@@ -4,7 +4,7 @@ import OrderNav from "@/app/order/_shared/OrderNav";
 import { OrderCrumbs, OrderHeader } from "@/app/order/_shared/ui";
 import { TableScroll } from "@/app/_shared/TableScroll";
 import { getOrderGrid, cellMatrix } from "@/lib/order";
-import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd } from "@/lib/seo";
+import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd, ogImage } from "@/lib/seo";
 
 // One of the three pages where prose is the product, alongside /methodology and
 // /sports/about, so the one-clause-above-the-board rule in DESIGN-STANDARDS 2A
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website", images: [{ url: "/og-default.png", width: 1200, height: 630 }] },
-  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC, images: ["/og-default.png"] },
+  openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website", images: [{ url: ogImage(TITLE, PATH), width: 1200, height: 630 }] },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC, images: [ogImage(TITLE, PATH)] },
 };
 
 const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;

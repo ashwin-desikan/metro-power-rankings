@@ -7,7 +7,7 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { getAllNpbTeams, getNpbDefunct, getNpbHub } from "@/lib/npb";
 import { getNpbStandings, type NpbStandingRow } from "@/lib/npbStandings";
 import { getSeasonSim, simIsCurrent, simBySlug, fmtOdds, type SeasonSimRow } from "@/lib/seasonSim";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  openGraph: { images: [{ url: ogImage(TITLE, PATH), width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
+  twitter: { images: [ogImage(TITLE, PATH)], card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 const card = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;

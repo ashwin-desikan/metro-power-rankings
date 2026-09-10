@@ -5,6 +5,8 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { Tabs } from "@/app/teams/_shared/Tabs";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 import { DataBar } from "@/app/_shared/DataBar";
+import MoneyBoard from "../SeasonMoney";
+import type { MoneyBoardRow } from "@/lib/footballMoneyShape";
 
 export type RankedClub = { rank: number; name: string; slug: string | null; country: string; mp: number; w: number; d: number; l: number; form: number; ped: number; tb: number; score: number; deltaRank?: number | null };
 export type CoefCountry = { rank: number; country: string; seasons: Record<string, number | null>; coef: number };
@@ -18,9 +20,19 @@ function DeltaCell({ d }: { d?: number | null }) {
   return <span style={{ color: d > 0 ? "var(--div-pos)" : "var(--div-neg)" }}>{d > 0 ? "▲" : "▼"}{Math.abs(d)}</span>;
 }
 
-export default function RankingTable({ clubs, countries, clubSeasons, pendingNote, top5 }: { clubs: RankedClub[]; countries: CoefCountry[]; clubSeasons: string[]; pendingNote?: string; top5?: string[] }) {
+type Tab = "clubs" | "countries" | "money";
+
+export default function RankingTable({ clubs, countries, clubSeasons, pendingNote, top5, season, money, moneyCredit }: {
+  clubs: RankedClub[]; countries: CoefCountry[]; clubSeasons: string[]; pendingNote?: string; top5?: string[];
+  /** The hub's season, for the money view's sentence. */
+  season?: string;
+  /** The Money Ledger cut for this season (2012-13 to 2025-26); the tab exists only when non-empty. */
+  money?: MoneyBoardRow[];
+  moneyCredit?: string;
+}) {
   const clubsPending = clubs.length === 0;
-  const [tab, setTab] = useState<"clubs" | "countries">(clubsPending ? "countries" : "clubs");
+  const hasMoney = !!money && money.length > 0;
+  const [tab, setTab] = useState<Tab>(clubsPending ? "countries" : "clubs");
   const [country, setCountry] = useState<string>("");
   const rankOf = new Map(countries.map((c) => [c.country, c.rank]));
   const filterCountries = Array.from(new Set(clubs.map((c) => c.country))).sort((a, b) => (rankOf.get(a) ?? 999) - (rankOf.get(b) ?? 999) || a.localeCompare(b));
@@ -41,13 +53,16 @@ export default function RankingTable({ clubs, countries, clubSeasons, pendingNot
         className="mb-3"
         aria-label="Ranking view"
         active={tab}
-        onChange={(k) => setTab(k as "clubs" | "countries")}
+        onChange={(k) => setTab(k as Tab)}
         items={[
           { key: "clubs", label: "Club ranking" },
           { key: "countries", label: "Country coefficients" },
+          ...(hasMoney ? [{ key: "money", label: "Transfer money" }] : []),
         ]}
       />
-      {tab === "clubs" ? (
+      {tab === "money" && hasMoney ? (
+        <MoneyBoard season={season ?? ""} rows={money!} sourceCredit={moneyCredit ?? ""} />
+      ) : tab === "clubs" ? (
         clubsPending ? (
           <div className="rounded-xl border px-4 py-8 text-center" style={cardStyle}>
             <p className="text-sm font-medium">Club power ranking opens with the season</p>

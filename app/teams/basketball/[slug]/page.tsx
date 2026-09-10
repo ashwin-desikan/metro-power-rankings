@@ -10,7 +10,7 @@ import {
   getCountrySlugForBasketballNation,
 } from "@/lib/basketball";
 import { flagCdnUrl } from "@/lib/international-display";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
 
 // dynamicParams=true since 2026-08-07: this portal's data is now read at runtime
@@ -37,8 +37,8 @@ export async function generateMetadata(
     title: `${team.name}: International Basketball`,
     description: desc,
     alternates: { canonical: path },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${team.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${team.name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: ogImage(team.name, path), width: 1200, height: 630 }], title: `${team.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
+    twitter: { images: [ogImage(team.name, path)], card: "summary_large_image", title: `${team.name} | ${SITE_NAME}`, description: desc },
   };
 }
 

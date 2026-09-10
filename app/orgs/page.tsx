@@ -2,17 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import OrgLeaders from "@/app/orgs/OrgLeaders";
-import {
-  ORG_DEFS,
-  ORG_GROUPS,
-  ORG_MAP,
-  STATUS_STYLES,
-  getOrgMembers,
-  type OrgGroup,
-  type OrgStatus,
-} from "@/lib/orgs";
+import { ORG_DEFS, ORG_GROUPS, ORG_MAP, STATUS_STYLES, getOrgMembers, type OrgGroup, type OrgStatus, getOrgsMeta } from "@/lib/orgs";
 import { getCountry } from "@/lib/countries";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 
 const PATH = "/orgs";
 const TITLE = "Alliances & Organisations";
@@ -23,7 +15,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+  openGraph: { images: [{ url: ogImage(TITLE, PATH), width: 1200, height: 630 }],
     title: `${TITLE} | ${SITE_NAME}`,
     description: DESC,
     url: `${BASE_URL}${PATH}`,
@@ -51,12 +43,39 @@ const ORG_DESC: Record<string, string> = {
   "OPEC":         "12-member oil cartel that coordinates production to influence global crude prices.",
   "OPEC+":        "OPEC plus 10 allied producers including Russia, Kazakhstan, and Malaysia.",
   "CSTO":         "Russia-led collective-security pact covering six post-Soviet states.",
+  "Mercosur": "South American customs union; Bolivia became the fifth full member in 2024, Venezuela remains suspended.",
+  "ECOWAS": "West African economic community; twelve members since Mali, Burkina Faso and Niger completed their withdrawal in January 2025.",
+  "AES": "Confederation of Mali, Burkina Faso and Niger under the July 2024 treaty, formed on leaving ECOWAS.",
+  "SADC": "Sixteen southern African states from Angola and DR Congo to South Africa and Madagascar.",
+  "EAC": "Eight partner states with a customs union and common market, and a proposed political federation; Somalia joined in 2024.",
+  "ECCAS": "Eleven central African states from Chad to Angola.",
+  "IGAD": "Horn of Africa bloc of eight; Eritrea resumed its membership in 2023.",
+  "AMU": "Five Maghreb states; largely dormant since the 1990s over the Western Sahara dispute.",
+  "CARICOM": "Fifteen Caribbean members including Guyana, Suriname and Haiti; Montserrat is a member but not a country here.",
+  "SICA": "Eight Central American and Caribbean states, the Dominican Republic included.",
+  "CAN": "Bolivia, Colombia, Ecuador and Peru; Chile and the Mercosur states are associates.",
+  "ALBA": "Venezuela and Cuba's alliance of ten, mostly Caribbean, states.",
+  "PIF": "Eighteen Pacific members from Australia and New Zealand to the atoll states; French Polynesia and New Caledonia are members but not countries here.",
+  "SAARC": "Eight South Asian states; summits have been stalled since 2014 by the India-Pakistan dispute.",
+  "BIMSTEC": "Seven states around the Bay of Bengal, the grouping India has favoured over SAARC.",
+  "EAEU": "Russia-led economic union of five with a common market; observers include Uzbekistan and Cuba.",
+  "CIS": "Post-Soviet association; Ukraine and Georgia have left, Moldova is withdrawing from its agreements, Turkmenistan is an associate.",
+  "OTS": "Five Turkic-speaking states; Hungary and Turkmenistan observe.",
+  "EFTA": "The four European states outside the EU with single-market access: Iceland, Liechtenstein, Norway, Switzerland.",
+  "Nordic Council": "The five Nordic states with the Faroe Islands, Greenland and Åland; a parliamentary body since 1952.",
+  "Benelux": "Belgium, the Netherlands and Luxembourg; the 1944 customs union that preceded the EU.",
+  "Visegrád": "Czechia, Hungary, Poland and Slovakia; a political grouping since 1991.",
+  "USMCA": "The 2020 successor to NAFTA.",
+  "CPTPP": "Twelve Pacific-rim economies; the United Kingdom acceded in December 2024.",
+  "RCEP": "The ten ASEAN states with Australia, China, Japan, New Zealand and South Korea; the largest trade bloc by population.",
 };
 
 const GROUP_DESC: Record<OrgGroup, string> = {
   "Security":              "Mutual-defence treaties and security alliances",
   "Political & Economic":  "Global governance forums and economic clubs",
   "Regional":              "Continental and sub-regional bodies",
+  "Subregional":           "Customs unions, communities and councils of a neighbourhood",
+  "Trade":                 "Trade agreements with a fixed membership",
   "Energy":                "Oil production coordination and energy cartels",
 };
 
@@ -157,6 +176,10 @@ function OrgCard({ orgKey }: { orgKey: string }) {
 }
 
 export default function OrgsHubPage() {
+  const orgsMeta = getOrgsMeta();
+  const verifiedLabel = orgsMeta?.verified
+    ? new Date(orgsMeta.verified + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })
+    : "the date in the data file";
   // Build HubNav items — one per group
   const navItems = ORG_GROUPS.map((g) => ({
     label: g,
@@ -222,7 +245,7 @@ export default function OrgsHubPage() {
 
       {/* Footer note */}
       <footer className="mt-12 pt-6 border-t text-xs text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
-        Membership data reflects publicly available records as of mid-2025. Some statuses (BRICS+, CSTO) are subject to ongoing political change.
+        Every membership was verified against the organisation's own records on {verifiedLabel}. A monthly check against Wikidata flags any change for review; suspended members are shown struck through.
       </footer>
     </main>
   );

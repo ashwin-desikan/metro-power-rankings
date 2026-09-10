@@ -8,7 +8,7 @@ import {
   monogramForFootball,
   type EuropeanCurrentEntry,
 } from "@/lib/football";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import FootballHubNav from "@/app/teams/FootballHubNav";
 import MostDecoratedTable from "./MostDecoratedTable";
 import ContinentalTable from "./ContinentalTable";
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: hub.label,
     description: desc,
     alternates: { canonical: `/teams/football/tournaments/${hub.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+    openGraph: { images: [{ url: ogImage(hub.label, `/teams/football/tournaments/${hub.slug}`), width: 1200, height: 630 }],
       title: `${hub.label} | ${SITE_NAME}`,
       description: desc,
       url: `${BASE_URL}/teams/football/tournaments/${hub.slug}`,

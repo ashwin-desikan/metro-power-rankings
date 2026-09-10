@@ -3,7 +3,7 @@ import { ELECTION_HUBS, HUB_REGION, GOVERNMENT_TYPE_LABELS, nextElections } from
 import { getElectionCensus } from "@/lib/electionCensus";
 import { getElectionSystems } from "@/lib/electionSystems";
 import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { ElectionsCrumbs, ElectionsHeader, SourcesCard } from "../_shared/ui";
 import ElectionsNav from "../_shared/ElectionsNav";
 import HubIndex, { type HubRow, type Regime, type Horizon } from "../HubIndex";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: {
-    images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+    images: [{ url: ogImage(TITLE, PATH), width: 1200, height: 630 }],
     title: `${TITLE} | ${SITE_NAME}`,
     description: DESC,
     url: `${BASE_URL}${PATH}`,

@@ -1,0 +1,100 @@
+name: Organisation memberships (monthly Wikidata tripwire)
+
+# Once a month, ask Wikidata which countries it lists as current members of
+# every organisation the site tracks (scripts/data/org-qids.json), and open
+# one rolling Issue when it names a member the site lacks. It never edits the
+# data: a membership change is a judgement (suspended is not withdrawn,
+# announced is not effective), so a person checks the organisation's own site
+# and applies it in scripts/data/subregional-orgs.json, then reruns
+# scripts/build-orgs-extra.py.
+#
+# Why here and not the mini: it needs only the public Wikidata endpoint and
+# the ambient GITHUB_TOKEN, it is not time-critical (a 3h dispatch lag on the
+# first of the month is nothing), and like staleness-watch it should not
+# share a failure domain with the machine that runs the refreshes.
+#
+# Ashwin, 2026-09-10, after finding the UAE still listed in OPEC four months
+# after it left: "we need to look at perhaps running a monthly job to ensure
+# we have the correct constituents of all of these different organizations."
+
+on:
+  schedule:
+    - cron: "0 7 1 * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: orgs-monthly
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Self-test (offline decision logic)
+        run: python3 scripts/orgs/check_memberships.py --self-test
+
+      - name: Compare against Wikidata
+        id: check
+        run: |
+          set +e
+          python3 scripts/orgs/check_memberships.py > /tmp/orgs.md
+          rc=$?
+          set -e
+          cat /tmp/orgs.md
+          if [ "$rc" != "0" ]; then echo "differs=true" >> "$GITHUB_OUTPUT"; else echo "differs=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Open or update the tracking issue
+        if: steps.check.outputs.differs == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TITLE: "Organisations: Wikidata lists members this site lacks"
+        run: |
+          set -e
+          gh label create org-memberships \
+            --description "Opened by orgs-monthly.yml" \
+            --color 0E8A16 2>/dev/null || true
+          num="$(gh issue list --label org-memberships --state open \
+                   --json number --jq '.[0].number // empty')"
+          {
+            cat /tmp/orgs.md
+            echo
+            echo "---"
+            echo "Opened by \`orgs-monthly.yml\`. Wikidata is a tripwire, not a source: check the"
+            echo "organisation's own site, then apply the change in \`scripts/data/subregional-orgs.json\`"
+            echo "(the \`overrides\` block for the workbook's organisations) and run"
+            echo "\`python scripts/build-orgs-extra.py\`. This issue is edited in place each month and"
+            echo "closes itself once the site and Wikidata agree."
+          } > /tmp/issue-body.md
+          if [ -n "$num" ]; then
+            gh issue edit "$num" --body-file /tmp/issue-body.md
+            echo "Updated issue #$num."
+          else
+            gh issue create --title "$TITLE" --label org-memberships --body-file /tmp/issue-body.md
+          fi
+
+      - name: Close the tracking issue once they agree
+        if: steps.check.outputs.differs == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          num="$(gh issue list --label org-memberships --state open \
+                   --json number --jq '.[0].number // empty')"
+          if [ -n "$num" ]; then
+            gh issue close "$num" --comment "Wikidata names no member the site lacks."
+            echo "Closed issue #$num."
+          else
+            echo "No additions, no open issue. Silent."
+          fi

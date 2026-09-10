@@ -8,7 +8,7 @@ import HeartbreakTag from "@/app/teams/HeartbreakTag";
 import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import TopTeamChip from "@/app/teams/TopTeamChip";
 import { getAllCbbSlugs, getAllCbbTeams, getCbbTeamBySlug, getCbbSeasons, getCbbAwards, getCbbNba, getCbbTeamGames, cbbMonogram } from "@/lib/cbb";
 import CbbGamesTable from "../CbbGamesTable";
@@ -33,8 +33,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const desc = `${t.name} men's college basketball: ${titles}all-time ${t.w}-${t.l} (${t.pct.toFixed(3)}), ${t.tour_app} NCAA tournament appearances, ${t.final4} Final Fours. Conference: ${t.conference}.`;
   return {
     title: `${t.name}: Men's College Basketball`, description: desc, alternates: { canonical: path },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${t.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${t.name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: ogImage(t.name, path), width: 1200, height: 630 }], title: `${t.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
+    twitter: { images: [ogImage(t.name, path)], card: "summary_large_image", title: `${t.name} | ${SITE_NAME}`, description: desc },
   };
 }
 

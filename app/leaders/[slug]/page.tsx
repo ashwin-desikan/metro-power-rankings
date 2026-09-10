@@ -5,7 +5,7 @@ import { getLeadersMaster, type LeaderEntity } from "@/lib/leadersAll";
 import type { HistRow } from "@/lib/leaderRules";
 import { BALLOT_OF } from "@/lib/electionLeaderLinks";
 import { flagUrl, flagSrcSet } from "@/lib/flags";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { BackButton } from "../../elections/HubShared";
 
 // Leadership profile per tracked entity: the full officeholder history behind
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title,
     description: desc,
     alternates: { canonical: path },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
+    openGraph: { images: [{ url: ogImage(title, path), width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
   };
 }
 

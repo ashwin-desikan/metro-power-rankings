@@ -12,7 +12,7 @@ import {
   scoreAwayFirst,
   type GameRow,
 } from "@/lib/nflExpectation";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { pfrBoxscoreUrl, PFR_LINK_LABEL } from "@/lib/nflBoxscore";
 
 // One season of the expectation ledger: the game log with what each result was
@@ -59,7 +59,7 @@ export async function generateMetadata({
     description,
     alternates: { canonical: `/teams/nfl/expectation/${season}` },
     openGraph: {
-      images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+      images: [{ url: ogImage(title, `/teams/nfl/expectation/${season}`), width: 1200, height: 630 }],
       title: `${title} | ${SITE_NAME}`,
       description,
       url: `${BASE_URL}/teams/nfl/expectation/${season}`,

@@ -105,6 +105,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/footyFinals",
   "@/lib/nflPlayoffs",
   "@/lib/clubValue",
+  "@/lib/footballMoney",
   "@/lib/population2100",
   "@/lib/footballSeasonExpectation",
   "@/lib/moves",

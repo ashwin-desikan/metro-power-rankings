@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { BELOW_LINE_CLUBS, getBelowLineClub, honoursForClub } from "@/lib/belowTheLine";
 import BelowTheLineTag from "@/app/teams/BelowTheLineTag";
 
@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: c.name,
     description: desc,
     alternates: { canonical: path },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${c.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${c.name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: ogImage(c.name, path), width: 1200, height: 630 }], title: `${c.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
+    twitter: { images: [ogImage(c.name, path)], card: "summary_large_image", title: `${c.name} | ${SITE_NAME}`, description: desc },
   };
 }
 

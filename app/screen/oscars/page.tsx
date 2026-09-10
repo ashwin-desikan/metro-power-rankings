@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getScreenOscars } from "@/lib/screen";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import ScreenNav from "../ScreenNav";
 import OscarsView from "./OscarsView";
 
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: "/screen/oscars" },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}/screen/oscars`, type: "website" },
+  openGraph: { images: [{ url: ogImage(TITLE, `/screen/oscars`), width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}/screen/oscars`, type: "website" },
 };
 
 export default function ScreenOscarsPage() {

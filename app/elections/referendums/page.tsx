@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getReferendums } from "@/lib/referendums";
 import { ELECTION_HUBS } from "@/lib/electionHubsMeta";
 import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { ElectionsCrumbs } from "../_shared/ui";
 import ElectionsNav from "../_shared/ElectionsNav";
 import SortableTable from "../SortableTable";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
+  openGraph: { images: [{ url: ogImage(TITLE, PATH), width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
 };
 
 const pct = (n: number | null) => (n == null ? "—" : `${n.toFixed(n >= 90 ? 1 : 2).replace(/\.?0+$/, "")}%`);

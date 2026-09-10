@@ -70,6 +70,44 @@ MANUAL = {
     ("italy", "SPAL"): "ferrara",   # index carries Spal with no metro; club is Ferrara
 }
 
+# 🔴 TRANSFERMARKT NAMES THAT THE MATCHER CANNOT REACH, PINNED TO THE SITE
+# SLUG BY HAND. The crosswalk's exact/loose/containment matcher refuses when
+# a name shares no distinctive token with the site's ("Inter Milan" against
+# "Internazionale", "1.FC Nuremberg" against "1. FC Nürnberg") or when two
+# site clubs qualify ("Genoa CFC" beside Sampdoria and Andrea Doria under the
+# same city). Every one of these was a top-flight club silently missing from
+# the value series and the Money Ledger until 2026-09-10 (Ashwin: "they all
+# have equivalents in my canonical database"). Keyed by (country slug, the
+# transfermarkt name as it appears in clubs.csv); value is the site slug.
+TM_SLUG = {
+    ("france", "LOSC Lille"): "lille-osc",
+    ("france", "RC Strasbourg Alsace"): "rc-strasbourg",
+    ("france", "ESTAC Troyes"): "troyes-ac",
+    ("france", "EA Guingamp"): "en-avant-guingamp",
+    ("france", "Thonon Évian Grand Genève FC"): "evian-thonon-gaillard-fc",
+    ("france", "AS Nancy-Lorraine"): "as-nancy",
+    ("france", "GFC Ajaccio"): "gazelec-ajaccio",
+    ("germany", "1.FC Union Berlin"): "fc-union-berlin",
+    ("germany", "1.FC Nuremberg"): "1-fc-nurnberg",
+    ("italy", "Inter Milan"): "internazionale",
+    ("italy", "Associazione Sportiva Roma"): "as-roma",
+    ("italy", "Genoa CFC"): "genoa",
+    ("italy", "Delfino Pescara 1936"): "pescara",
+}
+
+
+def resolve_club(slug, club, site_exact, site_loose, place):
+    """The crosswalk's resolve(), with TM_SLUG consulted first. Returns the
+    same dict shape ({method, slug, metro, site_name}) or {}."""
+    pin = TM_SLUG.get((slug, club))
+    if pin:
+        for c in site_exact[COUNTRY[slug]].values():
+            if c.get("slug") == pin:
+                return {"method": "pinned", "slug": pin, "metro": c.get("metro"),
+                        "site_name": c.get("cur_name")}
+        raise SystemExit("TM_SLUG pins %r to %r but the site index has no such slug" % (club, pin))
+    return resolve(slug, club, site_exact, site_loose, place) or {}
+
 
 def mindex(ym):
     return (int(ym[:4]) - 2000) * 12 + int(ym[5:7]) - 1
@@ -140,7 +178,7 @@ def build(src=SRC):
         slug = COUNTRIES.get(ctry)
         if not slug:
             continue                      # outside the six; not an error
-        r = resolve(slug, club, site_exact, site_loose, place) or {}
+        r = resolve_club(slug, club, site_exact, site_loose, place)
         ms = MANUAL.get((slug, club)) or r.get("metro_slug")
         if not ms and r.get("metro"):
             ms = next((s for s, m in by_slug.items()
@@ -153,8 +191,8 @@ def build(src=SRC):
         if len(pts) < 12:                 # a club needs a year to have a curve
             continue
         payload[slug].append({
-            "club": club, "slug": r.get("slug"), "metro": r.get("metro"),
-            "metro_slug": ms, "metro_method": r.get("method"),
+            "club": club, "slug": r.get("slug"), "site_name": r.get("site_name"),
+            "metro": r.get("metro"), "metro_slug": ms, "metro_method": r.get("method"),
             "first": pts[0]["m"], "last": pts[-1]["m"], "months": len(pts),
             "peak": max(p["v"] for p in pts),
             "series": pts,

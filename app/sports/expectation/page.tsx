@@ -9,11 +9,14 @@ import { getPlExpectation } from "@/lib/plExpectation";
 import { getNflExpectation } from "@/lib/nflExpectation";
 import { getIntlExpectation } from "@/lib/intlExpectation";
 import { getClubValueIndex, joinValueAndSurplus } from "@/lib/clubValue";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { getMoneyIndex, getSpanMoneyBoard } from "@/lib/footballMoney";
+import { fmtEurM, fmtEurSigned, MONEY_FIRST_SEASON, MONEY_LAST_FULL_SEASON } from "@/lib/footballMoneyShape";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 
 import { SectionHead } from "@/app/_shared/SectionHead";
 import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
+import SortableBoard from "@/app/_shared/SortableBoard";
 // The one place the expectation ledgers answer for themselves.
 //
 // 🔴 THIS IS NOT A BOARD OF BOARDS. Ashwin, on the NFL-only page this one
@@ -35,14 +38,14 @@ export const metadata: Metadata = {
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_PATH },
   openGraph: {
-    images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+    images: [{ url: ogImage(PAGE_TITLE, PAGE_PATH), width: 1200, height: 630 }],
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,
     url: `${BASE_URL}${PAGE_PATH}`,
     type: "website",
   },
   twitter: {
-    images: ["/og-default.png"],
+    images: [ogImage(PAGE_TITLE, PAGE_PATH)],
     card: "summary_large_image",
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,
@@ -135,10 +138,22 @@ export default async function ExpectationPage() {
   const valueSeason = intl?.metas.length
     ? intl.metas.reduce((a, m) => (m.seasons[1] > a ? m.seasons[1] : a), intl.metas[0].seasons[1])
     : null;
-  const [valueIdx, valueJoined] = await Promise.all([
+  const [valueIdx, valueJoined, moneyIdx, money] = await Promise.all([
     getClubValueIndex().catch(() => null),
     valueSeason ? joinValueAndSurplus(valueSeason).catch(() => []) : Promise.resolve([]),
+    getMoneyIndex().catch(() => null),
+    getSpanMoneyBoard().catch(() => []),
   ]);
+  // The money board is the whole span, full seasons only (2012-13 to
+  // 2025-26), sorted on appreciation; only clubs priced at both ends of at
+  // least three of those seasons, so a club that spent one season in the top
+  // flight is not ranked on one window, while a Brentford (priced from its
+  // 2021 promotion) still is. The seasons count rides on every row.
+  const moneyRows = money.filter((r) => r.appreciation != null && r.seasons_valued >= 3);
+  const moneyBest = moneyRows[0] ?? null;
+  const moneyWorst = moneyRows.length ? moneyRows[moneyRows.length - 1] : null;
+  const moneyBySpend = [...moneyRows].sort((a, b) => b.spent - a.spent);
+  const moneyBestReturn = moneyRows.filter((r) => r.return_pct != null).sort((a, b) => (b.return_pct as number) - (a.return_pct as number))[0] ?? null;
   // The board is the GAP, so it sorts on the gap: the club that beat its
   // money by most at the top, the one that underspent its way to the bottom at
   // the foot. Value rank stays a column, within each league, so the two ranks
@@ -816,6 +831,81 @@ export default async function ExpectationPage() {
               </tbody>
             </table>
           </ResponsiveTable>
+        </section>
+      ) : null}
+
+      {/* ------------------------------------------ the money ledger */}
+      {moneyRows.length > 0 ? (
+        <section className="mb-12">
+          <SectionHead
+            id="money"
+            title="Return on the transfer window"
+            sub={`Fees paid and received from ${MONEY_FIRST_SEASON} to ${MONEY_LAST_FULL_SEASON}, and what each squad gained in value once the trading is netted out.`}
+            more={
+              <>
+                Spent and received are transfer fees in EUR millions, by the July-to-June season of the
+                move; a move with no fee on record is counted on the club page and never priced here.
+                Wages are not in it. Appreciation is the change in squad value over each season minus the
+                net spend, summed across the seasons the squad was priced at both ends (the count is on the
+                row): a club that ends where its spending alone would put it scores zero, a club that
+                made its players worth more scores above it. Return is that appreciation as a share of
+                fees spent, shown only where the spend reached €50m over the span, because a small
+                denominator makes a meaningless ratio. Only clubs priced in at least three seasons are
+                ranked. {moneyIdx?._meta.source_credit ?? "Transfer fees and player valuations from Transfermarkt via github.com/dcaribou/transfermarkt-datasets (CC0)"}.
+              </>
+            }
+          />
+          {moneyBest && moneyWorst && moneyBySpend[0] ? (
+            <p className="mb-3 text-sm text-[var(--text-muted)] max-w-3xl">
+              {moneyBest.club} made the most of its windows: <span className="tabular-nums" style={MONO}>{fmtEurSigned(moneyBest.appreciation as number)}</span> of
+              squad value beyond what it paid, across {moneyBest.seasons_valued} priced seasons.{" "}
+              {moneyBySpend[0].club} spent the most, <span className="tabular-nums" style={MONO}>{fmtEurM(moneyBySpend[0].spent)}</span>, for{" "}
+              <span className="tabular-nums" style={MONO}>{fmtEurSigned(moneyBySpend[0].appreciation as number)}</span>.{" "}
+              {moneyWorst.club} sits at the foot, <span className="tabular-nums" style={MONO}>{fmtEurSigned(moneyWorst.appreciation as number)}</span>.
+              {moneyBestReturn ? <> The best return on a real programme of spending is {moneyBestReturn.club}, <span className="tabular-nums" style={MONO}>{fmtEurSigned(moneyBestReturn.appreciation as number)}</span> on <span className="tabular-nums" style={MONO}>{fmtEurM(moneyBestReturn.spent)}</span> spent.</> : null}
+            </p>
+          ) : null}
+          <SortableBoard
+            id="money"
+            mobileNoun="clubs"
+            mobileInitial={12}
+            initial={{ key: "appreciation", dir: "desc" }}
+            cols={[
+              { key: "club", label: "Club", className: "whitespace-nowrap" },
+              { key: "country", label: "League", demote: true },
+              { key: "spent", label: "Spent", right: true },
+              { key: "received", label: "Received", right: true, demote: true },
+              { key: "net", label: "Net", right: true },
+              { key: "appreciation", label: "Appreciation", right: true, title: "Squad value gained beyond the net spend" },
+              { key: "return_pct", label: "Return", right: true, demote: true, title: "Appreciation as a share of fees spent" },
+              { key: "seasons_valued", label: "Seasons", right: true, demote: true },
+            ]}
+            rows={moneyRows.map((r) => ({
+              key: r.slug,
+              sort: { club: r.club, country: r.country, spent: r.spent, received: r.received, net: r.net, appreciation: r.appreciation, return_pct: r.return_pct, seasons_valued: r.seasons_valued },
+              cells: [
+                <Link key="c" href={`/teams/football/${r.slug}`} className="text-[var(--accent)] hover:underline">{r.club}</Link>,
+                <span key="l" className="text-[var(--text-muted)] whitespace-nowrap">{r.country}</span>,
+                <span key="s" className="tabular-nums" style={MONO}>{fmtEurM(r.spent)}</span>,
+                <span key="r" className="tabular-nums text-[var(--text-muted)]" style={MONO}>{fmtEurM(r.received)}</span>,
+                <span key="n" className="tabular-nums text-[var(--text-muted)]" style={MONO}>{fmtEurSigned(r.net)}</span>,
+                <span key="a" className="tabular-nums font-semibold" style={{ ...MONO, color: (r.appreciation as number) >= 0 ? UP : DOWN }}>{fmtEurSigned(r.appreciation as number)}</span>,
+                <DivergingBar key="p" v={r.return_pct} dp={0} suffix="%" label="appreciation as a share of fees spent" />,
+                <span key="v" className="tabular-nums text-[var(--text-dim)]" style={MONO}>{r.seasons_valued}</span>,
+              ],
+              mobile: {
+                name: (
+                  <>
+                    <Link href={`/teams/football/${r.slug}`} className="truncate text-[var(--accent)] hover:underline">{r.club}</Link>
+                    <span className="flex-shrink-0 text-[var(--text-dim)]">{r.country}</span>
+                  </>
+                ),
+                sub: <>spent {fmtEurM(r.spent)} · net {fmtEurSigned(r.net)} · {r.seasons_valued} seasons</>,
+                right: <span style={{ color: (r.appreciation as number) >= 0 ? UP : DOWN }}>{fmtEurSigned(r.appreciation as number)}</span>,
+                rightSub: r.return_pct != null ? `${r.return_pct >= 0 ? "+" : "\u2212"}${Math.abs(r.return_pct).toFixed(0)}% return` : "squad gain",
+              },
+            }))}
+          />
         </section>
       ) : null}
 

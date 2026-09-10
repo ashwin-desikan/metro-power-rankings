@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getLeaderChanges } from "@/lib/leaderChanges";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 
 const PAGE_PATH = "/leaders/changes";
 const PAGE_TITLE = "Leadership changes";
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_PATH },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+  openGraph: { images: [{ url: ogImage(PAGE_TITLE, PAGE_PATH), width: 1200, height: 630 }],
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,
     url: `${BASE_URL}${PAGE_PATH}`,
     type: "website",
   },
-  twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
+  twitter: { images: [ogImage(PAGE_TITLE, PAGE_PATH)], card: "summary_large_image", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
 };
 
 function fmtDate(d: string): string {

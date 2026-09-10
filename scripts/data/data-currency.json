@@ -192,6 +192,20 @@
       "file": "public/data/countries/pop2100/index.json",
       "maxAgeDays": 900,
       "why": "The UN revises WPP every two years (July 2024, next expected mid-2026); scripts/countries/build_population_2100.py is run by hand from the CSVs downloaded on the Windows box, so an index older than thirty months means a revision was missed."
+    },
+    {
+      "key": "club-money",
+      "label": "The Money Ledger: transfer fees per club and season, six leagues",
+      "file": "public/data/football/money/index.json",
+      "maxAgeDays": 120,
+      "why": "Same corpus as club-value (Transfermarkt via transfermarkt-datasets, paused since July 2026); asOf is the source's last transfer date. Rebuild with scripts/football/build_transfer_ledger.py --write after re-downloading transfers.csv.gz whenever the value corpus is refreshed, so the two never disagree on a month."
+    },
+    {
+      "key": "country-orgs",
+      "label": "Organisation memberships (/orgs, country pages, the 2100 blocs)",
+      "file": "public/data/country-orgs.json",
+      "maxAgeDays": 60,
+      "why": "asOf is the date every membership was last verified by hand against the organisations' own records (2026-09-10 the first time; the UAE had left OPEC four months earlier and the site still listed it). The monthly Wikidata tripwire (orgs-monthly.yml) catches additions between verifications; this gate says when the hand check itself is overdue."
     }
   ]
 }

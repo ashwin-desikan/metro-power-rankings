@@ -29,7 +29,7 @@ import MlsMostDecorated from "./MlsMostDecorated";
 import LiveLeagueTable, { type LiveCompTable } from "./LiveLeagueTable";
 import { getClubStandings, getEuropeBadges, getCupAlive, getDomesticCups, type LiveLeague, type LiveRow } from "@/lib/clubFootballLive";
 import { liveMembershipBySlug, LIVE_SEASON_END_YEAR } from "@/lib/footballLiveMembership";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { leagueStatusFor } from "@/lib/leagueStatus";
 import { HubHero } from "@/app/teams/_shared/HubHero";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
@@ -111,7 +111,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: h.league,
     description: `${h.league} (${h.country}): current-season standings and complete all-time Level 1 champions list.`,
     alternates: { canonical: `/teams/football/leagues/${h.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+    openGraph: { images: [{ url: ogImage(h.league, `/teams/football/leagues/${h.slug}`), width: 1200, height: 630 }],
       title: `${h.league} | ${SITE_NAME}`,
       description: `${h.league} (${h.country}) current standings and all-time champions.`,
       url: `${BASE_URL}/teams/football/leagues/${h.slug}`,

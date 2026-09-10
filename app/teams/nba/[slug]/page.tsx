@@ -37,7 +37,7 @@ import {
   type Season,
   type HistoricalFranchise,
 } from "@/lib/nba";
-import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd, ogImage } from "@/lib/seo";
 import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
 import { CappedList } from "@/app/_shared/Disclosure";
 
@@ -65,8 +65,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: f.display_name,
       description: desc,
       alternates: { canonical: `/teams/nba/${f.slug}` },
-      openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${f.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-      twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${f.display_name} | ${SITE_NAME}`, description: desc },
+      openGraph: { images: [{ url: ogImage(f.display_name, url), width: 1200, height: 630 }], title: `${f.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+      twitter: { images: [ogImage(f.display_name, url)], card: "summary_large_image", title: `${f.display_name} | ${SITE_NAME}`, description: desc },
     };
   }
   const h = getHistoricalBySlug(slug);
@@ -84,8 +84,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${h.display_name} (defunct)`,
     description: desc,
     alternates: { canonical: `/teams/nba/${h.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${h.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${h.display_name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: ogImage(h.display_name, url), width: 1200, height: 630 }], title: `${h.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+    twitter: { images: [ogImage(h.display_name, url)], card: "summary_large_image", title: `${h.display_name} | ${SITE_NAME}`, description: desc },
   };
 }
 

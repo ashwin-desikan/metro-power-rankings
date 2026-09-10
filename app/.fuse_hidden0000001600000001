@@ -1,0 +1,910 @@
+import { getAllMetros } from '@/lib/data';
+import { getSubstackPosts, type SubstackPost } from '@/lib/substack';
+import { getLiveBadges } from '@/lib/badges';
+import { leagueStatusFor, clubFootballStatus, type LeagueStatusTone } from '@/lib/leagueStatus';
+import { FEATURED } from '@/app/sports/games/featured';
+import { flagCdnUrl } from '@/lib/international-display';
+import { getCountry } from '@/lib/countries';
+import { ELECTION_HUBS } from '@/lib/electionHubsMeta';
+import { getForecast, type ForecastFile } from '@/lib/forecast';
+import { getPopulation2100Index } from '@/lib/population2100';
+import { fmtPop } from '@/lib/population2100Shape';
+import { datasetJsonLd, serializeJsonLd } from '@/lib/seo';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import Link from 'next/link';
+import FollowingRail from './FollowingRail';
+
+// Directory-forward landing page. Surfaces the breadth of the site first —
+// four ranked indices (each with a live top-three preview), a Greatest Games
+// showcase, the full atlas, live sports, the journal, badges, and a site
+// index — and routes the metro rankings table to its own /rankings hub.
+// Server component; the only async work is the hourly Substack ISR fetch.
+export const revalidate = 3600;
+
+const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+function fmtDate(iso: string): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return iso;
+  return `${MONTHS[parseInt(m[2], 10) - 1]} ${parseInt(m[3], 10)}, ${m[1]}`;
+}
+
+// Every path is spelled as a literal: a spread (`...rel`) under public/data
+// made the file tracer bundle all 265 MB into the home page's function
+// (measured 2026-09-08, the last route left above 220 MB). Add a key here,
+// never a dynamic segment; scripts/check-data-reads.mjs enforces it.
+const HOME_FILES = {
+  meta: () => readFileSync(join(process.cwd(), 'public', 'data', 'meta.json'), 'utf-8'),
+  powerRanking: () => readFileSync(join(process.cwd(), 'public', 'data', 'power-ranking.json'), 'utf-8'),
+  zoneZeroCup: () => readFileSync(join(process.cwd(), 'public', 'data', 'zone-zero-cup.json'), 'utf-8'),
+  soundArtists: () => readFileSync(join(process.cwd(), 'public', 'data', 'sound', 'artists.json'), 'utf-8'),
+  screen: () => readFileSync(join(process.cwd(), 'public', 'data', 'screen', 'screen.json'), 'utf-8'),
+  powerHistory: () => readFileSync(join(process.cwd(), 'public', 'data', 'power-history.json'), 'utf-8'),
+  cricketTopGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'cricket', 'top-games.json'), 'utf-8'),
+  rugbyTopGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'rugby-union', 'top-games.json'), 'utf-8'),
+  footballTopClubGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'football', 'top-club-games.json'), 'utf-8'),
+  intlTopGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'international', 'top-games-all-time.json'), 'utf-8'),
+  nflTopGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'nfl', 'top-games-all-time.json'), 'utf-8'),
+  nbaTopGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'nba', 'top-games-all-time.json'), 'utf-8'),
+  mlbTopGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'mlb', 'top-games-all-time.json'), 'utf-8'),
+  cfbGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'cfb', 'games.json'), 'utf-8'),
+  cbbGames: () => readFileSync(join(process.cwd(), 'public', 'data', 'cbb', 'games.json'), 'utf-8'),
+} as const;
+type HomeFile = keyof typeof HOME_FILES;
+
+function readData<T>(file: HomeFile, fallback: T): T {
+  try {
+    return JSON.parse(HOME_FILES[file]()) as T;
+  } catch {
+    return fallback;
+  }
+}
+
+function getLastUpdate(): string {
+  const meta = readData<{ lastUpdate?: string }>('meta', {});
+  return meta.lastUpdate || new Date().toISOString().slice(0, 10);
+}
+
+// Football nation names (incl. historical) -> internal nation slug, used with
+// the site-wide flagCdnUrl helper to render real flag images (emoji flags do
+// not render on Windows browsers, so we use images everywhere).
+const FB_SLUG: Record<string, string> = {
+  'West Germany': 'germany', 'East Germany': 'germany', 'Germany': 'germany', 'Hungary': 'hungary',
+  'England': 'england', 'Scotland': 'scotland', 'Wales': 'wales', 'Argentina': 'argentina', 'France': 'france',
+  'Brazil': 'brazil', 'Italy': 'italy', 'Spain': 'spain', 'Netherlands': 'netherlands', 'Uruguay': 'uruguay',
+  'Portugal': 'portugal', 'Croatia': 'croatia', 'Morocco': 'morocco', 'Mexico': 'mexico', 'USA': 'united-states', 'United States': 'united-states',
+};
+function footballFlagUrls(matchup?: string): string[] {
+  if (!matchup) return [];
+  const m = /^(.+?)\s+\d+\s*[-\u2013]\s*\d+\s+(.+?)$/.exec(matchup);
+  if (!m) return [];
+  return [m[1].trim(), m[2].trim()]
+    .map((nm) => { const sl = FB_SLUG[nm]; return sl ? flagCdnUrl(sl, '20x15') : null; })
+    .filter((u): u is string => !!u);
+}
+
+// ---- Top-three previews for the index cards ----
+type Preview = { name: string; meta: string; sub?: string; flagUrl?: string | null };
+
+function topMetros(): Preview[] {
+  return getAllMetros().slice(0, 3).map((m) => ({ name: m.name, sub: m.country, meta: m.score.toFixed(1) }));
+}
+function topPeople(): Preview[] {
+  const d = readData<{ ranking?: { name: string; metro?: string; power?: number }[] }>('powerRanking', {});
+  return (d.ranking ?? []).slice(0, 3).map((p) => ({ name: p.name, sub: p.metro, meta: p.power != null ? String(Math.round(p.power)) : '' }));
+}
+function topNations(): Preview[] {
+  const d = readData<{ nations?: { name: string; merit?: number; continent?: string; countrySlug?: string; slug?: string }[] }>('zoneZeroCup', {});
+  return (d.nations ?? []).slice(0, 3).map((n) => ({
+    name: n.name,
+    sub: n.continent,
+    flagUrl: n.slug ? flagCdnUrl(n.slug, '20x15') : null,
+    meta: n.merit != null ? n.merit.toFixed(0) : '',
+  }));
+}
+function topArtists(): Preview[] {
+  const d = readData<{ name: string; metro?: string; combined?: number }[]>('soundArtists', []);
+  return d.slice(0, 3).map((a) => ({ name: a.name, sub: a.metro, meta: a.combined != null ? a.combined.toFixed(0) : '' }));
+}
+function topFilmMetros(): Preview[] {
+  const d = readData<{ metros?: { name: string; country?: string; score?: number }[] }>('screen', {});
+  return (d.metros ?? []).slice(0, 3).map((m) => ({ name: m.name, sub: m.country, meta: m.score != null ? m.score.toFixed(0) : '' }));
+}
+function topPowers(): Preview[] {
+  const d = readData<{ byYear?: Record<string, { slug: string; share: number | null }[]> }>('powerHistory', {});
+  const cur = d.byYear?.['2026'] ?? [];
+  return cur.slice(0, 3).map((r) => ({
+    name: getCountry(r.slug)?.name ?? r.slug,
+    flagUrl: flagCdnUrl(r.slug, '20x15'),
+    meta: r.share != null ? `${(r.share * 100).toFixed(1)}%` : '',
+  }));
+}
+
+// The three largest countries in 2100 on the UN median, for the home-page
+// promo of /countries/2100 (Ashwin 2026-09-10: "something we do need to
+// promote on the front page"). Reads the same index the page reads.
+function top2100(): Preview[] {
+  const idx = getPopulation2100Index();
+  if (!idx) return [];
+  return [...idx.countries]
+    .sort((a, b) => b.y2100.med - a.y2100.med)
+    .slice(0, 3)
+    .map((r) => ({
+      name: r.name,
+      sub: r.multiple2100 != null ? `${r.multiple2100.toFixed(2)}x today` : undefined,
+      flagUrl: flagCdnUrl(r.slug, '20x15'),
+      meta: fmtPop(r.y2100.med),
+    }));
+}
+
+// Genuinely self-retiring: candidates are only included while the weekly
+// forecast pipeline (scripts/forecast/) still tracks them in forecast.json --
+// the same source that drives /elections' "Tracking now" band, which "each
+// preview retires from this window once its election has been run." Once a
+// contest is decided and the pipeline drops it, it falls out of both places
+// together with no manual edit here. UK is excluded (its next election is an
+// undated "expected 2029", not a near-horizon race like the others).
+function topElections(forecast: ForecastFile | null): Preview[] {
+  if (!forecast) return [];
+  const CANDIDATES = ['us', 'br', 'nz', 'il', 'fr'] as const;
+  const active: Record<(typeof CANDIDATES)[number], unknown> = {
+    us: forecast.us, br: forecast.br, nz: forecast.nz, il: forecast.il, fr: forecast.fr,
+  };
+  return CANDIDATES.filter((code) => active[code]).slice(0, 3).map((code) => {
+    const h = ELECTION_HUBS[code];
+    return { name: h.name, flagUrl: flagCdnUrl(h.flag, '20x15'), sub: h.next, meta: '' };
+  });
+}
+
+// ---- Greatest Games: one marquee game per sport (excluding NHL), pulled
+// from the same curated FEATURED list that powers /sports/games. ----
+const GAME_SPORTS: { tag: string; label: string; emoji: string }[] = [
+  { tag: 'INTFB', label: 'World Football', emoji: '⚽' },
+  { tag: 'NFL', label: 'NFL', emoji: '🏈' },
+  { tag: 'NBA', label: 'NBA', emoji: '🏀' },
+  { tag: 'MLB', label: 'MLB', emoji: '⚾' },
+  { tag: 'CFB', label: 'College Football', emoji: '🏈' },
+  { tag: 'CBB', label: 'College Hoops', emoji: '🏀' },
+];
+type GameEntry = { title: string; matchup?: string; note?: string; flagUrls: string[]; rank?: number };
+type SportGames = { tag: string; label: string; emoji: string; games: GameEntry[] };
+// True all-time Game Score rank for each curated clip, matched against the
+// same ranked source the /sports/games page uses: by game date for the pro
+// leagues, by team pairing for college (its FEATURED clips carry no date).
+type RankRow = { date?: string; team?: string; opp?: string };
+const RANK_SRC: Record<string, { file: HomeFile; key?: string; by: 'date' | 'teams' }> = {
+  INTFB: { file: 'intlTopGames', by: 'date' },
+  NFL: { file: 'nflTopGames', by: 'date' },
+  NBA: { file: 'nbaTopGames', by: 'date' },
+  MLB: { file: 'mlbTopGames', by: 'date' },
+  CFB: { file: 'cfbGames', key: 'top_overall', by: 'teams' },
+  CBB: { file: 'cbbGames', key: 'top_overall', by: 'teams' },
+};
+function norm(x?: string): string { return (x ?? '').toLowerCase().replace(/[^a-z0-9]/g, ''); }
+function rankByDate(rows: RankRow[], date?: string): number | undefined {
+  if (!date) return undefined;
+  const i = rows.findIndex((r) => r.date === date);
+  return i >= 0 ? i + 1 : undefined;
+}
+function rankByTeams(rows: RankRow[], matchup?: string): number | undefined {
+  if (!matchup) return undefined;
+  const parts = matchup.split(/\s+\d+\s*[-\u2013]\s*\d+\s*(?:\([^)]*\)\s*)?/).map((x) => x.trim()).filter(Boolean);
+  if (parts.length !== 2) return undefined;
+  const key = [norm(parts[0]), norm(parts[1])];
+  const i = rows.findIndex((r) => { const a = norm(r.team), b = norm(r.opp); return (a === key[0] && b === key[1]) || (a === key[1] && b === key[0]); });
+  return i >= 0 ? i + 1 : undefined;
+}
+function marqueeGames(): SportGames[] {
+  const out: SportGames[] = [];
+  for (const s of GAME_SPORTS) {
+    const feats = FEATURED.filter((f) => f.leagueTag === s.tag).slice(0, 2);
+    if (!feats.length) continue;
+    const src = RANK_SRC[s.tag];
+    const rows: RankRow[] = src.key
+      ? (readData<Record<string, RankRow[]>>(src.file, {})[src.key] ?? [])
+      : readData<RankRow[]>(src.file, []);
+    const games: GameEntry[] = feats.map((g) => ({
+      title: g.title,
+      matchup: g.matchup,
+      note: g.note,
+      flagUrls: s.tag === 'INTFB' ? footballFlagUrls(g.matchup) : [],
+      rank: src.by === 'date' ? rankByDate(rows, g.match?.date) : rankByTeams(rows, g.matchup),
+    }));
+    out.push({ tag: s.tag, label: s.label, emoji: s.emoji, games });
+  }
+  return out;
+}
+
+type CricEntry = { date: string; fmt: string; team: string; teamSlug: string; opp: string; oppSlug: string; winner: string; detail?: string; major?: string | null; round?: string | null; city?: string | null };
+type RugEntry = { date: string; team: string; teamSlug: string; opp: string; oppSlug: string; winner: string; pf: number; pa: number; draw: boolean; competition: string; stage: string; city?: string | null };
+
+// Cricket and Rugby Union carry their own Game Score boards (public/data/*/top-games.json),
+// not the FEATURED clip list, so their top-two marquee cards are built straight from the data.
+function ballGames(): SportGames[] {
+  const out: SportGames[] = [];
+  const cric = readData<{ combined: CricEntry[] }>('cricketTopGames', { combined: [] }).combined.slice(0, 2);
+  if (cric.length) {
+    out.push({
+      tag: 'CRICKET', label: 'Cricket', emoji: '\u{1F3CF}',
+      games: cric.map((e, i) => {
+        const winner = e.winner || e.team;
+        const loser = e.winner ? (e.winner === e.team ? e.opp : e.team) : e.opp;
+        const wSlug = e.winner ? (e.winner === e.team ? e.teamSlug : e.oppSlug) : e.teamSlug;
+        const lSlug = e.winner ? (e.winner === e.team ? e.oppSlug : e.teamSlug) : e.oppSlug;
+        const yr = e.date.slice(0, 4);
+        const isAshes = e.fmt === 'Test' && ((e.team === 'England' && e.opp === 'Australia') || (e.team === 'Australia' && e.opp === 'England'));
+        const title = e.major ? [yr, e.major, e.round || ''].filter(Boolean).join(' ') : `${yr} ${isAshes ? 'Ashes' : e.fmt}`;
+        return {
+          title,
+          matchup: e.winner ? `${winner} beat ${loser}` : `${e.team} tied ${e.opp}`,
+          note: [e.detail, e.city].filter(Boolean).join(' \u00B7 ') || undefined,
+          flagUrls: [flagCdnUrl(wSlug, '20x15'), flagCdnUrl(lSlug, '20x15')].filter(Boolean) as string[],
+          rank: i + 1,
+        };
+      }),
+    });
+  }
+  const rug = readData<{ top: RugEntry[] }>('rugbyTopGames', { top: [] }).top.slice(0, 2);
+  if (rug.length) {
+    out.push({
+      tag: 'RUGBYU', label: 'Rugby Union', emoji: '\u{1F3C9}',
+      games: rug.map((e, i) => {
+        const winner = e.winner || e.team;
+        const loser = e.winner ? (e.winner === e.team ? e.opp : e.team) : e.opp;
+        const wSlug = e.winner ? (e.winner === e.team ? e.teamSlug : e.oppSlug) : e.teamSlug;
+        const lSlug = e.winner ? (e.winner === e.team ? e.oppSlug : e.teamSlug) : e.oppSlug;
+        const wp = e.winner === e.opp ? e.pa : e.pf;
+        const lp = e.winner === e.opp ? e.pf : e.pa;
+        const title = [e.competition, e.stage && e.stage !== 'Pool' ? e.stage : ''].filter(Boolean).join(' ');
+        return {
+          title,
+          matchup: e.draw ? `${e.team} drew ${e.opp} ${e.pf}-${e.pa}` : `${winner} beat ${loser} ${wp}-${lp}`,
+          note: e.city || undefined,
+          flagUrls: [flagCdnUrl(wSlug, '20x15'), flagCdnUrl(lSlug, '20x15')].filter(Boolean) as string[],
+          rank: i + 1,
+        };
+      }),
+    });
+  }
+  return out;
+}
+
+// Club football's top two, straight from its Game Score board (same pattern
+// as cricket and rugby: the data file is the source, so the card can't drift).
+type ClubEntry = { date: string; comp: string; round?: string | null; home: string; away: string; hg: number; ag: number; pens?: string | null };
+function clubBallGames(): SportGames[] {
+  const top = readData<{ top: ClubEntry[] }>('footballTopClubGames', { top: [] }).top.slice(0, 2);
+  if (!top.length) return [];
+  return [{
+    tag: 'CLUBFB', label: 'Club Football', emoji: '\u{1F3C6}',
+    games: top.map((e, i) => {
+      const homeWon = e.hg > e.ag;
+      let awayWon = e.ag > e.hg;
+      let onPens = false;
+      if (!homeWon && !awayWon && e.pens) {
+        // Drawn, settled in the shootout: the pens string is home-away.
+        const [ph, pa] = e.pens.split('-').map(Number);
+        if (Number.isFinite(ph) && Number.isFinite(pa) && ph !== pa) {
+          awayWon = pa > ph;
+          onPens = true;
+        }
+      }
+      const decided = homeWon || awayWon || onPens;
+      const w = awayWon ? e.away : e.home;
+      const l = awayWon ? e.home : e.away;
+      const score = awayWon && !onPens ? `${e.ag}-${e.hg}` : `${e.hg}-${e.ag}`;
+      return {
+        title: `${e.date.slice(0, 4)} ${e.comp}${e.round ? ` ${e.round}` : ''}`,
+        matchup: `${w} ${decided ? 'beat' : 'drew'} ${l} ${score}${onPens ? ' on penalties' : ''}`,
+        flagUrls: [],
+        rank: i + 1,
+      };
+    }),
+  }];
+}
+
+type IndexCard = { n: string; title: string; desc: string; stat: string; href: string; emoji?: string; seal?: boolean; isNew?: boolean; preview: Preview[] };
+
+type AtlasCard = { emoji: string; title: string; desc: string; href: string; sub: string; live?: boolean };
+const ATLAS: AtlasCard[] = [
+  { emoji: '🏙️', title: 'Rankings', desc: 'The metro leaderboard, badges, and the compare tool.', href: '/rankings', sub: 'Top 100 · Compare · Badges' },
+  { emoji: '🗺️', title: 'Geography', desc: 'Countries, states, leaders, the power atlas, and the world map.', href: '/geography', sub: 'Countries · 2100 · States · Map · Power Atlas' },
+  { emoji: '🏟️', title: 'Sports', desc: 'Every league, national team, and cross-sport index.', href: '/sports', sub: 'Leagues · Zone Zero Cup · Rivalries', live: true },
+  { emoji: '🎵', title: 'Sound', desc: 'The music of the metros, by chart and by decade.', href: '/sound', sub: 'Rankings · Artists · Awards · Decades' },
+  { emoji: '🎬', title: 'Screen', desc: 'The films of the metros, by box office and by ceremony.', href: '/screen', sub: 'Rankings · Number Ones · Oscars · 500 Greatest' },
+  { emoji: '👑', title: 'People', desc: 'The powerful, the wealthy, and the elected.', href: '/power', sub: 'Nowhere 100 · Billionaires · Mayors' },
+  { emoji: '🗳️', title: 'Elections', desc: 'Every democracy’s elections, since the 1800s, in one atlas.', href: '/elections', sub: '35 polities · World Map · Forecasts' },
+  { emoji: '✍️', title: 'Essays', desc: 'Long-form deep dives and the Substack archive.', href: '/deep-dives', sub: 'Deep Dives · Substack' },
+  { emoji: '🏅', title: 'Badges', desc: 'The same data reframed through categorical lenses.', href: '/badges', sub: 'Finance · Culture · Rail · Sport' },
+  { emoji: '🎮', title: 'Play', desc: 'Games and learning tools for younger fans.', href: '/play', sub: 'Kids Games · Arcade' },
+];
+
+// Masthead quick-launch: every Atlas section as a badge tile, plus explicit
+// entries for the kids games and the arcade games.
+const MASTHEAD_LAUNCH: { emoji: string; label: string; href: string; blurb: string; tip: string }[] = [
+  { emoji: '🏙️', label: 'Rankings', href: '/rankings', blurb: 'Metros, scored', tip: 'The Global Metro Power Rankings: every major urban area scored across power, sport, and culture.' },
+  { emoji: '🗺️', label: 'Geography', href: '/geography', blurb: 'Atlas of places', tip: "Maps and atlases of the world's places, from metro boundaries to the geography of power." },
+  { emoji: '🏟️', label: 'Sports', href: '/sports', blurb: 'Teams, live scores', tip: 'The Zone Zero sports hub: leagues, teams, live standings, champions, and cross-sport rankings.' },
+  { emoji: '🎵', label: 'Sound', href: '/sound', blurb: 'Where hits come from', tip: "The Sound of the Metros: cities ranked by their artists' chart success since 1958." },
+  { emoji: '🎬', label: 'Screen', href: '/screen', blurb: 'Where films come from', tip: 'The Screen of the Metros: a century of box office and the Oscars, credited back to the metros behind the films.' },
+  { emoji: '👑', label: 'People', href: '/power', blurb: 'The Nowhere 100', tip: 'The most powerful people on the planet, ranked and tied to their home metro and jurisdiction.' },
+  { emoji: '💼', label: 'Business', href: '/business', blurb: 'The money table', tip: "Business of the Metros: the world's public companies credited back to their home metros - money tables, the race to $5T, and the S&P 500 as a geography." },
+  { emoji: '✍️', label: 'Essays', href: '/deep-dives', blurb: 'Long-form dives', tip: 'Deep dives and essays on cities, power, and the ideas behind the rankings.' },
+  { emoji: '🏅', label: 'Badges', href: '/badges', blurb: 'Ranked, reframed', tip: 'Categorical lenses on the same data, from Finance Capitals to Greying Power.' },
+  { emoji: '🧸', label: 'Kids Games', href: '/play', blurb: 'Learn by playing', tip: 'Geography and sports games for kids, including Be-the-Ref and find-the-teams.' },
+  { emoji: '🕹️', label: 'Games', href: '/play/arcade', blurb: 'Test your knowledge', tip: 'The arcade: daily and practice games that test how well you know the world.' },
+];
+
+const LEAGUES: { name: string; href: string; emoji?: string }[] = [
+  { name: 'International Football', href: '/teams/national', emoji: '🏆' },
+  { name: 'Club Football', href: '/teams/football', emoji: '⚽' },
+  { name: 'NFL', href: '/teams/nfl', emoji: '🏈' },
+  { name: 'NBA', href: '/teams/nba', emoji: '🏀' },
+  { name: 'NHL', href: '/teams/nhl', emoji: '🏒' },
+  { name: 'MLB', href: '/teams/mlb', emoji: '⚾' },
+  { name: 'College Football', href: '/teams/cfb', emoji: '🏈' },
+  { name: 'College Basketball', href: '/teams/cbb', emoji: '🏀' },
+  { name: 'WNBA', href: '/teams/wnba', emoji: '🏀' },
+  { name: "Women's Football", href: '/teams/wfootball', emoji: '⚽' },
+  { name: 'CFL', href: '/teams/cfl', emoji: '🏈' },
+  { name: 'AFL', href: '/teams/afl', emoji: '🏉' },
+  { name: 'NRL', href: '/teams/nrl', emoji: '🏉' },
+  // Year-round + season-window additions (Ashwin 2026-08-02): F1 shows only while
+  // the race season runs (its month window ends with the season); international
+  // cricket and rugby run year-round, so they sit green essentially always.
+  { name: 'F1', href: '/teams/f1', emoji: '🏎️' },
+  { name: 'Intl Cricket', href: '/teams/cricket', emoji: '🏏' },
+  { name: 'Intl Rugby', href: '/teams/rugby-union', emoji: '🏉' },
+];
+
+const TONE_COLOR: Record<LeagueStatusTone, string> = {
+  regular: '#10b981',
+  playoffs: '#f59e0b',
+  worldcup: '#a855f7',
+  champion: '#d4af37',
+  offseason: 'var(--text-dim)',
+};
+
+type IndexColumn = { heading: string; href?: string; links: { label: string; href: string }[] };
+const SITE_INDEX: IndexColumn[] = [
+  { heading: 'Rankings', links: [
+    { label: 'Metro Power Rankings', href: '/rankings' },
+    { label: 'The Nowhere 100', href: '/power' },
+    { label: 'Zone Zero Cup', href: '/sports/zone-zero-cup' },
+    { label: 'The Power Atlas', href: '/power-atlas' },
+    { label: 'Artist Rankings', href: '/sound/artists' },
+    { label: 'Billionaires', href: '/billionaires' },
+    { label: 'Compare metros', href: '/compare' },
+    { label: 'Badges', href: '/badges' },
+  ]},
+  { heading: 'Geography', href: '/geography', links: [
+    { label: 'Countries', href: '/countries' },
+    { label: 'The world in 2100', href: '/countries/2100' },
+    { label: 'Elections', href: '/elections' },
+    { label: 'States & Provinces', href: '/states' },
+    { label: 'Expandable Map', href: '/expandable-map' },
+    { label: 'Matchups', href: '/matchups/london-vs-new-york' },
+    { label: 'Neighborhoods', href: '/neighborhoods' },
+    { label: 'World Leaders', href: '/leaders' },
+    { label: 'Mayors of the World', href: '/mayors' },
+    { label: 'Regional champions', href: '/rankings#regions' },
+  ]},
+  { heading: 'Sports', links: [
+    { label: 'Sports Hub', href: '/sports' },
+    { label: 'Club Football', href: '/teams/football' },
+    { label: '2026-27 Season Hub', href: '/teams/football/2026-27' },
+    { label: 'Zone Zero Cup', href: '/sports/zone-zero-cup' },
+    { label: 'The Greatest Games', href: '/sports/games' },
+    { label: 'Geography of Erasure', href: '/sports/geography-of-erasure' },
+    { label: 'Team Valuations', href: '/sports/valuations' },
+    { label: 'Rivalries', href: '/sports/rivalries' },
+  ]},
+  { heading: 'Sound', href: '/sound', links: [
+    { label: 'The Sound of the Metros', href: '/sound' },
+    { label: 'Rankings by Metro', href: '/sound/rankings' },
+    { label: 'Artists', href: '/sound/artists' },
+    { label: 'Awards History', href: '/sound/grammys' },
+    { label: 'Number-One Machines', href: '/sound/number-ones' },
+  ]},
+  { heading: 'Screen', href: '/screen', links: [
+    { label: 'The Screen of the Metros', href: '/screen' },
+    { label: 'Rankings by Metro', href: '/screen/rankings' },
+    { label: 'Year by Year', href: '/screen/years' },
+    { label: 'US Number Ones', href: '/screen/number-ones' },
+    { label: 'Oscar Winners', href: '/screen/oscars' },
+    { label: '500 Greatest Films', href: '/screen/canon' },
+  ]},
+  { heading: 'More', links: [
+    { label: 'About', href: '/about' },
+    { label: 'Methodology', href: '/methodology' },
+    { label: 'Deep Dives', href: '/deep-dives' },
+    { label: 'Play', href: '/play' },
+    { label: 'Updates', href: '/updates' },
+    { label: 'Studio', href: '/studio' },
+    { label: 'Random metro', href: '/random' },
+  ]},
+];
+
+const DIMENSIONS = [
+  'Population', 'Market Capitalization', 'Major League Teams & Venues', 'Minor & College Teams',
+  'Cultural & Civic Assets', 'Top-50 Universities', 'Other Research Institutions', 'Metro Transit',
+  'GaWC Global Connectivity', 'Suburban Rail', 'Intercity Train Hubs', 'Skyscrapers',
+  'Airport Score', 'Major Sporting Events', 'Annual Cultural Events', 'Michelin & Luxury Hospitality',
+];
+
+function IndexPreview({ rows }: { rows: Preview[] }) {
+  if (rows.length === 0) return null;
+  return (
+    <div className="mt-3 mb-3 flex flex-col gap-1.5">
+      {rows.map((r, i) => (
+        <div key={r.name} className="flex items-baseline justify-between gap-2">
+          <span className="flex items-baseline gap-2 min-w-0">
+            <span className="text-[11px] flex-shrink-0" style={{ ...MONO, color: 'var(--text-dim)' }}>{i + 1}</span>
+            {r.flagUrl && <img src={r.flagUrl} alt="" width={18} height={13} className="flex-shrink-0 rounded-[2px]" style={{ objectFit: 'cover' }} loading="lazy" decoding="async" />}
+            <span className="text-[13px] font-medium truncate">{r.name}</span>
+            {r.sub && <span className="text-[11px] text-[var(--text-dim)] truncate hidden sm:inline">{r.sub}</span>}
+          </span>
+          {r.meta && <span className="text-[11px] flex-shrink-0" style={{ ...MONO, color: 'var(--accent)' }}>{r.meta}</span>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default async function Home() {
+  const metros = getAllMetros();
+  const lastUpdate = getLastUpdate();
+  const posts: SubstackPost[] = await getSubstackPosts();
+  const journal = posts.slice(0, 3);
+  const badges = getLiveBadges();
+  const games = [...clubBallGames(), ...marqueeGames(), ...ballGames()];
+  const forecast = await getForecast();
+
+  const INDICES: IndexCard[] = [
+    { n: '01', title: 'Metro Power Rankings', desc: 'Every metro on Earth, scored across sixteen weighted dimensions.', stat: '4,200+ metros', href: '/rankings', emoji: '🌐', preview: topMetros() },
+    { n: '02', title: 'The Nowhere 100', desc: 'The hundred most powerful people alive, on one Metro Power scale.', stat: '100 people', href: '/power', seal: true, preview: topPeople() },
+    { n: '03', title: 'Zone Zero Cup', desc: 'National sporting merit across fourteen pillars, ten-year half-life.', stat: '200+ nations', href: '/sports/zone-zero-cup', emoji: '🏆', preview: topNations() },
+    { n: '04', title: 'Musical Artist Rankings', desc: 'The biggest artists by chart success and prestige, by home metro.', stat: 'By metro', href: '/sound/artists', emoji: '🎵', preview: topArtists() },
+    { n: '05', title: 'The Power Atlas', desc: 'National power ranked year by year, from the Renaissance to today.', stat: '526 years · 1500–now', href: '/power-atlas', emoji: '🏛️', preview: topPowers() },
+    { n: '06', title: 'The Election Atlas', desc: 'Every election in 35 countries and the EU: parties, leaders, turnout, and the results.', stat: '35 polities', href: '/elections', emoji: '🗳️', isNew: true, preview: topElections(forecast) },
+    { n: '07', title: 'The Screen of the Metros', desc: 'A century of box office and Oscar prestige, credited back to the metros that made it.', stat: '1927–now', href: '/screen', emoji: '🎬', isNew: true, preview: topFilmMetros() },
+  ];
+
+  const inSeasonRank = (s: ReturnType<typeof leagueStatusFor>) => (!s || s.tone === 'offseason' ? 1 : 0);
+  const leagueRows = LEAGUES
+    .map((l) => ({ ...l, status: l.href === '/teams/football' ? clubFootballStatus() : leagueStatusFor(l.href) }))
+    .sort((a, b) => inSeasonRank(a.status) - inSeasonRank(b.status));
+  const liveLeagues = leagueRows.filter((l) => l.status && l.status.tone !== 'offseason');
+
+  const dataset = datasetJsonLd({ lastUpdate, metroCount: metros.length });
+
+  return (
+    <div style={{ backgroundColor: 'var(--bg)', color: 'var(--text)' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(dataset) }} />
+
+      {/* Masthead — headline + live standings/badges + This Week rail. */}
+      <section className="pt-12 pb-14 px-4 sm:px-6 lg:px-8 border-b" style={{ borderColor: 'var(--border)' }}>
+        <div className="max-w-7xl mx-auto grid gap-10 lg:gap-16" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+          <div>
+            <p className="text-xs uppercase tracking-widest mb-3" style={{ ...MONO, color: 'var(--accent)' }}>
+              rankings.citizenofnowhere.org
+            </p>
+            <h1 className="font-extrabold leading-tight mb-4" style={{ fontSize: 'clamp(28px, 4vw, 40px)' }}>
+              Cities are the unit of civilization.
+            </h1>
+            <p className="text-base text-[var(--text)] max-w-lg mb-3">
+              So we measure them, and the power, sport, and culture they concentrate.
+            </p>
+            <p className="text-[15px] text-[var(--text-muted)] max-w-lg mb-6">
+              Everything ranked in the open, for anyone who would rather settle an argument with data
+              than opinion.
+            </p>
+
+            {/* Desktop fold promo (Ashwin 2026-08-02): the left column's dead space under the
+                intro now sells the two below-the-fold sections — the indices (the crux of the
+                site) and the Greatest Games — with CONTENT, not duplicate hub links: live #1s
+                from the boards themselves, anchoring DOWN the page (the Explore launcher's
+                links go OUT to hubs, so nothing is redundant). Hidden on mobile, where the
+                indices sit directly below and there is no dead space to fill. */}
+            <div className="hidden md:block max-w-lg">
+              <a href="#indices" className="block rounded-lg border p-4 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)] group" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[11px] uppercase tracking-widest" style={{ ...MONO, color: 'var(--accent)' }}>The indices · №1 right now</span>
+                  <span className="text-xs text-[var(--text-dim)] group-hover:text-[var(--accent)] transition-colors" style={MONO} aria-hidden>↓</span>
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  {/* cleanName: data names can carry editorial markers (power-ranking.json ships
+                      "⚠️ Donald Trump"); the promo shows plain names (Ashwin 2026-08-02). */}
+                  {[
+                    { emoji: '🌐', board: 'Metro Power Rankings', top: INDICES[0].preview[0]?.name, second: INDICES[0].preview[1]?.name },
+                    { emoji: '👑', board: 'The Nowhere 100', top: INDICES[1].preview[0]?.name, second: INDICES[1].preview[1]?.name },
+                    { emoji: '🏆', board: 'Zone Zero Cup', top: INDICES[2].preview[0]?.name, second: INDICES[2].preview[1]?.name },
+                  ].filter((r) => r.top).map((r) => {
+                    const clean = (s?: string) => (s ?? '').replace(/^[\s⚠️]+/u, '');
+                    return (
+                      <div key={r.board} className="flex items-baseline justify-between gap-3">
+                        <span className="flex items-baseline gap-2 min-w-0">
+                          <span aria-hidden className="text-sm leading-none flex-shrink-0">{r.emoji}</span>
+                          <span className="text-[13px] text-[var(--text-muted)] truncate">{r.board}</span>
+                        </span>
+                        <span className="text-[13px] flex-shrink-0">
+                          <span className="font-semibold">{clean(r.top)}</span>
+                          {r.second && (
+                            <span className="text-[var(--text-muted)]"> · {clean(r.second)}</span>
+                          )}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="mt-3 pt-2.5 border-t text-[11px]" style={{ ...MONO, color: 'var(--text-muted)', borderColor: 'var(--border)' }}>
+                  Seven live boards: metros, people, nations, artists, power, elections, screen <span className="group-hover:text-[var(--accent)] transition-colors" aria-hidden>↓</span>
+                </div>
+              </a>
+              {games.length > 0 && (
+                <a href="#games" className="mt-3 flex items-baseline justify-between gap-3 rounded-lg border px-4 py-3 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)] group" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                  <span className="flex items-baseline gap-2 min-w-0">
+                    <span aria-hidden className="text-sm leading-none flex-shrink-0">🎬</span>
+                    <span className="text-[13px] min-w-0">
+                      <span className="font-semibold">The Greatest Games</span>
+                      <span className="text-[var(--text-muted)]">: every sport&rsquo;s all-time best, ranked by Game Score</span>
+                    </span>
+                  </span>
+                  <span className="text-xs text-[var(--text-dim)] group-hover:text-[var(--accent)] transition-colors flex-shrink-0" style={MONO} aria-hidden>↓</span>
+                </a>
+              )}
+            </div>
+          </div>
+
+          {/* Explore launcher — quick visual entry to every section + the games. */}
+          <div className="h-fit">
+            <p className="text-[11px] uppercase tracking-widest mb-3" style={{ ...MONO, color: 'var(--text-muted)' }}>Explore the site</p>
+            <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))' }}>
+              {MASTHEAD_LAUNCH.map((t) => (
+                <Link key={t.href + t.label} href={t.href} title={t.tip} className="flex items-start gap-2.5 rounded-lg border px-3 py-2.5 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                  <span className="text-lg leading-none mt-0.5" aria-hidden>{t.emoji}</span>
+                  <span className="min-w-0">
+                    <span className="block text-[13px] font-medium leading-tight">{t.label}</span>
+                    <span className="block text-[11px] mt-0.5 leading-snug" style={{ color: 'var(--text-muted)' }}>{t.blurb}</span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+            <Link href="/random" className="inline-flex items-center gap-1.5 mt-3 text-[13px]" style={{ ...MONO, color: 'var(--accent)' }}>
+              🎲 Random metro <span aria-hidden>→</span>
+            </Link>
+            {/* Who's in charge — live officeholder datasets (Ashwin 2026-08-02: card links to
+                World Leaders + Mayors between the Explore launcher and Predictions, both
+                marked live — the civic pipelines keep them current week to week). */}
+            <div className="mt-6 pt-5 border-t" style={{ borderColor: 'var(--border)' }}>
+              <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: 'var(--text-muted)' }}>Who&rsquo;s in charge</p>
+              <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))' }}>
+                {[
+                  { emoji: '🌍', label: 'World Leaders', href: '/leaders', blurb: 'Every head of state & government' },
+                  { emoji: '🏛️', label: 'Mayors', href: '/mayors', blurb: 'Who runs the major metros' },
+                ].map((t) => (
+                  <Link key={t.href} href={t.href} className="flex items-start gap-2.5 rounded-lg border px-3 py-2.5 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                    <span className="text-lg leading-none mt-0.5" aria-hidden>{t.emoji}</span>
+                    <span className="min-w-0 flex-1">
+                      <span className="flex items-center gap-1.5">
+                        <span className="text-[13px] font-medium leading-tight">{t.label}</span>
+                        <span className="flex items-center gap-1 ml-auto flex-shrink-0">
+                          <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#10b981' }} aria-hidden />
+                          <span className="text-[10px]" style={{ ...MONO, color: '#10b981' }}>LIVE</span>
+                        </span>
+                      </span>
+                      <span className="block text-[11px] mt-0.5 leading-snug" style={{ color: 'var(--text-muted)' }}>{t.blurb}</span>
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            {/* Predictions — compact hub links (Ashwin 2026-08-02: small, under the
+                explore launcher; add each new league hub here as its model ships). */}
+            <div className="mt-6 pt-5 border-t" style={{ borderColor: 'var(--border)' }}>
+              <Link href="/predictions" className="inline-flex items-center gap-1 text-xs mb-2 hover:opacity-80 transition-opacity" style={{ ...MONO, color: 'var(--accent)' }}>
+                🔮 Predictions <span aria-hidden>→</span>
+              </Link>
+              {/* Featured forecast: every country and bloc to 2100 (UN WPP 2024 median). */}
+              <Link href="/countries/2100" className="block rounded-lg border p-4 mb-3 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)] group" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="flex items-center justify-between gap-3">
+                  <span className="flex items-center gap-2 min-w-0">
+                    <span className="text-xl leading-none" aria-hidden>🌍</span>
+                    <span className="font-bold text-[15px] truncate">The world in 2100</span>
+                    <span className="text-[10px] px-1.5 py-0.5 rounded flex-shrink-0" style={{ ...MONO, color: 'var(--accent)', background: 'rgba(78,205,196,0.16)' }}>NEW</span>
+                  </span>
+                  <span className="text-[var(--text-dim)] group-hover:text-[var(--accent)] transition-colors flex-shrink-0" aria-hidden>→</span>
+                </div>
+                <p className="text-[12px] leading-snug mt-1.5" style={{ color: 'var(--text-muted)' }}>Every country, every year to 2100, plus the EU, the AU, ASEAN and forty more blocs, and where each one peaks.</p>
+                <IndexPreview rows={top2100()} />
+                <span className="text-[11px]" style={{ ...MONO, color: 'var(--text-dim)' }}>UN WPP 2024 median · sortable · by continent</span>
+              </Link>
+              <div className="flex flex-wrap items-center gap-2">
+                {[
+                  { href: '/countries/2100', label: 'Population 2100', emoji: '🌍' },
+                  { href: '/elections/forecast', label: 'Elections', emoji: '🗳️' },
+                  { href: '/predictions/pl', label: 'Premier League', emoji: '⚽' },
+                  { href: '/predictions/ucl', label: 'Champions League', emoji: '🏆' },
+                  { href: '/predictions/nfl', label: 'NFL', emoji: '🏈' },
+                  { href: '/predictions/cfb', label: 'College Football', emoji: '🏈' },
+                  { href: '/predictions/mlb', label: 'MLB', emoji: '⚾' },
+                ].map((p) => (
+                  <Link key={p.href} href={p.href} className="inline-flex items-center gap-1.5 rounded-full transition-colors" style={{ ...MONO, fontSize: 12, padding: '4px 11px', color: 'var(--text)', background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
+                    <span aria-hidden>{p.emoji}</span>
+                    <span>{p.label}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            {/* Live now — standings + sport badges (moved here) + live music charts. */}
+            <div className="mt-6 pt-5 border-t" style={{ borderColor: 'var(--border)' }}>
+            {liveLeagues.length > 0 && (
+              <div>
+                <Link href="/sports/standings" className="inline-flex items-center gap-1 text-xs mb-2 hover:opacity-80 transition-opacity" style={{ ...MONO, color: 'var(--accent)' }}>
+                  📊 Live standings <span aria-hidden>→</span>
+                </Link>
+                <div className="flex flex-wrap items-center gap-2">
+                  {liveLeagues.map((l) => {
+                    const isWC = l.href === '/teams/national';
+                    const color = l.status ? TONE_COLOR[l.status.tone] : 'var(--text-dim)';
+                    return (
+                      <Link
+                        key={l.href}
+                        href={l.href}
+                        className="inline-flex items-center gap-1.5 rounded-full transition-colors"
+                        style={
+                          isWC
+                            ? { ...MONO, fontSize: 12, padding: '5px 12px', color: '#F5F4EE', background: 'rgba(168,85,247,0.22)', border: '1px solid #a855f7', fontWeight: 600 }
+                            : { ...MONO, fontSize: 12, padding: '4px 11px', color: 'var(--text)', background: 'var(--bg-card)', border: '1px solid var(--border)' }
+                        }
+                        title={l.status ? `${l.name}: ${l.status.label}` : l.name}
+                      >
+                        <span aria-hidden>{l.emoji}</span>
+                        <span>{isWC ? (l.status?.label?.replace('Live - ', '') ?? l.name) : l.name}</span>
+                        <span className="w-1.5 h-1.5 rounded-full" style={{ background: color }} aria-hidden />
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+              <div className="mt-4 pt-4 border-t flex flex-wrap gap-x-5 gap-y-1.5" style={{ borderColor: 'var(--border)' }}>
+                <Link href="/sound/charts" className="inline-flex items-center gap-1.5 text-[13px]" style={{ ...MONO, color: 'var(--accent)' }}>
+                  🎵 Live Music Charts <span aria-hidden>→</span>
+                </Link>
+                <Link href="/screen/number-ones" className="inline-flex items-center gap-1.5 text-[13px]" style={{ ...MONO, color: 'var(--accent)' }}>
+                  🎬 Box Office №1s <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </div>
+            <FollowingRail />
+          </div>
+        </div>
+      </section>
+
+      {/* The Indices — the crux of the site — lead; everything else follows them. */}
+      <section id="indices" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
+        <div className="max-w-7xl mx-auto">
+          <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: 'var(--accent)' }}>The indices</p>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3">The rankings</h2>
+          <p className="text-[15px] text-[var(--text-muted)] max-w-3xl mb-8">
+            Metros, people, countries, artists, films, and the 235-year sweep of world power. Each index has its own hub, hand-curated, weighted in the open, and inspectable at the row level.
+          </p>
+          <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
+            {INDICES.map((c) => (
+              <Link key={c.n} href={c.href} className="flex flex-col p-6 rounded-lg border transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[11px] uppercase tracking-widest" style={{ ...MONO, color: 'var(--text-muted)' }}>Index / {c.n}</span>
+                  {c.isNew && <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ ...MONO, color: 'var(--accent)', background: 'rgba(78,205,196,0.16)' }}>NEW</span>}
+                </div>
+                <div className="flex items-center gap-2.5 mb-2">
+                  {c.seal ? (
+                    <img src="/nowhere-100-seal.svg" alt="" width={26} height={26} style={{ flexShrink: 0 }} loading="lazy" decoding="async" />
+                  ) : (
+                    <span className="text-2xl leading-none" aria-hidden>{c.emoji}</span>
+                  )}
+                  <h3 className="text-lg font-bold">{c.title}</h3>
+                </div>
+                <p className="text-[13px] text-[var(--text-muted)] leading-relaxed">{c.desc}</p>
+                <IndexPreview rows={c.preview} />
+                <div className="flex items-center justify-between mt-auto pt-3.5 border-t" style={{ borderColor: 'var(--border)' }}>
+                  <span className="text-xs" style={{ ...MONO, color: 'var(--accent)' }}>{c.stat}</span>
+                  <span className="text-[var(--text-dim)]" aria-hidden>See all →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Greatest Games — the top two games in every sport (NHL excluded for now).
+              id="games" is the target of the masthead fold-promo anchor. */}
+          {games.length > 0 && (
+            <div id="games" className="mt-10 pt-8 border-t scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
+              <div className="flex items-baseline justify-between gap-4 mb-5 flex-wrap">
+                <div><h3 className="text-lg font-bold flex items-center gap-2"><span aria-hidden>🎬</span> The Greatest Games</h3><p className="text-[11px] mt-1" style={{ ...MONO, color: 'var(--text-dim)' }}>Two per sport, with all-time Game Score rank</p></div>
+                <Link href="/sports/games" className="text-xs" style={{ ...MONO, color: 'var(--accent)' }}>The top games in every sport →</Link>
+              </div>
+              <div className="grid gap-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
+                {games.map((sp) => (
+                  <div key={sp.tag} className="p-4 rounded-lg border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                    <div className="flex items-center gap-1.5 mb-3 text-[10px] uppercase tracking-widest" style={{ ...MONO, color: 'var(--text-muted)' }}>
+                      <span aria-hidden className="text-base leading-none">{sp.emoji}</span>{sp.label}
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      {sp.games.map((g, idx) => (
+                        <Link key={idx} href="/sports/games" className="block group">
+                          <div className="flex items-baseline gap-2">
+                            <span className="text-[11px] flex-shrink-0 font-semibold" style={{ ...MONO, color: 'var(--accent)' }}>{g.rank ? `#${g.rank}` : `#${idx + 1}`}</span>
+                            <span className="text-sm font-semibold leading-snug group-hover:text-[var(--accent)] transition-colors">{g.title}</span>
+                          </div>
+                          <div className="flex items-center gap-2 mt-0.5 pl-5">
+                            {g.flagUrls.map((u, i) => (
+                              <img key={i} src={u} alt="" width={18} height={13} className="rounded-[2px] flex-shrink-0" style={{ objectFit: 'cover' }} loading="lazy" decoding="async" />
+                            ))}
+                            {g.matchup && <span className="text-[12px]" style={{ color: 'var(--accent)' }}>{g.matchup}</span>}
+                          </div>
+                          {g.note && <span className="block text-[11px] text-[var(--text-dim)] leading-snug pl-5 mt-0.5">{g.note}</span>}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* The Atlas */}
+      <section id="atlas" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-baseline justify-between gap-4 mb-8 flex-wrap">
+            <div>
+              <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: 'var(--accent)' }}>The atlas</p>
+              <h2 className="text-2xl sm:text-3xl font-bold">Everything on the site</h2>
+            </div>
+            <a href="#index" className="text-xs" style={{ ...MONO, color: 'var(--text-muted)' }}>Full site index →</a>
+          </div>
+          <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
+            {ATLAS.map((c) => (
+              <Link key={c.title} href={c.href} className="flex flex-col gap-2.5 p-5 rounded-lg border transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="flex items-center gap-2.5">
+                  <span className="text-2xl leading-none" aria-hidden>{c.emoji}</span>
+                  <h3 className="text-lg font-bold">{c.title}</h3>
+                  {c.live && (
+                    <span className="flex items-center gap-1 ml-auto">
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#10b981' }} aria-hidden />
+                      <span className="text-[10px]" style={{ ...MONO, color: '#10b981' }}>LIVE</span>
+                    </span>
+                  )}
+                </div>
+                <p className="text-[13px] text-[var(--text-muted)] leading-relaxed">{c.desc}</p>
+                <span className="text-xs mt-1" style={{ ...MONO, color: 'var(--text-dim)' }}>{c.sub}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Live / Journal / Badges band */}
+      <section id="live" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
+        <div className="max-w-7xl mx-auto grid gap-10" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
+          {/* In season now */}
+          <div>
+            <p className="text-[11px] uppercase tracking-widest mb-4" style={{ ...MONO, color: 'var(--accent)' }}>🟢 In season now</p>
+            <div>
+              {leagueRows.map((l) => (
+                <a key={l.href} href={l.href} className="flex items-center justify-between gap-3 py-2.5 border-b hover:text-[var(--accent)] transition-colors group" style={{ borderColor: 'var(--border)' }}>
+                  <span className="text-[13px] flex items-center gap-2"><span aria-hidden>{l.emoji}</span>{l.name}</span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: l.status ? TONE_COLOR[l.status.tone] : 'var(--text-dim)' }} aria-hidden />
+                    <span className="text-[10px] uppercase tracking-wide text-right" style={{ ...MONO, color: 'var(--text-muted)' }}>{l.status ? l.status.label.replace('Live - ', '') : 'Offseason'}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+            <a href="/sports" className="inline-block mt-3 text-xs" style={{ ...MONO, color: 'var(--text-muted)' }}>Zone Zero Sports Hub →</a>
+          </div>
+
+          {/* From the journal */}
+          <div>
+            <div className="flex items-baseline justify-between mb-4">
+              <p className="text-[11px] uppercase tracking-widest" style={{ ...MONO, color: 'var(--accent)' }}>✍️ From the journal</p>
+              <a href="https://citizenofnowhere.substack.com" target="_blank" rel="noopener noreferrer" className="text-[11px]" style={{ ...MONO, color: 'var(--text-muted)' }}>All essays ↗</a>
+            </div>
+            <div>
+              {journal.map((p) => (
+                <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer" className="block py-3.5 border-b hover:bg-[var(--bg-card-hover)] -mx-2 px-2 rounded transition-colors group" style={{ borderColor: 'var(--border)' }}>
+                  <div className="text-[11px]" style={{ ...MONO, color: 'var(--text-muted)' }}>{fmtDate(p.pubDate)} · Substack</div>
+                  <div className="text-base font-semibold mt-0.5 group-hover:text-[var(--accent)] transition-colors">{p.title}<span className="text-[var(--text-dim)] ml-1" aria-hidden>↗</span></div>
+                  {p.description && <div className="text-[13px] text-[var(--text-muted)] mt-1 line-clamp-2">{p.description}</div>}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Badges */}
+          <div>
+            <p className="text-[11px] uppercase tracking-widest mb-4" style={{ ...MONO, color: 'var(--accent)' }}>🏅 Badges</p>
+            <p className="text-[13px] text-[var(--text-muted)] mb-4">The same data, reframed through categorical lenses.</p>
+            <div className="flex flex-wrap gap-2 mb-6">
+              {badges.map((b) => (
+                <Link key={b.slug} href={`/badges/${b.slug}`} className="inline-flex items-center gap-1.5 rounded px-2.5 py-1 text-xs transition-colors hover:brightness-125" style={{ ...MONO, color: 'var(--text)', background: 'rgba(78,205,196,0.16)' }}>
+                  <span aria-hidden>{b.emoji}</span>
+                  <span>{b.name}</span>
+                </Link>
+              ))}
+            </div>
+            <div className="rounded-lg border p-4" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+              <p className="text-[13px] text-[var(--text-muted)] mb-2">Not sure where to start?</p>
+              <Link href="/random" className="text-[13px]" style={{ ...MONO, color: 'var(--accent)' }}>🎲 Random metro →</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Site Index */}
+      <section id="index" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
+        <div className="max-w-7xl mx-auto">
+          <p className="text-[11px] uppercase tracking-widest mb-8" style={{ ...MONO, color: 'var(--accent)' }}>Site index</p>
+          <div className="grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
+            {SITE_INDEX.map((col) => (
+              <div key={col.heading}>
+                <div className="text-[11px] uppercase tracking-widest pb-2 mb-3 border-b" style={{ ...MONO, color: 'var(--text-muted)', borderColor: 'var(--border)' }}>{col.href ? <Link href={col.href} className="hover:text-[var(--accent)] transition-colors">{col.heading}</Link> : col.heading}</div>
+                <div className="flex flex-col gap-[7px]">
+                  {col.links.map((l) => (
+                    <Link key={l.href} href={l.href} className="text-[13px] text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">{l.label}</Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Methodology teaser */}
+      <section id="methodology" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
+        <div className="max-w-7xl mx-auto grid gap-12" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+          <div>
+            <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: 'var(--accent)' }}>Methodology</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">How the score is built</h2>
+            <p className="text-base text-[var(--text-muted)] mb-4">
+              The composite measures metro completeness: the breadth and depth of globally-recognized
+              infrastructure, culture, sport, finance, education, and connectivity concentrated in one place.
+              It is not a livability score or a popularity contest. It is a composite of what a metro has built.
+            </p>
+            <p className="text-base text-[var(--text-muted)] mb-6">
+              Sixteen weighted terms, each drawing its own lines: linear where volume matters, logarithmic
+              where returns diminish, capped where you either have the thing or you do not.
+            </p>
+            <Link href="/methodology" className="inline-block rounded-lg font-semibold text-sm px-5 py-2.5 transition-opacity hover:opacity-90" style={{ backgroundColor: 'var(--accent)', color: '#08080D' }}>
+              Read the full methodology
+            </Link>
+          </div>
+          <div className="grid gap-x-8 sm:grid-cols-2">
+            {DIMENSIONS.map((d, i) => (
+              <div key={d} className="flex items-baseline gap-3 py-2 border-b" style={{ borderColor: 'var(--border)' }}>
+                <span className="text-xs w-6 flex-shrink-0" style={{ ...MONO, color: 'var(--text-dim)' }}>{String(i + 1).padStart(2, '0')}</span>
+                <span className="text-sm text-[var(--text)]">{d}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p className="text-[13px] text-[var(--text-muted)]">© 2026 Global Metro Power Rankings. Hand-curated by Ashwin Desikan.</p>
+          <div className="flex items-center gap-5 text-[13px]" style={MONO}>
+            <a href="/privacy" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Privacy</a>
+            <a href="https://citizenofnowhere.org" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Citizen of Nowhere</a>
+            <a href="https://citizenofnowhere.substack.com" target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Substack ↗</a>
+            <a href="https://citizenofnowhere.substack.com/about" target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Contact</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

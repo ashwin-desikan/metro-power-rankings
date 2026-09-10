@@ -4,7 +4,20 @@
 
 export const BASE_URL = "https://rankings.citizenofnowhere.org";
 
-export const SITE_NAME = "Global Metro Power Rankings";
+// 🔴 THE SITE NAME IS THE BRAND. It is the suffix of every page title and the
+// siteName of every share card, so it is what a link reads as when it is
+// pasted into WhatsApp. "Global Metro Power Rankings" is the DATASET (below),
+// one pillar of the site; Ashwin, 2026-09-10: a link "should say the name of
+// the page: Citizen of Nowhere".
+export const SITE_NAME = "Citizen of Nowhere";
+export const DATASET_NAME = "Global Metro Power Rankings";
+import { ogImagePath } from "./ogBrand";
+export { ogImagePath };
+
+/** Absolute share-card URL for a page: its title on the brand card, its section's emoji. */
+export function ogImage(title: string, path: string): string {
+  return `${BASE_URL}${ogImagePath(title, path)}`;
+}
 
 export const AUTHOR = {
   name: "Ashwin Desikan",
@@ -54,7 +67,7 @@ export function datasetJsonLd(opts: { lastUpdate: string; metroCount: number }) 
   return {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    name: SITE_NAME,
+    name: DATASET_NAME,
     alternateName: "GMPR",
     description:
       "A composite ranking of every metropolitan area on Earth, across sixteen dimensions, hand-curated from individually verified parameters over years.",
@@ -213,7 +226,7 @@ export function placeJsonLd(opts: {
     ],
     isPartOf: {
       "@type": "Dataset",
-      name: SITE_NAME,
+      name: DATASET_NAME,
       url: BASE_URL,
       description:
         "A composite ranking of every metropolitan area on Earth, across sixteen dimensions, hand-curated from individually verified parameters.",
@@ -370,7 +383,7 @@ export function soundDatasetJsonLd(opts: {
     },
     isPartOf: {
       "@type": "Dataset",
-      name: SITE_NAME,
+      name: DATASET_NAME,
       url: BASE_URL,
     },
     distribution: [

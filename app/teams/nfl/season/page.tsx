@@ -11,7 +11,7 @@ import { getNflExpectation } from "@/lib/nflExpectation";
 import {
   nflSlugForCanonical, nflLineColor, logoUrlFor, monogramFor, MONOGRAM_BY_SLUG,
 } from "@/lib/nfl";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 
 // The discovery surface for 107 season hubs. Without it /teams/nfl/season is a
 // 404 and the only way to reach 1932 is to type it.
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
   description: PAGE_DESCRIPTION,
   alternates: { canonical: "/teams/nfl/season" },
   openGraph: {
-    images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+    images: [{ url: ogImage(PAGE_TITLE, `/teams/nfl/season`), width: 1200, height: 630 }],
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,
     url: `${BASE_URL}/teams/nfl/season`,
     type: "website",
   },
-  twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
+  twitter: { images: [ogImage(PAGE_TITLE, `/teams/nfl/season`)], card: "summary_large_image", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
 };
 
 export default async function NflSeasonsIndex() {

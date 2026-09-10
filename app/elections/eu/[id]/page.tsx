@@ -9,7 +9,7 @@ import {
   fmtInt,
   fmtPct,
 } from "@/lib/euElections";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import SortableTable from "../../SortableTable";
 
 export const dynamicParams = true;
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title,
     description: desc,
     alternates: { canonical: path },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "article" },
+    openGraph: { images: [{ url: ogImage(title, path), width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "article" },
   };
 }
 

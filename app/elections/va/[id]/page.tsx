@@ -8,7 +8,7 @@ import {
   vaEraKeyOf,
   vaDuration,
 } from "@/lib/vaElections";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { DetailPager } from "../../HubShared";
 
 export const dynamicParams = true;
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title,
     description: c.summary,
     alternates: { canonical: path },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: c.summary, url: `${BASE_URL}${path}`, type: "article" },
+    openGraph: { images: [{ url: ogImage(title, path), width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: c.summary, url: `${BASE_URL}${path}`, type: "article" },
   };
 }
 

@@ -31,9 +31,11 @@ import { withIcon } from "./sectionIcons";
 const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const LINE = "#4a9edb";      // the estimate, same blue as PopulationSection
 const MEDIAN = "var(--accent)";
-const PEAK = "#E2628B";
+const PEAK = "var(--div-neg)";
 
-const DECADES = [1950, 1975, 2000, 2025, 2050, 2075, 2100];
+// Every decade, 1950 to 2100 (Ashwin, 2026-09-10: quarter-century steps hid
+// the trend). The chart above is annual; this is the table beneath it.
+const DECADES = Array.from({ length: 16 }, (_, i) => 1950 + i * 10);
 
 export default function Population2100Section({ data, name }: { data: Pop2100; name: string }) {
   return (
@@ -167,12 +169,12 @@ function Inner({ data, name }: { data: Pop2100; name: string }) {
       </div>
 
       <h3 className="text-base font-semibold mt-6 mb-1">What drives it</h3>
-      <p className="text-sm text-[var(--text-muted)] mb-2 max-w-3xl">Births, deaths and net migration on the UN medium path, with fertility, life expectancy and median age, at twenty-five-year steps.</p>
+      <p className="text-sm text-[var(--text-muted)] mb-2 max-w-3xl">Births, deaths and net migration on the UN medium path, with fertility, life expectancy and median age, every decade from 1950.</p>
       <ResponsiveTable
         compact
         variant="list"
-        mobileNoun="years"
-        mobileInitial={0}
+        mobileNoun="decades"
+        mobileInitial={8}
         className="rounded-xl border"
         style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
         mobileRows={decadeRows.map((r) => (
@@ -181,7 +183,7 @@ function Inner({ data, name }: { data: Pop2100; name: string }) {
             sub={<>TFR {num(r.tfr, 2)} · life expectancy {num(r.lex)} · median age {num(r.age)}</>} />
         ))}
       >
-        <table className="w-full text-xs">
+        <table className="w-full text-xs" data-static-sort="chronological: one row per decade, the order is the content">
           <thead>
             <tr className="text-[var(--text-dim)] text-left">
               <th className="py-2 px-3 font-medium">Year</th>

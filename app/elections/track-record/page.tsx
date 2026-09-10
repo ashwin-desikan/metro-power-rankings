@@ -5,7 +5,7 @@ import { SectionHead } from "@/app/_shared/SectionHead";
 import { Disclosure } from "@/app/_shared/Disclosure";
 import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
 import { getForecastScoreboard, nextToSettle, longDate, type PendingRace, type ResolvedRace } from "@/lib/forecastScoreboard";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { ElectionsCrumbs, ElectionsHeader, SiblingHubs, SourcesCard, MONO, CARD, TH, THR, TD, TDR } from "../_shared/ui";
 import ElectionsNav from "../_shared/ElectionsNav";
 
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  openGraph: { images: [{ url: ogImage(TITLE, PATH), width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
+  twitter: { images: [ogImage(TITLE, PATH)], card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 function daysLabel(n: number | null): string {

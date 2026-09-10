@@ -34,7 +34,7 @@ import {
   type HistoricalFranchise,
 } from "@/lib/nhl";
 import { getCurrentNhlStandings } from "@/lib/nhl-standings";
-import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd, ogImage } from "@/lib/seo";
 import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
 import SeasonsByTeamTable from "./SeasonsByTeamTable";
 
@@ -68,8 +68,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${name} (defunct)`,
       description: hDesc,
       alternates: { canonical: `/teams/nhl/${h.slug}` },
-      openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${name} (defunct) | ${SITE_NAME}`, description: hDesc, url: hUrl, type: "website" },
-      twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${name} (defunct) | ${SITE_NAME}`, description: hDesc },
+      openGraph: { images: [{ url: ogImage(name, hUrl), width: 1200, height: 630 }], title: `${name} (defunct) | ${SITE_NAME}`, description: hDesc, url: hUrl, type: "website" },
+      twitter: { images: [ogImage(name, hUrl)], card: "summary_large_image", title: `${name} (defunct) | ${SITE_NAME}`, description: hDesc },
     };
   }
   const url = `${BASE_URL}/teams/nhl/${f.slug}`;
@@ -79,8 +79,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: f.display_name,
     description: desc,
     alternates: { canonical: `/teams/nhl/${f.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${f.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${f.display_name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: ogImage(f.display_name, url), width: 1200, height: 630 }], title: `${f.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+    twitter: { images: [ogImage(f.display_name, url)], card: "summary_large_image", title: `${f.display_name} | ${SITE_NAME}`, description: desc },
   };
 }
 

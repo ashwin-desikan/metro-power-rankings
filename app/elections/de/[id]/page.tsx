@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDeElections, deElectionById, deNeighbours, deEraOf, dePresById, dePresNeighbours, dePresEraOf, dePartyColor, deFmtInt, deFmtPct } from "@/lib/deElections";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import LegElectionDetail from "../../LegDetailShared";
 import PresElectionDetail from "../../PresDetailShared";
 
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       title,
       description: p.summary,
       alternates: { canonical: path },
-      openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: p.summary, url: `${BASE_URL}${path}`, type: "article" },
+      openGraph: { images: [{ url: ogImage(title, path), width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: p.summary, url: `${BASE_URL}${path}`, type: "article" },
     };
   }
   const e = deElectionById(id);
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title,
     description: e.summary,
     alternates: { canonical: path },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: e.summary, url: `${BASE_URL}${path}`, type: "article" },
+    openGraph: { images: [{ url: ogImage(title, path), width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: e.summary, url: `${BASE_URL}${path}`, type: "article" },
   };
 }
 

@@ -7,7 +7,7 @@ import HubNav from "@/app/teams/HubNav";
 import FootballHubNav from "@/app/teams/FootballHubNav";
 import CoefTables, { type CoefClubRow, type CoefCountryRow, type PowerRow } from "./CoefTables";
 import { getUefaCoefficients, getLiveRanking } from "@/lib/uefaCoefficients";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { getFootballClubByName } from "@/lib/football";
 import { getClubStandings, getClubCompetitions, getSuperCups, getDomesticCups, type LiveRow, type LiveComp } from "@/lib/clubFootballLive";
 import Hub2027Client, { type HubConf, type HubLeague, type HubGroup, type HubRow } from "./Hub2027Client";
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  openGraph: { images: [{ url: ogImage(TITLE, PATH), width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
+  twitter: { images: [ogImage(TITLE, PATH)], card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;

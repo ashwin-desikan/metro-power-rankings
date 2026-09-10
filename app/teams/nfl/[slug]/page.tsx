@@ -38,7 +38,7 @@ import SeasonsByTeamTable from "./SeasonsByTeamTable";
 import FranchiseEloTracker from "../_shared/FranchiseEloTracker";
 import { getNflFranchiseElo } from "@/lib/nflElo";
 import type { NflFranchise } from "@/lib/nflElo";
-import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd, ogImage } from "@/lib/seo";
 import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
 import { CappedList } from "@/app/_shared/Disclosure";
 import { DataBar } from "@/app/_shared/DataBar";
@@ -74,8 +74,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: f.name,
       description: desc,
       alternates: { canonical: `/teams/nfl/${f.slug}` },
-      openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${f.name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-      twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${f.name} | ${SITE_NAME}`, description: desc },
+      openGraph: { images: [{ url: ogImage(f.name, url), width: 1200, height: 630 }], title: `${f.name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+      twitter: { images: [ogImage(f.name, url)], card: "summary_large_image", title: `${f.name} | ${SITE_NAME}`, description: desc },
     };
   }
   const h = getHistoricalBySlug(slug);
@@ -88,8 +88,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${hName} (defunct)`,
       description: desc,
       alternates: { canonical: `/teams/nfl/${slug}` },
-      openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${hName} (defunct) | ${SITE_NAME}`, description: desc, url, type: "website" },
-      twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${hName} (defunct) | ${SITE_NAME}`, description: desc },
+      openGraph: { images: [{ url: ogImage(hName, url), width: 1200, height: 630 }], title: `${hName} (defunct) | ${SITE_NAME}`, description: desc, url, type: "website" },
+      twitter: { images: [ogImage(hName, url)], card: "summary_large_image", title: `${hName} (defunct) | ${SITE_NAME}`, description: desc },
     };
   }
   return { title: "Franchise not found" };

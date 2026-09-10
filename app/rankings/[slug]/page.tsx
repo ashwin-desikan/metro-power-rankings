@@ -29,7 +29,7 @@ import {
   regionColors,
   slugify,
 } from "@/lib/data";
-import { BASE_URL, placeJsonLd, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, placeJsonLd, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
 import {
   getQualifierByMetroName,
   qualifierAnchorId,
@@ -214,7 +214,12 @@ export async function generateMetadata({
   }
 
   const { metro } = detail;
-  const title = `${metro.name} (#${metro.rank}) - Metro Power Rankings`;
+  // The <title> takes the root template ("| Citizen of Nowhere"); the share
+  // title spells it out. No `images` here on purpose: this route has its own
+  // per-metro card (opengraph-image.tsx beside this file), which the file
+  // convention supplies and an explicit image would override.
+  const title = `${metro.name} (#${metro.rank})`;
+  const shareTitle = `${title} | ${SITE_NAME}`;
   const description = `${metro.name}, ${metro.country}. Score: ${metro.score.toFixed(1)}. Population: ${formatPop(metro.pop)}. Region: ${metro.region}.`;
 
   return {
@@ -223,15 +228,15 @@ export async function generateMetadata({
     alternates: {
       canonical: `/rankings/${slug}`,
     },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
-      title,
+    openGraph: {
+      title: shareTitle,
       description,
       type: "website",
       url: `${BASE_URL}/rankings/${slug}`,
     },
-    twitter: { images: ["/og-default.png"],
+    twitter: {
       card: "summary_large_image",
-      title,
+      title: shareTitle,
       description,
     },
   };
@@ -491,7 +496,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
               <div className="pt-3">
                 <ShareRow
                   url={`${BASE_URL}/rankings/${slug}`}
-                  title={`${metro.name} (#${metro.rank}) - Global Metro Power Rankings`}
+                  title={`${metro.name} (#${metro.rank}) | ${SITE_NAME}`}
                   containerClassName="flex gap-2 text-xs"
                   linkClassName="flex-1 text-center rounded border px-2 py-1.5 text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
                 />

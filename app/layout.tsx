@@ -6,13 +6,13 @@ import SiteNav from "./SiteNav";
 import VisitBeacon from "./VisitBeacon";
 import BackToTop from "./BackToTop";
 import SiteFooter from "./SiteFooter";
-import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd } from "@/lib/seo";
+import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, ogImage, serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default: SITE_NAME,
-    template: "%s | Global Metro Power Rankings",
+    template: "%s | Citizen of Nowhere",
   },
   description:
     "A composite ranking of every metropolitan area on Earth, across sixteen dimensions, hand-curated from individually verified parameters.",
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     url: BASE_URL,
     locale: "en_US",
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: SITE_NAME }],
+    images: [{ url: ogImage("", "/"), width: 1200, height: 630, alt: SITE_NAME }],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
     description:
       "Every metropolitan area on Earth. Sixteen dimensions. Hand-curated parameters.",
-    images: ["/og-default.png"],
+    images: [ogImage("", "/")],
   },
   robots: {
     index: true,

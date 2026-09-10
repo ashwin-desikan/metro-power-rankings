@@ -11,7 +11,8 @@ import fs from "fs";
 import path from "path";
 import SeasonSnapshot, { type SnapshotChampion, type SnapshotMover } from "./SeasonSnapshot";
 import SeasonAgainstExpectation from "./SeasonAgainstExpectation";
-import { getSeasonLedger, type SeasonLedger } from "@/lib/footballSeasonExpectation";
+import { getSeasonLedger, seasonHasValue, type SeasonLedger } from "@/lib/footballSeasonExpectation";
+import { getMoneyIndex, getSeasonMoneyBoard } from "@/lib/footballMoney";
 
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
@@ -334,6 +335,12 @@ export default async function SeasonHub({ hub }: { hub: Hub }) {
   // 1959-60 carries at least five of the six leagues; the squad-value half
   // exists only from 2012-13 (lib/clubValue's 2012-07 floor).
   const ledger = await getSeasonLedger(hub.season);
+  // The money board exists for exactly the seasons the value series covers
+  // (2012-13 to 2025-26): a season needs a July and a June reading for its
+  // appreciation, and 2026-27 holds six days of a window.
+  const [moneyRows, moneyIdx] = seasonHasValue(hub.season)
+    ? await Promise.all([getSeasonMoneyBoard(hub.season).catch(() => []), getMoneyIndex().catch(() => null)])
+    : [[], null];
   const confs = buildConfs(hub.leagues, countryRank, hub.season, ledger);
   const ledgerLeagues = [...ledger.leagues.values()].map((l) => `${l.competition} (${l.country})`);
   const { ranks: prevRank, gaps: prevGap } = loadPrevSeason(hub.season);
@@ -465,9 +472,9 @@ export default async function SeasonHub({ hub }: { hub: Hub }) {
       </div>
       <section id="clubs" className="scroll-mt-24 mb-10">
         <h2 className="text-lg font-semibold mb-1">Club power ranking</h2>
-        <p className="text-xs text-[var(--text-muted)] mb-3">Score = 0.65 form + 0.35 five-year pedigree + current-season coefficient, less a losing-record penalty. Filter by country (ordered by coefficient rank), or switch to the country coefficient table.</p>
+        <p className="text-xs text-[var(--text-muted)] mb-3">Score = 0.65 form + 0.35 five-year pedigree + current-season coefficient, less a losing-record penalty. Filter by country (ordered by coefficient rank), or switch to the country coefficient table{moneyRows.length ? " or the transfer money" : ""}.</p>
         <SeasonSnapshot champion={championProp} clNote={clNote} overachiever={overM} underachiever={underM} riser={riserM} faller={fallerM} bestOutside5={out5M} bestOutside8={out8M} leagueShare={leagueShare} shareTotal={top10.length} />
-        <RankingTable clubs={ranked} countries={hub.countries} clubSeasons={hub.clubSeasons} top5={[...top5Countries]} />
+        <RankingTable clubs={ranked} countries={hub.countries} clubSeasons={hub.clubSeasons} top5={[...top5Countries]} season={hub.season} money={moneyRows} moneyCredit={moneyIdx?._meta.source_credit ?? ""} />
       </section>
       <section id="europe" className="scroll-mt-24 mb-10">
         <h2 className="text-lg font-semibold mb-3">European &amp; continental competitions</h2>

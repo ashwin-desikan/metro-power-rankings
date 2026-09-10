@@ -8,7 +8,7 @@ import { getAllNpbSlugs, getNpbTeamBySlug, getNpbTeamDetail } from "@/lib/npb";
 import TopTeamChip from "@/app/teams/TopTeamChip";
 import HeartbreakTag from "@/app/teams/HeartbreakTag";
 import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
@@ -29,8 +29,8 @@ export async function generateMetadata(
     title: `${team.name}: NPB`,
     description: desc,
     alternates: { canonical: path },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${team.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${team.name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: ogImage(team.name, path), width: 1200, height: 630 }], title: `${team.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
+    twitter: { images: [ogImage(team.name, path)], card: "summary_large_image", title: `${team.name} | ${SITE_NAME}`, description: desc },
   };
 }
 

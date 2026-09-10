@@ -65,6 +65,7 @@ SOURCE_CREDIT = ("United Nations, DESA, Population Division. World Population Pr
 LAST_ESTIMATE = 2023   # WPP 2024's estimates run to 2023; 2024 on is projection
 END = 2100
 BASE_YEAR = 2025       # "today" for the multiples on the board
+PATH_START = 1950      # the board's path reaches back to the first UN estimate, so a bloc's peak is its real one (Ashwin, 2026-09-10)
 
 # The PI series and the scenario variants we keep, by the file's Variant label.
 PI = {"Median PI": "med", "Lower 80 PI": "lo80", "Upper 80 PI": "hi80",
@@ -221,7 +222,16 @@ def build(med_path=MED, oth_path=OTH, countries_path=COUNTRIES):
             "source_credit": SOURCE_CREDIT,
             "estimates": est, "projection": proj, "scenarios": scen, "drivers": drv, "facts": f,
         }
-        index.append({"slug": slug, "iso3": iso, "name": name, **{k: f[k] for k in ("peak", "base", "y2050", "y2100", "multiple2100", "declineFrom", "naturalDeclineFrom")}})
+        # The board carries the whole path, one integer per year from
+        # PATH_START (estimates, then the median) to 2100, so /countries/2100 can draw every country as a
+        # line rather than three points a quarter-century apart (Ashwin,
+        # 2026-09-10). Bands stay in the per-country file: a multi-country
+        # chart cannot carry them legibly.
+        # Estimates to LAST_ESTIMATE, the median after; one integer per year from PATH_START.
+        path = [round(pi[y].get("med", pop.get(y, 0))) if (y > LAST_ESTIMATE and y in pi) else round(pop.get(y, 0)) for y in range(PATH_START, END + 1)]
+        index.append({"slug": slug, "iso3": iso, "name": name,
+                      **{k: f[k] for k in ("peak", "base", "y2050", "y2100", "multiple2100", "declineFrom", "naturalDeclineFrom")},
+                      "path": path})
     return files, index, unmatched
 
 
@@ -282,7 +292,7 @@ def main():
             json.dump(doc, fh, separators=(",", ":"), ensure_ascii=False)
     with open(os.path.join(OUT_DIR, "index.json"), "w", encoding="utf-8", newline="\n") as fh:
         json.dump({"_meta": {"asOf": "2024-07-11", "revision": REVISION, "last_estimate": LAST_ESTIMATE,
-                             "end": END, "base_year": BASE_YEAR, "source_credit": SOURCE_CREDIT,
+                             "end": END, "base_year": BASE_YEAR, "path_start": PATH_START, "source_credit": SOURCE_CREDIT,
                              "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds")},
                    "countries": sorted(index, key=lambda r: -(r["base"]["value"] or 0)),
                    "unmatched": unmatched}, fh, separators=(",", ":"), ensure_ascii=False)

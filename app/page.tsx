@@ -7,6 +7,8 @@ import { flagCdnUrl } from '@/lib/international-display';
 import { getCountry } from '@/lib/countries';
 import { ELECTION_HUBS } from '@/lib/electionHubsMeta';
 import { getForecast, type ForecastFile } from '@/lib/forecast';
+import { getPopulation2100Index } from '@/lib/population2100';
+import { fmtPop } from '@/lib/population2100Shape';
 import { datasetJsonLd, serializeJsonLd } from '@/lib/seo';
 import { readFileSync } from 'fs';
 import { join } from 'path';
@@ -118,6 +120,23 @@ function topPowers(): Preview[] {
     flagUrl: flagCdnUrl(r.slug, '20x15'),
     meta: r.share != null ? `${(r.share * 100).toFixed(1)}%` : '',
   }));
+}
+
+// The three largest countries in 2100 on the UN median, for the home-page
+// promo of /countries/2100 (Ashwin 2026-09-10: "something we do need to
+// promote on the front page"). Reads the same index the page reads.
+function top2100(): Preview[] {
+  const idx = getPopulation2100Index();
+  if (!idx) return [];
+  return [...idx.countries]
+    .sort((a, b) => b.y2100.med - a.y2100.med)
+    .slice(0, 3)
+    .map((r) => ({
+      name: r.name,
+      sub: r.multiple2100 != null ? `${r.multiple2100.toFixed(2)}x today` : undefined,
+      flagUrl: flagCdnUrl(r.slug, '20x15'),
+      meta: fmtPop(r.y2100.med),
+    }));
 }
 
 // Genuinely self-retiring: candidates are only included while the weekly
@@ -291,7 +310,7 @@ type IndexCard = { n: string; title: string; desc: string; stat: string; href: s
 type AtlasCard = { emoji: string; title: string; desc: string; href: string; sub: string; live?: boolean };
 const ATLAS: AtlasCard[] = [
   { emoji: '🏙️', title: 'Rankings', desc: 'The metro leaderboard, badges, and the compare tool.', href: '/rankings', sub: 'Top 100 · Compare · Badges' },
-  { emoji: '🗺️', title: 'Geography', desc: 'Countries, states, leaders, the power atlas, and the world map.', href: '/geography', sub: 'Countries · States · Map · Power Atlas' },
+  { emoji: '🗺️', title: 'Geography', desc: 'Countries, states, leaders, the power atlas, and the world map.', href: '/geography', sub: 'Countries · 2100 · States · Map · Power Atlas' },
   { emoji: '🏟️', title: 'Sports', desc: 'Every league, national team, and cross-sport index.', href: '/sports', sub: 'Leagues · Zone Zero Cup · Rivalries', live: true },
   { emoji: '🎵', title: 'Sound', desc: 'The music of the metros, by chart and by decade.', href: '/sound', sub: 'Rankings · Artists · Awards · Decades' },
   { emoji: '🎬', title: 'Screen', desc: 'The films of the metros, by box office and by ceremony.', href: '/screen', sub: 'Rankings · Number Ones · Oscars · 500 Greatest' },
@@ -362,6 +381,7 @@ const SITE_INDEX: IndexColumn[] = [
   ]},
   { heading: 'Geography', href: '/geography', links: [
     { label: 'Countries', href: '/countries' },
+    { label: 'The world in 2100', href: '/countries/2100' },
     { label: 'Elections', href: '/elections' },
     { label: 'States & Provinces', href: '/states' },
     { label: 'Expandable Map', href: '/expandable-map' },
@@ -587,8 +607,23 @@ export default async function Home() {
               <Link href="/predictions" className="inline-flex items-center gap-1 text-xs mb-2 hover:opacity-80 transition-opacity" style={{ ...MONO, color: 'var(--accent)' }}>
                 🔮 Predictions <span aria-hidden>→</span>
               </Link>
+              {/* Featured forecast: every country and bloc to 2100 (UN WPP 2024 median). */}
+              <Link href="/countries/2100" className="block rounded-lg border p-4 mb-3 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)] group" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="flex items-center justify-between gap-3">
+                  <span className="flex items-center gap-2 min-w-0">
+                    <span className="text-xl leading-none" aria-hidden>🌍</span>
+                    <span className="font-bold text-[15px] truncate">The world in 2100</span>
+                    <span className="text-[10px] px-1.5 py-0.5 rounded flex-shrink-0" style={{ ...MONO, color: 'var(--accent)', background: 'rgba(78,205,196,0.16)' }}>NEW</span>
+                  </span>
+                  <span className="text-[var(--text-dim)] group-hover:text-[var(--accent)] transition-colors flex-shrink-0" aria-hidden>→</span>
+                </div>
+                <p className="text-[12px] leading-snug mt-1.5" style={{ color: 'var(--text-muted)' }}>Every country, every year to 2100, plus the EU, the AU, ASEAN and forty-odd other blocs, and the year each one peaks.</p>
+                <IndexPreview rows={top2100()} />
+                <span className="text-[11px]" style={{ ...MONO, color: 'var(--text-dim)' }}>UN WPP 2024 median · sortable · by continent</span>
+              </Link>
               <div className="flex flex-wrap items-center gap-2">
                 {[
+                  { href: '/countries/2100', label: 'Population 2100', emoji: '🌍' },
                   { href: '/elections/forecast', label: 'Elections', emoji: '🗳️' },
                   { href: '/predictions/pl', label: 'Premier League', emoji: '⚽' },
                   { href: '/predictions/ucl', label: 'Champions League', emoji: '🏆' },

@@ -15,7 +15,7 @@ import EloPowerRankings from "./EloPowerRankings";
 import NflPlayoffsBracket from "./NflPlayoffsBracket";
 import { getNflEloIndex } from "@/lib/nflElo";
 import { getNflPlayoffs, playoffsIsCurrent } from "@/lib/nflPlayoffs";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_PATH },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+  openGraph: { images: [{ url: ogImage(PAGE_TITLE, PAGE_URL), width: 1200, height: 630 }],
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,
     url: PAGE_URL,
     type: "website",
   },
-  twitter: { images: ["/og-default.png"],
+  twitter: { images: [ogImage(PAGE_TITLE, PAGE_URL)],
     card: "summary_large_image",
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,

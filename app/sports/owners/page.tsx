@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { getOwnerPortfolios, getMultiTeamPortfolios, getWatchlist } from "@/lib/teamOwners";
 import OwnersTable from "./OwnersTable";
 
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_PATH },
   openGraph: {
-    images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+    images: [{ url: ogImage(PAGE_TITLE, PAGE_URL), width: 1200, height: 630 }],
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,
     url: PAGE_URL,
     type: "website",
   },
   twitter: {
-    images: ["/og-default.png"],
+    images: [ogImage(PAGE_TITLE, PAGE_URL)],
     card: "summary_large_image",
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,

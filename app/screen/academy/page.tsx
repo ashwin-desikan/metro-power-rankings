@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getScreen } from "@/lib/screen";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import ScreenNav from "../ScreenNav";
 
 export const dynamic = "force-static";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: "/screen/academy" },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}/screen/academy`, type: "website" },
+  openGraph: { images: [{ url: ogImage(TITLE, `/screen/academy`), width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}/screen/academy`, type: "website" },
 };
 
 const DEC_COLORS: Record<string, string> = { us: "#5B8DEF", ukie: "#E06C75", europe: "#02A95B", world: "#D9A038" };

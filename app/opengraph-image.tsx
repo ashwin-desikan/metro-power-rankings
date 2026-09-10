@@ -1,85 +1,17 @@
 import { ImageResponse } from "next/og";
+import { brandCard } from "./og/card";
 
-// Site-wide DEFAULT Open Graph / Twitter share card. Next auto-applies this to
-// every route that does not define its own opengraph-image, so the home page
-// and all subpages get a branded preview instead of a blank one. Routes with
-// their own card (/rankings/[slug], /badges/[slug]) still override it.
-// A single image rendered once at build; negligible cost.
+// The home page's share card, and the fallback for any route that sets no
+// image of its own: the Citizen of Nowhere brand card (app/og/card.tsx), the
+// same element the /og route draws for every page with its title. The old
+// "Global Metro Power Rankings" card was retired on 2026-09-10 (Ashwin: a
+// pasted link "should say the name of the page: Citizen of Nowhere").
+// Rendered once at build.
 
-export const alt = "Global Metro Power Rankings";
+export const alt = "Citizen of Nowhere";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const ACCENT = "#38bdf8";
-
 export default function Image() {
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          width: 1200,
-          height: 630,
-          background: "#0d1117",
-          color: "#ffffff",
-          display: "flex",
-          flexDirection: "column",
-          position: "relative",
-          fontFamily: "system-ui, sans-serif",
-        }}
-      >
-        <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 6, background: ACCENT, display: "flex" }} />
-
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "44px 56px 0 56px",
-            fontSize: 15,
-            color: "#9ca3af",
-            letterSpacing: 3,
-          }}
-        >
-          <div style={{ display: "flex" }}>CITIZEN OF NOWHERE</div>
-          <div style={{ display: "flex", color: "#6b7280", letterSpacing: 0 }}>rankings.citizenofnowhere.org</div>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "column", flex: 1, justifyContent: "center", padding: "0 56px" }}>
-          <div style={{ fontSize: 96, fontWeight: 600, letterSpacing: -3, lineHeight: 1.02, display: "flex" }}>
-            Global Metro
-          </div>
-          <div style={{ fontSize: 96, fontWeight: 600, letterSpacing: -3, lineHeight: 1.02, display: "flex" }}>
-            Power Rankings
-          </div>
-          <div style={{ fontSize: 30, color: "#9ca3af", marginTop: 28, display: "flex" }}>
-            Measuring what makes a city matter.
-          </div>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            gap: 48,
-            padding: "0 56px 52px 56px",
-            fontSize: 24,
-            color: "#e5e7eb",
-          }}
-        >
-          <div style={{ display: "flex" }}>
-            <span style={{ color: ACCENT, fontWeight: 600 }}>4,200+</span>
-            <span style={{ marginLeft: 10, color: "#9ca3af" }}>metros</span>
-          </div>
-          <div style={{ display: "flex" }}>
-            <span style={{ color: ACCENT, fontWeight: 600 }}>16</span>
-            <span style={{ marginLeft: 10, color: "#9ca3af" }}>dimensions</span>
-          </div>
-          <div style={{ display: "flex" }}>
-            <span style={{ color: ACCENT, fontWeight: 600 }}>237</span>
-            <span style={{ marginLeft: 10, color: "#9ca3af" }}>countries</span>
-          </div>
-        </div>
-      </div>
-    ),
-    { ...size },
-  );
+  return new ImageResponse(brandCard("", "/"), { ...size, emoji: "twemoji" });
 }

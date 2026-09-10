@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getFx, getFxSeries } from "@/lib/business";
 import { CURRENCY_PAGE_CODES, hasCurrencyPage } from "@/lib/currencyPages";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import BusinessNav from "../../BusinessNav";
 import { MONO, CARD } from "../../ui";
 import FxChart from "./FxChart";
@@ -64,8 +64,8 @@ export async function generateMetadata({ params }: { params: Promise<{ code: str
     title,
     description,
     alternates: { canonical: `/business/currencies/${code}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description, url: `${BASE_URL}/business/currencies/${code}`, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description },
+    openGraph: { images: [{ url: ogImage(title, `/business/currencies/${code}`), width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description, url: `${BASE_URL}/business/currencies/${code}`, type: "website" },
+    twitter: { images: [ogImage(title, `/business/currencies/${code}`)], card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description },
   };
 }
 

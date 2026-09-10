@@ -5,7 +5,7 @@ import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import { getWnbaMeta, getAllFranchises, getDefunctFranchises, getChampions, getLatestStandings, type WnbaFranchise } from "@/lib/wnba";
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getSeasonSim, simIsCurrent, simByName, fmtOdds } from "@/lib/seasonSim";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import WnbaFranchiseTable from "./WnbaFranchiseTable";
 import { CappedList } from "@/app/_shared/Disclosure";
 import { SportBadge } from "@/app/teams/_shared/SportIcon";
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_PATH },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION, url: `${BASE_URL}${PAGE_PATH}`, type: "website" },
-  twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
+  openGraph: { images: [{ url: ogImage(PAGE_TITLE, PAGE_PATH), width: 1200, height: 630 }], title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION, url: `${BASE_URL}${PAGE_PATH}`, type: "website" },
+  twitter: { images: [ogImage(PAGE_TITLE, PAGE_PATH)], card: "summary_large_image", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
 };
 
 function Mono({ abbr, color }: { abbr: string; color: string }) {

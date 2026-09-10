@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllWCompetitionSlugs, getWCompetition } from "@/lib/wfootball";
 import { getWLiveCompetition } from "@/lib/wLive";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import WLiveComp from "@/app/teams/wfootball/WLiveComp";
 import { CappedList } from "@/app/_shared/Disclosure";
 
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: c.label,
     description: desc,
     alternates: { canonical: `/teams/wfootball/${c.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${c.label} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/wfootball/${c.slug}`, type: "website" },
+    openGraph: { images: [{ url: ogImage(c.label, `/teams/wfootball/${c.slug}`), width: 1200, height: 630 }], title: `${c.label} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/wfootball/${c.slug}`, type: "website" },
   };
 }
 

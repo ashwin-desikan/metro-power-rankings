@@ -9,7 +9,7 @@ import {
 import { getUsCongress, getScotusHistory, benchOn, type PartySplit } from "@/lib/usPolitics";
 import { getState } from "@/lib/states";
 import { getAllMetros } from "@/lib/data";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import GovernorsTable, { type GovRow } from "./GovernorsTable";
 import SenatorsTable, { type SenRow } from "./SenatorsTable";
 import { CappedList, Disclosure } from "@/app/_shared/Disclosure";
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+  openGraph: { images: [{ url: ogImage(TITLE, PATH), width: 1200, height: 630 }],
     title: `${TITLE} | ${SITE_NAME}`,
     description: DESC,
     url: `${BASE_URL}${PATH}`,

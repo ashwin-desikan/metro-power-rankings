@@ -12490,3 +12490,359 @@ rulings needed); the mobile chart sweep (P1); population v2.
 Commit call for this batch (the day's first paid build; 0 used). The cap token, the three PFR
 URLs, the NFL dispatch decision, the brand deploy hook, the Supabase policy-rate seed on the
 mini: all unchanged from yesterday's list.
+
+### K. Afternoon: the Money Ledger, built (Ashwin: "continue with the next priority")
+Committed as e82112a28 (sections A to J, unpushed) and then the approved P1 row from I.
+
+**The builder.** `scripts/football/build_transfer_ledger.py` (--self-test, --dry, --write)
+reads `data/football/tm/transfers.csv.gz` (gitignored, 175,165 rows) and writes
+`public/data/football/money/{england,france,germany,holland,italy,spain}.json` + `index.json`
+(205 clubs, 0.9 MB). Per club-season from 2012-13: spent, received, net, arrivals and
+departures with a fee, moves with NO fee (counted, never priced), squad value in the opening
+July and the closing June with `n`, and **appreciation = (v_end - v_start) - (spent -
+received)**, the argument of the whole thing. Biggest arrival and sale per season by fee.
+
+Three rulings that shaped it, all in the file header:
+- 🔴 **Attribution by the row's own club ids** resolved through `clubs.csv`, not the file's
+  short names ("Wolves", "Nott'm Forest" matched five English clubs; the ids match 37). The
+  value build refuses ids because a valuation's `current_club_id` is the club TODAY; a
+  transfer row's from/to ids are the two clubs of that move, which is what we want.
+- 🔴 **`DATA_END = 2026-07-06`.** The file carries loan returns dated 2028 and 2030; everything
+  after the upstream's last day is dropped. "2026-27" therefore holds six days of a window and
+  every surface labels it "to 6 July 2026" and never ranks on it (`isStubSeason`).
+- 🔴 **Fees only.** Wages are not in it and will not be. No service, no player pages.
+
+**The lib.** `lib/footballMoneyShape.ts` (pure: types, `fmtEurM`/`fmtEurSigned`, the two
+board cuts `seasonMoneyBoard` with spend and appreciation ranks WITHIN each league, and
+`spanMoneyBoard` over full seasons with `return_pct` = appreciation / spent, floored at a €50m
+spend) and `lib/footballMoney.ts` (server-only, same GitHub-raw-first `load()` as clubValue,
+registered in check-client-imports). `lib/footballMoney.test.ts`, 5 tests.
+
+**Three surfaces.**
+- Club page: `ClubMoneyPanel` under the value chart. Four figures (spent, received, net,
+  appreciation with its priced-season count), then a per-season table latest first: spent and
+  received each carry a `4+3` count (four with a fee, three without; explained in `more`),
+  value Jul to Jun with `n`, appreciation, biggest arrival and sale (player + fee, other club
+  as a tooltip; with both club names on the row the table was 1436px in an 1120px card, now
+  1084). Phone: one RankRow per season, appreciation on the right.
+- Season hubs 2012-13 to 2025-26: `SeasonMoney` between the domestic tables and the cups,
+  "Money" in the sticky nav, every club with a window that season across the six leagues,
+  sorted on appreciation, `#4` spend-rank-in-league chip beside the country. 2024-25 has 189
+  rows; Barcelona leads at +€194m on €67m spent. Older hubs render nothing.
+- `/sports/expectation#money` "Return on the transfer window": the whole span, clubs priced in
+  at least three seasons (Brentford qualifies from 2021), appreciation, return. Ajax first at
+  +€626m on €563m spent (+111%); Chelsea has spent €2.93b for −€977m of appreciation.
+
+**Data currency:** `club-money` snapshot, 120 days on the index `asOf` (2026-07-06), with the
+note to rebuild alongside the value corpus. Release note bullet added to today's block, which
+meant folding the two NFL bullets into one: the /updates gate is 4 bullets and 220 chars, and
+`check:release-notes` does NOT enforce the bullet count or the 12-word headline, only
+`next build` does (builds e and f each failed on one of those; g is the clean one).
+
+**Found on the way, not mine, not fixed:** `/sports/expectation` throws a hydration mismatch
+at both widths in `HomeAdvantageChart`'s SVG `<title>` (server text differs from client).
+Pre-existing; the section above mine. Worth a look.
+
+**Gates:** tsc clean; data-reads, client-imports, mobile, table-scroll OK; data-currency 27
+current; vitest 187/187; release-notes OK; `_scratch/measure-money.mjs` at 390 and 1280 on
+brentford, 2024-25, /sports/expectation (all three sections present, no horizontal scroll;
+1987-88 correctly absent). Native build g: `next build --webpack` clean, 5,682 static pages.
+Function-size OK (no route at or above 220 MB); `football/money` traces at 0.9 MB on the three
+routes that read it, scoped correctly. ⚠️ The largest route now reports 127.9 MB
+(/countries/[slug]) against the 80 MB noted in H this morning; the money files are 0.9 MB of
+that and the top items on the trace are cbb/data.json, nfl/expectation, pop2100, cfb, nfl/elo.
+Not investigated further; worth a diff of the two nft files before the next size scare.
+
+**Uncommitted, awaiting the commit call:** 7 modified, 7 new (see `git status`).
+
+### L. Later, same afternoon: the board rule, the pinned names, money as a tab, 2100 by the year
+Ashwin's review of K, in his words: the money board "should just be another pin in that
+ecosystem rather than its own separate table further down the sheet"; Como, Cagliari and
+Hoffenheim "are not matched to the canonical names"; /countries/2100 "why do you only have it
+at 2025, 2050 and 2100"; "where are the flags"; and on /sports/expectation#money: "Where's the
+sorting? When you build tables, they always need to be sortable, right? They also need to have
+contingencies for desktop and mobile. I don't want to have to keep repeating this."
+
+**1. 🔴 THE BOARD RULE, AS A PRIMITIVE AND A GATE (so it is not repeated again).**
+`app/_shared/SortableBoard.tsx`: column specs + per-row cell nodes in, and the board owns the
+shell (ResponsiveTable), the order, the desktop heading buttons (`aria-sort`, largest-first
+then reverse then the board's own order) and the phone Sort select + direction button driving
+the same state; the rank column is the position under the current sort. DESIGN-STANDARDS §4
+carries the rule; `scripts/check-sortable.mjs` (`npm run check:sortable`, in `verify` after
+table-scroll) fails any `<table>` with five or more heading columns that is not the primitive
+and does not carry `data-static-sort="<reason>"`. Ratchet baseline
+`scripts/sortable-baseline.json`: **203 fixed-order boards in 141 files** on the day the rule
+landed. That is the backlog; shrink it, never grow it. Moved onto the primitive today: the
+money board on /sports/expectation, the club-page money panel, the season-hub money tab,
+Board2100. Marked static: the country-page drivers table (chronological).
+
+**2. 🔴 THIRTEEN TOP-FLIGHT CLUBS WERE SILENTLY MISSING FROM BOTH THE VALUE SERIES AND THE
+LEDGER.** Como/Cagliari/Hoffenheim had links but no crest (CrestIcon keyed on Transfermarkt's
+name; now keys on `site_name`, the displayed name stays the source's as ruled). The real find
+was underneath: the crosswalk matcher could not reach Inter Milan, AS Roma, Genoa, Pescara,
+Lille, Strasbourg, Troyes, Guingamp, Évian, Nancy, GFC Ajaccio, Union Berlin and Nürnberg, and
+both builders dropped them without a word. `TM_SLUG` in `build_club_value.py` pins each to
+the site slug (a pin to a slug the index lacks is a hard exit), `resolve_club()` wraps the
+crosswalk's resolve and both builders use it; value and money rebuilt, 0 unslugged in all six
+files. `_scratch/money-slugs.py` is the check.
+
+**3. Money as a tab.** `RankingTable` (the club power ranking on every hub) has a third tab,
+"Transfer money", for hubs 2012-13 to 2025-26, rendering `SeasonMoney.tsx` (now the
+`MoneyBoard` client component on the primitive). The separate section and its nav chip are
+gone. Measured 2025-26: 202 clubs, PSG first on appreciation (+€275m), sort by Spent puts
+Liverpool first (€481m, Isak €145m), on the phone select and the desktop heading alike.
+
+**4. /countries/2100 by the year.** The builder writes each country's annual median path
+2025 to 2100 into the index (`path`, 76 ints; index 80 KB to 214 KB). `Chart2100.tsx`: up to
+six countries (the six largest in 2100 by default; add from a select, remove by chip),
+`--cat-1..6` by slot so survivors are never repainted, People or 2025 = 100, direct labels at
+the line ends pushed apart to the font floor, readout on tap or drag naming every country's
+figure for the year. 🔴 The phone gets its own viewBox (390×420, 15-unit text = 12.8px
+rendered) because the desktop box scaled down was 133px tall with 4px text. `Board2100` on
+the primitive with a flag on every row (`flagCdnUrl`, 205 of 211 resolve), decade columns
+2025 to 2100, multiple, peak, 95% band; sort by Multiple puts Angola first at 3.84×. The
+country page's drivers table is every decade from 1950, not quarter-centuries, and its
+`#E2628B` is `var(--div-neg)`.
+
+**Gates:** tsc clean; sortable, table-scroll, mobile, client-imports, data-reads OK;
+data-currency 27 current; vitest 187/187; measured at 390 and 1280 (`_scratch/measure-money3.mjs`,
+`_scratch/debug-2100.mjs`: readout answers at both widths; the first probe that said it did
+not had fired before hydration, with the chart below the fold). Not rebuilt natively since
+build g; the changes are components and two JSON rebuilds, no new routes.
+
+**Backlog rows to file:** the 203-board sortable sweep (P1, the gate's own baseline is the
+list); the SVG-title hydration mismatch in HomeAdvantageChart.
+
+### M. Evening: blocs on the 2100 board, 25 subregional bodies tracked, the filters
+Ashwin's second pass on /countries/2100, six asks in a row: decades descending from 2100;
+bloc rows for every organisation the site tracks (then: the UN too); proposed future unions,
+the East African Federation first, "set the precedent"; table before chart; filters for
+countries / blocs / proposed; continent filters where a bloc answers to every continent a
+member sits in, and pan-world bodies under Global; and "why haven't we been tracking
+Mercosur, ECOWAS, or some of these other more subregional organizations?"
+
+**Blocs.** `aggregateBloc()` in `lib/population2100Shape.ts` (tested): a membership summed
+year by year on the median, peak and decline read off the summed path, `multiple2100` from
+it. 🔴 **Medians add, bands do not**: a bloc has no 95% band and the cell says so. The page
+builds one bloc per `ORG_DEFS` entry on CURRENT full members via `getOrgMembers` (UN
+included), plus `PROPOSED_BLOCS`: East African Federation (the eight EAC states), Korea
+unified, the Union State of Russia and Belarus, Romania with Moldova. Each proposed row
+carries a one-line note on what the proposal is and whose policy it is or is not; I judged
+Chinese unification too contested to sit in a population table and left it out. Splits are
+not modelled and the file header says why (the UN publishes nothing sub-national). Blocs are
+also pickable series on the annual chart ("(bloc)" in the picker).
+
+**Tracking.** `scripts/data/subregional-orgs.json` holds 25 organisations by country NAME
+(Mercosur, ECOWAS, AES, SADC, EAC, ECCAS, IGAD, AMU, CARICOM, SICA, Andean Community, ALBA,
+Pacific Islands Forum, SAARC, BIMSTEC, EAEU, CIS, Organization of Turkic States, EFTA, Nordic
+Council, Benelux, Visegrád, USMCA, CPTPP, RCEP), with members, associates and observers as of
+September 2025 from my own knowledge, each with a one-line description. 🔴
+`scripts/build-orgs-extra.py` merges them into `public/data/country-orgs.json` beside the
+workbook's eighteen, owning only its own keys (idempotent), and **fails on any name that does
+not resolve** (four Caribbean names and Micronesia did, first run; fixed to countries.json's
+spellings). `lib/orgs.ts` gains groups Subregional and Trade and the 25 defs; /orgs and every
+country page's organisations section pick them up with no other change (measured: /orgs
+shows both groups, Brazil shows Mercosur, Nigeria shows ECOWAS, no horizontal scroll). The
+workbook CSV is untouched and stays the source for its eighteen. ⚠️ Ashwin, worth a scan of
+that JSON: the memberships are mine, not a source's, and Mercosur's suspended Venezuela,
+ECOWAS's three departures and IGAD's Eritrea are the calls most likely to age.
+
+**The board.** Columns 2100, 2090 ... 2030, 2025, Multiple, Peak, Band. Filters: Everything /
+Countries / Blocs / Proposed with counts, and a Continent select (the six from countries.json
+plus Global) with counts and "N shown". A bloc answers to every continent a full member is
+assigned to (Russia is Europe here, so the SCO, CIS and EAEU sit under Europe as well as
+Asia); a bloc whose members span **three or more continents is Global only** (`GLOBAL_FROM`),
+which files OPEC, OECD, the G7 and G20, BRICS+, APEC, the Commonwealth, CPTPP and the UN
+there. Measured 2026-09-10 at 390 and 1280: 257 rows (211 countries, 42 org blocs, 4
+proposed), Europe 68 of which 11 blocs, Global 10; sorts, filters and the picker all answer on
+both surfaces; the phone page no longer scrolls sideways (the picker select had grown to the
+longest option, "Organisation for Economic Co-operation and Development", now `max-w-full`
+and long labels fall back to the abbreviation).
+
+**The past (Ashwin: "extend it back to 2020, 2010 and 2000").** The index path now starts at
+`_meta.path_start` = 2000 (UN estimates to `last_estimate` 2023, the median after; 101 ints
+per row, index 280 KB). Board columns run 2100 down to 2025 and on to 2020, 2010, 2000; the
+chart runs from 2000 with a dashed line at the estimate boundary and the readout says
+"(estimate)" or "(UN median)"; indexed mode still divides by 2025. `aggregateBloc` takes
+`{pathStart, baseYear, lastEstimate}` so a bloc's base and multiple are read at 2025, not
+at the path's first element, and its peak is "past" when it falls within the estimates
+(test added). Measured: China 1.27bn (2000), 1.35bn (2010), 1.43bn (2020), 1.42bn (2025),
+633m (2100), peak 2021 past; the UN bloc 6.13bn (2000) to 10.15bn (2100), peak 2084.
+🔴 `lib/population2100.ts` caches the parsed index per process, which served the OLD index
+for a whole dev session after the rebuild; in development it now re-reads when the file's
+mtime changes (both fs calls spell the literal path inline for the tracer; data-reads OK).
+
+### N. Night: the board reshaped, the current year from the site's own count, every membership verified
+Ashwin, four more rulings on /countries/2100 and one on /orgs.
+
+**The board.** Columns now: 2100, **Multiple, Peak** (the two he wants seen before any scroll),
+2090 down to 2030, then **the current year** in its slot, then 2020, 2010, 2000 dimmed, band
+last. Measured at 1280: everything through 2020 is visible without a scroll. There is no 2025
+column: the current-year column is `new Date().getUTCFullYear()` (capped at 2029) and its
+figure is the population THIS SITE TRACKS (countries.json `pop`, the country hub's own
+number), not a UN figure; the multiple is 2100 over it; a bloc sums its members' tracked
+figures (`aggregateBloc` takes `nowPop`). It is highlighted (`--cat-6` at 18% via color-mix,
+label in `--cat-6`, a legend chip beside the filters); the UN estimates before it are dimmed.
+🔴 It moves with the calendar: in 2027 the column reads 2027 with no code change.
+Peak: the path now runs from 1950, so a bloc's peak is its real one (Bulgaria "peaked 1988",
+not "2000 (past)"); a past peak is written "peaked YYYY" in `--div-neg`, a future one as the
+year, "after 2100" when it never turns; the peak value is the cell's tooltip. `SortableBoard`
+gained `tdStyle` (a column's td style) and `short` (the phone Sort option text when a label
+is a node; without it the select grew to a 548px title string and the phone page scrolled
+sideways, measured and fixed).
+
+**Every organisation verified (Ashwin: "you still have the UAE").** Three research passes
+(Sonnet subagents with web search, at most 3 searches per body, the organisation's own site
+first) over all 43 organisations. Corrections applied, all in `scripts/data/subregional-
+orgs.json` so the workbook stays untouched: the 25 new bodies edited in place, the workbook's
+eighteen through a new `overrides` block that `build-orgs-extra.py` applies after the merge
+(a status sets, null removes; unresolved names fail the build):
+- OPEC and OPEC+: **UAE removed**, withdrawal effective 1 May 2026 (Enerdata, Khaleej Times).
+- SCO: Laos added as dialogue partner (Tianjin 2025).
+- African Union: six suspensions in force as a new `Suspended` status (Mali, Sudan, Burkina
+  Faso, Niger, Madagascar 2025, Guinea-Bissau 2025); Gabon and Guinea are back as members.
+- OAS: Nicaragua removed (withdrawal effective 19 Nov 2023).
+- Commonwealth: Gabon, Togo, St Kitts & Nevis, St Vincent added (56 members; the last two
+  were a workbook gap, the first two real changes).
+- IGAD: Eritrea removed (withdrew December 2025). ALBA: Bolivia suspended (2025).
+  Mercosur: Venezuela listed as suspended rather than omitted. CPTPP: Costa Rica as
+  applicant (working group concluded May 2026).
+- Kept with a caveat in the file's notes: Armenia in the CSTO (frozen, not withdrawn), Saudi
+  Arabia in BRICS+ (still "assessing"), Moldova in the CIS (leaves April 2027), Cuba in the OAS.
+`OrgStatus` gains `Suspended` (struck-through amber pill on /orgs and the country pages;
+sorts after Member). On the 2100 board a suspended member still counts in its bloc: it is a
+member state. 🔴 Ashwin: the `overrides` block is a list of edits the workbook needs; when
+you next open international_orgs.csv, apply them there and delete the block.
+
+**Gates after N:** tsc clean; sortable, table-scroll, mobile, client-imports, data-reads,
+release-notes OK; data-currency 27 current; vitest 193/193; /countries/2100, /orgs,
+/countries/brazil and /countries/nigeria measured at 390 and 1280, no sideways scroll.
+Release-note bullet two carries the blocs and the 25 bodies (219 chars). Still not rebuilt
+natively since build g; do that before the commit if you want the belt and braces.
+
+### O. Late: no sideways scroll at any width, "peaked" judged against today, Côte d'Ivoire
+Ashwin saw the 2100 board scroll sideways in a tablet-width preview: "We don't scroll when
+it comes to left-right scrolling ... if you go to a reference site and look at a table on
+mobile, it just behaves differently." What a reference site does is show fewer columns.
+
+**🔴 Width tiers, now a §4 rule.** `SortableBoard.demote` takes `"sm" | "md" | "lg" | "xl" |
+"2xl"` (the narrowest viewport a column appears at; `true` still means sm) and the board fits
+its container at EVERY breakpoint, the scroll box being the last resort for the legacy tail.
+The 2100 board's tiers, chosen by measuring (`_scratch/measure-tiers.mjs`): always the
+identity, 2100, Multiple, Peak; 2050 and the current year from 640; 2070 and 2030 from 768;
+2080, 2060, 2040 from 1024; 2090, 2020, 2000 from 1280; 2010 and the band from 1536, where
+the page widens to 7xl. Long names truncate with a title (150/190/200px). Measured after: table
+width equals box width at 640, 768, 820, 1024, 1280 and 1536; the phone list under 640. The
+board is `compact`. Rule written into DESIGN-STANDARDS §4 with the quote.
+
+**Peaked, judged against today.** Germany's peak is 2024; the data's `past` flag is "within
+the UN estimates" (to 2023), so it read as future. The board now judges against the current
+year: `peak.year <= nowYear` is red and "peaked YYYY"; measured Germany "peaked 2024" in
+`--div-neg`.
+
+**Côte d'Ivoire.** The country hub and the board had no flag: `flagCdnUrl` knew the sport
+slug `cote-d-ivoire` and `ivory-coast` but not the /countries slug `cote-divoire`; added to
+`SUBDIVISION_CDN_CODES`. Ashwin: "Côte d'Ivoire is the canonical name; anywhere it says Ivory
+Coast should change." `TEAM_DISPLAY_NAME_OVERRIDES` now maps both sport slugs to it, and the
+published copies of three data files were edited in place (international/index.json name,
+country-facts.json "Parliament of Côte d'Ivoire", cricket/top-games.json team and opponent
+strings, 13 rows). ⚠️ Those three are BUILDER OUTPUT; the next run of their builders will
+put "Ivory Coast" back unless the rename is made at the source (the international index
+builder, the country-facts fetch, the cricket top-games builder). Left as they are: the 1976
+Oscar credit "Ivory Coast" (a historical credit) and the conflicts dataset's "Ivory Coast
+FNCI" (a faction's name). Measured: flag on both pages, no "Ivory Coast" on the hub.
+
+**Gates after O:** tsc clean; sortable, table-scroll, mobile, client-imports, data-reads,
+public-data OK; vitest 193/193.
+
+**P (late, same page).** Countries is the default filter (Everything moved to the end of the
+group). The header is one sentence (31 words, from a paragraph plus a revision line); the
+method, the caveats, the revision and the licence moved into an `#about` box at the foot,
+per §2A, which Ashwin called out as a standard being ignored. The two `more` notes were cut
+to what the controls do. The four stat cards are a 2×2 grid on a phone (the board's top
+moved from 810px to 659px at 390). Measured both widths; mobile and sortable gates OK.
+
+### Q. The monthly membership tripwire, and the date on /orgs
+Ashwin: "ensure that the update date on this page is accurate ... perhaps running a monthly
+job to ensure we have the correct constituents ... incorporate that into an already existing
+flow." GitHub Actions, not the mini: it needs only the public Wikidata endpoint and the
+ambient token, it is not time-critical, and like staleness-watch it should not share a
+failure domain with the refresh machine.
+
+- `scripts/orgs/check_memberships.py` (self-test, `--resolve`, report): for each organisation
+  in `scripts/data/org-qids.json` (43 Wikidata items, resolved by label search and reviewed
+  by hand; GCC's first hit was a TV institution, corrected to Q217172), one SPARQL query for
+  countries whose "member of" statement names it with no end date, mapped to countries.json
+  names (an alias table for "Kingdom of Denmark", "realm of the United Kingdom" and the
+  like), diffed against our Member+Suspended set. Never edits the data.
+- 🔴 **Wikidata is a tripwire, not a source.** First run, 2026-09-10: 30 of 43 "differed",
+  almost all noise. Its "member of" coverage is thin for many bodies (PIF, RCEP, OPEC+,
+  IGAD, SAARC, SICA had most members missing), and it lags: it still listed the UAE in OPEC
+  four months after the exit, and Angola. So the check now (a) skips an organisation when
+  Wikidata knows fewer than half our members, (b) exits 1 ONLY when Wikidata names a member
+  we lack, and (c) notes the reverse without alarming. What that first run did find, all
+  real and all applied via the `overrides` block: São Tomé and Príncipe missing from the UN
+  and the African Union; St Kitts & Nevis and St Vincent missing from the UN and the OAS
+  (workbook rows never filled).
+- `.github/workflows/orgs-monthly.yml`: cron `0 7 1 * *` and manual; self-test, report, one
+  rolling issue labelled `org-memberships` on exit 1, closed when they agree.
+- `build-orgs-extra.py` now writes `_meta {asOf, verified, how}` into country-orgs.json;
+  `lib/orgs.ts` strips it when loading and exports `getOrgsMeta()`; /orgs reads it: "Every
+  membership was verified against the organisation's own records on 10 September 2026. A
+  monthly check against Wikidata flags any change for review" replaces "as of mid-2025"
+  (measured at 390 and 1280). `country-orgs` joined data-currency at 60 days: the alarm for
+  the HAND check going stale, distinct from the monthly tripwire.
+
+### R. Share cards: the brand travels with the link
+Ashwin: "whenever I'm posting a link ... it should say the name of the page: Citizen of
+Nowhere ... I don't like the text, and I don't like the image ... something professional and
+representative of the page that is being shared."
+
+- `SITE_NAME` is now "Citizen of Nowhere" (`DATASET_NAME` keeps "Global Metro Power
+  Rankings" for the JSON-LD dataset only); the root title template is "%s | Citizen of
+  Nowhere"; the root openGraph/twitter, `applicationName` and every `${X} | ${SITE_NAME}`
+  share title follow.
+- `/og?t=<title>&p=<path>` (`app/og/route.tsx`, edge, Satori, Twemoji, cached a week) draws
+  the card: dark ground, the section's emoji tile, the title, the section kicker, the
+  wordmark, the domain. `lib/ogBrand.ts` maps 30 path prefixes to emoji and kicker
+  (🏈 NFL, ⚽ Club football, 🌍 Countries to 2100, 🗳️ Elections, 💼 Business, 🏙️ Metro
+  rankings ...); `lib/seo.ts` exports `ogImage(title, path)` (absolute; a full URL is
+  tolerated as the path). `app/og/card.tsx` is the element, shared with
+  `app/opengraph-image.tsx` (the home card, no title); the old static
+  `app/opengraph-image.png`, `twitter-image.png` and `alt.txt` are deleted (they shadowed
+  the .tsx), and `public/og-default.png` is a render of the new home card.
+- **The sweep:** two codemods replaced `/og-default.png` with `ogImage(TITLE, PATH)` in
+  382 files (315 with constants, 67 with template-literal or absolute URLs), five
+  hand-fixed where the codemod caught a variable from the wrong branch (countries/[slug],
+  mlb/nba/nfl/nhl [slug]). Routes with a richer card of their own keep it: /rankings/[slug]
+  (wordmark now CITIZEN OF NOWHERE · METRO RANKINGS, its og:title "London (#2) | Citizen of
+  Nowhere", and its explicit images removed so the per-metro card wins), /badges/[slug],
+  /sports. Rendered and looked at: the 2100 card reads CITIZEN OF NOWHERE / COUNTRIES TO
+  2100 / 🌍 / Population to 2100. Measured: /countries/2100, a club page, /rankings/london,
+  /sports and / all carry the right og:title and og:image; document titles correct.
+- **Still on the default card (12 pages, their metadata does not fit either codemod
+  pattern; they share fine with the home card, just without the page title):**
+  elections/cn/[id], og/route (a comment), states/[slug], teams/football/domestic,
+  teams/football (index), teams/ipl/[slug], teams/national (index),
+  teams/national/tournaments/british-home-championship,
+  teams/national/womens-world-cup/[slug], teams/national/[slug],
+  teams/wfootball/leagues/[slug]. Hand-fix when touched.
+- Satori's bundled sans has no bold weight, so the title renders regular; loading a
+  weight-700 face on the edge is the one refinement left. §9 rewritten with the rule: a new
+  page never references og-default.png, it calls `ogImage`.
+
+**S (2100 board, names).** Ashwin: truncated bloc names made "Economic Community of West
+African States" and "... Central African States" the same row; "I'd want the entirety of
+the name shown ... is it okay to have the text wrap?" Yes: the name cell is a fixed-width
+block (150/190/220px by tier) that wraps, with the flag or chip and the member count inline
+so the text uses the whole column; a row is as tall as its name. Measured ECCAS: two lines
+from 768 up (41px row), three at 640 (58px), the full name in the phone list; no overflow at
+any width. DESIGN-STANDARDS §4's "long identity cells truncate with a title" is therefore
+wrong for this board and softened: truncate only when the name carries no meaning the
+reader needs to tell rows apart, otherwise wrap in a fixed-width cell.
+
+**Gates after Q and R:** tsc clean; sortable, table-scroll, mobile, client-imports,
+data-reads, public-data, release-notes OK; data-currency 28 current; vitest 193/193.
+437 files uncommitted on top of e82112a28; not rebuilt natively since build g, and this
+batch adds an edge route (`/og`) and deletes three file-convention images, so run
+`next build --webpack` before the commit.

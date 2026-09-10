@@ -32,7 +32,7 @@ import {
 } from "@/lib/mlb";
 import { getCurrentMlbStandings } from "@/lib/mlb-standings";
 import SeasonsByTeamTable from "./SeasonsByTeamTable";
-import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd, ogImage } from "@/lib/seo";
 import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
 import { CappedList } from "@/app/_shared/Disclosure";
 import { DataBar } from "@/app/_shared/DataBar";
@@ -69,8 +69,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: f.display_name,
       description: desc,
       alternates: { canonical: `/teams/mlb/${f.slug}` },
-      openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${f.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-      twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${f.display_name} | ${SITE_NAME}`, description: desc },
+      openGraph: { images: [{ url: ogImage(f.display_name, url), width: 1200, height: 630 }], title: `${f.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+      twitter: { images: [ogImage(f.display_name, url)], card: "summary_large_image", title: `${f.display_name} | ${SITE_NAME}`, description: desc },
     };
   }
   const h = getHistoricalBySlug(slug);
@@ -83,8 +83,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${name} (defunct)`,
       description: desc,
       alternates: { canonical: `/teams/mlb/${slug}` },
-      openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-      twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${name} | ${SITE_NAME}`, description: desc },
+      openGraph: { images: [{ url: ogImage(name, url), width: 1200, height: 630 }], title: `${name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+      twitter: { images: [ogImage(name, url)], card: "summary_large_image", title: `${name} | ${SITE_NAME}`, description: desc },
     };
   }
   return { title: "Franchise not found" };

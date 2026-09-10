@@ -9,7 +9,7 @@ import { computeTier } from "@/lib/tiers";
 // Generated on demand (not at build) and cached at the edge.
 // Runtime is Node (default) because lib/data uses readFileSync.
 
-export const alt = "Global Metro Power Rankings share card";
+export const alt = "Citizen of Nowhere: metro share card";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -81,7 +81,7 @@ export default async function Image({
             fontSize: 48,
           }}
         >
-          Global Metro Power Rankings
+          Citizen of Nowhere
         </div>
       ),
       { ...size },
@@ -130,7 +130,7 @@ export default async function Image({
             letterSpacing: 3,
           }}
         >
-          <div style={{ display: "flex" }}>GLOBAL METRO POWER RANKINGS</div>
+          <div style={{ display: "flex" }}>CITIZEN OF NOWHERE · METRO RANKINGS</div>
           <div style={{ display: "flex", color: "#6b7280", letterSpacing: 0 }}>
             rankings.citizenofnowhere.org
           </div>

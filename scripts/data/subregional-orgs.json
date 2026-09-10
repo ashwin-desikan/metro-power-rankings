@@ -1,0 +1,592 @@
+{
+ "_meta": {
+  "asOf": "2025-09-01",
+  "why": "Ashwin, 2026-09-10: 'why haven't we been tracking Mercosur, ECOWAS, or some of these other more subregional organizations?' The original eighteen come from the international_orgs.csv workbook; these ride in from this file via scripts/build-orgs-extra.py so the workbook is untouched. Members are named as countries.json names them and resolved to slugs at build time; a name that does not resolve fails the build rather than vanishing.",
+  "statuses": "Member = full member. Partner = associate or associated state. Observer = observer. Suspended memberships are omitted.",
+  "verified": "2026-09-10: every organisation on the site (the workbook's eighteen and these) checked against its own site, Wikipedia's current membership page or recent news by three research passes; corrections applied here and, for the workbook's organisations, in `overrides` below."
+ },
+ "orgs": [
+  {
+   "key": "Mercosur",
+   "label": "Southern Common Market",
+   "abbr": "Mercosur",
+   "group": "Subregional",
+   "href": "https://www.mercosur.int",
+   "desc": "South American customs union; Bolivia became the fifth full member in 2024, Venezuela has been suspended since 2017.",
+   "members": {
+    "Member": [
+     "Argentina",
+     "Bolivia",
+     "Brazil",
+     "Paraguay",
+     "Uruguay"
+    ],
+    "Partner": [
+     "Chile",
+     "Colombia",
+     "Ecuador",
+     "Guyana",
+     "Panama",
+     "Peru",
+     "Suriname"
+    ],
+    "Suspended": [
+     "Venezuela"
+    ]
+   }
+  },
+  {
+   "key": "ECOWAS",
+   "label": "Economic Community of West African States",
+   "abbr": "ECOWAS",
+   "group": "Subregional",
+   "href": "https://www.ecowas.int",
+   "desc": "West African economic community; twelve members since Mali, Burkina Faso and Niger completed their withdrawal in January 2025.",
+   "members": {
+    "Member": [
+     "Benin",
+     "Cape Verde",
+     "Côte d'Ivoire",
+     "Gambia",
+     "Ghana",
+     "Guinea",
+     "Guinea-Bissau",
+     "Liberia",
+     "Nigeria",
+     "Senegal",
+     "Sierra Leone",
+     "Togo"
+    ]
+   }
+  },
+  {
+   "key": "AES",
+   "label": "Alliance of Sahel States",
+   "abbr": "AES",
+   "group": "Subregional",
+   "href": "https://en.wikipedia.org/wiki/Alliance_of_Sahel_States",
+   "desc": "Confederation of Mali, Burkina Faso and Niger under the July 2024 treaty, formed on leaving ECOWAS.",
+   "members": {
+    "Member": [
+     "Mali",
+     "Burkina Faso",
+     "Niger"
+    ]
+   }
+  },
+  {
+   "key": "SADC",
+   "label": "Southern African Development Community",
+   "abbr": "SADC",
+   "group": "Subregional",
+   "href": "https://www.sadc.int",
+   "desc": "Sixteen southern African states from Angola and DR Congo to South Africa and Madagascar.",
+   "members": {
+    "Member": [
+     "Angola",
+     "Botswana",
+     "Comoros",
+     "Congo DR",
+     "Eswatini",
+     "Lesotho",
+     "Madagascar",
+     "Malawi",
+     "Mauritius",
+     "Mozambique",
+     "Namibia",
+     "Seychelles",
+     "South Africa",
+     "Tanzania",
+     "Zambia",
+     "Zimbabwe"
+    ]
+   }
+  },
+  {
+   "key": "EAC",
+   "label": "East African Community",
+   "abbr": "EAC",
+   "group": "Subregional",
+   "href": "https://www.eac.int",
+   "desc": "Eight partner states with a customs union and common market, and a proposed political federation; Somalia joined in 2024.",
+   "members": {
+    "Member": [
+     "Burundi",
+     "Congo DR",
+     "Kenya",
+     "Rwanda",
+     "Somalia",
+     "South Sudan",
+     "Tanzania",
+     "Uganda"
+    ]
+   }
+  },
+  {
+   "key": "ECCAS",
+   "label": "Economic Community of Central African States",
+   "abbr": "ECCAS",
+   "group": "Subregional",
+   "href": "https://ceeac-eccas.org",
+   "desc": "Eleven central African states from Chad to Angola.",
+   "members": {
+    "Member": [
+     "Angola",
+     "Burundi",
+     "Cameroon",
+     "Central African Republic",
+     "Chad",
+     "Congo",
+     "Congo DR",
+     "Equatorial Guinea",
+     "Gabon",
+     "Rwanda",
+     "São Tomé and Príncipe"
+    ]
+   }
+  },
+  {
+   "key": "IGAD",
+   "label": "Intergovernmental Authority on Development",
+   "abbr": "IGAD",
+   "group": "Subregional",
+   "href": "https://igad.int",
+   "desc": "Horn of Africa bloc of seven; Eritrea rejoined in 2023 and withdrew again in December 2025.",
+   "members": {
+    "Member": [
+     "Djibouti",
+     "Ethiopia",
+     "Kenya",
+     "Somalia",
+     "South Sudan",
+     "Sudan",
+     "Uganda"
+    ]
+   }
+  },
+  {
+   "key": "AMU",
+   "label": "Arab Maghreb Union",
+   "abbr": "AMU",
+   "group": "Subregional",
+   "href": "https://maghrebarabe.org",
+   "desc": "Five Maghreb states; largely dormant since the 1990s over the Western Sahara dispute.",
+   "members": {
+    "Member": [
+     "Algeria",
+     "Libya",
+     "Mauritania",
+     "Morocco",
+     "Tunisia"
+    ]
+   }
+  },
+  {
+   "key": "CARICOM",
+   "label": "Caribbean Community",
+   "abbr": "CARICOM",
+   "group": "Subregional",
+   "href": "https://caricom.org",
+   "desc": "Fifteen Caribbean members including Guyana, Suriname and Haiti; Montserrat is a member but not a country here.",
+   "members": {
+    "Member": [
+     "Antigua & Barbuda",
+     "Bahamas",
+     "Barbados",
+     "Belize",
+     "Dominica",
+     "Grenada",
+     "Guyana",
+     "Haiti",
+     "Jamaica",
+     "St. Kitts & Nevis",
+     "Saint Lucia",
+     "St. Vincent & the Grenadines",
+     "Suriname",
+     "Trinidad & Tobago"
+    ]
+   }
+  },
+  {
+   "key": "SICA",
+   "label": "Central American Integration System",
+   "abbr": "SICA",
+   "group": "Subregional",
+   "href": "https://www.sica.int",
+   "desc": "Eight Central American and Caribbean states, the Dominican Republic included.",
+   "members": {
+    "Member": [
+     "Belize",
+     "Costa Rica",
+     "Dominican Republic",
+     "El Salvador",
+     "Guatemala",
+     "Honduras",
+     "Nicaragua",
+     "Panama"
+    ]
+   }
+  },
+  {
+   "key": "CAN",
+   "label": "Andean Community",
+   "abbr": "CAN",
+   "group": "Subregional",
+   "href": "https://www.comunidadandina.org",
+   "desc": "Bolivia, Colombia, Ecuador and Peru; Chile and the Mercosur states are associates.",
+   "members": {
+    "Member": [
+     "Bolivia",
+     "Colombia",
+     "Ecuador",
+     "Peru"
+    ],
+    "Partner": [
+     "Argentina",
+     "Brazil",
+     "Chile",
+     "Paraguay",
+     "Uruguay"
+    ]
+   }
+  },
+  {
+   "key": "ALBA",
+   "label": "Bolivarian Alliance for the Peoples of Our America",
+   "abbr": "ALBA",
+   "group": "Subregional",
+   "href": "https://en.wikipedia.org/wiki/ALBA",
+   "desc": "Venezuela and Cuba's alliance of ten, mostly Caribbean, states; Bolivia's membership was suspended after its 2025 election.",
+   "members": {
+    "Member": [
+     "Antigua & Barbuda",
+     "Cuba",
+     "Dominica",
+     "Grenada",
+     "Nicaragua",
+     "St. Kitts & Nevis",
+     "Saint Lucia",
+     "St. Vincent & the Grenadines",
+     "Venezuela"
+    ],
+    "Suspended": [
+     "Bolivia"
+    ]
+   }
+  },
+  {
+   "key": "PIF",
+   "label": "Pacific Islands Forum",
+   "abbr": "PIF",
+   "group": "Subregional",
+   "href": "https://forumsec.org",
+   "desc": "Eighteen Pacific members from Australia and New Zealand to the atoll states; French Polynesia and New Caledonia are members but not countries here.",
+   "members": {
+    "Member": [
+     "Australia",
+     "Cook Islands",
+     "Fiji",
+     "Kiribati",
+     "Marshall Islands",
+     "Federated States of Micronesia",
+     "Nauru",
+     "New Zealand",
+     "Niue",
+     "Palau",
+     "Papua New Guinea",
+     "Samoa",
+     "Solomon Islands",
+     "Tonga",
+     "Tuvalu",
+     "Vanuatu"
+    ]
+   }
+  },
+  {
+   "key": "SAARC",
+   "label": "South Asian Association for Regional Cooperation",
+   "abbr": "SAARC",
+   "group": "Subregional",
+   "href": "https://www.saarc-sec.org",
+   "desc": "Eight South Asian states; summits have been stalled since 2014 by the India-Pakistan dispute.",
+   "members": {
+    "Member": [
+     "Afghanistan",
+     "Bangladesh",
+     "Bhutan",
+     "India",
+     "Maldives",
+     "Nepal",
+     "Pakistan",
+     "Sri Lanka"
+    ]
+   }
+  },
+  {
+   "key": "BIMSTEC",
+   "label": "Bay of Bengal Initiative for Multi-Sectoral Technical and Economic Cooperation",
+   "abbr": "BIMSTEC",
+   "group": "Subregional",
+   "href": "https://bimstec.org",
+   "desc": "Seven states around the Bay of Bengal, the grouping India has favoured over SAARC.",
+   "members": {
+    "Member": [
+     "Bangladesh",
+     "Bhutan",
+     "India",
+     "Myanmar",
+     "Nepal",
+     "Sri Lanka",
+     "Thailand"
+    ]
+   }
+  },
+  {
+   "key": "EAEU",
+   "label": "Eurasian Economic Union",
+   "abbr": "EAEU",
+   "group": "Subregional",
+   "href": "https://eaeunion.org",
+   "desc": "Russia-led economic union of five with a common market; observers include Uzbekistan and Cuba.",
+   "members": {
+    "Member": [
+     "Armenia",
+     "Belarus",
+     "Kazakhstan",
+     "Kyrgyzstan",
+     "Russia"
+    ],
+    "Observer": [
+     "Cuba",
+     "Iran",
+     "Moldova",
+     "Uzbekistan"
+    ]
+   }
+  },
+  {
+   "key": "CIS",
+   "label": "Commonwealth of Independent States",
+   "abbr": "CIS",
+   "group": "Subregional",
+   "href": "https://cis.minsk.by",
+   "desc": "Post-Soviet association; Ukraine and Georgia have left, Moldova gave notice in April 2026 and leaves in April 2027, Turkmenistan is an associate.",
+   "members": {
+    "Member": [
+     "Armenia",
+     "Azerbaijan",
+     "Belarus",
+     "Kazakhstan",
+     "Kyrgyzstan",
+     "Moldova",
+     "Russia",
+     "Tajikistan",
+     "Uzbekistan"
+    ],
+    "Partner": [
+     "Turkmenistan"
+    ]
+   }
+  },
+  {
+   "key": "OTS",
+   "label": "Organization of Turkic States",
+   "abbr": "OTS",
+   "group": "Subregional",
+   "href": "https://www.turkicstates.org",
+   "desc": "Five Turkic-speaking states; Hungary and Turkmenistan observe.",
+   "members": {
+    "Member": [
+     "Azerbaijan",
+     "Kazakhstan",
+     "Kyrgyzstan",
+     "Turkey",
+     "Uzbekistan"
+    ],
+    "Observer": [
+     "Hungary",
+     "Turkmenistan"
+    ]
+   }
+  },
+  {
+   "key": "EFTA",
+   "label": "European Free Trade Association",
+   "abbr": "EFTA",
+   "group": "Subregional",
+   "href": "https://www.efta.int",
+   "desc": "The four European states outside the EU with single-market access: Iceland, Liechtenstein, Norway, Switzerland.",
+   "members": {
+    "Member": [
+     "Iceland",
+     "Liechtenstein",
+     "Norway",
+     "Switzerland"
+    ]
+   }
+  },
+  {
+   "key": "Nordic Council",
+   "label": "Nordic Council",
+   "abbr": "Nordic",
+   "group": "Subregional",
+   "href": "https://www.norden.org",
+   "desc": "The five Nordic states with the Faroe Islands, Greenland and Åland; a parliamentary body since 1952.",
+   "members": {
+    "Member": [
+     "Denmark",
+     "Finland",
+     "Iceland",
+     "Norway",
+     "Sweden"
+    ]
+   }
+  },
+  {
+   "key": "Benelux",
+   "label": "Benelux Union",
+   "abbr": "Benelux",
+   "group": "Subregional",
+   "href": "https://www.benelux.int",
+   "desc": "Belgium, the Netherlands and Luxembourg; the 1944 customs union that preceded the EU.",
+   "members": {
+    "Member": [
+     "Belgium",
+     "Netherlands",
+     "Luxembourg"
+    ]
+   }
+  },
+  {
+   "key": "Visegrád",
+   "label": "Visegrád Group",
+   "abbr": "V4",
+   "group": "Subregional",
+   "href": "https://www.visegradgroup.eu",
+   "desc": "Czechia, Hungary, Poland and Slovakia; a political grouping since 1991.",
+   "members": {
+    "Member": [
+     "Czech Republic",
+     "Hungary",
+     "Poland",
+     "Slovakia"
+    ]
+   }
+  },
+  {
+   "key": "USMCA",
+   "label": "United States-Mexico-Canada Agreement",
+   "abbr": "USMCA",
+   "group": "Trade",
+   "href": "https://ustr.gov/usmca",
+   "desc": "The 2020 successor to NAFTA.",
+   "members": {
+    "Member": [
+     "United States",
+     "Mexico",
+     "Canada"
+    ]
+   }
+  },
+  {
+   "key": "CPTPP",
+   "label": "Comprehensive and Progressive Agreement for Trans-Pacific Partnership",
+   "abbr": "CPTPP",
+   "group": "Trade",
+   "href": "https://en.wikipedia.org/wiki/Comprehensive_and_Progressive_Agreement_for_Trans-Pacific_Partnership",
+   "desc": "Twelve Pacific-rim economies; the United Kingdom acceded in December 2024 and Costa Rica's accession working group concluded in May 2026.",
+   "members": {
+    "Member": [
+     "Australia",
+     "Brunei",
+     "Canada",
+     "Chile",
+     "Japan",
+     "Malaysia",
+     "Mexico",
+     "New Zealand",
+     "Peru",
+     "Singapore",
+     "United Kingdom",
+     "Vietnam"
+    ],
+    "Applicant": [
+     "Costa Rica"
+    ]
+   }
+  },
+  {
+   "key": "RCEP",
+   "label": "Regional Comprehensive Economic Partnership",
+   "abbr": "RCEP",
+   "group": "Trade",
+   "href": "https://rcepsec.org",
+   "desc": "The ten ASEAN states with Australia, China, Japan, New Zealand and South Korea; the largest trade bloc by population.",
+   "members": {
+    "Member": [
+     "Australia",
+     "Brunei",
+     "Cambodia",
+     "China",
+     "Indonesia",
+     "Japan",
+     "Laos",
+     "Malaysia",
+     "Myanmar",
+     "New Zealand",
+     "Philippines",
+     "Singapore",
+     "South Korea",
+     "Thailand",
+     "Vietnam"
+    ]
+   }
+  }
+ ],
+ "overrides": {
+  "_why": "Corrections to the WORKBOOK organisations (international_orgs.csv is their source and was not edited). Applied after the merge: a status string sets it, null removes the membership. Move these into the workbook when it is next edited and delete them here.",
+  "OPEC": {
+   "United Arab Emirates": null
+  },
+  "OPEC+": {
+   "United Arab Emirates": null
+  },
+  "SCO": {
+   "Laos": "Dialogue"
+  },
+  "African Union": {
+   "Mali": "Suspended",
+   "Sudan": "Suspended",
+   "Burkina Faso": "Suspended",
+   "Niger": "Suspended",
+   "Madagascar": "Suspended",
+   "Guinea-Bissau": "Suspended",
+   "São Tomé and Príncipe": "Member"
+  },
+  "OAS": {
+   "Nicaragua": null,
+   "St. Kitts & Nevis": "Member",
+   "St. Vincent & the Grenadines": "Member"
+  },
+  "Commonwealth": {
+   "Gabon": "Member",
+   "Togo": "Member",
+   "St. Kitts & Nevis": "Member",
+   "St. Vincent & the Grenadines": "Member"
+  },
+  "_notes": [
+   "OPEC / OPEC+: the UAE withdrew effective 1 May 2026 (Enerdata, Khaleej Times).",
+   "SCO: Laos became the fifteenth dialogue partner at the 2025 Tianjin summit.",
+   "African Union: six suspensions in force (Mali 2021, Sudan 2021, Burkina Faso 2022, Niger 2023, Madagascar 2025, Guinea-Bissau 2025); Gabon (April 2025) and Guinea (January 2026) reinstated.",
+   "OAS: Nicaragua's withdrawal took effect 19 November 2023.",
+   "Commonwealth: Gabon (suspension lifted July 2025), Togo (joined 2022), St Kitts & Nevis and St Vincent were missing from the workbook.",
+   "Kept as Member with a caveat: Armenia in the CSTO (participation frozen since 2024, no formal withdrawal); Saudi Arabia in BRICS+ (invited, still 'assessing'); Moldova in the CIS (leaves April 2027); Cuba in the OAS (member, non-participating).",
+   "2026-09-10 Wikidata tripwire, first run: São Tomé and Príncipe was missing from the UN and the African Union, St Kitts & Nevis and St Vincent from the UN and the OAS (all four are members; workbook rows never filled)."
+  ],
+  "UN": {
+   "São Tomé and Príncipe": "Member",
+   "St. Kitts & Nevis": "Member",
+   "St. Vincent & the Grenadines": "Member"
+  }
+ }
+}

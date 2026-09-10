@@ -12,7 +12,7 @@ import {
   frFmtPct,
   type FrPresElection,
 } from "@/lib/frElections";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import LegElectionDetail from "../../LegDetailShared";
 import SortableTable from "../../SortableTable";
 import { DetailPager } from "../../HubShared";
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title,
     description: e.summary,
     alternates: { canonical: path },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: e.summary, url: `${BASE_URL}${path}`, type: "article" },
+    openGraph: { images: [{ url: ogImage(title, path), width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: e.summary, url: `${BASE_URL}${path}`, type: "article" },
   };
 }
 

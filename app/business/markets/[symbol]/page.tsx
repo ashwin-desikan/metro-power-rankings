@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getMarketSeries } from "@/lib/business";
 import { MARKET_PAGE_SLUGS, hasMarketPage, MARKETS_COMPARE } from "@/lib/marketPages";
 import { makeDeflator, deflateSeries, cagrPct } from "@/lib/realTerms";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import BusinessNav from "../../BusinessNav";
 import { MONO, CARD } from "../../ui";
 import SeriesChart from "./SeriesChart";
@@ -58,8 +58,8 @@ export async function generateMetadata({ params }: { params: Promise<{ symbol: s
     title: `${title} | Business of the Metros`,
     description,
     alternates: { canonical: `/business/markets/${symbol}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description, url: `${BASE_URL}/business/markets/${symbol}`, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description },
+    openGraph: { images: [{ url: ogImage(title, `/business/markets/${symbol}`), width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description, url: `${BASE_URL}/business/markets/${symbol}`, type: "website" },
+    twitter: { images: [ogImage(title, `/business/markets/${symbol}`)], card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description },
   };
 }
 

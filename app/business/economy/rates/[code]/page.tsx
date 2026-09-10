@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getRatesIndex, getBank, type RateChange } from "@/lib/economyRates";
 import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import BusinessNav from "../../../BusinessNav";
 import { MONO, CARD, TH, THR, TD, TDR, Crumbs, TabHeader, TableBox, SectionHead } from "../../../ui";
 import EconomyNav from "../../EconomyNav";
@@ -53,8 +53,8 @@ export async function generateMetadata({ params }: { params: Promise<{ code: str
     title: `${title} | Business of the Metros`,
     description,
     alternates: { canonical: `/business/economy/rates/${code}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description, url: `${BASE_URL}/business/economy/rates/${code}`, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description },
+    openGraph: { images: [{ url: ogImage(title, `/business/economy/rates/${code}`), width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description, url: `${BASE_URL}/business/economy/rates/${code}`, type: "website" },
+    twitter: { images: [ogImage(title, `/business/economy/rates/${code}`)], card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description },
   };
 }
 

@@ -5,7 +5,7 @@ import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import TopTeamChip from "@/app/teams/TopTeamChip";
 import HeartbreakTag from "@/app/teams/HeartbreakTag";
 import HeartbreakPanel from "@/app/teams/HeartbreakPanel";
@@ -38,8 +38,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const desc = `${t.name} college football: ${titles}all-time ${t.w}-${t.l}${t.tie ? `-${t.tie}` : ""} (${t.pct.toFixed(3)}). Conference: ${t.conference}.`;
   return {
     title: `${t.name}: College Football`, description: desc, alternates: { canonical: path },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${t.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${t.name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: ogImage(t.name, path), width: 1200, height: 630 }], title: `${t.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
+    twitter: { images: [ogImage(t.name, path)], card: "summary_large_image", title: `${t.name} | ${SITE_NAME}`, description: desc },
   };
 }
 

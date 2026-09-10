@@ -154,6 +154,9 @@ const SUBDIVISION_CDN_CODES: Record<string, string> = {
   "st-helena": "sh",
   "timor-leste": "tl",
   "ivory-coast": "ci",
+  // The /countries slug (COUNTRY_FLAGS only knows the international "cote-d-ivoire"); the
+  // country hub and the 2100 board had no flag until 2026-09-10.
+  "cote-divoire": "ci",
   // Baseball/WBC entities. Chinese Taipei is intentionally absent: the team
   // competes under the Chinese Taipei Olympic flag, which flagcdn lacks.
   "great-britain": "gb",
@@ -216,6 +219,11 @@ export const HISTORICAL_FLAG = "🏛️";
 export const TEAM_DISPLAY_NAME_OVERRIDES: Record<string, string> = {
   "czech-republic": "Czechia",
   turkey: "Türkiye",
+  // Côte d'Ivoire is the canonical name on this site (Ashwin, 2026-09-10:
+  // "anywhere where it says Ivory Coast on this site should be changed");
+  // the country's own request since 1986. Both sport slugs map to it.
+  "ivory-coast": "Côte d'Ivoire",
+  "cote-d-ivoire": "Côte d'Ivoire",
 };
 
 export function displayNameForTeam(slug: string, fallback: string): string {

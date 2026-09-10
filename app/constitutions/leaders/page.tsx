@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getTenures, ranked, unchanged, OFFICE_LABEL } from "@/lib/constitutionTenures";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { StatTile } from "@/app/elections/HubShared";
 import SortableTable from "@/app/elections/SortableTable";
 import { CappedList } from "@/app/_shared/Disclosure";
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: {
-    images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+    images: [{ url: ogImage(TITLE, PATH), width: 1200, height: 630 }],
     title: `${TITLE} | ${SITE_NAME}`,
     description: DESC,
     url: `${BASE_URL}${PATH}`,

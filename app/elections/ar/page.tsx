@@ -8,7 +8,7 @@ import {
   arWinnerOf,
   type ArPresElection,
 } from "@/lib/arElections";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import LineChart, { type ChartSeries } from "../LineChart";
 import { StatTile, JumpNav, RecordsGrid, HowItWorks, HubFooter, HubTitle } from "../HubShared";
 
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
+  openGraph: { images: [{ url: ogImage(TITLE, PATH), width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
 };
 
 function PresCard({ e }: { e: ArPresElection }) {

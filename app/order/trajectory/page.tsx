@@ -7,7 +7,7 @@ import { CappedList, Disclosure } from "@/app/_shared/Disclosure";
 import { SectionHead } from "@/app/_shared/SectionHead";
 import { TableScroll } from "@/app/_shared/TableScroll";
 import { getTrajectory, type TrajectoryCountry } from "@/lib/order";
-import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd } from "@/lib/seo";
+import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd, ogImage } from "@/lib/seo";
 
 const PATH = "/order/trajectory";
 const TITLE = "Direction of Travel";
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website", images: [{ url: "/og-default.png", width: 1200, height: 630 }] },
-  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC, images: ["/og-default.png"] },
+  openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website", images: [{ url: ogImage(TITLE, PATH), width: 1200, height: 630 }] },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC, images: [ogImage(TITLE, PATH)] },
 };
 
 const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;

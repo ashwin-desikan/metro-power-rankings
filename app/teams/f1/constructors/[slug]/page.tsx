@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { f1ConstructorCrestName } from "@/lib/f1Crest";
 import { CappedList } from "@/app/_shared/Disclosure";
@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title, description: desc,
     alternates: { canonical: `/teams/f1/constructors/${slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/f1/constructors/${slug}`, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: ogImage(title, `/teams/f1/constructors/${slug}`), width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/f1/constructors/${slug}`, type: "website" },
+    twitter: { images: [ogImage(title, `/teams/f1/constructors/${slug}`)], card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description: desc },
   };
 }
 

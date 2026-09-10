@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getHousingIndex, getHousingMsa } from "@/lib/economyHousing";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import BusinessNav from "../../../BusinessNav";
 import { MONO, CARD, TH, THR, TD, TDR, Crumbs, TabHeader, TableBox, SectionHead } from "../../../ui";
 import EconomyNav from "../../EconomyNav";
@@ -34,8 +34,8 @@ export async function generateMetadata({ params }: { params: Promise<{ cbsa: str
     title: `${title} | Business of the Metros`,
     description,
     alternates: { canonical: `/business/economy/housing/${cbsa}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description, url: `${BASE_URL}/business/economy/housing/${cbsa}`, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description },
+    openGraph: { images: [{ url: ogImage(title, `/business/economy/housing/${cbsa}`), width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description, url: `${BASE_URL}/business/economy/housing/${cbsa}`, type: "website" },
+    twitter: { images: [ogImage(title, `/business/economy/housing/${cbsa}`)], card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description },
   };
 }
 

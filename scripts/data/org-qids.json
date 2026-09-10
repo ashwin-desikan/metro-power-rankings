@@ -1,0 +1,178 @@
+{
+ "AES": {
+  "qid": "Q122624387",
+  "label": "Alliance of Sahel States"
+ },
+ "ALBA": {
+  "qid": "Q8874",
+  "label": "ALBA"
+ },
+ "AMU": {
+  "qid": "Q370862",
+  "label": "Arab Maghreb Union"
+ },
+ "APEC": {
+  "qid": "Q170481",
+  "label": "Asia-Pacific Economic Cooperation"
+ },
+ "ASEAN": {
+  "qid": "Q7768",
+  "label": "ASEAN"
+ },
+ "African Union": {
+  "qid": "Q7159",
+  "label": "African Union"
+ },
+ "Arab League": {
+  "qid": "Q7172",
+  "label": "Arab League"
+ },
+ "BIMSTEC": {
+  "qid": "Q795985",
+  "label": "Bay of Bengal Initiative for Multi-Sectoral Technical and Economic Cooperation"
+ },
+ "BRICS+": {
+  "qid": "Q243630",
+  "label": "BRICS"
+ },
+ "Benelux": {
+  "qid": "Q13116",
+  "label": "Benelux"
+ },
+ "CAN": {
+  "qid": "Q471690",
+  "label": "Andean Community"
+ },
+ "CARICOM": {
+  "qid": "Q205995",
+  "label": "Caribbean Community"
+ },
+ "CIS": {
+  "qid": "Q7779",
+  "label": "Commonwealth of Independent States"
+ },
+ "CPTPP": {
+  "qid": "Q48852287",
+  "label": "Comprehensive and Progressive Agreement for Trans-Pacific Partnership"
+ },
+ "CSTO": {
+  "qid": "Q318693",
+  "label": "Collective Security Treaty Organization"
+ },
+ "Commonwealth": {
+  "qid": "Q7785",
+  "label": "Commonwealth of Nations"
+ },
+ "EAC": {
+  "qid": "Q337456",
+  "label": "East African Community"
+ },
+ "EAEU": {
+  "qid": "Q4173083",
+  "label": "Eurasian Economic Union"
+ },
+ "ECCAS": {
+  "qid": "Q189966",
+  "label": "Economic Community of Central African States"
+ },
+ "ECOWAS": {
+  "qid": "Q193272",
+  "label": "Economic Community of West African States"
+ },
+ "EFTA": {
+  "qid": "Q166546",
+  "label": "European Free Trade Association"
+ },
+ "EU": {
+  "qid": "Q458",
+  "label": "European Union"
+ },
+ "G20": {
+  "qid": "Q19771",
+  "label": "G20"
+ },
+ "G7": {
+  "qid": "Q1764511",
+  "label": "G7"
+ },
+ "GCC": {
+  "qid": "Q217172",
+  "label": "Cooperation Council for the Arab States of the Persian Gulf"
+ },
+ "IGAD": {
+  "qid": "Q499039",
+  "label": "Intergovernmental Authority on Development"
+ },
+ "Mercosur": {
+  "qid": "Q4264",
+  "label": "Mercosur"
+ },
+ "NATO": {
+  "qid": "Q7184",
+  "label": "NATO"
+ },
+ "Nordic Council": {
+  "qid": "Q146165",
+  "label": "Nordic Council"
+ },
+ "OAS": {
+  "qid": "Q123759",
+  "label": "Organization of American States"
+ },
+ "OECD": {
+  "qid": "Q41550",
+  "label": "Organization for Economic Cooperation and Development"
+ },
+ "OPEC": {
+  "qid": "Q7795",
+  "label": "Organization of the Petroleum Exporting Countries"
+ },
+ "OPEC+": {
+  "qid": "Q121826282",
+  "label": "OPEC+"
+ },
+ "OTS": {
+  "qid": "Q596850",
+  "label": "Organization of Turkic States"
+ },
+ "PIF": {
+  "qid": "Q757276",
+  "label": "Pacific Islands Forum"
+ },
+ "RCEP": {
+  "qid": "Q11523819",
+  "label": "Regional Comprehensive Economic Partnership"
+ },
+ "SAARC": {
+  "qid": "Q145700",
+  "label": "South Asian Association for Regional Cooperation"
+ },
+ "SADC": {
+  "qid": "Q816706",
+  "label": "Southern African Development Community"
+ },
+ "SCO": {
+  "qid": "Q485207",
+  "label": "Shanghai Cooperation Organisation"
+ },
+ "SICA": {
+  "qid": "Q190028",
+  "label": "Central American Integration System"
+ },
+ "UN": {
+  "qid": "Q1065",
+  "label": "United Nations"
+ },
+ "USMCA": {
+  "qid": "Q56839716",
+  "label": "United States–Mexico–Canada Agreement"
+ },
+ "Visegrád": {
+  "qid": "Q244323",
+  "label": "Visegrád Group"
+ },
+ "_meta": {
+  "reviewed": "2026-09-10",
+  "note": "Wikidata items per organisation key, reviewed by hand from wbsearchentities hits; the check script skips any entry carrying an 'auto' flag."
+ }
+}

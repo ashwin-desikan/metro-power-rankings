@@ -4,7 +4,7 @@ import path from "node:path";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import { TableScroll } from "@/app/_shared/TableScroll";
-import { SITE_NAME } from "@/lib/seo";
+import { SITE_NAME, ogImage } from "@/lib/seo";
 import { resolveTeamLink } from "@/lib/teamLinks";
 import { getAllNationalTeamSlugs } from "@/lib/international";
 import { getAllCricketTeams } from "@/lib/cricket";
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_PATH },
   openGraph: {
-    images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+    images: [{ url: ogImage(PAGE_TITLE, PAGE_PATH), width: 1200, height: 630 }],
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,
     url: PAGE_PATH,
     type: "website",
   },
   twitter: {
-    images: ["/og-default.png"],
+    images: [ogImage(PAGE_TITLE, PAGE_PATH)],
     card: "summary_large_image",
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,

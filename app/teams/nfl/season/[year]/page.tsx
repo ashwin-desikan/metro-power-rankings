@@ -26,7 +26,7 @@ import {
   getTopGamesForYear, nflSlugForEraTeam, nflSlugForCanonical, nflLineColor,
   logoUrlFor, monogramFor, MONOGRAM_BY_SLUG,
 } from "@/lib/nfl";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 
 // One NFL season, from the weekly Elo spine.
 //
@@ -74,13 +74,13 @@ export async function generateMetadata({ params }: { params: Promise<{ year: str
     description,
     alternates: { canonical: `/teams/nfl/season/${n}` },
     openGraph: {
-      images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+      images: [{ url: ogImage(title, `/teams/nfl/season/${n}`), width: 1200, height: 630 }],
       title: `${title} | ${SITE_NAME}`,
       description,
       url: `${BASE_URL}/teams/nfl/season/${n}`,
       type: "website",
     },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description },
+    twitter: { images: [ogImage(title, `/teams/nfl/season/${n}`)], card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description },
   };
 }
 

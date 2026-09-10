@@ -14,6 +14,7 @@ import FootballHubNav from "@/app/teams/FootballHubNav";
 import ClubHistoryChart from "../ClubHistoryChart";
 import ClubExpectationPanel from "@/app/teams/_shared/ClubExpectationPanel";
 import ClubValuePanel from "@/app/teams/_shared/ClubValuePanel";
+import ClubMoneyPanel from "@/app/teams/_shared/ClubMoneyPanel";
 import TeamGreatestGames from "../TeamGreatestGames";
 import { getClubGamesForTeam } from "@/lib/clubGames";
 import { getPlExpectationClub } from "@/lib/plExpectation";
@@ -50,7 +51,7 @@ import { slugify } from "@/lib/shared";
 import { getCurrentMlsStandings } from "@/lib/mls-standings";
 import { getClubStandings } from "@/lib/clubFootballLive";
 import { liveSeasonForClub, LIVE_SEASON_END_YEAR } from "@/lib/footballLiveMembership";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 
 // Pre-generate only clubs that have ever played top-flight (Level 1) football,
 // plus the cup-only entries getAllClubSlugs adds on top of the main roster
@@ -94,12 +95,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: c.cur_name,
     description: desc,
     alternates: { canonical: `/teams/football/${c.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+    openGraph: { images: [{ url: ogImage(c.cur_name, `/teams/football/${c.slug}`), width: 1200, height: 630 }],
       title: `${c.cur_name} | ${SITE_NAME}`,
       description: desc,
       url: `${BASE_URL}/teams/football/${c.slug}`,
       type: "website",
     },
+    twitter: { card: "summary_large_image", title: `${c.cur_name} | ${SITE_NAME}`, description: desc, images: [ogImage(c.cur_name, `/teams/football/${c.slug}`)] },
   };
 }
 
@@ -296,6 +298,8 @@ export default async function FootballClubPage({ params }: Props) {
       <ClubExpectationPanel entry={expectation} intl={intlExpectation} />
 
       <ClubValuePanel slug={club.slug} />
+
+      <ClubMoneyPanel slug={club.slug} />
 
       <TeamGreatestGames rows={topGames} slug={club.slug} teamName={club.cur_name} />
 

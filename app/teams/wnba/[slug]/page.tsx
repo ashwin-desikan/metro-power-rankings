@@ -8,7 +8,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllFranchiseSlugs, getFranchiseBySlug, getFranchiseSeasons, getWnbaFranchiseByTeamName, type WnbaFranchise, type WnbaSeason } from "@/lib/wnba";
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import TopTeamChip from "@/app/teams/TopTeamChip";
 import { CappedList } from "@/app/_shared/Disclosure";
 
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${f.name}: WNBA`,
     description: desc,
     alternates: { canonical: `/teams/wnba/${f.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${f.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/wnba/${f.slug}`, type: "website" },
+    openGraph: { images: [{ url: ogImage(f.name, `/teams/wnba/${f.slug}`), width: 1200, height: 630 }], title: `${f.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/wnba/${f.slug}`, type: "website" },
   };
 }
 

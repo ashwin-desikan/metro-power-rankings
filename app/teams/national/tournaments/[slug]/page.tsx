@@ -8,7 +8,7 @@ import {
   type TournamentHub,
 } from "@/lib/international";
 import { flagForTeam, flagCdnUrl, displayNameForTeam } from "@/lib/international-display";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: hub.label,
     description: `${hub.label} all-time champions, finalists, and most decorated national teams from ${hub.year_min} to ${hub.year_max}.`,
     alternates: { canonical: `/teams/national/tournaments/${hub.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+    openGraph: { images: [{ url: ogImage(hub.label, `/teams/national/tournaments/${hub.slug}`), width: 1200, height: 630 }],
       title: `${hub.label} | ${SITE_NAME}`,
       description: `${hub.label} history: all-time champions and most decorated teams.`,
       url: `${BASE_URL}/teams/national/tournaments/${hub.slug}`,

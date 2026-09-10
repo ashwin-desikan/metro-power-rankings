@@ -3,7 +3,7 @@ import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
 import { getWClubs, getWMeta, getWTournamentCompetitions, getWLeagueHubs, decoratedRows, WCOLS_DEFAULT } from "@/lib/wfootball";
 import { getWLiveLeagues, getWLiveCompetition, getWLiveOdds } from "@/lib/wLive";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import MostDecoratedClubsTable from "@/app/teams/wfootball/MostDecoratedClubsTable";
 import WLiveHub from "@/app/teams/wfootball/WLiveHub";
 import { SportBadge } from "@/app/teams/_shared/SportIcon";
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_PATH },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION, url: PAGE_URL, type: "website" },
-  twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
+  openGraph: { images: [{ url: ogImage(PAGE_TITLE, PAGE_URL), width: 1200, height: 630 }], title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION, url: PAGE_URL, type: "website" },
+  twitter: { images: [ogImage(PAGE_TITLE, PAGE_URL)], card: "summary_large_image", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
 };
 
 export default async function WFootballHubPage() {

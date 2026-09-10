@@ -48,13 +48,7 @@ import { countryHasOrgs } from "@/lib/orgs";
 import { formatPop, regionColors, fmtArea } from "@/lib/shared";
 import { flagUrl, flagSrcSet } from "@/lib/flags";
 import { CappedList } from "@/app/_shared/Disclosure";
-import {
-  AUTHOR,
-  BASE_URL,
-  PUBLISHER,
-  SITE_NAME,
-  serializeJsonLd,
-} from "@/lib/seo";
+import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd, ogImage } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -113,8 +107,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: c.name,
     description: desc,
     alternates: { canonical: `/countries/${c.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${c.name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${c.name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: ogImage(c.name, url), width: 1200, height: 630 }], title: `${c.name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+    twitter: { images: [ogImage(c.name, url)], card: "summary_large_image", title: `${c.name} | ${SITE_NAME}`, description: desc },
   };
 }
 

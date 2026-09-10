@@ -336,6 +336,47 @@ never does.
   lead with a rank cell, still pass `stickyCol={2}`.
 - A table's mobile counterpart is a `<CappedList>`, per §2 — the table rules
   above cover only half of a responsive board.
+- **Every board is sortable, on both surfaces (added 2026-09-10).** A table
+  with five or more heading columns is a board, and a board sorts on every
+  column that carries a value: on the desktop table by clicking the heading
+  (numeric columns start largest-first, a second click reverses, a third
+  restores the board's own order, `aria-sort` on the active heading), and on
+  the phone list by a Sort select and a direction button above it, driving
+  the same state. The rank column is the POSITION under the current sort.
+  `app/_shared/SortableBoard.tsx` is the primitive and the only sanctioned
+  way to build one: the caller passes column specs and per-row cell nodes,
+  the board owns the shell, the order and both controls. A table whose order
+  IS its content (a fixture list, a decade-by-decade series, a key/value
+  board) is exempt when its `<table>` carries `data-static-sort="<reason>"`.
+  Enforced by `check:sortable` against the ratchet baseline
+  `scripts/sortable-baseline.json` (203 fixed-order boards in 141 files on
+  the day the rule landed; shrink it as files move to the primitive, never
+  grow it). Ashwin, on the fourth new board of the week to ship without it:
+  "When you build tables, they always need to be sortable, right? ... I
+  don't want to have to keep repeating this."
+- **A board fits its container at every width; the scroll box is the last
+  resort, not the design (added 2026-09-10).** The horizontal scroll box that
+  §3 allows for tables is there so a legacy table never breaks the page; it is
+  not how a new board handles width. Ashwin, on seeing the 2100 board scroll in
+  a tablet-width preview: "We don't scroll when it comes to left-right
+  scrolling. It's such a non-intuitive way of design ... if you go to a
+  reference site and look at a table on mobile, it just behaves differently."
+  What a reference site does is show fewer columns. So: every column beyond
+  the identity and the two or three that make the argument carries a width
+  tier (`SortableBoard`'s `demote`: `"sm" | "md" | "lg" | "xl" | "2xl"`, the
+  narrowest viewport it appears at), chosen by MEASURING the table against its
+  container at 640, 768, 1024, 1280 and 1536 (`_scratch/measure-tiers.mjs` is
+  the pattern) until nothing overflows at any of them. A long identity cell
+  WRAPS in a fixed-width column rather than truncating when the name is what
+  tells rows apart (Ashwin, 2026-09-10, on the 2100 board's blocs: "I'd want
+  the entirety of the name shown ... a lot of these are similarly named at
+  the beginning"); a row is as tall as its name, and the marks beside the
+  name (flag, chip, count) go inline so the text uses the whole column.
+  Truncate with a title only where the tail of a name carries nothing the
+  reader needs. Under 640 the phone list (§2) carries the whole row,
+  so nothing is lost, only deferred to a wider screen. The order of columns
+  puts the argument first (§4, value before metadata), so the always-shown set
+  is the left edge and every tier adds to its right.
 
 ---
 
@@ -553,15 +594,29 @@ cards at random, doubled titles) came from Next's SHALLOW metadata merge: a
 page that exports its own `openGraph` object replaces the layout's ENTIRELY,
 images included.
 
-- `app/opengraph-image.png` + `app/twitter-image.png` (+ `alt.txt`) are the
-  sitewide fallback card — file-convention images inherit into every route,
-  so a page-level `openGraph` without `images` still shares with the brand
-  card. **Never delete these**; update both together with
-  `public/og-default.png`.
-- **Titles never hardcode "| Global Metro Power Rankings"** — the layout's
-  title template appends it (hardcoding doubles it in the tab and in
-  shares). og/twitter titles MAY spell out `${TITLE} | ${SITE_NAME}`,
-  because templates do not apply there.
+- **The brand is Citizen of Nowhere, and every page's card says so (rewritten
+  2026-09-10).** Ashwin, on pasting a link into WhatsApp: "it should say the
+  name of the page: Citizen of Nowhere ... something professional and
+  representative of the page that is being shared." So: `SITE_NAME` in
+  `lib/seo.ts` is "Citizen of Nowhere" (the dataset keeps `DATASET_NAME` for
+  JSON-LD only); the title template appends "| Citizen of Nowhere"; and every
+  page's `openGraph.images` and `twitter.images` are
+  `ogImage(TITLE, PATH)` from `lib/seo`, which points at the `/og` route:
+  the site's dark card with the section's emoji tile (`lib/ogBrand.ts`
+  maps a path prefix to emoji and kicker), the page title, the kicker and
+  the wordmark, rendered on the edge by Satori with Twemoji, cached a week.
+  `app/opengraph-image.tsx` is the same card with no title, for the home
+  page and any route without an image; the old static PNGs are gone.
+  `public/og-default.png` is a render of the home card, kept for the few
+  pages that still reference it by name. Routes with a RICHER card of their
+  own (`/rankings/[slug]`, `/badges/[slug]`, `/sports`) keep their
+  `opengraph-image.tsx` and must NOT set `openGraph.images`, or the plain
+  card would override it; their wordmark reads Citizen of Nowhere too. A
+  new page never references `/og-default.png`; it calls `ogImage`.
+- **Titles never hardcode the brand suffix** — the layout's title template
+  appends it (hardcoding doubles it in the tab and in shares). og/twitter
+  titles MAY spell out `${TITLE} | ${SITE_NAME}`, because templates do not
+  apply there.
 - **Twitter card is `summary_large_image` everywhere.** Never `summary`.
 - Every `page.tsx` exports metadata (or `generateMetadata`) with: title,
   description (≤160 chars, reads like a sentence, no keyword soup),
@@ -583,8 +638,13 @@ images included.
 
 `typecheck` → `check:client-imports` → `check:public-data` →
 `check:slug-drift` → `check:team-placement` → `check:skyscrapers` →
-`check:score-parity` → `check:table-scroll` → **`check:mobile`** →
-`check:live-data` → `vitest` → `pytest` → `next build`.
+`check:score-parity` → `check:table-scroll` → **`check:sortable`** →
+**`check:mobile`** → `check:live-data` → `vitest` → `pytest` → `next build`.
+
+**`check:sortable`** (`scripts/check-sortable.mjs`) enforces the §4 board
+rule: a `<table>` with five or more heading columns must come from
+`SortableBoard` or carry `data-static-sort="<reason>"`. Ratchet baseline
+`scripts/sortable-baseline.json`; `--write-baseline` ONLY to shrink it.
 
 Run it before declaring ANY frontend change done. Never `next build` while
 the dev server holds :3000.

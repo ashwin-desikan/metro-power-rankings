@@ -2,13 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getActivityFeed, type ActivityEntry, type ActivityCategory } from "@/lib/activity";
 import { RELEASES } from "@/lib/releases";
-import {
-  AUTHOR,
-  BASE_URL,
-  PUBLISHER,
-  SITE_NAME,
-  serializeJsonLd,
-} from "@/lib/seo";
+import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd, ogImage } from "@/lib/seo";
 
 // The feed is regenerated + committed daily with [vercel skip]; read it from
 // GitHub raw on an hourly revalidate so new entries appear without a build.
@@ -31,13 +25,13 @@ export const metadata: Metadata = {
   // not the actual protection.
   robots: { index: false, follow: false },
   alternates: { canonical: PAGE_PATH },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+  openGraph: { images: [{ url: ogImage(PAGE_TITLE, PAGE_URL), width: 1200, height: 630 }],
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,
     url: PAGE_URL,
     type: "website",
   },
-  twitter: { images: ["/og-default.png"],
+  twitter: { images: [ogImage(PAGE_TITLE, PAGE_URL)],
     card: "summary_large_image",
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,

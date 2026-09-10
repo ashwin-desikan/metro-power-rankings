@@ -31,7 +31,7 @@ import { getPsElections } from "@/lib/psElections";
 import { getVaElections } from "@/lib/vaElections";
 import { ELECTION_HUBS, HUB_REGION, GOVERNMENT_TYPE_LABELS, nextElections, nextKind } from "@/lib/electionHubsMeta";
 import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import HubDirectory, { type DirRow } from "./HubDirectory";
 import { getUsElections } from "@/lib/usElections";
 import ElectionsWorldMap, { type HubMarker } from "./ElectionsWorldMap";
@@ -110,7 +110,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
+  openGraph: { images: [{ url: ogImage(TITLE, PATH), width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
 };
 
 // Seat of government for each hub — the world map's marker positions.
