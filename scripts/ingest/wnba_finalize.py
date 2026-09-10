@@ -49,8 +49,18 @@ GATES (nothing is ever guessed)
     round or a format change should stop this script and reach a human, not
     be silently absorbed into the flags.
   * div_title / best_rec come from the standings already in Supabase, not
-    from ESPN. A tie for a conference lead or the league's best record is
-    reported and left alone rather than broken by a guess.
+    from ESPN. A tied conference lead is a SHARED title: div_title is set for
+    every tied club, which is what all five tied leads in the record already do
+    (2002/2004/2010/2011 East, 2020 West) and what the column means -- at equal
+    records both genuinely finished top, and a tiebreaker decides playoff
+    seeding, not who led. A tie for the league's best record still leaves
+    best_rec alone: it is a Supabase-only column, absent from every hub JSON
+    row, so there is no precedent to follow and nothing on the site to be wrong.
+  * An UNSEEDED bracket (ESPN's TBD placeholders, before the field is
+    announced) is "not determined yet", not a fault: the postseason flags are
+    left strictly alone but the run exits 0, so the nightly workflow's later
+    steps still happen, and the regular-season flags -- which owe nothing to
+    the bracket -- are still written.
   * champ is only set once the Finals series has no unplayed games left.
   * DRY RUN BY DEFAULT. --write applies; --self-test covers the pure decision
     logic offline with the real 2024 and 2025 brackets as fixtures.
@@ -98,8 +108,11 @@ MAX_ROUNDS = 3
 PLACEHOLDER_TEAMS = {"TBD"}
 # Problem kinds. PENDING: not determined yet, will resolve itself, do not fail
 # the workflow. BLOCKING: genuinely inconsistent, stop and fetch a human.
+# NOTICE: worth printing, decided, blocks nothing -- a shared title is a fact
+# about the season, not a fault, and must not hold back the other flags.
 PENDING = "pending"
 BLOCKING = "blocking"
+NOTICE = "notice"
 
 FLAG_COLS = ("playoffs", "div_title", "best_rec", "sf_app", "champ_app", "champ",
              "p_wins", "p_losses")
@@ -418,7 +431,10 @@ def desired_flags(ladder, games):
 
     div, league = leaders(ladder)
     if len(league) > 1:
-        problems.append((PENDING,
+        # best_rec is Supabase-only -- it appears in no hub JSON row and is None
+        # across all 380 historic rows, so there is no precedent to follow and
+        # nothing on the site to be wrong. Left unset, as before.
+        problems.append((NOTICE,
                          "tie for the league's best record (%s) -- best_rec left alone"
                          % ", ".join(sorted(league))))
         league = set()
@@ -426,10 +442,19 @@ def desired_flags(ladder, games):
         tied = {t for t in div if any(r["team"] == t and (r.get("conference") or "") == c
                                       for r in ladder)}
         if len(tied) > 1:
-            problems.append((PENDING,
-                             "tie for the %s lead (%s) -- div_title left alone"
+            # A SHARED conference title, awarded to every tied club -- this is
+            # what the site has always said. All five tied leads in the record
+            # (2002 East, 2004 East, 2010 East, 2011 East, 2020 West) carry
+            # div_title=True for BOTH clubs, 5 of 5. It is also what the column
+            # means: div_title is "best regular-season record in its
+            # conference", and at equal records both genuinely had it. A
+            # tiebreaker decides playoff SEEDING, not who finished top.
+            # Ashwin confirmed this reading for the 2026 East tie (Indiana
+            # Fever and Atlanta Dream, both 26-14; head-to-head also level at
+            # 2-2, so no tiebreak separated them either).
+            problems.append((NOTICE,
+                             "shared %s lead (%s) -- div_title set for all of them"
                              % (c or "?", ", ".join(sorted(tied)))))
-            div -= tied
 
     finals = [s for s in series if s["round"] == MAX_ROUNDS]
     champion = None
@@ -455,8 +480,42 @@ def desired_flags(ladder, games):
     return by_team, problems
 
 
-def flag_updates(ladder, by_team):
-    """[(row, patch)] -- the minimal changes that make the flags exact."""
+def build_payload(season, updates, by_team):
+    """Rows for the merge-duplicates POST, with a UNIFORM key set.
+
+    PostgREST rejects a bulk insert whose objects have different keys
+    ("PGRST102: All object keys must match"), and the per-row patches routinely
+    do differ -- a conference leader that also holds the league's best record
+    carries best_rec where the others carry only div_title. So take the union
+    of every column being changed and give each row all of them, filling the
+    ones it was not changing with the value it SHOULD have anyway. That is a
+    no-op write for those cells, never a guess: the value comes from by_team,
+    the same source the patch itself came from.
+
+    Only the key and flag columns travel. The standings columns are not in the
+    payload, so merge-duplicates cannot touch them.
+    """
+    cols = sorted({k for _, patch in updates for k in patch})
+    out = []
+    for r, _patch in updates:
+        want = by_team[r["team"]]
+        out.append({"season": season, "team": r["team"], **{k: want[k] for k in cols}})
+    return out
+
+
+# Flags derived ONLY from the regular-season standings already in Supabase.
+# They are knowable the moment the regular season ends, and owe nothing to the
+# bracket -- so an unseeded postseason must not hold them back.
+REGULAR_SEASON_FLAGS = ("div_title", "best_rec")
+
+
+def flag_updates(ladder, by_team, only=None):
+    """[(row, patch)] -- the minimal changes that make the flags exact.
+
+    `only`: restrict to these columns. Used when the bracket is not seeded yet,
+    so the regular-season flags can still be written while every
+    postseason-derived flag is left strictly alone.
+    """
     out = []
     for r in ladder:
         want = by_team.get(r["team"])
@@ -464,6 +523,8 @@ def flag_updates(ladder, by_team):
             continue
         patch = {}
         for k, v in want.items():
+            if only is not None and k not in only:
+                continue
             cur = r.get(k)
             if k in ("p_wins", "p_losses"):
                 # NULL is not the same as 0 here. The migrated history records
@@ -510,24 +571,46 @@ def run(season, write):
     by_team, problems = desired_flags(ladder, games)
     blocking = [m for k, m in problems if k == BLOCKING]
     pending = [m for k, m in problems if k == PENDING]
+    notices = [m for k, m in problems if k == NOTICE]
 
     for m in blocking:
         print("[wnba] REFUSING: %s" % m, file=sys.stderr)
     for m in pending:
         print("[wnba] NOT YET: %s" % m, file=sys.stderr)
+    for m in notices:
+        # Deliberately not on stderr: decided, not a fault.
+        print("[wnba] NOTE: %s" % m)
 
     if blocking:
         raise SystemExit("[wnba] %d bracket problem(s) above -- flags left untouched. "
                          "This needs a human, not a guess." % len(blocking))
     if pending:
-        # Flags stay untouched, exactly as when this was fatal -- the only
-        # change is the exit code, so the workflow's later steps (rebuild the
-        # hub JSON, commit) still run. Writing a half-seeded bracket would be
-        # the actual harm; failing the whole run for a normal week of the
-        # calendar was merely a costly one.
+        # Every POSTSEASON flag is left strictly alone -- writing a half-seeded
+        # bracket would be the actual harm. But the regular-season flags owe
+        # nothing to the bracket: once the season is played, div_title is
+        # knowable, and holding it back until the field is seeded would leave
+        # the site saying nobody led the conference. So write just those, and
+        # exit 0 so the hub rebuild and commit still run.
         print("[wnba] %d item(s) not determined yet -- postseason flags left "
               "untouched; nothing here needs a human. Re-runs once the field is "
               "seeded." % len(pending))
+        rs = flag_updates(ladder, by_team, only=REGULAR_SEASON_FLAGS)
+        if not rs:
+            print("[wnba] regular-season flags already exact; nothing to write")
+            return 0
+        for r, patch in rs:
+            print("[wnba] %-24s %s" % (r["team"], patch))
+        rs_payload = build_payload(season, rs, by_team)
+        if not write:
+            print("[wnba] DRY RUN -- %d regular-season row(s) would change. "
+                  "Re-run with --write to apply." % len(rs_payload))
+            return 0
+        if not WRITE_KEY:
+            raise SystemExit("SUPABASE_WRITE_KEY (or SUPABASE_SERVICE_KEY) not set; refusing to write.")
+        _req("POST", TABLE, {"on_conflict": "season,team"}, rs_payload,
+             write=True, prefer="resolution=merge-duplicates,return=minimal")
+        print("[wnba] wrote regular-season flags for %d row(s) for %d"
+              % (len(rs_payload), season))
         return 0
 
     series = assign_rounds(build_series(games))
@@ -543,12 +626,9 @@ def run(season, write):
         print("[wnba] flags already exact; nothing to write")
         return 0
 
-    payload = []
     for r, patch in updates:
         print("[wnba] %-24s %s" % (r["team"], patch))
-        # Only the key and the flag columns travel. The standings columns are
-        # not in the payload, so merge-duplicates cannot touch them.
-        payload.append({"season": season, "team": r["team"], **patch})
+    payload = build_payload(season, updates, by_team)
 
     if not write:
         print("[wnba] DRY RUN -- %d row(s) would change. Re-run with --write to apply."
@@ -765,10 +845,28 @@ def self_test():
     for r in tied:
         if r["team"] in ("Minnesota Lynx", "Las Vegas Aces"):
             r["win_pct"], r["gb"] = 0.773, 0.0
-    _, probs5 = desired_flags(tied, G)
+    flags5, probs5 = desired_flags(tied, G)
     check("a tie for best record is reported", any("best record" in m for _, m in probs5))
-    check("...as PENDING, not blocking: level is not wrong, and the flag is left unset",
-          all(k == PENDING for k, m in probs5 if "best record" in m))
+    check("...as a NOTICE: level is not wrong, and it must not block the other flags",
+          all(k == NOTICE for k, m in probs5 if "best record" in m))
+    check("a tie leaves best_rec unset (Supabase-only column, no precedent)",
+          not any(f["best_rec"] for f in flags5.values()))
+
+    # A SHARED conference lead is awarded to every tied club, which is what all
+    # five tied leads in the record do (2002/2004/2010/2011 East, 2020 West).
+    shared = [dict(r) for r in _ladder_2025()]
+    east = [r for r in shared if (r.get("conference") or "") == "East"]
+    best_east = max(r["win_pct"] for r in east)
+    top_two = sorted(east, key=lambda r: -r["win_pct"])[:2]
+    for r in top_two:
+        r["win_pct"], r["gb"] = best_east, 0.0
+    flags6, probs6 = desired_flags(shared, G)
+    check("a shared conference lead is reported as a NOTICE",
+          any(k == NOTICE and "shared" in m for k, m in probs6))
+    check("...and never blocks",
+          not any(k == BLOCKING for k, m in probs6 if "shared" in m))
+    check("...and div_title is set for BOTH tied clubs",
+          all(flags6[r["team"]]["div_title"] for r in top_two))
 
     print("self-test OK (%d checks)" % n[0])
 
