@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-10",
+    headline: "Every country to 2100, and the season grid by touch",
+    items: [
+      "Every country hub now runs to 2100: the UN's probabilistic median with its 80% and 95% bands, the high, low and zero-migration scenarios, the drivers by decade, and a ranking of all 211 countries at /countries/2100.",
+      "The season-as-a-shape grid reads by touch: tap or drag any team's boxes and a line beneath names the game, the score and what the model had given it; on a phone the grid turns to one row per team.",
+      "Before 1970 the playoff picture names the division a club was leading instead of a seed that never existed; clubs level for a title that was played off are starred, and the playoff itself is the last column.",
+      "The Champions League hub shows one league-phase table, sized to its content with points beside the club, and lists which clubs went out in each qualifying round with the 36 that reached the league phase.",
+    ],
+  },
+  {
     date: "2026-09-09",
     headline: "Scrub any NFL season, and a Housing tab",
     items: [

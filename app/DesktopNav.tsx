@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useLayoutEffect } from "react";
 import { leagueStatusFor, clubFootballStatus, LeagueStatusTag, type LeagueStatus } from "@/lib/leagueStatus";
 import { catalogByFamily, boardLabelFor, familyLabel, SPORTS_FEATURES, type CatalogEntry } from "@/lib/sportsCatalog";
 
@@ -47,6 +47,22 @@ function Caret() {
 function Dropdown({ id, label, openId, setOpenId, children, minWidth = 260, href }: DropdownProps) {
   const isOpen = openId === id;
   const wrapRef = useRef<HTMLDivElement | null>(null);
+  // Which edge the panel hangs from. A panel was always right-aligned under
+  // its trigger, which clipped a 760px Geography menu off the LEFT of the
+  // page because Geography is the first item (Ashwin, 2026-09-10). Now:
+  // hang from the left edge when the panel fits to the right of the
+  // trigger, from the right edge otherwise, decided when the menu opens.
+  // The offset is a pixel shift from the trigger's left edge: 0 when the
+  // panel fits to the right, otherwise the negative amount that keeps its
+  // right edge 16px inside the viewport; never past the left edge.
+  const [offset, setOffset] = useState(0);
+  useLayoutEffect(() => {
+    if (!isOpen || !wrapRef.current) return;
+    const r = wrapRef.current.getBoundingClientRect();
+    const width = Math.min(minWidth, window.innerWidth - 32);
+    const shift = Math.min(0, window.innerWidth - 16 - width - r.left);
+    setOffset(Math.max(shift, 16 - r.left));
+  }, [isOpen, minWidth]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -89,8 +105,8 @@ function Dropdown({ id, label, openId, setOpenId, children, minWidth = 260, href
       )}
       {isOpen && (
         <div
-          className="absolute right-0 top-full pt-2"
-          style={{ minWidth: `${minWidth}px`, maxWidth: "calc(100vw - 2rem)" }}
+          className="absolute top-full pt-2"
+          style={{ left: offset, minWidth: `min(${minWidth}px, calc(100vw - 2rem))`, maxWidth: "calc(100vw - 2rem)" }}
         >
           <div
             className="border rounded-md shadow-xl backdrop-blur-md overflow-hidden"
@@ -228,8 +244,14 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
     // render anyway and the two overlapped. MobileMenu — which mirrors these
     // same sections from lib/sportsCatalog — covers that band instead.
     <div className="hidden lg:flex gap-4 lg:gap-5 items-center">
-      <Dropdown id="data" label="Geography" href="/geography" openId={openId} setOpenId={setOpenId} minWidth={520}>
-        <div className="p-2 grid grid-cols-2 gap-x-4">
+      {/* 🔴 MENU SIZE RULE (Ashwin, 2026-09-10): no column longer than ten
+          links, no menu wider than three columns, no menu taller than one
+          column of ten plus its group labels. A family that outgrows that
+          gets a hub page and one link here, never a longer menu. Geography
+          went from two columns of fourteen to three of nine; Business from
+          one column of twelve to two of six. */}
+      <Dropdown id="data" label="Geography" href="/geography" openId={openId} setOpenId={setOpenId} minWidth={760}>
+        <div className="p-2 grid grid-cols-3 gap-x-4">
           <div>
             <MenuGroupLabel>🗺️ Places &amp; directories</MenuGroupLabel>
             <MenuLink href="/rankings" title="🌐 Metro Power Rankings" />
@@ -241,16 +263,6 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuLink href="/compare" title="⚖️ Compare metros" />
             <MenuLink href="/matchups/london-vs-new-york" title="🥊 Matchups" />
             <MenuLink href="/neighborhoods" title="🏘️ Neighborhoods" />
-            {/* The past and the future, side by side. /predictions had the
-                same orphan bug the Time Machine hub was built to fix: it was
-                in neither nav and reachable only by knowing the URL. */}
-            <MenuGroupLabel>🕰️ Across time</MenuGroupLabel>
-            <MenuLink href="/time-machine" title="🕰️ The Time Machine" />
-            <MenuLink href="/predictions" title="🔮 Predictions" />
-            <MenuLink href="/predictions/scoreboard" title="📓 The Ledger" />
-            <MenuGroupLabel>🤝 Geopolitics</MenuGroupLabel>
-            <MenuLink href="/orgs" title="🤝 Alliances &amp; Orgs" />
-            <MenuLink href="/conflicts" title="⚔️ Interstate Wars" />
           </div>
           <div>
             <MenuGroupLabel>👑 Power &amp; people</MenuGroupLabel>
@@ -263,6 +275,18 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuLink href="/constitutions" title={"📜 The World's Constitutions"} />
             <MenuLink href="/constitutions/leaders" title="⏳ Who Outlasts Whom" />
             <MenuLink href="/mayors" title="🏙️ Mayors of the World" />
+          </div>
+          <div>
+            {/* The past and the future, side by side. /predictions had the
+                same orphan bug the Time Machine hub was built to fix: it was
+                in neither nav and reachable only by knowing the URL. */}
+            <MenuGroupLabel>🕰️ Across time</MenuGroupLabel>
+            <MenuLink href="/time-machine" title="🕰️ The Time Machine" />
+            <MenuLink href="/predictions" title="🔮 Predictions" />
+            <MenuLink href="/predictions/scoreboard" title="📓 The Ledger" />
+            <MenuGroupLabel>🤝 Geopolitics</MenuGroupLabel>
+            <MenuLink href="/orgs" title="🤝 Alliances &amp; Orgs" />
+            <MenuLink href="/conflicts" title="⚔️ Interstate Wars" />
             {/* The Order layer reads business, sport and culture as well as
                 geography, so /order is a peer route rather than a child of
                 this hub. It sits here until it has enough boards to earn its
@@ -363,21 +387,32 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
 
       {/* Business: the money hub's tabs plus the money-adjacent directory pages.
           Mirrors the Culture pattern - marquee destination first, tabs below. */}
-      <Dropdown id="business" label="Business" openId={openId} setOpenId={setOpenId}>
-        <DropdownItem href="/business" title="💼 Business of the Metros →" />
-        <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/business/companies" title="🏢 Companies" />
-        <DropdownItem href="/business/private" title="🦄 Private & Unicorns" />
-        <DropdownItem href="/business/sp500" title="📈 S&P 500" />
-        <DropdownItem href="/business/rankings" title="🏛️ Rankings" />
-        <DropdownItem href="/business/owners" title="👑 Owners" />
-        <DropdownItem href="/business/markets" title="🌐 Markets" />
-        <DropdownItem href="/business/currencies" title="💱 Currencies" />
-        <DropdownItem href="/business/economy" title="🏦 Economy" />
-        <DropdownItem href="/business/leaders" title="🎩 Leaders" />
-        <DropdownItem href="/business/crossovers" title="🔀 Crossovers" />
-        <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/billionaires" title="💰 Billionaires" />
+      <Dropdown id="business" label="Business" href="/business" openId={openId} setOpenId={setOpenId} minWidth={460}>
+        <div className="p-2 grid grid-cols-2 gap-x-4">
+          <div>
+            <MenuGroupLabel>💼 The money hub</MenuGroupLabel>
+            <a
+              href="/business"
+              className="block px-2 py-1.5 rounded text-sm font-medium hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+            >
+              💼 Business of the Metros <span aria-hidden className="text-[var(--text-dim)]">→</span>
+            </a>
+            <MenuLink href="/business/companies" title="🏢 Companies" />
+            <MenuLink href="/business/private" title="🦄 Private &amp; Unicorns" />
+            <MenuLink href="/business/sp500" title="📈 S&amp;P 500" />
+            <MenuLink href="/business/rankings" title="🏛️ Rankings" />
+            <MenuLink href="/business/owners" title="👑 Owners" />
+          </div>
+          <div>
+            <MenuGroupLabel>🌐 Markets &amp; people</MenuGroupLabel>
+            <MenuLink href="/business/markets" title="🌐 Markets" />
+            <MenuLink href="/business/currencies" title="💱 Currencies" />
+            <MenuLink href="/business/economy" title="🏦 Economy" />
+            <MenuLink href="/business/leaders" title="🎩 Leaders" />
+            <MenuLink href="/business/crossovers" title="🔀 Crossovers" />
+            <MenuLink href="/billionaires" title="💰 Billionaires" />
+          </div>
+        </div>
       </Dropdown>
 
       <Dropdown id="articles" label="Deep Dives" openId={openId} setOpenId={setOpenId}>

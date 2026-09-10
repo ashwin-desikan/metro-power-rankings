@@ -35,6 +35,8 @@ import { getLeagueHubsForCountry } from "@/lib/leagueHubs";
 import LeadersSection from "./LeadersSection";
 import PowerSection from "./PowerSection";
 import PopulationSection from "./PopulationSection";
+import Population2100Section from "./Population2100Section";
+import { getPopulation2100 } from "@/lib/population2100";
 import { getCountryPowerSeries } from "@/lib/powerHistory";
 import { countryHasLeaders, getLeaders } from "@/lib/leaders";
 import OrgsSection from "./OrgsSection";
@@ -292,6 +294,7 @@ export default async function CountryDetailPage({ params }: Props) {
   // whether there is a series at all. Two of the site's countries have none,
   // because the World Bank does not report Taiwan or Vatican City.
   const population = getCountryPopulation(slug);
+  const population2100 = getPopulation2100(slug);
   const indicators = getCountryIndicators(slug);
   const indicatorsMeta = getIndicatorsMeta();
   const facts = getCountryFacts(slug);
@@ -720,6 +723,7 @@ export default async function CountryDetailPage({ params }: Props) {
               name={country.name}
             />
           ) : null}
+          {population2100 ? <Population2100Section data={population2100} name={country.name} /> : null}
           <BillionairesSection list={billionaires} />
 
           {(hasNationalTeams || champTitles.length > 0) ? (

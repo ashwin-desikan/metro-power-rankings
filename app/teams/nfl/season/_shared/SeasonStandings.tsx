@@ -5,6 +5,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import { TableScroll } from "@/app/_shared/TableScroll";
 import type { NflHonour, NflEloWeek, NflSeedsFile } from "@/lib/nflElo";
+import { divAbbr, seedCellMode } from "./SeedTimeline";
 import { useThroughWeek, WeekScrubberControl } from "./WeekScrubber";
 
 // One season's standings, grouped the way a reader wants to read them.
@@ -191,6 +192,15 @@ export default function SeasonStandings({
         };
       });
   const seeded = seedWeek != null && teams.some((t) => t.cr != null);
+  // Division-only eras (1933-69) get a chip, not a number: see SeedTimeline.
+  // The pool and division come from the SEEDS file, not the standings row:
+  // the 1969 NFL rows carry no conf of their own and fell through to a
+  // number while the AFL beside them showed the chip.
+  const seedPool = (t: StandingsTeam) => seeds?.teams[t.name]?.conf ?? t.conf ?? "";
+  const seedDiv = (t: StandingsTeam) => seeds?.teams[t.name]?.div ?? t.div ?? "";
+  const seedMode = (t: StandingsTeam) => seedCellMode(seeds?.label ?? "seed", seeds?.pools?.[seedPool(t)]);
+  // Level for a title that would be played off (before 1970): a starred, dashed chip.
+  const seedTied = (t: StandingsTeam) => seedWeek != null && Boolean(seeds?.teams[t.name]?.tie?.[seedWeek - 1]);
   const showHonours = through == null && finalHonours;
   // 🔴 COLUMNS DO NOT COME AND GO WITH THE SCRUBBER. A column that mounts at
   // "Final" and unmounts at week 9 changes every table's width mid-drag, which
@@ -383,7 +393,7 @@ export default function SeasonStandings({
                         {/* The phone's second line: nothing is dropped, it moves. */}
                         <span className="sm:hidden block mt-0.5 pl-[26px] text-[12px] text-[var(--text-dim)] tabular-nums" style={MONO}>
                           {t.pts ? `${t.pts[0]}-${t.pts[1]}` : "no points recorded"}
-                          {t.seed ? ` · ${t.seed} seed` : ""}
+                          {t.seed ? (seedMode(t) === "div" ? " · leads division" : seedMode(t) === "divrank" ? ` · ${ordinalWord(t.dr ?? t.seed)} in division` : ` · ${t.seed} seed`) : ""}
                         </span>
                       </td>
                       <td className="py-2 sm:py-1.5 px-2 text-right tabular-nums whitespace-nowrap align-middle" style={MONO}>
@@ -399,11 +409,25 @@ export default function SeasonStandings({
                       {seedsCol ? (
                         <td className="py-1.5 px-2 text-right tabular-nums hidden sm:table-cell" style={MONO}>
                           {showSeeds && t.seed ? (
-                            <span className="inline-grid place-items-center rounded-full"
-                              title={through != null ? (seeds?.label === "seed" ? `the ${t.seed} seed had the season ended after week ${through}` : seeds?.label === "place" ? `in the playoffs had the season ended after week ${through}` : `the league leader after week ${through}`) : `entered the playoffs as the ${t.seed} seed`}
-                              style={{ width: 17, height: 17, background: "var(--bg-card-hover)", border: `1px solid ${t.seed <= 4 ? "var(--accent)" : "var(--border)"}`, fontSize: 10 }}>
-                              {t.seed}
-                            </span>
+                            seedMode(t) === "div" ? (
+                              /* A division-only era: the number was a rank between clubs that never
+                                 competed for the same place. The chip says what is true instead. */
+                              <span title={
+                                  seedTied(t) ? `level for the ${seedDiv(t)}${through != null ? ` after week ${through}` : ""}; a playoff would decide it`
+                                  : through != null ? `leading the ${seedDiv(t)} after week ${through}` : `won the ${seedDiv(t)}`}
+                                className="text-[9px] uppercase tracking-wider px-1 rounded border"
+                                style={{ borderColor: "var(--accent)", color: "var(--accent)", borderStyle: seedTied(t) ? "dashed" : "solid" }}>{divAbbr(seedDiv(t), seedPool(t))}{seedTied(t) ? "*" : ""}</span>
+                            ) : (
+                              <span className="inline-grid place-items-center rounded-full"
+                                title={
+                                  seedMode(t) === "divrank"
+                                    ? `${ordinalWord(t.dr ?? t.seed)} in the ${seedDiv(t)}${through != null ? ` after week ${through}` : ""}, a playoff place`
+                                    : through != null ? (seeds?.label === "seed" ? `the ${t.seed} seed had the season ended after week ${through}` : seeds?.label === "place" ? `in the playoffs had the season ended after week ${through}` : `the league leader after week ${through}`) : `entered the playoffs as the ${t.seed} seed`
+                                }
+                                style={{ width: 17, height: 17, background: "var(--bg-card-hover)", border: `1px solid ${(seedMode(t) === "divrank" ? (t.dr ?? t.seed) === 1 : t.seed <= 4) ? "var(--accent)" : "var(--border)"}`, fontSize: 10 }}>
+                                {seedMode(t) === "divrank" ? t.dr ?? t.seed : t.seed}
+                              </span>
+                            )
                           ) : <span className="text-[var(--text-dim)]">&mdash;</span>}
                         </td>
                       ) : null}
@@ -435,4 +459,10 @@ export default function SeasonStandings({
       ) : null}
     </div>
   );
+}
+
+function ordinalWord(k: number): string {
+  const s = ["th", "st", "nd", "rd"];
+  const v = k % 100;
+  return `${k}${s[(v - 20) % 10] || s[v] || s[0]}`;
 }

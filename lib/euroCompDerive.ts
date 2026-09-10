@@ -63,11 +63,33 @@ const teamKnown = (t: LiveTeamRef): boolean => teamKey(t) !== null;
 
 // ---------------------------------------------------------------- tables ----
 
+/**
+ * Two groups over the SAME team set are one table fetched under two labels,
+ * not two groups. api-football renamed the Champions League standings group
+ * ("League Phase" on 2026-08-31, "UEFA Champions League" on 2026-09-09) and
+ * the refresh's label-keyed upsert kept both; the hub rendered two 36-row
+ * league-phase tables with different numbers (Ashwin, 2026-09-10). The
+ * refresh now prunes the old label; this keeps the page honest if it ever
+ * happens again. Keep the group with the most games played (the live one);
+ * on a tie, the last one exported (ordered by label, the later fetch).
+ */
+export function dedupeGroupsByTeamSet(groups: LiveGroup[]): LiveGroup[] {
+  const kept: Array<{ key: string; g: LiveGroup; played: number }> = [];
+  for (const g of groups) {
+    const key = g.rows.map((r) => teamKey(r) ?? r.name).sort().join("|");
+    const played = g.rows.reduce((n, r) => n + (r.played ?? 0), 0);
+    const i = kept.findIndex((k) => k.key === key && g.rows.length > 1);
+    if (i === -1) kept.push({ key, g, played });
+    else if (played >= kept[i].played) kept[i] = { key, g, played };
+  }
+  return kept.map((k) => k.g);
+}
+
 /** Real standings if the bundle has them; otherwise a table computed from the
  *  comp's league-phase fixtures. `computed` tells the caller which it got so
  *  captions can say so. Empty groups when the league phase isn't drawn yet. */
 export function deriveLeaguePhaseGroups(comp: LiveComp): { groups: LiveGroup[]; computed: boolean } {
-  if (comp.groups.length > 0) return { groups: comp.groups, computed: false };
+  if (comp.groups.length > 0) return { groups: dedupeGroupsByTeamSet(comp.groups), computed: false };
 
   const lp = (comp.fixtures ?? []).filter((f) => stageIndexOf(f.round) ===
     STAGES.findIndex((s) => s.key === "league_phase"));

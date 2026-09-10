@@ -341,6 +341,13 @@ never does.
 
 ## 5. Navigation and wayfinding
 
+- **A menu column is ten links, and a menu is at most three columns**
+  (Ashwin, 2026-09-10; Culture's two columns of ten are the reference
+  length). A family that outgrows that gets a hub page and one link in the
+  menu, never a longer column. Measured 2026-09-10 at 1280: Geography three
+  columns of nine (440px), Culture two of ten (406px), Business two of six
+  (245px), Sports 515px.
+
 - **The nav is `sticky top-0`, never `fixed`** (§1.1). `DesktopNav` renders
   mega-menus from **1024px** up; `MobileMenu` fills everything below with the
   SAME sections as collapsible groups, generated from the same sources
@@ -475,6 +482,34 @@ never does.
   internal panes cannot paint over the nav. Do not remove it.
 - Images carry `loading="lazy"`, `decoding="async"`, and explicit
   `width`/`height` to avoid layout shift.
+
+### A chart that needs a pointer is not finished (added 2026-09-10)
+
+Twenty-one chart components carried their facts in hover tooltips or `title`
+attributes, which a phone never shows, over marks and labels below any
+readable size. Ashwin, 2026-09-10: "how can anybody use these charts that
+have such small font? ... I don't have to do this on other sites." The
+answer is not a smaller tooltip; it is the pattern the good news graphics
+use, and it is three rules:
+
+1. **Readout, not tooltip.** Tap or drag anywhere on the chart and one line
+   under it, in body size, says what you are on and stays until the next
+   tap. Hover drives the same line on desktop. `app/_shared/ChartReadout.tsx`
+   is the primitive (`ChartReadoutProvider`, `useChartReadout`,
+   `<ChartReadout hint=.../>`); `TowersGrid.tsx` is the worked example.
+2. **Nearest mark, whole surface.** The pointer surface is the chart, and
+   selection is the nearest mark, so a 10px box is a 44px target because the
+   finger only has to be closer to it than to its neighbour. `touch-pan-y`
+   on a horizontal surface and `touch-pan-x` on a vertical one keep the page
+   scrolling under a finger that is not scrubbing.
+3. **12px floor.** No axis label or legend text under 12px on a phone, no
+   readout under 13px. If the marks do not fit at that size, change the
+   layout (the towers pivot from 32 columns to 32 rows under 640px), never
+   the font.
+
+Every `title=` on a chart mark and every `onMouseMove` without a touch path
+is a defect under this rule. The sweep of the remaining components is a
+Notion Backlog item; do not add a twenty-second.
 
 ### In-cell bars — the default answer to "this board is just numbers"
 

@@ -14,7 +14,13 @@ const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const cardStyle = { background: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const n = (v: number | null) => (v == null ? "-" : v);
 const byPts = (a: LiveRow, b: LiveRow) => (b.points ?? 0) - (a.points ?? 0) || (b.gd ?? 0) - (a.gd ?? 0);
-const COLS = ["P", "W", "D", "L", "GD", "Pts"];
+// Value before metadata (DESIGN-STANDARDS §4): points sit right after the
+// club, the record after that. The table is sized to its content, never
+// stretched to the card: a 36-row league phase stretched to `w-full` gave the
+// club column half the desktop width and pushed every number to the far edge
+// (Ashwin, 2026-09-10).
+const COLS = ["Pts", "P", "W", "D", "L", "GD"];
+const cellVals = (r: LiveRow) => [n(r.points), n(r.played), n(r.win), n(r.draw), n(r.lose), n(r.gd)];
 
 function ColorBall({ slug, name }: { slug: string | null; name: string }) {
   const m = monogramForFootball(name, slug ?? undefined);
@@ -35,7 +41,7 @@ export default function LiveCompGroups({ comp, season, note }: { comp: LiveComp;
           // maximum, computed once per group, never per row.
           const ptsMax = Math.max(...g.rows.map((r) => r.points ?? 0), 1);
           return (
-          <div key={g.group_label} className="rounded-xl border p-3" style={cardStyle}>
+          <div key={g.group_label} className={`rounded-xl border p-4 min-w-0 ${comp.groups.length > 1 ? "" : "sm:w-fit sm:max-w-full"}`} style={cardStyle}>
             {comp.groups.length > 1 && <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-1">{g.group_label}</div>}
             <ResponsiveTable
               compact
@@ -63,12 +69,12 @@ export default function LiveCompGroups({ comp, season, note }: { comp: LiveComp;
                 );
               })}
             >
-              <table className="w-full text-sm min-w-[320px]" data-sticky-col="2">
+              <table className="text-sm w-auto" data-sticky-col="2">
                 <thead>
                   <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>
-                    <th className="py-1.5 text-left font-medium">#</th>
-                    <th className="py-1.5 text-left font-medium">Club</th>
-                    {COLS.map((c) => <th key={c} className="py-1.5 text-right font-medium">{c}</th>)}
+                    <th className="py-2 pr-3 text-left font-medium">#</th>
+                    <th className="py-2 pr-6 text-left font-medium">Club</th>
+                    {COLS.map((c) => <th key={c} className="py-2 pl-4 text-right font-medium">{c}</th>)}
                   </tr>
                 </thead>
                 <tbody>
@@ -77,20 +83,20 @@ export default function LiveCompGroups({ comp, season, note }: { comp: LiveComp;
                     const nm = c?.cur_name ?? r.lookup ?? r.name ?? "-";
                     return (
                       <tr key={i} className="border-b" style={{ borderColor: "var(--border)" }}>
-                        <td className="py-1.5 tabular-nums text-[var(--text-muted)]" style={mono}>{r.rank ?? i + 1}</td>
-                        <td className="py-1.5">
+                        <td className="py-2 pr-3 tabular-nums text-[var(--text-muted)]" style={mono}>{r.rank ?? i + 1}</td>
+                        <td className="py-2 pr-6 whitespace-nowrap">
                           <span className="inline-flex items-center gap-1.5">
                             <TeamCrest name={nm} size={18} fallback={<ColorBall slug={c?.slug ?? null} name={nm} />} />
                             {c?.slug ? <Link href={`/teams/football/${c.slug}`} className="hover:underline font-medium">{nm}</Link> : <span className="font-medium">{nm}</span>}
                           </span>
                         </td>
-                        {[n(r.played), n(r.win), n(r.draw), n(r.lose), n(r.gd), n(r.points)].map((v, j) => (
+                        {cellVals(r).map((v, j) => (
                           COLS[j] === "Pts" ? (
-                            <td key={j} className="py-1.5 text-right">
-                              <DataBar v={r.points} max={ptsMax} width={72} label="points" />
+                            <td key={j} className="py-2 pl-4 text-right whitespace-nowrap">
+                              <DataBar v={r.points} max={ptsMax} width={64} label="points" />
                             </td>
                           ) : (
-                            <td key={j} className="py-1.5 text-right tabular-nums" style={mono}>{v}</td>
+                            <td key={j} className="py-2 pl-4 text-right tabular-nums" style={mono}>{v}</td>
                           )
                         ))}
                       </tr>

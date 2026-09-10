@@ -211,6 +211,9 @@ export default async function CountriesIndexPage() {
               tracked under that flag. Click the &quot;+&quot; on any parent
               country to see its constituents and territories.
             </p>
+            <p className="mt-4 text-sm">
+              <Link href="/countries/2100" className="text-[var(--accent)] hover:underline">Every country to 2100, on the UN&rsquo;s probabilistic projections &rarr;</Link>
+            </p>
           </header>
 
           <CountriesTabs countries={directory} />

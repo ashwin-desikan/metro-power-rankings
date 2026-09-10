@@ -12387,3 +12387,106 @@ done: Ashwin's call.
 
 **Pushed and live at `58ab5e622`** (data + FIBA + standings reconcile), `b5223a5d9` and
 `703456966` (canary), `ffebb034f` and `88e906673` (WNBA), `7f6faa8a4` and this entry (handoff).
+
+## 2026-09-10 — cowork (cloud, bridged to the Windows box) → mini and next session: THE READOUT, THE PLAYED-OFF TITLES, ONE CHAMPIONS LEAGUE TABLE, AND EVERY COUNTRY TO 2100
+
+State at open: tree clean at `3004b98a6` (section K handoff on `e41598f8b`), 23 bot commits
+behind; Vercel 17 CANCELED, 0 paid on the UTC day. Mid-morning the mini pushed `58ab5e622`
+(the api-football rename reconcile in `refresh.py`, the fiba five-nation fix, the
+newsletter-podcast repo); rebased over it, my `refresh.py` version of the same fix dropped
+in favour of the mini's, the HANDOFF conflict resolved with K before the mini's 09-10 entry.
+Everything below is in the working tree awaiting Ashwin's commit call. ONE app commit.
+
+### A. Corrections owned
+"Four seasons, one ledger" was PUBLISHED on 2026-09-09 (Substack and LinkedIn); the
+session-open report said no post since July because it read the Editorial calendar and
+memory, not the feed snapshot the mini refreshes daily. Notion row set to Published with
+the URL. Rule for the next open: read `public/data/substack-feed.json` on origin.
+
+### B. NFL playoff picture, division-only eras (Ashwin's three asks)
+- Numbers meant nothing before 1970: `seedCellMode()` in SeedTimeline. One qualifier per
+  division shows the DIVISION (E, W; CAP, CEN, CST, CTR for the 1967-69 NFL; `divAbbr`),
+  two per division (1969 AFL) shows the division rank, a single group (1949 AAFC, pre-1933)
+  keeps its rank. Standings chip and phone line say the same; the standings read the pool and
+  division from the SEEDS file because the 1969 NFL rows carry no conf of their own.
+- Played-off titles: `playoff_seeds.py` marks clubs level with a division leader on the record
+  (`tie` per week, shared place) until 1966 in the NFL and to the end in the AFL and AAFC (the
+  NFL adopted tiebreakers for 1967; `--verify` caught it: Colts "computed in, no appearance"),
+  and carries the settling game as `tiebreaks` (ledger round "Div. Playoff", filtered to pairs
+  still level at the final week so the 1969 AFL semifinals do not count). Exactly the ten
+  played-off titles surface (1941, 1943, 1947, 1950 ×2, 1952, 1957, 1958, 1963 AFL, 1965, 1968
+  AFL). 106 files rebuilt, `--verify` 106/106. Page: starred outlined cell ("E*"), tooltip
+  "level with X for the AFL East; a playoff would decide it", dashed starred standings chip, PO
+  column after the last week (winner filled, loser struck through, score and date in the title).
+  Measured 1963: 27 E* and 19 W*, PO column present; 1967 none.
+- Season page order: standings, the shape, the playoff picture (nav to match).
+
+### C. The readout: charts by touch
+`app/_shared/ChartReadout.tsx` (provider, hook, `<ChartReadout>` 13px aria-live line) and
+`TowersGrid.tsx` (client half of ExpectationTowers): nearest-box pointer surface on both
+layouts, phone pivots to one row per team (13px boxes, 12px axis, fits 390 with no sideways
+scroll), desktop columns unchanged; `touch-pan-y`/`touch-pan-x` keep the page scrolling.
+Axis realigned (44px head like a column; the old 24px spacer sat two rows high). Measured on
+the built server: 32 rows / 32 columns, readout "Kansas City Chiefs. Wk 9: beat Tampa Bay
+Buccaneers 30-24, expected win (given 83% to win)" after one tap and one click. DESIGN-
+STANDARDS §8 rule added ("a chart that needs a pointer is not finished"); the sweep of the
+other 20 chart components is a P1 Backlog row. Best-games and movers tables on the season
+hubs became ResponsiveTable lists on a phone.
+
+### D. Champions League hub
+Two league-phase tables: api-football renamed the standings group ("League Phase" 08-31 →
+"UEFA Champions League" 09-09); the mini's `refresh.py` now prunes the old label, Supabase
+holds one group, and `deriveLeaguePhaseGroups` dedupes any two groups over one team set
+(vitest case). "81 still alive": the Swiss format moved the workbook's Rnd# (6 = league phase,
+7-10 = qualifying); `bracketRoundsFor(slug, season)` uses the new map for the three UEFA slugs
+from 2024-25, Libertadores keeps the old one. Measured: one 36-row table, "36 clubs still
+alive of 81 entered", Q1 14 out, Q2 14, Q3 10, play-off 7, league phase 36. Table sized to its
+content (382px at 1280, was full width), Pts beside the club, then padded on request.
+
+### E. Menus
+Geography three columns of nine, Business two of six; a panel hangs from its trigger's left
+edge and shifts only as far as it must to stay 16px inside the viewport (was `right-0`, which
+clipped a 760px panel off the left). DESIGN-STANDARDS §5: a column is ten links, a menu three
+columns. Measured at 1280: Geography 440px, Culture 406, Business 245; at 1100 nothing off-page.
+
+### F. Population to 2100 (Ashwin's ruling: published projections, not our model)
+`scripts/countries/build_population_2100.py` reads `data/wpp/WPP2024_Demographic_Indicators_
+{Medium,OtherVariants}.csv.gz` (downloaded on the box from population.un.org/wpp/assets/...;
+CC BY 3.0 IGO; the container cannot reach the site; `data/` is gitignored) and writes
+`public/data/countries/pop2100/<slug>.json` ×211 + `index.json` (5.8 MB): estimates 1950-2023,
+median with 80/95 PI 2024-2100, high/low/zero-migration/constant-fertility scenarios, drivers
+(births, deaths, net migration, TFR, LEx, CBR, CDR, median age), facts (peak, 2050, 2100 with
+bands, multiple on 2025, decline year, natural-decline year). Join by iso3 via
+country-population.json; 26 UN territories unmatched and listed. Sanity: China 633m in 2100
+(peak 2021), Nigeria 477m (95% 256m-1.14bn), India peaks 2061, Japan 77m; 48 past peak, 138
+falling by 2100. `lib/population2100{,Shape}.ts` (server reader registered in
+check-client-imports; literal dir + slug leaf per the tracer recipe).
+`Population2100Section.tsx` on every country hub (fan chart on the readout primitive, cards,
+drivers by 25-year step as table/list) and `/countries/2100` (sortable board, phone list, linked
+from the hub header and every section; sitemap). Currency manifest: `population-2100`, 900 days.
+Measured on the built server: /countries/japan and /nigeria 390 wide, 12px min font, readout
+after a tap; /countries/2100 211 rows, sort by multiple puts Angola first (3.84×). v2, filed:
+WPP vintage grading (2010-2022 against outturns), IHME and Wittgenstein medians.
+
+### G. Dev servers read local NFL data
+`lib/nflElo.ts` `load()`: in development, or with `NFL_DATA_LOCAL=1` on a local `next start`,
+the checkout's file wins over origin's; production stays GitHub-raw-first. Ashwin's dev server
+could not show the rebuilt seeds until this. The build script sets it for the measuring server.
+
+### H. Gates on the box (full batch)
+tsc clean; data-reads, client-imports, mobile, table-scroll OK; data-currency 26 current;
+vitest 182/182; release-notes OK (four bullets 215/196/207/203); `next build --webpack` exit 0;
+function-size largest 80 MB; probe 9/9 clean at 390 (/countries/japan, /nigeria, /countries/2100,
+/countries, /updates, /teams/nfl/season/1963, /2024, the UCL hub, /).
+
+### I. Scoped, not built (Notion Backlog rows filed today)
+Money Ledger and the frontier (P1, approved; note "SoccerSolver - what to take for club
+football - 2026-09-10.md"; `data/football/tm/transfers.csv.gz` downloaded, 175,165 rows,
+113,639 with a fee, future-dated loan returns to exclude); club football Elo race sampled
+every Friday on the season hubs (P1); coalition probabilities for Israel and NZ (P1, two
+rulings needed); the mobile chart sweep (P1); population v2.
+
+### J. Open for Ashwin
+Commit call for this batch (the day's first paid build; 0 used). The cap token, the three PFR
+URLs, the NFL dispatch decision, the brand deploy hook, the Supabase policy-rate seed on the
+mini: all unchanged from yesterday's list.

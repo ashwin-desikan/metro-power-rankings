@@ -173,6 +173,7 @@ export default async function ClubTournamentHubPage({ params }: Props) {
             entries={hub.current_entries}
             season={hub.current_season}
             label={hub.short_label}
+            rounds={bracketRoundsFor(slug, hub.current_season)}
           />
         </div>
       )}
@@ -380,6 +381,9 @@ type BracketRound = {
   rnd_match: (r: number | null) => boolean;
 };
 
+// The workbook's Rnd# counts up from the final: 1 Final, 2 SF, 3 QF, 4 R16,
+// 5 group stage, 6+ qualifying. That is the pre-2024 shape and Libertadores
+// still uses it (2026: 16 clubs at 5).
 const BRACKET_ROUNDS: BracketRound[] = [
   { key: "qualifying",   label: "Qualifying",     rnd_match: (r) => r !== null && r >= 6 },
   { key: "group_stage",  label: "Group stage",    rnd_match: (r) => r === 5 },
@@ -389,14 +393,44 @@ const BRACKET_ROUNDS: BracketRound[] = [
   { key: "final",        label: "Final",          rnd_match: (r) => r === 1 },
 ];
 
+// 🔴 THE SWISS FORMAT ADDED A ROUND, AND THE NUMBERS MOVED. From 2024-25 the
+// three UEFA comps count 1 Final, 2 SF, 3 QF, 4 R16, 5 knockout play-offs,
+// 6 LEAGUE PHASE, 7 play-off round, 8 Q3, 9 Q2, 10 Q1 (2026-27: exactly 36
+// clubs at 6 in all three). Read with the old map, every one of the 81
+// entrants fell into a single "Qualifying" bucket at the frontier and the
+// page said "81 clubs still alive" (Ashwin, 2026-09-10). Each qualifying
+// round gets its own row so a club eliminated in Q1 is shown out in Q1.
+const SWISS_ROUNDS: BracketRound[] = [
+  { key: "q1",            label: "First qualifying round",  rnd_match: (r) => r === 10 },
+  { key: "q2",            label: "Second qualifying round", rnd_match: (r) => r === 9 },
+  { key: "q3",            label: "Third qualifying round",  rnd_match: (r) => r === 8 },
+  { key: "playoff",       label: "Play-off round",          rnd_match: (r) => r === 7 },
+  { key: "league_phase",  label: "League phase",            rnd_match: (r) => r === 6 },
+  { key: "ko_playoffs",   label: "Knockout play-offs",      rnd_match: (r) => r === 5 },
+  { key: "round_of_16",   label: "Round of 16",             rnd_match: (r) => r === 4 },
+  { key: "quarterfinal",  label: "Quarter-finals",          rnd_match: (r) => r === 3 },
+  { key: "semifinal",     label: "Semi-finals",             rnd_match: (r) => r === 2 },
+  { key: "final",         label: "Final",                   rnd_match: (r) => r === 1 },
+];
+
+const SWISS_SLUGS = new Set(["champions-league", "europa-league", "conference-league"]);
+
+/** Which round map a hub's current season uses. Season strings read "2026-27". */
+function bracketRoundsFor(slug: string, season: string | null): BracketRound[] {
+  const start = season ? parseInt(season.slice(0, 4), 10) : NaN;
+  return SWISS_SLUGS.has(slug) && Number.isFinite(start) && start >= 2024 ? SWISS_ROUNDS : BRACKET_ROUNDS;
+}
+
 function CurrentSeasonBracket({
   entries,
   season,
   label,
+  rounds,
 }: {
   entries: EuropeanCurrentEntry[];
   season: string | null;
   label: string;
+  rounds: BracketRound[];
 }) {
   // Frontier round = the smallest deepest_rnd present in the cohort. Rnd# 1
   // is the final, so "smaller is deeper into the tournament." Clubs whose
@@ -434,7 +468,7 @@ function CurrentSeasonBracket({
     return { alive: [], eliminated: inBucket };
   }
 
-  const rows = BRACKET_ROUNDS.map((round) => ({
+  const rows = rounds.map((round) => ({
     round,
     ...classifyForRound(round),
   })).filter((r) => r.alive.length > 0 || r.eliminated.length > 0);

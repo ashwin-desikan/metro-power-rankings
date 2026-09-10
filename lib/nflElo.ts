@@ -205,6 +205,13 @@ async function load<T>(
   } catch {
     /* no build-time copy */
   }
+  // A development server, or a local `next start` with NFL_DATA_LOCAL=1,
+  // reads the checkout's files instead of origin's, so a data change shows
+  // on the page BEFORE it is pushed (Ashwin, 2026-09-10: rebuilt seeds files
+  // invisible on `next dev` because the page fetched origin's copy first).
+  // Production keeps GitHub-raw-first, which is what makes a data refresh
+  // free of a build. Never set NFL_DATA_LOCAL in Vercel's environment.
+  if ((process.env.NFL_DATA_LOCAL === "1" || process.env.NODE_ENV === "development") && local != null) return local;
   try {
     const res = await fetch(`${GH_BASE}/${file}`, {
       next: { revalidate: 86400, tags: ["nfl-elo"] },
@@ -255,9 +262,15 @@ export type NflSeedsTeam = {
   seed: (number | null)[];
   dr: number[];
   cr: number[];
+  /** Before 1970 only: level for a division title that would be played off. */
+  tie?: boolean[];
 };
 
+/** A played-off division title (ten of them, 1941 to 1968). */
+export type NflTiebreak = { home: string; away: string; score: string; date: string | null; winner: string; div: string | null };
+
 export type NflSeedsFile = {
+  tiebreaks?: NflTiebreak[];
   season: number;
   /** The largest pool's seed count; `pools` has each pool's own. */
   seeds_per_conf: number;

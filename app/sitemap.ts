@@ -153,6 +153,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.85,
     },
     {
+      url: `${BASE_URL}/countries/2100`,
+      lastModified: stamp,
+      changeFrequency: "yearly",
+      priority: 0.7,
+    },
+    {
       url: `${BASE_URL}/time-machine`,
       lastModified: stamp,
       changeFrequency: "monthly",

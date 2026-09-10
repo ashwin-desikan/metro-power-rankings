@@ -6,6 +6,7 @@ import HubNav from "@/app/teams/HubNav";
 import { SectionHead } from "@/app/_shared/SectionHead";
 import { CollapsibleSection } from "@/app/_shared/CollapsibleSection";
 import { TableScroll } from "@/app/_shared/TableScroll";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
 import { getNflEloIndex, getNflEloSeason, getNflSeeds, getNflUpcoming } from "@/lib/nflElo";
 import { getNflExpectationSeason } from "@/lib/nflExpectation";
@@ -203,13 +204,13 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
 
       <HubNav items={[
         { label: seeded ? "Preseason board" : "The season, week by week", href: "#race" },
-        { label: "The season as a shape", href: "#towers" },
-        ...(wk1.length ? [{ label: "Week 1, priced", href: "#week1" }] : []),
         { label: "Standings", href: "#standings" },
+        { label: "The season as a shape", href: "#towers" },
+        ...(seeds ? [{ label: seeds.label === "leader" ? "The race, week by week" : "Playoff picture", href: "#picture" }] : []),
+        ...(wk1.length ? [{ label: "Week 1, priced", href: "#week1" }] : []),
         ...(bestGames.length ? [{ label: "Greatest games", href: "#games" }] : []),
         { label: "Against expectation", href: "#expectation" },
         ...(seeded ? [] : [{ label: "Biggest movers", href: "#movers" }]),
-        ...(seeds ? [{ label: seeds.label === "leader" ? "The race, week by week" : "Playoff picture", href: "#picture" }] : []),
         { label: "Where this comes from", href: "#method" },
       ]} />
 
@@ -242,6 +243,33 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
         )}
       </section>
 
+      {/* ------------------------------------------------------- standings */}
+      {/* Order (Ashwin, 2026-09-10): standings, then the season as a shape, then
+         the playoff picture, so the table, the grid and the seeds read together. */}
+      <CollapsibleSection
+        defaultOpen
+        meta={`${data.teams.length} teams`}
+        id="standings"
+          title="Standings"
+          sub={
+            data.leagues.length > 1
+              ? `${data.leagues.join(" and ")} ran side by side; the ratings do not.`
+              : "Record, points, rating and what the season came to, grouped however you want to read it."
+          }
+          more={
+            (data.leagues.length > 1
+              ? "The two leagues are shown apart because their tables were never one table. The ratings ARE one pool: a team is rated against everyone playing that year, which is the only way to ask how the leagues compared. "
+              : "") +
+            "The record is the final regular-season record. The strip on each row fills in from the left as a team went further: playoffs, division, best record in its conference, conference final, championship game, championship. " +
+            "An asterisk on a record is the best record in the league, and a seed is the number a team carried into the playoffs. " +
+            (seeds
+              ? "Teams level on record are ordered by the NFL tiebreaking procedure, applied to the results as they stood after each week: head-to-head, division and conference records, common games, strength of victory and schedule, points rankings and net points, in the order the league used that season. Scrub to any week and the seed column shows where each team would have been seeded had the season ended there."
+              : "Teams level on record are ordered by rating: the league's own tiebreakers are not in this workbook, so the order inside a tie is not authoritative. The division flag is.")
+          }
+        >
+        <SeasonStandings teams={standingsTeams} showHonours={showHonours} showSeeds={showSeeds} seeds={seeds} />
+      </CollapsibleSection>
+
       {/* ---------------------------------------------- the season as a shape */}
       {hasTowers ? (
         <section className="mb-12">
@@ -272,6 +300,32 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
               <WhatIsLeft season={season} status={data.status} teams={data.teams} ident={ident} upcoming={upcoming} />
             </div>
           ) : null}
+        </section>
+      ) : null}
+
+      {/* ---------------------------------- the playoff picture, week by week */}
+      {seeds ? (
+        <section className="mb-12">
+          <SectionHead
+            id="picture"
+            title={seeds.label === "leader" ? "The race for the title, week by week" : "The playoff picture, week by week"}
+            sub={
+              seeds.label === "seed"
+                ? `Each team's seed had the season ended after that week, ${seeds.seeds_per_conf} a conference; filled for a division winner, outlined for a wild card.`
+                : seeds.label === "place"
+                ? "Each cell names the division a club was leading after that week; a starred, outlined cell is a club level for the title, which was played off."
+                : "The standings leader after each week, in a league that crowned its champion from the table, ties excluded from the percentage as the league counted it."
+            }
+            more={
+              "Computed from the results as they stood after each week with the tiebreaking procedure of that era (head-to-head, division and conference records, net points; common games from 1980; strength of victory and schedule and the points rankings from 2002), so the number is a position, not a forecast. " +
+              (season < 1970 ? "E and W are East and West; CAP, CEN, CST and CTR are the 1967-69 Capitol, Century, Coastal and Central divisions. Until 1966 in the NFL and to the end in the AFL a tied division title was played off, so clubs level on the record after a week are all shown, starred, and the PO column carries the playoff that settled it: the winner filled, the loser struck through. The NFL used tiebreakers from 1967. Where a league took two clubs from each division (the 1969 AFL) the cell shows the division rank, which fixed the pairing; a single group (the 1949 AAFC) keeps its rank. " : season < 1975 ? "Before 1975 the divisional round's home fields rotated by division, so the seed here is a ranking by record, not the league's own number. " : "") +
+              "Rows are the final order; the line is the cut. The scrubber above highlights its week here. " +
+              (Object.keys(seeds.notes).length
+                ? `In ${Object.keys(seeds.notes).length} week${Object.keys(seeds.notes).length === 1 ? "" : "s"} two clubs were level on every step the ledger can score and the club first by name was placed first; the raw file lists them.`
+                : "No week needed the coin toss.")
+            }
+          />
+          <SeedTimeline seeds={seeds} teams={timelineTeams} />
         </section>
       ) : null}
 
@@ -321,57 +375,6 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
         </section>
       ) : null}
 
-      {/* ------------------------------------------------------- standings */}
-      <CollapsibleSection
-        defaultOpen
-        meta={`${data.teams.length} teams`}
-        id="standings"
-          title="Standings"
-          sub={
-            data.leagues.length > 1
-              ? `${data.leagues.join(" and ")} ran side by side; the ratings do not.`
-              : "Record, points, rating and what the season came to, grouped however you want to read it."
-          }
-          more={
-            (data.leagues.length > 1
-              ? "The two leagues are shown apart because their tables were never one table. The ratings ARE one pool: a team is rated against everyone playing that year, which is the only way to ask how the leagues compared. "
-              : "") +
-            "The record is the final regular-season record. The strip on each row fills in from the left as a team went further: playoffs, division, best record in its conference, conference final, championship game, championship. " +
-            "An asterisk on a record is the best record in the league, and a seed is the number a team carried into the playoffs. " +
-            (seeds
-              ? "Teams level on record are ordered by the NFL tiebreaking procedure, applied to the results as they stood after each week: head-to-head, division and conference records, common games, strength of victory and schedule, points rankings and net points, in the order the league used that season. Scrub to any week and the seed column shows where each team would have been seeded had the season ended there."
-              : "Teams level on record are ordered by rating: the league's own tiebreakers are not in this workbook, so the order inside a tie is not authoritative. The division flag is.")
-          }
-        >
-        <SeasonStandings teams={standingsTeams} showHonours={showHonours} showSeeds={showSeeds} seeds={seeds} />
-      </CollapsibleSection>
-
-      {/* ---------------------------------- the playoff picture, week by week */}
-      {seeds ? (
-        <section className="mb-12">
-          <SectionHead
-            id="picture"
-            title={seeds.label === "leader" ? "The race for the title, week by week" : "The playoff picture, week by week"}
-            sub={
-              seeds.label === "seed"
-                ? `Each team's seed had the season ended after that week, ${seeds.seeds_per_conf} a conference; filled for a division winner, outlined for a wild card.`
-                : seeds.label === "place"
-                ? "Each team's playoff place had the season ended after that week: the division winners, by the standings of the day."
-                : "The standings leader after each week, in a league that crowned its champion from the table, ties excluded from the percentage as the league counted it."
-            }
-            more={
-              "Computed from the results as they stood after each week with the tiebreaking procedure of that era (head-to-head, division and conference records, net points; common games from 1980; strength of victory and schedule and the points rankings from 2002), so the number is a position, not a forecast. " +
-              (season < 1970 ? "Before 1970 a tied division title was played off, so a week that shows one club is the club the procedure would have placed first. " : season < 1975 ? "Before 1975 the divisional round's home fields rotated by division, so the seed here is a ranking by record, not the league's own number. " : "") +
-              "Rows are the final order; the line is the cut. The scrubber above highlights its week here. " +
-              (Object.keys(seeds.notes).length
-                ? `In ${Object.keys(seeds.notes).length} week${Object.keys(seeds.notes).length === 1 ? "" : "s"} two clubs were level on every step the ledger can score and the club first by name was placed first; the raw file lists them.`
-                : "No week needed the coin toss.")
-            }
-          />
-          <SeedTimeline seeds={seeds} teams={timelineTeams} />
-        </section>
-      ) : null}
-
       {/* --------------------------------------------------------- games */}
       {bestGames.length ? (
         <section className="mb-12">
@@ -384,7 +387,34 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
               "so a tight upset in a Super Bowl scores above a blowout in week 3 without anyone deciding it should. The same measure ranks the all-time board on the NFL hub."
             }
           />
-          <TableScroll className="rounded-xl border" style={CARD}>
+          <ResponsiveTable
+            variant="list"
+            className="rounded-xl border"
+            style={CARD}
+            mobileNoun="games"
+            mobileRows={bestGames.map((g, i) => {
+              const wName = [g.winner_city, g.winner_team].filter(Boolean).join(" ");
+              const lName = [g.loser_city, g.loser_team].filter(Boolean).join(" ");
+              const ws = nflSlugForEraTeam(g.winner_city, g.winner_team);
+              const ls = nflSlugForEraTeam(g.loser_city, g.loser_team);
+              return (
+                <RankRow
+                  key={`${g.date}-${g.winner_team}`}
+                  rank={i + 1}
+                  name={
+                    <span className="whitespace-normal leading-snug">
+                      {ws ? <Link href={`/teams/nfl/${ws}`} className="text-[var(--accent)]">{wName}</Link> : wName}
+                      <span className="text-[var(--text-muted)]"> {g.is_tie ? "tied with" : "beat"} </span>
+                      {ls ? <Link href={`/teams/nfl/${ls}`}>{lName}</Link> : lName}
+                    </span>
+                  }
+                  sub={<>{g.winner_score}-{g.loser_score}{g.ot ? " OT" : ""} · {g.round} · {g.date}</>}
+                  right={g.du.toFixed(2)}
+                  rightSub="score"
+                />
+              );
+            })}
+          >
             <table className="w-full text-xs" data-sticky-col="2">
               <thead>
                 <tr className="text-[var(--text-dim)] text-left">
@@ -450,7 +480,7 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
                 })}
               </tbody>
             </table>
-          </TableScroll>
+          </ResponsiveTable>
         </section>
       ) : null}
 
@@ -463,7 +493,22 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
             sub="Rating at the end, against the rating it started with."
             more="A team can gain a lot and still miss the playoffs, and a team can win its division while the model thinks less of it in January than it did in August. That gap is the season's real story and no final table contains it."
           />
-          <TableScroll className="rounded-xl border" style={CARD}>
+          <ResponsiveTable
+            variant="list"
+            className="rounded-xl border"
+            style={CARD}
+            mobileNoun="teams"
+            mobileRows={movers.slice(0, 5).concat(movers.slice(-5)).map((m, i) => (
+              <RankRow
+                key={m.t.name}
+                rank={i < 5 ? i + 1 : "\u00b7"}
+                name={<TeamCell city={m.t.city} team={m.t.team} name={m.t.name} ident={ident[m.t.name]} />}
+                sub={<>{m.t.start.toFixed(0)} to {m.t.end.toFixed(0)} · peak {m.t.peak.e.toFixed(0)}</>}
+                right={`${m.delta >= 0 ? "+" : ""}${m.delta.toFixed(0)}`}
+                rightSub="Elo"
+              />
+            ))}
+          >
             <table className="w-full text-xs" data-sticky-col="2">
               <thead>
                 <tr className="text-[var(--text-dim)] text-left">
@@ -492,7 +537,7 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
                 ))}
               </tbody>
             </table>
-          </TableScroll>
+          </ResponsiveTable>
         </section>
       ) : null}
 

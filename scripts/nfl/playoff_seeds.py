@@ -523,6 +523,7 @@ def picture(teams: dict[str, Team], games: list[Game], season: int, notes: list[
         divs = sorted({teams[n].div for n in members})
         q, nseeds = pool_format(season, league, len(divs))
         winners = []
+        shared: list[str] = []   # clubs level for a title that would be played off
         for div in divs:
             dm = [n for n in members if teams[n].div == div]
             ranked = _rank(dm, st, br, "div")
@@ -530,6 +531,23 @@ def picture(teams: dict[str, Team], games: list[Game], season: int, notes: list[
                 out[n] = {"dr": i + 1}
                 br.div_rank[n] = i + 1
             winners.extend(ranked[:q])
+            # Before 1970 there was no tiebreaker for a division title: level
+            # clubs played it off. So a club level with the leader on the
+            # record IS in the playoff picture that week, with a playoff to
+            # come (Ashwin, 2026-09-10: 1963 AFL East, Boston and Buffalo).
+            # The NFL adopted tiebreakers for 1967 (the Coastal: Rams over the
+            # Colts, both 11-1-2, on the points in their two games, no playoff);
+            # the AFL played its ties off to the end (1968 West, Raiders 41-6
+            # Chiefs). `--verify` is what says so: 1967 Colts "computed in,
+            # shard has no appearance" the moment this rule forgets the NFL.
+            played_off = season < 1967 or league != "NFL"
+            if played_off and q == 1 and len(divs) > 1:
+                top = round(st.rec[ranked[0]].pct, 6)
+                level = [n for n in ranked if round(st.rec[n].pct, 6) == top]
+                if len(level) > 1:
+                    shared.extend(level[1:])
+                    for n in level:
+                        out[n]["tie"] = True
         if season == 1982:
             # The strike season: a 16-team tournament seeded by conference
             # record, division standings not used.
@@ -547,6 +565,12 @@ def picture(teams: dict[str, Team], games: list[Game], season: int, notes: list[
         for i, n in enumerate(pool_order):
             out[n]["cr"] = i + 1
             out[n]["seed"] = i + 1 if i < nseeds else None
+        # A club sharing a played-off title takes the leader's place (the
+        # same seed), not a place of its own: the ranking above is what the
+        # procedure would say, and the flag says the procedure did not apply.
+        for n in shared:
+            leader = next(m for m in winners if teams[m].div == teams[n].div)
+            out[n]["seed"] = out[leader]["seed"]
     return out
 
 
@@ -580,11 +604,20 @@ def load_season(season: int):
     teams = {t["name"]: Team(t["name"], t.get("conf") or t.get("league") or "NFL", t.get("div") or t.get("league") or "NFL", t.get("league") or "NFL")
              for t in shard["teams"]}
     games = []
+    tiebreaks: list[dict] = []
     ledger_path = os.path.join(LEDGER_DIR, f"season-{season}.json")
     if os.path.exists(ledger_path):
         with open(ledger_path, encoding="utf-8") as f:
             ledger = json.load(f)
         for g in ledger["games"]:
+            if g.get("playoff") and g.get("round") == "Div. Playoff" and season < 1970 and g.get("score"):
+                # The played-off division title (1941, 1943, 1947, 1950, 1952,
+                # 1957, 1958, 1963 AFL, 1965, 1968 AFL): kept for the file's
+                # `tiebreaks`, never counted in the standings.
+                hs, as_ = (int(x) for x in g["score"].split("-"))
+                tiebreaks.append({"home": g["home_key"], "away": g["away_key"], "score": g["score"],
+                                  "date": g.get("date"), "winner": g["home_key"] if hs > as_ else g["away_key"]})
+                continue
             if g.get("playoff") or not g.get("result") or not g.get("score") or not isinstance(g.get("week"), int):
                 continue
             hs, as_ = (int(x) for x in g["score"].split("-"))
@@ -600,13 +633,15 @@ def load_season(season: int):
                 continue
             games.append(Game(g["week"], g["home"], g["away"], int(g["home_pts"]), int(g["away_pts"])))
     reg_end = shard.get("reg_end_week", {}).get("NFL") or max((g.week for g in games), default=0)
-    return shard, teams, games, reg_end
+    for tb in tiebreaks:
+        tb["div"] = teams[tb["home"]].div if tb["home"] in teams else None
+    return shard, teams, games, reg_end, tiebreaks
 
 
 def build(season: int) -> dict:
     if season < FIRST_SEASON:
         raise SystemExit(f"{season}: seeds are built from {FIRST_SEASON} on (see the module docstring)")
-    shard, teams, games, reg_end = load_season(season)
+    shard, teams, games, reg_end, tiebreaks = load_season(season)
     if not teams or not games:
         raise SystemExit(f"{season}: no teams or no games")
     played_through = max((g.week for g in games), default=0)
@@ -642,6 +677,8 @@ def build(season: int) -> dict:
             "dr": [weeks[str(w)][n]["dr"] for w in range(1, last + 1)],
             "cr": [weeks[str(w)][n]["cr"] for w in range(1, last + 1)],
         }
+        if season < 1970:
+            per_team[n]["tie"] = [bool(weeks[str(w)][n].get("tie")) for w in range(1, last + 1)]
     label = "seed" if season >= 1970 else ("place" if season >= 1933 else "leader")
     return {
         "season": season,
@@ -659,6 +696,14 @@ def build(season: int) -> dict:
                  "home fields rotated, so the 1970-74 seed is a ranking by record."),
         "teams": per_team,
         "notes": notes_all,
+        # The played-off titles, so the page can show the playoff as one more
+        # column after the last week: winner in, loser out.
+        # Only a game between two clubs the final week left level counts:
+        # the 1969 AFL's divisional round is labelled "Div. Playoff" too.
+        "tiebreaks": [tb for tb in tiebreaks
+                      if shard.get("complete") and season < 1970
+                      and per_team.get(tb["home"], {}).get("tie", [False])[-1]
+                      and per_team.get(tb["away"], {}).get("tie", [False])[-1]],
     }
 
 
@@ -695,7 +740,7 @@ def seasons_available() -> list[int]:
 def verify(seasons: list[int]) -> int:
     bad = 0
     for y in seasons:
-        shard, teams, games, reg_end = load_season(y)
+        shard, teams, games, reg_end, _tb = load_season(y)
         if not shard.get("complete"):
             continue
         data = build(y)

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { deriveCompBracket, deriveLeaguePhaseGroups, stageIndexOf, stageLabel } from "./euroCompDerive";
+import { dedupeGroupsByTeamSet, deriveCompBracket, deriveLeaguePhaseGroups, stageIndexOf, stageLabel } from "./euroCompDerive";
 import type { LiveComp, LiveFixture, LiveTeamRef } from "./clubFootballLive";
 
 const T = (id: number, name: string): LiveTeamRef => ({ team_id: id, name, lookup: name, country: null });
@@ -135,5 +135,24 @@ describe("deriveCompBracket", () => {
   it("labels every stage it emits", () => {
     const b = deriveCompBracket(comp([fx("Quarter-finals", T(1, "A"), T(2, "B"), 1, 0, "FT")]))!;
     expect(b.stages.every((s) => stageLabel(s.index) === s.label)).toBe(true);
+  });
+});
+
+describe("dedupeGroupsByTeamSet", () => {
+  // The 2026-09-09 Champions League case: api-football renamed the standings
+  // group, the label-keyed upsert kept the old rows, and the bundle carried
+  // two 36-row tables of the same clubs with different numbers.
+  const row = (id: number, name: string, played: number, points: number) =>
+    ({ ...T(id, name), rank: null, played, win: null, draw: null, lose: null, gf: null, ga: null, gd: null, points, form: null });
+  it("keeps one table per team set, the one with more games played", () => {
+    const stale = { group_label: "League Phase", rows: [row(1, "Arsenal", 0, 0), row(2, "PSG", 1, 3)] };
+    const live = { group_label: "UEFA Champions League", rows: [row(1, "Arsenal", 1, 3), row(2, "PSG", 1, 3)] };
+    expect(dedupeGroupsByTeamSet([stale, live]).map((g) => g.group_label)).toEqual(["UEFA Champions League"]);
+    expect(dedupeGroupsByTeamSet([live, stale]).map((g) => g.group_label)).toEqual(["UEFA Champions League"]);
+  });
+  it("leaves genuinely different groups alone", () => {
+    const a = { group_label: "Group A", rows: [row(1, "A", 0, 0), row(2, "B", 0, 0)] };
+    const b = { group_label: "Group B", rows: [row(3, "C", 0, 0), row(4, "D", 0, 0)] };
+    expect(dedupeGroupsByTeamSet([a, b])).toHaveLength(2);
   });
 });

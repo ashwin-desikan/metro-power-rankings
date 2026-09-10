@@ -185,6 +185,13 @@
       "file": "public/data/football/value/index.json",
       "maxAgeDays": 120,
       "why": "Transfermarkt reprices in waves each December and June with continuous revaluation between, so a corpus more than four months old is missing a repricing. The upstream transfermarkt-datasets pipeline has been paused since July 2026; when this goes overdue that is the reason to check."
+    },
+    {
+      "key": "population-2100",
+      "label": "UN World Population Prospects (country hubs, /countries/2100)",
+      "file": "public/data/countries/pop2100/index.json",
+      "maxAgeDays": 900,
+      "why": "The UN revises WPP every two years (July 2024, next expected mid-2026); scripts/countries/build_population_2100.py is run by hand from the CSVs downloaded on the Windows box, so an index older than thirty months means a revision was missed."
     }
   ]
 }

@@ -1,9 +1,9 @@
-import type { CSSProperties } from "react";
 import type { NflEloTeam } from "@/lib/nflElo";
 import type { GameRow, SeasonFile } from "@/lib/nflExpectation";
 import type { TeamIdent } from "./TeamCell";
 import { MONOGRAM_BY_SLUG } from "@/lib/nfl";
 import { eraAbbr } from "@/lib/nflEra";
+import TowersGrid, { type Band, type Cell, type Col } from "./TowersGrid";
 
 // The season as a shape: one column per team, one box per regular-season
 // WEEK, stacked bottom (week 1) to top (the last regular-season week), a
@@ -37,13 +37,7 @@ import { eraAbbr } from "@/lib/nflEra";
 // at the bottom for free, in document order, with no y-coordinate arithmetic
 // anywhere in this file.
 
-const MONO: CSSProperties = { fontFamily: "'JetBrains Mono', monospace" };
-const COL_MIN_W = 28; // phones: fixed column width, so 32 teams = 896px
-const COL_MAX_W = 44; // desktop: a column never grows past this
-const BOX_H = 10;
-const BOX_GAP = 2;
-const SEAM_H = 6; // the line between the regular season and the playoffs
-const AXIS_WEEKS = [1, 5, 10, 15, 20];
+// Sizes, the Cell and Col shapes and the drawing live in TowersGrid (client).
 
 // 🔴 PLAYOFF ROWS ARE KEYED BY ROUND, NOT BY WEEK NUMBER. Before 1969 the
 // ledger's playoff week numbers overlap the regular season (the 1967 NFL
@@ -86,33 +80,13 @@ function tierFor(round: string | null | undefined, season: number): Tier | null 
   }
 }
 
-type Band = "expected" | "tossup" | "shock";
-
 function bandFor(p: number): Band {
   if (p >= 0.6) return "expected";
   if (p < 0.4) return "shock";
   return "tossup";
 }
 
-const OPACITY: Record<Band, number> = { expected: 0.3, tossup: 0.65, shock: 1 };
 const BAND_LABEL: Record<Band, string> = { expected: "expected", tossup: "toss-up", shock: "shock" };
-
-type Cell =
-  | { kind: "game"; band: Band; win: boolean; title: string }
-  | { kind: "tie"; title: string }
-  | { kind: "bye"; title?: string }
-  | { kind: "out" } // playoff round the team was not in: nothing drawn
-  | { kind: "seam" }; // the line between the regular season and the playoffs
-
-type Col = {
-  key: string;
-  slug: string | null;
-  logo: string | null;
-  mono: { bg: string; fg: string; mono: string } | null;
-  abbr: string;
-  labelTitle: string;
-  cells: Cell[]; // index 0 = week 1; then the seam; then one per playoff tier
-};
 
 // One cell from one graded game, seen from `t`'s side. Shared by the
 // regular-season weeks and the playoff rounds; only the leading label differs.
@@ -289,6 +263,7 @@ export default function ExpectationTowers({
       logo: ident[t.name]?.logo ?? null,
       mono: ident[t.name]?.mono ?? (slug && MONOGRAM_BY_SLUG[slug] ? MONOGRAM_BY_SLUG[slug] : null),
       abbr: abbrFor(t, slug),
+      label,
       labelTitle: `${label} ${recStr}${waeStr ? ` · ${waeStr}` : ""}${poWins + poLosses ? ` · playoffs ${poWins}-${poLosses}` : ""}`,
       cells,
     });
@@ -296,137 +271,9 @@ export default function ExpectationTowers({
 
   if (!cols.length) return null;
 
-  const rows = maxWeek + tiers.length;
-  const stackH = rows * (BOX_H + BOX_GAP) - BOX_GAP + (tiers.length ? SEAM_H + BOX_GAP : 0);
-
-  // The seam: a hairline across every column at the same height, so the eye
-  // reads one line across the whole grid rather than 32 short dashes.
-  function Seam() {
-    return <div aria-hidden className="w-full" style={{ height: SEAM_H, backgroundImage: "linear-gradient(var(--border), var(--border))", backgroundSize: "100% 1px", backgroundPosition: "center", backgroundRepeat: "no-repeat" }} />;
-  }
-
-  function Box({ cell }: { cell: Cell }) {
-    if (cell.kind === "seam") return <Seam />;
-    if (cell.kind === "out") {
-      return <div aria-hidden className="w-full" style={{ height: BOX_H }} />;
-    }
-    if (cell.kind === "bye") {
-      return (
-        <div
-          title={cell.title ?? "Bye or no game that week"}
-          className="w-full rounded-[1px]"
-          style={{ height: BOX_H, border: "1px dashed var(--border)" }}
-        />
-      );
-    }
-    if (cell.kind === "tie") {
-      return (
-        <div
-          title={cell.title}
-          className="w-full rounded-[1px]"
-          style={{ height: BOX_H, background: "var(--div-mid)", opacity: 0.75 }}
-        />
-      );
-    }
-    const fill = cell.win ? "var(--div-pos)" : "var(--div-neg)";
-    const shock = cell.band === "shock";
-    return (
-      <div
-        title={cell.title}
-        className="relative w-full rounded-[1px]"
-        style={{
-          height: BOX_H,
-          background: fill,
-          opacity: OPACITY[cell.band],
-          border: shock ? "1.5px solid var(--text)" : "none",
-          boxSizing: "border-box",
-        }}
-      >
-        {shock ? (
-          <span
-            aria-hidden
-            className="absolute rounded-full"
-            style={{ top: 1, right: 1, width: 3, height: 3, background: "#fff" }}
-          />
-        ) : null}
-      </div>
-    );
-  }
-
   return (
-    <figure className="m-0 min-w-0">
-      <div className="overflow-x-auto min-w-0">
-        <div className="flex items-stretch" style={{ minWidth: (cols.length + 1) * COL_MIN_W }}>
-          {/* Week axis, pinned so it stays visible while the columns scroll. */}
-          <div
-            className="sticky left-0 z-10 flex flex-shrink-0 flex-col items-end pr-1.5 text-[9px] text-[var(--text-dim)]"
-            style={{ ...MONO, background: "var(--bg-card)", width: 22 }}
-          >
-            <div style={{ height: 24 }} aria-hidden />
-            <div className="flex flex-col-reverse" style={{ gap: BOX_GAP }}>
-              {Array.from({ length: maxWeek }, (_, i) => i + 1).map((wk) => (
-                <div key={wk} className="flex items-center justify-end" style={{ height: BOX_H }}>
-                  {AXIS_WEEKS.includes(wk) ? wk : ""}
-                </div>
-              ))}
-              {tiers.length ? <Seam /> : null}
-              {tiers.map((tier) => (
-                <div key={`t${tier}`} title={tierTitle(tier)} className="flex items-center justify-end text-[7px]" style={{ height: BOX_H }}>
-                  {tierLabel(tier)}
-                </div>
-              ))}
-            </div>
-            <div style={{ height: 18 }} aria-hidden />
-          </div>
-
-          {cols.map((c) => (
-            <div
-              key={c.key}
-              className="flex flex-shrink-0 flex-1 flex-col items-center gap-1"
-              style={{ minWidth: COL_MIN_W, maxWidth: COL_MAX_W }}
-            >
-              {/* One link per column, 44px tall so it is a real tap target; the
-                  abbreviation below is a label, not a second link. A stretched
-                  .tap-row overlay would swallow the boxes' hover titles. */}
-              <a href={c.slug ? `/teams/nfl/${c.slug}` : undefined} title={c.labelTitle} className="flex h-11 w-full flex-shrink-0 items-center justify-center">
-                {c.logo ? (
-                  <img
-                    src={c.logo}
-                    alt=""
-                    className="h-4 w-4 object-contain sm:h-6 sm:w-6"
-                    decoding="async"
-                  />
-                ) : c.mono ? (
-                  <span
-                    aria-hidden
-                    className="inline-grid h-4 w-4 place-items-center rounded-full sm:h-6 sm:w-6"
-                    style={{ background: c.mono.bg, color: c.mono.fg, fontSize: 7, fontWeight: 700 }}
-                  >
-                    {c.mono.mono}
-                  </span>
-                ) : (
-                  <span aria-hidden className="inline-block h-4 w-4 rounded-full sm:h-6 sm:w-6" style={{ border: "1px solid var(--border)" }} />
-                )}
-              </a>
-
-              <div className="flex w-full flex-col-reverse" style={{ gap: BOX_GAP, height: stackH }}>
-                {c.cells.map((cell, i) => (
-                  <Box key={i} cell={cell} />
-                ))}
-              </div>
-
-              <span
-                title={c.labelTitle}
-                className="text-[8px] font-semibold text-[var(--accent)] sm:text-[9px]"
-                style={MONO}
-              >
-                {c.abbr}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
+    <div className="min-w-0">
+      <TowersGrid cols={cols} maxWeek={maxWeek} tierLabels={tiers.map(tierLabel)} tierTitles={tiers.map(tierTitle)} />
       <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-[var(--text-muted)]">
         <span className="inline-flex items-center gap-1.5">
           <span aria-hidden style={{ background: "var(--div-pos)", opacity: 0.3, width: 12, height: 12, borderRadius: 2, display: "inline-block" }} />
@@ -454,6 +301,6 @@ export default function ExpectationTowers({
         </span>
         <span className="text-[var(--text-dim)]">a dashed box is a bye &middot; a grey box is a tie{tiers.length ? " \u00b7 above the line: the playoffs, round by round; an empty slot is a season already over" : ""}</span>
       </div>
-    </figure>
+    </div>
   );
 }
