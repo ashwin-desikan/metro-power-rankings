@@ -12301,5 +12301,61 @@ Workflow re-run 34485939747 went green through ALL steps including the finalizer
 failed, rebuilt the hub JSON and committed it as `b6388d42f`. Nothing on the WNBA is
 outstanding; the nightly 08:00Z run should now be a clean no-op.
 
+### I. 🔴 HEALTHCHECKS IS CAPPED AT 20 CHECKS, AND `?create=1` WILL BLOW STRAIGHT THROUGH IT
+**My fault, start to finish, and the mechanism is the part to remember.** Creating a check via
+`POST /api/v1/checks/` returned **403**, which I read as "the API key is read-only". It is not:
+healthchecks returns 403 on that endpoint when the account's **check limit is reached**, and the
+project was sitting at exactly 20. I then created both checks anyway by pinging
+`hc-ping.com/<ping-key>/<slug>?create=1`, which auto-provisions and **does not enforce the cap** —
+so the project went to 22, silently over its plan, and Ashwin had to notice.
+
+  * 🔴 A 403 from healthchecks' create endpoint means QUOTA, not permission. `HC_API_KEY` has
+    full write access: `POST /api/v1/checks/<uuid>` updates fine, which is how both graces were
+    set to 21600s. Test a write before diagnosing a key.
+  * 🔴 `?create=1` bypasses the limit. Never use it to "work around" a create failure.
+
+**Back to 20 by giving up two tiles, chosen so the least is lost.** Deleting a check is
+PERMANENT and takes its ping history with it, so both configs are recorded here:
+
+  * `football-standings` — period 86400s, grace 21600s, no channel, 416 pings.
+  * `gap-league-watch` — period 86400s, grace 21600s, no channel, 120 pings.
+
+The selection rule, worth reusing: **give up the tiles that are most covered elsewhere, never
+the ones that can actually alert.** football-standings runs 4x daily behind three other layers
+(`dispatcher.notify()` ntfys the moment a run fails; the `mac-mini` hourly heartbeat, which HAS
+a channel, catches the mini or dispatcher dying; the Data staleness watch GitHub Action notices
+the data going stale independently of the mini). gap-league-watch polls for an UPSTREAM STATE
+CHANGE — a missed run costs literally nothing, because the next run observes the same
+transition. `f1-weekly` was considered and KEPT: its script documents that check as a
+deliberate *"poller-alive signal"* for an hourly launchd job outside the dispatcher, so it is
+that job's only liveness monitor, and its ping is wired in the plist's ProgramArguments rather
+than jobs.toml.
+
+🔴 **Deleting a check means removing its `hc_slug` in the same edit.** Otherwise the job keeps
+pinging a check that does not exist, curl 404s, `hc-run.sh` swallows it, and you are left with
+exactly the trap `daily-ops-sweep` sat in from 08-30 to 09-10: a declared slug, no tile, no
+alerting, and nothing anywhere saying so. Audit for it with:
+
+    cd ~/metro-mini-jobs && python3 - <<'EOF'
+    import json, tomllib, urllib.request, os
+    key = os.environ["HC_API_KEY"]          # from ~/.config/mini-hc.env
+    req = urllib.request.Request("https://healthchecks.io/api/v1/checks/", headers={"X-Api-Key": key})
+    checks = {c["slug"] for c in json.load(urllib.request.urlopen(req))["checks"]}
+    declared = {j["hc_slug"] for j in tomllib.load(open("jobs.toml","rb"))["job"] if j.get("hc_slug")}
+    print("dangling:", sorted(declared - checks) or "none")
+    print("pinged from elsewhere:", sorted(checks - declared))
+    EOF
+
+Run after this cleanup: 20 checks, 15 declared slugs, **0 dangling**. The five checks with no
+jobs.toml slug are all legitimately pinged elsewhere — `f1-weekly` (its plist), `mac-mini` (the
+heartbeat) and the three `newsletter-*` launchd jobs.
+
+⚠️ **The cap is not the real weakness. 16 of the 20 checks have NO notification channel** — only
+`mac-mini`, `mktcap-refresh`, `daily-ops-sweep` and `claude-auth-canary` can tell anyone
+anything; the rest speak only to whoever opens the dashboard. Wiring the existing channel
+(`58301f3a-…`) to the tiles where silent non-execution costs most — the monthlies and weeklies,
+where a missed run could go unnoticed for weeks — would buy far more than a higher cap. Not
+done: Ashwin's call.
+
 **Pushed and live at `58ab5e622`** (data + FIBA + standings reconcile), `b5223a5d9` and
 `703456966` (canary), `ffebb034f` and `88e906673` (WNBA), `7f6faa8a4` and this entry (handoff).

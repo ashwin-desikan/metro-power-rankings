@@ -293,7 +293,14 @@ label = "Football gap-league watch"
 time = "05:00"                 # NOT a pair. The plist brackets local 05:00+06:00
                                 # and the script's guard picks 05:00 UTC; one run.
 command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-gap-league-watch.sh"
-hc_slug = "gap-league-watch"
+# hc_slug REMOVED 2026-09-10, with football-standings, to get the healthchecks
+# project back under its 20-check cap (see HANDOFF 2026-09-10 sec I). Chosen
+# because this job loses the least by not being watched: it polls for an UPSTREAM
+# STATE CHANGE (right now, whether api-football has published Indian Super League
+# 2026), so a missed run costs nothing at all -- the next run observes exactly
+# the same transition, and there is no window to miss. It also carried no
+# notification channel, so the tile only ever spoke to someone already looking at
+# the dashboard. A real failure still pushes ntfy through dispatcher.notify().
 catchup_hours = 14
 timeout_minutes = 20
 
@@ -314,7 +321,17 @@ id = "football-standings"      # launchd/com.citizenofnowhere.football-standings
 label = "Football live standings"
 times = ["05:00", "11:00", "17:00", "23:00"]
 command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-football-standings.sh"
-hc_slug = "football-standings"
+# hc_slug REMOVED 2026-09-10. The healthchecks project is capped at 20 checks and
+# stood at 22 (see HANDOFF 2026-09-10 sec I): this tile was given up rather than
+# one that can actually alert. It was the cheapest to lose -- it carried NO
+# notification channel, so it only ever spoke to anyone who went and looked, and
+# this job runs 4x daily behind three other layers: dispatcher.notify() pushes an
+# ntfy the moment a run fails, the mac-mini hourly heartbeat (which DOES have a
+# channel) catches the mini or dispatcher dying, and the Data staleness watch
+# GitHub Action independently notices football data going stale. Deleting the
+# check WITHOUT removing this line would have left the same dangling-slug trap
+# daily-ops-sweep sat in since 08-30, pinging a check that does not exist and
+# 404ing in silence.
 catchup_hours = 4              # deliberately short: slots are 6h apart, so a
                                 # slot missed by more than 4h should be recorded
                                 # MISSED rather than fired just before the next.
