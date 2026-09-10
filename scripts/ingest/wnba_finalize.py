@@ -94,6 +94,13 @@ POSTSEASON_TYPE = 3
 EXPECTED_PLAYOFF_TEAMS = 8
 MAX_ROUNDS = 3
 
+# ESPN fills the bracket with these until the seeds are known.
+PLACEHOLDER_TEAMS = {"TBD"}
+# Problem kinds. PENDING: not determined yet, will resolve itself, do not fail
+# the workflow. BLOCKING: genuinely inconsistent, stop and fetch a human.
+PENDING = "pending"
+BLOCKING = "blocking"
+
 FLAG_COLS = ("playoffs", "div_title", "best_rec", "sf_app", "champ_app", "champ",
              "p_wins", "p_losses")
 
@@ -338,45 +345,90 @@ def leaders(ladder):
 
 
 def desired_flags(ladder, games):
-    """The flags the season SHOULD carry. Returns (by_team, problems)."""
+    """The flags the season SHOULD carry. Returns (by_team, problems).
+
+    `problems` is a list of (kind, message), kind being PENDING or BLOCKING.
+
+    PENDING means "the bracket is not determined YET" -- ESPN has published the
+    postseason schedule with TBD placeholders where the seeds will go, which is
+    the normal state between the end of the regular season and the seeding. It
+    resolves itself when the field is announced. Flags are still left untouched,
+    but the caller exits 0 so the rest of the nightly workflow (hub rebuild,
+    commit) is not held hostage to it. Before 2026-09-10 every problem was
+    fatal, so this ordinary week of the calendar failed the run nightly and
+    blocked the rebuild for data that had nothing to do with the postseason.
+
+    BLOCKING means the data is genuinely inconsistent -- a format change, a
+    series joining teams from different rounds, a real team name absent from the
+    ladder. Those still stop the run loudly, because they need a human.
+
+    A TIE is PENDING, not BLOCKING: the data is not wrong, two clubs simply
+    finished level, and the code below already does the safe thing by leaving
+    the flag unset. Who "wins" a shared division title is an editorial call,
+    and it should not fail a data pipeline nightly until someone makes it. It
+    is printed under its own heading so it is still visible.
+    """
     problems = []
     series = assign_rounds(build_series(games))
     teams = sorted({t for s in series for t in s["teams"]})
 
+    # A placeholder is ESPN's literal TBD, not merely a name absent from the
+    # ladder: an unrecognised REAL club is a mapping fault and must stay fatal.
+    known = {r["team"] for r in ladder}
+    placeholders = sorted(t for t in teams if t.strip().upper() in PLACEHOLDER_TEAMS)
+    unseeded = bool(placeholders)
+    # Once results start landing the bracket is real, and "not determined yet"
+    # stops being an available excuse for anything.
+    started = any(g["completed"] for g in games)
+    soft = PENDING if (unseeded and not started) else BLOCKING
+
     if len(teams) != EXPECTED_PLAYOFF_TEAMS:
-        problems.append("expected %d postseason teams, found %d (%s)"
-                        % (EXPECTED_PLAYOFF_TEAMS, len(teams), ", ".join(teams)))
+        problems.append((soft if unseeded else BLOCKING,
+                         "expected %d postseason teams, found %d (%s)"
+                         % (EXPECTED_PLAYOFF_TEAMS, len(teams), ", ".join(teams))))
     if series and max(s["round"] for s in series) > MAX_ROUNDS:
-        problems.append("found %d rounds, expected at most %d -- format change?"
-                        % (max(s["round"] for s in series), MAX_ROUNDS))
+        # Never soft: more rounds than the format allows is a format change.
+        problems.append((BLOCKING,
+                         "found %d rounds, expected at most %d -- format change?"
+                         % (max(s["round"] for s in series), MAX_ROUNDS)))
     for s in series:
         if not s["round_consistent"]:
-            problems.append("series %s joins teams arriving from different rounds"
-                            % " v ".join(sorted(s["teams"])))
-        # Cross-check only. Structure decides; a disagreement stops the run.
+            problems.append((soft,
+                             "series %s joins teams arriving from different rounds"
+                             % " v ".join(sorted(s["teams"]))))
+        # Cross-check only. Structure decides; a disagreement stops the run --
+        # unless the structure is still collapsed around TBD, in which case the
+        # disagreement is an artefact of the placeholders, not a real conflict.
         if any("final" in h.lower() and "semi" not in h.lower() for h in s["headlines"]):
             if s["round"] != MAX_ROUNDS:
-                problems.append("series %s is headlined %r but is structurally round %d"
-                                % (" v ".join(sorted(s["teams"])), sorted(s["headlines"])[0],
-                                   s["round"]))
+                problems.append((soft,
+                                 "series %s is headlined %r but is structurally round %d"
+                                 % (" v ".join(sorted(s["teams"])), sorted(s["headlines"])[0],
+                                    s["round"])))
 
-    known = {r["team"] for r in ladder}
     unknown = [t for t in teams if t not in known]
-    if unknown:
-        problems.append("postseason team(s) missing from the %s ladder: %s"
-                        % (TABLE, ", ".join(unknown)))
+    unknown_real = [t for t in unknown if t.strip().upper() not in PLACEHOLDER_TEAMS]
+    if placeholders and [t for t in unknown if t in placeholders]:
+        problems.append((soft, "postseason field not seeded yet: %s"
+                         % ", ".join(placeholders)))
+    if unknown_real:
+        problems.append((BLOCKING,
+                         "postseason team(s) missing from the %s ladder: %s"
+                         % (TABLE, ", ".join(unknown_real))))
 
     div, league = leaders(ladder)
     if len(league) > 1:
-        problems.append("tie for the league's best record (%s) -- best_rec left alone"
-                        % ", ".join(sorted(league)))
+        problems.append((PENDING,
+                         "tie for the league's best record (%s) -- best_rec left alone"
+                         % ", ".join(sorted(league))))
         league = set()
     for c in {r.get("conference") or "" for r in ladder}:
         tied = {t for t in div if any(r["team"] == t and (r.get("conference") or "") == c
                                       for r in ladder)}
         if len(tied) > 1:
-            problems.append("tie for the %s lead (%s) -- div_title left alone"
-                            % (c or "?", ", ".join(sorted(tied))))
+            problems.append((PENDING,
+                             "tie for the %s lead (%s) -- div_title left alone"
+                             % (c or "?", ", ".join(sorted(tied)))))
             div -= tied
 
     finals = [s for s in series if s["round"] == MAX_ROUNDS]
@@ -456,11 +508,27 @@ def run(season, write):
           % (len(games), done, len(games) - done))
 
     by_team, problems = desired_flags(ladder, games)
-    for p in problems:
-        print("[wnba] REFUSING: %s" % p, file=sys.stderr)
-    if problems:
+    blocking = [m for k, m in problems if k == BLOCKING]
+    pending = [m for k, m in problems if k == PENDING]
+
+    for m in blocking:
+        print("[wnba] REFUSING: %s" % m, file=sys.stderr)
+    for m in pending:
+        print("[wnba] NOT YET: %s" % m, file=sys.stderr)
+
+    if blocking:
         raise SystemExit("[wnba] %d bracket problem(s) above -- flags left untouched. "
-                         "This needs a human, not a guess." % len(problems))
+                         "This needs a human, not a guess." % len(blocking))
+    if pending:
+        # Flags stay untouched, exactly as when this was fatal -- the only
+        # change is the exit code, so the workflow's later steps (rebuild the
+        # hub JSON, commit) still run. Writing a half-seeded bracket would be
+        # the actual harm; failing the whole run for a normal week of the
+        # calendar was merely a costly one.
+        print("[wnba] %d item(s) not determined yet -- postseason flags left "
+              "untouched; nothing here needs a human. Re-runs once the field is "
+              "seeded." % len(pending))
+        return 0
 
     series = assign_rounds(build_series(games))
     for s in series:
@@ -681,7 +749,9 @@ def self_test():
     # -- gates -------------------------------------------------------------
     short = [g for g in G if "Golden State Valkyries" not in (g["home"], g["away"])]
     _, probs3 = desired_flags(ladder, short)
-    check("wrong team count is refused", any("postseason teams" in p for p in probs3))
+    check("wrong team count is refused", any("postseason teams" in m for _, m in probs3))
+    check("...and it BLOCKS when no placeholder explains it",
+          any(k == BLOCKING and "postseason teams" in m for k, m in probs3))
 
     mislabel = [dict(g) for g in G]
     for g in mislabel:
@@ -689,14 +759,16 @@ def self_test():
             g["headline"] = "WNBA Finals"
     _, probs4 = desired_flags(ladder, mislabel)
     check("headline/structure disagreement is refused",
-          any("structurally round" in p for p in probs4))
+          any("structurally round" in m for _, m in probs4))
 
     tied = [dict(r) for r in _ladder_2025()]
     for r in tied:
         if r["team"] in ("Minnesota Lynx", "Las Vegas Aces"):
             r["win_pct"], r["gb"] = 0.773, 0.0
     _, probs5 = desired_flags(tied, G)
-    check("a tie for best record is refused", any("best record" in p for p in probs5))
+    check("a tie for best record is reported", any("best record" in m for _, m in probs5))
+    check("...as PENDING, not blocking: level is not wrong, and the flag is left unset",
+          all(k == PENDING for k, m in probs5 if "best record" in m))
 
     print("self-test OK (%d checks)" % n[0])
 

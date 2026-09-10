@@ -12202,12 +12202,60 @@ sent Ashwin two real "re-auth needed in 27d" alerts for a credential with 27 day
 
 **healthchecks:** `claude-auth-canary` and `daily-ops-sweep` both created. daily-ops-sweep had
 declared `hc_slug` since 08-30 with NO check behind it, so every ping it ever sent 404'd
-silently — it had no tile at all. Both had to be auto-provisioned by pinging
-`hc-ping.com/<key>/<slug>?create=1`, because **HC_API_KEY is READ-ONLY**: GET works, POST
-returns 403. Consequence: both landed with defaults (period 86400s, grace 3600s) rather than a
-cron schedule. 🔴 That grace is too tight for their catch-up windows — the canary's own first
-run was a legitimate 319m-late catch-up that would have shown red. Set grace to 21600 in the UI
-(or get a write-capable API key) for both.
+silently — it had no tile at all. Both were auto-provisioned by pinging
+`hc-ping.com/<key>/<slug>?create=1`, which creates with defaults (period 86400s, grace 3600s)
+rather than a cron schedule. Both graces have since been set to **21600s (6h)** to match their
+catch-up windows, and both carry a notification channel. The canary's own first run was a
+legitimate 319m-late catch-up that would have shown red under the 1h default.
+
+⚠️ CORRECTION, same day: an earlier version of this entry said **HC_API_KEY is read-only**.
+It is NOT. It updates existing checks fine (`POST /api/v1/checks/<uuid>` returned 200, which is
+how the graces above were fixed). The 403 that prompted that claim was on *creating* a check
+while the project sat at 20 — healthchecks returns 403 for POST /api/v1/checks/ when the
+account's check limit is reached, which is a quota, not a permission. Do not repeat the
+read-only diagnosis: test a write before concluding anything from one status code.
+
+### G. WNBA: a nightly CI failure that was the guard working, and the exit code that cost too much
+Ashwin got a GitHub failure notification for "WNBA season refresh" (run 34478252537, 12:42Z).
+Not a break: `scripts/ingest/wnba_finalize.py` refused to write, exactly as designed, and said
+so — *"4 bracket problem(s) above -- flags left untouched. This needs a human, not a guess."*
+First failure in the history; 09-03 through 09-09 all green.
+
+**What changed** is the calendar, not the code. ESPN has published the postseason schedule —
+18 games, 0 completed — while the field is still unseeded, so the bracket is full of `TBD`:
+expected 8 postseason teams found 1 (TBD); TBD missing from the ladder; a series headlined
+"First Round - Game 1" that is structurally round 1. Plus a real **tie for the East lead,
+Indiana Fever and Atlanta Dream both 26-14 (.650)**.
+
+**No data was stale.** The ingest step SUCCEEDED (Supabase is current); only the finalizer
+failed, which skipped the hub rebuild and commit. But all 15 teams sit on exactly 40 games —
+a uniform count across the league means the regular season is complete, standings have been
+final since the 08-31 commit, and that is why the nine green runs before this one also produced
+no commit ("quiet days produce no commit", by design).
+
+**The cost was the exit code.** One `problems` list mixed two different things, and every entry
+was fatal. So an ordinary week of the calendar failed the run nightly AND blocked the rebuild
+for data with nothing to do with the postseason. `desired_flags` now returns `(kind, message)`:
+
+  * **PENDING** — not determined YET, resolves itself: TBD placeholders, the short field and the
+    headline/structure artefact they cause, and **ties** (the data is not wrong, two clubs
+    finished level, and the code already does the safe thing by leaving the flag unset; who
+    takes a shared division title is an editorial call that should not fail a pipeline nightly).
+    Flags still untouched, printed as `NOT YET`, **exit 0** so the workflow continues.
+  * **BLOCKING** — genuinely inconsistent, unchanged loud `REFUSING` + exit 1: a format change
+    (more rounds than allowed is never soft), a series joining teams from different rounds, and
+    a REAL club absent from the ladder — a placeholder is ESPN's literal `TBD`, never merely an
+    unrecognised name, because that is a mapping fault.
+
+🔴 The "not determined yet" excuse EXPIRES: once any postseason game is completed the bracket is
+real, and the same TBD conditions become BLOCKING. Verified on the three cases — today's state
+exits 0; TBD-with-results-landing blocks; a real club absent from the ladder blocks. Self-test
+84 checks (was 82), and a dry run against live ESPN data reproduces today's failure as four
+`NOT YET` lines and exit 0.
+
+**Still open for Ashwin:** the East tie. `div_title` is False for both Indiana and Atlanta and
+will stay that way until someone rules on the tiebreak — it no longer fails the run, so it will
+not nag. The other three clear themselves when ESPN seeds the field.
 
 **Pushed and live at `58ab5e622`** (data + FIBA + standings reconcile), `b5223a5d9` and
 `703456966` (canary), `7f6faa8a4` and this entry (handoff).
