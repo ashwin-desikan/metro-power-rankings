@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-10T05:58:54.635271+00:00",
+  "generated_at": "2026-09-10T06:09:03.684828+00:00",
   "jobs": [
-    {
-      "id": "substack-daily",
-      "label": "Substack feed sync",
-      "schedule_text": "Daily at 06:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "06:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-10T06:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-09",
-        "status": "ok",
-        "slot": "2026-09-09T06:00:00+00:00"
-      }
-    },
     {
       "id": "mlb-sim",
       "label": "MLB + season playoff odds (7 leagues)",
@@ -175,6 +157,24 @@
         "date": "2026-09-10",
         "status": "ok",
         "slot": "2026-09-10T05:50:00+00:00"
+      }
+    },
+    {
+      "id": "substack-daily",
+      "label": "Substack feed sync",
+      "schedule_text": "Daily at 06:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "06:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-11T06:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-10",
+        "status": "ok",
+        "slot": "2026-09-10T06:00:00+00:00"
       }
     },
     {
