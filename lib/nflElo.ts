@@ -299,6 +299,44 @@ export async function getNflSeeds(season: number): Promise<NflSeedsFile | null> 
   );
 }
 
+export type NflOddsTeam = {
+  conf: string;
+  div: string;
+  /** Index 0 is before the first game; index w is after week w. Share of simulated seasons in which the club held a seed. */
+  playoffs: number[];
+  /** Share of simulated seasons in which the club won its title: the league championship to 1965, the Super Bowl from 1966. */
+  title: number[];
+  /** Set only where the records alone settle it: "in" (clinched) or "out" (eliminated); null otherwise. */
+  status: ("in" | "out" | null)[];
+};
+
+export type NflOddsFile = {
+  season: number;
+  sims: number;
+  hfa_elo: number;
+  reg_end_week: number;
+  through_week: number;
+  complete: boolean;
+  pools: Record<string, { seeds: number }>;
+  note: string;
+  teams: Record<string, NflOddsTeam>;
+  /** Per week, the mean squared error of the playoff odds against what happened; null until the season is complete. */
+  brier: number[] | null;
+};
+
+/** One season's playoff and title odds by week (scripts/nfl/playoff_odds.py, 1920 on); null before the file is built. */
+export async function getNflOdds(season: number): Promise<NflOddsFile | null> {
+  if (!Number.isInteger(season) || season < 1920) return null;
+  return load<NflOddsFile>(
+    `nfl/odds/${season}.json`,
+    () =>
+      JSON.parse(
+        readFileSync(join(process.cwd(), "public", "data", "nfl", "odds", `${season}.json`), "utf-8"),
+      ),
+    (r) => Boolean(r?.season === season && r?.teams),
+  );
+}
+
 // 78 franchise pages want one entry out of the same 349 KB file. Hold the
 // in-flight promise so it is parsed once per server process. Lazy, so it stays
 // off the build graph.

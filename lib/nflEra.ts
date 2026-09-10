@@ -30,6 +30,8 @@ const ERA_ABBR: Record<string, string> = {
   "Phoenix Cardinals": "PHX",
   "Pittsburgh Pirates": "PIT",
   "Portsmouth Spartans": "POR",
+  // Rock Island and Rochester would both read ROC from the city rule (Ashwin, 2026-09-11: "Use RCK for Rock Island").
+  "Rock Island Independents": "RCK",
   "San Diego Chargers": "SD",
   "St. Louis Cardinals": "STL",
   "St. Louis Rams": "STL",

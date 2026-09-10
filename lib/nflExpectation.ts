@@ -119,6 +119,10 @@ export type GameRow = {
   away_slug: string | null;
   home_era: string;
   away_era: string;
+  /** The season shard's team name (its `teams[].name`), the one key every
+   *  club carries, defunct or not: "Independents", "Yellow Jackets", "Bears". */
+  home_key?: string;
+  away_key?: string;
   venue: string | null;
   metro: string | null;
   neutral: boolean;

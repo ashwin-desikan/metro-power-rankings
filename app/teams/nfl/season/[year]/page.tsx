@@ -8,7 +8,7 @@ import { CollapsibleSection } from "@/app/_shared/CollapsibleSection";
 import { TableScroll } from "@/app/_shared/TableScroll";
 import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 import { DataBar, DivergingBar } from "@/app/_shared/DataBar";
-import { getNflEloIndex, getNflEloSeason, getNflSeeds, getNflUpcoming } from "@/lib/nflElo";
+import { getNflEloIndex, getNflEloSeason, getNflOdds, getNflSeeds, getNflUpcoming } from "@/lib/nflElo";
 import { getNflExpectationSeason } from "@/lib/nflExpectation";
 import WeeklyEloChart from "../_shared/WeeklyEloChart";
 import PreseasonChart from "../_shared/PreseasonChart";
@@ -89,12 +89,13 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
   const season = parseYear(year);
   if (!season) notFound();
 
-  const [data, index, upcoming, expectationFile, seeds] = await Promise.all([
+  const [data, index, upcoming, expectationFile, seeds, odds] = await Promise.all([
     getNflEloSeason(season).catch(() => null),
     getNflEloIndex().catch(() => null),
     getNflUpcoming().catch(() => null),
     getNflExpectationSeason(season).catch(() => null),
     getNflSeeds(season).catch(() => null),
+    getNflOdds(season).catch(() => null),
   ]);
   if (!data) notFound();
 
@@ -118,10 +119,20 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
   const colorByName: Record<string, string | null> = {};
   for (const t of data.teams) {
     const slug = nflSlugForCanonical(t.name);
+    const logo = slug ? logoUrlFor(slug) : null;
+    // A club with no crest and no franchise monogram (every defunct one) gets
+    // a de facto one: the era abbreviation on the site's accent, so a 1925 row
+    // or tower is not a blank circle (Ashwin, 2026-09-10: "the defunct teams
+    // all have no logos ... fill them in with just lettering ... We'll find a
+    // better solution. Maybe we can find the actual logos from the 20s").
     ident[t.name] = {
       slug,
-      logo: slug ? logoUrlFor(slug) : null,
-      mono: slug && MONOGRAM_BY_SLUG[slug] ? monogramFor(slug) : null,
+      logo,
+      mono: slug && MONOGRAM_BY_SLUG[slug]
+        ? monogramFor(slug)
+        : logo
+          ? null
+          : { bg: "var(--accent)", fg: "#08080D", mono: eraAbbr(t.city, t.team ?? t.name, null) },
     };
     colorByName[t.name] = nflLineColor(slug);
   }
@@ -264,10 +275,13 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
             "An asterisk on a record is the best record in the league, and a seed is the number a team carried into the playoffs. " +
             (seeds
               ? "Teams level on record are ordered by the NFL tiebreaking procedure, applied to the results as they stood after each week: head-to-head, division and conference records, common games, strength of victory and schedule, points rankings and net points, in the order the league used that season. Scrub to any week and the seed column shows where each team would have been seeded had the season ended there."
-              : "Teams level on record are ordered by rating: the league's own tiebreakers are not in this workbook, so the order inside a tie is not authoritative. The division flag is.")
+              : "Teams level on record are ordered by rating: the league's own tiebreakers are not in this workbook, so the order inside a tie is not authoritative. The division flag is.") +
+            (odds
+              ? ` The playoff and title columns are odds, not records: after each week the games so far are as played and the rest of the season is drawn ${odds.sims.toLocaleString("en-GB")} times from the Elo ratings of that week (65 points to a home side), each drawn season seeded by the tiebreaking procedure and played through the bracket of the era; the title is the league championship to 1965 and the Super Bowl from 1966. "clinched" and "out" appear only where the records alone settle it, allowing for who still plays whom; a clinch that rests on a tiebreaker shows as a number, and a small number is not an elimination.`
+              : "")
           }
         >
-        <SeasonStandings teams={standingsTeams} showHonours={showHonours} showSeeds={showSeeds} seeds={seeds} />
+        <SeasonStandings teams={standingsTeams} showHonours={showHonours} showSeeds={showSeeds} seeds={seeds} odds={odds} />
       </CollapsibleSection>
 
       {/* ---------------------------------------------- the season as a shape */}

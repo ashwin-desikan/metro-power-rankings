@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import { TableScroll } from "@/app/_shared/TableScroll";
-import type { NflHonour, NflEloWeek, NflSeedsFile } from "@/lib/nflElo";
+import type { NflHonour, NflEloWeek, NflOddsFile, NflSeedsFile } from "@/lib/nflElo";
 import { divAbbr, seedCellMode } from "./SeedTimeline";
 import { useThroughWeek, WeekScrubberControl } from "./WeekScrubber";
 
@@ -57,7 +57,29 @@ export type StandingsTeam = {
    *  conference rank by the tiebreaking procedure. */
   dr?: number;
   cr?: number;
+  /** Filled from the odds file for the scrubbed week (1978 on): the share of
+   *  drawn seasons in which the club held a seed, and won the title; a
+   *  status where wins alone have settled the playoffs. */
+  pPlayoffs?: number;
+  pTitle?: number;
+  oddsStatus?: "in" | "out" | null;
 };
+
+// 🔴 A SMALL NUMBER IS NOT AN ELIMINATION, AND 100% IS NOT A CLINCH. 2,000
+// draws resolve to a twentieth of a percent; a club the draws never sent
+// through is shown as under 1%, never 0%, and "out" is printed only when the
+// odds file proved it from the records alone. The same at the top: over 99%,
+// and "clinched" only when proved (Ashwin, 2026-09-10: ">99% still feels like
+// it says that team could miss the playoffs ... there are many examples of
+// teams clinching way before the end of the season").
+function fmtOdds(p: number | undefined, status: "in" | "out" | null | undefined): string {
+  if (status === "in") return "clinched";
+  if (status === "out") return "out";
+  if (p == null) return "";
+  if (p < 0.005) return "<1%";
+  if (p > 0.995) return ">99%";
+  return `${Math.round(p * 100)}%`;
+}
 
 const MONO: CSSProperties = { fontFamily: "'JetBrains Mono', monospace" };
 const CARD: CSSProperties = { background: "var(--bg-card)", borderColor: "var(--border)" };
@@ -145,11 +167,13 @@ export default function SeasonStandings({
   showHonours: finalHonours,
   showSeeds: finalSeeds,
   seeds = null,
+  odds = null,
 }: {
   teams: StandingsTeam[];
   showHonours: boolean;
   showSeeds: boolean;
   seeds?: NflSeedsFile | null;
+  odds?: NflOddsFile | null;
 }) {
   // 🔴 THE SCRUBBER REWRITES THE ROWS, NOT THE TABLE. After week N a team's
   // record, points and rating are the last stored week at or before N that
@@ -170,16 +194,30 @@ export default function SeasonStandings({
     if (!t) return null;
     return { seed: t.seed[seedWeek - 1] ?? undefined, dr: t.dr[seedWeek - 1], cr: t.cr[seedWeek - 1] };
   };
+  // The odds file is indexed from week 0 (before a game), so the scrubbed
+  // week is its index; the final table shows the odds entering the playoffs,
+  // which is the last regular-season week the file covers. A playoff week
+  // (past reg_end) keeps that last week too: the odds file has no later one.
+  const oddsWeek =
+    odds && (through == null ? odds.through_week : Math.min(through, odds.through_week));
+  const oddsRow = (name: string) => {
+    if (!odds || oddsWeek == null) return null;
+    const t = odds.teams[name];
+    if (!t) return null;
+    return { pPlayoffs: t.playoffs[oddsWeek], pTitle: t.title[oddsWeek], oddsStatus: t.status[oddsWeek] ?? null };
+  };
   const teams: StandingsTeam[] = through == null
     ? finalTeams.map((t) => {
         const sr = seedRow(t.name);
-        return sr ? { ...t, dr: sr.dr, cr: sr.cr } : t;
+        const od = oddsRow(t.name);
+        return { ...t, ...(sr ? { dr: sr.dr, cr: sr.cr } : {}), ...(od ?? {}) };
       })
     : finalTeams.map((t) => {
         const ws = (t.weeks ?? []).filter((w) => w.w <= through);
         const last = ws.length ? ws[ws.length - 1] : null;
         const withRec = [...ws].reverse().find((w) => w.rec);
         const sr = seedRow(t.name);
+        const od = oddsRow(t.name);
         return {
           ...t,
           end: last ? last.e : t.end,
@@ -189,8 +227,15 @@ export default function SeasonStandings({
           dr: sr?.dr,
           cr: sr?.cr,
           flags: undefined,
+          ...(od ?? {}),
         };
       });
+  // The odds columns are decided once per page, like the seed column: a
+  // season with an odds file carries them at every week, week 0 included.
+  // Before 1933 the standings leader IS the champion, so the two numbers are
+  // one number and only the title column is shown.
+  const titleCol = Boolean(odds);
+  const oddsCol = Boolean(odds) && seeds?.label !== "leader";
   const seeded = seedWeek != null && teams.some((t) => t.cr != null);
   // Division-only eras (1933-69) get a chip, not a number: see SeedTimeline.
   // The pool and division come from the SEEDS file, not the standings row:
@@ -341,7 +386,10 @@ export default function SeasonStandings({
           became one cell, and the padding dropped to px-2. That is 427px, which
           fits with room. On a phone the two widest numeric columns move into a
           second line under the team name rather than off the edge, so the phone
-          still gets every number the desktop does. */}
+          still gets every number the desktop does. The two odds columns
+          (2026-09-10) took the room: 529px in a 531px box with a numeric seed,
+          550 with the 1933-69 division chip until their headers lost the "%"
+          and their padding dropped to px-1.5 (measured at 1280 on 1963). */}
       <div className={cols}>
         {columns.map((col) => (
         <div key={col.key} className="min-w-0 flex flex-col gap-6">
@@ -353,11 +401,13 @@ export default function SeasonStandings({
                 <thead>
                   <tr className="text-[var(--text-dim)] text-left">
                     <th className="py-2 px-2 font-medium">Team</th>
-                    <th className="py-2 px-2 font-medium text-right">W-L-T</th>
+                    <th className="py-2 px-2 font-medium text-right whitespace-nowrap">W-L-T</th>
                     <th className="py-2 px-2 font-medium text-right hidden sm:table-cell">PF-PA</th>
                     <th className="py-2 px-2 font-medium text-right">Elo</th>
-                    {seedsCol ? <th className="py-2 px-2 font-medium text-right hidden sm:table-cell">{seeds && seeds.label !== "seed" ? "Playoffs" : "Seed"}</th> : null}
-                    {honoursCol ? <th className="py-2 px-2 font-medium whitespace-nowrap">Season</th> : null}
+                    {seedsCol ? <th className="py-2 px-1.5 font-medium text-right hidden sm:table-cell">{seeds && seeds.label !== "seed" ? "Playoffs" : "Seed"}</th> : null}
+                    {oddsCol ? <th className="py-2 px-1.5 font-medium text-right hidden sm:table-cell whitespace-nowrap" title="Odds of a playoff place, drawn from the ratings of that week; clinched or out once the records settle it">Playoff</th> : null}
+                    {titleCol ? <th className="py-2 px-1.5 font-medium text-right hidden sm:table-cell whitespace-nowrap" title="Odds of the title, drawn from the ratings of that week: the league championship to 1965, the Super Bowl from 1966">Title</th> : null}
+                    {honoursCol ? <th className="py-2 px-1.5 font-medium whitespace-nowrap hidden sm:table-cell">Season</th> : null}
                   </tr>
                 </thead>
                 <tbody>
@@ -377,13 +427,23 @@ export default function SeasonStandings({
                       <td className="py-2 sm:py-1.5 px-2 align-middle" style={{ minHeight: 44 }}>
                         <span className="inline-flex items-center gap-1.5">
                           <Crest t={t} size={18} />
+                          {/* 🔴 CITY AND TEAM, STACKED (Ashwin, 2026-09-10, on 1925: "it
+                              doesn't look that good ... when you just have the team name,
+                              because a lot of teams had similar names like Bulldogs. I
+                              think you need to bring back the city"). The city sits above
+                              the team in 10px, so the cell is as wide as the longer of the
+                              two words rather than both, and the column budget below holds. */}
                           {t.slug ? (
-                            <Link href={`/teams/nfl/${t.slug}`} className="tap-target hover:text-[var(--accent)] hover:underline whitespace-nowrap"
+                            <Link href={`/teams/nfl/${t.slug}`} className="tap-target hover:text-[var(--accent)] hover:underline whitespace-nowrap inline-flex flex-col leading-tight"
                               title={[t.city, t.team].filter(Boolean).join(" ") || t.name}>
-                              {t.team ?? t.name}
+                              {t.city?.trim() ? <span className="text-[10px] font-normal tracking-wide text-[var(--text-dim)]">{t.city.trim()}</span> : null}
+                              <span>{t.team ?? t.name}</span>
                             </Link>
                           ) : (
-                            <span className="whitespace-nowrap">{t.team ?? t.name}</span>
+                            <span className="whitespace-nowrap inline-flex flex-col leading-tight">
+                              {t.city?.trim() ? <span className="text-[10px] tracking-wide text-[var(--text-dim)]">{t.city.trim()}</span> : null}
+                              <span>{t.team ?? t.name}</span>
+                            </span>
                           )}
                           {t.flags?.div_title ? (
                             <span title="won its division" className="text-[9px] uppercase tracking-wider px-1 rounded border flex-shrink-0"
@@ -393,8 +453,23 @@ export default function SeasonStandings({
                         {/* The phone's second line: nothing is dropped, it moves. */}
                         <span className="sm:hidden block mt-0.5 pl-[26px] text-[12px] text-[var(--text-dim)] tabular-nums" style={MONO}>
                           {t.pts ? `${t.pts[0]}-${t.pts[1]}` : "no points recorded"}
-                          {t.seed ? (seedMode(t) === "div" ? " · leads division" : seedMode(t) === "divrank" ? ` · ${ordinalWord(t.dr ?? t.seed)} in division` : ` · ${t.seed} seed`) : ""}
+                          {t.seed ? (seedMode(t) === "div" ? " · leads division" : seedMode(t) === "divrank" ? ` · ${ordinalWord(t.dr ?? t.seed)} in division` : seedTied(t) ? " · level, playoff to come" : ` · ${t.seed} seed`) : ""}
                         </span>
+                        {/* The phone's third line: the odds, and the season strip, which on a
+                            phone lives here rather than in a column of its own so the name
+                            column keeps the width the two extra lines need (measured
+                            2026-09-10: rows of 111px with the strip in its own column, 60
+                            with it here). */}
+                        {titleCol && t.pTitle != null ? (
+                          <span className="sm:hidden block pl-[26px] text-[12px] text-[var(--text-dim)] tabular-nums" style={MONO}>
+                            {t.oddsStatus === "out" ? "out" : `${oddsCol ? `${t.oddsStatus === "in" ? "clinched" : `playoffs ${fmtOdds(t.pPlayoffs, null)}`} · ` : ""}title ${fmtOdds(t.pTitle, null)}`}
+                          </span>
+                        ) : null}
+                        {honoursCol && showHonours ? (
+                          <span className="sm:hidden block mt-1 pl-[26px]">
+                            <Strip t={t} />
+                          </span>
+                        ) : null}
                       </td>
                       <td className="py-2 sm:py-1.5 px-2 text-right tabular-nums whitespace-nowrap align-middle" style={MONO}>
                         {fmtRec(t) || <span className="text-[var(--text-dim)]">&mdash;</span>}
@@ -407,7 +482,7 @@ export default function SeasonStandings({
                       </td>
                       <td className="py-2 sm:py-1.5 px-2 text-right tabular-nums font-semibold align-middle" style={MONO}>{t.end.toFixed(0)}</td>
                       {seedsCol ? (
-                        <td className="py-1.5 px-2 text-right tabular-nums hidden sm:table-cell" style={MONO}>
+                        <td className="py-1.5 px-1.5 text-right tabular-nums hidden sm:table-cell" style={MONO}>
                           {showSeeds && t.seed ? (
                             seedMode(t) === "div" ? (
                               /* A division-only era: the number was a rank between clubs that never
@@ -420,19 +495,37 @@ export default function SeasonStandings({
                             ) : (
                               <span className="inline-grid place-items-center rounded-full"
                                 title={
-                                  seedMode(t) === "divrank"
+                                  seedTied(t)
+                                    ? `level for the league title${through != null ? ` after week ${through}` : ""}; a playoff would decide it`
+                                    : seedMode(t) === "divrank"
                                     ? `${ordinalWord(t.dr ?? t.seed)} in the ${seedDiv(t)}${through != null ? ` after week ${through}` : ""}, a playoff place`
                                     : through != null ? (seeds?.label === "seed" ? `the ${t.seed} seed had the season ended after week ${through}` : seeds?.label === "place" ? `in the playoffs had the season ended after week ${through}` : `the league leader after week ${through}`) : `entered the playoffs as the ${t.seed} seed`
                                 }
-                                style={{ width: 17, height: 17, background: "var(--bg-card-hover)", border: `1px solid ${(seedMode(t) === "divrank" ? (t.dr ?? t.seed) === 1 : t.seed <= 4) ? "var(--accent)" : "var(--border)"}`, fontSize: 10 }}>
-                                {seedMode(t) === "divrank" ? t.dr ?? t.seed : t.seed}
+                                style={{ width: seedTied(t) ? 22 : 17, height: 17, background: "var(--bg-card-hover)", border: `1px ${seedTied(t) ? "dashed" : "solid"} ${(seedMode(t) === "divrank" ? (t.dr ?? t.seed) === 1 : t.seed <= 4) ? "var(--accent)" : "var(--border)"}`, fontSize: 10 }}>
+                                {seedMode(t) === "divrank" ? t.dr ?? t.seed : t.seed}{seedTied(t) ? "*" : ""}
                               </span>
                             )
                           ) : <span className="text-[var(--text-dim)]">&mdash;</span>}
                         </td>
                       ) : null}
+                      {oddsCol ? (
+                        <td className="py-1.5 px-1.5 text-right tabular-nums hidden sm:table-cell whitespace-nowrap" style={MONO}
+                          title={t.pPlayoffs != null ? `${(t.pPlayoffs * 100).toFixed(1)}% of ${odds!.sims.toLocaleString("en-GB")} drawn seasons${t.oddsStatus === "in" ? "; clinched on the records alone" : t.oddsStatus === "out" ? "; eliminated on the records alone" : ""}` : undefined}>
+                          {t.pPlayoffs != null ? (
+                            <span style={{ color: t.oddsStatus === "in" ? "var(--accent)" : t.oddsStatus === "out" ? "var(--text-dim)" : "var(--text-muted)", fontWeight: t.oddsStatus ? 600 : 400 }}>
+                              {fmtOdds(t.pPlayoffs, t.oddsStatus)}
+                            </span>
+                          ) : <span className="text-[var(--text-dim)]">&mdash;</span>}
+                        </td>
+                      ) : null}
+                      {titleCol ? (
+                        <td className="py-1.5 px-1.5 text-right tabular-nums hidden sm:table-cell whitespace-nowrap text-[var(--text-muted)]" style={MONO}
+                          title={t.pTitle != null ? `${(t.pTitle * 100).toFixed(1)}% of ${odds!.sims.toLocaleString("en-GB")} drawn seasons` : undefined}>
+                          {t.pTitle != null ? fmtOdds(t.pTitle, t.oddsStatus === "out" ? "out" : null) : <span className="text-[var(--text-dim)]">&mdash;</span>}
+                        </td>
+                      ) : null}
                       {honoursCol ? (
-                        <td className="py-2 sm:py-1.5 px-2 align-middle">
+                        <td className="py-2 sm:py-1.5 px-1.5 align-middle hidden sm:table-cell">
                           {showHonours ? <Strip t={t} /> : <Strip t={{ ...t, flags: undefined }} withheld />}
                         </td>
                       ) : null}

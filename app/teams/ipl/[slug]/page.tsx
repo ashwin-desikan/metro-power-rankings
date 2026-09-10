@@ -12,7 +12,7 @@ import {
   type IplFranchise,
   type FranchiseSeason,
 } from "@/lib/ipl";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import TopTeamChip from "@/app/teams/TopTeamChip";
 import { CappedList } from "@/app/_shared/Disclosure";
 
@@ -34,8 +34,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: f.name,
     description: desc,
     alternates: { canonical: `/teams/ipl/${f.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${f.name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${f.name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: ogImage(f.name, `/teams/ipl/${f.slug}`), width: 1200, height: 630 }], title: `${f.name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+    twitter: { images: [ogImage(f.name, `/teams/ipl/${f.slug}`)], card: "summary_large_image", title: `${f.name} | ${SITE_NAME}`, description: desc },
   };
 }
 

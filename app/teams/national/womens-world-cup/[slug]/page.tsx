@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getAllWWCNationSlugs, getWWCNation, getWWCMeta } from "@/lib/wnational";
 import { countryPageSlugFor, flagCdnUrl } from "@/lib/international-display";
 import { getAllCountrySlugs } from "@/lib/countries";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
 
 export const dynamicParams = false;
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${n.name}: Women's World Cup`,
     description: desc,
     alternates: { canonical: `/teams/national/womens-world-cup/${n.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${n.name}: Women's World Cup | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/national/womens-world-cup/${n.slug}`, type: "website" },
+    openGraph: { images: [{ url: ogImage(`${n.name}: Women's World Cup`, `/teams/national/womens-world-cup/${n.slug}`), width: 1200, height: 630 }], title: `${n.name}: Women's World Cup | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/national/womens-world-cup/${n.slug}`, type: "website" },
   };
 }
 

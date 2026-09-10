@@ -72,7 +72,10 @@ export default function HomeAdvantageChart({
           .join(" and ")}`}
         style={{ display: "block", width: "100%", height: "auto" }}
       >
-        <title>Home advantage in Elo points, {x0} to {x1}</title>
+        {/* One string, not three JSX children: React serialises "text, {x0} to {x1}"
+            as separate text nodes and the client sees one, so an SVG <title> built
+            from pieces threw a hydration mismatch on every load (HANDOFF 2026-09-10 K). */}
+        <title>{`Home advantage in Elo points, ${x0} to ${x1}`}</title>
 
         {/* Recessive grid. The zero line is the meaningful one: no advantage at all. */}
         {ticks.map((t) => (

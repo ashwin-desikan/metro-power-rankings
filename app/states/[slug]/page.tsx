@@ -14,13 +14,7 @@ import StateFactsSection from "./StateFactsSection";
 import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop, regionColors } from "@/lib/shared";
 import { CappedList } from "@/app/_shared/Disclosure";
-import {
-  AUTHOR,
-  BASE_URL,
-  PUBLISHER,
-  SITE_NAME,
-  serializeJsonLd,
-} from "@/lib/seo";
+import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd, ogImage } from "@/lib/seo";
 
 // Pre-generate only the top 500 states by score (see
 // getTopStateSlugsForStaticParams). Every other state - including the
@@ -47,13 +41,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${s.name} (${s.country})`,
     description: desc,
     alternates: { canonical: `/states/${s.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+    openGraph: { images: [{ url: ogImage(`${s.name}, ${s.country}`, `/states/${s.slug}`), width: 1200, height: 630 }],
       title: `${s.name}, ${s.country} | ${SITE_NAME}`,
       description: desc,
       url,
       type: "website",
     },
-    twitter: { images: ["/og-default.png"],
+    twitter: { images: [ogImage(`${s.name}, ${s.country}`, `/states/${s.slug}`)],
       card: "summary_large_image",
       title: `${s.name}, ${s.country} | ${SITE_NAME}`,
       description: desc,

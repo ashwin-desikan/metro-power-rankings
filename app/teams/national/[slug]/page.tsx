@@ -32,7 +32,7 @@ import {
   HISTORICAL_FLAG,
 } from "@/lib/international-display";
 import { getAllCountrySlugs } from "@/lib/countries";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { readFileSync } from "fs";
 import { join } from "path";
 import { CappedList } from "@/app/_shared/Disclosure";
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: displayName,
     description: desc,
     alternates: { canonical: `/teams/national/${t.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+    openGraph: { images: [{ url: ogImage(`${displayName} (national team)`, `/teams/national/${t.slug}`), width: 1200, height: 630 }],
       title: `${displayName} (national team) | ${SITE_NAME}`,
       description: desc,
       url: `${BASE_URL}/teams/national/${t.slug}`,

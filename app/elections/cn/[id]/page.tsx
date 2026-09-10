@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getCnElections, cnElectionById, cnNeighbours, cnEraOf, cnPartyColor, cnFmtInt, cnFmtPct } from "@/lib/cnElections";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import LegElectionDetail from "../../LegDetailShared";
 
 export const dynamicParams = true;
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title: `${e.label}, ${e.year}`,
     description: e.summary,
     alternates: { canonical: path },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${e.label}, ${e.year} | ${SITE_NAME}`, description: e.summary, url: `${BASE_URL}${path}`, type: "article" },
+    openGraph: { images: [{ url: ogImage(`${e.label}, ${e.year}`, path), width: 1200, height: 630 }], title: `${e.label}, ${e.year} | ${SITE_NAME}`, description: e.summary, url: `${BASE_URL}${path}`, type: "article" },
   };
 }
 

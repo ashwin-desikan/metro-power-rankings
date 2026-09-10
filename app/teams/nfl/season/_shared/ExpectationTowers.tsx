@@ -186,11 +186,22 @@ export default function ExpectationTowers({
   const cols: Col[] = [];
   for (const t of ordered) {
     const slug = ident[t.name]?.slug ?? null;
+    // 🔴 A DEFUNCT CLUB IS STILL A CLUB (Ashwin, 2026-09-10, on 1925: "why do
+    // you not show any of the defunct teams ... Why aren't you showing the
+    // Pottsville Maroons?"). A defunct club HAS a slug (its historical page),
+    // but the ledger's `home_slug`/`away_slug` is null for it, so a match by
+    // slug found nothing and the column was skipped: every column before the
+    // 1930s was a modern survivor and the champion was usually missing. The
+    // ledger's `home_key`/`away_key` is the shard name for every club in
+    // every season (playoff_seeds.py reads the same two), so that is the
+    // join; slug, then era name, only for a row that carries no key.
     const mine = (g: GameRow) => {
+      if (g.home_key || g.away_key) return g.home_key === t.name || g.away_key === t.name;
       if (slug) return g.home_slug === slug || g.away_slug === slug;
       return g.home_era === t.name || g.away_era === t.name || g.home === t.name || g.away === t.name;
     };
-    const homeSide = (g: GameRow) => (slug ? g.home_slug === slug : g.home_era === t.name || g.home === t.name);
+    const homeSide = (g: GameRow) =>
+      g.home_key ? g.home_key === t.name : slug ? g.home_slug === slug : g.home_era === t.name || g.home === t.name;
     const own = graded.filter(mine);
     if (!own.length) continue;
 

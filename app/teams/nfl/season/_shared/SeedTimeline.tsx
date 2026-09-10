@@ -62,6 +62,9 @@ export default function SeedTimeline({
   // The other clubs level with `name` for its division after week i.
   const levelWith = (name: string, i: number) =>
     Object.entries(seeds.teams).filter(([n, u]) => n !== name && u.div === seeds.teams[name].div && u.tie?.[i]).map(([n]) => teamLabel(n));
+  // What a played-off tie was for: a division title from 1933, the league
+  // title itself before (1932, Bears and Spartans, one game in December).
+  const tieFor = (t: { div: string }, conf: string) => (t.div === conf ? "the league title" : `the ${t.div}`);
   const marked = through != null && through >= 1 && through <= seeds.through_week ? through : null;
 
   return (
@@ -116,12 +119,12 @@ export default function SeedTimeline({
                         {weeks.map((w, i) => {
                           const s = t.seed[i];
                           const inBracket = s != null;
-                          const tied = mode === "div" && Boolean(t.tie?.[i]);
-                          const shown = mode === "div" ? `${divAbbr(t.div, conf)}${tied ? "*" : ""}` : mode === "divrank" ? t.dr[i] : s;
+                          const tied = (mode === "div" || mode === "rank") && Boolean(t.tie?.[i]);
+                          const shown = mode === "div" ? `${divAbbr(t.div, conf)}${tied ? "*" : ""}` : mode === "divrank" ? t.dr[i] : tied ? `${s}*` : s;
                           const top = inBracket && !tied && (mode === "div" || (mode === "divrank" ? t.dr[i] === 1 : s <= 4));
                           const title = `${label}, week ${w}: ${
                             !inBracket ? `out, ${ordinal(t.cr[i])} in the ${conf}`
-                            : tied ? `level with ${levelWith(name, i).join(" and ")} for the ${t.div}; a playoff would decide it`
+                            : tied ? `level with ${levelWith(name, i).join(" and ")} for ${tieFor(t, conf)}; a playoff would decide it`
                             : mode === "div" ? `leading the ${t.div}`
                             : mode === "divrank" ? `${ordinal(t.dr[i])} in the ${t.div}, in the playoffs`
                             : n === 1 ? word : `${word} ${s}`
@@ -149,7 +152,7 @@ export default function SeedTimeline({
                           const sc = tb ? (tb.home === name ? tb.score : tb.score.split("-").reverse().join("-")) : "";
                           return (
                             <td className="text-center align-middle p-0"
-                              title={tb ? (won ? `won the ${t.div} playoff, ${sc} over ${other}${tb.date ? `, ${tb.date}` : ""}` : `lost the ${t.div} playoff, ${sc} to ${other}${tb.date ? `, ${tb.date}` : ""}`) : undefined}
+                              title={tb ? (won ? `won the ${t.div === conf ? "title" : t.div} playoff, ${sc} over ${other}${tb.date ? `, ${tb.date}` : ""}` : `lost the ${t.div === conf ? "title" : t.div} playoff, ${sc} to ${other}${tb.date ? `, ${tb.date}` : ""}`) : undefined}
                               style={{ width: CELL + 4, height: CELL, borderTop: line ? "2px solid var(--accent)" : "1px solid var(--border)" }}>
                               {tb ? (
                                 <span className="inline-grid place-items-center rounded-[3px]" style={{

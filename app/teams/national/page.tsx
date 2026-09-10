@@ -20,7 +20,7 @@ import { getWc2026LiveStandings, mergeWc2026Live, mergeWc2026Knockout, getWc2026
 import { getInternationalComps, type LiveComp } from "@/lib/clubFootballLive";
 import type { ReactNode } from "react";
 import { flagCdnUrl } from "@/lib/international-display";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import NationalIndexClient, { type IndexTeam } from "./NationalIndexClient";
 import WorldCup2026 from "./WorldCup2026";
 import { SportBadge } from "@/app/teams/_shared/SportIcon";
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   description:
     "Canonical pages for every senior men's national football team with tournament history on file, plus hubs for the FIFA World Cup, all six continental cups, and intercontinental tournaments. A sibling product to the metro-anchored Club Football pages.",
   alternates: { canonical: "/teams/national" },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+  openGraph: { images: [{ url: ogImage("International Football", "/teams/national"), width: 1200, height: 630 }],
     title: `International Football | ${SITE_NAME}`,
     description:
       "Senior national-team pages, all-time tournament hubs, and trophy history sourced from the grand football workbook.",

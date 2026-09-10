@@ -6,7 +6,7 @@ import { getAllClubs, getAllLeagueHubs, getAllEuropeanTournamentHubs } from "@/l
 import { getClubStandings } from "@/lib/clubFootballLive";
 import { liveMembershipBySlug, LIVE_MAP_COUNTRIES, LIVE_SEASON_END_YEAR } from "@/lib/footballLiveMembership";
 import { leagueStatusFor } from "@/lib/leagueStatus";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { HubHero } from "@/app/teams/_shared/HubHero";
 import { sportGlyph } from "@/app/teams/_shared/SportIcon";
 import { Badge } from "@/app/teams/_shared/Badge";
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "with a live 2026-27 season hub; the great top-flight leagues; every first division worldwide; and " +
     "per-club pages with season-by-season history back to the 1870s.",
   alternates: { canonical: "/teams/football" },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+  openGraph: { images: [{ url: ogImage("Club Football", "/teams/football"), width: 1200, height: 630 }],
     title: `Club Football | ${SITE_NAME}`,
     description: "European and world club football: tournaments, leagues, and per-club history from the 1870s on.",
     url: `${BASE_URL}/teams/football`,

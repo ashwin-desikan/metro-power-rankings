@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllWLeagueHubSlugs, getWLeagueHub, getWLeagueHubClubs, decoratedRows, columnsForHub } from "@/lib/wfootball";
 import { getWLiveLeagueForHub, getWLiveOdds } from "@/lib/wLive";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import MostDecoratedClubsTable from "@/app/teams/wfootball/MostDecoratedClubsTable";
 import WLiveTable from "@/app/teams/wfootball/WLiveTable";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Women's Football: ${hub.country}`,
     description: desc,
     alternates: { canonical: `/teams/wfootball/leagues/${hub.slug}` },
-    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `Women's Football: ${hub.country} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/wfootball/leagues/${hub.slug}`, type: "website" },
+    openGraph: { images: [{ url: ogImage(`Women's Football: ${hub.country}`, `/teams/wfootball/leagues/${hub.slug}`), width: 1200, height: 630 }], title: `Women's Football: ${hub.country} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/wfootball/leagues/${hub.slug}`, type: "website" },
   };
 }
 

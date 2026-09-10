@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { brandCard } from "./og/card";
+import { cardFontsNode } from "./og/fonts";
 
 // The home page's share card, and the fallback for any route that sets no
 // image of its own: the Citizen of Nowhere brand card (app/og/card.tsx), the
@@ -13,5 +14,5 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function Image() {
-  return new ImageResponse(brandCard("", "/"), { ...size, emoji: "twemoji" });
+  return new ImageResponse(brandCard("", "/"), { ...size, emoji: "twemoji", fonts: cardFontsNode() });
 }

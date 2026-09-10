@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import FootballHubNav from "@/app/teams/FootballHubNav";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { getDomesticClubs, getDomesticFacets } from "@/lib/domesticFootball";
 import { HubHero } from "@/app/teams/_shared/HubHero";
 import { sportGlyph } from "@/app/teams/_shared/SportIcon";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "domestic cups, and continental and Champions League pedigree, split by country era, in one " +
     "sortable, filterable master table.",
   alternates: { canonical: "/teams/football/domestic" },
-  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+  openGraph: { images: [{ url: ogImage("Domestic Leagues Worldwide", "/teams/football/domestic"), width: 1200, height: 630 }],
     title: `Domestic Leagues Worldwide | ${SITE_NAME}`,
     description: "A single master table of first-division clubs across 66 countries, with honours, current form and metros.",
     url: `${BASE_URL}/teams/football/domestic`,

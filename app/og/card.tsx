@@ -3,7 +3,8 @@ import { ogSectionFor } from "@/lib/ogBrand";
 // The one share card, as a JSX element for ImageResponse: used by the /og
 // route (any page, by title and path) and by app/opengraph-image.tsx (the
 // home page's file-convention card). Satori rules: every box is display:flex,
-// no CSS variables, the bundled sans, Twemoji for the emoji.
+// no CSS variables, Inter 400 and 700 from ./fonts-edge.ts or ./fonts.ts (Satori's own sans has
+// no bold, so the title used to render regular), Twemoji for the emoji.
 
 const BG = "#08080D";
 const CARD = "#12121A";
@@ -21,7 +22,7 @@ export function brandCard(rawTitle: string, path: string) {
     <div
       style={{
         width: 1200, height: 630, display: "flex", flexDirection: "column", justifyContent: "space-between",
-        background: BG, color: TEXT, padding: 64, fontFamily: "sans-serif",
+        background: BG, color: TEXT, padding: 64, fontFamily: "Inter",
       }}
     >
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
