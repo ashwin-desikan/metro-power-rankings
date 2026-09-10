@@ -1,35 +1,6 @@
 {
-  "generated_at": "2026-09-10T11:48:47.279546+00:00",
+  "generated_at": "2026-09-10T14:46:24.167552+00:00",
   "jobs": [
-    {
-      "id": "mlb-sim",
-      "label": "MLB + season playoff odds (7 leagues)",
-      "schedule_text": "Daily at 07:00, 14:30 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
-      "cadence": "daily",
-      "times": [
-        "07:00",
-        "14:30"
-      ],
-      "weekdays": [],
-      "months": [
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11
-      ],
-      "days_of_month": [],
-      "next_run": "2026-09-10T14:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-10",
-        "status": "ok",
-        "slot": "2026-09-10T07:00:00+00:00"
-      }
-    },
     {
       "id": "football-standings",
       "label": "Football live standings",
@@ -49,6 +20,25 @@
         "date": "2026-09-10",
         "status": "ok",
         "slot": "2026-09-10T11:00:00+00:00"
+      }
+    },
+    {
+      "id": "claude-auth-canary",
+      "label": "Claude auth canary (report-only)",
+      "schedule_text": "Daily at 00:30, 06:30 UTC",
+      "cadence": "daily",
+      "times": [
+        "00:30",
+        "06:30"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-11T00:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-10",
+        "status": "ok",
+        "slot": "2026-09-10T06:30:00+00:00"
       }
     },
     {
@@ -182,21 +172,32 @@
       }
     },
     {
-      "id": "claude-auth-canary",
-      "label": "Claude auth canary (report-only)",
-      "schedule_text": "Daily at 06:30 UTC",
+      "id": "mlb-sim",
+      "label": "MLB + season playoff odds (7 leagues)",
+      "schedule_text": "Daily at 07:00, 14:30 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
       "cadence": "daily",
       "times": [
-        "06:30"
+        "07:00",
+        "14:30"
       ],
       "weekdays": [],
-      "months": [],
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
       "days_of_month": [],
-      "next_run": "2026-09-11T06:30:00+00:00",
+      "next_run": "2026-09-11T07:00:00+00:00",
       "last_run": {
         "date": "2026-09-10",
         "status": "ok",
-        "slot": "2026-09-10T06:30:00+00:00"
+        "slot": "2026-09-10T14:30:00+00:00"
       }
     },
     {
