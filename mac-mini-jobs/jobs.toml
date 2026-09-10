@@ -607,6 +607,40 @@ timeout_minutes = 25         # was 15 -- the real first run got killed at 15m mi
 # silently refreshed all day) -- see the script header. catchup_hours is
 # short because a warning that arrives most of a day late has spent the
 # margin it exists to buy; the next slot is the retry.
+# --- ops-autofix: NEW 2026-09-10. THE ONLY JOB HERE THAT ACTS ON PRODUCTION. --
+# Commissioned by Ashwin the same day. Reads detect_issues.py (a state
+# reconciler, not a notification reader) and applies a FIXED whitelist of
+# mechanical remedies: deploy drift repo -> live, re-run a job whose last slot
+# failed, re-run a failed GitHub Actions run. No LLM, no judgement, no code
+# edits, no commits, no pushes. See run-ops-autofix.sh's header for the full
+# whitelist and the reasoning for every exclusion.
+#
+# Every two hours, on the :15 to sit clear of the busy o'clock and half-past
+# slots. The cadence is cheap because the expensive half never wakes unless the
+# detector finds something: a clean run is a few seconds of Python.
+#
+# catchup_hours = 1 deliberately: if the mini was off, the right thing is to
+# resume at the next slot two hours away, not to fire a backlog of remediation
+# at a machine that has just woken up.
+#
+# NO hc_slug, and that is deliberate too: the healthchecks project is capped at
+# 20 checks and is exactly at 20 (HANDOFF 2026-09-10 sec I). Adding one here
+# would need something else deleted, and this job announces every action it
+# takes on ntfy anyway -- a tile would add nothing a push does not.
+#
+# 🔴 Handbrakes, if it ever misbehaves: `touch ~/metro-mini-jobs/AUTOFIX-OFF`
+# stops it dead, this run and every future one. It also refuses to act at all
+# while the repo has uncommitted changes.
+[[job]]
+id = "ops-autofix"
+label = "Ops autofix (whitelist, acts on production)"
+times = ["00:15", "02:15", "04:15", "06:15", "08:15", "10:15",
+         "12:15", "14:15", "16:15", "18:15", "20:15", "22:15"]
+command = "run-ops-autofix.sh"
+catchup_hours = 1
+timeout_minutes = 25           # it may re-run a real job; business-daily alone
+                                # takes ~340s and mlb-sim ~450s.
+
 [[job]]
 id = "claude-auth-canary"
 label = "Claude auth canary (report-only)"
