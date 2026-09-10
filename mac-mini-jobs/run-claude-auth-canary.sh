@@ -31,7 +31,22 @@ DATE="$(date +%F)"; LOGDIR="$HOME/metro-mini-jobs/logs"; mkdir -p "$LOGDIR"
 LOG="$LOGDIR/claude-auth-canary-$DATE.log"
 log(){ echo "$(date +%T) $*" | tee -a "$LOG"; }
 [ -f "$HOME/.config/newsletter-podcast/env" ] && { set -a; source "$HOME/.config/newsletter-podcast/env"; set +a; }
-push(){ [ -n "${NTFY_TOPIC:-}" ] || return 0; curl -s -o /dev/null -H "Title: $1" -H "Priority: $2" -H "Tags: $3" -d "$4" "https://ntfy.sh/$NTFY_TOPIC" || true; }
+
+# --dry-run prints the alert instead of sending it. This exists because setting
+# NTFY_TOPIC="" to test safely DOES NOT WORK: the source line above runs after the
+# environment is set and overwrites it. Testing this script's warning branches on
+# 2026-09-10 sent Ashwin two real "re-auth needed in 27d" alerts for a credential
+# with 27 days left. Use --dry-run to exercise the branches; never trust an env
+# override to muzzle a script that sources its own config.
+DRY=0; [ "${1:-}" = "--dry-run" ] && DRY=1
+push(){
+  if [ "$DRY" = "1" ]; then
+    printf 'DRY-RUN would push: title=[%s] prio=[%s] tags=[%s]\n  body=[%s]\n' "$1" "$2" "$3" "$4" | tee -a "$LOG"
+    return 0
+  fi
+  [ -n "${NTFY_TOPIC:-}" ] || return 0
+  curl -s -o /dev/null -H "Title: $1" -H "Priority: $2" -H "Tags: $3" -d "$4" "https://ntfy.sh/$NTFY_TOPIC" || true
+}
 
 # Days of refresh-token life left at which to start warning. 3 days (not the 48h originally
 # sketched) so a Friday-evening expiry is still flagged on a working day.
