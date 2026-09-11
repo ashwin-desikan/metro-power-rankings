@@ -13296,9 +13296,12 @@ healthchecks 403-means-quota); three Data sources rows updated (api-football to 
 group-label incident and the `updated_at` is-insert-only trap; ESPN with the TBD-bracket quirk;
 ECB from "Not yet live" to OK with the effective-date rule). Four new Backlog rows filed.
 
-⚠️ The Decisions database has no basketball or "Other sports" Area option, unlike Backlog. The
-WNBA ruling is filed with Area blank rather than misfiled or an option added to someone else's
-schema — worth a decision.
+The Decisions database had no "Other sports" Area option, unlike Backlog, so the WNBA ruling was
+filed with Area blank rather than misfiled. **Resolved the same day at Ashwin's word:** the
+option was added to Decisions and the ruling refiled under it. Placed between "Infra / deploy"
+and "Content" to mirror Backlog's own ordering, and the ALTER carried all thirteen existing
+options through unchanged — each kept its original option id, so no existing row lost its value.
+⚠️ Backlog still has a "Play" option that Decisions lacks; left alone, since nothing needed it.
 
 ### D. New: the Silent failure register (Notion, under "Citizen of Nowhere")
 A page, not a database, listing the faults that **exit 0 and tell nobody** — split into the ones
