@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-11T07:12:04.061919+00:00",
+  "generated_at": "2026-09-11T07:22:23.110083+00:00",
   "jobs": [
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-11T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-09-10",
-        "status": "ok",
-        "slot": "2026-09-10T07:20:00+00:00"
-      }
-    },
     {
       "id": "economy-rates",
       "label": "Policy rate refresh (/business/economy)",
@@ -283,6 +265,24 @@
         "date": "2026-09-11",
         "status": "ok",
         "slot": "2026-09-11T06:00:00+00:00"
+      }
+    },
+    {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-12T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-09-11",
+        "status": "ok",
+        "slot": "2026-09-11T07:20:00+00:00"
       }
     },
     {
