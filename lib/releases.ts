@@ -21,8 +21,8 @@ export const RELEASES: Release[] = [
     date: "2026-09-11",
     headline: "Playoff and title odds for every NFL week since 1920",
     items: [
-      "Every NFL season page since 1920 shows each team's chance of a playoff place and of the title after any week, drawn 2,000 times from that week's ratings and seeded by the tiebreakers of the era.",
-      "A club reads clinched or out only once the records settle it, allowing for who still plays whom; a small chance stays a small chance, never a zero, and the 2026 season carries its odds from the preseason on.",
+      "Every NFL season page since 1920 shows each team's chance of a playoff place and of the title after any week, drawn 2,000 times on that week's ratings; a club reads clinched or out only once the records settle it.",
+      "Money against football: one dot per club and season across six leagues, points against expectation across and squad value gained beyond spend up, the frontier joined, and each club's own trail on its page.",
       "Every share card now carries the page's own title in a real bold weight, and the last twelve pages that still shared the plain home card have their own.",
       "Live Standings follows the Copa Libertadores into the knockout rounds, reads every upcoming kick-off in your own time zone, and gives NPB a winning percentage to three places.",
     ],

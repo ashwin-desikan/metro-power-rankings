@@ -13508,3 +13508,133 @@ test ping did NOT push tomorrow's deadline out.
 `jobs.toml` carries all four edits (two `hc_slug` added, two removed with their deleted configs
 in comments) and is deployed to the live copy; `--check-sync` clean, `build_argv` confirmed
 wrapping both economy jobs in `hc-run.sh` and both retired jobs unwrapped.
+
+---
+
+## 2026-09-11 (day) — cowork (cloud, bridged to the Windows box) → mini and next session: FRIDAY'S FIRST RUNS READ, THE BRAND HOOK MADE CONDITIONAL, CÔTE D'IVOIRE AT THE BUILDERS
+
+### A. Step 1, the first runs, with the evidence
+**economy-rates (mini, Fri 07:30Z):** one run, not two. `015ef5f1d` "Auto: policy rates refresh"
+is authored 07:32:58Z, the 07:30Z slot; the night entry's note that it landed "before 01:30Z"
+was a clock misread (the Vercel READY for `c095ad8b6` was likewise created 22:03Z on 09-10, so
+it counted against 09-10's two, which the mini's daily sweep also reports). `refresh-schedule.json`
+on origin: `economy-rates` last_run 2026-09-11 ok, next 09-18. Two decisions in `changelog.json`:
+Korea +25bp to 3.00 (2026-08-27), New Zealand +25bp to 2.75 (2026-09-03); `index.json` moved
+the Korea block (61 changes, hold_days 12). Supabase: `policy_rate_changes` 19,547 rows (19,545
+at close, max date 09-03), `policy_rate_daily` 2,885 rows to 09-08, so the BIS daily table is
+populated. ⚠️ Worth a look, not a fault: the NZ changelog row's `era_name` is a truncated string
+ending in "..." ("Official market intervention represen..."), which will show wherever that
+field renders; `built` reads 2026-09-08 on rows written 09-11 because it is data-derived (the
+mini's section B says so), not the run date. The mini's own entry (sections A to F above)
+then found and fixed the four builders that had NOT been running since 09-08.
+
+**nfl-live-refresh (Actions, Fri 09:30Z):** NOT fired by 10:45Z (all times here UTC; the box's clock reads BST, one hour ahead). The Actions API from the box
+lists one run in the workflow's history, 09-08 13:47Z scheduled, failure (the 403), and that run
+started 4h17m after its own 09:30Z cron, so a late fire today is likely rather than a missing
+one. Baseline on origin unchanged: `elo/seasons/2026.json` status `seeded`, no
+`seeds/2026.json`, `odds/2026.json` through_week 0. Not dispatched by hand; a manual dispatch
+would commit results and the scheduled run would follow as a second run. Whoever reads this
+next: check the run list before assuming anything about the User-Agent fix.
+
+**economy-housing:** Saturday. `last_run` reads "missed" for 09-05 (the slot predates the job),
+next 09-12 07:30Z. **claude-auth-canary:** 06:30Z ok, silent.
+
+### B. 🔴 Four paid builds today, and the [deploy-now] one built a tree that had already built
+Vercel (`list_deployments`, states READY and ERROR since 00:00Z): `647310a5a` ERROR,
+`770368de1` READY, **`441f2be5a` READY (created 10:53Z)**, `2a32e0068` READY (10:54Z). The
+mini's section F counted two and then pushed `2a32e0068` `[deploy-now]` on the reasoning that the
+cap had skipped `441f2be5a`. It had not: the same commit shows READY, so the `[deploy-now]`
+build rebuilt an identical tree. This is the cap reading INACTIVE, which it says in every build
+log until `VERCEL_BUILD_CAP_TOKEN` exists in the project's build environment (Ashwin's item,
+still open). Two consequences for the mini: (1) before a `[deploy-now]`, read the deployment
+state of the commit you think was skipped, from the Vercel API, not from the guard's expected
+behaviour; (2) with the cap inactive, every app commit on main builds, so the 2/day budget is
+still a promise, not code, until the token is set. Nothing pushed from this session today
+spends a build: everything below is `[vercel skip]` or in the other repo.
+
+### C. Step 2A, the brand deploy hook (citizenofnowhere-brand, its own Vercel project)
+`_scratch/daily-rebuild.yml` from the 09-10 entry did not survive (the `_scratch` copy is gone;
+only `_scratch/substack_check.py`, the test, remained), so the workflow was rewritten from that
+check: fetch the feed, take the newest title (skip "Coming soon"), fetch the homepage, deploy
+only when the title is absent; manual dispatch always deploys; a failed fetch fails the job
+rather than guessing. Tested on the box: newest "Four seasons, one ledger", homepage current,
+`behind False`, no deploy. Committed as `de302a9` on branch `deploy-hook-conditional` off
+`origin/main` (`a2717b3`) in `C:\Users\ashwi\Desktop\Projects\citizenofnowhere-brand`; the
+checkout is back on `stack-decision`, untouched. Not pushed. The daily run at 13:17Z will keep
+rebuilding until it is.
+
+### D. Step 2B, Côte d'Ivoire at the three builder sources (`4d67d0bd1`, `[vercel skip]`)
+The workbook keeps "Ivory Coast" as Name and Côte d'Ivoire as Cur. Name, Wikidata labels the
+legislature "Parliament of Ivory Coast", and the cricket workbook says "Ivory Coast", so all
+three published files would have reverted on their next build. Now: `DISPLAY_NAME_OVERRIDES` in
+`build-international-data.py` on the Name column, with `slug-lookup.json` keeping the workbook
+name resolvable for cross-source joins (the first rebuild dropped the "ivory coast" key, caught
+by diffing, fixed before commit); `fixLabel` on the legislature label in `build-facts.mjs`; a
+`display()` map on team and opponent strings in `build_cricket_top_games.py` with the slugs
+left on the workbook name so `ivory-coast` links keep resolving. Proof: international rebuilt
+from the workbook and cricket rebuilt from Supabase (its production source; the local xlsx is
+an older copy and produced 127 fewer matches, so it is NOT the source to verify against) both
+reproduce the committed files apart from their generated timestamps: 13 Côte d'Ivoire strings,
+14 ivory-coast slugs, zero "Ivory Coast". The data files are not in the commit; the builders
+reproduce them.
+
+### E. Step 2C, first commit: the frontier (money against football), one dot per club-season
+The SoccerSolver note's one chart worth taking, drawn our way. `lib/footballMoneyShape.ts` gains
+the pure half (`moneyFrontierPoints`: every full, priced club-season joined to its surplus from
+the Against Expectation ledgers, `paretoFrontier`: the set no other point beats on both axes,
+`packFrontier`/`unpackFrontier`: club and season strings once, one seven-number tuple per point,
+so 1,362 dots travel as ~50 KB of RSC payload rather than 250 KB), `lib/footballMoney.ts` the
+loader (`getMoneyFrontier`, five leagues from lib/intlExpectation and England from
+lib/plExpectation, both slug-keyed, cached once per process like the boards), and
+`app/teams/football/MoneyFrontier.tsx` the client chart. Three tests added (8 in the file).
+
+**The chart.** x is the season's surplus (match points above expected, a win counting one, the
+same unit on every club page), y the season's appreciation (squad value gained beyond the net
+spend). The Pareto set is joined as a dashed `--cat-1` line, drawn through the data and never
+fitted (a fitted curve would claim a trade-off the data does not have to carry). The field is the
+dim text token; a club page passes its slug and its seasons are joined as a `--cat-2` trail, the
+latest dot largest, over the same field, so the reader sees one club against all of them. The
+selection ring is the accent. Two of the three categorical colours a scatter is allowed.
+
+**The readout rule, applied.** Drawn in PIXELS from a ResizeObserver width, not a scaled viewBox,
+so a phone keeps 12px axis text while the marks shrink; whole-surface pointer, nearest dot,
+`touch-pan-y`, pointermove only while dragging on touch (TowersGrid's pattern); readout 13px on
+the phone and 14px on desktop; a club page opens on the club's latest season so the readout is
+never empty where there is something to say. The readout names the league every time, because
+surplus is comparable within a league and only loosely across them, and nothing ranks across
+leagues. `net` is received minus spent, so the sentence says "beyond a net spend of €X" for a
+buying window and "on top of €X of net sales" for a selling one.
+
+**Surfaces.** `/sports/expectation#frontier`, a new section under the money board with a
+HubNav item, a `more` note with the definitions, and a sentence naming the frontier's ends (the
+furthest right and the highest); the club page's money panel, under the season table, only when
+the club has at least one joined season (`onField`), so a club with nothing to place does not
+get a chart about other clubs.
+
+**Measured** (`_scratch/measure-frontier.mjs`, dev server, `NFL_DATA_LOCAL=1`):
+`/sports/expectation` 390: scrollWidth 390, svg 332x266, 1,362 dots, smallest text 12px,
+readout 13px, a tap at 60%/40% reads "Rayo Vallecano, 2014-15 (Spain). +1.4 points against
+expectation; +€11m of squad value ..."; 1280: scrollWidth 1280, svg 1086x440, readout 14px, hover
+reads Hoffenheim 2013-14. `/teams/football/brentford` 390 and 1280: same widths, 1,363/1,364
+dots (the trail on top), opens on "Brentford FC, 2025-26 (England). +0.8 points against
+expectation; +€120m of squad value on top of €50m of net sales." No page errors, no console
+warnings on either page. Frontier today: 5 club-seasons; the furthest right sits at +9.5 points
+with roughly zero appreciation, so the line's last segment drops steeply, which is the data.
+Screenshots in `_scratch/frontier-{390,1280}-{expectation,brentford}.png`.
+
+**Gates.** `npm run verify` end to end on the box (`_scratch/verify-frontier.log`): every
+check OK, 16 test files, `next build --webpack` compiled in 45s, 5,680 static pages,
+function-size OK (largest route 79.6 MB). Release note: today's block was already at four
+bullets, so the two odds bullets were folded into one (213 chars) and the frontier bullet added
+(205). ⚠️ This is an app commit and the day's builds are spent four times over; it waits for
+tomorrow's first push, and by the ordering rule it must be push HEAD.
+
+Still in C: the trading-versus-appreciation split and the director's ledger (the note's C and
+D); the director's ledger needs player valuations from the tm corpus on the box, a builder
+change, so it is a separate commit.
+
+### F. State
+Local, not pushed: `df6a58a2e` (the night entry's section M, rebased onto the mini's morning,
+conflict in HANDOFF.md resolved by keeping both sides in time order), `4d67d0bd1` (Côte
+d'Ivoire at the builders) and the frontier commit (app; must be push HEAD). The brand branch is
+separate.

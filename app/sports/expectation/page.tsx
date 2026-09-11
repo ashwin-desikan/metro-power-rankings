@@ -9,8 +9,9 @@ import { getPlExpectation } from "@/lib/plExpectation";
 import { getNflExpectation } from "@/lib/nflExpectation";
 import { getIntlExpectation } from "@/lib/intlExpectation";
 import { getClubValueIndex, joinValueAndSurplus } from "@/lib/clubValue";
-import { getMoneyIndex, getSpanMoneyBoard } from "@/lib/footballMoney";
-import { fmtEurM, fmtEurSigned, MONEY_FIRST_SEASON, MONEY_LAST_FULL_SEASON } from "@/lib/footballMoneyShape";
+import { getMoneyFrontier, getMoneyIndex, getSpanMoneyBoard } from "@/lib/footballMoney";
+import { fmtEurM, fmtEurSigned, MONEY_FIRST_SEASON, MONEY_LAST_FULL_SEASON, packFrontier } from "@/lib/footballMoneyShape";
+import MoneyFrontier from "@/app/teams/football/MoneyFrontier";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 
 import { SectionHead } from "@/app/_shared/SectionHead";
@@ -138,12 +139,16 @@ export default async function ExpectationPage() {
   const valueSeason = intl?.metas.length
     ? intl.metas.reduce((a, m) => (m.seasons[1] > a ? m.seasons[1] : a), intl.metas[0].seasons[1])
     : null;
-  const [valueIdx, valueJoined, moneyIdx, money] = await Promise.all([
+  const [valueIdx, valueJoined, moneyIdx, money, frontier] = await Promise.all([
     getClubValueIndex().catch(() => null),
     valueSeason ? joinValueAndSurplus(valueSeason).catch(() => []) : Promise.resolve([]),
     getMoneyIndex().catch(() => null),
     getSpanMoneyBoard().catch(() => []),
+    getMoneyFrontier().catch(() => []),
   ]);
+  // The frontier: the club-seasons no other beat on both axes, named in the
+  // sentence above the plot, best season first by surplus.
+  const frontierSet = frontier.filter((p) => p.frontier).sort((a, b) => b.surplus - a.surplus);
   // The money board is the whole span, full seasons only (2012-13 to
   // 2025-26), sorted on appreciation; only clubs priced at both ends of at
   // least three of those seasons, so a club that spent one season in the top
@@ -264,6 +269,7 @@ export default async function ExpectationPage() {
         { label: "Six leagues, one model", href: "#leagues" },
         { label: "By metro", href: "#metros" },
         { label: "Form against money", href: "#value" },
+        { label: "Money against football", href: "#frontier" },
         { label: "Against the market", href: "#market" },
         { label: "Where the numbers come from", href: "#method" },
       ]} />
@@ -906,6 +912,42 @@ export default async function ExpectationPage() {
               },
             }))}
           />
+        </section>
+      ) : null}
+
+      {/* ------------------------------------------ money against football */}
+      {frontier.length > 0 ? (
+        <section className="mb-12">
+          <SectionHead
+            id="frontier"
+            title="Money against football"
+            sub="One dot per club and season: points against expectation across, squad value gained beyond the spend up."
+            more={
+              <>
+                Every club-season from {MONEY_FIRST_SEASON} to {MONEY_LAST_FULL_SEASON} with a priced squad at both
+                ends and a row in the Against Expectation ledger, {frontier.length.toLocaleString("en-GB")} of them
+                across the six leagues. Across is the season&rsquo;s surplus: match points earned minus the points
+                the model expected, a win counting one and a draw a half, the same unit on every club page. Up is the
+                season&rsquo;s appreciation: the change in squad value once the net spend is taken out. The frontier
+                joins the club-seasons no other one beat on both axes; it is drawn through the data, never fitted,
+                because a fitted curve would claim a trade-off the data does not have to carry. Surplus is comparable
+                within a league and only loosely across them, so nothing here ranks one league against another; the
+                readout names the league every time.
+              </>
+            }
+          />
+          {frontierSet.length ? (
+            <p className="mb-3 text-sm text-[var(--text-muted)] max-w-3xl">
+              {frontierSet.length} club-seasons make the frontier. The furthest right is {frontierSet[0].club} in{" "}
+              {frontierSet[0].season}, <span className="tabular-nums" style={MONO}>{frontierSet[0].surplus > 0 ? "+" : ""}{frontierSet[0].surplus.toFixed(1)}</span> points
+              against expectation with <span className="tabular-nums" style={MONO}>{fmtEurSigned(frontierSet[0].appreciation)}</span> of value gained beyond its spend;
+              the highest is {frontierSet[frontierSet.length - 1].club} in {frontierSet[frontierSet.length - 1].season},{" "}
+              <span className="tabular-nums" style={MONO}>{fmtEurSigned(frontierSet[frontierSet.length - 1].appreciation)}</span>.
+            </p>
+          ) : null}
+          <div className="rounded-xl border p-3 sm:p-4 min-w-0" style={CARD}>
+            <MoneyFrontier packed={packFrontier(frontier)} />
+          </div>
         </section>
       ) : null}
 

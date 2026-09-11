@@ -3,6 +3,10 @@ import {
   fmtEurM,
   fmtEurSigned,
   isStubSeason,
+  moneyFrontierPoints,
+  packFrontier,
+  paretoFrontier,
+  unpackFrontier,
   seasonMoneyBoard,
   spanMoneyBoard,
   type MoneyCountryFile,
@@ -87,5 +91,65 @@ describe("spanMoneyBoard", () => {
     expect(a.last).toBe("2025-26");
     expect(a.return_pct).toBeCloseTo(20);
     expect(rows.find((r) => r.slug === "b")!.return_pct).toBeNull();
+  });
+});
+
+describe("moneyFrontierPoints and paretoFrontier", () => {
+  it("keeps only the club-seasons no other point beats on both axes", () => {
+    const pts = [
+      { surplus: 3, appreciation: 10 },   // 0: beaten by 2 on both
+      { surplus: 5, appreciation: 40 },   // 1: frontier (most surplus)
+      { surplus: 4, appreciation: 60 },   // 2: frontier
+      { surplus: 1, appreciation: 90 },   // 3: frontier (most appreciation)
+      { surplus: 2, appreciation: 50 },   // 4: beaten by 2
+      { surplus: 4, appreciation: 55 },   // 5: tie on surplus with 2, lower y
+    ];
+    expect(paretoFrontier(pts)).toEqual([1, 2, 3]);
+  });
+
+  it("joins money seasons to the surplus lookup, full seasons only, priced only", () => {
+    const files = [
+      ["spain", file("Spain", [
+        { club: "Girona", slug: "girona", seasons: [
+          season({ season: "2023-24", spent: 20, received: 50, net: 30, appreciation: 120 }),
+          season({ season: "2024-25", spent: 60, received: 10, net: -50, appreciation: null }),  // unpriced: out
+          season({ season: "2026-27", spent: 1, appreciation: 5 }),                              // stub: out
+        ] },
+        { club: "Nowhere", slug: null, seasons: [season({ season: "2023-24", appreciation: 1 })] },  // no slug: out
+      ])],
+      ["england", file("England", [
+        { club: "Brighton", slug: "brighton", seasons: [season({ season: "2023-24", spent: 90, received: 200, net: 110, appreciation: 80 })] },
+        { club: "Orphan", slug: "orphan", seasons: [season({ season: "2023-24", appreciation: 9 })] },      // no ledger row: out
+      ])],
+    ] as const;
+    const surplus = new Map([
+      ["girona", new Map([["2023-24", 6.5], ["2024-25", 1]])],
+      ["brighton", new Map([["2023-24", 2.25]])],
+    ]);
+    const pts = moneyFrontierPoints(files, surplus);
+    expect(pts.map((p) => `${p.club} ${p.season} ${p.surplus} ${p.appreciation} ${p.frontier}`)).toEqual([
+      "Brighton 2023-24 2.25 80 false",
+      "Girona 2023-24 6.5 120 true",
+    ]);
+    expect(pts[1].country).toBe("Spain");
+    expect(pts[1].net).toBe(30);
+  });
+});
+
+describe("packFrontier / unpackFrontier", () => {
+  it("round-trips the points and dedupes club and season strings", () => {
+    const pts = [
+      { slug: "a", club: "A", country: "Spain", leagueSlug: "spain" as const, season: "2023-24", surplus: 1.25, appreciation: 10.04, spent: 5, net: -2, frontier: true },
+      { slug: "a", club: "A", country: "Spain", leagueSlug: "spain" as const, season: "2024-25", surplus: -0.5, appreciation: -3, spent: 0, net: 0, frontier: false },
+      { slug: "b", club: "B", country: "Italy", leagueSlug: "italy" as const, season: "2023-24", surplus: 2, appreciation: 1, spent: 1, net: 1, frontier: false },
+    ];
+    const packed = packFrontier(pts);
+    expect(packed.clubs.map((c) => c.slug)).toEqual(["a", "b"]);
+    expect(packed.seasons).toEqual(["2023-24", "2024-25"]);
+    expect(packed.pts[0]).toEqual([0, 0, 1.3, 10, 5, -2, 1]);
+    const back = unpackFrontier(packed);
+    expect(back[2]).toEqual({ ...pts[2] });
+    expect(back[0].frontier).toBe(true);
+    expect(back[1].frontier).toBe(false);
   });
 });

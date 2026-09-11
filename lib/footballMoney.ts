@@ -1,11 +1,15 @@
 import "server-only";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { getIntlExpectation } from "./intlExpectation";
+import { getPlExpectationClubs } from "./plExpectation";
 import {
   MONEY_LEAGUE_SLUGS,
+  moneyFrontierPoints,
   seasonMoneyBoard,
   spanMoneyBoard,
   type ClubMoneyRecord,
+  type FrontierPoint,
   type MoneyBoardRow,
   type MoneyCountryFile,
   type MoneyIndex,
@@ -27,7 +31,7 @@ import {
 // 🔴 A CLUB WITH NO LEDGER RETURNS NULL and the surface renders nothing.
 // The great majority of club pages sit outside these six leagues.
 
-export type { ClubMoneyRecord, MoneyBoardRow, MoneyCountryFile, MoneyIndex, MoneySpanRow };
+export type { ClubMoneyRecord, FrontierPoint, MoneyBoardRow, MoneyCountryFile, MoneyIndex, MoneySpanRow };
 
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
@@ -125,4 +129,38 @@ export async function getSeasonMoneyBoard(season: string): Promise<MoneyBoardRow
 export async function getSpanMoneyBoard(): Promise<MoneySpanRow[]> {
   const d = await getDerived();
   return d ? spanMoneyBoard(d.files) : [];
+}
+
+/**
+ * Money against football: every priced club-season joined to its surplus
+ * from the Against Expectation ledgers (five leagues from lib/intlExpectation,
+ * England from lib/plExpectation, both slug-keyed), Pareto set marked. Same
+ * once-per-process cache as the boards.
+ */
+let _frontier: Promise<FrontierPoint[]> | null = null;
+
+async function deriveFrontier(): Promise<FrontierPoint[]> {
+  const [d, intl, pl] = await Promise.all([
+    getDerived(),
+    getIntlExpectation().catch(() => null),
+    getPlExpectationClubs().catch(() => null),
+  ]);
+  if (!d) return [];
+  const surplus = new Map<string, Map<string, number>>();
+  if (intl) {
+    for (const entry of intl.clubs.values()) {
+      surplus.set(entry.slug, new Map(entry.seasons.map((r) => [r.season, r.surplus])));
+    }
+  }
+  if (pl) {
+    for (const [slug, entry] of Object.entries(pl.clubs)) {
+      if (!surplus.has(slug)) surplus.set(slug, new Map(entry.seasons.map((r) => [r.season, r.surplus])));
+    }
+  }
+  return moneyFrontierPoints(d.files, surplus);
+}
+
+export async function getMoneyFrontier(): Promise<FrontierPoint[]> {
+  if (!_frontier) _frontier = deriveFrontier().catch(() => []);
+  return _frontier;
 }

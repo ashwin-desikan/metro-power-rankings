@@ -229,3 +229,152 @@ export function spanMoneyBoard(
       (b.appreciation ?? -Infinity) - (a.appreciation ?? -Infinity) || b.spent - a.spent,
   );
 }
+
+// ---------------------------------------------------------------- the frontier
+//
+// Money against football, one dot per club and season. x is the season's
+// surplus from the Against Expectation ledger (match points earned minus
+// expected, a win counting one, a draw a half: era-neutral and the same unit
+// on every club page). y is the season's appreciation: squad value gained
+// beyond the net spend. A club above and to the right of another did both
+// things better that season. The Pareto set is every club-season no other
+// one beats on BOTH axes; that is the frontier, and it is drawn, never
+// fitted, because a fitted curve claims a relationship the data does not
+// have to carry.
+//
+// 🔴 SURPLUS IS COMPARABLE WITHIN A LEAGUE AND ONLY LOOSELY ACROSS LEAGUES
+// (lib/clubValue.ts, same rule). The chart puts all six on one plane because
+// the argument is money against football, not league against league; the
+// readout always names the league, and nothing here ranks across leagues.
+
+export type FrontierPoint = {
+  slug: string;
+  club: string;
+  country: string;
+  leagueSlug: MoneyLeagueSlug;
+  season: string;
+  /** Match points above expectation that season (win 1, draw 0.5). */
+  surplus: number;
+  /** Squad value gained beyond the net spend, EUR millions. */
+  appreciation: number;
+  spent: number;
+  net: number;
+  /** True when no other point beats this one on both axes. */
+  frontier: boolean;
+};
+
+/** slug -> season -> surplus, from whichever expectation ledgers are loaded. */
+export type SurplusLookup = ReadonlyMap<string, ReadonlyMap<string, number>>;
+
+/**
+ * Every priced club-season that also has a ledger row, full seasons only.
+ * `frontier` is set on the Pareto set (maximise both axes). Sorted by season
+ * then club so the client component's order is stable.
+ */
+export function moneyFrontierPoints(
+  files: readonly (readonly [MoneyLeagueSlug, MoneyCountryFile])[],
+  surplus: SurplusLookup,
+  lastFullSeason: string = MONEY_LAST_FULL_SEASON,
+): FrontierPoint[] {
+  const out: FrontierPoint[] = [];
+  for (const [leagueSlug, f] of files) {
+    for (const c of f.clubs) {
+      if (!c.slug) continue;
+      const bySeason = surplus.get(c.slug);
+      if (!bySeason) continue;
+      for (const s of c.seasons) {
+        if (s.season > lastFullSeason || s.appreciation == null) continue;
+        const x = bySeason.get(s.season);
+        if (x == null || !Number.isFinite(x)) continue;
+        out.push({
+          slug: c.slug,
+          club: c.club,
+          country: f.meta.country,
+          leagueSlug,
+          season: s.season,
+          surplus: x,
+          appreciation: s.appreciation,
+          spent: s.spent,
+          net: s.net,
+          frontier: false,
+        });
+      }
+    }
+  }
+  for (const i of paretoFrontier(out)) out[i].frontier = true;
+  return out.sort((a, b) => a.season.localeCompare(b.season) || a.club.localeCompare(b.club));
+}
+
+/**
+ * Indices of the Pareto set for "more surplus AND more appreciation": walk the
+ * points from the highest surplus down and keep each one whose appreciation
+ * beats every point already kept. Ties on surplus keep the higher
+ * appreciation only. Returned in descending-surplus order, so joining them
+ * in sequence draws the frontier from right to left.
+ */
+export function paretoFrontier(points: readonly { surplus: number; appreciation: number }[]): number[] {
+  const order = points
+    .map((p, i) => i)
+    .sort((a, b) => points[b].surplus - points[a].surplus || points[b].appreciation - points[a].appreciation);
+  const kept: number[] = [];
+  let best = -Infinity;
+  for (const i of order) {
+    if (points[i].appreciation > best) {
+      kept.push(i);
+      best = points[i].appreciation;
+    }
+  }
+  return kept;
+}
+
+/**
+ * The frontier packed for the client: club identity once, season strings
+ * once, then one short tuple per point, so 2,000 dots travel as ~50 KB of
+ * RSC payload rather than 250 KB of repeated strings.
+ * Tuple: [clubIndex, seasonIndex, surplus, appreciation, spent, net, frontier 0/1].
+ */
+export type PackedFrontier = {
+  clubs: { slug: string; club: string; country: string; leagueSlug: MoneyLeagueSlug }[];
+  seasons: string[];
+  pts: [number, number, number, number, number, number, 0 | 1][];
+};
+
+export function packFrontier(points: readonly FrontierPoint[]): PackedFrontier {
+  const clubs: PackedFrontier["clubs"] = [];
+  const clubIdx = new Map<string, number>();
+  const seasons: string[] = [];
+  const seasonIdx = new Map<string, number>();
+  const pts: PackedFrontier["pts"] = [];
+  for (const p of points) {
+    let ci = clubIdx.get(p.slug);
+    if (ci == null) {
+      ci = clubs.length;
+      clubIdx.set(p.slug, ci);
+      clubs.push({ slug: p.slug, club: p.club, country: p.country, leagueSlug: p.leagueSlug });
+    }
+    let si = seasonIdx.get(p.season);
+    if (si == null) {
+      si = seasons.length;
+      seasonIdx.set(p.season, si);
+      seasons.push(p.season);
+    }
+    pts.push([ci, si, round1(p.surplus), round1(p.appreciation), round1(p.spent), round1(p.net), p.frontier ? 1 : 0]);
+  }
+  return { clubs, seasons, pts };
+}
+
+export function unpackFrontier(packed: PackedFrontier): FrontierPoint[] {
+  return packed.pts.map(([ci, si, surplus, appreciation, spent, net, f]) => ({
+    ...packed.clubs[ci],
+    season: packed.seasons[si],
+    surplus,
+    appreciation,
+    spent,
+    net,
+    frontier: f === 1,
+  }));
+}
+
+function round1(v: number): number {
+  return Math.round(v * 10) / 10;
+}

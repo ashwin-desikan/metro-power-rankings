@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { CollapsibleSection } from "@/app/_shared/CollapsibleSection";
 import SortableBoard from "@/app/_shared/SortableBoard";
-import { getClubMoneyBySlug } from "@/lib/footballMoney";
-import { fmtEurM, fmtEurSigned, isStubSeason, type MoneySeason } from "@/lib/footballMoneyShape";
+import MoneyFrontier from "@/app/teams/football/MoneyFrontier";
+import { getClubMoneyBySlug, getMoneyFrontier } from "@/lib/footballMoney";
+import { fmtEurM, fmtEurSigned, isStubSeason, packFrontier, type MoneySeason } from "@/lib/footballMoneyShape";
 
 // The club page's Money Ledger: fees paid and received per season, beside
 // the squad-value panel above it, with the season's appreciation as the
@@ -57,8 +58,15 @@ function Move({ m }: { m: MoneySeason["biggest_in"] }) {
 }
 
 export default async function ClubMoneyPanel({ slug }: { slug: string }) {
-  const hit = await getClubMoneyBySlug(slug).catch(() => null);
+  const [hit, frontier] = await Promise.all([
+    getClubMoneyBySlug(slug).catch(() => null),
+    getMoneyFrontier().catch(() => []),
+  ]);
   if (!hit) return null;
+  // The frontier is drawn only when this club is on it: a club with no priced
+  // season joined to a ledger row has nothing to place, and the field alone
+  // would be a chart about other clubs.
+  const onField = frontier.some((p) => p.slug === slug);
   const { record: club, meta } = hit;
   const seasons = [...club.seasons].reverse();   // latest first, the value chart above ends there too
   if (!seasons.length) return null;
@@ -180,6 +188,15 @@ export default async function ClubMoneyPanel({ slug }: { slug: string }) {
             },
           }))}
         />
+        {onField ? (
+          <div className="mt-6 min-w-0">
+            <h4 className="text-sm font-semibold">Money against football</h4>
+            <p className="mb-2 text-[12.5px] text-[var(--text-muted)]">
+              Every priced club-season in the six leagues: points against expectation across, squad value gained beyond the net spend up. This club&rsquo;s seasons are joined.
+            </p>
+            <MoneyFrontier packed={packFrontier(frontier)} highlight={slug} />
+          </div>
+        ) : null}
         <p className="mt-3 text-[12.5px]">
           <Link href="/sports/expectation#money" className="text-[var(--accent)] hover:underline">
             Every club&rsquo;s return on the transfer window&nbsp;&rarr;
