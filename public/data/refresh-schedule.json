@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T18:23:52.136843+00:00",
+  "generated_at": "2026-09-11T19:29:30.497400+00:00",
   "jobs": [
     {
       "id": "ops-autofix",
@@ -246,6 +246,31 @@
       }
     },
     {
+      "id": "nfl-elo",
+      "label": "NFL live Elo, seeds, odds (and the bracket in Jan/Feb)",
+      "schedule_text": "Daily at 08:00 UTC (Jan/Feb/Sep/Oct/Nov/Dec)",
+      "cadence": "daily",
+      "times": [
+        "08:00"
+      ],
+      "weekdays": [],
+      "months": [
+        1,
+        2,
+        9,
+        10,
+        11,
+        12
+      ],
+      "days_of_month": [],
+      "next_run": "2026-09-12T08:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-11",
+        "status": "ok",
+        "slot": "2026-09-11T08:00:00+00:00"
+      }
+    },
+    {
       "id": "mktcap-refresh",
       "label": "Company market caps",
       "schedule_text": "Sat at 09:00 UTC",
@@ -263,6 +288,26 @@
         "date": "2026-09-05",
         "status": "ok",
         "slot": "2026-09-05T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "economy-prices",
+      "label": "Consumer price refresh (/business/economy/prices)",
+      "schedule_text": "Sun at 07:30 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:30"
+      ],
+      "weekdays": [
+        7
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-13T07:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-06",
+        "status": "missed",
+        "slot": "2026-09-06T07:30:00+00:00"
       }
     },
     {
