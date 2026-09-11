@@ -39,6 +39,53 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 export const BUILD_RELEVANT_PATHS = ["app", "lib", "public"];
 export const SKIP_MARKER = "[vercel skip]";
 
+/**
+ * The SAME brevity limits app/updates/page.tsx enforces at build time.
+ *
+ * 🔴 Duplicated here on purpose, and it earned its place: on 2026-09-11 a
+ * 276-character bullet passed this gate, passed tsc, passed vitest, passed
+ * every other check -- and then failed `next build` with
+ * RELEASE_NOTES_VIOLATION, burning one of the two paid production builds the
+ * day allows. This gate knew only whether a date block EXISTED, never whether
+ * its contents were legal, so the only thing that could catch an over-long
+ * bullet was the build itself. Keep these numbers in step with
+ * RELEASE_LIMITS in app/updates/page.tsx.
+ */
+const RELEASE_LIMITS = { maxBulletsPerRelease: 4, maxCharsPerBullet: 220, maxHeadlineWords: 12 };
+
+/** Parse lib/releases.ts well enough to measure headlines and bullets. */
+export function brevityViolations(src) {
+  const out = [];
+  // Each release block starts at its date and runs to the next one.
+  const blocks = src.split(/(?=date:\s*")/).filter((b) => /^date:\s*"/.test(b.trim()));
+  for (const block of blocks) {
+    const date = block.match(/date:\s*"(\d{4}-\d{2}-\d{2})"/)?.[1];
+    if (!date) continue;
+    const headline = block.match(/headline:\s*("(?:[^"\\]|\\.)*")/)?.[1];
+    if (headline) {
+      const words = JSON.parse(headline).trim().split(/\s+/).length;
+      if (words > RELEASE_LIMITS.maxHeadlineWords) {
+        out.push(`${date}: headline ${words} words exceeds max ${RELEASE_LIMITS.maxHeadlineWords}`);
+      }
+    }
+    const items = block.match(/items:\s*\[([\s\S]*?)\]/)?.[1] ?? "";
+    // Every double-quoted literal in the items array, escapes intact, then
+    // JSON.parse so "\u00b7" is measured as the ONE character it renders as.
+    const lits = items.match(/"(?:[^"\\]|\\.)*"/g) ?? [];
+    if (lits.length > RELEASE_LIMITS.maxBulletsPerRelease) {
+      out.push(`${date}: ${lits.length} bullets exceeds max ${RELEASE_LIMITS.maxBulletsPerRelease}`);
+    }
+    for (const lit of lits) {
+      let text;
+      try { text = JSON.parse(lit); } catch { continue; }
+      if (text.length > RELEASE_LIMITS.maxCharsPerBullet) {
+        out.push(`${date}: bullet is ${text.length} chars (max ${RELEASE_LIMITS.maxCharsPerBullet}). Starts: "${text.slice(0, 60)}..."`);
+      }
+    }
+  }
+  return out;
+}
+
 /** Every ISO date in lib/releases.ts, in file order. */
 export function releaseDatesFrom(src) {
   return [...src.matchAll(/date:\s*"(\d{4}-\d{2}-\d{2})"/g)].map((m) => m[1]);
@@ -97,7 +144,21 @@ function main() {
     return;
   }
 
-  const releaseDates = releaseDatesFrom(readFileSync(join(root, "lib", "releases.ts"), "utf8"));
+  const releasesSrc = readFileSync(join(root, "lib", "releases.ts"), "utf8");
+  const releaseDates = releaseDatesFrom(releasesSrc);
+
+  // Brevity BEFORE the date audit: an over-long bullet fails `next build`, so
+  // catching it here is the difference between a local error and a wasted
+  // production build.
+  const brevity = brevityViolations(releasesSrc);
+  if (brevity.length) {
+    for (const v of brevity) console.error(`check:release-notes - FAIL: ${v}`);
+    console.error("");
+    console.error("RELEASE_NOTES_VIOLATION: these break the limits app/updates/page.tsx enforces");
+    console.error("at build time, so `next build` would fail. Cut bullets, not just words.");
+    process.exitCode = 1;
+    return;
+  }
   const newest = releaseDates.slice().sort().at(-1) ?? "1970-01-01";
 
   // Two days of slack on --since (which filters committer date) so a rebase or
