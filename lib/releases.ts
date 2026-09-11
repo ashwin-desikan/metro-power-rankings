@@ -22,9 +22,9 @@ export const RELEASES: Release[] = [
     headline: "Playoff and title odds for every NFL week since 1920",
     items: [
       "Every NFL season page since 1920 shows each team's playoff and title odds after any week, through the playoffs to the final, with honours filling in as they are earned and the seeds kept through the bracket.",
-      "Money against football: one dot per club and season across six leagues, the frontier joined and each club's trail on its page; share cards carry their title in bold; The World in 2100 joins the rankings as index eight.",
-      "Formula 1 title odds for every driver and constructor, simulated after each race, on the F1 hub and Live Standings; club football reads green all season, the WNBA through its break, and a live major lights the menu.",
-      "Live Standings opens with today, recent results and the three days ahead across sports, La Liga, Bundesliga, Serie A, Ligue 1, MLS, WSL, NWSL and the UEFA competitions included, and carries PL, UCL, NFL and CFB odds.",
+      "Money against football: the frontier of club-seasons, a board of who grows players against who buys them, and a director's ledger grading five seasons of signings by what they fetched or are worth today.",
+      "Formula 1 title odds after each race on the F1 hub and Live Standings; the Zone Zero Cup's golf pillar rebuilt on the women's majors, the OWGR and Rolex depth and the nation team events; The World in 2100 at index eight.",
+      "Live Standings opens with today, recent results and the three days ahead across every league with a fixture feed; a Prices tab on the economy hub carries US and UK consumer prices monthly and every country's index.",
     ],
   },
   {

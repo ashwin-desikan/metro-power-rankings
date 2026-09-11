@@ -13962,11 +13962,95 @@ reads: after week 18 the wild-card losers out; week 19 four clubs; week 20 exact
   anywhere; no horizontal scroll (scrollWidth 390/1280). Open heights 607/251/391 on the
   phone.
 
-### S. State
+### S. The queue, all five, on Ashwin's "build all of these" (17:00Z on)
+Four Sonnet implementers ran in parallel on disjoint file sets against the Windows checkout,
+each with tsc and Playwright; one verify and six commits at the end (T to Y below). Golf
+rulings applied: no amateur team events, prestige 0.6 to 0.9.
+
+### T. Zone Zero Cup, golf (app commit: methodology page plus scripts and data)
+- **Women's majors loaded**: `scripts/majors/load_womens_golf_majors.py` (Wikipedia, eight
+  events: Chevron 44, Women's PGA 72, U.S. Women's Open 81, Evian 13, Women's British Open
+  26, du Maurier 22, Titleholders 28, Women's Western Open 38; 324 rows) into Supabase
+  `golf_majors`, which gained a `gender` column (M default, W; migration `golf_majors_gender`).
+  `build-majors-data.py` keeps golf.json's men's tables as they were and adds
+  `championsWomen`/`leadersWomen`/`byNationWomen`; `zzc-titles.json` golf titles 478 to 802.
+- **Depth layer**: `scripts/zzc/golf_rankings.py` writes `public/data/majors/golf-rankings.json`
+  (OWGR top 300 live; 🔴 Rolex is behind Akamai bot management from the box, 403 to any
+  script, so the file carries a top-100 snapshot taken in a browser session,
+  `scripts/zzc/rolex-cache.json`, and the script falls back to it with a warning; refresh
+  it by hand from a browser: `fetch('/core/rankings/list?count=300',{credentials:'include'})`).
+  Engine: `golf_ranking_contribs` (mean rank_strength of the three best per nation on each
+  list, `RANK_SPORT_WEIGHT["Golf"] = 0.5`), `golf_team_contribs` (International Crown and
+  World Cup of Golf, champion 2 / runner-up 1, continental tier), `PRESTIGE["Golf"]` 0.9.
+- **Before and after** (`_scratch/zzc-golf-diff.md`): golf 35.6 to 110.5 points, 19 to 33
+  nations, 33rd to 11th sport. USA 10.9 to 21.8 (still first overall, 183.2 to 194.0), South
+  Korea 1.1 to 11.6 (21st to 17th), Japan 1.5 to 6.7, Australia 2.0 to 7.3, Sweden 1.0 to
+  5.8, Thailand 0 to 3.7 (60th to 53rd), New Zealand 2.3 to 5.4 (13th, unchanged, +2.8
+  merit: the note's 6 to 8 was a touch high), Great Britain 4.6 to 9.2. Top ten unchanged in
+  order; no nation moved more than four places.
+
+### U. Sortable sweep, NFL and predictions batch (app commit)
+Fifteen files, baseline 141 files / 203 boards to 126 / 169, fifteen deletions and no
+additions. Ranking boards became SortableBoards (predictions cfb/mlb/nfl/pl/ucl main
+tables, NFL expectation, international franchises, biggest upsets, best games); tables whose
+order is the content took the check's `data-static-sort="<reason>"` opt-out (fixture lists,
+the scrubber-driven SeasonStandings, SeedTimeline's week matrix, the Game Score top lists, the
+movers split). scoreboard/page.tsx had a false positive (a comment containing `<table>`).
+check:sortable, check:mobile (11 baselined findings, unchanged), check:table-scroll OK.
+
+### V. Mobile chart sweep, NFL batch (app commit)
+PreseasonChart, ExpectationChart, FranchiseEloTracker (now a client component) and
+WeeklyEloChart on ChartReadout: provider, readout line as the label, pointer surface with
+nearest-mark selection, drag on touch and move on mouse, pixel-measured width, 12px floor,
+token colours. WeeklyEloChart keeps its filters, pin, carried-week dashing and the scrubber;
+its CSS hover highlight became one JS "active line" so mouse, click and drag agree, and end
+labels are skipped under 480px. Measured at 390 and 1280 on /teams/nfl/season/1994 and 2024
+(chart 380px), /teams/nfl/seattle-seahawks (200), /teams/nfl/season (220): scrollWidth equals
+the viewport everywhere, no errors, smallest svg text 12px, every readout moves on a drag.
+/teams/nfl/season/2026 draws no PreseasonChart at all (pre-existing: no rated teams yet).
+
+### W. Prices tab, /business/economy/prices (app commit)
+`scripts/macro/prices/build_prices.py` (BLS CPI-U via datahub's raw CSV, 1,362 months; ONS
+CPIH L522/MM23 via `api.beta.ons.gov.uk`, the plain host 404s from the box, 463 months; World
+Bank FP.CPI.TOTL for 192 countries, 190 of the site's 247 matched), `lib/prices.ts` (GitHub
+raw first, tag `economy-prices`, registered in the route and the client-imports gate), the
+page (two lines, US and UK headline cards, a 30-year year-on-year chart on ChartReadout, a
+SortableBoard of every country with flags, 5- and 10-year annualised), EconomyNav gains the
+tab, runner `economy-prices.sh` and jobs.toml row `economy-prices` (Sunday 07:30Z; the mini
+copies both, see O). Latest: US CPI-U July 2026 333.918, +3.36% y/y, -0.01% m/m; UK CPIH July
+2026 142.7, +3.03% y/y, +0.28% m/m. Measured 390/1280: no horizontal scroll, no errors, chart
+text floor 12px, six columns at both widths, the readout moves on a tap.
+
+### X. Money Ledger remainder (app commit)
+The tm corpus on the box carries `player_valuations.csv.gz` keyed by player, so both halves
+built. **Grown or bought** (`growthBoard()` in footballMoneyShape.ts): trading and
+appreciation per club over a window, a board of 111 clubs over 2021-22 to 2025-26 on
+/sports/expectation#growth and two sentences in ClubMoneyPanel (Stuttgart +€352m appreciation
+against -€137m trading, Barcelona +€346m, Bournemouth +€300m; Manchester United -€732m,
+Tottenham -€633m, Chelsea -€532m, all trading-driven). **The director's ledger**
+(`grade_transfers`/`director_summary` in build_transfer_ledger.py): every arrival of the last
+five seasons graded sold-on fee or latest valuation, frees and loans graded but out of the
+capital, 204 of 205 clubs across all six leagues, `public/data/football/money/director.json`
+(top 20 each way) plus a `director` block per club; a board of 204 clubs on
+/sports/expectation#director and two lines in the panel (Yamal free to €200m held is the best
+trade, Kolo Muani €95m to €20m the worst; SPAL 39.1x on tiny capital, Vitesse 0.17x). Tests
+11/11; measured 390/1280 on /sports/expectation and /teams/football/brentford: no scroll,
+no errors.
+
+### Y. NFL season hub: the odds columns leave the Final view (app commit)
+Ashwin: "at the end of the year, it doesn't make sense to have the playoff and title columns
+... I would take those out for the full season view, but in every other weekly view, you keep
+them in." `titleCol`/`oddsCol` now require a scrubbed week; the Final table shows seeds and
+honours. The one deliberate exception to the no-mount-with-the-scrubber rule, noted in code.
+
+### Z. State
 Local, not pushed, linear on origin/main, oldest first: `a9ce70c89` (docs, `[vercel skip]`),
 `7f32be81f` (Côte d'Ivoire, `[vercel skip]`), `baea6d08e` (the frontier), `ce800aff3` (F1
 odds, the dots, the 2100 card), `d6f1edda4` (Live Standings odds), `589fadde7` (the Today
 box), `a06cc4cc6` (the follow-ups), `e622e6a41` (the NFL updater fix, `[vercel skip]`),
-`8e9522ce9` (section M), `aaf2fb25a` (O), `093df3933` (P), `4b6ad9c82` (Q), `d974097d2` (R,
-app, push HEAD); `npm run verify` green for the four (`_scratch/verify-round3.log`). The brand branch is separate. Open: `VERCEL_BUILD_CAP_TOKEN`; the golf build (rulings
-in N); the CFL fixture feed; the mini-side steps in O.
+`8e9522ce9` (section M), `aaf2fb25a` (O), `093df3933` (P), `4b6ad9c82` (Q), `088f0558c` (R),
+then the six commits T to Y (all app; Y is push HEAD); `npm run verify` green for the six
+(`_scratch/verify-round4.log`). The brand branch is separate. Open: `VERCEL_BUILD_CAP_TOKEN`;
+the CFL fixture feed; the mini-side steps in O (now also `runners/economy-prices.sh`); the
+Rolex snapshot refresh in T; the sortable and chart sweeps' next batches (the baseline has
+169 boards in 126 files left).
