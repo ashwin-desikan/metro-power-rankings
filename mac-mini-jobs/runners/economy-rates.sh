@@ -44,6 +44,61 @@ bootstrap_bis_bulk() {
 }
 guarded "bootstrap BIS bulk CBPOL (first run only)" bootstrap_bis_bulk
 
+# Every OWN-SOURCE builder's full-history base input, restored if absent.
+#
+# These are not the incremental fetch. refresh.py deliberately REFUSES to seed a
+# base from its own 90-day window ("run the full builder download on this machine
+# first"), because doing so would silently truncate a century of history to a
+# quarter. Without the base on disk the source is marked unreachable, its builder
+# is SKIPPED, and -- this is the part that bites -- the job still exits 0 and its
+# healthcheck still goes green.
+#
+# That is exactly what happened. The 09-08 container loss took these files with
+# it, and from then until 2026-09-11 the fed, ECB, Riksbank and BoE builders never
+# ran at all. Nothing was visibly wrong, because none of those four banks happened
+# to move in that window, so a full rebuild produced byte-identical files. The
+# cost was entirely prospective: the ECB hike announced 09-10 takes effect
+# 09-16, and would have been silently missed on the 09-18 run.
+#
+# BoC is in this list for a different reason worth keeping: its INCREMENTAL source
+# (V39079) is reachable, so refresh.py never flagged it unreachable, yet its
+# builder needs a second file (V122530, the monthly 1935-on series) that was also
+# lost. It failed outright rather than being skipped. Reachability of the
+# incremental feed says nothing about whether the base is present.
+base_input() {   # base_input <file> <url>
+  [ -s "_scratch/macro/$1" ] && return 0
+  echo "  base input missing, downloading: $1"
+  curl -fsSL -m 180 -o "_scratch/macro/$1" "$2" || return 1
+  [ -s "_scratch/macro/$1" ]
+}
+bootstrap_base_inputs() {
+  mkdir -p _scratch/macro || return 1
+  local today; today="$(date +%F)"
+  local fred="https://fred.stlouisfed.org/graph/fredgraph.csv?id"
+  local ecb="https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR"
+  local swea="https://api.riksbank.se/swea/v1/Observations"
+  base_input dfedtar.csv        "$fred=DFEDTAR"                                   || return 1
+  base_input dfedtaru.csv       "$fred=DFEDTARU"                                  || return 1
+  base_input dfedtarl.csv       "$fred=DFEDTARL"                                  || return 1
+  base_input ecb_dfr.csv        "$ecb.DFR.LEV?format=csvdata&startPeriod=1999-01-01"    || return 1
+  base_input ecb_mrr.csv        "$ecb.MRR_FR.LEV?format=csvdata&startPeriod=1999-01-01" || return 1
+  base_input riksbank_disc.json "$swea/SECBDISCEFF/1907-11-11/$today"             || return 1
+  base_input riksbank_marg.json "$swea/SECBMARGEFF/1987-01-30/$today"             || return 1
+  base_input riksbank_repo.json "$swea/SECBREPOEFF/1994-06-01/$today"             || return 1
+  base_input boe.csv            "https://datahub.io/core/interest-rates-gb/r/data.csv"  || return 1
+  base_input boc_v122530.csv    "https://www.bankofcanada.ca/valet/observations/V122530/csv?start_date=1935-01-01" || return 1
+  # DELIBERATELY NOT HERE: boc_bankrate.csv and norges_kpra_daily.json. Both were
+  # already on disk on 2026-09-11 (the incremental fetch maintains them), so
+  # neither was downloaded or self-tested as part of this restore. Adding a URL
+  # for a file whose on-disk format has not been verified risks writing CSV into
+  # a .json the builder parses -- trading a skipped builder for a corrupted one,
+  # which is strictly worse. Every entry above was fetched by hand and put
+  # through its builder's own --self-test before being written down here. If
+  # either of those two ever goes missing, verify the format first, then add it.
+  return 0
+}
+guarded "bootstrap own-source base inputs (restores any that are missing)" bootstrap_base_inputs
+
 # The real run: fetch, merge, rerun every builder + build_index.py, write.
 # Captured to a temp file so the runner can grep it for a "NEW RATE
 # DECISIONS" block afterward without refresh.py needing to know anything
@@ -68,6 +123,24 @@ if grep -q "NEW RATE DECISIONS" "$REFRESH_LOG"; then
   note "New rate decisions detected:"
   note "$SUMMARY"
   "$PY" "$MINI_DIR/notify.py" "Policy rate decisions" "$SUMMARY" 0 || true
+fi
+
+# A SKIPPED BANK MUST NOT BE SILENT. refresh.py degrades gracefully when a
+# source is unreachable: it reports it, leaves that bank's file untouched, and
+# exits 0 so one dead endpoint never takes down the other twelve. That is the
+# right behaviour and is not being changed. What was missing is that the report
+# went nowhere -- the job went green, the healthcheck went green, and between
+# the 09-08 container loss and 2026-09-11 the fed, ECB, Riksbank and BoE
+# builders did not run once, with nothing anywhere saying so. The bootstrap
+# above should make this rare; this makes it audible when it happens anyway.
+if grep -q "source(s) unreachable this run" "$REFRESH_LOG"; then
+  UNREACH="$(awk '/source\(s\) unreachable this run/{f=1} f' "$REFRESH_LOG" | sed 's/^ *//' | head -10)"
+  note "UNREACHABLE sources this run -- those banks were NOT rebuilt:"
+  note "$UNREACH"
+  "$PY" "$MINI_DIR/notify.py" "Policy rates: source(s) unreachable, banks not rebuilt" \
+    "$UNREACH
+
+The job still exited 0 by design -- one dead endpoint must not take down the other twelve. But those banks' files are untouched, and a rate move there will be MISSED until this clears." 1 || true
 fi
 rm -f "$REFRESH_LOG"
 
