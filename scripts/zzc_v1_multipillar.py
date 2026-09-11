@@ -154,7 +154,15 @@ PRESTIGE = {
     # Denmark, Malaysia and India behind the second. They sit just under tennis,
     # which keeps a small edge for four annual majors on a genuinely global
     # calendar, and above golf, which does not out-contest either of them.
-    "Tennis": 0.9, "Golf": 0.6, "Badminton": 0.85, "Table Tennis": 0.85,
+    # Golf 0.6 to 0.9 on 2026-09-11. The 0.6 rationale (2026-09-04) was that
+    # golf's title pillar was men's-majors-only and thin next to tennis's four
+    # majors, Davis Cup and Olympic medals on both genders. That gap is closed
+    # this pass: golf now carries the women's majors in the same slot, a
+    # depth-weighted current-strength layer off the OWGR and Rolex rankings
+    # (three best per nation, not just a world number one), and the
+    # International Crown and World Cup of Golf as nation team events. With a
+    # comparably deep input set to tennis's, it sits at the same prestige.
+    "Tennis": 0.9, "Golf": 0.9, "Badminton": 0.85, "Table Tennis": 0.85,
     # Road cycling: a year-round professional sport with a national-team world
     # championship, held at the Olympic default of 0.5 only because nobody had
     # given it a line of its own. Lifted just below athletics.
@@ -773,10 +781,16 @@ def rugby_league_contribs(boost):
 # 10th in a ~12-nation sport is not worth being 10th in 200-nation football, so
 # cricket and baseball associates with no titles don't bank a large ranking bonus.
 def golf_contribs(boost):
-    # Men's majors (The Open, U.S. Open, PGA, Masters) as world-tier titles, one
-    # per championship per year, 8y decay. Non-Olympic, so merges cleanly with the
-    # Olympic golf medals already in the canonical "Golf" slot. Ryder Cup is
-    # excluded: it is USA vs Europe, a continent, not a nation.
+    # Men's majors (The Open, U.S. Open, PGA, Masters) AND, since 2026-09-11,
+    # the five current women's majors (Chevron, Women's PGA, U.S. Women's
+    # Open, Evian, Women's British Open) plus three defunct historic women's
+    # majors (du Maurier Classic, Titleholders, Women's Western Open), all as
+    # world-tier titles, one per championship per year, 8y decay -- the same
+    # slot tennis already uses for men's + women's Grand Slam singles. Both
+    # arrive pre-merged in golf_years (scripts/build-majors-data.py). Non-
+    # Olympic, so merges cleanly with the Olympic golf medals already in the
+    # canonical "Golf" slot. Ryder Cup is excluded: it is USA vs Europe, a
+    # continent, not a nation.
     recs = json.load(open(os.path.join(D, "majors", "zzc-titles.json"), encoding="utf-8"))["nations"]
     out = []
     for r in recs:
@@ -797,7 +811,138 @@ def tennis_contribs(boost):
     return out
 
 
-RANK_SPORT_WEIGHT = {"Cricket": 0.35, "Baseball": 0.35}
+# Golf current-strength layer, added 2026-09-11 (Ashwin's ruling). For each
+# nation, the mean rank_strength of its up to three best-ranked players on
+# the OWGR (men) and again on the Rolex Women's World Golf Rankings (women),
+# summed -- so depth counts (three players, not one) and a nation's women
+# count as much as its men, exactly like the men's-majors/women's-majors
+# split above. RANK_SPORT_WEIGHT["Golf"] = 0.5 keeps it a supplement to the
+# title pillar rather than a replacement for it (the same role the weight
+# plays for cricket and baseball). No decay: a NOW-dated contribution, like
+# every other entry in ranking_contribs. A nation missing from a list (fewer
+# than one ranked player) contributes 0 for that list, not a penalty.
+# Source: public/data/majors/golf-rankings.json, built by
+# scripts/zzc/golf_rankings.py from apiweb.owgr.com and rolexrankings.com.
+def golf_ranking_contribs(boost):
+    path = os.path.join(D, "majors", "golf-rankings.json")
+    if not os.path.exists(path):
+        print("  golf ranking: golf-rankings.json missing, pillar skipped")
+        return []
+    data = json.load(open(path, encoding="utf-8"))
+    w = RANK_SPORT_WEIGHT.get("Golf", 1.0)
+    out = []
+    for slug, blk in data.get("nations", {}).items():
+        owgr_ranks = blk.get("owgr_top3") or []
+        rolex_ranks = blk.get("rolex_top3") or []
+        owgr_v = (sum(rank_strength(r) for r in owgr_ranks) / len(owgr_ranks)) if owgr_ranks else 0.0
+        rolex_v = (sum(rank_strength(r) for r in rolex_ranks) / len(rolex_ranks)) if rolex_ranks else 0.0
+        v = (owgr_v + rolex_v) * w
+        if v:
+            out.append((fold(slug), "Golf", v))
+    return out
+
+
+# Golf nation team events, added 2026-09-11 (Ashwin's ruling: continental
+# tier, champion 2 / runner-up 1, the standard 8-year decay -- no amateur
+# team events, so no Eisenhower Trophy or Espirito Santo Trophy here).
+#
+# International Crown (LPGA, women's nations, biennial since 2014). 2020
+# cancelled (COVID), 2027 not yet played. Source:
+# en.wikipedia.org/wiki/International_Crown, "Winners" table, verified
+# 2026-09-11: 2014 Spain d. Sweden; 2016 United States d. South Korea; 2018
+# South Korea d. United States AND England (tied runners-up, 11 pts each);
+# 2023 Thailand d. Australia; 2025 Australia d. United States.
+INTERNATIONAL_CROWN = {
+    2014: ("spain", ["sweden"]),
+    2016: ("united-states", ["south-korea"]),
+    2018: ("south-korea", ["united-states", "great-britain"]),
+    2023: ("thailand", ["australia"]),
+    2025: ("australia", ["united-states"]),
+}
+
+# World Cup of Golf (men's national pairs; Canada Cup 1953-1966, World Cup
+# 1967-2018; not held 1981, 1986, 2010, 2012, 2014-2015, 2017, and every year
+# since 2018). Source: en.wikipedia.org/wiki/World_Cup_(men%27s_golf),
+# "Team winners" table, verified 2026-09-11. Ties among runners-up (more than
+# one nation sharing the runner-up spot) are listed in full and each gets the
+# runner-up credit, the same rule football uses for shared finals.
+WORLD_CUP_GOLF = {
+    2018: ("belgium", ["australia", "mexico"]),
+    2016: ("denmark", ["china", "france", "united-states"]),
+    2013: ("australia", ["united-states"]),
+    2011: ("united-states", ["great-britain", "germany"]),
+    2009: ("italy", ["sweden", "ireland"]),
+    2008: ("sweden", ["spain"]),
+    2007: ("great-britain", ["united-states"]),
+    2006: ("germany", ["great-britain"]),
+    2005: ("great-britain", ["great-britain", "sweden"]),
+    2004: ("great-britain", ["spain"]),
+    2003: ("south-africa", ["great-britain"]),
+    2002: ("japan", ["united-states"]),
+    2001: ("south-africa", ["denmark", "new-zealand", "united-states"]),
+    2000: ("united-states", ["argentina"]),
+    1999: ("united-states", ["spain"]),
+    1998: ("great-britain", ["italy"]),
+    1997: ("ireland", ["great-britain"]),
+    1996: ("south-africa", ["united-states"]),
+    1995: ("united-states", ["australia"]),
+    1994: ("united-states", ["zimbabwe"]),
+    1993: ("united-states", ["zimbabwe"]),
+    1992: ("united-states", ["sweden"]),
+    1991: ("sweden", ["great-britain"]),
+    1990: ("germany", ["great-britain", "ireland"]),
+    1989: ("australia", ["spain"]),
+    1988: ("united-states", ["japan"]),
+    1987: ("great-britain", ["great-britain"]),
+    1985: ("canada", ["great-britain"]),
+    1984: ("spain", ["great-britain", "taiwan"]),
+    1983: ("united-states", ["australia", "canada"]),
+    1982: ("spain", ["united-states"]),
+    1980: ("canada", ["great-britain"]),
+    1979: ("united-states", ["great-britain"]),
+    1978: ("united-states", ["australia"]),
+    1977: ("spain", ["philippines"]),
+    1976: ("spain", ["united-states"]),
+    1975: ("united-states", ["taiwan"]),
+    1974: ("south-africa", ["japan"]),
+    1973: ("united-states", ["south-africa"]),
+    1972: ("taiwan", ["japan"]),
+    1971: ("united-states", ["south-africa"]),
+    1970: ("australia", ["argentina"]),
+    1969: ("united-states", ["japan"]),
+    1968: ("canada", ["united-states"]),
+    1967: ("united-states", ["new-zealand"]),
+    1966: ("united-states", ["south-africa"]),
+    1965: ("south-africa", ["spain"]),
+    1964: ("united-states", ["argentina"]),
+    1963: ("united-states", ["spain"]),
+    1962: ("united-states", ["argentina"]),
+    1961: ("united-states", ["australia"]),
+    1960: ("united-states", ["great-britain"]),
+    1959: ("australia", ["united-states"]),
+    1958: ("ireland", ["spain"]),
+    1957: ("japan", ["united-states"]),
+    1956: ("united-states", ["south-africa"]),
+    1955: ("united-states", ["australia"]),
+    1954: ("australia", ["argentina"]),
+    1953: ("argentina", ["canada"]),
+}
+
+
+def golf_team_contribs(boost):
+    out = []
+    for year, (champ, runners) in INTERNATIONAL_CROWN.items():
+        _titles(out, champ, "Golf", [year], "champion", "continental", boost)
+        for r in runners:
+            _titles(out, r, "Golf", [year], "runner_up", "continental", boost)
+    for year, (champ, runners) in WORLD_CUP_GOLF.items():
+        _titles(out, champ, "Golf", [year], "champion", "continental", boost)
+        for r in runners:
+            _titles(out, r, "Golf", [year], "runner_up", "continental", boost)
+    return out
+
+
+RANK_SPORT_WEIGHT = {"Cricket": 0.35, "Baseball": 0.35, "Golf": 0.5}
 
 
 def rank_strength(rank):
@@ -1075,12 +1220,13 @@ PILLARS = [("olympics", olympic_contribs), ("football", football_contribs),
            ("basketball", basketball_contribs), ("hockey", hockey_contribs),
            ("handball", handball_contribs), ("volleyball", volleyball_contribs),
            ("baseball", baseball_contribs), ("rugby_league", rugby_league_contribs),
-           ("golf", golf_contribs), ("tennis", tennis_contribs),
+           ("golf", golf_contribs), ("golf_team", golf_team_contribs), ("tennis", tennis_contribs),
            ("netball", netball_titles_contribs),
            ("road_cycling", road_cycling_contribs),
            ("womens_hockey", womens_hockey_contribs),
            ("americas_cup", americas_cup_contribs),
-           ("ranking", ranking_contribs), ("extra_ranking", extra_ranking_contribs)]
+           ("ranking", ranking_contribs), ("golf_ranking", golf_ranking_contribs),
+           ("extra_ranking", extra_ranking_contribs)]
 
 
 def activity_factor(slug, suspend_hl):

@@ -55,7 +55,11 @@ def _champ(r, gender=None):
     return out
 
 GOLF_SEL = "year,tournament,champion,nation,career_no,career_total,note,venue,metro_slug,metro_name"
-golf_rows = [_champ(r) for r in fetch("golf_majors", GOLF_SEL, "year,tournament")]
+golf_rows_all = [_champ(r, r.get("gender") or "M") for r in
+                 fetch("golf_majors", "gender," + GOLF_SEL, "year,tournament,gender")]
+golf_rows = [r for r in golf_rows_all if r.get("gender") == "M"]          # hub stays men-only
+for r in golf_rows: r.pop("gender", None)                                 # unchanged shape for the men's hub
+golf_rows_women = [r for r in golf_rows_all if r.get("gender") == "W"]
 tennis_rows = [_champ(r, r["gender"]) for r in
                fetch("tennis_majors", "gender," + GOLF_SEL, "year,tournament,gender,note")]
 
@@ -104,6 +108,11 @@ def latest(rows, gender=None):
 golf = {"sport": "Golf", "tournaments": ["The Open Championship", "U.S. Open", "PGA Championship", "Masters Tournament"],
         "champions": sorted(golf_rows, key=lambda r: (-(r["year"] or 0), GOLF_ORDER.get(r["tournament"], 9), r.get("note") or "", r["champion"])),
         "leaders": leaders(golf_rows), "byNation": by_nation(golf_rows), "hostMetros": host_metros(golf_rows),
+        "tournamentsWomen": ["Chevron Championship", "Women's PGA Championship", "U.S. Women's Open",
+                             "The Evian Championship", "Women's British Open", "du Maurier Classic",
+                             "Titleholders Championship", "Women's Western Open"],
+        "championsWomen": sorted(golf_rows_women, key=lambda r: (-(r["year"] or 0), r["tournament"], r["champion"])),
+        "leadersWomen": leaders(golf_rows_women), "byNationWomen": by_nation(golf_rows_women),
         "ryder": sorted(ryder_rows, key=lambda r: -(r["year"] or 0)),
         "ryderTally": dict(collections.Counter(r["winner"].split(" – ")[0] if r["winner"].startswith("Tied") else r["winner"] for r in ryder_rows))}
 tennis = {"sport": "Tennis", "tournaments": ["Australian Open", "French Open", "Wimbledon", "US Open"],
@@ -119,7 +128,7 @@ json.dump(tennis, open(os.path.join(OUT, "tennis.json"), "w", encoding="utf-8"),
 def join_rate(rows):
     j = sum(1 for r in rows if r.get("metroSlug")); return j, len(rows)
 gj, gt = join_rate(golf_rows); tj, tt = join_rate(tennis_rows); rj = sum(1 for r in ryder_rows if r.get("metroSlug"))
-print(f"golf champions {gt} (metro-linked {gj}/{gt} = {gj*100//gt}%)")
+print(f"golf champions {gt} (metro-linked {gj}/{gt} = {gj*100//gt}%); women's majors {len(golf_rows_women)}")
 print(f"tennis champions {tt} (metro-linked {tj}/{tt} = {tj*100//tt}%)")
 print(f"ryder editions {len(ryder_rows)} (metro-linked {rj}); davis nations {len(davis_rows)}")
 print("golf leaders top3:", [(l['player'], l['total']) for l in golf['leaders'][:3]])
@@ -151,6 +160,8 @@ def zz_add(slug, field, year):
                          "davis_title_years": [], "davis_ru_years": []})[field].append(int(year))
 
 for r in golf_rows:
+    zz_add(zzc_slug(r["nation"]), "golf_years", r["year"])
+for r in golf_rows_women:  # women's majors count in the same Golf slot (Ashwin, 2026-09-11)
     zz_add(zzc_slug(r["nation"]), "golf_years", r["year"])
 for r in tennis_rows:
     if r.get("note") == "unrecognized": continue

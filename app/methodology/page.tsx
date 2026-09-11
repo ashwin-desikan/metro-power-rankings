@@ -704,6 +704,22 @@ export default function MethodologyPage() {
                 ranked unit, carrying both its Olympic medals and the home
                 nations&apos; team-sport titles.
               </p>
+              <h3 className="text-lg font-semibold mt-6 mb-2">Golf and tennis</h3>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                Golf and tennis sit alongside the fourteen team-sport pillars at the same 0.9
+                prestige. Tennis reads the men&apos;s and women&apos;s Grand Slam singles titles, the
+                Davis Cup, and Olympic medals. Golf, expanded on 2026-09-11, reads the men&apos;s
+                and women&apos;s majors in one slot (the four men&apos;s majors plus the five current
+                women&apos;s majors and three defunct historic ones), Olympic medals, and a
+                current-strength layer built from the Official World Golf Ranking and the Rolex
+                Women&apos;s World Golf Rankings: for each nation, the mean strength of its three
+                best-ranked players on each list, so depth counts rather than a single world
+                number one, and a nation&apos;s women count as much as its men. Two nation team
+                events are scored at continental tier: the International Crown (LPGA, since 2014)
+                and the World Cup of Golf (national pairs, 1953-2018). Amateur team events (the
+                Eisenhower Trophy, the Espirito Santo Trophy) are deliberately excluded, the same
+                line the Cup draws around the Olympics itself.
+              </p>
               <h3 className="text-lg font-semibold mt-6 mb-2">Sources and caveats</h3>
               <p className="text-[var(--text)] leading-relaxed">
                 Results come from this project&apos;s own validated source-of-truth
