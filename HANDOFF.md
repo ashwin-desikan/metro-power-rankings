@@ -13441,3 +13441,47 @@ the cap. Everything after was correctly CANCELED and cost nothing.
 (release-note fix + the gate, deployed), `441f2be5a` + `2a32e0068` (AFL/NRL/rugby/tennis,
 deployed past the cap) and `65d8104a2` + `4722760e1` (the hooks).
 
+
+### J. The economy jobs got healthchecks tiles, paid for by deleting two — and the cap is still 20
+
+Ashwin asked for tiles on both economy jobs. The project was at **exactly 20/20** (verified by
+`GET /api/v1/checks/`, not by trusting section I), so this was never an "add two" — it was a
+trade, and the two given up are **permanently gone with their ping history**. Both configs,
+recorded here the way 09-10 recorded football-standings and gap-league-watch, so either can be
+rebuilt:
+
+  * `activity-feed` — cron `30 3 * * *` Europe/London, grace 3600s, **no channel**, 78 pings.
+  * `screen-number-ones` — cron `0 6,14,22 * * 1,2,3` Europe/London, grace 5400s, **no channel**,
+    112 pings.
+
+**The selection rule from 09-10 held, and it chose these two on the same test:** give up what is
+most covered elsewhere, never what can actually alert. Neither carried a notification channel, so
+neither could ever speak to anyone who did not go and look, while `dispatcher.notify()` ntfys
+both their failures AND their missed slots regardless — confirmed at `dispatcher.py:295` (missed)
+and `:311` (failure). `screen-number-ones` also polls 3x daily on three days, so a single missed
+run is re-observed within hours. The channel-less tiles that were KEPT are `f1-weekly` and the
+three `newsletter-*`: those sit OUTSIDE the dispatcher, so their tile is the only signal they have.
+
+**🔴 Why a tile was worth a permanent deletion here, when `dispatcher.notify()` already alerts.**
+The tile is the only monitor outside the dispatcher's own worldview. `dispatcher.notify()` cannot
+report a slot missed by a job it does not know about — and that is precisely what happened on
+09-04: `economy-rates` was in the repo's jobs.toml but never deployed to the live one, so nothing
+in the dispatcher could notice, and it took a sweep six days later to find it. A healthchecks
+check goes red on silence alone. It is the one layer that does not depend on the thing it watches.
+
+Both new checks: cron in **UTC** (not Europe/London — these slots are defined in UTC and would
+drift an hour at BST's end), grace 21600s, **email channel attached**, unlike the two they
+replaced.
+
+  * `economy-rates` — `30 7 * * 5`, next expected 2026-09-18 07:30Z (today's run predates the tile).
+  * `economy-housing` — `30 7 * * 6`, next expected **2026-09-12 07:30Z — its first run ever**.
+
+Wiring verified end to end rather than assumed: `bash hc-run.sh <slug> true` for both, 2 pings
+each landed, status up. That test is worth repeating on any new slug — a typo'd slug or an unset
+`HC_PING_KEY` 404s into `|| true` inside hc-run.sh and leaves a tile that never turns red, which
+looks exactly like a healthy one. Note `next_ping` is computed from the cron schedule, so the
+test ping did NOT push tomorrow's deadline out.
+
+`jobs.toml` carries all four edits (two `hc_slug` added, two removed with their deleted configs
+in comments) and is deployed to the live copy; `--check-sync` clean, `build_argv` confirmed
+wrapping both economy jobs in `hc-run.sh` and both retired jobs unwrapped.

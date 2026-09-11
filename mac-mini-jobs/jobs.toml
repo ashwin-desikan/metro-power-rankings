@@ -216,7 +216,11 @@ id = "activity-feed"           # launchd/com.citizenofnowhere.activity-feed.plis
 label = "Site activity feed"
 time = "02:30"                 # was 03:30 LOCAL, which is 02:30 UTC today
 command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-activity-feed.sh"
-hc_slug = "activity-feed"      # keep the existing healthchecks tile
+# hc_slug REMOVED 2026-09-11 (check DELETED, 78 pings, cron "30 3 * * *"
+# Europe/London, grace 3600s, NO channel) to fund the economy-rates tile at the
+# 20-check cap. Same selection rule as the 09-10 pair: it carried no channel, so
+# it only ever spoke to someone who went and looked, while dispatcher.notify()
+# ntfys this job's failures AND its missed slots either way.
 catchup_hours = 14
 timeout_minutes = 20
 #
@@ -361,7 +365,11 @@ label = "US box office #1s"
 times = ["05:00", "13:00", "21:00"]   # was 06:00/14:00/22:00 LOCAL
 weekdays = [1, 2, 3]                  # Mon, Tue, Wed
 command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-screen-number-ones.sh"
-hc_slug = "screen-number-ones"
+# hc_slug REMOVED 2026-09-11 (check DELETED, 112 pings, cron "0 6,14,22 * * 1,2,3"
+# Europe/London, grace 5400s, NO channel) to fund the economy-housing tile. Also
+# polls three times a day on three days, so a single missed run is re-observed
+# within hours -- the same "most covered elsewhere" test that retired
+# football-standings and gap-league-watch on 09-10.
 catchup_hours = 6              # slots are 8h apart; a slot missed by more than
                                # 6h should be recorded MISSED, not fired just
                                # before the next poll makes it redundant.
@@ -517,6 +525,16 @@ label = "Policy rate refresh (/business/economy)"
 time = "07:30"                  # Friday; BIS publishes WS_CBPOL weekly, Thursday
 weekdays = [5]
 command = "runners/economy-rates.sh"
+hc_slug = "economy-rates"       # ADDED 2026-09-11, paid for by deleting the
+                                 # activity-feed and screen-number-ones tiles
+                                 # (see below, and HANDOFF 2026-09-11). The tile
+                                 # is the only monitor OUTSIDE the dispatcher's
+                                 # own worldview: dispatcher.notify() cannot
+                                 # report a slot missed by a job it does not
+                                 # know about, which is exactly how the 09-04
+                                 # slot passed unnoticed while this job sat
+                                 # undeployed. Cron 30 7 * * 5 UTC, grace 6h,
+                                 # email channel attached.
 catchup_hours = 40              # weekly cadence, generous like egress-refresh:
                                  # worth catching up most of the way to the
                                  # next Friday rather than skipping a week.
@@ -530,6 +548,11 @@ time = "07:30"                  # Saturday; FHFA's master file updates a few
                                  # print is annual, so weekly is already generous
 weekdays = [6]
 command = "runners/economy-housing.sh"
+hc_slug = "economy-housing"     # ADDED 2026-09-11, same trade and same reason
+                                 # as economy-rates above. This job had never
+                                 # run at all when the tile was cut: deployed
+                                 # 09-10, first genuine slot 09-12.
+                                 # Cron 30 7 * * 6 UTC, grace 6h, email channel.
 catchup_hours = 40
 timeout_minutes = 20
 
