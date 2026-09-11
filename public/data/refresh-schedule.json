@@ -1,35 +1,6 @@
 {
-  "generated_at": "2026-09-11T12:24:15.228899+00:00",
+  "generated_at": "2026-09-11T14:24:22.944147+00:00",
   "jobs": [
-    {
-      "id": "ops-autofix",
-      "label": "Ops autofix (whitelist, acts on production)",
-      "schedule_text": "Daily at 00:15, 02:15, 04:15, 06:15, 08:15, 10:15, 12:15, 14:15, 16:15, 18:15, 20:15, 22:15 UTC",
-      "cadence": "daily",
-      "times": [
-        "00:15",
-        "02:15",
-        "04:15",
-        "06:15",
-        "08:15",
-        "10:15",
-        "12:15",
-        "14:15",
-        "16:15",
-        "18:15",
-        "20:15",
-        "22:15"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-11T14:15:00+00:00",
-      "last_run": {
-        "date": "2026-09-11",
-        "status": "ok",
-        "slot": "2026-09-11T12:15:00+00:00"
-      }
-    },
     {
       "id": "mlb-sim",
       "label": "MLB + season playoff odds (7 leagues)",
@@ -57,6 +28,35 @@
         "date": "2026-09-11",
         "status": "ok",
         "slot": "2026-09-11T07:00:00+00:00"
+      }
+    },
+    {
+      "id": "ops-autofix",
+      "label": "Ops autofix (whitelist, acts on production)",
+      "schedule_text": "Daily at 00:15, 02:15, 04:15, 06:15, 08:15, 10:15, 12:15, 14:15, 16:15, 18:15, 20:15, 22:15 UTC",
+      "cadence": "daily",
+      "times": [
+        "00:15",
+        "02:15",
+        "04:15",
+        "06:15",
+        "08:15",
+        "10:15",
+        "12:15",
+        "14:15",
+        "16:15",
+        "18:15",
+        "20:15",
+        "22:15"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-11T16:15:00+00:00",
+      "last_run": {
+        "date": "2026-09-11",
+        "status": "ok",
+        "slot": "2026-09-11T14:15:00+00:00"
       }
     },
     {
