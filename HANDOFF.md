@@ -13821,9 +13821,51 @@ folds Gridiron 34 into College Football 20 (folded) and NFL 14 (folded), Footbal
 Premier League 10 (folded) and League Cup 3 (inline). And **a cup name two countries share
 carries the country code, England excepted**: "League Cup" and "SCO League Cup".
 
-### L. State
-Local, not pushed, linear on origin/main (`1a70c505e`), oldest first: `b27123e79` (the night
-entry's section M, `[vercel skip]`), `fd1e11b1e` (Côte d'Ivoire at the builders, `[vercel
-skip]`), `6b9e1a83e` (the frontier), `3437f4b15` (F1 odds, the dots, the 2100 card),
-`ca884a31f` (Live Standings odds), `e726bf3c2` (the Today box) and the follow-ups commit (push
-HEAD); every commit from the frontier on is app. The brand branch is separate.
+### L. NFL: the live updater called the season over after week 1 (`e622e6a41`, `[vercel skip]`)
+`scripts/nfl/nfl_live_update.py` wrote `reg_end_week` as `min(last played, 18)`, so after week
+1 the seeds file said `complete: true` at week 1 and the Live Standings seed-order join would
+have frozen there. It now writes 18 flat (the schedule's own length); the season, spine,
+upcoming, seeds (through 1 of 18, complete false) and odds files were regenerated from the box.
+The post-commit hook reports MISMATCH for this shape (public/data under `[vercel skip]`); that is
+the expected shape for ISR-read files and the workflow commits them the same way.
+
+### M. Live Standings, the Today box refined at Ashwin's word (app commit, push HEAD)
+- **Weekday on every date** (`LocalTime` gains a `weekday` prop; `kickoff(iso, withTime,
+  weekday)`): "FRI 11 Sept, 19:00" for fixtures, "THU · 27–7" on results. Ashwin: "FRI for
+  Friday, SAT for Saturday".
+- **The day windows are days, not hours.** Coming up is days 1, 2 and 3 after today's window;
+  Recent results is days -1, -2 and -3 before it (`RESULTS_BACK_MS` = 72h measured from the
+  window's start, not from now). Today itself still runs from Japan's start of the date to the
+  US West Coast's end (10h lead, 8h lag on UTC).
+- **International football rides along whenever it exists** (`getInternationalComps()` read for
+  events regardless of whether the block is shown), so a September window's qualifiers land in
+  all three strips.
+- **F1 race weekends** from a new `calendar` in `public/data/f1/title-odds.json` (the builder
+  now emits each round's qualifying, sprint and race instants and the winners once known):
+  the strip lists qualifying, sprint and race with the winner as the result; practice is
+  excluded (Ashwin: "maybe it is just listing the race time"). Jolpica paginates at 100 rows,
+  so `races_paged` walks the season; the first run had read "through round 5 of 23".
+- **Admission rules recorded** in a comment block at the top of the Today box code, so the
+  next feed builder knows what to admit: MLB, WNBA and NPB in their playoffs only; NBA and NHL
+  every regular-season and playoff game once they start; college basketball the AP Top 25
+  except every game of the NCAA tournament; IPL, the Champions Cup (rugby union) and EuroLeague
+  every match; women's football (WSL, NWSL, UWCL), La Liga, Bundesliga, Serie A, Ligue 1, MLS
+  and the CFL wanted. 🔴 **Of those, only UWCL, the internationals and the NFL/PL/CFB/UCL
+  ledgers have fixture feeds on the site today.** La Liga, Bundesliga, Serie A, Ligue 1, MLS,
+  WSL, NWSL and the CFL bundles carry tables only, and MLB's regular season has no feed; a
+  mini-side fixtures builder (api-football / wlive) is the missing piece for each, and the
+  strips admit them the moment a `LiveEvent` source exists.
+- Measured at 390 and 1280, every strip open (`_scratch/strips3.log`): "On today 16 fixtures
+  across 7 sports, 6 in play", "Recent results 11 across 3 sports", "Coming up 55 across 7
+  sports" with Football 13 folded into Premier League 10 (folded) and SCO League Cup 3 (inline),
+  Motorsport 2 inline (Qualifying, Race), Gridiron 34 folded into College Football 20 and NFL
+  14; no horizontal scroll. `npm run verify` green (`_scratch/verify-follow5.log`).
+
+### N. State
+Local, not pushed, linear on origin/main, oldest first: `a9ce70c89` (docs, `[vercel skip]`),
+`7f32be81f` (Côte d'Ivoire at the builders, `[vercel skip]`), `baea6d08e` (the frontier),
+`ce800aff3` (F1 odds, the dots, the 2100 card), `d6f1edda4` (Live Standings odds),
+`589fadde7` (the Today box), `a06cc4cc6` (the follow-ups), `e622e6a41` (the NFL updater fix,
+`[vercel skip]`) and the section M commit (app, push HEAD). The brand branch is separate.
+Open: Ashwin's golf rulings (K), `git config pull.rebase true` on the checkout,
+`VERCEL_BUILD_CAP_TOKEN` still unset so the cap is inactive, the fixture-feed builders in M.

@@ -29,6 +29,7 @@ export default function LocalTime({
   iso,
   fallback,
   withTime = true,
+  weekday = false,
 }: {
   /** Full ISO timestamp for the fixture. */
   iso: string;
@@ -36,6 +37,9 @@ export default function LocalTime({
   fallback: string;
   /** False when the feed gives a date with no kick-off time (the rugby block). */
   withTime?: boolean;
+  /** Lead with the day of the week ("FRI 11 Sept, 19:00"): the Today box, where
+   *  a reader is placing a game in their week (Ashwin, 2026-09-11). */
+  weekday?: boolean;
 }) {
   const [label, setLabel] = useState(fallback);
   const [zone, setZone] = useState<string | null>(null);
@@ -45,7 +49,8 @@ export default function LocalTime({
     if (Number.isNaN(d.getTime())) return; // unparseable: keep the server's string
     try {
       const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || null;
-      const date = d.toLocaleDateString(undefined, { day: "numeric", month: "short" });
+      const day = weekday ? `${d.toLocaleDateString(undefined, { weekday: "short" }).toUpperCase().replace(/\.$/, "")} ` : "";
+      const date = `${day}${d.toLocaleDateString(undefined, { day: "numeric", month: "short" })}`;
       if (!withTime) {
         setLabel(date);
         setZone(tz);
@@ -59,7 +64,7 @@ export default function LocalTime({
     } catch {
       /* Intl unavailable: keep the server's string rather than guess */
     }
-  }, [iso, withTime]);
+  }, [iso, withTime, weekday]);
 
   return (
     <time dateTime={iso} title={zone ? `${label} (${zone})` : `${fallback} UTC`}>

@@ -174,15 +174,16 @@ const pct3 = (v: number | string | null | undefined): Cell => {
 // mount, adding the time when the feed supplies one. Pass withTime=false for a
 // feed that gives a date and no kick-off -- the rugby block is the one case --
 // so a real midnight UTC fixture is never confused with "time unknown".
-const kickoff = (iso: string | null | undefined, withTime = true): Cell => {
+const kickoff = (iso: string | null | undefined, withTime = true, weekday = false): Cell => {
   if (!iso) return "";
   const d = new Date(withTime ? iso : `${iso}T00:00:00Z`);
   if (Number.isNaN(d.getTime())) return "";
-  const date = d.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+  const day = weekday ? `${d.toLocaleDateString("en-GB", { weekday: "short", timeZone: "UTC" }).toUpperCase()} ` : "";
+  const date = `${day}${d.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" })}`;
   const fallback = withTime
     ? `${date}, ${d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "UTC" })} UTC`
     : date;
-  return <LocalTime iso={d.toISOString()} fallback={fallback} withTime={withTime} />;
+  return <LocalTime iso={d.toISOString()} fallback={fallback} withTime={withTime} weekday={weekday} />;
 };
 
 const num = (v: number | null | undefined): Cell => (v === null || v === undefined ? DASH : v);
@@ -301,6 +302,23 @@ function NameCell({ r }: { r: SRow }) {
 }
 
 // ---- The Today box --------------------------------------------------------
+//
+// 🔴 THE ADMISSION RULES, as Ashwin set them on 2026-09-11, for every source
+// that joins the box now or later (a league joins by pushing LiveEvents from
+// its block, or from the page for a feed with no block):
+//   - In: the club comps, the domestic and super cups (no qualifying rounds),
+//     the Premier League, the internationals, the UWCL, rugby and cricket
+//     internationals, a slam's rounds, the AFL and NRL finals, NFL, college
+//     football (AP Top 25 involvement), Formula 1 sessions.
+//   - Playoffs only: MLB, WNBA and NPB; the regular season's daily volume is
+//     never listed, the postseason always is.
+//   - Regular season and playoffs: NBA and NHL, once their seasons start.
+//   - College basketball: Top 25 involvement, every game during the NCAA
+//     tournament.
+//   - Every match: the IPL, the Champions Cup (rugby), the EuroLeague.
+//   - Wanted, no fixture feed on the site yet: La Liga, Bundesliga, Serie A,
+//     Ligue 1, MLS, the WSL and NWSL (the bundle carries tables only), CFL.
+// Six per sport and per competition before a fold; two levels, no deeper.
 // Two collapsed strips above the sections: what is on in the next day and a
 // half, and what finished in the last three days, coalesced from every block
 // that carries fixtures (European and South American club comps, the
@@ -355,8 +373,10 @@ function collectEvents(groups: SportGroup[], extra: LiveEvent[] = []): { upcomin
   const coming = open
     .filter((e) => !e.live && t(e) > to && t(e) <= to + COMING_DAYS * 24 * 3600 * 1000)
     .sort((a, b) => t(a) - t(b));
+  // Results: today and the three days before it (day 0 back to day -3),
+  // measured from today's window rather than a rolling 72 hours.
   const results = all
-    .filter((e) => !!e.score && Number.isFinite(t(e)) && t(e) >= now - RESULTS_BACK_MS && t(e) <= now)
+    .filter((e) => !!e.score && Number.isFinite(t(e)) && t(e) >= from - RESULTS_BACK_MS && t(e) <= now)
     .sort((a, b) => t(b) - t(a));
   return { upcoming, coming, results };
 }
@@ -370,7 +390,9 @@ function EventRow({ e, kind }: { e: LiveEvent; kind: "upcoming" | "results" }) {
         <span className="text-[var(--text-dim)]"> · {e.league}</span>
       </span>
       <span className="flex-shrink-0 max-w-[55%] truncate tabular-nums text-[var(--text-muted)]" style={mono} title={kind === "results" ? e.score ?? undefined : undefined}>
-        {kind === "results" ? e.score : kickoff(e.when, e.when.endsWith("T00:00:00Z") ? false : true)}
+        {kind === "results"
+          ? <><span className="text-[var(--text-dim)]">{new Date(e.when).toLocaleDateString("en-GB", { weekday: "short", timeZone: "UTC" }).toUpperCase()} · </span>{e.score}</>
+          : kickoff(e.when, e.when.endsWith("T00:00:00Z") ? false : true, true)}
       </span>
     </li>
   );
@@ -1260,7 +1282,21 @@ async function f1Block(): Promise<Block | null> {
       cells: [num(c.points), num(c.wins), ...(showOdds ? [titleCell(odds.constructors.get(normConstructor(c.constructor)))] : [])] })),
   };
   const note = f1Live ? (s.source === "espn" ? "live" : `${s.season}`) : `${s.season} final`;
-  return { league: "Formula 1", href: "/teams/f1", note: showOdds ? `${note} · odds simulated` : note, open: f1Live, live: f1Live, cols: true, subTables: [drivers, constructors] };
+  // The Today box: a race weekend as its sessions (practice, qualifying, the
+  // sprint, the race), each at its own instant, and the race and sprint as
+  // results once run, the winner in the score column. Ashwin, 2026-09-11:
+  // "we want to know if a Formula One race is happening ... maybe it is just
+  // listing the race time." The sessions come from the odds file's calendar
+  // (Jolpica), taken for this season only.
+  const cal = oddsFile?.meta.season === s.season ? oddsFile.calendar ?? [] : [];
+  const surname = (d: string) => d.split(" ").slice(-1)[0];
+  // Practice stays off the strip: qualifying, the sprint and the race are the events.
+  const events: LiveEvent[] = cal.flatMap((r) => r.sessions.filter((se) => !/^Practice/.test(se.label)).map((se) => {
+    const won = se.label === "Race" ? r.winner : se.label === "Sprint" ? r.sprint_winner : null;
+    return { sport: "Motorsport", league: "Formula 1", href: "/teams/f1", label: `${r.name} · ${se.label}`, when: se.when,
+      score: won ? `${surname(won.driver)} (${won.constructor})` : null, live: false };
+  }));
+  return { league: "Formula 1", href: "/teams/f1", note: showOdds ? `${note} · odds simulated` : note, open: f1Live, live: f1Live, cols: true, subTables: [drivers, constructors], events };
 }
 
 async function wtcBlock(): Promise<Block | null> {
@@ -1667,6 +1703,17 @@ export default async function LiveStandingsPage() {
       : [],
   );
   const intlComps = await getInternationalComps();
+  // International fixtures feed the Today box whether or not their block is
+  // showing (the block hides outside a tournament window; a qualifier on a
+  // Tuesday still belongs in "On today"). Ashwin, 2026-09-11: "you should be
+  // including international football if and when it pops up".
+  const INTL_FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
+  const INTL_LIVE = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
+  const intlEvents: LiveEvent[] = intlComps.flatMap((comp) => (comp.fixtures ?? []).filter((f) => f.kickoff).map((f) => ({
+    sport: "International Football", league: comp.name ?? "International", href: "/teams/national",
+    label: `${f.home.name ?? f.home.lookup ?? "TBD"} v ${f.away.name ?? f.away.lookup ?? "TBD"}`, when: f.kickoff as string,
+    score: f.status && INTL_FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
+    live: !!f.status && INTL_LIVE.has(f.status) })));
   const unl = intlCompBlock(intlComps.find((c) => c.league_id === 5), {
     label: "UEFA Nations League", href: "/teams/national#nations-league",
     liveNote: "league phase", closedNote: "Sept–Nov 2026",
@@ -1768,7 +1815,7 @@ export default async function LiveStandingsPage() {
       return { sport: g.sport, blocks };
     })
     .filter((g) => g.blocks.length > 0);
-  const today = collectEvents(groups, cupEvents);
+  const today = collectEvents(groups, [...cupEvents, ...intlEvents]);
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">

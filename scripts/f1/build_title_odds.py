@@ -85,6 +85,32 @@ def fullname(d: dict) -> str:
     return (d.get("givenName", "") + " " + d.get("familyName", "")).strip()
 
 
+SESSION_KEYS = [("FirstPractice", "Practice 1"), ("SecondPractice", "Practice 2"), ("ThirdPractice", "Practice 3"),
+                ("SprintQualifying", "Sprint qualifying"), ("Sprint", "Sprint"), ("Qualifying", "Qualifying")]
+
+
+def iso_of(d: dict | None) -> str | None:
+    """Jolpica gives a session as {"date": "2026-09-12", "time": "14:00:00Z"}; a
+    race with no time published carries the date only, kept at midnight UTC and
+    flagged by the consumer as a day, not an instant."""
+    if not d or not d.get("date"):
+        return None
+    return f"{d['date']}T{d.get('time') or '00:00:00Z'}"
+
+
+def sessions_of(r: dict) -> list:
+    """Every session of a race weekend in order, as (label, ISO instant)."""
+    out = []
+    for key, label in SESSION_KEYS:
+        when = iso_of(r.get(key))
+        if when:
+            out.append({"label": label, "when": when})
+    when = iso_of({"date": r.get("date"), "time": r.get("time")})
+    if when:
+        out.append({"label": "Race", "when": when})
+    return out
+
+
 def fetch_season() -> dict:
     """Everything the model needs, in one plain structure (also the self-test's input shape)."""
     schedule = races_of(gj("current.json?limit=100"))
@@ -98,7 +124,11 @@ def fetch_season() -> dict:
     season = int(schedule[0]["season"]) if schedule else dt.date.today().year
     return {
         "season": season,
-        "schedule": [{"round": int(r["round"]), "name": r["raceName"], "date": r.get("date"), "sprint": "Sprint" in r} for r in schedule],
+        "schedule": [{"round": int(r["round"]), "name": r["raceName"], "date": r.get("date"), "sprint": "Sprint" in r,
+                      "circuit": (r.get("Circuit") or {}).get("circuitName"),
+                      "locality": ((r.get("Circuit") or {}).get("Location") or {}).get("locality"),
+                      "country": ((r.get("Circuit") or {}).get("Location") or {}).get("country"),
+                      "sessions": sessions_of(r)} for r in schedule],
         "races": [
             {"round": int(r["round"]),
              "results": [{"driverId": x["Driver"]["driverId"], "driver": fullname(x["Driver"]),
@@ -285,6 +315,19 @@ def simulate(season: dict, sims: int, seed: int = 20260911) -> dict:
     drows = sorted((drow(d) for d in dpts0), key=lambda r: (-r["p_title"], -r["points"]))
     crows = sorted((crow(c) for c in cpts0), key=lambda r: (-r["p_title"], -r["points"]))
     next_race = remaining[0] if remaining else None
+    winners = {}
+    for race in season["races"]:
+        top = next((x for x in race["results"] if x.get("positionText") == "1"), None)
+        if top:
+            winners[race["round"]] = {"driver": top["driver"], "constructor": top["constructor"]}
+    sprint_winners = {}
+    for sp in season["sprints"]:
+        best = max(sp["results"], key=lambda x: x["points"], default=None)
+        if best and best["points"] > 0:
+            d = drivers.get(best["driverId"])
+            if d:
+                sprint_winners[sp["round"]] = {"driver": d["driver"], "constructor": d["constructor"]}
+    calendar = [dict(r, winner=winners.get(r["round"]), sprint_winner=sprint_winners.get(r["round"])) for r in season["schedule"]]
     return {
         "meta": {
             "league": "Formula 1", "season": season["season"], "through_round": last_round,
@@ -301,6 +344,9 @@ def simulate(season: dict, sims: int, seed: int = 20260911) -> dict:
         },
         "drivers": drows,
         "constructors": crows,
+        # The season's calendar with every session's instant and the winners
+        # so far: what Live Standings' Today box lists for a race weekend.
+        "calendar": calendar,
     }
 
 
@@ -311,8 +357,8 @@ def self_test() -> None:
     # A three-driver season, two rounds done, one to go, no sprints.
     season = {
         "season": 2026,
-        "schedule": [{"round": 1, "name": "A", "date": "2026-03-01", "sprint": False}, {"round": 2, "name": "B", "date": "2026-03-08", "sprint": False},
-                     {"round": 3, "name": "C", "date": "2026-03-15", "sprint": False}],
+        "schedule": [{"round": 1, "name": "A", "date": "2026-03-01", "sprint": False, "sessions": []}, {"round": 2, "name": "B", "date": "2026-03-08", "sprint": False, "sessions": []},
+                     {"round": 3, "name": "C", "date": "2026-03-15", "sprint": False, "sessions": [{"label": "Race", "when": "2026-03-15T13:00:00Z"}]}],
         "races": [
             {"round": 1, "results": [{"driverId": "x", "driver": "X", "constructorId": "t1", "constructor": "T1", "points": 25, "status": "Finished", "positionText": "1"},
                                      {"driverId": "y", "driver": "Y", "constructorId": "t1", "constructor": "T1", "points": 18, "status": "Finished", "positionText": "2"},
@@ -345,6 +391,9 @@ def self_test() -> None:
     season2["driver_standings"][0]["points"] = 80
     out2 = simulate(season2, sims=50, seed=1)
     assert {r["driverId"]: r for r in out2["drivers"]}["x"]["clinched"]
+    assert out["calendar"][0]["winner"] == {"driver": "X", "constructor": "T1"} and out["calendar"][2]["winner"] is None
+    assert sessions_of({"date": "2026-09-13", "time": "13:00:00Z", "Qualifying": {"date": "2026-09-12", "time": "14:00:00Z"}}) == [
+        {"label": "Qualifying", "when": "2026-09-12T14:00:00Z"}, {"label": "Race", "when": "2026-09-13T13:00:00Z"}]
     print("self-test OK")
 
 

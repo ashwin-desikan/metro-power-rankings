@@ -54,6 +54,22 @@ export type F1TitleOdds = {
   };
   drivers: F1DriverOdds[];
   constructors: F1ConstructorOdds[];
+  /** Every round with its sessions' instants and the winners so far; absent in files built before 2026-09-11. */
+  calendar?: F1CalendarRound[];
+};
+
+export type F1CalendarRound = {
+  round: number;
+  name: string;
+  date: string | null;
+  sprint: boolean;
+  circuit: string | null;
+  locality: string | null;
+  country: string | null;
+  /** In weekend order: practice, sprint qualifying, sprint, qualifying, race. */
+  sessions: { label: string; when: string }[];
+  winner: { driver: string; constructor: string } | null;
+  sprint_winner: { driver: string; constructor: string } | null;
 };
 
 const GH_BASE =
