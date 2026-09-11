@@ -24,6 +24,7 @@ import { Band } from "@/app/predictions/_shared/Band";
 import { TierTabs } from "@/app/predictions/_shared/TierTabs";
 import { deltaSince, series } from "@/app/predictions/_shared/deltas";
 import { DataBar } from "@/app/_shared/DataBar";
+import SortableBoard, { type BoardCol, type BoardRow } from "@/app/_shared/SortableBoard";
 
 // College Football 2026 prediction hub on /predictions - the CFB sibling of
 // /predictions/nfl. Season odds from cfb-sim.json (the real FBS schedule, all
@@ -142,80 +143,77 @@ function ConferenceTable({ rows, conference, href, history, withHistory }: {
   const ts = rows.filter((r) => r.conference === conference)
     .sort((a, b) => b.p_conf - a.p_conf || b.p_playoff - a.p_playoff || b.exp_wins - a.exp_wins);
   const indep = conference === "Independents";
+  const cols: BoardCol[] = [
+    { key: "team", label: conference, sortable: false },
+    { key: "xw", label: "xW", right: true },
+    ...(!indep ? [{ key: "ccg", label: "CCG", right: true, demote: "sm" as const }] : []),
+    ...(!indep ? [{ key: "conf", label: "Conf", right: true, demote: "sm" as const }] : []),
+    { key: "playoff", label: "Playoff", right: true },
+    { key: "title", label: "Title", right: true },
+  ];
+  const boardRows: BoardRow[] = ts.map((r) => ({
+    key: r.espn_id,
+    sort: {
+      team: r.name, xw: r.exp_wins,
+      ...(!indep ? { ccg: r.p_ccg, conf: r.p_conf } : {}),
+      playoff: r.p_playoff, title: r.p_natty,
+    },
+    mobile: {
+      name: mobileName(r, href(r.slug)),
+      sub: r.band ? <Band band={r.band} /> : null,
+      right: pct(r.p_playoff),
+      rightSub: `xW ${r.exp_wins.toFixed(1)}${r.wins_p10 != null && r.wins_p90 != null ? ` (${r.wins_p10.toFixed(1)}-${r.wins_p90.toFixed(1)})` : ""}`,
+    },
+    cells: [
+      <span key="team" className="inline-flex items-center gap-1.5">
+        <TeamLabel name={r.name} href={href(r.slug)} rank={r.ap_rank} />
+        {withHistory && r.slug && (
+          <span className="hidden sm:inline-block" style={{ color: "var(--accent)" }}>
+            <Sparkline points={series(history, r.slug, "title")} />
+          </span>
+        )}
+      </span>,
+      <span key="xw">
+        {r.exp_wins.toFixed(1)}
+        {r.wins_p10 != null && r.wins_p90 != null && (
+          <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
+            {r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)}
+          </span>
+        )}
+      </span>,
+      ...(!indep ? [pct(r.p_ccg)] : []),
+      ...(!indep ? [pct(r.p_conf)] : []),
+      <span key="po">
+        {pct(r.p_playoff)}
+        {withHistory && r.slug && (
+          <span className="block text-[10px] leading-tight">
+            <Delta value={deltaSince(history, r.slug, "po", 7)} unit="pp" />
+          </span>
+        )}
+      </span>,
+      <span key="title" style={{ color: r.p_natty >= 3 ? "var(--accent)" : "var(--text-muted)" }}>
+        {pct(r.p_natty)}
+        {withHistory && r.slug && (
+          <span className="block text-[10px] leading-tight">
+            <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
+          </span>
+        )}
+      </span>,
+    ],
+  }));
   return (
     <div className="min-w-0">
       <ListLabel>{conference}</ListLabel>
-      <ResponsiveTable
-        variant="list"
+      <SortableBoard
+        id={`cfbconf-${conference.replace(/\s+/g, "-")}`}
+        cols={cols}
+        rows={boardRows}
+        rank={false}
+        compact
         mobileNoun="teams"
         className="rounded-xl border min-w-0"
         style={BORD}
-        mobileRows={ts.map((r) => (
-          <TeamOddsRow
-            key={r.espn_id}
-            name={mobileName(r, href(r.slug))}
-            band={r.band ? <Band band={r.band} /> : null}
-            right={pct(r.p_playoff)}
-            metricLabel="playoff"
-            rightSub={`xW ${r.exp_wins.toFixed(1)}${r.wins_p10 != null && r.wins_p90 != null ? ` (${r.wins_p10.toFixed(1)}-${r.wins_p90.toFixed(1)})` : ""}`}
-          />
-        ))}
-      >
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="text-left" style={{ background: "var(--bg-card)" }}>
-              <th className="px-2 py-2 font-semibold">{conference}</th>
-              <th className="px-2 py-2 text-right font-semibold">xW</th>
-              {!indep && <th className={`px-2 py-2 text-right font-semibold ${SMCOL}`}>CCG</th>}
-              {!indep && <th className={`px-2 py-2 text-right font-semibold ${SMCOL}`}>Conf</th>}
-              <th className="px-2 py-2 text-right font-semibold">Playoff</th>
-              <th className="px-2 py-2 text-right font-semibold">Title</th>
-            </tr>
-          </thead>
-          <tbody>
-            {ts.map((r) => (
-              <tr key={r.espn_id} className="border-t" style={{ borderColor: "var(--border)" }}>
-                <td className="px-2 py-2 whitespace-nowrap">
-                  <span className="inline-flex items-center gap-1.5">
-                    <TeamLabel name={r.name} href={href(r.slug)} rank={r.ap_rank} />
-                    {withHistory && r.slug && (
-                      <span className="hidden sm:inline-block" style={{ color: "var(--accent)" }}>
-                        <Sparkline points={series(history, r.slug, "title")} />
-                      </span>
-                    )}
-                  </span>
-                </td>
-                <td className="px-2 py-2 text-right whitespace-nowrap" style={MONO}>
-                  {r.exp_wins.toFixed(1)}
-                  {r.wins_p10 != null && r.wins_p90 != null && (
-                    <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
-                      {r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)}
-                    </span>
-                  )}
-                </td>
-                {!indep && <td className={`px-2 py-2 text-right whitespace-nowrap ${SMCOL}`} style={MONO}>{pct(r.p_ccg)}</td>}
-                {!indep && <td className={`px-2 py-2 text-right whitespace-nowrap ${SMCOL}`} style={MONO}>{pct(r.p_conf)}</td>}
-                <td className="px-2 py-2 text-right whitespace-nowrap" style={MONO}>
-                  {pct(r.p_playoff)}
-                  {withHistory && r.slug && (
-                    <span className="block text-[10px] leading-tight">
-                      <Delta value={deltaSince(history, r.slug, "po", 7)} unit="pp" />
-                    </span>
-                  )}
-                </td>
-                <td className="px-2 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: r.p_natty >= 3 ? "var(--accent)" : "var(--text-muted)" }}>
-                  {pct(r.p_natty)}
-                  {withHistory && r.slug && (
-                    <span className="block text-[10px] leading-tight">
-                      <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
-                    </span>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </ResponsiveTable>
+      />
     </div>
   );
 }
@@ -389,7 +387,7 @@ export default async function CfbPredictionsPage() {
                     />
                   ))}
                 >
-                  <table className="w-full text-sm">
+                  <table className="w-full text-sm" data-static-sort="ordered by playoff odds; row shading marks the qualifying cutline at row 11, which would break under reordering">
                     <thead>
                       <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                         <th className="px-3 py-2 font-semibold">Team</th>
@@ -453,7 +451,7 @@ export default async function CfbPredictionsPage() {
                     />
                   ))}
                 >
-                  <table className="w-full text-sm">
+                  <table className="w-full text-sm" data-static-sort="ordered by playoff odds; row shading marks the current favourite, which would break under reordering">
                     <thead>
                       <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                         <th className="px-3 py-2 font-semibold">Team</th>
@@ -578,7 +576,7 @@ export default async function CfbPredictionsPage() {
                   />
                 ))}
               >
-                <table className="w-full text-sm">
+                <table className="w-full text-sm" data-static-sort="a fixture list, ordered by kickoff date">
                   <thead>
                     <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                       <th className="px-3 py-2 font-semibold">Date</th>
@@ -663,7 +661,7 @@ export default async function CfbPredictionsPage() {
                   />
                 ))}
               >
-                <table className="w-full text-sm">
+                <table className="w-full text-sm" data-static-sort="a fixture list, ordered by kickoff date">
                   <thead>
                     <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                       <th className="px-3 py-2 font-semibold">Kickoff</th>
@@ -792,7 +790,7 @@ export default async function CfbPredictionsPage() {
                       />
                     ))}
                   >
-                    <table className="w-full text-sm">
+                    <table className="w-full text-sm" data-static-sort="a fixture list, ordered by kickoff date">
                       <thead>
                         <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                           <th className="px-3 py-2 font-semibold">Date</th>

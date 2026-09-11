@@ -13,6 +13,7 @@ import HubNav from "@/app/teams/HubNav";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { CappedList } from "@/app/_shared/Disclosure";
 import { DataBar } from "@/app/_shared/DataBar";
+import SortableBoard from "@/app/_shared/SortableBoard";
 
 export const dynamicParams = false;
 
@@ -153,7 +154,7 @@ export default function NflInternationalPage() {
         </div>
 
         <div className="overflow-x-auto border border-[var(--border)] rounded-lg hidden sm:block">
-          <table className="w-full text-sm">
+          <table className="w-full text-sm" data-static-sort="a fixture list, in chronological order">
             <thead>
               <tr className="text-left text-[var(--text-dim)] text-xs uppercase tracking-wide border-b border-[var(--border)]">
                 <th className="px-3 py-2 font-medium">Date</th>
@@ -222,7 +223,7 @@ export default function NflInternationalPage() {
         </div>
 
         <div className="overflow-x-auto border border-[var(--border)] rounded-lg hidden sm:block">
-          <table className="w-full text-sm">
+          <table className="w-full text-sm" data-static-sort="World Bowl finals, in chronological order">
             <thead>
               <tr className="text-left text-[var(--text-dim)] text-xs uppercase tracking-wide border-b border-[var(--border)]">
                 <th className="px-3 py-2 font-medium">Season</th>
@@ -319,55 +320,60 @@ export default function NflInternationalPage() {
           />
         </div>
 
-        <div className="overflow-x-auto border border-[var(--border)] rounded-lg hidden sm:block">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="text-left text-[var(--text-dim)] text-xs uppercase tracking-wide border-b border-[var(--border)]">
-                <th className="px-3 py-2 font-medium">Franchise</th>
-                <th className="px-3 py-2 font-medium">Metro</th>
-                <th className="px-3 py-2 font-medium">Years</th>
-                <th className="px-3 py-2 font-medium text-right">Record</th>
-                <th className="px-3 py-2 font-medium text-right">Win%</th>
-                <th className="px-3 py-2 font-medium text-right">World Bowls</th>
-              </tr>
-            </thead>
-            <tbody>
-              {franchises.map((f) => (
-                <tr key={f.canonical} id={`${nflEuropeFranchiseSlug(f.canonical)}-desktop`} className="border-b border-[var(--border)] last:border-0 hover:bg-[var(--bg-card-hover)] scroll-mt-24 align-top">
-                  <td className="px-3 py-2 font-semibold text-[var(--text)] whitespace-nowrap">
-                    {f.canonical}
-                    {f.wb_titles > 0 && (
-                      <span className="ml-2 text-[10px] px-1.5 py-0.5 rounded font-semibold align-middle" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}>
-                        {f.wb_titles}×
-                      </span>
-                    )}
-                  </td>
-                  <td className="px-3 py-2 text-xs">
-                    {f.metros.map((m, i) => (
-                      <div key={m.metro} className={i > 0 ? "text-[var(--text-dim)]" : ""}>
-                        <MetroLink name={m.metro} slug={m.metro_slug} />
-                        {f.relocated && (
-                          <span className="text-[var(--text-dim)]"> ({m.team}, {m.first_year}&ndash;{m.last_year})</span>
-                        )}
-                      </div>
-                    ))}
-                  </td>
-                  <td className="px-3 py-2 tabular-nums text-[var(--text-muted)] whitespace-nowrap">
-                    {f.first_year === f.last_year ? f.first_year : `${f.first_year}–${f.last_year}`}
-                    <span className="text-[var(--text-dim)]"> · {f.seasons} seas.</span>
-                  </td>
-                  <td className="px-3 py-2 tabular-nums text-right whitespace-nowrap">{rec(f.w, f.l, f.t)}</td>
-                  <td className="px-3 py-2 text-right">
-                    <DataBar v={f.win_pct} max={franchisesColMax} dp={3} width={80} label="win percentage" />
-                  </td>
-                  <td className="px-3 py-2 tabular-nums text-right whitespace-nowrap">
-                    <span className="text-[var(--text)] font-semibold">{f.wb_titles}</span>
-                    <span className="text-[var(--text-dim)]"> / {f.wb_apps} app{f.wb_apps === 1 ? "" : "s"}</span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="hidden sm:block">
+          <SortableBoard
+            id="nfl-europe-franchises"
+            rank={false}
+            className="border border-[var(--border)]"
+            initial={{ key: "titles", dir: "desc" }}
+            cols={[
+              { key: "franchise", label: "Franchise", sortable: false },
+              { key: "metro", label: "Metro", sortable: false },
+              { key: "years", label: "Years", right: false },
+              { key: "record", label: "Record", right: true },
+              { key: "winpct", label: "Win%", right: true },
+              { key: "titles", label: "World Bowls", right: true },
+            ]}
+            rows={franchises.map((f) => ({
+              key: f.canonical,
+              sort: { franchise: f.canonical, metro: f.metros[0]?.metro ?? null, years: f.first_year, record: f.w - f.l, winpct: f.win_pct, titles: f.wb_titles },
+              mobile: {
+                name: f.canonical,
+                right: f.wb_titles,
+                rightSub: `${f.wb_apps} app${f.wb_apps === 1 ? "" : "s"}`,
+              },
+              cells: [
+                <span key="franchise" id={`${nflEuropeFranchiseSlug(f.canonical)}-desktop`} className="font-semibold text-[var(--text)] scroll-mt-24">
+                  {f.canonical}
+                  {f.wb_titles > 0 && (
+                    <span className="ml-2 text-[10px] px-1.5 py-0.5 rounded font-semibold align-middle" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}>
+                      {f.wb_titles}×
+                    </span>
+                  )}
+                </span>,
+                <span key="metro" className="text-xs">
+                  {f.metros.map((m, i) => (
+                    <div key={m.metro} className={i > 0 ? "text-[var(--text-dim)]" : ""}>
+                      <MetroLink name={m.metro} slug={m.metro_slug} />
+                      {f.relocated && (
+                        <span className="text-[var(--text-dim)]"> ({m.team}, {m.first_year}&ndash;{m.last_year})</span>
+                      )}
+                    </div>
+                  ))}
+                </span>,
+                <span key="years" className="text-[var(--text-muted)]">
+                  {f.first_year === f.last_year ? f.first_year : `${f.first_year}–${f.last_year}`}
+                  <span className="text-[var(--text-dim)]"> · {f.seasons} seas.</span>
+                </span>,
+                rec(f.w, f.l, f.t),
+                <DataBar key="winpct" v={f.win_pct} max={franchisesColMax} dp={3} width={80} label="win percentage" />,
+                <span key="titles">
+                  <span className="text-[var(--text)] font-semibold">{f.wb_titles}</span>
+                  <span className="text-[var(--text-dim)]"> / {f.wb_apps} app{f.wb_apps === 1 ? "" : "s"}</span>
+                </span>,
+              ],
+            }))}
+          />
         </div>
       </section>
 
@@ -429,7 +435,7 @@ export default function NflInternationalPage() {
               </div>
 
               <div className="border-t border-[var(--border)] overflow-x-auto hidden sm:block">
-                <table className="w-full text-sm">
+                <table className="w-full text-sm" data-static-sort="one season's final standings, in finishing order">
                   <thead>
                     <tr className="text-left text-[var(--text-dim)] text-xs uppercase tracking-wide border-b border-[var(--border)]">
                       <th className="px-3 py-2 font-medium">#</th>

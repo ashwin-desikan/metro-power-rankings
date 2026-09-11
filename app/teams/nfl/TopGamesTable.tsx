@@ -184,7 +184,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
       </div>
 
       <div className="max-h-[70vh] overflow-auto hidden sm:block">
-        <table className="w-full text-xs tabular-nums [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg)]">
+        <table className="w-full text-xs tabular-nums [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg)]" data-static-sort="ranked by the site's own Game Score, the only value column; Date and Round are context, not alternative orderings">
           <thead>
             <tr className="text-[var(--text-muted)]">
               <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">#</th>

@@ -20,6 +20,7 @@ import { Sparkline } from "@/app/predictions/_shared/Sparkline";
 import { Band } from "@/app/predictions/_shared/Band";
 import { deltaSince, series } from "@/app/predictions/_shared/deltas";
 import { DataBar } from "@/app/_shared/DataBar";
+import SortableBoard, { type BoardCol, type BoardRow } from "@/app/_shared/SortableBoard";
 
 // MLB 2026 prediction hub - the baseball sibling of /predictions/nfl and
 // /predictions/pl. Season odds from mlb-sim.json (the real remaining schedule
@@ -117,87 +118,82 @@ function DivisionTable({
   history: MlbSimHistoryFile | null;
 }) {
   const ts = rows.filter((r) => r.division === division).sort((a, b) => b.exp_wins - a.exp_wins);
+  const cols: BoardCol[] = [
+    { key: "team", label: division, sortable: false },
+    { key: "now", label: "Now", right: true },
+    { key: "xw", label: "xW", right: true },
+    { key: "playoff", label: "Playoff", right: true },
+    { key: "div", label: "Div", right: true, demote: "sm" },
+    { key: "pennant", label: "Pennant", right: true, demote: "sm" },
+    { key: "series", label: "Series", right: true },
+  ];
+  const boardRows: BoardRow[] = ts.map((r) => ({
+    key: r.canonical,
+    sort: { team: r.name, now: r.wins - r.losses, xw: r.exp_wins, playoff: r.p_playoffs, div: r.p_division, pennant: r.p_pennant, series: r.p_ws },
+    mobile: {
+      name: (
+        <span className="inline-flex items-center gap-1.5 min-w-0">
+          <TeamCrest logo={logo(r.canonical)} />
+          {href(r.canonical) ? <Link href={href(r.canonical)!}>{r.name}</Link> : r.name}
+        </span>
+      ),
+      sub: (
+        <span className="inline-flex items-center gap-1.5">
+          {r.band && <Band band={r.band} />}
+          <span className="text-[13px]" style={{ ...MONO, color: "var(--text-muted)" }}>{r.wins}-{r.losses}</span>
+        </span>
+      ),
+      right: pct(r.p_playoffs),
+      rightSub: `xW ${r.exp_wins.toFixed(1)}${r.wins_p10 != null && r.wins_p90 != null ? ` (${r.wins_p10.toFixed(1)}-${r.wins_p90.toFixed(1)})` : ""}`,
+    },
+    cells: [
+      <span key="team" className="inline-flex items-center gap-1">
+        <TeamName r={r} href={href(r.canonical)} logo={logo(r.canonical)} />
+        {series(history, r.canonical, "title").length >= 2 && (
+          <span className="hidden sm:inline-block" style={{ color: "var(--accent)" }}>
+            <Sparkline points={series(history, r.canonical, "title")} />
+          </span>
+        )}
+      </span>,
+      <span key="now" style={{ color: "var(--text-muted)" }}>{r.wins}-{r.losses}</span>,
+      <span key="xw">
+        {r.exp_wins.toFixed(1)}
+        {r.wins_p10 != null && r.wins_p90 != null && (
+          <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
+            {r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)}
+          </span>
+        )}
+      </span>,
+      <span key="po">
+        {pct(r.p_playoffs)}
+        <span className="block text-[10px] leading-tight">
+          <Delta value={deltaSince(history, r.canonical, "po", 7)} unit="pp" />
+        </span>
+      </span>,
+      pct(r.p_division),
+      pct(r.p_pennant),
+      <span key="ws" style={{ color: r.p_ws >= 5 ? "var(--accent)" : "var(--text-muted)" }}>
+        {pct(r.p_ws)}
+        <span className="block text-[10px] leading-tight">
+          <Delta value={deltaSince(history, r.canonical, "title", 7)} unit="pp" />
+        </span>
+      </span>,
+    ],
+  }));
   return (
-    <div className="min-w-0" data-mobile-uncapped="five teams per division">
+    <div className="min-w-0">
       <ListLabel>{division}</ListLabel>
-      <ResponsiveTable
-        variant="list"
+      <SortableBoard
+        id={`mlbdiv-${division.replace(/\s+/g, "-")}`}
+        cols={cols}
+        rows={boardRows}
+        rank={false}
+        compact
         mobileNoun="teams"
         mobileInitial={0}
         className="rounded-xl border min-w-0"
         style={{ borderColor: "var(--border)" }}
-        mobileRows={ts.map((r) => (
-          <TeamOddsRow
-            key={r.canonical}
-            crest={<TeamCrest logo={logo(r.canonical)} />}
-            name={href(r.canonical) ? <Link href={href(r.canonical)!}>{r.name}</Link> : r.name}
-            band={
-              <span className="inline-flex items-center gap-1.5">
-                {r.band && <Band band={r.band} />}
-                <span className="text-[13px]" style={{ ...MONO, color: "var(--text-muted)" }}>{r.wins}-{r.losses}</span>
-              </span>
-            }
-            right={pct(r.p_playoffs)}
-            metricLabel="playoffs"
-            rightSub={`xW ${r.exp_wins.toFixed(1)}${r.wins_p10 != null && r.wins_p90 != null ? ` (${r.wins_p10.toFixed(1)}-${r.wins_p90.toFixed(1)})` : ""}`}
-          />
-        ))}
-      >
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="text-left" style={{ background: "var(--bg-card)" }}>
-              <th className="px-1.5 py-2 font-semibold">{division}</th>
-              <th className="px-1.5 py-2 text-right font-semibold">Now</th>
-              <th className="px-1.5 py-2 text-right font-semibold">xW</th>
-              <th className="px-1.5 py-2 text-right font-semibold">Playoff</th>
-              <th className={`px-1.5 py-2 text-right font-semibold ${SMCOL}`}>Div</th>
-              <th className={`px-1.5 py-2 text-right font-semibold ${SMCOL}`}>Pennant</th>
-              <th className="px-1.5 py-2 text-right font-semibold">Series</th>
-            </tr>
-          </thead>
-          <tbody>
-            {ts.map((r) => (
-              <tr key={r.canonical} className="border-t" style={{ borderColor: "var(--border)" }}>
-                <td className="px-1.5 py-2 whitespace-nowrap">
-                  <span className="inline-flex items-center gap-1">
-                    <TeamName r={r} href={href(r.canonical)} logo={logo(r.canonical)} />
-                    {series(history, r.canonical, "title").length >= 2 && (
-                      <span className="hidden sm:inline-block" style={{ color: "var(--accent)" }}>
-                        <Sparkline points={series(history, r.canonical, "title")} />
-                      </span>
-                    )}
-                  </span>
-                </td>
-                <td className="px-1.5 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: "var(--text-muted)" }}>
-                  {r.wins}-{r.losses}
-                </td>
-                <td className="px-1.5 py-2 text-right whitespace-nowrap" style={MONO}>
-                  {r.exp_wins.toFixed(1)}
-                  {r.wins_p10 != null && r.wins_p90 != null && (
-                    <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
-                      {r.wins_p10.toFixed(1)}–{r.wins_p90.toFixed(1)}
-                    </span>
-                  )}
-                </td>
-                <td className="px-1.5 py-2 text-right whitespace-nowrap" style={MONO}>
-                  {pct(r.p_playoffs)}
-                  <span className="block text-[10px] leading-tight">
-                    <Delta value={deltaSince(history, r.canonical, "po", 7)} unit="pp" />
-                  </span>
-                </td>
-                <td className={`px-1.5 py-2 text-right ${SMCOL}`} style={MONO}>{pct(r.p_division)}</td>
-                <td className={`px-1.5 py-2 text-right ${SMCOL}`} style={MONO}>{pct(r.p_pennant)}</td>
-                <td className="px-1.5 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: r.p_ws >= 5 ? "var(--accent)" : "var(--text-muted)" }}>
-                  {pct(r.p_ws)}
-                  <span className="block text-[10px] leading-tight">
-                    <Delta value={deltaSince(history, r.canonical, "title", 7)} unit="pp" />
-                  </span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </ResponsiveTable>
+      />
     </div>
   );
 }

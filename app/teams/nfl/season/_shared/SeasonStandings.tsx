@@ -276,12 +276,19 @@ export default function SeasonStandings({
           ...(od ?? {}),
         };
       });
-  // The odds columns are decided once per page, like the seed column: a
-  // season with an odds file carries them at every week, week 0 included.
+  // The odds columns are in-season columns: they ride every scrubbed week,
+  // week 0 included, and leave the full-season view altogether, which shows
+  // the seeds and the honours instead (Ashwin, 2026-09-11: "at the end of the
+  // year, it doesn't make sense to have the playoff and title columns ... I
+  // would take those out for the full season view, but in every other weekly
+  // view, you keep them in"). This is the one deliberate exception to the
+  // columns-never-mount-with-the-scrubber rule below: Final is a different
+  // table, not a week, and the width change happens once, at the reset.
   // Before 1933 the standings leader IS the champion, so the two numbers are
   // one number and only the title column is shown.
-  const titleCol = Boolean(odds);
-  const oddsCol = Boolean(odds) && seeds?.label !== "leader";
+  const inSeasonView = through != null;
+  const titleCol = Boolean(odds) && inSeasonView;
+  const oddsCol = Boolean(odds) && inSeasonView && seeds?.label !== "leader";
   const seeded = seedWeek != null && teams.some((t) => t.cr != null);
   // Division-only eras (1933-69) get a chip, not a number: see SeedTimeline.
   // The pool and division come from the SEEDS file, not the standings row:
@@ -449,7 +456,7 @@ export default function SeasonStandings({
           <div key={g.key} className="min-w-0">
             <h3 className="text-sm font-semibold mb-2">{g.key}</h3>
             <TableScroll className="rounded-xl border" style={CARD}>
-              <table className="w-full text-xs" data-sticky-col="1">
+              <table className="w-full text-xs" data-sticky-col="1" data-static-sort="order is a ruling, not a sort key (see the comment above): division winner first regardless of record, conference order by seeding once a seeds file exists, and every row rewrites live as the week scrubber moves; a column sort would fight the scrubber and misstate who actually won the group">
                 <thead>
                   <tr className="text-[var(--text-dim)] text-left">
                     <th className="py-2 px-2 font-medium">Team</th>

@@ -80,7 +80,8 @@ export default function SeedTimeline({
           <div key={conf} className="min-w-0">
             <h3 className="text-sm font-semibold mb-2">{conf}</h3>
             <div className="overflow-x-auto rounded-xl border" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-              <table className="text-[10px] border-separate" style={{ borderSpacing: 0 }}>
+              <table className="text-[10px] border-separate" style={{ borderSpacing: 0 }} data-static-sort="a week-by-week matrix; rows are ordered by final seeding and columns are the season's weeks in order">
+
                 <thead>
                   <tr>
                     <th className="sticky left-0 z-10 text-left font-medium px-2 py-1.5 text-[var(--text-dim)]" style={{ background: "var(--bg-card)" }}>Team</th>

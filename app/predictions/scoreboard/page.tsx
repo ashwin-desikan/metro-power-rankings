@@ -24,7 +24,7 @@
 // which is dimensionless. Raw Brier stays inside its own sport's row.
 //
 // Shell brought into line with app/predictions/nfl/page.tsx 2026-09-03: shared
-// PredCrumbs/PredHeader/PredictionsNav, and every <table> through
+// PredCrumbs/PredHeader/PredictionsNav, and every table element through
 // ResponsiveTable with a mobile list counterpart (LedgerRow for the two
 // per-ledger boards, a local CalibRow for the calibration bins).
 import type { Metadata } from "next";
@@ -512,7 +512,7 @@ export default async function LedgerPage() {
             />,
           ]}
         >
-          <table className="w-full text-xs sm:text-sm">
+          <table className="w-full text-xs sm:text-sm" data-static-sort="a two-row comparison of leagues, not a ranked board">
             <thead>
               <tr className="text-left" style={{ background: "var(--bg-card-hover)" }}>
                 <th className="px-3 py-2 font-semibold">Ledger</th>
@@ -607,7 +607,7 @@ export default async function LedgerPage() {
               <CalibRow key={c.bin} bin={c.bin} n={c.n} predicted={c.predicted} actual={c.actual} />
             ))}
           >
-            <table className="w-full text-xs sm:text-sm">
+            <table className="w-full text-xs sm:text-sm" data-static-sort="probability bins in fixed increasing order">
               <thead>
                 <tr className="text-left" style={{ background: "var(--bg-card-hover)" }}>
                   <th className="px-3 py-2 font-semibold">Said</th>
@@ -750,7 +750,7 @@ export default async function LedgerPage() {
           style={CARD}
           mobileRows={liveMobileRows}
         >
-          <table className="w-full text-xs sm:text-sm">
+          <table className="w-full text-xs sm:text-sm" data-static-sort="a fixed list of hubs with per-hub tier sub-rows, not a ranked board">
             <thead>
               <tr className="text-left" style={{ background: "var(--bg-card-hover)" }}>
                 <th className="px-3 py-2 font-semibold">Hub</th>

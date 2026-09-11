@@ -319,7 +319,7 @@ export default function HistoricalTable({ rows, histChamps, histSeasons }: Props
                   </p>
                 ) : (
                   <div className="overflow-x-auto">
-                    <table className="w-full text-xs tabular-nums mt-2">
+                    <table className="w-full text-xs tabular-nums mt-2" data-static-sort="one franchise's seasons, in chronological order">
                       <thead>
                         <tr className="text-[var(--text-muted)]">
                           <th className="text-left font-medium py-1.5 pr-3 uppercase tracking-wider text-[10px]">Year</th>

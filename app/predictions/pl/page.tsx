@@ -14,12 +14,13 @@ import { SectionHead } from "@/app/_shared/SectionHead";
 import { ResponsiveTable } from "@/app/teams/_shared/ResponsiveTable";
 import { PredCrumbs, PredHeader, SourcesCard, MONO, CARD, SMCOL, plural } from "../_shared/ui";
 import PredictionsNav from "../_shared/PredictionsNav";
-import { FixtureRow, TeamOddsRow } from "../_shared/rows";
+import { FixtureRow } from "../_shared/rows";
 import { Band } from "../_shared/Band";
 import { Delta } from "../_shared/Delta";
 import { Sparkline } from "../_shared/Sparkline";
 import { deltaSince, series } from "../_shared/deltas";
 import { DataBar } from "@/app/_shared/DataBar";
+import SortableBoard from "@/app/_shared/SortableBoard";
 
 // Premier League 2026-27 prediction hub: the first live league hub on
 // /predictions. Season odds from pl-sim.json (site data blended with market
@@ -229,7 +230,7 @@ export default async function PlPredictionsPage() {
                   />
                 ))}
               >
-                <table className="w-full text-sm">
+                <table className="w-full text-sm" data-static-sort="a fixture list, ordered by kickoff date">
                   <thead>
                     <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                       <th className="px-3 py-2 font-semibold">Date</th>
@@ -303,7 +304,7 @@ export default async function PlPredictionsPage() {
                       />
                     ))}
                   >
-                    <table className="w-full text-sm">
+                    <table className="w-full text-sm" data-static-sort="a fixture list, ordered by kickoff date">
                       <thead>
                         <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                           <th className="px-3 py-2 font-semibold">Date</th>
@@ -347,87 +348,82 @@ export default async function PlPredictionsPage() {
               sub="Expected points, finishing range and odds for each landing spot."
               more="The title, the top four (automatic Champions League), the top five/seven (Europe) and the bottom three. &ldquo;Finish&rdquo; is the median simulated position with the 5th-95th percentile range."
             />
-            <ResponsiveTable
-              variant="list"
+            <SortableBoard
+              id="pl-table"
+              rank={false}
               mobileNoun="clubs"
               className="rounded-xl border"
               style={BORD}
-              mobileRows={rows.map((r) => (
-                <TeamOddsRow
-                  key={r.slug}
-                  name={<ClubLabel name={r.name} href={clubLink(clubSlugs, r.slug)} />}
-                  band={r.band ? <Band band={r.band} /> : null}
-                  right={r.p_top4 != null ? pct(r.p_top4) : "—"}
-                  metricLabel="top 4"
-                  rightSub={`xPts ${r.exp_pts.toFixed(1)}${r.pts_p10 != null && r.pts_p90 != null ? ` (${r.pts_p10}-${r.pts_p90})` : ""}`}
-                />
-              ))}
-            >
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="text-left" style={{ background: "var(--bg-card)" }}>
-                    <th className="px-3 py-2 font-semibold">Club</th>
-                    <th className="px-3 py-2 text-right font-semibold">xPts</th>
-                    <th className="px-3 py-2 text-right font-semibold">Finish</th>
-                    <th className="px-3 py-2 text-right font-semibold">Title</th>
-                    <th className="px-3 py-2 text-right font-semibold">Top 4</th>
-                    <th className={`px-3 py-2 text-right font-semibold ${SMCOL}`}>Top 5</th>
-                    <th className={`px-3 py-2 text-right font-semibold ${SMCOL}`}>Top 7</th>
-                    <th className="px-3 py-2 text-right font-semibold">Relegated</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {rows.map((r: PlSimRow) => (
-                    <tr key={r.slug} className="border-t" style={BORD}>
-                      <td className="px-3 py-2 whitespace-nowrap">
-                        <ClubLabel name={r.name} href={clubLink(clubSlugs, r.slug)} />
-                        {r.band && (
-                          <span className="hidden xl:block mt-0.5">
-                            <Band band={r.band} />
-                          </span>
-                        )}
-                      </td>
-                      <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>
-                        {r.exp_pts.toFixed(1)}
-                        {r.pts_p10 != null && r.pts_p90 != null && (
-                          <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
-                            ({r.pts_p10}–{r.pts_p90})
-                          </span>
-                        )}
-                      </td>
-                      <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>
-                        {r.pos.p50}
-                        <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
-                          ({r.pos.p5}-{r.pos.p95})
-                        </span>
-                      </td>
-                      <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>
-                        <DataBar v={r.p_title} max={maxTitle} dp={1} suffix="%" color="var(--seq-4)" width={90} />
-                        <span className="block text-[10px] leading-tight">
-                          <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
-                        </span>
-                      </td>
-                      <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>
-                        {r.p_top4 != null ? pct(r.p_top4) : "—"}
-                        {r.p_top4 != null && (
-                          <span className="block text-[10px] leading-tight">
-                            <Delta value={deltaSince(history, r.slug, "top4", 7)} unit="pp" />
-                          </span>
-                        )}
-                      </td>
-                      <td className={`px-3 py-2 text-right whitespace-nowrap ${SMCOL}`} style={MONO}>{pct(r.p_top5)}</td>
-                      <td className={`px-3 py-2 text-right whitespace-nowrap ${SMCOL}`} style={MONO}>{pct(r.p_top7)}</td>
-                      <td className="px-3 py-2 text-right whitespace-nowrap" style={{ ...MONO, color: r.p_releg >= 25 ? "#E2628B" : "var(--text-muted)" }}>
-                        {pct(r.p_releg)}
-                        <span className="block text-[10px] leading-tight">
-                          <Delta value={deltaSince(history, r.slug, "rel", 7)} unit="pp" />
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </ResponsiveTable>
+              cols={[
+                { key: "club", label: "Club", sortable: false },
+                { key: "xpts", label: "xPts", right: true },
+                { key: "finish", label: "Finish", right: true },
+                { key: "title", label: "Title", right: true },
+                { key: "top4", label: "Top 4", right: true },
+                { key: "top5", label: "Top 5", right: true, demote: "sm" },
+                { key: "top7", label: "Top 7", right: true, demote: "sm" },
+                { key: "releg", label: "Relegated", right: true },
+              ]}
+              rows={rows.map((r: PlSimRow) => ({
+                key: r.slug,
+                sort: {
+                  club: r.name, xpts: r.exp_pts, finish: -r.pos.p50, title: r.p_title,
+                  top4: r.p_top4 ?? null, top5: r.p_top5 ?? null, top7: r.p_top7 ?? null, releg: r.p_releg,
+                },
+                mobile: {
+                  name: <ClubLabel name={r.name} href={clubLink(clubSlugs, r.slug)} />,
+                  sub: r.band ? <Band band={r.band} /> : null,
+                  right: r.p_top4 != null ? pct(r.p_top4) : "—",
+                  rightSub: `xPts ${r.exp_pts.toFixed(1)}${r.pts_p10 != null && r.pts_p90 != null ? ` (${r.pts_p10}-${r.pts_p90})` : ""}`,
+                },
+                cells: [
+                  <span key="club">
+                    <ClubLabel name={r.name} href={clubLink(clubSlugs, r.slug)} />
+                    {r.band && (
+                      <span className="hidden xl:block mt-0.5">
+                        <Band band={r.band} />
+                      </span>
+                    )}
+                  </span>,
+                  <span key="xpts">
+                    {r.exp_pts.toFixed(1)}
+                    {r.pts_p10 != null && r.pts_p90 != null && (
+                      <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
+                        ({r.pts_p10}–{r.pts_p90})
+                      </span>
+                    )}
+                  </span>,
+                  <span key="finish">
+                    {r.pos.p50}
+                    <span className="block text-[10px] leading-tight" style={{ color: "var(--text-dim)" }}>
+                      ({r.pos.p5}-{r.pos.p95})
+                    </span>
+                  </span>,
+                  <span key="title">
+                    <DataBar v={r.p_title} max={maxTitle} dp={1} suffix="%" color="var(--seq-4)" width={90} />
+                    <span className="block text-[10px] leading-tight">
+                      <Delta value={deltaSince(history, r.slug, "title", 7)} unit="pp" />
+                    </span>
+                  </span>,
+                  <span key="top4">
+                    {r.p_top4 != null ? pct(r.p_top4) : "—"}
+                    {r.p_top4 != null && (
+                      <span className="block text-[10px] leading-tight">
+                        <Delta value={deltaSince(history, r.slug, "top4", 7)} unit="pp" />
+                      </span>
+                    )}
+                  </span>,
+                  pct(r.p_top5),
+                  pct(r.p_top7),
+                  <span key="releg" style={{ color: r.p_releg >= 25 ? "#E2628B" : "var(--text-muted)" }}>
+                    {pct(r.p_releg)}
+                    <span className="block text-[10px] leading-tight">
+                      <Delta value={deltaSince(history, r.slug, "rel", 7)} unit="pp" />
+                    </span>
+                  </span>,
+                ],
+              }))}
+            />
             <p className="text-[13px] text-[var(--text-muted)] mt-4">
               Get the data:{" "}
               <Link href="/predictions/pl/table.csv" className="hover:underline">season table as CSV</Link>

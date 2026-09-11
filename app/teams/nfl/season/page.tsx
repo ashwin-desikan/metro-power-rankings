@@ -12,6 +12,7 @@ import {
   nflSlugForCanonical, nflLineColor, logoUrlFor, monogramFor, MONOGRAM_BY_SLUG,
 } from "@/lib/nfl";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
+import SortableBoard from "@/app/_shared/SortableBoard";
 
 // The discovery surface for 107 season hubs. Without it /teams/nfl/season is a
 // 404 and the only way to reach 1932 is to type it.
@@ -245,43 +246,47 @@ export default async function NflSeasonsIndex() {
               <div className="text-[11px] uppercase tracking-wider text-[var(--text-dim)] mb-1.5" style={MONO}>
                 The results a century of Elo got most wrong
               </div>
-              <TableScroll className="rounded-xl border" style={CARD}>
-                <table className="w-full text-xs" data-sticky-col="1">
-                  <thead>
-                    <tr className="text-[var(--text-dim)] text-left">
-                      <th className="py-2 px-3 font-medium">Season</th>
-                      <th className="py-2 px-3 font-medium">Winner</th>
-                      <th className="py-2 px-3 font-medium">Beat</th>
-                      <th className="py-2 px-3 font-medium text-right">Given</th>
-                      <th className="py-2 px-3 font-medium hidden sm:table-cell">Where</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {exp.upsets.slice(0, 8).map((u) => (
-                      <tr key={`${u.season}|${u.date ?? ""}|${u.winner}|${u.loser}`} className="border-t" style={BORD}>
-                        <td className="py-1.5 px-3 tabular-nums" style={MONO}>
-                          <Link href={`/teams/nfl/season/${u.season}`} className="text-[var(--accent)] hover:underline">{u.season}</Link>
-                        </td>
-                        <td className="py-1.5 px-3 whitespace-nowrap">
-                          <TeamCell name={u.winner} team={u.winner} size={18}
-                            ident={{ slug: u.winner_slug, logo: u.winner_slug ? logoUrlFor(u.winner_slug) : null,
-                              mono: u.winner_slug && MONOGRAM_BY_SLUG[u.winner_slug] ? monogramFor(u.winner_slug) : null }} />
-                        </td>
-                        <td className="py-1.5 px-3 whitespace-nowrap text-[var(--text-muted)]">
-                          <TeamCell name={u.loser} team={u.loser} size={18}
-                            ident={{ slug: u.loser_slug, logo: u.loser_slug ? logoUrlFor(u.loser_slug) : null,
-                              mono: u.loser_slug && MONOGRAM_BY_SLUG[u.loser_slug] ? monogramFor(u.loser_slug) : null }} />
-                          {u.score ? <span className="ml-2 tabular-nums text-[var(--text-dim)]" style={MONO}>{u.score}</span> : null}
-                        </td>
-                        <td className="py-1.5 px-3 text-right tabular-nums" style={MONO}>{(u.p_winner * 100).toFixed(0)}%</td>
-                        <td className="py-1.5 px-3 text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">
-                          {u.playoff ? `${u.round ?? "playoff"} · ` : ""}{u.metro ?? u.venue ?? ""}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </TableScroll>
+              <SortableBoard
+                id="nfl-biggest-upsets"
+                rank={false}
+                className="rounded-xl border"
+                style={CARD}
+                initial={{ key: "given", dir: "asc" }}
+                cols={[
+                  { key: "season", label: "Season" },
+                  { key: "winner", label: "Winner", sortable: false },
+                  { key: "beat", label: "Beat", sortable: false },
+                  { key: "given", label: "Given", right: true },
+                  { key: "where", label: "Where", demote: "sm" },
+                ]}
+                rows={exp.upsets.slice(0, 8).map((u) => ({
+                  key: `${u.season}|${u.date ?? ""}|${u.winner}|${u.loser}`,
+                  sort: { season: u.season, given: u.p_winner },
+                  mobile: {
+                    name: <TeamCell name={u.winner} team={u.winner} size={18}
+                      ident={{ slug: u.winner_slug, logo: u.winner_slug ? logoUrlFor(u.winner_slug) : null,
+                        mono: u.winner_slug && MONOGRAM_BY_SLUG[u.winner_slug] ? monogramFor(u.winner_slug) : null }} />,
+                    sub: `beat ${u.loser}, ${u.season}`,
+                    right: `${(u.p_winner * 100).toFixed(0)}%`,
+                  },
+                  cells: [
+                    <Link key="season" href={`/teams/nfl/season/${u.season}`} className="text-[var(--accent)] hover:underline">{u.season}</Link>,
+                    <TeamCell key="winner" name={u.winner} team={u.winner} size={18}
+                      ident={{ slug: u.winner_slug, logo: u.winner_slug ? logoUrlFor(u.winner_slug) : null,
+                        mono: u.winner_slug && MONOGRAM_BY_SLUG[u.winner_slug] ? monogramFor(u.winner_slug) : null }} />,
+                    <span key="beat" className="text-[var(--text-muted)] whitespace-nowrap">
+                      <TeamCell name={u.loser} team={u.loser} size={18}
+                        ident={{ slug: u.loser_slug, logo: u.loser_slug ? logoUrlFor(u.loser_slug) : null,
+                          mono: u.loser_slug && MONOGRAM_BY_SLUG[u.loser_slug] ? monogramFor(u.loser_slug) : null }} />
+                      {u.score ? <span className="ml-2 tabular-nums text-[var(--text-dim)]" style={MONO}>{u.score}</span> : null}
+                    </span>,
+                    `${(u.p_winner * 100).toFixed(0)}%`,
+                    <span key="where" className="text-[var(--text-muted)] whitespace-nowrap">
+                      {u.playoff ? `${u.round ?? "playoff"} · ` : ""}{u.metro ?? u.venue ?? ""}
+                    </span>,
+                  ],
+                }))}
+              />
             </>
           ) : null}
           <p className="mt-2 text-xs text-[var(--text-dim)]">

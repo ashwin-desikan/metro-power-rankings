@@ -27,6 +27,7 @@ import {
   logoUrlFor, monogramFor, MONOGRAM_BY_SLUG,
 } from "@/lib/nfl";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
+import SortableBoard from "@/app/_shared/SortableBoard";
 
 // One NFL season, from the weekly Elo spine.
 //
@@ -401,100 +402,71 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
               "so a tight upset in a Super Bowl scores above a blowout in week 3 without anyone deciding it should. The same measure ranks the all-time board on the NFL hub."
             }
           />
-          <ResponsiveTable
-            variant="list"
+          <SortableBoard
+            id="nfl-best-games"
             className="rounded-xl border"
             style={CARD}
-            mobileNoun="games"
-            mobileRows={bestGames.map((g, i) => {
+            initial={{ key: "score", dir: "desc" }}
+            cols={[
+              { key: "game", label: "Game", sortable: false },
+              { key: "score", label: "Score", right: true },
+              { key: "round", label: "Round", demote: "sm" },
+              { key: "date", label: "Date", demote: "sm" },
+            ]}
+            rows={bestGames.map((g, i) => {
               const wName = [g.winner_city, g.winner_team].filter(Boolean).join(" ");
               const lName = [g.loser_city, g.loser_team].filter(Boolean).join(" ");
               const ws = nflSlugForEraTeam(g.winner_city, g.winner_team);
               const ls = nflSlugForEraTeam(g.loser_city, g.loser_team);
-              return (
-                <RankRow
-                  key={`${g.date}-${g.winner_team}`}
-                  rank={i + 1}
-                  name={
+              const crest = (slug: string | null) => {
+                const src = slug ? logoUrlFor(slug) : null;
+                if (src) {
+                  return <img src={src} alt="" width={18} height={18} className="inline-block align-text-bottom mr-1.5 object-contain" style={{ width: 18, height: 18 }} loading="lazy" decoding="async" />;
+                }
+                const m = slug && MONOGRAM_BY_SLUG[slug] ? monogramFor(slug) : null;
+                return m ? (
+                  <span aria-hidden className="inline-grid place-items-center rounded-full mr-1.5 align-text-bottom"
+                    style={{ background: m.bg, color: m.fg, width: 18, height: 18, fontSize: 7, fontWeight: 700 }}>{m.mono}</span>
+                ) : null;
+              };
+              return {
+                key: `${g.date}-${g.winner_team}-${i}`,
+                sort: { game: wName, score: g.du, round: g.round ?? null, date: g.date ?? null },
+                mobile: {
+                  name: (
                     <span className="whitespace-normal leading-snug">
                       {ws ? <Link href={`/teams/nfl/${ws}`} className="text-[var(--accent)]">{wName}</Link> : wName}
                       <span className="text-[var(--text-muted)]"> {g.is_tie ? "tied with" : "beat"} </span>
                       {ls ? <Link href={`/teams/nfl/${ls}`}>{lName}</Link> : lName}
                     </span>
-                  }
-                  sub={<>{g.winner_score}-{g.loser_score}{g.ot ? " OT" : ""} · {g.round} · {g.date}</>}
-                  right={g.du.toFixed(2)}
-                  rightSub="score"
-                />
-              );
+                  ),
+                  sub: <>{g.winner_score}-{g.loser_score}{g.ot ? " OT" : ""} · {g.round} · {g.date}</>,
+                  right: g.du.toFixed(2),
+                  rightSub: "score",
+                },
+                cells: [
+                  <span key="game" className="whitespace-nowrap">
+                    {crest(ws)}
+                    {ws ? (
+                      <Link href={`/teams/nfl/${ws}`} className="text-[var(--accent)] hover:underline">{wName}</Link>
+                    ) : wName}{" "}
+                    <span className="tabular-nums text-[var(--text-dim)]" style={MONO}>
+                      {g.winner_score}-{g.loser_score}
+                    </span>{" "}
+                    <span className="text-[var(--text-muted)]">{g.is_tie ? "tied with" : "beat"}</span>{" "}
+                    {crest(ls)}
+                    {ls ? (
+                      <Link href={`/teams/nfl/${ls}`} className="hover:text-[var(--accent)] hover:underline">{lName}</Link>
+                    ) : <span className="text-[var(--text-muted)]">{lName}</span>}
+                    {g.ot ? <span className="ml-1 text-[10px] uppercase tracking-wider text-[var(--text-dim)]">OT</span> : null}
+                  </span>,
+                  <DataBar key="score" v={g.du} dp={2} label="game score" />,
+                  <span key="round" className="text-[var(--text-muted)]">{g.round}</span>,
+                  <span key="date" className="text-[var(--text-muted)] tabular-nums" style={MONO}>{g.date}</span>,
+                ],
+              };
             })}
-          >
-            <table className="w-full text-xs" data-sticky-col="2">
-              <thead>
-                <tr className="text-[var(--text-dim)] text-left">
-                  <th className="py-2 px-3 font-medium">#</th>
-                  <th className="py-2 px-3 font-medium">Game</th>
-                  <th className="py-2 px-3 font-medium text-right">Score</th>
-                  <th className="py-2 px-3 font-medium hidden sm:table-cell">Round</th>
-                  <th className="py-2 px-3 font-medium hidden sm:table-cell">Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {bestGames.map((g, i) => {
-                  const wName = [g.winner_city, g.winner_team].filter(Boolean).join(" ");
-                  const lName = [g.loser_city, g.loser_team].filter(Boolean).join(" ");
-                  // Era names, so a 1994 row finds the San Diego Chargers and a
-                  // 1925 row finds the Pottsville Maroons.
-                  const ws = nflSlugForEraTeam(g.winner_city, g.winner_team);
-                  const ls = nflSlugForEraTeam(g.loser_city, g.loser_team);
-                  // 🔴 BOTH SIDES GET A CREST AND A FULL NAME. A game has two
-                  // teams in it. Crowning only the winner with a badge and
-                  // shortening both to nicknames made the row read as a result
-                  // rather than as a fixture, and there is room for neither
-                  // economy: this column is the widest on the page.
-                  const crest = (slug: string | null) => {
-                    const src = slug ? logoUrlFor(slug) : null;
-                    if (src) {
-                      return <img src={src} alt="" width={18} height={18} className="inline-block align-text-bottom mr-1.5 object-contain" style={{ width: 18, height: 18 }} loading="lazy" decoding="async" />;
-                    }
-                    // A relocated club keeps its modern crest; a defunct one has
-                    // none, so it wears the same monogram the rest of the site
-                    // gives it rather than an empty gap.
-                    const m = slug && MONOGRAM_BY_SLUG[slug] ? monogramFor(slug) : null;
-                    return m ? (
-                      <span aria-hidden className="inline-grid place-items-center rounded-full mr-1.5 align-text-bottom"
-                        style={{ background: m.bg, color: m.fg, width: 18, height: 18, fontSize: 7, fontWeight: 700 }}>{m.mono}</span>
-                    ) : null;
-                  };
-                  return (
-                    <tr key={`${g.date}-${g.winner_team}`} className="border-t" style={BORD}>
-                      <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={MONO}>{i + 1}</td>
-                      <td className="py-1.5 px-3 whitespace-nowrap">
-                        {crest(ws)}
-                        {ws ? (
-                          <Link href={`/teams/nfl/${ws}`} className="text-[var(--accent)] hover:underline">{wName}</Link>
-                        ) : wName}{" "}
-                        <span className="tabular-nums text-[var(--text-dim)]" style={MONO}>
-                          {g.winner_score}-{g.loser_score}
-                        </span>{" "}
-                        <span className="text-[var(--text-muted)]">{g.is_tie ? "tied with" : "beat"}</span>{" "}
-                        {crest(ls)}
-                        {ls ? (
-                          <Link href={`/teams/nfl/${ls}`} className="hover:text-[var(--accent)] hover:underline">{lName}</Link>
-                        ) : <span className="text-[var(--text-muted)]">{lName}</span>}
-                        {g.ot ? <span className="ml-1 text-[10px] uppercase tracking-wider text-[var(--text-dim)]">OT</span> : null}
-                      </td>
-                      <td className="py-1.5 px-3 text-right">
-                        <DataBar v={g.du} dp={2} label="game score" />
-                      </td>
-                      <td className="py-1.5 px-3 text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">{g.round}</td>
-                      <td className="py-1.5 px-3 text-[var(--text-muted)] tabular-nums hidden sm:table-cell whitespace-nowrap" style={MONO}>{g.date}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </ResponsiveTable>
+          />
         </section>
       ) : null}
 
@@ -523,7 +495,7 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
               />
             ))}
           >
-            <table className="w-full text-xs" data-sticky-col="2">
+            <table className="w-full text-xs" data-sticky-col="2" data-static-sort="the five biggest gainers then the five biggest losers, in that order; sorting would erase the split">
               <thead>
                 <tr className="text-[var(--text-dim)] text-left">
                   <th className="py-2 px-3 font-medium">#</th>

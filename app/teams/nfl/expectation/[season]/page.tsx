@@ -14,6 +14,7 @@ import {
 } from "@/lib/nflExpectation";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { pfrBoxscoreUrl, PFR_LINK_LABEL } from "@/lib/nflBoxscore";
+import SortableBoard from "@/app/_shared/SortableBoard";
 
 // One season of the expectation ledger: the game log with what each result was
 // supposed to be, and the season's teams ranked by wins against expectation.
@@ -206,46 +207,44 @@ export default async function NflExpectationSeasonPage({
             Expected wins are the pre-game probabilities of each team&apos;s own games added up;
             teams are printed under the name they carried in {season}.
           </p>
-          <TableScroll className="rounded-xl border" style={card}>
-            <table className="w-full text-xs" data-sticky-col="2">
-              <thead>
-                <tr className="text-[var(--text-dim)] text-left">
-                  <th className="py-2 px-3 font-medium">#</th>
-                  <th className="py-2 px-3 font-medium">Team</th>
-                  <th className="py-2 px-3 font-medium text-right">vs expected</th>
-                  <th className="py-2 px-3 font-medium text-right">Won</th>
-                  <th className="py-2 px-3 font-medium text-right">Expected</th>
-                  <th className="py-2 px-3 font-medium hidden sm:table-cell">Metro</th>
-                </tr>
-              </thead>
-              <tbody>
-                {teamRows.map((r, i) => (
-                  <tr key={r.key} className="border-t" style={{ borderColor: "var(--border)" }}>
-                    <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={mono}>{i + 1}</td>
-                    <td className="py-1.5 px-3 whitespace-nowrap">
-                      {r.slug ? (
-                        <Link href={`/teams/nfl/${r.slug}`} className="text-[var(--accent)] hover:underline">
-                          {r.team}
-                        </Link>
-                      ) : r.team}
-                    </td>
-                    <td className="py-1.5 px-3 text-right">
-                      <DivergingBar v={r.wae ?? 0} max={teamRowsColMax} dp={2} suffix="" width={132} label="wins against expectation" />
-                    </td>
-                    <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{r.wins}</td>
-                    <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)]" style={mono}>
-                      {r.exp_wins?.toFixed(2)}
-                    </td>
-                    <td className="py-1.5 px-3 text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">
-                      {r.metro_slug ? (
-                        <Link href={`/rankings/${r.metro_slug}`} className="hover:underline">{r.metro}</Link>
-                      ) : (r.metro ?? "")}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </TableScroll>
+          <SortableBoard
+            id="expectation-teams"
+            className="rounded-xl border"
+            style={card}
+            initial={{ key: "wae", dir: "desc" }}
+            cols={[
+              { key: "team", label: "Team", sortable: false },
+              { key: "wae", label: "vs expected", right: true },
+              { key: "won", label: "Won", right: true },
+              { key: "exp", label: "Expected", right: true },
+              { key: "metro", label: "Metro", right: false, demote: "sm" },
+            ]}
+            rows={teamRows.map((r) => ({
+              key: r.key,
+              sort: { team: r.team, wae: r.wae ?? 0, won: r.wins, exp: r.exp_wins ?? null, metro: r.metro ?? null },
+              mobile: {
+                name: r.slug ? (
+                  <Link href={`/teams/nfl/${r.slug}`} className="text-[var(--accent)] hover:underline">{r.team}</Link>
+                ) : r.team,
+                sub: r.metro_slug ? (
+                  <Link href={`/rankings/${r.metro_slug}`} className="hover:underline">{r.metro}</Link>
+                ) : (r.metro ?? undefined),
+                right: r.wins,
+                rightSub: `exp ${r.exp_wins?.toFixed(2) ?? "—"}`,
+              },
+              cells: [
+                r.slug ? (
+                  <Link key="team" href={`/teams/nfl/${r.slug}`} className="text-[var(--accent)] hover:underline">{r.team}</Link>
+                ) : r.team,
+                <DivergingBar key="wae" v={r.wae ?? 0} max={teamRowsColMax} dp={2} suffix="" width={132} label="wins against expectation" />,
+                r.wins,
+                <span key="exp" className="text-[var(--text-muted)]">{r.exp_wins?.toFixed(2)}</span>,
+                r.metro_slug ? (
+                  <Link key="metro" href={`/rankings/${r.metro_slug}`} className="hover:underline text-[var(--text-muted)]">{r.metro}</Link>
+                ) : (r.metro ?? ""),
+              ],
+            }))}
+          />
         </section>
       )}
 
@@ -257,7 +256,7 @@ export default async function NflExpectationSeasonPage({
           neutral-site games and clubs no longer in the league carry none.
         </p>
         <TableScroll className="rounded-xl border max-h-[36rem]" style={card}>
-          <table className="w-full text-xs">
+          <table className="w-full text-xs" data-static-sort="a game log, in the order games were played">
             <thead>
               <tr className="text-[var(--text-dim)] text-left">
                 <th className="py-2 px-3 font-medium">Date</th>

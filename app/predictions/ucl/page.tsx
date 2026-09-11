@@ -8,7 +8,8 @@ import { SectionHead } from "@/app/_shared/SectionHead";
 import { ResponsiveTable } from "@/app/teams/_shared/ResponsiveTable";
 import { PredCrumbs, PredHeader, SourcesCard, MONO, SMCOL, plural } from "../_shared/ui";
 import PredictionsNav from "../_shared/PredictionsNav";
-import { FixtureRow, TeamOddsRow } from "../_shared/rows";
+import { FixtureRow } from "../_shared/rows";
+import SortableBoard from "@/app/_shared/SortableBoard";
 
 // Champions League 2026-27 prediction hub — built 2026-08-29, rebuilt as v2
 // on 2026-08-30 after the strength formula was re-derived from research
@@ -157,7 +158,7 @@ export default async function UclPredictionsPage() {
                   />
                 ))}
               >
-                <table className="w-full text-sm">
+                <table className="w-full text-sm" data-static-sort="a fixture list, ordered by kickoff date">
                   <thead>
                     <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                       <th className="px-3 py-2 font-semibold">Kickoff</th>
@@ -203,52 +204,42 @@ export default async function UclPredictionsPage() {
               sub="Expected league-phase points, finishing range and odds for each landing spot."
               more="The top eight (straight to the round of 16), the top 24 (alive in the knockouts), the quarter-finals and the trophy. &ldquo;Finish&rdquo; is the median simulated position with the 5th-95th percentile range."
             />
-            <ResponsiveTable
-              variant="list"
+            <SortableBoard
+              id="ucl-table"
+              rank={false}
               mobileNoun="clubs"
               className="rounded-xl border"
               style={BORD}
-              mobileRows={rows.map((r) => (
-                <TeamOddsRow
-                  key={r.name}
-                  name={<ClubLabel name={r.name} />}
-                  right={pct(r.p_top24)}
-                  metricLabel="advance"
-                  rightSub={`xPts ${r.exp_pts.toFixed(1)} · Finish ${r.pos.p50} (${r.pos.p5}-${r.pos.p95})`}
-                />
-              ))}
-            >
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="text-left" style={{ background: "var(--bg-card)" }}>
-                    <th className="px-3 py-2 font-semibold">Club</th>
-                    <th className="px-3 py-2 text-right font-semibold">xPts</th>
-                    <th className={`px-3 py-2 text-right font-semibold ${SMCOL}`}>Finish</th>
-                    <th className={`px-3 py-2 text-right font-semibold ${SMCOL}`}>Top 8</th>
-                    <th className="px-3 py-2 text-right font-semibold">Advance</th>
-                    <th className={`px-3 py-2 text-right font-semibold ${SMCOL}`}>QF</th>
-                    <th className="px-3 py-2 text-right font-semibold">Champion</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {rows.map((r) => (
-                    <tr key={r.name} className="border-t" style={BORD}>
-                      <td className="px-3 py-2 whitespace-nowrap">
-                        <ClubLabel name={r.name} />
-                      </td>
-                      <td className="px-3 py-2 text-right" style={MONO}>{r.exp_pts.toFixed(1)}</td>
-                      <td className={`px-3 py-2 text-right whitespace-nowrap ${SMCOL}`} style={MONO}>
-                        {r.pos.p50}<span style={{ color: "var(--text-dim)" }}> ({r.pos.p5}-{r.pos.p95})</span>
-                      </td>
-                      <td className={`px-3 py-2 text-right ${SMCOL}`} style={MONO}>{pct(r.p_top8)}</td>
-                      <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_top24 < 25 ? "#E2628B" : "var(--text-muted)" }}>{pct(r.p_top24)}</td>
-                      <td className={`px-3 py-2 text-right ${SMCOL}`} style={MONO}>{pct(r.p_qf)}</td>
-                      <td className="px-3 py-2 text-right" style={{ ...MONO, color: r.p_champion >= 1 ? "var(--accent)" : "var(--text-muted)" }}>{pct(r.p_champion)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </ResponsiveTable>
+              cols={[
+                { key: "club", label: "Club", sortable: false },
+                { key: "xpts", label: "xPts", right: true },
+                { key: "finish", label: "Finish", right: true, demote: "sm" },
+                { key: "top8", label: "Top 8", right: true, demote: "sm" },
+                { key: "advance", label: "Advance", right: true },
+                { key: "qf", label: "QF", right: true, demote: "sm" },
+                { key: "champion", label: "Champion", right: true },
+              ]}
+              rows={rows.map((r) => ({
+                key: r.name,
+                sort: { club: r.name, xpts: r.exp_pts, finish: -r.pos.p50, top8: r.p_top8, advance: r.p_top24, qf: r.p_qf, champion: r.p_champion },
+                mobile: {
+                  name: <ClubLabel name={r.name} />,
+                  right: pct(r.p_top24),
+                  rightSub: `xPts ${r.exp_pts.toFixed(1)} · Finish ${r.pos.p50} (${r.pos.p5}-${r.pos.p95})`,
+                },
+                cells: [
+                  <ClubLabel key="club" name={r.name} />,
+                  r.exp_pts.toFixed(1),
+                  <span key="finish">
+                    {r.pos.p50}<span style={{ color: "var(--text-dim)" }}> ({r.pos.p5}-{r.pos.p95})</span>
+                  </span>,
+                  pct(r.p_top8),
+                  <span key="advance" style={{ color: r.p_top24 < 25 ? "#E2628B" : "var(--text-muted)" }}>{pct(r.p_top24)}</span>,
+                  pct(r.p_qf),
+                  <span key="champion" style={{ color: r.p_champion >= 1 ? "var(--accent)" : "var(--text-muted)" }}>{pct(r.p_champion)}</span>,
+                ],
+              }))}
+            />
             <p className="text-[13px] text-[var(--text-muted)] mt-4">
               Get the data:{" "}
               <Link href="/predictions/ucl/table.csv" className="hover:underline">league-phase table as CSV</Link>

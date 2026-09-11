@@ -671,7 +671,7 @@ export default async function FranchisePage({ params }: Props) {
           </div>
 
           <div className="overflow-x-auto hidden sm:block">
-            <table className="w-full text-xs tabular-nums">
+            <table className="w-full text-xs tabular-nums" data-static-sort="ranked by the site's own Game Score, the only value column; Date, Round and Result are context, not alternative orderings">
               <thead>
                 <tr className="text-[var(--text-muted)]">
                   <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">#</th>
