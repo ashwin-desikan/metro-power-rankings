@@ -563,6 +563,15 @@ TRULY_DEFUNCT_TEAMS = {
     "South Vietnam",
 }
 
+# Display-name overrides for the workbook's Name column. Côte d'Ivoire is the
+# canonical name on the site (Ashwin, 2026-09-10: "anywhere it says Ivory Coast
+# should change"); the workbook keeps "Ivory Coast" as Name with Côte d'Ivoire as
+# Cur. Name, so without this the index's `name` reverts on every rebuild. The
+# slug is derived from Cur. Name and is unaffected.
+DISPLAY_NAME_OVERRIDES = {
+    "Ivory Coast": "Côte d'Ivoire",
+}
+
 
 def build_teams_index(totals_rows, summary_rows, federation_lookup):
     """Produce one team per Cur. Name plus standalone entries for every
@@ -696,7 +705,7 @@ def build_teams_index(totals_rows, summary_rows, federation_lookup):
             fed_lookup = federation_lookup.get(normalize_team_name(t["name"]))
         teams.append({
             "slug": slug,
-            "name": t["name"],
+            "name": DISPLAY_NAME_OVERRIDES.get(t["name"], t["name"]),
             "cur_name": cn,
             "continent": t["continent"],
             "federation": (fed_lookup or {}).get("federation"),
@@ -1394,7 +1403,10 @@ def build_slug_lookup(teams):
     so cross-source joins (e.g. national-teams.tsv) can resolve either."""
     out = {}
     for t in teams:
-        for k in (t["cur_name"], t["name"]):
+        # The workbook's own Name stays resolvable even when the published
+        # `name` carries a display override (Ivory Coast -> Côte d'Ivoire).
+        source_names = [k for k, v in DISPLAY_NAME_OVERRIDES.items() if v == t["name"]]
+        for k in (t["cur_name"], t["name"], *source_names):
             if not k:
                 continue
             out[normalize_team_name(k)] = t["slug"]

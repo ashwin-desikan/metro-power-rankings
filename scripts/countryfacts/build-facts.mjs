@@ -87,6 +87,11 @@ async function fetchJson(url, tries = 4) {
   }
 }
 const V = (b, k) => (b[k] ? b[k].value : null);
+// Wikidata's English labels still say "Ivory Coast" (the legislature is labelled
+// "Parliament of Ivory Coast"). Côte d'Ivoire is the site's canonical name
+// (Ashwin, 2026-09-10), so labelled strings are rewritten on the way out.
+const LABEL_FIXES = [["Ivory Coast", "Côte d'Ivoire"]];
+const fixLabel = (s) => (typeof s === "string" ? LABEL_FIXES.reduce((t, [a, b]) => t.split(a).join(b), s) : s);
 const qidOf = (b, k) => (b[k] ? b[k].value.split("/").pop() : null);
 const chunk = (arr, n) => { const o = []; for (let i = 0; i < arr.length; i += n) o.push(arr.slice(i, i + n)); return o; };
 
@@ -179,7 +184,7 @@ for (const c of chunk(allQids, 45)) {
       iso_3166: V(b, "iso3166"),
       anthem: V(b, "anthem"),
       motto: V(b, "mottoT"),
-      legislature: V(b, "legislature"),
+      legislature: fixLabel(V(b, "legislature")),
     };
   }
   await sleep(400);

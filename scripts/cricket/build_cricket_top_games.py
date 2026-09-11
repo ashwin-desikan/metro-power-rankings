@@ -24,6 +24,11 @@ DEST = os.environ.get("TOPGAMES_DEST") or os.path.normpath(os.path.join(os.path.
                                      "..", "..", "public", "data", "cricket", "top-games.json"))
 CANON = {"United States of America": "United States"}
 def canon(t): return CANON.get(t, t)
+# Display names for the published team strings. Slugs (teamSlug, oppSlug, by_team keys)
+# stay derived from the workbook name so existing links keep resolving; only the label
+# changes. Côte d'Ivoire is the site's canonical name (Ashwin, 2026-09-10).
+DISPLAY = {"Ivory Coast": "Côte d'Ivoire"}
+def display(t): return DISPLAY.get(t, t)
 def slug(t): return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", t.lower())).strip("-")
 
 def _to_date(v):
@@ -165,8 +170,8 @@ def main():
     fmax = {f: max((x[0] for x in scored if x[4]["fmt"] == f), default=1) for f in ("Test", "ODI", "T20I")}
     def rec(x):
         gs, cl, st, q, m = x
-        return dict(fmt=m["fmt"], date=m["sd"].isoformat(), team=m["team"], teamSlug=slug(m["team"]),
-            end=m["ed"].isoformat(), opp=m["opp"], oppSlug=slug(m["opp"]), winner=m["winner"], detail=m["detail"],
+        return dict(fmt=m["fmt"], date=m["sd"].isoformat(), team=display(m["team"]), teamSlug=slug(m["team"]),
+            end=m["ed"].isoformat(), opp=display(m["opp"]), oppSlug=slug(m["opp"]), winner=m["winner"], detail=m["detail"],
             major=m["major"] or None, round=m["round"] or None, tournament=m["tourn"] or None,
             venue=m["venue"] or None, city=m["city"] or None, country=m["country"] or None,
             gs=round(gs, 1), norm=round(gs / fmax[m["fmt"]] * 100, 1), editorPick=bool(floor_for(m)),
