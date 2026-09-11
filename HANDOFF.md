@@ -14043,14 +14043,26 @@ Ashwin: "at the end of the year, it doesn't make sense to have the playoff and t
 them in." `titleCol`/`oddsCol` now require a scrubbed week; the Final table shows seeds and
 honours. The one deliberate exception to the no-mount-with-the-scrubber rule, noted in code.
 
-### Z. State
+### Z. Zone Zero Cup: a sport opens to its nations (app commit)
+Ashwin: "there should be a plus sign next to the sport, and then you click it, and you should
+be able to see the country scores for those sports ... not showing all 200 countries at once."
+`SportRow.holders` (every scoring nation, points and share, from the same map as `leaders`);
+SportTotals gains the nations table's `+`/`−` idiom on desktop and the cards, and a
+`SportBreakdown` panel: the top 12 with points and share, a line "Top 12 hold N% of the
+sport; M more nations score", and a Show all. Golf opens to United States 21.8 (19.7%), South
+Korea 11.6, Great Britain 9.2, top 12 hold 77%, 40 nations; Football to Argentina 55.8
+(9.2%), Brazil 52.4, Germany 48.1, top 12 hold 66%, 229 nations. Measured 390/1280: no
+horizontal scroll, no errors; sticky column bumped to 3 for the new cell.
+
+### AA. State
 Local, not pushed, linear on origin/main, oldest first: `a9ce70c89` (docs, `[vercel skip]`),
 `7f32be81f` (Côte d'Ivoire, `[vercel skip]`), `baea6d08e` (the frontier), `ce800aff3` (F1
 odds, the dots, the 2100 card), `d6f1edda4` (Live Standings odds), `589fadde7` (the Today
 box), `a06cc4cc6` (the follow-ups), `e622e6a41` (the NFL updater fix, `[vercel skip]`),
 `8e9522ce9` (section M), `aaf2fb25a` (O), `093df3933` (P), `4b6ad9c82` (Q), `088f0558c` (R),
-then the six commits T to Y (all app; Y is push HEAD); `npm run verify` green for the six
-(`_scratch/verify-round4.log`). The brand branch is separate. Open: `VERCEL_BUILD_CAP_TOKEN`;
+`ed85f3433` (T), `0483dbfda` (U and Y), `b89db355f` (V), `f0b3916f7` (W), `232bd32e9` (X),
+`b90b6296d` (docs), and the section Z commit (app, push HEAD); `npm run verify` green
+(`_scratch/verify-round4.log` for T to X, `verify-round5.log` for Z). The brand branch is separate. Open: `VERCEL_BUILD_CAP_TOKEN`;
 the CFL fixture feed; the mini-side steps in O (now also `runners/economy-prices.sh`); the
 Rolex snapshot refresh in T; the sortable and chart sweeps' next batches (the baseline has
 169 boards in 126 files left).

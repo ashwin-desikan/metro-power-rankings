@@ -56,6 +56,13 @@ export type SportRow = {
   topFourShare: number;
   weight: number | null;
   leaders: { name: string; slug: string | null; pts: number; defunct: boolean; suspended: boolean }[];
+  /**
+   * Every nation with points in this sport, sorted by points descending.
+   * `leaders` above stays the table's Leaders column (top few); this is the
+   * full roster the sport's expand panel reads to show every scorer, not
+   * just the top four.
+   */
+  holders: { name: string; slug: string | null; pts: number; share: number; defunct: boolean; suspended: boolean }[];
 };
 
 // Short on purpose. At 390px the full names ("Summer Olympic", "National
@@ -300,6 +307,18 @@ export function buildSportRows(nations: NationLike[], prestige: Record<string, n
           name: h.n.name,
           slug: h.n.countrySlug,
           pts: h.pts,
+          defunct: !!h.n.defunct,
+          suspended: !!h.n.suspended,
+        })),
+        // Same holders map `leaders` above is sliced from, so the two can
+        // never disagree and the full roster's points sum to a.total by
+        // construction (each holder's pts is folded from the same `add`
+        // calls that produced the total).
+        holders: ranked.map((h) => ({
+          name: h.n.name,
+          slug: h.n.countrySlug,
+          pts: h.pts,
+          share: a.total > 0 ? (h.pts / a.total) * 100 : 0,
           defunct: !!h.n.defunct,
           suspended: !!h.n.suspended,
         })),
