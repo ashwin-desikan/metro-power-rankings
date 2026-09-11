@@ -43,11 +43,15 @@ name: NFL live Elo refresh
 # reaches the hub through ISR with no production build. If that read ever
 # becomes build-time only, this tag has to change with it.
 
+# SCHEDULE RETIRED 2026-09-11: this job now runs DAILY in season on the Mac
+# mini (mac-mini-jobs/runners/nfl-elo.sh, jobs.toml id "nfl-elo", 08:00 UTC),
+# after GitHub's cron fired the 09-08 run 4h17m late and skipped 09-11's.
+# workflow_dispatch stays as the manual fallback for when the mini is down.
 on:
-  schedule:
-    - cron: "30 9 * 9-12,1,2 2"   # Tuesdays, in season
-    - cron: "30 9 * 9-12,1,2 5"   # Fridays, in season
-    - cron: "30 9 * 1,2 1"       # Mondays, Jan-Feb: the morning after a playoff weekend
+  # schedule:
+  #   - cron: "30 9 * 9-12,1,2 2"   # Tuesdays, in season
+  #   - cron: "30 9 * 9-12,1,2 5"   # Fridays, in season
+  #   - cron: "30 9 * 1,2 1"       # Mondays, Jan-Feb: the morning after a playoff weekend
   workflow_dispatch:
     inputs:
       season:

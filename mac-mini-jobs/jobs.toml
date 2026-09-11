@@ -172,6 +172,30 @@ catchup_hours = 5              # deliberately short: slots are 7.5h apart, so a
                                 # MISSED rather than fired just before the next.
 timeout_minutes = 45
 
+# --- nfl-elo: NEW 2026-09-11. Ports nfl-live-refresh.yml to the mini. --------
+# Ashwin: "I don't want to wait 5 hours for this thing to run ... why do we have
+# it on GitHub and not on Mac Mini?" GitHub's cron fired the 09-08 run 4h17m
+# late and did not fire 09-11's at all. DAILY in season because the 2026
+# schedule plays Thursday to Monday; the scripts are change-gated so a quiet
+# day commits nothing. 08:00 UTC: Monday night's game ends ~04:30Z and ESPN's
+# scoreboard is final well before, and the slot sits clear of mlb-sim (07:00,
+# 45 min) and predictions-tue (06:40). The runner also pings /api/revalidate
+# (tag nfl-elo), which the Action never did, so the season page and Live
+# Standings refresh in minutes rather than at the 24h ISR window.
+#
+# 🔴 FLIP RULE, as for every row above: the schedule: block in
+# .github/workflows/nfl-live-refresh.yml is commented out in the SAME commit
+# as this row (done 2026-09-11); workflow_dispatch stays as the manual
+# fallback for when the mini is down.
+[[job]]
+id = "nfl-elo"                 # .github/workflows/nfl-live-refresh.yml (schedule retired 2026-09-11)
+label = "NFL live Elo, seeds, odds (and the bracket in Jan/Feb)"
+time = "08:00"
+months = [9, 10, 11, 12, 1, 2]
+command = "runners/nfl-elo.sh"
+catchup_hours = 14
+timeout_minutes = 30           # two 300s CDN sleeps in Jan/Feb plus the carry
+
 # ---------------------------------------------------------------------------
 # LEGACY LAUNCHD MIGRATION (see DST-MIGRATION.md). Separate thread from the
 # GitHub-Actions rollout above: these jobs already run on the mini, just on
