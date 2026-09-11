@@ -581,6 +581,19 @@ catchup_hours = 40
 timeout_minutes = 20
 
 [[job]]
+id = "economy-prices"
+label = "Consumer price refresh (/business/economy/prices)"
+time = "07:30"                  # Sunday; BLS CPI-U and ONS CPIH are each
+                                 # monthly prints and the World Bank annual
+                                 # index rarer still, so weekly is generous
+weekdays = [7]
+command = "runners/economy-prices.sh"
+catchup_hours = 40              # weekly cadence, same margin as the other
+                                 # economy-* jobs: worth catching up most of
+                                 # the way to next Sunday rather than skipping.
+timeout_minutes = 20
+
+[[job]]
 id = "mktcap-refresh"
 label = "Company market caps"
 time = "09:00"                  # Saturday; matches cricket-weekly's slot on a

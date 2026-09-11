@@ -26,6 +26,7 @@ const ALLOWED_TAGS = new Set([
   "forecast-weekly",    // forecast-weekly.yml, 06:10 UTC Mon/Wed/Fri
   "economy-rates",      // economy-rates.sh (mac-mini-jobs), Fridays 07:30 UTC
   "economy-housing",    // economy-housing.sh (mac-mini-jobs), Saturdays 07:30 UTC
+  "economy-prices",     // economy-prices.sh (mac-mini-jobs), Sundays 07:30 UTC
   "nfl-elo",            // nfl-elo.sh (mac-mini-jobs), 08:00 UTC daily in season: lib/nflElo.ts
   "nfl-playoffs",       // nfl-elo.sh, January and February: lib/nflPlayoffs.ts
 ]);

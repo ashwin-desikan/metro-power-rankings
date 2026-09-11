@@ -4,12 +4,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 // Second-level tab row under /business/economy, same idiom as BusinessNav.
-// Rates is the only sub-family that has shipped; Prices, Housing, Yields and
-// Countries join this list as they ship. Do not render a tab with no page
-// behind it.
+// Rates, Housing and Prices have shipped; Yields and Countries join this
+// list as they ship. Do not render a tab with no page behind it.
 const TABS: [string, string][] = [
   ['/business/economy', 'Rates'],
   ['/business/economy/housing', 'Housing'],
+  ['/business/economy/prices', 'Prices'],
 ];
 
 export default function EconomyNav() {
