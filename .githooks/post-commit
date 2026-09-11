@@ -27,6 +27,16 @@ if [ "$HAS_DEPLOY_NOW" = 1 ] && [ "$HAS_TAG" = 1 ]; then
   # will say so, because a skip is a perfectly normal outcome to the guard.
   # Worth stopping loudly: this is the one combination that silently does the
   # opposite of what it reads like.
+  #
+  # ⚠️ It cannot tell a DIRECTIVE from PROSE. A subject that merely discusses
+  # both tags trips it -- the commit that introduced this check did exactly
+  # that, immediately, being titled "...teach both about [deploy-now]..." while
+  # carrying a real [vercel skip]. vercel-ignore.sh has the same exposure and
+  # the same answer (its 2026-08-06 comment): the tags are matched literally,
+  # anywhere on the subject line, because anything cleverer is guesswork. So
+  # when WRITING ABOUT a tag in a subject, drop the brackets -- "deploy-now",
+  # not "[deploy-now]". The behaviour here was still correct (skip wins, no
+  # build spent); only the warning was noise.
   echo "post-commit CHECK: MISMATCH -- this commit carries BOTH [deploy-now]" >&2
   echo "  and [vercel skip]. vercel-ignore.sh checks skip first, so the skip" >&2
   echo "  WINS and [deploy-now] does nothing. Drop one: keep [vercel skip] if" >&2
