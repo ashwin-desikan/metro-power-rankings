@@ -126,7 +126,12 @@ export default async function NflSeasonsIndex() {
             <div key={d} className="flex items-baseline gap-3">
               <div className="text-xs font-semibold text-[var(--text-dim)] w-11 flex-shrink-0 tabular-nums pt-0.5" style={MONO}>{d}s</div>
               <div className="flex flex-wrap gap-1.5">
-                {list.map((r) => {
+                {/* Newest first inside the decade as well as across them, so the
+                    latest season of every decade sits at the row's left edge and
+                    the eye reads the page as one descending column (Ashwin,
+                    2026-09-11: "it makes it easier to then navigate both on
+                    desktop and mobile"). */}
+                {[...list].sort((a, b) => b.season - a.season).map((r) => {
                   const who = r.top ? [r.top.city, r.top.team].filter(Boolean).join(" ") || r.top.name : null;
                   const champ = r.champion ? [r.champion.city, r.champion.team].filter(Boolean).join(" ") : null;
                   return (
