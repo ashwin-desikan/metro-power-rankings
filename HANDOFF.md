@@ -13374,7 +13374,70 @@ confirmed both by the deployment state and by `/deployed` returning the new SHA 
 `c095ad8b6`) — the second check being the one that catches a green build that never aliases.
 ⚠️ Both of the day's paid builds are now spent, one on the failure and one on the fix.
 
+### G. Ashwin checked the page, and found the three blocks E had missed
+Times showed for the Libertadores and cricket but not AFL, NRL or the rugby internationals, and
+tennis listed only finished matches. Shipped in `441f2be5a`.
+
+**AFL and NRL: simply never touched.** That block formatted the date in `Australia/Sydney` — the
+right zone for the ground, the wrong one for the reader — and showed no kick-off at all, though
+the feed carries a full instant (`2026-09-11T09:50Z`, with NRL `pre`-state finals listed at the
+time). Now in the viewer's zone like every other fixture.
+
+**Rugby internationals: NOT a feed limitation, though the type said so.** `RugbyMatch.date` was
+commented `// ISO yyyy-mm-dd` and it is — because `lib/rugbyFixtures.ts` THREW THE CLOCK AWAY,
+converting the source's `time.millis` to a ymd string. A new `kickoff` field carries the instant
+alongside. 🔴 `date` deliberately stays yyyy-mm-dd: the dedupe key and both sorts are built on it,
+and widening it would silently stop two matches on the same day deduping. **A type comment
+describes what the code does, not what the source has** — this one had been true and misleading
+for as long as it existed.
+
+**Tennis listed only what had finished.** `lib/tennisDraw.ts` admitted `"in"` and `"post"` and
+dropped `"pre"`, so a reader saw a round's completed matches with no sign that four more were on
+court later that day. `"pre"` is admitted, and the round on display is still chosen from matches
+that have actually STARTED, so admitting them cannot drag the view into a round that has not
+begun. Results and live first, then what is to come, chronological within each.
+
+### H. 🔴 BOTH GIT HOOKS TREATED `[deploy-now]` AS THE FAILURE MODE IT IS THE CURE FOR
+`441f2be5a` landed with the same-day cap already at 2 of 2, so `vercel-ignore.sh` skipped it.
+Ashwin asked for it out the same day, which is what the `[deploy-now]` override exists for.
+Pushing it exposed two hook faults (`65d8104a2`, caveat in `4722760e1`).
+
+**`post-commit` cried wolf.** A deploy-now trigger is MEANT to touch nothing — carrying the tag so
+the guard builds the tree at HEAD is its whole job — and the hook read that as the 2026-08-06
+failure mode. **A guard that warns at the correct action is how a real guard starts being
+ignored.**
+
+🔴 **`prepare-commit-msg` was the sharper hazard, and it is the one to remember.** It auto-appends
+`[vercel skip]` whenever nothing build-relevant is staged — EXACTLY the shape of a deploy-now
+trigger. `vercel-ignore.sh` checks skip FIRST (L47) and exits before reaching `[deploy-now]`
+(L80), so the stamp would have silently neutered the override: the build the author deliberately
+asked for would never happen, and NOTHING would report the loss, because a skip is a normal
+outcome to the guard. Both hooks now leave `[deploy-now]` subjects alone, and a subject carrying
+BOTH tags is now a MISMATCH — the one pairing that does the opposite of what it reads like.
+
+⚠️ The both-tags check cannot tell a DIRECTIVE from PROSE, and proved it by firing on the very
+commit that introduced it (titled "...teach both about [deploy-now]..." while carrying a real
+`[vercel skip]`). Not softened — the alternative is guesswork, and `vercel-ignore.sh` reached the
+same conclusion in its own 2026-08-06 comment. **When writing ABOUT a tag in a subject, drop the
+brackets.**
+
+**Use `lib/deploy-retry.ts`, not an empty commit.** That file is imported nowhere and exists
+precisely so a re-trigger touches a build-relevant path. An empty `[deploy-now]` commit trips the
+hook and, worse, is the exact shape `prepare-commit-msg` wants to stamp.
+
+⚠️ **My watcher lied about a healthy deploy.** The poll loop reported "NOT live after 20m" while
+`dpl_DC1EGfqkFKtL9cXGbG3iLDrpR8Ko` was READY and production was already serving the commit. The
+endpoint returns `{"sha":...}` and I had trimmed that throwaway loop to read only a `commit` key.
+**A hand-rolled monitor is a thing that can be wrong about production** — check the authoritative
+source before believing a bespoke poller, especially one written minutes earlier.
+
+**Build ledger for the day: FOUR production builds, two over the 2/day budget.** `647310a5a`
+ERROR (the release bullet), `770368de1` READY (the fix), `2a32e0068` READY (the `[deploy-now]`
+Ashwin authorised having been told the cost). An ERROR consumes build minutes and counts toward
+the cap. Everything after was correctly CANCELED and cost nothing.
+
 **Pushed and live at `8e1598454`** (rates base inputs + bootstrap + unreachable alert),
-`50ab50394` (CLAUDE.md), `647310a5a` (Live Standings, build FAILED) and `770368de1`
-(release-note fix + the gate, deployed).
+`50ab50394` (CLAUDE.md), `647310a5a` (Live Standings, build FAILED), `770368de1`
+(release-note fix + the gate, deployed), `441f2be5a` + `2a32e0068` (AFL/NRL/rugby/tennis,
+deployed past the cap) and `65d8104a2` + `4722760e1` (the hooks).
 
