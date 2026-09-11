@@ -111,9 +111,19 @@ export async function getLiveTennisSlam(tour: "atp" | "wta"): Promise<TennisDraw
     if (inPlay.length === 0) continue;          // nothing has begun: no round to show
     const maxRound = Math.max(...inPlay.map((m) => m.round));
     const cur = started.filter((m) => m.round === maxRound);
-    const roundName = cur[0]?.roundName || "Current round";
+    // The NEXT round's fixtures ride along once the draw has named them: on
+    // the day between the quarter-finals and the semi-finals the reader wants
+    // to see who plays tonight, not only who won yesterday (Ashwin,
+    // 2026-09-11: "we should be seeing the men's semifinals, which are
+    // scheduled for today, and the women's final, which is scheduled for
+    // Saturday"). A "TBD v TBD" placeholder is not a fixture and stays out.
+    const named = (m: M) => asArr(m.c.competitors).map(asObj).filter((x): x is AnyObj => !!x).every((x) => !!asObj(x.athlete));
+    const nextRoundIds = started.filter((m) => m.round > maxRound && m.state === "pre" && named(m)).map((m) => m.round);
+    const nextRound = nextRoundIds.length ? Math.min(...nextRoundIds) : null;
+    const next = nextRound == null ? [] : started.filter((m) => m.round === nextRound && m.state === "pre" && named(m));
+    const roundName = (cur[0]?.roundName || "Current round") + (next.length ? ` · ${next[0].roundName} to come` : "");
 
-    const matches: TennisMatch[] = cur.map(({ c }) => {
+    const matches: TennisMatch[] = [...cur, ...next].map(({ c }) => {
       const cs = asArr(c.competitors).map(asObj).filter((x): x is AnyObj => !!x);
       const a = cs[0], b = cs[1];
       if (!a || !b) return { label: "—", score: "—", flagUrl: null, live: false, kickoff: null, upcoming: false };

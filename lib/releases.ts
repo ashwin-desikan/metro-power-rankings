@@ -22,9 +22,9 @@ export const RELEASES: Release[] = [
     headline: "Playoff and title odds for every NFL week since 1920",
     items: [
       "Every NFL season page since 1920 shows each team's chance of a playoff place and of the title after any week, drawn 2,000 times on that week's ratings; a club reads clinched or out only once the records settle it.",
-      "Money against football: one dot per club and season across six leagues, points against expectation across and squad value gained beyond spend up, the frontier joined, and each club's own trail on its page.",
+      "Money against football: one dot per club and season across six leagues, the frontier joined and each club's trail on its page; share cards carry their title in bold; The World in 2100 joins the rankings as index eight.",
       "Formula 1 title odds for every driver and constructor, simulated after each race, on the F1 hub and Live Standings; club football reads green all season, the WNBA through its break, and a live major lights the menu.",
-      "Live Standings follows the Libertadores into the knockouts and reads kick-offs in your time zone; every share card carries its title in bold; The World in 2100 joins the home page's rankings as the eighth index.",
+      "Live Standings carries title, playoff and Super Bowl odds for the Premier League, Champions League, NFL and college football, follows the Libertadores into the knockouts, and a slam lists the next round's matches.",
     ],
   },
   {

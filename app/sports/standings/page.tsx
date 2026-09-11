@@ -17,6 +17,10 @@ import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getLiveCflStandings } from "@/lib/cflStandings";
 import { getLiveF1Standings } from "@/lib/f1Standings";
 import { getF1TitleOdds, f1OddsAreCurrent, f1OddsByName, normDriver, normConstructor } from "@/lib/f1TitleOdds";
+import { getPlSim } from "@/lib/plSim";
+import { getUclSim } from "@/lib/uclSim";
+import { getNflSim } from "@/lib/nflSim";
+import { getCfbSim } from "@/lib/cfbSim";
 import { getNpbStandings } from "@/lib/npbStandings";
 import { getClubStandings, getClubCompetitions, getInternationalComps, type LiveLeague, type LiveComp, type LiveRow, type LiveFixture, type LiveTeamRef } from "@/lib/clubFootballLive";
 import { deriveLeaguePhaseGroups } from "@/lib/euroCompDerive";
@@ -175,6 +179,17 @@ const kickoff = (iso: string | null | undefined, withTime = true): Cell => {
 };
 
 const num = (v: number | null | undefined): Cell => (v === null || v === undefined ? DASH : v);
+
+// One freshness rule for the season sims joined onto these tables (PL, UCL,
+// NFL, CFB): generated within the last ten days, same test lib/seasonSim
+// applies, so a dead refresh job fades its odds out rather than pinning a
+// stale column beside a live table. `season` is checked where the file
+// carries one in the table's own shape.
+const simFresh = (generatedAt: string | null | undefined, days = 10): boolean => {
+  if (!generatedAt) return false;
+  const age = Date.now() - new Date(generatedAt.length === 10 ? `${generatedAt}T00:00:00Z` : generatedAt).getTime();
+  return Number.isFinite(age) && age < days * 24 * 3600 * 1000;
+};
 
 // Recent form and current streak. Both ride feeds the page already fetches:
 // `form` on every api-football LiveRow, `streak` on the four ESPN majors and
@@ -413,25 +428,34 @@ function LeagueAccordion({ block }: { block: Block }) {
 // ---- North American majors ---------------------------------------------
 
 async function nflBlock(): Promise<Block | null> {
-  const s = await getCurrentNflStandings();
+  const [s, sim] = await Promise.all([getCurrentNflStandings(), getNflSim().catch(() => null)]);
   const teams = Object.values(s.by_canonical);
   if (teams.length === 0) return null;
   const fr = new Map(nflFranchises().map((f) => [f.canonical, f]));
   const live = isLeagueLive("nfl", teams.map((t) => t.games_played), 17);
+  // Playoff and Super Bowl odds from the points-v3 season sim (/predictions/nfl),
+  // joined on the franchise slug; shown while the season is live and the sim
+  // is fresh (Ashwin, 2026-09-11: "now that the NFL season has started, I want
+  // to see probabilities in the live standings table").
+  const showOdds = live && simFresh(sim?.meta.generated_at) && (sim?.table.length ?? 0) >= 32;
+  const odds = new Map((showOdds ? sim!.table : []).map((r) => [r.slug, r]));
   const nameOf = (t: (typeof teams)[number]) => fr.get(t.canonical)?.name ?? t.display_name;
   const row = (t: (typeof teams)[number], i: number): SRow => {
     const f = fr.get(t.canonical); const m = f ? nflMono(f.slug) : null;
+    const o = f ? odds.get(f.slug) : undefined;
     return { rank: live ? i + 1 : null, name: nameOf(t), href: f ? `/teams/nfl/${f.slug}` : null,
       logoUrl: f ? nflLogo(f.slug) : null, monogram: m ? { text: m.mono, bg: m.bg, fg: m.fg } : null,
-      cells: live ? [t.wins, t.losses, t.ties, pct3(t.win_pct), strk(t.streak)] : [DASH, DASH, DASH, DASH, DASH] };
+      cells: live
+        ? [t.wins, t.losses, t.ties, pct3(t.win_pct), ...(showOdds ? [fmtOdds(o?.p_playoffs), fmtOdds(o?.p_sb)] : []), strk(t.streak)]
+        : [DASH, DASH, DASH, DASH, ...(showOdds ? [DASH, DASH] : []), DASH] };
   };
   return buildBlock({
     // source_label now describes the REGULAR-season table in every calendar
     // state ("2026 Regular Season · opens 6 Sep" before week 1), so it is a
     // better note than the flat "Offseason" this used when nothing is live:
     // two days before kickoff, "Offseason" is simply untrue.
-    league: "NFL", href: "/teams/nfl", note: s.source_label || "Offseason", open: live,
-    items: teams, columns: ["W", "L", "T", "PCT", "STRK"],
+    league: "NFL", href: "/teams/nfl", note: showOdds ? `${s.source_label} · odds simulated` : (s.source_label || "Offseason"), open: live,
+    items: teams, columns: ["W", "L", "T", "PCT", ...(showOdds ? ["PO%", "SB%"] : []), "STRK"],
     sort: live ? (a, b) => b.win_pct - a.win_pct || b.wins - a.wins : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "AFC", pick: (t) => t.conference === "AFC" }, { title: "NFC", pick: (t) => t.conference === "NFC" }],
     row,
@@ -726,17 +750,29 @@ function clubRow(r: LiveRow, i: number, cols: "domestic" | "group"): SRow {
 
 const byPtsGd = (a: LiveRow, b: LiveRow) => (b.points ?? 0) - (a.points ?? 0) || (b.gd ?? 0) - (a.gd ?? 0);
 
-function domesticLiveBlock(league: LiveLeague | undefined, label: string): Block | null {
+// Season odds for a domestic table, keyed by the site's club slug (the PL sim
+// on /predictions/pl carries them); the three that matter at both ends.
+type DomesticOdds = Map<string, { p_title: number; p_top5: number; p_releg: number }>;
+
+function domesticLiveBlock(league: LiveLeague | undefined, label: string, odds?: DomesticOdds): Block | null {
   if (!league) return null;
+  const showOdds = !!odds && odds.size > 0;
   const subTables: SubTable[] = league.groups
     .map((g): SubTable => ({
       title: league.groups.length > 1 ? g.group_label : null,
-      columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts", "Form"],
-      rows: g.rows.slice().sort(byPtsGd).map((r, i) => clubRow(r, i, "domestic")),
+      columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts", ...(showOdds ? ["Title%", "Top5%", "Rel%"] : []), "Form"],
+      rows: g.rows.slice().sort(byPtsGd).map((r, i) => {
+        const row = clubRow(r, i, "domestic");
+        if (!showOdds) return row;
+        const slug = row.href?.replace("/teams/football/", "") ?? "";
+        const o = odds!.get(slug);
+        const form = row.cells[row.cells.length - 1];
+        return { ...row, cells: [...row.cells.slice(0, -1), fmtOdds(o?.p_title), fmtOdds(o?.p_top5), fmtOdds(o?.p_releg), form] };
+      }),
     }))
     .filter((st) => st.rows.length > 0);
   if (subTables.length === 0) return null;
-  return { league: label, href: "/teams/football/2026-27", note: "live", open: true, subTables };
+  return { league: label, href: "/teams/football/2026-27", note: showOdds ? "live · odds simulated" : "live", open: true, subTables };
 }
 
 // ---- International Football section -------------------------------------
@@ -1206,7 +1242,12 @@ async function cricketFixturesBlock(): Promise<Block | null> {
 // a "Live" sub-table above the standings. Full fixtures stay on the
 // tournament hubs behind their own collapsed shell. Before a season's draw
 // (July), the old fixture-list block returns as a collapsed fallback.
-function euroCompBlocks(comps: LiveComp[]): Block[] {
+// Champions League odds by the club's canonical name (lib/uclSim's rows carry
+// the site's Lookup names, resolved through the same getFootballClubByName the
+// table rows use, so both sides meet on cur_name).
+type UclOdds = Map<string, { p_top8: number; p_top24: number; p_champion: number }>;
+
+function euroCompBlocks(comps: LiveComp[], uclOdds?: UclOdds): Block[] {
   const WANT: Array<[number, string, string]> = [
     [2, "champions-league", "Champions League"],
     [3, "europa-league", "Europa League"],
@@ -1234,19 +1275,25 @@ function euroCompBlocks(comps: LiveComp[]): Block[] {
     const liveTable = mkFx("Live", live, true);
 
     const { groups, computed } = deriveLeaguePhaseGroups(comp);
+    const odds = id === 2 && uclOdds && uclOdds.size > 0 ? uclOdds : null;
     const groupTables: SubTable[] = groups
       .slice().sort((a, b) => a.group_label.localeCompare(b.group_label))
       .map((g): SubTable => ({
         title: groups.length > 1 ? g.group_label : null,
-        columns: ["P", "W", "D", "L", "GD", "Pts"],
-        rows: g.rows.slice().sort(byPtsGd).map((r, i) => clubRow(r, i, "group")),
+        columns: ["P", "W", "D", "L", "GD", "Pts", ...(odds ? ["Top8%", "Top24%", "Title%"] : [])],
+        rows: g.rows.slice().sort(byPtsGd).map((r, i) => {
+          const row = clubRow(r, i, "group");
+          if (!odds) return row;
+          const o = odds.get(row.name);
+          return { ...row, cells: [...row.cells, fmtOdds(o?.p_top8), fmtOdds(o?.p_top24), fmtOdds(o?.p_champion)] };
+        }),
       }))
       .filter((st) => st.rows.length > 0);
 
     if (groupTables.length > 0) {
       const anyPlayed = groups.some((g) => g.rows.some((r) => Number(r.played ?? 0) > 0));
-      const note = live.length ? "live"
-        : computed ? (anyPlayed ? "computed from results" : "league phase drawn") : "league phase";
+      const note = (live.length ? "live"
+        : computed ? (anyPlayed ? "computed from results" : "league phase drawn") : "league phase") + (odds ? " · odds simulated" : "");
       blocks.push({
         league: label, href: `/teams/football/tournaments/${slug}`, note,
         open: true, live: live.length > 0,
@@ -1272,8 +1319,14 @@ function euroCompBlocks(comps: LiveComp[]): Block[] {
 // pages. Collapsed until the 2026 kickoff (CFB_KICKOFF_UTC in lib/cfb-live),
 // with the poll date always visible in the accordion note.
 async function cfbBlock(): Promise<Block | null> {
-  const s = await getCfbRankings();
+  const [s, sim] = await Promise.all([getCfbRankings(), getCfbSim().catch(() => null)]);
   if (s.polls.length === 0) return null;
+  // Playoff and national-title odds from the points-v3 season sim
+  // (/predictions/cfb), joined on the school's site slug; a ranked school the
+  // sim does not carry reads a dash.
+  const started0 = cfbSeasonStarted();
+  const showOdds = started0 && simFresh(sim?.meta.generated_at) && (sim?.table.length ?? 0) > 0;
+  const odds = new Map((showOdds ? sim!.table : []).map((r) => [r.slug, r]));
   const dt = (iso: string | null) =>
     iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }) : null;
 
@@ -1295,19 +1348,22 @@ async function cfbBlock(): Promise<Block | null> {
   const best = (a: Agg) => Math.min(...a.ranks.map((x) => x ?? 99));
   const teams = [...bySchool.values()].sort((a, b) =>
     (a.ranks[0] ?? 99) - (b.ranks[0] ?? 99) || best(a) - best(b) || a.school.localeCompare(b.school));
-  const rows: SRow[] = teams.map((a): SRow => ({
-    rank: a.ranks[0] ?? DASH, name: a.school,
-    href: a.slug ? `/teams/cfb/${a.slug}` : null, crestName: a.school,
-    cells: [...a.ranks.slice(1).map((x) => x ?? DASH), a.record || DASH],
-  }));
-  const columns = [...s.polls.slice(1).map((p) => COL[p.kind] ?? p.name), "Rec"];
+  const rows: SRow[] = teams.map((a): SRow => {
+    const o = a.slug ? odds.get(a.slug) : undefined;
+    return {
+      rank: a.ranks[0] ?? DASH, name: a.school,
+      href: a.slug ? `/teams/cfb/${a.slug}` : null, crestName: a.school,
+      cells: [...a.ranks.slice(1).map((x) => x ?? DASH), a.record || DASH, ...(showOdds ? [fmtOdds(o?.p_playoff), fmtOdds(o?.p_natty)] : [])],
+    };
+  });
+  const columns = [...s.polls.slice(1).map((p) => COL[p.kind] ?? p.name), "Rec", ...(showOdds ? ["PO%", "Title%"] : [])];
 
   const started = cfbSeasonStarted();
   const lead = s.polls[0];
   const title = s.polls.length > 1
     ? `# = ${COL[lead.kind] ?? lead.name} \u00b7 ${[lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ")}`
     : [lead.name, lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ");
-  const note = [COL[lead.kind] ?? lead.name, lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ") || null;
+  const note = ([COL[lead.kind] ?? lead.name, lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ") || null) + (showOdds ? " \u00b7 odds simulated" : "");
   return {
     league: "College Football", href: "/teams/cfb", note,
     open: started, live: started,
@@ -1325,6 +1381,20 @@ export default async function LiveStandingsPage() {
     getClubStandings(), getClubCompetitions(), getWLiveLeagues(), getWLiveCompetition("uwcl"),
     getWLiveOdds(),
   ]);
+  // The Premier League and Champions League sims (Ashwin, 2026-09-11: "fit in
+  // the probabilities that we have for both ... on the live standings tables").
+  // Both are joined only when fresh and for the season on the table.
+  const [plSim, uclSim] = await Promise.all([getPlSim().catch(() => null), getUclSim().catch(() => null)]);
+  const plOdds: DomesticOdds = new Map(
+    plSim && plSim.meta.season === "2026-27" && simFresh(plSim.meta.generated_at)
+      ? plSim.table.map((r) => [r.slug, { p_title: r.p_title, p_top5: r.p_top5, p_releg: r.p_releg }])
+      : [],
+  );
+  const uclOdds: UclOdds = new Map(
+    uclSim && uclSim.meta.season === "2026-27" && simFresh(uclSim.meta.generated_at)
+      ? uclSim.table.map((r) => [getFootballClubByName(r.name)?.cur_name ?? r.name, { p_top8: r.p_top8, p_top24: r.p_top24, p_champion: r.p_champion }])
+      : [],
+  );
   const intlComps = await getInternationalComps();
   const unl = intlCompBlock(intlComps.find((c) => c.league_id === 5), {
     label: "UEFA Nations League", href: "/teams/national#nations-league",
@@ -1338,10 +1408,10 @@ export default async function LiveStandingsPage() {
   const ligaF = wLeagueBlock(wLeagues.find((l) => l.compSlug === "liga-f"), "Liga F");
   const nwslW = wLeagueBlock(wLeagues.find((l) => l.compSlug === "nwsl"), "NWSL", wOdds.nwsl);
   const uwcl = uwclBlock(uwclComp);
-  const euro = euroCompBlocks(clubComps);
+  const euro = euroCompBlocks(clubComps, uclOdds);
   const clubById = new Map(clubStandings.map((l) => [l.league_id, l]));
   const domestics = DOMESTIC_LIVE
-    .map((d) => domesticLiveBlock(clubById.get(d.id), d.label))
+    .map((d) => domesticLiveBlock(clubById.get(d.id), d.label, d.label === "Premier League" ? plOdds : undefined))
     .filter((b): b is Block => b !== null);
   const liber = libertadoresBlock(clubComps.find((c) => c.league_id === 13));
 

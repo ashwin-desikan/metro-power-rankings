@@ -13701,8 +13701,46 @@ again (`git rebase origin/main` drops the merge and replays the four); nothing l
 defences worth taking: `git config pull.rebase true` on this checkout, which turns any such
 pull into a rebase, and finding the puller. Left for Ashwin to say which.
 
-### H. State
+### H. Live Standings: the odds the site already had, on the tables that lacked them
+Ashwin: "fit in the probabilities that we have for both the Champions League and Premier League
+on the live standings tables"; "now that the NFL season has started, I want to see probabilities
+... for making the playoffs and winning the Super Bowl"; "same for college football". All four
+sims existed (`pl-sim.json`, `ucl-sim.json`, `nfl-sim.json`, `cfb-sim.json`, the predictions
+hubs' own files); none reached `/sports/standings`. Joined, one shared freshness gate
+(`simFresh`: generated within ten days, the same rule lib/seasonSim applies, and the season
+must match where the file carries one):
+- **Premier League** (`domesticLiveBlock` takes an optional odds map, PL only): Title%, Top5%,
+  Rel% by site slug from the row's own href. Arsenal 54 / >99 / 0.
+- **Champions League** (`euroCompBlocks` takes `uclOdds`, applied to league id 2): Top8%,
+  Top24%, Title%, the sim's Lookup names resolved through `getFootballClubByName` so both sides
+  meet on `cur_name`. PSG 64 / 98 / 16.
+- **NFL**: PO% and SB% by franchise slug, only while `isLeagueLive` and the file has 32 rows.
+  Bills 73 / 9 after the sim of 09-08.
+- **College Football**: PO% and Title% by school slug on the poll table; a ranked school the sim
+  does not carry reads a dash. Notre Dame 90 / 13.
+Every note gains "· odds simulated" when the columns are present, as the other tables do. The
+lib modules are registered in check-client-imports. Measured at 390 and 1280: page scrollWidth
+equals the viewport, every block's scrollWidth within its width, the phone cards wrap the new
+columns inline like the others.
+
+**The tennis block was showing only the last round with a result.** ESPN's payload today: the
+four quarter-finals `post`, two semi-finals `pre` with named players (Khachanov v Zverev 19:00Z,
+Shelton v Tiafoe 23:00Z), the final `pre` as "TBD v TBD"; the mini's 09-11 change admitted `pre`
+matches but only within the latest STARTED round, so on the day between rounds a reader saw
+yesterday's results and nothing of tonight. `lib/tennisDraw.ts` now adds the next round's
+fixtures once the draw has named both players (a TBD placeholder stays out), and the sub-table
+title says so: "Men's Singles: Quarterfinal · Semifinal to come", "Women's Singles: Semifinal ·
+Final to come" (Rybakina v Sabalenka, 12 Sep 20:00Z). Measured on the dev server at both
+widths. Not a delay: it was the rule.
+
+🔧 ESPN from the box: `curl.exe` and `Invoke-RestMethod` both 403 (Akamai rejects their
+User-Agents; `-A ""` still sends an empty header and is refused). Node's `fetch` with no UA
+header is the shape that works, so `_scratch/tennis-probe.mjs` is the probe to reuse.
+
+Release note: today's block reworked again (four bullets, 213 / 218 / 215 / 213).
+
+### I. State
 Local, not pushed, linear on origin/main (`1a70c505e`), oldest first: `b27123e79` (the night
 entry's section M, `[vercel skip]`), `fd1e11b1e` (Côte d'Ivoire at the builders, `[vercel
-skip]`), `6b9e1a83e` (the frontier, app), `1cbc38eca` (F1 odds, the dots, the 2100 card; app,
-push HEAD). Hashes changed at the rebase in G. The brand branch is separate.
+skip]`), `6b9e1a83e` (the frontier, app), `3437f4b15` (F1 odds, the dots, the 2100 card; app)
+and the Live Standings odds commit (app, push HEAD). The brand branch is separate.
