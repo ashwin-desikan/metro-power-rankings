@@ -2,19 +2,19 @@
  "code": "uk",
  "election": "2029-05-03",
  "confidence": "assumed",
- "built": "2026-09-09",
- "daysBefore": 967,
+ "built": "2026-09-11",
+ "daysBefore": 965,
  "block": {
   "electionAssumed": "2029-05-03",
   "electionDate": "2029-05-03",
   "electionConfidence": "assumed",
   "average": {
-   "con": 20.1,
-   "lab": 26.6,
-   "ld": 9.9,
-   "ref": 23.2,
+   "con": 20.0,
+   "lab": 26.4,
+   "ld": 10.2,
+   "ref": 23.4,
    "grn": 10.8,
-   "snp": 2.9
+   "snp": 2.6
   },
   "pollsters": 12,
   "latestPollDate": "2026-09-07",
@@ -561,46 +561,46 @@
    },
    {
     "date": "2026-09-01",
-    "n": 7,
-    "con": 20.0,
-    "lab": 26.0,
-    "ld": 10.3,
-    "ref": 23.0,
-    "grn": 11.6,
-    "snp": 2.9
+    "n": 9,
+    "con": 20.2,
+    "lab": 25.8,
+    "ld": 10.6,
+    "ref": 23.2,
+    "grn": 11.2,
+    "snp": 2.7
    }
   ],
   "sim": {
    "seats": {
     "con": {
-     "median": 94,
+     "median": 91,
      "lo": 0,
-     "hi": 342
+     "hi": 339
     },
     "lab": {
-     "median": 208,
-     "lo": 17,
-     "hi": 456
+     "median": 205,
+     "lo": 16,
+     "hi": 455
     },
     "ld": {
-     "median": 63,
+     "median": 65,
      "lo": 0,
-     "hi": 103
+     "hi": 105
     },
     "ref": {
-     "median": 142,
+     "median": 148,
      "lo": 2,
-     "hi": 392
+     "hi": 394
     },
     "grn": {
      "median": 10,
      "lo": 0,
-     "hi": 83
+     "hi": 84
     },
     "snp": {
-     "median": 27,
+     "median": 20,
      "lo": 0,
-     "hi": 57
+     "hi": 56
     },
     "pc": {
      "median": 4,
@@ -616,19 +616,19 @@
    "niSeats": 18,
    "majorityNeeds": 326,
    "pLargest": {
-    "con": 21.7,
-    "lab": 43.9,
-    "ld": 0.0,
-    "ref": 34.2,
+    "con": 21.4,
+    "lab": 43.2,
+    "ld": 0.1,
+    "ref": 35.2,
     "grn": 0.1
    },
    "pMajority": {
-    "con": 6.8,
-    "lab": 24.8,
-    "ref": 15.0
+    "con": 6.6,
+    "lab": 24.4,
+    "ref": 15.6
    },
-   "pHung": 53.4,
-   "monthsOut": 31.8,
+   "pHung": 53.5,
+   "monthsOut": 31.7,
    "sims": 4000,
    "nat2024": {
     "con": 23.6,

@@ -2,8 +2,8 @@
  "code": "us",
  "election": "2026-11-03",
  "confidence": "confirmed",
- "built": "2026-09-09",
- "daysBefore": 55,
+ "built": "2026-09-11",
+ "daysBefore": 53,
  "block": {
   "margin": 6.2,
   "sigma": 2.5,
@@ -93,7 +93,7 @@
     ]
    ]
   },
-  "monthsOut": 1.8,
+  "monthsOut": 1.7,
   "sims": 20000,
   "election": "2026-11-03",
   "electionDate": "2026-11-03",
@@ -122,7 +122,7 @@
     "lo": 47,
     "hi": 54
    },
-   "pDemControl": 44.8,
+   "pDemControl": 44.7,
    "competitive": [
     {
      "state": "Alaska",
@@ -153,18 +153,18 @@
      "pDem": 60.0
     },
     {
+     "state": "Michigan",
+     "held": "D",
+     "score": 0.45,
+     "retiring": true,
+     "pDem": 63.0
+    },
+    {
      "state": "Ohio",
      "held": "R",
      "score": 0.45,
      "retiring": false,
      "pDem": 63.0
-    },
-    {
-     "state": "Michigan",
-     "held": "D",
-     "score": 0.55,
-     "retiring": true,
-     "pDem": 66.0
     }
    ],
    "sims": 20000,
@@ -189,8 +189,8 @@
     "lo": 21,
     "hi": 28
    },
-   "pDemMajority": 39.6,
-   "pRepMajority": 42.0,
+   "pDemMajority": 40.0,
+   "pRepMajority": 41.7,
    "competitive": [
     {
      "state": "Ohio",
@@ -214,18 +214,18 @@
      "pDem": 57.0
     },
     {
+     "state": "Alaska",
+     "held": "R",
+     "score": -0.38,
+     "retiring": true,
+     "pDem": 39.0
+    },
+    {
      "state": "Nevada",
      "held": "R",
      "score": -0.44,
      "retiring": false,
      "pDem": 37.0
-    },
-    {
-     "state": "Alaska",
-     "held": "R",
-     "score": -0.5,
-     "retiring": true,
-     "pDem": 36.0
     },
     {
      "state": "Kansas",

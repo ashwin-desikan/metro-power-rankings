@@ -2,60 +2,48 @@
  "code": "il",
  "election": "2026-10-27",
  "confidence": "confirmed",
- "built": "2026-09-09",
- "daysBefore": 48,
+ "built": "2026-09-11",
+ "daysBefore": 46,
  "block": {
   "electionAssumed": "2026-10-27",
   "electionDate": "2026-10-27",
   "electionConfidence": "confirmed",
   "parties": [
    {
-    "name": "Amcha Yisrael",
-    "seats": 34.8
-   },
-   {
-    "name": "Dems",
-    "seats": 18.5
+    "name": "Haredi Public",
+    "seats": 48.8
    },
    {
     "name": "Likud",
-    "seats": 14.8
-   },
-   {
-    "name": "Together",
-    "seats": 9.6
+    "seats": 20.2
    },
    {
     "name": "Joint List",
-    "seats": 7.4
+    "seats": 10.6
    },
    {
     "name": "UTJ",
-    "seats": 6.7
+    "seats": 9.6
    },
    {
     "name": "RZP- Zehut",
-    "seats": 5.9
+    "seats": 8.5
    },
    {
     "name": "Blue & White",
-    "seats": 5.2
+    "seats": 7.4
    },
    {
     "name": "Shas",
-    "seats": 5.2
+    "seats": 7.4
    },
    {
     "name": "Ra'am",
-    "seats": 5.2
+    "seats": 7.4
    },
    {
-    "name": "Yisrael Beiteinu",
-    "seats": 3.7
-   },
-   {
-    "name": "Yashar",
-    "seats": 3.0
+    "name": "",
+    "seats": 0.0
    },
    {
     "name": "Otzma",
@@ -64,16 +52,20 @@
    {
     "name": "Reserv.- NEP",
     "seats": 0.0
+   },
+   {
+    "name": "Amcha Yisrael",
+    "seats": 0.0
    }
   ],
-  "polls": 1,
+  "polls": 2,
   "pollsters": 1,
-  "latestPollDate": "2026-09-08",
+  "latestPollDate": "2026-09-10",
   "gov": {
    "avg": null,
    "pMajority": null
   },
-  "monthsOut": 1.6,
+  "monthsOut": 1.5,
   "sims": 8000,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Israeli legislative election (CC BY-SA 4.0)"

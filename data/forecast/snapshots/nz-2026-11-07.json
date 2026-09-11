@@ -2,21 +2,21 @@
  "code": "nz",
  "election": "2026-11-07",
  "confidence": "confirmed",
- "built": "2026-09-09",
- "daysBefore": 59,
+ "built": "2026-09-11",
+ "daysBefore": 57,
  "block": {
   "electionAssumed": "2026-11-07",
   "electionDate": "2026-11-07",
   "electionConfidence": "confirmed",
   "average": {
    "nat": 29.4,
-   "lab": 28.8,
+   "lab": 28.7,
    "grn": 12.2,
    "act": 9.1,
    "nzf": 9.7,
    "tpm": 2.2
   },
-  "pollsters": 6,
+  "pollsters": 5,
   "latestPollDate": "2026-09-03",
   "seats": {
    "nat": {
@@ -32,11 +32,11 @@
    "grn": {
     "median": 16,
     "lo": 14,
-    "hi": 18
+    "hi": 19
    },
    "act": {
     "median": 12,
-    "lo": 9,
+    "lo": 10,
     "hi": 14
    },
    "nzf": {
@@ -55,9 +55,9 @@
     "hi": 0
    }
   },
-  "pRightBloc": 86.2,
-  "pLeftBloc": 6.8,
-  "pNeither": 7.0,
+  "pRightBloc": 86.9,
+  "pLeftBloc": 6.2,
+  "pNeither": 6.9,
   "monthsOut": 1.9,
   "sims": 10000,
   "sources": [

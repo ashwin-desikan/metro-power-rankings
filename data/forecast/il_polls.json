@@ -2,21 +2,22 @@
  "source": "Wikipedia: Opinion polling for the 2026 Israeli legislative election (CC BY-SA 4.0)",
  "parties": [
   "Likud",
-  "Together",
+  "",
   "RZP- Zehut",
   "RZP- Zehut",
   "Otzma",
   "Blue & White",
   "Shas",
   "UTJ",
-  "Yisrael Beiteinu",
+  "",
   "Ra'am",
   "Joint List",
-  "Dems",
-  "Yashar",
+  "",
+  "",
   "Reserv.- NEP",
   "Reserv.- NEP",
-  "Amcha Yisrael"
+  "Amcha Yisrael",
+  "Haredi Public"
  ],
  "polls": [
   {
@@ -24,19 +25,36 @@
    "pollster": "Lazar",
    "seats": {
     "Likud": 20,
-    "Together": 13,
+    "": 4,
     "RZP- Zehut": 8,
     "Otzma": 0,
     "Blue & White": 7,
     "Shas": 7,
     "UTJ": 9,
-    "Yisrael Beiteinu": 5,
     "Ra'am": 7,
     "Joint List": 10,
-    "Dems": 25,
-    "Yashar": 4,
     "Reserv.- NEP": 0,
-    "Amcha Yisrael": 47
+    "Amcha Yisrael": 0,
+    "Haredi Public": 47
+   },
+   "gov": null
+  },
+  {
+   "date": "2026-09-10",
+   "pollster": "Lazar",
+   "seats": {
+    "Likud": 19,
+    "": 0,
+    "RZP- Zehut": 8,
+    "Otzma": 0,
+    "Blue & White": 7,
+    "Shas": 7,
+    "UTJ": 9,
+    "Ra'am": 7,
+    "Joint List": 10,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 0,
+    "Haredi Public": 46
    },
    "gov": null
   }

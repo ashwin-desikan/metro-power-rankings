@@ -2,8 +2,8 @@
  "code": "fr",
  "election": "2027-04-11",
  "confidence": "assumed",
- "built": "2026-09-09",
- "daysBefore": 214,
+ "built": "2026-09-11",
+ "daysBefore": 212,
  "block": {
   "electionAssumed": "2027-04-11",
   "electionDate": "2027-04-11",
@@ -61,7 +61,7 @@
     "b": "Philippe HOR",
     "avgA": 52.9,
     "avgB": 47.1,
-    "pA": 82.7,
+    "pA": 82.8,
     "polls": 4,
     "latest": "2026-05-27"
    },
