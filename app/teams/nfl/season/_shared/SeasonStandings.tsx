@@ -178,16 +178,22 @@ export default function SeasonStandings({
   // 🔴 THE SCRUBBER REWRITES THE ROWS, NOT THE TABLE. After week N a team's
   // record, points and rating are the last stored week at or before N that
   // carries a record (the workbook stops writing W/L/T once a team's regular
-  // season ends, so a January week inherits the final record). Honours and
-  // seeds are season-end facts and are not shown mid-season: a strip that
-  // says "won the championship" next to a 3-2 record is a lie about time.
+  // season ends, so a January week inherits the final record). The workbook's
+  // own year-end flags are still a season-end fact (`finalHonours`, the Final
+  // table's withheld/shown switch below), but the odds file's `honours` are
+  // proved week by week and filled in progressively as the scrubber moves
+  // (Ashwin, 2026-09-11: "if it happened in week 12 that they clinch a
+  // playoff spot, you then fill in the playoff square").
   const through = useThroughWeek();
-  // The seeds file's week for this view: the scrubbed week, or the last
-  // regular-season week it covers for the final table. Null when the file is
-  // missing (before 1978, or a live season before its first Friday build) or
-  // the week is outside it (week 0, a playoff week).
+  // The seeds file's week for this view: the scrubbed week (clamped to the
+  // file's last, so a postseason week keeps showing the seeds the season
+  // actually entered the playoffs with, rather than emptying the column —
+  // Ashwin, 2026-09-11: "just keep the seeds there because you can just show
+  // that they had been earned"), or that same last week for the final table.
+  // Null only when the file is missing (before 1978, or a live season before
+  // its first Friday build) or the scrubbed week is week 0.
   const seedWeek =
-    seeds && (through == null ? seeds.through_week : through >= 1 && through <= seeds.through_week ? through : null);
+    seeds && (through == null ? seeds.through_week : through >= 1 ? Math.min(through, seeds.through_week) : null);
   const seedRow = (name: string) => {
     if (!seeds || seedWeek == null) return null;
     const t = seeds.teams[name];
@@ -195,16 +201,56 @@ export default function SeasonStandings({
     return { seed: t.seed[seedWeek - 1] ?? undefined, dr: t.dr[seedWeek - 1], cr: t.cr[seedWeek - 1] };
   };
   // The odds file is indexed from week 0 (before a game), so the scrubbed
-  // week is its index; the final table shows the odds entering the playoffs,
-  // which is the last regular-season week the file covers. A playoff week
-  // (past reg_end) keeps that last week too: the odds file has no later one.
+  // week is its index; through_week now reaches past the regular season into
+  // the postseason weeks the file covers too (1994: 18-21), so a scrubbed
+  // playoff week gets its own, re-simulated odds rather than the last
+  // regular-season week's. The final table is a different case: it shows the
+  // odds ENTERING the title game, the week before the file's last postseason
+  // week, so the finished season reads as the two finalists' chances rather
+  // than a 100% beside the trophy (Ashwin, 2026-09-11: "the week of the Super
+  // Bowl or the championship game, there should only be two teams with title
+  // percentages"); a season with no postseason weeks in the file keeps the
+  // odds entering the playoffs, reg_end_week.
+  const finalOddsWeek = odds
+    ? (odds.postseason_weeks?.length ? Math.max(odds.reg_end_week, odds.postseason_weeks[odds.postseason_weeks.length - 1] - 1) : odds.reg_end_week)
+    : null;
   const oddsWeek =
-    odds && (through == null ? odds.through_week : Math.min(through, odds.through_week));
+    odds && (through == null ? finalOddsWeek : Math.min(through, odds.through_week));
   const oddsRow = (name: string) => {
     if (!odds || oddsWeek == null) return null;
     const t = odds.teams[name];
     if (!t) return null;
     return { pPlayoffs: t.playoffs[oddsWeek], pTitle: t.title[oddsWeek], oddsStatus: t.status[oddsWeek] ?? null };
+  };
+  // A postseason week's title odds are the real bracket's, forced to exactly
+  // 0.0 (out) or 1.0 (champion) where the results already settle it, so the
+  // title cell reads that off pTitle directly rather than the percentage.
+  // A week reads as "postseason" once we're at/after the first postseason
+  // week the file covers OR past reg_end_week — needed for two-league eras
+  // (e.g. 1966) where one league's championship game falls on a week the
+  // other league's regular season is still using, so pTitle for the
+  // eliminated club reads "out" rather than a leftover percentage.
+  const isPostseasonWeek =
+    oddsWeek != null && odds != null && (oddsWeek >= (odds.postseason_weeks?.[0] ?? Infinity) || oddsWeek > odds.reg_end_week);
+  // The playoff-odds cell is blanked only once every league's regular season
+  // has finished (oddsWeek > reg_end_week) on a SCRUBBED week; during an
+  // overlap week it keeps showing, since some league's regular season is
+  // still running. The final table keeps clinched/out beside the finalists'
+  // odds, since it is the season's summary and "made the playoffs" is part
+  // of it.
+  const blankPlayoffCell = through != null && oddsWeek != null && odds != null && oddsWeek > odds.reg_end_week;
+  const titleText = (t: StandingsTeam): string =>
+    isPostseasonWeek && t.pTitle === 0 ? "out" : isPostseasonWeek && t.pTitle === 1 ? "champion" : `title ${fmtOdds(t.pTitle, null)}`;
+  // Whether the odds file was built with the progressive `honours` array at
+  // all (an old cached build might predate it): checked once, not per team.
+  const hasOddsHonours = Boolean(odds) && Object.values(odds!.teams).some((tt) => Array.isArray(tt.honours));
+  const oddsFlags = (name: string): Partial<Record<NflHonour, true>> | undefined => {
+    if (!odds || oddsWeek == null) return undefined;
+    const earned = odds.teams[name]?.honours?.[oddsWeek];
+    if (!earned) return undefined;
+    const out: Partial<Record<NflHonour, true>> = {};
+    for (const h of earned) out[h] = true;
+    return out;
   };
   const teams: StandingsTeam[] = through == null
     ? finalTeams.map((t) => {
@@ -226,7 +272,7 @@ export default function SeasonStandings({
           seed: sr ? sr.seed : undefined,
           dr: sr?.dr,
           cr: sr?.cr,
-          flags: undefined,
+          flags: oddsFlags(t.name),
           ...(od ?? {}),
         };
       });
@@ -246,13 +292,19 @@ export default function SeasonStandings({
   const seedMode = (t: StandingsTeam) => seedCellMode(seeds?.label ?? "seed", seeds?.pools?.[seedPool(t)]);
   // Level for a title that would be played off (before 1970): a starred, dashed chip.
   const seedTied = (t: StandingsTeam) => seedWeek != null && Boolean(seeds?.teams[t.name]?.tie?.[seedWeek - 1]);
-  const showHonours = through == null && finalHonours;
+  // The Final table's withheld/shown switch is still the workbook's own
+  // year-end flags (`finalHonours`, an incomplete season has none yet); a
+  // scrubbed week instead switches on whether the odds file carries the
+  // progressive `honours` array at all, since those are proved from the
+  // records independently of whether the season, or the workbook's flags,
+  // are finished.
+  const showHonours = through == null ? finalHonours : hasOddsHonours;
   // 🔴 COLUMNS DO NOT COME AND GO WITH THE SCRUBBER. A column that mounts at
   // "Final" and unmounts at week 9 changes every table's width mid-drag, which
   // is the "whole thing being pulled" Ashwin felt. The seed and season columns
   // are decided once per page; mid-season they show a dash and an empty strip.
   const seedsCol = finalSeeds || Boolean(seeds);
-  const honoursCol = finalHonours;
+  const honoursCol = finalHonours || hasOddsHonours;
   const showSeeds = (through == null && finalSeeds) || (through != null && seeded);
   const hasDiv = teams.some((t) => t.div && t.div !== t.conf);
   const hasConf = teams.some((t) => t.conf);
@@ -462,7 +514,15 @@ export default function SeasonStandings({
                             with it here). */}
                         {titleCol && t.pTitle != null ? (
                           <span className="sm:hidden block pl-[26px] text-[12px] text-[var(--text-dim)] tabular-nums" style={MONO}>
-                            {t.oddsStatus === "out" ? "out" : `${oddsCol ? `${t.oddsStatus === "in" ? "clinched" : `playoffs ${fmtOdds(t.pPlayoffs, null)}`} · ` : ""}title ${fmtOdds(t.pTitle, null)}`}
+                            {/* A postseason week drops the playoff-odds part entirely
+                                (the playoffs are the point, "clinched" says nothing
+                                new) and shows only the title side: out, champion, or
+                                still-live odds between the two. */}
+                            {blankPlayoffCell
+                              ? titleText(t)
+                              : t.oddsStatus === "out"
+                              ? "out"
+                              : `${oddsCol ? `${t.oddsStatus === "in" ? "clinched" : `playoffs ${fmtOdds(t.pPlayoffs, null)}`} · ` : ""}${titleText(t)}`}
                           </span>
                         ) : null}
                         {honoursCol && showHonours ? (
@@ -510,8 +570,16 @@ export default function SeasonStandings({
                       ) : null}
                       {oddsCol ? (
                         <td className="py-1.5 px-1.5 text-right tabular-nums hidden sm:table-cell whitespace-nowrap" style={MONO}
-                          title={t.pPlayoffs != null ? `${(t.pPlayoffs * 100).toFixed(1)}% of ${odds!.sims.toLocaleString("en-GB")} drawn seasons${t.oddsStatus === "in" ? "; clinched on the records alone" : t.oddsStatus === "out" ? "; eliminated on the records alone" : ""}` : undefined}>
-                          {t.pPlayoffs != null ? (
+                          title={blankPlayoffCell
+                            ? "the playoffs are set by this point in the season; the title column is what is still live"
+                            : t.pPlayoffs != null ? `${(t.pPlayoffs * 100).toFixed(1)}% of ${odds!.sims.toLocaleString("en-GB")} drawn seasons${t.oddsStatus === "in" ? "; clinched on the records alone" : t.oddsStatus === "out" ? "; eliminated on the records alone" : ""}` : undefined}>
+                          {/* A postseason week blanks this cell rather than unmounting the
+                              column (columns never come and go with the scrubber): every
+                              club's playoff fate is already known by then, so "clinched" /
+                              "out" here would just repeat the title cell's own story. */}
+                          {blankPlayoffCell ? (
+                            <span className="text-[var(--text-dim)]">&mdash;</span>
+                          ) : t.pPlayoffs != null ? (
                             <span style={{ color: t.oddsStatus === "in" ? "var(--accent)" : t.oddsStatus === "out" ? "var(--text-dim)" : "var(--text-muted)", fontWeight: t.oddsStatus ? 600 : 400 }}>
                               {fmtOdds(t.pPlayoffs, t.oddsStatus)}
                             </span>
@@ -520,8 +588,16 @@ export default function SeasonStandings({
                       ) : null}
                       {titleCol ? (
                         <td className="py-1.5 px-1.5 text-right tabular-nums hidden sm:table-cell whitespace-nowrap text-[var(--text-muted)]" style={MONO}
-                          title={t.pTitle != null ? `${(t.pTitle * 100).toFixed(1)}% of ${odds!.sims.toLocaleString("en-GB")} drawn seasons` : undefined}>
-                          {t.pTitle != null ? fmtOdds(t.pTitle, t.oddsStatus === "out" ? "out" : null) : <span className="text-[var(--text-dim)]">&mdash;</span>}
+                          title={t.pTitle != null ? (isPostseasonWeek ? (t.pTitle === 0 ? "eliminated" : t.pTitle === 1 ? "won the championship" : `${(t.pTitle * 100).toFixed(1)}% of ${odds!.sims.toLocaleString("en-GB")} drawn postseasons, the real results held fixed`) : `${(t.pTitle * 100).toFixed(1)}% of ${odds!.sims.toLocaleString("en-GB")} drawn seasons`) : undefined}>
+                          {t.pTitle == null ? (
+                            <span className="text-[var(--text-dim)]">&mdash;</span>
+                          ) : isPostseasonWeek && t.pTitle === 0 ? (
+                            "out"
+                          ) : isPostseasonWeek && t.pTitle === 1 ? (
+                            <span style={{ color: "var(--accent)", fontWeight: 600 }}>champion</span>
+                          ) : (
+                            fmtOdds(t.pTitle, t.oddsStatus === "out" ? "out" : null)
+                          )}
                         </td>
                       ) : null}
                       {honoursCol ? (

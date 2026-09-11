@@ -75,6 +75,63 @@ GRADING. For a complete season the file carries `brier` per week: the mean
 over clubs of (P(playoffs) - made it)^2, so the hub can say how sharp the
 odds were at each point of the season (0.25 is a coin flip, 0 is certainty).
 
+POSTSEASON WEEKS. The regular season is not the whole scrubber: 1994 plays
+its postseason in weeks 18-21 after a 17-week regular season, and a team the
+divisional round put out still showed a title percentage in Super Bowl week
+until this was added (Ashwin, 2026-09-11). `load_postseason()` reads those
+games from the ledger (playoff: true, an integer week, home_key/away_key
+matching the shard, a "Playoff Bowl"-style third-place game dropped by
+NON_BRACKET_ROUND) or, for a live season with no ledger yet, from
+public/data/nfl/playoffs.json (its weeks[].week, 1 = Wild Card, offset by
+reg_end_week; a full team name is matched to the shard's short name by
+`full_name.endswith(key)`).
+
+🔴 ONE WEEK AXIS, INDEX = WEEK, ALWAYS (Ashwin, 2026-09-11, from the rebuilt
+1966 file: "the postseason week 16 was appended after the regular-season
+index 16 [so] index = week is broken from there on"). `reg_end_week` is the
+LAST regular-season week of EVERY league in a two-league era (1946-49 AAFC +
+NFL, 1960-69 AFL + NFL): 1966 is NFL 15, AFL 16, so reg_end_week is 16, and
+the NFL's own championship (week 16) falls AT reg_end_week while the AFL's
+regular season is still finishing. `build()` runs ONE loop over `week_axis()`
+(0 to the later of reg_end_week and the last postseason week played); at
+w <= reg_end_week it is still the regular-season Monte Carlo
+(`odds_for_week`), just fed any postseason result already played by then
+(`known`, `force_postseason` applied once `known` is non-empty); at
+w > reg_end_week it is `postseason_odds_for_week`, from the real seeds. A
+club already knows whether it made the playoffs once the regular season it
+belongs to is done, so `playoffs`/`status` still just carry the real, final
+picture forward from `reg_end_week` on; `title` is what is re-simulated at
+every index, `known` held fixed and only the rounds still ahead drawn from
+the Elo ratings after that week (`bracket()`/`title_game()`'s `known` param).
+Because the bracket cannot always reproduce an old era's real pairings
+(hosting rotated by division before 1975, not by seed), a team the real
+results have already eliminated can still pick up stray simulated wins, and
+the real champion can fall short of 1.0; `force_postseason()` corrects this
+by setting an eliminated club to exactly 0.0 and a decided champion to
+exactly 1.0, then rescales the still-undecided clubs (per pool, i.e. league,
+before 1966, when each crowned its own; across everyone from 1966 on, when
+the Super Bowl alone decides it and the league/conference championship games
+are semi-finals: see `_decided_champions()`) so the total stays 1.0. The
+file's `postseason_weeks` lists every postseason week covered (which can
+include weeks at or before `reg_end_week`) and `champions` the club(s) the
+last played final crowned (empty until it is).
+
+HONOURS, WEEK BY WEEK (Ashwin, 2026-09-11: "if it happened in week 12 that
+they clinch a playoff spot, you then fill in the playoff square"). Every team
+also carries `honours: list[list[str]]`, aligned with `playoffs`/`title`/
+`status`, cumulative (once earned, a honour is present in every later week
+too). The four regular-season honours (play_app, div_title, best_conf,
+best_rec, NFL_HONOURS' first four in lib/nflElo.ts) are proved from the
+records alone during the season with a STRICT version of `record_bounds()`
+(see `honours_for_week()`; a level finish needs the tiebreakers, which this
+does not attempt), then, at the last regular-season week of a complete
+season, taken from the shard's final `flags` outright (the retrospective
+truth, which catches a tiebroken division title the strict check cannot
+prove). The three postseason honours (cf_app, champ_app, champ) come from
+`postseason_honours()`: which club earns them at all is the shard's final
+flags again, and each is lit at the week its qualifying real game was
+actually played, so a live season mid-playoffs never shows one early.
+
 USAGE
   python scripts/nfl/playoff_odds.py --self-test
   python scripts/nfl/playoff_odds.py --season 2024 [--write] [--sims 2000]
@@ -87,6 +144,7 @@ import argparse
 import json
 import os
 import random
+import re
 import sys
 from collections import defaultdict
 from dataclasses import dataclass
@@ -123,6 +181,7 @@ class Fixture:
     neutral: bool
     hs: int | None = None
     as_: int | None = None
+    round: str = ""
 
     @property
     def played(self) -> bool:
@@ -172,7 +231,19 @@ def load_inputs(season: int):
             as_ = g.get("away_pts")
             fixtures.append(Fixture(g["week"], g["home"], g["away"], bool(g.get("neutral")),
                                     int(hs) if hs is not None else None, int(as_) if as_ is not None else None))
-    reg_end = (shard.get("reg_end_week") or {}).get("NFL") or max((f.week for f in fixtures), default=0)
+    # 🔴 ONE WEEK AXIS FOR THE WHOLE SEASON. A two-league season (1946-49
+    # AAFC + NFL, 1960-69 AFL + NFL) has leagues with different regular-
+    # season lengths, so reg_end is the LAST week of EITHER league, not just
+    # the NFL's own (the shard's reg_end_week carries one entry per league):
+    # 1966 is NFL 15, AFL 16, so reg_end is 16. A postseason game (a league
+    # final) can then fall at or before this reg_end while the other league
+    # is still finishing its regular season; build() folds that game's real
+    # result into the regular-season Monte Carlo for those overlap weeks
+    # rather than treating index = week as broken past it (Ashwin,
+    # 2026-09-11, from the rebuilt 1966 file: "the postseason week 16 was
+    # appended after the regular-season index 16").
+    reg_end_map = shard.get("reg_end_week") or {}
+    reg_end = max(reg_end_map.values()) if reg_end_map else max((f.week for f in fixtures), default=0)
     return shard, teams, fixtures, reg_end
 
 
@@ -189,6 +260,150 @@ def ratings_after(shard: dict, week: int) -> dict[str, float]:
             e = t.get("start", 1500.0)
         out[t["name"]] = float(e)
     return out
+
+
+PLAYOFFS_JSON = os.path.join(ROOT, "public", "data", "nfl", "playoffs.json")
+
+# The round label of the game that decides the season's champion outright,
+# from 1966 on (before that, see `_decided_champions`: a pool's own last
+# scheduled postseason game, whatever its label is called).
+SUPER_BOWL_ROUND = "Super Bowl"
+
+# Postseason games that are not part of the championship bracket at all, so
+# `load_postseason` drops them before they can be mistaken for a postseason
+# week that decides anything: the "Playoff Bowl" (1960-69, the two
+# conference/division runners-up playing a third-place game the standings
+# never counted), and its rarer synonyms in older round labels.
+NON_BRACKET_ROUND = re.compile(r"playoff bowl|third|3rd|consolation|bert bell", re.I)
+
+
+def load_postseason(season: int, teams: dict[str, ps.Team], reg_end: int) -> list[Fixture]:
+    """Every postseason fixture (played or not), `week` continuing on from the
+    regular season's own numbering (1994: 18-21). The ledger carries these
+    with `playoff: true` and their own week number; a live season with no
+    ledger yet (public/data/nfl/expectation/season-YYYY.json absent) falls
+    back to public/data/nfl/playoffs.json instead, whose weeks[].week counts
+    1 = Wild Card, offset here by `reg_end` to land in the same numbering,
+    matching a full team name ("Carolina Panthers") to the shard's short one
+    ("Panthers") the way the site does everywhere else: `full_name.endswith(key)`."""
+    fixtures: list[Fixture] = []
+    ledger_path = os.path.join(ps.LEDGER_DIR, f"season-{season}.json")
+    if os.path.exists(ledger_path):
+        with open(ledger_path, encoding="utf-8") as f:
+            ledger = json.load(f)
+        for g in ledger["games"]:
+            if not g.get("playoff") or not isinstance(g.get("week"), int):
+                continue
+            rnd = g.get("round") or ""
+            if NON_BRACKET_ROUND.search(rnd):
+                # A third-place game (the "Playoff Bowl", 1960-69, e.g. 1966
+                # week 17 Colts v Eagles): not part of the bracket, so it is
+                # dropped here rather than becoming a postseason week, a
+                # `known` result, or an `eliminated` loser.
+                continue
+            if g["home_key"] not in teams or g["away_key"] not in teams:
+                continue
+            hs = as_ = None
+            if g.get("score") and g.get("result"):
+                hs, as_ = (int(x) for x in g["score"].split("-"))
+            fixtures.append(Fixture(g["week"], g["home_key"], g["away_key"], bool(g.get("neutral")),
+                                    hs, as_, rnd))
+        return fixtures
+    if not os.path.exists(PLAYOFFS_JSON):
+        return fixtures
+    with open(PLAYOFFS_JSON, encoding="utf-8") as f:
+        pf = json.load(f)
+    if (pf.get("meta") or {}).get("season") != season:
+        return fixtures
+    def match(full_name: str | None) -> str | None:
+        if not full_name:
+            return None
+        for key in teams:
+            if full_name.endswith(key):
+                return key
+        return None
+    pf_weeks = pf.get("weeks") or []
+    last_pf_week = max((w.get("week", 0) for w in pf_weeks), default=0)
+    for wk in pf_weeks:
+        week = reg_end + wk.get("week", 0)
+        # playoffs.json carries no round label; the only one this function
+        # needs to recognise is the final, which in the live (Super Bowl)
+        # era is simply the last week of the postseason.
+        is_final = wk.get("week") == last_pf_week
+        for g in wk.get("games", []):
+            home = match((g.get("home") or {}).get("name"))
+            away = match((g.get("away") or {}).get("name"))
+            if home is None or away is None:
+                continue
+            completed = bool(g.get("completed"))
+            hs = (g.get("home") or {}).get("score") if completed else None
+            as_ = (g.get("away") or {}).get("score") if completed else None
+            fixtures.append(Fixture(week, home, away, bool(g.get("neutral")),
+                                    int(hs) if hs is not None else None,
+                                    int(as_) if as_ is not None else None,
+                                    "Super Bowl" if is_final else ""))
+    return fixtures
+
+
+def _decided_champions(post: list[Fixture], through: int, season: int, pools: dict[str, str]) -> list[str]:
+    """The winner(s) of the season's final(s), played by `through`.
+
+    From 1966 the Super Bowl decides the champion alone: the league
+    (from 1970, conference) championship games are semi-finals, whatever the
+    ledger calls them, so only the round labelled SUPER_BOWL_ROUND counts (a
+    season has at most one; this asserts it does, since a second would mean
+    the round label stopped meaning what this function assumes it means).
+
+    Before 1966 a pool IS a league, and each crowns its own champion in the
+    winner of THAT POOL'S OWN last scheduled postseason game, whatever its
+    week is (1946 week 13 for one league, 16 for the other: they need not be
+    the same week, and the earlier one is a champion the moment it is played,
+    not when the later league's final catches up to it)."""
+    if season >= 1966:
+        finals = [f for f in post if f.round == SUPER_BOWL_ROUND]
+        assert len(finals) <= 1, f"season {season}: expected at most one {SUPER_BOWL_ROUND} fixture, got {finals}"
+        if not finals or finals[0].week > through or not finals[0].played:
+            return []
+        f = finals[0]
+        return [f.home if f.hs > f.as_ else f.away]
+    by_pool: dict[str, list[Fixture]] = defaultdict(list)
+    for f in post:
+        pool = pools.get(f.home) or pools.get(f.away)
+        if pool is not None:
+            by_pool[pool].append(f)
+    champions: list[str] = []
+    for fx in by_pool.values():
+        final_week = max(g.week for g in fx)
+        finals = [g for g in fx if g.week == final_week]
+        if len(finals) != 1:
+            continue   # defensive: an ambiguous "last week" proves nothing
+        g = finals[0]
+        if g.week <= through and g.played:
+            champions.append(g.home if g.hs > g.as_ else g.away)
+    return champions
+
+
+def _known_and_eliminated(post: list[Fixture], through: int) -> tuple[dict[frozenset, str], set[str]]:
+    """(`known`, `eliminated`) from every postseason game played by `through`:
+    `known` maps the unordered pair to its real winner (fed to `bracket()`
+    and `title_game()`), `eliminated` is every real loser so far. Shared by
+    the regular-season weeks that overlap a postseason game (a two-league
+    era) and by `postseason_odds_for_week`."""
+    played = [f for f in post if f.week <= through and f.played]
+    known = {frozenset((f.home, f.away)): (f.home if f.hs > f.as_ else f.away) for f in played}
+    eliminated = {(f.away if f.hs > f.as_ else f.home) for f in played}
+    return known, eliminated
+
+
+def week_axis(reg_end: int, post_weeks_played: list[int]) -> list[int]:
+    """The whole season's week axis, index = week, always: 0 up to the LAST
+    week covered, regular season or postseason, whichever runs later. A
+    two-league era can have a postseason week at or before `reg_end` (one
+    league's final while the other's regular season is still running); that
+    does not extend the axis, since `reg_end` already covers it. A pure
+    function so the axis logic can be checked without a shard."""
+    last_week = max([reg_end, *post_weeks_played]) if post_weeks_played else reg_end
+    return list(range(0, last_week + 1))
 
 
 # --------------------------------------------------------------------------
@@ -221,18 +436,27 @@ def _play(rng: random.Random, elo: dict[str, float], home: str, away: str, neutr
 
 
 def bracket(season: int, seeds: list[str], divs: dict[str, str], wc_winners: dict[tuple[str, str], str] | None = None,
-            rng: random.Random | None = None, elo: dict[str, float] | None = None, confs: dict[str, str] | None = None):
+            rng: random.Random | None = None, elo: dict[str, float] | None = None, confs: dict[str, str] | None = None,
+            known: dict[frozenset, str] | None = None):
     """One conference's bracket from its seeds (index 0 is the 1 seed).
 
     Returns (games, champion): `games` is the list of (round, home, away) it
     produced, `champion` the conference champion. With `wc_winners` given
     ({(home, away): winner}) the wild-card round is replayed from real
     results and the later rounds are not played (for --verify); otherwise
-    every game is drawn from `elo`."""
+    every game is drawn from `elo`. With `known` given ({frozenset({home,
+    away}): winner}, the postseason odds' real results so far) a game whose
+    pair is in it returns that real winner directly, WITHOUT drawing an rng
+    number, so a regular-season call (where `known` is always None) consumes
+    the rng in exactly the sequence it always has."""
     games: list[tuple[str, str, str]] = []
 
     def play(rnd, home, away, neutral=False):
         games.append((rnd, home, away))
+        if known is not None:
+            w = known.get(frozenset((home, away)))
+            if w is not None:
+                return w
         if wc_winners is not None:
             if rnd != "WC":
                 return None
@@ -335,13 +559,19 @@ def bracket(season: int, seeds: list[str], divs: dict[str, str], wc_winners: dic
     return games, champ
 
 
-def title_game(rng: random.Random, elo: dict[str, float], champs: list[str], season: int) -> list[str]:
+def title_game(rng: random.Random, elo: dict[str, float], champs: list[str], season: int,
+               known: dict[frozenset, str] | None = None) -> list[str]:
     """The champions of the season: one per league before 1966 (the AAFC and
     the AFL crowned their own), the Super Bowl winner from 1966 (the NFL and
     AFL champions met from the 1966 season; the conference champions from
-    1970), drawn on a neutral field."""
+    1970), drawn on a neutral field. With `known` given and the two champions'
+    pair in it, the real result is returned instead of a draw (see `bracket`)."""
     champs = [c for c in champs if c]
     if season >= 1966 and len(champs) == 2:
+        if known is not None:
+            w = known.get(frozenset((champs[0], champs[1])))
+            if w is not None:
+                return [w]
         return [_play(rng, elo, champs[0], champs[1], neutral=True)]
     return champs
 
@@ -436,6 +666,30 @@ def _max_reaching(cands: list[str], need: dict[str, int], among: dict[tuple[str,
     return 0
 
 
+def record_bounds(teams: dict[str, ps.Team], games: list[ps.Game], fixtures: list[Fixture], through: int,
+                  season: int) -> tuple[dict[str, float], dict[str, float]]:
+    """(worst, best) per club: worst is the record after losing every game
+    still to play, best after winning every one, in the era's percentage
+    (ties half a win from 1972, excluded before). Shared by `proved_status`
+    (its threat/certain thresholds) and `honours_for_week` (its div_title /
+    best_conf / best_rec cutoffs), so the two cannot drift apart."""
+    half = ps.ties_half(season)
+    rec: dict[str, list[float]] = defaultdict(lambda: [0.0, 0.0, 0.0])
+    for g in games:
+        for side in (g.home, g.away):
+            if side in teams:
+                r = g.result_for(side)
+                rec[side][0 if r == 1.0 else 1 if r == 0.0 else 2] += 1
+    left: dict[str, int] = defaultdict(int)
+    for f in fixtures:
+        if f.week > through or not f.played:
+            left[f.home] += 1
+            left[f.away] += 1
+    worst = {n: _pct(rec[n][0], rec[n][1] + left[n], rec[n][2], half) for n in teams}
+    best = {n: _pct(rec[n][0] + left[n], rec[n][1], rec[n][2], half) for n in teams}
+    return worst, best
+
+
 def proved_status(teams: dict[str, ps.Team], games: list[ps.Game], fixtures: list[Fixture], through: int,
                   season: int) -> dict[str, str | None]:
     """'in' / 'out' / None per club from the records alone (see the module note).
@@ -467,8 +721,7 @@ def proved_status(teams: dict[str, ps.Team], games: list[ps.Game], fixtures: lis
             left[f.away] += 1
             a, b = sorted((f.home, f.away))
             among[(a, b)] += 1
-    worst = {n: _pct(rec[n][0], rec[n][1] + left[n], rec[n][2], half) for n in teams}
-    best = {n: _pct(rec[n][0] + left[n], rec[n][1], rec[n][2], half) for n in teams}
+    worst, best = record_bounds(teams, games, fixtures, through, season)
     def need_for(n: str, target: float) -> int:
         """Wins from the games left that lift `n` to at least `target`; left+1 when none does."""
         for k in range(0, left[n] + 1):
@@ -522,50 +775,237 @@ def proved_status(teams: dict[str, ps.Team], games: list[ps.Game], fixtures: lis
     return out
 
 
+# The four honours a club can earn purely from the arithmetic of records
+# during the regular season, in the order NFL_HONOURS (lib/nflElo.ts) lists
+# them. `cf_app`, `champ_app`, `champ` are postseason honours (see the
+# module's POSTSEASON WEEKS note); they are added in `build()` from the
+# shard's final flags and the real postseason fixtures, never here.
+REGULAR_SEASON_HONOURS = ("play_app", "div_title", "best_conf", "best_rec")
+HONOUR_ORDER = ("play_app", "div_title", "best_conf", "best_rec", "cf_app", "champ_app", "champ")
+
+
+def honours_for_week(teams: dict[str, ps.Team], games: list[ps.Game], fixtures: list[Fixture], through: int,
+                     season: int, status: dict[str, str | None]) -> dict[str, set[str]]:
+    """This week's OWN earned honours (a subset of REGULAR_SEASON_HONOURS; the
+    caller unions them across weeks, since once earned a club keeps a honour).
+    `play_app` follows `proved_status`'s "in" directly. The other three
+    compare `record_bounds()`'s worst/best STRICTLY (a level finish needs the
+    tiebreakers, which this does not attempt to prove): `div_title` when the
+    club's worst beats every division rival's best (only in an era with more
+    than one division in the pool, excluding the 1982 conference-record
+    tournament, which had none); `best_conf` against every other club in the
+    same pool (the conference from 1970, the league before); `best_rec`
+    against every other club in the same league. Week 0 always comes back
+    empty: with nothing played, everyone's worst is 0 and everyone's best is
+    1, so no strict comparison can pass."""
+    worst, best = record_bounds(teams, games, fixtures, through, season)
+    out: dict[str, set[str]] = {n: set() for n in teams}
+    for n in teams:
+        if status.get(n) == "in":
+            out[n].add("play_app")
+        conf_rivals = [m for m in teams if m != n and teams[m].pool(season) == teams[n].pool(season)]
+        if worst[n] > max((best[m] for m in conf_rivals), default=-1.0) + 1e-9:
+            out[n].add("best_conf")
+        league_rivals = [m for m in teams if m != n and teams[m].league == teams[n].league]
+        if worst[n] > max((best[m] for m in league_rivals), default=-1.0) + 1e-9:
+            out[n].add("best_rec")
+    for pool in {t.pool(season) for t in teams.values()}:
+        members = [n for n, t in teams.items() if t.pool(season) == pool]
+        divs = sorted({teams[n].div for n in members})
+        if not (len(divs) > 1 and season != 1982):
+            continue
+        for n in members:
+            div_rivals = [m for m in members if m != n and teams[m].div == teams[n].div]
+            if worst[n] > max((best[m] for m in div_rivals), default=-1.0) + 1e-9:
+                out[n].add("div_title")
+    return out
+
+
+def _last_played_before(post: list[Fixture], team: str, before: int | None) -> int | None:
+    """The latest week strictly before `before` in which `team` played a
+    (played) postseason game; None if it played none."""
+    if before is None:
+        return None
+    ws = [f.week for f in post if f.played and f.week < before and team in (f.home, f.away)]
+    return max(ws) if ws else None
+
+
+def _played_at(post: list[Fixture], team: str, week: int | None) -> bool:
+    return week is not None and any(f.week == week and f.played and team in (f.home, f.away) for f in post)
+
+
+def postseason_honours(post: list[Fixture], shard_flags: dict[str, set[str]],
+                       reg_end: int) -> dict[str, dict[str, int]]:
+    """{team: {honour: week it is first true}} for cf_app, champ_app and champ,
+    from the shard's final flags (which teams earn them at all, retrospective
+    over the whole postseason) and the real postseason fixtures (when: only
+    once the qualifying game is actually played, so a live season mid-
+    playoffs never shows one early). `final_week` is the title game(s)'
+    week (post's last); `champ_app` is lit at the week of the team's last
+    played game before it (the win that put it in the final), or `reg_end`
+    for a direct entrant with none (1933-69 could send a division winner
+    straight to the league final). `cf_app` is the same one round earlier
+    (before `final_week - 1`, the conference final's own week); if the shard
+    says a club has it but it never actually played in that week (a data
+    oddity), it is lit at `reg_end` rather than left unlit. `champ` is lit
+    at `final_week` itself, and only once that week's game is confirmed
+    played."""
+    final_week = max((f.week for f in post), default=None)
+    cf_week = final_week - 1 if final_week is not None else None
+    out: dict[str, dict[str, int]] = defaultdict(dict)
+    for n, flags in shard_flags.items():
+        if "champ_app" in flags and final_week is not None:
+            wk = _last_played_before(post, n, final_week)
+            out[n]["champ_app"] = wk if wk is not None else reg_end
+        if "cf_app" in flags and cf_week is not None:
+            if not _played_at(post, n, cf_week):
+                out[n]["cf_app"] = reg_end
+            else:
+                wk = _last_played_before(post, n, cf_week)
+                out[n]["cf_app"] = wk if wk is not None else reg_end
+        if "champ" in flags and final_week is not None and _played_at(post, n, final_week):
+            out[n]["champ"] = final_week
+    return out
+
+
 # --------------------------------------------------------------------------
 # one season
 # --------------------------------------------------------------------------
 
+def seed_lists(pic: dict, teams: dict[str, ps.Team], season: int, rng: random.Random,
+               elo: dict[str, float]) -> dict[str, list[str]]:
+    """Per-pool ordered seed lists (index 0 is the 1 seed) from one `picture()`
+    result. Before 1970 a division title level on the record was played off
+    (and in 1932 the league title itself), and `picture()` gives every club
+    in the tie the leader's seed; that game is played off here (one game,
+    the first-listed club at home) so the bracket gets one club per seed.
+    Shared by `odds_for_week` (a simulated `pic`) and `postseason_odds_for_week`
+    (the one real, final `pic`); the rng draws happen in the same order
+    either way, so refactoring this out of `odds_for_week` changed nothing
+    about the regular-season numbers."""
+    by_pool: dict[str, list[str]] = defaultdict(list)
+    for n, v in pic.items():
+        if v.get("seed"):
+            by_pool[teams[n].pool(season)].append(n)
+    out: dict[str, list[str]] = {}
+    for pool, names in by_pool.items():
+        by_seed: dict[int, list[str]] = defaultdict(list)
+        for t in sorted(names, key=lambda t: pic[t]["seed"]):
+            by_seed[pic[t]["seed"]].append(t)
+        seeds = []
+        for sv in sorted(by_seed):
+            group = by_seed[sv]
+            while len(group) > 1:
+                group = [_play(rng, elo, group[0], group[1])] + group[2:]
+            seeds.append(group[0])
+        out[pool] = seeds
+    return out
+
+
 def odds_for_week(season: int, teams: dict[str, ps.Team], fixtures: list[Fixture], shard: dict, through: int,
-                  sims: int) -> tuple[dict[str, float], dict[str, float]]:
+                  sims: int, known: dict[frozenset, str] | None = None) -> tuple[dict[str, float], dict[str, float]]:
+    """`known` is only ever non-empty in a two-league era, for a regular-
+    season week that a postseason game (another league's final, played while
+    this one's regular season is still running) overlaps: fed straight into
+    `bracket()`/`title_game()` so that already-played final is held fixed
+    rather than drawn, exactly as a postseason week's own `known` is. It
+    defaults to None, so a plain call (every era outside that overlap) draws
+    the whole bracket exactly as before and consumes the rng identically."""
     rng = random.Random(season * 1000 + through)
     elo = ratings_after(shard, through)
-    known = played_games(fixtures, through)
+    known_games = played_games(fixtures, through)
     todo = [f for f in fixtures if f.week > through or not f.played]
     divs = {n: t.div for n, t in teams.items()}
     confs = {n: t.conf for n, t in teams.items()}
     made: dict[str, int] = defaultdict(int)
     won: dict[str, int] = defaultdict(int)
     for _ in range(sims):
-        games = known + [draw_game(rng, f, elo) for f in todo]
+        games = known_games + [draw_game(rng, f, elo) for f in todo]
         pic = ps.picture(teams, games, season, [])
-        by_pool: dict[str, list[str]] = defaultdict(list)
         for n, v in pic.items():
             if v.get("seed"):
-                by_pool[teams[n].pool(season)].append(n)
+                made[n] += 1          # a club in a played-off tie reached the playoff too
+        by_pool = seed_lists(pic, teams, season, rng, elo)
         champs = []
-        for pool, names in by_pool.items():
-            # Before 1970 a division title level on the record was played off
-            # (and in 1932 the league title itself), and picture() gives both
-            # clubs the leader's seed. Both reached the playoffs, that game
-            # being one; play it off here (one game, the first-listed club at
-            # home) so the bracket gets one club per seed.
-            by_seed: dict[int, list[str]] = defaultdict(list)
-            for t in sorted(names, key=lambda t: pic[t]["seed"]):
-                by_seed[pic[t]["seed"]].append(t)
-            seeds = []
-            for sv in sorted(by_seed):
-                group = by_seed[sv]
-                for t in group:
-                    made[t] += 1          # a club in a played-off tie reached the playoff
-                while len(group) > 1:
-                    group = [_play(rng, elo, group[0], group[1])] + group[2:]
-                seeds.append(group[0])
-            _g, c = bracket(season, seeds, divs, None, rng, elo, confs)
+        for pool, seeds in by_pool.items():
+            _g, c = bracket(season, seeds, divs, None, rng, elo, confs, known=known)
             champs.append(c)
-        for w in title_game(rng, elo, champs, season):
+        for w in title_game(rng, elo, champs, season, known=known):
             won[w] += 1
     return ({n: made[n] / sims for n in teams}, {n: won[n] / sims for n in teams})
+
+
+def force_postseason(won: dict[str, float], eliminated: set[str], champions: list[str],
+                     pools: dict[str, str], season: int) -> dict[str, float]:
+    """Turn one postseason week's simulated title shares into the invariants
+    the real bracket guarantees: a club the real results have eliminated is
+    out (0.0), a club a real final has crowned is in (1.0). The bracket
+    cannot always reproduce an old era's real pairings (hosting rotated by
+    division before 1975, not by seed), so a proven-eliminated club can pick
+    up stray simulated wins in a mismatched sim, and a proven champion can
+    fall short of 1.0 the same way; zeroing and forcing those directly can
+    then leave the still-undecided clubs short of the mass they are entitled
+    to (1.0 in total, per pool before 1966 when two champions were crowned,
+    across every club together from 1966 on, since only one club can hold
+    that mass at a time), so what is left over after the forced clubs is
+    rescaled back onto them, in proportion to their simulated share. Once a
+    pool's champion is forced to 1.0 the undecided clubs in that pool rescale
+    to exactly 0.0 (nothing is left to give them): the runner-up in that
+    pool's final is always already in `eliminated` by then, so this only
+    ever touches a club the bracket got wrong."""
+    out = dict(won)
+    for n in eliminated:
+        out[n] = 0.0
+    for c in champions:
+        out[c] = 1.0
+    champ_set = set(champions)
+    if season >= 1966:
+        groups = [list(out)]
+    else:
+        by_pool: dict[str, list[str]] = defaultdict(list)
+        for n in out:
+            by_pool[pools[n]].append(n)
+        groups = list(by_pool.values())
+    for members in groups:
+        target = 0.0 if any(c in champ_set for c in members) else 1.0
+        alive = [n for n in members if n not in eliminated and n not in champ_set]
+        mass = sum(out[n] for n in alive)
+        if alive and mass > 0:
+            scale = target / mass
+            for n in alive:
+                out[n] *= scale
+    return out
+
+
+def postseason_odds_for_week(season: int, teams: dict[str, ps.Team], fixtures: list[Fixture],
+                             post: list[Fixture], shard: dict, reg_end: int, through: int, sims: int,
+                             final: dict) -> dict[str, float]:
+    """Title odds for one postseason week (`through` > reg_end). `final` is the
+    real, completed regular season's `picture()` (computed once by the
+    caller, not per sim: the real seeds do not change). Every real postseason
+    result through `through` is held to its actual winner (`known`, fed to
+    `bracket()`/`title_game()`), so a simulated bracket replays what actually
+    happened and only draws the rounds still ahead, from the Elo ratings
+    after `through`. `force_postseason()` then corrects the raw shares for
+    what the real bracket cannot always express (see its docstring)."""
+    elo = ratings_after(shard, through)
+    rng = random.Random(season * 1000 + through)
+    divs = {n: t.div for n, t in teams.items()}
+    confs = {n: t.conf for n, t in teams.items()}
+    pools = {n: teams[n].pool(season) for n in teams}
+    known, eliminated = _known_and_eliminated(post, through)
+    champions = _decided_champions(post, through, season, pools)
+    won: dict[str, int] = defaultdict(int)
+    for _ in range(sims):
+        by_pool = seed_lists(final, teams, season, rng, elo)
+        champs = []
+        for pool, seeds in by_pool.items():
+            _g, c = bracket(season, seeds, divs, None, rng, elo, confs, known=known)
+            champs.append(c)
+        for w in title_game(rng, elo, champs, season, known=known):
+            won[w] += 1
+    won_pct = {n: won[n] / sims for n in teams}
+    return force_postseason(won_pct, eliminated, champions, pools, season)
 
 
 def build(season: int, sims: int = DEFAULT_SIMS, quiet: bool = False) -> dict:
@@ -575,58 +1015,171 @@ def build(season: int, sims: int = DEFAULT_SIMS, quiet: bool = False) -> dict:
     if not teams or not fixtures:
         raise SystemExit(f"{season}: no teams or no fixtures")
     played_through = max((f.week for f in fixtures if f.played), default=0)
-    last = played_through if shard.get("complete") else min(reg_end, played_through)
+    last_reg = played_through if shard.get("complete") else min(reg_end, played_through)
     if shard.get("complete"):
-        reg_end = last
-    weeks = list(range(0, last + 1))
+        reg_end = last_reg
+    pools = {n: teams[n].pool(season) for n in teams}   # team -> pool, for force_postseason/_decided_champions
+
+    # Every postseason fixture (played or not; the ledger's own week, which
+    # can be <= reg_end in a two-league era: see load_inputs' ONE WEEK AXIS
+    # note), and which of its weeks are covered: every game played for a
+    # complete season, at least one game played for a live one still mid-week.
+    post = load_postseason(season, teams, reg_end)
+    postseason_weeks: list[int] = []
+    if post:
+        if shard.get("complete"):
+            by_week: dict[int, list[Fixture]] = defaultdict(list)
+            for f in post:
+                by_week[f.week].append(f)
+            postseason_weeks = sorted(w for w, gs in by_week.items() if all(g.played for g in gs))
+        else:
+            postseason_weeks = sorted({f.week for f in post if f.played})
+
+    # ONE index axis for the whole season, index = week, always: a two-
+    # league postseason week at or before reg_end does not add an index (it
+    # is folded into that regular-season week instead, below); only a week
+    # past reg_end extends the axis.
+    weeks = week_axis(last_reg, postseason_weeks)
+    last_week = weeks[-1]
+
+    complete = last_reg >= reg_end and bool(shard.get("complete"))
+    final = None
+    made: dict[str, float] = {}
+    if complete or postseason_weeks:
+        # The real seeds for the whole postseason: the completed regular
+        # season's picture(), computed once (not per sim, not per week).
+        final = ps.picture(teams, played_games(fixtures, last_reg), season, [])
+        made = {n: 1.0 if final[n].get("seed") else 0.0 for n in teams}
+
+    # Every honour a club has picked up SO FAR (cumulative: once earned, a
+    # honour never disappears from a later week's list); `shard_flags` is the
+    # retrospective truth used both to settle the four regular-season honours
+    # at the last regular-season week and to drive the three postseason ones.
+    shard_flags: dict[str, set[str]] = {t["name"]: {k for k, v in (t.get("flags") or {}).items() if v}
+                                        for t in shard["teams"]}
+    post_honours = postseason_honours(post, shard_flags, reg_end) if postseason_weeks else {}
+
     playoffs: dict[str, list[float]] = {n: [] for n in teams}
     title: dict[str, list[float]] = {n: [] for n in teams}
     status: dict[str, list[str | None]] = {n: [] for n in teams}
+    honours_running: dict[str, set[str]] = {n: set() for n in teams}
+    honours: dict[str, list[list[str]]] = {n: [] for n in teams}
+
     for w in weeks:
-        p, t = odds_for_week(season, teams, fixtures, shard, w, sims)
-        st = proved_status(teams, played_games(fixtures, w), fixtures, w, season)
-        for n in teams:
-            playoffs[n].append(round(p[n], 3))
-            title[n].append(round(t[n], 3))
-            status[n].append(st[n])
+        # A postseason result already played by week w, whether w is still a
+        # regular-season index (a two-league overlap) or a postseason one.
+        known, eliminated = _known_and_eliminated(post, w)
+        champs_w = _decided_champions(post, w, season, pools)
+        if w <= reg_end:
+            p, t = odds_for_week(season, teams, fixtures, shard, w, sims, known=known or None)
+            if known:
+                # A league final already played while another league's
+                # regular season runs on: hold it fixed rather than let the
+                # bracket's imperfect reproduction of an old era's real
+                # pairings (see force_postseason's docstring) leave its loser
+                # with stray simulated mass.
+                t = force_postseason(t, eliminated, champs_w, pools, season)
+            st = proved_status(teams, played_games(fixtures, w), fixtures, w, season)
+            if w == reg_end and shard.get("complete"):
+                # The regular season is over: play_app/div_title/best_conf/
+                # best_rec are settled facts by then, not a bound the strict
+                # records-alone check can miss (a division title level on the
+                # record and decided by a tiebreaker, say).
+                wk_honours = {n: shard_flags.get(n, set()) & set(REGULAR_SEASON_HONOURS) for n in teams}
+            else:
+                wk_honours = honours_for_week(teams, played_games(fixtures, w), fixtures, w, season, st)
+            for n in teams:
+                playoffs[n].append(round(p[n], 3))
+                title[n].append(round(t[n], 3))
+                status[n].append(st[n])
+                honours_running[n] |= wk_honours[n]
+                for h, lit_wk in post_honours.get(n, {}).items():
+                    if lit_wk <= w:
+                        honours_running[n].add(h)
+                honours[n].append([h for h in HONOUR_ORDER if h in honours_running[n]])
+            top, top_p = max(t.items(), key=lambda kv: kv[1])
+            label = "week"
+        else:
+            wt = postseason_odds_for_week(season, teams, fixtures, post, shard, reg_end, w, sims, final)
+            for n in teams:
+                playoffs[n].append(made[n])
+                title[n].append(round(wt[n], 3))
+                status[n].append("in" if made[n] else "out")
+                for h, lit_wk in post_honours.get(n, {}).items():
+                    if lit_wk <= w:
+                        honours_running[n].add(h)
+                honours[n].append([h for h in HONOUR_ORDER if h in honours_running[n]])
+            top, top_p = max(wt.items(), key=lambda kv: kv[1])
+            label = "postseason week"
         if not quiet:
-            top = max(teams, key=lambda n: t[n])
-            print(f"  {season} week {w:>2}: {top} {t[top]:.1%} for the title", file=sys.stderr)
-    brier = None
-    complete = last >= reg_end and bool(shard.get("complete"))
+            print(f"  {season} {label} {w:>2}: {top} {top_p:.1%} for the title", file=sys.stderr)
+
     if complete:
-        final = ps.picture(teams, played_games(fixtures, last), season, [])
-        made = {n: 1.0 if final[n].get("seed") else 0.0 for n in teams}
-        brier = [round(sum((playoffs[n][i] - made[n]) ** 2 for n in teams) / len(teams), 4) for i in range(len(weeks))]
         # After the last regular-season week nothing is drawn: the seeds are
-        # the procedure's, so the status is a fact, not a bound. A club level
-        # for a played-off title (before 1970) is in: the playoff it went on
-        # to play IS the playoff.
+        # the procedure's, so playoffs and status are a fact at THAT index,
+        # not a bound. A club level for a played-off title (before 1970) is
+        # in: the playoff it went on to play IS the playoff. (A postseason
+        # index past reg_end already carries `made` forward as playoffs, so
+        # this only ever touches the regular-season index.)
         for n in teams:
-            playoffs[n][-1] = made[n]
-            status[n][-1] = "in" if made[n] else "out"
-    pools = {}
+            playoffs[n][reg_end] = made[n]
+            status[n][reg_end] = "in" if made[n] else "out"
+
+    champions = _decided_champions(post, last_week, season, pools) if post else []
+
+    brier = None
+    if complete:
+        brier = [round(sum((playoffs[n][i] - made[n]) ** 2 for n in teams) / len(teams), 4) for i in range(len(weeks))]
+
+    # Index = week, always: every per-team array must be exactly this long.
+    for n in teams:
+        assert len(playoffs[n]) == len(title[n]) == len(status[n]) == len(honours[n]) == len(weeks), \
+            f"{season} {n}: array length {len(playoffs[n])}/{len(title[n])}/{len(status[n])}/{len(honours[n])} != {len(weeks)} (through_week {last_week} + 1)"
+
+    pools_summary = {}
     for pool in sorted({t.pool(season) for t in teams.values()}):
         members = [n for n, t in teams.items() if t.pool(season) == pool]
         divs = sorted({teams[n].div for n in members})
         _q, nseeds = ps.pool_format(season, teams[members[0]].league, len(divs))
-        pools[pool] = {"seeds": nseeds}
+        pools_summary[pool] = {"seeds": nseeds}
     return {
         "season": season,
         "sims": sims,
         "hfa_elo": HFA_ELO,
         "reg_end_week": reg_end,
-        "through_week": last,
+        "through_week": last_week,
         "complete": complete,
-        "pools": pools,
-        "note": ("Index 0 is before the first game; index w is after week w. playoffs: the share of "
-                 "simulated seasons (the games so far as played, the rest drawn from the Elo ratings after "
-                 "that week, held fixed) in which the club held a seed by the tiebreaking procedure of the "
-                 "era; title: the share in which it won the last game of the era's bracket. status is set "
-                 "only where the arithmetic of wins alone settles it (in, out); brier grades the playoff "
-                 "odds against what happened, for a complete season."),
+        "pools": pools_summary,
+        "postseason_weeks": postseason_weeks,
+        "champions": champions,
+        "note": ("Index 0 is before the first game; index w is after week w, ONE axis for the whole season "
+                 "(index = week, always), through reg_end_week the regular season (the LAST week of every "
+                 "league in a two-league era, 1946-49 and 1960-69: a league final played at or before it, "
+                 "while another league's regular season still runs, is folded into that regular-season "
+                 "index rather than appended after it) and then, for postseason_weeks, one index per "
+                 "postseason week past reg_end_week. playoffs: the share of simulated seasons (the games "
+                 "so far as played, the rest drawn from the Elo ratings after that week, held fixed) in "
+                 "which the club held a seed by the tiebreaking procedure of the era; a postseason index, "
+                 "or the regular-season index at reg_end_week once the season is complete, just carries the "
+                 "real, final picture forward instead, since a club already knows by then whether it made "
+                 "it. title: the share in which the club won the season's final; a real postseason result "
+                 "already played (`known`, whether at a postseason index or an earlier overlapping regular-"
+                 "season one) is held fixed and only the rounds still ahead are drawn, from the Elo ratings "
+                 "after that week, then a club the real results have eliminated is forced to exactly 0.0 "
+                 "and, once the season's final has been played, its winner to exactly 1.0 (from 1966 the "
+                 "Super Bowl alone; before that each pool, i.e. league, crowns its own in the winner of "
+                 "that pool's own last scheduled postseason game; champions lists them; see "
+                 "_decided_champions() and force_postseason()). status is set only where the arithmetic of "
+                 "wins alone settles it (in, out); brier grades the playoff odds against what happened, for "
+                 "a complete season. honours is cumulative: once a club earns one it stays for every later "
+                 "week, filled in progressively as the records settle it (play_app, div_title, best_conf, "
+                 "best_rec) and then, in the postseason, from the shard's final flags at the week the "
+                 "qualifying game was actually played, which can itself be at or before reg_end_week in a "
+                 "two-league era (cf_app, champ_app, champ); see honours_for_week() and "
+                 "postseason_honours()."),
         "teams": {n: {"conf": teams[n].pool(season), "div": teams[n].div,
-                      "playoffs": playoffs[n], "title": title[n], "status": status[n]} for n in teams},
+                      "playoffs": playoffs[n], "title": title[n], "status": status[n],
+                      "honours": honours[n]} for n in teams},
         "brier": brier,
     }
 
@@ -762,6 +1315,35 @@ def self_test() -> None:
     games, c = bracket(1969, ["T1", "T2", "T3", "T4"], divsA, None, rng, elo, confsA)
     assert {frozenset(g[1:]) for g in games[:2]} == {frozenset(("T1", "T4")), frozenset(("T2", "T3"))}, games
 
+    # `known` honours a real wild-card upset instead of drawing it
+    games, champ = bracket(2023, seeds7, divs, None, rng, elo, confs=None, known={frozenset(("T2", "T7")): "T7"})
+    assert ("WC", "T2", "T7") in games and champ in seeds7, games
+    # and, fully known, a bracket consumes NO rng draws at all (postseason
+    # weeks only ever feed `known` results, never the regular season, so
+    # this refactor must not change the regular season's rng consumption)
+    known_full = {frozenset(("T2", "T7")): "T2", frozenset(("T3", "T6")): "T3", frozenset(("T4", "T5")): "T4",
+                  frozenset(("T1", "T4")): "T1", frozenset(("T2", "T3")): "T2", frozenset(("T1", "T2")): "T1"}
+    rng_before = random.Random(99)
+    rng_after = random.Random(99)
+    games, champ = bracket(2023, seeds7, divs, None, rng_after, elo, confs=None, known=known_full)
+    assert champ == "T1", (games, champ)
+    assert rng_after.random() == rng_before.random()   # rng_after untouched by the fully-known bracket
+    assert title_game(rng, elo, ["T1", "T2"], 2023, known={frozenset(("T1", "T2")): "T2"}) == ["T2"]
+
+    # force_postseason: an eliminated club is zeroed, the alive clubs
+    # renormalise to what is left, and a decided champion takes it all
+    won = {"A": 0.3, "B": 0.3, "C": 0.3, "D": 0.1}
+    pools4 = {n: "AFC" for n in won}
+    out = force_postseason(won, {"D"}, [], pools4, 2020)
+    assert out["D"] == 0.0 and abs(sum(out.values()) - 1.0) < 1e-9, out
+    out2 = force_postseason(won, {"D"}, ["A"], pools4, 2020)
+    assert out2 == {"A": 1.0, "B": 0.0, "C": 0.0, "D": 0.0}, out2
+    # before 1966, two pools each carry their own 1.0
+    won2 = {"A": 0.4, "B": 0.6, "C": 0.7, "D": 0.3}
+    pools2 = {"A": "NFL", "B": "NFL", "C": "AFL", "D": "AFL"}
+    out3 = force_postseason(won2, set(), [], pools2, 1962)
+    assert abs(out3["A"] + out3["B"] - 1.0) < 1e-9 and abs(out3["C"] + out3["D"] - 1.0) < 1e-9, out3
+
     # proved status: eight clubs, two divisions, five seeds (1985). T1 has won
     # its seven games and only T2 (five, two to play) can still reach seven:
     # in by arithmetic. T8 is 0-7 with nothing left, six clubs above it and a
@@ -806,6 +1388,72 @@ def self_test() -> None:
     assert _can_all_reach({"A": 1, "B": 1}, {("A", "B"): 1}, {"A": 1, "B": 1}) is False
     assert _can_all_reach({"A": 1, "B": 1}, {("A", "B"): 2}, {"A": 2, "B": 2}) is True
     assert _can_all_reach({"A": 1, "B": 1}, {("A", "B"): 1}, {"A": 2, "B": 1}) is True   # A has an outside game
+
+    # honours_for_week wants a STRICT domination (see its docstring), which
+    # the "proved status" fixture above does not give T1 (it still has T2 on
+    # its own schedule, so T2's naive best-case ties T1's worst-case at the
+    # same number): a fresh, simpler fixture where T1 has finished 7-0 with
+    # NO games left and everyone else has only a single loss, to T1, with
+    # their 6 games among each other still to come. T1's worst (1.0, done)
+    # strictly beats every rival's best (6/7, one loss already on the books),
+    # so it clinches its division, its conference and the league outright,
+    # all in the same week; T8 (0-1, 6 to go, symmetric with the rest) earns
+    # nothing yet.
+    Th = {f"T{i}": ps.Team(f"T{i}", "AFC", "AFC East" if i <= 4 else "AFC West") for i in range(1, 9)}
+    played_h = [ps.Game(1, "T1", f"T{i}", 20, 10) for i in range(2, 9)]
+    fx_h = [Fixture(9, f"T{i}", f"T{j}", False) for i in range(2, 9) for j in range(i + 1, 9)]
+    st_h = proved_status(Th, played_h, fx_h, 8, 1985)
+    assert st_h["T1"] == "in", st_h
+    hn = honours_for_week(Th, played_h, fx_h, 8, 1985, st_h)
+    assert hn["T1"] == {"play_app", "div_title", "best_conf", "best_rec"}, hn["T1"]
+    assert hn["T8"] == set(), hn["T8"]
+    # week 0: nothing played means everyone's worst is 0 and best is 1, so no
+    # strict comparison and no status can pass.
+    hn0 = honours_for_week(Th, [], fx_h, 0, 1985, {n: None for n in Th})
+    assert all(not v for v in hn0.values()), hn0
+
+    # week_axis: index = week, always. A postseason week at or before
+    # reg_end (a two-league era, one league's final while the other's
+    # regular season runs on) does not extend the axis; one past it does.
+    assert week_axis(16, [16, 17, 18]) == list(range(0, 19))          # 1966: NFL 15, AFL 16
+    assert week_axis(15, [13, 16]) == list(range(0, 17))               # 1946: AAFC 13, NFL 15/16
+    assert week_axis(17, []) == list(range(0, 18))                     # no postseason yet: just the regular season
+
+    # force_postseason on a synthetic two-league week 15: league A's own (and
+    # only) final has just been played, crowning A1; league B's own regular
+    # season runs to week 16, so its clubs are untouched by A's result.
+    won5 = {"A1": 0.6, "A2": 0.4, "B1": 0.5, "B2": 0.5}
+    pools5 = {"A1": "NFL", "A2": "NFL", "B1": "AFL", "B2": "AFL"}
+    out5 = force_postseason(won5, {"A2"}, ["A1"], pools5, 1962)
+    assert out5["A1"] == 1.0 and out5["A2"] == 0.0, out5
+    assert out5["B1"] == 0.5 and out5["B2"] == 0.5, out5               # league B untouched
+
+    # _decided_champions / force_postseason, >= 1966: the Super Bowl alone
+    # decides it, not the league (from 1970, conference) championship games.
+    sb_teams = {"Cowboys": "NFC", "Packers": "NFC", "Bills": "AFC", "Chiefs": "AFC"}
+    post_sb = [
+        Fixture(16, "Cowboys", "Packers", False, 27, 34, "NFL Champ"),
+        Fixture(17, "Bills", "Chiefs", False, 27, 31, "AFL Champ"),
+        Fixture(18, "Chiefs", "Packers", True, 10, 35, "Super Bowl"),
+    ]
+    # both league finals played (through week 17), no Super Bowl yet: no
+    # champion, and the two league champions carry all the (renormalised) mass.
+    assert _decided_champions(post_sb, 17, 1966, sb_teams) == []
+    known17, elim17 = _known_and_eliminated(post_sb, 17)
+    assert elim17 == {"Cowboys", "Bills"}
+    out17 = force_postseason({"Cowboys": 0.0, "Packers": 0.5, "Bills": 0.0, "Chiefs": 0.5},
+                             elim17, [], sb_teams, 1966)
+    assert out17["Cowboys"] == 0.0 and out17["Bills"] == 0.0, out17
+    assert out17["Packers"] > 0 and out17["Chiefs"] > 0, out17
+    assert abs(out17["Packers"] + out17["Chiefs"] - 1.0) < 1e-9, out17
+    # the Super Bowl played (through week 18): Packers, and only Packers, at 1.0
+    champs18 = _decided_champions(post_sb, 18, 1966, sb_teams)
+    assert champs18 == ["Packers"], champs18
+    known18, elim18 = _known_and_eliminated(post_sb, 18)
+    assert elim18 == {"Cowboys", "Bills", "Chiefs"}
+    out18 = force_postseason({"Cowboys": 0.0, "Packers": 0.5, "Bills": 0.0, "Chiefs": 0.5},
+                             elim18, champs18, sb_teams, 1966)
+    assert out18 == {"Cowboys": 0.0, "Packers": 1.0, "Bills": 0.0, "Chiefs": 0.0}, out18
     print("playoff_odds self-test OK")
 
 

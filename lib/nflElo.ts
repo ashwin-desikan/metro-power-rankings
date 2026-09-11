@@ -308,6 +308,11 @@ export type NflOddsTeam = {
   title: number[];
   /** Set only where the records alone settle it: "in" (clinched) or "out" (eliminated); null otherwise. */
   status: ("in" | "out" | null)[];
+  /** Index 0 is before the first game; index w is after week w, same as playoffs/title/status. Cumulative
+   *  (once earned, a honour stays in every later week's list): the four regular-season honours proved from
+   *  the records as the season goes, then the three postseason ones lit as their real game is played.
+   *  Optional: an odds file built before this existed has none. */
+  honours?: NflHonour[][];
 };
 
 export type NflOddsFile = {
@@ -318,6 +323,10 @@ export type NflOddsFile = {
   through_week: number;
   complete: boolean;
   pools: Record<string, { seeds: number }>;
+  /** Postseason week numbers the file also covers, past reg_end_week (1994: [18, 19, 20, 21]); empty before a postseason week is complete. */
+  postseason_weeks?: number[];
+  /** The club(s) the last played final crowned; empty until it has been. */
+  champions?: string[];
   note: string;
   teams: Record<string, NflOddsTeam>;
   /** Per week, the mean squared error of the playoff odds against what happened; null until the season is complete. */
