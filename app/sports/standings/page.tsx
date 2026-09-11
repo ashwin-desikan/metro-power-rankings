@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import type { ReactElement } from "react";
 import Link from "next/link";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import HubNav from "@/app/teams/HubNav";
+import LocalTime from "./LocalTime";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 
 import { getCurrentNflStandings } from "@/lib/standings";
@@ -66,7 +68,11 @@ const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--borde
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 
 // ---- shared model -------------------------------------------------------
-type Cell = string | number;
+// A cell is a primitive, or a React element for the one case that needs
+// client behaviour: LocalTime, which re-formats a kick-off into the
+// viewer's own zone after hydration. cellNum (the in-cell bar) already
+// returns null for anything it cannot parse, so an element is inert there.
+type Cell = string | number | ReactElement;
 type Mono = { text: string; bg: string; fg: string };
 type SRow = { rank: number | string | null; name: string; href?: string | null; logoUrl?: string | null; flagUrl?: string | null; crestName?: string | null; monogram?: Mono | null; cells: Cell[]; po?: boolean; cut?: boolean };
 // `fixtures`: rows are matches, not ranked clubs. No rank column, and the
@@ -136,7 +142,37 @@ function barColumn(st: SubTable): { index: number; max: number } | null {
   return max > 0 ? { index, max } : null;
 }
 const slugId = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-const pct3 = (v: number | null | undefined): Cell => (v === null || v === undefined ? DASH : v.toFixed(3).replace(/^0/, ""));
+// Three decimals, leading zero stripped (".600") -- the convention every
+// baseball and gridiron table on this page already uses. Accepts a STRING too:
+// the NPB feed hands back WinningPercentage pre-formatted to five decimals
+// ("0.53846"), which was rendering raw and made NPB the only table here
+// quoting a win percentage to five places. An unparseable string (the feed's
+// own "—" for a team with no games) passes through untouched.
+const pct3 = (v: number | string | null | undefined): Cell => {
+  if (v === null || v === undefined) return DASH;
+  // Number("") is 0, not NaN, so an empty cell would read ".000" -- a real
+  // record of no wins rather than no games. Reject it before parsing.
+  if (typeof v === "string" && v.trim() === "") return DASH;
+  const n = typeof v === "number" ? v : Number(v);
+  if (!Number.isFinite(n)) return typeof v === "string" ? v : DASH;
+  return n.toFixed(3).replace(/^0/, "");
+};
+// An UPCOMING fixture's kick-off. The server renders a UTC string (stable, so
+// hydration matches); LocalTime then swaps in the viewer's own zone after
+// mount, adding the time when the feed supplies one. Pass withTime=false for a
+// feed that gives a date and no kick-off -- the rugby block is the one case --
+// so a real midnight UTC fixture is never confused with "time unknown".
+const kickoff = (iso: string | null | undefined, withTime = true): Cell => {
+  if (!iso) return "";
+  const d = new Date(withTime ? iso : `${iso}T00:00:00Z`);
+  if (Number.isNaN(d.getTime())) return "";
+  const date = d.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+  const fallback = withTime
+    ? `${date}, ${d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "UTC" })} UTC`
+    : date;
+  return <LocalTime iso={d.toISOString()} fallback={fallback} withTime={withTime} />;
+};
+
 const num = (v: number | null | undefined): Cell => (v === null || v === undefined ? DASH : v);
 
 // Recent form and current streak. Both ride feeds the page already fetches:
@@ -614,7 +650,6 @@ function uwclBlock(c: Awaited<ReturnType<typeof getWLiveCompetition>>): Block | 
   if (!c || !c.hasContent) return null;
   const FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
   const IN_PLAY = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
-  const dt = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "");
   const fx = c.fixtures;
   const liveFx = fx.filter((f) => f.status && IN_PLAY.has(f.status));
   const recent = fx.filter((f) => f.status && FIN.has(f.status)).sort((a, b) => String(b.date ?? "").localeCompare(String(a.date ?? ""))).slice(0, 10);
@@ -623,7 +658,7 @@ function uwclBlock(c: Awaited<ReturnType<typeof getWLiveCompetition>>): Block | 
     items.length ? {
       title, columns: [score ? "Score" : "Date"],
       rows: items.map((f): SRow => ({ rank: null, name: `${f.home.name} v ${f.away.name}`,
-        cells: [score && f.homeGoals != null && f.awayGoals != null ? `${f.homeGoals}\u2013${f.awayGoals}` : dt(f.date)] })),
+        cells: [score && f.homeGoals != null && f.awayGoals != null ? `${f.homeGoals}\u2013${f.awayGoals}` : kickoff(f.date)] })),
     } : null;
   const groupTables: SubTable[] = c.groups
     .map((g): SubTable => ({
@@ -653,7 +688,7 @@ async function npbBlock(): Promise<Block | null> {
   const toRows = (rows: typeof s.central): SRow[] => {
     const out = rows.map((r): SRow => ({
       rank: r.rank, name: r.name, href: r.slug ? `/teams/baseball/npb/${r.slug}` : null, crestName: r.name,
-      cells: [r.win, r.lose, r.draw, r.pct, r.gamesBehind,
+      cells: [r.win, r.lose, r.draw, pct3(r.pct), r.gamesBehind,
         ...(showOdds ? [fmtOdds(r.slug ? odds.get(r.slug)?.p_playoffs : null), fmtOdds(r.slug ? odds.get(r.slug)?.p_title : null)] : [])],
     }));
     // Top three per league reach the Climax Series; rows arrive rank-sorted.
@@ -720,7 +755,6 @@ function intlCompBlock(
   if (!comp) return null;
   const FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
   const IN_PLAY = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
-  const dt = (d: string | null) => (d ? new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "");
   const nation = (t: LiveTeamRef) => t.name ?? t.lookup ?? "TBD";
   const groupTables: SubTable[] = comp.groups
     .slice().sort((a, b) => a.group_label.localeCompare(b.group_label))
@@ -742,7 +776,7 @@ function intlCompBlock(
     items.length ? {
       title, columns: [score ? "Score" : "Date"],
       rows: items.map((f): SRow => ({ rank: null, name: `${nation(f.home)} v ${nation(f.away)}`, flagUrl: _crFlag(nation(f.home)),
-        cells: [score && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : dt(f.kickoff)] })),
+        cells: [score && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : kickoff(f.kickoff)] })),
     } : null;
   const subTables = [...groupTables,
     ...[mkFx("Live", live, true), mkFx("Upcoming", upcoming, false), mkFx("Recent", recent, true)]
@@ -771,9 +805,57 @@ function intlCompBlock(
   };
 }
 
+// The Libertadores knockout, in the order api-football labels the rounds.
+// Anything not listed (the three Qualification rounds, "Group Stage - N") is
+// pre-knockout and is not drawn as a bracket round.
+const LIB_KO_ROUNDS = ["Round of 16", "Quarter-finals", "Semi-finals", "3rd Place Final", "Final"];
+
 function libertadoresBlock(comp: LiveComp | undefined): Block | null {
   if (!comp || comp.groups.length === 0) return null;
-  const subTables: SubTable[] = comp.groups
+
+  // 🔴 This block used to render comp.groups and NOTHING else, with the note
+  // hardcoded to "group stage". So it could not follow the competition past the
+  // groups however much the feed moved on: on 2026-09-11 the group stage was
+  // long finished, the Round of 16 was complete and the quarter-finals half
+  // played, while Live Standings still showed eight group tables labelled
+  // "group stage". The rounds below are read from the fixtures, so this now
+  // follows the competition on its own.
+  const fx = comp.fixtures ?? [];
+  const FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
+  const nm = (t: LiveTeamRef) => {
+    const c = getFootballClubByName(t.lookup ?? "") ?? getFootballClubByName(t.name ?? "");
+    return c?.cur_name ?? t.lookup ?? t.name ?? "TBD";
+  };
+  const byKickoff = (a: LiveFixture, b: LiveFixture) =>
+    String(a.kickoff ?? "").localeCompare(String(b.kickoff ?? ""));
+
+  const koTables: SubTable[] = [];
+  let liveRound: string | null = null;
+  for (const round of LIB_KO_ROUNDS) {
+    const games = fx.filter((f) => f.round === round).sort(byKickoff);
+    if (games.length === 0) continue;
+    const done = games.every((f) => f.status && FIN.has(f.status));
+    // The live round is the FIRST knockout round still carrying an unplayed
+    // game -- not the last round with any fixture, which would jump the label
+    // to the Final the moment its placeholder fixtures appear.
+    if (!done && liveRound === null) liveRound = round;
+    koTables.push({
+      title: round,
+      // A round in progress carries both: results for the legs already played
+      // and kick-offs for the rest. Header follows whether ANY are played, so a
+      // half-finished round is not labelled "Date" over a column of scores.
+      columns: [games.some((f) => f.home_goals != null && f.away_goals != null) ? "Score" : "Date"],
+      fixtures: true,
+      rows: games.map((f): SRow => ({
+        rank: null, name: `${nm(f.home)} v ${nm(f.away)}`,
+        cells: [f.home_goals != null && f.away_goals != null
+          ? `${f.home_goals}–${f.away_goals}`
+          : kickoff(f.kickoff)],
+      })),
+    });
+  }
+
+  const groupTables: SubTable[] = comp.groups
     .slice().sort((a, b) => a.group_label.localeCompare(b.group_label))
     .map((g): SubTable => ({
       title: g.group_label,
@@ -781,8 +863,15 @@ function libertadoresBlock(comp: LiveComp | undefined): Block | null {
       rows: g.rows.slice().sort(byPtsGd).map((r, i) => clubRow(r, i, "group")),
     }))
     .filter((st) => st.rows.length > 0);
+
+  // Knockout first once it exists: it is where the competition actually is.
+  // The groups stay below as the season's record rather than being dropped.
+  const subTables = [...koTables, ...groupTables];
   if (subTables.length === 0) return null;
-  return { league: "Copa Libertadores", href: "/teams/football/2026-27", note: "group stage", open: true, subTables };
+  const note = koTables.length === 0
+    ? "group stage"
+    : (liveRound ? liveRound.toLowerCase() : `${koTables[koTables.length - 1].title?.toLowerCase()} complete`);
+  return { league: "Copa Libertadores", href: "/teams/football/2026-27", note, open: true, subTables };
 }
 
 async function cflBlock(): Promise<Block | null> {
@@ -1054,12 +1143,11 @@ async function euroleagueBlock(): Promise<Block | null> {
 async function rugbyFixturesBlock(): Promise<Block | null> {
   const f = await getRugbyFixtures();
   if (!f) return null;
-  const dt = (d: string) => new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
   const mk = (title: string, items: RugbyMatch[], score: boolean): SubTable | null =>
     items.length ? {
       title, columns: [score ? "Score" : "Date"],
       rows: items.map((m): SRow => ({ rank: null, name: `${m.teamA} v ${m.teamB}`, flagUrl: _ruFlag(m.teamA),
-        cells: [score && m.scoreA != null && m.scoreB != null ? `${m.scoreA}\u2013${m.scoreB}` : dt(m.date)] })),
+        cells: [score && m.scoreA != null && m.scoreB != null ? `${m.scoreA}\u2013${m.scoreB}` : kickoff(m.date, false)] })),
     } : null;
   const subTables = [mk("Live", f.live, true), mk("Upcoming", f.upcoming, false), mk("Recent", f.recent, true)]
     .filter((st): st is SubTable => st !== null);
@@ -1070,9 +1158,8 @@ async function rugbyFixturesBlock(): Promise<Block | null> {
 async function cricketFixturesBlock(): Promise<Block | null> {
   const f = await getCricketFixtures();
   if (!f) return null;
-  const dt = (d: string) => (d ? new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "");
-  const info = (m: CricketMatch, score: boolean) =>
-    score && (m.scoreA || m.scoreB) ? `${m.scoreA ?? ""} / ${m.scoreB ?? ""}`.trim() : dt(m.date);
+  const info = (m: CricketMatch, score: boolean): Cell =>
+    score && (m.scoreA || m.scoreB) ? `${m.scoreA ?? ""} / ${m.scoreB ?? ""}`.trim() : kickoff(m.date);
   const mk = (title: string, items: CricketMatch[], score: boolean): SubTable | null =>
     items.length ? {
       title, columns: [score ? "Score" : "Date"],
@@ -1104,7 +1191,6 @@ function euroCompBlocks(comps: LiveComp[]): Block[] {
   ];
   const FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
   const IN_PLAY = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
-  const dt = (d: string | null) => (d ? new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "");
   const nm = (t: LiveTeamRef) => {
     const c = getFootballClubByName(t.lookup ?? "") ?? getFootballClubByName(t.name ?? "");
     return c?.cur_name ?? t.lookup ?? t.name ?? "TBD";
@@ -1120,7 +1206,7 @@ function euroCompBlocks(comps: LiveComp[]): Block[] {
       items.length ? {
         title, columns: [score ? "Score" : "Date"],
         rows: items.map((f): SRow => ({ rank: null, name: `${nm(f.home)} v ${nm(f.away)}`,
-          cells: [score && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : dt(f.kickoff)] })),
+          cells: [score && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : kickoff(f.kickoff)] })),
       } : null;
     const liveTable = mkFx("Live", live, true);
 
