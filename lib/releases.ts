@@ -24,7 +24,7 @@ export const RELEASES: Release[] = [
       "Every NFL season page since 1920 shows each team's chance of a playoff place and of the title after any week, drawn 2,000 times on that week's ratings; a club reads clinched or out only once the records settle it.",
       "Money against football: one dot per club and season across six leagues, the frontier joined and each club's trail on its page; share cards carry their title in bold; The World in 2100 joins the rankings as index eight.",
       "Formula 1 title odds for every driver and constructor, simulated after each race, on the F1 hub and Live Standings; club football reads green all season, the WNBA through its break, and a live major lights the menu.",
-      "Live Standings carries title, playoff and Super Bowl odds for the Premier League, Champions League, NFL and college football, follows the Libertadores into the knockouts, and a slam lists the next round's matches.",
+      "Live Standings opens with today's fixtures and recent results across sports, carries title, playoff and Super Bowl odds for the Premier League, Champions League, NFL and college football, and a slam lists its next round.",
     ],
   },
   {

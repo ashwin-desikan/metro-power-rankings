@@ -87,6 +87,8 @@ export type NflPredictionEntry = {
   blend?: { pH: number };
   pick: "H" | "A";
   predicted_at: string;
+  /** ISO kick-off instant. */
+  kickoff?: string;
   result?: "H" | "A" | "T";
   score?: string;
   graded_at?: string;

@@ -135,6 +135,32 @@ export async function getMlbSim(): Promise<MlbSimFile | null> {
   );
 }
 
+/** The October ledger from scripts/predictions/build_mlb_postseason.py: one
+ *  row per postseason game (kickoff, home, away, result and score once
+ *  played). Empty ledger outside the postseason, by design, which is exactly
+ *  why Live Standings can list it: the regular season's fifteen games a day
+ *  would swamp the Today box, the playoffs will not. */
+export type MlbPostseasonGame = {
+  event_id: string;
+  date: string;
+  kickoff: string;
+  home: string;
+  away: string;
+  home_slug?: string;
+  away_slug?: string;
+  model?: { pH: number };
+  pick?: "H" | "A";
+  result?: "H" | "A";
+  score?: string;
+};
+export type MlbPostseasonFile = { meta: { generated_at: string; season: number; mode: string; events: number }; ledger: MlbPostseasonGame[] };
+
+export async function getMlbPostseason(): Promise<MlbPostseasonFile | null> {
+  return load<MlbPostseasonFile>("mlb-predictions.json", () =>
+    JSON.parse(readFileSync(join(process.cwd(), "public", "data", "mlb-predictions.json"), "utf-8")),
+  );
+}
+
 export async function getMlbSimHistory(): Promise<MlbSimHistoryFile | null> {
   return load<MlbSimHistoryFile>("mlb-sim-history.json", () =>
     JSON.parse(readFileSync(join(process.cwd(), "public", "data", "mlb-sim-history.json"), "utf-8")),

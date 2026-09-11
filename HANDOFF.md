@@ -13739,8 +13739,91 @@ header is the shape that works, so `_scratch/tennis-probe.mjs` is the probe to r
 
 Release note: today's block reworked again (four bullets, 213 / 218 / 215 / 213).
 
-### I. State
+### I. Live Standings: the Today box (`e726bf3c2`)
+Ashwin's proposal: "all of the matches on that day for the various sports ... in some box at the
+top ... upcoming fixtures as one box ... results from the last few days ... both collapsible ...
+compact ... break it down by sport", times in the viewer's zone, and later: "the day should
+start in Japan/Australia and end on the US West Coast."
+
+`LiveEvent` (sport, league, href, label, when, score, live) rides on `Block.events`; every block
+that builds fixture rows pushes its events beside them (euro comps, Libertadores, the
+internationals, UWCL, rugby and cricket internationals, a slam's upcoming matches, AFL and NRL
+finals), `collectEvents` dedupes and windows them, and `TodayStrip` renders two closed `<details>`
+above the sections: "On today" and "Recent results", grouped by sport in the page's own order,
+at most six per sport with "+N more in <sport>" anchoring to the section, kick-offs through the
+same `kickoff()`/LocalTime the tables use, a LIVE tag and the pulsing dot when anything is in
+play. "Today" is the UTC date's window widened ten hours before and eight after (its first
+kick-off in Japan and Australia to its last on the West Coast), plus anything live; results are
+the last 72 hours. Measured at 390 and 1280: 16 fixtures across five sports, six in play; open
+strip 462px on the phone, 305px on desktop; no horizontal scroll.
+
+### J. Live Standings follow-ups, one commit
+- **Champions League table slimmed** to P, GD, Pts and the three odds (W, D, L on the hub);
+  Europa and Conference keep the six until they carry odds. Ashwin: "getting a little too busy".
+- **NFL conference order is the seed order, from the hub's source.** When
+  `public/data/nfl/seeds/<year>.json` covers the week the live table has reached, each
+  conference is ordered by that file's `cr` for the week (the season page's own tiebreak
+  procedure) and the playoff shading follows it; until the file catches up (rebuilt after each
+  week's games), ESPN's `playoffSeed` orders it; win percentage only breaks what neither placed.
+  The cut note says which. Ashwin: "I don't want inconsistency between what we show in the
+  live standings and what we show on the hub." ⚠️ The seeds file matches on the nickname key
+  (`name.endsWith(key)`), the same convention the season page uses.
+- **Today box fed by the Premier League, the NFL and college football** from their predictions
+  ledgers (`pl-`, `nfl-`, `cfb-predictions.json`: kick-off instants, `score` once graded;
+  `kickoff`/`score` added to the PL and NFL entry types, the files already carried them). The
+  Champions League was already in through the club-comp fixtures. Gridiron labels read "Away at
+  Home" and the score is turned to read the same way (`awayFirst`: the ledger stores home first).
+  College football is the slate's own scope, games involving the AP Top 25. 🔴 **CFL has no
+  fixture source** on the site (cfl.ca standings only), so it is not in the box; a schedule feed
+  is the missing piece. Measured: "15 fixtures across 6 sports, 6 in play", "4 results across 2
+  sports" (49ers at Rams 27–7, Patriots at Seahawks 10–13, Florida A&M at Miami 7–77).
+
+### K. Zone Zero Cup, golf: diagnosed, not built
+Note in the Claude Projects folder, "Zone Zero Cup - golf - 2026-09-11.md". Golf is 33rd of the
+board's sports at 35.6 points across 22 nations, 28 per cent of tennis, because the engine
+gives it three inputs (men's majors, Olympic medals, prestige 0.6) where tennis has six. Both
+live rankings are reachable from the box (OWGR JSON with country; the Rolex table as HTML).
+Proposal: women's majors into the same Golf slot (the tennis precedent), a current-strength layer
+from the top three per nation on each ranking, the two World Amateur Team Championships and the
+International Crown at continental tier, prestige to 0.9. New Zealand's golf line goes from 2.3
+to roughly 6 to 8 (speculation until the builder runs); Korea, Japan and Sweden move more.
+Ashwin's rulings wanted on the amateur team events and the prestige move before any of it is
+built.
+
+Also in the follow-ups commit, from the same hour: the **Premier League table is slimmed the
+same way** (P, GD, Pts, Title%, Top5%, Rel%, Form; the other domestic tables keep the nine
+until they carry odds); the Today box's per-sport cap **folds the rest inline** (`+N more` is a
+nested `<details>`, so a slam's 64 first-round matches or an October of baseball stay one click
+deep and never a list; Ashwin: "some sort of pagination or collapsibility inside"); and **MLB
+joins the box for the postseason only**, from `mlb-predictions.json` (`getMlbPostseason`, the
+same ledger shape as the NFL's, empty until the bracket exists, which is the point: fifteen
+regular-season games a day would swamp the strip; Ashwin: "I think it's important for the MLB
+playoffs to show up here").
+
+Then, from the last hour, the rule that replaced the cap: 🔴 **the threshold rule.** A sport
+with six or fewer events reads in full; a sport with more folds to one line ("Football · 21
+results") that opens on a click (Ashwin: "anything above the threshold in terms of fixtures
+would just be collapsed into a line"). With that in place every fixture source joins: the
+domestic cups and super cups from `getDomesticCups`/`getSuperCups` (qualifying and preliminary
+rounds excluded; the FA Cup's first-round qualifying replays are not what the strip is for),
+and a third strip, **"Coming up"**, the three days after today's window under the same rule
+(Ashwin: "a Future Fixtures hub ... in the next 3 days"). Measured at 390 and 1280 with every
+strip opened: "On today 16 fixtures across 7 sports, 6 in play" (every sport inline),
+"Recent results 25 across 3 sports" (Football's 21 folded), "Coming up 53 across 6 sports"
+(Football 13 and Gridiron 34 folded, four sports inline); open heights 511/197/306px on the
+phone, 347/172/215 on desktop; no horizontal scroll. MLB regular-season games have no fixture
+feed on the site, so the box carries only its postseason; CFL has none at all.
+
+Two refinements at Ashwin's word, same commit (amended): **the rule runs twice**, once at the
+sport and once at the competition inside a folded sport ("for Gridiron ... college football /
+NFL level if there are more than six of either"), two levels and no deeper; measured, Coming up
+folds Gridiron 34 into College Football 20 (folded) and NFL 14 (folded), Football 13 into
+Premier League 10 (folded) and League Cup 3 (inline). And **a cup name two countries share
+carries the country code, England excepted**: "League Cup" and "SCO League Cup".
+
+### L. State
 Local, not pushed, linear on origin/main (`1a70c505e`), oldest first: `b27123e79` (the night
 entry's section M, `[vercel skip]`), `fd1e11b1e` (Côte d'Ivoire at the builders, `[vercel
-skip]`), `6b9e1a83e` (the frontier, app), `3437f4b15` (F1 odds, the dots, the 2100 card; app)
-and the Live Standings odds commit (app, push HEAD). The brand branch is separate.
+skip]`), `6b9e1a83e` (the frontier), `3437f4b15` (F1 odds, the dots, the 2100 card),
+`ca884a31f` (Live Standings odds), `e726bf3c2` (the Today box) and the follow-ups commit (push
+HEAD); every commit from the frontier on is app. The brand branch is separate.

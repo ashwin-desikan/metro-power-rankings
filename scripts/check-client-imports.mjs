@@ -74,6 +74,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/plSim",
   "@/lib/uclSim",
   "@/lib/nflSim",
+  "@/lib/nflElo",
   "@/lib/nhl",
   "@/lib/nhl-standings",
   "@/lib/rugbyStandings",

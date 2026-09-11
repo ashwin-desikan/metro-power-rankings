@@ -10,19 +10,20 @@ import { getCurrentNflStandings } from "@/lib/standings";
 import { getCurrentNbaStandings } from "@/lib/nba-standings";
 import { getCurrentNhlStandings } from "@/lib/nhl-standings";
 import { getCurrentMlbStandings } from "@/lib/mlb-standings";
-import { getMlbSim, playoffOddsByCanonical, fmtOdds } from "@/lib/mlbSim";
+import { getMlbSim, getMlbPostseason, playoffOddsByCanonical, fmtOdds } from "@/lib/mlbSim";
 import { getSeasonSim, simIsCurrent, simBySlug, simByName } from "@/lib/seasonSim";
 import { getCurrentMlsStandings } from "@/lib/mls-standings";
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getLiveCflStandings } from "@/lib/cflStandings";
 import { getLiveF1Standings } from "@/lib/f1Standings";
 import { getF1TitleOdds, f1OddsAreCurrent, f1OddsByName, normDriver, normConstructor } from "@/lib/f1TitleOdds";
-import { getPlSim } from "@/lib/plSim";
+import { getPlSim, getPlPredictions } from "@/lib/plSim";
 import { getUclSim } from "@/lib/uclSim";
-import { getNflSim } from "@/lib/nflSim";
-import { getCfbSim } from "@/lib/cfbSim";
+import { getNflSim, getNflPredictions } from "@/lib/nflSim";
+import { getCfbSim, getCfbPredictions } from "@/lib/cfbSim";
+import { getNflSeeds } from "@/lib/nflElo";
 import { getNpbStandings } from "@/lib/npbStandings";
-import { getClubStandings, getClubCompetitions, getInternationalComps, type LiveLeague, type LiveComp, type LiveRow, type LiveFixture, type LiveTeamRef } from "@/lib/clubFootballLive";
+import { getClubStandings, getClubCompetitions, getInternationalComps, getDomesticCups, getSuperCups, type LiveLeague, type LiveComp, type LiveRow, type LiveFixture, type LiveTeamRef } from "@/lib/clubFootballLive";
 import { deriveLeaguePhaseGroups } from "@/lib/euroCompDerive";
 import { getFootyLiveStandings } from "@/lib/_footyStandings";
 import { getFootyFinals, finalsIsCurrent } from "@/lib/footyFinals";
@@ -254,6 +255,8 @@ function buildBlock<T>(opts: {
   // under the table itself. Only set it where the rule is already established
   // in code; never guess a format.
   cutNote?: string | null;
+  /** Fixtures and results for the Today box, when the league has a source. */
+  events?: LiveEvent[];
 }): Block | null {
   if (opts.items.length === 0) return null;
   const mk = (items: T[]): SRow[] => {
@@ -268,7 +271,7 @@ function buildBlock<T>(opts: {
     .filter((st) => st.rows.length > 0);
   const covered = grouped.reduce((a, st) => a + st.rows.length, 0);
   const subTables = grouped.length > 0 && covered === all.length ? grouped : [{ title: null, columns: opts.columns, rows: all }];
-  return { league: opts.league, href: opts.href, note: opts.note, open: opts.open, subTables, cutNote: opts.playoff ? opts.cutNote ?? null : null };
+  return { league: opts.league, href: opts.href, note: opts.note, open: opts.open, subTables, cutNote: opts.playoff ? opts.cutNote ?? null : null, events: opts.events };
 }
 
 function Marker({ r }: { r: SRow }) {
@@ -308,32 +311,72 @@ function NameCell({ r }: { r: SRow }) {
 // not in the bundle this page reads, so the Premier League and its peers are
 // absent here until they are (Ashwin, 2026-09-11: "compact and collapsible
 // ... I don't want a 10,000-line list of everything happening that day").
-const TODAY_AHEAD_MS = 36 * 3600 * 1000;
-const TODAY_BEHIND_MS = 3 * 3600 * 1000;
+// "Today" is the calendar date wherever it is being played, from its first
+// kick-off in Japan and Australia to its last on the US West Coast (Ashwin,
+// 2026-09-11: "the day should start in Japan/Australia and end on the US West
+// Coast"): the UTC date's window widened by ten hours before and eight after.
+// A gridiron label reads "Away at Home", so its score is turned to read the
+// same way: the ledger stores home first ("27-7"), the strip shows "7–27".
+const awayFirst = (score: string | undefined | null): string | null => {
+  if (!score) return null;
+  const m = score.match(/^(\d+)\s*-\s*(\d+)$/);
+  return m ? `${m[2]}–${m[1]}` : score;
+};
+const TODAY_START_LEAD_MS = 10 * 3600 * 1000;
+const TODAY_END_LAG_MS = 8 * 3600 * 1000;
 const RESULTS_BACK_MS = 72 * 3600 * 1000;
 const TODAY_PER_SPORT = 6;
+const COMING_DAYS = 3;
 
-function collectEvents(groups: SportGroup[]): { upcoming: LiveEvent[]; results: LiveEvent[] } {
+function todayWindow(now: number): [number, number] {
+  const d = new Date(now);
+  const dayStart = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+  return [dayStart - TODAY_START_LEAD_MS, dayStart + 24 * 3600 * 1000 + TODAY_END_LAG_MS];
+}
+
+function collectEvents(groups: SportGroup[], extra: LiveEvent[] = []): { upcoming: LiveEvent[]; coming: LiveEvent[]; results: LiveEvent[] } {
   const now = Date.now();
+  const [from, to] = todayWindow(now);
   const all: LiveEvent[] = [];
   const seen = new Set<string>();
-  for (const g of groups) for (const b of g.blocks) for (const e of b.events ?? []) {
+  for (const e of [...groups.flatMap((g) => g.blocks.flatMap((b) => b.events ?? [])), ...extra]) {
     const k = `${e.league}|${e.label}|${e.when}`;
     if (seen.has(k)) continue;
     seen.add(k);
     all.push(e);
   }
   const t = (e: LiveEvent) => new Date(e.when).getTime();
-  const upcoming = all
-    .filter((e) => !e.score && Number.isFinite(t(e)) && (e.live || (t(e) >= now - TODAY_BEHIND_MS && t(e) <= now + TODAY_AHEAD_MS)))
+  const open = all.filter((e) => !e.score && Number.isFinite(t(e)));
+  const upcoming = open
+    .filter((e) => e.live || (t(e) >= from && t(e) <= to))
     .sort((a, b) => Number(b.live) - Number(a.live) || t(a) - t(b));
+  // The three days after today's window, same rules (Ashwin, 2026-09-11:
+  // "anything that's happening tomorrow, let's just say in the next 3 days").
+  const coming = open
+    .filter((e) => !e.live && t(e) > to && t(e) <= to + COMING_DAYS * 24 * 3600 * 1000)
+    .sort((a, b) => t(a) - t(b));
   const results = all
     .filter((e) => !!e.score && Number.isFinite(t(e)) && t(e) >= now - RESULTS_BACK_MS && t(e) <= now)
     .sort((a, b) => t(b) - t(a));
-  return { upcoming, results };
+  return { upcoming, coming, results };
 }
 
-function TodayStrip({ title, events, kind, sportOrder }: { title: string; events: LiveEvent[]; kind: "upcoming" | "results"; sportOrder: string[] }) {
+function EventRow({ e, kind }: { e: LiveEvent; kind: "upcoming" | "results" }) {
+  return (
+    <li className="flex items-baseline justify-between gap-2 text-xs">
+      <span className="min-w-0 truncate">
+        {e.live && <span className="text-[10px] font-semibold mr-1" style={{ color: "#22c55e" }}>LIVE</span>}
+        <span className="text-[var(--text)]">{e.label}</span>
+        <span className="text-[var(--text-dim)]"> · {e.league}</span>
+      </span>
+      <span className="flex-shrink-0 max-w-[55%] truncate tabular-nums text-[var(--text-muted)]" style={mono} title={kind === "results" ? e.score ?? undefined : undefined}>
+        {kind === "results" ? e.score : kickoff(e.when, e.when.endsWith("T00:00:00Z") ? false : true)}
+      </span>
+    </li>
+  );
+}
+
+function TodayStrip({ title, events, kind, sportOrder, noun }: { title: string; events: LiveEvent[]; kind: "upcoming" | "results"; sportOrder: string[]; noun: string }) {
   if (events.length === 0) return null;
   const bySport = new Map<string, LiveEvent[]>();
   for (const e of events) bySport.set(e.sport, [...(bySport.get(e.sport) ?? []), e]);
@@ -342,9 +385,7 @@ function TodayStrip({ title, events, kind, sportOrder }: { title: string; events
     return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
   });
   const liveN = events.filter((e) => e.live).length;
-  const summary = kind === "upcoming"
-    ? `${events.length} fixture${events.length === 1 ? "" : "s"} across ${sports.length} sport${sports.length === 1 ? "" : "s"}${liveN ? `, ${liveN} in play` : ""}`
-    : `${events.length} result${events.length === 1 ? "" : "s"} across ${sports.length} sport${sports.length === 1 ? "" : "s"}`;
+  const summary = `${events.length} ${noun}${events.length === 1 ? "" : "s"} across ${sports.length} sport${sports.length === 1 ? "" : "s"}${liveN ? `, ${liveN} in play` : ""}`;
   return (
     <details className="rounded-xl border overflow-hidden" style={cardStyle}>
       <summary className="cursor-pointer select-none px-4 py-2.5 flex items-center justify-between gap-2">
@@ -357,33 +398,50 @@ function TodayStrip({ title, events, kind, sportOrder }: { title: string; events
       <div className="border-t px-3 py-2 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2" style={{ borderColor: "var(--border)" }}>
         {sports.map((sport) => {
           const list = bySport.get(sport) ?? [];
-          const shown = list.slice(0, TODAY_PER_SPORT);
-          const more = list.length - shown.length;
-          return (
-            <div key={sport} className="min-w-0">
-              <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-0.5">
-                <a href={`#${slugId(sport)}`} className="hover:text-[var(--accent)]">{sport}</a>
+          const head = <a href={`#${slugId(sport)}`} className="hover:text-[var(--accent)]">{sport}</a>;
+          // 🔴 THE THRESHOLD RULE (Ashwin, 2026-09-11): a sport with six or
+          // fewer reads in full; a sport with more folds to one line and opens
+          // on a click, so a slam's first round or a cup weekend never becomes
+          // the page. Six is the number the day's own lists sat at.
+          if (list.length <= TODAY_PER_SPORT) {
+            return (
+              <div key={sport} className="min-w-0">
+                <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-0.5">{head}</div>
+                <ul className="m-0 p-0 list-none space-y-0.5">{list.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
               </div>
-              <ul className="m-0 p-0 list-none space-y-0.5">
-                {shown.map((e, i) => (
-                  <li key={`${e.label}-${i}`} className="flex items-baseline justify-between gap-2 text-xs">
-                    <span className="min-w-0 truncate">
-                      {e.live && <span className="text-[10px] font-semibold mr-1" style={{ color: "#22c55e" }}>LIVE</span>}
-                      <span className="text-[var(--text)]">{e.label}</span>
-                      <span className="text-[var(--text-dim)]"> · {e.league}</span>
-                    </span>
-                    <span className="flex-shrink-0 max-w-[55%] truncate tabular-nums text-[var(--text-muted)]" style={mono} title={kind === "results" ? e.score ?? undefined : undefined}>
-                      {kind === "results" ? e.score : kickoff(e.when)}
-                    </span>
-                  </li>
-                ))}
-                {more > 0 && (
-                  <li className="text-[11px] text-[var(--text-dim)]">
-                    <a href={`#${slugId(sport)}`} className="hover:text-[var(--accent)]">+{more} more in {sport}</a>
-                  </li>
+            );
+          }
+          const liveHere = list.filter((e) => e.live).length;
+          // Inside a folded sport the same rule runs once more at the
+          // competition level (Ashwin: "for Gridiron ... college football /
+          // NFL level if there are more than six of either of those"): a
+          // competition with six or fewer reads under its own heading, one
+          // with more folds again. Two levels and no deeper.
+          const byLeague = new Map<string, LiveEvent[]>();
+          for (const e of list) byLeague.set(e.league, [...(byLeague.get(e.league) ?? []), e]);
+          return (
+            <details key={sport} className="min-w-0">
+              <summary className="cursor-pointer select-none text-[11px] font-semibold text-[var(--text-muted)] hover:text-[var(--accent)]">
+                {sport} <span className="font-normal text-[var(--text-dim)]">· {list.length} {noun}s{liveHere ? `, ${liveHere} in play` : ""}</span>
+              </summary>
+              <div className="mt-0.5 space-y-1.5">
+                {[...byLeague.entries()].map(([league, items]) =>
+                  items.length <= TODAY_PER_SPORT ? (
+                    <div key={league}>
+                      {byLeague.size > 1 && <div className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]">{league}</div>}
+                      <ul className="m-0 p-0 list-none space-y-0.5">{items.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
+                    </div>
+                  ) : (
+                    <details key={league}>
+                      <summary className="cursor-pointer select-none text-[10px] uppercase tracking-wider text-[var(--text-dim)] hover:text-[var(--accent)]">
+                        {league} · {items.length} {noun}s
+                      </summary>
+                      <ul className="m-0 p-0 list-none space-y-0.5 mt-0.5">{items.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
+                    </details>
+                  ),
                 )}
-              </ul>
-            </div>
+              </div>
+            </details>
           );
         })}
       </div>
@@ -528,11 +586,37 @@ function LeagueAccordion({ block }: { block: Block }) {
 // ---- North American majors ---------------------------------------------
 
 async function nflBlock(): Promise<Block | null> {
-  const [s, sim] = await Promise.all([getCurrentNflStandings(), getNflSim().catch(() => null)]);
+  const season = new Date().getUTCFullYear();
+  const [s, sim, seedsFile, preds] = await Promise.all([
+    getCurrentNflStandings(), getNflSim().catch(() => null), getNflSeeds(season).catch(() => null), getNflPredictions().catch(() => null),
+  ]);
   const teams = Object.values(s.by_canonical);
   if (teams.length === 0) return null;
   const fr = new Map(nflFranchises().map((f) => [f.canonical, f]));
   const live = isLeagueLive("nfl", teams.map((t) => t.games_played), 17);
+  // 🔴 THE ORDER IS THE SEED ORDER, AND THE SEEDS ARE THE HUB'S. The season
+  // page seeds every week by the era's tiebreakers (public/data/nfl/seeds);
+  // when that file covers the week the table has reached, the conference here
+  // is ordered by it, so Live Standings and /teams/nfl/season/<year> cannot
+  // disagree (Ashwin, 2026-09-11: "I don't want inconsistency between what we
+  // show in the live standings and what we show on the hub"). Until the file
+  // catches up (it is rebuilt after each week's games), ESPN's playoffSeed,
+  // which applies the same procedure, is the order; win percentage is only the
+  // fallback for a team neither source has placed.
+  const maxPlayed = Math.max(0, ...teams.map((t) => t.games_played));
+  const seedsCurrent = !!seedsFile && seedsFile.season === season && seedsFile.through_week >= maxPlayed && seedsFile.through_week > 0;
+  const seedOf = (t: (typeof teams)[number]): number | null => {
+    if (seedsCurrent) {
+      const name = fr.get(t.canonical)?.name ?? t.display_name;
+      const key = Object.keys(seedsFile!.teams).find((k) => name.endsWith(k));
+      const st = key ? seedsFile!.teams[key] : undefined;
+      const wk = seedsFile!.through_week - 1;
+      const cr = st?.cr?.[wk];
+      if (typeof cr === "number") return cr;
+    }
+    return t.playoff_seed;
+  };
+  const seedRank = new Map(teams.map((t) => [t.canonical, seedOf(t)]));
   // Playoff and Super Bowl odds from the points-v3 season sim (/predictions/nfl),
   // joined on the franchise slug; shown while the season is live and the sim
   // is fresh (Ashwin, 2026-09-11: "now that the NFL season has started, I want
@@ -556,13 +640,17 @@ async function nflBlock(): Promise<Block | null> {
     // two days before kickoff, "Offseason" is simply untrue.
     league: "NFL", href: "/teams/nfl", note: showOdds ? `${s.source_label} · odds simulated` : (s.source_label || "Offseason"), open: live,
     items: teams, columns: ["W", "L", "T", "PCT", ...(showOdds ? ["PO%", "SB%"] : []), "STRK"],
-    sort: live ? (a, b) => b.win_pct - a.win_pct || b.wins - a.wins : (a, b) => nameOf(a).localeCompare(nameOf(b)),
+    sort: live
+      ? (a, b) => (seedRank.get(a.canonical) ?? 99) - (seedRank.get(b.canonical) ?? 99) || b.win_pct - a.win_pct || b.wins - a.wins
+      : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "AFC", pick: (t) => t.conference === "AFC" }, { title: "NFC", pick: (t) => t.conference === "NFC" }],
     row,
-    // ESPN's playoffSeed already applies the real seeding rules (division
-    // winners first, then wild cards), so seed <= 7 IS the current field.
-    playoff: live ? () => (t) => t.playoff_seed !== null && t.playoff_seed <= 7 : undefined,
-    cutNote: "Seeds 1-7 in each conference make the playoffs.",
+    // The field is the seed order's first seven, from the same source as the order.
+    playoff: live ? () => (t) => { const sd = seedRank.get(t.canonical); return sd !== null && sd !== undefined && sd <= 7; } : undefined,
+    cutNote: seedsCurrent ? `Seeds 1-7 in each conference make the playoffs; ordered by the tiebreakers, as on the season page through week ${seedsFile!.through_week}.` : "Seeds 1-7 in each conference make the playoffs.",
+    events: (preds?.ledger ?? []).filter((g) => g.kickoff).map((g) => ({
+      sport: "Gridiron", league: "NFL", href: "/teams/nfl", label: `${g.away} at ${g.home}`, when: g.kickoff as string,
+      score: g.result ? awayFirst(g.score) : null, live: false })),
   });
 }
 
@@ -618,7 +706,13 @@ async function nhlBlock(): Promise<Block | null> {
 }
 
 async function mlbBlock(): Promise<Block | null> {
-  const [s, sim] = await Promise.all([getCurrentMlbStandings(), getMlbSim()]);
+  const [s, sim, post] = await Promise.all([getCurrentMlbStandings(), getMlbSim(), getMlbPostseason().catch(() => null)]);
+  // The Today box takes the POSTSEASON only: the ledger is empty until the
+  // bracket exists (Ashwin, 2026-09-11: the playoffs must show, fifteen
+  // regular-season games a day would make the list too long).
+  const events: LiveEvent[] = (post?.ledger ?? []).filter((g) => g.kickoff).map((g) => ({
+    sport: "Baseball", league: "MLB postseason", href: "/teams/mlb", label: `${g.away} at ${g.home}`, when: g.kickoff,
+    score: g.result ? awayFirst(g.score) : null, live: false }));
   const teams = Object.values(s.by_canonical);
   if (teams.length === 0) return null;
   // Playoff odds from our own Monte Carlo (scripts/predictions/build_mlb_sim.py).
@@ -670,7 +764,8 @@ async function mlbBlock(): Promise<Block | null> {
     // Three division winners + three wild cards per league; ESPN's seed
     // already encodes that, and it is null for eliminated clubs late on.
     playoff: live ? () => (t) => t.playoff_seed !== null && t.playoff_seed <= 6 : undefined,
-    cutNote: "Six per league make the postseason: three division winners and three wild cards."
+    cutNote: "Six per league make the postseason: three division winners and three wild cards.",
+    events,
   });
 }
 
@@ -858,25 +953,29 @@ const byPtsGd = (a: LiveRow, b: LiveRow) => (b.points ?? 0) - (a.points ?? 0) ||
 // on /predictions/pl carries them); the three that matter at both ends.
 type DomesticOdds = Map<string, { p_title: number; p_top5: number; p_releg: number }>;
 
-function domesticLiveBlock(league: LiveLeague | undefined, label: string, odds?: DomesticOdds): Block | null {
+function domesticLiveBlock(league: LiveLeague | undefined, label: string, odds?: DomesticOdds, events?: LiveEvent[]): Block | null {
   if (!league) return null;
   const showOdds = !!odds && odds.size > 0;
+  // A table carrying odds reads P, GD, Pts, the odds and Form; W, D, L, GF
+  // and GA live on the hub (Ashwin, 2026-09-11, on the Premier League: "too
+  // little room to show win, draw, loss"). The leagues without odds keep the
+  // full nine.
   const subTables: SubTable[] = league.groups
     .map((g): SubTable => ({
       title: league.groups.length > 1 ? g.group_label : null,
-      columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts", ...(showOdds ? ["Title%", "Top5%", "Rel%"] : []), "Form"],
+      columns: showOdds ? ["P", "GD", "Pts", "Title%", "Top5%", "Rel%", "Form"] : ["P", "W", "D", "L", "GF", "GA", "GD", "Pts", "Form"],
       rows: g.rows.slice().sort(byPtsGd).map((r, i) => {
         const row = clubRow(r, i, "domestic");
         if (!showOdds) return row;
         const slug = row.href?.replace("/teams/football/", "") ?? "";
         const o = odds!.get(slug);
-        const form = row.cells[row.cells.length - 1];
-        return { ...row, cells: [...row.cells.slice(0, -1), fmtOdds(o?.p_title), fmtOdds(o?.p_top5), fmtOdds(o?.p_releg), form] };
+        const [p, , , , , , gd, pts, form] = row.cells;
+        return { ...row, cells: [p, gd, pts, fmtOdds(o?.p_title), fmtOdds(o?.p_top5), fmtOdds(o?.p_releg), form] };
       }),
     }))
     .filter((st) => st.rows.length > 0);
   if (subTables.length === 0) return null;
-  return { league: label, href: "/teams/football/2026-27", note: showOdds ? "live · odds simulated" : "live", open: true, subTables };
+  return { league: label, href: "/teams/football/2026-27", note: showOdds ? "live · odds simulated" : "live", open: true, subTables, events };
 }
 
 // ---- International Football section -------------------------------------
@@ -1406,16 +1505,21 @@ function euroCompBlocks(comps: LiveComp[], uclOdds?: UclOdds): Block[] {
 
     const { groups, computed } = deriveLeaguePhaseGroups(comp);
     const odds = id === 2 && uclOdds && uclOdds.size > 0 ? uclOdds : null;
+    // The Champions League table reads P, GD, Pts and the three odds; W, D and
+    // L live on the hub (Ashwin, 2026-09-11: "it's getting a little too busy").
+    // The other two comps keep the full six until they carry odds of their own.
+    const slim = id === 2;
     const groupTables: SubTable[] = groups
       .slice().sort((a, b) => a.group_label.localeCompare(b.group_label))
       .map((g): SubTable => ({
         title: groups.length > 1 ? g.group_label : null,
-        columns: ["P", "W", "D", "L", "GD", "Pts", ...(odds ? ["Top8%", "Top24%", "Title%"] : [])],
+        columns: slim ? ["P", "GD", "Pts", ...(odds ? ["Top8%", "Top24%", "Title%"] : [])] : ["P", "W", "D", "L", "GD", "Pts"],
         rows: g.rows.slice().sort(byPtsGd).map((r, i) => {
           const row = clubRow(r, i, "group");
-          if (!odds) return row;
-          const o = odds.get(row.name);
-          return { ...row, cells: [...row.cells, fmtOdds(o?.p_top8), fmtOdds(o?.p_top24), fmtOdds(o?.p_champion)] };
+          if (!slim) return row;
+          const [p, , , , gd, pts] = row.cells;
+          const o = odds ? odds.get(row.name) : undefined;
+          return { ...row, cells: [p, gd, pts, ...(odds ? [fmtOdds(o?.p_top8), fmtOdds(o?.p_top24), fmtOdds(o?.p_champion)] : [])] };
         }),
       }))
       .filter((st) => st.rows.length > 0);
@@ -1449,7 +1553,7 @@ function euroCompBlocks(comps: LiveComp[], uclOdds?: UclOdds): Block[] {
 // pages. Collapsed until the 2026 kickoff (CFB_KICKOFF_UTC in lib/cfb-live),
 // with the poll date always visible in the accordion note.
 async function cfbBlock(): Promise<Block | null> {
-  const [s, sim] = await Promise.all([getCfbRankings(), getCfbSim().catch(() => null)]);
+  const [s, sim, preds] = await Promise.all([getCfbRankings(), getCfbSim().catch(() => null), getCfbPredictions().catch(() => null)]);
   if (s.polls.length === 0) return null;
   // Playoff and national-title odds from the points-v3 season sim
   // (/predictions/cfb), joined on the school's site slug; a ranked school the
@@ -1494,10 +1598,16 @@ async function cfbBlock(): Promise<Block | null> {
     ? `# = ${COL[lead.kind] ?? lead.name} \u00b7 ${[lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ")}`
     : [lead.name, lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ");
   const note = ([COL[lead.kind] ?? lead.name, lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ") || null) + (showOdds ? " \u00b7 odds simulated" : "");
+  // The Today box: games on the predictions slate (AP Top 25 involvement, the
+  // slate's own scope), with the poll ranks in the label.
+  const rk = (n: number | null | undefined) => (n ? `#${n} ` : "");
+  const events: LiveEvent[] = (preds?.ledger ?? []).filter((g) => g.kickoff).map((g) => ({
+    sport: "Gridiron", league: "College Football", href: "/teams/cfb", label: `${rk(g.ap?.away)}${g.away} at ${rk(g.ap?.home)}${g.home}`, when: g.kickoff as string,
+    score: g.result ? awayFirst(g.score) : null, live: false }));
   return {
     league: "College Football", href: "/teams/cfb", note,
     open: started, live: started,
-    subTables: [{ title, columns, rows }],
+    subTables: [{ title, columns, rows }], events,
   };
 }
 
@@ -1511,10 +1621,41 @@ export default async function LiveStandingsPage() {
     getClubStandings(), getClubCompetitions(), getWLiveLeagues(), getWLiveCompetition("uwcl"),
     getWLiveOdds(),
   ]);
+  // Cup fixtures feed the Today box without a block of their own (the cups
+  // live on the season hub): the FA Cup and its peers, the super cups.
+  const [domesticCups, superCups] = await Promise.all([getDomesticCups().catch(() => []), getSuperCups().catch(() => [])]);
+  const cupName = (t: LiveTeamRef) => {
+    const c = getFootballClubByName(t.lookup ?? "") ?? getFootballClubByName(t.name ?? "");
+    return c?.cur_name ?? t.lookup ?? t.name ?? "TBD";
+  };
+  const CUP_FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
+  const CUP_LIVE = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
+  // Qualifying and preliminary rounds stay out: the FA Cup's first-round
+  // qualifying replays are not what a reader opening "On today" came for.
+  // A cup name two countries share carries the country's code, England's
+  // excepted (Ashwin, 2026-09-11: "League Cup" for the English one, "SCO" or
+  // similar for the Scottish one), so "League Cup" and "SCO League Cup" sit
+  // apart and neither takes a long name.
+  const CC: Record<string, string> = { England: "ENG", Scotland: "SCO", Italy: "ITA", Germany: "GER", Spain: "ESP", France: "FRA", Portugal: "POR", Netherlands: "NED" };
+  const allCups = [...domesticCups, ...superCups];
+  const nameCount = new Map<string, number>();
+  for (const c of allCups) nameCount.set(c.name, (nameCount.get(c.name) ?? 0) + 1);
+  const cupLabel = (cup: { name: string; country: string }) =>
+    (nameCount.get(cup.name) ?? 0) > 1 && cup.country !== "England" ? `${CC[cup.country] ?? cup.country} ${cup.name}` : cup.name;
+  const cupEvents: LiveEvent[] = allCups.flatMap((cup) => (cup.fixtures ?? []).filter((f) => f.kickoff && !/qualif|prelim/i.test(f.round ?? "")).map((f) => ({
+    sport: "Football", league: cupLabel(cup), href: "/teams/football/2026-27", label: `${cupName(f.home)} v ${cupName(f.away)}`, when: f.kickoff as string,
+    score: f.status && CUP_FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
+    live: !!f.status && CUP_LIVE.has(f.status) })));
   // The Premier League and Champions League sims (Ashwin, 2026-09-11: "fit in
   // the probabilities that we have for both ... on the live standings tables").
   // Both are joined only when fresh and for the season on the table.
-  const [plSim, uclSim] = await Promise.all([getPlSim().catch(() => null), getUclSim().catch(() => null)]);
+  const [plSim, uclSim, plPreds] = await Promise.all([getPlSim().catch(() => null), getUclSim().catch(() => null), getPlPredictions().catch(() => null)]);
+  // Premier League fixtures and results for the Today box come from the
+  // predictions ledger (kick-off instants, scores once graded); the standings
+  // bundle carries tables only.
+  const plEvents: LiveEvent[] = (plPreds?.ledger ?? []).filter((g) => g.kickoff).map((g) => ({
+    sport: "Football", league: "Premier League", href: "/teams/football/2026-27", label: `${g.home} v ${g.away}`, when: g.kickoff as string,
+    score: g.result && g.score ? g.score.replace("-", "–") : null, live: false }));
   const plOdds: DomesticOdds = new Map(
     plSim && plSim.meta.season === "2026-27" && simFresh(plSim.meta.generated_at)
       ? plSim.table.map((r) => [r.slug, { p_title: r.p_title, p_top5: r.p_top5, p_releg: r.p_releg }])
@@ -1541,7 +1682,7 @@ export default async function LiveStandingsPage() {
   const euro = euroCompBlocks(clubComps, uclOdds);
   const clubById = new Map(clubStandings.map((l) => [l.league_id, l]));
   const domestics = DOMESTIC_LIVE
-    .map((d) => domesticLiveBlock(clubById.get(d.id), d.label, d.label === "Premier League" ? plOdds : undefined))
+    .map((d) => domesticLiveBlock(clubById.get(d.id), d.label, d.label === "Premier League" ? plOdds : undefined, d.label === "Premier League" ? plEvents : undefined))
     .filter((b): b is Block => b !== null);
   const liber = libertadoresBlock(clubComps.find((c) => c.league_id === 13));
 
@@ -1627,7 +1768,7 @@ export default async function LiveStandingsPage() {
       return { sport: g.sport, blocks };
     })
     .filter((g) => g.blocks.length > 0);
-  const today = collectEvents(groups);
+  const today = collectEvents(groups, cupEvents);
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">
@@ -1668,10 +1809,11 @@ export default async function LiveStandingsPage() {
 
       <HubNav items={groups.map((g) => ({ label: g.sport, href: `#${slugId(g.sport)}` }))} />
 
-      {(today.upcoming.length > 0 || today.results.length > 0) && (
+      {(today.upcoming.length > 0 || today.results.length > 0 || today.coming.length > 0) && (
         <div className="space-y-3 mb-8">
-          <TodayStrip title="On today" events={today.upcoming} kind="upcoming" sportOrder={groups.map((g) => g.sport)} />
-          <TodayStrip title="Recent results" events={today.results} kind="results" sportOrder={groups.map((g) => g.sport)} />
+          <TodayStrip title="On today" events={today.upcoming} kind="upcoming" noun="fixture" sportOrder={groups.map((g) => g.sport)} />
+          <TodayStrip title="Recent results" events={today.results} kind="results" noun="result" sportOrder={groups.map((g) => g.sport)} />
+          <TodayStrip title="Coming up" events={today.coming} kind="upcoming" noun="fixture" sportOrder={groups.map((g) => g.sport)} />
         </div>
       )}
 

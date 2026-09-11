@@ -69,7 +69,11 @@ export type PlPredictionEntry = {
   blend?: PlOutcomeProbs;
   pick: "H" | "D" | "A";
   predicted_at: string;
+  /** ISO kick-off instant; present since the 2026-27 ledger. */
+  kickoff?: string;
   result?: "H" | "D" | "A";
+  /** "3-0", home first, once graded. */
+  score?: string;
   graded_at?: string;
   model_brier?: number;
   market_brier?: number;
