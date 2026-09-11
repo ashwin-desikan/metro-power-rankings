@@ -13311,6 +13311,70 @@ faults sent nothing at all and the two most damaging exited 0. It closes with th
 recognising, and carries the mtime mistake above as a worked example of getting it wrong.
 Wired into CLAUDE.md so it is discoverable; an undiscoverable page is decorative.
 
-**Pushed and live at `8e1598454`** (rates base inputs + bootstrap + unreachable alert) and
-`50ab50394` (CLAUDE.md).
+### E. Live Standings: the Libertadores knockout, kick-offs in local time, NPB to three places
+Three fixes Ashwin raised on `/sports/standings`, shipped in `647310a5a`.
+
+**Copa Libertadores was stuck on the group stage, and structurally could not leave it.**
+`libertadoresBlock` rendered `comp.groups` and nothing else, with the note hardcoded to
+`"group stage"`, so it had no path to the knockout however far the feed moved on. The data was
+two rounds ahead: group stage complete, Round of 16 complete, quarter-finals four played and four
+to come. The rounds are now read FROM THE FIXTURES, so it follows the competition by itself —
+knockout tables first (that is where the competition is), groups kept below as the season's
+record. 🔴 The note names the FIRST round still carrying an unplayed game, not the last round with
+any fixture, which would jump the label to "Final" the moment its placeholder fixtures appear.
+A round in progress shows results for the legs played and kick-offs for the rest, and the column
+header follows whether ANY are played so a half-finished round is not labelled "Date" over a
+column of scores.
+
+**Upcoming kick-offs now read in the viewer's own time zone.** The page is a server component on
+ISR, so every date was formatted server-side in a fixed zone — right for a date, wrong for a
+kick-off, since only the browser knows which 19:30 the reader means. New `LocalTime` client
+component. 🔴 It renders the SERVER's UTC string on the first client render and applies the local
+value in an effect AFTER hydration has matched: formatting local immediately would mismatch every
+fixture and make React discard and re-render the subtree. With JS off the reader keeps the UTC
+string, LABELLED UTC rather than passed off as local. Applied to the WSL Champions League, the
+European comps, the club competitions, cricket and rugby — rugby passes `withTime=false` because
+its feed gives a date and no kick-off, so a real midnight UTC fixture is never confused with
+"time unknown". `Cell` widens to accept a React element; `cellNum` already returned null for
+anything unparseable, so the in-cell bars are unaffected. Five date helpers left dead were removed.
+
+**NPB quoted a winning percentage to five places.** It passed the feed's preformatted
+`WinningPercentage` string straight through, so it never reached the `pct3` helper every other
+baseball and gridiron table here uses. `pct3` now accepts a string, and rejects an EMPTY one
+before parsing — `Number("")` is 0, not NaN, so an empty cell would otherwise read `.000`, a
+record of no wins rather than no games.
+
+### F. 🔴 A 276-CHARACTER RELEASE BULLET FAILED THE BUILD, AND NO LOCAL GATE COULD HAVE CAUGHT IT
+`647310a5a` failed on Vercel (`dpl_9zuTiF2CBmGM2TLhxHoQBAp98Fes`):
+
+    RELEASE_NOTES_VIOLATION (2026-09-11): bullet is 276 chars (max 220).
+
+**The bullet was mine and the cap was known** — the 09-09 entry records notes being "merged to
+four bullets under 220 characters (the build's cap)". The useful half is why nothing local
+objected: `check:release-notes` only verified that a date block EXISTED for each shipping day and
+never read its contents. So the 220-char, 4-bullet and 12-word-headline limits in
+`app/updates/page.tsx` were enforced ONLY by `next build`. tsc, vitest, client-imports,
+table-scroll, mobile and the release-notes gate itself all passed, and **the first thing to object
+was a paid production build** — one of the two the day allows.
+
+Fixed in `770368de1`: bullet cut to 175, and the gate now applies the same three limits. Verified
+the right way round — with the 276-char bullet still in place it reproduced the build failure
+exactly (same bullet, same count, same limit) and passed only once the bullet was cut. Each
+literal is `JSON.parse`d before measuring, so an escape like `·` counts as the one character
+it renders as rather than six. Limits are duplicated with a comment pointing at `RELEASE_LIMITS`,
+because the alternative was leaving the only enforcement in the one place that costs money to run.
+
+🔴 **The habit, not just the fix: run `npm run build` locally before spending a paid build.** It
+was run to completion (exit 0, `/updates` prerendered) before pushing the retry, which is what
+should have happened first. **A gate that checks a thing EXISTS is not a gate on whether the thing
+is VALID** — worth asking of every other check in the suite.
+
+**Deployed:** `dpl_AXMhPsxXQp4Fekb5iWosLwRmCAYB` READY in 5m16s, production serving `770368de1`,
+confirmed both by the deployment state and by `/deployed` returning the new SHA (it had been on
+`c095ad8b6`) — the second check being the one that catches a green build that never aliases.
+⚠️ Both of the day's paid builds are now spent, one on the failure and one on the fix.
+
+**Pushed and live at `8e1598454`** (rates base inputs + bootstrap + unreachable alert),
+`50ab50394` (CLAUDE.md), `647310a5a` (Live Standings, build FAILED) and `770368de1`
+(release-note fix + the gate, deployed).
 
