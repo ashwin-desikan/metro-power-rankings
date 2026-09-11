@@ -1,8 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type PointerEvent } from "react";
 import type { NflEloTeam } from "@/lib/nflElo";
 import { useThroughWeek } from "./WeekScrubber";
+import { ChartReadout, ChartReadoutProvider, useChartReadout } from "@/app/_shared/ChartReadout";
 
 // One season's Elo, week by week, every team on one axis.
 //
@@ -10,36 +11,41 @@ import { useThroughWeek } from "./WeekScrubber";
 // legitimately share a scale because Elo is one pool per season by ruling,
 // including the years the NFL ran alongside the AAFC or the AFL.
 //
-// 🔴 THESE ARE CLUB COLOURS, NOT A CATEGORICAL PALETTE, and that is why 32 of
+// THESE ARE CLUB COLOURS, NOT A CATEGORICAL PALETTE, and that is why 32 of
 // them is allowed. The palette rules cap categorical assignment at six because
 // the ORDER carries colourblind safety; a team's own colour carries identity
-// instead, and identity is reinforced twice more, by the hover label and the
-// tooltip. A franchise with no stored colour stays neutral rather than being
+// instead, and identity is reinforced twice more, by the label and the
+// readout. A franchise with no stored colour stays neutral rather than being
 // assigned one: inventing a club colour is worse than not having it.
 //
-// 🔴 THE TOOLTIP IS THE POINT UNDER THE CURSOR, NOT THE SEASON. Every rated
-// week carries its own hit circle and its own title: the week, the rating, the
-// rank, the record and the phase. The line still answers "whose line is this",
-// because that is what a reader asks when the cursor is between two points.
+// A CHART THAT NEEDS A POINTER IS NOT FINISHED (DESIGN-STANDARDS section 8):
+// a native `<title>` only answers a mouse that is already hovering, which a
+// phone never is. The readout under the chart is the label now, driven by a
+// pointer surface over the whole plot: the nearest (team, week) to the pointer
+// is the selection, on pointerdown/move/up with a drag path on touch and a
+// move path on mouse. Nothing is under 12px, and the plot is measured in
+// pixels from the wrapper's real width (ResizeObserver), not a scaled viewBox
+// that shrinks 32 team labels along with the marks on a phone.
 //
-// 🔴 END LABELS ARE DECONFLICTED, NOT DROPPED. Four teams inside 20 Elo points
+// END LABELS ARE DECONFLICTED, NOT DROPPED. Four teams inside 20 Elo points
 // put four labels inside 6px of each other. The visible labels are pushed apart
-// in one pass with a leader line back to the point, and while a line is hovered
-// every OTHER label is hidden outright rather than dimmed, because a dimmed
-// label still overlaps the hovered one.
+// in one pass with a leader line back to the point. On a narrow phone there is
+// not room for them at all, so they are dropped there; the legend above and
+// the readout below still name every emphasised line.
 //
-// 🔴 A CARRIED WEEK IS DRAWN AS HELD. Byes and post-elimination weeks inherit
+// A CARRIED WEEK IS DRAWN AS HELD. Byes and post-elimination weeks inherit
 // the previous rating, so the segment into one is dashed. A solid line there
 // would assert a measurement nobody took.
 //
-// 🔴 CLIENT COMPONENT FOR THE FILTERS ONLY. Grouping 32 lines by conference,
-// division or playoff fate is the difference between a hairball and a chart,
-// and it has to be instant. The drawing itself is still pure: same data in,
-// same SVG out.
+// PINNING AND PICKING ARE TWO NAMES FOR THE SAME HIGHLIGHT. Ashwin asked to be
+// able to pick a team and have it stand out, without removing the rest: the
+// whole point of one line among thirty-two is where it sits against them.
+// Clicking a line (or the Highlight select) pins it until cleared or another
+// line is clicked; dragging the pointer across the chart does the identical
+// thing for whatever is nearest, without touching the persistent pin. Either
+// one is "the active line" below, and the readout reports it either way.
 
-const W = 940;
-const H = 380;
-const M = { top: 14, right: 128, bottom: 30, left: 44 };
+const FONT = 12;
 const MONO = "'JetBrains Mono', monospace";
 
 function ord(n: number): string {
@@ -71,13 +77,7 @@ function deconflict(items: { key: string; y: number }[], gap: number, lo: number
 
 type Filter = { key: string; label: string; test: (t: NflEloTeam) => boolean };
 
-export default function WeeklyEloChart({
-  teams,
-  season,
-  colorByName = {},
-  regEndWeek = {},
-  emphasise = 4,
-}: {
+type WeeklyEloChartProps = {
   teams: NflEloTeam[];
   season: number;
   /** Canonical franchise name to a club colour that reads on the card, or null. */
@@ -85,8 +85,24 @@ export default function WeeklyEloChart({
   /** League to the last regular-season week. Two entries when two leagues ran. */
   regEndWeek?: Record<string, number>;
   emphasise?: number;
-}) {
-  // 🔴 THE FILTERS ARE BUILT FROM THE SEASON, NOT HARDCODED. 1966 has no AFC,
+};
+
+export default function WeeklyEloChart(props: WeeklyEloChartProps) {
+  return (
+    <ChartReadoutProvider>
+      <Plot {...props} />
+    </ChartReadoutProvider>
+  );
+}
+
+function Plot({
+  teams,
+  season,
+  colorByName = {},
+  regEndWeek = {},
+  emphasise = 4,
+}: WeeklyEloChartProps) {
+  // THE FILTERS ARE BUILT FROM THE SEASON, NOT HARDCODED. 1966 has no AFC,
   // 1932 has no divisions, and a season before the playoffs existed has no
   // playoff teams. A filter that would select everything or nothing is not
   // offered at all.
@@ -113,46 +129,66 @@ export default function WeeklyEloChart({
   }, [teams]);
 
   const [active, setActive] = useState("all");
-  // 🔴 PINNING IS NOT FILTERING. Ashwin asked to be able to pick a team and have
-  // it stand out "as if you're hovering over" it, WITHOUT removing the rest: the
-  // whole point of one line among thirty-two is where it sits against them. So
-  // this sets exactly the same visual state hover does, and leaves every other
-  // line drawn. It also makes the chart usable without a pointer at all, which
-  // a hover-only interaction never was.
+  // PINNING IS NOT FILTERING. See the comment above: this sets exactly the
+  // visual state dragging does, and leaves every other line drawn.
   const [pinned, setPinned] = useState<string | null>(null);
-  const filter = filters.find((f) => f.key === active) ?? filters[0];
+  // The pointer's current nearest (team, week), driven by pointerdown/move/up
+  // over the whole plot. Ephemeral: it updates continuously while dragging and
+  // simply holds its last value once the pointer lifts, same as a pin does.
+  const [pick, setPick] = useState<{ name: string; week: number } | null>(null);
+  const { set } = useChartReadout();
+  const wrap = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(0);
+  const dragging = useRef(false);
+  const through = useThroughWeek();
+  const H = 380;
 
+  useEffect(() => {
+    const el = wrap.current;
+    if (!el) return;
+    const ro = new ResizeObserver((entries) => setWidth(Math.floor(entries[0].contentRect.width)));
+    ro.observe(el);
+    setWidth(Math.floor(el.getBoundingClientRect().width));
+    return () => ro.disconnect();
+  }, []);
+
+  // Every hook above runs on every render, whatever `teams` turns out to
+  // hold; everything below is plain data derived from it.
+  const filter = filters.find((f) => f.key === active) ?? filters[0];
   const rated = teams.filter((t) => t.weeks.length >= 3);
   const shown = rated.filter(filter.test);
-  if (rated.length < 2) return null;
   const drawn = shown.length >= 1 ? shown : rated;
 
-  // 🔴 THE SCALE IS THE WHOLE SEASON, ALWAYS. Rescaling to the filtered subset
+  if (rated.length < 2) return null;
+
+  // THE SCALE IS THE WHOLE SEASON, ALWAYS. Rescaling to the filtered subset
   // would make the AFC and the NFC look identically spread and quietly make the
   // two views uncomparable, which is the one thing a filter must not do.
-  const weeks = rated.flatMap((t) => t.weeks.map((w) => w.w));
-  const x0 = Math.min(...weeks);
-  const x1 = Math.max(...weeks);
+  const seasonWeeks = rated.flatMap((t) => t.weeks.map((w) => w.w));
+  const x0 = Math.min(...seasonWeeks);
+  const x1 = Math.max(...seasonWeeks);
   const elos = rated.flatMap((t) => t.weeks.map((w) => w.e));
   const lo = Math.floor((Math.min(...elos) - 15) / 25) * 25;
   const hi = Math.ceil((Math.max(...elos) + 15) / 25) * 25;
 
-  const px = (w: number) => M.left + ((w - x0) / Math.max(x1 - x0, 1)) * (W - M.left - M.right);
+  const isNarrow = width > 0 && width < 480;
+  const M = { top: 14, right: isNarrow ? 14 : 128, bottom: 30, left: isNarrow ? 34 : 44 };
+
+  const px = (w: number) => M.left + ((w - x0) / Math.max(x1 - x0, 1)) * (width - M.left - M.right);
   const py = (e: number) => M.top + (1 - (e - lo) / (hi - lo)) * (H - M.top - M.bottom);
 
-  // 🔴 THE SCRUBBER CUTS THE LINES, NEVER THE SCALE. "Through week N" draws
+  // THE SCRUBBER CUTS THE LINES, NEVER THE SCALE. "Through week N" draws
   // every team only as far as week N and ranks and labels them by the rating
   // they held THEN, but the axes stay the whole season's, so scrubbing reads
   // as the season filling in rather than as thirty-two charts of different
   // shapes. null means the whole season, which is also what a page with no
   // scrubber gets.
-  const through = useThroughWeek();
   const drawnV: NflEloTeam[] = through == null
     ? drawn
     : drawn
         .map((t) => {
-          const weeks = t.weeks.filter((w) => w.w <= through);
-          return { ...t, weeks, end: weeks.length ? weeks[weeks.length - 1].e : t.start };
+          const cut = t.weeks.filter((w) => w.w <= through);
+          return { ...t, weeks: cut, end: cut.length ? cut[cut.length - 1].e : t.start };
         })
         .filter((t) => t.weeks.length >= 1);
 
@@ -173,18 +209,62 @@ export default function WeeklyEloChart({
 
   const uid = `elo${season}`;
 
-  const labelY = deconflict(
-    ranked.slice(0, leadCount).map((t) => ({
-      key: t.name,
-      y: py(t.weeks[t.weeks.length - 1].e) + 3.5,
-    })),
-    12,
-    M.top + 8,
-    H - M.bottom - 2,
-  );
+  const labelY = isNarrow
+    ? new Map<string, number>()
+    : deconflict(
+        ranked.slice(0, leadCount).map((t) => ({
+          key: t.name,
+          y: py(t.weeks[t.weeks.length - 1].e) + 3.5,
+        })),
+        14,
+        M.top + 8,
+        H - M.bottom - 2,
+      );
 
   const fmtRec = (rec?: [number, number, number]) =>
     rec ? `${rec[0]}-${rec[1]}${rec[2] ? `-${rec[2]}` : ""}` : "";
+
+  const activeName = pinned ?? pick?.name ?? null;
+
+  const readoutFor = (name: string, week: number) => {
+    const t = drawnV.find((d) => d.name === name);
+    const w = t?.weeks.find((wk) => wk.w === week);
+    if (!t || !w) return null;
+    const who = `${t.city ?? ""} ${t.team ?? t.name}`.trim();
+    const text =
+      `${who}, ${w.w === 0 ? "preseason seed" : `week ${w.w}`}: ${w.e}` +
+      `${w.r ? `, ${w.r}${ord(w.r)} of ${rated.length}` : ""}` +
+      `${w.rec ? `, ${fmtRec(w.rec)}` : ""}` +
+      `${w.pts ? `, ${w.pts[0]}-${w.pts[1]}` : ""}` +
+      `${w.carried ? " (no game, rating held)" : ""}.`;
+    return { key: `${name}:${week}`, text };
+  };
+
+  const nearest = (cx: number, cy: number): { name: string; week: number } | null => {
+    if (!drawnV.length || width <= 0) return null;
+    let best: { name: string; week: number } | null = null;
+    let bd = Infinity;
+    for (const t of drawnV) {
+      for (const w of t.weeks) {
+        const d = Math.hypot(px(w.w) - cx, py(w.e) - cy);
+        if (d < bd) { bd = d; best = { name: t.name, week: w.w }; }
+      }
+    }
+    return best;
+  };
+
+  const onPointer = (e: PointerEvent<SVGSVGElement>) => {
+    if (e.type === "pointermove" && !dragging.current && e.pointerType !== "mouse") return;
+    const r = e.currentTarget.getBoundingClientRect();
+    const found = nearest(e.clientX - r.left, e.clientY - r.top);
+    if (found) {
+      setPick(found);
+      const ro = readoutFor(found.name, found.week);
+      if (ro) set(ro);
+    }
+  };
+  const down = (e: PointerEvent<SVGSVGElement>) => { dragging.current = true; onPointer(e); };
+  const up = () => { dragging.current = false; };
 
   return (
     <figure className="m-0 min-w-0">
@@ -217,7 +297,7 @@ export default function WeeklyEloChart({
           id={`${uid}-pin`}
           value={pinned ?? ""}
           onChange={(e) => setPinned(e.target.value || null)}
-          /* 16px on a phone or iOS zooms the page on focus (§6), and the
+          /* 16px on a phone or iOS zooms the page on focus (section 6), and the
              control clears 44px there for the same reason. */
           className="rounded-md border px-2 min-h-11 sm:min-h-8 text-[16px] sm:text-xs max-w-[15rem]"
           style={{ background: "var(--bg-card)", borderColor: pinned ? "var(--accent)" : "var(--border)", color: pinned ? "var(--accent)" : "var(--text-muted)" }}
@@ -246,183 +326,156 @@ export default function WeeklyEloChart({
           </span>
         ))}
         <span className="text-[var(--text-dim)]">
-          {drawnV.length} of {rated.length} shown &middot; hover any point for that week &middot;{" "}
-          {pinned ? "click the line again to release it" : "click a line to lock it"}
+          {drawnV.length} of {rated.length} shown &middot; tap or drag any point for that week &middot;{" "}
+          {pinned ? "tap the line again to release it" : "tap a line to lock it"}
         </span>
       </figcaption>
 
-      <svg viewBox={`0 0 ${W} ${H}`} className={`w-full h-auto ${uid}${pinned ? " haspin" : ""}`} role="img"
-        aria-label={`Elo rating by week for ${drawnV.length} teams in the ${season} season. ${ranked.slice(0, leadCount).map((t) => `${t.team ?? t.name} ${through == null ? "ended on" : `stood at`} ${t.end}`).join("; ")}.`}>
-        <style>{`
-          /* 🔴 THE BASE OPACITY IS A CLASS, NOT AN INLINE STYLE. It was inline,
-             and an inline style beats a stylesheet rule, so neither the dim nor
-             the highlight could touch a line: hovering the Chargers left them at
-             the same 0.55 they started at while everything else stayed put. The
-             whole interaction was a no-op that looked like a subtle one. */
-          .${uid} .ln { opacity: 0.5; }
-          .${uid} .ln.lead { opacity: 1; }
-          .${uid} .ln .hit { stroke: transparent; stroke-width: 14; fill: none; pointer-events: stroke; }
-          .${uid} .ln .lbl { opacity: 0; }
-          .${uid} .ln.lead .lbl { opacity: 1; }
+      <div ref={wrap} className="w-full min-w-0">
+        {width > 0 ? (
+          <svg
+            width={width}
+            height={H}
+            role="img"
+            aria-label={`Elo rating by week for ${drawnV.length} teams in the ${season} season. ${ranked.slice(0, leadCount).map((t) => `${t.team ?? t.name} ${through == null ? "ended on" : `stood at`} ${t.end}`).join("; ")}.`}
+            className="block cursor-crosshair touch-pan-y select-none"
+            onPointerDown={down}
+            onPointerMove={onPointer}
+            onPointerUp={up}
+            onPointerCancel={up}
+            onPointerLeave={up}
+          >
+            {yTicks.map((v) => (
+              <g key={v}>
+                <line x1={M.left} x2={width - M.right} y1={py(v)} y2={py(v)} stroke="var(--border)" strokeWidth={1} />
+                <text x={M.left - 8} y={py(v) + 3} textAnchor="end" fontSize={FONT} fill="var(--text-dim)" style={{ fontFamily: MONO }}>{v}</text>
+              </g>
+            ))}
+            {1500 >= lo && 1500 <= hi ? (
+              <line x1={M.left} x2={width - M.right} y1={py(1500)} y2={py(1500)} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="2 3" />
+            ) : null}
 
-          /* One line held: everything else drops to a ghost, and the held one
-             goes to full strength, thicker, and separated from what it crosses
-             by a halo in the card colour. There is no z-index in SVG, so the
-             halo is what puts it visually on top of the lines painted after it. */
-          .${uid}:has(.ln:hover) .ln { opacity: 0.07; }
-          .${uid}:has(.ln:hover) .ln:hover { opacity: 1; }
-          .${uid}:has(.ln:hover) .ln:not(:hover) .lbl,
-          .${uid}:has(.ln:hover) .ln:not(:hover) .lead-line { opacity: 0; }
-          .${uid} .ln:hover .stroke {
-            stroke-width: 4;
-            filter: drop-shadow(0 0 4px var(--bg-card)) drop-shadow(0 0 2px var(--bg-card));
-          }
-          .${uid} .ln:hover .lbl { opacity: 1; font-weight: 700; }
-          .${uid} .ln:hover .dot { r: 5; }
-          .${uid} .ln:hover .lblbg { opacity: 1; }
-          .${uid} .lblbg { opacity: 0; }
-          .${uid} .ln.lead .lblbg { opacity: 0; }
+            {/* Where the regular season ended: the line sits ON the last regular-
+                season week, not half a step into the playoffs (Ashwin, 2026-09-08:
+                the playoffs start the weekend the regular season ends). Labelled
+                per league when they differ. */}
+            {dividers.map(([lg, w]) => (
+              <g key={lg}>
+                <line x1={px(w)} x2={px(w)} y1={M.top} y2={H - M.bottom} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="4 4" />
+                {!isNarrow ? (
+                  <text x={px(w) + 4} y={M.top + 10} fontSize={FONT} fill="var(--text-dim)" style={{ fontFamily: MONO }}>
+                    {oneDivider ? "playoffs" : `${lg} playoffs`}
+                  </text>
+                ) : null}
+              </g>
+            ))}
 
-          /* A pinned line gets exactly what a hovered one gets. Written before
-             the hover block so that hovering a DIFFERENT line still takes over. */
-          .${uid}.haspin .ln { opacity: 0.07; }
-          .${uid}.haspin .ln.on { opacity: 1; }
-          .${uid}.haspin .ln:not(.on) .lbl,
-          .${uid}.haspin .ln:not(.on) .lead-line { opacity: 0; }
-          .${uid}.haspin .ln.on .stroke {
-            stroke-width: 4;
-            filter: drop-shadow(0 0 4px var(--bg-card)) drop-shadow(0 0 2px var(--bg-card));
-          }
-          .${uid}.haspin .ln.on .lbl { opacity: 1; font-weight: 700; }
-          .${uid}.haspin .ln.on .lblbg { opacity: 1; }
-          .${uid}.haspin .ln.on .dot { r: 5; }
+            {through != null && through > x0 ? (
+              <line x1={px(through)} x2={px(through)} y1={M.top} y2={H - M.bottom}
+                stroke="var(--accent)" strokeWidth={1} strokeOpacity={0.6} strokeDasharray="2 3" />
+            ) : null}
 
-          .${uid} .pt { fill: transparent; }
-          .${uid} .pt:hover { fill: var(--text); fill-opacity: 0.9; }
-          /* 🔴 A PIN OUTRANKS HOVER, and this block is what makes that true.
-             The first version let hover win, which meant the pinned line was
-             lost the moment the cursor crossed anything on its way to it: the
-             chart kept handing the highlight to whatever was under the mouse,
-             which is the behaviour pinning exists to escape. A pin now holds
-             until it is cleared or another line is clicked. The per-point
-             tooltips still answer wherever the cursor is, because those are
-             native titles and owe nothing to opacity. */
-          .${uid}.haspin:has(.ln:hover) .ln { opacity: 0.07; }
-          .${uid}.haspin:has(.ln:hover) .ln.on { opacity: 1; }
-          .${uid}.haspin .ln:hover:not(.on) .stroke { stroke-width: 1.4; filter: none; }
-          .${uid}.haspin .ln:hover:not(.on) .lbl { opacity: 0; }
-          .${uid}.haspin .ln:hover:not(.on) .dot { r: 2; }
-
-          @media (prefers-reduced-motion: no-preference) {
-            .${uid} .ln { transition: opacity .12s ease; }
-            .${uid} .ln .stroke { transition: stroke-width .12s ease; }
-          }
-        `}</style>
-
-        {yTicks.map((v) => (
-          <g key={v}>
-            <line x1={M.left} x2={W - M.right} y1={py(v)} y2={py(v)} stroke="var(--border)" strokeWidth={1} />
-            <text x={M.left - 8} y={py(v) + 3} textAnchor="end" fontSize={10} fill="var(--text-dim)" style={{ fontFamily: MONO }}>{v}</text>
-          </g>
-        ))}
-        {1500 >= lo && 1500 <= hi ? (
-          <line x1={M.left} x2={W - M.right} y1={py(1500)} y2={py(1500)} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="2 3" />
-        ) : null}
-
-        {/* Where the regular season ended: the line sits ON the last regular-
-            season week, not half a step into the playoffs (Ashwin, 2026-09-08:
-            the playoffs start the weekend the regular season ends). Labelled
-            per league when they differ. */}
-        {dividers.map(([lg, w]) => (
-          <g key={lg}>
-            <line x1={px(w)} x2={px(w)} y1={M.top} y2={H - M.bottom} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="4 4" />
-            <text x={px(w) + 4} y={M.top + 10} fontSize={9} fill="var(--text-dim)" style={{ fontFamily: MONO }}>
-              {oneDivider ? "playoffs" : `${lg} playoffs`}
-            </text>
-          </g>
-        ))}
-
-        {through != null && through > x0 ? (
-          <line x1={px(through)} x2={px(through)} y1={M.top} y2={H - M.bottom}
-            stroke="var(--accent)" strokeWidth={1} strokeOpacity={0.6} strokeDasharray="2 3" />
-        ) : null}
-
-        {xTicks.map((w) => (
-          <text key={w} x={px(w)} y={H - 10} textAnchor="middle" fontSize={10} fill="var(--text-dim)" style={{ fontFamily: MONO }}>
-            {w === 0 ? "seed" : `wk ${w}`}
-          </text>
-        ))}
-
-        {/* Trailing teams first so the emphasised few paint on top. */}
-        {[...drawnV].sort((a, b) => (lead.has(a.name) ? 1 : 0) - (lead.has(b.name) ? 1 : 0)).map((t) => {
-          const color = colorByName[t.name] || "var(--border)";
-          const isLead = lead.has(t.name);
-          const solid: string[] = [];
-          const held: string[] = [];
-          for (let i = 1; i < t.weeks.length; i++) {
-            const a = t.weeks[i - 1];
-            const b = t.weeks[i];
-            (b.carried ? held : solid).push(
-              `M${px(a.w).toFixed(1)},${py(a.e).toFixed(1)}L${px(b.w).toFixed(1)},${py(b.e).toFixed(1)}`);
-          }
-          const all = t.weeks.map((w, i) => `${i ? "L" : "M"}${px(w.w).toFixed(1)},${py(w.e).toFixed(1)}`).join("");
-          const last = t.weeks[t.weeks.length - 1];
-          const who = `${t.city ?? ""} ${t.team ?? t.name}`.trim();
-          const ly = labelY.get(t.name) ?? null;
-          const moved = ly !== null && Math.abs(ly - (py(last.e) + 3.5)) > 1.5;
-          return (
-            /* 🔴 CLICK THE LINE TO LOCK IT. Hover alone is a state you lose the
-               moment you move to read the thing you were hovering for: the line
-               you were following disappears the instant the cursor leaves its
-               14px hit stroke. Clicking pins the same state so it survives the
-               mouse, and clicking again releases it. The select above does the
-               same thing for anyone not using a pointer. */
-            <g
-              key={t.name}
-              className={`ln${isLead ? " lead" : ""}${t.name === pinned ? " on" : ""}`}
-              onClick={() => setPinned(pinned === t.name ? null : t.name)}
-              style={{ cursor: "pointer" }}
-            >
-              {/* Whose line is this. The per-week detail is on the points. */}
-              <title>{`${who}${t.league ? ` (${t.league})` : ""}${t.div ? ` · ${t.div}` : ""}`}</title>
-              <path className="hit" d={all} />
-              <path className="stroke" d={solid.join("")} fill="none" stroke={color} strokeWidth={isLead ? 2.4 : 1.4} strokeLinecap="round" strokeLinejoin="round" />
-              {held.length ? <path className="stroke" d={held.join("")} fill="none" stroke={color} strokeWidth={isLead ? 2.4 : 1.4} strokeDasharray="3 3" /> : null}
-
-              {/* 🔴 ONE HIT CIRCLE PER RATED WEEK, each with its own title, so
-                  the tooltip answers "what is this point" rather than "what was
-                  this season". Transparent until hovered, then it marks itself. */}
-              {t.weeks.map((w) => (
-                <circle key={w.w} className="pt" cx={px(w.w)} cy={py(w.e)} r={4.5}>
-                  <title>
-                    {`${who} · ${w.w === 0 ? "preseason seed" : `week ${w.w}`}` +
-                     `\n${w.e}${w.r ? ` · ${w.r}${ord(w.r)} of ${rated.length}` : ""}` +
-                     `${w.rec ? ` · ${fmtRec(w.rec)}` : ""}` +
-                     `${w.pts ? ` · ${w.pts[0]}-${w.pts[1]}` : ""}` +
-                     `${w.ph ? `\n${w.ph}` : ""}${w.carried ? " · no game, rating held" : ""}`}
-                  </title>
-                </circle>
-              ))}
-
-              <circle className="dot" cx={px(last.w)} cy={py(last.e)} r={isLead ? 3 : 2} fill={color} pointerEvents="none" />
-              {moved ? (
-                <polyline
-                  className="lead-line"
-                  points={`${(px(last.w) + 4).toFixed(1)},${py(last.e).toFixed(1)} ${(px(last.w) + 9).toFixed(1)},${(ly! - 3.5).toFixed(1)} ${(px(last.w) + 13).toFixed(1)},${(ly! - 3.5).toFixed(1)}`}
-                  fill="none" stroke={color} strokeWidth={1} strokeOpacity={0.7} pointerEvents="none"
-                />
-              ) : null}
-              <rect className="lblbg" x={px(last.w) + (moved ? 14 : 5)} y={(ly ?? py(last.e) + 3.5) - 10}
-                width={Math.max((t.team ?? t.name).length * 6.8 + 6, 24)} height={14} rx={3}
-                fill="var(--bg-card)" pointerEvents="none" />
-              <text className="lbl" x={px(last.w) + (moved ? 16 : 7)} y={ly ?? py(last.e) + 3.5}
-                fontSize={11} fill="var(--text)" style={{ fontFamily: MONO }} pointerEvents="none">
-                {t.team ?? t.name}
+            {xTicks.map((w) => (
+              <text key={w} x={px(w)} y={H - 10} textAnchor="middle" fontSize={FONT} fill="var(--text-dim)" style={{ fontFamily: MONO }}>
+                {w === 0 ? "seed" : `wk ${w}`}
               </text>
-            </g>
-          );
-        })}
-      </svg>
+            ))}
+
+            {/* Trailing teams first so the emphasised or active few paint on top. */}
+            {[...drawnV].sort((a, b) => {
+              const aOn = a.name === activeName ? 1 : 0;
+              const bOn = b.name === activeName ? 1 : 0;
+              if (aOn !== bOn) return aOn - bOn;
+              return (lead.has(a.name) ? 1 : 0) - (lead.has(b.name) ? 1 : 0);
+            }).map((t) => {
+              const color = colorByName[t.name] || "var(--border)";
+              const isLead = lead.has(t.name);
+              const isActive = t.name === activeName;
+              const dimmed = activeName != null && !isActive;
+              const strokeW = isActive ? 4 : isLead ? 2.4 : 1.4;
+              const lineOpacity = dimmed ? 0.07 : 1;
+              const showLabel = !isNarrow && (isActive || (isLead && activeName == null));
+              const solid: string[] = [];
+              const held: string[] = [];
+              for (let i = 1; i < t.weeks.length; i++) {
+                const a = t.weeks[i - 1];
+                const b = t.weeks[i];
+                (b.carried ? held : solid).push(
+                  `M${px(a.w).toFixed(1)},${py(a.e).toFixed(1)}L${px(b.w).toFixed(1)},${py(b.e).toFixed(1)}`);
+              }
+              const all = t.weeks.map((w, i) => `${i ? "L" : "M"}${px(w.w).toFixed(1)},${py(w.e).toFixed(1)}`).join("");
+              const last = t.weeks[t.weeks.length - 1];
+              const who = `${t.city ?? ""} ${t.team ?? t.name}`.trim();
+              const ly = labelY.get(t.name) ?? null;
+              const moved = ly !== null && Math.abs(ly - (py(last.e) + 3.5)) > 1.5;
+              return (
+                /* Click (or tap) the line to lock it. Dragging picks the same
+                   highlight for whatever is nearest, without touching the pin. */
+                <g
+                  key={t.name}
+                  onClick={() => setPinned(pinned === t.name ? null : t.name)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <title>{`${who}${t.league ? ` (${t.league})` : ""}${t.div ? ` · ${t.div}` : ""}`}</title>
+                  <path d={all} stroke="transparent" strokeWidth={14} fill="none" style={{ pointerEvents: "stroke" }} />
+                  <path
+                    d={solid.join("")}
+                    fill="none"
+                    stroke={color}
+                    strokeWidth={strokeW}
+                    strokeOpacity={lineOpacity}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={isActive ? { filter: "drop-shadow(0 0 4px var(--bg-card)) drop-shadow(0 0 2px var(--bg-card))" } : undefined}
+                  />
+                  {held.length ? (
+                    <path d={held.join("")} fill="none" stroke={color} strokeWidth={strokeW} strokeOpacity={lineOpacity} strokeDasharray="3 3" />
+                  ) : null}
+
+                  {/* One point per rated week, marking the one nearest the pointer. */}
+                  {t.weeks.map((w) => {
+                    const picked = pick?.name === t.name && pick.week === w.w;
+                    return (
+                      <circle key={w.w} cx={px(w.w)} cy={py(w.e)} r={picked ? 5 : 4.5}
+                        fill={picked ? "var(--text)" : "transparent"} fillOpacity={picked ? 0.9 : 1}>
+                        <title>
+                          {`${who} · ${w.w === 0 ? "preseason seed" : `week ${w.w}`}` +
+                           `\n${w.e}${w.r ? ` · ${w.r}${ord(w.r)} of ${rated.length}` : ""}` +
+                           `${w.rec ? ` · ${fmtRec(w.rec)}` : ""}` +
+                           `${w.pts ? ` · ${w.pts[0]}-${w.pts[1]}` : ""}` +
+                           `${w.ph ? `\n${w.ph}` : ""}${w.carried ? " · no game, rating held" : ""}`}
+                        </title>
+                      </circle>
+                    );
+                  })}
+
+                  <circle cx={px(last.w)} cy={py(last.e)} r={isActive ? 5 : isLead ? 3 : 2} fill={color} pointerEvents="none" />
+                  {showLabel && moved ? (
+                    <polyline
+                      points={`${(px(last.w) + 4).toFixed(1)},${py(last.e).toFixed(1)} ${(px(last.w) + 9).toFixed(1)},${(ly! - 3.5).toFixed(1)} ${(px(last.w) + 13).toFixed(1)},${(ly! - 3.5).toFixed(1)}`}
+                      fill="none" stroke={color} strokeWidth={1} strokeOpacity={0.7} pointerEvents="none"
+                    />
+                  ) : null}
+                  {showLabel ? (
+                    <>
+                      <rect x={px(last.w) + (moved ? 14 : 5)} y={(ly ?? py(last.e) + 3.5) - 10}
+                        width={Math.max((t.team ?? t.name).length * 7 + 6, 24)} height={15} rx={3}
+                        fill="var(--bg-card)" pointerEvents="none" />
+                      <text x={px(last.w) + (moved ? 16 : 7)} y={ly ?? py(last.e) + 3.5}
+                        fontSize={FONT} fill="var(--text)" fontWeight={700} style={{ fontFamily: MONO }} pointerEvents="none">
+                        {t.team ?? t.name}
+                      </text>
+                    </>
+                  ) : null}
+                </g>
+              );
+            })}
+          </svg>
+        ) : (
+          <div style={{ height: H }} aria-hidden />
+        )}
+      </div>
+      <ChartReadout hint="Tap or drag on the chart: the nearest team's rating that week." />
     </figure>
   );
 }
