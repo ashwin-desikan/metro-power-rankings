@@ -13214,3 +13214,100 @@ Seeds and odds 1920-32 rebuilt (1932 through_week 13, complete); `playoff_seeds 
 1932 "2 qualifiers within the shard's 2 appearances", the rest unchanged. Also: "Rock Island
 Independents" reads RCK (era table), Rochester keeps ROC.
 
+---
+
+## 2026-09-11 — mini → next session: FOUR RATES BUILDERS HAD NOT RUN SINCE 09-08, AND NOTION WENT UNUSED FOR A WHOLE SESSION
+
+### A. Overnight: both systems shipped yesterday came through their first night
+`economy-rates` made its **first genuine run ever** (RUN 07:32:26Z, DONE ok 348s, commit
+`015ef5f1d`, `{"ok":true}`, both pages warmed HTTP 200). `ops-autofix` ran every two hours and
+correctly took **no action**: it declined `check_down` as outside the whitelist, deduped the
+repeat notifications (`same unfixable finding(s) as the last run -- not re-notifying`), and at
+09:18Z reported `no findings; nothing to do` when `newsletter-daily` cleared on its own. The
+noise fix held: one notification yesterday, silence after. `claude-auth-canary` and
+`daily-ops-sweep` both ok. No job in a failed state.
+
+### B. 🔴 FOUR RATES BUILDERS HAD NOT RUN SINCE 09-08 — AND THE SIX IN THE BACKLOG WERE NEVER THE PROBLEM
+The open backlog row said *"Rates builders boj, snb, rba, rbnz, norges, buba: base inputs lost
+with the 09-08 container"*. I compounded it by reporting the same six as "frozen", inferred from
+file mtimes. **Both were wrong.** Measured, not inferred:
+
+  * Those six rebuild cleanly and produce **byte-identical** files. None of those banks has moved
+    since 09-08, so an unchanged file is the EXPECTED result, not a fault. `built` is
+    data-derived, not run-time, so a no-change rebuild leaves no trace at all.
+  * The genuinely broken ones were **fed, ECB, Riksbank and BoE**. Their full-history base inputs
+    went with the container. `refresh.py` rightly REFUSES to seed a base from its own 90-day
+    window (that would truncate a century of history to a quarter), so all four were marked
+    unreachable and **SKIPPED on every run from 09-08 to 09-11** — while the job exited 0 and its
+    healthcheck stayed green.
+  * **BoC belongs on the list for a different reason worth keeping.** Its INCREMENTAL source
+    (V39079) was reachable, so `refresh.py` never flagged it — but its builder needs a SECOND file
+    (V122530, monthly 1935-on) that was also lost, so it FAILED outright rather than being
+    skipped. 🔴 Reachability of an incremental feed says nothing about whether the base is present.
+
+**Nothing published was ever wrong.** A full rebuild produced NO diff across all thirteen banks.
+The cost was entirely prospective — and the first thing that would have been missed is the ECB
+hike announced 09-10, effective 09-16. ⚠️ That also corrects what I told Ashwin yesterday: I said
+it would appear on the 09-18 run. It would NOT have; the ECB builder had not run in three days
+and was not going to.
+
+**Fixed in `8e1598454`.** Ten base inputs restored by hand (FRED DFEDTAR/U/L; ECB DFR and MRR_FR
+from 1999; the three Riksbank SWEA series from 1907/1987/1994; datahub BoE; BoC V122530), each
+put through its own builder's `--self-test`. All 13 builders now OK, zero unreachable, 2,885 rows
+upserted. Two changes so it cannot recur:
+
+1. `bootstrap_base_inputs()` in `runners/economy-rates.sh`, extending the existing
+   `bootstrap_bis_bulk` pattern: any missing base input is re-downloaded at the start of every
+   run, so a wiped `_scratch` self-heals instead of silently disabling a bank. Verified by
+   deleting `boe.csv` and watching the runner's own function restore it and pass its self-test.
+   DELIBERATELY excludes `boc_bankrate.csv` and `norges_kpra_daily.json`: both were already
+   present and so were never downloaded or verified, and guessing a format into a file a builder
+   parses would trade a skipped builder for a corrupted one.
+2. An ntfy when `refresh.py` reports unreachable sources. The graceful degradation is correct and
+   unchanged — one dead endpoint must not take down the other twelve — but **graceful degradation
+   needs a voice**: doing it silently is what made this invisible for three days.
+
+🔴 The shape to carry forward: **an artefact's timestamp is not evidence of what a job did.** Both
+the wrong bank lists came from reading mtimes instead of running the thing and reading what it
+said. The dispatcher's console log captured only the tail of the run, so the per-builder verdicts
+were not there either — when the log is thin, re-run the tool, do not infer.
+
+### C. 🔴 NOTION WENT UNUSED FOR AN ENTIRE SESSION, AND CLAUDE.MD POINTS AT A MEMORY THAT DOES NOT EXIST HERE
+CLAUDE.md has required the four Notion databases since 2026-09-09. The 09-10 mini session (ten
+HANDOFF sections) used them **zero times** — no Backlog read at session start, no Data sources row
+read before touching FIBA, api-football, ESPN or the ECB, no Decisions check before making a
+naming ruling, and no rows updated alongside the HANDOFF entries. Ashwin had to ask.
+
+**What it cost, concretely.** The open row warning that these builders were broken would have
+qualified yesterday's "economy-rates worked" before it was said; and an open Windows-session row
+on renaming `'Ivory Coast'` to Côte d'Ivoire at three builder sources sat directly adjacent to the
+`CIV -> cote-divoire` slug change made the same day.
+
+🔴 **`reference_notion_workspace` does not exist on the mini.** CLAUDE.md tells a session to find
+the database ids there; that memory was written by the Windows session, whose memory lives on its
+own box, and there is no memory directory for the Metro project path at all. A mini session
+following the instruction literally finds nothing and could reasonably conclude the workspace is
+unused. Search Notion for "Citizen of Nowhere" instead. Corrected in CLAUDE.md (`50ab50394`).
+
+**Caught up the same session:** `economy-rates` row closed with its caveat rather than a clean
+bill of health; the bank-list row corrected and closed; four Decisions recorded (the WNBA shared
+title, ops-autofix's whitelist and the standing of the 08-30 ruling, the symlink deployment rule,
+healthchecks 403-means-quota); three Data sources rows updated (api-football to Watch with the
+group-label incident and the `updated_at` is-insert-only trap; ESPN with the TBD-bracket quirk;
+ECB from "Not yet live" to OK with the effective-date rule). Four new Backlog rows filed.
+
+⚠️ The Decisions database has no basketball or "Other sports" Area option, unlike Backlog. The
+WNBA ruling is filed with Area blank rather than misfiled or an option added to someone else's
+schema — worth a decision.
+
+### D. New: the Silent failure register (Notion, under "Citizen of Nowhere")
+A page, not a database, listing the faults that **exit 0 and tell nobody** — split into the ones
+something now catches (seven) and the ones still uncovered (two). It exists because the
+notification channels are not the safety net they are assumed to be: on 09-10, three of six real
+faults sent nothing at all and the two most damaging exited 0. It closes with the shapes worth
+recognising, and carries the mtime mistake above as a worked example of getting it wrong.
+Wired into CLAUDE.md so it is discoverable; an undiscoverable page is decorative.
+
+**Pushed and live at `8e1598454`** (rates base inputs + bootstrap + unreachable alert) and
+`50ab50394` (CLAUDE.md).
+
