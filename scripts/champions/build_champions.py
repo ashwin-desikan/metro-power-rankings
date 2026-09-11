@@ -93,9 +93,13 @@ def fetch():
         # after the season it succeeds). push() only deletes source=SOURCE,
         # so these rows survive workbook re-pushes; when the workbook later
         # carries the same season, dedupe() below keeps one.
+        # majors-ingest rows (scripts/champions/majors_to_champions.py, the
+        # golf and tennis majors appended by the daily ingest, and the hand
+        # insert of 2026-09-11 for the IBF heavyweight title) ride the same
+        # base stream for the same reason.
         r = requests.get(f"{URL}/rest/v1/champions", headers=H, timeout=120,
                          params={"select": COLUMNS + ",source,id",
-                                 "source": f"in.(\"{SOURCE}\",\"footy-finalizer\")",
+                                 "source": f"in.(\"{SOURCE}\",\"footy-finalizer\",\"majors-ingest\")",
                                  "order": "source_ordinal.asc,id.asc",
                                  "limit": 1000, "offset": offset})
         r.raise_for_status()
@@ -202,7 +206,7 @@ def build_extra(check=False):
                                  # footy-finalizer rows ride the BASE stream
                                  # (see fetch()); listing them here too would
                                  # double-count the premier on metro pages.
-                                 "source": f"not.in.(\"{SOURCE}\",\"footy-finalizer\")",
+                                 "source": f"not.in.(\"{SOURCE}\",\"footy-finalizer\",\"majors-ingest\")",
                                  # id.asc makes the order TOTAL. Without it the
                                  # sort has ties, and limit/offset paging over a
                                  # non-deterministic order can skip or repeat

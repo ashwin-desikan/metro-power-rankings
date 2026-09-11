@@ -4,13 +4,18 @@ name: Majors auto-update (ESPN -> Supabase -> site)
 # when a major shows final, records the new champion straight into the live
 # golf_majors / tennis_majors Supabase tables (host metro auto-resolved from a
 # prior edition of the same venue/tournament), then rebuilds the majors JSON from
-# Supabase and commits it. The golf/tennis hubs bake this JSON at build time
-# (readFileSync), so the commit intentionally triggers a normal Vercel deploy to
-# publish the champion — only ~8 majors a year, so a build each is cheap.
+# Supabase and commits it. It then appends the same champion to the public.champions
+# ledger (scripts/champions/majors_to_champions.py, same template-the-previous-row
+# idiom as the AFL/NRL finalizer) and re-emits public/data/champions-history.json,
+# so /sports/champions and the Time Machine update in this same run too. The
+# golf/tennis hubs and /sports/champions bake their JSON at build time (readFileSync),
+# so the commit intentionally triggers a normal Vercel deploy to publish the champion
+# — only ~8 majors a year, so a build each is cheap.
 # Idempotent: already-recorded champions are skipped and quiet days commit nothing.
 #
 # Needs the SUPABASE_WRITE_KEY repo secret (Supabase key with insert/update on the
-# majors tables). Without it the detect step runs dry and nothing is written.
+# majors tables and public.champions). Without it the detect and ledger-append steps
+# run dry and nothing is written.
 
 on:
   schedule:
@@ -48,9 +53,29 @@ jobs:
       - name: Rebuild majors JSON from Supabase
         run: python3 scripts/build-majors-data.py
 
+      - name: Append new major champions to the champions ledger
+        env:
+          SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_WRITE_KEY" ]; then
+            echo "SUPABASE_WRITE_KEY not set; ledger-append dry run (nothing written)."
+          fi
+          python3 scripts/champions/majors_to_champions.py --self-test
+          python3 scripts/champions/majors_to_champions.py --write
+
+      - name: Re-emit champions JSON if the ledger gained a champion
+        env:
+          SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
+        run: |
+          mkdir -p scripts/mktcap
+          printf '%s' "$SUPABASE_WRITE_KEY" > scripts/mktcap/supabase_key.txt
+          python3 scripts/champions/build_champions.py
+          rm -f scripts/mktcap/supabase_key.txt
+
       - name: Commit refreshed JSON if anything changed
         run: |
-          git add public/data/majors/golf.json public/data/majors/tennis.json public/data/majors/zzc-titles.json
+          git add public/data/majors/golf.json public/data/majors/tennis.json public/data/majors/zzc-titles.json \
+                  public/data/champions-history.json public/data/champions-metro-extra.json
           if git diff --cached --quiet; then
             echo "No change in majors output; nothing to publish."
             exit 0

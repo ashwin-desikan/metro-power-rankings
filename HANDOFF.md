@@ -14054,15 +14054,76 @@ Korea 11.6, Great Britain 9.2, top 12 hold 77%, 40 nations; Football to Argentin
 (9.2%), Brazil 52.4, Germany 48.1, top 12 hold 66%, 229 nations. Measured 390/1280: no
 horizontal scroll, no errors; sticky column bumped to 3 for the new cell.
 
-### AA. State
+### AA. Zone Zero Cup: baseball lifted above women's football, and the US golf question (app commit)
+Ashwin: "Baseball is undervalued ... around the same level as ice hockey, but maybe slightly
+below ... boost baseball above women's football." Reached through inputs the pillar lacked,
+not the prestige knob: the WBSC Premier12 (2015 South Korea, 2019 Japan, 2024 Taiwan, with
+runners-up) and the Baseball World Cup (38 editions 1938 to 2011, Cuba's era) as world-tier
+titles from a new hand-curated `public/data/baseball/world-events.json`
+(`baseball_team_contribs`), and `RANK_SPORT_WEIGHT["Baseball"]` 0.35 to 0.5 (the "narrow
+sport" discount dated from a thin WBSC list; 85 nations carry a rank now, cricket keeps
+0.35 with 30). Baseball 140.7 to 165.0, between Women's Football 160.8 and Ice Hockey 176.9;
+prestige stays 1.5. No watched nation moved more than two places overall; Nicaragua +7,
+Curacao +6, Taiwan +4, Panama +4 from the depth weight. Methodology page gains a Baseball
+section. Diff in `_scratch/zzc-baseball-diff.md`.
+
+🔴 **The US golf line (21.8) cannot be brought to the US tennis line (12.1) with the levers
+allowed.** Ashwin: "from a U.S. perspective the score is a little too high. It should probably
+be around what tennis is." Decomposed (raw, before the ^0.6 compression and prestige): men's
+majors 117.2, women's majors 60.5, depth layer 10.6, Olympic 8.5, team events 5.3. The men's
+majors alone floor the US at 15.7 after compression; zeroing the whole depth layer moves it
+only to 21.1. Two tries (a 1.0/0.6/0.4 weighting of the three best, then the depth weight
+to 0.2) moved the US 21.8 to 21.3 and cut every other golf nation instead, so both were
+reverted. The reason is real: Americans won 28 of the last 40 men's majors (2016 to 2026)
+and 8 of the last 40 women's. The levers that would do it are the ones ruled out: golf
+prestige back toward 0.6 (which drops the whole sport out of the band he asked for), or a
+per-nation cap on title volume inside one sport, which would be a new engine rule for every
+sport. Working in `_scratch/zzc-golf-diff.md` under "US trim". **Ruling, 18:20Z: "drop Golf to
+0.75 prestige."** Done: golf 110.5 to 91.6 points, 11th to 13th sport (under Handball 98.8,
+above Cycling Road 78.6), 32 nations; US golf 21.8 to 18.1, South Korea 9.7, Great Britain
+7.7, Australia 6.1, Japan 5.6, Sweden 4.8, New Zealand 4.5. Baseball unchanged at 165.0.
+Methodology page and the engine comment say why. Ashwin then: "commit everything and push
+to main." Then "drop Handball to 0.8": handball 98.8 to 79.6, 12th to 13th, now under golf
+(91.6) and above road cycling (78.6).
+
+### AB. Champions hub: the IBF heavyweight title and the majors bridge (app commit)
+Ashwin: "check that the boxing champions listed are the most recent ones in all of the
+different boxing organizations ... we'll get a new [US Open] champion tomorrow and Sunday
+... make sure that this champions table will update accordingly, so I don't have to do
+anything manually."
+- **Boxing, checked on the web (Al Jazeera, heavyweightboxing.com, champinon.info)**: Usyk
+  vacated everything on 1 July; WBC Agit Kabayel (the ledger's 27 June row stands), WBA
+  Murat Gassiev (1 July, stands), WBO Daniel Dubois (9 May, second reign, stands; defends
+  against Wardley on 17 October), IBF: **vacant on the site, won by Filip Hrgovic over Moses
+  Itauma at the O2 on 29 August 2026**. Inserted into `public.champions` (id 149510, templated
+  on Usyk's 2025 IBF row, metro left null like every boxing row, `source majors-ingest`) and
+  `build_champions.py`'s base-stream source set widened to `majors-ingest`; the JSON now
+  carries the row (6,814 rows).
+- **The majors bridge**: `scripts/champions/majors_to_champions.py` (self-test 23 checks)
+  reads the latest `tennis_majors`/`golf_majors` row per slam (eight) and men's major (four),
+  appends a `champions` row templated on the previous holder when the year is newer, flips
+  `is_current`, tennis dated from the template's `next_awarded_date` (the table has no
+  event date; the ledger's hand-curated next dates are the real final dates, the US Open's is
+  2026-09-13), golf from `event_date`. `majors-ingest.yml` now runs it after the ingest and
+  re-emits `champions-history.json` in the same commit (a build, by design: the file is baked).
+  Dry run today: all twelve "up to date". 🔴 So: Saturday's and Sunday's US Open winners reach
+  `tennis_majors` at the 05:30Z ingest (the lookback window covers the weekend), the ledger
+  and /sports/champions in the same run, and the site on that run's build. Nothing manual,
+  provided the Action fires (it is a GitHub cron; if the mini takes the job later, the step
+  moves with it). Verify on Monday: the row, the JSON, the page.
+- `public.champions` blocks anon reads (RLS), so the bridge reads with the write key too.
+
+### AC. State
 Local, not pushed, linear on origin/main, oldest first: `a9ce70c89` (docs, `[vercel skip]`),
 `7f32be81f` (Côte d'Ivoire, `[vercel skip]`), `baea6d08e` (the frontier), `ce800aff3` (F1
 odds, the dots, the 2100 card), `d6f1edda4` (Live Standings odds), `589fadde7` (the Today
 box), `a06cc4cc6` (the follow-ups), `e622e6a41` (the NFL updater fix, `[vercel skip]`),
 `8e9522ce9` (section M), `aaf2fb25a` (O), `093df3933` (P), `4b6ad9c82` (Q), `088f0558c` (R),
 `ed85f3433` (T), `0483dbfda` (U and Y), `b89db355f` (V), `f0b3916f7` (W), `232bd32e9` (X),
-`b90b6296d` (docs), and the section Z commit (app, push HEAD); `npm run verify` green
-(`_scratch/verify-round4.log` for T to X, `verify-round5.log` for Z). The brand branch is separate. Open: `VERCEL_BUILD_CAP_TOKEN`;
+`b90b6296d` (docs), `2b4931ed2` (Z), the section AA commit and the section AB commit (app,
+push HEAD); `npm run verify` green (`_scratch/verify-round4.log` for T to X,
+`verify-round5.log` for Z, `verify-round8.log` for AA and AB). Pushed on Ashwin's word at the end of the session: one production
+build for the whole day's stack. The brand branch is separate. Open: `VERCEL_BUILD_CAP_TOKEN`;
 the CFL fixture feed; the mini-side steps in O (now also `runners/economy-prices.sh`); the
 Rolex snapshot refresh in T; the sortable and chart sweeps' next batches (the baseline has
 169 boards in 126 files left).
