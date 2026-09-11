@@ -43,6 +43,32 @@ export type MoneySeason = {
   biggest_out: MoneyMove | null;
 };
 
+/**
+ * The director's ledger (use case D): every incoming transfer of the club's
+ * last five seasons, graded on realised outcome (bought at a fee, sold on
+ * later for a fee, or still held at its latest corpus valuation). Built by
+ * scripts/football/build_transfer_ledger.py; null when the corpus carries no
+ * valuations reachable for this league (not zero, "not graded").
+ */
+export type DirectorSummary = {
+  window_first: string;
+  window_last: string;
+  /** Trades with a realised outcome: sold-on fee or a held valuation found. */
+  trades_graded: number;
+  /** Of the graded trades, the share with a positive outcome, 0-100. */
+  share_ev_positive: number | null;
+  /** Fees paid for the trades with a real fee (frees and loans excluded). */
+  capital_deployed: number;
+  /** Sold-on fee or held value, summed over the same fee-paying trades. */
+  realized_held_value: number;
+  /** realized_held_value / capital_deployed; null with no capital deployed. */
+  multiplier: number | null;
+  /** Frees and loans: graded (outcome computed from a zero fee) but excluded above. */
+  free_loan_count: number;
+  /** Arrivals with no sale on record and no valuation found in the corpus. */
+  ungraded: number;
+};
+
 export type ClubMoneyRecord = {
   club: string;
   slug: string | null;
@@ -58,6 +84,30 @@ export type ClubMoneyRecord = {
   appreciation: number | null;
   seasons_valued: number;
   seasons: MoneySeason[];
+  /** Present when the builder graded this club's transfers; null = not graded. */
+  director?: DirectorSummary | null;
+};
+
+/** One trade in the director's ledger's top-20-each-way, league-wide. */
+export type DirectorTopTrade = {
+  club: string;
+  slug: string | null;
+  country: string;
+  leagueSlug: MoneyLeagueSlug;
+  player: string;
+  from: string;
+  date: string;
+  fee: number;
+  status: "sold" | "held";
+  outcome_value: number;
+  outcome: number;
+};
+
+export type DirectorIndex = {
+  meta: { window_first: string; window_last: string; source_credit: string; generated_at: string };
+  leagues: { slug: MoneyLeagueSlug; country: string; clubs_graded: number; clubs_total: number }[];
+  top_best: DirectorTopTrade[];
+  top_worst: DirectorTopTrade[];
 };
 
 export type MoneyCountryMeta = {
@@ -227,6 +277,101 @@ export function spanMoneyBoard(
   return out.sort(
     (a, b) =>
       (b.appreciation ?? -Infinity) - (a.appreciation ?? -Infinity) || b.spent - a.spent,
+  );
+}
+
+// ------------------------------------------------------------- the growth board
+//
+// Use case C: the squad as a portfolio. Every season already carries `net`
+// (received minus spent: positive is a net-selling window) and
+// `appreciation` (the value change once that trading is netted out) —
+// TRADING is exactly `net`, sign and all, so the split is not a new number,
+// it is the two the ledger already keeps, read as one argument: who grows
+// players and who buys them. `value_change` (trading + appreciation) and
+// `share_pct` (appreciation's share of it) are only set when every season
+// in the window is priced, so a partly-unpriced window shows trading alone
+// rather than a share computed from a mismatched sum.
+
+export type GrowthRow = {
+  club: string;
+  slug: string;
+  site_name: string | null;
+  country: string;
+  leagueSlug: MoneyLeagueSlug;
+  first: string;
+  last: string;
+  seasons: number;
+  seasons_valued: number;
+  trading: number;
+  appreciation: number | null;
+  value_change: number | null;
+  /** Appreciation's share of the value change, 0-100; null off a full window. */
+  share_pct: number | null;
+};
+
+/**
+ * One row per club with at least one season in [sinceSeason, throughSeason],
+ * summed over that window. Sorted on appreciation (nulls last, then trading).
+ */
+export function growthBoard(
+  files: readonly (readonly [MoneyLeagueSlug, MoneyCountryFile])[],
+  sinceSeason: string,
+  throughSeason: string = MONEY_LAST_FULL_SEASON,
+): GrowthRow[] {
+  const out: GrowthRow[] = [];
+  for (const [leagueSlug, f] of files) {
+    for (const c of f.clubs) {
+      if (!c.slug) continue;
+      const win = c.seasons.filter((s) => s.season >= sinceSeason && s.season <= throughSeason);
+      if (!win.length) continue;
+      const trading = win.reduce((a, s) => a + s.net, 0);
+      const valued = win.filter((s) => s.appreciation != null);
+      const appreciation = valued.length ? valued.reduce((a, s) => a + (s.appreciation as number), 0) : null;
+      const full = valued.length === win.length;
+      const value_change = full && appreciation != null ? trading + appreciation : null;
+      const share_pct = value_change != null && value_change !== 0 && appreciation != null
+        ? (appreciation / value_change) * 100
+        : null;
+      out.push({
+        club: c.club, slug: c.slug, site_name: c.site_name ?? null, country: f.meta.country, leagueSlug,
+        first: win[0].season, last: win[win.length - 1].season,
+        seasons: win.length, seasons_valued: valued.length,
+        trading, appreciation, value_change, share_pct,
+      });
+    }
+  }
+  return out.sort(
+    (a, b) => (b.appreciation ?? -Infinity) - (a.appreciation ?? -Infinity) || b.trading - a.trading,
+  );
+}
+
+/** One club's director summary, for the board on /sports/expectation. */
+export type DirectorClubRow = {
+  club: string;
+  slug: string;
+  site_name: string | null;
+  country: string;
+  leagueSlug: MoneyLeagueSlug;
+  director: DirectorSummary;
+};
+
+/**
+ * Every club the builder graded (director != null), across whichever of the
+ * six leagues are present. Sorted on the multiplier, nulls last, then on
+ * capital deployed so a big unrewarded spender still surfaces near the top.
+ */
+export function directorClubBoard(
+  files: readonly (readonly [MoneyLeagueSlug, MoneyCountryFile])[],
+): DirectorClubRow[] {
+  const out: DirectorClubRow[] = [];
+  for (const [leagueSlug, f] of files) {
+    for (const c of f.clubs) {
+      if (!c.slug || !c.director) continue;
+      out.push({ club: c.club, slug: c.slug, site_name: c.site_name ?? null, country: f.meta.country, leagueSlug, director: c.director });
+    }
+  }
+  return out.sort(
+    (a, b) => (b.director.multiplier ?? -Infinity) - (a.director.multiplier ?? -Infinity) || b.director.capital_deployed - a.director.capital_deployed,
   );
 }
 

@@ -4,12 +4,17 @@ import { join } from "path";
 import { getIntlExpectation } from "./intlExpectation";
 import { getPlExpectationClubs } from "./plExpectation";
 import {
+  directorClubBoard,
+  growthBoard,
   MONEY_LEAGUE_SLUGS,
   moneyFrontierPoints,
   seasonMoneyBoard,
   spanMoneyBoard,
   type ClubMoneyRecord,
+  type DirectorClubRow,
+  type DirectorIndex,
   type FrontierPoint,
+  type GrowthRow,
   type MoneyBoardRow,
   type MoneyCountryFile,
   type MoneyIndex,
@@ -31,7 +36,7 @@ import {
 // 🔴 A CLUB WITH NO LEDGER RETURNS NULL and the surface renders nothing.
 // The great majority of club pages sit outside these six leagues.
 
-export type { ClubMoneyRecord, FrontierPoint, MoneyBoardRow, MoneyCountryFile, MoneyIndex, MoneySpanRow };
+export type { ClubMoneyRecord, DirectorClubRow, DirectorIndex, FrontierPoint, GrowthRow, MoneyBoardRow, MoneyCountryFile, MoneyIndex, MoneySpanRow };
 
 const GH_BASE =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data";
@@ -69,6 +74,19 @@ export async function getMoneyIndex(): Promise<MoneyIndex | null> {
   );
 }
 
+/** The director's ledger's top-20-each-way and per-league coverage; each
+ * club's own summary rides on its ClubMoneyRecord ("director" field). */
+export async function getDirectorIndex(): Promise<DirectorIndex | null> {
+  return load<DirectorIndex>(
+    "football/money/director.json",
+    () =>
+      JSON.parse(
+        readFileSync(join(process.cwd(), "public", "data", "football", "money", "director.json"), "utf-8"),
+      ),
+    (r) => Boolean(r?.leagues?.length),
+  );
+}
+
 async function loadMoneyCountry(slug: MoneyLeagueSlug): Promise<MoneyCountryFile | null> {
   return load<MoneyCountryFile>(
     `football/money/${slug}.json`,
@@ -85,6 +103,8 @@ type MoneyDerived = {
   bySlug: Map<string, { leagueSlug: MoneyLeagueSlug; record: ClubMoneyRecord; meta: MoneyCountryFile["meta"] }>;
 };
 
+// (module-scope cache; a dev-server edit here forces a reload of any stale
+// public/data snapshot picked up before a --write rebuild)
 let _derived: Promise<MoneyDerived | null> | null = null;
 
 async function derive(): Promise<MoneyDerived | null> {
@@ -129,6 +149,18 @@ export async function getSeasonMoneyBoard(season: string): Promise<MoneyBoardRow
 export async function getSpanMoneyBoard(): Promise<MoneySpanRow[]> {
   const d = await getDerived();
   return d ? spanMoneyBoard(d.files) : [];
+}
+
+/** Trading (=net) split from appreciation, summed over [sinceSeason, throughSeason]. */
+export async function getGrowthBoard(sinceSeason: string, throughSeason?: string): Promise<GrowthRow[]> {
+  const d = await getDerived();
+  return d ? growthBoard(d.files, sinceSeason, throughSeason) : [];
+}
+
+/** Every club the builder graded in the director's ledger, sorted on the multiplier. */
+export async function getDirectorBoard(): Promise<DirectorClubRow[]> {
+  const d = await getDerived();
+  return d ? directorClubBoard(d.files) : [];
 }
 
 /**

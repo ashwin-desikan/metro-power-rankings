@@ -9,7 +9,7 @@ import { getPlExpectation } from "@/lib/plExpectation";
 import { getNflExpectation } from "@/lib/nflExpectation";
 import { getIntlExpectation } from "@/lib/intlExpectation";
 import { getClubValueIndex, joinValueAndSurplus } from "@/lib/clubValue";
-import { getMoneyFrontier, getMoneyIndex, getSpanMoneyBoard } from "@/lib/footballMoney";
+import { getDirectorBoard, getDirectorIndex, getGrowthBoard, getMoneyFrontier, getMoneyIndex, getSpanMoneyBoard } from "@/lib/footballMoney";
 import { fmtEurM, fmtEurSigned, MONEY_FIRST_SEASON, MONEY_LAST_FULL_SEASON, packFrontier } from "@/lib/footballMoneyShape";
 import MoneyFrontier from "@/app/teams/football/MoneyFrontier";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
@@ -139,13 +139,30 @@ export default async function ExpectationPage() {
   const valueSeason = intl?.metas.length
     ? intl.metas.reduce((a, m) => (m.seasons[1] > a ? m.seasons[1] : a), intl.metas[0].seasons[1])
     : null;
-  const [valueIdx, valueJoined, moneyIdx, money, frontier] = await Promise.all([
+  // Use case C's window: the five seasons ending MONEY_LAST_FULL_SEASON.
+  const growthSinceYear = Number(MONEY_LAST_FULL_SEASON.slice(0, 4)) - 4;
+  const growthSinceSeason = `${growthSinceYear}-${String((growthSinceYear + 1) % 100).padStart(2, "0")}`;
+  const [valueIdx, valueJoined, moneyIdx, money, frontier, growthLast5, directorIdx, directorBoard] = await Promise.all([
     getClubValueIndex().catch(() => null),
     valueSeason ? joinValueAndSurplus(valueSeason).catch(() => []) : Promise.resolve([]),
     getMoneyIndex().catch(() => null),
     getSpanMoneyBoard().catch(() => []),
     getMoneyFrontier().catch(() => []),
+    // Use case C: last five seasons, trading (=net) split from appreciation.
+    getGrowthBoard(growthSinceSeason, MONEY_LAST_FULL_SEASON).catch(() => []),
+    getDirectorIndex().catch(() => null),
+    getDirectorBoard().catch(() => []),
   ]);
+  // Use case C: only clubs priced across every season of the window are
+  // ranked on the share (§: growthBoard leaves value_change/share_pct null
+  // otherwise); trading alone would compare a five-year and a two-year sum.
+  const growthRows = growthLast5.filter((r) => r.value_change != null);   // already appreciation-desc from growthBoard
+  const growthByShare = [...growthRows].filter((r) => r.share_pct != null).sort((a, b) => b.share_pct! - a.share_pct!);
+  // Use case D: the director's ledger board, clubs the builder could grade.
+  const directorRows = directorBoard.filter((r) => r.director.trades_graded > 0);
+  const directorByMultiplier = [...directorRows]
+    .filter((r) => r.director.multiplier != null)
+    .sort((a, b) => (b.director.multiplier as number) - (a.director.multiplier as number));
   // The frontier: the club-seasons no other beat on both axes, named in the
   // sentence above the plot, best season first by surplus.
   const frontierSet = frontier.filter((p) => p.frontier).sort((a, b) => b.surplus - a.surplus);
@@ -270,6 +287,8 @@ export default async function ExpectationPage() {
         { label: "By metro", href: "#metros" },
         { label: "Form against money", href: "#value" },
         { label: "Money against football", href: "#frontier" },
+        { label: "Grown or bought", href: "#growth" },
+        { label: "The director's ledger", href: "#director" },
         { label: "Against the market", href: "#market" },
         { label: "Where the numbers come from", href: "#method" },
       ]} />
@@ -948,6 +967,158 @@ export default async function ExpectationPage() {
           <div className="rounded-xl border p-3 sm:p-4 min-w-0" style={CARD}>
             <MoneyFrontier packed={packFrontier(frontier)} />
           </div>
+        </section>
+      ) : null}
+
+      {/* ------------------------------------------ grown or bought */}
+      {growthRows.length > 0 ? (
+        <section className="mb-12">
+          <SectionHead
+            id="growth"
+            title="Grown or bought"
+            sub={`Each club's squad-value change from ${growthSinceSeason} to ${MONEY_LAST_FULL_SEASON}, split into trading and appreciation.`}
+            more={
+              <>
+                Trading is the fees paid and received netted together, sign and all: positive means the
+                window was a net sale. Appreciation is the change in squad value once that trading is
+                taken out&nbsp;&mdash; the same number the club page already carries, summed here over five
+                seasons instead of one. The two always sum to the value change, so{" "}
+                <span className="text-[var(--text)]">share</span> is appreciation&rsquo;s share of it: a
+                club near 100% grew the players it already had; a club near 0%, or negative, mostly bought
+                its way there. Only clubs priced at both ends of every one of the five seasons are ranked,
+                so a five-year sum is never set beside a two-year one.
+              </>
+            }
+          />
+          {growthRows[0] && growthByShare[0] ? (
+            <p className="mb-3 text-sm text-[var(--text-muted)] max-w-3xl">
+              {growthRows[0].club} grew the most squad value over the window,{" "}
+              <span className="tabular-nums" style={MONO}>{fmtEurSigned(growthRows[0].appreciation as number)}</span> of appreciation
+              beside <span className="tabular-nums" style={MONO}>{fmtEurSigned(growthRows[0].trading)}</span> of trading.{" "}
+              {growthByShare[0].club} grew it the purest way: <span className="tabular-nums" style={MONO}>{(growthByShare[0].share_pct as number).toFixed(0)}%</span> of
+              its value change was appreciation, not spending.
+            </p>
+          ) : null}
+          <SortableBoard
+            id="growth"
+            mobileNoun="clubs"
+            mobileInitial={12}
+            initial={{ key: "appreciation", dir: "desc" }}
+            cols={[
+              { key: "club", label: "Club", className: "whitespace-nowrap" },
+              { key: "country", label: "League", demote: true },
+              { key: "trading", label: "Trading", right: true, title: "Fees received minus fees paid over the window; positive is a net sale" },
+              { key: "appreciation", label: "Appreciation", right: true, title: "Squad value gained beyond that trading" },
+              { key: "value_change", label: "Value change", right: true, demote: true },
+              { key: "share_pct", label: "Share grown", right: true, title: "Appreciation's share of the value change" },
+            ]}
+            rows={growthRows.map((r) => ({
+              key: r.slug,
+              sort: { club: r.club, country: r.country, trading: r.trading, appreciation: r.appreciation, value_change: r.value_change, share_pct: r.share_pct },
+              cells: [
+                <Link key="c" href={`/teams/football/${r.slug}`} className="text-[var(--accent)] hover:underline">{r.club}</Link>,
+                <span key="l" className="text-[var(--text-muted)] whitespace-nowrap">{r.country}</span>,
+                <span key="t" className="tabular-nums text-[var(--text-muted)]" style={MONO}>{fmtEurSigned(r.trading)}</span>,
+                <span key="a" className="tabular-nums font-semibold" style={{ ...MONO, color: (r.appreciation as number) >= 0 ? UP : DOWN }}>{fmtEurSigned(r.appreciation as number)}</span>,
+                <span key="v" className="tabular-nums text-[var(--text-dim)]" style={MONO}>{fmtEurSigned(r.value_change as number)}</span>,
+                <DivergingBar key="s" v={r.share_pct} dp={0} suffix="%" label="appreciation's share of the value change" />,
+              ],
+              mobile: {
+                name: (
+                  <>
+                    <Link href={`/teams/football/${r.slug}`} className="truncate text-[var(--accent)] hover:underline">{r.club}</Link>
+                    <span className="flex-shrink-0 text-[var(--text-dim)]">{r.country}</span>
+                  </>
+                ),
+                sub: <>trading {fmtEurSigned(r.trading)} · value change {fmtEurSigned(r.value_change as number)}</>,
+                right: <span style={{ color: (r.appreciation as number) >= 0 ? UP : DOWN }}>{fmtEurSigned(r.appreciation as number)}</span>,
+                rightSub: r.share_pct != null ? `${r.share_pct.toFixed(0)}% grown` : "appreciation",
+              },
+            }))}
+          />
+        </section>
+      ) : null}
+
+      {/* ------------------------------------------ the director's ledger */}
+      {directorRows.length > 0 ? (
+        <section className="mb-12">
+          <SectionHead
+            id="director"
+            title="The director's ledger"
+            sub={`Every arrival of the last five seasons graded on realised outcome${directorIdx ? `, ${directorIdx.meta.window_first} to ${directorIdx.meta.window_last}` : ""}.`}
+            more={
+              <>
+                Each arrival is bought at its fee; if the player was later sold on by the same club, graded
+                at that sale&rsquo;s fee, and if not, at the player&rsquo;s latest valuation in the corpus
+                (&ldquo;held&rdquo;). A free transfer or loan is graded the same way but never counts toward
+                capital deployed or the multiplier, because there is no capital to measure a return on; it
+                still counts toward the share of trades that came out ahead. A player with no sale on record
+                and no valuation reachable is <span className="text-[var(--text)]">ungraded</span>, not
+                zero. Multiplier is realised-plus-held value over capital deployed.{" "}
+                {directorIdx ? (
+                  <>Coverage: {directorIdx.leagues.map((l) => `${l.country} ${l.clubs_graded}/${l.clubs_total}`).join(", ")}.</>
+                ) : null}{" "}
+                {directorIdx?.meta.source_credit ?? "Transfer fees and player valuations from Transfermarkt via github.com/dcaribou/transfermarkt-datasets (CC0)"}.
+              </>
+            }
+          />
+          {directorByMultiplier[0] && directorIdx?.top_best[0] && directorIdx?.top_worst[0] ? (
+            <p className="mb-3 text-sm text-[var(--text-muted)] max-w-3xl">
+              {directorByMultiplier[0].club} has the best multiplier on real spending,{" "}
+              <span className="tabular-nums" style={MONO}>{(directorByMultiplier[0].director.multiplier as number).toFixed(1)}×</span> on{" "}
+              <span className="tabular-nums" style={MONO}>{fmtEurM(directorByMultiplier[0].director.capital_deployed)}</span> deployed.
+              The best single trade league-wide: {directorIdx.top_best[0].club}&rsquo;s {directorIdx.top_best[0].player} from{" "}
+              {directorIdx.top_best[0].from}, <span className="tabular-nums" style={MONO}>{fmtEurM(directorIdx.top_best[0].fee)}</span> to{" "}
+              <span className="tabular-nums" style={MONO}>{fmtEurSigned(directorIdx.top_best[0].outcome)}</span>&nbsp;({directorIdx.top_best[0].status}).
+              The worst: {directorIdx.top_worst[0].club}&rsquo;s {directorIdx.top_worst[0].player},{" "}
+              <span className="tabular-nums" style={MONO}>{fmtEurSigned(directorIdx.top_worst[0].outcome)}</span>.
+            </p>
+          ) : null}
+          <SortableBoard
+            id="director"
+            mobileNoun="clubs"
+            mobileInitial={12}
+            initial={{ key: "multiplier", dir: "desc" }}
+            cols={[
+              { key: "club", label: "Club", className: "whitespace-nowrap" },
+              { key: "country", label: "League", demote: true },
+              { key: "trades_graded", label: "Trades", right: true, demote: true },
+              { key: "share_ev_positive", label: "EV+", right: true, title: "Share of graded trades with a positive outcome" },
+              { key: "capital_deployed", label: "Capital", right: true, title: "Fees paid, frees and loans excluded" },
+              { key: "multiplier", label: "Multiplier", right: true, title: "Realised plus held value over capital deployed" },
+            ]}
+            rows={directorRows.map((r) => ({
+              key: r.slug,
+              sort: {
+                club: r.club, country: r.country, trades_graded: r.director.trades_graded,
+                share_ev_positive: r.director.share_ev_positive, capital_deployed: r.director.capital_deployed,
+                multiplier: r.director.multiplier,
+              },
+              cells: [
+                <Link key="c" href={`/teams/football/${r.slug}`} className="text-[var(--accent)] hover:underline">{r.club}</Link>,
+                <span key="l" className="text-[var(--text-muted)] whitespace-nowrap">{r.country}</span>,
+                <span key="t" className="tabular-nums text-[var(--text-dim)]" style={MONO}>
+                  {r.director.trades_graded}{r.director.ungraded > 0 ? <span className="text-[var(--text-dim)]">+{r.director.ungraded}</span> : null}
+                </span>,
+                <DivergingBar key="e" v={r.director.share_ev_positive} dp={0} suffix="%" label="graded trades with a positive outcome" />,
+                <span key="cap" className="tabular-nums" style={MONO}>{fmtEurM(r.director.capital_deployed)}</span>,
+                <span key="m" className="tabular-nums font-semibold" style={{ ...MONO, color: r.director.multiplier == null ? "var(--text-dim)" : r.director.multiplier >= 1 ? UP : DOWN }}>
+                  {r.director.multiplier != null ? `${r.director.multiplier.toFixed(1)}×` : "—"}
+                </span>,
+              ],
+              mobile: {
+                name: (
+                  <>
+                    <Link href={`/teams/football/${r.slug}`} className="truncate text-[var(--accent)] hover:underline">{r.club}</Link>
+                    <span className="flex-shrink-0 text-[var(--text-dim)]">{r.country}</span>
+                  </>
+                ),
+                sub: <>{r.director.trades_graded} graded · {fmtEurM(r.director.capital_deployed)} deployed</>,
+                right: <span style={{ color: r.director.multiplier == null ? "var(--text-dim)" : r.director.multiplier >= 1 ? UP : DOWN }}>{r.director.multiplier != null ? `${r.director.multiplier.toFixed(1)}×` : "—"}</span>,
+                rightSub: r.director.share_ev_positive != null ? `${r.director.share_ev_positive.toFixed(0)}% EV+` : "multiplier",
+              },
+            }))}
+          />
         </section>
       ) : null}
 

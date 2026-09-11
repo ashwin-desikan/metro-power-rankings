@@ -74,6 +74,17 @@ export default async function ClubMoneyPanel({ slug }: { slug: string }) {
   const nIn = club.seasons.reduce((a, s) => a + s.n_in, 0);
   const nOut = club.seasons.reduce((a, s) => a + s.n_out, 0);
   const nofee = club.seasons.reduce((a, s) => a + s.nofee_in + s.nofee_out, 0);
+
+  // Use case C: last season and the last five, trading (=net) split from
+  // appreciation. Sums whatever seasons exist, so a club with three seasons
+  // in the ledger still gets a "last five" line, narrower than five years.
+  const lastSeason = seasons[0] ?? null;
+  const last5 = seasons.slice(0, 5);
+  const last5Trading = last5.reduce((a, s) => a + s.net, 0);
+  const last5ValuedAll = last5.length > 0 && last5.every((s) => s.appreciation != null);
+  const last5Appreciation = last5ValuedAll ? last5.reduce((a, s) => a + (s.appreciation as number), 0) : null;
+
+  const director = club.director ?? null;
   const dataEndLabel = meta.data_end.slice(0, 4) === "2026" ? "6 July 2026" : meta.data_end;
   const stubLabel = (s: MoneySeason) => (isStubSeason(s.season, meta.data_end) ? `to ${dataEndLabel}` : null);
 
@@ -134,6 +145,41 @@ export default async function ClubMoneyPanel({ slug }: { slug: string }) {
             </div>
           </div>
         </div>
+        {lastSeason ? (
+          <p className="mt-4 text-[12.5px] text-[var(--text-muted)]">
+            <span className="text-[var(--text)]">Grown or bought:</span> in {lastSeason.season}, trading{" "}
+            <Signed v={lastSeason.net} dim /> and appreciation <Signed v={lastSeason.appreciation} />
+            {last5.length > 1 ? (
+              <>
+                . Over the last {last5.length} season{last5.length === 1 ? "" : "s"} ({last5[last5.length - 1].season}
+                &ndash;{lastSeason.season}), trading <Signed v={last5Trading} dim /> and appreciation{" "}
+                {last5Appreciation != null ? <Signed v={last5Appreciation} /> : <span className="text-[var(--text-dim)]">unpriced</span>}.
+              </>
+            ) : (
+              "."
+            )}
+          </p>
+        ) : null}
+        {director ? (
+          <p className="mt-1.5 text-[12.5px] text-[var(--text-muted)]">
+            <span className="text-[var(--text)]">The director&rsquo;s ledger:</span>{" "}
+            {director.trades_graded} arrival{director.trades_graded === 1 ? "" : "s"} graded since {director.window_first}
+            {director.ungraded > 0 ? <>, {director.ungraded} ungraded</> : null}
+            {director.share_ev_positive != null ? <>, {director.share_ev_positive.toFixed(0)}% EV-positive</> : null}.{" "}
+            {director.multiplier != null ? (
+              <>
+                <span className="tabular-nums" style={MONO}>{fmtEurM(director.capital_deployed)}</span> deployed for a{" "}
+                <span className="tabular-nums font-semibold" style={{ ...MONO, color: director.multiplier >= 1 ? "var(--div-pos)" : "var(--div-neg)" }}>
+                  {director.multiplier.toFixed(1)}&times;
+                </span> multiplier.
+              </>
+            ) : (
+              "No fee-paying arrivals to grade a multiplier on."
+            )}
+          </p>
+        ) : (
+          <p className="mt-1.5 text-[12.5px] text-[var(--text-dim)]">The director&rsquo;s ledger: not graded (no arrivals with a valuation or sale on record).</p>
+        )}
         <SortableBoard
           id="club-money"
           rank={false}

@@ -1,7 +1,9 @@
 import { describe, it, expect } from "vitest";
 import {
+  directorClubBoard,
   fmtEurM,
   fmtEurSigned,
+  growthBoard,
   isStubSeason,
   moneyFrontierPoints,
   packFrontier,
@@ -91,6 +93,65 @@ describe("spanMoneyBoard", () => {
     expect(a.last).toBe("2025-26");
     expect(a.return_pct).toBeCloseTo(20);
     expect(rows.find((r) => r.slug === "b")!.return_pct).toBeNull();
+  });
+});
+
+describe("growthBoard", () => {
+  it("splits value change into trading (=net) and appreciation, share only on a fully priced window", () => {
+    const eng = file("England", [
+      { club: "Grower", slug: "grower", seasons: [
+        season({ season: "2023-24", spent: 10, received: 0, net: -10, appreciation: 30 }),
+        season({ season: "2024-25", spent: 5, received: 0, net: -5, appreciation: 20 }),
+      ] },
+      { club: "Buyer", slug: "buyer", seasons: [
+        season({ season: "2023-24", spent: 100, received: 0, net: -100, appreciation: 5 }),
+        season({ season: "2024-25", spent: 80, received: 0, net: -80, appreciation: null }),   // unpriced: window not full
+      ] },
+      { club: "Seller", slug: "seller", seasons: [
+        season({ season: "2023-24", spent: 0, received: 40, net: 40, appreciation: -10 }),
+      ] },
+    ]);
+    const rows = growthBoard([["england", eng]], "2023-24", "2024-25");
+    const by = Object.fromEntries(rows.map((r) => [r.slug, r]));
+
+    // Grower: trading = -15 (net summed), appreciation = 50, value_change = 35, fully priced
+    expect([by.grower.trading, by.grower.appreciation, by.grower.value_change]).toEqual([-15, 50, 35]);
+    expect(by.grower.share_pct).toBeCloseTo((50 / 35) * 100);
+
+    // Buyer: one season unpriced, so value_change and share are null but trading still sums
+    expect(by.buyer.trading).toBe(-180);
+    expect(by.buyer.value_change).toBeNull();
+    expect(by.buyer.share_pct).toBeNull();
+
+    // Seller: a net seller reads positive trading (received - spent)
+    expect(by.seller.trading).toBe(40);
+    expect(by.seller.appreciation).toBe(-10);
+
+    // ranked on appreciation (Buyer's one priced season still counts: +5)
+    expect(rows.map((r) => r.slug)).toEqual(["grower", "buyer", "seller"]);
+  });
+
+  it("keeps only clubs with a season in the window", () => {
+    const eng = file("England", [
+      { club: "Old", slug: "old", seasons: [season({ season: "2010-11" })] },
+    ]);
+    expect(growthBoard([["england", eng]], "2023-24", "2024-25")).toEqual([]);
+  });
+});
+
+describe("directorClubBoard", () => {
+  it("keeps only clubs the builder graded, sorted on the multiplier", () => {
+    const graded = { window_first: "2022-23", window_last: "2026-27", trades_graded: 4, share_ev_positive: 75,
+      capital_deployed: 100, realized_held_value: 250, multiplier: 2.5, free_loan_count: 1, ungraded: 0 };
+    const eng = file("England", [
+      { club: "Graded", slug: "graded", seasons: [season({ season: "2023-24" })] },
+      { club: "NotGraded", slug: "not-graded", seasons: [season({ season: "2023-24" })] },
+    ] as never);
+    (eng.clubs[0] as { director?: typeof graded }).director = graded;
+    (eng.clubs[1] as { director?: typeof graded | null }).director = null;
+    const rows = directorClubBoard([["england", eng]]);
+    expect(rows.map((r) => r.slug)).toEqual(["graded"]);
+    expect(rows[0].director.multiplier).toBe(2.5);
   });
 });
 

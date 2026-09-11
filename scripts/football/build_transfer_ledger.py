@@ -67,6 +67,8 @@ FIRST_SEASON = 2012          # the value series floor; earlier fee rows are surv
 DATA_END = "2026-07-06"      # the paused upstream's last day
 SOURCE_CREDIT = ("Transfer fees and player valuations from Transfermarkt via "
                  "github.com/dcaribou/transfermarkt-datasets (CC0)")
+DIRECTOR_WINDOW = 5          # seasons graded in the director's ledger (10 transfer windows)
+TOP_TRADES = 20              # each way, league-wide, in director.json
 
 
 def season_of(date: str) -> int:
@@ -149,6 +151,124 @@ def season_values(series, season):
     return (a[0] if a else None, a[1] if a else None, b[0] if b else None, b[1] if b else None)
 
 
+def read_transfer_player_rows(src=SRC, data_end=DATA_END, names=None):
+    """Every dated, priced-or-not transfer with BOTH club ids on record, kept
+    by player id (not resolved to the six leagues): the director's ledger
+    needs a player's whole timeline to find a later sale, wherever it went.
+    Distinct from read_transfers(), which drops rows with no name match and
+    is keyed for the ledger's club/season aggregation, not per-player."""
+    names = names if names is not None else club_names_by_id(src)
+    rows = []
+    with gzip.open(os.path.join(src, "transfers.csv.gz"), "rt", encoding="utf-8", newline="") as fh:
+        for r in csv.DictReader(fh):
+            d = r.get("transfer_date") or ""
+            if len(d) < 10 or d > data_end:
+                continue
+            pid, fid, tid = r.get("player_id") or "", r.get("from_club_id") or "", r.get("to_club_id") or ""
+            if not pid or not fid or not tid or fid == tid:
+                continue
+            fee_s = r.get("transfer_fee")
+            fee = None
+            if fee_s not in (None, ""):
+                try:
+                    fee = float(fee_s)
+                except ValueError:
+                    fee = None
+            rows.append({"player_id": pid, "date": d, "season": season_of(d), "from_id": fid, "to_id": tid,
+                         "from_name": names.get(fid, (r.get("from_club_name") or "").strip()),
+                         "to_name": names.get(tid, (r.get("to_club_name") or "").strip()),
+                         "fee": fee, "player": r.get("player_name") or ""})
+    return rows
+
+
+def latest_valuations(src=SRC):
+    """player_id -> (date, value_eur): the most recent positive valuation on
+    record for the player, regardless of club (a player who left for free
+    keeps being valued; that valuation is the closest thing to "current
+    value Z" the corpus can give the club that let them go)."""
+    out = {}
+    with gzip.open(os.path.join(src, "player_valuations.csv.gz"), "rt", encoding="utf-8", newline="") as fh:
+        for r in csv.DictReader(fh):
+            d = r.get("date") or ""
+            if len(d) < 10:
+                continue
+            try:
+                v = float(r["market_value_in_eur"] or 0)
+            except ValueError:
+                continue
+            if v <= 0:
+                continue
+            pid = r.get("player_id") or ""
+            if not pid:
+                continue
+            cur = out.get(pid)
+            if cur is None or d > cur[0]:
+                out[pid] = (d, v)
+    return out
+
+
+def grade_transfers(rows, valuations, first_season, last_season):
+    """{to_club_id: [trade, ...]} for arrivals in [first_season, last_season].
+    Each trade: bought at `fee` (0 and `is_free` for a free/loan); if the
+    player later left the SAME club (any later row with that club as
+    `from_id`) with a real fee, `status` "sold" at that fee; else `status`
+    "held" at the player's latest corpus valuation if one exists; else
+    ungraded (`status` None, no outcome)."""
+    by_player = defaultdict(list)
+    for r in rows:
+        by_player[r["player_id"]].append(r)
+    for lst in by_player.values():
+        lst.sort(key=lambda r: r["date"])
+
+    out = defaultdict(list)
+    for r in rows:
+        if r["season"] < first_season or r["season"] > last_season:
+            continue
+        fee = r["fee"]
+        is_free = fee is None or fee <= 0
+        x = fee if (fee is not None and fee > 0) else 0.0
+        sale = None
+        for other in by_player[r["player_id"]]:
+            if other is r or other["date"] <= r["date"] or other["from_id"] != r["to_id"]:
+                continue
+            if sale is None or other["date"] < sale["date"]:
+                sale = other
+        if sale is not None and sale["fee"] is not None and sale["fee"] > 0:
+            status, outcome_value = "sold", sale["fee"]
+        else:
+            v = valuations.get(r["player_id"])
+            status, outcome_value = ("held", v[1]) if v is not None else (None, None)
+        ungraded = status is None
+        out[r["to_id"]].append({
+            "player": r["player"], "from_name": r["from_name"], "date": r["date"],
+            "fee": x, "is_free": is_free, "status": status, "outcome_value": outcome_value,
+            "outcome": (outcome_value - x) if outcome_value is not None else None, "ungraded": ungraded,
+        })
+    return out
+
+
+def director_summary(trades, window_first_label, window_last_label):
+    """None for a club with no incoming trades in the window (not graded).
+    Otherwise the per-club numbers of DirectorSummary (lib/footballMoneyShape.ts)."""
+    if not trades:
+        return None
+    graded = [t for t in trades if not t["ungraded"]]
+    paid = [t for t in graded if not t["is_free"]]
+    capital = sum(t["fee"] for t in paid)
+    realized = sum(t["outcome_value"] for t in paid)
+    ev_pos = sum(1 for t in graded if (t["outcome"] or 0) > 0)
+    return {
+        "window_first": window_first_label, "window_last": window_last_label,
+        "trades_graded": len(graded),
+        "share_ev_positive": round(ev_pos / len(graded) * 100, 1) if graded else None,
+        "capital_deployed": round(capital / 1e6, 1),
+        "realized_held_value": round(realized / 1e6, 1),
+        "multiplier": round(realized / capital, 2) if capital > 0 else None,
+        "free_loan_count": sum(1 for t in graded if t["is_free"]),
+        "ungraded": len(trades) - len(graded),
+    }
+
+
 def build(src=SRC):
     rows = read_transfers(src)
     last_season = max(r["season"] for r in rows)
@@ -202,7 +322,51 @@ def build(src=SRC):
             "appreciation": round(sum(apprs), 1) if apprs else None, "seasons_valued": len(apprs),
             "seasons": out_seasons,
         })
-    return payload, unmapped, last_season
+
+    # The director's ledger (use case D): every incoming transfer of the
+    # last DIRECTOR_WINDOW seasons, graded on realised outcome. Player ids,
+    # not names, carry it: read_transfer_player_rows keeps every dated
+    # transfer with both club ids on record, wherever it went, so a sale to
+    # a club outside the six leagues is still found.
+    names = club_names_by_id(src)
+    name_to_ids = defaultdict(list)
+    for cid, cname in names.items():
+        name_to_ids[cname].append(cid)
+    dir_first = last_season - DIRECTOR_WINDOW + 1
+    player_rows = read_transfer_player_rows(src, names=names)
+    valuations = latest_valuations(src)
+    graded_by_id = grade_transfers(player_rows, valuations, dir_first, last_season)
+
+    dir_first_label, dir_last_label = season_label(dir_first), season_label(last_season)
+    best, worst = [], []
+    league_coverage = defaultdict(lambda: {"graded": 0, "total": 0})
+    for slug, clubs in payload.items():
+        for c in clubs:
+            trades = []
+            for cid in name_to_ids.get(c["club"], []):
+                trades.extend(graded_by_id.get(cid, []))
+            summary = director_summary(trades, dir_first_label, dir_last_label)
+            c["director"] = summary
+            league_coverage[slug]["total"] += 1
+            if summary is not None:
+                league_coverage[slug]["graded"] += 1
+                for t in trades:
+                    if t["ungraded"]:
+                        continue
+                    top = {"club": c["club"], "slug": c.get("slug"), "country": COUNTRY[slug], "leagueSlug": slug,
+                           "player": t["player"], "from": t["from_name"], "date": t["date"], "fee": round(t["fee"] / 1e6, 2),
+                           "status": t["status"], "outcome_value": round(t["outcome_value"] / 1e6, 2), "outcome": round(t["outcome"] / 1e6, 2)}
+                    (best if t["outcome"] > 0 else worst).append(top)
+    best.sort(key=lambda t: -t["outcome"])
+    worst.sort(key=lambda t: t["outcome"])
+    director_index = {
+        "meta": {"window_first": season_label(dir_first), "window_last": season_label(last_season),
+                 "source_credit": SOURCE_CREDIT, "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds")},
+        "leagues": [{"slug": slug, "country": COUNTRY[slug], "clubs_graded": v["graded"], "clubs_total": v["total"]}
+                    for slug, v in sorted(league_coverage.items())],
+        "top_best": best[:TOP_TRADES], "top_worst": worst[:TOP_TRADES],
+    }
+    return payload, unmapped, last_season, director_index
 
 
 def self_test():
@@ -229,6 +393,36 @@ def self_test():
     # the season's value months
     ser = {mindex("2024-07"): (300e6, 25), mindex("2025-06"): (340e6, 26)}
     assert season_values(ser, 2024) == (300e6, 25, 340e6, 26) and season_values(ser, 2023) == (None, None, None, None)
+
+    # The director's ledger: bought-sold-held-ungraded, one player each.
+    prows = [
+        # p1: X bought p1 for 40 from Z, then sold p1 to W for 60 later -> sold, outcome +20
+        {"player_id": "p1", "date": "2023-07-01", "season": 2023, "from_id": "Z", "to_id": "X", "from_name": "Z", "to_name": "X", "fee": 40e6, "player": "P1"},
+        {"player_id": "p1", "date": "2024-07-01", "season": 2024, "from_id": "X", "to_id": "W", "from_name": "X", "to_name": "W", "fee": 60e6, "player": "P1"},
+        # p2: X signs p2 for free, never sold -> held at valuation
+        {"player_id": "p2", "date": "2023-08-01", "season": 2023, "from_id": "Z", "to_id": "X", "from_name": "Z", "to_name": "X", "fee": None, "player": "P2"},
+        # p3: X buys p3 for 10, no later move, no valuation -> ungraded
+        {"player_id": "p3", "date": "2023-08-01", "season": 2023, "from_id": "Z", "to_id": "X", "from_name": "Z", "to_name": "X", "fee": 10e6, "player": "P3"},
+        # p4: X buys p4 for 30 OUTSIDE the graded window -> excluded entirely
+        {"player_id": "p4", "date": "2010-08-01", "season": 2010, "from_id": "Z", "to_id": "X", "from_name": "Z", "to_name": "X", "fee": 30e6, "player": "P4"},
+        # p1's departure to W and p2's arrival must not themselves grade as X arrivals outside the window rule
+    ]
+    vals = {"p2": ("2026-01-01", 5e6)}
+    graded = grade_transfers(prows, vals, 2023, 2025)
+    xin = graded["X"]
+    assert len(xin) == 3, xin   # p1, p2, p3 (p4 is season 2010, outside window)
+    byp = {t["player"]: t for t in xin}
+    assert byp["P1"]["status"] == "sold" and byp["P1"]["outcome"] == 20e6
+    assert byp["P2"]["status"] == "held" and byp["P2"]["outcome"] == 5e6 and byp["P2"]["is_free"]
+    assert byp["P3"]["status"] is None and byp["P3"]["ungraded"]
+    summ = director_summary(xin, "2023-24", "2025-26")
+    assert summ["window_first"] == "2023-24" and summ["window_last"] == "2025-26"
+    assert summ["trades_graded"] == 2 and summ["ungraded"] == 1              # P1, P2 graded; P3 ungraded
+    assert summ["free_loan_count"] == 1                                     # P2 was free
+    assert summ["capital_deployed"] == 40.0 and summ["realized_held_value"] == 60.0   # P1 only: P2 is free, excluded from capital/realized
+    assert summ["multiplier"] == 1.5
+    assert summ["share_ev_positive"] == 100.0                               # both graded trades positive
+    assert director_summary([], "2023-24", "2025-26") is None              # no incoming trades: not graded, not zero
     print("build_transfer_ledger self-test: OK")
 
 
@@ -242,7 +436,7 @@ def main():
         self_test(); return 0
     if not (a.dry or a.write):
         ap.error("pass --self-test, --dry or --write")
-    payload, unmapped, last_season = build()
+    payload, unmapped, last_season, director_index = build()
     index = []
     for slug in sorted(payload):
         clubs = sorted(payload[slug], key=lambda c: -c["spent"])
@@ -255,6 +449,15 @@ def main():
                  best["club"] if best else "-", best["appreciation"] if best else 0))
         if unmapped.get(slug):
             print("         %d unmapped: %s" % (len(unmapped[slug]), ", ".join(sorted(unmapped[slug])[:8])))
+    for lg in director_index["leagues"]:
+        print("director's ledger  %-8s %d/%d clubs graded (%s to %s)"
+              % (lg["slug"], lg["clubs_graded"], lg["clubs_total"], director_index["meta"]["window_first"], director_index["meta"]["window_last"]))
+    if director_index["top_best"]:
+        b = director_index["top_best"][0]
+        print("         best trade  %s %s from %s %.1fm -> %.1fm (%+.1fm, %s)" % (b["club"], b["player"], b["from"], b["fee"], b["outcome_value"], b["outcome"], b["status"]))
+    if director_index["top_worst"]:
+        w = director_index["top_worst"][0]
+        print("         worst trade %s %s from %s %.1fm -> %.1fm (%+.1fm, %s)" % (w["club"], w["player"], w["from"], w["fee"], w["outcome_value"], w["outcome"], w["status"]))
     if not a.write:
         print("--dry: nothing written"); return 0
     os.makedirs(OUT_DIR, exist_ok=True)
@@ -269,7 +472,9 @@ def main():
         json.dump({"_meta": {"asOf": DATA_END, "source_credit": SOURCE_CREDIT},
                    "first_season": season_label(FIRST_SEASON), "last_season": season_label(last_season),
                    "countries": index}, fh, separators=(",", ":"))
-    print("wrote %d files to %s" % (len(payload) + 1, OUT_DIR))
+    with open(os.path.join(OUT_DIR, "director.json"), "w", encoding="utf-8", newline="\n") as fh:
+        json.dump(director_index, fh, separators=(",", ":"), ensure_ascii=False)
+    print("wrote %d files to %s" % (len(payload) + 2, OUT_DIR))
     return 0
 
 
