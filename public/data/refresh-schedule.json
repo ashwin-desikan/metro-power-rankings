@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-09-11T07:22:23.110083+00:00",
+  "generated_at": "2026-09-11T07:38:14.969180+00:00",
   "jobs": [
-    {
-      "id": "economy-rates",
-      "label": "Policy rate refresh (/business/economy)",
-      "schedule_text": "Fri at 07:30 UTC",
-      "cadence": "weekly",
-      "times": [
-        "07:30"
-      ],
-      "weekdays": [
-        5
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-11T07:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-04",
-        "status": "missed",
-        "slot": "2026-09-04T07:30:00+00:00"
-      }
-    },
     {
       "id": "ops-autofix",
       "label": "Ops autofix (whitelist, acts on production)",
@@ -529,6 +509,26 @@
         "date": "2026-09-09",
         "status": "ok",
         "slot": "2026-09-09T11:40:00+00:00"
+      }
+    },
+    {
+      "id": "economy-rates",
+      "label": "Policy rate refresh (/business/economy)",
+      "schedule_text": "Fri at 07:30 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:30"
+      ],
+      "weekdays": [
+        5
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-18T07:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-11",
+        "status": "ok",
+        "slot": "2026-09-11T07:30:00+00:00"
       }
     },
     {
