@@ -927,11 +927,16 @@ async function footyBlock(league: "afl" | "nrl"): Promise<Block | null> {
               ? `${nm(g.winner === "home" ? g.home : g.away)} def. ${nm(g.winner === "home" ? g.away : g.home)}`
               : `${nm(g.home)} v ${nm(g.away)}`;
           const label = g.code ? `${g.code} · ${matchup}` : matchup;
-          const when =
+          // An upcoming final reads in the VIEWER's zone like every other
+          // fixture on this page. It used to be formatted in Australia/Sydney,
+          // which is the right zone for the ground and the wrong one for the
+          // reader -- and it showed no kick-off at all, though the feed carries
+          // a full instant ("2026-09-11T09:50Z").
+          const when: Cell =
             g.state !== "pre" && g.home?.score !== null && g.home?.score !== undefined && g.away
               ? `${g.home.score}–${g.away.score}`
               : g.date
-                ? new Date(g.date).toLocaleDateString("en-AU", { timeZone: "Australia/Sydney", day: "numeric", month: "short" })
+                ? kickoff(g.date)
                 : DASH;
           return { rank: null, name: label, cells: [when, g.venue ?? DASH] };
         }),
@@ -1014,7 +1019,10 @@ async function tennisBlock(): Promise<Block | null> {
   if (!men && !women) return null;
   const tournament = men?.tournament ?? women?.tournament ?? "Grand Slam";
   const toSub = (d: Awaited<ReturnType<typeof getLiveTennisSlam>>, label: string): SubTable | null =>
-    d ? { title: `${label}: ${d.round}`, columns: ["Score"], rows: d.matches.map((m): SRow => ({ rank: null, name: m.label, flagUrl: m.flagUrl, cells: [m.score] })) } : null;
+    d ? { title: `${label}: ${d.round}`, columns: ["Score"],
+          rows: d.matches.map((m): SRow => ({ rank: null, name: m.label, flagUrl: m.flagUrl,
+            // An upcoming match has no score to show, so show when it starts.
+            cells: [m.upcoming && m.kickoff ? kickoff(m.kickoff) : m.score] })) } : null;
   const subTables = [toSub(men, "Men's Singles"), toSub(women, "Women's Singles")].filter((st): st is SubTable => st !== null);
   if (subTables.length === 0) return null;
   return { league: `Tennis: ${tournament}`, href: "/teams/tennis", note: "live", open: true, subTables };
@@ -1147,7 +1155,10 @@ async function rugbyFixturesBlock(): Promise<Block | null> {
     items.length ? {
       title, columns: [score ? "Score" : "Date"],
       rows: items.map((m): SRow => ({ rank: null, name: `${m.teamA} v ${m.teamB}`, flagUrl: _ruFlag(m.teamA),
-        cells: [score && m.scoreA != null && m.scoreB != null ? `${m.scoreA}\u2013${m.scoreB}` : kickoff(m.date, false)] })),
+        cells: [score && m.scoreA != null && m.scoreB != null ? `${m.scoreA}\u2013${m.scoreB}`
+          // Prefer the real kick-off; fall back to the date-only value for
+          // any match whose source row had no usable timestamp.
+          : m.kickoff ? kickoff(m.kickoff) : kickoff(m.date, false)] })),
     } : null;
   const subTables = [mk("Live", f.live, true), mk("Upcoming", f.upcoming, false), mk("Recent", f.recent, true)]
     .filter((st): st is SubTable => st !== null);

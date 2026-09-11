@@ -13,7 +13,9 @@ const URL: Record<"atp" | "wta", string> = {
   wta: "https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard",
 };
 
-export type TennisMatch = { label: string; score: string; flagUrl: string | null; live: boolean };
+export type TennisMatch = { label: string; score: string; flagUrl: string | null; live: boolean;
+  /** Full ISO instant, for a match that has not started. Null once it has. */
+  kickoff: string | null; upcoming: boolean };
 export type TennisDraw = { tournament: string; round: string; matches: TennisMatch[] };
 
 type AnyObj = Record<string, unknown>;
@@ -69,7 +71,7 @@ export async function getLiveTennisSlam(tour: "atp" | "wta"): Promise<TennisDraw
     const tournament = asStr(ev.name);
 
     // collect started main-draw singles matches across the singles grouping(s)
-    type M = { c: AnyObj; round: number; roundName: string };
+    type M = { c: AnyObj; round: number; roundName: string; state: string };
     const started: M[] = [];
     // Gender-tag each singles grouping. During a combined Slam ESPN returns both
     // the men's and women's singles under each tour endpoint, so match only this
@@ -91,31 +93,46 @@ export async function getLiveTennisSlam(tour: "atp" | "wta"): Promise<TennisDraw
         const c = asObj(cRaw);
         if (!c) continue;
         const state = asStr(asObj(asObj(c.status)?.type)?.state);
-        if (state !== "in" && state !== "post") continue;
+        // "pre" is admitted so the round shows what is STILL TO COME as well as
+        // what is done -- previously a reader saw only finished matches and had
+        // no idea another four were on court later that day. The round on
+        // display is still chosen from STARTED matches alone (below), so
+        // admitting these cannot drag the view forward into a round that has
+        // not begun.
+        if (state !== "in" && state !== "post" && state !== "pre") continue;
         const roundName = asStr(asObj(c.round)?.displayName);
         if (/qualif/i.test(roundName)) continue; // main draw only
-        started.push({ c, round: asNum(asObj(c.round)?.id, 0), roundName });
+        started.push({ c, round: asNum(asObj(c.round)?.id, 0), roundName, state });
       }
     }
     if (started.length === 0) continue;
 
-    const maxRound = Math.max(...started.map((m) => m.round));
+    const inPlay = started.filter((m) => m.state !== "pre");
+    if (inPlay.length === 0) continue;          // nothing has begun: no round to show
+    const maxRound = Math.max(...inPlay.map((m) => m.round));
     const cur = started.filter((m) => m.round === maxRound);
     const roundName = cur[0]?.roundName || "Current round";
 
     const matches: TennisMatch[] = cur.map(({ c }) => {
       const cs = asArr(c.competitors).map(asObj).filter((x): x is AnyObj => !!x);
       const a = cs[0], b = cs[1];
-      if (!a || !b) return { label: "—", score: "—", flagUrl: null, live: false };
+      if (!a || !b) return { label: "—", score: "—", flagUrl: null, live: false, kickoff: null, upcoming: false };
       const completed = asObj(asObj(c.status)?.type)?.completed === true;
       const live = asStr(asObj(asObj(c.status)?.type)?.state) === "in";
       const winner = cs.find((x) => x.winner === true);
       if (completed && winner) {
         const loser = cs.find((x) => x !== winner) ?? b;
-        return { label: `${playerName(winner)} def. ${playerName(loser)}`, score: zipScore(winner, loser) || "—", flagUrl: playerFlag(winner), live: false };
+        return { label: `${playerName(winner)} def. ${playerName(loser)}`, score: zipScore(winner, loser) || "—", flagUrl: playerFlag(winner), live: false, kickoff: null, upcoming: false };
       }
-      return { label: `${playerName(a)} v ${playerName(b)}`, score: zipScore(a, b) || (live ? "live" : "—"), flagUrl: playerFlag(a), live };
+      const pre = asStr(asObj(asObj(c.status)?.type)?.state) === "pre";
+      return { label: `${playerName(a)} v ${playerName(b)}`, score: zipScore(a, b) || (live ? "live" : "—"),
+        flagUrl: playerFlag(a), live, kickoff: pre ? (asStr(c.date) || null) : null, upcoming: pre };
     });
+
+    // Results and matches in play first, then what is still to come. Within
+    // each, chronological -- a schedule read top to bottom.
+    matches.sort((x, y) =>
+      Number(x.upcoming) - Number(y.upcoming) || String(x.kickoff ?? "").localeCompare(String(y.kickoff ?? "")));
 
     return { tournament, round: roundName, matches };
   }

@@ -28,6 +28,12 @@ const ALIASES: Record<string, string> = {
 
 export type RugbyMatch = {
   date: string;           // ISO yyyy-mm-dd
+  // Full kick-off instant. `date` stays yyyy-mm-dd because the dedupe key and
+  // both sorts below are built on it, and widening it would silently stop two
+  // matches on the same day deduping. The feed has always carried the time --
+  // it was simply thrown away here -- so this keeps it alongside rather than
+  // reshaping what already works. Null if the source had no usable timestamp.
+  kickoff: string | null;
   status: "live" | "upcoming" | "recent";
   teamA: string; teamB: string;
   scoreA: number | null; scoreB: number | null;
@@ -77,7 +83,8 @@ function shape(m: AnyObj): RugbyMatch | null {
   const sB = typeof scores[1] === "number" ? (scores[1] as number) : null;
   const v = asObj(m.venue) || {};
   return {
-    date: iso(ymd), status, teamA: teams[0], teamB: teams[1],
+    date: iso(ymd), kickoff: Number.isFinite(millis) ? new Date(millis).toISOString() : null,
+    status, teamA: teams[0], teamB: teams[1],
     scoreA: status === "upcoming" ? null : sA, scoreB: status === "upcoming" ? null : sB,
     competition: label, venue: asStr(v.name), city: asStr(v.city), country: asStr(v.country),
   };
