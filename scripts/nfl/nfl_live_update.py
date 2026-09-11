@@ -462,7 +462,13 @@ def run(season: int, fixtures: Path | None, write: bool) -> int:
     if last > 0:
         shard["status"] = "live"
         shard["dropped_weeks"] = []
-        shard["reg_end_week"] = {"NFL": min(last, LAST_WEEK)}
+        # 🔴 reg_end_week is the SCHEDULE's last regular-season week, not the last
+        # week played. The first live run (2026-09-11, after week 1) wrote {"NFL": 1}
+        # here, and downstream that reads as a one-week regular season: the seeds
+        # file marked itself complete, and the season page drew its playoff
+        # boundary after week 1. The played-through week is `last`; the shard's
+        # readers take it from the team weeks.
+        shard["reg_end_week"] = {"NFL": LAST_WEEK}
     else:
         print("nothing played yet: the season stays the preseason board it is.")
 
