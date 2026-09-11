@@ -17,8 +17,21 @@ TOUCHES_BUILD=0
 git diff --quiet HEAD~1 HEAD -- $BUILD_PATHS 2>/dev/null || TOUCHES_BUILD=1
 HAS_TAG=0
 case "$SUBJECT" in *"[vercel skip]"*) HAS_TAG=1;; esac
+HAS_DEPLOY_NOW=0
+case "$SUBJECT" in *"[deploy-now]"*) HAS_DEPLOY_NOW=1;; esac
 
-if [ "$TOUCHES_BUILD" = 1 ] && [ "$HAS_TAG" = 1 ]; then
+if [ "$HAS_DEPLOY_NOW" = 1 ] && [ "$HAS_TAG" = 1 ]; then
+  # Both tags on one subject. vercel-ignore.sh tests [vercel skip] FIRST and
+  # exits before it reaches [deploy-now], so the skip wins and the override is
+  # dead weight -- the build the author asked for will not happen, and nothing
+  # will say so, because a skip is a perfectly normal outcome to the guard.
+  # Worth stopping loudly: this is the one combination that silently does the
+  # opposite of what it reads like.
+  echo "post-commit CHECK: MISMATCH -- this commit carries BOTH [deploy-now]" >&2
+  echo "  and [vercel skip]. vercel-ignore.sh checks skip first, so the skip" >&2
+  echo "  WINS and [deploy-now] does nothing. Drop one: keep [vercel skip] if" >&2
+  echo "  this should not deploy, or drop it if it should." >&2
+elif [ "$TOUCHES_BUILD" = 1 ] && [ "$HAS_TAG" = 1 ]; then
   # vercel-ignore.sh's own comment: "public/data STAYS IN, and that is
   # deliberate... The ISR-backed files (business, mlb-sim, the espn
   # snapshots, the football live bundles) are the exception, not the rule,
@@ -60,6 +73,14 @@ if [ "$TOUCHES_BUILD" = 1 ] && [ "$HAS_TAG" = 1 ]; then
     echo "  its own risk) -- if the tag is wrong, fix it by hand: git commit" >&2
     echo "  --amend, or a follow-up commit without the tag." >&2
   fi
+elif [ "$TOUCHES_BUILD" = 0 ] && [ "$HAS_TAG" = 0 ] && [ "$HAS_DEPLOY_NOW" = 1 ]; then
+  # A [deploy-now] trigger is MEANT to touch nothing: its whole job is to carry
+  # the tag so vercel-ignore.sh builds the tree at HEAD, past the same-day cap.
+  # Before this arm existed the hook read it as the 2026-08-06 failure mode and
+  # warned on a commit that was doing exactly what was asked (2026-09-11), which
+  # is how a real guard starts getting ignored.
+  echo "post-commit CHECK: OK (touches_build=0, [deploy-now] trigger -- builds" \
+       "past the same-day cap by design)"
 elif [ "$TOUCHES_BUILD" = 0 ] && [ "$HAS_TAG" = 0 ]; then
   echo "post-commit CHECK: MISMATCH -- this commit touches nothing build-" >&2
   echo "  relevant but has no [vercel skip] tag. This is the 2026-08-06" >&2

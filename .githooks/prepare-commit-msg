@@ -36,6 +36,16 @@ case "$SOURCE" in merge|squash|commit) exit 0;; esac
 SUBJECT=$(head -1 "$MSG_FILE")
 case "$SUBJECT" in *"[vercel skip]"*) exit 0;; esac
 
+# 🔴 NEVER stamp a [deploy-now] commit. That tag exists to force the third
+# same-day build past the cap, and a deploy-now trigger is BY DESIGN a commit
+# that touches little or nothing -- exactly the shape this hook auto-tags. But
+# vercel-ignore.sh checks [vercel skip] FIRST and exits before it ever reaches
+# [deploy-now], so appending the tag here would not merely be untidy: it would
+# silently neuter the override, and the build the author deliberately asked for
+# would never happen. Nothing would report the loss, because from the guard's
+# point of view a skip is a normal outcome. Leave the message alone.
+case "$SUBJECT" in *"[deploy-now]"*) exit 0;; esac
+
 REPO_ROOT=$(git rev-parse --show-toplevel) || exit 0
 PATHS_FILE="$REPO_ROOT/scripts/vercel-build-paths.txt"
 [ -f "$PATHS_FILE" ] || exit 0   # fail open: no list, don't touch the message
