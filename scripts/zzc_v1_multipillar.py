@@ -77,7 +77,10 @@ PRESTIGE = {
     # handball world championship. Volleyball keeps more of its weight because
     # its case is participation and it has genuine elite leagues on three
     # continents. Handball 1.2 to 1.0, volleyball 1.2 to 1.1, tennis 0.7 to 0.9.
-    "Volleyball": 1.1, "Handball": 1.0,
+    # Handball 1.0 to 0.8 on 2026-09-11 (Ashwin): at 1.0 it still sat above
+    # golf and tennis on the by-sport board (98.8 against 91.6 and 127.2), and
+    # the 09-04 reasoning about its footprint holds. Under tennis and golf now.
+    "Volleyball": 1.1, "Handball": 0.8,
     "Athletics": 1.0,   # the foundational Olympic sport (track & field); lifted above the 0.5 Olympic default
     # Swimming: 0.5 to 0.75 and then down to 0.27, both on 2026-09-04. The lift
     # was made on Australia's inputs and it was the wrong read of them, and the
@@ -161,8 +164,13 @@ PRESTIGE = {
     # depth-weighted current-strength layer off the OWGR and Rolex rankings
     # (three best per nation, not just a world number one), and the
     # International Crown and World Cup of Golf as nation team events. With a
-    # comparably deep input set to tennis's, it sits at the same prestige.
-    "Tennis": 0.9, "Golf": 0.9, "Badminton": 0.85, "Table Tennis": 0.85,
+    # comparably deep input set to tennis's, it sat at the same prestige for an
+    # afternoon. Then 0.9 to 0.75 the same day (Ashwin): the United States line
+    # read 21.8 against its tennis line of 12.1, and the excess is the majors
+    # themselves (Americans won 28 of the last 40 men's majors), which no depth
+    # or ranking lever touches. A notch under tennis and badminton takes the
+    # edge off every golf nation evenly and keeps golf in the tennis band.
+    "Tennis": 0.9, "Golf": 0.75, "Badminton": 0.85, "Table Tennis": 0.85,
     # Road cycling: a year-round professional sport with a national-team world
     # championship, held at the Olympic default of 0.5 only because nobody had
     # given it a line of its own. Lifted just below athletics.
@@ -760,6 +768,38 @@ def baseball_contribs(boost):
     return out
 
 
+# Baseball's second and third tier of national-team events, added 2026-09-11
+# (Ashwin's ruling): the WBC alone (above, flagship tier via teams.json) was
+# undercounting the sport's history and its second annual/quadrennial event,
+# the way reading only the football World Cup and skipping the continental
+# championships would. Both read at "world" tier, the same slot rugby league's
+# World Cup and golf's majors use, with the standard 8-year decay -- world
+# tier because neither is the sport's flagship (the WBC keeps that), not
+# continental because both are genuinely global fields, not regional ones.
+# teams.json is WBC-specific (apps/pld/w/l/rf/ra columns) and out of scope for
+# this change, so this is hand-curated in its own file the same way teams.json
+# itself is hand-curated, rather than folded into it.
+# Source: public/data/baseball/world-events.json (WBSC Premier12 and the
+# Baseball World Cup / Amateur World Series, both verified against Wikipedia
+# 2026-09-11; see that file for the per-edition citations and the 1973
+# double-edition note). Slugs there are already folded, but _titles folds
+# again so a future edit that forgets to pre-fold still lands correctly.
+def baseball_team_contribs(boost):
+    path = os.path.join(D, "baseball", "world-events.json")
+    if not os.path.exists(path):
+        print("  baseball team events: world-events.json missing, pillar skipped")
+        return []
+    data = json.load(open(path, encoding="utf-8"))
+    out = []
+    for block in ("premier12", "world_cup"):
+        for e in data.get(block, {}).get("editions", []):
+            y = e["year"]
+            _titles(out, e["champion"], "Baseball", [y], "champion", "world", boost)
+            for r in e.get("runners_up", []):
+                _titles(out, r, "Baseball", [y], "runner_up", "world", boost)
+    return out
+
+
 def rugby_league_contribs(boost):
     d = json.load(open(os.path.join(D, "rugby-league-intl", "teams.json"), encoding="utf-8"))
     out = []
@@ -779,7 +819,9 @@ def rugby_league_contribs(boost):
 
 # Depth discount on the current-ranking layer for narrow sports: being roughly
 # 10th in a ~12-nation sport is not worth being 10th in 200-nation football, so
-# cricket and baseball associates with no titles don't bank a large ranking bonus.
+# an associate with no titles doesn't bank a large ranking bonus just for being
+# ranked. See RANK_SPORT_WEIGHT, below golf_team_contribs, for which sports
+# still count as narrow by this test and why baseball no longer does.
 def golf_contribs(boost):
     # Men's majors (The Open, U.S. Open, PGA, Masters) AND, since 2026-09-11,
     # the five current women's majors (Chevron, Women's PGA, U.S. Women's
@@ -823,6 +865,14 @@ def tennis_contribs(boost):
 # than one ranked player) contributes 0 for that list, not a penalty.
 # Source: public/data/majors/golf-rankings.json, built by
 # scripts/zzc/golf_rankings.py from apiweb.owgr.com and rolexrankings.com.
+#
+# A same-day reshape to a 1.0/0.6/0.4 weighted depth signal, plus a
+# RANK_SPORT_WEIGHT cut to 0.2, was tried and reverted (Ashwin, 2026-09-11):
+# neither moved the US golf line meaningfully (21.8 -> 21.3 at best, against
+# a ~12 target) because the ranking layer was never the dominant input --
+# the men's and women's majors are -- while both changes lowered every other
+# ranked golf nation for no benefit. See "US trim" in
+# _scratch/zzc-golf-diff.md for the full arithmetic and the revert note.
 def golf_ranking_contribs(boost):
     path = os.path.join(D, "majors", "golf-rankings.json")
     if not os.path.exists(path):
@@ -942,7 +992,21 @@ def golf_team_contribs(boost):
     return out
 
 
-RANK_SPORT_WEIGHT = {"Cricket": 0.35, "Baseball": 0.35, "Golf": 0.5}
+# Depth discount on the current-ranking layer, continued from the comment
+# above golf_contribs. Cricket stays at 0.35: its WCR ranking carries about 30
+# nations, most of them associate sides with no realistic path to a title, so
+# a high placement there is still a placement in a shallow field. Baseball
+# moved to 0.5 (golf's level) on 2026-09-11: the WBSC ranking that feeds
+# ranking_contribs now carries a rank for 85 nations, the same order of depth
+# golf's OWGR/Rolex layer has, so the discount written for a thin list no
+# longer describes what the list actually is.
+#
+# Golf was cut to 0.2 the same day in an attempt to trim the United States'
+# golf line down toward its tennis line, then reverted back to 0.5: the
+# ranking layer was never the dominant input for the US (the majors are), so
+# the cut moved every other ranked golf nation down for essentially no gain
+# on the US line. See "US trim" in _scratch/zzc-golf-diff.md.
+RANK_SPORT_WEIGHT = {"Cricket": 0.35, "Baseball": 0.5, "Golf": 0.5}
 
 
 def rank_strength(rank):
@@ -1219,7 +1283,8 @@ PILLARS = [("olympics", olympic_contribs), ("football", football_contribs),
            ("cricket", cricket_contribs), ("rugby", rugby_contribs),
            ("basketball", basketball_contribs), ("hockey", hockey_contribs),
            ("handball", handball_contribs), ("volleyball", volleyball_contribs),
-           ("baseball", baseball_contribs), ("rugby_league", rugby_league_contribs),
+           ("baseball", baseball_contribs), ("baseball_team", baseball_team_contribs),
+           ("rugby_league", rugby_league_contribs),
            ("golf", golf_contribs), ("golf_team", golf_team_contribs), ("tennis", tennis_contribs),
            ("netball", netball_titles_contribs),
            ("road_cycling", road_cycling_contribs),
@@ -1655,7 +1720,8 @@ def main():
              f"Prestige: " + ", ".join(f"{k} x{v}" for k, v in PRESTIGE.items()) + ".\n")
     L.append("Tiers: flagship world title (boosted) > annual/secondary worlds > continental > intercontinental.\n")
     L.append(f"Current-standing layer ON: live ranking -> present strength (RANK_TOP {RANK_TOP}, "
-             f"halving every {RANK_HL_POSITIONS} places). Pillars now include Baseball (WBC) + Rugby League (RLWC).\n")
+             f"halving every {RANK_HL_POSITIONS} places). Pillars now include Baseball "
+             f"(WBC flagship + Premier12/Baseball World Cup world tier + WBSC ranking) + Rugby League (RLWC).\n")
     L.append("Pillar rows: " + ", ".join(f"{k} {v}" for k, v in counts.items()) + ".\n")
 
     spot = ["australia", "new-zealand", "papua-new-guinea", "italy", "great-britain"]

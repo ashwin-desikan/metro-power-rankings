@@ -1,0 +1,55 @@
+{
+  "_comment": "WBSC Premier12 and the Baseball World Cup (IBAF, formerly the Amateur World Series), added 2026-09-11 per Ashwin's ruling that baseball's titles pillar was missing its second and third tier of team events (only the WBC was read, via public/data/baseball/teams.json). Hand-curated here rather than in teams.json because teams.json is WBC-specific (apps/pld/w/l/rf/ra columns) and out of edit scope for this change; this file follows the same hand-curated pattern. Both events are read at 'world' tier (not 'flagship', which stays reserved for the WBC) by baseball_team_contribs() in scripts/zzc_v1_multipillar.py. Slugs pre-folded to the engine's canonical spelling (Chinese Taipei as 'taiwan', per FOLD).",
+  "premier12": {
+    "_comment": "WBSC Premier12, quadrennial since 2015. Source: en.wikipedia.org/wiki/WBSC_Premier12, 'Results' table, verified 2026-09-11.",
+    "editions": [
+      {"year": 2015, "champion": "south-korea", "runners_up": ["united-states"]},
+      {"year": 2019, "champion": "japan", "runners_up": ["south-korea"]},
+      {"year": 2024, "champion": "taiwan", "runners_up": ["japan"]}
+    ]
+  },
+  "world_cup": {
+    "_comment": "Baseball World Cup (IBAF), 1938-2011, known as the Amateur World Series until 1988. Discontinued after 2011 in favor of the expanded WBC. Two editions were held in 1973 (one in Cuba, one in Nicaragua under FEMBA rules); both are listed. Source: en.wikipedia.org/wiki/Baseball_World_Cup, 'Tournament results' table, verified 2026-09-11.",
+    "editions": [
+      {"year": 1938, "champion": "great-britain", "runners_up": ["united-states"]},
+      {"year": 1939, "champion": "cuba", "runners_up": ["nicaragua"]},
+      {"year": 1940, "champion": "cuba", "runners_up": ["nicaragua"]},
+      {"year": 1941, "champion": "venezuela", "runners_up": ["cuba"]},
+      {"year": 1942, "champion": "cuba", "runners_up": ["dominican-republic"]},
+      {"year": 1943, "champion": "cuba", "runners_up": ["mexico"]},
+      {"year": 1944, "champion": "venezuela", "runners_up": ["mexico"]},
+      {"year": 1945, "champion": "venezuela", "runners_up": ["colombia"]},
+      {"year": 1947, "champion": "colombia", "runners_up": ["puerto-rico"]},
+      {"year": 1948, "champion": "dominican-republic", "runners_up": ["puerto-rico"]},
+      {"year": 1950, "champion": "cuba", "runners_up": ["dominican-republic"]},
+      {"year": 1951, "champion": "puerto-rico", "runners_up": ["venezuela"]},
+      {"year": 1952, "champion": "cuba", "runners_up": ["dominican-republic"]},
+      {"year": 1953, "champion": "cuba", "runners_up": ["venezuela"]},
+      {"year": 1961, "champion": "cuba", "runners_up": ["mexico"]},
+      {"year": 1965, "champion": "colombia", "runners_up": ["mexico"]},
+      {"year": 1969, "champion": "cuba", "runners_up": ["united-states"]},
+      {"year": 1970, "champion": "cuba", "runners_up": ["united-states"]},
+      {"year": 1971, "champion": "cuba", "runners_up": ["colombia"]},
+      {"year": 1972, "champion": "cuba", "runners_up": ["united-states"]},
+      {"year": 1973, "champion": "cuba", "runners_up": ["puerto-rico"]},
+      {"year": 1973, "champion": "united-states", "runners_up": ["nicaragua"]},
+      {"year": 1974, "champion": "united-states", "runners_up": ["nicaragua"]},
+      {"year": 1976, "champion": "cuba", "runners_up": ["puerto-rico"]},
+      {"year": 1978, "champion": "cuba", "runners_up": ["united-states"]},
+      {"year": 1980, "champion": "cuba", "runners_up": ["south-korea"]},
+      {"year": 1982, "champion": "south-korea", "runners_up": ["japan"]},
+      {"year": 1984, "champion": "cuba", "runners_up": ["taiwan"]},
+      {"year": 1986, "champion": "cuba", "runners_up": ["south-korea"]},
+      {"year": 1988, "champion": "cuba", "runners_up": ["united-states"]},
+      {"year": 1990, "champion": "cuba", "runners_up": ["nicaragua"]},
+      {"year": 1994, "champion": "cuba", "runners_up": ["south-korea"]},
+      {"year": 1998, "champion": "cuba", "runners_up": ["south-korea"]},
+      {"year": 2001, "champion": "cuba", "runners_up": ["united-states"]},
+      {"year": 2003, "champion": "cuba", "runners_up": ["panama"]},
+      {"year": 2005, "champion": "cuba", "runners_up": ["south-korea"]},
+      {"year": 2007, "champion": "united-states", "runners_up": ["cuba"]},
+      {"year": 2009, "champion": "united-states", "runners_up": ["cuba"]},
+      {"year": 2011, "champion": "netherlands", "runners_up": ["cuba"]}
+    ]
+  }
+}

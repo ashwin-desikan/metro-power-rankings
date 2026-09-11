@@ -706,8 +706,9 @@ export default function MethodologyPage() {
               </p>
               <h3 className="text-lg font-semibold mt-6 mb-2">Golf and tennis</h3>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                Golf and tennis sit alongside the fourteen team-sport pillars at the same 0.9
-                prestige. Tennis reads the men&apos;s and women&apos;s Grand Slam singles titles, the
+                Golf and tennis sit alongside the fourteen team-sport pillars, tennis at 0.9
+                prestige and golf at 0.75, a notch under, because the majors concentrate in
+                one nation to a degree the slams do not. Tennis reads the men&apos;s and women&apos;s Grand Slam singles titles, the
                 Davis Cup, and Olympic medals. Golf, expanded on 2026-09-11, reads the men&apos;s
                 and women&apos;s majors in one slot (the four men&apos;s majors plus the five current
                 women&apos;s majors and three defunct historic ones), Olympic medals, and a
@@ -720,6 +721,19 @@ export default function MethodologyPage() {
                 Eisenhower Trophy, the Espirito Santo Trophy) are deliberately excluded, the same
                 line the Cup draws around the Olympics itself.
               </p>
+              <h3 className="text-lg font-semibold mt-6 mb-2">Baseball</h3>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                Baseball, expanded on 2026-09-11, reads three tiers of national-team titles plus
+                Olympic medals: the World Baseball Classic at flagship tier, and, newly added, the
+                WBSC Premier12 (since 2015) and the historic Baseball World Cup (run as the Amateur
+                World Series from 1938 and discontinued in 2011) both at world tier. A current-strength
+                layer reads the WBSC world ranking at a 0.5 depth weight (up from a 0.35 narrow-sport
+                discount written when the ranking carried far fewer nations) rather than as
+                cricket&apos;s thinner associate-heavy field. Baseball&apos;s
+                prestige sits at 1.5, unchanged: it is played at a genuinely high professional
+                level in Japan and the United States, above rugby union, but the added inputs
+                alone were enough to place it correctly without moving the multiplier.
+              </p>
               <h3 className="text-lg font-semibold mt-6 mb-2">Sources and caveats</h3>
               <p className="text-[var(--text)] leading-relaxed">
                 Results come from this project&apos;s own validated source-of-truth
@@ -727,7 +741,8 @@ export default function MethodologyPage() {
                 international football and cricket records, World Rugby and the
                 Rugby and FIBA World Cups, IIHF and the World Cup of Hockey, the
                 handball and volleyball World Championships, the World Baseball
-                Classic, and the Rugby League World Cup. Every parameter above is
+                Classic, the WBSC Premier12 and Baseball World Cup, and the Rugby
+                League World Cup. Every parameter above is
                 an editorial judgment, calibrated to make the table read true, and
                 the Cup is a model rather than an official record.
               </p>
