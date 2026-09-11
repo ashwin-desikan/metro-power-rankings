@@ -1,13 +1,41 @@
 {
-  "generatedAt": "2026-09-10",
+  "generatedAt": "2026-09-11",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-11",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "42bd95c27"
+    },
     {
       "date": "2026-09-10",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "801656477"
+      "text": "Data refreshed — Football, Basketball, AFL, NFL, and 1 more.",
+      "commit": "953794a18"
+    },
+    {
+      "date": "2026-09-10",
+      "category": "hub",
+      "hub": "Elections",
+      "text": "NFL playoff and title odds on every season page, defunct clubs in the season grid, city in the standings, the last twelve share cards.",
+      "commit": "c095ad8b6"
+    },
+    {
+      "date": "2026-09-10",
+      "category": "hub",
+      "hub": "About",
+      "text": "Money ledger, sortable boards, every country to 2100, verified orgs, Citizen of Nowhere share cards.",
+      "commit": "b59c61a14"
+    },
+    {
+      "date": "2026-09-10",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Every country to 2100, the season grid by touch, and the played-off titles.",
+      "commit": "9c3ec660e"
     },
     {
       "date": "2026-09-09",
@@ -4173,34 +4201,6 @@
       "hub": null,
       "text": "Rankings map + Primary City column.",
       "commit": "ea0d8ba4c"
-    },
-    {
-      "date": "2026-05-17",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Countries, Populations.",
-      "commit": "994f13fda"
-    },
-    {
-      "date": "2026-05-17",
-      "category": "hub",
-      "hub": null,
-      "text": "Data+schema: workbook-driven Gold Standard.",
-      "commit": "05ddda945"
-    },
-    {
-      "date": "2026-05-16",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Basketball, NFL.",
-      "commit": "c978dab06"
-    },
-    {
-      "date": "2026-05-16",
-      "category": "hub",
-      "hub": "Sports",
-      "text": "/sports: national-teams.tsv as definitive Federation source, FIFA + Active sub-filters, silver Major League.",
-      "commit": "c4966e613"
     }
   ]
 }
