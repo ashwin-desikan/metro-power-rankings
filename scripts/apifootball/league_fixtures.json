@@ -1,0 +1,9 @@
+[
+  {"league_id": 140, "country": "Spain", "name": "La Liga", "comp_slug": "la-liga", "women": false, "season": 2026},
+  {"league_id": 78, "country": "Germany", "name": "Bundesliga", "comp_slug": "bundesliga", "women": false, "season": 2026},
+  {"league_id": 135, "country": "Italy", "name": "Serie A", "comp_slug": "serie-a", "women": false, "season": 2026},
+  {"league_id": 61, "country": "France", "name": "Ligue 1", "comp_slug": "ligue-1", "women": false, "season": 2026},
+  {"league_id": 253, "country": "USA", "name": "MLS", "comp_slug": "mls", "women": false, "season": 2026},
+  {"league_id": 44, "country": "England", "name": "WSL", "comp_slug": "wsl", "women": true, "season": 2026, "fallback_season": 2025},
+  {"league_id": 254, "country": "USA", "name": "NWSL", "comp_slug": "nwsl", "women": true, "season": 2026}
+]

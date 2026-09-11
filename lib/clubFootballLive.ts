@@ -129,3 +129,19 @@ export async function getCupAlive(): Promise<Record<string, string[]>> {
   const doc = await load<{ cup_alive?: Record<string, string[]> }>("live-cups-2026.json");
   return doc?.cup_alive ?? {};
 }
+
+// ---- League fixtures (results and upcoming, a window either side of today) ----
+// Written by scripts/apifootball/refresh_league_fixtures.py on the mini for
+// the leagues whose standings bundles carry tables only: La Liga, Bundesliga,
+// Serie A, Ligue 1, MLS, the WSL and NWSL (Ashwin, 2026-09-11: "build out the
+// builder ... We can pull it directly from the Football API"). The Today box
+// on Live Standings reads it; nothing else does. Same shape as a cup's
+// fixtures, so the one row type serves.
+export type LeagueFixtures = {
+  league_id: number; name: string; country: string; comp_slug: string; women: boolean; season: number;
+  fixtures: CupFixture[];
+};
+export async function getLeagueFixtures(): Promise<LeagueFixtures[]> {
+  const doc = await load<{ leagues: LeagueFixtures[] }>("live-fixtures-2026.json");
+  return doc?.leagues ?? [];
+}

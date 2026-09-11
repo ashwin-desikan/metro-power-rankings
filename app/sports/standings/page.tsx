@@ -23,7 +23,7 @@ import { getNflSim, getNflPredictions } from "@/lib/nflSim";
 import { getCfbSim, getCfbPredictions } from "@/lib/cfbSim";
 import { getNflSeeds } from "@/lib/nflElo";
 import { getNpbStandings } from "@/lib/npbStandings";
-import { getClubStandings, getClubCompetitions, getInternationalComps, getDomesticCups, getSuperCups, type LiveLeague, type LiveComp, type LiveRow, type LiveFixture, type LiveTeamRef } from "@/lib/clubFootballLive";
+import { getClubStandings, getClubCompetitions, getInternationalComps, getDomesticCups, getSuperCups, getLeagueFixtures, type LiveLeague, type LiveComp, type LiveRow, type LiveFixture, type LiveTeamRef } from "@/lib/clubFootballLive";
 import { deriveLeaguePhaseGroups } from "@/lib/euroCompDerive";
 import { getFootyLiveStandings } from "@/lib/_footyStandings";
 import { getFootyFinals, finalsIsCurrent } from "@/lib/footyFinals";
@@ -316,8 +316,14 @@ function NameCell({ r }: { r: SRow }) {
 //   - College basketball: Top 25 involvement, every game during the NCAA
 //     tournament.
 //   - Every match: the IPL, the Champions Cup (rugby), the EuroLeague.
-//   - Wanted, no fixture feed on the site yet: La Liga, Bundesliga, Serie A,
-//     Ligue 1, MLS, the WSL and NWSL (the bundle carries tables only), CFL.
+//   - Every match: La Liga, Bundesliga, Serie A, Ligue 1, MLS, the WSL and
+//     NWSL, from live-fixtures-2026.json (refresh_league_fixtures.py on the
+//     mini, a week either side of today); the Europa and Conference Leagues
+//     beside the Champions League from the competitions bundle.
+//   - Wanted, no fixture feed on the site yet: CFL; MLB's regular season is
+//     excluded by rule, not by absence.
+//   - Not a scoreboard: no LIVE mark, no in-play count. The strips are the
+//     day's schedule and refresh with the morning jobs and ISR.
 // Six per sport and per competition before a fold; two levels, no deeper.
 // Two collapsed strips above the sections: what is on in the next day and a
 // half, and what finished in the last three days, coalesced from every block
@@ -364,14 +370,19 @@ function collectEvents(groups: SportGroup[], extra: LiveEvent[] = []): { upcomin
     all.push(e);
   }
   const t = (e: LiveEvent) => new Date(e.when).getTime();
+  // 🔴 A SCHEDULE, NOT A SCOREBOARD (Ashwin, 2026-09-11: "I don't want this to
+  // be a scoreboard that updates all the time. It's just about what's on
+  // schedule, so I can keep track of it at a glance"). A game in play is
+  // simply a game on today, placed by its kick-off like every other; the
+  // `live` flag the blocks still set is not read here and not shown.
   const open = all.filter((e) => !e.score && Number.isFinite(t(e)));
   const upcoming = open
-    .filter((e) => e.live || (t(e) >= from && t(e) <= to))
-    .sort((a, b) => Number(b.live) - Number(a.live) || t(a) - t(b));
+    .filter((e) => t(e) >= from && t(e) <= to)
+    .sort((a, b) => t(a) - t(b));
   // The three days after today's window, same rules (Ashwin, 2026-09-11:
   // "anything that's happening tomorrow, let's just say in the next 3 days").
   const coming = open
-    .filter((e) => !e.live && t(e) > to && t(e) <= to + COMING_DAYS * 24 * 3600 * 1000)
+    .filter((e) => t(e) > to && t(e) <= to + COMING_DAYS * 24 * 3600 * 1000)
     .sort((a, b) => t(a) - t(b));
   // Results: today and the three days before it (day 0 back to day -3),
   // measured from today's window rather than a rolling 72 hours.
@@ -385,7 +396,6 @@ function EventRow({ e, kind }: { e: LiveEvent; kind: "upcoming" | "results" }) {
   return (
     <li className="flex items-baseline justify-between gap-2 text-xs">
       <span className="min-w-0 truncate">
-        {e.live && <span className="text-[10px] font-semibold mr-1" style={{ color: "#22c55e" }}>LIVE</span>}
         <span className="text-[var(--text)]">{e.label}</span>
         <span className="text-[var(--text-dim)]"> · {e.league}</span>
       </span>
@@ -406,13 +416,11 @@ function TodayStrip({ title, events, kind, sportOrder, noun }: { title: string; 
     const ia = sportOrder.indexOf(a), ib = sportOrder.indexOf(b);
     return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
   });
-  const liveN = events.filter((e) => e.live).length;
-  const summary = `${events.length} ${noun}${events.length === 1 ? "" : "s"} across ${sports.length} sport${sports.length === 1 ? "" : "s"}${liveN ? `, ${liveN} in play` : ""}`;
+  const summary = `${events.length} ${noun}${events.length === 1 ? "" : "s"} across ${sports.length} sport${sports.length === 1 ? "" : "s"}`;
   return (
     <details className="rounded-xl border overflow-hidden" style={cardStyle}>
       <summary className="cursor-pointer select-none px-4 py-2.5 flex items-center justify-between gap-2">
         <span className="font-semibold text-sm flex items-center gap-1.5">
-          {liveN > 0 && <span className="inline-block w-2 h-2 rounded-full bg-[#22c55e] animate-pulse flex-shrink-0" aria-label="In play" />}
           {title}
         </span>
         <span className="text-[10px] text-[var(--text-dim)]">{summary}</span>
@@ -433,7 +441,6 @@ function TodayStrip({ title, events, kind, sportOrder, noun }: { title: string; 
               </div>
             );
           }
-          const liveHere = list.filter((e) => e.live).length;
           // Inside a folded sport the same rule runs once more at the
           // competition level (Ashwin: "for Gridiron ... college football /
           // NFL level if there are more than six of either of those"): a
@@ -444,7 +451,7 @@ function TodayStrip({ title, events, kind, sportOrder, noun }: { title: string; 
           return (
             <details key={sport} className="min-w-0">
               <summary className="cursor-pointer select-none text-[11px] font-semibold text-[var(--text-muted)] hover:text-[var(--accent)]">
-                {sport} <span className="font-normal text-[var(--text-dim)]">· {list.length} {noun}s{liveHere ? `, ${liveHere} in play` : ""}</span>
+                {sport} <span className="font-normal text-[var(--text-dim)]">· {list.length} {noun}s</span>
               </summary>
               <div className="mt-0.5 space-y-1.5">
                 {[...byLeague.entries()].map(([league, items]) =>
@@ -1815,7 +1822,24 @@ export default async function LiveStandingsPage() {
       return { sport: g.sport, blocks };
     })
     .filter((g) => g.blocks.length > 0);
-  const today = collectEvents(groups, [...cupEvents, ...intlEvents]);
+  // The three UEFA club competitions feed the strips from the competitions
+  // bundle (Ashwin, 2026-09-11: "make sure that those are also in those
+  // three"), and the domestic leagues whose bundles carry tables only come
+  // through live-fixtures-2026.json, the builder's window a week either side
+  // of today. Women's leagues sit under Women's Football beside the UWCL.
+  const EURO_LABEL: Record<number, string> = { 2: "Champions League", 3: "Europa League", 848: "Conference League" };
+  const euroEvents: LiveEvent[] = clubComps.filter((c) => EURO_LABEL[c.league_id]).flatMap((comp) => (comp.fixtures ?? []).filter((f) => f.kickoff && !/qualif|prelim/i.test(f.round ?? "")).map((f) => ({
+    sport: "Football", league: EURO_LABEL[comp.league_id], href: `/teams/football/tournaments/${comp.league_id === 2 ? "champions-league" : comp.league_id === 3 ? "europa-league" : "conference-league"}`,
+    label: `${cupName(f.home)} v ${cupName(f.away)}`, when: f.kickoff as string,
+    score: f.status && CUP_FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
+    live: !!f.status && CUP_LIVE.has(f.status) })));
+  const leagueFixtures = await getLeagueFixtures().catch(() => []);
+  const leagueEvents: LiveEvent[] = leagueFixtures.flatMap((lg) => (lg.fixtures ?? []).filter((f) => f.kickoff).map((f) => ({
+    sport: lg.women ? "Women's Football" : "Football", league: lg.name, href: lg.women ? "/teams/wfootball" : "/teams/football/2026-27",
+    label: `${cupName(f.home)} v ${cupName(f.away)}`, when: f.kickoff as string,
+    score: f.status && CUP_FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
+    live: !!f.status && CUP_LIVE.has(f.status) })));
+  const today = collectEvents(groups, [...cupEvents, ...intlEvents, ...euroEvents, ...leagueEvents]);
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">

@@ -13861,11 +13861,112 @@ the expected shape for ISR-read files and the workflow commits them the same way
   Motorsport 2 inline (Qualifying, Race), Gridiron 34 folded into College Football 20 and NFL
   14; no horizontal scroll. `npm run verify` green (`_scratch/verify-follow5.log`).
 
-### N. State
+### N. Rulings, afternoon
+Golf (K): no amateur team events; yes to prestige 0.6 to 0.9. `git config pull.rebase true`
+set on the Windows checkout. No push yet; `VERCEL_BUILD_CAP_TOKEN` waits.
+
+### O. The NFL Elo refresh moves to the mini, daily (app commit)
+Ashwin: "I don't want to wait 5 hours for this thing to run ... why do we have it on GitHub
+and not on Mac Mini?" It was born on 09-06 as "needs no workbook and no Mac mini" when the
+mini's reach into ESPN was still in question; that was settled on 08-05 (no User-Agent), so
+only the date kept it there. GitHub's cron fired 09-08's run 4h17m late and skipped 09-11's.
+Now `mac-mini-jobs/runners/nfl-elo.sh` (a literal port: self-test, carry, bracket in Jan/Feb,
+seeds, odds, one `[vercel skip]` commit) on jobs.toml row `nfl-elo`, **08:00 UTC daily,
+September to February** (the 2026 schedule plays Thursday to Monday; the scripts are
+change-gated, a quiet day commits nothing), and the workflow's `schedule:` is commented out
+with `workflow_dispatch` kept as the fallback. The runner also pings `/api/revalidate` with
+new tags `nfl-elo` (lib/nflElo.ts reads with an 86400s window, so the Action's commits were
+reaching the page up to a day late) and `nfl-playoffs`; both added to the route's allow list.
+🔴 **Mini side, next session there:** pull, copy `jobs.toml` and `runners/nfl-elo.sh` into
+`~/metro-mini-jobs/` (or confirm the symlink), `chmod +x`, `dispatcher.py --self-test`,
+`DRY_RUN=1 runners/nfl-elo.sh` once by hand, then let 08:00 take it. jobs.toml validates
+(29 jobs, no errors); the dispatcher self-test's lock case cannot run on Windows.
+
+### P. NFL season browser: newest first inside each decade (app commit)
+Ashwin: "make them descending ... it makes it easier to then navigate both on desktop and
+mobile." One sort in `app/teams/nfl/season/page.tsx`.
+
+### Q. NFL season hub: the playoffs week by week (app commit)
+Ashwin, on 1994: "once you get to the playoff weeks, why doesn't the title percentage change
+per week? ... Super Bowl week, it still shows the Cowboys with a title percentage." The odds
+file (`scripts/nfl/playoff_odds.py`, `public/data/nfl/odds/<year>.json`) now covers the
+postseason weeks: after each one the real bracket results are held fixed (`known` pairs in
+`bracket()` and `title_game()`), the rest drawn from that week's ratings, eliminated clubs
+forced to exactly 0.0 and the champion to 1.0 after the final (`force_postseason`, renormalised
+per league before 1966, across the field from 1966); `postseason_weeks` and `champions` keys
+added; the regular-season numbers are byte-identical (checked, 1994, 0 mismatches). 1994
+reads: after week 18 the wild-card losers out; week 19 four clubs; week 20 exactly two, 49ers
+67%, Chargers 33%; week 21 the 49ers alone. Three more at Ashwin's word, same commit:
+- **Honours fill in as they happen** ("If it happened in week 12 that they clinch a playoff
+  spot, you then fill in the playoff square"): a per-week `honours` array per club, proved
+  from the records during the season (`play_app` from the existing status proof; `div_title`,
+  `best_conf`, `best_rec` when the club's worst finish strictly beats every rival's best,
+  ties left to the tiebreakers and so unproved), the shard's final flags at the last
+  regular-season week, and `cf_app`/`champ_app`/`champ` lit at the week the qualifying game
+  was actually played. 1994: 49ers playoffs and division at 14, best conference and league
+  record at 17, conference final 19, championship game 20, champion 21; Chargers playoffs 16,
+  division 17, championship game 20, no champion.
+- **Seeds stay through the playoff weeks** ("keep the seeds there because you can just show
+  that they had been earned"): `seedWeek` clamps to the last regular-season week instead of
+  going null.
+- **The playoff-odds cell blanks on a scrubbed postseason week** ("remove that playoff column
+  because it doesn't matter anymore. You keep the title percentage"): blanked, not unmounted,
+  because columns never come and go with the scrubber (his own 09-10 complaint); the title
+  cell reads "out" and "champion" where the file forced them. The Final table shows the odds
+  entering the title game (two clubs) with clinched/out beside them.
+- Measured at 390 and 1280 on /teams/nfl/season/1994 through weeks 12, 14, 17, 18, 19, 20,
+  21 (`_scratch/measure-1994.mjs`, `m1994.log`): no page errors, no horizontal scroll, every
+  reading above confirmed on the page.
+- 🔴 **The first full sweep exposed the two-league era** (Ashwin, on the hubs before 1994: "why
+  didn't you do it for all the previous years ... It's incomplete"): the AAFC (1946-49) and the
+  AFL (1960-69) played a different number of weeks from the NFL, so one league's championship
+  game fell on a week the other was still playing and the file's week index slipped (1966:
+  `reg_end_week` 16 with the NFL final at 16, 20 entries for 19 weeks); and from 1966 the league
+  title games were counted as titles beside the Super Bowl (1966 `champions` read Chiefs,
+  Packers, Packers). Fixed: one week axis for the whole season (index = week, always;
+  `reg_end` the last regular-season week across leagues; a league final on an overlap week is
+  a `known` result inside the regular-season sim), third-place games (the 1960s "Playoff Bowl")
+  excluded, and from 1966 the single last game decides the champion while before 1966 each
+  league's last game does. 1966 reads Chiefs 39% and Packers 61% entering the Super Bowl,
+  Packers alone after; 1946 and 1963 one champion per league; 1985, 1994 and 2010 unchanged to
+  the byte across the regular season. All 107 files rebuilt twice (`_scratch/odds-all2.log`,
+  about 50 minutes a sweep): 93 carry postseason weeks (1933 to 2025), every array is
+  `through_week + 1` long, every complete season's after-final odds are exactly its champions
+  at 1.0, every season from 1966 has exactly two clubs entering the final.
+
+### R. Live Standings: a schedule, not a scoreboard, and the league fixtures builder (app commit)
+- **No LIVE mark, no in-play count** (Ashwin: "I don't want this to be a scoreboard that
+  updates all the time ... I can keep track of it at a glance"): `collectEvents` places an
+  in-play game by its kick-off like any other; the pulse, the LIVE tag and the "N in play"
+  counts are gone. The `live` flag stays on `LiveEvent` for the blocks that set it.
+- **The morning job he asked for already exists in shape**: the strips are assembled at render
+  from every feed, the page revalidates every 120s and the football bundles every 1800s, and
+  the feeds refresh in the morning lull (euro-comps 04:00Z, football-standings 05:00Z and
+  three more slots, mlb-sim 07:00Z, nfl-elo 08:00Z). No separate Today job was built; say so.
+- **`scripts/apifootball/refresh_league_fixtures.py`** (registry `league_fixtures.json`: La
+  Liga 140, Bundesliga 78, Serie A 135, Ligue 1 61, MLS 253, WSL 44, NWSL 254): one
+  api-football `/fixtures` call per league with `from`/`to` a week either side of today,
+  names soft-resolved through `football_team`, a `fallback_season` retry for a league the api
+  has not rolled over; writes `public/data/football/live-fixtures-2026.json`. Added to
+  `run-football-standings.sh` as a soft-fail step and to its BUNDLES list, so it ships four
+  times a day with the standings. First run from the box (the key in `_scratch/apikey.txt`):
+  all seven on season 2026, 166 fixtures in the window. `lib/clubFootballLive.ts` gains
+  `getLeagueFixtures()`; the page joins them as `leagueEvents` (women's leagues under Women's
+  Football) and the Europa and Conference Leagues join beside the Champions League as
+  `euroEvents` from the competitions bundle ("make sure that those are also in those three").
+- Measured at 390 and 1280 with every strip open (`_scratch/strips4.log`): "On today 20
+  fixtures across 8 sports", "Recent results 49 across 3 sports" (Football 42 folded into
+  Champions League 18, MLS 14, League Cup 6, La Liga 2, Serie A 2), "Coming up 116 across 8
+  sports" (Football 62: La Liga 9, Serie A 9, Bundesliga 8, Premier League 10, SCO League Cup
+  3, Ligue 1 8, MLS 15; Women's Football 12: WSL 7, NWSL 5; Gridiron 34); no "in play"
+  anywhere; no horizontal scroll (scrollWidth 390/1280). Open heights 607/251/391 on the
+  phone.
+
+### S. State
 Local, not pushed, linear on origin/main, oldest first: `a9ce70c89` (docs, `[vercel skip]`),
-`7f32be81f` (Côte d'Ivoire at the builders, `[vercel skip]`), `baea6d08e` (the frontier),
-`ce800aff3` (F1 odds, the dots, the 2100 card), `d6f1edda4` (Live Standings odds),
-`589fadde7` (the Today box), `a06cc4cc6` (the follow-ups), `e622e6a41` (the NFL updater fix,
-`[vercel skip]`) and the section M commit (app, push HEAD). The brand branch is separate.
-Open: Ashwin's golf rulings (K), `git config pull.rebase true` on the checkout,
-`VERCEL_BUILD_CAP_TOKEN` still unset so the cap is inactive, the fixture-feed builders in M.
+`7f32be81f` (Côte d'Ivoire, `[vercel skip]`), `baea6d08e` (the frontier), `ce800aff3` (F1
+odds, the dots, the 2100 card), `d6f1edda4` (Live Standings odds), `589fadde7` (the Today
+box), `a06cc4cc6` (the follow-ups), `e622e6a41` (the NFL updater fix, `[vercel skip]`),
+`8e9522ce9` (section M), `aaf2fb25a` (O), `093df3933` (P), `4b6ad9c82` (Q), `d974097d2` (R,
+app, push HEAD); `npm run verify` green for the four (`_scratch/verify-round3.log`). The brand branch is separate. Open: `VERCEL_BUILD_CAP_TOKEN`; the golf build (rulings
+in N); the CFL fixture feed; the mini-side steps in O.

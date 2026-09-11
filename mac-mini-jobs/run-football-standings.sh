@@ -58,6 +58,22 @@ log "exporting frontend bundles"
 "$PY" scripts/apifootball/export_bundles.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "export_bundles failed"
 "$PY" scripts/apifootball/refresh_supercups.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "supercups export failed"
 "$PY" scripts/apifootball/refresh_domestic_cups.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "domestic cups export failed"
+# League fixtures and results, a week either side of today, for the Today box on
+# Live Standings: La Liga, Bundesliga, Serie A, Ligue 1, MLS, WSL, NWSL (Ashwin,
+# 2026-09-11). Seven api-football requests a run. SOFT-FAIL: a missed window
+# leaves last run's bundle in place, and the box reads three days either way,
+# so a single failed slot costs nothing a reader would see.
+"$PY" scripts/apifootball/refresh_league_fixtures.py --self-test 2>&1 | tee -a "$LOG"
+if [ "${PIPESTATUS[0]}" -eq 0 ]; then
+  "$PY" scripts/apifootball/refresh_league_fixtures.py --write 2>&1 | tee -a "$LOG"
+  [ "${PIPESTATUS[0]}" -eq 0 ] || {
+    log "  WARN: league fixtures --write failed; keeping the previous bundle"
+    push "football: league fixtures not refreshed" default warning "refresh_league_fixtures.py --write failed; standings bundles still shipped. See $LOG"
+  }
+else
+  log "  WARN: league fixtures self-test failed; skipping the fixtures write"
+  push "football: league fixtures self-test FAILED" high warning "refresh_league_fixtures.py broke its own unit tests. Fixtures NOT refreshed. See $LOG"
+fi
 # Women's hub: bundle-direct (no Supabase), writes wlive-2026.json. Its WSL auto-watch
 # swaps FA WSL to 2026-27 the day api-football publishes that table -- so it must run
 # daily, not once. lib/wLive.ts ISR-reads the bundle from GitHub raw ([vercel skip]).
@@ -107,7 +123,7 @@ else
   push "football: power ranking self-test FAILED" high warning "Scoring logic broke its own unit tests. Ranking NOT refreshed. See $LOG"
 fi
 
-BUNDLES="public/data/football/live-standings-2026.json public/data/football/live-competitions-2026.json public/data/football/live-supercups-2026.json public/data/football/live-cups-2026.json public/data/football/wlive-2026.json public/data/football/uefa-coefficients.json public/data/football/live-ranking-2026-27.json"
+BUNDLES="public/data/football/live-standings-2026.json public/data/football/live-competitions-2026.json public/data/football/live-supercups-2026.json public/data/football/live-cups-2026.json public/data/football/live-fixtures-2026.json public/data/football/wlive-2026.json public/data/football/uefa-coefficients.json public/data/football/live-ranking-2026-27.json"
 if ! git diff --quiet -- $BUNDLES; then
   git add $BUNDLES
   git commit -q -m "football: refresh live bundles [vercel skip]" || fail "bundle commit failed"
