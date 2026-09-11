@@ -84,7 +84,13 @@ type SRow = { rank: number | string | null; name: string; href?: string | null; 
 // name cell wraps instead of forcing the table wider than its box (a finals
 // week label plus two club names put a scrollbar on the NRL block, 2026-09-08).
 type SubTable = { title: string | null; columns: string[]; rows: SRow[]; fixtures?: boolean };
-type Block = { league: string; href: string | null; note: string | null; open: boolean; subTables: SubTable[]; cols?: boolean; live?: boolean; cutNote?: string | null };
+// One fixture or result, in a shape the Today box at the top of the page can
+// coalesce across sports (Ashwin, 2026-09-11: "what events are happening today
+// and what results just recently happened, instead of having to scroll
+// through all of live standings"). Blocks that build fixture rows also push
+// their events here; `when` is the ISO instant, `score` is set once played.
+type LiveEvent = { sport: string; league: string; href: string | null; label: string; when: string; score: string | null; live: boolean };
+type Block = { league: string; href: string | null; note: string | null; open: boolean; subTables: SubTable[]; cols?: boolean; live?: boolean; cutNote?: string | null; events?: LiveEvent[] };
 type SportGroup = { sport: string; blocks: Block[]; columns?: [Block[], Block[]] };
 
 // The Football section on Live Standings renders as two columns: the LEFT column
@@ -289,6 +295,100 @@ function NameCell({ r }: { r: SRow }) {
     </span>
   );
   return r.href ? <Link href={r.href} className="hover:text-[var(--accent)]">{content}</Link> : content;
+}
+
+// ---- The Today box --------------------------------------------------------
+// Two collapsed strips above the sections: what is on in the next day and a
+// half, and what finished in the last three days, coalesced from every block
+// that carries fixtures (European and South American club comps, the
+// internationals, the UWCL, rugby and cricket internationals, a slam, the AFL
+// and NRL finals). Compact by rule: grouped by sport, at most SIX per sport
+// with a "+N more" pointing at the block, kick-offs in the viewer's zone
+// through the same LocalTime the tables use. Domestic league fixtures are
+// not in the bundle this page reads, so the Premier League and its peers are
+// absent here until they are (Ashwin, 2026-09-11: "compact and collapsible
+// ... I don't want a 10,000-line list of everything happening that day").
+const TODAY_AHEAD_MS = 36 * 3600 * 1000;
+const TODAY_BEHIND_MS = 3 * 3600 * 1000;
+const RESULTS_BACK_MS = 72 * 3600 * 1000;
+const TODAY_PER_SPORT = 6;
+
+function collectEvents(groups: SportGroup[]): { upcoming: LiveEvent[]; results: LiveEvent[] } {
+  const now = Date.now();
+  const all: LiveEvent[] = [];
+  const seen = new Set<string>();
+  for (const g of groups) for (const b of g.blocks) for (const e of b.events ?? []) {
+    const k = `${e.league}|${e.label}|${e.when}`;
+    if (seen.has(k)) continue;
+    seen.add(k);
+    all.push(e);
+  }
+  const t = (e: LiveEvent) => new Date(e.when).getTime();
+  const upcoming = all
+    .filter((e) => !e.score && Number.isFinite(t(e)) && (e.live || (t(e) >= now - TODAY_BEHIND_MS && t(e) <= now + TODAY_AHEAD_MS)))
+    .sort((a, b) => Number(b.live) - Number(a.live) || t(a) - t(b));
+  const results = all
+    .filter((e) => !!e.score && Number.isFinite(t(e)) && t(e) >= now - RESULTS_BACK_MS && t(e) <= now)
+    .sort((a, b) => t(b) - t(a));
+  return { upcoming, results };
+}
+
+function TodayStrip({ title, events, kind, sportOrder }: { title: string; events: LiveEvent[]; kind: "upcoming" | "results"; sportOrder: string[] }) {
+  if (events.length === 0) return null;
+  const bySport = new Map<string, LiveEvent[]>();
+  for (const e of events) bySport.set(e.sport, [...(bySport.get(e.sport) ?? []), e]);
+  const sports = [...bySport.keys()].sort((a, b) => {
+    const ia = sportOrder.indexOf(a), ib = sportOrder.indexOf(b);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
+  const liveN = events.filter((e) => e.live).length;
+  const summary = kind === "upcoming"
+    ? `${events.length} fixture${events.length === 1 ? "" : "s"} across ${sports.length} sport${sports.length === 1 ? "" : "s"}${liveN ? `, ${liveN} in play` : ""}`
+    : `${events.length} result${events.length === 1 ? "" : "s"} across ${sports.length} sport${sports.length === 1 ? "" : "s"}`;
+  return (
+    <details className="rounded-xl border overflow-hidden" style={cardStyle}>
+      <summary className="cursor-pointer select-none px-4 py-2.5 flex items-center justify-between gap-2">
+        <span className="font-semibold text-sm flex items-center gap-1.5">
+          {liveN > 0 && <span className="inline-block w-2 h-2 rounded-full bg-[#22c55e] animate-pulse flex-shrink-0" aria-label="In play" />}
+          {title}
+        </span>
+        <span className="text-[10px] text-[var(--text-dim)]">{summary}</span>
+      </summary>
+      <div className="border-t px-3 py-2 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2" style={{ borderColor: "var(--border)" }}>
+        {sports.map((sport) => {
+          const list = bySport.get(sport) ?? [];
+          const shown = list.slice(0, TODAY_PER_SPORT);
+          const more = list.length - shown.length;
+          return (
+            <div key={sport} className="min-w-0">
+              <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-0.5">
+                <a href={`#${slugId(sport)}`} className="hover:text-[var(--accent)]">{sport}</a>
+              </div>
+              <ul className="m-0 p-0 list-none space-y-0.5">
+                {shown.map((e, i) => (
+                  <li key={`${e.label}-${i}`} className="flex items-baseline justify-between gap-2 text-xs">
+                    <span className="min-w-0 truncate">
+                      {e.live && <span className="text-[10px] font-semibold mr-1" style={{ color: "#22c55e" }}>LIVE</span>}
+                      <span className="text-[var(--text)]">{e.label}</span>
+                      <span className="text-[var(--text-dim)]"> · {e.league}</span>
+                    </span>
+                    <span className="flex-shrink-0 max-w-[55%] truncate tabular-nums text-[var(--text-muted)]" style={mono} title={kind === "results" ? e.score ?? undefined : undefined}>
+                      {kind === "results" ? e.score : kickoff(e.when)}
+                    </span>
+                  </li>
+                ))}
+                {more > 0 && (
+                  <li className="text-[11px] text-[var(--text-dim)]">
+                    <a href={`#${slugId(sport)}`} className="hover:text-[var(--accent)]">+{more} more in {sport}</a>
+                  </li>
+                )}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
+    </details>
+  );
 }
 
 function LeagueAccordion({ block }: { block: Block }) {
@@ -691,6 +791,10 @@ function uwclBlock(c: Awaited<ReturnType<typeof getWLiveCompetition>>): Block | 
       rows: g.rows.map((r, i): SRow => ({ rank: r.rank ?? i + 1, name: r.name, href: r.slug ? `/teams/wfootball/clubs/${r.slug}` : null, crestName: r.name, cells: r.cells })),
     }))
     .filter((st) => st.rows.length > 0);
+  const events: LiveEvent[] = fx.filter((f) => f.date).map((f) => ({
+    sport: "Women's Football", league: "Women's Champions League", href: "/teams/wfootball", label: `${f.home.name} v ${f.away.name}`, when: f.date as string,
+    score: f.status && FIN.has(f.status) && f.homeGoals != null && f.awayGoals != null ? `${f.homeGoals}–${f.awayGoals}` : null,
+    live: !!f.status && IN_PLAY.has(f.status) }));
   const subTables = [...groupTables, mk("Live", liveFx, true), mk("Upcoming", upcoming, false), mk("Recent", recent, true)]
     .filter((st): st is SubTable => st !== null);
   if (subTables.length === 0) return null;
@@ -699,7 +803,7 @@ function uwclBlock(c: Awaited<ReturnType<typeof getWLiveCompetition>>): Block | 
   // until then the block carries fixtures alone and says so, rather than
   // looking like the table was forgotten (Ashwin, 2026-09-07).
   const note = groupTables.length ? c.seasonLabel : `${c.seasonLabel} · qualifying; league-phase table appears after the draw`;
-  return { league: "Women's Champions League", href: "/teams/wfootball", note, open: false, live: liveFx.length > 0 || upcoming.length > 0, subTables };
+  return { league: "Women's Champions League", href: "/teams/wfootball", note, open: false, live: liveFx.length > 0 || upcoming.length > 0, subTables, events };
 }
 
 async function npbBlock(): Promise<Block | null> {
@@ -835,10 +939,14 @@ function intlCompBlock(
   });
   if (!current) return null;
 
+  const events: LiveEvent[] = fx.filter((f) => f.kickoff).map((f) => ({
+    sport: "International Football", league: opts.label, href: opts.href, label: `${nation(f.home)} v ${nation(f.away)}`, when: f.kickoff as string,
+    score: f.status && FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
+    live: !!f.status && IN_PLAY.has(f.status) }));
   return {
     league: opts.label, href: opts.href,
     note: groupTables.length ? opts.liveNote : opts.closedNote,
-    open: false, live: live.length > 0, subTables,
+    open: false, live: live.length > 0, subTables, events,
   };
 }
 
@@ -1009,6 +1117,13 @@ async function footyBlock(league: "afl" | "nrl"): Promise<Block | null> {
     };
   });
   if (footyLive) applyPlayoffMarks(s.rows, rows, (t) => (t.rank ?? 99) <= spots);
+  // Finals games with both sides named feed the Today box.
+  const events: LiveEvent[] = finalsIsCurrent(finals)
+    ? finals.weeks.flatMap((w) => w.games.filter((g) => g.date && g.home && g.away).map((g) => ({
+        sport: league === "afl" ? "Aussie Rules" : "Rugby League", league: `${league.toUpperCase()} finals, ${w.label}`, href: `/teams/${league}`,
+        label: `${g.home!.name} v ${g.away!.name}`, when: g.date as string,
+        score: g.state === "post" && g.home!.score != null && g.away!.score != null ? `${g.home!.score}–${g.away!.score}` : null, live: g.state === "in" })))
+    : [];
   return {
     league: league.toUpperCase(), href: `/teams/${league}`,
     note: finalsSubs.length ? `${s.year} finals` : footyLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`,
@@ -1017,6 +1132,7 @@ async function footyBlock(league: "afl" | "nrl"): Promise<Block | null> {
       ...finalsSubs,
       { title: finalsSubs.length ? `${s.year} Ladder` : null, columns: cols, rows },
     ],
+    events,
   };
 }
 
@@ -1073,7 +1189,12 @@ async function tennisBlock(): Promise<Block | null> {
             cells: [m.upcoming && m.kickoff ? kickoff(m.kickoff) : m.score] })) } : null;
   const subTables = [toSub(men, "Men's Singles"), toSub(women, "Women's Singles")].filter((st): st is SubTable => st !== null);
   if (subTables.length === 0) return null;
-  return { league: `Tennis: ${tournament}`, href: "/teams/tennis", note: "live", open: true, subTables };
+  // Upcoming matches only: a finished match carries no instant in the feed
+  // we keep, so results stay in the draw table below.
+  const events: LiveEvent[] = [men, women].flatMap((d, i) => (d ? d.matches : []).filter((m) => m.upcoming && m.kickoff).map((m) => ({
+    sport: "Tennis", league: `${tournament}, ${i === 0 ? "men" : "women"}`, href: "/teams/tennis",
+    label: m.label, when: m.kickoff as string, score: null, live: m.live })));
+  return { league: `Tennis: ${tournament}`, href: "/teams/tennis", note: "live", open: true, subTables, events };
 }
 
 const _slugName = (n: string) => n.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -1211,7 +1332,13 @@ async function rugbyFixturesBlock(): Promise<Block | null> {
   const subTables = [mk("Live", f.live, true), mk("Upcoming", f.upcoming, false), mk("Recent", f.recent, true)]
     .filter((st): st is SubTable => st !== null);
   if (subTables.length === 0) return null;
-  return { league: "Internationals", href: "/teams/rugby-union", note: f.live.length ? "live" : "fixtures", open: true, subTables };
+  const events: LiveEvent[] = [...f.live, ...f.upcoming, ...f.recent].map((m) => ({
+    sport: "Rugby Union", league: "Internationals", href: "/teams/rugby-union", label: `${m.teamA} v ${m.teamB}`,
+    // A match with no kick-off instant carries its date at midnight UTC, and
+    // the Today box treats that as "some time that day".
+    when: m.kickoff ?? `${m.date}T00:00:00Z`,
+    score: m.status === "recent" && m.scoreA != null && m.scoreB != null ? `${m.scoreA}–${m.scoreB}` : null, live: m.status === "live" }));
+  return { league: "Internationals", href: "/teams/rugby-union", note: f.live.length ? "live" : "fixtures", open: true, subTables, events };
 }
 
 async function cricketFixturesBlock(): Promise<Block | null> {
@@ -1227,7 +1354,10 @@ async function cricketFixturesBlock(): Promise<Block | null> {
   const subTables = [mk("Live", f.live, true), mk("Upcoming", f.upcoming, false), mk("Recent", f.recent, true)]
     .filter((st): st is SubTable => st !== null);
   if (subTables.length === 0) return null;
-  return { league: "Internationals", href: "/teams/cricket", note: f.live.length ? "live" : "fixtures", open: true, subTables };
+  const events: LiveEvent[] = [...f.live, ...f.upcoming, ...f.recent].map((m) => ({
+    sport: "Cricket", league: m.format, href: "/teams/cricket", label: `${m.teamA} v ${m.teamB}`, when: m.date,
+    score: m.status === "recent" && (m.scoreA || m.scoreB) ? `${m.scoreA ?? ""} / ${m.scoreB ?? ""}`.trim() : null, live: m.status === "live" }));
+  return { league: "Internationals", href: "/teams/cricket", note: f.live.length ? "live" : "fixtures", open: true, subTables, events };
 }
 
 // European club-competition fixtures for the standings page, fed from the unified
@@ -1497,6 +1627,7 @@ export default async function LiveStandingsPage() {
       return { sport: g.sport, blocks };
     })
     .filter((g) => g.blocks.length > 0);
+  const today = collectEvents(groups);
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">
@@ -1536,6 +1667,13 @@ export default async function LiveStandingsPage() {
       </header>
 
       <HubNav items={groups.map((g) => ({ label: g.sport, href: `#${slugId(g.sport)}` }))} />
+
+      {(today.upcoming.length > 0 || today.results.length > 0) && (
+        <div className="space-y-3 mb-8">
+          <TodayStrip title="On today" events={today.upcoming} kind="upcoming" sportOrder={groups.map((g) => g.sport)} />
+          <TodayStrip title="Recent results" events={today.results} kind="results" sportOrder={groups.map((g) => g.sport)} />
+        </div>
+      )}
 
       {groups.length === 0 ? (
         <p className="text-sm text-[var(--text-muted)] italic">Standings are unavailable right now.</p>
