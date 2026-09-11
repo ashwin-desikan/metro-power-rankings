@@ -62,6 +62,20 @@ added with `claude mcp add --transport http notion https://mcp.notion.com/mcp`
 and authorised once with `/mcp`; launchd jobs have no Claude in the loop and
 do not touch Notion.
 
+Alongside the four databases, the **Silent failure register** (a page under the
+same parent) lists the faults that EXIT 0 AND TELL NOBODY, split into the ones
+something now catches and the ones still uncovered. Read it before concluding a
+pipeline is healthy: a green tile, a clean `--status` and a quiet ntfy topic
+mean only that nothing failed loudly, not that the data is right. On 2026-09-10,
+three of six real faults sent no notification at all and the two most damaging
+exited 0. When you find a new way for something to break silently, add a row --
+that is the whole value of the page.
+
+🔴 The `reference_notion_workspace` memory this section points at does NOT exist
+on the mini; it was written by the Windows session, whose memory lives on its
+own box. Find the databases by searching Notion for "Citizen of Nowhere"
+instead, and do not assume a missing memory means the workspace is unused.
+
 ## The working loop for data/pipeline fixes
 
 This project has organically converged on a discipline worth keeping
