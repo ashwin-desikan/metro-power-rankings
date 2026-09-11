@@ -38,15 +38,19 @@ jobs:
           python-version: "3.12"
       - name: Refresh F1 current-season data
         run: python3 scripts/refresh-f1-current-season.py
+      - name: Title odds (drivers and constructors)
+        run: |
+          python3 scripts/f1/build_title_odds.py --self-test
+          python3 scripts/f1/build_title_odds.py
       - name: Commit if changed
         run: |
           set -e
-          if git diff --quiet -- public/data/f1/data.json; then
+          if git diff --quiet -- public/data/f1/data.json public/data/f1/title-odds.json; then
             echo "No F1 data change this run."
             exit 0
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/f1/data.json
+          git add public/data/f1/data.json public/data/f1/title-odds.json
           git commit -m "data: F1 current-season refresh [vercel skip]"
           git push origin HEAD:main

@@ -8,6 +8,10 @@ import {
   fetchF1LiveSeason,
 } from "@/lib/f1";
 import { getLiveF1Standings } from "@/lib/f1Standings";
+import { getF1TitleOdds, f1OddsAreCurrent } from "@/lib/f1TitleOdds";
+import { fmtOdds } from "@/lib/mlbSim";
+import SortableBoard from "@/app/_shared/SortableBoard";
+import { SectionHead } from "@/app/_shared/SectionHead";
 import { getPagedF1Constructors } from "@/lib/f1Constructors";
 import TeamName from "@/app/teams/_shared/F1TeamName";
 import { CappedList } from "@/app/_shared/Disclosure";
@@ -73,7 +77,9 @@ export default async function F1Page() {
   const hostMetros = getF1HostMetros();
   const live = await fetchF1LiveSeason();
   const season = live.races;
-  const standings = await getLiveF1Standings();
+  const [standings, oddsFile] = await Promise.all([getLiveF1Standings(), getF1TitleOdds().catch(() => null)]);
+  const odds = f1OddsAreCurrent(oddsFile, standings.season) ? oddsFile : null;
+  const oddsLabel = (r: { p_title: number; clinched: boolean; eliminated: boolean }) => (r.clinched ? "clinched" : r.eliminated ? "out" : fmtOdds(r.p_title));
   // ESPN's live driver table omits the constructor; backfill it from the
   // fallback snapshot so the Team column (and its crest) renders in both modes.
   const fallbackDriverTeam = new Map(live.standings.drivers.map((d) => [d.driver, d.team]));
@@ -111,6 +117,7 @@ export default async function F1Page() {
       <HubNav items={[
         { label: "Teams", href: "/teams/f1/constructors" },
         { label: "Standings", href: "#standings" },
+        ...(odds ? [{ label: "Title odds", href: "#title-odds" }] : []),
         { label: "This Season", href: "#season" },
         { label: "Host Metros", href: "#host-metros" },
         { label: "Champions", href: "#champions" },
@@ -222,6 +229,88 @@ export default async function F1Page() {
           </div>
         </div>
       </div>
+
+      {/* Title odds: who wins the two championships, simulated after each race. */}
+      {odds ? (
+        <section className="mb-12 mt-10">
+          <SectionHead
+            id="title-odds"
+            title="Title odds"
+            sub={`Each driver's and constructor's chance of the title: the season so far, run over the ${odds.meta.races_remaining} race${odds.meta.races_remaining === 1 ? "" : "s"} left.`}
+            more={
+              <>
+                {odds.meta.method} Simulated after round {odds.meta.through_round} of {odds.meta.rounds_total}
+                {odds.meta.next_race ? <>; next, the {odds.meta.next_race.name}{odds.meta.next_race.sprint ? " (sprint weekend)" : ""}</> : null}.
+                A driver still has {odds.meta.max_points_remaining_driver} points to race for, a constructor {odds.meta.max_points_remaining_constructor}. Source: {odds.meta.source}; generated {odds.meta.generated_at}.
+              </>
+            }
+          />
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="min-w-0">
+              <SortableBoard
+                id="f1-driver-odds"
+                mobileNoun="drivers"
+                mobileInitial={10}
+                initial={{ key: "p_title", dir: "desc" }}
+                cols={[
+                  { key: "driver", label: "Driver", className: "whitespace-nowrap" },
+                  { key: "constructor", label: "Team", demote: true },
+                  { key: "points", label: "Pts", right: true },
+                  { key: "p_title", label: "Title", right: true, title: "Share of simulated seasons won" },
+                  { key: "exp_points", label: "Proj.", right: true, demote: true, title: "Expected final points" },
+                ]}
+                rows={odds.drivers.map((d) => ({
+                  key: d.driverId,
+                  sort: { driver: d.driver, constructor: d.constructor, points: d.points, p_title: d.p_title, exp_points: d.exp_points },
+                  cells: [
+                    <span key="d" style={{ color: "var(--text)" }}>{d.driver}</span>,
+                    <span key="t" className="text-[var(--text-muted)] whitespace-nowrap">{d.constructor ? <TeamName name={d.constructor} /> : "—"}</span>,
+                    <span key="p" className="tabular-nums">{d.points}</span>,
+                    <span key="o" className="tabular-nums font-semibold" style={{ color: "var(--text)" }}>{oddsLabel(d)}</span>,
+                    <span key="e" className="tabular-nums text-[var(--text-muted)]">{d.exp_points.toFixed(0)}</span>,
+                  ],
+                  mobile: {
+                    name: <span className="truncate">{d.driver}</span>,
+                    sub: <>{d.constructor ?? "—"} · {d.points} pts · proj. {d.exp_points.toFixed(0)}</>,
+                    right: <span className="font-semibold">{oddsLabel(d)}</span>,
+                    rightSub: "title",
+                  },
+                }))}
+              />
+            </div>
+            <div className="min-w-0">
+              <SortableBoard
+                id="f1-constructor-odds"
+                mobileNoun="constructors"
+                mobileInitial={10}
+                initial={{ key: "p_title", dir: "desc" }}
+                cols={[
+                  { key: "constructor", label: "Constructor", className: "whitespace-nowrap" },
+                  { key: "points", label: "Pts", right: true },
+                  { key: "p_title", label: "Title", right: true, title: "Share of simulated seasons won" },
+                  { key: "exp_points", label: "Proj.", right: true, demote: true, title: "Expected final points" },
+                ]}
+                rows={odds.constructors.map((c) => ({
+                  key: c.constructorId,
+                  sort: { constructor: c.constructor, points: c.points, p_title: c.p_title, exp_points: c.exp_points },
+                  cells: [
+                    <span key="c" style={{ color: "var(--text)" }}><TeamName name={c.constructor} /></span>,
+                    <span key="p" className="tabular-nums">{c.points}</span>,
+                    <span key="o" className="tabular-nums font-semibold" style={{ color: "var(--text)" }}>{oddsLabel(c)}</span>,
+                    <span key="e" className="tabular-nums text-[var(--text-muted)]">{c.exp_points.toFixed(0)}</span>,
+                  ],
+                  mobile: {
+                    name: <span className="truncate"><TeamName name={c.constructor} /></span>,
+                    sub: <>{c.drivers.join(" · ")} · {c.points} pts</>,
+                    right: <span className="font-semibold">{oddsLabel(c)}</span>,
+                    rightSub: "title",
+                  },
+                }))}
+              />
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* This Season */}
       <SectionHeading id="season">This Season ({meta.latest_season})</SectionHeading>

@@ -13633,8 +13633,76 @@ Still in C: the trading-versus-appreciation split and the director's ledger (the
 D); the director's ledger needs player valuations from the tm corpus on the box, a builder
 change, so it is a separate commit.
 
-### F. State
-Local, not pushed: `df6a58a2e` (the night entry's section M, rebased onto the mini's morning,
-conflict in HANDOFF.md resolved by keeping both sides in time order), `4d67d0bd1` (Côte
-d'Ivoire at the builders) and the frontier commit (app; must be push HEAD). The brand branch is
-separate.
+### F. Ashwin's four fixes, one app commit
+His words: club football and the WNBA "with orange circles next to them, indicating playoffs,
+but neither is in the playoffs right now"; club football "should just be green all year round";
+the WNBA "is just on a break right now"; tennis and golf "if a major is going on, then that
+should be lit up as well"; an F1 model "to forecast who might win both the drivers' and
+constructors' championships"; and "The World in 2100" belongs "down in the rankings section
+... number 8".
+
+**The dots (`lib/leagueStatus.tsx`, the one file the top menu, /sports and the home page
+all read).** Three causes, all in the month grid. (1) September was "Live - Knockouts" with
+the playoffs tone for the Copa Libertadores, and `clubFootballStatus()` promoted the parent to
+the highest tone among its children, so Club Football read amber. Every club-football entry
+now carries the regular tone whatever its label (MLS Cup, Knockouts) and the parent is regular
+whenever anything is live. (2) The WNBA grid put September in the playoffs. wnba.com/keydates:
+the FIBA World Cup break runs 31 Aug to 16 Sep, the regular season ends 24 Sep, the first
+round begins 27 Sep, the Finals end by 31 Oct. New `LEAGUE_DATES`, checked before the month
+grid: regular to 26 Sep, playoffs 27 Sep to 31 Oct; the month grid itself now keeps September
+regular for any year without dates. (3) 🔴 The tennis window for the 2026 US Open was typed
+as 25 Aug to 7 Sep; the tournament runs 30 Aug to 13 Sep (WTA), so Live Standings showed the
+draw from ESPN's own flag while the menu showed "Offseason". Corrected, and the 2027 slams
+(ATP calendar: AO 17-31 Jan, RG 23 May-6 Jun, Wimbledon 28 Jun-11 Jul, US Open 29 Aug-12 Sep)
+and 2027 majors (Sky Sports: Masters 8-11 Apr, PGA 20-23 May, US Open 17-20 Jun, The Open
+15-18 Jul) added with their sources in the file, so the menu is never dark for want of a date.
+Measured on /sports at both widths: Formula 1 green "Race Season", WNBA green "Regular
+Season", Tennis green "Live - US Open", Golf grey "Next: The Masters Apr"; the Sports menu
+reads "Club Football 13 live" and "WNBA Regular Season".
+
+**F1 title odds.** `scripts/f1/build_title_odds.py` (`--self-test`, `--dry`, `--sims`) reads
+Jolpica (schedule, every race and sprint result, both standings; 🔴 Jolpica caps a page at 100
+result rows, five races, so results are walked by offset: the first run read "through round 5
+of 23" and put the noise scale on its grid limit). Model: strength = race points per race
+weighted 0.9 per round toward the latest; retirement rate shrunk toward the grid's (six
+pseudo-races); each remaining race is strength plus N(0,1), retirements out, ranked, F1 points
+paid, sprint table on sprint weekends; the noise scale is fitted (grid 0.5 to 12) so the sim
+reproduces each driver's points per race; 10,000 runs; `clinched` and `eliminated` from the
+points still available (a constructor has two cars). Today, after round 13 of 23 with one
+sprint left, scale 3.25: Antonelli 267 pts 98.8%, Hamilton 0.7, Russell 0.4; Mercedes 100.0
+(not clinched: 122 clear with 516 available). Output `public/data/f1/title-odds.json`; wired
+into `mac-mini-jobs/run-f1-weekly.sh` (self-test then build, added to the commit) and
+`.github/workflows/f1-refresh.yml`. `lib/f1TitleOdds.ts` (ISR, GitHub raw first, 21-day
+freshness because F1 has three-week gaps, season must match the live table's; registered in
+check-client-imports) with `normDriver` (last two tokens: "Andrea Kimi Antonelli" meets "Kimi
+Antonelli") and `normConstructor` (drops f1/team/racing: "Haas F1 Team" meets "Haas"). Surfaces:
+`/sports/standings` Formula 1 block gains Title% on both tables when the odds are current
+("clinched"/"out"/fmtOdds, a dash for an unknown name), note "· odds simulated"; `/teams/f1`
+gains a "Title odds" section (HubNav item) with two SortableBoards (Driver, Team, Pts, Title,
+Proj.), the method in `more`. Measured: 390 and 1280, no horizontal scroll, Antonelli 99% and
+Mercedes >99% on both surfaces.
+
+**The home page.** `The World in 2100` is index 08 in the rankings grid (same card shape as
+the other seven, NEW flag, the three largest countries as its preview); the Predictions strip
+keeps its small "Population 2100" chip and loses the large card. Measured: one "08 The World
+in 2100" card and the chip on both widths.
+
+Release note: today's block reworked to hold it (F1 odds and the dots in one bullet, 215;
+Live Standings, share cards and the 2100 card in another, 211).
+
+### G. 🔴 The merge commit came back, and this time it has a name
+At 11:00:23Z a second "Merge branch 'main' of github.com:ashwin-desikan/metro-power-rankings"
+appeared on the Windows checkout, author Ashwin, reflog `pull: Merge made by the 'ort'
+strategy`, between the frontier commit and the fixes commit; the night entry saw the same
+shape at 00:25Z. No session ran it. The only git-adjacent process on the box is `codex` (PID
+31660, running since 09-09 09:13), so the likeliest puller is the Codex app or a `git pull` run
+inside it; whatever it is, it pulls with a merge rather than a rebase. Reset and rebased linear
+again (`git rebase origin/main` drops the merge and replays the four); nothing lost. Two
+defences worth taking: `git config pull.rebase true` on this checkout, which turns any such
+pull into a rebase, and finding the puller. Left for Ashwin to say which.
+
+### H. State
+Local, not pushed, linear on origin/main (`1a70c505e`), oldest first: `b27123e79` (the night
+entry's section M, `[vercel skip]`), `fd1e11b1e` (Côte d'Ivoire at the builders, `[vercel
+skip]`), `6b9e1a83e` (the frontier, app), `1cbc38eca` (F1 odds, the dots, the 2100 card; app,
+push HEAD). Hashes changed at the rebase in G. The brand branch is separate.

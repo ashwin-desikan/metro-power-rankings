@@ -70,6 +70,9 @@ log "merging into Supabase (f1_update.py)"
 "$PY" f1_update.py 2>&1 | tee -a "$LOG" || fail "f1_update failed"
 log "rebuilding data.json"
 "$PY" "$SC/build-f1-data.py" 2>&1 | tee -a "$LOG" || fail "build-f1-data failed"
+log "title odds (build_title_odds.py)"
+"$PY" "$SC/f1/build_title_odds.py" --self-test 2>&1 | tee -a "$LOG" || fail "build_title_odds self-test failed"
+"$PY" "$SC/f1/build_title_odds.py" 2>&1 | tee -a "$LOG" || fail "build_title_odds failed"
 rm -f "$INCOMING"/*.json
 
 DJ="$REPO/public/data/f1/data.json"; [ -f "$DJ" ] || fail "data.json not produced"
@@ -82,7 +85,7 @@ if [ "$DRY_RUN" = "1" ]; then
   log "DRY_RUN=1: not committing."; git --no-pager diff --stat -- public/data/f1/data.json | tee -a "$LOG"; git checkout -- public/data/f1/data.json
 else
   git config user.name "mac-mini[claude]"; git config user.email "mac-mini-claude@users.noreply.github.com"
-  git add public/data/f1/data.json
+  git add public/data/f1/data.json public/data/f1/title-odds.json
   git commit -m "data: f1 sync — $season R$jrnd $racename [vercel skip]" --quiet || fail "git commit failed"
   git push origin HEAD:main || fail "git push failed"
   push "F1 synced -- $DATE" default checkered_flag "$season R$jrnd $racename is live."

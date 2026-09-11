@@ -470,6 +470,9 @@ export default async function Home() {
     { n: '05', title: 'The Power Atlas', desc: 'National power ranked year by year, from the Renaissance to today.', stat: '526 years · 1500–now', href: '/power-atlas', emoji: '🏛️', preview: topPowers() },
     { n: '06', title: 'The Election Atlas', desc: 'Every election in 35 countries and the EU: parties, leaders, turnout, and the results.', stat: '35 polities', href: '/elections', emoji: '🗳️', isNew: true, preview: topElections(forecast) },
     { n: '07', title: 'The Screen of the Metros', desc: 'A century of box office and Oscar prestige, credited back to the metros that made it.', stat: '1927–now', href: '/screen', emoji: '🎬', isNew: true, preview: topFilmMetros() },
+    // A ranking of the future, so it sits with the rankings (Ashwin, 2026-09-11):
+    // the Predictions strip keeps only its small Population 2100 chip.
+    { n: '08', title: 'The World in 2100', desc: 'Every country, every year to 2100, plus the EU, the AU, ASEAN and forty-odd other blocs, and the year each one peaks.', stat: 'UN WPP 2024 median', href: '/countries/2100', emoji: '🌍', isNew: true, preview: top2100() },
   ];
 
   const inSeasonRank = (s: ReturnType<typeof leagueStatusFor>) => (!s || s.tone === 'offseason' ? 1 : 0);
@@ -606,20 +609,6 @@ export default async function Home() {
             <div className="mt-6 pt-5 border-t" style={{ borderColor: 'var(--border)' }}>
               <Link href="/predictions" className="inline-flex items-center gap-1 text-xs mb-2 hover:opacity-80 transition-opacity" style={{ ...MONO, color: 'var(--accent)' }}>
                 🔮 Predictions <span aria-hidden>→</span>
-              </Link>
-              {/* Featured forecast: every country and bloc to 2100 (UN WPP 2024 median). */}
-              <Link href="/countries/2100" className="block rounded-lg border p-4 mb-3 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)] group" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
-                <div className="flex items-center justify-between gap-3">
-                  <span className="flex items-center gap-2 min-w-0">
-                    <span className="text-xl leading-none" aria-hidden>🌍</span>
-                    <span className="font-bold text-[15px] truncate">The world in 2100</span>
-                    <span className="text-[10px] px-1.5 py-0.5 rounded flex-shrink-0" style={{ ...MONO, color: 'var(--accent)', background: 'rgba(78,205,196,0.16)' }}>NEW</span>
-                  </span>
-                  <span className="text-[var(--text-dim)] group-hover:text-[var(--accent)] transition-colors flex-shrink-0" aria-hidden>→</span>
-                </div>
-                <p className="text-[12px] leading-snug mt-1.5" style={{ color: 'var(--text-muted)' }}>Every country, every year to 2100, plus the EU, the AU, ASEAN and forty-odd other blocs, and the year each one peaks.</p>
-                <IndexPreview rows={top2100()} />
-                <span className="text-[11px]" style={{ ...MONO, color: 'var(--text-dim)' }}>UN WPP 2024 median · sortable · by continent</span>
               </Link>
               <div className="flex flex-wrap items-center gap-2">
                 {[

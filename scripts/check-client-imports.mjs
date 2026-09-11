@@ -67,6 +67,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/mlb-standings",
   "@/lib/mlbSim",
   "@/lib/seasonSim",
+  "@/lib/f1TitleOdds",
   "@/lib/nba-standings",
   "@/lib/cfb-live",
   "@/lib/cfbSim",

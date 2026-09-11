@@ -16,6 +16,7 @@ import { getCurrentMlsStandings } from "@/lib/mls-standings";
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getLiveCflStandings } from "@/lib/cflStandings";
 import { getLiveF1Standings } from "@/lib/f1Standings";
+import { getF1TitleOdds, f1OddsAreCurrent, f1OddsByName, normDriver, normConstructor } from "@/lib/f1TitleOdds";
 import { getNpbStandings } from "@/lib/npbStandings";
 import { getClubStandings, getClubCompetitions, getInternationalComps, type LiveLeague, type LiveComp, type LiveRow, type LiveFixture, type LiveTeamRef } from "@/lib/clubFootballLive";
 import { deriveLeaguePhaseGroups } from "@/lib/euroCompDerive";
@@ -984,20 +985,31 @@ async function footyBlock(league: "afl" | "nrl"): Promise<Block | null> {
 }
 
 async function f1Block(): Promise<Block | null> {
-  const s = await getLiveF1Standings();
+  const [s, oddsFile] = await Promise.all([getLiveF1Standings(), getF1TitleOdds().catch(() => null)]);
   if (s.drivers.length === 0) return null;
+  const f1Live = inSeasonWindow("f1");
+  // Title odds from scripts/f1/build_title_odds.py, joined on the driver's and
+  // the constructor's name; shown only while the odds are current for THIS
+  // season, and a name the file does not know reads a dash rather than a
+  // neighbour's number.
+  const showOdds = f1Live && f1OddsAreCurrent(oddsFile, s.season);
+  const odds = f1OddsByName(showOdds ? oddsFile : null);
+  const titleCell = (r: { p_title: number; clinched: boolean; eliminated: boolean } | undefined): Cell =>
+    r ? (r.clinched ? "clinched" : r.eliminated ? "out" : fmtOdds(r.p_title)) : DASH;
   const drivers: SubTable = {
     title: "Drivers",
-    columns: ["Team", "Pts", "Wins"],
-    rows: s.drivers.map((d): SRow => ({ rank: d.pos, name: d.driver, crestName: f1ConstructorCrestName(d.team), cells: [d.team ?? DASH, num(d.points), num(d.wins)] })),
+    columns: ["Team", "Pts", "Wins", ...(showOdds ? ["Title%"] : [])],
+    rows: s.drivers.map((d): SRow => ({ rank: d.pos, name: d.driver, crestName: f1ConstructorCrestName(d.team),
+      cells: [d.team ?? DASH, num(d.points), num(d.wins), ...(showOdds ? [titleCell(odds.drivers.get(normDriver(d.driver)))] : [])] })),
   };
   const constructors: SubTable = {
     title: "Constructors",
-    columns: ["Pts", "Wins"],
-    rows: s.constructors.map((c): SRow => ({ rank: c.pos, name: c.constructor, crestName: f1ConstructorCrestName(c.constructor), cells: [num(c.points), num(c.wins)] })),
+    columns: ["Pts", "Wins", ...(showOdds ? ["Title%"] : [])],
+    rows: s.constructors.map((c): SRow => ({ rank: c.pos, name: c.constructor, crestName: f1ConstructorCrestName(c.constructor),
+      cells: [num(c.points), num(c.wins), ...(showOdds ? [titleCell(odds.constructors.get(normConstructor(c.constructor)))] : [])] })),
   };
-  const f1Live = inSeasonWindow("f1");
-  return { league: "Formula 1", href: "/teams/f1", note: f1Live ? (s.source === "espn" ? "live" : `${s.season}`) : `${s.season} final`, open: f1Live, live: f1Live, cols: true, subTables: [drivers, constructors] };
+  const note = f1Live ? (s.source === "espn" ? "live" : `${s.season}`) : `${s.season} final`;
+  return { league: "Formula 1", href: "/teams/f1", note: showOdds ? `${note} · odds simulated` : note, open: f1Live, live: f1Live, cols: true, subTables: [drivers, constructors] };
 }
 
 async function wtcBlock(): Promise<Block | null> {

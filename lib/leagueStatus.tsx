@@ -27,27 +27,65 @@ const STATUS_BY_PAGE: Record<string, LeagueStatus> = {
   // Club football domestic leagues (seasonal)
 };
 
-// Golf and tennis light green while a major is in play. 2026 windows (UTC);
-// update these date ranges each season, like the other seasonal entries above.
+// Golf and tennis light green while a major is in play. Date windows (UTC),
+// from the organisers' published calendars; keep at least the current and the
+// next season here so the menu never goes dark for want of a date.
+//
+// 🔴 2026-09-11: the 2026 US Open window here read 25 Aug to 7 Sep while the
+// tournament ran 30 Aug to 13 Sep (the main draw's 15-day format), so the
+// Live Standings showed the draw and the top menu showed nothing. Ashwin:
+// "if a major is going on, then that should be lit up as well for both golf
+// and for tennis." A window typed from memory is a window that lies; take
+// the dates from the organiser and write the source beside them.
 type MajorWindow = { label: string; start: number; end: number };
-const GOLF_MAJORS_2026: MajorWindow[] = [
+const GOLF_MAJORS: MajorWindow[] = [
+  // 2026
   { label: "Live - The Masters", start: Date.UTC(2026, 3, 9), end: Date.UTC(2026, 3, 12, 23, 59, 59) },
   { label: "Live - PGA Championship", start: Date.UTC(2026, 4, 14), end: Date.UTC(2026, 4, 17, 23, 59, 59) },
   { label: "Live - U.S. Open", start: Date.UTC(2026, 5, 18), end: Date.UTC(2026, 5, 21, 23, 59, 59) },
   { label: "Live - The Open", start: Date.UTC(2026, 6, 16), end: Date.UTC(2026, 6, 19, 23, 59, 59) },
+  // 2027 (Sky Sports, "Golf majors in 2027", read 2026-09-11)
+  { label: "Live - The Masters", start: Date.UTC(2027, 3, 8), end: Date.UTC(2027, 3, 11, 23, 59, 59) },
+  { label: "Live - PGA Championship", start: Date.UTC(2027, 4, 20), end: Date.UTC(2027, 4, 23, 23, 59, 59) },
+  { label: "Live - U.S. Open", start: Date.UTC(2027, 5, 17), end: Date.UTC(2027, 5, 20, 23, 59, 59) },
+  { label: "Live - The Open", start: Date.UTC(2027, 6, 15), end: Date.UTC(2027, 6, 18, 23, 59, 59) },
 ];
-const TENNIS_SLAMS_2026: MajorWindow[] = [
+const TENNIS_SLAMS: MajorWindow[] = [
+  // 2026
   { label: "Live - Australian Open", start: Date.UTC(2026, 0, 12), end: Date.UTC(2026, 0, 25, 23, 59, 59) },
   { label: "Live - Roland-Garros", start: Date.UTC(2026, 4, 24), end: Date.UTC(2026, 5, 7, 23, 59, 59) },
   { label: "Live - Wimbledon", start: Date.UTC(2026, 5, 29), end: Date.UTC(2026, 6, 12, 23, 59, 59) },
-  { label: "Live - US Open", start: Date.UTC(2026, 7, 25), end: Date.UTC(2026, 8, 7, 23, 59, 59) },
+  // main draw 30 Aug to 13 Sep (WTA, "US Open 2026: dates, draws, schedule", read 2026-09-11)
+  { label: "Live - US Open", start: Date.UTC(2026, 7, 30), end: Date.UTC(2026, 8, 13, 23, 59, 59) },
+  // 2027 (ATP calendar as reported by tennisnerd.net, read 2026-09-11)
+  { label: "Live - Australian Open", start: Date.UTC(2027, 0, 17), end: Date.UTC(2027, 0, 31, 23, 59, 59) },
+  { label: "Live - Roland-Garros", start: Date.UTC(2027, 4, 23), end: Date.UTC(2027, 5, 6, 23, 59, 59) },
+  { label: "Live - Wimbledon", start: Date.UTC(2027, 5, 28), end: Date.UTC(2027, 6, 11, 23, 59, 59) },
+  { label: "Live - US Open", start: Date.UTC(2027, 7, 29), end: Date.UTC(2027, 8, 12, 23, 59, 59) },
 ];
 // Any sport listed here auto-lights green during its date windows (evaluated
 // client-side with Date.now(), so it flips without a deploy) and shows
 // "Next: ..." otherwise. Add a sport here to make its status self-updating.
 const SEASON_WINDOWS: Record<string, MajorWindow[]> = {
-  "/teams/golf": GOLF_MAJORS_2026,
-  "/teams/tennis": TENNIS_SLAMS_2026,
+  "/teams/golf": GOLF_MAJORS,
+  "/teams/tennis": TENNIS_SLAMS,
+};
+
+// Dated phases for a league whose calendar does not follow the month grid
+// below in a given year. Checked before LEAGUE_SEASONS; outside every dated
+// window the month grid still answers, so a year with no dates degrades to
+// the usual approximation rather than to nothing.
+type DatedWindow = { label: string; tone: LeagueStatusTone; start: number; end: number };
+const LEAGUE_DATES: Record<string, DatedWindow[]> = {
+  // WNBA 2026 (wnba.com/keydates, read 2026-09-11): the FIBA World Cup break
+  // runs 31 Aug to 16 Sep, the regular season resumes and ends 24 Sep, the
+  // first round begins 27 Sep, the Finals run 17 to 31 Oct at the latest.
+  // Ashwin: the break is still the season, green; amber only when the real
+  // playoffs start.
+  "/teams/wnba": [
+    { label: "Live - Regular Season", tone: "regular", start: Date.UTC(2026, 4, 1), end: Date.UTC(2026, 8, 26, 23, 59, 59) },
+    { label: "Live - Playoffs", tone: "playoffs", start: Date.UTC(2026, 8, 27), end: Date.UTC(2026, 9, 31, 23, 59, 59) },
+  ],
 };
 
 // Recurring per-league season calendar (month-based, UTC). The in-season /
@@ -68,14 +106,18 @@ const LEAGUE_SEASONS: Record<string, MonthWindow[]> = {
   "/teams/nba":  [{ label: "Live - Regular Season", tone: "regular", months: [10, 11, 12, 1, 2, 3] }, { label: "Live - Playoffs", tone: "playoffs", months: [4, 5, 6] }],
   "/teams/nhl":  [{ label: "Live - Regular Season", tone: "regular", months: [10, 11, 12, 1, 2, 3] }, { label: "Live - Playoffs", tone: "playoffs", months: [4, 5, 6] }],
   "/teams/mlb":  [{ label: "Live - Regular Season", tone: "regular", months: [3, 4, 5, 6, 7, 8, 9] }, { label: "Live - Postseason", tone: "playoffs", months: [10] }],
-  "/teams/wnba": [{ label: "Live - Regular Season", tone: "regular", months: [5, 6, 7, 8] }, { label: "Live - Playoffs", tone: "playoffs", months: [9, 10] }],
+  "/teams/wnba": [{ label: "Live - Regular Season", tone: "regular", months: [5, 6, 7, 8, 9] }, { label: "Live - Playoffs", tone: "playoffs", months: [10] }],
   "/teams/cfl":  [{ label: "Live - Regular Season", tone: "regular", months: [6, 7, 8, 9, 10] }, { label: "Live - Grey Cup", tone: "playoffs", months: [11] }],
   "/teams/afl":  [{ label: "Live - Regular Season", tone: "regular", months: [3, 4, 5, 6, 7, 8] }, { label: "Live - Finals", tone: "playoffs", months: [9] }],
   "/teams/nrl":  [{ label: "Live - Regular Season", tone: "regular", months: [3, 4, 5, 6, 7, 8] }, { label: "Live - Finals", tone: "playoffs", months: [9, 10] }],
   "/teams/cfb":  [{ label: "Live - Season", tone: "regular", months: [8, 9, 10, 11] }, { label: "Live - Bowls & Playoff", tone: "playoffs", months: [12, 1] }],
   "/teams/cbb":  [{ label: "Live - Regular Season", tone: "regular", months: [11, 12, 1, 2] }, { label: "Live - March Madness", tone: "playoffs", months: [3, 4] }],
   "/teams/ipl":  [{ label: "Live - IPL", tone: "regular", months: [3, 4, 5] }],
-  "/teams/football/leagues/mls": [{ label: "Live - Regular Season", tone: "regular", months: [2, 3, 4, 5, 6, 7, 8, 9, 10] }, { label: "Live - Playoffs", tone: "playoffs", months: [11, 12] }],
+  // 🔴 CLUB FOOTBALL IS GREEN WHENEVER IT IS RUNNING (Ashwin, 2026-09-11: "there's
+  // no real concept of playoffs as in other sports"). A knockout round or the MLS
+  // Cup keeps its label and takes the regular tone; nothing under /teams/football
+  // may carry the playoffs tone, and clubFootballStatus() enforces it once more.
+  "/teams/football/leagues/mls": [{ label: "Live - Regular Season", tone: "regular", months: [2, 3, 4, 5, 6, 7, 8, 9, 10] }, { label: "Live - MLS Cup", tone: "regular", months: [11, 12] }],
   "/teams/football/leagues/premier-league": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
   "/teams/football/leagues/la-liga": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
   "/teams/football/leagues/serie-a": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
@@ -88,10 +130,10 @@ const LEAGUE_SEASONS: Record<string, MonthWindow[]> = {
   // club season (URC/Top 14/Premiership/Champions Cup) fills Dec/Jan/Apr/May, so the
   // portal stays green through the calendar with era-appropriate labels.
   "/teams/rugby-union": [{ label: "Live - Six Nations", tone: "regular", months: [2, 3] }, { label: "Live - Internationals", tone: "regular", months: [6, 7, 8, 9, 10] }, { label: "Live - Autumn Internationals", tone: "regular", months: [11] }, { label: "Live - Club Season", tone: "regular", months: [12, 1, 4, 5] }],
-  "/teams/football/tournaments/champions-league": [{ label: "Live - Qualifying", tone: "regular", months: [7, 8] }, { label: "Live - League Phase", tone: "regular", months: [9, 10, 11, 12, 1] }, { label: "Live - Knockouts", tone: "playoffs", months: [2, 3, 4, 5] }],
-  "/teams/football/tournaments/europa-league": [{ label: "Live - Qualifying", tone: "regular", months: [7, 8] }, { label: "Live - League Phase", tone: "regular", months: [9, 10, 11, 12, 1] }, { label: "Live - Knockouts", tone: "playoffs", months: [2, 3, 4, 5] }],
-  "/teams/football/tournaments/conference-league": [{ label: "Live - Qualifying", tone: "regular", months: [7, 8] }, { label: "Live - League Phase", tone: "regular", months: [9, 10, 11, 12, 1] }, { label: "Live - Knockouts", tone: "playoffs", months: [2, 3, 4, 5] }],
-  "/teams/football/tournaments/copa-libertadores": [{ label: "Live - Group Stage", tone: "regular", months: [4, 5, 6, 7, 8] }, { label: "Live - Knockouts", tone: "playoffs", months: [9, 10, 11] }],
+  "/teams/football/tournaments/champions-league": [{ label: "Live - Qualifying", tone: "regular", months: [7, 8] }, { label: "Live - League Phase", tone: "regular", months: [9, 10, 11, 12, 1] }, { label: "Live - Knockouts", tone: "regular", months: [2, 3, 4, 5] }],
+  "/teams/football/tournaments/europa-league": [{ label: "Live - Qualifying", tone: "regular", months: [7, 8] }, { label: "Live - League Phase", tone: "regular", months: [9, 10, 11, 12, 1] }, { label: "Live - Knockouts", tone: "regular", months: [2, 3, 4, 5] }],
+  "/teams/football/tournaments/conference-league": [{ label: "Live - Qualifying", tone: "regular", months: [7, 8] }, { label: "Live - League Phase", tone: "regular", months: [9, 10, 11, 12, 1] }, { label: "Live - Knockouts", tone: "regular", months: [2, 3, 4, 5] }],
+  "/teams/football/tournaments/copa-libertadores": [{ label: "Live - Group Stage", tone: "regular", months: [4, 5, 6, 7, 8] }, { label: "Live - Knockouts", tone: "regular", months: [9, 10, 11] }],
 };
 function monthSeasonStatus(windows: MonthWindow[]): LeagueStatus {
   const m = new Date().getUTCMonth() + 1;
@@ -126,6 +168,12 @@ export function leagueStatusFor(page: string | null | undefined): LeagueStatus |
   }
   const seasonWindows = SEASON_WINDOWS[page];
   if (seasonWindows) return majorsSeasonStatus(seasonWindows);
+  const dated = LEAGUE_DATES[page];
+  if (dated) {
+    const now = Date.now();
+    const hit = dated.find((w) => now >= w.start && now <= w.end);
+    if (hit) return { label: hit.label, tone: hit.tone };
+  }
   const leagueSeason = LEAGUE_SEASONS[page];
   if (leagueSeason) return monthSeasonStatus(leagueSeason);
   return STATUS_BY_PAGE[page] ?? null;
@@ -161,9 +209,9 @@ export function clubFootballStatus(): LeagueStatus {
     .filter((s): s is LeagueStatus => !!s && s.tone !== "offseason")
     .map((s) => s.tone);
   if (liveTones.length === 0) return { label: "Offseason", tone: "offseason" };
-  const order: LeagueStatusTone[] = ["worldcup", "playoffs", "regular"];
-  const tone = order.find((t) => liveTones.includes(t)) ?? "regular";
-  return { label: liveTones.length + " live", tone };
+  // Green whenever anything is running: club football has no playoff phase
+  // (see LEAGUE_SEASONS), so the parent never reads amber either.
+  return { label: liveTones.length + " live", tone: "regular" };
 }
 
 const TONE: Record<LeagueStatusTone, { bg: string; color: string }> = {

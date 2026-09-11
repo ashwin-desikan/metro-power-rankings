@@ -23,8 +23,8 @@ export const RELEASES: Release[] = [
     items: [
       "Every NFL season page since 1920 shows each team's chance of a playoff place and of the title after any week, drawn 2,000 times on that week's ratings; a club reads clinched or out only once the records settle it.",
       "Money against football: one dot per club and season across six leagues, points against expectation across and squad value gained beyond spend up, the frontier joined, and each club's own trail on its page.",
-      "Every share card now carries the page's own title in a real bold weight, and the last twelve pages that still shared the plain home card have their own.",
-      "Live Standings follows the Copa Libertadores into the knockout rounds, reads every upcoming kick-off in your own time zone, and gives NPB a winning percentage to three places.",
+      "Formula 1 title odds for every driver and constructor, simulated after each race, on the F1 hub and Live Standings; club football reads green all season, the WNBA through its break, and a live major lights the menu.",
+      "Live Standings follows the Libertadores into the knockouts and reads kick-offs in your time zone; every share card carries its title in bold; The World in 2100 joins the home page's rankings as the eighth index.",
     ],
   },
   {
