@@ -7,7 +7,7 @@
   "currency": "KRW",
   "founded": null,
   "first_change": "1999-05-06",
-  "last_change": "2026-07-16",
+  "last_change": "2026-08-27",
   "built": "2026-09-08",
   "instruments": [
     {
@@ -391,6 +391,12 @@
       "level": 2.75,
       "change": 0.25,
       "era": 1
+    },
+    {
+      "date": "2026-08-27",
+      "level": 3.0,
+      "change": 0.25,
+      "era": 1
     }
   ],
   "market": [],
@@ -634,6 +640,10 @@
     [
       "2026-07-16",
       2.75
+    ],
+    [
+      "2026-08-27",
+      3.0
     ]
   ],
   "coverage": {

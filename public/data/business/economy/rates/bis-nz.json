@@ -7,7 +7,7 @@
   "currency": "NZD",
   "founded": null,
   "first_change": "1999-03-17",
-  "last_change": "2026-07-09",
+  "last_change": "2026-09-03",
   "built": "2026-09-08",
   "instruments": [
     {
@@ -491,6 +491,12 @@
     {
       "date": "2026-07-09",
       "level": 2.5,
+      "change": 0.25,
+      "era": 1
+    },
+    {
+      "date": "2026-09-03",
+      "level": 2.75,
       "change": 0.25,
       "era": 1
     }
@@ -3687,6 +3693,10 @@
     [
       "2026-07-09",
       2.5
+    ],
+    [
+      "2026-09-03",
+      2.75
     ]
   ],
   "coverage": {

@@ -1,0 +1,22 @@
+[
+  {
+    "bank": "bis-nz",
+    "date": "2026-09-03",
+    "level": 2.75,
+    "change": 0.25,
+    "source": "bis",
+    "era_name": "Official market intervention represen...",
+    "kind": "policy",
+    "built": "2026-09-08"
+  },
+  {
+    "bank": "bis-kr",
+    "date": "2026-08-27",
+    "level": 3.0,
+    "change": 0.25,
+    "source": "bis",
+    "era_name": "Bank of Korea base rate",
+    "kind": "policy",
+    "built": "2026-09-08"
+  }
+]
