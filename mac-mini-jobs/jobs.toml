@@ -579,6 +579,12 @@ hc_slug = "economy-housing"     # ADDED 2026-09-11, same trade and same reason
                                  # Cron 30 7 * * 6 UTC, grace 6h, email channel.
 catchup_hours = 40
 timeout_minutes = 20
+log_tail_lines = 30             # build_housing.py prints its MSA/metro match
+                                 # counts BEFORE the commit + 5-minute CDN wait +
+                                 # revalidate epilogue, so the default 12-line
+                                 # window dropped exactly the lines you check the
+                                 # run by (first run 09-12 logged from "real
+                                 # terms:" onward and lost the counts above it).
 
 [[job]]
 id = "economy-prices"

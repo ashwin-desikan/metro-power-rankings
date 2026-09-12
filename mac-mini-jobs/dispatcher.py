@@ -44,6 +44,11 @@ LOCK_FILE = HERE / ".dispatcher.lock"
 
 DEFAULT_CATCHUP_HOURS = 12
 DEFAULT_TIMEOUT_MINUTES = 30
+# Lines of a job's stdout kept in the operational log. Deliberately short: for
+# most jobs the interesting part is the last few lines. A job whose builder
+# prints its diagnostics BEFORE the commit/push/revalidate epilogue loses them
+# to this window, so such a job sets log_tail_lines in jobs.toml.
+DEFAULT_LOG_TAIL_LINES = 12
 # How far back to look for a live occurrence. Must exceed the longest gap any
 # configured job has between runs (daily = 1 day, Tue-only = 7), and must NOT be
 # so large that it reaches across a seasonal gap: on 10 February a Mar-Nov job
@@ -263,7 +268,8 @@ def run_job(job):
     except subprocess.TimeoutExpired:
         return "timeout", f"exceeded {timeout // 60}m"
     dur = (datetime.now(timezone.utc) - started).total_seconds()
-    tail = (proc.stdout or "").strip().splitlines()[-12:]
+    tail_n = job.get("log_tail_lines", DEFAULT_LOG_TAIL_LINES)
+    tail = (proc.stdout or "").strip().splitlines()[-tail_n:]
     for line in tail:
         log(f"    | {line}")
     if proc.returncode != 0:
