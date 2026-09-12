@@ -41,6 +41,17 @@ jobs:
         with:
           python-version: "3.12"
 
+      # The first three steps are stdlib-only (majors_ingest.py,
+      # build-majors-data.py and majors_to_champions.py all use urllib), which is
+      # why this workflow had no install step at all. The champions re-emit added
+      # on 2026-09-11 broke that assumption: build_champions.py imports requests,
+      # so every run from 09-11 onward died at the last step with
+      # ModuleNotFoundError AFTER the ingest had already written to Supabase.
+      # footy-refresh.yml, the other caller of build_champions.py, installs it
+      # the same way.
+      - name: Install deps (build_champions.py imports requests)
+        run: pip install requests
+
       - name: Detect and record new major champions
         env:
           SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
