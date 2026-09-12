@@ -14217,9 +14217,14 @@ build environment, which re-arms the cap for every push from every machine; and 
 The Decisions row "Two production builds a day…" is corrected: its Enforced-in said
 `vercel-ignore.sh` "fails closed" — true of the skip rules, false of the cap — and its open question
 "a same-day build counter in code is still open" now reads *exists in code, never on in production*.
-⚠️ Also recorded there, unresolved: that Rule says never push without Ashwin's explicit yes for the
-push, while a project memory amended 2026-08-31 says disclose a build-triggering push as a fact rather
-than pause. The two disagree, and sessions have been following the memory.
+✅ **Push rule settled the same evening by Ashwin: never push without his explicit yes — unless
+the push is `[vercel skip]`.** A build-triggering push needs a yes for that specific push; a
+`[vercel skip]` push (HANDOFF, docs, data, mini-jobs config) does not. This replaces the
+2026-08-31 project memory that said to disclose a build-triggering push rather than pause, which
+sessions had been following; the memory and the Decisions row are both updated. 🔴 On the mini,
+draft a build-triggering change OUTSIDE the shared working tree and ask before applying it — a
+dirty tree stops scheduled jobs from running, and an unpushed commit rides out on the next bot
+job's push under the wrong name.
 
 ### C. ops-autofix's `action_failed` fired live, and behaved
 Verified from its own log rather than a commit message: re-ran "Majors auto-update" at 11:17 and
