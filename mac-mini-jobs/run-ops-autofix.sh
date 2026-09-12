@@ -46,8 +46,9 @@
 #   * It NEVER edits code, NEVER commits, and NEVER pushes. Re-run jobs may
 #     commit as part of their own normal behaviour; that is their doing, not
 #     this script's.
-#   * ATTEMPT CAP, default 3 per finding-kind per day, so a fault it cannot fix
-#     is not ground at forever.
+#   * ATTEMPT CAP, default 3 per FINDING per day (the kind AND the workflow or
+#     job it names), so a fault it cannot fix is not ground at forever, and a
+#     noisy one cannot use up another finding's retries.
 #   * Every action is announced on ntfy, including doing nothing.
 #
 # 🔴 It cannot fix an expired Claude OAuth session -- that is the canary's job
@@ -116,23 +117,37 @@ if printf '%s' "$FINDINGS" | grep -q '"kind": "working_tree_dirty"'; then
 fi
 
 # --- attempt cap --------------------------------------------------------------
-# Consumes one attempt per (kind) per run, so a fault this cannot actually fix
-# stops being retried after MAX_ATTEMPTS rather than every slot, forever.
-allowed(){
+# One budget per FINDING -- the kind AND the workflow or job it names -- so a
+# fault this cannot actually fix stops being retried after MAX_ATTEMPTS rather
+# than every slot, forever, without starving anything else.
+#
+# 🔴 It used to be one budget per KIND. On 2026-09-12 that made two unrelated
+# workflows share three attempts: 'Majors auto-update' was re-run at 11:17 and
+# 13:19 and 'WNBA season refresh' at 13:19, then at 15:19 the cap stood the
+# whole kind down. Majors needed a workflow-file fix, so no rerun could ever
+# have worked, yet it spent attempts WNBA could have used -- and a third failing
+# workflow that day would not have been retried at all.
+#
+# deploy_drift carries no id (one sync handles every drifted file), so its key
+# stays plain "deploy_drift", as before. Old per-kind keys left in the attempts
+# file are simply never read again.
+allowed(){   # allowed <kind> [id]
   # A DRY RUN must not spend the budget it is only pretending to use: testing
   # three times would otherwise exhaust the cap and leave the next REAL run
   # standing down on a fault it was meant to fix.
-  python3 - "$ATTEMPTS" "$DATE" "$MAX_ATTEMPTS" "$1" "$DRY_RUN" <<'PY'
+  python3 - "$ATTEMPTS" "$DATE" "$MAX_ATTEMPTS" "$1" "${2:-}" "$DRY_RUN" <<'PY'
 import json, sys
-path, date, cap, kind, dry = sys.argv[1], sys.argv[2], int(sys.argv[3]), sys.argv[4], sys.argv[5] == "1"
+path, date, cap, kind, fid, dry = (sys.argv[1], sys.argv[2], int(sys.argv[3]),
+                                   sys.argv[4], sys.argv[5], sys.argv[6] == "1")
+key = "%s|%s" % (kind, fid) if fid else kind
 try:
     with open(path) as f: db = json.load(f)
 except Exception: db = {}
 if db.get("date") != date: db = {"date": date, "counts": {}}
 c = db.setdefault("counts", {})
-ok = c.get(kind, 0) < cap
+ok = c.get(key, 0) < cap
 if ok and not dry:
-    c[kind] = c.get(kind, 0) + 1
+    c[key] = c.get(key, 0) + 1
     with open(path, "w") as f: json.dump(db, f)
 print("yes" if ok else "no")
 PY
@@ -231,9 +246,9 @@ while IFS=$'\t' read -r kind fid extra; do
     deploy_drift|job_failed|action_failed) ;;
     *) log "-- $kind: not in the whitelist, reporting only"; continue;;
   esac
-  if [ "$(allowed "$kind")" != "yes" ]; then
-    log "-- $kind: at the $MAX_ATTEMPTS/day attempt cap, standing down"
-    ACTED+=("$kind left alone: hit the $MAX_ATTEMPTS/day attempt cap")
+  if [ "$(allowed "$kind" "$fid")" != "yes" ]; then
+    log "-- $kind${fid:+ ($fid)}: at its $MAX_ATTEMPTS/day attempt cap, standing down"
+    ACTED+=("$kind${fid:+ ($fid)} left alone: hit its $MAX_ATTEMPTS/day attempt cap")
     continue
   fi
   case "$kind" in
