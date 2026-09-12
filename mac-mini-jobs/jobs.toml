@@ -53,6 +53,9 @@
 #   predictions-tue  LIVE on the mini since 2026-08-07. Action schedule retirement pending Windows.
 #   predictions-fri  LIVE on the mini since 2026-08-07. Action schedule retirement pending Windows.
 #   mlb-sim          LIVE on the mini since 2026-08-07. Action schedule retirement pending Windows.
+#   owners-weekly    ADDED 2026-09-12. Goes live on first hand-verified mini run;
+#                    its other runner is a Claude CLOUD scheduled task (not an
+#                    Action), disabled 2026-09-12 and kept as manual fallback.
 #
 # The four below stay commented until each is DRY_RUN-validated on the mini, one
 # per day, in that order. Uncommenting one without retiring its Action schedule
@@ -730,3 +733,32 @@ command = "run-claude-auth-canary.sh"
 hc_slug = "claude-auth-canary"
 catchup_hours = 6
 timeout_minutes = 5
+
+# --- owners-weekly: NEW 2026-09-12. APPLY-MODE, can spend a Vercel build. ---
+# The weekly team-ownership check, moved here from a Claude cloud scheduled
+# task at Ashwin's instruction (2026-09-12): the cloud session lost repo push
+# access (git proxy 403) and cannot reach ntfy; the mini has both. The cloud
+# task is DISABLED, kept as the hand-fireable fallback, one runner per job.
+# Apply-mode is Ashwin's explicit 2026-09-07 choice for this task, not scope
+# drift from the report-only sweep; see run-owners-weekly.sh's header.
+#
+# Monday 08:30 UTC: clear of ops-autofix (:15 slots), the canary (06:30),
+# business-daily (05:50), substack (06:00) and mlb-sim (07:00), and close to
+# the hour the cloud task used to fire. An owners push spends one of the two
+# daily paid builds, which the prompt counts before committing; a blocked run
+# leaves a patch in ~/metro-mini-jobs/pending/ and says so on ntfy.
+#
+# NO hc_slug: the healthchecks project is capped at 20 checks and is at 20
+# (HANDOFF 2026-09-10 sec I); the job pushes its own ntfy summary every run,
+# including a one-line 'no changes', so silence on the topic is itself signal.
+# catchup_hours = 48 because for a weekly job Tuesday is still worth running;
+# past that, the next Monday is the retry and the watchlist checker's
+# pending_review_by dates are the staleness backstop.
+[[job]]
+id = "owners-weekly"
+label = "Team owners weekly (apply-mode, may spend a build)"
+time = "08:30"
+weekdays = [1]
+command = "run-owners-weekly.sh"
+catchup_hours = 48
+timeout_minutes = 40           # web research + gates + build + push

@@ -14127,3 +14127,35 @@ build for the whole day's stack. The brand branch is separate. Open: `VERCEL_BUI
 the CFL fixture feed; the mini-side steps in O (now also `runners/economy-prices.sh`); the
 Rolex snapshot refresh in T; the sortable and chart sweeps' next batches (the baseline has
 169 boards in 126 files left).
+
+## 2026-09-12 — cloud/cowork → mac mini (OWNERS WEEKLY MOVES TO THE MINI — install steps below, cloud task disabled)
+
+The weekly team-ownership check (rankings.citizenofnowhere.org/sports/owners)
+ran until today as a Claude cloud scheduled task. Two things ended that: the
+cloud session lost repo push access (git proxy 403, "not in this session's
+authorized repository set" — today's run had to deliver its commit as a patch
+Ashwin applied by hand, now on main as c52b2ec8), and ntfy has never been
+reachable from that sandbox. Ashwin instructed the transition today. What this
+session prepared, all committed with this entry:
+
+- `mac-mini-jobs/run-owners-weekly.sh` — headless-Claude wrapper on the
+  daily-ops-sweep pattern (lock, dirty-tree refusal, offline self-test gate,
+  auth-expiry detection, dirty-tree recovery after the run). APPLY-MODE by
+  Ashwin's explicit 2026-09-07 choice; full reasoning in the script header.
+- `jobs.toml` — `owners-weekly`, Monday 08:30 UTC, catchup 48h, timeout 40m,
+  no hc_slug (project at its 20-check cap). Dispatcher self-test passes
+  (87 cases). ROLLOUT STATE updated.
+- The cloud scheduled task is DISABLED (not deleted): it is the manual
+  fallback, same role workflow_dispatch plays for migrated Actions.
+
+MINI: to go live, (1) sync `mac-mini-jobs/` to `~/metro-mini-jobs` as usual,
+`chmod +x run-owners-weekly.sh`; (2) run it once BY HAND and read the diff it
+pushes plus the ntfy summary — first run is the validation run; (3)
+`python3 dispatcher.py --seed` is NOT needed for a new job id, the first tick
+computes its next Monday slot. Watch for: the job can spend one of the two
+daily paid Vercel builds (owners data is build-time), it counts today's builds
+first when a Vercel token is in config.env, and a budget-blocked or
+push-failed run leaves its patch in `~/metro-mini-jobs/pending/` and says so
+on ntfy. If `VERCEL_TOKEN`/`VERCEL_BUILD_CAP_TOKEN` is absent in config.env,
+add one (read scope), else the pre-count is skipped and only the server-side
+cap protects the budget.
