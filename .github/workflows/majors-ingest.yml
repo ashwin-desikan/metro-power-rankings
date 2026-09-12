@@ -43,10 +43,19 @@ jobs:
 
       # The first three steps are stdlib-only (majors_ingest.py,
       # build-majors-data.py and majors_to_champions.py all use urllib), which is
-      # why this workflow had no install step at all. The champions re-emit added
-      # on 2026-09-11 broke that assumption: build_champions.py imports requests,
-      # so every run from 09-11 onward died at the last step with
-      # ModuleNotFoundError AFTER the ingest had already written to Supabase.
+      # why this workflow had no install step at all. The champions bridge in
+      # 5640996d0 broke that assumption: build_champions.py imports requests.
+      #
+      # Exactly ONE run was lost, and the dating matters if you ever bisect this:
+      # the bridge was committed 2026-09-11 20:00:52Z, AFTER that day's scheduled
+      # run had already finished green at 09:51:05Z. The first run to carry it was
+      # the 09-12 scheduled run (09:27:37Z), which died here with
+      # ModuleNotFoundError -- and it died AFTER majors_ingest.py had written to
+      # Supabase and the ledger append had run, so the cost was a red tile and a
+      # champions-history.json that was never re-emitted, not bad data. Verified
+      # fixed by a 09-12 16:10:45Z workflow_dispatch (scheduled runs land ~4h past
+      # the 05:30 cron on shared runners, so judge freshness by run time, not cron).
+      #
       # footy-refresh.yml, the other caller of build_champions.py, installs it
       # the same way.
       - name: Install deps (build_champions.py imports requests)
