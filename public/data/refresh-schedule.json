@@ -1,6 +1,26 @@
 {
-  "generated_at": "2026-09-12T08:11:10.568794+00:00",
+  "generated_at": "2026-09-12T08:21:16.521999+00:00",
   "jobs": [
+    {
+      "id": "mktcap-refresh",
+      "label": "Company market caps",
+      "schedule_text": "Sat at 09:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "09:00"
+      ],
+      "weekdays": [
+        6
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-12T09:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-05",
+        "status": "ok",
+        "slot": "2026-09-05T09:00:00+00:00"
+      }
+    },
     {
       "id": "ops-autofix",
       "label": "Ops autofix (whitelist, acts on production)",
@@ -23,31 +43,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-12T08:15:00+00:00",
+      "next_run": "2026-09-12T10:15:00+00:00",
       "last_run": {
         "date": "2026-09-12",
         "status": "ok",
-        "slot": "2026-09-12T06:15:00+00:00"
-      }
-    },
-    {
-      "id": "mktcap-refresh",
-      "label": "Company market caps",
-      "schedule_text": "Sat at 09:00 UTC",
-      "cadence": "weekly",
-      "times": [
-        "09:00"
-      ],
-      "weekdays": [
-        6
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-12T09:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-05",
-        "status": "ok",
-        "slot": "2026-09-05T09:00:00+00:00"
+        "slot": "2026-09-12T08:15:00+00:00"
       }
     },
     {
