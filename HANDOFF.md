@@ -13421,7 +13421,15 @@ that have actually STARTED, so admitting them cannot drag the view into a round 
 begun. Results and live first, then what is to come, chronological within each.
 
 ### H. 🔴 BOTH GIT HOOKS TREATED `[deploy-now]` AS THE FAILURE MODE IT IS THE CURE FOR
-`441f2be5a` landed with the same-day cap already at 2 of 2, so `vercel-ignore.sh` skipped it.
+⚠️ **CORRECTED 2026-09-12 — the premise of this section was wrong.** It said `441f2be5a` "landed
+with the same-day cap already at 2 of 2, so `vercel-ignore.sh` skipped it". It was NOT skipped:
+its own deployment `dpl_49x2FnwJhmRGXiGQvqgyt54hEZq4` went READY by itself, because the cap has
+never been active in production — its build-log line reads `vercel-ignore: build cap inactive (no
+VERCEL_BUILD_CAP_TOKEN or the API did not answer)`. The claim came from reading the script's
+SOURCE (`MAX_DAILY_BUILDS=2`) instead of its OUTPUT. So the `[deploy-now]` trigger `2a32e0068`
+rebuilt a tree that was already live: **one wasted paid build, on my recommendation.** The hook
+findings below are still real; only the reason they got exercised was mistaken.
+
 Ashwin asked for it out the same day, which is what the `[deploy-now]` override exists for.
 Pushing it exposed two hook faults (`65d8104a2`, caveat in `4722760e1`).
 
@@ -13454,15 +13462,18 @@ endpoint returns `{"sha":...}` and I had trimmed that throwaway loop to read onl
 **A hand-rolled monitor is a thing that can be wrong about production** — check the authoritative
 source before believing a bespoke poller, especially one written minutes earlier.
 
-**Build ledger for the day: FOUR production builds, two over the 2/day budget.** `647310a5a`
-ERROR (the release bullet), `770368de1` READY (the fix), `2a32e0068` READY (the `[deploy-now]`
-Ashwin authorised having been told the cost). An ERROR consumes build minutes and counts toward
-the cap. Everything after was correctly CANCELED and cost nothing.
+**Build ledger for the day (CORRECTED 2026-09-12): FOUR production builds, two over the 2/day
+budget, one of them wasted.** `647310a5a` ERROR (the release bullet), `770368de1` READY (the fix),
+`441f2be5a` READY (built by itself — the original ledger left it out, believing the cap had
+skipped it), and `2a32e0068` READY (the `[deploy-now]`, which rebuilt the same tree and bought
+nothing). The cap's logic does count an ERROR, but the cap was never on, which is why nothing
+stopped any of these. Everything after was correctly CANCELED by the `[vercel skip]` rule, which
+does work.
 
 **Pushed and live at `8e1598454`** (rates base inputs + bootstrap + unreachable alert),
 `50ab50394` (CLAUDE.md), `647310a5a` (Live Standings, build FAILED), `770368de1`
-(release-note fix + the gate, deployed), `441f2be5a` + `2a32e0068` (AFL/NRL/rugby/tennis,
-deployed past the cap) and `65d8104a2` + `4722760e1` (the hooks).
+(release-note fix + the gate, deployed), `441f2be5a` (AFL/NRL/rugby/tennis, deployed on
+its own) + `2a32e0068` (a redundant rebuild of it) and `65d8104a2` + `4722760e1` (the hooks).
 
 
 ### J. The economy jobs got healthchecks tiles, paid for by deleting two — and the cap is still 20
@@ -14159,3 +14170,70 @@ push-failed run leaves its patch in `~/metro-mini-jobs/pending/` and says so
 on ntfy. If `VERCEL_TOKEN`/`VERCEL_BUILD_CAP_TOKEN` is absent in config.env,
 add one (read scope), else the pre-count is skipped and only the server-side
 cap protects the budget.
+
+---
+
+## 2026-09-12 — mini → next session: OWNERS WEEKLY DEPLOYED, AND THE BUILD CAP HAS NEVER BEEN ON
+
+### A. owners-weekly is deployed; its validation run waits on two tokens
+Deployed 21:01Z the documented way (Decisions: scripts go live as symlinks, `jobs.toml` as a copy):
+runner symlinked into `~/metro-mini-jobs`, `jobs.toml` copied, `--check-sync` in sync, dispatcher
+self-test OK, on the schedule for Mondays 08:30Z. `chmod` is moot through a symlink — it follows the
+`+x` repo file, and the dispatcher invokes `/bin/bash` anyway. Expect ONE "scheduled job missed" ntfy
+for the 09-07 slot (before the job existed, past its 48h catch-up). Not a fault.
+
+**Not run by hand yet, at Ashwin's choice**, because three things in the cloud entry above were wrong
+when checked on disk:
+1. **It is not "a check".** `run-owners-weekly.sh` launches headless Claude with
+   `--dangerously-skip-permissions`, edits `team-owners-seed.json`, builds, commits and PUSHES, and can
+   spend a paid build. There is no `--dry-run`: a by-hand run IS a live apply run.
+2. **The read-scope Vercel token it says to confirm is absent** from `config.env`.
+3. **The fallback it names — "only the server-side cap protects the budget" — protects nothing**: the
+   cap is inactive (section B). An owners run today would have no budget protection at all.
+
+The validation run follows once Ashwin places both tokens. Expected result: `owners weekly: no
+changes`, because the week was applied hours earlier in `c52b2ec86` (Seahawks close, Liverpool
+minority stake, Aston Martin and Alpine F1) — which makes it a good first run precisely because it
+should do nothing. First run likely to APPLY something: Monday 21 Sep, after the NBA votes on the
+Lakers and Timberwolves/Lynx sales expected 15-16 Sep.
+
+### B. 🔴 THE SAME-DAY BUILD CAP HAS NEVER BEEN ACTIVE IN PRODUCTION
+Found because a count did not add up: three paid builds today (the mktcap refresh 09:14Z, a merge
+commit 10:40Z, the owners seed 20:36Z), and the owners one — the THIRD — still went READY. Its log:
+
+    vercel-ignore: build cap inactive (no VERCEL_BUILD_CAP_TOKEN or the API did not answer)
+
+The cap (`vercel-ignore.sh` step 3b, added 09-09 after the fifth overage invoice) fails OPEN without
+its token, by design — the right call for shipping the file ahead of the credential — and says so in
+one build-log line nobody reads. It was inactive on 09-11 too, which invalidated 09-11 mini section
+H (corrected in place above): `441f2be5a` was never skipped, and the `[deploy-now]` rebuilt a live
+tree. 🔴 **Read what a guard DID, not what its source says it would do.**
+
+Needs two secrets only Ashwin can place: `VERCEL_BUILD_CAP_TOKEN` (read scope) in the Vercel PROJECT
+build environment, which re-arms the cap for every push from every machine; and a read-scope
+`VERCEL_TOKEN` in `~/metro-mini-jobs/config.env` for owners-weekly's own pre-count. Notion Backlog:
+"Build budget is unprotected" (P0 watch).
+
+The Decisions row "Two production builds a day…" is corrected: its Enforced-in said
+`vercel-ignore.sh` "fails closed" — true of the skip rules, false of the cap — and its open question
+"a same-day build counter in code is still open" now reads *exists in code, never on in production*.
+⚠️ Also recorded there, unresolved: that Rule says never push without Ashwin's explicit yes for the
+push, while a project memory amended 2026-08-31 says disclose a build-triggering push as a fact rather
+than pause. The two disagree, and sessions have been following the memory.
+
+### C. ops-autofix's `action_failed` fired live, and behaved
+Verified from its own log rather than a commit message: re-ran "Majors auto-update" at 11:17 and
+13:19 and "WNBA season refresh" at 13:19, then stood down at the 3/day cap at 15:19. Correct outcome
+— the Majors failure was a missing `requests` install in the workflow YAML (fixed by hand in
+`2324c497d`), so a rerun replays broken code, and the cap is what stopped that becoming a loop. One
+subtlety it exposed: the cap is per finding KIND, not per workflow, so two unrelated workflows shared
+three attempts. `job_failed` remains unexercised.
+
+### D. Notion, used the way CLAUDE.md asks
+Backlog: new "Build budget is unprotected" (Ashwin, P0 watch) and "owners-weekly on the mini:
+deployed, validation waiting on tokens" (Mac mini, Blocked); the ops-autofix row updated with the
+live firing. Decisions: the build-cap ruling corrected as above. Silent failure register: the
+inactive cap added under *Still silent*, the tile count corrected to 8 of 20, and a new shape — **a
+guard that fails open must say so where someone looks.**
+
+No build spent by this session: deploying a job and editing docs are both `[vercel skip]`.
