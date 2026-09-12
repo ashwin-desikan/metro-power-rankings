@@ -1,212 +1,264 @@
-# Daily Ops Sweep -- 2026-09-11
+# Daily Ops Sweep -- 2026-09-12
 
-Window `2026-09-09T23:00Z` -> `2026-09-11T01:00Z` (trailing 26h), selected on each
+Window `2026-09-10T23:02Z` -> `2026-09-12T01:02Z` (trailing 26h), selected on each
 dispatcher.log line's own UTC timestamp. Read-only run: nothing re-run, no data
-written, no healthchecks pinged, no Supabase write. This report file is the only
-thing committed.
+written, no healthchecks pinged, no Supabase write, nothing fixed. This report
+file is the only thing committed.
 
-## Jobs this window: 18 ok, 2 failed (both already recovered), 3 flagged
+## Jobs this window: 35 ok, 0 failed, 3 flagged
 
-**Dispatcher occurrences (19 completed + this sweep): 18 DONE, 1 FAIL.**
+**Dispatcher occurrences: 35 DONE, 0 FAIL, 1 MISSED** (plus this sweep, in flight).
+The first FAIL-free window in some time.
 
 | when (UTC) | job | result |
 |---|---|---|
-| 09-09 23:09 | football-standings | DONE 89s |
-| 09-10 01:01 | **daily-ops-sweep** | **FAIL exit 1 after 3s** |
-| 09-10 02:31 | activity-feed | DONE 5s |
-| 09-10 04:01 | euro-comps | DONE 5s |
-| 09-10 05:01 | gap-league-watch | DONE 3s |
-| 09-10 05:01 | football-standings | DONE 87s |
-| 09-10 05:53 | business-daily | DONE 340s |
-| 09-10 06:08 | substack-daily | DONE 5s |
-| 09-10 07:09 | mlb-sim | DONE 450s |
-| 09-10 07:26 | feed-monitor | DONE 15s |
-| 09-10 11:07 | football-standings | DONE 96s |
-| 09-10 11:48 | claude-auth-canary | DONE 0s |
-| 09-10 14:38 | mlb-sim | DONE 449s |
-| 09-10 17:06 | football-standings | DONE 108s |
-| 09-10 20:18 | ops-autofix | DONE 2s (first scheduled run) |
-| 09-10 22:18 | ops-autofix | DONE 2s |
 | 09-10 23:08 | football-standings | DONE 100s |
 | 09-11 00:20 | ops-autofix | DONE 3s |
 | 09-11 00:30 | claude-auth-canary | DONE 0s |
-| 09-11 01:00 | daily-ops-sweep | this run |
+| 09-11 01:00 | daily-ops-sweep | DONE 610s |
+| 09-11 02:20 | ops-autofix | DONE 2s |
+| 09-11 02:31 | activity-feed | DONE 5s |
+| 09-11 04:01 | euro-comps | DONE 5s |
+| 09-11 04:21 | ops-autofix | DONE 2s |
+| 09-11 05:01 | gap-league-watch | DONE 3s |
+| 09-11 05:01 | football-standings | DONE 101s |
+| 09-11 05:53 | business-daily | DONE 337s |
+| 09-11 06:08 | substack-daily | DONE 4s |
+| 09-11 06:19 | forecast | DONE 329s |
+| 09-11 06:24 | ops-autofix | DONE 2s |
+| 09-11 06:34 | claude-auth-canary | DONE 0s |
+| 09-11 07:04 | mlb-sim | DONE 438s |
+| 09-11 07:22 | feed-monitor | DONE 16s |
+| 09-11 07:32 | **economy-rates** | **DONE 348s -- but fired an EMPTY ntfy, see item 2** |
+| 09-11 08:18 | ops-autofix | DONE 2s |
+| 09-11 10:18 | ops-autofix | DONE 2s |
+| 09-11 11:08 | football-standings | DONE 104s |
+| 09-11 11:40 | predictions-fri | DONE 433s |
+| 09-11 11:47 | cfb-fri | DONE 394s |
+| 09-11 12:24 | ops-autofix | DONE 2s |
+| 09-11 14:24 | ops-autofix | DONE 2s |
+| 09-11 14:34 | mlb-sim | DONE 450s |
+| 09-11 16:22 | ops-autofix | DONE 3s |
+| 09-11 17:02 | football-standings | DONE 95s |
+| 09-11 18:23 | ops-autofix | DONE 2s |
+| 09-11 19:23 | nfl-elo | DONE 334s (first mini run, 684m late -- benign, §3) |
+| 09-11 20:19 | ops-autofix | DONE 2s |
+| 09-11 22:19 | ops-autofix | DONE 2s |
+| 09-11 23:09 | football-standings | DONE 105s |
+| 09-12 00:21 | ops-autofix | DONE 2s |
+| 09-12 00:31 | claude-auth-canary | DONE 0s |
+| 09-12 01:01 | daily-ops-sweep | this run |
 
-**3 MISSED slots, all benign and all explained in Self-healed below:**
-`economy-rates` (slot 09-04 07:30Z) and `economy-housing` (slot 09-05 07:30Z) at
-the 11:48Z tick, and `ops-autofix` (slot 09-10 18:15Z) at the 19:48Z tick.
+**1 MISSED slot:** `economy-prices` (slot 09-06 07:30Z, 7914m late) at the 19:29Z
+tick. Benign new-job artefact, explained in Self-healed §2.
 
-**Off-dispatcher on the mini:** the `f1-weekly` launchd poller ran hourly all
-window, every run `idle: 2026 R13 already synced`. Correct, not stale -- see
-Self-healed §4. `newsletter-daily` at 07:00Z FAILED and was recovered by hand
-(§1).
+**Off-dispatcher on the mini:** the `f1-weekly` poller ran hourly all window,
+every run `idle: 2026 R13 already synced`. Correct, not stale -- R13 is the
+Italian GP (2026-09-06) and R14 (Spanish GP) is tomorrow, 09-13, per
+`mac-mini-jobs/f1-data/schedule_2026.csv`. `newsletter-daily` ran clean at 07:00Z
+and published (episode `2qsW3z25GnvpM2eMYV9Xzp`, 41:01); its healthchecks tile
+recovered with it (§1).
 
-**GitHub Actions:** 75 runs in window, 1 failure (`WNBA season refresh`
-34478252537, 09-10 12:42Z), re-run green as 34485939747 at 13:57Z. §3.
+**Healthchecks: 20 of 20 checks, every one `up`** (read via the API this run).
+The project is at its hard cap, which is why `economy-prices` has no tile -- see
+the note under item 2.
 
-**Vercel: 2 paid production builds on 09-10, exactly at the 2/day cap, neither
-an ERROR.** Both `READY`, both Ashwin's: `b59c61a14` (17:34Z, money ledger /
-countries-to-2100 / share cards) and `c095ad8b6` (22:02Z, NFL playoff and title
-odds). Every other 09-10 deployment was `CANCELED`, which is free. So far on
-09-11 UTC: 1 deployment, `CANCELED`, **0 paid builds**. Counted from the Vercel
-API across the whole UTC day in three pages, not from GitHub `deployment_status`.
+**GitHub Actions: 90 runs in window, 0 failures** (89 success, 1 skipped).
 
-I also checked the ordering trap specifically, because 09-10 has an app commit
-(`b59c61a14`) with a `[vercel skip]` doc commit (`bbed354ef`) immediately after
-it in history. It did **not** bite: they went in separate pushes, and
-`b59c61a14` has its own `READY` deployment. Release notes for 09-10 are present
-in `lib/releases.ts` (as is a 09-11 block), so `check:release-notes` is satisfied.
+**Vercel: 5 paid production builds on 09-11 UTC against a 2/day budget.** This
+is item 1 and the main thing in this report. So far on 09-12 UTC: 3 deployments,
+all `CANCELED` (free), **0 paid builds**. Release notes for 09-11 are present in
+`lib/releases.ts`; 09-12 has shipped only `[vercel skip]` automation so far, so
+nothing is owed yet. The push-ordering trap did **not** bite: the 19:00Z push of
+19 commits had `5640996d0`, a real app commit, as HEAD, and it got its own
+`READY` deployment.
 
 ## Self-healed (informational only, no action needed)
 
-**1. The 01:00Z sweep and the 07:00Z newsletter digest both died on the same
-expired Claude OAuth session.** `Failed to authenticate: OAuth session expired
-and could not be refreshed`, six hours apart. Both `auth_expired()` guards did
-the right thing (3-second exits, no futile retry). Ashwin re-authed; both jobs
-were re-run by hand and both completed. The digest is genuinely healthy rather
-than merely exit-0: Spotify episode `1IaF1Kz9HkIA1tqYQMyXPa` polled through to
-`READY`, 40:21 of audio, both Gmail drafts created (`~/newsletter-podcast/logs/
-2026-09-10.log`, 10:10:48 done). Fully documented in `HANDOFF.md` 2026-09-10 §A.
+**1. `newsletter-daily` healthchecks tile was down; the 09-11 run cleared it.**
+`ops-autofix` reported `[high] check_down -- healthchecks tile newsletter-daily
+is down (last ping 2026-09-10T07:00:03+00:00)` on its 00:20Z run and notified
+once, then correctly suppressed the repeat on 02:20Z, 04:20Z and 06:24Z ("same
+unfixable finding(s) as the last run -- not re-notifying"). This was the tail of
+the 09-10 newsletter failure recovered by hand, already in HANDOFF. The 09-11
+07:00Z run succeeded end to end -- narration, 16 TTS chunks, cover, Spotify
+episode `READY`, both Gmail drafts -- and pinged at 07:19:01Z. `ops-autofix` was
+clean from 08:18Z onward and has stayed clean for 10 consecutive runs. The tile
+reads `up` now. Nothing to do.
 
-**This run is the proof the credential is good again**, and the canary agrees:
-`status=OK days_left=27.11 -- refresh token valid until 2026-10-08 03:12 UTC`.
+**2. `economy-prices` MISSED its 09-06 slot because it did not exist yet.**
+The job was deployed on 09-11 (commit `203c464a9`, 17:43Z, which shipped the
+Prices tab, `build_prices.py`, the runner and the jobs.toml entry). Its first
+dispatcher tick computed the most recent Sunday slot, 09-06 07:30Z, found it
+7914m late, correctly declined to fire a stale slot past its 40h catch-up window
+and skipped forward. `state.json` now holds `last_slot 2026-09-06T07:30:00+00:00,
+last_status missed`, so the next genuine slot is **Sunday 09-13 07:30Z**. The data
+itself is fresh -- `public/data/business/economy/prices/index.json` was built and
+committed 09-11 17:43Z. This is the identical shape `economy-rates` (09-04 slot)
+and `economy-housing` (09-05 slot) each produced on deployment; it needs nothing.
+The ntfy you saw for it is the dispatcher doing its job.
 
-The two forward-looking gaps the last sweep raised are both **closed**:
-- The canary now runs at **two** slots, `times = ["00:30", "06:30"]` -- 00:30Z as
-  pre-flight for the sweep, 06:30Z as the one that actually gets read at a
-  civilised hour. Ashwin shipped a better fix than the one I recommended
-  (`87cc23363`); a bare move to 00:30 would have traded one gap for a worse one.
-- `dispatcher.py --mark-ok daily-ops-sweep` was applied at 09-10 14:46:24Z, so
-  `--status` no longer reads `failed` for a resolved incident.
+**3. `nfl-elo` ran 684 minutes late, and that was the catch-up working.**
+Also deployed 09-11 (commit `8966c4218`, 16:29Z), moving the live Elo refresh off
+GitHub Actions onto the mini after GitHub's cron fired 09-08 four hours late and
+skipped 09-11. Its 08:00Z slot had already passed when the job first became
+visible, so the dispatcher caught it up at 19:23Z -- 11h24m late, inside the
+14h `catchup_hours`. Output is correct: `reg_end_week` reads 18 (the `34beaf835`
+fix from earlier that day, which had the updater writing the last week PLAYED as
+the season's end), the 49ers carry a week-1 result dated 2026-09-10 and teams
+that have not played yet carry only their week-0 seed. That is right for a
+season whose Thursday opener was 09-10 with the first full Sunday on 09-13.
+Next run is today, 08:00Z, on time.
 
-**2. `economy-rates`, `economy-housing` and `ops-autofix` each logged a MISSED
-slot, and all three are the expected consequence of a job being NEW.** A slot
-that predates the job's deployment cannot have run. The first tick that could
-see each job found its last slot outside the catch-up window and correctly
-seeded forward instead of firing a backlog. `economy-{rates,housing}` reached the
-live dispatcher at 09-10 12:43Z (`HANDOFF.md` §E: committing to the repo does not
-deploy anything); `ops-autofix` at 09-10 19:37Z with `catchup_hours = 1`
-deliberately. All three are now fully deployed: `dispatcher.py --status` from the
-live directory lists 28 jobs including all three, and the runner symlinks for
-`economy-rates`/`economy-housing` resolve into the repo. (I read `--status`, which
-is read-only; I did not run `--check-sync`.)
-
-**3. `WNBA season refresh` failed at 09-10 12:42Z and it was the guard working.**
-Re-run green the same afternoon (34485939747). `HANDOFF.md` §G and §H carry the
-reasoning, including the tied East lead being a shared title.
-
-**4. F1 sitting on R13 in mid-September is correct, and I verified it rather than
-assuming.** R13 is the Italian GP at Monza, 2026-09-06 -- genuinely the last
-completed race. The stored 2026 season has 13 rounds and a conspicuous gap
-between Japan (03-29) and Miami (05-03), which looks like two missing races and
-is not: **Bahrain and Saudi Arabia were cancelled outright** after the Middle East
-conflict, cutting the calendar from 24 races to 22 and renumbering everything
-after them. That is exactly why Monza reads as round 13 here while pre-cancellation
-calendar listings still call it round 15. Next race is Madrid on 09-13, so the
-poller should pick up R14 this weekend. (Sources:
-[Sky Sports](https://www.skysports.com/f1/news/12433/13519453/f1-confirms-cancellation-of-bahrain-and-saudi-arabian-grands-prix-due-to-war-in-middle-east-as-2026-calendar-reduced-to-22-races),
-[Motorsport.com](https://www.motorsport.com/f1/news/bahrain-and-saudi-arabia-f1-races-officially-cancelled-amid-middle-east-conflict/10805321/).)
-The single `ERROR: jolpica fetch failed` in `launchd-f1-weekly.out` is from an
-older window (the R11 era) and the next hourly run recovered it.
-
-**5. `newsletter-daily`'s healthchecks tile is red for a reason that is not a
-failure, and it clears itself at 07:00Z today.** See the P3 below for the durable
-fix; no action is needed for the tile itself.
-
-**Also checked and clear.** I scanned every log line in the window for in-script
-`push()` alerts, not just failures, and there are none beyond the two known ones.
-`gap-league-watch`: Indian Super League still `awaiting_target` (2026 unpublished
-upstream, latest season on the API is 2025), "no state transitions this run".
-`business-daily` raised no new-geo-stub notice, revalidated on attempt 1 and
-warmed `/business`, `/business/markets` and `/business/currencies` to HTTP 200.
-`feed-monitor` is all `ok` except the standing `empty ESPN PGA scoreboard`, which
-is correct -- the Biltmore Championship is played Sept 17-20. `football-standings`
-ran 4x, every run `standings=2238 fixtures=1167 unmatched=0 collisions=0`.
-**Yesterday's Champions League label reconcile is still holding**: the exported
-`live-competitions-2026.json` (generated 09-10 23:10Z) carries exactly ONE
-Champions League group of 36 rows, all on 1 game played, with no orphaned
-`League Phase` table.
-
-**The new `ops-autofix` job is behaving.** Three scheduled runs, each finding only
-the `newsletter-daily` tile, each correctly declining to act because `check_down`
-is not in its whitelist. It announced that finding once (09-10 20:40Z) and has
-stayed quiet since, which is the de-duplication in `6299174d8` working as
-intended. It also correctly refused to run at all while the working tree was
-dirty. Worth knowing: two of its three remedies have still never fired on a live
-fault, so their first real exercise will be against production.
+**4. The retired NFL Action and the mini both ran on 09-11. One day only.**
+`NFL live Elo refresh` shows a `schedule` run at 13:40Z and the mini's run at
+19:23Z on the same day. Not a double-run going forward: the Friday cron fired
+before commit `8966c4218` commented the `schedule:` block out at 16:29Z.
+`workflow_dispatch` remains as the manual fallback, which is what the migration
+intended. The mini ran last, so its output is what is published. No conflict.
 
 ## Needs Ashwin's attention
 
-Nothing is broken right now. Three items, all low priority.
+### 1. 🔴 The 2/day Vercel build cap is INACTIVE, and 09-11 cost five paid production builds
 
-### [P3] Recovering the newsletter by hand leaves its healthchecks tile red, every time
+**What happened.** Five paid production builds ran on 2026-09-11 UTC against a
+budget of two:
 
-**What happened.** `newsletter-daily` has read `down` since 09-10T07:00:03Z and
-still does, even though that day's digest was completed successfully by hand 105
-minutes later. `ops-autofix` has flagged it `[high]` on all three of its runs.
+| # | commit | deployment | state |
+|---|---|---|---|
+| 1 | `647310a5a` 09:33:21Z | (build `9zuTiF2CBmGM2TLhxHoQBAp98Fes`) | **ERROR** -- `RELEASE_NOTES_VIOLATION`, 276-char bullet |
+| 2 | `770368de1` 09:40:13Z | `dpl_AXMhPsxXQp4Fekb5iWosLwRmCAYB` 09:40:16Z | READY |
+| 3 | `441f2be5a` 09:52:55Z | `dpl_49x2FnwJhmRGXiGQvqgyt54hEZq4` 09:53:05Z | READY |
+| 4 | `2a32e0068` 09:54:22Z | `dpl_DC1EGfqkFKtL9cXGbG3iLDrpR8Ko` 09:54:32Z | READY -- `[deploy-now]` |
+| 5 | `5640996d0` 19:00:52Z | `dpl_EuVWNXqzohWaBSxMk5FVpLBjvT9i` 19:01:15Z | READY -- the 19-commit push |
 
-**Root cause, confirmed from the ping history rather than inferred.** The
-healthchecks ping is not in `run-daily.sh` at all -- it comes from the launchd
-plist, which invokes `hc-run.sh newsletter-daily /bin/bash .../run-daily.sh`. The
-wrapper is what pings start/success/fail. The hand recovery invoked
-`run-daily.sh` **directly**, so the success ping never happened. The ping log is
-unambiguous:
+A failed build is not a free build: #1 spent the minutes and produced nothing.
+
+**Root cause, from the build logs themselves rather than inference.** Every one
+of these logs the same line before deciding:
 
 ```
-135 fail     2026-09-10T07:00:03Z  dur=2.45     <- the OAuth failure
-134 start    2026-09-10T07:00:00Z
-133 success  2026-09-09T07:19:16Z  dur=1156.07  <- last healthy run
+19:01:34  Running "sh scripts/vercel-ignore.sh"
+19:01:34  vercel-ignore: build cap inactive (no VERCEL_BUILD_CAP_TOKEN or the API did not answer)
+19:01:34  vercel-ignore: build-relevant change in 5640996d0^..5640996d0; building
 ```
 
-Nothing at 08:45Z, which is when the successful re-run actually ran.
+Verified on two separate builds (the 09:53:05Z one prints it identically), so it
+is the persistent state, not a transient API failure. `VERCEL_BUILD_CAP_TOKEN` is
+not present in the project's build environment, so `builds_today()` never runs and
+`MAX_DAILY_BUILDS` is never applied. **The 2/day budget is still a promise, not
+code**, despite the 2026-09-09 work that was meant to make it code.
 
-**Why it matters, mildly.** The tile self-heals at today's 07:00Z launchd run, so
-this specific instance needs nothing. But every hand recovery will do this again,
-and a monitoring tile that stays red after the work succeeded is the thing that
-teaches you to ignore red tiles. Note this is specific to the newsletter:
-`daily-ops-sweep`'s own hand re-run on 09-10 *did* ping correctly (start 14:29:49,
-success 14:39:14), because `run-daily-ops-sweep.sh` gets wrapped by the
-dispatcher.
+**This is a known open item, not a new bug** -- HANDOFF section E of 2026-09-09
+and section B of 2026-09-11 both record it as waiting on you, and the same
+`b59c61a14` build log said so on 09-10. What is new is that it has now measurably
+cost a day: three builds over budget.
 
-**Recommended fix.** Recover through the wrapper instead of around it:
+**One correction to the record.** HANDOFF 2026-09-11 section B counted four paid
+builds. The day finished at **five** -- the 19:00Z push added `5640996d0` at
+19:01:15Z, after that entry was written. Section B is otherwise exactly right,
+including the sharpest part of it: build #4 was pushed `[deploy-now]` on the
+reasoning that the cap had skipped `441f2be5a`, and it had not -- `441f2be5a`
+built normally at 09:53:05Z, so the override rebuilt an identical tree for
+nothing. With the cap inactive that reasoning could never have held, because
+nothing was ever being skipped.
+
+(Times in HANDOFF section B read `10:53Z`/`10:54Z`; the API `created` values and
+the git committer dates both put these at 09:53:05Z and 09:54:32Z UTC. The
+HANDOFF times look like BST labelled as Z. Cosmetic, but worth knowing if you
+reconcile the two.)
+
+**Recommended fix (yours, needs the Vercel dashboard -- I made no change).**
+1. Create a read-scoped token at <https://vercel.com/account/tokens>.
+2. Add it to project `metro-power-rankings`
+   (`prj_eGoUAOrnwvNP86s7p74ruILMl3Dr`, team `team_yQjbuPwcr40J6AxkjCv6AawD`) as
+   `VERCEL_BUILD_CAP_TOKEN`, **Production, build-time**.
+3. Confirm on the next app commit that the build log says the cap is active and
+   prints a count instead of `build cap inactive`. That line is the whole test,
+   and it is in every build log, so it costs nothing to check.
+
+Until that is done, assume every app commit that lands on `main` builds, and keep
+batching by hand.
+
+### 2. 🔴 `economy-rates` sends a "Policy rate decisions" ntfy with an EMPTY body, every time
+
+**What happened.** The 09-11 07:32Z run finished clean (`DONE 348s`, healthcheck
+green) and pushed a real notification, but with no content. From dispatcher.log:
+
+```
+2026-09-11T07:38:14Z | [2026-09-11 08:38:14] New rate decisions detected:
+2026-09-11T07:38:14Z | [2026-09-11 08:38:14]
+2026-09-11T07:38:14Z | [2026-09-11 08:38:14] done
+```
+
+The heading printed, the summary was blank, and `notify.py` was then called with
+that blank string as the body. So you received a push titled "Policy rate
+decisions" that did not say which bank moved or by how much -- which is the
+entire content the alert exists to deliver.
+
+**Root cause: an off-by-one-line awk bug, and it is deterministic.**
+`mac-mini-jobs/runners/economy-rates.sh` extracts the summary with:
+
+```awk
+awk '/^NEW RATE DECISIONS$/{f=1;next} /^={10,}$/{if(f){f=0}} f'
+```
+
+`scripts/macro/rates/refresh.py:756-764` prints the block as a **rule, heading,
+rule, rows, rule**:
+
+```
+============================================================
+NEW RATE DECISIONS
+============================================================
+  bis-nz: 2026-09-03 -> 2.7500% (+0.2500 pts)
+============================================================
+```
+
+So the line immediately after the heading is the 60-character underline. The awk
+sets `f=1` on the heading, then the very next line matches `/^={10,}$/` and sets
+`f=0` before a single row is ever printed. The extraction therefore returns the
+empty string **whenever there are decisions to report** -- it cannot succeed. This
+is not an intermittent fault and it is not "there were no decisions": the `grep -q
+"NEW RATE DECISIONS"` that gates the whole block only matches when `refresh.py`
+found decisions (`if decisions:` at line 756), so a fired alert always means real
+content existed and was thrown away.
+
+**Recommended fix** -- skip the underline, and only close the block on the rule
+that comes *after* content:
 
 ```bash
-/bin/bash ~/metro-mini-jobs/hc-run.sh newsletter-daily \
-          /bin/bash ~/newsletter-podcast/run-daily.sh
+SUMMARY="$(awk '/^NEW RATE DECISIONS$/{f=1;n=0;next}
+                f&&/^={10,}$/{if(n)f=0;next}
+                f{print;n++}' "$REFRESH_LOG" | sed 's/^  //' | head -8)"
 ```
 
-That is byte-for-byte what the plist does, so the tile tracks reality. If you'd
-rather not have to remember it, the durable version is to move the `hcping`
-calls from `hc-run.sh` into `run-daily.sh` itself, guarded so the plist does not
-double-ping. I did not make either change; this run is report-only.
+Worth doing two more things in the same change:
+- **Guard against sending an empty push at all.** `[ -n "$SUMMARY" ]` before the
+  `notify.py` call, falling back to a generic "decisions found, see the log" body
+  rather than silence. A notification whose body is empty is worse than no
+  notification, because it reads as noise and trains you to ignore the topic.
+- The sibling unreachable-sources block just below it uses
+  `awk '/source\(s\) unreachable this run/{f=1} f'`, which prints to EOF and is
+  **not** affected by this bug. Leave it alone.
 
-### [P3] `economy-rates` fires at 07:30Z today -- the first genuine run it has ever had
+**Not self-healing.** `economy-rates` is Friday-only, so the next run is
+**09-18 07:30Z**, and the ECB hike announced 09-10 takes effect 09-16 -- meaning
+the very next run is the one most likely to have a real decision to report, and
+it will report it blank. Worth fixing before Friday.
 
-Today is Friday, `weekdays = [5]`, so the job that has never once executed runs in
-about six and a half hours. Pre-flight is green and unchanged from yesterday's
-check: both runner symlinks exist and resolve into the repo, `_common.sh` is
-present, and the runner gates on `--self-test` before any network call. Mode 644
-on the runner targets is fine -- `dispatcher.py` invokes them as
-`["/bin/bash", path]`, same as `business-daily.sh`.
+**Related, lower priority:** `economy-prices` is the only one of the three
+economy jobs with no `hc_slug`. That is forced, not an oversight -- healthchecks
+is at exactly 20 of 20 checks and the 09-11 pair of tiles was already paid for by
+deleting two others. The dispatcher does ntfy this job's failures and missed
+slots (it did on 09-11), so the gap only matters if the dispatcher itself stops.
+Flagging it because the two siblings shipped the same day and got tiles, and this
+one silently did not. Candidate for the Silent failure register rather than an
+action.
 
-`economy-housing` follows at 07:30Z tomorrow (Saturday). Tomorrow's 01:00Z sweep
-will cover the rates run in its window, so this will be reported on without you
-doing anything. **What to look for if you check yourself:** a `DONE economy-rates`
-around 07:30Z and the `NEW DECISIONS` block in its log. `HANDOFF.md` 2026-09-09
-notes the rates refresh refuses a thin base, so a refusal on the first run is the
-guard working, not a break.
+## Standing items unchanged this window
 
-### [P3] Standing, not from this window: the mktcap metro queue is still 40 deep
-
-`mac-mini-jobs/mktcap-review-queue.md` is still dated **2026-09-05** and still
-lists the same 40 unmapped companies awaiting your metro curation (Boehringer
-Ingelheim, Anhui Conch Cement, Mohawk Industries, St. James's Place and 36
-others). `mktcap-refresh` next runs **tomorrow, Saturday 09-12 at 09:00Z**, and
-that run overwrites this file -- the queue itself is regenerated from Supabase, so
-nothing is lost, but the list you see today will be replaced by the list as of
-tomorrow. Only you can clear it. Nothing on the site is wrong meanwhile: unmapped
-companies queue as geo stubs and are never guessed.
-
----
-*Read-only sweep. No job re-run, no data written, no healthchecks pinged, no
-Supabase write. Only this file was committed.*
+- **mktcap metro curation queue is still ~40 deep.** `mktcap-refresh` last ran
+  09-05 09:00Z; its next slot is today, 09-12 09:00Z, which regenerates the queue
+  file from Supabase (nothing is lost).
+- **`economy-housing` has its first genuine run today**, 09-12 07:30Z. Worth a
+  glance at tomorrow's sweep to confirm it fired.
