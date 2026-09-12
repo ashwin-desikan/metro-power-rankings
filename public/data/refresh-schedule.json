@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-12T00:31:45.380555+00:00",
+  "generated_at": "2026-09-12T01:14:09.765920+00:00",
   "jobs": [
-    {
-      "id": "daily-ops-sweep",
-      "label": "Daily ops sweep (report-only)",
-      "schedule_text": "Daily at 01:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "01:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-12T01:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-11",
-        "status": "ok",
-        "slot": "2026-09-11T01:00:00+00:00"
-      }
-    },
     {
       "id": "ops-autofix",
       "label": "Ops autofix (whitelist, acts on production)",
@@ -288,6 +270,24 @@
         "date": "2026-09-05",
         "status": "ok",
         "slot": "2026-09-05T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "daily-ops-sweep",
+      "label": "Daily ops sweep (report-only)",
+      "schedule_text": "Daily at 01:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "01:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-13T01:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-12",
+        "status": "ok",
+        "slot": "2026-09-12T01:00:00+00:00"
       }
     },
     {
