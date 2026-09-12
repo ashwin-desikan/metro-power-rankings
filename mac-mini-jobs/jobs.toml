@@ -592,6 +592,14 @@ log_tail_lines = 30             # build_housing.py prints its MSA/metro match
                                  # failure; the DONE/FAIL line says which it was.
                                  # A clean run writes no stderr, so that costs
                                  # nothing until something actually warns.
+                                 # VERIFIED 2026-09-12 by a manual run through
+                                 # run_job (hc-run.sh wrapped, so the tile saw
+                                 # it): ok in 312s, 18 stdout lines kept under
+                                 # the 30 cap with the MSA and crosswalk counts
+                                 # both present, and 0 stderr lines. Output was
+                                 # byte-identical to the morning's, so it hit
+                                 # the "nothing to commit" path -- which is the
+                                 # success case for this job, not a failure.
 
 [[job]]
 id = "economy-prices"
