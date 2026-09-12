@@ -14232,7 +14232,7 @@ Verified from its own log rather than a commit message: re-ran "Majors auto-upda
 — the Majors failure was a missing `requests` install in the workflow YAML (fixed by hand in
 `2324c497d`), so a rerun replays broken code, and the cap is what stopped that becoming a loop. One
 subtlety it exposed: the cap is per finding KIND, not per workflow, so two unrelated workflows shared
-three attempts. `job_failed` remains unexercised.
+three attempts. `job_failed` remains unexercised. (That subtlety is now fixed — see E.)
 
 ### D. Notion, used the way CLAUDE.md asks
 Backlog: new "Build budget is unprotected" (Ashwin, P0 watch) and "owners-weekly on the mini:
@@ -14240,5 +14240,24 @@ deployed, validation waiting on tokens" (Mac mini, Blocked); the ops-autofix row
 live firing. Decisions: the build-cap ruling corrected as above. Silent failure register: the
 inactive cap added under *Still silent*, the tile count corrected to 8 of 20, and a new shape — **a
 guard that fails open must say so where someone looks.**
+
+### E. ops-autofix's attempt cap is now per finding, not per kind (`742fb6eaf`)
+Ashwin ruled that the shared budget in C was wrong: one unfixable failure must not use up another
+workflow's retries. `allowed()` in `mac-mini-jobs/run-ops-autofix.sh` now keys the day's count on
+`kind|id` — the id being the workflow name for `action_failed` and the job id for `job_failed`.
+`deploy_drift` has no id (one sync covers every drifted file), so its key stays plain `deploy_drift`.
+The stand-down log line and ntfy text now name the workflow that hit its cap.
+
+- **Tested** `allowed()` in isolation against a copy of that day's real
+  `~/metro-mini-jobs/.autofix-attempts.json` (`{"action_failed": 3}`): Majors ×4 → yes, yes, yes,
+  no; WNBA still yes with Majors capped; four dry runs spend nothing; `deploy_drift` unaffected.
+- **Live immediately.** The live script is a symlink into the repo, and `--check-sync` (run from
+  `~/metro-mini-jobs`) reports in sync. Old per-kind keys in the attempts file are never read again,
+  so any failure later on 09-12 starts with its full three.
+- **Not addressed, deliberately:** a failure a rerun can never fix (Majors' broken YAML) still gets
+  its three reruns. The per-finding cap limits that waste but doesn't detect it; telling a
+  deterministic failure from a transient one is a separate change.
+- **Notion:** the Decisions row now reads "three attempts per FINDING (kind + workflow/job) per day,
+  amended 2026-09-12"; the Backlog autofix row records the fix in place of the open question.
 
 No build spent by this session: deploying a job and editing docs are both `[vercel skip]`.
