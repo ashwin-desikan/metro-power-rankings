@@ -119,9 +119,30 @@ revalidate_ping "economy-rates" "/business/economy" "/business/economy/compare"
 # Fail-open: a notify.py hiccup here must never fail an otherwise-successful
 # refresh, so it is deliberately NOT wrapped in guarded/fail.
 if grep -q "NEW RATE DECISIONS" "$REFRESH_LOG"; then
-  SUMMARY="$(awk '/^NEW RATE DECISIONS$/{f=1;next} /^={10,}$/{if(f){f=0}} f' "$REFRESH_LOG" | sed 's/^  //' | head -8)"
+  # refresh.py (lines ~756-764) frames the block in THREE rules, not two:
+  #   ====...  /  NEW RATE DECISIONS  /  ====...  /  rows  /  ====...
+  # The original one-flag awk (`/^={10,}$/{if(f){f=0}}`) set its flag on the
+  # heading and then cleared it on the rule IMMEDIATELY BELOW the heading,
+  # before a single row could print -- so SUMMARY was ALWAYS empty and every
+  # alert this block ever sent had a blank body. It is not a rare edge case:
+  # because the grep gate only matches when refresh.py genuinely found
+  # decisions, a fired alert ALWAYS meant real content existed and was
+  # discarded. Observed live on the 2026-09-11 run ("New rate decisions
+  # detected:" followed by nothing). Three states, so the opening rule is
+  # consumed and only the CLOSING one stops the scan.
+  SUMMARY="$(awk '/^NEW RATE DECISIONS$/{st=1;next}
+                  st==1 && /^={10,}$/{st=2;next}
+                  st==2 && /^={10,}$/{exit}
+                  st==2' "$REFRESH_LOG" | sed 's/^  //' | head -8)"
   note "New rate decisions detected:"
   note "$SUMMARY"
+  # Never push a blank body again: if the gate matched but parsing yielded
+  # nothing, the PARSER is broken and that must itself be the alert, not
+  # silence. Same rule as the skipped-bank block below.
+  if [ -z "$SUMMARY" ]; then
+    SUMMARY="refresh.py reported NEW RATE DECISIONS but the runner could not parse the block -- read the job log, the rate moves are in it."
+    note "WARNING: decisions block found but parsed empty; alerting on the parse failure itself"
+  fi
   "$PY" "$MINI_DIR/notify.py" "Policy rate decisions" "$SUMMARY" 0 || true
 fi
 
