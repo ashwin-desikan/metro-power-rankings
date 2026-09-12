@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-12",
+    headline: "Ownership updates: Seahawks, Liverpool, Formula 1",
+    items: [
+      "The team owners board records the Khosla family's Seahawks purchase closing on 3 September, completing the record $9.6B sale from the Paul Allen estate.",
+      "Liverpool's row now carries the strategic minority stake FSG agreed to sell to a consortium of Amit Bhatia, the Mittal family, Jeff Bezos and Eduardo Saverin, with FSG keeping control.",
+      "In Formula 1, Woody Johnson joins Aston Martin's minority investors, and Alpine's entry tracks Otro Capital's expired lock-up on its 24 percent stake.",
+    ],
+  },
+  {
     date: "2026-09-11",
     headline: "Playoff and title odds for every NFL week since 1920",
     items: [

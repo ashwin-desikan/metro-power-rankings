@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-07T09:45:29",
+ "generated": "2026-09-12T08:08:38",
  "rows": [
   {
    "team": "AFC Bournemouth",
@@ -191,13 +191,13 @@
    "stakePct": null,
    "confidence": "sourced",
    "coControllers": null,
-   "minority": "Dynasty Equity, RedBird Capital (stake in FSG itself)",
-   "note": "FSG also owns the Boston Red Sox. A Mittal-family-backed consortium was in talks for a minority stake at a ~$6bn valuation as of Jul 2026; not completed.",
+   "minority": "1892 Holdings consortium (Amit Bhatia, Mittal family trusts, Jeff Bezos's K5, Eduardo Saverin's EE Capital; ~30% agreed Aug 2026, pending approvals), Dynasty Equity, RedBird Capital (stake in FSG itself)",
+   "note": "FSG also owns the Boston Red Sox. On 14 Aug 2026 FSG agreed to sell a strategic minority stake in the club to a consortium led by Amit Bhatia's 1892 Holdings, with the Mittal family trusts, a Jeff Bezos-led K5 fund and Eduardo Saverin's EE Capital. Sportico reported roughly 30% at a $7bn valuation, and CNBC reported the group holds an option to take control later. The deal awaits regulatory approvals; FSG keeps majority ownership and operational control.",
    "pendingSummary": null,
    "pendingWhen": null,
    "pendingKind": null,
-   "sourceUrl": "https://europeanbusinessmagazine.com/liverpool-mittal-stake/",
-   "sourceDate": "2026-07-22"
+   "sourceUrl": "https://www.liverpoolfc.com/news/fsg-announces-strategic-minority-investment-liverpool-fc",
+   "sourceDate": "2026-08-14"
   },
   {
    "team": "Manchester City",
@@ -318,7 +318,7 @@
    "confidence": "sourced",
    "coControllers": null,
    "minority": "Otro Capital-led consortium, 24%, with RedBird Capital, Maximum Effort, Ryan Reynolds, Rob McElhenney and Michael B. Jordan",
-   "note": "Renault Group retains outright control. The 24% minority bought in Jun 2023 has been for sale through 2026; talks with Mercedes Grand Prix collapsed over valuation in Jun 2026 and no alternative buyer is in process. RedBird's involvement is minority and does not join Alpine to the AC Milan portfolio.",
+   "note": "Renault Group retains outright control. The 24% minority bought in Jun 2023 has been for sale through 2026; talks with Mercedes Grand Prix collapsed over valuation in Jun 2026. PlanetF1 reported that the three-year restrictions binding Otro expired on 8 Sep 2026, leaving it free to sell subject to Renault veto rights; Alpine confirmed in Jan 2026 that a Christian Horner-led consortium is interested in buying in, and no sale is agreed. RedBird's involvement is minority and does not join Alpine to the AC Milan portfolio.",
    "pendingSummary": null,
    "pendingWhen": null,
    "pendingKind": null,
@@ -335,13 +335,13 @@
    "stakePct": null,
    "confidence": "cross-checked",
    "coControllers": null,
-   "minority": "Arctos Partners; HPS Investment Partners and Accel; Saudi Arabia's PIF, about 8%; Adrian Newey",
-   "note": "Control has sat with Stroll's consortium since it rescued Force India in 2018. Aston Martin Lagonda, the carmaker, agreed in Jul 2025 to sell its own equity in the team for about £110m at a valuation near £2.4bn while keeping the naming rights, so the team and the car company are no longer the same asset. PIF's stake here is minority and does not join it to Newcastle's portfolio.",
+   "minority": "Arctos Partners; HPS Investment Partners and Accel; Saudi Arabia's PIF, about 8%; Adrian Newey; Woody Johnson (from Aug 2026)",
+   "note": "Control has sat with Stroll's consortium since it rescued Force India in 2018. Aston Martin Lagonda, the carmaker, agreed in Jul 2025 to sell its own equity in the team for about £110m at a valuation near £2.4bn while keeping the naming rights, so the team and the car company are no longer the same asset. PIF's stake here is minority and does not join it to Newcastle's portfolio. Woody Johnson bought a significant minority stake in Aug 2026 at a reported valuation near $3.5bn with no operational role, per Sportico and PlanetF1; control is unchanged.",
    "pendingSummary": null,
    "pendingWhen": null,
    "pendingKind": null,
-   "sourceUrl": null,
-   "sourceDate": null
+   "sourceUrl": "https://www.sportico.com/business/team-sales/2026/woody-johnson-stake-aston-martin-formula-1-1234942473/",
+   "sourceDate": "2026-08-20"
   },
   {
    "team": "Ferrari",
@@ -2406,12 +2406,12 @@
    "confidence": "sourced",
    "coControllers": null,
    "minority": null,
-   "note": "NFL owners approved the sale unanimously, 32-0, at a special meeting in Atlanta on 26 Aug 2026 for $9.612B, a record for a change of control in North American sport. Sold by the estate of Paul G. Allen, which retains nothing; the proceeds go to Allen's philanthropy. Legal closing is expected in early Sep 2026, with a Seattle introduction around the 9 Sep home opener. Vinod Khosla divested his 49ers minority stake to complete the deal. Reporting disagrees on which Khosla is the NFL-designated controlling owner: Front Office Sports and the Seattle Times name Neeru Khosla, while AP and NFL.com frame Vinod as the principal, so the family is named here rather than one of them chosen.",
+   "note": "NFL owners approved the sale unanimously, 32-0, at a special meeting in Atlanta on 26 Aug 2026 for $9.612B, a record for a change of control in North American sport. Sold by the estate of Paul G. Allen, which retains nothing; the proceeds go to Allen's philanthropy. The sale closed on 3 Sep 2026, the club confirmed. Vinod Khosla divested his 49ers minority stake to complete the deal. Reporting disagrees on which Khosla is the NFL-designated controlling owner: Front Office Sports and the Seattle Times name Neeru Khosla, while AP and NFL.com frame Vinod as the principal, so the family is named here rather than one of them chosen.",
    "pendingSummary": null,
    "pendingWhen": null,
    "pendingKind": null,
-   "sourceUrl": "https://www.nfl.com/news/nfl-owners-approve-sale-seattle-seahawks-khosla-family",
-   "sourceDate": "2026-08-26"
+   "sourceUrl": "https://www.seahawks.com/news/sale-of-seahawks-to-khosla-family-is-complete",
+   "sourceDate": "2026-09-03"
   },
   {
    "team": "Tampa Bay Buccaneers",
