@@ -1,7 +1,7 @@
 {
  "meta": {
-  "as_of": "2026-09-05",
-  "generated_at": "2026-09-05T09:01:13Z",
+  "as_of": "2026-09-12",
+  "generated_at": "2026-09-12T09:02:17Z",
   "snapshots": [
    "2026-07-18",
    "2026-08-02",
@@ -10,13 +10,14 @@
    "2026-08-17",
    "2026-08-22",
    "2026-08-29",
-   "2026-09-05"
+   "2026-09-05",
+   "2026-09-12"
   ],
-  "companies": 12996,
-  "totalCap": 181925236307562.0,
-  "mappedCompanies": 6191,
-  "mappedCap": 176269681435868.0,
-  "metros": 561,
+  "companies": 13068,
+  "totalCap": 180419394796151.0,
+  "mappedCompanies": 6177,
+  "mappedCap": 174791759481358.0,
+  "metros": 562,
   "countries": 85,
   "g500Source": "Fortune Global 500 (2022 list), extracted from CompaniesMarketCap workbook Global 500 sheet 2026-08-02",
   "cultureUnmatched": []
@@ -24,20 +25,20 @@
  "metros": [
   {
    "name": "San Francisco-San Jose",
-   "cap": 30572622047616.0,
+   "cap": 30561367285888.0,
    "count": 535,
    "top": [
     {
      "name": "NVIDIA",
-     "cap": 5562502742016.0
+     "cap": 5271048421376.0
     },
     {
      "name": "Apple",
-     "cap": 4669700046848.0
+     "cap": 4849207869440.0
     },
     {
      "name": "Alphabet (Google)",
-     "cap": 4100819517440.0
+     "cap": 4102531842048.0
     }
    ],
    "slug": "san-francisco-san-jose",
@@ -46,20 +47,20 @@
   },
   {
    "name": "New York",
-   "cap": 10225394111644.0,
+   "cap": 10063721590108.0,
    "count": 350,
    "top": [
     {
      "name": "JPMorgan Chase",
-     "cap": 953331941376.0
+     "cap": 946925731840.0
     },
     {
      "name": "Johnson & Johnson",
-     "cap": 663276421120.0
+     "cap": 640020840448.0
     },
     {
      "name": "Mastercard",
-     "cap": 507393736704.0
+     "cap": 498616074240.0
     }
    ],
    "slug": "new-york",
@@ -68,20 +69,20 @@
   },
   {
    "name": "Seattle",
-   "cap": 7409556557440.0,
+   "cap": 7345223379840.0,
    "count": 39,
    "top": [
     {
      "name": "Microsoft",
-     "cap": 3710545297408.0
+     "cap": 3680323239936.0
     },
     {
      "name": "Amazon",
-     "cap": 2788369891328.0
+     "cap": 2769709432832.0
     },
     {
      "name": "Costco",
-     "cap": 406111289344.0
+     "cap": 401246322688.0
     }
    ],
    "slug": "seattle",
@@ -90,20 +91,20 @@
   },
   {
    "name": "Tokyo",
-   "cap": 5940912993447.0,
+   "cap": 5956997070371.0,
    "count": 333,
    "top": [
     {
      "name": "Mitsubishi UFJ Financial",
-     "cap": 271151382528.0
+     "cap": 268900220928.0
     },
     {
      "name": "SoftBank Group Corp.",
-     "cap": 204040089179.0
+     "cap": 242519989193.0
     },
     {
      "name": "KIOXIA Holdings Corporation",
-     "cap": 190883469206.0
+     "cap": 192394098540.0
     }
    ],
    "slug": "tokyo",
@@ -112,7 +113,7 @@
   },
   {
    "name": "Beijing",
-   "cap": 5061560026774.0,
+   "cap": 4972850006494.0,
    "count": 154,
    "top": [
     {
@@ -121,11 +122,11 @@
     },
     {
      "name": "China Construction Bank",
-     "cap": 428705858818.0
+     "cap": 430505390066.0
     },
     {
      "name": "Agricultural Bank of China",
-     "cap": 363559077626.0
+     "cap": 364282557512.0
     }
    ],
    "slug": "beijing",
@@ -134,20 +135,20 @@
   },
   {
    "name": "London",
-   "cap": 4636410804799.0,
-   "count": 166,
+   "cap": 4553463591394.0,
+   "count": 164,
    "top": [
     {
      "name": "HSBC",
-     "cap": 366959591424.0
+     "cap": 360627863552.0
     },
     {
      "name": "Shell",
-     "cap": 255681150976.0
+     "cap": 276837367808.0
     },
     {
      "name": "Linde",
-     "cap": 220150300672.0
+     "cap": 214918168576.0
     }
    ],
    "slug": "london",
@@ -156,20 +157,20 @@
   },
   {
    "name": "Seoul",
-   "cap": 3616095547978.0,
-   "count": 115,
+   "cap": 3743818880570.0,
+   "count": 116,
    "top": [
     {
      "name": "Samsung",
-     "cap": 1246355770376.0
+     "cap": 1271014042238.0
     },
     {
      "name": "SK Hynix",
-     "cap": 868512721756.0
+     "cap": 959406437562.0
     },
     {
      "name": "SK Square",
-     "cap": 101931192915.0
+     "cap": 107064657822.0
     }
    ],
    "slug": "seoul",
@@ -178,7 +179,7 @@
   },
   {
    "name": "Paris",
-   "cap": 3583931005752.0,
+   "cap": 3537299150295.0,
    "count": 111,
    "top": [
     {
@@ -187,11 +188,11 @@
     },
     {
      "name": "LVMH",
-     "cap": 245709590556.0
+     "cap": 237531567156.0
     },
     {
      "name": "L'Oréal",
-     "cap": 237523832661.0
+     "cap": 234745374626.0
     }
    ],
    "slug": "paris",
@@ -200,20 +201,20 @@
   },
   {
    "name": "Houston",
-   "cap": 3015030376397.0,
-   "count": 85,
+   "cap": 3028430617812.0,
+   "count": 84,
    "top": [
     {
      "name": "Exxon Mobil",
-     "cap": 655726608384.0
+     "cap": 682536271872.0
     },
     {
      "name": "Chevron",
-     "cap": 409190465536.0
+     "cap": 419900817408.0
     },
     {
      "name": "ConocoPhillips",
-     "cap": 161291567104.0
+     "cap": 165003706368.0
     }
    ],
    "slug": "houston",
@@ -222,20 +223,20 @@
   },
   {
    "name": "Boston",
-   "cap": 2950875331264.0,
-   "count": 140,
+   "cap": 2901833051712.0,
+   "count": 139,
    "top": [
     {
      "name": "General Electric",
-     "cap": 349783064576.0
+     "cap": 335817474048.0
     },
     {
      "name": "GE Vernova",
-     "cap": 250872922112.0
+     "cap": 254953160704.0
     },
     {
      "name": "Thermo Fisher Scientific",
-     "cap": 226943500288.0
+     "cap": 225479294976.0
     }
    ],
    "slug": "boston",
@@ -244,20 +245,20 @@
   },
   {
    "name": "Chicago",
-   "cap": 2815882707200.0,
-   "count": 114,
+   "cap": 2759188303616.0,
+   "count": 113,
    "top": [
     {
      "name": "AbbVie",
-     "cap": 453194874880.0
-    },
-    {
-     "name": "Abbott Laboratories",
-     "cap": 187452440576.0
+     "cap": 454361186304.0
     },
     {
      "name": "McDonald",
-     "cap": 180936867840.0
+     "cap": 178700713984.0
+    },
+    {
+     "name": "Abbott Laboratories",
+     "cap": 176412573696.0
     }
    ],
    "slug": "chicago",
@@ -265,13 +266,35 @@
    "region": "North America"
   },
   {
+   "name": "Hsinchu",
+   "cap": 2686529822632.0,
+   "count": 15,
+   "top": [
+    {
+     "name": "TSMC",
+     "cap": 2246988005376.0
+    },
+    {
+     "name": "MediaTek",
+     "cap": 231777582595.0
+    },
+    {
+     "name": "United Microelectronics",
+     "cap": 56779051008.0
+    }
+   ],
+   "slug": "hsinchu",
+   "country": "Taiwan",
+   "region": "East Asia"
+  },
+  {
    "name": "Guangzhou",
-   "cap": 2697252201873.0,
+   "cap": 2653995887901.0,
    "count": 78,
    "top": [
     {
      "name": "Tencent",
-     "cap": 510996810000.0
+     "cap": 492750150000.0
     },
     {
      "name": "Huawei",
@@ -287,43 +310,21 @@
    "region": "China"
   },
   {
-   "name": "Hsinchu",
-   "cap": 2651984239847.0,
-   "count": 15,
-   "top": [
-    {
-     "name": "TSMC",
-     "cap": 2224530653184.0
-    },
-    {
-     "name": "MediaTek",
-     "cap": 223148534307.0
-    },
-    {
-     "name": "United Microelectronics",
-     "cap": 52089262080.0
-    }
-   ],
-   "slug": "hsinchu",
-   "country": "Taiwan",
-   "region": "East Asia"
-  },
-  {
    "name": "Austin",
-   "cap": 2597940859648.0,
+   "cap": 2633308730752.0,
    "count": 38,
    "top": [
     {
      "name": "Tesla",
-     "cap": 1398455795712.0
+     "cap": 1443322658816.0
     },
     {
      "name": "Oracle",
-     "cap": 457361195008.0
+     "cap": 432877174784.0
     },
     {
      "name": "Dell",
-     "cap": 338669076480.0
+     "cap": 360690188288.0
     }
    ],
    "slug": "austin",
@@ -332,16 +333,16 @@
   },
   {
    "name": "Washington-Baltimore",
-   "cap": 2411250383416.0,
-   "count": 84,
+   "cap": 2376327914692.0,
+   "count": 83,
    "top": [
     {
      "name": "RTX",
-     "cap": 270616330240.0
+     "cap": 266424811520.0
     },
     {
      "name": "Boeing",
-     "cap": 167756038144.0
+     "cap": 166333366272.0
     },
     {
      "name": "Mars",
@@ -354,20 +355,20 @@
   },
   {
    "name": "Dallas",
-   "cap": 2172115167274.0,
+   "cap": 2174490233444.0,
    "count": 76,
    "top": [
     {
      "name": "Caterpillar",
-     "cap": 374147776512.0
+     "cap": 376276058112.0
     },
     {
      "name": "Texas Instruments",
-     "cap": 236019728384.0
+     "cap": 245389656064.0
     },
     {
      "name": "Charles Schwab",
-     "cap": 188999090176.0
+     "cap": 185471254528.0
     }
    ],
    "slug": "dallas",
@@ -375,35 +376,13 @@
    "region": "North America"
   },
   {
-   "name": "Toronto",
-   "cap": 2017414545678.0,
-   "count": 80,
-   "top": [
-    {
-     "name": "Royal Bank Of Canada",
-     "cap": 291547086848.0
-    },
-    {
-     "name": "Toronto Dominion Bank",
-     "cap": 199292092416.0
-    },
-    {
-     "name": "Scotiabank",
-     "cap": 114350628864.0
-    }
-   ],
-   "slug": "toronto",
-   "country": "Canada",
-   "region": "North America"
-  },
-  {
    "name": "Brownsville",
-   "cap": 1950244274176.0,
+   "cap": 1993217015808.0,
    "count": 1,
    "top": [
     {
      "name": "SpaceX",
-     "cap": 1950244274176.0
+     "cap": 1993217015808.0
     }
    ],
    "slug": "brownsville",
@@ -411,17 +390,39 @@
    "region": "North America"
   },
   {
+   "name": "Toronto",
+   "cap": 1969066394502.0,
+   "count": 80,
+   "top": [
+    {
+     "name": "Royal Bank Of Canada",
+     "cap": 285054107648.0
+    },
+    {
+     "name": "Toronto Dominion Bank",
+     "cap": 198210682880.0
+    },
+    {
+     "name": "Scotiabank",
+     "cap": 113899659264.0
+    }
+   ],
+   "slug": "toronto",
+   "country": "Canada",
+   "region": "North America"
+  },
+  {
    "name": "Los Angeles",
-   "cap": 1811306380051.0,
-   "count": 122,
+   "cap": 1759644758482.0,
+   "count": 121,
    "top": [
     {
      "name": "Amgen",
-     "cap": 236380536832.0
+     "cap": 204007489536.0
     },
     {
      "name": "Walt Disney",
-     "cap": 181837381632.0
+     "cap": 183978491904.0
     },
     {
      "name": "Ingram Micro",
@@ -434,20 +435,20 @@
   },
   {
    "name": "Mumbai",
-   "cap": 1797197040597.0,
+   "cap": 1741570325473.0,
    "count": 106,
    "top": [
     {
      "name": "Reliance Industries",
-     "cap": 189361518799.0
+     "cap": 181940848669.0
     },
     {
      "name": "HDFC Bank",
-     "cap": 119099285504.0
+     "cap": 119921369088.0
     },
     {
      "name": "ICICI Bank",
-     "cap": 108734947328.0
+     "cap": 105476300800.0
     }
    ],
    "slug": "mumbai",
@@ -456,20 +457,20 @@
   },
   {
    "name": "Atlanta",
-   "cap": 1760055392832.0,
+   "cap": 1731291143232.0,
    "count": 53,
    "top": [
     {
      "name": "Coca-Cola",
-     "cap": 378925481984.0
+     "cap": 379872051200.0
     },
     {
      "name": "Home Depot",
-     "cap": 320308248576.0
+     "cap": 308026671104.0
     },
     {
      "name": "Southern Company",
-     "cap": 101358485504.0
+     "cap": 100277141504.0
     }
    ],
    "slug": "atlanta",
@@ -478,20 +479,20 @@
   },
   {
    "name": "Dammam",
-   "cap": 1703734943661.0,
+   "cap": 1714686119655.0,
    "count": 6,
    "top": [
     {
      "name": "Saudi Aramco",
-     "cap": 1672503398566.0
+     "cap": 1683786162198.0
     },
     {
      "name": "Saudi Arabian Fertilizer Company",
-     "cap": 16430752166.0
+     "cap": 16085445928.0
     },
     {
      "name": "ADES Holding Company",
-     "cap": 5240210527.0
+     "cap": 5289215788.0
     }
    ],
    "slug": "dammam",
@@ -500,7 +501,7 @@
   },
   {
    "name": "Minneapolis",
-   "cap": 1677402581120.0,
+   "cap": 1645180521088.0,
    "count": 34,
    "top": [
     {
@@ -509,11 +510,11 @@
     },
     {
      "name": "UnitedHealth",
-     "cap": 356470816768.0
+     "cap": 340269203456.0
     },
     {
      "name": "Medtronic",
-     "cap": 120535793664.0
+     "cap": 116350386176.0
     }
    ],
    "slug": "minneapolis",
@@ -522,7 +523,7 @@
   },
   {
    "name": "Singapore",
-   "cap": 1570481664941.0,
+   "cap": 1555925079884.0,
    "count": 58,
    "top": [
     {
@@ -531,11 +532,11 @@
     },
     {
      "name": "DBS Group",
-     "cap": 176528172020.0
+     "cap": 172847993195.0
     },
     {
      "name": "OCBC Bank",
-     "cap": 114371171925.0
+     "cap": 112118525939.0
     }
    ],
    "slug": "singapore",
@@ -544,7 +545,7 @@
   },
   {
    "name": "Geneva",
-   "cap": 1496265450379.0,
+   "cap": 1482815296972.0,
    "count": 9,
    "top": [
     {
@@ -553,11 +554,11 @@
     },
     {
      "name": "Compagnie Financière Richemont",
-     "cap": 134614267555.0
+     "cap": 126066964045.0
     },
     {
      "name": "STMicroelectronics",
-     "cap": 46594326528.0
+     "cap": 45943218176.0
     }
    ],
    "slug": "geneva",
@@ -566,16 +567,16 @@
   },
   {
    "name": "Omaha-Lincoln",
-   "cap": 1418051722752.0,
+   "cap": 1424170505216.0,
    "count": 12,
    "top": [
     {
      "name": "Berkshire Hathaway",
-     "cap": 1083263352832.0
+     "cap": 1092553998336.0
     },
     {
      "name": "Union Pacific Corporation",
-     "cap": 172056150016.0
+     "cap": 168955068416.0
     },
     {
      "name": "Kiewit",
@@ -588,12 +589,12 @@
   },
   {
    "name": "Shanghai",
-   "cap": 1414300034839.0,
+   "cap": 1384370780378.0,
    "count": 99,
    "top": [
     {
      "name": "PDD Holdings (Pinduoduo)",
-     "cap": 117017419776.0
+     "cap": 110754480128.0
     },
     {
      "name": "Jiangsu Shagang Group",
@@ -601,7 +602,7 @@
     },
     {
      "name": "Bank of Communications",
-     "cap": 97858137683.0
+     "cap": 98530321391.0
     }
    ],
    "slug": "shanghai",
@@ -610,20 +611,20 @@
   },
   {
    "name": "Indianapolis",
-   "cap": 1374252251648.0,
+   "cap": 1340696031744.0,
    "count": 12,
    "top": [
     {
      "name": "Eli Lilly",
-     "cap": 1024931856384.0
+     "cap": 994915778560.0
     },
     {
      "name": "Elevance Health",
-     "cap": 88374239232.0
+     "cap": 90807508992.0
     },
     {
      "name": "Simon Property Group",
-     "cap": 79508340736.0
+     "cap": 77758283776.0
     }
    ],
    "slug": "indianapolis",
@@ -632,7 +633,7 @@
   },
   {
    "name": "Rhine-Ruhr",
-   "cap": 1303457239381.0,
+   "cap": 1298878811577.0,
    "count": 21,
    "top": [
     {
@@ -645,7 +646,7 @@
     },
     {
      "name": "Deutsche Telekom",
-     "cap": 157772260983.0
+     "cap": 158643507525.0
     }
    ],
    "slug": "rhine-ruhr",
@@ -653,13 +654,35 @@
    "region": "Europe"
   },
   {
+   "name": "Osaka-Kyoto-Kobe",
+   "cap": 1229993282063.0,
+   "count": 75,
+   "top": [
+    {
+     "name": "Nippon Life Insurance",
+     "cap": 222000000000.0
+    },
+    {
+     "name": "Keyence",
+     "cap": 119935386390.0
+    },
+    {
+     "name": "Sumitomo Life Insurance",
+     "cap": 96300000000.0
+    }
+   ],
+   "slug": "osaka-kyoto-kobe",
+   "country": "Japan",
+   "region": "East Asia"
+  },
+  {
    "name": "Boise",
-   "cap": 1242395585024.0,
-   "count": 8,
+   "cap": 1187689244672.0,
+   "count": 7,
    "top": [
     {
      "name": "Micron Technology",
-     "cap": 1148129771520.0
+     "cap": 1101452017664.0
     },
     {
      "name": "JR Simplot",
@@ -675,43 +698,21 @@
    "region": "North America"
   },
   {
-   "name": "Osaka-Kyoto-Kobe",
-   "cap": 1238922193905.0,
-   "count": 76,
-   "top": [
-    {
-     "name": "Nippon Life Insurance",
-     "cap": 222000000000.0
-    },
-    {
-     "name": "Keyence",
-     "cap": 120725888364.0
-    },
-    {
-     "name": "Sumitomo Life Insurance",
-     "cap": 96300000000.0
-    }
-   ],
-   "slug": "osaka-kyoto-kobe",
-   "country": "Japan",
-   "region": "East Asia"
-  },
-  {
    "name": "Hong Kong",
-   "cap": 1198712794345.0,
+   "cap": 1172144289718.0,
    "count": 74,
    "top": [
     {
      "name": "AIA",
-     "cap": 101834091913.0
+     "cap": 98597469952.0
     },
     {
      "name": "Bank of China (Hong Kong)",
-     "cap": 71261684741.0
+     "cap": 70507667291.0
     },
     {
      "name": "Hong Kong Exchanges & Clearing",
-     "cap": 65899089752.0
+     "cap": 63276491678.0
     }
    ],
    "slug": "hong-kong",
@@ -720,20 +721,20 @@
   },
   {
    "name": "Taipei",
-   "cap": 1161293431201.0,
-   "count": 59,
+   "cap": 1135157770217.0,
+   "count": 60,
    "top": [
     {
      "name": "Delta Electronics",
-     "cap": 150016348682.0
+     "cap": 133186279921.0
     },
     {
      "name": "Foxconn (Hon Hai Precision Industry)",
-     "cap": 113512282790.0
+     "cap": 109982432546.0
     },
     {
      "name": "Fubon Financial",
-     "cap": 65085165456.0
+     "cap": 64230408947.0
     }
    ],
    "slug": "taipei",
@@ -742,12 +743,12 @@
   },
   {
    "name": "Amsterdam",
-   "cap": 1068715966526.0,
-   "count": 33,
+   "cap": 1029513206213.0,
+   "count": 32,
    "top": [
     {
      "name": "Prosus",
-     "cap": 188426609037.0
+     "cap": 180552934973.0
     },
     {
      "name": "SPAR",
@@ -764,20 +765,20 @@
   },
   {
    "name": "Stockholm",
-   "cap": 1042548668784.0,
+   "cap": 1020093586928.0,
    "count": 52,
    "top": [
     {
      "name": "Investor AB",
-     "cap": 130740162125.0
+     "cap": 128691162224.0
     },
     {
      "name": "Spotify",
-     "cap": 111515041792.0
+     "cap": 108085895168.0
     },
     {
      "name": "Atlas Copco",
-     "cap": 89775911209.0
+     "cap": 88131674591.0
     }
    ],
    "slug": "stockholm",
@@ -786,20 +787,20 @@
   },
   {
    "name": "Zurich",
-   "cap": 1026394153403.0,
+   "cap": 1008725591559.0,
    "count": 34,
    "top": [
     {
      "name": "ABB",
-     "cap": 173887764556.0
+     "cap": 174568421411.0
     },
     {
      "name": "UBS",
-     "cap": 169559277568.0
+     "cap": 167109885952.0
     },
     {
      "name": "Chubb",
-     "cap": 131785375744.0
+     "cap": 130496806912.0
     }
    ],
    "slug": "zurich",
@@ -808,7 +809,7 @@
   },
   {
    "name": "Stuttgart",
-   "cap": 998882488769.0,
+   "cap": 997131676744.0,
    "count": 8,
    "top": [
     {
@@ -821,7 +822,7 @@
     },
     {
      "name": "Mercedes-Benz",
-     "cap": 53026244093.0
+     "cap": 51848442350.0
     }
    ],
    "slug": "stuttgart",
@@ -830,20 +831,20 @@
   },
   {
    "name": "Charlotte",
-   "cap": 985394935808.0,
+   "cap": 973233767424.0,
    "count": 22,
    "top": [
     {
      "name": "Bank of America",
-     "cap": 438305488896.0
+     "cap": 438375383040.0
     },
     {
      "name": "Lowe's Companies",
-     "cap": 114707488768.0
+     "cap": 110426652672.0
     },
     {
      "name": "Duke Energy",
-     "cap": 93735796736.0
+     "cap": 93112033280.0
     }
    ],
    "slug": "charlotte",
@@ -852,20 +853,20 @@
   },
   {
    "name": "Munich",
-   "cap": 970726685878.0,
+   "cap": 948615277667.0,
    "count": 28,
    "top": [
     {
      "name": "Siemens",
-     "cap": 247112364720.0
+     "cap": 239583378561.0
     },
     {
      "name": "Allianz SE",
-     "cap": 198520624726.0
+     "cap": 192998859998.0
     },
     {
      "name": "Siemens Energy",
-     "cap": 145343001338.0
+     "cap": 141817971579.0
     }
    ],
    "slug": "munich",
@@ -874,12 +875,12 @@
   },
   {
    "name": "Hangzhou",
-   "cap": 964999350689.0,
+   "cap": 941375887206.0,
    "count": 43,
    "top": [
     {
      "name": "Alibaba",
-     "cap": 281472008192.0
+     "cap": 271678668800.0
     },
     {
      "name": "Zheijiang Geely Holding Group",
@@ -895,17 +896,61 @@
    "region": "China"
   },
   {
+   "name": "Fayetteville",
+   "cap": 906045904128.0,
+   "count": 4,
+   "top": [
+    {
+     "name": "Walmart",
+     "cap": 852708163584.0
+    },
+    {
+     "name": "J. B. Hunt",
+     "cap": 25399296000.0
+    },
+    {
+     "name": "Tyson Foods",
+     "cap": 18638444544.0
+    }
+   ],
+   "slug": "fayetteville",
+   "country": "United States",
+   "region": "North America"
+  },
+  {
+   "name": "Miami",
+   "cap": 901557442624.0,
+   "count": 52,
+   "top": [
+    {
+     "name": "Nextera Energy",
+     "cap": 171696865280.0
+    },
+    {
+     "name": "Southern Glazer's Wine & Spirits",
+     "cap": 75000000000.0
+    },
+    {
+     "name": "Royal Caribbean Group",
+     "cap": 69574991872.0
+    }
+   ],
+   "slug": "miami",
+   "country": "United States",
+   "region": "North America"
+  },
+  {
    "name": "Basel",
-   "cap": 938414411700.0,
+   "cap": 875055515452.0,
    "count": 11,
    "top": [
     {
      "name": "Roche",
-     "cap": 358262809975.0
+     "cap": 344225517305.0
     },
     {
      "name": "Novartis",
-     "cap": 304095395840.0
+     "cap": 260702060544.0
     },
     {
      "name": "Coop Group",
@@ -917,65 +962,21 @@
    "region": "Europe"
   },
   {
-   "name": "Miami",
-   "cap": 918206436672.0,
-   "count": 53,
-   "top": [
-    {
-     "name": "Nextera Energy",
-     "cap": 174033158144.0
-    },
-    {
-     "name": "Southern Glazer's Wine & Spirits",
-     "cap": 75000000000.0
-    },
-    {
-     "name": "Royal Caribbean Group",
-     "cap": 70925615104.0
-    }
-   ],
-   "slug": "miami",
-   "country": "United States",
-   "region": "North America"
-  },
-  {
-   "name": "Fayetteville",
-   "cap": 905729326336.0,
-   "count": 4,
-   "top": [
-    {
-     "name": "Walmart",
-     "cap": 852628602880.0
-    },
-    {
-     "name": "J. B. Hunt",
-     "cap": 25711091712.0
-    },
-    {
-     "name": "Tyson Foods",
-     "cap": 18089631744.0
-    }
-   ],
-   "slug": "fayetteville",
-   "country": "United States",
-   "region": "North America"
-  },
-  {
    "name": "Sydney",
-   "cap": 895452255825.0,
+   "cap": 868038375699.0,
    "count": 52,
    "top": [
     {
      "name": "Commonwealth Bank",
-     "cap": 193251962930.0
+     "cap": 185013687277.0
     },
     {
      "name": "Westpac Banking",
-     "cap": 86024761204.0
+     "cap": 83871477638.0
     },
     {
      "name": "Macquarie Group Limited",
-     "cap": 69122499770.0
+     "cap": 68563609724.0
     }
    ],
    "slug": "sydney",
@@ -984,20 +985,20 @@
   },
   {
    "name": "Phoenix",
-   "cap": 890729501248.0,
-   "count": 37,
+   "cap": 866240551232.0,
+   "count": 36,
    "top": [
     {
      "name": "Southern Copper",
-     "cap": 167821737984.0
+     "cap": 163372056576.0
     },
     {
      "name": "Freeport-McMoRan",
-     "cap": 104441561088.0
+     "cap": 102057762816.0
     },
     {
      "name": "Carvana",
-     "cap": 82680307712.0
+     "cap": 76661358592.0
     }
    ],
    "slug": "phoenix",
@@ -1006,20 +1007,20 @@
   },
   {
    "name": "Denver",
-   "cap": 848419363456.0,
-   "count": 41,
+   "cap": 822258712064.0,
+   "count": 40,
    "top": [
     {
      "name": "Palantir",
-     "cap": 418925182976.0
+     "cap": 401863442432.0
     },
     {
      "name": "Newmont",
-     "cap": 134967443456.0
+     "cap": 133618712576.0
     },
     {
      "name": "EchoStar",
-     "cap": 26086068224.0
+     "cap": 27056306176.0
     }
    ],
    "slug": "denver",
@@ -1028,20 +1029,20 @@
   },
   {
    "name": "Delhi",
-   "cap": 839304962741.0,
+   "cap": 820608398041.0,
    "count": 71,
    "top": [
     {
      "name": "Bharti Airtel",
-     "cap": 121504427162.0
+     "cap": 119568832582.0
     },
     {
      "name": "Maruti Suzuki India",
-     "cap": 42244255862.0
+     "cap": 40805857620.0
     },
     {
      "name": "HCL Technologies",
-     "cap": 37043013596.0
+     "cap": 34157683899.0
     }
    ],
    "slug": "delhi",
@@ -1049,17 +1050,61 @@
    "region": "South Asia"
   },
   {
+   "name": "Cleveland",
+   "cap": 782778299648.0,
+   "count": 26,
+   "top": [
+    {
+     "name": "Eaton",
+     "cap": 165213700096.0
+    },
+    {
+     "name": "Progressive",
+     "cap": 126458986496.0
+    },
+    {
+     "name": "Parker-Hannifin",
+     "cap": 119774085120.0
+    }
+   ],
+   "slug": "cleveland",
+   "country": "United States",
+   "region": "North America"
+  },
+  {
+   "name": "Madrid",
+   "cap": 777721397099.0,
+   "count": 30,
+   "top": [
+    {
+     "name": "Santander",
+     "cap": 217135497216.0
+    },
+    {
+     "name": "Banco Bilbao Vizcaya Argentaria",
+     "cap": 163065921536.0
+    },
+    {
+     "name": "Endesa",
+     "cap": 49669426356.0
+    }
+   ],
+   "slug": "madrid",
+   "country": "Spain",
+   "region": "Europe"
+  },
+  {
    "name": "Philadelphia",
-   "cap": 793474604352.0,
+   "cap": 777318635840.0,
    "count": 52,
    "top": [
     {
      "name": "Comcast",
-     "cap": 94003388416.0
+     "cap": 89425649664.0
     },
     {
      "name": "Cencora",
-     "cap": 63154253824.0
+     "cap": 61364293632.0
     },
     {
      "name": "Wawa",
@@ -1071,79 +1116,13 @@
    "region": "North America"
   },
   {
-   "name": "Cleveland",
-   "cap": 788574467072.0,
-   "count": 26,
-   "top": [
-    {
-     "name": "Eaton",
-     "cap": 159574147072.0
-    },
-    {
-     "name": "Progressive",
-     "cap": 127231852544.0
-    },
-    {
-     "name": "Parker-Hannifin",
-     "cap": 121332039680.0
-    }
-   ],
-   "slug": "cleveland",
-   "country": "United States",
-   "region": "North America"
-  },
-  {
-   "name": "Madrid",
-   "cap": 783165546062.0,
-   "count": 30,
-   "top": [
-    {
-     "name": "Santander",
-     "cap": 216816533504.0
-    },
-    {
-     "name": "Banco Bilbao Vizcaya Argentaria",
-     "cap": 162845196288.0
-    },
-    {
-     "name": "Endesa",
-     "cap": 48739693664.0
-    }
-   ],
-   "slug": "madrid",
-   "country": "Spain",
-   "region": "Europe"
-  },
-  {
-   "name": "Calgary",
-   "cap": 732277687446.0,
-   "count": 27,
-   "top": [
-    {
-     "name": "Enbridge",
-     "cap": 109400842240.0
-    },
-    {
-     "name": "Canadian Natural Resources",
-     "cap": 104023285760.0
-    },
-    {
-     "name": "CPKC (Canadian Pacific Kansas City)",
-     "cap": 80523657216.0
-    }
-   ],
-   "slug": "calgary",
-   "country": "Canada",
-   "region": "North America"
-  },
-  {
    "name": "Abu Dhabi",
-   "cap": 731933765531.0,
+   "cap": 741295244481.0,
    "count": 24,
    "top": [
     {
      "name": "International Holding Company",
-     "cap": 220679855523.0
+     "cap": 218583573289.0
     },
     {
      "name": "TAQA",
@@ -1151,7 +1130,7 @@
     },
     {
      "name": "ADNOC Gas",
-     "cap": 67289145765.0
+     "cap": 68541116513.0
     }
    ],
    "slug": "abu-dhabi",
@@ -1159,17 +1138,39 @@
    "region": "MENA"
   },
   {
+   "name": "Calgary",
+   "cap": 725497644301.0,
+   "count": 27,
+   "top": [
+    {
+     "name": "Enbridge",
+     "cap": 104313020416.0
+    },
+    {
+     "name": "Canadian Natural Resources",
+     "cap": 103219306496.0
+    },
+    {
+     "name": "Suncor Energy",
+     "cap": 81270693888.0
+    }
+   ],
+   "slug": "calgary",
+   "country": "Canada",
+   "region": "North America"
+  },
+  {
    "name": "Eindhoven",
-   "cap": 716137254912.0,
+   "cap": 711984119808.0,
    "count": 2,
    "top": [
     {
      "name": "ASML",
-     "cap": 658685427712.0
+     "cap": 652317032448.0
     },
     {
      "name": "NXP Semiconductors",
-     "cap": 57451827200.0
+     "cap": 59667087360.0
     }
    ],
    "slug": "eindhoven",
@@ -1177,30 +1178,30 @@
    "region": "Europe"
   },
   {
-   "name": "Melbourne",
-   "cap": 657495036316.0,
-   "count": 30,
+   "name": "Hefei",
+   "cap": 667043836732.0,
+   "count": 8,
    "top": [
     {
-     "name": "BHP Group",
-     "cap": 229800329216.0
+     "name": "CXMT",
+     "cap": 599925050899.0
     },
     {
-     "name": "National Australia Bank",
-     "cap": 86518861485.0
+     "name": "Sungrow Power Supply",
+     "cap": 26130314035.0
     },
     {
-     "name": "ANZ Bank",
-     "cap": 82278658059.0
+     "name": "iFLYTEK",
+     "cap": 14043578870.0
     }
    ],
-   "slug": "melbourne",
-   "country": "Australia",
-   "region": "Oceania"
+   "slug": "hefei",
+   "country": "China",
+   "region": "China"
   },
   {
    "name": "Nanjing",
-   "cap": 650936369681.0,
+   "cap": 651237798766.0,
    "count": 12,
    "top": [
     {
@@ -1213,7 +1214,7 @@
     },
     {
      "name": "Bank of Jiangsu",
-     "cap": 33634463742.0
+     "cap": 34447784872.0
     }
    ],
    "slug": "nanjing",
@@ -1221,43 +1222,21 @@
    "region": "China"
   },
   {
-   "name": "Hefei",
-   "cap": 648796792930.0,
-   "count": 8,
-   "top": [
-    {
-     "name": "CXMT",
-     "cap": 579195113664.0
-    },
-    {
-     "name": "Sungrow Power Supply",
-     "cap": 27362886811.0
-    },
-    {
-     "name": "iFLYTEK",
-     "cap": 14161304044.0
-    }
-   ],
-   "slug": "hefei",
-   "country": "China",
-   "region": "China"
-  },
-  {
    "name": "Sao Paulo",
-   "cap": 643311367558.0,
+   "cap": 645462657281.0,
    "count": 38,
    "top": [
     {
      "name": "Itaú Unibanco",
-     "cap": 89828253696.0
+     "cap": 91812192256.0
     },
     {
      "name": "Nu Holdings",
-     "cap": 74247684096.0
+     "cap": 70624665600.0
     },
     {
      "name": "BTG Pactual",
-     "cap": 53068909280.0
+     "cap": 53573680803.0
     }
    ],
    "slug": "sao-paulo",
@@ -1265,43 +1244,65 @@
    "region": "Latin America"
   },
   {
-   "name": "Pittsburgh",
-   "cap": 627200054016.0,
-   "count": 28,
+   "name": "Melbourne",
+   "cap": 638633404842.0,
+   "count": 30,
    "top": [
     {
-     "name": "Howmet Aerospace",
-     "cap": 103397236736.0
+     "name": "BHP Group",
+     "cap": 221489709056.0
     },
     {
-     "name": "PNC Financial Services",
-     "cap": 97980571648.0
+     "name": "National Australia Bank",
+     "cap": 84651224528.0
     },
     {
-     "name": "Coherent Corp.",
-     "cap": 55197274112.0
+     "name": "ANZ Bank",
+     "cap": 80040323994.0
     }
    ],
-   "slug": "pittsburgh",
-   "country": "United States",
-   "region": "North America"
+   "slug": "melbourne",
+   "country": "Australia",
+   "region": "Oceania"
+  },
+  {
+   "name": "Frankfurt",
+   "cap": 622168501178.0,
+   "count": 17,
+   "top": [
+    {
+     "name": "DZ Bank",
+     "cap": 117300000000.0
+    },
+    {
+     "name": "Deutsche Bank",
+     "cap": 76061925376.0
+    },
+    {
+     "name": "Heraeus",
+     "cap": 75300000000.0
+    }
+   ],
+   "slug": "frankfurt",
+   "country": "Germany",
+   "region": "Europe"
   },
   {
    "name": "Riyadh",
-   "cap": 622397279108.0,
+   "cap": 619412594446.0,
    "count": 30,
    "top": [
     {
      "name": "Al Rajhi Bank",
-     "cap": 106024287911.0
+     "cap": 105445345174.0
     },
     {
      "name": "Ma'aden",
-     "cap": 69059409384.0
+     "cap": 68219632776.0
     },
     {
      "name": "The Saudi National Bank",
-     "cap": 66829600616.0
+     "cap": 65742509888.0
     }
    ],
    "slug": "riyadh",
@@ -1309,21 +1310,43 @@
    "region": "MENA"
   },
   {
+   "name": "Pittsburgh",
+   "cap": 614076365056.0,
+   "count": 28,
+   "top": [
+    {
+     "name": "PNC Financial Services",
+     "cap": 97438007296.0
+    },
+    {
+     "name": "Howmet Aerospace",
+     "cap": 91568791552.0
+    },
+    {
+     "name": "Coherent Corp.",
+     "cap": 59801288704.0
+    }
+   ],
+   "slug": "pittsburgh",
+   "country": "United States",
+   "region": "North America"
+  },
+  {
    "name": "Cincinnati",
-   "cap": 609975779840.0,
+   "cap": 606926203904.0,
    "count": 13,
    "top": [
     {
      "name": "Procter & Gamble",
-     "cap": 340132134912.0
+     "cap": 337414619136.0
     },
     {
      "name": "Cintas",
-     "cap": 80221995008.0
+     "cap": 80634167296.0
     },
     {
      "name": "Fifth Third Bank",
-     "cap": 49761193984.0
+     "cap": 49625161728.0
     }
    ],
    "slug": "cincinnati",
@@ -1332,20 +1355,20 @@
   },
   {
    "name": "San Diego",
-   "cap": 589613821728.0,
-   "count": 36,
+   "cap": 583509077248.0,
+   "count": 35,
    "top": [
     {
      "name": "QUALCOMM",
-     "cap": 180224524288.0
+     "cap": 194354970624.0
     },
     {
      "name": "Realty Income",
-     "cap": 57955856384.0
+     "cap": 56299974656.0
     },
     {
      "name": "Sempra",
-     "cap": 54953787392.0
+     "cap": 54496051200.0
     }
    ],
    "slug": "san-diego",
@@ -1353,30 +1376,8 @@
    "region": "North America"
   },
   {
-   "name": "Copenhagen",
-   "cap": 584916522185.0,
-   "count": 26,
-   "top": [
-    {
-     "name": "Novo Nordisk",
-     "cap": 206019985408.0
-    },
-    {
-     "name": "Maersk",
-     "cap": 50652305380.0
-    },
-    {
-     "name": "DSV",
-     "cap": 49057991723.0
-    }
-   ],
-   "slug": "copenhagen",
-   "country": "Denmark",
-   "region": "Europe"
-  },
-  {
    "name": "St. Louis",
-   "cap": 580800607680.0,
+   "cap": 578433592256.0,
    "count": 23,
    "top": [
     {
@@ -1385,7 +1386,7 @@
     },
     {
      "name": "Emerson",
-     "cap": 85243002880.0
+     "cap": 84891582464.0
     },
     {
      "name": "World Wide Technology",
@@ -1398,20 +1399,20 @@
   },
   {
    "name": "Montreal",
-   "cap": 575173666934.0,
+   "cap": 564098960754.0,
    "count": 22,
    "top": [
     {
      "name": "Bank of Montreal",
-     "cap": 121919168512.0
+     "cap": 121557729280.0
     },
     {
      "name": "Canadian National Railway",
-     "cap": 74626506752.0
+     "cap": 73949020160.0
     },
     {
      "name": "National Bank of Canada",
-     "cap": 60640916919.0
+     "cap": 58919980180.0
     }
    ],
    "slug": "montreal",
@@ -1419,65 +1420,43 @@
    "region": "North America"
   },
   {
-   "name": "Frankfurt",
-   "cap": 564481553046.0,
-   "count": 16,
+   "name": "Copenhagen",
+   "cap": 561727220236.0,
+   "count": 26,
    "top": [
     {
-     "name": "DZ Bank",
-     "cap": 117300000000.0
+     "name": "Novo Nordisk",
+     "cap": 190323097600.0
     },
     {
-     "name": "Deutsche Bank",
-     "cap": 77659078656.0
+     "name": "Maersk",
+     "cap": 49944674997.0
     },
     {
-     "name": "Heraeus",
-     "cap": 75300000000.0
+     "name": "DSV",
+     "cap": 47940200506.0
     }
    ],
-   "slug": "frankfurt",
-   "country": "Germany",
-   "region": "Europe"
-  },
-  {
-   "name": "Dublin",
-   "cap": 549814185436.0,
-   "count": 24,
-   "top": [
-    {
-     "name": "Accenture",
-     "cap": 114261827584.0
-    },
-    {
-     "name": "Trane Technologies",
-     "cap": 98548383744.0
-    },
-    {
-     "name": "Cement Roadstone Holding",
-     "cap": 62709714944.0
-    }
-   ],
-   "slug": "dublin",
-   "country": "Ireland",
+   "slug": "copenhagen",
+   "country": "Denmark",
    "region": "Europe"
   },
   {
    "name": "Cambridge",
-   "cap": 538606903808.0,
+   "cap": 548202832384.0,
    "count": 4,
    "top": [
     {
      "name": "Arm Holdings",
-     "cap": 269231767552.0
+     "cap": 282795343872.0
     },
     {
      "name": "AstraZeneca",
-     "cap": 252330754048.0
+     "cap": 248406982656.0
     },
     {
      "name": "Summit Therapeutics",
-     "cap": 14044382208.0
+     "cap": 14000505856.0
     }
    ],
    "slug": "cambridge",
@@ -1485,9 +1464,31 @@
    "region": "Europe"
   },
   {
+   "name": "Dublin",
+   "cap": 537316873236.0,
+   "count": 24,
+   "top": [
+    {
+     "name": "Accenture",
+     "cap": 112536141824.0
+    },
+    {
+     "name": "Trane Technologies",
+     "cap": 97364656128.0
+    },
+    {
+     "name": "Cement Roadstone Holding",
+     "cap": 58910941184.0
+    }
+   ],
+   "slug": "dublin",
+   "country": "Ireland",
+   "region": "Europe"
+  },
+  {
    "name": "Columbus",
-   "cap": 501649646208.0,
-   "count": 21,
+   "cap": 480289004416.0,
+   "count": 20,
    "top": [
     {
      "name": "Nationwide",
@@ -1495,11 +1496,11 @@
     },
     {
      "name": "Vertiv Holdings",
-     "cap": 108000731136.0
+     "cap": 98965053440.0
     },
     {
      "name": "American Electric Power",
-     "cap": 67777474560.0
+     "cap": 67140530176.0
     }
    ],
    "slug": "columbus",
@@ -1508,20 +1509,20 @@
   },
   {
    "name": "Nagoya",
-   "cap": 478861440724.0,
+   "cap": 477843490752.0,
    "count": 27,
    "top": [
     {
      "name": "Toyota",
-     "cap": 233414393856.0
+     "cap": 234705158144.0
     },
     {
      "name": "Toyota Tsusho",
-     "cap": 45571474840.0
+     "cap": 46084125773.0
     },
     {
      "name": "Ibiden",
-     "cap": 36862849194.0
+     "cap": 35776672322.0
     }
    ],
    "slug": "nagoya",
@@ -1530,20 +1531,20 @@
   },
   {
    "name": "Milan",
-   "cap": 467980383883.0,
+   "cap": 472030958573.0,
    "count": 26,
    "top": [
     {
      "name": "UniCredit",
-     "cap": 145599146425.0
+     "cap": 146897461168.0
     },
     {
      "name": "Prysmian Group",
-     "cap": 41500145565.0
+     "cap": 43147376607.0
     },
     {
      "name": "Banco BPM",
-     "cap": 28161273211.0
+     "cap": 28390665270.0
     }
    ],
    "slug": "milan",
@@ -1552,20 +1553,20 @@
   },
   {
    "name": "Bangkok",
-   "cap": 460806869506.0,
+   "cap": 463594171002.0,
    "count": 35,
    "top": [
     {
      "name": "Delta Electronics (Thailand)",
-     "cap": 97060691923.0
+     "cap": 99881328756.0
     },
     {
      "name": "PTT PCL",
-     "cap": 35728265439.0
+     "cap": 36081953620.0
     },
     {
      "name": "Advanced Info Service (AIS)",
-     "cap": 31278923022.0
+     "cap": 31934188881.0
     }
    ],
    "slug": "bangkok",
@@ -1574,20 +1575,20 @@
   },
   {
    "name": "Detroit",
-   "cap": 440003404800.0,
+   "cap": 427391189248.0,
    "count": 26,
    "top": [
     {
      "name": "General Motors",
-     "cap": 79374663680.0
+     "cap": 77439139840.0
     },
     {
      "name": "Ford",
-     "cap": 58298650624.0
+     "cap": 55706714112.0
     },
     {
      "name": "Rocket Companies",
-     "cap": 39812894720.0
+     "cap": 37321048064.0
     }
    ],
    "slug": "detroit",
@@ -1596,12 +1597,12 @@
   },
   {
    "name": "Rhine-Neckar",
-   "cap": 439122957234.0,
+   "cap": 424787478324.0,
    "count": 7,
    "top": [
     {
      "name": "SAP",
-     "cap": 248280891392.0
+     "cap": 238181597184.0
     },
     {
      "name": "Phoenix Pharma",
@@ -1609,7 +1610,7 @@
     },
     {
      "name": "BASF",
-     "cap": 53361360559.0
+     "cap": 51771189098.0
     }
    ],
    "slug": "rhine-neckar",
@@ -1618,20 +1619,20 @@
   },
   {
    "name": "Brussels",
-   "cap": 423767348467.0,
-   "count": 23,
+   "cap": 410878187404.0,
+   "count": 22,
    "top": [
     {
      "name": "Anheuser-Busch Inbev",
-     "cap": 158219304960.0
+     "cap": 154044760064.0
     },
     {
      "name": "KBC",
-     "cap": 61221138432.0
+     "cap": 60203778048.0
     },
     {
      "name": "UCB",
-     "cap": 47394346287.0
+     "cap": 46233296169.0
     }
    ],
    "slug": "brussels",
@@ -1640,7 +1641,7 @@
   },
   {
    "name": "Milwaukee",
-   "cap": 413563842176.0,
+   "cap": 409803388544.0,
    "count": 22,
    "top": [
     {
@@ -1649,7 +1650,7 @@
     },
     {
      "name": "Rockwell Automation",
-     "cap": 48271753216.0
+     "cap": 47668649984.0
     },
     {
      "name": "SC Johnson",
@@ -1661,52 +1662,8 @@
    "region": "North America"
   },
   {
-   "name": "Vancouver",
-   "cap": 413047068875.0,
-   "count": 43,
-   "top": [
-    {
-     "name": "Wheaton Precious Metals",
-     "cap": 70385713152.0
-    },
-    {
-     "name": "Teck Resources",
-     "cap": 33900460032.0
-    },
-    {
-     "name": "First Quantum Minerals",
-     "cap": 26870793703.0
-    }
-   ],
-   "slug": "vancouver",
-   "country": "Canada",
-   "region": "North America"
-  },
-  {
-   "name": "Tel-Aviv",
-   "cap": 406483400798.0,
-   "count": 59,
-   "top": [
-    {
-     "name": "Teva Pharmaceutical Industries",
-     "cap": 42370166784.0
-    },
-    {
-     "name": "Bank Leumi",
-     "cap": 38683057616.0
-    },
-    {
-     "name": "Bank Hapoalim",
-     "cap": 34643890639.0
-    }
-   ],
-   "slug": "tel-aviv",
-   "country": "Israel",
-   "region": "MENA"
-  },
-  {
    "name": "San Antonio",
-   "cap": 403212999616.0,
+   "cap": 408384671680.0,
    "count": 7,
    "top": [
     {
@@ -1714,12 +1671,12 @@
      "cap": 148710000000.0
     },
     {
-     "name": "USAA",
-     "cap": 106800000000.0
+     "name": "Valero Energy",
+     "cap": 112412639232.0
     },
     {
-     "name": "Valero Energy",
-     "cap": 106740465664.0
+     "name": "USAA",
+     "cap": 106800000000.0
     }
    ],
    "slug": "san-antonio",
@@ -1727,43 +1684,43 @@
    "region": "North America"
   },
   {
-   "name": "Mexico City",
-   "cap": 402998509149.0,
-   "count": 24,
+   "name": "Vancouver",
+   "cap": 402563561090.0,
+   "count": 42,
    "top": [
     {
-     "name": "Grupo México",
-     "cap": 103369957376.0
+     "name": "Wheaton Precious Metals",
+     "cap": 69995134976.0
     },
     {
-     "name": "America Movil",
-     "cap": 68886724608.0
+     "name": "Teck Resources",
+     "cap": 32595464192.0
     },
     {
-     "name": "Walmex",
-     "cap": 46494625792.0
+     "name": "First Quantum Minerals",
+     "cap": 26439564817.0
     }
    ],
-   "slug": "mexico-city",
-   "country": "Mexico",
-   "region": "Latin America"
+   "slug": "vancouver",
+   "country": "Canada",
+   "region": "North America"
   },
   {
    "name": "Helsinki",
-   "cap": 393245181430.0,
+   "cap": 400006320538.0,
    "count": 26,
    "top": [
     {
      "name": "Nordea Bank",
-     "cap": 70603003980.0
+     "cap": 70166711107.0
     },
     {
      "name": "Nokia",
-     "cap": 56154406912.0
+     "cap": 62312914944.0
     },
     {
      "name": "KONE",
-     "cap": 31004308336.0
+     "cap": 29849868287.0
     }
    ],
    "slug": "helsinki",
@@ -1771,17 +1728,61 @@
    "region": "Europe"
   },
   {
+   "name": "Tel-Aviv",
+   "cap": 397954749746.0,
+   "count": 59,
+   "top": [
+    {
+     "name": "Teva Pharmaceutical Industries",
+     "cap": 43220832256.0
+    },
+    {
+     "name": "Bank Leumi",
+     "cap": 38209411720.0
+    },
+    {
+     "name": "Bank Hapoalim",
+     "cap": 34358788446.0
+    }
+   ],
+   "slug": "tel-aviv",
+   "country": "Israel",
+   "region": "MENA"
+  },
+  {
+   "name": "Mexico City",
+   "cap": 394113057078.0,
+   "count": 24,
+   "top": [
+    {
+     "name": "Grupo México",
+     "cap": 100944158720.0
+    },
+    {
+     "name": "America Movil",
+     "cap": 68300169216.0
+    },
+    {
+     "name": "Walmex",
+     "cap": 46322421760.0
+    }
+   ],
+   "slug": "mexico-city",
+   "country": "Mexico",
+   "region": "Latin America"
+  },
+  {
    "name": "Kansas City",
-   "cap": 384972035328.0,
+   "cap": 386032096000.0,
    "count": 15,
    "top": [
     {
      "name": "T-Mobile US",
-     "cap": 194711355392.0
+     "cap": 195580215296.0
     },
     {
      "name": "Garmin",
-     "cap": 53425938432.0
+     "cap": 54513631232.0
     },
     {
      "name": "JE Dunn Construction Group",
@@ -1808,7 +1809,7 @@
   },
   {
    "name": "Suzhou",
-   "cap": 364747528025.0,
+   "cap": 365847535975.0,
    "count": 9,
    "top": [
     {
@@ -1817,11 +1818,11 @@
     },
     {
      "name": "Suzhou TFC Optical Communication",
-     "cap": 40490170468.0
+     "cap": 42672558051.0
     },
     {
      "name": "HENGTONG Optic-Electric",
-     "cap": 22903976809.0
+     "cap": 24028944487.0
     }
    ],
    "slug": "suzhou",
@@ -1829,43 +1830,21 @@
    "region": "China"
   },
   {
-   "name": "Bangalore",
-   "cap": 355489602861.0,
-   "count": 47,
-   "top": [
-    {
-     "name": "Infosys",
-     "cap": 47388504064.0
-    },
-    {
-     "name": "Titan Company",
-     "cap": 47148006651.0
-    },
-    {
-     "name": "Hindustan Aeronautics",
-     "cap": 34374927320.0
-    }
-   ],
-   "slug": "bangalore",
-   "country": "India",
-   "region": "South Asia"
-  },
-  {
    "name": "Toledo",
-   "cap": 354299559424.0,
+   "cap": 355407414528.0,
    "count": 5,
    "top": [
     {
      "name": "Welltower",
-     "cap": 170177495040.0
+     "cap": 169781182464.0
     },
     {
      "name": "Marathon Petroleum",
-     "cap": 109212753920.0
+     "cap": 111186952192.0
     },
     {
      "name": "MPLX",
-     "cap": 60496920576.0
+     "cap": 60669276160.0
     }
    ],
    "slug": "toledo",
@@ -1873,8 +1852,30 @@
    "region": "North America"
   },
   {
+   "name": "Bangalore",
+   "cap": 347928724644.0,
+   "count": 47,
+   "top": [
+    {
+     "name": "Titan Company",
+     "cap": 46524923760.0
+    },
+    {
+     "name": "Infosys",
+     "cap": 44836814848.0
+    },
+    {
+     "name": "Hindustan Aeronautics",
+     "cap": 34334742222.0
+    }
+   ],
+   "slug": "bangalore",
+   "country": "India",
+   "region": "South Asia"
+  },
+  {
    "name": "Rotterdam-The Hague",
-   "cap": 324174315204.0,
+   "cap": 322480331309.0,
    "count": 8,
    "top": [
     {
@@ -1887,7 +1888,7 @@
     },
     {
      "name": "NN Group",
-     "cap": 24248903259.0
+     "cap": 23611330751.0
     }
    ],
    "slug": "rotterdam-the-hague",
@@ -1895,21 +1896,43 @@
    "region": "Europe"
   },
   {
+   "name": "Kaohsiung",
+   "cap": 320576959217.0,
+   "count": 7,
+   "top": [
+    {
+     "name": "ASE Group",
+     "cap": 102766673920.0
+    },
+    {
+     "name": "Nan Ya Plastics",
+     "cap": 58863044656.0
+    },
+    {
+     "name": "Unimicron",
+     "cap": 50725138904.0
+    }
+   ],
+   "slug": "kaohsiung",
+   "country": "Taiwan",
+   "region": "East Asia"
+  },
+  {
    "name": "Johannesburg",
-   "cap": 323353862528.0,
+   "cap": 317078375736.0,
    "count": 33,
    "top": [
     {
      "name": "AngloGold Ashanti",
-     "cap": 55164252160.0
+     "cap": 52812423168.0
     },
     {
      "name": "Gold Fields",
-     "cap": 42228494336.0
+     "cap": 40179429376.0
     },
     {
      "name": "FirstRand",
-     "cap": 34064051900.0
+     "cap": 33585456000.0
     }
    ],
    "slug": "johannesburg",
@@ -1918,20 +1941,20 @@
   },
   {
    "name": "Rome",
-   "cap": 316433020871.0,
+   "cap": 316533957712.0,
    "count": 10,
    "top": [
     {
      "name": "Enel",
-     "cap": 104472923257.0
+     "cap": 103097088473.0
     },
     {
      "name": "ENI",
-     "cap": 77191749632.0
+     "cap": 80570277888.0
     },
     {
      "name": "Poste Italiane",
-     "cap": 40350810514.0
+     "cap": 39045433733.0
     }
    ],
    "slug": "rome",
@@ -1939,43 +1962,21 @@
    "region": "Europe"
   },
   {
-   "name": "Kaohsiung",
-   "cap": 308217231074.0,
-   "count": 7,
-   "top": [
-    {
-     "name": "ASE Group",
-     "cap": 97663483904.0
-    },
-    {
-     "name": "Nan Ya Plastics",
-     "cap": 56594947724.0
-    },
-    {
-     "name": "Nanya Technology",
-     "cap": 48636691504.0
-    }
-   ],
-   "slug": "kaohsiung",
-   "country": "Taiwan",
-   "region": "East Asia"
-  },
-  {
    "name": "Kuala Lumpur",
-   "cap": 302499758909.0,
+   "cap": 300292500790.0,
    "count": 35,
    "top": [
     {
      "name": "Maybank",
-     "cap": 30299426816.0
+     "cap": 31750895616.0
     },
     {
      "name": "PBBank (Public Bank Bhd)",
-     "cap": 23921121106.0
+     "cap": 22903473610.0
     },
     {
      "name": "CIMB Group",
-     "cap": 21400679214.0
+     "cap": 20700600823.0
     }
    ],
    "slug": "kuala-lumpur",
@@ -1984,7 +1985,7 @@
   },
   {
    "name": "Zug",
-   "cap": 298268025817.0,
+   "cap": 290517862184.0,
    "count": 10,
    "top": [
     {
@@ -1993,11 +1994,11 @@
     },
     {
      "name": "Holcim Group",
-     "cap": 50425021945.0
+     "cap": 47738938406.0
     },
     {
      "name": "Galderma Group",
-     "cap": 45675053750.0
+     "cap": 44272040686.0
     }
    ],
    "slug": "zug",
@@ -2006,20 +2007,20 @@
   },
   {
    "name": "Jakarta",
-   "cap": 292767240547.0,
+   "cap": 286574056737.0,
    "count": 32,
    "top": [
     {
      "name": "Bank Central Asia",
-     "cap": 46681399302.0
+     "cap": 44131209779.0
     },
     {
      "name": "Bank Rakyat Indonesia",
-     "cap": 28972797074.0
+     "cap": 27986896766.0
     },
     {
      "name": "PT DCI Indonesia Tbk",
-     "cap": 27202635688.0
+     "cap": 27227721548.0
     }
    ],
    "slug": "jakarta",
@@ -2028,20 +2029,20 @@
   },
   {
    "name": "Richmond",
-   "cap": 279310498560.0,
+   "cap": 276203703040.0,
    "count": 14,
    "top": [
     {
      "name": "Altria Group",
-     "cap": 115011952640.0
+     "cap": 115178938368.0
     },
     {
      "name": "Dominion Energy",
-     "cap": 57907986432.0
+     "cap": 56606289920.0
     },
     {
      "name": "Markel Group",
-     "cap": 22632984576.0
+     "cap": 22105915392.0
     }
    ],
    "slug": "richmond",
@@ -2049,30 +2050,8 @@
    "region": "North America"
   },
   {
-   "name": "Lausanne",
-   "cap": 278404140854.0,
-   "count": 4,
-   "top": [
-    {
-     "name": "Nestlé",
-     "cap": 248688873430.0
-    },
-    {
-     "name": "Logitech",
-     "cap": 14612370432.0
-    },
-    {
-     "name": "Banque Cantonale Vaudoise",
-     "cap": 14102896992.0
-    }
-   ],
-   "slug": "lausanne",
-   "country": "Switzerland",
-   "region": "Europe"
-  },
-  {
    "name": "Haikou",
-   "cap": 274445636352.0,
+   "cap": 274315989760.0,
    "count": 2,
    "top": [
     {
@@ -2081,7 +2060,7 @@
     },
     {
      "name": "Hainan Airlines",
-     "cap": 8945636352.0
+     "cap": 8815989760.0
     }
    ],
    "slug": "haikou",
@@ -2089,65 +2068,43 @@
    "region": "China"
   },
   {
-   "name": "Perth",
-   "cap": 273045309421.0,
-   "count": 20,
+   "name": "Lausanne",
+   "cap": 273354452016.0,
+   "count": 4,
    "top": [
     {
-     "name": "Wesfarmers",
-     "cap": 63586632015.0
+     "name": "Nestlé",
+     "cap": 244379015522.0
     },
     {
-     "name": "Woodside Energy",
-     "cap": 43345080320.0
+     "name": "Logitech",
+     "cap": 14705441792.0
     },
     {
-     "name": "Fortescue",
-     "cap": 38204190666.0
+     "name": "Banque Cantonale Vaudoise",
+     "cap": 13269994702.0
     }
    ],
-   "slug": "perth",
-   "country": "Australia",
-   "region": "Oceania"
-  },
-  {
-   "name": "Pune",
-   "cap": 252327880982.0,
-   "count": 21,
-   "top": [
-    {
-     "name": "Bajaj Finance",
-     "cap": 69830945116.0
-    },
-    {
-     "name": "Bajaj Auto",
-     "cap": 34669352704.0
-    },
-    {
-     "name": "Bajaj Finserv",
-     "cap": 33368427532.0
-    }
-   ],
-   "slug": "pune",
-   "country": "India",
-   "region": "South Asia"
+   "slug": "lausanne",
+   "country": "Switzerland",
+   "region": "Europe"
   },
   {
    "name": "Moscow",
-   "cap": 249923507263.0,
+   "cap": 263480390512.0,
    "count": 11,
    "top": [
     {
      "name": "Sberbank",
-     "cap": 69935854295.0
-    },
-    {
-     "name": "Lukoil",
-     "cap": 40318466053.0
+     "cap": 72660192511.0
     },
     {
      "name": "Rosneft",
-     "cap": 39335531110.0
+     "cap": 44089977216.0
+    },
+    {
+     "name": "Lukoil",
+     "cap": 43263043800.0
     }
    ],
    "slug": "moscow",
@@ -2155,18 +2112,26 @@
    "region": "Eurasia"
   },
   {
-   "name": "Zunyi",
-   "cap": 248146836438.0,
-   "count": 1,
+   "name": "Perth",
+   "cap": 261514831898.0,
+   "count": 20,
    "top": [
     {
-     "name": "Kweichow Moutai",
-     "cap": 248146836438.0
+     "name": "Wesfarmers",
+     "cap": 59334877607.0
+    },
+    {
+     "name": "Woodside Energy",
+     "cap": 46063656960.0
+    },
+    {
+     "name": "Fortescue",
+     "cap": 36837969666.0
     }
    ],
-   "slug": "zunyi",
-   "country": "China",
-   "region": "China"
+   "slug": "perth",
+   "country": "Australia",
+   "region": "Oceania"
   },
   {
    "name": "Bloomington–Normal",
@@ -2181,48 +2146,92 @@
    "slug": "bloomington-normal",
    "country": "United States",
    "region": "North America"
+  },
+  {
+   "name": "Pune",
+   "cap": 245830344517.0,
+   "count": 21,
+   "top": [
+    {
+     "name": "Bajaj Finance",
+     "cap": 67359582113.0
+    },
+    {
+     "name": "Bajaj Auto",
+     "cap": 33589692433.0
+    },
+    {
+     "name": "Bajaj Finserv",
+     "cap": 32050119145.0
+    }
+   ],
+   "slug": "pune",
+   "country": "India",
+   "region": "South Asia"
+  },
+  {
+   "name": "Tampa",
+   "cap": 241933595904.0,
+   "count": 13,
+   "top": [
+    {
+     "name": "Tech Data",
+     "cap": 111000000000.0
+    },
+    {
+     "name": "Jabil",
+     "cap": 33330675712.0
+    },
+    {
+     "name": "Raymond James Financial",
+     "cap": 33321666560.0
+    }
+   ],
+   "slug": "tampa",
+   "country": "United States",
+   "region": "North America"
   }
  ],
  "countries": [
   {
    "name": "United States",
-   "cap": 94801191406688.0,
-   "count": 4653,
+   "cap": 94142597949252.0,
+   "count": 4733,
    "top": {
     "name": "NVIDIA",
-    "cap": 5562502742016.0
+    "cap": 5271048421376.0
    }
   },
   {
    "name": "China",
-   "cap": 15273209098424.0,
+   "cap": 15062766599971.0,
    "count": 679,
    "top": {
     "name": "CXMT",
-    "cap": 579195113664.0
+    "cap": 599925050899.0
    }
   },
   {
    "name": "Japan",
-   "cap": 8575257516813.0,
-   "count": 948,
+   "cap": 8579068445239.0,
+   "count": 949,
    "top": {
     "name": "Mitsubishi UFJ Financial",
-    "cap": 271151382528.0
+    "cap": 268900220928.0
    }
   },
   {
    "name": "United Kingdom",
-   "cap": 6210604541037.0,
-   "count": 562,
+   "cap": 6121709390428.0,
+   "count": 560,
    "top": {
     "name": "HSBC",
-    "cap": 366959591424.0
+    "cap": 360627863552.0
    }
   },
   {
    "name": "Germany",
-   "cap": 5279866749723.0,
+   "cap": 5217172667338.0,
    "count": 430,
    "top": {
     "name": "Schwarz Group",
@@ -2230,17 +2239,8 @@
    }
   },
   {
-   "name": "Switzerland",
-   "cap": 4509269213160.0,
-   "count": 227,
-   "top": {
-    "name": "Vitol",
-    "cap": 1200000000000.0
-   }
-  },
-  {
    "name": "France",
-   "cap": 4466546281372.0,
+   "cap": 4417249315500.0,
    "count": 380,
    "top": {
     "name": "E.Leclerc",
@@ -2248,71 +2248,80 @@
    }
   },
   {
+   "name": "Switzerland",
+   "cap": 4394763120345.0,
+   "count": 227,
+   "top": {
+    "name": "Vitol",
+    "cap": 1200000000000.0
+   }
+  },
+  {
    "name": "Canada",
-   "cap": 4410633913351.0,
-   "count": 479,
+   "cap": 4300099970426.0,
+   "count": 475,
    "top": {
     "name": "Royal Bank Of Canada",
-    "cap": 291547086848.0
+    "cap": 285054107648.0
    }
   },
   {
    "name": "India",
-   "cap": 4295305111961.0,
+   "cap": 4192169134609.0,
    "count": 661,
    "top": {
     "name": "Reliance Industries",
-    "cap": 189361518799.0
+    "cap": 181940848669.0
    }
   },
   {
    "name": "Taiwan",
-   "cap": 4176716348461.0,
+   "cap": 4188472740505.0,
    "count": 116,
    "top": {
     "name": "TSMC",
-    "cap": 2224530653184.0
+    "cap": 2246988005376.0
    }
   },
   {
    "name": "South Korea",
-   "cap": 3956510566281.0,
+   "cap": 4091901846435.0,
    "count": 194,
    "top": {
     "name": "Samsung",
-    "cap": 1246355770376.0
+    "cap": 1271014042238.0
    }
   },
   {
    "name": "Saudi Arabia",
-   "cap": 2517842290857.0,
+   "cap": 2525037035078.0,
    "count": 243,
    "top": {
     "name": "Saudi Aramco",
-    "cap": 1672503398566.0
-   }
-  },
-  {
-   "name": "Australia",
-   "cap": 2137572200143.0,
-   "count": 398,
-   "top": {
-    "name": "BHP Group",
-    "cap": 229800329216.0
+    "cap": 1683786162198.0
    }
   },
   {
    "name": "Netherlands",
-   "cap": 2134072157271.0,
-   "count": 76,
+   "cap": 2088342090075.0,
+   "count": 75,
    "top": {
     "name": "ASML",
-    "cap": 658685427712.0
+    "cap": 652317032448.0
+   }
+  },
+  {
+   "name": "Australia",
+   "cap": 2069161455220.0,
+   "count": 397,
+   "top": {
+    "name": "BHP Group",
+    "cap": 221489709056.0
    }
   },
   {
    "name": "Singapore",
-   "cap": 1636924398624.0,
+   "cap": 1622879138763.0,
    "count": 99,
    "top": {
     "name": "Trafigura Group",
@@ -2321,16 +2330,16 @@
   },
   {
    "name": "Spain",
-   "cap": 1546390728713.0,
+   "cap": 1527242461587.0,
    "count": 113,
    "top": {
     "name": "Santander",
-    "cap": 216816533504.0
+    "cap": 217135497216.0
    }
   },
   {
    "name": "Sweden",
-   "cap": 1530880932575.0,
+   "cap": 1496950338555.0,
    "count": 231,
    "top": {
     "name": "IKEA",
@@ -2339,335 +2348,335 @@
   },
   {
    "name": "Italy",
-   "cap": 1353247099085.0,
+   "cap": 1358394189308.0,
    "count": 163,
    "top": {
     "name": "UniCredit",
-    "cap": 145599146425.0
+    "cap": 146897461168.0
    }
   },
   {
    "name": "Ireland",
-   "cap": 1223398218972.0,
+   "cap": 1205570209128.0,
    "count": 48,
    "top": {
     "name": "Seagate Technology",
-    "cap": 192484655104.0
+    "cap": 188774842368.0
    }
   },
   {
    "name": "Hong Kong",
-   "cap": 1222662079373.0,
+   "cap": 1194565973546.0,
    "count": 157,
    "top": {
     "name": "AIA",
-    "cap": 101834091913.0
+    "cap": 98597469952.0
    }
   },
   {
    "name": "Brazil",
-   "cap": 1091418401028.0,
+   "cap": 1100553322084.0,
    "count": 115,
    "top": {
     "name": "Petrobras",
-    "cap": 129660657664.0
+    "cap": 136620572672.0
    }
   },
   {
    "name": "United Arab Emirates",
-   "cap": 1023454309751.0,
+   "cap": 1037191082923.0,
    "count": 134,
    "top": {
     "name": "International Holding Company",
-    "cap": 220679855523.0
+    "cap": 218583573289.0
    }
   },
   {
    "name": "Denmark",
-   "cap": 676039322946.0,
+   "cap": 652689312998.0,
    "count": 67,
    "top": {
     "name": "Novo Nordisk",
-    "cap": 206019985408.0
+    "cap": 190323097600.0
    }
   },
   {
    "name": "Israel",
-   "cap": 633477915149.0,
-   "count": 212,
+   "cap": 618437384358.0,
+   "count": 213,
    "top": {
     "name": "Teva Pharmaceutical Industries",
-    "cap": 42370166784.0
+    "cap": 43220832256.0
    }
   },
   {
    "name": "Mexico",
-   "cap": 563302153802.0,
+   "cap": 553265362013.0,
    "count": 43,
    "top": {
     "name": "Grupo México",
-    "cap": 103369957376.0
+    "cap": 100944158720.0
    }
   },
   {
    "name": "Belgium",
-   "cap": 510270389321.0,
-   "count": 86,
+   "cap": 493481936407.0,
+   "count": 84,
    "top": {
     "name": "Anheuser-Busch Inbev",
-    "cap": 158219304960.0
+    "cap": 154044760064.0
    }
   },
   {
    "name": "Thailand",
-   "cap": 485772088184.0,
+   "cap": 487286148127.0,
    "count": 61,
    "top": {
     "name": "Delta Electronics (Thailand)",
-    "cap": 97060691923.0
+    "cap": 99881328756.0
    }
   },
   {
    "name": "Finland",
-   "cap": 451179276388.0,
+   "cap": 457494662095.0,
    "count": 95,
    "top": {
     "name": "Nordea Bank",
-    "cap": 70603003980.0
-   }
-  },
-  {
-   "name": "South Africa",
-   "cap": 446729549254.0,
-   "count": 48,
-   "top": {
-    "name": "AngloGold Ashanti",
-    "cap": 55164252160.0
+    "cap": 70166711107.0
    }
   },
   {
    "name": "Norway",
-   "cap": 443006420495.0,
+   "cap": 447498058964.0,
    "count": 115,
    "top": {
     "name": "Equinor",
-    "cap": 99894976512.0
+    "cap": 106263166976.0
+   }
+  },
+  {
+   "name": "South Africa",
+   "cap": 435590532643.0,
+   "count": 48,
+   "top": {
+    "name": "AngloGold Ashanti",
+    "cap": 52812423168.0
    }
   },
   {
    "name": "Poland",
-   "cap": 342129091489.0,
+   "cap": 344925096005.0,
    "count": 113,
    "top": {
     "name": "ORLEN",
-    "cap": 49396468748.0
+    "cap": 50201281399.0
    }
   },
   {
    "name": "Malaysia",
-   "cap": 326844798691.0,
+   "cap": 324750724881.0,
    "count": 58,
    "top": {
     "name": "Maybank",
-    "cap": 30299426816.0
+    "cap": 31750895616.0
    }
   },
   {
    "name": "Indonesia",
-   "cap": 326691642502.0,
+   "cap": 320051877304.0,
    "count": 56,
    "top": {
     "name": "Bank Central Asia",
-    "cap": 46681399302.0
+    "cap": 44131209779.0
    }
   },
   {
    "name": "Russia",
-   "cap": 296718862937.0,
+   "cap": 313087101267.0,
    "count": 16,
    "top": {
     "name": "Sberbank",
-    "cap": 69935854295.0
+    "cap": 72660192511.0
    }
   },
   {
    "name": "Bermuda",
-   "cap": 284838980664.0,
+   "cap": 282193685516.0,
    "count": 40,
    "top": {
     "name": "Viking Holdings",
-    "cap": 38326013952.0
+    "cap": 37968707584.0
    }
   },
   {
    "name": "Austria",
-   "cap": 276132488481.0,
+   "cap": 278900669203.0,
    "count": 60,
    "top": {
     "name": "Erste Group Bank",
-    "cap": 55409236892.0
+    "cap": 54849186590.0
    }
   },
   {
    "name": "Turkey",
-   "cap": 227343095374.0,
+   "cap": 235218252610.0,
    "count": 43,
    "top": {
     "name": "Aselsan",
-    "cap": 36551514119.0
+    "cap": 36946270011.0
    }
   },
   {
    "name": "Luxembourg",
-   "cap": 224380955969.0,
+   "cap": 220126811355.0,
    "count": 35,
    "top": {
     "name": "ArcelorMittal",
-    "cap": 59373244416.0
+    "cap": 56064421888.0
    }
   },
   {
    "name": "Vietnam",
-   "cap": 209338355169.0,
+   "cap": 203582914936.0,
    "count": 38,
    "top": {
     "name": "Vingroup Company",
-    "cap": 73709502699.0
+    "cap": 70387478943.0
    }
   },
   {
    "name": "Chile",
-   "cap": 185768295802.0,
+   "cap": 181077387910.0,
    "count": 26,
    "top": {
-    "name": "Sociedad Química y Minera",
-    "cap": 21831299072.0
+    "name": "Banco de Chile",
+    "cap": 21072162816.0
    }
   },
   {
    "name": "Greece",
-   "cap": 166734123791.0,
+   "cap": 169016046593.0,
    "count": 45,
    "top": {
     "name": "Eurobank Ergasias Services and Holdings",
-    "cap": 19684808264.0
-   }
-  },
-  {
-   "name": "Argentina",
-   "cap": 165885728348.0,
-   "count": 19,
-   "top": {
-    "name": "MercadoLibre",
-    "cap": 100296523776.0
+    "cap": 19641154666.0
    }
   },
   {
    "name": "Kuwait",
-   "cap": 165409238610.0,
+   "cap": 168070623607.0,
    "count": 131,
    "top": {
     "name": "Kuwait Finance House",
-    "cap": 46199625989.0
+    "cap": 46941488584.0
+   }
+  },
+  {
+   "name": "Argentina",
+   "cap": 163139274750.0,
+   "count": 19,
+   "top": {
+    "name": "MercadoLibre",
+    "cap": 96190586880.0
    }
   },
   {
    "name": "Qatar",
-   "cap": 160509843301.0,
+   "cap": 161612678589.0,
    "count": 54,
    "top": {
     "name": "QNB (Qatar National Bank)",
-    "cap": 41750391764.0
+    "cap": 41775386365.0
    }
   },
   {
    "name": "New Zealand",
-   "cap": 113064890278.0,
+   "cap": 107491314248.0,
    "count": 55,
    "top": {
     "name": "Fisher & Paykel Healthcare",
-    "cap": 15518508255.0
+    "cap": 14769392538.0
    }
   },
   {
    "name": "Philippines",
-   "cap": 105021677201.0,
+   "cap": 105290451752.0,
    "count": 15,
    "top": {
     "name": "International Container Terminal Services",
-    "cap": 31090178048.0
+    "cap": 33048457216.0
    }
   },
   {
    "name": "Portugal",
-   "cap": 102604516529.0,
+   "cap": 104189680290.0,
    "count": 28,
    "top": {
     "name": "EDP Group",
-    "cap": 22232614038.0
+    "cap": 22878299275.0
    }
   },
   {
    "name": "Czech Republic",
-   "cap": 73226212521.0,
+   "cap": 72183632163.0,
    "count": 6,
    "top": {
     "name": "ČEZ Group",
-    "cap": 35552221217.0
+    "cap": 35838731699.0
    }
   },
   {
    "name": "Colombia",
-   "cap": 69518031872.0,
+   "cap": 70790825472.0,
    "count": 6,
    "top": {
     "name": "Ecopetrol",
-    "cap": 35463147520.0
-   }
-  },
-  {
-   "name": "Kazakhstan",
-   "cap": 60716888700.0,
-   "count": 5,
-   "top": {
-    "name": "Kaspi.kz Joint Stock Company",
-    "cap": 20764617413.0
+    "cap": 36491067392.0
    }
   },
   {
    "name": "Hungary",
-   "cap": 56519168845.0,
+   "cap": 58917684530.0,
    "count": 3,
    "top": {
     "name": "OTP Bank",
-    "cap": 36519534304.0
+    "cap": 38017881515.0
+   }
+  },
+  {
+   "name": "Kazakhstan",
+   "cap": 57278739901.0,
+   "count": 5,
+   "top": {
+    "name": "Kaspi.kz Joint Stock Company",
+    "cap": 19169273495.0
    }
   },
   {
    "name": "Pakistan",
-   "cap": 47183097434.0,
+   "cap": 45960475139.0,
    "count": 38,
    "top": {
     "name": "Oil &amp; Gas Development Company",
-    "cap": 5102822621.0
+    "cap": 4980030769.0
    }
   },
   {
    "name": "Romania",
-   "cap": 44494835439.0,
+   "cap": 42160959951.0,
    "count": 4,
    "top": {
     "name": "SPEEH Hidroelectrica",
-    "cap": 18389344591.0
+    "cap": 17643211648.0
    }
   },
   {
    "name": "Oman",
-   "cap": 41397304793.0,
+   "cap": 41767675055.0,
    "count": 84,
    "top": {
     "name": "Bank Muscat",
-    "cap": 7954831369.0
+    "cap": 8266785541.0
    }
   },
   {
@@ -2681,43 +2690,43 @@
   },
   {
    "name": "Jersey",
-   "cap": 28337847786.0,
+   "cap": 27556690351.0,
    "count": 7,
    "top": {
     "name": "CVC Capital Partners plc",
-    "cap": 17626461177.0
+    "cap": 17288028965.0
    }
   },
   {
    "name": "Cayman Islands",
-   "cap": 27516640224.0,
+   "cap": 27520590208.0,
    "count": 10,
    "top": {
     "name": "Fabrinet",
-    "cap": 14599122944.0
+    "cap": 14856417280.0
    }
   },
   {
    "name": "Bahrain",
-   "cap": 19824652437.0,
+   "cap": 19744255704.0,
    "count": 33,
    "top": {
-    "name": "Aluminium Bahrain (Alba)",
-    "cap": 3239257260.0
+    "name": "National Bank of Bahrain",
+    "cap": 3167696404.0
    }
   },
   {
    "name": "Iceland",
-   "cap": 18862090614.0,
+   "cap": 18438578322.0,
    "count": 29,
    "top": {
     "name": "Arion banki",
-    "cap": 2061040741.0
+    "cap": 2001444326.0
    }
   },
   {
    "name": "Lithuania",
-   "cap": 16600378798.0,
+   "cap": 16559892427.0,
    "count": 22,
    "top": {
     "name": "Vinted",
@@ -2728,67 +2737,67 @@
  "regions": [
   {
    "name": "North America",
-   "cap": 97906777324176.0,
-   "count": 2715,
+   "cap": 97003833270444.0,
+   "count": 2698,
    "metros": 173
   },
   {
    "name": "Europe",
-   "cap": 29666122342923.0,
+   "cap": 29325203931243.0,
    "count": 1081,
-   "metros": 178
-  },
-  {
-   "name": "China",
-   "cap": 16310093388478.0,
-   "count": 602,
-   "metros": 59
+   "metros": 179
   },
   {
    "name": "East Asia",
-   "cap": 16043111884404.0,
-   "count": 690,
+   "cap": 16205907809442.0,
+   "count": 692,
    "metros": 37
   },
   {
+   "name": "China",
+   "cap": 16087678140583.0,
+   "count": 603,
+   "metros": 59
+  },
+  {
    "name": "MENA",
-   "cap": 4329936041114.0,
+   "cap": 4351012864041.0,
    "count": 217,
    "metros": 23
   },
   {
    "name": "South Asia",
-   "cap": 3982219927088.0,
+   "cap": 3885332278601.0,
    "count": 313,
    "metros": 22
   },
   {
    "name": "ASEAN",
-   "cap": 2922479950294.0,
+   "cap": 2897795119621.0,
    "count": 194,
    "metros": 12
   },
   {
    "name": "Latin America",
-   "cap": 2191005130030.0,
+   "cap": 2180549365048.0,
    "count": 157,
    "metros": 31
   },
   {
    "name": "Oceania",
-   "cap": 2056398867076.0,
+   "cap": 1991159959017.0,
    "count": 147,
    "metros": 11
   },
   {
    "name": "Africa",
-   "cap": 489761212597.0,
+   "cap": 478621225486.0,
    "count": 54,
    "metros": 6
   },
   {
    "name": "Eurasia",
-   "cap": 371775367688.0,
+   "cap": 384665517832.0,
    "count": 21,
    "metros": 9
   }
@@ -2798,7 +2807,7 @@
    "rank": 1,
    "name": "NVIDIA",
    "symbol": "NVDA",
-   "cap": 5562502742016.0,
+   "cap": 5271048421376.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
@@ -2808,7 +2817,7 @@
    "rank": 2,
    "name": "Apple",
    "symbol": "AAPL",
-   "cap": 4669700046848.0,
+   "cap": 4849207869440.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
@@ -2818,7 +2827,7 @@
    "rank": 3,
    "name": "Alphabet (Google)",
    "symbol": "GOOG",
-   "cap": 4100819517440.0,
+   "cap": 4102531842048.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
@@ -2828,7 +2837,7 @@
    "rank": 4,
    "name": "Microsoft",
    "symbol": "MSFT",
-   "cap": 3710545297408.0,
+   "cap": 3680323239936.0,
    "country": "United States",
    "metro": "Seattle",
    "metroSlug": "seattle",
@@ -2838,7 +2847,7 @@
    "rank": 5,
    "name": "Amazon",
    "symbol": "AMZN",
-   "cap": 2788369891328.0,
+   "cap": 2769709432832.0,
    "country": "United States",
    "metro": "Seattle",
    "metroSlug": "seattle",
@@ -2848,7 +2857,7 @@
    "rank": 6,
    "name": "TSMC",
    "symbol": "TSM",
-   "cap": 2224530653184.0,
+   "cap": 2246988005376.0,
    "country": "Taiwan",
    "metro": "Hsinchu",
    "metroSlug": "hsinchu",
@@ -2858,7 +2867,7 @@
    "rank": 7,
    "name": "SpaceX",
    "symbol": "SPCX",
-   "cap": 1950244274176.0,
+   "cap": 1993217015808.0,
    "country": "United States",
    "metro": "Brownsville",
    "metroSlug": "brownsville",
@@ -2868,7 +2877,7 @@
    "rank": 8,
    "name": "Broadcom",
    "symbol": "AVGO",
-   "cap": 1702714146816.0,
+   "cap": 1728006324224.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
@@ -2878,7 +2887,7 @@
    "rank": 9,
    "name": "Saudi Aramco",
    "symbol": "2222.SR",
-   "cap": 1672503398566.0,
+   "cap": 1683786162198.0,
    "country": "Saudi Arabia",
    "metro": "Dammam",
    "metroSlug": "dammam",
@@ -2888,7 +2897,7 @@
    "rank": 10,
    "name": "Meta Platforms (Facebook)",
    "symbol": "META",
-   "cap": 1571225468928.0,
+   "cap": 1650860490752.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
@@ -2898,7 +2907,7 @@
    "rank": 11,
    "name": "Tesla",
    "symbol": "TSLA",
-   "cap": 1398455795712.0,
+   "cap": 1443322658816.0,
    "country": "United States",
    "metro": "Austin",
    "metroSlug": "austin",
@@ -2908,7 +2917,7 @@
    "rank": 12,
    "name": "Samsung",
    "symbol": "005930.KS",
-   "cap": 1246355770376.0,
+   "cap": 1271014042238.0,
    "country": "South Korea",
    "metro": "Seoul",
    "metroSlug": "seoul",
@@ -2928,7 +2937,7 @@
    "rank": 14,
    "name": "Micron Technology",
    "symbol": "MU",
-   "cap": 1148129771520.0,
+   "cap": 1101452017664.0,
    "country": "United States",
    "metro": "Boise",
    "metroSlug": "boise",
@@ -2938,7 +2947,7 @@
    "rank": 15,
    "name": "Berkshire Hathaway",
    "symbol": "BRK-B",
-   "cap": 1083263352832.0,
+   "cap": 1092553998336.0,
    "country": "United States",
    "metro": "Omaha-Lincoln",
    "metroSlug": "omaha-lincoln",
@@ -2948,7 +2957,7 @@
    "rank": 16,
    "name": "Eli Lilly",
    "symbol": "LLY",
-   "cap": 1024931856384.0,
+   "cap": 994915778560.0,
    "country": "United States",
    "metro": "Indianapolis",
    "metroSlug": "indianapolis",
@@ -2966,29 +2975,29 @@
   },
   {
    "rank": 18,
-   "name": "JPMorgan Chase",
-   "symbol": "JPM",
-   "cap": 953331941376.0,
-   "country": "United States",
-   "metro": "New York",
-   "metroSlug": "new-york",
-   "source": "Public"
-  },
-  {
-   "rank": 19,
    "name": "SK Hynix",
    "symbol": "000660.KS",
-   "cap": 868512721756.0,
+   "cap": 959406437562.0,
    "country": "South Korea",
    "metro": "Seoul",
    "metroSlug": "seoul",
    "source": "Public"
   },
   {
+   "rank": 19,
+   "name": "JPMorgan Chase",
+   "symbol": "JPM",
+   "cap": 946925731840.0,
+   "country": "United States",
+   "metro": "New York",
+   "metroSlug": "new-york",
+   "source": "Public"
+  },
+  {
    "rank": 20,
    "name": "Walmart",
    "symbol": "WMT",
-   "cap": 852628602880.0,
+   "cap": 852708163584.0,
    "country": "United States",
    "metro": "Fayetteville",
    "metroSlug": "fayetteville",
@@ -2996,6 +3005,16 @@
   },
   {
    "rank": 21,
+   "name": "AMD",
+   "symbol": "AMD",
+   "cap": 842569351168.0,
+   "country": "United States",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "source": "Public"
+  },
+  {
+   "rank": 22,
    "name": "OpenAI",
    "symbol": "OpenAI(Uni)",
    "cap": 840000000000.0,
@@ -3003,16 +3022,6 @@
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
    "source": "Unicorn"
-  },
-  {
-   "rank": 22,
-   "name": "AMD",
-   "symbol": "AMD",
-   "cap": 779621105664.0,
-   "country": "United States",
-   "metro": "San Francisco-San Jose",
-   "metroSlug": "san-francisco-san-jose",
-   "source": "Public"
   },
   {
    "rank": 23,
@@ -3028,7 +3037,7 @@
    "rank": 24,
    "name": "Visa",
    "symbol": "V",
-   "cap": 700273459200.0,
+   "cap": 691647676416.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
@@ -3036,19 +3045,19 @@
   },
   {
    "rank": 25,
-   "name": "Johnson & Johnson",
-   "symbol": "JNJ",
-   "cap": 663276421120.0,
+   "name": "Exxon Mobil",
+   "symbol": "XOM",
+   "cap": 682536271872.0,
    "country": "United States",
-   "metro": "New York",
-   "metroSlug": "new-york",
+   "metro": "Houston",
+   "metroSlug": "houston",
    "source": "Public"
   },
   {
    "rank": 26,
    "name": "ASML",
    "symbol": "ASML",
-   "cap": 658685427712.0,
+   "cap": 652317032448.0,
    "country": "Netherlands",
    "metro": "Eindhoven",
    "metroSlug": "eindhoven",
@@ -3056,19 +3065,19 @@
   },
   {
    "rank": 27,
-   "name": "Exxon Mobil",
-   "symbol": "XOM",
-   "cap": 655726608384.0,
+   "name": "Johnson & Johnson",
+   "symbol": "JNJ",
+   "cap": 640020840448.0,
    "country": "United States",
-   "metro": "Houston",
-   "metroSlug": "houston",
+   "metro": "New York",
+   "metroSlug": "new-york",
    "source": "Public"
   },
   {
    "rank": 28,
    "name": "CXMT",
    "symbol": "688825.SS",
-   "cap": 579195113664.0,
+   "cap": 599925050899.0,
    "country": "China",
    "metro": "Hefei",
    "metroSlug": "hefei",
@@ -3076,6 +3085,16 @@
   },
   {
    "rank": 29,
+   "name": "Intel",
+   "symbol": "INTC",
+   "cap": 544151666688.0,
+   "country": "United States",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "source": "Public"
+  },
+  {
+   "rank": 30,
    "name": "Schwarz Group",
    "symbol": "Schwarz Group",
    "cap": 541800000000.0,
@@ -3085,20 +3104,10 @@
    "source": "Private"
   },
   {
-   "rank": 30,
-   "name": "Tencent",
-   "symbol": "TCEHY",
-   "cap": 510996810000.0,
-   "country": "China",
-   "metro": "Guangzhou",
-   "metroSlug": "guangzhou",
-   "source": "Public"
-  },
-  {
    "rank": 31,
    "name": "Mastercard",
    "symbol": "MA",
-   "cap": 507393736704.0,
+   "cap": 498616074240.0,
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
@@ -3106,12 +3115,12 @@
   },
   {
    "rank": 32,
-   "name": "Intel",
-   "symbol": "INTC",
-   "cap": 506408894464.0,
-   "country": "United States",
-   "metro": "San Francisco-San Jose",
-   "metroSlug": "san-francisco-san-jose",
+   "name": "Tencent",
+   "symbol": "TCEHY",
+   "cap": 492750150000.0,
+   "country": "China",
+   "metro": "Guangzhou",
+   "metroSlug": "guangzhou",
    "source": "Public"
   },
   {
@@ -3136,29 +3145,29 @@
   },
   {
    "rank": 35,
-   "name": "Oracle",
-   "symbol": "ORCL",
-   "cap": 457361195008.0,
-   "country": "United States",
-   "metro": "Austin",
-   "metroSlug": "austin",
-   "source": "Public"
-  },
-  {
-   "rank": 36,
    "name": "AbbVie",
    "symbol": "ABBV",
-   "cap": 453194874880.0,
+   "cap": 454361186304.0,
    "country": "United States",
    "metro": "Chicago",
    "metroSlug": "chicago",
    "source": "Public"
   },
   {
+   "rank": 36,
+   "name": "Cisco",
+   "symbol": "CSCO",
+   "cap": 442082263040.0,
+   "country": "United States",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "source": "Public"
+  },
+  {
    "rank": 37,
    "name": "Bank of America",
    "symbol": "BAC",
-   "cap": 438305488896.0,
+   "cap": 438375383040.0,
    "country": "United States",
    "metro": "Charlotte",
    "metroSlug": "charlotte",
@@ -3166,19 +3175,19 @@
   },
   {
    "rank": 38,
-   "name": "Cisco",
-   "symbol": "CSCO",
-   "cap": 430530461696.0,
+   "name": "Oracle",
+   "symbol": "ORCL",
+   "cap": 432877174784.0,
    "country": "United States",
-   "metro": "San Francisco-San Jose",
-   "metroSlug": "san-francisco-san-jose",
+   "metro": "Austin",
+   "metroSlug": "austin",
    "source": "Public"
   },
   {
    "rank": 39,
    "name": "China Construction Bank",
    "symbol": "601939.SS",
-   "cap": 428705858818.0,
+   "cap": 430505390066.0,
    "country": "China",
    "metro": "Beijing",
    "metroSlug": "beijing",
@@ -3186,29 +3195,29 @@
   },
   {
    "rank": 40,
-   "name": "Palantir",
-   "symbol": "PLTR",
-   "cap": 418925182976.0,
-   "country": "United States",
-   "metro": "Denver",
-   "metroSlug": "denver",
-   "source": "Public"
-  },
-  {
-   "rank": 41,
    "name": "Chevron",
    "symbol": "CVX",
-   "cap": 409190465536.0,
+   "cap": 419900817408.0,
    "country": "United States",
    "metro": "Houston",
    "metroSlug": "houston",
    "source": "Public"
   },
   {
+   "rank": 41,
+   "name": "Palantir",
+   "symbol": "PLTR",
+   "cap": 401863442432.0,
+   "country": "United States",
+   "metro": "Denver",
+   "metroSlug": "denver",
+   "source": "Public"
+  },
+  {
    "rank": 42,
    "name": "Costco",
    "symbol": "COST",
-   "cap": 406111289344.0,
+   "cap": 401246322688.0,
    "country": "United States",
    "metro": "Seattle",
    "metroSlug": "seattle",
@@ -3216,22 +3225,22 @@
   },
   {
    "rank": 43,
-   "name": "Lam Research",
-   "symbol": "LRCX",
-   "cap": 384968884224.0,
+   "name": "Coca-Cola",
+   "symbol": "KO",
+   "cap": 379872051200.0,
    "country": "United States",
-   "metro": "San Francisco-San Jose",
-   "metroSlug": "san-francisco-san-jose",
+   "metro": "Atlanta",
+   "metroSlug": "atlanta",
    "source": "Public"
   },
   {
    "rank": 44,
-   "name": "Coca-Cola",
-   "symbol": "KO",
-   "cap": 378925481984.0,
+   "name": "Caterpillar",
+   "symbol": "CAT",
+   "cap": 376276058112.0,
    "country": "United States",
-   "metro": "Atlanta",
-   "metroSlug": "atlanta",
+   "metro": "Dallas",
+   "metroSlug": "dallas",
    "source": "Public"
   },
   {
@@ -3246,46 +3255,26 @@
   },
   {
    "rank": 46,
-   "name": "Caterpillar",
-   "symbol": "CAT",
-   "cap": 374147776512.0,
+   "name": "Lam Research",
+   "symbol": "LRCX",
+   "cap": 373168930816.0,
    "country": "United States",
-   "metro": "Dallas",
-   "metroSlug": "dallas",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
    "source": "Public"
   },
   {
    "rank": 47,
-   "name": "Merck",
-   "symbol": "MRK",
-   "cap": 370889916416.0,
-   "country": "United States",
-   "metro": "New York",
-   "metroSlug": "new-york",
-   "source": "Public"
-  },
-  {
-   "rank": 48,
-   "name": "HSBC",
-   "symbol": "HSBC",
-   "cap": 366959591424.0,
-   "country": "United Kingdom",
-   "metro": "London",
-   "metroSlug": "london",
-   "source": "Public"
-  },
-  {
-   "rank": 49,
    "name": "Agricultural Bank of China",
    "symbol": "601288.SS",
-   "cap": 363559077626.0,
+   "cap": 364282557512.0,
    "country": "China",
    "metro": "Beijing",
    "metroSlug": "beijing",
    "source": "Public"
   },
   {
-   "rank": 50,
+   "rank": 48,
    "name": "Aldi",
    "symbol": "Aldi",
    "cap": 362880000000.0,
@@ -3295,90 +3284,110 @@
    "source": "Private"
   },
   {
-   "rank": 51,
+   "rank": 49,
    "name": "Applied Materials",
    "symbol": "AMAT",
-   "cap": 360856682496.0,
+   "cap": 362269278208.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
    "source": "Public"
   },
   {
-   "rank": 52,
-   "name": "Roche",
-   "symbol": "RO.SW",
-   "cap": 358262809975.0,
-   "country": "Switzerland",
-   "metro": "Basel",
-   "metroSlug": "basel",
-   "source": "Public"
-  },
-  {
-   "rank": 53,
-   "name": "UnitedHealth",
-   "symbol": "UNH",
-   "cap": 356470816768.0,
-   "country": "United States",
-   "metro": "Minneapolis",
-   "metroSlug": "minneapolis",
-   "source": "Public"
-  },
-  {
-   "rank": 54,
-   "name": "General Electric",
-   "symbol": "GE",
-   "cap": 349783064576.0,
-   "country": "United States",
-   "metro": "Boston",
-   "metroSlug": "boston",
-   "source": "Public"
-  },
-  {
-   "rank": 55,
-   "name": "ICBC",
-   "symbol": "1398.HK",
-   "cap": 349764627433.0,
-   "country": "China",
-   "metro": "Beijing",
-   "metroSlug": "beijing",
-   "source": "Public"
-  },
-  {
-   "rank": 56,
-   "name": "Morgan Stanley",
-   "symbol": "MS",
-   "cap": 341943681024.0,
-   "country": "United States",
-   "metro": "New York",
-   "metroSlug": "new-york",
-   "source": "Public"
-  },
-  {
-   "rank": 57,
-   "name": "Procter & Gamble",
-   "symbol": "PG",
-   "cap": 340132134912.0,
-   "country": "United States",
-   "metro": "Cincinnati",
-   "metroSlug": "cincinnati",
-   "source": "Public"
-  },
-  {
-   "rank": 58,
+   "rank": 50,
    "name": "Dell",
    "symbol": "DELL",
-   "cap": 338669076480.0,
+   "cap": 360690188288.0,
    "country": "United States",
    "metro": "Austin",
    "metroSlug": "austin",
    "source": "Public"
   },
   {
+   "rank": 51,
+   "name": "HSBC",
+   "symbol": "HSBC",
+   "cap": 360627863552.0,
+   "country": "United Kingdom",
+   "metro": "London",
+   "metroSlug": "london",
+   "source": "Public"
+  },
+  {
+   "rank": 52,
+   "name": "Merck",
+   "symbol": "MRK",
+   "cap": 355100000256.0,
+   "country": "United States",
+   "metro": "New York",
+   "metroSlug": "new-york",
+   "source": "Public"
+  },
+  {
+   "rank": 53,
+   "name": "ICBC",
+   "symbol": "1398.HK",
+   "cap": 345840177211.0,
+   "country": "China",
+   "metro": "Beijing",
+   "metroSlug": "beijing",
+   "source": "Public"
+  },
+  {
+   "rank": 54,
+   "name": "Roche",
+   "symbol": "RO.SW",
+   "cap": 344225517305.0,
+   "country": "Switzerland",
+   "metro": "Basel",
+   "metroSlug": "basel",
+   "source": "Public"
+  },
+  {
+   "rank": 55,
+   "name": "UnitedHealth",
+   "symbol": "UNH",
+   "cap": 340269203456.0,
+   "country": "United States",
+   "metro": "Minneapolis",
+   "metroSlug": "minneapolis",
+   "source": "Public"
+  },
+  {
+   "rank": 56,
+   "name": "Procter & Gamble",
+   "symbol": "PG",
+   "cap": 337414619136.0,
+   "country": "United States",
+   "metro": "Cincinnati",
+   "metroSlug": "cincinnati",
+   "source": "Public"
+  },
+  {
+   "rank": 57,
+   "name": "Morgan Stanley",
+   "symbol": "MS",
+   "cap": 336698015744.0,
+   "country": "United States",
+   "metro": "New York",
+   "metroSlug": "new-york",
+   "source": "Public"
+  },
+  {
+   "rank": 58,
+   "name": "General Electric",
+   "symbol": "GE",
+   "cap": 335817474048.0,
+   "country": "United States",
+   "metro": "Boston",
+   "metroSlug": "boston",
+   "source": "Public"
+  },
+  {
    "rank": 59,
    "name": "Netflix",
    "symbol": "NFLX",
-   "cap": 325828280320.0,
+   "cap": 322288943104.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
@@ -3386,26 +3395,16 @@
   },
   {
    "rank": 60,
-   "name": "Home Depot",
-   "symbol": "HD",
-   "cap": 320308248576.0,
-   "country": "United States",
-   "metro": "Atlanta",
-   "metroSlug": "atlanta",
-   "source": "Public"
-  },
-  {
-   "rank": 61,
    "name": "Bank of China",
    "symbol": "601988.SS",
-   "cap": 315955806741.0,
+   "cap": 316130373194.0,
    "country": "China",
    "metro": "Beijing",
    "metroSlug": "beijing",
    "source": "Public"
   },
   {
-   "rank": 62,
+   "rank": 61,
    "name": "E.Leclerc",
    "symbol": "E.Leclerc",
    "cap": 308940000000.0,
@@ -3415,7 +3414,7 @@
    "source": "Private"
   },
   {
-   "rank": 63,
+   "rank": 62,
    "name": "Suning Holdings Group",
    "symbol": "Suning Holdings Group",
    "cap": 308700000000.0,
@@ -3425,27 +3424,27 @@
    "source": "Private"
   },
   {
-   "rank": 64,
-   "name": "Novartis",
-   "symbol": "NVS",
-   "cap": 304095395840.0,
-   "country": "Switzerland",
-   "metro": "Basel",
-   "metroSlug": "basel",
+   "rank": 63,
+   "name": "Home Depot",
+   "symbol": "HD",
+   "cap": 308026671104.0,
+   "country": "United States",
+   "metro": "Atlanta",
+   "metroSlug": "atlanta",
    "source": "Public"
   },
   {
-   "rank": 65,
+   "rank": 64,
    "name": "Goldman Sachs",
    "symbol": "GS",
-   "cap": 302413512704.0,
+   "cap": 299667783680.0,
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
    "source": "Public"
   },
   {
-   "rank": 66,
+   "rank": 65,
    "name": "REWE Group",
    "symbol": "REWE Group",
    "cap": 299070000000.0,
@@ -3453,6 +3452,16 @@
    "metro": "Rhine-Ruhr",
    "metroSlug": "rhine-ruhr",
    "source": "Private"
+  },
+  {
+   "rank": 66,
+   "name": "Philip Morris International",
+   "symbol": "PM",
+   "cap": 297788669952.0,
+   "country": "United States",
+   "metro": "New York",
+   "metroSlug": "new-york",
+   "source": "Public"
   },
   {
    "rank": 67,
@@ -3478,7 +3487,7 @@
    "rank": 69,
    "name": "Royal Bank Of Canada",
    "symbol": "RY",
-   "cap": 291547086848.0,
+   "cap": 285054107648.0,
    "country": "Canada",
    "metro": "Toronto",
    "metroSlug": "toronto",
@@ -3486,29 +3495,29 @@
   },
   {
    "rank": 70,
-   "name": "Philip Morris International",
-   "symbol": "PM",
-   "cap": 284493709312.0,
-   "country": "United States",
-   "metro": "New York",
-   "metroSlug": "new-york",
+   "name": "Arm Holdings",
+   "symbol": "ARM",
+   "cap": 282795343872.0,
+   "country": "United Kingdom",
+   "metro": "Cambridge",
+   "metroSlug": "cambridge",
    "source": "Public"
   },
   {
    "rank": 71,
-   "name": "Alibaba",
-   "symbol": "BABA",
-   "cap": 281472008192.0,
-   "country": "China",
-   "metro": "Hangzhou",
-   "metroSlug": "hangzhou",
+   "name": "Shell",
+   "symbol": "SHEL",
+   "cap": 276837367808.0,
+   "country": "United Kingdom",
+   "metro": "London",
+   "metroSlug": "london",
    "source": "Public"
   },
   {
    "rank": 72,
    "name": "Wells Fargo",
    "symbol": "WFC",
-   "cap": 272069214208.0,
+   "cap": 273036886016.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
@@ -3516,46 +3525,36 @@
   },
   {
    "rank": 73,
+   "name": "Alibaba",
+   "symbol": "BABA",
+   "cap": 271678668800.0,
+   "country": "China",
+   "metro": "Hangzhou",
+   "metroSlug": "hangzhou",
+   "source": "Public"
+  },
+  {
+   "rank": 74,
    "name": "Palo Alto Networks",
    "symbol": "PANW",
-   "cap": 271606906880.0,
+   "cap": 269479739392.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
    "source": "Public"
   },
   {
-   "rank": 74,
+   "rank": 75,
    "name": "Mitsubishi UFJ Financial",
    "symbol": "MUFG",
-   "cap": 271151382528.0,
+   "cap": 268900220928.0,
    "country": "Japan",
    "metro": "Tokyo",
    "metroSlug": "tokyo",
    "source": "Public"
   },
   {
-   "rank": 75,
-   "name": "RTX",
-   "symbol": "RTX",
-   "cap": 270616330240.0,
-   "country": "United States",
-   "metro": "Washington-Baltimore",
-   "metroSlug": "washington-baltimore",
-   "source": "Public"
-  },
-  {
    "rank": 76,
-   "name": "Arm Holdings",
-   "symbol": "ARM",
-   "cap": 269231767552.0,
-   "country": "United Kingdom",
-   "metro": "Cambridge",
-   "metroSlug": "cambridge",
-   "source": "Public"
-  },
-  {
-   "rank": 77,
    "name": "Amer International Group",
    "symbol": "Amer International Group",
    "cap": 266700000000.0,
@@ -3563,6 +3562,16 @@
    "metro": "Guangzhou",
    "metroSlug": "guangzhou",
    "source": "Private"
+  },
+  {
+   "rank": 77,
+   "name": "RTX",
+   "symbol": "RTX",
+   "cap": 266424811520.0,
+   "country": "United States",
+   "metro": "Washington-Baltimore",
+   "metroSlug": "washington-baltimore",
+   "source": "Public"
   },
   {
    "rank": 78,
@@ -3576,86 +3585,46 @@
   },
   {
    "rank": 79,
-   "name": "Shell",
-   "symbol": "SHEL",
-   "cap": 255681150976.0,
-   "country": "United Kingdom",
-   "metro": "London",
-   "metroSlug": "london",
+   "name": "Novartis",
+   "symbol": "NVS",
+   "cap": 260702060544.0,
+   "country": "Switzerland",
+   "metro": "Basel",
+   "metroSlug": "basel",
    "source": "Public"
   },
   {
    "rank": 80,
-   "name": "Sandisk",
-   "symbol": "SNDK",
-   "cap": 254769070080.0,
-   "country": "United States",
-   "metro": "San Francisco-San Jose",
-   "metroSlug": "san-francisco-san-jose",
-   "source": "Public"
-  },
-  {
-   "rank": 81,
-   "name": "AstraZeneca",
-   "symbol": "AZN",
-   "cap": 252330754048.0,
-   "country": "United Kingdom",
-   "metro": "Cambridge",
-   "metroSlug": "cambridge",
-   "source": "Public"
-  },
-  {
-   "rank": 82,
    "name": "GE Vernova",
    "symbol": "GEV",
-   "cap": 250872922112.0,
+   "cap": 254953160704.0,
    "country": "United States",
    "metro": "Boston",
    "metroSlug": "boston",
    "source": "Public"
   },
   {
+   "rank": 81,
+   "name": "Arista Networks",
+   "symbol": "ANET",
+   "cap": 251727839232.0,
+   "country": "United States",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "source": "Public"
+  },
+  {
+   "rank": 82,
+   "name": "AstraZeneca",
+   "symbol": "AZN",
+   "cap": 248406982656.0,
+   "country": "United Kingdom",
+   "metro": "Cambridge",
+   "metroSlug": "cambridge",
+   "source": "Public"
+  },
+  {
    "rank": 83,
-   "name": "Nestlé",
-   "symbol": "NESN.SW",
-   "cap": 248688873430.0,
-   "country": "Switzerland",
-   "metro": "Lausanne",
-   "metroSlug": "lausanne",
-   "source": "Public"
-  },
-  {
-   "rank": 84,
-   "name": "SAP",
-   "symbol": "SAP",
-   "cap": 248280891392.0,
-   "country": "Germany",
-   "metro": "Rhine-Neckar",
-   "metroSlug": "rhine-neckar",
-   "source": "Public"
-  },
-  {
-   "rank": 85,
-   "name": "Kweichow Moutai",
-   "symbol": "600519.SS",
-   "cap": 248146836438.0,
-   "country": "China",
-   "metro": "Zunyi",
-   "metroSlug": "zunyi",
-   "source": "Public"
-  },
-  {
-   "rank": 86,
-   "name": "Siemens",
-   "symbol": "SIE.DE",
-   "cap": 247112364720.0,
-   "country": "Germany",
-   "metro": "Munich",
-   "metroSlug": "munich",
-   "source": "Public"
-  },
-  {
-   "rank": 87,
    "name": "State Farm",
    "symbol": "State Farm",
    "cap": 246600000000.0,
@@ -3665,47 +3634,37 @@
    "source": "Private"
   },
   {
-   "rank": 88,
-   "name": "LVMH",
-   "symbol": "MC.PA",
-   "cap": 245709590556.0,
-   "country": "France",
-   "metro": "Paris",
-   "metroSlug": "paris",
-   "source": "Public"
-  },
-  {
-   "rank": 89,
-   "name": "Arista Networks",
-   "symbol": "ANET",
-   "cap": 244400128000.0,
+   "rank": 84,
+   "name": "Texas Instruments",
+   "symbol": "TXN",
+   "cap": 245389656064.0,
    "country": "United States",
-   "metro": "San Francisco-San Jose",
-   "metroSlug": "san-francisco-san-jose",
+   "metro": "Dallas",
+   "metroSlug": "dallas",
    "source": "Public"
   },
   {
-   "rank": 90,
-   "name": "KLA",
-   "symbol": "KLAC",
-   "cap": 242495094784.0,
-   "country": "United States",
-   "metro": "San Francisco-San Jose",
-   "metroSlug": "san-francisco-san-jose",
+   "rank": 85,
+   "name": "Nestlé",
+   "symbol": "NESN.SW",
+   "cap": 244379015522.0,
+   "country": "Switzerland",
+   "metro": "Lausanne",
+   "metroSlug": "lausanne",
    "source": "Public"
   },
   {
-   "rank": 91,
-   "name": "CATL",
-   "symbol": "300750.SZ",
-   "cap": 242377856885.0,
-   "country": "China",
-   "metro": "Ningde",
-   "metroSlug": "ningde",
+   "rank": 86,
+   "name": "SoftBank Group Corp.",
+   "symbol": "9984.T",
+   "cap": 242519989193.0,
+   "country": "Japan",
+   "metro": "Tokyo",
+   "metroSlug": "tokyo",
    "source": "Public"
   },
   {
-   "rank": 92,
+   "rank": 87,
    "name": "Hengli Group",
    "symbol": "Hengli Group",
    "cap": 241800000000.0,
@@ -3715,57 +3674,117 @@
    "source": "Private"
   },
   {
-   "rank": 93,
-   "name": "L'Oréal",
-   "symbol": "OR.PA",
-   "cap": 237523832661.0,
+   "rank": 88,
+   "name": "Siemens",
+   "symbol": "SIE.DE",
+   "cap": 239583378561.0,
+   "country": "Germany",
+   "metro": "Munich",
+   "metroSlug": "munich",
+   "source": "Public"
+  },
+  {
+   "rank": 89,
+   "name": "Sandisk",
+   "symbol": "SNDK",
+   "cap": 239153479680.0,
+   "country": "United States",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "source": "Public"
+  },
+  {
+   "rank": 90,
+   "name": "SAP",
+   "symbol": "SAP",
+   "cap": 238181597184.0,
+   "country": "Germany",
+   "metro": "Rhine-Neckar",
+   "metroSlug": "rhine-neckar",
+   "source": "Public"
+  },
+  {
+   "rank": 91,
+   "name": "Kweichow Moutai",
+   "symbol": "600519.SS",
+   "cap": 238046429228.0,
+   "country": "China",
+   "metro": "Zunyi",
+   "metroSlug": "zunyi",
+   "source": "Public"
+  },
+  {
+   "rank": 92,
+   "name": "LVMH",
+   "symbol": "MC.PA",
+   "cap": 237531567156.0,
    "country": "France",
    "metro": "Paris",
    "metroSlug": "paris",
    "source": "Public"
   },
   {
+   "rank": 93,
+   "name": "KLA",
+   "symbol": "KLAC",
+   "cap": 236014616576.0,
+   "country": "United States",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "source": "Public"
+  },
+  {
    "rank": 94,
-   "name": "PetroChina",
-   "symbol": "0857.HK",
-   "cap": 237146379923.0,
-   "country": "China",
-   "metro": "Beijing",
-   "metroSlug": "beijing",
+   "name": "L'Oréal",
+   "symbol": "OR.PA",
+   "cap": 234745374626.0,
+   "country": "France",
+   "metro": "Paris",
+   "metroSlug": "paris",
    "source": "Public"
   },
   {
    "rank": 95,
-   "name": "Amgen",
-   "symbol": "AMGN",
-   "cap": 236380536832.0,
-   "country": "United States",
-   "metro": "Los Angeles",
-   "metroSlug": "los-angeles",
-   "source": "Public"
-  },
-  {
-   "rank": 96,
-   "name": "Texas Instruments",
-   "symbol": "TXN",
-   "cap": 236019728384.0,
-   "country": "United States",
-   "metro": "Dallas",
-   "metroSlug": "dallas",
-   "source": "Public"
-  },
-  {
-   "rank": 97,
    "name": "Toyota",
    "symbol": "TM",
-   "cap": 233414393856.0,
+   "cap": 234705158144.0,
    "country": "Japan",
    "metro": "Nagoya",
    "metroSlug": "nagoya",
    "source": "Public"
   },
   {
+   "rank": 96,
+   "name": "PetroChina",
+   "symbol": "0857.HK",
+   "cap": 232903948947.0,
+   "country": "China",
+   "metro": "Beijing",
+   "metroSlug": "beijing",
+   "source": "Public"
+  },
+  {
+   "rank": 97,
+   "name": "Citigroup",
+   "symbol": "C",
+   "cap": 232861794304.0,
+   "country": "United States",
+   "metro": "New York",
+   "metroSlug": "new-york",
+   "source": "Public"
+  },
+  {
    "rank": 98,
+   "name": "MediaTek",
+   "symbol": "2454.TW",
+   "cap": 231777582595.0,
+   "country": "Taiwan",
+   "metro": "Hsinchu",
+   "metroSlug": "hsinchu",
+   "source": "Public"
+  },
+  {
+   "rank": 99,
    "name": "Pacific Construction Group",
    "symbol": "Pacific Construction Group",
    "cap": 231210000000.0,
@@ -3775,23 +3794,13 @@
    "source": "Private"
   },
   {
-   "rank": 99,
-   "name": "Citigroup",
-   "symbol": "C",
-   "cap": 231016595456.0,
+   "rank": 100,
+   "name": "IBM",
+   "symbol": "IBM",
+   "cap": 229211865088.0,
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "source": "Public"
-  },
-  {
-   "rank": 100,
-   "name": "BHP Group",
-   "symbol": "BHP",
-   "cap": 229800329216.0,
-   "country": "Australia",
-   "metro": "Melbourne",
-   "metroSlug": "melbourne",
    "source": "Public"
   }
  ],
@@ -3800,324 +3809,324 @@
    "rank": 1,
    "name": "NVIDIA",
    "symbol": "NVDA",
-   "cap": 5562502742016.0,
+   "cap": 5271048421376.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
    "source": "Public",
-   "pctTo5T": 111.3
+   "pctTo5T": 105.4
   },
   {
    "rank": 2,
    "name": "Apple",
    "symbol": "AAPL",
-   "cap": 4669700046848.0,
+   "cap": 4849207869440.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
    "source": "Public",
-   "pctTo5T": 93.4
+   "pctTo5T": 97.0
   },
   {
    "rank": 3,
    "name": "Alphabet (Google)",
    "symbol": "GOOG",
-   "cap": 4100819517440.0,
+   "cap": 4102531842048.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
    "source": "Public",
-   "pctTo5T": 82.0
+   "pctTo5T": 82.1
   },
   {
    "rank": 4,
    "name": "Microsoft",
    "symbol": "MSFT",
-   "cap": 3710545297408.0,
+   "cap": 3680323239936.0,
    "country": "United States",
    "metro": "Seattle",
    "metroSlug": "seattle",
    "source": "Public",
-   "pctTo5T": 74.2
+   "pctTo5T": 73.6
   },
   {
    "rank": 5,
    "name": "Amazon",
    "symbol": "AMZN",
-   "cap": 2788369891328.0,
+   "cap": 2769709432832.0,
    "country": "United States",
    "metro": "Seattle",
    "metroSlug": "seattle",
    "source": "Public",
-   "pctTo5T": 55.8
+   "pctTo5T": 55.4
   },
   {
    "rank": 6,
    "name": "TSMC",
    "symbol": "TSM",
-   "cap": 2224530653184.0,
+   "cap": 2246988005376.0,
    "country": "Taiwan",
    "metro": "Hsinchu",
    "metroSlug": "hsinchu",
    "source": "Public",
-   "pctTo5T": 44.5
+   "pctTo5T": 44.9
   },
   {
    "rank": 7,
    "name": "SpaceX",
    "symbol": "SPCX",
-   "cap": 1950244274176.0,
+   "cap": 1993217015808.0,
    "country": "United States",
    "metro": "Brownsville",
    "metroSlug": "brownsville",
    "source": "Public",
-   "pctTo5T": 39.0
+   "pctTo5T": 39.9
   },
   {
    "rank": 8,
    "name": "Broadcom",
    "symbol": "AVGO",
-   "cap": 1702714146816.0,
+   "cap": 1728006324224.0,
    "country": "United States",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
    "source": "Public",
-   "pctTo5T": 34.1
+   "pctTo5T": 34.6
   }
  ],
  "movers": {
-  "prev_as_of": "2026-08-29",
-  "as_of": "2026-09-05",
+  "prev_as_of": "2026-09-05",
+  "as_of": "2026-09-12",
   "companies": [
    {
     "name": "NVIDIA",
     "symbol": "NVDA",
     "metro": "San Francisco-San Jose",
-    "cap": 5562502742016.0,
-    "prev": 5253179637760.0,
-    "chg": 309323104256.0,
-    "pct": 0.058883024298765074
+    "cap": 5271048421376.0,
+    "prev": 5562502742016.0,
+    "chg": -291454320640.0,
+    "pct": -0.05239625653368562
    },
    {
-    "name": "Microsoft",
-    "symbol": "MSFT",
-    "metro": "Seattle",
-    "cap": 3710545297408.0,
-    "prev": 3813240733696.0,
-    "chg": -102695436288.0,
-    "pct": -0.026931275379632802
+    "name": "Apple",
+    "symbol": "AAPL",
+    "metro": "San Francisco-San Jose",
+    "cap": 4849207869440.0,
+    "prev": 4669700046848.0,
+    "chg": 179507822592.0,
+    "pct": 0.038440974964369705
+   },
+   {
+    "name": "SK Hynix",
+    "symbol": "000660.KS",
+    "metro": "Seoul",
+    "cap": 959406437562.0,
+    "prev": 868512721756.0,
+    "chg": 90893715806.0,
+    "pct": 0.10465444377398042
    },
    {
     "name": "Meta Platforms (Facebook)",
     "symbol": "META",
     "metro": "San Francisco-San Jose",
-    "cap": 1571225468928.0,
-    "prev": 1472509509632.0,
-    "chg": 98715959296.0,
-    "pct": 0.0670392677604306
+    "cap": 1650860490752.0,
+    "prev": 1571225468928.0,
+    "chg": 79635021824.0,
+    "pct": 0.050683382747310345
+   },
+   {
+    "name": "AMD",
+    "symbol": "AMD",
+    "metro": "San Francisco-San Jose",
+    "cap": 842569351168.0,
+    "prev": 779621105664.0,
+    "chg": 62948245504.0,
+    "pct": 0.08074210029292017
    },
    {
     "name": "Micron Technology",
     "symbol": "MU",
     "metro": "Boise",
-    "cap": 1148129771520.0,
-    "prev": 1053565648896.0,
-    "chg": 94564122624.0,
-    "pct": 0.08975626979020332
+    "cap": 1101452017664.0,
+    "prev": 1148129771520.0,
+    "chg": -46677753856.0,
+    "pct": -0.0406554685836634
    },
    {
-    "name": "Alphabet (Google)",
-    "symbol": "GOOG",
-    "metro": "San Francisco-San Jose",
-    "cap": 4100819517440.0,
-    "prev": 4193400127488.0,
-    "chg": -92580610048.0,
-    "pct": -0.022077695243324938
+    "name": "Tesla",
+    "symbol": "TSLA",
+    "metro": "Austin",
+    "cap": 1443322658816.0,
+    "prev": 1398455795712.0,
+    "chg": 44866863104.0,
+    "pct": 0.03208314716959416
    },
    {
-    "name": "Amazon",
-    "symbol": "AMZN",
-    "metro": "Seattle",
-    "cap": 2788369891328.0,
-    "prev": 2873797378048.0,
-    "chg": -85427486720.0,
-    "pct": -0.029726343051376093
+    "name": "Novartis",
+    "symbol": "NVS",
+    "metro": "Basel",
+    "cap": 260702060544.0,
+    "prev": 304095395840.0,
+    "chg": -43393335296.0,
+    "pct": -0.14269645607798492
    },
    {
     "name": "SpaceX",
     "symbol": "SPCX",
     "metro": "Brownsville",
-    "cap": 1950244274176.0,
-    "prev": 1865221931008.0,
-    "chg": 85022343168.0,
-    "pct": 0.04558296348255587
+    "cap": 1993217015808.0,
+    "prev": 1950244274176.0,
+    "chg": 42972741632.0,
+    "pct": 0.022034543160064635
    },
    {
-    "name": "Wiwynn",
-    "symbol": "6669.TW",
-    "metro": "Taipei",
-    "cap": 45254585977.0,
-    "prev": 126765646311.0,
-    "chg": -81511060334.0,
-    "pct": -0.6430059145048269
-   },
-   {
-    "name": "TSMC",
-    "symbol": "TSM",
-    "metro": "Hsinchu",
-    "cap": 2224530653184.0,
-    "prev": 2165456502784.0,
-    "chg": 59074150400.0,
-    "pct": 0.02728022951467824
-   },
-   {
-    "name": "Broadcom",
-    "symbol": "AVGO",
-    "metro": "San Francisco-San Jose",
-    "cap": 1702714146816.0,
-    "prev": 1754548011008.0,
-    "chg": -51833864192.0,
-    "pct": -0.029542573851952383
-   },
-   {
-    "name": "Dell",
-    "symbol": "DELL",
-    "metro": "Austin",
-    "cap": 338669076480.0,
-    "prev": 294796001280.0,
-    "chg": 43873075200.0,
-    "pct": 0.14882520458046833
-   },
-   {
-    "name": "CXMT",
-    "symbol": "688825.SS",
-    "metro": "Hefei",
-    "cap": 579195113664.0,
-    "prev": 617634447474.0,
-    "chg": -38439333810.0,
-    "pct": -0.06223638264868338
-   },
-   {
-    "name": "Sandisk",
-    "symbol": "SNDK",
-    "metro": "San Francisco-San Jose",
-    "cap": 254769070080.0,
-    "prev": 217429295104.0,
-    "chg": 37339774976.0,
-    "pct": 0.17173295327172805
+    "name": "SoftBank Group Corp.",
+    "symbol": "9984.T",
+    "metro": "Tokyo",
+    "cap": 242519989193.0,
+    "prev": 204040089179.0,
+    "chg": 38479900014.0,
+    "pct": 0.18858989999873216
    },
    {
     "name": "Intel",
     "symbol": "INTC",
     "metro": "San Francisco-San Jose",
-    "cap": 506408894464.0,
-    "prev": 472947818496.0,
-    "chg": 33461075968.0,
-    "pct": 0.07075003765617961
+    "cap": 544151666688.0,
+    "prev": 506408894464.0,
+    "chg": 37742772224.0,
+    "pct": 0.07453023166970281
    },
    {
-    "name": "Walmart",
-    "symbol": "WMT",
-    "metro": "Fayetteville",
-    "cap": 852628602880.0,
-    "prev": 820398325760.0,
-    "chg": 32230277120.0,
-    "pct": 0.039286132245750914
+    "name": "Amgen",
+    "symbol": "AMGN",
+    "metro": "Los Angeles",
+    "cap": 204007489536.0,
+    "prev": 236380536832.0,
+    "chg": -32373047296.0,
+    "pct": -0.13695309998812685
    },
    {
-    "name": "Palo Alto Networks",
-    "symbol": "PANW",
+    "name": "Microsoft",
+    "symbol": "MSFT",
+    "metro": "Seattle",
+    "cap": 3680323239936.0,
+    "prev": 3710545297408.0,
+    "chg": -30222057472.0,
+    "pct": -0.008144909992909023
+   },
+   {
+    "name": "Eli Lilly",
+    "symbol": "LLY",
+    "metro": "Indianapolis",
+    "cap": 994915778560.0,
+    "prev": 1024931856384.0,
+    "chg": -30016077824.0,
+    "pct": -0.029285925339366373
+   },
+   {
+    "name": "Exxon Mobil",
+    "symbol": "XOM",
+    "metro": "Houston",
+    "cap": 682536271872.0,
+    "prev": 655726608384.0,
+    "chg": 26809663488.0,
+    "pct": 0.04088542869119015
+   },
+   {
+    "name": "Broadcom",
+    "symbol": "AVGO",
     "metro": "San Francisco-San Jose",
-    "cap": 271606906880.0,
-    "prev": 302845853696.0,
-    "chg": -31238946816.0,
-    "pct": -0.10315131092188569
+    "cap": 1728006324224.0,
+    "prev": 1702714146816.0,
+    "chg": 25292177408.0,
+    "pct": 0.01485403610188783
    }
   ],
   "metros": [
    {
-    "metro": "San Francisco-San Jose",
-    "cap": 30572622047616.0,
-    "prev": 30312638848648.0,
-    "chg": 259983198968.0,
-    "pct": 0.008576726040451465
+    "metro": "New York",
+    "cap": 10063721590108.0,
+    "prev": 10234477068188.0,
+    "chg": -170755478080.0,
+    "pct": -0.016684338334272318
    },
    {
-    "metro": "Seattle",
-    "cap": 7409556557440.0,
-    "prev": 7622451568256.0,
-    "chg": -212895010816.0,
-    "pct": -0.027929991933646342
-   },
-   {
-    "metro": "Tokyo",
-    "cap": 5940912993447.0,
-    "prev": 5829452486205.0,
-    "chg": 111460507242.0,
-    "pct": 0.01912023599227606
-   },
-   {
-    "metro": "Boise",
-    "cap": 1242395585024.0,
-    "prev": 1148531424000.0,
-    "chg": 93864161024.0,
-    "pct": 0.08172537473733066
-   },
-   {
-    "metro": "Brownsville",
-    "cap": 1950244274176.0,
-    "prev": 1865221931008.0,
-    "chg": 85022343168.0,
-    "pct": 0.04558296348255587
-   },
-   {
-    "metro": "Austin",
-    "cap": 2597940859648.0,
-    "prev": 2514511991808.0,
-    "chg": 83428867840.0,
-    "pct": 0.033178950075323545
-   },
-   {
-    "metro": "Hsinchu",
-    "cap": 2651984239847.0,
-    "prev": 2570267823547.0,
-    "chg": 81716416300.0,
-    "pct": 0.031792957742135364
+    "metro": "Seoul",
+    "cap": 3743818880570.0,
+    "prev": 3620785178767.0,
+    "chg": 123033701803.0,
+    "pct": 0.03397984020827691
    },
    {
     "metro": "Beijing",
-    "cap": 5061560026774.0,
-    "prev": 4997956291272.0,
-    "chg": 63603735502.0,
-    "pct": 0.012725948726897049
+    "cap": 4972850006494.0,
+    "prev": 5061560026774.0,
+    "chg": -88710020280.0,
+    "pct": -0.017526221127627244
+   },
+   {
+    "metro": "Seattle",
+    "cap": 7345223379840.0,
+    "prev": 7409556557440.0,
+    "chg": -64333177600.0,
+    "pct": -0.008682459888291492
+   },
+   {
+    "metro": "Basel",
+    "cap": 875055515452.0,
+    "prev": 938414411700.0,
+    "chg": -63358896248.0,
+    "pct": -0.06751696847155315
+   },
+   {
+    "metro": "Mumbai",
+    "cap": 1741570325473.0,
+    "prev": 1797197040597.0,
+    "chg": -55626715124.0,
+    "pct": -0.030951928957952044
+   },
+   {
+    "metro": "Chicago",
+    "cap": 2759188303616.0,
+    "prev": 2812302892032.0,
+    "chg": -53114588416.0,
+    "pct": -0.018886510612526025
+   },
+   {
+    "metro": "Toronto",
+    "cap": 1969066394502.0,
+    "prev": 2017414545678.0,
+    "chg": -48348151176.0,
+    "pct": -0.023965402291551068
+   },
+   {
+    "metro": "Boise",
+    "cap": 1187689244672.0,
+    "prev": 1235064712704.0,
+    "chg": -47375468032.0,
+    "pct": -0.038358692904664156
+   },
+   {
+    "metro": "London",
+    "cap": 4553463591394.0,
+    "prev": 4600226736357.0,
+    "chg": -46763144963.0,
+    "pct": -0.010165400021137338
    },
    {
     "metro": "Paris",
-    "cap": 3583931005752.0,
-    "prev": 3640726864814.0,
-    "chg": -56795859062.0,
-    "pct": -0.015600142820629206
+    "cap": 3537299150295.0,
+    "prev": 3583931005752.0,
+    "chg": -46631855457.0,
+    "pct": -0.013011370861257818
    },
    {
-    "metro": "Houston",
-    "cap": 3015030376397.0,
-    "prev": 2961631693837.0,
-    "chg": 53398682560.0,
-    "pct": 0.018030156373299168
-   },
-   {
-    "metro": "New York",
-    "cap": 10225394111644.0,
-    "prev": 10277218834204.0,
-    "chg": -51824722560.0,
-    "pct": -0.005042679677844378
-   },
-   {
-    "metro": "Taipei",
-    "cap": 1161293431201.0,
-    "prev": 1207678368079.0,
-    "chg": -46384936878.0,
-    "pct": -0.0384083528396575
+    "metro": "Los Angeles",
+    "cap": 1759644758482.0,
+    "prev": 1804024078611.0,
+    "chg": -44379320129.0,
+    "pct": -0.024600181702214115
    }
   ]
  },
@@ -4493,7 +4502,7 @@
    "owns": "Apple TV+, Apple Music",
    "screen": true,
    "sound": true,
-   "cap": 4669700046848.0,
+   "cap": 4849207869440.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
   },
@@ -4504,7 +4513,7 @@
    "owns": "YouTube and YouTube Music - the world's default video player",
    "screen": true,
    "sound": true,
-   "cap": 4100819517440.0,
+   "cap": 4102531842048.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
   },
@@ -4515,7 +4524,7 @@
    "owns": "Prime Video, MGM, Amazon Music",
    "screen": true,
    "sound": true,
-   "cap": 2788369891328.0,
+   "cap": 2769709432832.0,
    "metro": "Seattle",
    "metroSlug": "seattle"
   },
@@ -4526,7 +4535,7 @@
    "owns": "The biggest subscription screen on Earth",
    "screen": true,
    "sound": false,
-   "cap": 325828280320.0,
+   "cap": 322288943104.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
   },
@@ -4537,7 +4546,7 @@
    "owns": "Disney, Pixar, Marvel, Lucasfilm, 20th Century, Disney+, ESPN",
    "screen": true,
    "sound": false,
-   "cap": 181837381632.0,
+   "cap": 183978491904.0,
    "metro": "Los Angeles",
    "metroSlug": "los-angeles"
   },
@@ -4548,7 +4557,7 @@
    "owns": "Sony Pictures, Columbia, Sony Music - the only giant on both boards by design",
    "screen": true,
    "sound": true,
-   "cap": 143484256256.0,
+   "cap": 139628412928.0,
    "metro": "Tokyo",
    "metroSlug": "tokyo"
   },
@@ -4559,7 +4568,7 @@
    "owns": "The stream count behind half the charts",
    "screen": false,
    "sound": true,
-   "cap": 111515041792.0,
+   "cap": 108085895168.0,
    "metro": "Stockholm",
    "metroSlug": "stockholm"
   },
@@ -4570,7 +4579,7 @@
    "owns": "NBCUniversal, Universal Pictures, DreamWorks, Sky",
    "screen": true,
    "sound": false,
-   "cap": 94003388416.0,
+   "cap": 89425649664.0,
    "metro": "Philadelphia",
    "metroSlug": "philadelphia"
   },
@@ -4581,7 +4590,7 @@
    "owns": "Warner Bros., HBO, DC Studios, CNN",
    "screen": true,
    "sound": false,
-   "cap": 70826614784.0,
+   "cap": 70300114944.0,
    "metro": "New York",
    "metroSlug": "new-york"
   },
@@ -4592,7 +4601,7 @@
    "owns": "Ticketmaster and the global tour circuit",
    "screen": false,
    "sound": true,
-   "cap": 40418471936.0,
+   "cap": 39638056960.0,
    "metro": "Los Angeles",
    "metroSlug": "los-angeles"
   },
@@ -4603,7 +4612,7 @@
    "owns": "The largest label group: Interscope, Republic, Def Jam, Capitol",
    "screen": false,
    "sound": true,
-   "cap": 29754338431.0,
+   "cap": 30470895378.0,
    "metro": "Los Angeles",
    "metroSlug": "los-angeles"
   },
@@ -4614,7 +4623,7 @@
    "owns": "Atlantic, Warner Records, Parlophone",
    "screen": false,
    "sound": true,
-   "cap": 15055098880.0,
+   "cap": 14819699712.0,
    "metro": "New York",
    "metroSlug": "new-york"
   },
@@ -4625,7 +4634,7 @@
    "owns": "QQ Music, Kugou, Kuwo - China's listening layer",
    "screen": false,
    "sound": true,
-   "cap": 13461860352.0,
+   "cap": 13005526016.0,
    "metro": "Guangzhou",
    "metroSlug": "guangzhou"
   },
@@ -4636,7 +4645,7 @@
    "owns": "Paramount Pictures, CBS, Nickelodeon",
    "screen": true,
    "sound": false,
-   "cap": 12184330240.0,
+   "cap": 11892625408.0,
    "metro": "Los Angeles",
    "metroSlug": "los-angeles"
   }
