@@ -579,18 +579,19 @@ hc_slug = "economy-housing"     # ADDED 2026-09-11, same trade and same reason
                                  # Cron 30 7 * * 6 UTC, grace 6h, email channel.
 catchup_hours = 40
 timeout_minutes = 20
-log_stderr = true               # keep stderr on a run that exits 0 too, so a
-                                 # warn-and-carry-on in the builder is visible
-                                 # rather than discarded; shares log_tail_lines
-                                 # as its window. Logged with the "!" prefix,
-                                 # same as on failure -- "!" means stderr, and
-                                 # the DONE/FAIL line says which it was.
 log_tail_lines = 30             # build_housing.py prints its MSA/metro match
                                  # counts BEFORE the commit + 5-minute CDN wait +
                                  # revalidate epilogue, so the default 12-line
                                  # window dropped exactly the lines you check the
                                  # run by (first run 09-12 logged from "real
                                  # terms:" onward and lost the counts above it).
+                                 # Setting this key also keeps stderr on a run
+                                 # that exits 0, so a warn-and-carry-on in the
+                                 # builder is visible rather than discarded --
+                                 # logged with the "!" prefix, same as on
+                                 # failure; the DONE/FAIL line says which it was.
+                                 # A clean run writes no stderr, so that costs
+                                 # nothing until something actually warns.
 
 [[job]]
 id = "economy-prices"

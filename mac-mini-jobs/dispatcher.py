@@ -47,7 +47,9 @@ DEFAULT_TIMEOUT_MINUTES = 30
 # Lines of a job's stdout kept in the operational log. Deliberately short: for
 # most jobs the interesting part is the last few lines. A job whose builder
 # prints its diagnostics BEFORE the commit/push/revalidate epilogue loses them
-# to this window, so such a job sets log_tail_lines in jobs.toml.
+# to this window, so such a job sets log_tail_lines in jobs.toml. Setting that
+# key ALSO keeps the job's stderr on a run that exits 0 (see run_job) -- one
+# knob, meaning "log this job's output properly".
 DEFAULT_LOG_TAIL_LINES = 12
 # How far back to look for a live occurrence. Must exceed the longest gap any
 # configured job has between runs (daily = 1 day, Tue-only = 7), and must NOT be
@@ -278,11 +280,13 @@ def run_job(job):
             log(f"    ! {line}")
         return "failed", f"exit {proc.returncode} after {dur:.0f}s"
     # A job that exits 0 normally has its stderr discarded, so a builder that
-    # warns and carries on warns into nothing. log_stderr opts a job into
-    # keeping it, under the same window as its stdout. Left OFF by default
-    # because several runners wrap tools that are chatty on stderr even when
-    # they succeed, and that noise would drown the fleet's log.
-    if job.get("log_stderr"):
+    # warns and carries on warns into nothing. Setting log_tail_lines at all is
+    # the opt-in to keeping it, under that same window: the key means "I care
+    # about this job's output, log more of it". Off for a job that leaves the
+    # key unset, because several runners wrap tools that are chatty on stderr
+    # even when they succeed, and that noise would drown the fleet's log. A job
+    # that wants the stderr without a wider stdout window sets the default 12.
+    if "log_tail_lines" in job:
         err = (proc.stderr or "").strip().splitlines()[-tail_n:]
         for line in err:
             log(f"    ! {line}")
