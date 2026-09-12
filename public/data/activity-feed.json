@@ -1,13 +1,174 @@
 {
-  "generatedAt": "2026-09-11",
+  "generatedAt": "2026-09-12",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-12",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "77e6956f8"
+    },
     {
       "date": "2026-09-11",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "42bd95c27"
+      "text": "Data refreshed — Football, Basketball, Elections, AFL, and 3 more.",
+      "commit": "d5c1aa866"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Methodology",
+      "text": "Zone Zero Cup: baseball on the Premier12 and the Baseball World Cup with the WBSC depth weight at 0.5, golf prestige to 0.75, handball to 0…",
+      "commit": "b0eeca3d0"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Zone Zero Cup: a sport opens to its nations, the top twelve with points and share, the rest on a click.",
+      "commit": "bd47a7441"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": null,
+      "text": "HANDOFF sections S to Z and the day's release notes folded to four bullets.",
+      "commit": "2b4f4cef3"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Money Ledger: grown or bought, and the director's ledger.",
+      "commit": "a0ebda54c"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Economy hub: the Prices tab, US and UK consumer prices monthly and every country's annual index.",
+      "commit": "203c464a9"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Mobile chart sweep, the NFL batch: the four NFL charts on ChartReadout.",
+      "commit": "24fe14e9f"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "Sortable sweep, the NFL and predictions batch: fifteen files, the baseline from 203 boards to 169; the odds columns leave the NFL Final vie…",
+      "commit": "51377e646"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Methodology",
+      "text": "Zone Zero Cup: the golf pillar on the women's majors, the OWGR and Rolex depth, the nation team events and prestige 0.9.",
+      "commit": "bdfda9092"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Live Standings: the Today box as a schedule, not a scoreboard, with La Liga, Bundesliga, Serie A, Ligue 1, MLS, WSL, NWSL and the three UEF…",
+      "commit": "4d45cb5e3"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NFL season hub: title odds through the playoff weeks, honours that fill in as they are earned, seeds kept through the bracket.",
+      "commit": "49bef095a"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NFL season browser: newest season first inside each decade.",
+      "commit": "1eda2d126"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Api",
+      "text": "The live Elo refresh moves to the Mac mini, daily in season, with an ISR flush the Action never sent.",
+      "commit": "8966c4218"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Live Standings: weekdays on the strips, three-day windows, internationals and F1 weekends in the Today box, admission rules recorded.",
+      "commit": "365e9e935"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Live Standings: slimmer Champions League and Premier League tables, the NFL in seed order, and the Today box with every fixture source, a t…",
+      "commit": "71d462ad1"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Live Standings: On today and Recent results, two collapsed strips at the top.",
+      "commit": "9fe21c509"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Live Standings: the Premier League, Champions League, NFL and college football carry their odds, and a slam lists the next round.",
+      "commit": "ba9166b57"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "F1 title odds, the status dots put right, and The World in 2100 moved into the rankings.",
+      "commit": "c89b32a20"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Money against football: the frontier, one dot per club and season, on /sports/expectation and every club's money panel.",
+      "commit": "73e520af1"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "fix",
+      "hub": null,
+      "text": "Build the Live Standings kick-off fixes today [deploy-now].",
+      "commit": "2a32e0068"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Live Standings: kick-offs for AFL, NRL and rugby too, and tennis lists what is still to come.",
+      "commit": "441f2be5a"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "fix",
+      "hub": null,
+      "text": "The 09-11 bullet was over the build's 220-char cap, and the gate that should have caught it could not.",
+      "commit": "770368de1"
+    },
+    {
+      "date": "2026-09-11",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Live Standings: the Libertadores knockout, kick-offs in your own time zone, and NPB to three places.",
+      "commit": "647310a5a"
     },
     {
       "date": "2026-09-10",
@@ -4040,167 +4201,6 @@
       "hub": null,
       "text": "2026-05-21 release notes for workbook sync.",
       "commit": "a496183c3"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "hub",
-      "hub": null,
-      "text": "Zoom and attribution out of the corners.",
-      "commit": "ce4897e97"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "hub",
-      "hub": "Badges",
-      "text": "Badge maps: every badge page gets a filtered, tier-colored map; deeper zoom-out everywhere.",
-      "commit": "a3e10d6b7"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "hub",
-      "hub": null,
-      "text": "Remove unused MetroSearch.tsx.",
-      "commit": "9becbece1"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "hub",
-      "hub": null,
-      "text": "Tooltip floats above primary pin via a second custom pane.",
-      "commit": "1de9d3685"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "hub",
-      "hub": null,
-      "text": "Drop Recently shipped, add full badge index, Sports leads Discover.",
-      "commit": "124a00987"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "fix",
-      "hub": null,
-      "text": "World-wrap on.",
-      "commit": "0fc1f069e"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Side feed at lg+, map pin above polygon, tighter refit.",
-      "commit": "ef7579701"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Table-first layout.",
-      "commit": "f91e87246"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "hub",
-      "hub": "About",
-      "text": "Metro replaces city across descriptive copy, tier names rename city to metro.",
-      "commit": "14f313087"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Filter-aware map, discovery strip, search hero.",
-      "commit": "0c72a5b99"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Compressed hero plus map/search/top-5 console.",
-      "commit": "5916b08ce"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Reshape stats grid from counts to positioning tiles.",
-      "commit": "ee59c8743"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "fix",
-      "hub": "Sports",
-      "text": "Qualitative scope copy, sitemap completion, SportsTeam + Article JSON-LD, error pages, country-link fix.",
-      "commit": "78c78f38c"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "fix",
-      "hub": "Admin",
-      "text": "Figures + structured data: qualitative scope language across the site, sitemap completion, SportsTeam + Article JSON-LD.",
-      "commit": "feeaa35f3"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "fix",
-      "hub": "About",
-      "text": "Qualitative scope language across the site.",
-      "commit": "fa496c6f9"
-    },
-    {
-      "date": "2026-05-19",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Amend 2026-05-19 entry with the RU/IE/BE boundary expansion bullet.",
-      "commit": "a9a001f4d"
-    },
-    {
-      "date": "2026-05-19",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Basketball, Populations.",
-      "commit": "96a4d11c0"
-    },
-    {
-      "date": "2026-05-19",
-      "category": "fix",
-      "hub": "Methodology",
-      "text": "Consolidated catch-up commit.",
-      "commit": "94679ade6"
-    },
-    {
-      "date": "2026-05-17",
-      "category": "hub",
-      "hub": "Release Notes",
-      "text": "Trim Velvet Rock /updates bullets to satisfy the 220-char brevity validator.",
-      "commit": "90c70cd28"
-    },
-    {
-      "date": "2026-05-17",
-      "category": "hub",
-      "hub": "Methodology",
-      "text": "Velvet Rock Capital badge: 8-metro curated index of the 1974-89 producer-driven recording economy.",
-      "commit": "168a39c1d"
-    },
-    {
-      "date": "2026-05-17",
-      "category": "hub",
-      "hub": "Sports",
-      "text": "Large multi-area release.",
-      "commit": "06d1d3ea2"
-    },
-    {
-      "date": "2026-05-17",
-      "category": "hub",
-      "hub": "Sports",
-      "text": "Multi-area release.",
-      "commit": "794e7f84b"
-    },
-    {
-      "date": "2026-05-17",
-      "category": "hub",
-      "hub": null,
-      "text": "Rankings map + Primary City column.",
-      "commit": "ea0d8ba4c"
     }
   ]
 }
