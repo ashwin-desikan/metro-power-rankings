@@ -277,6 +277,15 @@ def run_job(job):
         for line in err:
             log(f"    ! {line}")
         return "failed", f"exit {proc.returncode} after {dur:.0f}s"
+    # A job that exits 0 normally has its stderr discarded, so a builder that
+    # warns and carries on warns into nothing. log_stderr opts a job into
+    # keeping it, under the same window as its stdout. Left OFF by default
+    # because several runners wrap tools that are chatty on stderr even when
+    # they succeed, and that noise would drown the fleet's log.
+    if job.get("log_stderr"):
+        err = (proc.stderr or "").strip().splitlines()[-tail_n:]
+        for line in err:
+            log(f"    ! {line}")
     return "ok", f"{dur:.0f}s"
 
 
