@@ -14611,12 +14611,14 @@ no fails or warns; `/digest` 4.2. Every ticker control measured 44px at 375; des
 card 186px, fixtures row 36px, buttons 28px). Release note 2026-09-13 bullet 4 mentions both tickers.
 Patch retired to `~/metro-mini-jobs/pending/ticker-country-collapse-2026-09-13.patch.applied-bed0ae366`.
 
-**Deploy:** PENDING when this was written. Pushed 13:06:51 BST; at 13:10:56 `/deployed` still reported
-`cb25a991a` (the last deploy took ~450s). A watcher is polling for `bed0ae366`. Once live, check on
-production: `/` shows both tickers (desktop and 390px), `/api/on-today` returns JSON items,
-`/sports/standings` On today has no finished games and Recent results show dates, and
-`/countries/united-states` loads its sections closed on a phone. If `/deployed` is still on `cb25a991a`
-after ~15 minutes, look for a canceled build (deploy-watch heals those every 10 minutes).
+**Deploy: LIVE, verified.** `/deployed` returned `bed0ae366…` ~340s after the 13:06:51 BST push. On
+production: `/` 200 with the headline ticker server-rendered and the fixtures placeholder; `/api/on-today`
+46 items, `x-vercel-cache: PRERENDER` (ISR, not per-visit); `/sports/standings` "46 fixtures across 6
+sports" (same 46) and "116 results across 7 sports"; `/countries/united-states` 22 `<details>`, all
+`data-desktop-default-open`, 18 `data-jump-reveal`; `/updates` carries "today's headlines and today's
+fixtures". Headless Chromium on production: at 390 headline card 219px and fixtures box 108px, every
+control 44px, scrollWidth 390; at 1280 headline 186px and fixtures row 36px; both rotated within 6s,
+0 console errors at either width.
 
 **Notion (done 2026-09-13):** Backlog digest row now notes the US scroll-hold fix; new Backlog row (P3,
 Any session) for the 3.4 MB college-football standings response; ESPN Data sources row gains
