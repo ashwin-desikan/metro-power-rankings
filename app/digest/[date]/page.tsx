@@ -49,7 +49,7 @@ export default async function DigestDatePage({ params }: Props) {
   if (!DAY.test(date)) notFound();
   const [items, dates, latest] = await Promise.all([
     getDigestItemsForDate(date),
-    getRecentDigestDates(30),
+    getRecentDigestDates(),
     getLatestDigestDate(),
   ]);
   if (items.length === 0) notFound();

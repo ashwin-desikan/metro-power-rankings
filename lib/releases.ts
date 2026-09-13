@@ -23,7 +23,7 @@ export const RELEASES: Release[] = [
     items: [
       "The S&P 500 page's index-changes feed shows its history again: 61 entries back to October 2023, lost in August when the source table disappeared.",
       "It adds Reddit's arrival on 18 August, replacing AvalonBay Communities after Equity Residential acquired it.",
-      "New From the Digest page: each day's most substantive newsletter stories, with a direct link and one line on why each matters.",
+      "New From the Digest page: every story each day's newsletter digest linked, with one line on why it matters, and an archive back to 29 June.",
       "The homepage, and any metro or country a story is about, now shows the latest stories under In the news.",
     ],
   },

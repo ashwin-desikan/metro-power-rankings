@@ -2,11 +2,12 @@ import "server-only";
 import Link from "next/link";
 import { getAllMetros } from "@/lib/data";
 import { getCountry } from "@/lib/countries";
+import { LEAGUE_HUBS } from "@/lib/leagueHubs";
 import { entityHref, type DigestEntity, type DigestItem } from "@/lib/digestFeed";
 import { MONO, TabHeader } from "@/app/business/ui";
 import { SourcesCard, plural } from "@/app/predictions/_shared/ui";
 import { SectionHead } from "@/app/_shared/SectionHead";
-import { Disclosure } from "@/app/_shared/Disclosure";
+import { Disclosure, ShowMore } from "@/app/_shared/Disclosure";
 
 // Shared shell for /digest and /digest/[date], plus the story row reused by the
 // homepage strip and the "In the news" sections on metro and country pages.
@@ -52,12 +53,20 @@ export function DigestCrumbs({ day }: { day?: string }) {
 
 let metroNames: Map<string, string> | null = null;
 
+// League hub pages carry list-style titles ("NFL franchises"), so a chip pointing at a hub
+// uses the hub's short name ("NFL") instead of the stored page title.
+const HUB_SHORT = new Map(LEAGUE_HUBS.map((h) => [h.href, h.short]));
+
 function entityLabel(e: DigestEntity): string | null {
   if (e.type === "metro") {
     metroNames ??= new Map([...getAllMetros()].map((m) => [m.slug, m.name]));
     return metroNames.get(e.slug) ?? null;
   }
   if (e.type === "country") return getCountry(e.slug)?.name ?? null;
+  if (e.type === "club" || e.type === "league") {
+    // No stored name means the writer never verified the page: no chip rather than a guess.
+    return HUB_SHORT.get(`/teams/${e.slug}`) ?? e.name ?? null;
+  }
   return null;
 }
 
@@ -175,14 +184,20 @@ export function DigestDayView({
   dates: { date: string; count: number }[];
   isLatest: boolean;
 }) {
-  const others = dates.filter((d) => d.date !== day);
+  // A day can carry every story its post linked (up to 43), so the phone gets the first
+  // PHONE_ROWS with the rest one tap away. ShowMore rather than CappedList: CappedList
+  // places its <details> among the items, which is invalid inside an <ol>, so the tail is
+  // a second <ol> continuing the numbering. Desktop renders every row (data-desktop-open).
+  const PHONE_ROWS = 12;
+  const head = items.slice(0, PHONE_ROWS);
+  const tail = items.slice(PHONE_ROWS);
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
       <DigestCrumbs day={isLatest ? undefined : day} />
       <TabHeader
         emoji="📰"
         title="From the Digest"
-        sub="The day's most substantive stories from about fifty newsletters, with one line on why each matters."
+        sub={DIGEST_SUB}
         stamp={`As of ${fmtDigestDate(day, "stamp")} · ${plural(items.length, "stories")} · Source: Daily Newsletter Digest`}
       />
 
@@ -190,42 +205,94 @@ export function DigestDayView({
         <SectionHead
           eyebrow={isLatest ? "Latest digest" : undefined}
           title={fmtDigestDate(day)}
-          sub="In editorial order. Headlines open the publisher's page; some are paywalled."
+          sub="In the digest's order. Headlines open the publisher's page; some are paywalled."
         />
-        {/* Bounded: push_feed.py caps a day at fifteen stories. */}
-        <ol className="max-w-3xl" data-mobile-uncapped="bounded: at most fifteen stories a day">
-          {items.map((it) => (
-            <DigestItemRow key={it.position} item={it} showNumber />
-          ))}
-        </ol>
+        <div className="max-w-3xl">
+          <ol>
+            {head.map((it) => (
+              <DigestItemRow key={it.position} item={it} showNumber />
+            ))}
+          </ol>
+          {tail.length > 0 ? (
+            <ShowMore label={`Show all ${items.length} stories`}>
+              <ol start={PHONE_ROWS + 1}>
+                {tail.map((it) => (
+                  <DigestItemRow key={it.position} item={it} showNumber />
+                ))}
+              </ol>
+            </ShowMore>
+          ) : null}
+        </div>
       </section>
 
-      {others.length > 0 ? (
-        <Disclosure
-          id="earlier"
-          className="mb-8"
-          title={<h2 className="text-lg font-bold">Earlier digests</h2>}
-          meta={plural(others.length, "days")}
-        >
-          <ul className="flex flex-wrap gap-2" data-mobile-uncapped="bounded: the thirty most recent days">
-            {others.map((d) => (
-              <li key={d.date}>
-                <Link
-                  href={`/digest/${d.date}`}
-                  className="inline-flex items-center gap-2 min-h-11 rounded-lg border px-3 text-sm transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                  style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
-                >
-                  {fmtDigestDate(d.date, "short")}
-                  <span className="text-[11px] text-[var(--text-dim)]" style={MONO}>{d.count}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Disclosure>
-      ) : null}
+      <DigestArchive dates={dates} current={day} />
 
       <DigestSources />
     </main>
+  );
+}
+
+export const DIGEST_SUB =
+  "Every story the day's newsletter digest linked, from about fifty newsletters, with one line on why each matters.";
+
+const MONTH = (ym: string) =>
+  new Date(`${ym}-15T12:00:00Z`).toLocaleDateString("en-GB", { month: "long", year: "numeric", timeZone: "UTC" });
+
+/**
+ * The archive: every digest day, grouped by month, newest first, under the day being read.
+ * Each month is a Disclosure (open on desktop; on a phone only the newest month starts open),
+ * so a year of archive is twelve headed rows on a phone rather than hundreds of chips.
+ */
+export function DigestArchive({ dates, current }: { dates: { date: string; count: number }[]; current: string }) {
+  if (dates.length <= 1) return null;
+  const months: { ym: string; days: { date: string; count: number }[] }[] = [];
+  for (const d of dates) {
+    const ym = d.date.slice(0, 7);
+    const last = months[months.length - 1];
+    if (last && last.ym === ym) last.days.push(d);
+    else months.push({ ym, days: [d] });
+  }
+  const stories = dates.reduce((n, d) => n + d.count, 0);
+  return (
+    <section id="archive" className="mb-10">
+      <SectionHead
+        title="The archive"
+        sub={`Every past digest, ${plural(dates.length, "days")} and ${stories.toLocaleString("en-GB")} stories. Pick a day to read it.`}
+      />
+      <div className="max-w-3xl space-y-3">
+        {months.map((m, i) => (
+          <Disclosure
+            key={m.ym}
+            defaultOpen={i === 0}
+            title={<h3 className="text-base font-bold">{MONTH(m.ym)}</h3>}
+            meta={`${plural(m.days.length, "days")} · ${m.days.reduce((n, d) => n + d.count, 0)} stories`}
+          >
+            <ul className="flex flex-wrap gap-2 p-3" data-mobile-uncapped="bounded: at most 31 days in a month, inside a collapsed month">
+              {m.days.map((d) => {
+                const here = d.date === current;
+                return (
+                  <li key={d.date}>
+                    <Link
+                      href={`/digest/${d.date}`}
+                      aria-current={here ? "page" : undefined}
+                      className="inline-flex items-center gap-2 min-h-11 rounded-lg border px-3 text-sm transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                      style={{
+                        borderColor: here ? "var(--accent)" : "var(--border)",
+                        backgroundColor: "var(--bg-card)",
+                        color: here ? "var(--accent)" : undefined,
+                      }}
+                    >
+                      {fmtDigestDate(d.date, "short")}
+                      <span className="text-[11px] text-[var(--text-dim)]" style={MONO}>{d.count}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </Disclosure>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -236,7 +303,7 @@ export function EmptyDigest() {
       <TabHeader
         emoji="📰"
         title="From the Digest"
-        sub="The day's most substantive stories from about fifty newsletters, with one line on why each matters."
+        sub={DIGEST_SUB}
         stamp="No digest published yet · Source: Daily Newsletter Digest"
       />
       <p className="text-[var(--text-muted)] mb-10">The first digest lands here after the next morning run.</p>

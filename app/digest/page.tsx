@@ -11,7 +11,7 @@ const PAGE_PATH = "/digest";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "From the Digest";
 const PAGE_DESCRIPTION =
-  "The day's most substantive stories from about fifty newsletters, each with a direct link and one line on why it matters.";
+  "Every story from the daily newsletter digest, each with a direct link and one line on why it matters, plus the full archive.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 export default async function DigestPage() {
-  const [day, dates] = await Promise.all([getLatestDigestDate(), getRecentDigestDates(30)]);
+  const [day, dates] = await Promise.all([getLatestDigestDate(), getRecentDigestDates()]);
   const items = day ? await getDigestItemsForDate(day) : [];
   if (!day || items.length === 0) return <EmptyDigest />;
   return <DigestDayView day={day} items={items} dates={dates} isLatest />;

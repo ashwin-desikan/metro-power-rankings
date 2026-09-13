@@ -23,7 +23,14 @@ const REVALIDATE = 1800; // 30 min. The digest lands once a day at ~08:20 BST.
 
 export type DigestEntity = {
   type: "metro" | "country" | "club" | "league";
+  /**
+   * metro/country: the site slug ("washington-baltimore", "united-states").
+   * club/league: the page's path under /teams/ ("football/arsenal",
+   * "football/leagues/premier-league", "nfl"). A bare club slug is ambiguous across sports.
+   */
   slug: string;
+  /** club/league only: the live page's own title, recorded by push_feed.py when it verified the page. */
+  name?: string;
 };
 
 export type DigestItem = {
@@ -48,11 +55,14 @@ type Row = {
 
 const ENTITY_TYPES = new Set(["metro", "country", "club", "league"]);
 
+// A /teams/ path: one to four lowercase hyphenated segments. The same shape push_feed.py
+// accepts, so a malformed or hostile slug ("../x", "//evil") can never become a link.
+const TEAM_PATH = /^[a-z0-9]+(?:-[a-z0-9]+)*(?:\/[a-z0-9]+(?:-[a-z0-9]+)*){0,3}$/;
+
 // The route for an entity. Kept here so a tag can never render as a dead link shape;
-// an unknown type yields null and the caller drops the chip.
-// 🔴 /clubs and /leagues do NOT exist in app/ (checked 2026-09-13; team pages live under
-// /teams/<sport>). The mini's push_feed.py never writes those types, and the UI drops any
-// tag it cannot name, so nothing dead renders today. Fix these two before allowing them.
+// an unknown type or malformed slug yields null and the caller drops the chip.
+// Clubs and leagues live under /teams/<sport>/... (there are no /clubs or /leagues routes),
+// so their slug IS that path; push_feed.py only writes one after the live page returned 200.
 export function entityHref(e: DigestEntity): string | null {
   switch (e.type) {
     case "metro":
@@ -60,9 +70,8 @@ export function entityHref(e: DigestEntity): string | null {
     case "country":
       return `/countries/${e.slug}`;
     case "club":
-      return `/clubs/${e.slug}`;
     case "league":
-      return `/leagues/${e.slug}`;
+      return TEAM_PATH.test(e.slug) ? `/teams/${e.slug}` : null;
     default:
       return null;
   }
@@ -75,8 +84,10 @@ function toEntities(raw: unknown): DigestEntity[] {
     if (!e || typeof e !== "object") continue;
     const t = (e as Record<string, unknown>).type;
     const s = (e as Record<string, unknown>).slug;
+    const n = (e as Record<string, unknown>).name;
     if (typeof t === "string" && typeof s === "string" && ENTITY_TYPES.has(t) && s) {
-      out.push({ type: t as DigestEntity["type"], slug: s });
+      const name = typeof n === "string" && n.trim() ? n.trim().slice(0, 80) : undefined;
+      out.push(name ? { type: t as DigestEntity["type"], slug: s, name } : { type: t as DigestEntity["type"], slug: s });
     }
   }
   return out;
@@ -156,10 +167,13 @@ export async function getDigestItemsForEntity(
   return rows.map(toItem);
 }
 
-/** Recent digest days with their story counts, newest first. The archive links on /digest. */
-export async function getRecentDigestDates(limit = 30): Promise<{ date: string; count: number }[]> {
+/**
+ * Digest days with their story counts, newest first: the archive on /digest. Every day by
+ * default (one row per day, so a thousand is years of digests); the archive groups them by month.
+ */
+export async function getRecentDigestDates(limit = 1000): Promise<{ date: string; count: number }[]> {
   const rows = await query<{ digest_date: string; item_count: number }>(
-    `select=digest_date,item_count&item_count=gt.0&order=digest_date.desc&limit=${Math.min(limit, 90)}`,
+    `select=digest_date,item_count&item_count=gt.0&order=digest_date.desc&limit=${Math.min(limit, 1000)}`,
     { table: "digest_run" },
   );
   return rows.map((r) => ({ date: r.digest_date, count: r.item_count }));
