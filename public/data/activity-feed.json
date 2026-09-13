@@ -1,13 +1,27 @@
 {
-  "generatedAt": "2026-09-12",
+  "generatedAt": "2026-09-13",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-13",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "f90c1e920"
+    },
     {
       "date": "2026-09-12",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL.",
-      "commit": "77e6956f8"
+      "text": "Data refreshed — Football, Basketball, AFL, NFL, and 1 more.",
+      "commit": "d7e37b242"
+    },
+    {
+      "date": "2026-09-12",
+      "category": "hub",
+      "hub": null,
+      "text": "Seahawks close, Liverpool minority stake, F1 updates.",
+      "commit": "c52b2ec86"
     },
     {
       "date": "2026-09-11",
@@ -4187,20 +4201,6 @@
       "hub": null,
       "text": "Drop ambiguous no-scraping line, add explicit Access policy listing verified AI crawlers (GPTBot, ClaudeBot, etc.) welcome under CC-BY with…",
       "commit": "efe81ea65"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "hub",
-      "hub": null,
-      "text": "Singapore, Malta, Liechtenstein wired and resolved to polygons.",
-      "commit": "fdf7feab2"
-    },
-    {
-      "date": "2026-05-20",
-      "category": "fix",
-      "hub": null,
-      "text": "2026-05-21 release notes for workbook sync.",
-      "commit": "a496183c3"
     }
   ]
 }
