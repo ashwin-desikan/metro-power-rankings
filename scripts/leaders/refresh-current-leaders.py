@@ -60,10 +60,6 @@ CURATED_OVERRIDES = {
     # Mohammed bin Salman has been Prime Minister (head of government) since
     # 2022-09-27; we track heads of government, so this is the PM, not the King.
     "saudi-arabia": {"name": "Mohammed bin Salman", "role": "PM", "since": "2022-09-27"},
-    # Wikidata's P6 for Bulgaria is stale (still Kiril Petkov, 2021). Rumen Radev
-    # resigned the presidency and was elected PM on 2026-05-08 (news-verified).
-    # Remove this override once Wikidata catches up.
-    "bulgaria": {"name": "Rumen Radev", "role": "PM", "since": "2026-05-08"},
     # Wikidata's P6 for Kuwait still lists Sabah Al-Khalid Al-Sabah, who left the
     # premiership in 2022 and has been CROWN PRINCE since 1 Jun 2024. Ahmad
     # Al-Abdullah Al-Sabah has been PM since 15 May 2024 (Wikipedia/news-verified
