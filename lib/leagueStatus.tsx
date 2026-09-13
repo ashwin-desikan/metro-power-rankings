@@ -135,13 +135,16 @@ const LEAGUE_SEASONS: Record<string, MonthWindow[]> = {
   "/teams/football/tournaments/conference-league": [{ label: "Live - Qualifying", tone: "regular", months: [7, 8] }, { label: "Live - League Phase", tone: "regular", months: [9, 10, 11, 12, 1] }, { label: "Live - Knockouts", tone: "regular", months: [2, 3, 4, 5] }],
   "/teams/football/tournaments/copa-libertadores": [{ label: "Live - Group Stage", tone: "regular", months: [4, 5, 6, 7, 8] }, { label: "Live - Knockouts", tone: "regular", months: [9, 10, 11] }],
 };
-function monthSeasonStatus(windows: MonthWindow[]): LeagueStatus {
-  const m = new Date().getUTCMonth() + 1;
+// `at` defaults to the clock, which is how every caller in the nav and the /sports
+// console uses it. It is a parameter so the state can be ASSERTED on a fixed date:
+// lib/digestSeason reads these for the digest's "What's on" panel, and a panel whose
+// tests can only ever check today is a panel nobody can prove moves with the calendar.
+function monthSeasonStatus(windows: MonthWindow[], at: number): LeagueStatus {
+  const m = new Date(at).getUTCMonth() + 1;
   for (const w of windows) if (w.months.includes(m)) return { label: w.label, tone: w.tone };
   return { label: "Offseason", tone: "offseason" };
 }
-function majorsSeasonStatus(windows: MajorWindow[]): LeagueStatus {
-  const now = Date.now();
+function majorsSeasonStatus(windows: MajorWindow[], now: number): LeagueStatus {
   for (const w of windows) {
     if (now >= w.start && now <= w.end) return { label: w.label, tone: "regular" };
   }
@@ -153,29 +156,49 @@ function majorsSeasonStatus(windows: MajorWindow[]): LeagueStatus {
   return { label: "Offseason", tone: "offseason" };
 }
 
-export function leagueStatusFor(page: string | null | undefined): LeagueStatus | null {
+/**
+ * The major currently being played on an individual-sport hub, with its dates.
+ *
+ * Exported so the digest's "What's on" panel can say which day of a major it is, which
+ * leagueStatusFor cannot: it returns a label, not the window behind it. Golf and tennis
+ * are the only two hubs driven by dated majors.
+ */
+export function currentMajorFor(
+  page: string | null | undefined,
+  at: number = Date.now(),
+): { label: string; start: number; end: number } | null {
+  if (!page) return null;
+  const windows = SEASON_WINDOWS[page];
+  if (!windows) return null;
+  const w = windows.find((x) => at >= x.start && at <= x.end);
+  return w ? { label: w.label.replace(/^Live\s*-\s*/i, ""), start: w.start, end: w.end } : null;
+}
+
+export function leagueStatusFor(
+  page: string | null | undefined,
+  at: number = Date.now(),
+): LeagueStatus | null {
   if (!page) return null;
   const champ = CHAMPION_STATUS[page];
   if (champ) {
-    return Date.now() <= champ.until
+    return at <= champ.until
       ? { label: champ.label, tone: "champion" }
       : { label: "Offseason", tone: "offseason" };
   }
   if (page === "/teams/national") {
-    return Date.now() <= WORLD_CUP_END
+    return at <= WORLD_CUP_END
       ? { label: "Live - World Cup", tone: "worldcup" }
       : { label: "Offseason", tone: "offseason" };
   }
   const seasonWindows = SEASON_WINDOWS[page];
-  if (seasonWindows) return majorsSeasonStatus(seasonWindows);
+  if (seasonWindows) return majorsSeasonStatus(seasonWindows, at);
   const dated = LEAGUE_DATES[page];
   if (dated) {
-    const now = Date.now();
-    const hit = dated.find((w) => now >= w.start && now <= w.end);
+    const hit = dated.find((w) => at >= w.start && at <= w.end);
     if (hit) return { label: hit.label, tone: hit.tone };
   }
   const leagueSeason = LEAGUE_SEASONS[page];
-  if (leagueSeason) return monthSeasonStatus(leagueSeason);
+  if (leagueSeason) return monthSeasonStatus(leagueSeason, at);
   return STATUS_BY_PAGE[page] ?? null;
 }
 
