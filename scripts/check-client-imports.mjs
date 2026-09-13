@@ -86,6 +86,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/wc2026Standings",
   "@/lib/euroComps",
   "@/lib/clubFootballLive",
+  "@/lib/digestFeed",
   "@/lib/uefaCoefficients",
   "@/lib/baseball",
   "@/lib/olympics",
