@@ -14425,9 +14425,10 @@ note amended in the same commit ("S&P 500 history and a daily news digest", four
   `check:function-size` max 87.4 MB against the 220 MB line. **pytest: the mini's bare `python3` has no
   pytest, so `npm run verify` stops there.** The suite passes (112) with
   `PYTHON_BIN="$REPO/.venv/bin/python" npm run test:python`; use that on the mini.
-- **Deploy:** pushed 10:2x BST; the watcher was still waiting on `/deployed` when this was written.
-  Verify: `/deployed` sha `e902e4727…`, `/digest` shows 12 stories, homepage "From the digest",
-  Washington-Baltimore In the news (rugby story), United States In the news (FEMA story),
-  `/digest/2020-01-01` 404.
+- **Deploy: LIVE, verified.** `/deployed` returned `e902e4727…` ~450s after push. On production:
+  `/digest` and `/digest/2026-09-13` 200 with "12 stories", the FEMA and rugby stories and the sources
+  card; homepage "From the digest" 200; Washington-Baltimore In the news (rugby story) and United States
+  In the news (FEMA story) 200; `/digest/2020-01-01` 404; `/updates` shows "S&P 500 history and a daily
+  news digest".
 - **Next proof:** 2026-09-14 ~08:20 BST, the first unattended `feed.json`. `/digest` should turn over to
   09-14 within 30 minutes of `[push_feed] pushed N item(s)` in the mini's log.
