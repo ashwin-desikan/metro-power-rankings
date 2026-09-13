@@ -14692,12 +14692,20 @@ story…"; Backlog "Evening news refresh … confirm the first live run and the 
 In progress) and "Create the healthchecks.io check 'newsletter-evening'" (Ashwin, Open).
 
 **Open:**
-- 🔴 No healthchecks tile yet: `POST /api/v3/checks/` returned 403 (the stored `HC_API_KEY` looks
-  read-only), so pings to `newsletter-evening` are ignored. Ashwin: create it in the dashboard (cron
-  `0 20 * * *`, Europe/London, grace 4h, slug `newsletter-evening`). ntfy still reports failures.
+- 🔴 No healthchecks tile yet, and I misread why at first: `POST /api/v3/checks/` returned 403 because
+  the project is at its **20-check plan limit**, not because `HC_API_KEY` is read-only (it has full
+  write access; every check lists an `update_url`). Same trap as 2026-09-10 section I. NOT worked
+  around with `?create=1`. Until Ashwin frees a slot (give up the tile most covered elsewhere, record its
+  config first) or raises the plan, `com.newsletter.evening` pings slug `newsletter-evening`, which does
+  not exist: hc-run.sh swallows the 404, so the job has NO tile. Its failures still reach ntfy via
+  run-evening.sh. When a slot exists: create it via the Management API, cron `0 20 * * *`,
+  Europe/London, grace 14400.
 - Check after 2026-09-14 08:00: yesterday lost exactly the evening urls the morning feed carries, item
   counts match on both days, and the morning feed is the new ~30-item size.
-- `topics` (the Windows session's `build_topics.py`) is manual (`--dry-run` / `--write`): neither the
-  morning nor the evening push fills it. A morning re-run also deletes and rewrites that day's morning
-  rows, dropping any topics written to them.
+- `topics`: now tagged in both jobs (Ashwin, same day). `build_topics.py --write --date <today>` runs after
+  the morning push (post-socials.sh) and after the evening append (run-evening.sh), non-fatal. `--date`
+  (metro `3b17cf098`) limits it to that day's `digest_item` rows and PATCHes `topics` only, so it can
+  never re-insert an evening story the morning push moved; the old whole-table path writes back full
+  rows and must not run alongside a push. key() now also reads `~/.config/metro-supabase/env`. Dry run
+  on 09-13: 34 rows, 10 tagged. newsletter-podcast `3b6bb9e`.
 - The Windows session also offered a `data-currency.json` entry for `/business/leaders`; not done here.
