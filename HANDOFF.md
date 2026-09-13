@@ -14333,3 +14333,28 @@ job fail CLOSED. `mac-mini-jobs/run-owners-weekly.sh`:
   ntfy: "owners weekly: no changes", or NOT APPLIED with a patch. To restore apply-and-push, put a
   read-scope `VERCEL_TOKEN` in `~/metro-mini-jobs/config.env`; the counted path is unchanged.
 - Live immediately: the live script is a symlink into the repo; `--check-sync` in sync.
+
+### E. Newsletter digest / podcast / email drafts: current state, as briefed to the Windows session
+Ashwin asked for a pointer message for Windows Claude. The facts it rests on, each read on disk
+09-13, so any session can start here instead of from memory:
+
+- **Code:** `github.com/ashwin-desikan/newsletter-podcast`, PRIVATE, clone at `~/newsletter-podcast`,
+  one commit `c19a7dc` (09-10), tree clean. `SETUP.md` is the entry point. `_windows-reference/` keeps
+  the old `.ps1` scripts for comparison only.
+- **Not in that repo:** secrets in `~/.config/newsletter-podcast/env`; the four launchd plists in
+  `~/Library/LaunchAgents/com.newsletter.*.plist`; `builds/`, `logs/`, `digest-newsfeed/`. These jobs
+  sit OUTSIDE the dispatcher, so their healthchecks tiles are their only signal.
+- **Schedule** (mini local time, BST; each wrapped in `hc-run.sh`):
+  | time | plist / script | does |
+  |---|---|---|
+  | 08:00 daily | `com.newsletter.daily` → `run-daily.sh` | headless `claude -p` reads Gmail newsletters → digest script; `daily.py` TTS + cover → publishes to the Daily Newsletter Digest Spotify show |
+  | end of daily | `post-socials.sh` | headless Claude makes TWO Gmail **drafts** to ashwind@gmail.com: "LinkedIn draft - Daily Digest <date>", "Substack draft - Daily Digest <date>". Never sends (connector has no send tool). Failure is non-fatal |
+  | 09:30 daily | `com.newsletter.watchdog` → `watchdog.sh` | final.mp3 present AND Spotify says READY |
+  | Sun 09:00 | `com.newsletter.weekly` → `run-weekly.sh` | Metro weekly from newest unnarrated Substack post; builds only, manual upload to Spotify for Creators. Clean-skipping: no new Substack post in its 14-day window |
+  | 12:00 daily | `com.newsletter.retention` → `retention-spotify.sh` | deletes daily-show episodes older than 7 days (irreversible) |
+- **Latest:** 09-13 daily published (`0PdQ035e6LkvlCRbvsXw6z`), drafts created 08:19 local; 09-12
+  retention deleted the 09-04 episode. Auth risk is covered by `claude-auth-canary` (00:30/06:30 UTC).
+- **Asked of the Windows session:** confirm its Task Scheduler still has "Daily Newsletter Digest",
+  "Daily Digest Watchdog" and "Metro Power Rankings Weekly" DISABLED. A Windows publish makes Spotify
+  reject the Mac's episode as a duplicate (it happened during the June cutover). Not yet confirmed.
+- History: 2026-09-10 mini entry, section A (OAuth expiry, repo versioned).
