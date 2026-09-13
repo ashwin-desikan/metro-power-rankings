@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T12:15:33.858837+00:00",
+  "generated_at": "2026-09-13T14:05:38.773743+00:00",
   "jobs": [
     {
       "id": "ops-autofix",
@@ -81,6 +81,26 @@
       }
     },
     {
+      "id": "claude-auth-canary",
+      "label": "Claude auth canary (report-only)",
+      "schedule_text": "Daily at 00:30, 06:30, 19:30 UTC",
+      "cadence": "daily",
+      "times": [
+        "00:30",
+        "06:30",
+        "19:30"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-13T19:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-13",
+        "status": "ok",
+        "slot": "2026-09-13T06:30:00+00:00"
+      }
+    },
+    {
       "id": "cfb-sun",
       "label": "CFB predictions (grade the week, publish AP-25 slate)",
       "schedule_text": "Sun at 23:40 UTC",
@@ -98,25 +118,6 @@
         "date": "2026-09-06",
         "status": "ok",
         "slot": "2026-09-06T23:40:00+00:00"
-      }
-    },
-    {
-      "id": "claude-auth-canary",
-      "label": "Claude auth canary (report-only)",
-      "schedule_text": "Daily at 00:30, 06:30 UTC",
-      "cadence": "daily",
-      "times": [
-        "00:30",
-        "06:30"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-14T00:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-13",
-        "status": "ok",
-        "slot": "2026-09-13T06:30:00+00:00"
       }
     },
     {
