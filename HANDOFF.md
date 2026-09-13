@@ -14634,3 +14634,70 @@ phones too" and "Recent results may show ESPN final scores before the grading jo
   of `/sports/standings` and `/api/on-today` refetches it. Worth trimming or snapshotting if ESPN or
   function time becomes a problem. (The new ESPN scoreboard feeds are under the limit.)
 - College tags in the digest archive remain uneven (I).
+
+### K. Evening feed-only news refresh, switched on 2026-09-13 (newsletter-podcast `55a7f7f`, `a476ad1`; no Vercel build)
+
+Ashwin's asks, all 2026-09-13: a digest-only job ~12 hours after the daily one that refreshes the site's
+news without a podcast; no redundant content on the site; the morning podcast still covering the prior
+24 hours; "build it, no label, start with the dry run"; then "switch it on tonight, add the older-article
+rule".
+
+**How it avoids repeats: one story, one day, the next morning wins.**
+- 20:00 (`com.newsletter.evening` → `hc-run.sh newsletter-evening` → `run-evening.sh`): headless Claude,
+  feed only, Gmail `category:social after:<today 08:00 epoch>`. Its prompt lists what today's page
+  already carries (`push_feed.py DATE --list`) and takes the link, feed and filtering rules straight from
+  `editorial-prompt.md` (three headings extracted at run time; the run fails loudly if one is renamed).
+  `$6` budget, auth-expiry detection, one retry, ntfy on failure (not on `--dry-run`).
+- `push_feed.py DATE --edition evening` APPENDS: skips any url already on today's or yesterday's page,
+  any url that dates itself more than `EVENING_MAX_AGE_DAYS` (2) before the digest date, and never passes
+  `MAX_ITEMS` (60). Nothing new writes nothing and exits 0.
+- 08:00 next morning (unchanged run; Gmail `newer_than:1d`, so the evening run takes nothing from the
+  podcast): `run-daily.sh` hands the editorial step last night's evening list so feed.json reuses the same
+  url for a repeated story (script and socials untouched). The default morning push replaces only
+  `edition='morning'` rows, drops today's own evening rows the morning now carries (a re-run), renumbers
+  the rest after the morning items, then DELETES from yesterday every evening row whose url the morning
+  carries, renumbers yesterday's remaining evening rows and fixes both `digest_run.item_count`s.
+- `digest_item.edition` (`'morning'|'evening'`, default morning, check constraint): migration
+  `digest_item_edition`, applied 2026-09-13. Before it existed the morning push used the old whole-day
+  replace; that fallback is still in the code.
+- No site change, no label (Ashwin). `/digest` and the homepage ticker read Supabase at request time, so
+  evening stories appear without a build (homepage within its 30-minute ISR window).
+
+**Dry run, 14:11 (`run-evening.sh --dry-run`):** 8 threads since 08:00; 12 candidates, 0 repeats of the 34
+on the page; Claude also left out a WaPo dividend-check editorial as the same story as a morning item
+under a different url. NYT *The Morning* contributed nothing (every link an `nl.nytimes.com/f/` redirect,
+same as mornings). Four picks were WaPo *Week in Ideas* opinion pieces from 7-9 Sept, so Ashwin added the
+age rule: re-planned on the same feed, 8 append and those 4 are skipped as older than 2 days.
+
+**Tests:** `push_feed.py --self-test` (append, cap, skips, age rule, morning move and renumber);
+post-migration dry runs of both editions; the PostgREST `url=eq.<quoted>` filter matched a live url
+exactly. `bash -n` on both wrappers.
+
+**Switched on:** migration applied; `~/Library/LaunchAgents/com.newsletter.evening.plist` bootstrapped
+(20:00 daily; not git-tracked, like the other newsletter plists); `claude-auth-canary` gains a 19:30 slot
+in `jobs.toml` (live and `mac-mini-jobs/` copies identical). First live run: PENDING when this was written (20:00 tonight); a check of the log and the evening rows is queued for 20:25.
+
+**Also in `a476ad1`, the Windows session's request 1 (Ashwin's ruling):** the LIVE morning feed now
+carries every non-generic linked story in `socials/substack.md`, in post order, `why` grounded in the post,
+listed-only stories "Further reading from the day's section on <topic>." Expect ~20-40 items from
+2026-09-14 instead of ~12. The evening prompt is exempt (there is no post in the evening).
+
+**Windows session's business leaders change (`a1cce05fd`, pulled):** `runners/business-daily.sh` now runs
+`scripts/business/build_leaders.py`, commits `leaders.json` + `leaders-changes.json` and revalidates
+`/business/leaders`. `bash -n` OK on the mini; the live `~/metro-mini-jobs/runners/` copy is identical.
+First real run: business-daily 05:50 on 2026-09-14.
+
+**Notion:** Decisions "Evening feed-only news refresh…" and "The live daily news feed carries every linked
+story…"; Backlog "Evening news refresh … confirm the first live run and the first morning move" (Mac mini,
+In progress) and "Create the healthchecks.io check 'newsletter-evening'" (Ashwin, Open).
+
+**Open:**
+- 🔴 No healthchecks tile yet: `POST /api/v3/checks/` returned 403 (the stored `HC_API_KEY` looks
+  read-only), so pings to `newsletter-evening` are ignored. Ashwin: create it in the dashboard (cron
+  `0 20 * * *`, Europe/London, grace 4h, slug `newsletter-evening`). ntfy still reports failures.
+- Check after 2026-09-14 08:00: yesterday lost exactly the evening urls the morning feed carries, item
+  counts match on both days, and the morning feed is the new ~30-item size.
+- `topics` (the Windows session's `build_topics.py`) is manual (`--dry-run` / `--write`): neither the
+  morning nor the evening push fills it. A morning re-run also deletes and rewrites that day's morning
+  rows, dropping any topics written to them.
+- The Windows session also offered a `data-currency.json` entry for `/business/leaders`; not done here.
