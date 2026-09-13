@@ -46,6 +46,7 @@ const SECTIONS: [string, OgSection][] = [
   ["/time-machine", { emoji: "⏳", kicker: "Time machine" }],
   ["/rankings", { emoji: "🏙️", kicker: "Metro rankings" }],
   ["/updates", { emoji: "📝", kicker: "Updates" }],
+  ["/digest", { emoji: "📰", kicker: "From the Digest" }],
 ];
 
 export function ogSectionFor(path: string): OgSection {

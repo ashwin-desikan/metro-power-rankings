@@ -417,6 +417,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
 
       <Dropdown id="articles" label="Deep Dives" openId={openId} setOpenId={setOpenId}>
         <DropdownItem href="/deep-dives" title="✍️ All deep dives →" />
+        <DropdownItem href="/digest" title="📰 From the Digest" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <DropdownItem href="/sports/geography-of-erasure" title="👻 The Geography of Erasure" />
         <DropdownItem href="/sports/heartbreak" title="💔 The Heartbreak Index" />

@@ -48,6 +48,8 @@ import { countryHasOrgs } from "@/lib/orgs";
 import { formatPop, regionColors, fmtArea } from "@/lib/shared";
 import { flagUrl, flagSrcSet } from "@/lib/flags";
 import { CappedList } from "@/app/_shared/Disclosure";
+import { getDigestItemsForEntity } from "@/lib/digestFeed";
+import { InTheNewsList } from "@/app/digest/_shared/ui";
 import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd, ogImage } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -292,6 +294,10 @@ export default async function CountryDetailPage({ params }: Props) {
   const indicators = getCountryIndicators(slug);
   const indicatorsMeta = getIndicatorsMeta();
   const facts = getCountryFacts(slug);
+  // Stories from the daily digest tagged with this country. This route was fully static;
+  // a daily revalidate makes it ISR once a day, the same cadence as the metro pages,
+  // rather than the lib's 30-minute default across all 247 countries.
+  const news = await getDigestItemsForEntity("country", slug, 6, { revalidate: 86400 });
   const metroSlugByName = new Map(metros.map((m) => [m.name, m.slug] as const));
   const children = getChildrenOf(country.name);
   // Championship history for this country: club / domestic titles join by the
@@ -492,6 +498,7 @@ export default async function CountryDetailPage({ params }: Props) {
               ...(stateGroups.length > 0 ? [{ label: "Subdivisions", href: "#subdivisions", group: "Regions" }] : []),
               ...(children.length > 0 ? [{ label: "Constituents", href: "#constituents", group: "Regions" }] : []),
               ...(facts ? [{ label: "At a glance", href: "#at-a-glance", group: "Overview" }] : []),
+              ...(news.length > 0 ? [{ label: "In the news", href: "#in-the-news", group: "Overview" }] : []),
               ...(indicators ? [{ label: "Economy", href: "#economy", group: "Overview" }] : []),
               ...(countryHasOrgs(slug) ? [{ label: "Alliances & Orgs", href: "#orgs", group: "Governance" }] : []),
               ...(countryHasLeaders(slug) ? [{ label: "Leadership", href: "#leaders", group: "Governance" }] : []),
@@ -595,6 +602,22 @@ export default async function CountryDetailPage({ params }: Props) {
 
           {/* ================= OVERVIEW ================================= */}
           <CountryFactsSection facts={facts} constitution={constitution} />
+
+          {/* In the news: directly after At a glance, matching its nav chip's place. */}
+          {news.length > 0 ? (
+            <Collapsible
+              id="in-the-news"
+              collapseOnMobile
+              title={withIcon("in-the-news", "In the news")}
+              right={
+                <span className="text-xs text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                  {news.length} {news.length === 1 ? "story" : "stories"}
+                </span>
+              }
+            >
+              <InTheNewsList items={news} self={{ type: "country", slug }} />
+            </Collapsible>
+          ) : null}
 
           {indicators ? (
             <Collapsible

@@ -14,12 +14,16 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import Link from 'next/link';
 import FollowingRail from './FollowingRail';
+import { getRecentDigestItems } from '@/lib/digestFeed';
+import { DigestItemRow, fmtDigestDate } from './digest/_shared/ui';
 
 // Directory-forward landing page. Surfaces the breadth of the site first —
 // four ranked indices (each with a live top-three preview), a Greatest Games
 // showcase, the full atlas, live sports, the journal, badges, and a site
 // index — and routes the metro rankings table to its own /rankings hub.
-// Server component; the only async work is the hourly Substack ISR fetch.
+// Server component. Async work: the hourly Substack ISR fetch, and the digest
+// strip (lib/digestFeed, revalidate 1800), whose shorter window makes this route
+// regenerate every 30 minutes rather than hourly. One page, so that is cheap.
 export const revalidate = 3600;
 
 const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
@@ -461,6 +465,9 @@ export default async function Home() {
   const badges = getLiveBadges();
   const games = [...clubBallGames(), ...marqueeGames(), ...ballGames()];
   const forecast = await getForecast();
+  // Newest digest first; six rows is two full rows of the three-column grid.
+  const digest = await getRecentDigestItems(6);
+  const digestDate = digest[0]?.digestDate ?? null;
 
   const INDICES: IndexCard[] = [
     { n: '01', title: 'Metro Power Rankings', desc: 'Every metro on Earth, scored across sixteen weighted dimensions.', stat: '4,200+ metros', href: '/rankings', emoji: '🌐', preview: topMetros() },
@@ -744,6 +751,34 @@ export default async function Home() {
           )}
         </div>
       </section>
+
+      {/* From the digest: the latest stories from the daily newsletter pipeline, read from
+          Supabase at request time so the strip turns over each morning with no build. Renders
+          nothing until a digest exists. Directly under the indices: it is the one part of the
+          homepage that changes every day. */}
+      {digest.length > 0 && digestDate && (
+        <section id="digest" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-end justify-between gap-4 mb-4 flex-wrap">
+              <div>
+                <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: 'var(--accent)' }}>📰 From the digest</p>
+                <h2 className="text-2xl sm:text-3xl font-bold">In the news</h2>
+                <p className="text-[10px] uppercase tracking-widest mt-2" style={{ ...MONO, color: 'var(--text-dim)' }}>
+                  As of {fmtDigestDate(digestDate, 'stamp')} · from about fifty newsletters
+                </p>
+              </div>
+              <Link href="/digest" className="inline-flex items-center min-h-11 text-xs" style={{ ...MONO, color: 'var(--accent)' }}>
+                Every story in the digest →
+              </Link>
+            </div>
+            <ul className="grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3" data-mobile-uncapped="bounded: six stories">
+              {digest.map((it) => (
+                <DigestItemRow key={`${it.digestDate}-${it.position}`} item={it} />
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* The Atlas */}
       <section id="atlas" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>

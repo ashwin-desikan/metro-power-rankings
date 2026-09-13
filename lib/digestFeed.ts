@@ -1,6 +1,8 @@
 import "server-only";
 
-// Digest feed (/ homepage "From the Digest" section).
+// Digest feed. Rendered by /digest, /digest/[date], the homepage "From the digest" strip,
+// and the "In the news" sections on /rankings/[slug] and /countries/[slug]; every surface
+// shares app/digest/_shared/ui.tsx.
 //
 // Source: the mini's daily newsletter pipeline. Its editorial step writes
 // builds/daily-newsletter-digest/<date>/feed.json, and post-socials.sh pushes it to
@@ -48,6 +50,9 @@ const ENTITY_TYPES = new Set(["metro", "country", "club", "league"]);
 
 // The route for an entity. Kept here so a tag can never render as a dead link shape;
 // an unknown type yields null and the caller drops the chip.
+// 🔴 /clubs and /leagues do NOT exist in app/ (checked 2026-09-13; team pages live under
+// /teams/<sport>). The mini's push_feed.py never writes those types, and the UI drops any
+// tag it cannot name, so nothing dead renders today. Fix these two before allowing them.
 export function entityHref(e: DigestEntity): string | null {
   switch (e.type) {
     case "metro":
@@ -89,18 +94,25 @@ function toItem(r: Row): DigestItem {
   };
 }
 
-async function query(params: string): Promise<Row[]> {
+// `revalidate` exists for the profile pages. A fetch's revalidate lowers its whole route's
+// ISR window, so the default 30 min would put every /rankings/[slug] page (4,300 of them,
+// dynamicParams, normally 86400) on a 30-minute regeneration cycle for one side section.
+// Those pages pass their own cadence instead.
+async function query<T = Row>(
+  params: string,
+  opts: { table?: "digest_item" | "digest_run"; revalidate?: number } = {},
+): Promise<T[]> {
   try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/digest_item?${params}`, {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${opts.table ?? "digest_item"}?${params}`, {
       headers: {
         apikey: SUPABASE_ANON_KEY,
         Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
       },
-      next: { revalidate: REVALIDATE },
+      next: { revalidate: opts.revalidate ?? REVALIDATE },
     });
     if (!res.ok) return [];
     const rows = (await res.json()) as unknown;
-    return Array.isArray(rows) ? (rows as Row[]) : [];
+    return Array.isArray(rows) ? (rows as T[]) : [];
   } catch {
     // A feed section is never load-bearing. An outage renders an empty section,
     // it does not throw a page.
@@ -133,13 +145,24 @@ export async function getDigestItemsForEntity(
   type: DigestEntity["type"],
   slug: string,
   limit = 6,
+  opts: { revalidate?: number } = {},
 ): Promise<DigestItem[]> {
   if (!ENTITY_TYPES.has(type) || !slug) return [];
   const contains = encodeURIComponent(JSON.stringify([{ type, slug }]));
   const rows = await query(
     `${SELECT}&entities=cs.${contains}&order=digest_date.desc,position.asc&limit=${Math.min(limit, 40)}`,
+    { revalidate: opts.revalidate },
   );
   return rows.map(toItem);
+}
+
+/** Recent digest days with their story counts, newest first. The archive links on /digest. */
+export async function getRecentDigestDates(limit = 30): Promise<{ date: string; count: number }[]> {
+  const rows = await query<{ digest_date: string; item_count: number }>(
+    `select=digest_date,item_count&item_count=gt.0&order=digest_date.desc&limit=${Math.min(limit, 90)}`,
+    { table: "digest_run" },
+  );
+  return rows.map((r) => ({ date: r.digest_date, count: r.item_count }));
 }
 
 /** The date of the newest digest on file, or null. Use for the as-of stamp. */

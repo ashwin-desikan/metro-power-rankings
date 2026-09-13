@@ -16,6 +16,7 @@
 
 export const SECTION_ICON: Record<string, string> = {
   "at-a-glance": "📋",
+  "in-the-news": "📰",
   economy: "💹",
   orgs: "🤝",
   leaders: "🏛️",

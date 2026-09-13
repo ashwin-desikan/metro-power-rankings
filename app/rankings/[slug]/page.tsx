@@ -14,6 +14,8 @@ import SoundSection from "./SoundSection";
 import { getScreenForMetro } from "@/lib/screen";
 import ScreenSection from "./ScreenSection";
 import HousingPanel from "./HousingPanel";
+import { getDigestItemsForEntity } from "@/lib/digestFeed";
+import { InTheNewsList } from "@/app/digest/_shared/ui";
 import { getMayor } from "@/lib/mayors";
 import {
   getAllMetros,
@@ -252,6 +254,9 @@ export default async function MetroDetailPage({ params }: PageProps) {
   const sound = await getSoundForMetro(slug);
   const screen = getScreenForMetro(slug);
   const mayor = await getMayor(slug);
+  // Stories from the daily digest tagged with this metro. revalidate matches this route's
+  // own 86400: the lib default (1800) would drag every metro page onto a 30-minute ISR cycle.
+  const news = await getDigestItemsForEntity("metro", slug, 6, { revalidate: 86400 });
   // The expectation rollups: NFL (53 metros), the English top flight (39) and
   // the five continental top flights (197). One ISR-cached read each serves
   // every metro page; misses render nothing.
@@ -689,6 +694,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
             { label: "Map", href: "#map" },
             { label: "Dimensions", href: "#stats" },
             ...((getSimilarMetrosForMetro(slug)?.neighbors?.length ?? 0) > 0 ? [{ label: "Similar Metros", href: "#similar" }] : []),
+            ...(news.length > 0 ? [{ label: "In the news", href: "#in-the-news" }] : []),
             ...(((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0 || getDefunctBritishRLForMetro(slug).length > 0) ? [{ label: "Sports", href: "#sports" }] : []),
             ...(getMetroTitles(slug).length > 0 ? [{ label: "Championships", href: "#championships" }] : []),
             ...(detail.marketCap && detail.marketCap.top12 && detail.marketCap.top12.length > 0 ? [{ label: "Companies", href: "#companies" }] : []),
@@ -978,6 +984,22 @@ export default async function MetroDetailPage({ params }: PageProps) {
             </section>
           );
         })()}
+
+        {/* In the news: stories from the daily digest tagged with this metro. Placed after
+            Similar Metros and before the catalogue, matching its nav chip. A catalogue-style
+            Disclosure: open on desktop, collapsed on a phone with the story count as meta. */}
+        {news.length > 0 && (
+          <Disclosure
+            id="in-the-news"
+            className="border-0 bg-transparent"
+            meta={`${news.length} ${news.length === 1 ? "story" : "stories"}`}
+            summaryClassName="px-0"
+            bodyClassName="border-0 pt-4"
+            title={<h2 className="text-2xl font-bold text-[var(--text)]">In the news</h2>}
+          >
+            <InTheNewsList items={news} self={{ type: "metro", slug }} />
+          </Disclosure>
+        )}
 
         {/* Sports Section */}
         {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0 || getDefunctBritishRLForMetro(slug).length > 0) && (() => {
