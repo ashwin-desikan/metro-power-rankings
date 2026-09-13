@@ -212,6 +212,31 @@ export async function getRecentDigestDates(limit = 1000): Promise<{ date: string
   return rows.map((r) => ({ date: r.digest_date, count: r.item_count }));
 }
 
+/**
+ * Every story in the trailing window, newest day first, then editorial order within a day.
+ * This is what backs the filter pages at /digest/filter/<group>/<value>.
+ *
+ * ONE FETCH FOR ALL OF THEM. The four topics, ~33 themes and ~10 sports are ~47 routes,
+ * and each needs the same window, because the topic of a story is computed from its source
+ * and its themes rather than stored, so it cannot be filtered in the query. Without the
+ * shared cache that is 47 identical 0.6 MB reads per regeneration.
+ *
+ * Measured 2026-09-13: 60 days is 1,323 rows and 0.59 MB of JSON, against Next's 2 MB
+ * data-cache ceiling. It grows about 0.01 MB a day, so there is well over a year of
+ * headroom, but this is the same ceiling that silently broke the CFB and tennis caches.
+ * If the window is ever widened, measure first; over the limit the fetch stops caching
+ * and says nothing.
+ */
+export const FILTER_WINDOW_DAYS = 60;
+
+export async function getDigestItemsSince(days = FILTER_WINDOW_DAYS): Promise<DigestItem[]> {
+  const since = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
+  const rows = await query(
+    `${SELECT}&digest_date=gte.${since}&order=digest_date.desc,position.asc&limit=2000`,
+  );
+  return rows.map(toItem);
+}
+
 /** The date of the newest digest on file, or null. Use for the as-of stamp. */
 export async function getLatestDigestDate(): Promise<string | null> {
   const rows = await query("select=digest_date&order=digest_date.desc&limit=1");
