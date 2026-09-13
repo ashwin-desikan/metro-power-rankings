@@ -14689,7 +14689,8 @@ First real run: business-daily 05:50 on 2026-09-14.
 
 **Notion:** Decisions "Evening feed-only news refresh…" and "The live daily news feed carries every linked
 story…"; Backlog "Evening news refresh … confirm the first live run and the first morning move" (Mac mini,
-In progress) and "Create the healthchecks.io check 'newsletter-evening'" (Ashwin, Open).
+In progress) and the healthchecks row, now Done: "healthchecks.io tile for the evening news refresh: shares the
+newsletter-daily check" (Mac mini).
 
 **Open:**
 - Healthchecks: the evening run SHARES the `newsletter-daily` tile (Ashwin: "since we're at the 20 check
