@@ -32,7 +32,25 @@ guarded "refresh FX (exchangerate-api)"    "$PY" scripts/business/build_fx.py
 # rows through PostgREST's 1000-row pages would be ~280 requests for that.
 guarded "rebuild markets overlay" "$PY" scripts/business/emit_market_series.py --overlay-only
 
+# /business/leaders: CEOs, fund heads and central-bank governors, resolved from
+# Wikidata (P169/P488/P1037).
+#
+# 🔴 Added 2026-09-13 because NOTHING ran this. The board was curated by hand on
+# 2026-08-03 and then sat untouched for six weeks: Apple still read Tim Cook on the
+# live page while Wikidata had carried John Ternus since 1 September. Project memory
+# claimed it ran "in the Saturday chain"; a search of mac-mini-jobs, the workflows
+# and every shell script found no caller at all. The first real run picked the
+# succession up immediately, so the script was never the problem, the schedule was.
+#
+# Daily rather than weekly: it is ~107 Wikidata lookups against a cached QID map,
+# and a CEO change is exactly the kind of thing a reader notices before we do.
+# Pinned seats (personQid/personName overrides) still win over Wikidata by design,
+# so an override must be deleted once Wikidata catches up or that seat stays frozen.
+guarded "refresh business leaders (Wikidata)" "$PY" scripts/business/build_leaders.py
+
 commit_paths "Auto: daily markets + FX refresh [vercel skip]" \
+  public/data/business/leaders.json \
+  public/data/business/leaders-changes.json \
   public/data/business/markets.json \
   public/data/business/markets-history.json \
   public/data/business/markets-series \
@@ -42,5 +60,5 @@ commit_paths "Auto: daily markets + FX refresh [vercel skip]" \
   public/data/business/fx-series
 
 # Runs even on no-change days; a redundant flush is harmless.
-revalidate_ping "business-daily" "/business" "/business/markets" "/business/currencies"
+revalidate_ping "business-daily" "/business" "/business/markets" "/business/currencies" "/business/leaders"
 note "done"

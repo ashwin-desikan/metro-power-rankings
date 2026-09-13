@@ -2,5 +2,13 @@
  "meta": {
   "note": "person-level changes detected by build_leaders.py runs"
  },
- "changes": []
+ "changes": [
+  {
+   "date": "2026-09-13",
+   "group": "CEO",
+   "entity": "Apple",
+   "from": "Tim Cook",
+   "to": "John Ternus"
+  }
+ ]
 }

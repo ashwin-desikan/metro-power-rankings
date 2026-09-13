@@ -55,6 +55,9 @@ STOP_NAMES = {
     "genesis", "queen", "train", "garbage", "air", "phoenix", "blur", "pulp", "ash",
     "elbow", "muse", "oasis", "bread", "heart", "chic", "sparks", "eagles", "doors",
     "who", "band", "police", "clash", "smiths", "cure", "jam", "kiss", "rush", "toto",
+    # office titles that leak in from mayors.json / leaders files as if they were names
+    "mayor", "governor", "president", "chancellor", "premier", "chair", "chairman",
+    "ceo", "director", "minister", "secretary", "commissioner", "vacant", "acting",
 }
 
 THEMES = [

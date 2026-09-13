@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated_at": "2026-08-03T06:22:34Z",
-  "as_of": "2026-08-03",
+  "generated_at": "2026-09-13T13:49:40Z",
+  "as_of": "2026-09-13",
   "source": "Wikidata (P169/P488 current-officeholder claims)",
   "total": 107,
-  "resolved": 107
+  "resolved": 106
  },
  "ceos": [
   {
@@ -14,18 +14,18 @@
    "since": "1993-01-01",
    "via": "P169",
    "symbol": "NVDA",
-   "cap": 4862365925376.0,
+   "cap": 5271048421376.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
   },
   {
    "entity": "Apple",
-   "person": "Tim Cook",
-   "personQid": "Q265852",
-   "since": "2011-08-24",
+   "person": "John Ternus",
+   "personQid": "Q106028933",
+   "since": "2026-09-01",
    "via": "P169",
    "symbol": "AAPL",
-   "cap": 4537070911488.0,
+   "cap": 4849207869440.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
   },
@@ -36,7 +36,7 @@
    "since": "2019-12-03",
    "via": "P169",
    "symbol": "GOOG",
-   "cap": 4361806151680.0,
+   "cap": 4102531842048.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
   },
@@ -47,7 +47,7 @@
    "since": "2014-02-04",
    "via": "P169",
    "symbol": "MSFT",
-   "cap": 3450799652864.0,
+   "cap": 3680323239936.0,
    "metro": "Seattle",
    "metroSlug": "seattle"
   },
@@ -58,7 +58,7 @@
    "since": "2021-07-06",
    "via": "P169",
    "symbol": "AMZN",
-   "cap": 2921415835648.0,
+   "cap": 2769709432832.0,
    "metro": "Seattle",
    "metroSlug": "seattle"
   },
@@ -69,9 +69,20 @@
    "since": "",
    "via": "P169",
    "symbol": "TSM",
-   "cap": 2096632168448.0,
+   "cap": 2246988005376.0,
    "metro": "Hsinchu",
    "metroSlug": "hsinchu"
+  },
+  {
+   "entity": "SpaceX",
+   "person": "Elon Musk",
+   "personQid": "Q317521",
+   "since": "2002-01-01",
+   "via": "P169",
+   "symbol": "SPCX",
+   "cap": 1993217015808.0,
+   "metro": "Brownsville",
+   "metroSlug": "brownsville"
   },
   {
    "entity": "Broadcom",
@@ -80,7 +91,7 @@
    "since": "",
    "via": "manual",
    "symbol": "AVGO",
-   "cap": 1852030844928.0,
+   "cap": 1728006324224.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
   },
@@ -91,20 +102,9 @@
    "since": "2015-01-01",
    "via": "P169",
    "symbol": "2222.SR",
-   "cap": 1705777891407.0,
+   "cap": 1683786162198.0,
    "metro": "Dammam",
    "metroSlug": "dammam"
-  },
-  {
-   "entity": "SpaceX",
-   "person": "Elon Musk",
-   "personQid": "Q317521",
-   "since": "2002-01-01",
-   "via": "P169",
-   "symbol": "SPCX",
-   "cap": 1427686686720.0,
-   "metro": "Brownsville",
-   "metroSlug": "brownsville"
   },
   {
    "entity": "Meta Platforms (Facebook)",
@@ -113,7 +113,7 @@
    "since": "2004-02-04",
    "via": "P169",
    "symbol": "META",
-   "cap": 1418222239744.0,
+   "cap": 1650860490752.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
   },
@@ -124,7 +124,7 @@
    "since": "2008-10-01",
    "via": "P169",
    "symbol": "TSLA",
-   "cap": 1229138690048.0,
+   "cap": 1443322658816.0,
    "metro": "Austin",
    "metroSlug": "austin"
   },
@@ -135,9 +135,20 @@
    "since": "2022-01-01",
    "via": "P169",
    "symbol": "005930.KS",
-   "cap": 1196506279462.0,
+   "cap": 1271014042238.0,
    "metro": "Seoul",
    "metroSlug": "seoul"
+  },
+  {
+   "entity": "Micron Technology",
+   "person": "Sanjay Mehrotra",
+   "personQid": "Q20714493",
+   "since": "",
+   "via": "manual",
+   "symbol": "MU",
+   "cap": 1101452017664.0,
+   "metro": "Boise",
+   "metroSlug": "boise"
   },
   {
    "entity": "Berkshire Hathaway",
@@ -146,7 +157,7 @@
    "since": "2026-01-01",
    "via": "P169",
    "symbol": "BRK-B",
-   "cap": 1103317041152.0,
+   "cap": 1092553998336.0,
    "metro": "Omaha-Lincoln",
    "metroSlug": "omaha-lincoln"
   },
@@ -157,42 +168,9 @@
    "since": "2017-01-01",
    "via": "P169",
    "symbol": "LLY",
-   "cap": 1024468123648.0,
+   "cap": 994915778560.0,
    "metro": "Indianapolis",
    "metroSlug": "indianapolis"
-  },
-  {
-   "entity": "JPMorgan Chase",
-   "person": "Jamie Dimon",
-   "personQid": "Q922169",
-   "since": "2004-01-01",
-   "via": "P169",
-   "symbol": "JPM",
-   "cap": 935128203264.0,
-   "metro": "New York",
-   "metroSlug": "new-york"
-  },
-  {
-   "entity": "Micron Technology",
-   "person": "Sanjay Mehrotra",
-   "personQid": "Q20714493",
-   "since": "",
-   "via": "manual",
-   "symbol": "MU",
-   "cap": 929524482048.0,
-   "metro": "Boise",
-   "metroSlug": "boise"
-  },
-  {
-   "entity": "Walmart",
-   "person": "Doug McMillon",
-   "personQid": "Q16196595",
-   "since": "2014-01-01",
-   "via": "P169",
-   "symbol": "WMT",
-   "cap": 884938375168.0,
-   "metro": "Fayetteville",
-   "metroSlug": "fayetteville"
   },
   {
    "entity": "SK Hynix",
@@ -201,9 +179,31 @@
    "since": "",
    "via": "manual",
    "symbol": "000660.KS",
-   "cap": 846525982822.0,
+   "cap": 959406437562.0,
    "metro": "Seoul",
    "metroSlug": "seoul"
+  },
+  {
+   "entity": "JPMorgan Chase",
+   "person": "Jamie Dimon",
+   "personQid": "Q922169",
+   "since": "2004-01-01",
+   "via": "P169",
+   "symbol": "JPM",
+   "cap": 946925731840.0,
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "entity": "Walmart",
+   "person": "Doug McMillon",
+   "personQid": "Q16196595",
+   "since": "2014-01-01",
+   "via": "P169",
+   "symbol": "WMT",
+   "cap": 852708163584.0,
+   "metro": "Fayetteville",
+   "metroSlug": "fayetteville"
   },
   {
    "entity": "AMD",
@@ -212,7 +212,7 @@
    "since": "2014-10-08",
    "via": "P169",
    "symbol": "AMD",
-   "cap": 776410431488.0,
+   "cap": 842569351168.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
   },
@@ -223,7 +223,7 @@
    "since": "2023-02-01",
    "via": "P169",
    "symbol": "V",
-   "cap": 683582029824.0,
+   "cap": 691647676416.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
   },
@@ -234,7 +234,7 @@
    "since": "2017-01-01",
    "via": "P169",
    "symbol": "XOM",
-   "cap": 644290576384.0,
+   "cap": 682536271872.0,
    "metro": "Houston",
    "metroSlug": "houston"
   },
@@ -245,7 +245,7 @@
    "since": "",
    "via": "manual",
    "symbol": "ASML",
-   "cap": 625698930688.0,
+   "cap": 652317032448.0,
    "metro": "Eindhoven",
    "metroSlug": "eindhoven"
   },
@@ -256,7 +256,7 @@
    "since": "2022-01-03",
    "via": "P169",
    "symbol": "JNJ",
-   "cap": 617777463296.0,
+   "cap": 640020840448.0,
    "metro": "New York",
    "metroSlug": "new-york"
   },
@@ -267,42 +267,9 @@
    "since": "",
    "via": "manual",
    "symbol": "688825.SS",
-   "cap": 566877572406.0,
+   "cap": 599925050899.0,
    "metro": "Hefei",
    "metroSlug": "hefei"
-  },
-  {
-   "entity": "Tencent",
-   "person": "Ma Huateng",
-   "personQid": "Q1739008",
-   "since": "1998-01-01",
-   "via": "P169",
-   "symbol": "TCEHY",
-   "cap": 553060073472.0,
-   "metro": "Guangzhou",
-   "metroSlug": "guangzhou"
-  },
-  {
-   "entity": "Mastercard",
-   "person": "Michael Miebach",
-   "personQid": "Q115735747",
-   "since": "2021-01-01",
-   "via": "P169",
-   "symbol": "MA",
-   "cap": 506381893632.0,
-   "metro": "New York",
-   "metroSlug": "new-york"
-  },
-  {
-   "entity": "Cisco",
-   "person": "Chuck Robbins",
-   "personQid": "Q21041473",
-   "since": "2015-07-01",
-   "via": "P169",
-   "symbol": "CSCO",
-   "cap": 457166979072.0,
-   "metro": "San Francisco-San Jose",
-   "metroSlug": "san-francisco-san-jose"
   },
   {
    "entity": "Intel",
@@ -311,9 +278,31 @@
    "since": "",
    "via": "manual",
    "symbol": "INTC",
-   "cap": 454968770560.0,
+   "cap": 544151666688.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "entity": "Mastercard",
+   "person": "Michael Miebach",
+   "personQid": "Q115735747",
+   "since": "2021-01-01",
+   "via": "P169",
+   "symbol": "MA",
+   "cap": 498616074240.0,
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "entity": "Tencent",
+   "person": "Ma Huateng",
+   "personQid": "Q1739008",
+   "since": "1998-01-01",
+   "via": "P169",
+   "symbol": "TCEHY",
+   "cap": 492750150000.0,
+   "metro": "Guangzhou",
+   "metroSlug": "guangzhou"
   },
   {
    "entity": "AbbVie",
@@ -322,9 +311,20 @@
    "since": "2024-07-01",
    "via": "P169",
    "symbol": "ABBV",
-   "cap": 443359002624.0,
+   "cap": 454361186304.0,
    "metro": "Chicago",
    "metroSlug": "chicago"
+  },
+  {
+   "entity": "Cisco",
+   "person": "Chuck Robbins",
+   "personQid": "Q21041473",
+   "since": "2015-07-01",
+   "via": "P169",
+   "symbol": "CSCO",
+   "cap": 442082263040.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
   },
   {
    "entity": "Bank of America",
@@ -333,20 +333,20 @@
    "since": "",
    "via": "P169",
    "symbol": "BAC",
-   "cap": 434763104256.0,
+   "cap": 438375383040.0,
    "metro": "Charlotte",
    "metroSlug": "charlotte"
   },
   {
-   "entity": "Costco",
-   "person": "Ron Vachris",
-   "personQid": "Q114361370",
-   "since": "2023-12-31",
-   "via": "P169",
-   "symbol": "COST",
-   "cap": 422143066112.0,
-   "metro": "Seattle",
-   "metroSlug": "seattle"
+   "entity": "Oracle",
+   "person": "Clay Magouyrk & Mike Sicilia",
+   "personQid": "",
+   "since": "",
+   "via": "manual",
+   "symbol": "ORCL",
+   "cap": 432877174784.0,
+   "metro": "Austin",
+   "metroSlug": "austin"
   },
   {
    "entity": "China Construction Bank",
@@ -355,7 +355,84 @@
    "since": "",
    "via": "manual",
    "symbol": "601939.SS",
-   "cap": 420997347469.0,
+   "cap": 430505390066.0,
+   "metro": "Beijing",
+   "metroSlug": "beijing"
+  },
+  {
+   "entity": "Chevron",
+   "person": "Mike Wirth",
+   "personQid": "Q48562446",
+   "since": "2018-01-01",
+   "via": "P169",
+   "symbol": "CVX",
+   "cap": 419900817408.0,
+   "metro": "Houston",
+   "metroSlug": "houston"
+  },
+  {
+   "entity": "Palantir",
+   "person": "Alexander C. Karp",
+   "personQid": "Q19560940",
+   "since": "",
+   "via": "P169",
+   "symbol": "PLTR",
+   "cap": 401863442432.0,
+   "metro": "Denver",
+   "metroSlug": "denver"
+  },
+  {
+   "entity": "Costco",
+   "person": "Ron Vachris",
+   "personQid": "Q114361370",
+   "since": "2023-12-31",
+   "via": "P169",
+   "symbol": "COST",
+   "cap": 401246322688.0,
+   "metro": "Seattle",
+   "metroSlug": "seattle"
+  },
+  {
+   "entity": "Coca-Cola",
+   "person": "James Quincey",
+   "personQid": "Q27839505",
+   "since": "2018-01-01",
+   "via": "P169",
+   "symbol": "KO",
+   "cap": 379872051200.0,
+   "metro": "Atlanta",
+   "metroSlug": "atlanta"
+  },
+  {
+   "entity": "Caterpillar",
+   "person": "Joe Creed",
+   "personQid": "",
+   "since": "",
+   "via": "manual",
+   "symbol": "CAT",
+   "cap": 376276058112.0,
+   "metro": "Dallas",
+   "metroSlug": "dallas"
+  },
+  {
+   "entity": "Lam Research",
+   "person": "Tim Archer",
+   "personQid": "",
+   "since": "",
+   "via": "manual",
+   "symbol": "LRCX",
+   "cap": 373168930816.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "entity": "Agricultural Bank of China",
+   "person": "Gu Shu",
+   "personQid": "Q28412923",
+   "since": "",
+   "via": "manual",
+   "symbol": "601288.SS",
+   "cap": 364282557512.0,
    "metro": "Beijing",
    "metroSlug": "beijing"
   },
@@ -366,86 +443,20 @@
    "since": "",
    "via": "manual",
    "symbol": "AMAT",
-   "cap": 403069403136.0,
+   "cap": 362269278208.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
   },
   {
-   "entity": "Chevron",
-   "person": "Mike Wirth",
-   "personQid": "Q48562446",
-   "since": "2018-01-01",
+   "entity": "Dell",
+   "person": "Michael Dell",
+   "personQid": "Q218630",
+   "since": "",
    "via": "P169",
-   "symbol": "CVX",
-   "cap": 392006172672.0,
-   "metro": "Houston",
-   "metroSlug": "houston"
-  },
-  {
-   "entity": "Coca-Cola",
-   "person": "James Quincey",
-   "personQid": "Q27839505",
-   "since": "2018-01-01",
-   "via": "P169",
-   "symbol": "KO",
-   "cap": 376860246016.0,
-   "metro": "Atlanta",
-   "metroSlug": "atlanta"
-  },
-  {
-   "entity": "UnitedHealth",
-   "person": "Stephen J. Hemsley",
-   "personQid": "Q2344783",
-   "since": "",
-   "via": "manual",
-   "symbol": "UNH",
-   "cap": 376335040512.0,
-   "metro": "Minneapolis",
-   "metroSlug": "minneapolis"
-  },
-  {
-   "entity": "Caterpillar",
-   "person": "Joe Creed",
-   "personQid": "",
-   "since": "",
-   "via": "manual",
-   "symbol": "CAT",
-   "cap": 375294951424.0,
-   "metro": "Dallas",
-   "metroSlug": "dallas"
-  },
-  {
-   "entity": "Oracle",
-   "person": "Clay Magouyrk & Mike Sicilia",
-   "personQid": "",
-   "since": "",
-   "via": "manual",
-   "symbol": "ORCL",
-   "cap": 374086762496.0,
+   "symbol": "DELL",
+   "cap": 360690188288.0,
    "metro": "Austin",
    "metroSlug": "austin"
-  },
-  {
-   "entity": "General Electric",
-   "person": "H. Lawrence Culp Jr.",
-   "personQid": "Q56868014",
-   "since": "2018-10-01",
-   "via": "P169",
-   "symbol": "GE",
-   "cap": 373595144192.0,
-   "metro": "Boston",
-   "metroSlug": "boston"
-  },
-  {
-   "entity": "Lam Research",
-   "person": "Tim Archer",
-   "personQid": "",
-   "since": "",
-   "via": "manual",
-   "symbol": "LRCX",
-   "cap": 366649442304.0,
-   "metro": "San Francisco-San Jose",
-   "metroSlug": "san-francisco-san-jose"
   },
   {
    "entity": "HSBC",
@@ -454,18 +465,29 @@
    "since": "",
    "via": "manual",
    "symbol": "HSBC",
-   "cap": 364982501376.0,
+   "cap": 360627863552.0,
    "metro": "London",
    "metroSlug": "london"
   },
   {
-   "entity": "Agricultural Bank of China",
-   "person": "Gu Shu",
-   "personQid": "Q28412923",
+   "entity": "Merck",
+   "person": "Rob Davis",
+   "personQid": "Q114706038",
+   "since": "2021-07-01",
+   "via": "P169",
+   "symbol": "MRK",
+   "cap": 355100000256.0,
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "entity": "ICBC",
+   "person": "Liao Lin",
+   "personQid": "Q105717721",
    "since": "",
    "via": "manual",
-   "symbol": "601288.SS",
-   "cap": 358184970931.0,
+   "symbol": "1398.HK",
+   "cap": 345840177211.0,
    "metro": "Beijing",
    "metroSlug": "beijing"
   },
@@ -476,20 +498,20 @@
    "since": "",
    "via": "manual",
    "symbol": "RO.SW",
-   "cap": 353855036929.0,
+   "cap": 344225517305.0,
    "metro": "Basel",
    "metroSlug": "basel"
   },
   {
-   "entity": "ICBC",
-   "person": "Liao Lin",
-   "personQid": "Q105717721",
+   "entity": "UnitedHealth",
+   "person": "Stephen J. Hemsley",
+   "personQid": "Q2344783",
    "since": "",
    "via": "manual",
-   "symbol": "1398.HK",
-   "cap": 341330459222.0,
-   "metro": "Beijing",
-   "metroSlug": "beijing"
+   "symbol": "UNH",
+   "cap": 340269203456.0,
+   "metro": "Minneapolis",
+   "metroSlug": "minneapolis"
   },
   {
    "entity": "Procter & Gamble",
@@ -498,20 +520,9 @@
    "since": "",
    "via": "manual",
    "symbol": "PG",
-   "cap": 336459300864.0,
+   "cap": 337414619136.0,
    "metro": "Cincinnati",
    "metroSlug": "cincinnati"
-  },
-  {
-   "entity": "Home Depot",
-   "person": "Ted Decker",
-   "personQid": "Q113632708",
-   "since": "2022-03-01",
-   "via": "P169",
-   "symbol": "HD",
-   "cap": 331002839040.0,
-   "metro": "Atlanta",
-   "metroSlug": "atlanta"
   },
   {
    "entity": "Morgan Stanley",
@@ -520,31 +531,20 @@
    "since": "2024-01-01",
    "via": "P169",
    "symbol": "MS",
-   "cap": 330780246016.0,
+   "cap": 336698015744.0,
    "metro": "New York",
    "metroSlug": "new-york"
   },
   {
-   "entity": "Merck",
-   "person": "Rob Davis",
-   "personQid": "Q114706038",
-   "since": "2021-07-01",
-   "via": "P169",
-   "symbol": "MRK",
-   "cap": 321571160064.0,
-   "metro": "New York",
-   "metroSlug": "new-york"
-  },
-  {
-   "entity": "Goldman Sachs",
-   "person": "David M. Solomon",
-   "personQid": "Q29641838",
-   "since": "2018-10-01",
-   "via": "P169",
-   "symbol": "GS",
-   "cap": 300429672448.0,
-   "metro": "New York",
-   "metroSlug": "new-york"
+   "entity": "General Electric",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "symbol": "GE",
+   "cap": 335817474048.0,
+   "metro": "Boston",
+   "metroSlug": "boston"
   },
   {
    "entity": "Netflix",
@@ -553,7 +553,7 @@
    "since": "2020-01-01",
    "via": "P488",
    "symbol": "NFLX",
-   "cap": 298596106240.0,
+   "cap": 322288943104.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
   }

@@ -476,5 +476,13 @@
  "Central Bank of Egypt": {
   "entityQid": "Q920699",
   "matchedLabel": "Central Bank of Egypt"
+ },
+ "Palantir": {
+  "entityQid": "Q2047336",
+  "matchedLabel": "Palantir Technologies"
+ },
+ "Dell": {
+  "entityQid": "Q30873",
+  "matchedLabel": "Dell"
  }
 }
