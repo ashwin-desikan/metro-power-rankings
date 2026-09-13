@@ -21,6 +21,7 @@ import { getSeasonSim, simIsCurrent, simBySlug, simByName } from "@/lib/seasonSi
 import { getCurrentMlsStandings } from "@/lib/mls-standings";
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getLiveCflStandings } from "@/lib/cflStandings";
+import { getCflFixtures } from "@/lib/cflSchedule";
 import { getLiveF1Standings } from "@/lib/f1Standings";
 import { getF1TitleOdds, f1OddsAreCurrent, f1OddsByName, normDriver, normConstructor } from "@/lib/f1TitleOdds";
 import { getPlSim, getPlPredictions } from "@/lib/plSim";
@@ -475,7 +476,24 @@ function EventGroup({ items, kind, noun, showHeads }: { items: LiveEvent[]; kind
             <ul className="m-0 p-0 list-none space-y-0.5">{list.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
           </div>
         ) : (
-          <details key={league}>
+          // 🔴 `open` by default, NOT left to the data-open-children script.
+          // Ashwin, 2026-09-13: "when I click on something like football, I still have
+          // to sub-click down to League Cup or Europa League ... I thought I had settled
+          // it that if we click on a category, it would open up all of the subcategories
+          // underneath it automatically."
+          //
+          // It was settled, and the script implementing it only ever ran on a hard
+          // reload: page.tsx renders it with dangerouslySetInnerHTML from a server
+          // component, and a script inserted into the DOM that way on a client-side
+          // navigation is never executed. Arriving at /sports/standings from a link
+          // inside the site therefore got the old two-click behaviour, which is how a
+          // fix can be real and invisible at the same time.
+          //
+          // A competition sitting inside a CLOSED sport is not visible either way, so
+          // opening it up front costs the reader nothing and needs no JavaScript: the
+          // sport opens, everything under it is already open. Folding one away by hand
+          // still works, because this is the initial attribute and not a lock.
+          <details key={league} open>
             <summary className="cursor-pointer select-none text-[10px] uppercase tracking-wider text-[var(--text-dim)] hover:text-[var(--accent)]">
               {league} · {list.length} {noun}s
             </summary>
@@ -1258,7 +1276,10 @@ function libertadoresBlock(comp: LiveComp | undefined): Block | null {
 }
 
 async function cflBlock(): Promise<Block | null> {
-  const [s, sim] = await Promise.all([getLiveCflStandings(new Date().getFullYear()), getSeasonSim("cfl")]);
+  const year = new Date().getFullYear();
+  const [s, sim, fixtures] = await Promise.all([
+    getLiveCflStandings(year), getSeasonSim("cfl"), getCflFixtures(year).catch(() => []),
+  ]);
   if (!s) return null;
   const cflLive = inSeasonWindow("cfl");
   const showOdds = cflLive && simIsCurrent(sim);
@@ -1288,7 +1309,18 @@ async function cflBlock(): Promise<Block | null> {
     return { title: `${d.division} Division`, columns: ["GP", "W", "L", "T", "Pts", "PF", "PA", ...(showOdds ? ["PO%", "Cup%"] : [])], rows };
   }).filter((st) => st.rows.length > 0);
   if (subTables.length === 0) return null;
-  return { league: "CFL", href: "/teams/cfl", note: cflLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`, open: cflLive, live: cflLive, subTables };
+  // Fixtures for On today / Recent results / Coming up. "Away at Home" and an away-first
+  // score, the convention the NFL and college football rows beside these already use, so
+  // a reader scanning the Gridiron group is not switching between two orders. Windowing
+  // is collectEvents' job, so the whole season goes in and it takes what it needs.
+  const events: LiveEvent[] = fixtures.map((g) => ({
+    sport: "Gridiron", league: "CFL", href: "/teams/cfl",
+    label: `${g.away.name} at ${g.home.name}`, when: g.kickoff,
+    score: g.completed ? `${g.awayScore}-${g.homeScore}` : null,
+    live: false,
+    teams: { home: g.home.name, away: g.away.name },
+  }));
+  return { league: "CFL", href: "/teams/cfl", note: cflLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`, open: cflLive, live: cflLive, subTables, events };
 }
 
 async function footyBlock(league: "afl" | "nrl"): Promise<Block | null> {
