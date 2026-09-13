@@ -14311,3 +14311,25 @@ the round check; 06:00/07:00/08:00 polls clean and the tile recovered, nothing t
 is today). 05:24 `ops-autofix` "nothing auto-fixable" was that same `check_down` on `f1-weekly`,
 correctly reported rather than acted on; clear by 07:22. `economy-prices` had its first real run at
 07:39Z and committed `f115defe9`; it was still running at 07:50Z, so its DONE line is unconfirmed.
+
+### D. owners-weekly can no longer push without a build-budget check (sweep item 1, closed on the mini side)
+Ashwin: "fix this". Neither token can be placed from here (a credential), so the fix is to make the
+job fail CLOSED. `mac-mini-jobs/run-owners-weekly.sh`:
+- **No `VERCEL_TOKEN`/`VERCEL_BUILD_CAP_TOKEN` in the environment → `budget mode: no-token`.** The
+  prompt's old "if no token, say so and proceed; vercel-ignore.sh enforces the cap" (false: that cap
+  has never been active) is replaced with: do not commit or push, save
+  `~/metro-mini-jobs/pending/owners-$DATE.patch`, report NOT APPLIED with each finding.
+- **Enforced, not just asked.** The `claude -p` process runs with `remote.origin.pushurl` pointed at a
+  nonexistent path via `GIT_CONFIG_COUNT` env: fetch/pull work, any `git push` exits 128. After the
+  run, any commit still ahead of `origin/main` is saved as `owners-$DATE-unpushed.patch` and the tree is
+  reset to `origin/main` (safe because the dispatcher runs jobs serially). Limit, stated honestly: a
+  process that deliberately unsets the env could still push; the prompt forbids it, and the unpushed
+  check does not cover a push that succeeded.
+- **Tested with a stub `claude`** in a scratch clone against a local bare origin: prompt carried the
+  no-token rule, the stub's push failed 128, origin unchanged, the stray commit became a patch, tree
+  clean and level with origin. I did NOT verify `--disallowedTools` under
+  `--dangerously-skip-permissions` (the harness classifier blocked a headless probe), so it is not used.
+- **Monday 09-14 08:30Z will run in no-token mode** (`config.env` has zero `VERCEL*` entries). Expected
+  ntfy: "owners weekly: no changes", or NOT APPLIED with a patch. To restore apply-and-push, put a
+  read-scope `VERCEL_TOKEN` in `~/metro-mini-jobs/config.env`; the counted path is unchanged.
+- Live immediately: the live script is a symlink into the repo; `--check-sync` in sync.
