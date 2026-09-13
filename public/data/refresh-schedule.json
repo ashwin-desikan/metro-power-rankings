@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-13T07:09:34.962494+00:00",
+  "generated_at": "2026-09-13T07:29:52.712764+00:00",
   "jobs": [
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-13T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-09-12",
-        "status": "ok",
-        "slot": "2026-09-12T07:20:00+00:00"
-      }
-    },
     {
       "id": "economy-prices",
       "label": "Consumer price refresh (/business/economy/prices)",
@@ -354,6 +336,24 @@
         "date": "2026-09-11",
         "status": "ok",
         "slot": "2026-09-11T06:10:00+00:00"
+      }
+    },
+    {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-14T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-09-13",
+        "status": "ok",
+        "slot": "2026-09-13T07:20:00+00:00"
       }
     },
     {
