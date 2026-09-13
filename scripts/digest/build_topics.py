@@ -14,6 +14,14 @@ Usage (from the repo root):
     python scripts/digest/build_topics.py --dry-run      # match + coverage report, no writes
     python scripts/digest/build_topics.py --write        # write topics back
     python scripts/digest/build_topics.py --self-test    # matcher logic only, no network
+    python scripts/digest/build_topics.py --write --date 2026-09-14 [--date ...]
+
+--date (repeatable) limits the run to digest_item rows for those days and writes with a
+per-row PATCH of `topics` only, skipping rows whose topics are unchanged. The daily jobs use
+this (Ashwin 2026-09-13): newsletter-podcast post-socials.sh after the morning feed push, and
+run-evening.sh after the evening append. A PATCH can never re-insert a row, which matters
+because the morning push DELETES evening stories that moved to the next day; the whole-table
+path below writes back full rows fetched earlier and must not run alongside a push.
 """
 
 from __future__ import annotations
@@ -258,6 +266,14 @@ def key() -> str:
         k = os.environ.get(var, "").strip()
         if k:
             return k
+    # The mini keeps the service key in ~/.config/metro-supabase/env (as push_feed.py reads it);
+    # scripts/mktcap/supabase_key.txt does not exist there (checked 2026-09-13).
+    mini = Path.home() / ".config" / "metro-supabase" / "env"
+    if mini.exists():
+        for line in mini.read_text(encoding="utf-8").splitlines():
+            m = re.match(r"\s*(?:export\s+)?SUPABASE_SERVICE(?:_ROLE)?_KEY=(.*)$", line)
+            if m and m.group(1).strip():
+                return m.group(1).strip().strip('"').strip("'")
     # Windows box keeps it in .env.local (gitignored); the mini uses the key file above.
     env = ROOT / ".env.local"
     if env.exists():
@@ -285,11 +301,15 @@ def req(method: str, path: str, body=None, prefer=None):
         sys.exit(f"Supabase {method} {path} -> {e.code}\n{e.read().decode()[:500]}")
 
 
-def fetch_stories(table: str) -> list[dict]:
-    # select=* because the write path is a bulk upsert, which must send whole rows.
+def fetch_stories(table: str, dates: list[str] | None = None) -> list[dict]:
+    # select=* because the whole-table write path is a bulk upsert, which must send whole rows.
+    # A --date run only PATCHes topics, so it reads just what matching needs.
+    select = "select=*"
+    if dates:
+        select = f"select=id,headline,why,topics&digest_date=in.({','.join(dates)})"
     rows, offset = [], 0
     while True:
-        page = req("GET", f"{table}?select=*&order=id&limit=1000&offset={offset}")
+        page = req("GET", f"{table}?{select}&order=id&limit=1000&offset={offset}")
         if not page:
             break
         rows.extend(page)
@@ -350,8 +370,14 @@ def main() -> None:
         return
 
     write = "--write" in args
-    for table in ("digest_item", "digest_item_textonly"):
-        rows = fetch_stories(table)
+    dates = [args[i + 1] for i, a in enumerate(args) if a == "--date" and i + 1 < len(args)]
+    if any(not re.match(r"^\d{4}-\d{2}-\d{2}$", d) for d in dates):
+        sys.exit(f"--date takes YYYY-MM-DD, got {dates}")
+    tables = ("digest_item",) if dates else ("digest_item", "digest_item_textonly")
+    if dates:
+        print(f"  limited to digest_item on {', '.join(dates)}")
+    for table in tables:
+        rows = fetch_stories(table, dates)
         if not rows:
             print(f"{table}: no rows")
             continue
@@ -387,6 +413,14 @@ def main() -> None:
 
         if not write:
             print("  (dry run, nothing written)")
+            continue
+
+        if dates:
+            by_id = {r["id"]: r for r in rows}
+            changed = [u for u in updates if (by_id[u["id"]].get("topics") or []) != u["topics"]]
+            for u in changed:
+                req("PATCH", f"{table}?id=eq.{u['id']}", {"topics": u["topics"]}, prefer="return=minimal")
+            print(f"  patched topics on {len(changed)} of {len(updates)} rows ({len(updates) - len(changed)} unchanged)")
             continue
 
         # Bulk upsert on the primary key: whole rows back, topics replaced. Three requests
