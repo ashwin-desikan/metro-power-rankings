@@ -14391,3 +14391,43 @@ maps `club` → `/clubs/<slug>` and `league` → `/leagues/<slug>`, but **neithe
 (checked 09-13; team pages live under `/teams/<sport>`). Once rendered they would be dead links. The
 writer never emits those types, so nothing is broken today, but fix the mapping or add the routes before
 allowing them.
+
+### G. The digest feed is on the site: /digest, homepage strip, In the news (`e902e4727`, one paid build)
+Ashwin: "build this, following the design protocols", then "push it once the build passes". Built in a
+detached worktree in the scratchpad (never the shared tree), swept against DESIGN-STANDARDS at 390 and
+1280, full `next build` passed, then applied to main and pushed ALONE as HEAD with the 09-13 release
+note amended in the same commit ("S&P 500 history and a daily news digest", four bullets).
+
+- **Surfaces.** `/digest` (latest, ISR 30m) and `/digest/[date]` (rendered on first request, 404 for a
+  day with no stories) share `app/digest/_shared/ui.tsx`: crumbs, `TabHeader` with an as-of + story
+  count + source stamp, `SectionHead` over the numbered stories, an "Earlier digests" `Disclosure`, a
+  closing `SourcesCard`. Rows are `tap-row`/`tap-target`, place chips lifted above the overlay.
+  Homepage: "From the digest" section directly under the indices, six newest stories.
+  `/rankings/[slug]`: "In the news" catalogue `Disclosure` before Sports, nav chip after Similar Metros.
+  `/countries/[slug]`: `collapseOnMobile` `Collapsible` after At a glance, chip in Overview. Both render
+  only when the place has stories and leave the page's own place off the chips. Nav: Deep Dives on
+  desktop and mobile (column now 10). Sitemap and `ogBrand` updated.
+- **🔴 ISR cost, decided deliberately.** A fetch's `revalidate` lowers its whole route's window, so the
+  lib's 1800 default would have put all ~4,300 `/rankings/[slug]` pages (normally 86400,
+  `dynamicParams`) on a 30-minute regeneration cycle. `getDigestItemsForEntity` now takes
+  `{ revalidate }`; metro and country pages pass 86400, so a place's In the news can lag the digest by up
+  to a day. Country pages were fully static and are now daily ISR. Homepage 3600 → 1800 (one page).
+  `getRecentDigestDates()` added for the archive.
+- **Dead links avoided.** `entityHref` still maps club/league to routes that do not exist (F above); the
+  UI drops any tag it cannot name, so none render. Fix before allowing those types.
+- **Measured (probe:mobile, dev server, concurrency 1, 390px).** `/digest` 3.6 screens at 1.4x;
+  `/` 16.2 at 2.5x vs a same-commit baseline dev server 14.7 at 2.5x;
+  `/rankings/washington-baltimore` 7.4 at 0.7x (prod 7.2); `/countries/united-states` 17.6 at 1.5x vs
+  baseline 16.4. **Its "scroll position did not hold" FAIL reproduces on the unchanged baseline dev
+  server** (production passes), so it predates this change: worth its own look. At 1280 the metro In the
+  news `Disclosure` is open and visible and `scrollWidth` stays within the viewport.
+- **Gates.** Every `npm run verify` step OK up to pytest (vitest 199), `next build --webpack` exit 0,
+  `check:function-size` max 87.4 MB against the 220 MB line. **pytest: the mini's bare `python3` has no
+  pytest, so `npm run verify` stops there.** The suite passes (112) with
+  `PYTHON_BIN="$REPO/.venv/bin/python" npm run test:python`; use that on the mini.
+- **Deploy:** pushed 10:2x BST; the watcher was still waiting on `/deployed` when this was written.
+  Verify: `/deployed` sha `e902e4727…`, `/digest` shows 12 stories, homepage "From the digest",
+  Washington-Baltimore In the news (rugby story), United States In the news (FEMA story),
+  `/digest/2020-01-01` 404.
+- **Next proof:** 2026-09-14 ~08:20 BST, the first unattended `feed.json`. `/digest` should turn over to
+  09-14 within 30 minutes of `[push_feed] pushed N item(s)` in the mini's log.
