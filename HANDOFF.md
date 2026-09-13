@@ -14488,3 +14488,68 @@ State:
   month; `getRecentDigestDates` limit raised.
 - Apply the club/league patch above; amend the release note for the push day.
 - Then: write all days to Supabase, sweep at 390/1280, verify, ask Ashwin, one push.
+
+(All of the above is now DONE: see I.)
+
+### I. The digest ARCHIVE is done: 75 days in Supabase, archive UI + club/league tags pushed as ONE build (`cb25a991a`)
+
+Completes H.2 and H.3. Ashwin's rulings, all 2026-09-13: every linked story; homepage links out; "Further
+reading" for listed-only stories; prose anywhere in that day's post may ground a why; national teams as
+`club national/<country>`; tagging in this session in batches; data written to Supabase first, then the
+sweep, then one push on his explicit yes ("push it once the build passes").
+
+**Data (newsletter-podcast, private repo):**
+- 76 source days (2026-06-29 → 09-13; no digest on 07-02). Tagged by 11 batch subagents plus a 14-story
+  follow-up. Every day validated by `archive/qa.py`: `push_feed.py --dry-run` clean, complete against the
+  skeleton, every name and number in a specific why present in that day's post, no em dashes. **Final:
+  76 days, 1,493 stories, 0 failing** (`64b6791`). 07-13 has 0 stories (its only link was a bare
+  `nytimes.com/athletic`), so it has no row and `/digest/2026-07-13` is a 404.
+- **Written to Supabase 2026-09-13** and read back with the anon key: 75 `digest_run` rows, 1,493
+  `digest_item` rows, every day's count equal to its feed file, 09-13 now 34 stories (the hand-picked 12
+  replaced).
+- 🔴 **Privacy fix that also protects the LIVE daily feed** (`78492a6`). A host survey of every archived
+  link found tracked per-subscriber links that `push_feed.clean_url()` let through:
+  `l.businessinsider.com/a/zc/<token>`, `elink.mail.status.news/ss/c/<token>`,
+  `info.sportsbusinessjournal.com/e/<id>`. Now blocked (short tracking subdomains; `info.` + `/e/`); 20
+  archived links refused in total. The 12 rows that had already been live were all direct article hosts.
+- **Extractor corrected** (`15b2c34`). The first `generic()` dropped 14 real articles (7 Digiday briefings,
+  4 Puck podcast episodes, AdExchanger, Status, Pathfounders) and missed section hubs. Rewritten; 13
+  section pages dropped; `EXCLUDE` (07-21 UKTN link that points at an unrelated story); `RESOLVE` (6 Ghost
+  `/r/<id>` click links → their article URLs, `ref`/`attribution_id` dropped); `SOURCE_FIX` (08-21 Swalwell
+  labelled "Vox", links nytimes.com). `push_feed.py` also strips markdown emphasis (`*Spider-Man*`) and
+  allows up to 60 stories a day (MAX_ITEMS).
+- **Re-running a day:** edit `archive/feeds/<date>.json`, run `python3 archive/qa.py <date>`, then
+  `python3 push_feed.py <date> --feed archive/feeds/<date>.json`. Tooling: `extract.py` → `skeleton/`,
+  `qa.py`, `merge_tagged.py`, batch generators in `archive/batches/`.
+
+**Site (`cb25a991a`, one paid build, pushed alone as HEAD):** H.2's club/league patch plus the archive UI.
+- **Per-day list:** a phone shows 12 stories and "Show all N stories"; desktop renders every row. Built with
+  `ShowMore` and a second `<ol start=13>`, because `CappedList` puts its `<details>` among the items, which
+  is invalid inside an `<ol>`.
+- **"The archive"** replaces "Earlier digests": every day grouped by month, each month a `Disclosure` (the
+  newest open on a phone), the day being read marked `aria-current`. Under the latest digest and every day
+  page. Copy now says "every story the day's newsletter digest linked".
+- **Club/league tags** link `/teams/<path>` (well-formed paths only); chip label is the LEAGUE_HUBS short
+  name, else the page title `push_feed.py` stored, else no chip.
+- **Sweep** (dev server + real Supabase data, probe:mobile at 390, concurrency 1): `/digest` 4.2 screens at
+  0.6x; `/digest/2026-08-17` (43 stories) 4.1 at 0.5x; `/digest/2026-07-07` 2.4; `/` 16.1 at 2.5x;
+  Washington-Baltimore 7.4. DOM on 08-17: at 375, 12 of 43 rows visible, "Show all 43 stories", 1 of 4
+  months open, scrollWidth 375; at 1280, 43 of 43 visible, show-all hidden, 4 of 4 open, numbering continues
+  at 13, scrollWidth 1274. United States still fails "scroll position did not hold" at 17.6 screens: the
+  pre-existing failure from G.
+- **Gates:** typecheck, client-imports, data-reads, mobile, table-scroll, sortable, release-notes, vitest,
+  `next build --webpack`, function-size all OK. Release note 2026-09-13 bullet updated (every story plus
+  the archive back to 29 June). Applied patch retired to
+  `~/metro-mini-jobs/pending/digest-entity-routes-2026-09-13.*.applied-cb25a991a`.
+- **Deploy:** the watcher was still waiting on `/deployed` when this was written. Verify: `/deployed` sha
+  `cb25a991a…`; `/digest` shows "The archive" with "75 days and 1,493 stories"; `/digest/2026-08-17` shows
+  "Show all 43 stories"; `/digest/2026-06-29` 200; `/digest/2026-07-13` 404; `/updates` carries "and an
+  archive back to 29 June".
+
+**Open:**
+- The live morning run (09-14 ~08:20 BST) still writes the curated 8–12 via `editorial-prompt.md`, while
+  archive days carry every linked story. If Ashwin wants the live feed to match, change the prompt, not the
+  site.
+- College tags are uneven: the September batch used `cfb/<school>-cfb`; earlier batches found no college
+  pages and left those stories untagged. Harmless.
+- The United States `/countries` phone scroll-hold failure (G) still needs its own look.
