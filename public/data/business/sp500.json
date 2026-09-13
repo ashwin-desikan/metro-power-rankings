@@ -7049,5 +7049,494 @@
    "metroSlug": ""
   }
  ],
- "changes": []
+ "changes": [
+  {
+   "date": "August 18, 2026",
+   "addedTicker": "RDDT",
+   "added": "Reddit",
+   "removedTicker": "AVB",
+   "removed": "AvalonBay Communities",
+   "reason": "Equity Residential acquired AvalonBay Communities; the combined company trades as Vivmark Residential (VMRK)."
+  },
+  {
+   "date": "August 5, 2026",
+   "addedTicker": "FERG",
+   "added": "Ferguson Enterprises",
+   "removedTicker": "EA",
+   "removed": "Electronic Arts",
+   "reason": "An investor consortium comprising Saudi Arabia's Public Investment Fund (PIF), Silver Lake, and Affinity Partners acquired Electronic Arts."
+  },
+  {
+   "date": "June 30, 2026",
+   "addedTicker": "",
+   "added": "",
+   "removedTicker": "CAG",
+   "removed": "Conagra Brands",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "June 29, 2026",
+   "addedTicker": "HONA",
+   "added": "Honeywell Aerospace",
+   "removedTicker": "",
+   "removed": "",
+   "reason": "S&P 500 constituent Honeywell spun off Honeywell Aerospace."
+  },
+  {
+   "date": "June 22, 2026",
+   "addedTicker": "MRVL",
+   "added": "Marvell Technology",
+   "removedTicker": "POOL",
+   "removed": "Pool Corporation",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "June 22, 2026",
+   "addedTicker": "FLEX",
+   "added": "Flex Ltd.",
+   "removedTicker": "CPB",
+   "removed": "Campbell's",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "June 2, 2026",
+   "addedTicker": "",
+   "added": "",
+   "removedTicker": "EPAM",
+   "removed": "EPAM Systems",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "June 1, 2026",
+   "addedTicker": "FDXF",
+   "added": "FedEx Freight",
+   "removedTicker": "",
+   "removed": "",
+   "reason": "S&P 500 & 100 constituent FedEx Corp. spun off FedEx Freight Holding."
+  },
+  {
+   "date": "May 7, 2026",
+   "addedTicker": "VEEV",
+   "added": "Veeva Systems",
+   "removedTicker": "CTRA",
+   "removed": "Coterra Energy",
+   "reason": "S&P 500 constituent Devon Energy Corp. acquired Coterra Energy."
+  },
+  {
+   "date": "April 9, 2026",
+   "addedTicker": "CASY",
+   "added": "Casey's",
+   "removedTicker": "HOLX",
+   "removed": "Hologic",
+   "reason": "Blackstone Inc. and TPG Inc. acquired Hologic."
+  },
+  {
+   "date": "March 23, 2026",
+   "addedTicker": "VRT",
+   "added": "Vertiv",
+   "removedTicker": "MTCH",
+   "removed": "Match Group",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "March 23, 2026",
+   "addedTicker": "LITE",
+   "added": "Lumentum",
+   "removedTicker": "MOH",
+   "removed": "Molina Healthcare",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "March 23, 2026",
+   "addedTicker": "COHR",
+   "added": "Coherent Corp.",
+   "removedTicker": "LW",
+   "removed": "Lamb Weston",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "March 23, 2026",
+   "addedTicker": "SATS",
+   "added": "EchoStar",
+   "removedTicker": "PAYC",
+   "removed": "Paycom",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "February 9, 2026",
+   "addedTicker": "CIEN",
+   "added": "Ciena",
+   "removedTicker": "DAY",
+   "removed": "Dayforce",
+   "reason": "Thoma Bravo L.P. acquired Dayforce."
+  },
+  {
+   "date": "December 22, 2025",
+   "addedTicker": "CRH",
+   "added": "CRH",
+   "removedTicker": "LKQ",
+   "removed": "LKQ Corporation",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "December 22, 2025",
+   "addedTicker": "CVNA",
+   "added": "Carvana",
+   "removedTicker": "SOLS",
+   "removed": "Solstice Advanced Materials",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "December 22, 2025",
+   "addedTicker": "FIX",
+   "added": "Comfort Systems USA",
+   "removedTicker": "MHK",
+   "removed": "Mohawk Industries",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "December 11, 2025",
+   "addedTicker": "ARES",
+   "added": "Ares Management",
+   "removedTicker": "K",
+   "removed": "Kellanova",
+   "reason": "Mars Inc. acquired Kellanova."
+  },
+  {
+   "date": "November 28, 2025",
+   "addedTicker": "SNDK",
+   "added": "Sandisk",
+   "removedTicker": "IPG",
+   "removed": "Interpublic Group",
+   "reason": "S&P 500 constituent Omnicom Group Inc. acquired (The) Interpublic Group."
+  },
+  {
+   "date": "November 4, 2025",
+   "addedTicker": "",
+   "added": "",
+   "removedTicker": "EMN",
+   "removed": "Eastman Chemical Co.",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "November 3, 2025",
+   "addedTicker": "Q",
+   "added": "Qnity Electronics",
+   "removedTicker": "",
+   "removed": "",
+   "reason": "S&P 500 constituent Dupont de Nemours, Inc. spun off Qnity Electronics."
+  },
+  {
+   "date": "October 31, 2025",
+   "addedTicker": "",
+   "added": "",
+   "removedTicker": "KMX",
+   "removed": "CarMax",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "October 30, 2025",
+   "addedTicker": "SOLS",
+   "added": "Solstice Advanced Materials",
+   "removedTicker": "",
+   "removed": "",
+   "reason": "S&P 500 and S&P 100 constituent Honeywell International Inc. spun off Solstice Advanced Materials."
+  },
+  {
+   "date": "September 22, 2025",
+   "addedTicker": "EME",
+   "added": "Emcor",
+   "removedTicker": "ENPH",
+   "removed": "Enphase Energy",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "September 22, 2025",
+   "addedTicker": "HOOD",
+   "added": "Robinhood Markets",
+   "removedTicker": "CZR",
+   "removed": "Caesars Entertainment",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "September 22, 2025",
+   "addedTicker": "APP",
+   "added": "AppLovin",
+   "removedTicker": "MKTX",
+   "removed": "MarketAxess",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "August 28, 2025",
+   "addedTicker": "IBKR",
+   "added": "Interactive Brokers",
+   "removedTicker": "WBA",
+   "removed": "Walgreens Boots Alliance",
+   "reason": "Sycamore Partners acquired Walgreen Boots Alliance."
+  },
+  {
+   "date": "July 23, 2025",
+   "addedTicker": "XYZ",
+   "added": "Block, Inc.",
+   "removedTicker": "HES",
+   "removed": "Hess Corporation",
+   "reason": "S&P 500 and S&P 100 constituent Chevron Corp. acquired Hess Corporation"
+  },
+  {
+   "date": "July 18, 2025",
+   "addedTicker": "TTD",
+   "added": "Trade Desk (The)",
+   "removedTicker": "ANSS",
+   "removed": "Ansys",
+   "reason": "S&P 500 constituent Synopsys Inc. acquired Ansys."
+  },
+  {
+   "date": "July 9, 2025",
+   "addedTicker": "DDOG",
+   "added": "Datadog",
+   "removedTicker": "JNPR",
+   "removed": "Juniper Networks",
+   "reason": "S&P 500 constituent Hewlett Packard Enterprise Co. acquired Juniper Networks."
+  },
+  {
+   "date": "May 19, 2025",
+   "addedTicker": "COIN",
+   "added": "Coinbase",
+   "removedTicker": "DFS",
+   "removed": "Discover Financial",
+   "reason": "S&P 500 constituent Capital One Financial Corp. acquired Discover Financial Services."
+  },
+  {
+   "date": "March 24, 2025",
+   "addedTicker": "DASH",
+   "added": "DoorDash",
+   "removedTicker": "BWA",
+   "removed": "BorgWarner",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "March 24, 2025",
+   "addedTicker": "TKO",
+   "added": "TKO Group Holdings",
+   "removedTicker": "TFX",
+   "removed": "Teleflex",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "March 24, 2025",
+   "addedTicker": "WSM",
+   "added": "Williams-Sonoma, Inc.",
+   "removedTicker": "CE",
+   "removed": "Celanese",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "March 24, 2025",
+   "addedTicker": "EXE",
+   "added": "Expand Energy",
+   "removedTicker": "FMC",
+   "removed": "FMC Corporation",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "December 23, 2024",
+   "addedTicker": "APO",
+   "added": "Apollo Global Management",
+   "removedTicker": "QRVO",
+   "removed": "Qorvo",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "December 23, 2024",
+   "addedTicker": "WDAY",
+   "added": "Workday, Inc.",
+   "removedTicker": "AMTM",
+   "removed": "Amentum",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "December 23, 2024",
+   "addedTicker": "LII",
+   "added": "Lennox International",
+   "removedTicker": "CTLT",
+   "removed": "Catalent",
+   "reason": "Novo Holdings A/S acquired Catalent."
+  },
+  {
+   "date": "November 26, 2024",
+   "addedTicker": "TPL",
+   "added": "Texas Pacific Land Corporation",
+   "removedTicker": "MRO",
+   "removed": "Marathon Oil",
+   "reason": "S&P 500 & 100 constituent ConocoPhillips acquired Marathon Oil."
+  },
+  {
+   "date": "October 1, 2024",
+   "addedTicker": "",
+   "added": "",
+   "removedTicker": "BBWI",
+   "removed": "Bath & Body Works, Inc.",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "September 30, 2024",
+   "addedTicker": "AMTM",
+   "added": "Amentum",
+   "removedTicker": "",
+   "removed": "",
+   "reason": "S&P 500 constituent Jacobs Solutions spun off its Critical Mission Solutions and Cyber Intelligence business, which merged with private Amentum to create newly publicly traded Amentum Holdings."
+  },
+  {
+   "date": "September 23, 2024",
+   "addedTicker": "PLTR",
+   "added": "Palantir Technologies",
+   "removedTicker": "AAL",
+   "removed": "American Airlines Group",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "September 23, 2024",
+   "addedTicker": "DELL",
+   "added": "Dell Technologies",
+   "removedTicker": "ETSY",
+   "removed": "Etsy",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "September 23, 2024",
+   "addedTicker": "ERIE",
+   "added": "Erie Indemnity",
+   "removedTicker": "BIO",
+   "removed": "Bio-Rad Laboratories",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "June 24, 2024",
+   "addedTicker": "KKR",
+   "added": "KKR",
+   "removedTicker": "RHI",
+   "removed": "Robert Half",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "June 24, 2024",
+   "addedTicker": "CRWD",
+   "added": "CrowdStrike",
+   "removedTicker": "CMA",
+   "removed": "Comerica",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "June 24, 2024",
+   "addedTicker": "GDDY",
+   "added": "GoDaddy",
+   "removedTicker": "ILMN",
+   "removed": "Illumina, Inc.",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "May 8, 2024",
+   "addedTicker": "VST",
+   "added": "Vistra",
+   "removedTicker": "PXD",
+   "removed": "Pioneer Natural Resources",
+   "reason": "S&P 500 and S&P 100 constituent ExxonMobil acquired Pioneer Natural Resources."
+  },
+  {
+   "date": "April 3, 2024",
+   "addedTicker": "",
+   "added": "",
+   "removedTicker": "XRAY",
+   "removed": "Dentsply Sirona",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "April 3, 2024",
+   "addedTicker": "",
+   "added": "",
+   "removedTicker": "VFC",
+   "removed": "VF Corporation",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "April 2, 2024",
+   "addedTicker": "GEV",
+   "added": "GE Vernova",
+   "removedTicker": "",
+   "removed": "",
+   "reason": "S&P 500 and 100 constituent General Electric Corp. spun off GE Vernova."
+  },
+  {
+   "date": "April 1, 2024",
+   "addedTicker": "SOLV",
+   "added": "Solventum",
+   "removedTicker": "",
+   "removed": "",
+   "reason": "S&P 500 and 100 constituent 3M Co. spun off Solventum."
+  },
+  {
+   "date": "March 25, 2024",
+   "addedTicker": "CPAY",
+   "added": "Corpay",
+   "removedTicker": "FLT",
+   "removed": "FLEETCOR Technologies",
+   "reason": "FLEETCOR Technologies changed its name to Corpay and ticker symbol from FLT to CPAY."
+  },
+  {
+   "date": "March 18, 2024",
+   "addedTicker": "SMCI",
+   "added": "Supermicro",
+   "removedTicker": "WHR",
+   "removed": "Whirlpool Corporation",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "March 18, 2024",
+   "addedTicker": "DECK",
+   "added": "Deckers Brands",
+   "removedTicker": "ZION",
+   "removed": "Zions Bancorporation",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "February 1, 2024",
+   "addedTicker": "DAY",
+   "added": "Dayforce",
+   "removedTicker": "CDAY",
+   "removed": "Ceridian",
+   "reason": "Ceridian changed its ticker symbol from CDAY to DAY."
+  },
+  {
+   "date": "December 18, 2023",
+   "addedTicker": "UBER",
+   "added": "Uber",
+   "removedTicker": "SEE",
+   "removed": "Sealed Air",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "December 18, 2023",
+   "addedTicker": "JBL",
+   "added": "Jabil",
+   "removedTicker": "ALK",
+   "removed": "Alaska Air Group",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "December 18, 2023",
+   "addedTicker": "BLDR",
+   "added": "Builders FirstSource",
+   "removedTicker": "SEDG",
+   "removed": "SolarEdge",
+   "reason": "Market capitalization change."
+  },
+  {
+   "date": "October 18, 2023",
+   "addedTicker": "HUBB",
+   "added": "Hubbell",
+   "removedTicker": "OGN",
+   "removed": "Organon & Co.",
+   "reason": "Market capitalization change."
+  }
+ ]
 }

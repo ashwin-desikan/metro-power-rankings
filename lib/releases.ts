@@ -18,6 +18,14 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-13",
+    headline: "S&P 500 index changes restored",
+    items: [
+      "The S&P 500 page's index-changes feed shows its history again: 61 entries back to October 2023, lost in August when the source table disappeared.",
+      "It adds Reddit's arrival on 18 August, replacing AvalonBay Communities after Equity Residential acquired it.",
+    ],
+  },
+  {
     date: "2026-09-12",
     headline: "Ownership updates: Seahawks, Liverpool, Formula 1",
     items: [
