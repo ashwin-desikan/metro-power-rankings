@@ -14,8 +14,10 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import Link from 'next/link';
 import FollowingRail from './FollowingRail';
-import { getRecentDigestItems } from '@/lib/digestFeed';
-import { DigestItemRow, fmtDigestDate } from './digest/_shared/ui';
+import { getRecentDigestItems, entityHref } from '@/lib/digestFeed';
+import { topicsFor, type TopicKey } from '@/lib/digestTopics';
+import { facetHref } from '@/lib/digestFacets';
+import { DigestItemRow, entityLabel, fmtDigestDate } from './digest/_shared/ui';
 import HeadlineTicker from './HeadlineTicker';
 import OnTodayTicker from './OnTodayTicker';
 
@@ -315,6 +317,9 @@ type IndexCard = { n: string; title: string; desc: string; stat: string; href: s
 
 type AtlasCard = { emoji: string; title: string; desc: string; href: string; sub: string; live?: boolean };
 const ATLAS: AtlasCard[] = [
+  // "Everything on the site" said everything except the one thing updated daily. Leads the
+  // grid, and marked live, because it is the only card here that changes every morning.
+  { emoji: '📰', title: 'Digest', desc: 'Every story worth keeping from about fifty newsletters, read and sorted each morning.', href: '/digest', sub: 'Today · Topics · Sports · Themes · 60 days', live: true },
   { emoji: '🏙️', title: 'Rankings', desc: 'The metro leaderboard, badges, and the compare tool.', href: '/rankings', sub: 'Top 100 · Compare · Badges' },
   { emoji: '🗺️', title: 'Geography', desc: 'Countries, states, leaders, the power atlas, and the world map.', href: '/geography', sub: 'Countries · 2100 · States · Map · Power Atlas' },
   { emoji: '🏟️', title: 'Sports', desc: 'Every league, national team, and cross-sport index.', href: '/sports', sub: 'Leagues · Zone Zero Cup · Rivalries', live: true },
@@ -330,6 +335,11 @@ const ATLAS: AtlasCard[] = [
 // Masthead quick-launch: every Atlas section as a badge tile, plus explicit
 // entries for the kids games and the arcade games.
 const MASTHEAD_LAUNCH: { emoji: string; label: string; href: string; blurb: string; tip: string }[] = [
+  // The digest leads the launcher, ahead of Rankings (Ashwin, 2026-09-13: "probably put
+  // it at the top, even ahead of the link to the rankings on the desktop side"). It was
+  // absent from this grid entirely, so a reader who skipped the ticker had no route to it
+  // from the masthead at all.
+  { emoji: '📰', label: 'Digest', href: '/digest', blurb: 'Today, in fifty newsletters', tip: 'The daily digest: every story worth keeping from about fifty newsletters, filterable by topic, sport and theme, sixty days back.' },
   { emoji: '🏙️', label: 'Rankings', href: '/rankings', blurb: 'Metros, scored', tip: 'The Global Metro Power Rankings: every major urban area scored across power, sport, and culture.' },
   { emoji: '🗺️', label: 'Geography', href: '/geography', blurb: 'Atlas of places', tip: "Maps and atlases of the world's places, from metro boundaries to the geography of power." },
   { emoji: '🏟️', label: 'Sports', href: '/sports', blurb: 'Teams, live scores', tip: 'The Zone Zero sports hub: leagues, teams, live standings, champions, and cross-sport rankings.' },
@@ -342,6 +352,17 @@ const MASTHEAD_LAUNCH: { emoji: string; label: string; href: string; blurb: stri
   { emoji: '🧸', label: 'Kids Games', href: '/play', blurb: 'Learn by playing', tip: 'Geography and sports games for kids, including Be-the-Ref and find-the-teams.' },
   { emoji: '🕹️', label: 'Games', href: '/play/arcade', blurb: 'Test your knowledge', tip: 'The arcade: daily and practice games that test how well you know the world.' },
 ];
+
+// Chip-sized forms of TOPIC_LABEL. "Politics and government" is the canonical name and is
+// what the filter page shows; at 10px in a pill beside two more tags it would push the
+// others off the row, so the ticker uses the short form and the destination carries the
+// full one. AdTech keeps "and media" because that half is the point of the bucket.
+const TICKER_TOPIC_SHORT: Record<TopicKey, string> = {
+  politics: 'Politics',
+  sport: 'Sport',
+  adtech: 'AdTech and media',
+  business: 'Business and tech',
+};
 
 const LEAGUES: { name: string; href: string; emoji?: string }[] = [
   { name: 'International Football', href: '/teams/national', emoji: '🏆' },
@@ -472,9 +493,36 @@ export default async function Home() {
   const digestRecent = await getRecentDigestItems(12);
   const digestDate = digestRecent[0]?.digestDate ?? null;
   const digest = digestRecent.slice(0, 6);
+  // Tags travel with each headline (Ashwin, 2026-09-13: "you just have the headline and
+  // the source, but the whole point is: can the tags be there ... just the main, top four
+  // hubs, and any of the useful tags within the site itself, like United States or a team
+  // name"). Two kinds, and they are resolved HERE rather than in the ticker because the
+  // ticker is a client component and entityLabel reads the metro and country datasets:
+  //   topic - one of the four buckets, pointing at that filter on /digest.
+  //   tags  - the story's own entities, pointing at the site page each one names.
+  // Three entities is the cap: the chip row is a fixed height so the card cannot change
+  // size as the headline rotates, and a fourth chip would wrap out of sight anyway.
   const tickerItems = digestRecent
     .filter((it) => it.digestDate === digestDate)
-    .map((it) => ({ headline: it.headline, sourceName: it.sourceName, url: it.url }));
+    .map((it) => {
+      // The headline goes in so a Washington Post story about Trump keeps its politics
+      // label rather than being pulled into Business and tech by a loose theme tag.
+      // Topics are not exclusive, so this is a list; two is the cap that keeps the chip
+      // row on one line, and a third topic is rare enough (10 stories in sixty days) that
+      // losing it here costs nothing the filter rail does not still show.
+      const keys = topicsFor(it.sourceName, it.topics, it.headline).slice(0, 2);
+      return {
+        headline: it.headline,
+        sourceName: it.sourceName,
+        url: it.url,
+        topics: keys.map((k) => ({ label: TICKER_TOPIC_SHORT[k], href: facetHref('topic', k) })),
+        tags: it.entities
+          .map((e) => ({ href: entityHref(e), label: entityLabel(e) }))
+          // A tag with no route or no known name is dropped, never rendered dead.
+          .filter((t): t is { href: string; label: string } => Boolean(t.href && t.label))
+          .slice(0, keys.length > 1 ? 2 : 3),
+      };
+    });
 
   const INDICES: IndexCard[] = [
     { n: '01', title: 'Metro Power Rankings', desc: 'Every metro on Earth, scored across sixteen weighted dimensions.', stat: '4,200+ metros', href: '/rankings', emoji: '🌐', preview: topMetros() },
@@ -518,6 +566,24 @@ export default async function Home() {
               Everything ranked in the open, for anyone who would rather settle an argument with data
               than opinion.
             </p>
+
+            {/* THE DIGEST, FIRST IN THE COLUMN.
+                Ashwin, 2026-09-13: "make sure that the digest link is highlighted as a very
+                useful place to go for all of your information ... people will look at the
+                ticker but won't know that the digest is a very useful thing to click on.
+                Please make it much more obvious, and probably put it at the top, even ahead
+                of the link to the rankings on the desktop side."
+                It sat BELOW the indices promo, so on desktop the first thing under the intro
+                was a link to the rankings and the digest was the afterthought at the bottom
+                of the column. Moving it above the promo puts it first on desktop; on mobile,
+                where the promo is hidden, it is already the first block under the intro, so
+                the phone reading order does not change. The ticker itself now opens with a
+                standing "read the digest" banner rather than a footnote link. */}
+            {digestDate && tickerItems.length > 0 && (
+              <div className="max-w-lg mb-3">
+                <HeadlineTicker items={tickerItems} dateLabel={fmtDigestDate(digestDate, 'stamp')} />
+              </div>
+            )}
 
             {/* Desktop fold promo (Ashwin 2026-08-02): the left column's dead space under the
                 intro now sells the two below-the-fold sections — the indices (the crux of the
@@ -573,14 +639,6 @@ export default async function Home() {
                 </a>
               )}
             </div>
-            {/* Today's headlines, cycling (Ashwin 2026-09-13): on desktop it fills the ~258px
-                the left column ran short of the right one at 1280 and 1440; outside the
-                desktop-only promo block so phones get it too, directly under the intro. */}
-            {digestDate && tickerItems.length > 0 && (
-              <div className="max-w-lg">
-                <HeadlineTicker items={tickerItems} dateLabel={fmtDigestDate(digestDate, 'stamp')} />
-              </div>
-            )}
           </div>
 
           {/* Explore launcher — quick visual entry to every section + the games. */}

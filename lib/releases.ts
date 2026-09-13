@@ -22,9 +22,9 @@ export const RELEASES: Release[] = [
     headline: "A daily news digest and clearer standings",
     items: [
       "The S&P 500 page's index-changes feed shows its history again: 61 entries back to October 2023, and the business leaders board tracks CEO changes daily, picking up John Ternus at Apple.",
-      "New From the Digest page: every story each day's newsletter digest linked, with one line on why it matters, an archive back to 20 June, and the companies and themes each story covers.",
-      "The homepage now cycles through today's headlines and today's fixtures, and any metro or country a story is about shows it under In the news.",
-      "Live standings carry a sport icon throughout, opening a sport opens every competition under it, and national-team games now sit in their own International section under Football.",
+      "New From the Digest page: every story from each day's digest with one line on why it matters, an archive back to 20 June, and a What's on panel of the leagues in season and the next elections.",
+      "Every story shows its topics, themes and sport, and each tag filters the last 60 days. Metro and country pages carry In the news, and the homepage now leads with the digest.",
+      "Live standings carry a sport icon throughout, opening a sport opens every competition beneath it, national-team games sit in their own International section, and the CFL is back with its fixtures.",
     ],
   },
   {
