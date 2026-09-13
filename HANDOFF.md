@@ -14552,4 +14552,83 @@ sweep, then one push on his explicit yes ("push it once the build passes").
   site.
 - College tags are uneven: the September batch used `cfb/<school>-cfb`; earlier batches found no college
   pages and left those stories untagged. Harmless.
-- The United States `/countries` phone scroll-hold failure (G) still needs its own look.
+- ~~The United States `/countries` phone scroll-hold failure (G) still needs its own look.~~ Fixed at the
+  cause in `bed0ae366`: see J.
+
+### J. Homepage tickers, country pages on phones, standings On today / Recent results (`bed0ae366`, one paid build)
+
+Ashwin's asks, all 2026-09-13, built in a scratchpad worktree, previewed on the mini's dev server
+(localhost:3100) and pushed as ONE build on his explicit yes ("push it once the build passes"). That was
+the day's 4th paid build, over the 2/day budget, and he chose it knowingly.
+
+**1. Headline ticker** (`app/HeadlineTicker.tsx`): today's digest headlines one at a time in the masthead's
+left column. On desktop it fills the ~258px that column ran short (now 61px). Phones get it directly under
+the intro ("both on phones"). `app/page.tsx` reads 12 digest items once; the ticker takes the newest day's,
+"From the digest" keeps six.
+
+**2. Fixtures ticker** (`app/OnTodayTicker.tsx`): today's fixtures under 📊 Live standings, the same list as
+the standings page's On today.
+- `app/sports/standings/liveData.tsx` (server-only) now holds the page's data half verbatim plus
+  `loadLiveStandings()` → `{ groups, today }`; `page.tsx` is metadata + JSX. Edit the standings logic THERE.
+- `app/api/on-today/route.ts` (`revalidate = 300`) serves `today.upcoming`; the ticker fetches it after
+  hydration, so the homepage's own ISR window and bundle are untouched. Build output: `○ /api/on-today
+  2m 1y` (static ISR; the standings fetches inside it lower the declared 300 to 2 minutes), homepage
+  still `○ / 30m`.
+- Starts at the next fixture not yet kicked off; date-only fixtures read "Today".
+- Phone: 108px box, 44px controls row over a 44px fixture link (teams, then time · league). md and up:
+  one 36px row.
+
+**Shared motion rules** (`app/_shared/useTickerRotation.ts`): 5s advance, hold on hover/focus, pause
+button, never auto-advances under prefers-reduced-motion, aria-live only while the reader drives. Both
+tickers have fixed heights (no layout shift).
+
+**3. `/countries/[slug]` scroll-hold on phones, fixed at the cause** (closes G's open item).
+`collapseOnMobile` sections rendered open and `MobileCollapse` closed them after hydration, shrinking the
+page ~6 screens under a scrolling reader. Now they ship closed with `data-desktop-default-open` + the
+standings-style inline script; `MobileCollapse` deleted; `data-jump-reveal` + a `section:target` rule so a
+section-nav chip opens what it jumps to; `suppressHydrationWarning` on those `<details>` and on the
+standings accordion. United States at 390: 17.6 → 11.4 screens, 97 → 29 small taps, scroll holds.
+
+**4. On today stops listing yesterday's finished games.** PL/CFB/NFL come from the predictions ledgers,
+which only carry a score once a grading job runs, and today's window opens 10h before UTC midnight.
+`collectEvents` drops an unscored game once its kick-off is more than `LIVE_GRACE_MS` (5h) old. Sunday
+11:22 UTC: 75 → 47 fixtures, 0 Saturday rows.
+
+**5. Recent results without waiting for grading jobs** (`lib/espnScores.ts`, server-only): ESPN public
+scoreboards for eng.1, college-football (`groups=80`) and NFL, `revalidate 900`, tag `espn-scores`,
+completed games only; a ledger game with no score borrows ESPN's when league, kick-off (±6h) and both team
+names match. Any ESPN failure returns [] and the strip behaves as before. Recent results 7 → 116 (PL 7/7,
+CFB 19/19 Saturday). Rows now show the date through `LocalTime` ("SAT 12 Sept").
+
+**Gates:** every `npm run verify` step passed, across three runs rather than one (typecheck, every
+check:*, vitest 199/199, pytest 112/112, `next build --webpack`, function-size). The first run failed check:sortable only because the
+standings board moved files; its existing `sortable-baseline.json` entry was renamed to `liveData.tsx`
+(still 1, no new board). The second run stopped at `test:python` because the mini's PATH `python3` (and
+Homebrew's, and `~/.local/bin/python3.11`) has no pytest; the suite passed 112/112 with
+`PYTHON_BIN="$HOME/Projects/Metro Area Project/.venv/bin/python"`, then `next build --webpack` and
+function-size ran on their own. **On the mini, run verify with that PYTHON_BIN set.** probe:mobile at 390, concurrency 1: `/` 16.5 screens at 2.6x,
+no fails or warns; `/digest` 4.2. Every ticker control measured 44px at 375; desktop unchanged (headline
+card 186px, fixtures row 36px, buttons 28px). Release note 2026-09-13 bullet 4 mentions both tickers.
+Patch retired to `~/metro-mini-jobs/pending/ticker-country-collapse-2026-09-13.patch.applied-bed0ae366`.
+
+**Deploy:** PENDING when this was written. Pushed 13:06:51 BST; at 13:10:56 `/deployed` still reported
+`cb25a991a` (the last deploy took ~450s). A watcher is polling for `bed0ae366`. Once live, check on
+production: `/` shows both tickers (desktop and 390px), `/api/on-today` returns JSON items,
+`/sports/standings` On today has no finished games and Recent results show dates, and
+`/countries/united-states` loads its sections closed on a phone. If `/deployed` is still on `cb25a991a`
+after ~15 minutes, look for a canceled build (deploy-watch heals those every 10 minutes).
+
+**Notion (done 2026-09-13):** Backlog digest row now notes the US scroll-hold fix; new Backlog row (P3,
+Any session) for the 3.4 MB college-football standings response; ESPN Data sources row gains
+`lib/espnScores.ts`, the 0-0-before-kick-off rule and the 2 MB limit; Decisions: "Homepage tickers ship on
+phones too" and "Recent results may show ESPN final scores before the grading jobs run".
+
+**Open:**
+- Cost: `/api/on-today` rebuilds the standings data at most every 2 minutes (~720/day ceiling), and only
+  while visitors come. If it ever shows as dynamic (ƒ) in a build, every homepage visit would run the
+  loader: fix before it ships.
+- Pre-existing, now with a second consumer: ESPN's college-football STANDINGS response is 3.4 MB, over the
+  2 MB data-cache limit (101 "Failed to set Next.js data cache" lines in the build), so every regeneration
+  of `/sports/standings` and `/api/on-today` refetches it. Worth trimming or snapshotting if ESPN or
+  function time becomes a problem. (The new ESPN scoreboard feeds are under the limit.)
+- College tags in the digest archive remain uneven (I).
