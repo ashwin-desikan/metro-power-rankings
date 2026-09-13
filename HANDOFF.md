@@ -14675,7 +14675,11 @@ exactly. `bash -n` on both wrappers.
 
 **Switched on:** migration applied; `~/Library/LaunchAgents/com.newsletter.evening.plist` bootstrapped
 (20:00 daily; not git-tracked, like the other newsletter plists); `claude-auth-canary` gains a 19:30 slot
-in `jobs.toml` (live and `mac-mini-jobs/` copies identical). First live run: PENDING when this was written (20:00 tonight); a check of the log and the evening rows is queued for 20:25.
+in `jobs.toml` (live and `mac-mini-jobs/` copies identical). First live run: 2026-09-13 20:00, launchd exit 0 (runs = 1). Claude read the post-08:00 newsletters, push_feed
+appended 12 evening items (positions 35-46, 0 skipped), 2026-09-13 now holds 46 and digest_run.item_count = 46; the
+topics step patched 12 of 46 rows. Claude flagged two quality points itself: Business Insider's newsletter did not show
+article titles, so four headlines use the newsletter's wording (the Amodei one paraphrased), and Post Most carried
+little beyond headlines, so its why lines are thin.
 
 **Also in `a476ad1`, the Windows session's request 1 (Ashwin's ruling):** the LIVE morning feed now
 carries every non-generic linked story in `socials/substack.md`, in post order, `why` grounded in the post,
