@@ -86,7 +86,12 @@ type SubTable = { title: string | null; columns: string[]; rows: SRow[]; fixture
 // `teams` is set only where a block knows its sides by name (the Premier League, NFL
 // and college football ledgers), so collectEvents can lend such a game ESPN's final
 // score before the grading job has run. The label stays the display string.
-export type LiveEvent = { sport: string; league: string; href: string | null; label: string; when: string; score: string | null; live: boolean; teams?: { home: string; away: string } };
+/** `section` puts an event in a named sub-group INSIDE its sport in the three strips,
+ *  instead of promoting it to a sport of its own. Ashwin, 2026-09-13: "Within Football
+ *  and Women's Football, create a separate section to show the International games rather
+ *  than creating two new categories". Unset for everything else, which reads exactly as
+ *  it did before. */
+export type LiveEvent = { sport: string; league: string; href: string | null; label: string; when: string; score: string | null; live: boolean; section?: string; teams?: { home: string; away: string } };
 type Block = { league: string; href: string | null; note: string | null; open: boolean; subTables: SubTable[]; cols?: boolean; live?: boolean; cutNote?: string | null; events?: LiveEvent[] };
 export type SportGroup = { sport: string; blocks: Block[]; columns?: [Block[], Block[]] };
 
@@ -442,6 +447,52 @@ function EventRow({ e, kind }: { e: LiveEvent; kind: "upcoming" | "results" }) {
   );
 }
 
+/** A sport's events split into its main body and its named sections, in the order the
+ *  sections first appear. A section is a sub-group INSIDE a sport (today: national-team
+ *  games under Football and Women's Football), not a sport of its own. */
+function splitSections(list: LiveEvent[]): { main: LiveEvent[]; sections: [string, LiveEvent[]][] } {
+  const main: LiveEvent[] = [];
+  const sections = new Map<string, LiveEvent[]>();
+  for (const e of list) {
+    if (!e.section) main.push(e);
+    else sections.set(e.section, [...(sections.get(e.section) ?? []), e]);
+  }
+  return { main, sections: [...sections.entries()] };
+}
+
+/** Events grouped by competition, with the same threshold rule the sport level uses:
+ *  a competition with six or fewer reads under its own heading, one with more folds.
+ *  Extracted so the sport body and each of its sections render identically. */
+function EventGroup({ items, kind, noun, showHeads }: { items: LiveEvent[]; kind: "upcoming" | "results"; noun: string; showHeads: boolean }) {
+  const byLeague = new Map<string, LiveEvent[]>();
+  for (const e of items) byLeague.set(e.league, [...(byLeague.get(e.league) ?? []), e]);
+  return (
+    <div className="space-y-1.5">
+      {[...byLeague.entries()].map(([league, list]) =>
+        list.length <= TODAY_PER_SPORT ? (
+          <div key={league}>
+            {showHeads && byLeague.size > 1 && <div className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]">{league}</div>}
+            <ul className="m-0 p-0 list-none space-y-0.5">{list.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
+          </div>
+        ) : (
+          <details key={league}>
+            <summary className="cursor-pointer select-none text-[10px] uppercase tracking-wider text-[var(--text-dim)] hover:text-[var(--accent)]">
+              {league} · {list.length} {noun}s
+            </summary>
+            <ul className="m-0 p-0 list-none space-y-0.5 mt-0.5">{list.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
+          </details>
+        ),
+      )}
+    </div>
+  );
+}
+
+/** The heading a section carries inside its sport. Deliberately distinct from a
+ *  competition heading: a section groups competitions, so it gets the weight. */
+function SectionHead({ name }: { name: string }) {
+  return <div className="text-[10px] font-semibold uppercase tracking-wider text-[var(--text-muted)]">{name}</div>;
+}
+
 export function TodayStrip({ title, events, kind, sportOrder, noun }: { title: string; events: LiveEvent[]; kind: "upcoming" | "results"; sportOrder: string[]; noun: string }) {
   if (events.length === 0) return null;
   const bySport = new Map<string, LiveEvent[]>();
@@ -473,11 +524,22 @@ export function TodayStrip({ title, events, kind, sportOrder, noun }: { title: s
           // fewer reads in full; a sport with more folds to one line and opens
           // on a click, so a slam's first round or a cup weekend never becomes
           // the page. Six is the number the day's own lists sat at.
+          // A section inside the sport is ALWAYS shown, folded or not, so the
+          // international games read the same on a quiet Tuesday as on a cup weekend.
+          const { main, sections } = splitSections(list);
           if (list.length <= TODAY_PER_SPORT) {
             return (
               <div key={sport} className="min-w-0">
                 <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-0.5">{head}</div>
-                <ul className="m-0 p-0 list-none space-y-0.5">{list.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
+                {main.length > 0 && (
+                  <ul className="m-0 p-0 list-none space-y-0.5">{main.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
+                )}
+                {sections.map(([name, items]) => (
+                  <div key={name} className={main.length > 0 ? "mt-1.5" : ""}>
+                    <SectionHead name={name} />
+                    <ul className="m-0 p-0 list-none space-y-0.5">{items.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
+                  </div>
+                ))}
               </div>
             );
           }
@@ -486,8 +548,6 @@ export function TodayStrip({ title, events, kind, sportOrder, noun }: { title: s
           // NFL level if there are more than six of either of those"): a
           // competition with six or fewer reads under its own heading, one
           // with more folds again. Two levels and no deeper.
-          const byLeague = new Map<string, LiveEvent[]>();
-          for (const e of list) byLeague.set(e.league, [...(byLeague.get(e.league) ?? []), e]);
           return (
             // data-open-children: opening a sport opens every competition under it in
             // one click (Ashwin, 2026-09-13: "click on the sport, and then all of the
@@ -500,21 +560,15 @@ export function TodayStrip({ title, events, kind, sportOrder, noun }: { title: s
                 {sport} <span className="font-normal text-[var(--text-dim)]">· {list.length} {noun}s</span>
               </summary>
               <div className="mt-0.5 space-y-1.5">
-                {[...byLeague.entries()].map(([league, items]) =>
-                  items.length <= TODAY_PER_SPORT ? (
-                    <div key={league}>
-                      {byLeague.size > 1 && <div className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]">{league}</div>}
-                      <ul className="m-0 p-0 list-none space-y-0.5">{items.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
+                {main.length > 0 && <EventGroup items={main} kind={kind} noun={noun} showHeads />}
+                {sections.map(([name, items]) => (
+                  <div key={name}>
+                    <SectionHead name={name} />
+                    <div className="mt-0.5">
+                      <EventGroup items={items} kind={kind} noun={noun} showHeads />
                     </div>
-                  ) : (
-                    <details key={league}>
-                      <summary className="cursor-pointer select-none text-[10px] uppercase tracking-wider text-[var(--text-dim)] hover:text-[var(--accent)]">
-                        {league} · {items.length} {noun}s
-                      </summary>
-                      <ul className="m-0 p-0 list-none space-y-0.5 mt-0.5">{items.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
-                    </details>
-                  ),
-                )}
+                  </div>
+                ))}
               </div>
             </details>
           );
@@ -1116,8 +1170,15 @@ function intlCompBlock(
   });
   if (!current) return null;
 
+  // 🔴 Sport and section must match the intlEvents path in loadLiveStandings, because
+  // collectEvents dedupes on league|label|when and takes BLOCK events first. If this
+  // still said "International Football", the UNL and Asian Cup rows here would win the
+  // key and keep the old sport, while AFCON and the women's qualifiers (which have no
+  // block) moved under Football — the same competition type rendering two different
+  // ways depending on whether a table happens to exist for it.
   const events: LiveEvent[] = fx.filter((f) => f.kickoff).map((f) => ({
-    sport: "International Football", league: opts.label, href: opts.href, label: `${nation(f.home)} v ${nation(f.away)}`, when: f.kickoff as string,
+    sport: "Football", section: "International", league: opts.label, href: opts.href,
+    label: `${nation(f.home)} v ${nation(f.away)}`, when: f.kickoff as string,
     score: f.status && FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
     live: !!f.status && IN_PLAY.has(f.status) }));
   return {
@@ -1767,8 +1828,13 @@ export async function loadLiveStandings(): Promise<{ groups: SportGroup[]; today
   // including international football if and when it pops up".
   const INTL_FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
   const INTL_LIVE = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
+  // National-team games sit INSIDE Football (or Women's Football, on the bundle's own
+  // `women` flag) under an "International" section, rather than becoming sports of their
+  // own. Ashwin, 2026-09-13: "Within Football and Women's Football, create a separate
+  // section to show the International games rather than creating two new categories".
   const intlEvents: LiveEvent[] = intlComps.flatMap((comp) => (comp.fixtures ?? []).filter((f) => f.kickoff).map((f) => ({
-    sport: "International Football", league: comp.name ?? "International", href: "/teams/national",
+    sport: comp.women ? "Women's Football" : "Football", section: "International",
+    league: comp.name ?? "International", href: comp.women ? "/teams/wfootball" : "/teams/national",
     label: `${f.home.name ?? f.home.lookup ?? "TBD"} v ${f.away.name ?? f.away.lookup ?? "TBD"}`, when: f.kickoff as string,
     score: f.status && INTL_FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
     live: !!f.status && INTL_LIVE.has(f.status) })));
@@ -1879,6 +1945,19 @@ export async function loadLiveStandings(): Promise<{ groups: SportGroup[]; today
   // through live-fixtures-2026.json, the builder's window a week either side
   // of today. Women's leagues sit under Women's Football beside the UWCL.
   const EURO_LABEL: Record<number, string> = { 2: "Champions League", 3: "Europa League", 848: "Conference League" };
+  // The other confederations' club competitions, added 2026-09-13. Club football, so
+  // they belong to the Football sport with NO section: "International" in these strips
+  // means national teams, and an Al-Hilal v Al-Nassr tie is not that. They have no
+  // tournament page of their own yet, so the link goes to the football hub.
+  const CONT_LABEL: Record<number, string> = {
+    17: "AFC Champions League Elite", 12: "CAF Champions League",
+    1168: "FIFA Intercontinental Cup",
+  };
+  const contEvents: LiveEvent[] = clubComps.filter((c) => CONT_LABEL[c.league_id]).flatMap((comp) => (comp.fixtures ?? []).filter((f) => f.kickoff).map((f) => ({
+    sport: "Football", league: CONT_LABEL[comp.league_id], href: "/teams/football/2026-27",
+    label: `${cupName(f.home)} v ${cupName(f.away)}`, when: f.kickoff as string,
+    score: f.status && CUP_FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}-${f.away_goals}` : null,
+    live: !!f.status && CUP_LIVE.has(f.status) })));
   const euroEvents: LiveEvent[] = clubComps.filter((c) => EURO_LABEL[c.league_id]).flatMap((comp) => (comp.fixtures ?? []).filter((f) => f.kickoff && !/qualif|prelim/i.test(f.round ?? "")).map((f) => ({
     sport: "Football", league: EURO_LABEL[comp.league_id], href: `/teams/football/tournaments/${comp.league_id === 2 ? "champions-league" : comp.league_id === 3 ? "europa-league" : "conference-league"}`,
     label: `${cupName(f.home)} v ${cupName(f.away)}`, when: f.kickoff as string,
@@ -1894,6 +1973,6 @@ export async function loadLiveStandings(): Promise<{ groups: SportGroup[]; today
   // game the grading jobs have not reached still lands in Recent results.
   const [windowFrom] = todayWindow(Date.now());
   const espnFinals = await getEspnFinals(windowFrom - RESULTS_BACK_MS, Date.now()).catch(() => []);
-  const today = collectEvents(groups, [...cupEvents, ...intlEvents, ...euroEvents, ...leagueEvents], espnFinals);
+  const today = collectEvents(groups, [...cupEvents, ...intlEvents, ...euroEvents, ...contEvents, ...leagueEvents], espnFinals);
   return { groups, today };
 }

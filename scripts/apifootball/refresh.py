@@ -31,14 +31,60 @@ import os, sys, json, time, re, unicodedata, urllib.request, urllib.parse, urlli
 HERE = os.path.dirname(os.path.abspath(__file__))
 API = "https://v3.football.api-sports.io"
 SUPA = os.environ.get("SUPABASE_URL", "https://nmprqkmymrdknffwnuur.supabase.co")
-CONTINENTAL = {2, 3, 848, 13, 531}
+# Continental CLUB competitions. Everything here is bound by the club-Lookup
+# invariant at the top of this file: every team must resolve to a Lookup club.
+# Added 2026-09-13 on Ashwin's list, after he confirmed "AFC Champions League
+# Elite, CAF Champions League, CONCACAF Champions League, OFC Champions League,
+# and CONMEBOL Libertadores are all Club Football":
+#   1168 FIFA Intercontinental Cup (2026, 26 Aug–19 Sep; 2 fixtures posted so far)
+#     17 AFC Champions League Elite (2026, 11 Aug–16 Feb 2027; 132 fixtures)
+#     12 CAF Champions League       (2026, 4 Sep–24 Oct; 74 fixtures, no table)
+# NOT here, deliberately: 16 (CONCACAF CL) and 27 (OFC CL). Both have a COMPLETE
+# 2026 season that finished in May and August, and no 2027 published at all
+# (probed 2026-09-13). Wiring a finished competition into a live tracker shows
+# the reader spring results as though they were today's, so they sit in the
+# gap-league watch instead and promote themselves when a real season appears.
+#
+# 🔴 DERIVED FROM leagues.json, not typed here as well. Until 2026-09-13 the ids lived
+# in two places that had to agree by hand, and the gap-league watcher could not promote
+# anything on its own because a promotion is a leagues.json row while membership was a
+# Python literal: run-gap-league-watch.sh has carried a commit-and-push block for
+# auto-promoted leagues since August, and it could never fire. A league in leagues.json
+# but absent from these sets is worse than missing, because refresh.py still fetches its
+# standings and export_bundles.py files it as DOMESTIC. One list now, in the data.
+def _watched_sets():
+    rows = json.load(open(os.path.join(HERE, "leagues.json"), encoding="utf-8"))
+    return (
+        {r["league_id"] for r in rows if r.get("comp_type") == "continental"},
+        {r["league_id"] for r in rows if r.get("comp_type") == "international"},
+        {r["league_id"] for r in rows if r.get("women")},
+    )
+
+
+CONTINENTAL, INTERNATIONAL, WOMEN_INTL = _watched_sets()
 # International (national-team) competitions: fetched like the continental
 # comps (standings + fixtures), but the teams are NATIONS, not clubs — they
 # BYPASS the club-Lookup invariant and map to themselves (canonical_name =
 # api nation name). 5 = UEFA Nations League (2026 league phase 24 Sep–17 Nov).
 # 7 = AFC Asian Cup (season 2027, 7-20 Jan 2027 in Saudi Arabia). Added
 # 2026-08-04; api-football confirms standings coverage for season 2027.
-INTERNATIONAL = {5, 7}
+# Added 2026-09-13, with the season the API actually serves, probed first:
+#    36 Africa Cup of Nations - Qualification (season 2027; 2026 is EMPTY)
+#   880 World Cup - Women - Qualification Europe   (season 2027; 2026 is EMPTY)
+#   927 World Cup - Women - Qualification Concacaf (season 2026; 2027 is EMPTY)
+# The API's "season" for a qualifying campaign is the year it ENDS, which is why
+# two women's campaigns running side by side sit on different numbers. Guessing
+# either would have fetched an empty array on every run, forever, in silence.
+# NOT here: 536 (CONCACAF Nations League). Its only published season is 2024,
+# which ended in March 2025. It sits in the gap-league watch with auto_promote
+# set, and the watcher writes its leagues.json row the day a real season
+# appears — which the derivation above turns into membership with no code edit.
+#
+# WOMEN_INTL is the women's national-team subset, flagged "women": true on the
+# leagues.json row. Same nation-passthrough path; the flag only decides where the
+# site files them (Ashwin, 2026-09-13: "Within Football and Women's Football,
+# create a separate section to show the International games rather than creating
+# two new categories").
 FIXTURE_COMPS = CONTINENTAL | INTERNATIONAL
 SKIP_STANDINGS = {76}
 TRANS = str.maketrans({"ø":"o","Ø":"o","ł":"l","Ł":"l","æ":"ae","Æ":"ae","œ":"oe","ð":"d","þ":"th",
@@ -333,6 +379,33 @@ def selftest():
     # invariant, so a missing entry here would make every AFC nation an
     # UNMATCHED "club" and exit 3.
     assert 7 in INTERNATIONAL and 7 in FIXTURE_COMPS and 7 not in CONTINENTAL
+    # 2026-09-13 additions. The club/nation split is the whole safety property
+    # here, so it is asserted rather than remembered: a confederation champions
+    # league in INTERNATIONAL would silently skip the Lookup invariant and file
+    # every club as a nation, and a qualifying campaign in CONTINENTAL would make
+    # every national side an UNMATCHED club and exit 3.
+    for club_comp in (1168, 17, 12):
+        assert club_comp in CONTINENTAL and club_comp not in INTERNATIONAL, club_comp
+    for nation_comp in (36, 880, 927):
+        assert nation_comp in INTERNATIONAL and nation_comp not in CONTINENTAL, nation_comp
+    # A women's flag on a DOMESTIC or CONTINENTAL row would be filed as a women's
+    # national-team competition by export_bundles.py and land under Women's Football
+    # with club sides in it.
+    assert WOMEN_INTL <= INTERNATIONAL, sorted(WOMEN_INTL - INTERNATIONAL)
+    assert WOMEN_INTL == {880, 927}, sorted(WOMEN_INTL)
+    # 536 is the one the watcher may promote on its own, so it is NOT asserted absent:
+    # the day a real CONCACAF Nations League season appears, the watcher writes its row
+    # and this self-test must still pass. 16 and 27 are club competitions and stay
+    # human-gated, so their absence is a real invariant until someone promotes them.
+    for dormant in (16, 27):
+        assert dormant not in FIXTURE_COMPS, dormant
+    # Every row must declare a comp_type the derivation understands. A typo ("intl",
+    # "cup") would silently file the league as domestic, which is how a continental
+    # competition ends up with no fixtures and a domestic table nobody asked for.
+    _lg = json.load(open(os.path.join(HERE, "leagues.json"), encoding="utf-8"))
+    _bad = [r["league_id"] for r in _lg
+            if r.get("comp_type") not in ("domestic", "continental", "international")]
+    assert not _bad, _bad
     assert check_collision("Spain", "Spain", 777, {("Spain", "Spain"): 777}) is None
     # prune_action: the stale-crosswalk auto-eviction decision (regression guard).
     assert prune_action(None, {}) == "claim"                          # free slot

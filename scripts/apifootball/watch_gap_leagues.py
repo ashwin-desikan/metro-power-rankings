@@ -65,9 +65,20 @@ def match_league(response, intended_name):
         if (want in nm or nm in want) and fallback is None: fallback = entry
     return fallback
 
-def classify(response, intended_name, target_season):
+def classify(response, intended_name, target_season, ready_on="standings", today=None):
     """Pure: is the TARGET season (2026-27 = 2026) available WITH standings? No current-season
-    fallback -- we are waiting specifically for 2026-27, not reporting whatever season exists."""
+    fallback -- we are waiting specifically for 2026-27, not reporting whatever season exists.
+
+    ready_on="window" is the knockout-cup variant, added 2026-09-13 for the three
+    competitions Ashwin asked to monitor: CONCACAF Champions League (16), OFC Champions
+    League (27) and CONCACAF Nations League (536). Probed the same day, all three report
+    coverage.standings FALSE on EVERY season they have ever had, live ones included, so
+    the standings gate above would hold them forever and the watch would be decoration.
+    What actually distinguishes a live season there is its DATE WINDOW, so this variant
+    waits for a season whose end has not passed, and ignores target_season entirely --
+    which is just as well, because these ids do not even agree with each other on what a
+    season year means (536 numbers a campaign by the year it STARTS, 880 by the World Cup
+    it feeds, 36 by the year it ENDS). A date is a date in all three."""
     lg = match_league(response, intended_name)
     if not lg and len(response) == 1:
         lg = response[0]   # id-scoped query returns exactly one league
@@ -79,6 +90,19 @@ def classify(response, intended_name, target_season):
     seasons = lg.get("seasons") or []
     years = sorted(s.get("year") for s in seasons if s.get("year") is not None)
     latest = years[-1] if years else None
+
+    if ready_on == "window":
+        day = today or datetime.now(timezone.utc).date().isoformat()
+        live = [s for s in seasons if (s.get("end") or "") >= day]
+        if live:
+            s = sorted(live, key=lambda x: x.get("end") or "")[0]
+            return {"state": "ready", "covered": True, "standings_ready": False,
+                    "api_league_id": lid, "season_used": s.get("year"), "latest_season": latest,
+                    "note": "season %s runs to %s" % (s.get("year"), s.get("end"))}
+        last_end = max((s.get("end") or "") for s in seasons) if seasons else None
+        return {"state": "awaiting_target", "covered": True, "standings_ready": False,
+                "api_league_id": lid, "season_used": None, "latest_season": latest,
+                "note": "no season still running (latest ended %s)" % last_end}
     tgt = next((s for s in seasons if s.get("year") == target_season), None)
     if not tgt:
         return {"state": "awaiting_target", "covered": True, "standings_ready": False,
@@ -113,6 +137,50 @@ def selftest():
                    "seasons": [{"year": 2026, "coverage": {"standings": False}}]}],
                  "Indian Super League", 2026)
     assert r["state"] == "ready" and r["api_league_id"] == 323, r
+
+    # ready_on="window": the knockout cups whose standings coverage is never on.
+    CCL = [{"league": {"id": 16, "name": "CONCACAF Champions League"}, "seasons": [
+        {"year": 2025, "coverage": {"standings": False}, "end": "2025-06-02"},
+        {"year": 2026, "coverage": {"standings": False}, "end": "2026-05-31"}]}]
+    r = classify(CCL, "CONCACAF Champions League", None, "window", today="2026-09-13")
+    assert r["state"] == "awaiting_target" and "2026-05-31" in r["note"], r
+    # The same shape a day before that season ended: ready, and it names the season
+    # rather than assuming the target year, because these ids disagree on what a year is.
+    r = classify(CCL, "CONCACAF Champions League", None, "window", today="2026-05-30")
+    assert r["state"] == "ready" and r["season_used"] == 2026, r
+    # Standings never turning on must NOT block the window variant, which is the whole
+    # reason it exists: under the default gate this identical input is awaiting_standings.
+    assert classify(CCL, "CONCACAF Champions League", 2026)["state"] == "awaiting_standings"
+    # A brand-new season published ahead of time is ready the moment it appears.
+    r = classify([{"league": {"id": 536, "name": "CONCACAF Nations League"}, "seasons": [
+        {"year": 2024, "end": "2025-03-24"}, {"year": 2026, "end": "2027-03-30"}]}],
+        "CONCACAF Nations League", None, "window", today="2026-09-13")
+    assert r["state"] == "ready" and r["season_used"] == 2026, r
+
+    # nations_auto: who may skip the club-Lookup gate. Both flags required, so every
+    # entry that predates this change keeps the gate.
+    assert nations_auto({"auto_promote": True, "comp_type": "international"}) is True
+    assert nations_auto({"auto_promote": True, "comp_type": "continental"}) is False
+    assert nations_auto({"comp_type": "international"}) is False
+    assert nations_auto({}) is False
+    assert nations_auto({"country": "India", "level": 1}) is False   # the pre-existing entry
+    # And the file itself: only 536 may self-promote. If a club competition ever
+    # acquires both flags, this fails rather than letting it go live unchecked.
+    _p = json.load(open(os.path.join(HERE, "leagues_pending.json"), encoding="utf-8"))
+    assert {e["api_league_id"] for e in _p if nations_auto(e)} == {536}, [e["api_league_id"] for e in _p if nations_auto(e)]
+
+    # promoted_row: the row a promotion actually writes. Run the REAL 536 entry through
+    # it, so the day this fires the shape is the one refresh.py's derivation expects.
+    cnl = next(e for e in _p if e["api_league_id"] == 536)
+    row = promoted_row(cnl, {"api_league_id": 536, "season_used": 2026})
+    assert row == {"league_id": 536, "country": "World", "name": "CONCACAF Nations League",
+                   "season": 2026, "level": None, "comp_type": "international",
+                   "has_standings": False}, row
+    # The pre-existing domestic entry must come out exactly as it did before.
+    isl = next(e for e in _p if e["api_league_id"] == 323)
+    assert promoted_row(isl, {"api_league_id": 323, "season_used": 2026}) == {
+        "league_id": 323, "country": "India", "name": "Indian Super League",
+        "season": 2026, "level": 1, "comp_type": "domestic", "has_standings": True}
     print("self-test OK")
 
 def resolver_report(lg, c, akey, skey):
@@ -130,6 +198,45 @@ def resolver_report(lg, c, akey, skey):
     for tid, nm in unmatched:
         log("    UNMATCHED team_id %s '%s' -- add to Lookup (level %s, %s) before promoting" % (tid, nm, lg["level"], lg["country"]))
     return unmatched  # [] = clean (caller may auto-promote); non-empty = needs Lookup; None (early returns) = can't check yet
+
+
+def nations_auto(lg):
+    """May this entry promote itself without the club-Lookup check?
+
+    Only a national-team competition that asked for it. The Lookup gate exists so a CLUB
+    competition never goes live with unmatched sides, and it is the right gate for every
+    club entry -- including the two Ashwin listed on 2026-09-13, CONCACAF and OFC
+    Champions Leagues, which stay human-gated.
+
+    It is the WRONG gate for national teams, and not merely unnecessary: nations bypass
+    football_lookup by design (see nation_row in refresh.py), so the resolver would fail
+    on every side and alert that Panama and Jamaica "need a Lookup entry". CONCACAF
+    Nations League (536) also has no standings coverage on any season it has ever had, so
+    resolver_report returns None and promotion would never be reached at all.
+
+    Requires BOTH flags, so nothing already in the file changes behaviour.
+    """
+    return bool(lg.get("auto_promote")) and lg.get("comp_type") == "international"
+
+
+def promoted_row(lg, c):
+    """The leagues.json row a promotion writes. Pure, so the self-test can check its shape.
+
+    comp_type and has_standings come from the pending entry, defaulting to the domestic
+    league this watcher was built for. They were hardcoded "domestic"/True until
+    2026-09-13, which would have filed a promoted CONCACAF Nations League as somebody's
+    DOMESTIC league with standings it has never had: refresh.py would fetch a table that
+    is not there and export_bundles.py would ship it in the wrong bucket.
+    """
+    comp_type = lg.get("comp_type") or "domestic"
+    return {"league_id": c["api_league_id"], "country": lg["country"], "name": lg["intended_name"],
+            "season": c["season_used"],
+            # `level` on a World competition is not a pyramid tier: the pending file
+            # borrows it as a unique key because watch state is stored on (country,
+            # level). It must not travel into leagues.json and be read as a tier.
+            "level": lg["level"] if comp_type == "domestic" else None,
+            "comp_type": comp_type,
+            "has_standings": bool(lg.get("has_standings", True))}
 
 
 def _write_pending(path, rows):
@@ -170,9 +277,7 @@ def auto_promote(lg, c, skey):
             except Exception as e:
                 log("  (state fixup failed: %s)" % str(e)[:80])
         return False
-    leagues.append({"league_id": lid, "country": lg["country"], "name": lg["intended_name"],
-                    "season": c["season_used"], "level": lg["level"],
-                    "comp_type": "domestic", "has_standings": True})
+    leagues.append(promoted_row(lg, c))
     json.dump(leagues, open(ljson, "w", encoding="utf-8"), ensure_ascii=False)  # one-line/compact, matches file
     _write_pending(pjson, [p for p in json.load(open(pjson, encoding="utf-8")) if p.get("api_league_id") != lid])
     if skey:
@@ -215,7 +320,8 @@ def main():
         if not response and lg.get("intended_name"):
             resp = api_get("/leagues", akey, search=lg["intended_name"]); response = resp.get("response") or []
         time.sleep(0.2)
-        c = classify(response, lg["intended_name"], lg.get("target_season"))
+        c = classify(response, lg["intended_name"], lg.get("target_season"),
+                     lg.get("ready_on") or "standings")
         prev_state = (prev.get((country, level)) or {}).get("state")
         detail = "%s L%s %s -> %s" % (country, level, lg["intended_name"], c["state"])
         if c["api_league_id"]: detail += " [api %s season %s]" % (c["api_league_id"], c["season_used"])
@@ -232,6 +338,12 @@ def main():
     if not write:
         log("DRY RUN -- no writes. %d transition(s) vs stored state, %d ready." % (len(transitions), len(ready)))
         for lg, c in ready:
+            # The dry run must reach the same verdict as --write, or it is a rehearsal
+            # of a different play.
+            if nations_auto(lg):
+                log("  would AUTO-PROMOTE %s (national teams, no Lookup gate) at season %s"
+                    % (lg["intended_name"], c["season_used"]))
+                continue
             u = resolver_report(lg, c, akey, skey)
             if u is not None:
                 log("  would %s" % ("AUTO-PROMOTE (0 unmatched)" if len(u) == 0 else "flag %d unmapped team(s)" % len(u)))
@@ -241,6 +353,9 @@ def main():
     log("wrote watch state for %d leagues" % n)
     promoted = []
     for lg, c in ready:
+        if nations_auto(lg):
+            if auto_promote(lg, c, skey): promoted.append(lg["intended_name"])
+            continue
         unmatched = resolver_report(lg, c, akey, skey)
         if unmatched is None:
             continue  # can't check yet (no standings rows / no Supabase key)

@@ -21,10 +21,10 @@ export const RELEASES: Release[] = [
     date: "2026-09-13",
     headline: "A daily news digest and clearer standings",
     items: [
-      "The S&P 500 page's index-changes feed shows its history again: 61 entries back to October 2023, including Reddit replacing AvalonBay Communities on 18 August.",
-      "New From the Digest page: every story each day's newsletter digest linked, with one line on why it matters, and an archive now back to 20 June.",
+      "The S&P 500 page's index-changes feed shows its history again: 61 entries back to October 2023, and the business leaders board tracks CEO changes daily, picking up John Ternus at Apple.",
+      "New From the Digest page: every story each day's newsletter digest linked, with one line on why it matters, an archive back to 20 June, and the companies and themes each story covers.",
       "The homepage now cycles through today's headlines and today's fixtures, and any metro or country a story is about shows it under In the news.",
-      "Live standings carry a sport icon throughout, opening a sport opens every competition under it, and digest stories now list the companies and themes they cover.",
+      "Live standings carry a sport icon throughout, opening a sport opens every competition under it, and national-team games now sit in their own International section under Football.",
     ],
   },
   {

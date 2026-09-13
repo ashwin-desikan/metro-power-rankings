@@ -21,7 +21,10 @@ export type LiveFixture = {
   fixture_id: number; round: string | null; kickoff: string | null;
   home: LiveTeamRef; away: LiveTeamRef; home_goals: number | null; away_goals: number | null; status: string | null;
 };
-export type LiveComp = { league_id: number; name: string | null; groups: LiveGroup[]; fixtures: LiveFixture[] };
+/** `women` is set by export_bundles.py for the women's national-team competitions inside
+ *  the international bucket (WOMEN_INTL in scripts/apifootball/refresh.py). The flag
+ *  travels with the data so the page never keeps a second copy of which ids are women's. */
+export type LiveComp = { league_id: number; name: string | null; groups: LiveGroup[]; fixtures: LiveFixture[]; women?: boolean };
 
 const GH_RAW =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/football";

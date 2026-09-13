@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from refresh import supa_get, supa_key, CONTINENTAL, INTERNATIONAL
+from refresh import supa_get, supa_key, CONTINENTAL, INTERNATIONAL, WOMEN_INTL
 
 OUT = os.path.abspath(os.path.join(HERE, "..", "..", "public", "data", "football"))
 
@@ -80,6 +80,11 @@ def main():
             entry = {"league_id": lid, "name": m.get("name"), "country": m.get("country"),
                      "level": m.get("level"), "confederation": confed(m.get("country")),
                      "groups": [{"group_label": gl, "rows": rows} for gl, rows in L["groups"].items()]}
+            # Women's national-team competitions ride the same nation-passthrough
+            # path as the men's, and differ only in where the site files them. The
+            # flag travels with the data so the page never has to keep its own copy
+            # of which ids are women's — one list, in refresh.py, for both.
+            if lid in WOMEN_INTL: entry["women"] = True
             if include_fixtures: entry["fixtures"] = L["fixtures"]
             out.append(entry)
         return out
