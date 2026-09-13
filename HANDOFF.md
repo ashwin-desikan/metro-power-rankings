@@ -14261,3 +14261,51 @@ The stand-down log line and ntfy text now name the workflow that hit its cap.
   amended 2026-09-12"; the Backlog autofix row records the fix in place of the open question.
 
 No build spent by this session: deploying a job and editing docs are both `[vercel skip]`.
+
+## 2026-09-13 — mini → next session: S&P 500 INDEX-CHANGES HISTORY RESTORED (ONE PAID BUILD), `pull.ff only` ON THE MINI
+
+Acts on items 2 and 3 of the 2026-09-13 daily ops sweep (`mac-mini-jobs/daily-ops-sweep-report.md`).
+Item 1 of that report (owners-weekly fires Monday 09-14 08:30Z with no build-budget check anywhere in
+its path) is **still open and still Ashwin's call**.
+
+### A. `/business/sp500` index changes: 0 → 61 on record (`55074565a`, a real build, pushed on Ashwin's yes)
+`public/data/business/sp500.json` had carried `changes: []` since `ddb490095` (08-17), when Wikipedia
+removed its "Selected changes" table and that run overwrote 60 rows. The constituent-diff fallback
+(`238dde631`, 08-30) prepends onto the stored list, so it could never recover them.
+
+- **60 rows restored verbatim** from `b2ea93d50` (08-08): 18 Oct 2023 → 5 Aug 2026.
+- **1 row the sweep did not know about.** Diffing the constituent lists of every snapshot since 08-08
+  turned up a real change that fell in the gap between the table's removal and the fallback's arrival:
+  08-17 → 08-22, `+RDDT +VMRK −AVB −EQR`. Sourced (CNBC 2026-08-13; AvalonBay/EQR merger releases):
+  **Reddit replaced AvalonBay effective 18 Aug 2026** after Equity Residential acquired it, and EQR was
+  renamed Vivmark Residential (VMRK). Recorded as one paired row, Wikipedia-style, dated "August 18,
+  2026". **EQR → VMRK gets no row**: it is a rename, not an index change. Every other snapshot pair was
+  empty except 09-07's `BF.B`/`BRK.B`, which is wikitext comment noise the builder already normalises.
+- **Only the `changes` array differs** from the builder's last write (checked key by key), dumped with
+  the builder's own `indent=1, ensure_ascii=False`.
+- **Release note** `lib/releases.ts` 2026-09-13, "S&P 500 index changes restored".
+- **Checked before pushing:** drafted in a detached worktree in the scratchpad (never in the shared
+  tree), `check:release-notes` OK, `tsc --noEmit` exit 0 (`getSp500` types `changes` as
+  `Sp500Change[]`, so no JSON-inference risk). At apply time: tree clean, local == origin, `changes`
+  still `[]`, no competing 09-13 release entry; hook `touches_build=1 tagged=0`; pushed alone as HEAD.
+- **Deploy:** `dpl_HyZNJiLEdZEE1fKCvHxfeK8cFBge` was BUILDING when this was written. First paid build
+  of 09-13 UTC. Verify: `/deployed` sha `55074565a…` and the page reads "61 on record".
+- **Mixed date formats are expected, cosmetic only.** Recovered rows say "August 5, 2026"; rows the
+  fallback writes say "2026-09-26". The page renders `ch.date` verbatim and nothing sorts on it.
+- **Next proof:** the 09-21 rebalance (Bloom Energy, Everpure, Illumina in; Molson Coors, The Trade
+  Desk, Builders FirstSource out) should appear on the **09-26** `mktcap-refresh` as six unpaired
+  diff rows prepended onto this history. If that run shows 6 rather than 67, the accumulator lost it.
+
+### B. `git config pull.ff only` set in the mini's clone
+A bare `git pull` here now refuses to mint a merge commit. **It would not have stopped 09-12's
+wasted build**: merge `a67a39c45` carries a `+0000` timestamp and reached the mini only via
+`fetch origin main`, so it was made on another machine (cloud/cowork). Any other machine working the
+repo needs the same setting, or `scripts/vercel-ignore.sh` needs the merge rule in sweep item 2.
+Neither is done.
+
+### C. This morning's ntfy, for the record
+02:13 sweep report (above). 05:00 `F1 sync FAILED` was a single Supabase `504 Gateway Timeout` on
+the round check; 06:00/07:00/08:00 polls clean and the tile recovered, nothing to do (R14 Spanish GP
+is today). 05:24 `ops-autofix` "nothing auto-fixable" was that same `check_down` on `f1-weekly`,
+correctly reported rather than acted on; clear by 07:22. `economy-prices` had its first real run at
+07:39Z and committed `f115defe9`; it was still running at 07:50Z, so its DONE line is unconfirmed.
