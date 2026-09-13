@@ -14432,3 +14432,59 @@ note amended in the same commit ("S&P 500 history and a daily news digest", four
   news digest".
 - **Next proof:** 2026-09-14 ~08:20 BST, the first unattended `feed.json`. `/digest` should turn over to
   09-14 within 30 minutes of `[push_feed] pushed N item(s)` in the mini's log.
+
+### H. Leaders overrides, club/league digest tags, and the digest ARCHIVE (in progress, nothing site-side pushed)
+
+**1. Leaders ping (done, both `[vercel skip]`).** The weekly override audit pinged "Wikidata caught up,
+remove override(s)" for Bulgaria and Belgium.
+- Bulgaria's override (PM row only) removed, `ae5063116`. The `check-leaders-sanity` pin stays.
+- 🔴 **Belgium's override KEPT.** The audit compared the head-of-government NAME only. Belgium's override
+  also carries the monarch row, and live Wikidata files Belgium as a "federation", so the refresh
+  script's own `build_entry` would publish **Philippe of Belgium (Pres.)**, the 09-07 bug the override
+  exists to fix. `bc8acf0bd`: `check-wikidata-overrides.py` now calls an override redundant only when
+  `build_entry` on live Wikidata reproduces it (lead name+role, and the second row's name+role). A match
+  on the PM alone is a new **PARTIAL** state, printed, no ntfy. `--self-test` added. Live audit: Belgium
+  PARTIAL, Saudi Arabia and Kuwait unchanged. The refresh script needs `requests`: use `.venv/bin/python`.
+
+**2. Club/league digest tags: FIXED, BUILT, DELIBERATELY UNPUSHED (Ashwin: push with the archive).**
+`/clubs/<slug>` and `/leagues/<slug>` (F and G above) never existed. A club/league slug is now the page's
+path under `/teams/` ("football/arsenal", "nba/clippers", "football/leagues/premier-league", "nfl").
+- Writer side, pushed (private repo, no build): newsletter-podcast `34ed6e8`. `push_feed.py` keeps a
+  club/league tag only if `https://rankings.citizenofnowhere.org/teams/<path>` returns 200 (production 404s
+  unknown slugs on every /teams route, dynamicParams true included) and stores the page title as `name`.
+- Site side, NOT pushed: `lib/digestFeed.ts` (`entityHref` → `/teams/<path>` only for a well-formed path;
+  `toEntities` keeps `name`) and `app/digest/_shared/ui.tsx` (label = LEAGUE_HUBS short name, else stored
+  name, else no chip). entityHref 11 cases pass (incl. `../etc`, `//evil.com` → null), typecheck, gates,
+  vitest 199, `next build` OK. **Patch + commit message preserved at
+  `~/metro-mini-jobs/pending/digest-entity-routes-2026-09-13.{patch,msg.txt}`** (applies cleanly to main
+  as of this entry). No release note needed on its own: nothing visible until a club/league tag exists.
+
+**3. Digest archive (in progress).** Ashwin: every past digest, tagged, browsable on the site under the
+present day's digest, stored in Supabase. His rulings, 2026-09-13:
+- **Every linked story** per day, not the curated 8–12.
+- **Homepage links left out** (links to a newsletter's landing page, not the article).
+- **"Further reading from the day's section on …"** is the approved `why` for a story the post only lists.
+- **Tagging done in this session in batches** (subagents), a sample shown to him per batch. Not the mini.
+- **Nothing site-side ships until the archive is done**: one combined push (club/league fix + archive UI).
+
+State:
+- Source: 76 days on the mini, **2026-06-29 → 2026-09-13** (nothing older; the Windows box had earlier
+  days). `builds/daily-newsletter-digest/<date>/socials/substack.md` holds every link. Old audio is
+  gone (Spotify retention keeps 7 days), so the archive is text and links only.
+- newsletter-podcast `332ed51`: `archive/extract.py` → `archive/skeleton/<date>.json` (mechanical: section,
+  source, headline, author, url, `generic_url`). 1,792 stories, 279 homepage links, 57 labels skipped (46
+  duplicate urls, 11 with no headline). `push_feed.py` MAX_ITEMS 15 → 60 (busiest day has 43).
+- Rules for a tagged day: every non-generic skeleton item, headline/source/url verbatim, `why` from that
+  day's post only, entities metro/country from public/data, club/league verified live; each day must pass
+  `push_feed.py <date> --dry-run --feed archive/feeds/<date>.json` with 0 dropped. Reference:
+  `archive/feeds/2026-09-12.json` (21 items, approved style).
+- **Nothing written to Supabase yet** (live 09-13 is still the hand-written 12-item feed; it will be
+  replaced with the full set). Batch 1 (06-29 → 07-05) was being tagged when this was written.
+
+**Still to build before the combined push (site):**
+- The per-day list: `data-mobile-uncapped="bounded: at most fifteen"` is now false (up to 43 a day).
+  Cap the phone list with `CappedList`.
+- "Earlier digests" (30 days) → an archive section under the present day's digest, every day grouped by
+  month; `getRecentDigestDates` limit raised.
+- Apply the club/league patch above; amend the release note for the push day.
+- Then: write all days to Supabase, sweep at 390/1280, verify, ask Ashwin, one push.
