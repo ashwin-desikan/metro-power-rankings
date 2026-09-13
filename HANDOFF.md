@@ -14711,3 +14711,45 @@ newsletter-daily check" (Mac mini).
   rows and must not run alongside a push. key() now also reads `~/.config/metro-supabase/env`. Dry run
   on 09-13: 34 rows, 10 tagged. newsletter-podcast `3b6bb9e`.
 - The Windows session also offered a `data-currency.json` entry for `/business/leaders`; not done here.
+
+### L. Women's Basketball World Cup tracker: Wikipedia split the 2026 article across pages; parser fixed (`915c5c011`, no build)
+
+**Symptom (Ashwin asked why he got ntfy pings).** `wwc-2026-tracker.yml` (06:00 UTC daily, 8-30 Sept) failed its
+2026-09-13 scheduled run (started 11:23Z) with exit 2: "PARSE FAILURE: Final section exists but no game could be read
+from it". It had passed every day that week. ops-autofix then re-ran that same run at 12:15Z and 14:15Z (13:15 and
+15:15 BST ntfys, both "acted on 1 finding"); a rerun reuses the failing commit, so both failed and a third was due at
+16:15Z. The final had NOT been played (USA v France, 13 Sept 20:00 Berlin), so nothing was missed.
+
+**Cause.** The article was restructured, not the data. The main article's `===Final===` is now only `{{main|...}}`
+plus `{{:2026 FIBA Women's Basketball World Cup final}}`; that page wraps its box in `<onlyinclude>`. The third-place
+game moved to "2026 FIBA Women's Basketball World Cup final round", transcluded from `==Knockout stage==`. Both boxes
+use `teamA/scoreA/teamB/scoreB` and name teams only with flag templates (`{{bkw-rt|USA}}`), which the old parser
+would also have refused ("bare IOC code") once scores appeared.
+
+**Fix (`scripts/basketball/track_wwc.py`).**
+- Expands `{{:Page}}` one level with MediaWiki's rules (the page's `<onlyinclude>` parts, else the page minus
+  `<noinclude>`); looks for the third-place section on pages transcluded from Knockout stage / Final when the main
+  article has none. `main()` fetches through a small cache and prints which pages it read.
+- Reads `teamA/scoreA/teamB/scoreB` as `team1/score1/team2/score2`.
+- A bare code resolves through `scripts/basketball/fiba_ranking_women.json` (each team carries `country` + `ioc`,
+  then the builder's `fix()`, so `USA` becomes "United States"); a code it cannot name still raises.
+- Never uses the plain-row fallback on transcluded text: the final page's "Road to the final" table carries other
+  games' scores (e.g. `94–61`) that would otherwise read as the final.
+- Self-test: eight split-shape cases (the 09-13 failure without fetch, not played, played, no `<onlyinclude>`, away
+  side wins, prose instead of a box, same without onlyinclude, unknown code, empty third-place box).
+
+**Verified.** Builder and tracker self-tests pass on the mini (Python 3.14) and in Actions (3.12). Live dry run from the
+mini: reads 2 pages, "not played yet". With scores injected into the LIVE pages: parses United States / France and the
+third-place game (Spain / Germany) from the final-round page, and renders the dump block. Workflow dispatch
+34763586124 on `915c5c011`: success, "No 2026 result yet; nothing to commit". (An earlier dispatch, 34763492400, fired
+a moment before GitHub registered the push, ran `2300925b6` and failed the old way; superseded.) `detect_issues.py
+--json` afterwards: 0 findings, so no further autofix rerun or ntfy.
+
+**Open.** The 2026-09-14 06:00Z run should record tonight's final and third place, rewrite the 2026 block of
+`scripts/basketball/wbasketball_worldcup.txt`, rebuild `public/data/wbasketball` and commit `[vercel skip]` (data is
+read through lib/liveData, so no build). Check that commit, and that "Germany" / "Spain" (new to the dump's medal rows)
+land on the right nation pages. If editors restructure again it will exit 2 loudly, by design.
+
+**Also answered today, for the record.** `run-owners-weekly.sh` reads `VERCEL_TOKEN` (or `VERCEL_BUILD_CAP_TOKEN`)
+from `~/metro-mini-jobs/config.env` (0600) to count the day's production builds; none is set, so the job still saves a
+patch and reports NOT APPLIED rather than pushing. Ashwin has the steps to add it.
