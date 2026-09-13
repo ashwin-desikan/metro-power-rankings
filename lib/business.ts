@@ -737,14 +737,16 @@ export async function getBizLeaders(): Promise<BizLeadersFile | null> {
   return load<BizLeadersFile>("leaders.json");
 }
 
-export function getBizLeaderChanges(): BizLeaderChange[] {
-  try {
-    return (
-      JSON.parse(
-        readFileSync(join(process.cwd(), "public", "data", "business", "leaders-changes.json"), "utf-8"),
-      ) as { changes: BizLeaderChange[] }
-    ).changes;
-  } catch {
-    return [];
-  }
+// 🔴 Was a build-time readFileSync while getBizLeaders() above went through load()
+// (GH raw + ISR). Same feature, two refresh mechanisms, and only one of them is
+// obvious from the page: on 2026-09-13 the board picked up Tim Cook to John Ternus
+// from the ISR path within its 6h window while the revolving door underneath it
+// still read "No changes on the log yet", because that half was baked at the last
+// build. A [vercel skip] data commit updated one and not the other.
+// Both halves now share the load() path, so they refresh together.
+export async function getBizLeaderChanges(): Promise<BizLeaderChange[]> {
+  const file = await load<{ meta: { generated_at: string }; changes: BizLeaderChange[] }>(
+    "leaders-changes.json",
+  );
+  return file?.changes ?? [];
 }

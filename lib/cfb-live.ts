@@ -1,5 +1,6 @@
 import "server-only";
 
+import { unstable_cache } from "next/cache";
 import { fetchEspnJson } from "@/lib/espnFetch";
 
 // Live College Football (FBS) layer: current-season standings + AP/Coaches/CFP
@@ -104,8 +105,12 @@ const asNum = (v: unknown, fb = 0): number => (Number.isFinite(Number(v)) ? Numb
 const asStr = (v: unknown): string => (typeof v === "string" ? v : "");
 
 // Live ESPN first, committed snapshot on failure -- see lib/espnFetch.ts.
-function fetchJson(url: string, snapshotKey: string): Promise<unknown | null> {
-  return fetchEspnJson(url, snapshotKey, REVALIDATE_SECONDS);
+function fetchJson(
+  url: string,
+  snapshotKey: string,
+  noStore = false,
+): Promise<unknown | null> {
+  return fetchEspnJson(url, snapshotKey, REVALIDATE_SECONDS, { noStore });
 }
 
 function resolve(location: string, fallback: string): { school: string; slug: string | null } {
@@ -125,8 +130,21 @@ const confShort = (name: string) =>
     .replace(/\s*conference\s*$/i, "")
     .trim() || name;
 
-export async function getCfbStandings(): Promise<CfbStandingsSnapshot> {
-  const raw = await fetchJson(STANDINGS_URL, "cfb-standings");
+/**
+ * 🔴 Cached through unstable_cache, NOT through the fetch.
+ *
+ * ESPN's standings response is 3.4 MB, past Next's 2 MB data-cache ceiling, so the
+ * fetch could never be cached: /sports/standings and /api/on-today refetched all
+ * 3.4 MB on every regeneration, and a single build logged 101 "Failed to set Next.js
+ * data cache" lines. The raw body is now fetched no-store and THIS function's shaped
+ * result, a few KB, is what gets cached. Same freshness, one download instead of one
+ * per regeneration.
+ *
+ * Keep the inner fetch no-store. Re-enabling its cache restores the old behaviour
+ * silently, because an over-size cache write fails as a log line, not an error.
+ */
+async function buildCfbStandings(): Promise<CfbStandingsSnapshot> {
+  const raw = await fetchJson(STANDINGS_URL, "cfb-standings", true);
   const root = asObj(raw);
   const empty: CfbStandingsSnapshot = {
     season_year: 0, fetched_at: new Date().toISOString(), conferences: [], source_label: "",
@@ -226,6 +244,14 @@ export async function getCfbStandings(): Promise<CfbStandingsSnapshot> {
     source_label: "ESPN FBS standings",
   };
 }
+
+// The exported entry point. Keyed on a version string so bumping it invalidates the
+// cache after a shaping change; tagged so a refresh job could flush it on demand.
+export const getCfbStandings = unstable_cache(
+  buildCfbStandings,
+  ["cfb-standings-shaped-v1"],
+  { revalidate: REVALIDATE_SECONDS, tags: ["espn-cfb-standings"] },
+);
 
 // ---- rankings -----------------------------------------------------------
 

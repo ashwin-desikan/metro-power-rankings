@@ -68,37 +68,101 @@ STOP_NAMES = {
     "ceo", "director", "minister", "secretary", "commissioner", "vacant", "acting",
 }
 
+# A needle is a plain substring, matched against the space-padded lowercase text.
+# A needle written "re:<pattern>" is a regular expression instead, for the handful of
+# cases a substring cannot express: " ai " misses "AI-written", "AI's capital boom" and
+# "AI-designed", which is most of how the word is actually used in headlines, while a
+# bare "ai" would match "said", "chair" and "Dubai".
+#
+# 🔴 These needles are the ONLY thing that decides a theme. A second pass that asked a
+# local model to infer themes for the stories these missed was measured on 2026-09-13
+# and rolled back the same day: 329 of 334 rows got a theme with no keyword evidence,
+# and a twelve-row sample was mostly wrong ("Vandals are destroying license-plate
+# cameras" -> public-health). Widening this list is the durable fix, because it is
+# auditable and it applies to every future day. Inference is not.
 THEMES = [
-    ("ai", ["artificial intelligence", "a.i.", " ai ", "llm", "chatbot", "openai", "genai"]),
-    ("data-centres", ["data centre", "data center", "hyperscaler"]),
+    # "llm" is a regex, not a substring: as a substring it fired on "Ballmer".
+    ("ai", ["artificial intelligence", "a.i.", "re:(?<![a-z])ai(?![a-z])",
+            "chatbot", "openai", "genai", "machine learning", "neural network",
+            "large language model", "re:(?<![a-z])llms?(?![a-z])"]),
+    ("data-centres", ["data centre", "data center", "hyperscaler", "capex",
+                      "capital expenditure", "compute spend"]),
     ("antitrust", ["antitrust", "monopol", "competition authority", "ftc sues", "doj sues",
                    "breakup", "break up", "divestiture"]),
     ("tariffs", ["tariff", "trade war", "import duty"]),
     ("streaming-rights", ["streaming rights", "media rights", "broadcast rights", "rights deal"]),
     ("stadium-financing", ["stadium", "arena deal", "ballpark", "naming rights"]),
-    ("housing", ["housing", "rent control", "mortgage", "homebuilder", "zoning"]),
+    ("housing", ["housing", "rent control", "mortgage", "homebuilder", "zoning",
+                 "manufactured home", "trailer park", "single-family", "home prices",
+                 "house prices", "landlord", "eviction"]),
     ("transit", ["transit", "subway", "light rail", "congestion pricing"]),
     ("elections", ["election", "ballot", "primary race", "referendum"]),
-    ("immigration", ["immigration", "visa policy", "deportation", "border"]),
+    ("immigration", ["immigration", "visa policy", "deportation",
+                     "re:(?<![a-z])borders?(?![a-z])"]),
     ("climate", ["climate", "emissions", "wildfire", "hurricane", "flooding"]),
     ("advertising", ["advertising", "ad spend", "adtech", "ad tech", "programmatic",
-                     "ad exchange", "ad market", "advertiser", "ad revenue"]),
+                     "ad exchange", "ad market", "advertiser", "ad revenue", "ad load",
+                     "upfronts", "re:(?<![a-z])cpm(?![a-z])"]),
     ("private-equity", ["private equity", "buyout", "leveraged"]),
-    ("labour", ["strike", "union", "layoff", "collective bargaining", "walkout"]),
+    ("venture-capital", ["venture capital", "seed round", "series a", "series b",
+                         "series c", "vc firm", "term sheet", "down round"]),
+    # "strike" gets no bare needle in any form. A word boundary is enough to kill
+    # "striker" and "strikeout", but not the military sense, which this archive carries
+    # constantly: "U.S. strikes Iran", "Trump calls off Iran strikes", "Iran diplomacy
+    # ruptures" were all tagged labour on 2026-09-13. There is no qualifier to exclude,
+    # so the labour sense has to be named, the same way "nil" is below.
+    # "union" needs only lookbehinds: Rugby Union, European Union, credit union.
+    ("labour", ["on strike", "go on strike", "strike action", "strike vote",
+                "strike ballot", "strike ends", "general strike", "wildcat strike",
+                "strike authorization", "writers strike", "writers' strike",
+                "actors strike", "actors' strike", "teachers strike",
+                "re:(?<!rugby )(?<!european )(?<!credit )(?<![a-z])unions?(?![a-z])",
+                "layoff", "collective bargaining", "walkout", "arbitrator", "back pay",
+                "reinstate", "severance", "picket", "wrongful termination",
+                "return to office"]),
     ("crypto", ["crypto", "bitcoin", "stablecoin", "ethereum"]),
-    ("sports-betting", ["sports betting", "sportsbook", "gambling", "prediction market"]),
+    ("sports-betting", ["sports betting", "sportsbook", "gambling", "prediction market",
+                        "betting exchange", "parlay"]),
     ("women-sports", ["women's sport", "nwsl", "wnba", "women's football"]),
-    ("college-sports", ["ncaa", "college football", "college sports", "nil deal"]),
-    ("ipo", ["ipo", "public listing", "direct listing", "spac"]),
-    ("m-and-a", ["acquisition", "merger", "takeover bid", "acquires"]),
-    ("regulation", ["regulator", "regulation", "lawsuit", "court ruled", "settlement"]),
-    ("public-health", ["public health", "obesity", "vaccine", "pandemic"]),
+    # No bare "nil" needle. In a newsletter that covers football, "nil" is a scoreline
+    # ("two-nil") far more often than it is name, image and likeness.
+    ("college-sports", ["ncaa", "college football", "college sports", "nil deal",
+                        "nil law", "nil rights", "nil era", "student-athlete",
+                        "name, image"]),
+    ("combat-sports", ["boxing", "re:(?<![a-z])ufc(?![a-z])", "re:(?<![a-z])mma(?![a-z])",
+                       "re:(?<![a-z])wwe(?![a-z])", "heavyweight title", "undercard"]),
+    ("ipo", ["re:(?<![a-z])ipos?(?![a-z])", "public listing", "direct listing",
+             "re:(?<![a-z])spacs?(?![a-z])"]),
+    ("m-and-a", ["acquisition", "merger", "takeover bid", "acquires", "sold its stake",
+                 "sells its stake", "divests", "all-cash deal"]),
+    ("regulation", ["regulator", "regulation", "lawsuit", "court ruled", "settlement",
+                    "supreme court", "federal judge", "appeals court", "subpoena",
+                    "injunction", "consent decree", "antitrust suit"]),
+    ("press-freedom", ["press freedom", "shield law", "source protection",
+                       "reporters to testify", "prior restraint", "gag order",
+                       "newsroom", "columnist", "editor-in-chief", "masthead"]),
+    # "license-plate" alone is not enough: the Roberto Clemente vanity-plate case is a
+    # licensing story, not a surveillance one. The camera has to be in the phrase.
+    ("surveillance", ["surveillance", "facial recognition", "license-plate camera",
+                      "license plate camera", "plate reader", "doorbell camera",
+                      "spyware", "data broker", "privacy"]),
+    ("robotics", ["robot", "autonomous vehicle", "self-driving", "driverless",
+                  "humanoid", "autonomous weapon"]),
+    ("art-market", ["art market", "auction house", "sotheby", "christie's", "art basel",
+                    "art gallery", "art fair", "collectible"]),
+    ("aviation", ["airline", "air travel", "frequent flyer", "airport", "aviation",
+                  "jet order"]),
+    ("public-health", ["public health", "obesity", "vaccine", "pandemic", "dementia",
+                       "menopause", "opioid", "measles", "life expectancy",
+                       "re:(?<![a-z])cdc(?![a-z])", "re:(?<![a-z])fda(?![a-z])"]),
     ("space", ["spacex", "satellite", "nasa", "rocket launch"]),
     ("semiconductors", ["semiconductor", "chipmaker", "foundry", "wafer"]),
     ("retail-media", ["retail media", "commerce media"]),
     ("music-industry", ["record label", "catalogue sale", "touring revenue", "streaming payout"]),
     ("film-tv", ["box office", "studio", "showrunner", "streaming series"]),
-    ("energy", ["oil price", "opec", "natural gas", "renewables", "grid"]),
+    # "grid" as a substring tags every gridiron story. Boundary, not substring.
+    ("energy", ["oil price", "opec", "natural gas", "renewables",
+                "re:(?<![a-z])grids?(?![a-z])"]),
 ]
 
 
@@ -227,6 +291,20 @@ def build_vocab() -> dict[str, dict]:
 
 # --------------------------------------------------------------------- matching
 
+# 🔴 462 of the 1,843 archived stories (a quarter) carry a `why` that describes the day's
+# SECTION rather than the story: "Further reading from the day's section on AI's capital
+# boom and its growing guilt." Matching against that text hands a story its NEIGHBOURS'
+# topics. Measured 2026-09-13: it is how a Pochettino story sat under an AI tag and how
+# theme:surveillance fired on an Appalachian memoir author. For those rows the headline
+# is the only text that describes the story, so it is the only text we match.
+SECTION_BOILERPLATE = re.compile(r"^\s*further reading from the day", re.I)
+
+
+def story_text(headline: str, why: str | None) -> str:
+    w = (why or "").strip()
+    return headline if SECTION_BOILERPLATE.match(w) else f"{headline} {w}".strip()
+
+
 def find_topics(text: str, vocab: dict[str, dict], limit: int = 8) -> list[dict]:
     hay_low = norm(text).lower()
     hits: dict[str, dict] = {}
@@ -247,7 +325,8 @@ def find_topics(text: str, vocab: dict[str, dict], limit: int = 8) -> list[dict]
 
     for theme_id, needles in THEMES:
         padded = f" {hay_low} "
-        if any(n in padded for n in needles):
+        if any(re.search(n[3:], padded) if n.startswith("re:") else n in padded
+               for n in needles):
             hits[f"theme:{theme_id}"] = {"type": "theme", "id": theme_id,
                                          "label": theme_id.replace("-", " ")}
 
@@ -346,6 +425,60 @@ def self_test() -> None:
         if expect not in themed:
             print(f"  FAIL theme {expect} not in {themed}")
             bad += 1
+
+    # Regex needles. The "ai" cases are the reason the mechanism exists: a plain " ai "
+    # needle missed the three shapes the word actually takes in a headline, and a bare
+    # "ai" substring would have fired on half the English language.
+    theme_cases = [
+        ("AI-written op-eds are here. Now what?", "ai", True),
+        ("Google's AI capex hits $205 billion", "ai", True),
+        ("Inside AI's growing guilt", "ai", True),
+        ("She said the chair was from Dubai", "ai", False),
+        ("Email aid for Thailand", "ai", False),
+        ("Zuffa signs 100 fighters in a boxing push", "combat-sports", True),
+        ("United won two-nil at the weekend", "college-sports", False),
+        ("How the Clemente case could reshape athlete NIL law", "college-sports", True),
+        ("Vandals are destroying license-plate cameras", "surveillance", True),
+        ("Vandals are destroying license-plate cameras", "public-health", False),
+        ("Inside the art market's stellar first half", "art-market", True),
+        ("I flew around the world to keep my airline status", "aviation", True),
+        ("Gravis Robotics retrofits excavators with autonomy", "robotics", True),
+        ("An arbitrator ordered the Post to reinstate its columnist", "labour", True),
+        ("An arbitrator ordered the Post to reinstate its columnist", "press-freedom", True),
+        ("SoftBank led the seed round", "venture-capital", True),
+        # Traps this corpus actually contains: a sports newsletter is full of strikers,
+        # strikeouts, Rugby Union, gridiron and Ballmer.
+        ("The striker scored twice", "labour", False),
+        ("Ohtani recorded ten strikeouts", "labour", False),
+        ("The writers' strike enters week six", "labour", True),
+        ("U.S. strikes Iran in response to a missile launch", "labour", False),
+        ("Trump calls off Iran strikes", "labour", False),
+        ("Crew go on strike at the studio", "labour", True),
+        ("Rugby Union confirms the calendar", "labour", False),
+        ("The European Union opened a case", "labour", False),
+        ("Autoworkers vote to join the union", "labour", True),
+        ("Steve Ballmer betrayed his fellow billionaires", "ai", False),
+        ("A gridiron weekend in Texas", "energy", False),
+        ("The grid cannot take another winter", "energy", True),
+        ("Upfront costs are rising for buyers", "advertising", False),
+    ]
+    # Section boilerplate must not lend a story its neighbours' topics.
+    boiler = "Further reading from the day's section on AI's capital boom."
+    if story_text("Pochettino on the USMNT", boiler) != "Pochettino on the USMNT":
+        print("  FAIL story_text kept section boilerplate")
+        bad += 1
+    if story_text("H", "Nvidia beat estimates") != "H Nvidia beat estimates":
+        print("  FAIL story_text dropped a real why")
+        bad += 1
+    if any(h["id"] == "ai" for h in find_topics(story_text("Pochettino on the USMNT", boiler), v)):
+        print("  FAIL boilerplate still tagging ai")
+        bad += 1
+
+    for text, theme_id, should in theme_cases:
+        got = {h["id"] for h in find_topics(text, v)}
+        if (theme_id in got) != should:
+            print(f"  FAIL theme {text!r}: {theme_id} in {sorted(got)} != {should}")
+            bad += 1
     print("self-test:", "OK" if bad == 0 else f"{bad} FAILURE(S)")
     sys.exit(1 if bad else 0)
 
@@ -384,8 +517,19 @@ def main() -> None:
 
         updates, tagged, tag_counts = [], 0, Counter()
         for r in rows:
-            text = f"{r['headline']} {r.get('why') or ''}"
+            text = story_text(r["headline"], r.get("why"))
             topics = find_topics(text, vocab)
+            # Carry forward any tag another pass sourced and this one cannot reproduce.
+            # topics_llm.py writes company tags stamped src="llm", each one verified to
+            # appear verbatim in the story; recomputing from the dictionary alone would
+            # delete them without anyone noticing. Dictionary tags carry no src, so they
+            # are never duplicated here.
+            for prev in (r.get("topics") or []):
+                if prev.get("src") and not any(
+                    t["type"] == prev.get("type") and t["id"] == prev.get("id")
+                    for t in topics
+                ):
+                    topics.append(prev)
             if topics:
                 tagged += 1
                 for t in topics:
@@ -415,11 +559,17 @@ def main() -> None:
             print("  (dry run, nothing written)")
             continue
 
-        if dates:
+        # --patch does the same per-row write over the WHOLE table. Slower than the bulk
+        # upsert below, and the right choice for a full re-tag after the needle list
+        # changes, because a PATCH of `topics` cannot re-insert a row the morning push
+        # has deleted. Use it whenever a run might overlap a push.
+        if dates or "--patch" in args:
             by_id = {r["id"]: r for r in rows}
             changed = [u for u in updates if (by_id[u["id"]].get("topics") or []) != u["topics"]]
-            for u in changed:
+            for n, u in enumerate(changed, start=1):
                 req("PATCH", f"{table}?id=eq.{u['id']}", {"topics": u["topics"]}, prefer="return=minimal")
+                if n % 100 == 0:
+                    print(f"    patched {n}/{len(changed)}")
             print(f"  patched topics on {len(changed)} of {len(updates)} rows ({len(updates) - len(changed)} unchanged)")
             continue
 

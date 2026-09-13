@@ -1,4 +1,5 @@
 import "server-only";
+import { unstable_cache } from "next/cache";
 
 // Live Grand Slam singles from ESPN's hidden tennis scoreboard. ATP (men) and
 // WTA (women) share one schema, so a single parser serves both via the `tour`
@@ -47,7 +48,9 @@ function zipScore(p1: AnyObj, p2: AnyObj): string {
   return sets.join(" ");
 }
 
-export async function getLiveTennisSlam(tour: "atp" | "wta"): Promise<TennisDraw | null> {
+const REVALIDATE_SECONDS = 120;
+
+async function buildLiveTennisSlam(tour: "atp" | "wta"): Promise<TennisDraw | null> {
   let root: AnyObj | null;
   try {
     const res = await fetch(URL[tour], {
@@ -55,7 +58,15 @@ export async function getLiveTennisSlam(tour: "atp" | "wta"): Promise<TennisDraw
       // tokens and browser-shaped UAs alike (measured 2026-09-02: 403 with
       // either, 200 with none). Same fix as espnFetch.ts in 027923904.
       headers: { Accept: "application/json" },
-      next: { revalidate: 120 },
+      // 🔴 no-store, NOT `next: { revalidate }`. These two scoreboards are 2.3 MB
+      // (ATP) and 3.2 MB (WTA), over Next's 2 MB data-cache ceiling, so a cache
+      // request could never be granted: every regeneration refetched the whole
+      // body and logged "Failed to set Next.js data cache". Asking for a cache
+      // you cannot have is slower than not asking. The caching moved to the
+      // SHAPED draw below, which is a few hundred bytes. Same inversion as
+      // lib/cfb-live.ts; the class is "large upstream body behind a small
+      // derived shape".
+      cache: "no-store",
       signal: AbortSignal.timeout(8000),
     });
     if (!res.ok) return null;
@@ -147,4 +158,23 @@ export async function getLiveTennisSlam(tour: "atp" | "wta"): Promise<TennisDraw
     return { tournament, round: roundName, matches };
   }
   return null;
+}
+
+// One cached entry per tour, declared explicitly rather than relying on Next to
+// fold the argument into the key: two tours, two keys, nothing to get wrong.
+// The cached value is a TennisDraw, so it stays far inside the 2 MB ceiling that
+// the raw scoreboard breaks.
+const CACHED: Record<"atp" | "wta", () => Promise<TennisDraw | null>> = {
+  atp: unstable_cache(() => buildLiveTennisSlam("atp"), ["tennis-draw-atp-v1"], {
+    revalidate: REVALIDATE_SECONDS,
+    tags: ["espn-tennis"],
+  }),
+  wta: unstable_cache(() => buildLiveTennisSlam("wta"), ["tennis-draw-wta-v1"], {
+    revalidate: REVALIDATE_SECONDS,
+    tags: ["espn-tennis"],
+  }),
+};
+
+export function getLiveTennisSlam(tour: "atp" | "wta"): Promise<TennisDraw | null> {
+  return CACHED[tour]();
 }

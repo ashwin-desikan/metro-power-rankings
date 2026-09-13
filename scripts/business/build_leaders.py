@@ -214,7 +214,13 @@ def main(argv):
         "ceos": ceos, "funds": funds, "centralBanks": banks,
     }
     json.dump(out, open(dest, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
-    json.dump({"meta": {"note": "person-level changes detected by build_leaders.py runs"},
+    # generated_at is required by lib/business.ts load(), which this file now goes
+    # through: it used to be a build-time readFileSync while the board beside it was
+    # already on the GH-raw ISR path, so a [vercel skip] data commit refreshed one
+    # half of /business/leaders and not the other.
+    json.dump({"meta": {"note": "person-level changes detected by build_leaders.py runs",
+                        "generated_at": datetime.datetime.now(datetime.timezone.utc)
+                        .strftime("%Y-%m-%dT%H:%M:%SZ")},
                "changes": changes[-200:]},
               open(changes_path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     unresolved = [r["entity"] for r in ceos + funds + banks if not r["person"]]

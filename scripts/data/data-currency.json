@@ -206,6 +206,14 @@
       "file": "public/data/country-orgs.json",
       "maxAgeDays": 60,
       "why": "asOf is the date every membership was last verified by hand against the organisations' own records (2026-09-10 the first time; the UAE had left OPEC four months earlier and the site still listed it). The monthly Wikidata tripwire (orgs-monthly.yml) catches additions between verifications; this gate says when the hand check itself is overdue."
+    },
+    {
+      "key": "business-leaders",
+      "label": "Business leaders board (/business/leaders)",
+      "file": "public/data/business/leaders.json",
+      "metaKey": "meta",
+      "maxAgeDays": 10,
+      "why": "Wikidata-resolved CEOs, fund heads and central bank governors. Found six weeks stale on 2026-09-13 because NOTHING ran build_leaders.py: the board still read Tim Cook while Wikidata had carried John Ternus since 1 September, and no manifest entry existed to say so. The refresh now runs inside mac-mini-jobs/runners/business-daily.sh, so anything past ten days means that job has stopped."
     }
   ]
 }

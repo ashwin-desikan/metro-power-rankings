@@ -155,10 +155,16 @@ for (const e of man.annual) {
 for (const e of man.snapshots) {
   if (!existsSync(join(ROOT, e.file))) { broken.push({ ...e, why: `missing file ${e.file}` }); continue; }
   let meta;
-  try { meta = (readJson(e.file)._meta) || {}; }
+  // metaKey defaults to _meta, the convention most snapshot files follow. Files built by
+  // another pipeline use a plain `meta` with snake_case keys (public/data/business/*),
+  // so an entry can name its own key rather than forcing every builder to agree.
+  try {
+    const json = readJson(e.file);
+    meta = (e.metaKey ? json[e.metaKey] : json._meta) || {};
+  }
   catch (err) { broken.push({ ...e, why: `unreadable: ${err.message}` }); continue; }
-  const raw = meta.asOf || meta.asof;
-  if (!raw) { broken.push({ ...e, why: "no _meta.asOf" }); continue; }
+  const raw = meta.asOf || meta.asof || meta.as_of;
+  if (!raw) { broken.push({ ...e, why: `no ${e.metaKey || "_meta"}.asOf` }); continue; }
   // "2026-06" is a legal as-of; read it as the first of that month.
   const asOf = new Date(`${raw.length === 7 ? `${raw}-01` : raw}T00:00:00Z`);
   if (Number.isNaN(asOf.getTime())) { broken.push({ ...e, why: `unparseable asOf '${raw}'` }); continue; }

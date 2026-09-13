@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated_at": "2026-09-13T13:49:40Z",
+  "generated_at": "2026-09-13T14:22:20Z",
   "as_of": "2026-09-13",
   "source": "Wikidata (P169/P488 current-officeholder claims)",
   "total": 107,
-  "resolved": 106
+  "resolved": 107
  },
  "ceos": [
   {
@@ -537,10 +537,10 @@
   },
   {
    "entity": "General Electric",
-   "person": "",
-   "personQid": "",
-   "since": "",
-   "via": "",
+   "person": "H. Lawrence Culp Jr.",
+   "personQid": "Q56868014",
+   "since": "2018-10-01",
+   "via": "P169",
    "symbol": "GE",
    "cap": 335817474048.0,
    "metro": "Boston",

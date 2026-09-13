@@ -30,16 +30,30 @@ const SNAPSHOT_REVALIDATE_SECONDS = 900;
 
 type SnapshotWrapper = { fetched_at?: string; url?: string; body?: unknown };
 
+/**
+ * `noStore`: skip Next's data cache for this response entirely.
+ *
+ * Next refuses to cache a body over 2 MB and logs one line per attempt. ESPN's
+ * college-football STANDINGS response is 3.4 MB, so every regeneration of
+ * /sports/standings and /api/on-today refetched the whole thing and produced 101
+ * "Failed to set Next.js data cache" lines in a build. Asking for a cache that cannot
+ * be granted is worse than not asking: the caller caches the SHAPED result instead,
+ * which is a few KB (see getCfbStandings in lib/cfb-live.ts).
+ */
 export async function fetchEspnJson(
   url: string,
   snapshotKey: string,
   revalidateSeconds: number,
+  opts: { noStore?: boolean } = {},
 ): Promise<unknown | null> {
+  const cachePolicy = opts.noStore
+    ? ({ cache: "no-store" } as const)
+    : ({ next: { revalidate: revalidateSeconds } } as const);
   try {
     const res = await fetch(url, {
       // 5-second timeout caps the failure cost when ESPN is slow or down.
       signal: AbortSignal.timeout(5000),
-      next: { revalidate: revalidateSeconds },
+      ...cachePolicy,
       headers: {
         // NO User-Agent. Send nothing and inherit the runtime's own token.
         //
@@ -78,7 +92,11 @@ export async function fetchEspnJson(
   }
   try {
     const res = await fetch(`${GH_RAW_SNAPSHOTS}/${snapshotKey}.json`, {
-      next: { revalidate: SNAPSHOT_REVALIDATE_SECONDS },
+      // The snapshot of an oversized endpoint is the same size as the endpoint, so it
+      // cannot be cached either. Same reasoning as above.
+      ...(opts.noStore
+        ? ({ cache: "no-store" } as const)
+        : ({ next: { revalidate: SNAPSHOT_REVALIDATE_SECONDS } } as const)),
     });
     if (!res.ok) throw new Error(`http ${res.status}`);
     const wrapped = (await res.json()) as SnapshotWrapper;

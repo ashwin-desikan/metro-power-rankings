@@ -33,7 +33,7 @@ function Person({ r }: { r: BizLeaderRow }) {
 
 export default async function BizLeadersPage() {
   const data = await getBizLeaders();
-  const changes = getBizLeaderChanges().slice().reverse().slice(0, 20);
+  const changes = (await getBizLeaderChanges()).slice().reverse().slice(0, 20);
   const kinds = ["Asset manager", "Hedge fund", "Private equity", "Sovereign wealth", "Pension"];
 
   return (
