@@ -14757,3 +14757,155 @@ land on the right nation pages. If editors restructure again it will exit 2 loud
 **Also answered today, for the record.** `run-owners-weekly.sh` reads `VERCEL_TOKEN` (or `VERCEL_BUILD_CAP_TOKEN`)
 from `~/metro-mini-jobs/config.env` (0600) to count the day's production builds; none is set, so the job still saves a
 patch and reports NOT APPLIED rather than pushing. Ashwin has the steps to add it.
+
+## 2026-09-13 (evening) — windows → next session (digest tagging, filters, What's on, homepage; crests)
+
+Cowork session, all of it live on `838637b8a` (5 commits, rebased onto the mini's data
+refreshes, one real production build). `npm run verify` green before the push: typecheck
+clean, 294 vitest across 23 files, 112 pytest, build 5,683 pages, `check:function-size`
+OK (largest route 129.8 MB against the 220 MB gate).
+
+### A. CRESTS — the 63 missing ones, and the generator moves into the repo (`6be9620fa`)
+
+Two problems wearing one symptom. 17 newly promoted men's clubs genuinely had no artwork
+(out of scope when the 25 June run happened). 46 women's rows had artwork all along that
+name matching could not reach: the feed writes "Arsenal W", TheSportsDB stores "Arsenal
+Women". `lib/teamCrest.ts` gained an explicit 46-entry alias map with **no bare-name
+fallback** — stripping " W" would resolve "Barcelona W" to the MEN'S crest, wrong even
+where the two clubs share artwork.
+
+`build-team-metadata.py` moved from `OneDrive/Documents/Claude/Projects/Metro Area Project/`
+into **`scripts/sports/build_team_metadata.py`** with `team-overrides.json` beside it.
+New flags: `--dry-run`, `--only a,b,c`, `--prune`. It now carries entries forward for
+leagues out of scope on a run and REFUSES to write a smaller file than it read unless
+`--prune` is passed. stdout is reconfigured to UTF-8 in the script itself; a cp1252
+Windows console kills a whole pass on the first Turkish or Nordic club name.
+
+**Open:** Sabah FK (Azerbaijan) unresolved — free-tier search returns only Sabah of
+Malaysia. Monogram stands. Two slugs are cosmetically wrong because `norm()` drops rather
+than transliterates: `slask-wrocaw.png`, `lillestrm-sk.png`.
+
+### B. DIGEST TOPIC TAGGING — four buckets, at the SOURCE (`4af7ff467`)
+
+`lib/digestTopics.ts`. ~120 publications map to Politics and government / Sport / AdTech
+and media / Business and tech. A specialist title decides on its own; a general one defers
+to the story's themes. Two rules were measured against the 60-day window, not guessed:
+
+1. **A business theme has to be EARNED on a newspaper.** `theme:ai` and
+   `theme:data-centres` fire on any story mentioning a model or a server farm, so 34
+   general-news stories had been claimed for Business and tech — a Senate race decided by
+   a faked audio clip, an ICE operation at airports, a strike on an Iranian island. A
+   politics-defaulted source now yields to a business theme only when a company is named
+   or the headline carries the trade, and a named political actor vetoes it outright.
+   13 stayed business, 21 returned to politics. `theme:energy` left the map entirely, for
+   the same reason climate/housing/public-health already had.
+2. **Topics are NOT exclusive** (Ashwin, explicitly). `topicsFor()` returns every topic:
+   the source's own plus every mapped theme, specialists included. 189 stories carry two,
+   10 carry three. Rail counts therefore exceed the day's story count, as themes and
+   sports already did. `topicFor()` survives as the single best answer and a test asserts
+   the set always contains it.
+
+### C. SPORT TAGGING — umbrellas, and a text pass (`4af7ff467`)
+
+The tagger's league vocabulary holds **eight names** (NFL, MLB, NBA, Premier League, NHL,
+Bundesliga, Serie A, Ligue 1) and nothing else, so 30 World Cup stories carried no league
+tag at all. Coverage was 5.3% of stories. Three additions, all read-side in
+`lib/digestFacets.ts` so they need no backfill and cover the whole archive at once:
+
+- **Text pass** over headline + summary against the competition names and aliases in the
+  new `lib/sportHubs.ts`.
+- **Umbrellas** (`UMBRELLAS` in sportHubs). A banner matches its own name AND its members':
+  **FIFA** (World Cup, Club World Cup, Infantino), **UEFA** (the three club cups, Super
+  Cup), **CONMEBOL** (Libertadores, Sudamericana), **CONCACAF** (Gold Cup, Leagues Cup).
+  Digest-only: the What's on panel still lists Champions League and Europa League as
+  separate rows with their own stages.
+- **Club names** (`lib/digestClubs.ts`) route to their league, from `all-teams.json`,
+  **`workbook_level: "1"` only** — the top flight, which is what keeps every college
+  division out. This is the idea that failed once: club TAGS rolled up were led by South
+  Carolina 11, San Francisco 6, George Washington 1. Any single-word club name that is
+  also a city or metro in the same file is dropped (Charlotte, Manchester, Brighton,
+  Liverpool, Genoa, Monza, Aberdeen). Measured **21 matches, 100% precision**.
+
+🔴 Deny lists carry their reasons in the code. Never add "UCL" (fires on UCLA, twice in
+90 days), "CBA" (collective bargaining agreement), "AFC" (American Football Conference),
+"County", "Euros", "Top 14", "Premiership", "Super League", "BL", "T20".
+
+Rail after: International Football 0 → 43, Club Football → 39, American Football → 44,
+NFL → 36, Premier League → 22, UEFA 1 → 9, CONMEBOL → 2.
+
+### D. WHAT'S ON + EVENTS (`37684c2b7`)
+
+Ashwin does not want fixtures on the digest: "it's more like what sports are in season,
+which ones are in the playoffs, and which ones are coming towards the end of the year."
+`lib/digestSeason.ts` answers that in four buckets (in season / in the playoffs /
+knockouts with the stage each is at / starting soon).
+
+**No second season calendar was written.** It reads `lib/leagueStatus` then
+`lib/seasonWindows` then per-competition month windows, in that order. That meant
+threading an optional `at` through `leagueStatusFor` / `monthSeasonStatus` /
+`majorsSeasonStatus`, because they read `Date.now()` internally and made the snapshot's
+own parameter a lie; a test now proves the panel reads differently in July.
+
+Tennis and golf majors appear only while one is played and carry the round. The day span
+is **floored, not rounded**: `end` is 23:59:59, so a 15-day slam read as 16 and the final
+read as a semi-final. Caught on the day of the US Open final.
+
+Events: `lib/digestEvents.ts`, sport from **Summitly** (summitly.events) and adtech from
+**The Digital Voice**, both credited in the footer, both hand-picked shortlists rather
+than copies — the UK database right protects investment in a compilation even where the
+underlying facts are free. Right-hand column, `app/digest/_shared/EventsColumn.tsx`.
+
+### E. FILTERS, TAGS ON ROWS, ARCHIVE HIDDEN (`cfb4418f0`)
+
+Every tag is a filter over the last 60 days (`FILTER_WINDOW_DAYS` in `lib/digestFeed.ts`).
+Left rail `FilterRail.tsx` (topics, themes, sports two levels deep); results at
+`/digest/filter/[group]/[value]`, grouped by day, newest first. Each story row now shows
+its own topics, sport and themes as links into those filters.
+
+🔴 The filter pages are ISR and **deliberately NOT statically generated**.
+`generateStaticParams` over every facet would add a few hundred pages to every production
+build, and each build is paid for.
+
+🔴 **Two `<details>` traps, both hit today.** `<Disclosure>` defaults `desktopOpen` to
+TRUE and `globals.css` then force-reveals the body above 640px whatever `open` says — so
+wrapping the archive in a plain `<Disclosure>` collapsed it on a phone and left it wide
+open on the desktop where Ashwin was looking. Both the archive and What's on use a plain
+`<details>` with no `data-desktop-open`, verified in the SERVED HTML, not by eye. And
+What's on is ONE collapsible around both panels, not one each: two siblings are two
+toggles and opening one left a half-filled row. The platform's own `name` attribute is the
+opposite of what is wanted (it makes an exclusive accordion).
+
+### F. HOMEPAGE (`838637b8a`)
+
+The digest was the afterthought at the foot of the masthead's left column, under a promo
+for the rankings, reachable through an 11px corner link. It now leads the column on
+desktop (mobile already had it first), the card is framed as the digest rather than a news
+ticker, the corner link is a full-width call to action, and each headline carries its tags
+(resolved on the SERVER — the ticker is a client component and `entityLabel` reads the
+metro and country datasets). Digest also leads the Explore launcher and the atlas grid; it
+was absent from both.
+
+### Open threads for the next session
+
+1. **`scripts/digest/build_topics.py` still only knows eight leagues.** Ashwin chose
+   "matcher first, tagger second" — the read-side pass is the only net today. Teaching the
+   tagger the same vocabulary (competitions, umbrellas, top-flight clubs) makes the tags
+   right at source and turns the text pass into a safety net. That is the single highest
+   -value follow-up.
+2. **EuroLeague has no entry in `lib/leagueStatus`** — it reaches the panel only through
+   its month windows in `sportHubs.ts`.
+3. **Sabah FK crest** and the two mojibake slugs (A).
+4. **Election Wikipedia capture**: two passes agreed (at certification, then +90 days),
+   Sweden set for Monday 21 September, scheduled tasks created earlier today.
+5. The FIFA umbrella's label could be "World Cup" instead; Ashwin left it open and I chose
+   FIFA for consistency with UEFA/CONMEBOL/CONCACAF. One word to flip.
+6. `public/data/sports/team-metadata.json` grew by ~928 lines; the next crest run should
+   use `--dry-run` first and never `--prune` without a reason.
+
+### Housekeeping
+
+- The dev server on :3000 was killed at the end (it held Next's build lock). Restart with
+  `npm run dev` when you next need it; a stale `.next/lock` had to be removed once.
+- `device_bash` is still down on this box (Windows update, 8 Sept). Everything here went
+  through Desktop Commander. PowerShell nesting mangles `$_`, `$env:` and parentheses, so
+  every non-trivial command was written to `_scratch/*.py` and run with `python`.
