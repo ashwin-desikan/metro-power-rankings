@@ -21,8 +21,8 @@
     "commissioner_factor": 0.44,
     "judiciary": 0.09
   },
-  "asOf": "2026-09-06",
-  "prevSnapshotDate": "2026-08-31",
+  "asOf": "2026-09-13",
+  "prevSnapshotDate": "2026-09-06",
   "ranking": [
     {
       "name": "⚠️ Donald Trump",
@@ -335,9 +335,9 @@
       "jurisdiction": "UN",
       "metro": "New York",
       "metroSlug": "new-york",
-      "jscore": 12128.7,
+      "jscore": 12135.4,
       "weight": 0.02,
-      "power": 242.6,
+      "power": 242.7,
       "jurisdictionHref": "/orgs",
       "transition": "UN Secretary-General term ends 31 Dec 2026",
       "prevRank": 20,
@@ -559,9 +559,9 @@
       "jurisdiction": "California",
       "metro": "Sacramento",
       "metroSlug": "sacramento",
-      "jscore": 329.0,
+      "jscore": 329.4,
       "weight": 0.55,
-      "power": 181.0,
+      "power": 181.2,
       "jurisdictionHref": "/states/california",
       "transition": "Term-limited; leaves office Jan 2027 (California gubernatorial election, 3 Nov 2026)",
       "prevRank": 34,
@@ -948,9 +948,9 @@
       "power": 126.5,
       "jurisdictionHref": "/countries/ukraine",
       "transition": "",
-      "prevRank": 59,
+      "prevRank": 58,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Larry Page",
@@ -964,9 +964,9 @@
       "power": 124.8,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 58,
+      "prevRank": 59,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Jeff Bezos",
@@ -1007,9 +1007,9 @@
       "jurisdiction": "Guangdong",
       "metro": "Guangzhou",
       "metroSlug": "guangzhou",
-      "jscore": 148.6,
+      "jscore": 149.3,
       "weight": 0.8,
-      "power": 118.9,
+      "power": 119.4,
       "jurisdictionHref": "/states/guangdong",
       "transition": "",
       "prevRank": 62,
@@ -1039,14 +1039,14 @@
       "jurisdiction": "Texas",
       "metro": "Austin",
       "metroSlug": "austin",
-      "jscore": 208.6,
+      "jscore": 208.8,
       "weight": 0.55,
-      "power": 114.7,
+      "power": 114.8,
       "jurisdictionHref": "/states/texas",
       "transition": "Seeking a 4th term; Texas gubernatorial election, 3 Nov 2026",
-      "prevRank": 65,
+      "prevRank": 64,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Ron O'Hanley",
@@ -1060,9 +1060,9 @@
       "power": 114.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 66,
+      "prevRank": 65,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Brian Roberts",
@@ -1076,9 +1076,9 @@
       "power": 110.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 67,
+      "prevRank": 66,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Michael Dell",
@@ -1092,9 +1092,9 @@
       "power": 108.3,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 64,
+      "prevRank": 67,
       "isNew": false,
-      "delta": -3
+      "delta": 0
     },
     {
       "name": "Lionel Messi",
@@ -1119,9 +1119,9 @@
       "jurisdiction": "Paris",
       "metro": "Paris",
       "metroSlug": "paris",
-      "jscore": 144.1,
+      "jscore": 144.0,
       "weight": 0.72,
-      "power": 103.8,
+      "power": 103.7,
       "jurisdictionHref": "/rankings/paris",
       "transition": "",
       "prevRank": 69,
@@ -1183,9 +1183,9 @@
       "jurisdiction": "Tokyo",
       "metro": "Tokyo",
       "metroSlug": "tokyo",
-      "jscore": 134.3,
+      "jscore": 134.4,
       "weight": 0.72,
-      "power": 96.7,
+      "power": 96.8,
       "jurisdictionHref": "/rankings/tokyo",
       "transition": "",
       "prevRank": 73,
@@ -1279,14 +1279,14 @@
       "jurisdiction": "San Francisco",
       "metro": "San Francisco-San Jose",
       "metroSlug": "san-francisco-san-jose",
-      "jscore": 125.0,
+      "jscore": 125.4,
       "weight": 0.72,
-      "power": 90.0,
+      "power": 90.3,
       "jurisdictionHref": "/rankings/san-francisco-san-jose",
       "transition": "",
-      "prevRank": 80,
+      "prevRank": 79,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "👑 Naruhito",
@@ -1300,9 +1300,9 @@
       "power": 90.0,
       "jurisdictionHref": "/countries/japan",
       "transition": "",
-      "prevRank": 81,
+      "prevRank": 80,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Kathy Hochul",
@@ -1316,9 +1316,9 @@
       "power": 89.5,
       "jurisdictionHref": "/states/new-york",
       "transition": "Seeking re-election; New York gubernatorial election, 3 Nov 2026",
-      "prevRank": 82,
+      "prevRank": 81,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Asif Ali Zardari",
@@ -1332,9 +1332,9 @@
       "power": 88.7,
       "jurisdictionHref": "/countries/pakistan",
       "transition": "",
-      "prevRank": 84,
+      "prevRank": 82,
       "isNew": false,
-      "delta": 2
+      "delta": 0
     },
     {
       "name": "Mark Zuckerberg",
@@ -1348,9 +1348,9 @@
       "power": 88.5,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 79,
+      "prevRank": 83,
       "isNew": false,
-      "delta": -4
+      "delta": 0
     },
     {
       "name": "Hock Tan",
@@ -1364,9 +1364,9 @@
       "power": 88.2,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 85,
+      "prevRank": 84,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "David Zaslav",
@@ -1380,9 +1380,9 @@
       "power": 88.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 86,
+      "prevRank": 85,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Ahmed el-Tayeb",
@@ -1396,9 +1396,9 @@
       "power": 88.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 87,
+      "prevRank": 86,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Andrew Bailey",
@@ -1412,9 +1412,9 @@
       "power": 87.3,
       "jurisdictionHref": "/countries/united-kingdom",
       "transition": "",
-      "prevRank": 88,
+      "prevRank": 87,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Larry Ellison",
@@ -1428,9 +1428,9 @@
       "power": 86.6,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 83,
+      "prevRank": 88,
       "isNew": false,
-      "delta": -5
+      "delta": 0
     },
     {
       "name": "Amin H. Nasser",
@@ -1487,9 +1487,9 @@
       "jurisdiction": "Beijing",
       "metro": "Beijing",
       "metroSlug": "beijing",
-      "jscore": 114.0,
+      "jscore": 114.1,
       "weight": 0.72,
-      "power": 82.1,
+      "power": 82.2,
       "jurisdictionHref": "/rankings/beijing",
       "transition": "",
       "prevRank": 92,
@@ -1593,36 +1593,36 @@
       "delta": 0
     },
     {
-      "name": "Valérie Pécresse",
-      "role": "Regional President, Île-de-France",
-      "category": "Sub-national",
-      "jurisdiction": "Île-de-France",
-      "metro": "Paris",
-      "metroSlug": "paris",
-      "jscore": 138.5,
-      "weight": 0.55,
-      "power": 76.2,
-      "jurisdictionHref": "/states/ile-de-france",
-      "transition": "",
-      "prevRank": 99,
-      "isNew": false,
-      "delta": 0
-    },
-    {
       "name": "Sun Zhiyang",
       "role": "Mayor of Guangzhou",
       "category": "Mayor",
       "jurisdiction": "Guangzhou",
       "metro": "Guangzhou",
       "metroSlug": "guangzhou",
-      "jscore": 105.4,
+      "jscore": 106.1,
       "weight": 0.72,
-      "power": 75.9,
+      "power": 76.4,
       "jurisdictionHref": "/rankings/guangzhou",
       "transition": "",
       "prevRank": 100,
       "isNew": false,
-      "delta": 0
+      "delta": 1
+    },
+    {
+      "name": "Valérie Pécresse",
+      "role": "Regional President, Île-de-France",
+      "category": "Sub-national",
+      "jurisdiction": "Île-de-France",
+      "metro": "Paris",
+      "metroSlug": "paris",
+      "jscore": 138.4,
+      "weight": 0.55,
+      "power": 76.1,
+      "jurisdictionHref": "/states/ile-de-france",
+      "transition": "",
+      "prevRank": 99,
+      "isNew": false,
+      "delta": -1
     }
   ],
   "dropped": []

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06",
+  "generated": "2026-09-13",
   "source": "Forbes real-time billionaires via komed3/rtb-api (MIT)",
   "count": 3403,
   "billionaires": [
@@ -23370,9 +23370,9 @@
       "name": "Tung Chee Hwa",
       "uri": "tung-chee-hwa",
       "networth": 3174.724,
-      "countryCode": "HK",
-      "countrySlug": "hong-kong",
-      "countryName": "Hong Kong",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Logistics"
       ],
@@ -50677,9 +50677,9 @@
       "name": "Wang Dong",
       "uri": "wang-dong-1",
       "networth": 1281.434,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -54195,9 +54195,9 @@
       "name": "Xia Xinde",
       "uri": "xia-xinde",
       "networth": 1158.145,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -55064,9 +55064,9 @@
       "name": "Shintaro Yamada",
       "uri": "shintaro-yamada",
       "networth": 1124.527,
-      "countryCode": "JP",
-      "countrySlug": "japan",
-      "countryName": "Japan",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -55387,9 +55387,9 @@
       "name": "Jung Sang-soo",
       "uri": "jung-sang-soo",
       "networth": 1112.358,
-      "countryCode": "KR",
-      "countrySlug": "south-korea",
-      "countryName": "South Korea",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Healthcare"
       ],
@@ -55985,9 +55985,9 @@
       "name": "Zheng Xiaodong",
       "uri": "zheng-xiaodong",
       "networth": 1088.41,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -56375,9 +56375,9 @@
       "name": "Zhang Jianhui",
       "uri": "zhang-jianhui",
       "networth": 1071.34,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Energy"
       ],
@@ -56562,9 +56562,9 @@
       "name": "Luc Tack",
       "uri": "luc-tack",
       "networth": 1066.4,
-      "countryCode": "BE",
-      "countrySlug": "belgium",
-      "countryName": "Belgium",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -56665,9 +56665,9 @@
       "name": "Brian Lawson",
       "uri": "brian-lawson",
       "networth": 1060.256,
-      "countryCode": "CA",
-      "countrySlug": "canada",
-      "countryName": "Canada",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Finance & Investments"
       ],
@@ -56936,9 +56936,9 @@
       "name": "Cyrus Madon",
       "uri": "cyrus-madon",
       "networth": 1047.929,
-      "countryCode": "CA",
-      "countrySlug": "canada",
-      "countryName": "Canada",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Finance & Investments"
       ],
@@ -57005,9 +57005,9 @@
       "name": "Harry Klagsbrun",
       "uri": "harry-klagsbrun",
       "networth": 1045.676,
-      "countryCode": "SE",
-      "countrySlug": "sweden",
-      "countryName": "Sweden",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Finance & Investments"
       ],
@@ -57022,9 +57022,9 @@
       "name": "Geng Diangen",
       "uri": "geng-diangen",
       "networth": 1043.866,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -57192,9 +57192,9 @@
       "name": "Xiong Xiaochuan",
       "uri": "xiong-xiaochuan",
       "networth": 1038.401,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Healthcare"
       ],
@@ -57312,9 +57312,9 @@
       "name": "Cao Yuhua & family",
       "uri": "cao-yuhua",
       "networth": 1033.415,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Automotive"
       ],
@@ -57346,9 +57346,9 @@
       "name": "Chang Chung-Hsing",
       "uri": "chang-chung-hsing",
       "networth": 1032.048,
-      "countryCode": "TW",
+      "countryCode": null,
       "countrySlug": null,
-      "countryName": "TW",
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -57431,9 +57431,9 @@
       "name": "Xu Yingtong",
       "uri": "xu-yingtong",
       "networth": 1029.814,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Energy"
       ],
@@ -57448,9 +57448,9 @@
       "name": "Nguyen Dang Quang",
       "uri": "nguyen-dang-quang",
       "networth": 1029.363,
-      "countryCode": "VN",
-      "countrySlug": "vietnam",
-      "countryName": "Vietnam",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Food & Beverage"
       ],
@@ -57638,9 +57638,9 @@
       "name": "Rao Wei & family",
       "uri": "rao-wei",
       "networth": 1018.713,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Healthcare"
       ],
@@ -57672,9 +57672,9 @@
       "name": "Philippe Benacin",
       "uri": "philippe-benacin",
       "networth": 1017.245,
-      "countryCode": "FR",
-      "countrySlug": "france",
-      "countryName": "France",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Fashion & Retail"
       ],
@@ -57915,9 +57915,9 @@
       "name": "Bart van Malderen",
       "uri": "bart-van-malderen",
       "networth": 1007.879,
-      "countryCode": "BE",
-      "countrySlug": "belgium",
-      "countryName": "Belgium",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -57932,9 +57932,9 @@
       "name": "Yang Min & family",
       "uri": "yang-min-1",
       "networth": 1005.401,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Metals & Mining"
       ],
@@ -57983,9 +57983,9 @@
       "name": "Saket Burman",
       "uri": "saket-burman",
       "networth": 1003.887,
-      "countryCode": "GB",
-      "countrySlug": "united-kingdom",
-      "countryName": "United Kingdom",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Food & Beverage"
       ],
