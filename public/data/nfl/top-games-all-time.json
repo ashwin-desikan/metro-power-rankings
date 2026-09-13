@@ -684,24 +684,6 @@
     "du": 1.8121
   },
   {
-    "year": 2022,
-    "date": "2023-02-12",
-    "week": 22,
-    "round": "Super Bowl",
-    "winner_city": "Kansas City",
-    "winner_team": "Chiefs",
-    "winner_canonical": "Chiefs",
-    "loser_city": "Philadelphia",
-    "loser_team": "Eagles",
-    "loser_canonical": "Eagles",
-    "winner_score": 38,
-    "loser_score": 35,
-    "ot": false,
-    "is_tie": false,
-    "stadium": "State Farm Stadium",
-    "du": 1.8119
-  },
-  {
     "year": 1990,
     "date": "1991-01-27",
     "week": 21,
@@ -717,6 +699,24 @@
     "ot": false,
     "is_tie": false,
     "stadium": "Tampa Stadium",
+    "du": 1.8119
+  },
+  {
+    "year": 2022,
+    "date": "2023-02-12",
+    "week": 22,
+    "round": "Super Bowl",
+    "winner_city": "Kansas City",
+    "winner_team": "Chiefs",
+    "winner_canonical": "Chiefs",
+    "loser_city": "Philadelphia",
+    "loser_team": "Eagles",
+    "loser_canonical": "Eagles",
+    "winner_score": 38,
+    "loser_score": 35,
+    "ot": false,
+    "is_tie": false,
+    "stadium": "State Farm Stadium",
     "du": 1.8119
   },
   {

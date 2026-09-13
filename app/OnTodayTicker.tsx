@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useTickerRotation } from './_shared/useTickerRotation';
+// Pure lookup table, no server-only import: safe in a client component.
+import { sportIcon } from '@/lib/sportLabels';
 
 // Today's fixtures, one at a time, under the homepage's Live standings link (Ashwin,
 // 2026-09-13: "something similar just about the live standings link ... derived from
@@ -90,12 +92,16 @@ export default function OnTodayTicker() {
           className="ticker-in flex min-h-11 md:min-h-0 flex-col justify-center md:block md:truncate hover:text-[var(--accent)] transition-colors"
           title={`${f.label} · ${f.league}`}
         >
-          <span className="md:hidden block truncate font-medium text-[var(--text)]">{f.label}</span>
+          <span className="md:hidden block truncate font-medium text-[var(--text)]">
+            {sportIcon(f.sport) ? <span aria-hidden className="mr-1">{sportIcon(f.sport)}</span> : null}
+            {f.label}
+          </span>
           <span className="md:hidden block truncate text-[11px] tabular-nums" style={{ ...MONO, color: 'var(--text-muted)' }}>
             {when} · {f.league}
           </span>
           <span className="hidden md:inline">
             <span className="tabular-nums" style={{ ...MONO, color: 'var(--text-muted)' }}>{when}</span>
+            {sportIcon(f.sport) ? <span aria-hidden> · {sportIcon(f.sport)}</span> : null}
             <span className="text-[var(--text)]"> · {f.label}</span>
             <span className="text-[var(--text-dim)]"> · {f.league}</span>
           </span>

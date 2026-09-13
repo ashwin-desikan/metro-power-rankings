@@ -6,12 +6,12 @@
       "metro": "Atlanta",
       "state": "Georgia",
       "first_year": 2017,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Mercedes-Benz Stadium",
           "first_year": 2017,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -58,7 +58,7 @@
       "metro": "New Orleans",
       "state": "Louisiana",
       "first_year": 1975,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Louisiana Superdome",
@@ -78,7 +78,7 @@
         {
           "era_name": "Caesars Superdome",
           "first_year": 2021,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -135,12 +135,12 @@
       "metro": "Boston",
       "state": "Massachusetts",
       "first_year": 2002,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Gillette Stadium",
           "first_year": 2002,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -299,7 +299,7 @@
       "metro": "Washington-Baltimore",
       "state": "Maryland",
       "first_year": 1997,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Jack Kent Cooke Stadium",
@@ -314,7 +314,7 @@
         {
           "era_name": "Northwest Stadium",
           "first_year": 2024,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -417,6 +417,21 @@
     }
   ],
   "Bills": [
+    {
+      "canonical": "New Highmark Stadium",
+      "city": "Orchard Park",
+      "metro": "Buffalo",
+      "state": "New York",
+      "first_year": 2026,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "New Highmark Stadium",
+          "first_year": 2026,
+          "last_year": 2026
+        }
+      ]
+    },
     {
       "canonical": "Highmark Stadium",
       "city": "Orchard Park",
@@ -566,7 +581,7 @@
       "metro": "Chicago",
       "state": "Illinois",
       "first_year": 1971,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Soldier Field",
@@ -576,7 +591,7 @@
         {
           "era_name": "Soldier Field",
           "first_year": 2003,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -638,7 +653,7 @@
       "metro": "Charlotte",
       "state": "North Carolina",
       "first_year": 1996,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Ericsson Stadium",
@@ -648,7 +663,7 @@
         {
           "era_name": "Bank of America Stadium",
           "first_year": 2004,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -675,7 +690,7 @@
       "metro": "Phoenix",
       "state": "Arizona",
       "first_year": 2006,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "University of Phoenix Stadium",
@@ -685,7 +700,7 @@
         {
           "era_name": "State Farm Stadium",
           "first_year": 2018,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -1007,7 +1022,7 @@
       "metro": "Cincinnati",
       "state": "Ohio",
       "first_year": 2000,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Paul Brown Stadium",
@@ -1017,7 +1032,7 @@
         {
           "era_name": "Paycor Stadium",
           "first_year": 2022,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -1113,7 +1128,7 @@
       "metro": "Cleveland",
       "state": "Ohio",
       "first_year": 1999,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Cleveland Browns Stadium",
@@ -1128,7 +1143,7 @@
         {
           "era_name": "Huntington Bank Field",
           "first_year": 2024,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -1155,12 +1170,12 @@
       "metro": "Los Angeles",
       "state": "California",
       "first_year": 2020,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "SoFi Stadium",
           "first_year": 2020,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -1511,7 +1526,7 @@
       "metro": "Dallas",
       "state": "Texas",
       "first_year": 2009,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Cowboys Stadium",
@@ -1521,7 +1536,7 @@
         {
           "era_name": "AT&T Stadium",
           "first_year": 2015,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -1563,12 +1578,12 @@
       "metro": "Kansas City",
       "state": "Missouri",
       "first_year": 1972,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Arrowhead Stadium",
           "first_year": 1972,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -1647,7 +1662,7 @@
       "metro": "Denver",
       "state": "Colorado",
       "first_year": 2001,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Invesco Field",
@@ -1667,7 +1682,7 @@
         {
           "era_name": "Empower Field at Mile High",
           "first_year": 2020,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -1709,12 +1724,12 @@
       "metro": "Detroit",
       "state": "Michigan",
       "first_year": 2002,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Ford Field",
           "first_year": 2002,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -1889,7 +1904,7 @@
       "metro": "Green Bay",
       "state": "Wisconsin",
       "first_year": 1957,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "City Stadium/County Stadium",
@@ -1904,7 +1919,7 @@
         {
           "era_name": "Lambeau Field",
           "first_year": 1995,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -2063,7 +2078,7 @@
       "metro": "Houston",
       "state": "Texas",
       "first_year": 2002,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Reliant Stadium",
@@ -2073,7 +2088,7 @@
         {
           "era_name": "NRG Stadium",
           "first_year": 2015,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     }
@@ -2085,7 +2100,7 @@
       "metro": "Nashville",
       "state": "Tennessee",
       "first_year": 1999,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Adelphia Coliseum",
@@ -2105,7 +2120,7 @@
         {
           "era_name": "Nissan Stadium",
           "first_year": 2015,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -2192,12 +2207,12 @@
       "metro": "Indianapolis",
       "state": "Indiana",
       "first_year": 2008,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Lucas Oil Stadium",
           "first_year": 2008,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -2249,7 +2264,7 @@
       "metro": "Jacksonville",
       "state": "Florida",
       "first_year": 1995,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Jacksonville Municipal Stadium",
@@ -2279,7 +2294,7 @@
         {
           "era_name": "EverBank Stadium",
           "first_year": 2024,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     }
@@ -2313,12 +2328,12 @@
       "metro": "Las Vegas",
       "state": "Nevada",
       "first_year": 2020,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Allegiant Stadium",
           "first_year": 2020,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -2435,12 +2450,12 @@
       "metro": "Los Angeles",
       "state": "California",
       "first_year": 2020,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "SoFi Stadium",
           "first_year": 2020,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -2625,7 +2640,7 @@
       "metro": "Miami",
       "state": "Florida",
       "first_year": 1987,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Joe Robbie Stadium",
@@ -2655,7 +2670,7 @@
         {
           "era_name": "Hard Rock Stadium",
           "first_year": 2016,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -2753,12 +2768,12 @@
       "metro": "Minneapolis",
       "state": "Minnesota",
       "first_year": 2016,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "U.S. Bank Stadium",
           "first_year": 2016,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -2871,7 +2886,7 @@
       "metro": "New York",
       "state": "New Jersey",
       "first_year": 2010,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "New Meadowlands Stadium",
@@ -2881,7 +2896,7 @@
         {
           "era_name": "MetLife Stadium",
           "first_year": 2011,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -2968,7 +2983,7 @@
       "metro": "New York",
       "state": "New Jersey",
       "first_year": 2010,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "New Meadowlands Stadium",
@@ -2978,7 +2993,7 @@
         {
           "era_name": "MetLife Stadium",
           "first_year": 2011,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -3133,12 +3148,12 @@
       "metro": "Philadelphia",
       "state": "Pennsylvania",
       "first_year": 2003,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Lincoln Financial Field",
           "first_year": 2003,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -3284,7 +3299,7 @@
       "metro": "Pittsburgh",
       "state": "Pennsylvania",
       "first_year": 2001,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Heinz Field",
@@ -3294,7 +3309,7 @@
         {
           "era_name": "Acrisure Stadium",
           "first_year": 2022,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -3445,12 +3460,12 @@
       "metro": "San Francisco-San Jose",
       "state": "California",
       "first_year": 2015,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Levi's Stadium",
           "first_year": 2015,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -3512,7 +3527,7 @@
       "metro": "Seattle",
       "state": "Washington",
       "first_year": 2002,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Seahawks Stadium",
@@ -3532,7 +3547,7 @@
         {
           "era_name": "Lumen Field",
           "first_year": 2021,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -3601,12 +3616,12 @@
       "metro": "Tampa",
       "state": "Florida",
       "first_year": 1998,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Raymond James Stadium",
           "first_year": 1998,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },
@@ -3638,7 +3653,7 @@
       "metro": "Washington-Baltimore",
       "state": "Maryland",
       "first_year": 1998,
-      "last_year": 2025,
+      "last_year": 2026,
       "eras": [
         {
           "era_name": "Ravens Stadium",
@@ -3658,7 +3673,7 @@
         {
           "era_name": "M&T Bank Stadium",
           "first_year": 2003,
-          "last_year": 2025
+          "last_year": 2026
         }
       ]
     },

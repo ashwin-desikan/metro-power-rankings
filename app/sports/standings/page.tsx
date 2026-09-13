@@ -3,6 +3,7 @@ import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { loadLiveStandings, TodayStrip, LeagueAccordion, slugId } from "./liveData";
+import { sportIcon } from "@/lib/sportLabels";
 
 export const revalidate = 120;
 
@@ -78,7 +79,10 @@ export default async function LiveStandingsPage() {
         <div className="space-y-8">
           {groups.map((g) => (
             <section key={g.sport} id={slugId(g.sport)} className="scroll-mt-24">
-              <h2 className="text-lg font-semibold mb-3">{g.sport}</h2>
+              <h2 className="text-lg font-semibold mb-3">
+                {sportIcon(g.sport) ? <span aria-hidden className="mr-1.5">{sportIcon(g.sport)}</span> : null}
+                {g.sport}
+              </h2>
               {g.columns ? (
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
                   <div className="space-y-3">
@@ -111,7 +115,15 @@ export default async function LiveStandingsPage() {
           __html:
             "(function(){var d=window.matchMedia('(min-width:640px)').matches;" +
             "document.querySelectorAll('details[data-desktop-default-open]').forEach(function(e){" +
-            "if(d)e.open=true;e.removeAttribute('data-desktop-default-open');});})();",
+            "if(d)e.open=true;e.removeAttribute('data-desktop-default-open');});" +
+            // Opening a sport in On today / Recent results / Coming up opens every
+            // competition under it. Capture phase: `toggle` does not bubble. Only on
+            // open, so a reader who folds one competition away keeps that choice until
+            // they collapse and reopen the sport itself.
+            "document.addEventListener('toggle',function(ev){var t=ev.target;" +
+            "if(!t||!t.hasAttribute||!t.hasAttribute('data-open-children')||!t.open)return;" +
+            "t.querySelectorAll('details').forEach(function(c){c.open=true;});},true);" +
+            "})();",
         }}
       />
     </main>

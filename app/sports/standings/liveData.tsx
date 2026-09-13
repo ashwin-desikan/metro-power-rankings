@@ -61,6 +61,7 @@ import { isLeagueLive, inSeasonWindow, tournamentIsCurrent, type SeasonKey } fro
 import { CappedList } from "@/app/_shared/Disclosure";
 import { DataBar } from "@/app/_shared/DataBar";
 import { getEspnFinals, sameTeam, type EspnFinal } from "@/lib/espnScores";
+import { sportIcon } from "@/lib/sportLabels";
 
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
@@ -461,7 +462,13 @@ export function TodayStrip({ title, events, kind, sportOrder, noun }: { title: s
       <div className="border-t px-3 py-2 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2" style={{ borderColor: "var(--border)" }}>
         {sports.map((sport) => {
           const list = bySport.get(sport) ?? [];
-          const head = <a href={`#${slugId(sport)}`} className="hover:text-[var(--accent)]">{sport}</a>;
+          const icon = sportIcon(sport);
+          const head = (
+            <a href={`#${slugId(sport)}`} className="hover:text-[var(--accent)]">
+              {icon ? <span aria-hidden className="mr-1">{icon}</span> : null}
+              {sport}
+            </a>
+          );
           // 🔴 THE THRESHOLD RULE (Ashwin, 2026-09-11): a sport with six or
           // fewer reads in full; a sport with more folds to one line and opens
           // on a click, so a slam's first round or a cup weekend never becomes
@@ -482,8 +489,14 @@ export function TodayStrip({ title, events, kind, sportOrder, noun }: { title: s
           const byLeague = new Map<string, LiveEvent[]>();
           for (const e of list) byLeague.set(e.league, [...(byLeague.get(e.league) ?? []), e]);
           return (
-            <details key={sport} className="min-w-0">
+            // data-open-children: opening a sport opens every competition under it in
+            // one click (Ashwin, 2026-09-13: "click on the sport, and then all of the
+            // collapsible ones would open up automatically underneath"). Driven by the
+            // inline script in page.tsx, because `toggle` does not bubble and this is a
+            // server component with nothing to hydrate.
+            <details key={sport} className="min-w-0" data-open-children="">
               <summary className="cursor-pointer select-none text-[11px] font-semibold text-[var(--text-muted)] hover:text-[var(--accent)]">
+                {icon ? <span aria-hidden className="mr-1">{icon}</span> : null}
                 {sport} <span className="font-normal text-[var(--text-dim)]">· {list.length} {noun}s</span>
               </summary>
               <div className="mt-0.5 space-y-1.5">

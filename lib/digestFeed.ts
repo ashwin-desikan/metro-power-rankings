@@ -33,6 +33,16 @@ export type DigestEntity = {
   name?: string;
 };
 
+/**
+ * An analytical tag from scripts/digest/build_topics.py. NOT a link: the vocabulary is
+ * generated from public/data and most of these have no page. Rendered as plain text.
+ */
+export type DigestTopic = {
+  type: "company" | "person" | "market" | "league" | "club" | "artist" | "work" | "theme";
+  id: string;
+  label: string;
+};
+
 export type DigestItem = {
   digestDate: string; // YYYY-MM-DD
   position: number;
@@ -41,6 +51,7 @@ export type DigestItem = {
   url: string;
   why: string;
   entities: DigestEntity[];
+  topics: DigestTopic[];
 };
 
 type Row = {
@@ -51,7 +62,28 @@ type Row = {
   url: string;
   why: string;
   entities: unknown;
+  topics: unknown;
 };
+
+const TOPIC_TYPES = new Set([
+  "company", "person", "market", "league", "club", "artist", "work", "theme",
+]);
+
+function toTopics(raw: unknown): DigestTopic[] {
+  if (!Array.isArray(raw)) return [];
+  const out: DigestTopic[] = [];
+  for (const t of raw) {
+    if (!t || typeof t !== "object") continue;
+    const ty = (t as Record<string, unknown>).type;
+    const id = (t as Record<string, unknown>).id;
+    const label = (t as Record<string, unknown>).label;
+    if (typeof ty === "string" && TOPIC_TYPES.has(ty) && typeof id === "string" && id
+        && typeof label === "string" && label.trim()) {
+      out.push({ type: ty as DigestTopic["type"], id, label: label.trim().slice(0, 60) });
+    }
+  }
+  return out;
+}
 
 const ENTITY_TYPES = new Set(["metro", "country", "club", "league"]);
 
@@ -102,6 +134,7 @@ function toItem(r: Row): DigestItem {
     url: r.url,
     why: r.why,
     entities: toEntities(r.entities),
+    topics: toTopics(r.topics),
   };
 }
 
@@ -131,7 +164,7 @@ async function query<T = Row>(
   }
 }
 
-const SELECT = "select=digest_date,position,headline,source_name,url,why,entities";
+const SELECT = "select=digest_date,position,headline,source_name,url,why,entities,topics";
 
 /** Most recent items across all digests, newest digest first. Homepage strip. */
 export async function getRecentDigestItems(limit = 12): Promise<DigestItem[]> {

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getAllMetros } from "@/lib/data";
 import { getCountry } from "@/lib/countries";
 import { LEAGUE_HUBS } from "@/lib/leagueHubs";
-import { entityHref, type DigestEntity, type DigestItem } from "@/lib/digestFeed";
+import { entityHref, type DigestEntity, type DigestItem, type DigestTopic } from "@/lib/digestFeed";
 import { MONO, TabHeader } from "@/app/business/ui";
 import { SourcesCard, plural } from "@/app/predictions/_shared/ui";
 import { SectionHead } from "@/app/_shared/SectionHead";
@@ -94,6 +94,34 @@ function EntityChips({ entities, omit }: { entities: DigestEntity[]; omit?: Dige
 }
 
 /**
+ * Analytical tags. Deliberately NOT links and deliberately not chip-shaped: most have no
+ * page, and a bordered pill reads as tappable. Plain dim mono text, separated by middots,
+ * so the row's own tap target is unambiguous.
+ */
+function TopicLabels({ topics }: { topics: DigestTopic[] }) {
+  if (!topics || topics.length === 0) return null;
+  const seen = new Set<string>();
+  const labels = topics
+    .map((t) => t.label)
+    .filter((l) => {
+      const k = l.toLowerCase();
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    })
+    .slice(0, 6);
+  if (labels.length === 0) return null;
+  return (
+    <p
+      className="mt-1.5 text-[10px] uppercase tracking-widest"
+      style={{ ...MONO, color: "var(--text-dim)" }}
+    >
+      {labels.join(" · ")}
+    </p>
+  );
+}
+
+/**
  * One story. The row is the tap target (tap-row + tap-target, DESIGN-STANDARDS §6):
  * the headline opens the publisher, place chips stay independently tappable.
  */
@@ -126,6 +154,7 @@ export function DigestItemRow({
       </a>
       <p className="text-[13px] text-[var(--text-muted)] mt-1 leading-relaxed">{item.why}</p>
       <EntityChips entities={item.entities} omit={omit} />
+      <TopicLabels topics={item.topics} />
     </li>
   );
 }

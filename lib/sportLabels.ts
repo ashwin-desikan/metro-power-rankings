@@ -47,6 +47,11 @@ const SPORT_ICONS: Record<string, string> = {
   "Wrestling": "🤼", "Sailing": "⛵", "Surfing": "🏄", "Esports": "🎮",
   "Swimming": "🏊", "Cycling": "🚴", "Skiing": "⛷️", "Softball": "🥎",
   "Gymnastics": "🤸", "Water Polo": "🤽", "Olympics": "🏅",
+  // Labels the live standings page uses for its sport groups (liveData.tsx). Added
+  // 2026-09-13 so /sports/standings, the three strips and the homepage ticker all
+  // resolve an icon from this one map.
+  "Gridiron": "🏈", "Motorsport": "🏎️",
+  "International Football": "⚽", "Women's Football": "⚽",
   // No natural emoji; closest-guess (pending review):
   "Netball": "🏐", "Kabaddi": "🤼", "Irish Sports": "☘️",
   "Japanese Sports": "🥋", "Rifle": "🎯", "Hall of Fame": "🏆",
@@ -55,6 +60,9 @@ export function sportIcon(sport: string | undefined): string {
   if (!sport) return "";
   let s = sport.trim();
   if (s.startsWith("W ")) s = s.slice(2).trim();
+  if (SPORT_ICONS[s]) return SPORT_ICONS[s];
+  // "Women's Rugby Union" and friends fall back to the base sport.
+  if (s.startsWith("Women's ")) s = s.slice(8).trim();
   if (s === "Soccer" || s === "Football") return "⚽";
   return SPORT_ICONS[s] ?? "";
 }
