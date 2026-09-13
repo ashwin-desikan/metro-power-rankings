@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated_at": "2026-09-12T05:56:44Z",
-  "as_of": "2026-09-12",
+  "generated_at": "2026-09-13T05:56:28Z",
+  "as_of": "2026-09-13",
   "source": "Yahoo Finance chart API",
   "indices": 13,
   "commodities": 6,
@@ -106,7 +106,7 @@
    "country": "China",
    "metro": "Shanghai",
    "metroSlug": "shanghai",
-   "value": 3888.111,
+   "value": 3888.1106,
    "date": "2026-09-11"
   },
   {
@@ -196,8 +196,8 @@
    "symbol": "BTC-USD",
    "name": "Bitcoin",
    "unit": "USD/BTC",
-   "value": 77220.01,
-   "date": "2026-09-12"
+   "value": 77298.99,
+   "date": "2026-09-13"
   }
  ]
 }
