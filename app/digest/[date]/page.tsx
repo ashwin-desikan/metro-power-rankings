@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getDigestItemsForDate, getLatestDigestDate, getRecentDigestDates } from "@/lib/digestFeed";
+import {
+  FILTER_WINDOW_DAYS, getDigestItemsForDate, getDigestItemsSince,
+  getLatestDigestDate, getRecentDigestDates,
+} from "@/lib/digestFeed";
+import { facetsFor } from "@/lib/digestFacets";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { DigestDayView, fmtDigestDate } from "../_shared/ui";
 
@@ -47,11 +51,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function DigestDatePage({ params }: Props) {
   const { date } = await params;
   if (!DAY.test(date)) notFound();
-  const [items, dates, latest] = await Promise.all([
+  const [items, dates, latest, window] = await Promise.all([
     getDigestItemsForDate(date),
     getRecentDigestDates(),
     getLatestDigestDate(),
+    getDigestItemsSince(),
   ]);
   if (items.length === 0) notFound();
-  return <DigestDayView day={date} items={items} dates={dates} isLatest={date === latest} />;
+  return (
+    <DigestDayView
+      day={date}
+      items={items}
+      dates={dates}
+      isLatest={date === latest}
+      facets={facetsFor(window)}
+      windowDays={FILTER_WINDOW_DAYS}
+    />
+  );
 }

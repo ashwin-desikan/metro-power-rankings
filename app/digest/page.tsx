@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { getDigestItemsForDate, getLatestDigestDate, getRecentDigestDates } from "@/lib/digestFeed";
+import {
+  FILTER_WINDOW_DAYS, getDigestItemsForDate, getDigestItemsSince,
+  getLatestDigestDate, getRecentDigestDates,
+} from "@/lib/digestFeed";
+import { facetsFor } from "@/lib/digestFacets";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { DigestDayView, EmptyDigest } from "./_shared/ui";
 
@@ -33,8 +37,21 @@ export const metadata: Metadata = {
 };
 
 export default async function DigestPage() {
-  const [day, dates] = await Promise.all([getLatestDigestDate(), getRecentDigestDates()]);
+  // The window fetch is the same one every filter page uses, so it is already cached by
+  // the time a reader clicks through: the rail costs nothing extra here.
+  const [day, dates, window] = await Promise.all([
+    getLatestDigestDate(), getRecentDigestDates(), getDigestItemsSince(),
+  ]);
   const items = day ? await getDigestItemsForDate(day) : [];
   if (!day || items.length === 0) return <EmptyDigest />;
-  return <DigestDayView day={day} items={items} dates={dates} isLatest />;
+  return (
+    <DigestDayView
+      day={day}
+      items={items}
+      dates={dates}
+      isLatest
+      facets={facetsFor(window)}
+      windowDays={FILTER_WINDOW_DAYS}
+    />
+  );
 }

@@ -3,11 +3,15 @@ import Link from "next/link";
 import { getAllMetros } from "@/lib/data";
 import { getCountry } from "@/lib/countries";
 import { LEAGUE_HUBS } from "@/lib/leagueHubs";
-import { entityHref, type DigestEntity, type DigestItem, type DigestTopic } from "@/lib/digestFeed";
+import { entityHref, type DigestEntity, type DigestItem } from "@/lib/digestFeed";
 import { MONO, TabHeader } from "@/app/business/ui";
 import { SourcesCard, plural } from "@/app/predictions/_shared/ui";
 import { SectionHead } from "@/app/_shared/SectionHead";
 import { Disclosure, ShowMore } from "@/app/_shared/Disclosure";
+import { storyChips, storyThemes, type DigestFacets, type FacetGroup } from "@/lib/digestFacets";
+import WhatsOn from "./WhatsOn";
+import EventsColumn from "./EventsColumn";
+import { FilterRail } from "./FilterRail";
 
 // Shared shell for /digest and /digest/[date], plus the story row reused by the
 // homepage strip and the "In the news" sections on metro and country pages.
@@ -57,7 +61,10 @@ let metroNames: Map<string, string> | null = null;
 // uses the hub's short name ("NFL") instead of the stored page title.
 const HUB_SHORT = new Map(LEAGUE_HUBS.map((h) => [h.href, h.short]));
 
-function entityLabel(e: DigestEntity): string | null {
+// Exported for the homepage ticker, which is a client component and so cannot reach
+// getAllMetros / getCountry itself: app/page.tsx resolves the labels on the server and
+// hands the ticker plain strings.
+export function entityLabel(e: DigestEntity): string | null {
   if (e.type === "metro") {
     metroNames ??= new Map([...getAllMetros()].map((m) => [m.slug, m.name]));
     return metroNames.get(e.slug) ?? null;
@@ -94,29 +101,64 @@ function EntityChips({ entities, omit }: { entities: DigestEntity[]; omit?: Dige
 }
 
 /**
- * Analytical tags. Deliberately NOT links and deliberately not chip-shaped: most have no
- * page, and a bordered pill reads as tappable. Plain dim mono text, separated by middots,
- * so the row's own tap target is unambiguous.
+ * The story's own filter chips: which of the four topics it belongs to, and which sport.
+ *
+ * Ashwin, 2026-09-13: "why do none of the stories on this page have any of the topic tags
+ * on them? ... we want to have the topics, themes, and sports associated with them visible
+ * so people can see them on that page itself." The rail counted them and the filter pages
+ * found them, and the rows said nothing, which made the whole taxonomy invisible at the
+ * only place a reader actually looks.
+ *
+ * A story can hold more than one topic, so this is a row and not a single label. Each chip
+ * goes to that filter over the last sixty days, which is the point of tagging at all.
  */
-function TopicLabels({ topics }: { topics: DigestTopic[] }) {
-  if (!topics || topics.length === 0) return null;
-  const seen = new Set<string>();
-  const labels = topics
-    .map((t) => t.label)
-    .filter((l) => {
-      const k = l.toLowerCase();
-      if (seen.has(k)) return false;
-      seen.add(k);
-      return true;
-    })
-    .slice(0, 6);
-  if (labels.length === 0) return null;
+function FacetChips({ item }: { item: DigestItem }) {
+  const chips = storyChips(item);
+  if (chips.length === 0) return null;
+  return (
+    <div className="mt-2 flex flex-wrap gap-1.5">
+      {chips.map((c) => (
+        <Link
+          key={c.key}
+          href={c.href}
+          className="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10px] leading-tight transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+          style={{
+            ...MONO,
+            // Topics are the top of the taxonomy and are tinted; a sport is one level
+            // down and stays quiet, or four chips of equal weight become a wall.
+            color: c.kind === "topic" ? "var(--accent)" : "var(--text-muted)",
+            borderColor: c.kind === "topic" ? "var(--accent)" : "var(--border)",
+            backgroundColor: "var(--bg-card)",
+          }}
+        >
+          {c.icon && <span aria-hidden>{c.icon}</span>}
+          {c.label}
+        </Link>
+      ))}
+    </div>
+  );
+}
+
+/**
+ * Analytical themes, the long tail of the taxonomy. Chip-shaped like the rest would give
+ * a row of eight identical pills, so these keep the quieter mono line they have always
+ * had. They ARE links now: every theme has a filter page, which was not true when this
+ * was written.
+ */
+function ThemeLabels({ item }: { item: DigestItem }) {
+  const themes = storyThemes(item).slice(0, 6);
+  if (themes.length === 0) return null;
   return (
     <p
       className="mt-1.5 text-[10px] uppercase tracking-widest"
       style={{ ...MONO, color: "var(--text-dim)" }}
     >
-      {labels.join(" · ")}
+      {themes.map((t, i) => (
+        <span key={t.id}>
+          {i > 0 && " · "}
+          <Link href={t.href} className="hover:text-[var(--accent)] transition-colors">{t.label}</Link>
+        </span>
+      ))}
     </p>
   );
 }
@@ -154,7 +196,8 @@ export function DigestItemRow({
       </a>
       <p className="text-[13px] text-[var(--text-muted)] mt-1 leading-relaxed">{item.why}</p>
       <EntityChips entities={item.entities} omit={omit} />
-      <TopicLabels topics={item.topics} />
+      <FacetChips item={item} />
+      <ThemeLabels item={item} />
     </li>
   );
 }
@@ -207,11 +250,16 @@ export function DigestDayView({
   items,
   dates,
   isLatest,
+  facets,
+  windowDays,
 }: {
   day: string;
   items: DigestItem[];
   dates: { date: string; count: number }[];
   isLatest: boolean;
+  /** Counted across the filter window, not this day, because that is what the rail links to. */
+  facets: DigestFacets;
+  windowDays: number;
 }) {
   // A day can carry every story its post linked (up to 43), so the phone gets the first
   // PHONE_ROWS with the rest one tap away. ShowMore rather than CappedList: CappedList
@@ -230,27 +278,43 @@ export function DigestDayView({
         stamp={`As of ${fmtDigestDate(day, "stamp")} · ${plural(items.length, "stories")} · Source: Daily Newsletter Digest`}
       />
 
+      {/* What's on, above the stories: the season state of every sport plus the confirmed
+          elections. Only on the latest day, because a panel of what is running now on top
+          of an archived day from June reads today's calendar next to last quarter's news. */}
+      {isLatest && <WhatsOn />}
+
       <section id="stories" className="mb-10">
         <SectionHead
           eyebrow={isLatest ? "Latest digest" : undefined}
           title={fmtDigestDate(day)}
           sub="In the digest's order. Headlines open the publisher's page; some are paywalled."
         />
-        <div className="max-w-3xl">
-          <ol>
-            {head.map((it) => (
-              <DigestItemRow key={it.position} item={it} showNumber />
-            ))}
-          </ol>
-          {tail.length > 0 ? (
-            <ShowMore label={`Show all ${items.length} stories`}>
-              <ol start={PHONE_ROWS + 1}>
-                {tail.map((it) => (
-                  <DigestItemRow key={it.position} item={it} showNumber />
-                ))}
-              </ol>
-            </ShowMore>
-          ) : null}
+        {/* Three columns where there is room for three: filters, stories, the two
+            industry calendars. Below xl the events drop under the stories and span the
+            story column rather than squeezing it, and on a phone everything stacks. */}
+        <div className="lg:grid lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-8 xl:grid-cols-[13rem_minmax(0,1fr)_15rem]">
+          {/* Counts are WINDOW counts, not this day's, because that is where the links
+              lead. A rail counting today and linking to sixty days would lie twice. */}
+          <FilterRail facets={facets} windowDays={windowDays} />
+          <div className="max-w-3xl min-w-0">
+            <ol>
+              {head.map((it) => (
+                <DigestItemRow key={it.position} item={it} showNumber />
+              ))}
+            </ol>
+            {tail.length > 0 ? (
+              <ShowMore label={`Show all ${items.length} stories`}>
+                <ol start={PHONE_ROWS + 1}>
+                  {tail.map((it) => (
+                    <DigestItemRow key={it.position} item={it} showNumber />
+                  ))}
+                </ol>
+              </ShowMore>
+            ) : null}
+          </div>
+          <div className="mt-6 min-w-0 lg:col-start-2 xl:col-start-3 xl:mt-0">
+            <EventsColumn />
+          </div>
         </div>
       </section>
 
@@ -284,15 +348,29 @@ export function DigestArchive({ dates, current }: { dates: { date: string; count
   const stories = dates.reduce((n, d) => n + d.count, 0);
   return (
     <section id="archive" className="mb-10">
-      <SectionHead
-        title="The archive"
-        sub={`Every past digest, ${plural(dates.length, "days")} and ${stories.toLocaleString("en-GB")} stories. Pick a day to read it.`}
-      />
-      <div className="max-w-3xl space-y-3">
-        {months.map((m, i) => (
+      {/* Ashwin, 2026-09-13: "I don't really want to see the archive with every day
+          listed visibly. It can exist, but it shouldn't be highly visible." So the whole
+          thing is one closed row. It stays in the HTML, so it is still crawlable and
+          still reachable, but a reader who wants today's digest is not scrolling past
+          eighty-three dates to leave. The month list inside is unchanged, except that no
+          month starts open any more: opening the archive should show the shape of it,
+          not dump September into your lap. */}
+      {/* 🔴 desktopOpen={false} IS THE WHOLE FIX. Disclosure defaults it to TRUE, and
+          globals.css then force-reveals the body above 640px whatever `open` says, so
+          wrapping the archive in a plain Disclosure collapsed it on a phone and left it
+          wide open on the desktop where Ashwin was looking at it. Its own doc comment
+          names this flag for "a genuinely optional appendix"; the archive is one. */}
+      <Disclosure
+        desktopOpen={false}
+        title={<h2 className="text-base font-bold">Browse the archive</h2>}
+        meta={`${plural(dates.length, "days")} · ${stories.toLocaleString("en-GB")} stories`}
+      >
+      <div className="max-w-3xl space-y-3 p-3">
+        {months.map((m) => (
           <Disclosure
             key={m.ym}
-            defaultOpen={i === 0}
+            defaultOpen={false}
+            desktopOpen={false}
             title={<h3 className="text-base font-bold">{MONTH(m.ym)}</h3>}
             meta={`${plural(m.days.length, "days")} · ${m.days.reduce((n, d) => n + d.count, 0)} stories`}
           >
@@ -321,7 +399,96 @@ export function DigestArchive({ dates, current }: { dates: { date: string; count
           </Disclosure>
         ))}
       </div>
+      </Disclosure>
     </section>
+  );
+}
+
+/**
+ * One filter's results across the window, newest day first, with a date heading whenever
+ * the day changes. Ashwin, 2026-09-13: "you can show the latest ones at the top from that
+ * date and then onwards every time."
+ *
+ * The rail stays, so a reader can move sideways between filters without going back first.
+ */
+export function DigestFilterView({
+  facets, current, label, hubHref, items, windowDays, latest,
+}: {
+  facets: DigestFacets;
+  current: { group: FacetGroup; slug: string };
+  label: string;
+  /** The site hub this filter names, for sports and competitions. */
+  hubHref?: string;
+  items: DigestItem[];
+  windowDays: number;
+  latest: string | null;
+}) {
+  const days: { date: string; items: DigestItem[] }[] = [];
+  for (const it of items) {
+    const last = days[days.length - 1];
+    if (last && last.date === it.digestDate) last.items.push(it);
+    else days.push({ date: it.digestDate, items: [it] });
+  }
+  return (
+    <main className="mx-auto max-w-6xl px-4 py-8">
+      <nav className="text-xs text-[var(--text-muted)] mb-4">
+        <Link href="/" className="inline-flex items-center min-h-[44px] -my-2 hover:underline">Home</Link>
+        {" / "}
+        <Link href="/digest" className="inline-flex items-center min-h-[44px] -my-2 hover:underline">Digest</Link>
+        {" / "}
+        <span>{label}</span>
+      </nav>
+      <TabHeader
+        emoji="📰"
+        title={label}
+        sub={`Every story tagged ${label.toLowerCase()} from the last ${windowDays} days of the digest, newest first.`}
+        stamp={`${plural(items.length, "stories")} · ${plural(days.length, "days")}${latest ? ` · latest ${fmtDigestDate(latest, "stamp")}` : ""}`}
+      />
+      {/* The hub link lives here rather than on the rail. Ashwin's reason for shaping the
+          sports rail like the hubs was "it makes it easier for those stories to be linked
+          to those hubs directly", and this is where that link belongs: a reader who
+          filtered to Premier League wanted the stories, and can then step across to the
+          competition itself. */}
+      {hubHref && (
+        <p className="-mt-4 mb-6 text-xs">
+          <Link href={hubHref} className="text-[var(--accent)] hover:underline">
+            {label} on this site →
+          </Link>
+        </p>
+      )}
+      <div className="lg:grid lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-8">
+        <FilterRail facets={facets} current={current} windowDays={windowDays} />
+        <div className="max-w-3xl min-w-0">
+          {days.length === 0 ? (
+            <p className="text-sm text-[var(--text-muted)]">
+              Nothing under this filter in the last {windowDays} days.{" "}
+              <Link href="/digest" className="text-[var(--accent)] hover:underline">Back to the digest</Link>.
+            </p>
+          ) : (
+            // Bounded by the window: at most ~60 day groups, each at most ~43 stories.
+            <div data-mobile-uncapped="bounded: one filter over a 60-day window">
+              {days.map((d) => (
+                <section key={d.date} className="mb-6">
+                  <h2 className="mb-1 text-[11px] uppercase tracking-widest" style={{ ...MONO, color: "var(--text-muted)" }}>
+                    <Link href={`/digest/${d.date}`} className="hover:text-[var(--accent)]">
+                      {fmtDigestDate(d.date)}
+                    </Link>
+                  </h2>
+                  <ul>
+                    {d.items.map((it) => (
+                      <DigestItemRow key={`${it.digestDate}-${it.position}`} item={it} />
+                    ))}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+      <div className="mt-10">
+        <DigestSources />
+      </div>
+    </main>
   );
 }
 
