@@ -1,6 +1,27 @@
 {
-  "generated_at": "2026-09-13T14:43:28.378603+00:00",
+  "generated_at": "2026-09-13T16:23:37.555305+00:00",
   "jobs": [
+    {
+      "id": "football-standings",
+      "label": "Football live standings",
+      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00",
+        "11:00",
+        "17:00",
+        "23:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-13T17:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-13",
+        "status": "ok",
+        "slot": "2026-09-13T11:00:00+00:00"
+      }
+    },
     {
       "id": "ops-autofix",
       "label": "Ops autofix (whitelist, acts on production)",
@@ -23,32 +44,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-13T16:15:00+00:00",
+      "next_run": "2026-09-13T18:15:00+00:00",
       "last_run": {
         "date": "2026-09-13",
         "status": "ok",
-        "slot": "2026-09-13T14:15:00+00:00"
-      }
-    },
-    {
-      "id": "football-standings",
-      "label": "Football live standings",
-      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:00",
-        "11:00",
-        "17:00",
-        "23:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-13T17:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-13",
-        "status": "ok",
-        "slot": "2026-09-13T11:00:00+00:00"
+        "slot": "2026-09-13T16:15:00+00:00"
       }
     },
     {
