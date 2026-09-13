@@ -14358,3 +14358,36 @@ Ashwin asked for a pointer message for Windows Claude. The facts it rests on, ea
   "Daily Digest Watchdog" and "Metro Power Rankings Weekly" DISABLED. A Windows publish makes Spotify
   reject the Mac's episode as a duplicate (it happened during the June cutover). Not yet confirmed.
 - History: 2026-09-10 mini entry, section A (OAuth expiry, repo versioned).
+
+### F. The digest feed's WRITER now exists (newsletter-podcast `fc1b02d`); 09-13 is live in Supabase
+`9e13dadce` (Ashwin, 09:32) added the READER, `lib/digestFeed.ts`, whose header says the mini's pipeline
+writes `digest_run`/`digest_item`. Nothing did: both tables were empty and no `push_feed.py`/`feed.json`
+existed. Built on the mini, in the private newsletter-podcast repo:
+
+- **`editorial-prompt.md`**: the headless editorial step now writes
+  `builds/daily-newsletter-digest/<date>/feed.json` daily: 8–12 items `{headline, source_name, url, why,
+  entities}`, entities metro/country only.
+- **`push_feed.py`**: validate → upsert `digest_run` → delete that date's items → insert. Idempotent
+  (re-push of 09-13 read `0-11/12`). Service key from `~/.config/metro-supabase/env`. `--dry-run`.
+  - 🔴 **Public-page guard:** opaque email redirects are DROPPED, never published. Today's own socials
+    carried `nl.nytimes.com/f/newsletter/…`, which can carry a per-subscriber token identifying
+    Ashwin's subscription. Also dropped: Google `/url` wrappers, `substack.com/redirect`, `email.*`,
+    `click.*`, list-manage and similar; tracking params stripped; Ashwin's own Substack dropped.
+  - Entities kept only if the slug exists in `public/data/metros.json` / `countries.json`. The check
+    caught a real miss on its first run: `baltimore` is not a metro, **`washington-baltimore`** is (Ashwin
+    confirmed); the prompt now says so.
+  - Zero valid items writes nothing, so a bad `feed.json` cannot wipe a good earlier push.
+- **`post-socials.sh`** runs it before the Gmail drafts, non-fatal.
+- **Backfilled 09-13:** 12 items written by hand from that day's `socials/substack.md` (the NYT-redirect
+  story left out), pushed, and read back with the anon key exactly as `lib/digestFeed.ts` queries:
+  run row `item_count 12`, latest date `2026-09-13`, `entities=cs.` finds 1 for `washington-baltimore`
+  and 6 for `united-states`; an anon INSERT gets 401.
+- **First real test is tomorrow, 09-14 ~08:20 BST**: the first time the headless model writes
+  `feed.json` itself. Check `logs/2026-09-14.log` for `[push_feed] pushed N item(s)`. If the model skips
+  the file, the log says `no feed.json … nothing pushed` and the episode and drafts are unaffected.
+
+**🔴 For the renderer session (site side, not touched here):** `entityHref` in `lib/digestFeed.ts`
+maps `club` → `/clubs/<slug>` and `league` → `/leagues/<slug>`, but **neither route exists in `app/`**
+(checked 09-13; team pages live under `/teams/<sport>`). Once rendered they would be dead links. The
+writer never emits those types, so nothing is broken today, but fix the mapping or add the routes before
+allowing them.
