@@ -9,7 +9,7 @@ import { fetchEspnJson } from "@/lib/espnFetch";
 // Mirrors lib/nba-standings.ts / lib/standings.ts: fetched server-side with ISR
 // (revalidate 1800, 5s timeout), shaped defensively, empty snapshot on failure.
 // Consumed by app/teams/cfb/page.tsx (standings + rankings) and
-// app/sports/standings/page.tsx (rankings only).
+// app/sports/standings/liveData.tsx (rankings only).
 //
 // Server-only — scripts/check-client-imports.mjs should list @/lib/cfb-live.
 

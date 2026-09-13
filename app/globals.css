@@ -247,6 +247,23 @@ details.jump-open:target::details-content {
   block-size: auto;
 }
 
+/* Country-page sections carry their id on the wrapping <section>, not the <details>, so
+   the rules above never match them. A section-nav jump to one of them (a phone, where
+   they ship closed) reveals it the same way. Collapsible.tsx sets data-jump-reveal. */
+section:target > details[data-jump-reveal] > *:not(summary) { display: revert; }
+section:target > details[data-jump-reveal]::details-content {
+  content-visibility: visible;
+  block-size: auto;
+}
+
+/* HeadlineTicker: each headline fades up as it arrives. The reduced-motion block
+   below zeroes the animation, and the ticker also stops auto-advancing there. */
+@keyframes ticker-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.ticker-in { animation: ticker-in 380ms ease-out; }
+
 /* A ShowMore inside a divided list needs the hairline above its control,
    because the control is the list's last child and `divide-y` only draws
    BETWEEN children it can see. The revealed rows themselves are styled by

@@ -16,6 +16,8 @@ import Link from 'next/link';
 import FollowingRail from './FollowingRail';
 import { getRecentDigestItems } from '@/lib/digestFeed';
 import { DigestItemRow, fmtDigestDate } from './digest/_shared/ui';
+import HeadlineTicker from './HeadlineTicker';
+import OnTodayTicker from './OnTodayTicker';
 
 // Directory-forward landing page. Surfaces the breadth of the site first —
 // four ranked indices (each with a live top-three preview), a Greatest Games
@@ -465,9 +467,14 @@ export default async function Home() {
   const badges = getLiveBadges();
   const games = [...clubBallGames(), ...marqueeGames(), ...ballGames()];
   const forecast = await getForecast();
-  // Newest digest first; six rows is two full rows of the three-column grid.
-  const digest = await getRecentDigestItems(6);
-  const digestDate = digest[0]?.digestDate ?? null;
+  // Newest digest first. The masthead ticker cycles up to 12 of the newest day's headlines;
+  // the "From the digest" section below keeps six (two full rows of its three-column grid).
+  const digestRecent = await getRecentDigestItems(12);
+  const digestDate = digestRecent[0]?.digestDate ?? null;
+  const digest = digestRecent.slice(0, 6);
+  const tickerItems = digestRecent
+    .filter((it) => it.digestDate === digestDate)
+    .map((it) => ({ headline: it.headline, sourceName: it.sourceName, url: it.url }));
 
   const INDICES: IndexCard[] = [
     { n: '01', title: 'Metro Power Rankings', desc: 'Every metro on Earth, scored across sixteen weighted dimensions.', stat: '4,200+ metros', href: '/rankings', emoji: '🌐', preview: topMetros() },
@@ -566,6 +573,14 @@ export default async function Home() {
                 </a>
               )}
             </div>
+            {/* Today's headlines, cycling (Ashwin 2026-09-13): on desktop it fills the ~258px
+                the left column ran short of the right one at 1280 and 1440; outside the
+                desktop-only promo block so phones get it too, directly under the intro. */}
+            {digestDate && tickerItems.length > 0 && (
+              <div className="max-w-lg">
+                <HeadlineTicker items={tickerItems} dateLabel={fmtDigestDate(digestDate, 'stamp')} />
+              </div>
+            )}
           </div>
 
           {/* Explore launcher — quick visual entry to every section + the games. */}
@@ -641,6 +656,10 @@ export default async function Home() {
                 <Link href="/sports/standings" className="inline-flex items-center gap-1 text-xs mb-2 hover:opacity-80 transition-opacity" style={{ ...MONO, color: 'var(--accent)' }}>
                   📊 Live standings <span aria-hidden>→</span>
                 </Link>
+                {/* Today's fixtures cycling under the link (Ashwin 2026-09-13), the same list as
+                    the standings page's "On today" strip, fetched from /api/on-today after load
+                    so this page does not have to build every league block. */}
+                <OnTodayTicker />
                 <div className="flex flex-wrap items-center gap-2">
                   {liveLeagues.map((l) => {
                     const isWC = l.href === '/teams/national';

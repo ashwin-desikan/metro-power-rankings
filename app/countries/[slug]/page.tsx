@@ -26,7 +26,6 @@ import CountryNav, { type CountryNavItem } from "./CountryNav";
 import MetrosExplorer from "./MetrosExplorer";
 import SubdivisionsExplorer from "./SubdivisionsExplorer";
 import { withIcon } from "./sectionIcons";
-import MobileCollapse from "./MobileCollapse";
 import { getCountryTitles } from "@/lib/championsHistory";
 import { competitionHref } from "@/lib/competitionLinks";
 import { sportIcon } from "@/lib/sportLabels";
@@ -512,8 +511,6 @@ export default async function CountryDetailPage({ params }: Props) {
             return navItems.length > 1 ? <CountryNav items={navItems} /> : null;
           })()}
 
-          {/* Renders nothing; closes the collapseOnMobile sections on phones. */}
-          <MobileCollapse />
 
           {/* ================= REGIONS ==================================
               Deliberately first (2026-08-04). This is what the site is
@@ -832,6 +829,18 @@ export default async function CountryDetailPage({ params }: Props) {
                 page states its as-of date up front rather than 800 lines down. */}
           </footer>
         </div>
+        {/* Same idiom as /sports/standings: after the markup exists, a desktop turns each
+            data-desktop-default-open section into a real `open` (foldable from then on)
+            and a phone simply drops the attribute, leaving it closed as it shipped. Runs
+            before paint, so nothing moves after load. See Collapsible.tsx. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var d=window.matchMedia('(min-width:640px)').matches;" +
+              "document.querySelectorAll('details[data-desktop-default-open]').forEach(function(e){" +
+              "if(d)e.open=true;e.removeAttribute('data-desktop-default-open');});})();",
+          }}
+        />
       </main>
     </>
   );

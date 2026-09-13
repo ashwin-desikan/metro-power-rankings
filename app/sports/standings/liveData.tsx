@@ -1,0 +1,1886 @@
+import "server-only";
+
+// Everything /sports/standings needs to BUILD its data: the league blocks, the
+// On today / Recent results / Coming up event collection, and the components those
+// blocks render. Split out of page.tsx on 2026-09-13 so a second surface can share
+// the exact same "On today" list (the homepage ticker, via /api/on-today): a Next
+// page file may not export helpers, and a copy would drift. page.tsx keeps only
+// its metadata and JSX and calls loadLiveStandings().
+
+import type { ReactElement } from "react";
+import Link from "next/link";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
+import LocalTime from "./LocalTime";
+
+import { getCurrentNflStandings } from "@/lib/standings";
+import { getCurrentNbaStandings } from "@/lib/nba-standings";
+import { getCurrentNhlStandings } from "@/lib/nhl-standings";
+import { getCurrentMlbStandings } from "@/lib/mlb-standings";
+import { getMlbSim, getMlbPostseason, playoffOddsByCanonical, fmtOdds } from "@/lib/mlbSim";
+import { getSeasonSim, simIsCurrent, simBySlug, simByName } from "@/lib/seasonSim";
+import { getCurrentMlsStandings } from "@/lib/mls-standings";
+import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
+import { getLiveCflStandings } from "@/lib/cflStandings";
+import { getLiveF1Standings } from "@/lib/f1Standings";
+import { getF1TitleOdds, f1OddsAreCurrent, f1OddsByName, normDriver, normConstructor } from "@/lib/f1TitleOdds";
+import { getPlSim, getPlPredictions } from "@/lib/plSim";
+import { getUclSim } from "@/lib/uclSim";
+import { getNflSim, getNflPredictions } from "@/lib/nflSim";
+import { getCfbSim, getCfbPredictions } from "@/lib/cfbSim";
+import { getNflSeeds } from "@/lib/nflElo";
+import { getNpbStandings } from "@/lib/npbStandings";
+import { getClubStandings, getClubCompetitions, getInternationalComps, getDomesticCups, getSuperCups, getLeagueFixtures, type LiveLeague, type LiveComp, type LiveRow, type LiveFixture, type LiveTeamRef } from "@/lib/clubFootballLive";
+import { deriveLeaguePhaseGroups } from "@/lib/euroCompDerive";
+import { getFootyLiveStandings } from "@/lib/_footyStandings";
+import { getFootyFinals, finalsIsCurrent } from "@/lib/footyFinals";
+import { getLiveGolfMajor } from "@/lib/golfLeaderboard";
+import { getLiveTennisSlam } from "@/lib/tennisDraw";
+import { f1ConstructorCrestName } from "@/lib/f1Crest";
+import { getWtcStandings } from "@/lib/wtcStandings";
+import { getRugbyFixtures, type RugbyMatch } from "@/lib/rugbyFixtures";
+import { getRugbyStandings, rugbyAllRows, RUGBY_COMPS, type RugbyCompKey, type RugbyStandingRow } from "@/lib/rugbyStandings";
+import { getEuroleagueStandings, EUROLEAGUE_FULL_SEASON, type EuroleagueRow } from "@/lib/euroleagueStandings";
+import { rugbyClubColor, rugbyMonogram } from "@/lib/rugby-colors";
+import { euroleagueClubColor, euroleagueMonogram } from "@/lib/euroleague-colors";
+import { getCfbRankings, cfbSeasonStarted } from "@/lib/cfb-live";
+import { getWLiveLeagues, getWLiveCompetition, getWLiveOdds, type WLiveLeagueVM, type WLiveFixtureVM, type WLiveOddsVM } from "@/lib/wLive";
+import { getCricketFixtures, type CricketMatch } from "@/lib/cricketFixtures";
+
+import { getAllFranchises as nflFranchises, logoUrlFor as nflLogo, monogramFor as nflMono } from "@/lib/nfl";
+import { getAllFranchises as nbaFranchises, logoUrlFor as nbaLogo, monogramFor as nbaMono } from "@/lib/nba";
+import { getAllFranchises as mlbFranchises, logoUrlFor as mlbLogo, monogramFor as mlbMono } from "@/lib/mlb";
+import { getAllFranchises as nhlFranchises, logoUrlFor as nhlLogo, monogramFor as nhlMono } from "@/lib/nhl";
+import { getWnbaFranchiseByTeamName, monogramFor as wnbaMono } from "@/lib/wnba";
+import { getAllAflFranchises } from "@/lib/afl";
+import { getAllNrlFranchises } from "@/lib/nrl";
+import { getFootballClubByName } from "@/lib/football";
+import { flagCdnUrl } from "@/lib/international-display";
+// Season gating: see lib/seasonWindows.ts for why a calendar window sits
+// alongside the games check rather than replacing it.
+import { isLeagueLive, inSeasonWindow, tournamentIsCurrent, type SeasonKey } from "@/lib/seasonWindows";
+import { CappedList } from "@/app/_shared/Disclosure";
+import { DataBar } from "@/app/_shared/DataBar";
+import { getEspnFinals, sameTeam, type EspnFinal } from "@/lib/espnScores";
+
+const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
+const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
+
+// ---- shared model -------------------------------------------------------
+// A cell is a primitive, or a React element for the one case that needs
+// client behaviour: LocalTime, which re-formats a kick-off into the
+// viewer's own zone after hydration. cellNum (the in-cell bar) already
+// returns null for anything it cannot parse, so an element is inert there.
+type Cell = string | number | ReactElement;
+type Mono = { text: string; bg: string; fg: string };
+type SRow = { rank: number | string | null; name: string; href?: string | null; logoUrl?: string | null; flagUrl?: string | null; crestName?: string | null; monogram?: Mono | null; cells: Cell[]; po?: boolean; cut?: boolean };
+// `fixtures`: rows are matches, not ranked clubs. No rank column, and the
+// name cell wraps instead of forcing the table wider than its box (a finals
+// week label plus two club names put a scrollbar on the NRL block, 2026-09-08).
+type SubTable = { title: string | null; columns: string[]; rows: SRow[]; fixtures?: boolean };
+// One fixture or result, in a shape the Today box at the top of the page can
+// coalesce across sports (Ashwin, 2026-09-11: "what events are happening today
+// and what results just recently happened, instead of having to scroll
+// through all of live standings"). Blocks that build fixture rows also push
+// their events here; `when` is the ISO instant, `score` is set once played.
+// `teams` is set only where a block knows its sides by name (the Premier League, NFL
+// and college football ledgers), so collectEvents can lend such a game ESPN's final
+// score before the grading job has run. The label stays the display string.
+export type LiveEvent = { sport: string; league: string; href: string | null; label: string; when: string; score: string | null; live: boolean; teams?: { home: string; away: string } };
+type Block = { league: string; href: string | null; note: string | null; open: boolean; subTables: SubTable[]; cols?: boolean; live?: boolean; cutNote?: string | null; events?: LiveEvent[] };
+export type SportGroup = { sport: string; blocks: Block[]; columns?: [Block[], Block[]] };
+
+// The Football section on Live Standings renders as two columns: the LEFT column
+// holds international + European competitions, the RIGHT column holds domestic
+// leagues, each in the order below. When a NEW football table is added, place it
+// in the correct column at the correct rank (ask which column + slot if unsure);
+// anything not listed appends to the end of the right column.
+const FOOTBALL_LEFT = [
+  "Champions League",
+  "Europa League",
+  "Conference League",
+  "Copa Libertadores",
+];
+const FOOTBALL_RIGHT = [
+  "Premier League", "La Liga", "Bundesliga", "Serie A", "Ligue 1",
+  "Eredivisie", "Primeira Liga", "Scottish Premiership",
+  "MLS",
+];
+const orderBy = (list: string[]) => (a: Block, b: Block): number => {
+  const ia = list.indexOf(a.league);
+  const ib = list.indexOf(b.league);
+  return (ia === -1 ? list.length : ia) - (ib === -1 ? list.length : ib);
+};
+
+const DASH = "—";
+
+// ---- the ordering column, encoded in the cell that already prints it ------
+//
+// Every standings sub-table here is ordered by exactly one column, and until
+// now that column was a bare number in a row of bare numbers: the reader had to
+// scan the whole column to see a runaway leader or a tight middle. The bar goes
+// in the cell that is already rendering the figure, so no width, no chart, no
+// second table.
+//
+// PCT before PTS/Pts because where both exist (MLB, the World Test
+// Championship) PCT is the column the table is sorted by. Fixture and results
+// sub-tables carry none of these names, so they are skipped without a special
+// case. A column with any unparseable cell is skipped too: half a bar column is
+// worse than none.
+const BAR_COLS = ["PCT", "PTS", "Pts"];
+
+function cellNum(c: Cell): number | null {
+  if (typeof c === "number") return isFinite(c) ? c : null;
+  const s = String(c).trim();
+  if (!s || s === DASH) return null;
+  const v = Number(s);
+  return isFinite(v) ? v : null;
+}
+
+// 🔴 max is the COLUMN's own maximum over the sub-table's FULL row set,
+// computed once here and passed to every row. Never per row, never over a
+// slice: a per-row max draws every bar full and says nothing.
+function barColumn(st: SubTable): { index: number; max: number } | null {
+  const name = BAR_COLS.find((c) => st.columns.includes(c));
+  if (!name) return null;
+  const index = st.columns.indexOf(name);
+  const vals = st.rows.map((r) => cellNum(r.cells[index]));
+  if (vals.length === 0 || vals.some((v) => v === null)) return null;
+  const max = Math.max(...(vals as number[]));
+  return max > 0 ? { index, max } : null;
+}
+export const slugId = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+// Three decimals, leading zero stripped (".600") -- the convention every
+// baseball and gridiron table on this page already uses. Accepts a STRING too:
+// the NPB feed hands back WinningPercentage pre-formatted to five decimals
+// ("0.53846"), which was rendering raw and made NPB the only table here
+// quoting a win percentage to five places. An unparseable string (the feed's
+// own "—" for a team with no games) passes through untouched.
+const pct3 = (v: number | string | null | undefined): Cell => {
+  if (v === null || v === undefined) return DASH;
+  // Number("") is 0, not NaN, so an empty cell would read ".000" -- a real
+  // record of no wins rather than no games. Reject it before parsing.
+  if (typeof v === "string" && v.trim() === "") return DASH;
+  const n = typeof v === "number" ? v : Number(v);
+  if (!Number.isFinite(n)) return typeof v === "string" ? v : DASH;
+  return n.toFixed(3).replace(/^0/, "");
+};
+// An UPCOMING fixture's kick-off. The server renders a UTC string (stable, so
+// hydration matches); LocalTime then swaps in the viewer's own zone after
+// mount, adding the time when the feed supplies one. Pass withTime=false for a
+// feed that gives a date and no kick-off -- the rugby block is the one case --
+// so a real midnight UTC fixture is never confused with "time unknown".
+const kickoff = (iso: string | null | undefined, withTime = true, weekday = false): Cell => {
+  if (!iso) return "";
+  const d = new Date(withTime ? iso : `${iso}T00:00:00Z`);
+  if (Number.isNaN(d.getTime())) return "";
+  const day = weekday ? `${d.toLocaleDateString("en-GB", { weekday: "short", timeZone: "UTC" }).toUpperCase()} ` : "";
+  const date = `${day}${d.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" })}`;
+  const fallback = withTime
+    ? `${date}, ${d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "UTC" })} UTC`
+    : date;
+  return <LocalTime iso={d.toISOString()} fallback={fallback} withTime={withTime} weekday={weekday} />;
+};
+
+const num = (v: number | null | undefined): Cell => (v === null || v === undefined ? DASH : v);
+
+// One freshness rule for the season sims joined onto these tables (PL, UCL,
+// NFL, CFB): generated within the last ten days, same test lib/seasonSim
+// applies, so a dead refresh job fades its odds out rather than pinning a
+// stale column beside a live table. `season` is checked where the file
+// carries one in the table's own shape.
+const simFresh = (generatedAt: string | null | undefined, days = 10): boolean => {
+  if (!generatedAt) return false;
+  const age = Date.now() - new Date(generatedAt.length === 10 ? `${generatedAt}T00:00:00Z` : generatedAt).getTime();
+  return Number.isFinite(age) && age < days * 24 * 3600 * 1000;
+};
+
+// Recent form and current streak. Both ride feeds the page already fetches:
+// `form` on every api-football LiveRow, `streak` on the four ESPN majors and
+// the WNBA. Neither reached the page until 2026-09-01.
+//
+// ORDER (the part that is easy to get wrong): the api-football bundle returns
+// `form` NEWEST-FIRST. Verified 2026-09-01 against the fixture list in the
+// same bundle - AEK Athens carried "WD" over a 0-0 on 18 Aug followed by a
+// 4-0 on 26 Aug, and nine further samples agreed. Every league site renders
+// form left-to-right oldest-to-newest, so the string is REVERSED here for
+// display. Do not "correct" it back without re-running that check.
+const form5 = (v: string | null | undefined): Cell =>
+  v ? v.slice(0, 5).split("").reverse().join("") : DASH;
+
+// ESPN ships the streak as a ready display string ("W3", "L1"); this only
+// guards the nulls it leaves in partial or offseason payloads.
+const strk = (v: string | null | undefined): Cell => (v || DASH);
+
+// inSeasonFromGames used to live here. It now sits in lib/seasonWindows.ts
+// paired with a calendar window, because on its own it cannot close a board:
+// a club that ends on 161 of 162 keeps min < fullSeason true forever.
+
+// Playoff-position marking, shared by every table on this page. Rows whose
+// team currently holds a playoff/finals spot get a green tint (`po`), and the
+// last row of a CONTIGUOUS leading run of playoff rows draws the cut line
+// (`cut`). Non-contiguous fields (an NFL wild card sitting below a weak
+// division leader, a CFL crossover) tint correctly and simply skip the line.
+function applyPlayoffMarks<T>(items: T[], rows: SRow[], inField: (t: T) => boolean): void {
+  let contiguous = true;
+  let lastLead = -1;
+  items.forEach((t, i) => {
+    const po = inField(t);
+    if (po) rows[i].po = true;
+    if (po && contiguous) lastLead = i;
+    if (!po) contiguous = false;
+  });
+  const anyBeyond = items.some((t, i) => i > lastLead && inField(t));
+  if (lastLead >= 0 && lastLead < rows.length - 1 && !anyBeyond) rows[lastLead].cut = true;
+}
+
+function buildBlock<T>(opts: {
+  league: string; href: string; note: string | null; open: boolean;
+  items: T[]; columns: string[];
+  sort: (a: T, b: T) => number;
+  groups: { title: string; pick: (t: T) => boolean }[];
+  row: (t: T, i: number) => SRow;
+  // Current playoff field within a sorted group (or the whole sorted table
+  // when the group split does not apply). Only evaluated on live tables -
+  // callers pass undefined in the offseason.
+  playoff?: (sorted: T[]) => (t: T) => boolean;
+  // One line naming what the green tint and the cut line actually mean in THIS
+  // competition ("Top 7 in each conference make the playoffs"). The page header
+  // explains the convention once, ninety words in, which nobody arriving on an
+  // anchor or a shared link ever reads. Borrowed from thestands.com, whose
+  // NWSL table carries "Top 8 make the playoffs - leader holds the Shield"
+  // under the table itself. Only set it where the rule is already established
+  // in code; never guess a format.
+  cutNote?: string | null;
+  /** Fixtures and results for the Today box, when the league has a source. */
+  events?: LiveEvent[];
+}): Block | null {
+  if (opts.items.length === 0) return null;
+  const mk = (items: T[]): SRow[] => {
+    const sorted = items.slice().sort(opts.sort);
+    const rows = sorted.map((t, i) => opts.row(t, i));
+    if (opts.playoff) applyPlayoffMarks(sorted, rows, opts.playoff(sorted));
+    return rows;
+  };
+  const all = mk(opts.items);
+  const grouped: SubTable[] = opts.groups
+    .map((g) => ({ title: g.title, columns: opts.columns, rows: mk(opts.items.filter(g.pick)) }))
+    .filter((st) => st.rows.length > 0);
+  const covered = grouped.reduce((a, st) => a + st.rows.length, 0);
+  const subTables = grouped.length > 0 && covered === all.length ? grouped : [{ title: null, columns: opts.columns, rows: all }];
+  return { league: opts.league, href: opts.href, note: opts.note, open: opts.open, subTables, cutNote: opts.playoff ? opts.cutNote ?? null : null, events: opts.events };
+}
+
+function Marker({ r }: { r: SRow }) {
+  const monoEl = r.monogram
+    ? <span className="inline-flex items-center justify-center rounded-sm font-bold flex-shrink-0" style={{ width: 15, height: 15, background: r.monogram.bg, color: r.monogram.fg, fontSize: 7 }}>{r.monogram.text}</span>
+    : <span className="inline-block flex-shrink-0" style={{ width: 15 }} />;
+  if (r.logoUrl) {
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img src={r.logoUrl} alt="" aria-hidden width={15} height={15} className="object-contain flex-shrink-0" style={{ width: 15, height: 15 }} loading="lazy" decoding="async" />;
+  }
+  if (r.flagUrl) {
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img src={r.flagUrl} alt="" aria-hidden width={18} height={13} className="object-contain flex-shrink-0" style={{ width: 18, height: 13 }} loading="lazy" decoding="async" />;
+  }
+  if (r.crestName) return <TeamCrest name={r.crestName} size={15} fallback={monoEl} />;
+  return monoEl;
+}
+
+function NameCell({ r }: { r: SRow }) {
+  const content = (
+    <span className="inline-flex items-center gap-1.5">
+      <Marker r={r} />
+      <span>{r.name}</span>
+    </span>
+  );
+  return r.href ? <Link href={r.href} className="hover:text-[var(--accent)]">{content}</Link> : content;
+}
+
+// ---- The Today box --------------------------------------------------------
+//
+// 🔴 THE ADMISSION RULES, as Ashwin set them on 2026-09-11, for every source
+// that joins the box now or later (a league joins by pushing LiveEvents from
+// its block, or from the page for a feed with no block):
+//   - In: the club comps, the domestic and super cups (no qualifying rounds),
+//     the Premier League, the internationals, the UWCL, rugby and cricket
+//     internationals, a slam's rounds, the AFL and NRL finals, NFL, college
+//     football (AP Top 25 involvement), Formula 1 sessions.
+//   - Playoffs only: MLB, WNBA and NPB; the regular season's daily volume is
+//     never listed, the postseason always is.
+//   - Regular season and playoffs: NBA and NHL, once their seasons start.
+//   - College basketball: Top 25 involvement, every game during the NCAA
+//     tournament.
+//   - Every match: the IPL, the Champions Cup (rugby), the EuroLeague.
+//   - Every match: La Liga, Bundesliga, Serie A, Ligue 1, MLS, the WSL and
+//     NWSL, from live-fixtures-2026.json (refresh_league_fixtures.py on the
+//     mini, a week either side of today); the Europa and Conference Leagues
+//     beside the Champions League from the competitions bundle.
+//   - Wanted, no fixture feed on the site yet: CFL; MLB's regular season is
+//     excluded by rule, not by absence.
+//   - Not a scoreboard: no LIVE mark, no in-play count. The strips are the
+//     day's schedule and refresh with the morning jobs and ISR.
+// Six per sport and per competition before a fold; two levels, no deeper.
+// Two collapsed strips above the sections: what is on in the next day and a
+// half, and what finished in the last three days, coalesced from every block
+// that carries fixtures (European and South American club comps, the
+// internationals, the UWCL, rugby and cricket internationals, a slam, the AFL
+// and NRL finals). Compact by rule: grouped by sport, at most SIX per sport
+// with a "+N more" pointing at the block, kick-offs in the viewer's zone
+// through the same LocalTime the tables use. Domestic league fixtures are
+// not in the bundle this page reads, so the Premier League and its peers are
+// absent here until they are (Ashwin, 2026-09-11: "compact and collapsible
+// ... I don't want a 10,000-line list of everything happening that day").
+// "Today" is the calendar date wherever it is being played, from its first
+// kick-off in Japan and Australia to its last on the US West Coast (Ashwin,
+// 2026-09-11: "the day should start in Japan/Australia and end on the US West
+// Coast"): the UTC date's window widened by ten hours before and eight after.
+// A gridiron label reads "Away at Home", so its score is turned to read the
+// same way: the ledger stores home first ("27-7"), the strip shows "7–27".
+const awayFirst = (score: string | undefined | null): string | null => {
+  if (!score) return null;
+  const m = score.match(/^(\d+)\s*-\s*(\d+)$/);
+  return m ? `${m[2]}–${m[1]}` : score;
+};
+const TODAY_START_LEAD_MS = 10 * 3600 * 1000;
+const TODAY_END_LAG_MS = 8 * 3600 * 1000;
+// How long after kick-off an unscored game can still be "on today" (see collectEvents).
+const LIVE_GRACE_MS = 5 * 3600 * 1000;
+const RESULTS_BACK_MS = 72 * 3600 * 1000;
+const TODAY_PER_SPORT = 6;
+const COMING_DAYS = 3;
+
+function todayWindow(now: number): [number, number] {
+  const d = new Date(now);
+  const dayStart = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+  return [dayStart - TODAY_START_LEAD_MS, dayStart + 24 * 3600 * 1000 + TODAY_END_LAG_MS];
+}
+
+export function collectEvents(groups: SportGroup[], extra: LiveEvent[] = [], finals: EspnFinal[] = []): { upcoming: LiveEvent[]; coming: LiveEvent[]; results: LiveEvent[] } {
+  const now = Date.now();
+  const [from, to] = todayWindow(now);
+  const all: LiveEvent[] = [];
+  const seen = new Set<string>();
+  const t = (e: { when: string }) => new Date(e.when).getTime();
+  for (const src of [...groups.flatMap((g) => g.blocks.flatMap((b) => b.events ?? [])), ...extra]) {
+    const k = `${src.league}|${src.label}|${src.when}`;
+    if (seen.has(k)) continue;
+    seen.add(k);
+    // A ledger game the grading job has not reached yet borrows ESPN's final score
+    // (lib/espnScores.ts): same league, kick-offs within six hours, both sides
+    // matching by name. Home-first for the Premier League; away-first for gridiron,
+    // the convention its labels ("Away at Home") and awayFirst() already use.
+    let e = src;
+    if (!e.score && e.teams && finals.length > 0) {
+      const f = finals.find((x) =>
+        x.league === e.league &&
+        Math.abs(t(x) - t(e)) <= 6 * 3600 * 1000 &&
+        sameTeam(e.teams!.home, x.home) &&
+        sameTeam(e.teams!.away, x.away));
+      if (f) e = { ...e, score: e.sport === "Gridiron" ? `${f.awayScore}–${f.homeScore}` : `${f.homeScore}–${f.awayScore}` };
+    }
+    all.push(e);
+  }
+  // 🔴 A SCHEDULE, NOT A SCOREBOARD (Ashwin, 2026-09-11: "I don't want this to
+  // be a scoreboard that updates all the time. It's just about what's on
+  // schedule, so I can keep track of it at a glance"). A game in play is
+  // simply a game on today, placed by its kick-off like every other; the
+  // `live` flag the blocks still set is not read here and not shown.
+  const open = all.filter((e) => !e.score && Number.isFinite(t(e)));
+  // 🔴 "No score" is not "not played yet". The Premier League, college football and
+  // NFL fixtures here come from the predictions ledgers, which only carry a score
+  // once a scheduled job grades them (predictions-tue/fri, cfb-sun/wed/fri). Until
+  // then a finished game looks unplayed, and because today's window opens 10 hours
+  // before UTC midnight (the day starts in Australia), Saturday's 14:00 UTC kick-offs
+  // were still listed "On today" on Sunday morning (Ashwin, 2026-09-13). A game whose
+  // kick-off is more than LIVE_GRACE_MS old is over, graded or not, so it leaves the
+  // schedule; five hours covers a long college broadcast with overtime.
+  const upcoming = open
+    .filter((e) => t(e) >= Math.max(from, now - LIVE_GRACE_MS) && t(e) <= to)
+    .sort((a, b) => t(a) - t(b));
+  // The three days after today's window, same rules (Ashwin, 2026-09-11:
+  // "anything that's happening tomorrow, let's just say in the next 3 days").
+  const coming = open
+    .filter((e) => t(e) > to && t(e) <= to + COMING_DAYS * 24 * 3600 * 1000)
+    .sort((a, b) => t(a) - t(b));
+  // Results: today and the three days before it (day 0 back to day -3),
+  // measured from today's window rather than a rolling 72 hours.
+  const results = all
+    .filter((e) => !!e.score && Number.isFinite(t(e)) && t(e) >= from - RESULTS_BACK_MS && t(e) <= now)
+    .sort((a, b) => t(b) - t(a));
+  return { upcoming, coming, results };
+}
+
+function EventRow({ e, kind }: { e: LiveEvent; kind: "upcoming" | "results" }) {
+  return (
+    <li className="flex items-baseline justify-between gap-2 text-xs">
+      <span className="min-w-0 truncate">
+        <span className="text-[var(--text)]">{e.label}</span>
+        <span className="text-[var(--text-dim)]"> · {e.league}</span>
+      </span>
+      <span className="flex-shrink-0 max-w-[55%] truncate tabular-nums text-[var(--text-muted)]" style={mono} title={kind === "results" ? e.score ?? undefined : undefined}>
+        {kind === "results"
+          ? <>
+              {/* Weekday AND date (Ashwin, 2026-09-13: a bare "SAT" doesn't say which
+                  Saturday), in the reader's own zone like the kick-offs above. The
+                  date comes from the real kick-off instant, not a UTC-midnight rebuild,
+                  so a 23:30 UTC Saturday game still reads Saturday in New York. */}
+              <span className="text-[var(--text-dim)]">
+                <LocalTime
+                  iso={new Date(e.when).toISOString()}
+                  withTime={false}
+                  weekday
+                  fallback={`${new Date(e.when).toLocaleDateString("en-GB", { weekday: "short", timeZone: "UTC" }).toUpperCase()} ${new Date(e.when).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" })}`}
+                />
+                {" · "}
+              </span>
+              {e.score}
+            </>
+          : kickoff(e.when, e.when.endsWith("T00:00:00Z") ? false : true, true)}
+      </span>
+    </li>
+  );
+}
+
+export function TodayStrip({ title, events, kind, sportOrder, noun }: { title: string; events: LiveEvent[]; kind: "upcoming" | "results"; sportOrder: string[]; noun: string }) {
+  if (events.length === 0) return null;
+  const bySport = new Map<string, LiveEvent[]>();
+  for (const e of events) bySport.set(e.sport, [...(bySport.get(e.sport) ?? []), e]);
+  const sports = [...bySport.keys()].sort((a, b) => {
+    const ia = sportOrder.indexOf(a), ib = sportOrder.indexOf(b);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
+  const summary = `${events.length} ${noun}${events.length === 1 ? "" : "s"} across ${sports.length} sport${sports.length === 1 ? "" : "s"}`;
+  return (
+    <details className="rounded-xl border overflow-hidden" style={cardStyle}>
+      <summary className="cursor-pointer select-none px-4 py-2.5 flex items-center justify-between gap-2">
+        <span className="font-semibold text-sm flex items-center gap-1.5">
+          {title}
+        </span>
+        <span className="text-[10px] text-[var(--text-dim)]">{summary}</span>
+      </summary>
+      <div className="border-t px-3 py-2 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2" style={{ borderColor: "var(--border)" }}>
+        {sports.map((sport) => {
+          const list = bySport.get(sport) ?? [];
+          const head = <a href={`#${slugId(sport)}`} className="hover:text-[var(--accent)]">{sport}</a>;
+          // 🔴 THE THRESHOLD RULE (Ashwin, 2026-09-11): a sport with six or
+          // fewer reads in full; a sport with more folds to one line and opens
+          // on a click, so a slam's first round or a cup weekend never becomes
+          // the page. Six is the number the day's own lists sat at.
+          if (list.length <= TODAY_PER_SPORT) {
+            return (
+              <div key={sport} className="min-w-0">
+                <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-0.5">{head}</div>
+                <ul className="m-0 p-0 list-none space-y-0.5">{list.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
+              </div>
+            );
+          }
+          // Inside a folded sport the same rule runs once more at the
+          // competition level (Ashwin: "for Gridiron ... college football /
+          // NFL level if there are more than six of either of those"): a
+          // competition with six or fewer reads under its own heading, one
+          // with more folds again. Two levels and no deeper.
+          const byLeague = new Map<string, LiveEvent[]>();
+          for (const e of list) byLeague.set(e.league, [...(byLeague.get(e.league) ?? []), e]);
+          return (
+            <details key={sport} className="min-w-0">
+              <summary className="cursor-pointer select-none text-[11px] font-semibold text-[var(--text-muted)] hover:text-[var(--accent)]">
+                {sport} <span className="font-normal text-[var(--text-dim)]">· {list.length} {noun}s</span>
+              </summary>
+              <div className="mt-0.5 space-y-1.5">
+                {[...byLeague.entries()].map(([league, items]) =>
+                  items.length <= TODAY_PER_SPORT ? (
+                    <div key={league}>
+                      {byLeague.size > 1 && <div className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]">{league}</div>}
+                      <ul className="m-0 p-0 list-none space-y-0.5">{items.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
+                    </div>
+                  ) : (
+                    <details key={league}>
+                      <summary className="cursor-pointer select-none text-[10px] uppercase tracking-wider text-[var(--text-dim)] hover:text-[var(--accent)]">
+                        {league} · {items.length} {noun}s
+                      </summary>
+                      <ul className="m-0 p-0 list-none space-y-0.5 mt-0.5">{items.map((e, i) => <EventRow key={`${e.label}-${i}`} e={e} kind={kind} />)}</ul>
+                    </details>
+                  ),
+                )}
+              </div>
+            </details>
+          );
+        })}
+      </div>
+    </details>
+  );
+}
+
+export function LeagueAccordion({ block }: { block: Block }) {
+  if (block.subTables.length === 0) return null;
+  return (
+    /* 🔴 COLLAPSED ON A PHONE, OPEN BY DEFAULT ON A DESKTOP, AND CLOSABLE ON
+       BOTH. This page carries about twenty-five leagues; with every in-season
+       one expanded it opened at 21 screens on a 390px viewport and a reader had
+       to scroll past four sports to reach the fifth. It first used the site's
+       `data-desktop-open` primitive, which force-reveals the content and sets
+       `pointer-events: none` on the summary above 640px: right for a sources
+       card, wrong here, because a reader on a desktop could not fold the NBA to
+       reach the NHL (Ashwin, 2026-09-08; the F1 board hit the same wall the day
+       before). `data-desktop-default-open` is the variant for a DEFAULT, not a
+       fixed state: globals.css reveals the content above 640px so the first
+       paint is already open, and the inline script at the foot of the page
+       swaps the attribute for a real `open` on desktop viewports, after which
+       every block toggles natively at every width. An offseason league carries
+       neither attribute and stays collapsible, which it always was. */
+    <details
+      data-desktop-default-open={block.open ? "" : undefined}
+      // The foot-of-page script flips `open` and drops the attribute before hydration;
+      // silence React's attribute-mismatch warning for this element only (same as Collapsible).
+      suppressHydrationWarning
+      className="rounded-xl border overflow-hidden jump-open"
+      style={cardStyle}
+    >
+      <summary className="cursor-pointer select-none px-4 py-2.5 flex items-center justify-between gap-2">
+        <span className="font-semibold text-sm flex items-center gap-1.5">
+          {block.live && (
+            <span className="inline-block w-2 h-2 rounded-full bg-[#22c55e] animate-pulse flex-shrink-0" aria-label="In season" title="Currently in season" />
+          )}
+          {block.league}
+        </span>
+        <span className="flex items-center gap-2">
+          {block.note && <span className="text-[10px] text-[var(--text-dim)]">{block.note}</span>}
+          {block.href && (
+            <Link
+              href={block.href}
+              className="text-[10px] px-2 py-0.5 rounded-full border text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
+              style={{ borderColor: "var(--border)" }}
+            >
+              Hub ↗
+            </Link>
+          )}
+        </span>
+      </summary>
+      <div className={`border-t px-3 py-3 ${block.cols ? "grid grid-cols-1 md:grid-cols-2 gap-4 items-start" : "space-y-4"}`} style={{ borderColor: "var(--border)" }}>
+        {block.subTables.map((st, si) => {
+          const bar = barColumn(st);
+          return (
+          <div key={si}>
+            {st.title && <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-1">{st.title}</div>}
+
+            {/* Mobile: stacked cards instead of a table forced wide by min-w */}
+            <div className="grid grid-cols-1 gap-1.5 sm:hidden">
+              <CappedList
+                initial={12}
+                noun="rows"
+                className="rounded-lg border border-[var(--border)]"
+                bodyClassName="grid grid-cols-1 gap-1.5 p-2 pt-0"
+                items={st.rows.map((r, i) => (
+                <div key={`${r.name}-${i}-card`} className="rounded-md border px-2.5 py-2"
+                  style={r.po
+                    ? { borderColor: "var(--border)", borderLeft: "3px solid rgba(34,197,94,0.55)", background: "rgba(34,197,94,0.05)" }
+                    : { borderColor: "var(--border)" }}>
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-1.5 min-w-0 text-xs font-medium">
+                      {!st.fixtures && <span className="tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>{r.rank ?? i + 1}</span>}
+                      <span className={st.fixtures ? "min-w-0" : "truncate"}><NameCell r={r} /></span>
+                    </div>
+                  </div>
+                  {st.columns.length > 0 && (
+                    <div className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 text-[11px]">
+                      {st.columns.map((c, j) => (
+                        <span key={c} className="inline-flex items-baseline gap-1">
+                          <span className="text-[var(--text-dim)]">{c}</span>
+                          <span className="tabular-nums" style={mono}>{r.cells[j]}</span>
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+              />
+            </div>
+
+            <div className="overflow-x-auto hidden sm:block">
+              <table className="w-full text-xs min-w-[320px]" data-sticky-col={st.fixtures ? "1" : "2"}>
+                <thead>
+                  <tr className="text-left text-[var(--text-muted)]">
+                    {!st.fixtures && <th className="py-1 px-1.5 font-medium text-right">#</th>}
+                    <th className="py-1 px-1.5 font-medium">{st.fixtures ? "Match" : "Club"}</th>
+                    {st.columns.map((c) => (
+                      <th key={c} className="py-1 px-1.5 font-medium text-right tabular-nums">{c}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {st.rows.map((r, i) => (
+                    <tr key={`${r.name}-${i}`} className="border-t"
+                      style={{
+                        borderColor: "var(--border)",
+                        ...(r.po ? { background: "rgba(34,197,94,0.06)" } : null),
+                        // The cut line under the last playoff spot rides an inset
+                        // shadow so the next row's border-t stays intact.
+                        ...(r.cut ? { boxShadow: "inset 0 -2px 0 rgba(34,197,94,0.45)" } : null),
+                      }}>
+                      {!st.fixtures && <td className="py-1 px-1.5 text-right tabular-nums text-[var(--text-dim)]" style={mono}>{r.rank ?? i + 1}</td>}
+                      <td className={`py-1 px-1.5 font-medium ${st.fixtures ? "" : "whitespace-nowrap"}`}><NameCell r={r} /></td>
+                      {r.cells.map((c, j) => (
+                        bar && j === bar.index ? (
+                          <td key={j} className="py-1 px-1.5 tabular-nums" style={mono}>
+                            {/* format keeps this page's own cell formatting (".612", not "0.6") */}
+                            <DataBar v={cellNum(c)} max={bar.max} format={() => String(c)} width={88} label={st.columns[j]} />
+                          </td>
+                        ) : (
+                          <td key={j} className="py-1 px-1.5 text-right tabular-nums" style={mono}>{c}</td>
+                        )
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          );
+        })}
+        {block.cutNote && (
+          <div className="text-[10px] text-[var(--text-dim)] pt-0.5 md:col-span-2">
+            <span className="inline-block w-2 h-2 rounded-sm align-middle mr-1.5" style={{ background: "rgba(34,197,94,0.45)" }} aria-hidden />
+            {block.cutNote}
+          </div>
+        )}
+      </div>
+    </details>
+  );
+}
+
+// ---- North American majors ---------------------------------------------
+
+async function nflBlock(): Promise<Block | null> {
+  const season = new Date().getUTCFullYear();
+  const [s, sim, seedsFile, preds] = await Promise.all([
+    getCurrentNflStandings(), getNflSim().catch(() => null), getNflSeeds(season).catch(() => null), getNflPredictions().catch(() => null),
+  ]);
+  const teams = Object.values(s.by_canonical);
+  if (teams.length === 0) return null;
+  const fr = new Map(nflFranchises().map((f) => [f.canonical, f]));
+  const live = isLeagueLive("nfl", teams.map((t) => t.games_played), 17);
+  // 🔴 THE ORDER IS THE SEED ORDER, AND THE SEEDS ARE THE HUB'S. The season
+  // page seeds every week by the era's tiebreakers (public/data/nfl/seeds);
+  // when that file covers the week the table has reached, the conference here
+  // is ordered by it, so Live Standings and /teams/nfl/season/<year> cannot
+  // disagree (Ashwin, 2026-09-11: "I don't want inconsistency between what we
+  // show in the live standings and what we show on the hub"). Until the file
+  // catches up (it is rebuilt after each week's games), ESPN's playoffSeed,
+  // which applies the same procedure, is the order; win percentage is only the
+  // fallback for a team neither source has placed.
+  const maxPlayed = Math.max(0, ...teams.map((t) => t.games_played));
+  const seedsCurrent = !!seedsFile && seedsFile.season === season && seedsFile.through_week >= maxPlayed && seedsFile.through_week > 0;
+  const seedOf = (t: (typeof teams)[number]): number | null => {
+    if (seedsCurrent) {
+      const name = fr.get(t.canonical)?.name ?? t.display_name;
+      const key = Object.keys(seedsFile!.teams).find((k) => name.endsWith(k));
+      const st = key ? seedsFile!.teams[key] : undefined;
+      const wk = seedsFile!.through_week - 1;
+      const cr = st?.cr?.[wk];
+      if (typeof cr === "number") return cr;
+    }
+    return t.playoff_seed;
+  };
+  const seedRank = new Map(teams.map((t) => [t.canonical, seedOf(t)]));
+  // Playoff and Super Bowl odds from the points-v3 season sim (/predictions/nfl),
+  // joined on the franchise slug; shown while the season is live and the sim
+  // is fresh (Ashwin, 2026-09-11: "now that the NFL season has started, I want
+  // to see probabilities in the live standings table").
+  const showOdds = live && simFresh(sim?.meta.generated_at) && (sim?.table.length ?? 0) >= 32;
+  const odds = new Map((showOdds ? sim!.table : []).map((r) => [r.slug, r]));
+  const nameOf = (t: (typeof teams)[number]) => fr.get(t.canonical)?.name ?? t.display_name;
+  const row = (t: (typeof teams)[number], i: number): SRow => {
+    const f = fr.get(t.canonical); const m = f ? nflMono(f.slug) : null;
+    const o = f ? odds.get(f.slug) : undefined;
+    return { rank: live ? i + 1 : null, name: nameOf(t), href: f ? `/teams/nfl/${f.slug}` : null,
+      logoUrl: f ? nflLogo(f.slug) : null, monogram: m ? { text: m.mono, bg: m.bg, fg: m.fg } : null,
+      cells: live
+        ? [t.wins, t.losses, t.ties, pct3(t.win_pct), ...(showOdds ? [fmtOdds(o?.p_playoffs), fmtOdds(o?.p_sb)] : []), strk(t.streak)]
+        : [DASH, DASH, DASH, DASH, ...(showOdds ? [DASH, DASH] : []), DASH] };
+  };
+  return buildBlock({
+    // source_label now describes the REGULAR-season table in every calendar
+    // state ("2026 Regular Season · opens 6 Sep" before week 1), so it is a
+    // better note than the flat "Offseason" this used when nothing is live:
+    // two days before kickoff, "Offseason" is simply untrue.
+    league: "NFL", href: "/teams/nfl", note: showOdds ? `${s.source_label} · odds simulated` : (s.source_label || "Offseason"), open: live,
+    items: teams, columns: ["W", "L", "T", "PCT", ...(showOdds ? ["PO%", "SB%"] : []), "STRK"],
+    sort: live
+      ? (a, b) => (seedRank.get(a.canonical) ?? 99) - (seedRank.get(b.canonical) ?? 99) || b.win_pct - a.win_pct || b.wins - a.wins
+      : (a, b) => nameOf(a).localeCompare(nameOf(b)),
+    groups: [{ title: "AFC", pick: (t) => t.conference === "AFC" }, { title: "NFC", pick: (t) => t.conference === "NFC" }],
+    row,
+    // The field is the seed order's first seven, from the same source as the order.
+    playoff: live ? () => (t) => { const sd = seedRank.get(t.canonical); return sd !== null && sd !== undefined && sd <= 7; } : undefined,
+    cutNote: seedsCurrent ? `Seeds 1-7 in each conference make the playoffs; ordered by the tiebreakers, as on the season page through week ${seedsFile!.through_week}.` : "Seeds 1-7 in each conference make the playoffs.",
+    events: (preds?.ledger ?? []).filter((g) => g.kickoff).map((g) => ({
+      sport: "Gridiron", league: "NFL", href: "/teams/nfl", label: `${g.away} at ${g.home}`, when: g.kickoff as string,
+      score: g.result ? awayFirst(g.score) : null, live: false, teams: { home: g.home, away: g.away } })),
+  });
+}
+
+async function nbaBlock(): Promise<Block | null> {
+  const s = await getCurrentNbaStandings();
+  const teams = Object.values(s.by_canonical);
+  if (teams.length === 0) return null;
+  const fr = new Map(nbaFranchises().map((f) => [f.canonical, f]));
+  const live = isLeagueLive("nba", teams.map((t) => t.games_played), 82);
+  const nameOf = (t: (typeof teams)[number]) => fr.get(t.canonical)?.name ?? t.display_name;
+  const row = (t: (typeof teams)[number], i: number): SRow => {
+    const f = fr.get(t.canonical); const m = f ? nbaMono(f.slug) : null;
+    return { rank: live ? i + 1 : null, name: nameOf(t), href: f ? `/teams/nba/${f.slug}` : null,
+      logoUrl: f ? nbaLogo(f.slug) : null, monogram: m ? { text: m.mono, bg: m.bg, fg: m.fg } : null,
+      cells: live ? [t.wins, t.losses, pct3(t.win_pct), strk(t.streak)] : [DASH, DASH, DASH, DASH] };
+  };
+  return buildBlock({
+    league: "NBA", href: "/teams/nba", note: live ? s.source_label : "Offseason", open: live,
+    items: teams, columns: ["W", "L", "PCT", "STRK"],
+    sort: live ? (a, b) => b.win_pct - a.win_pct : (a, b) => nameOf(a).localeCompare(nameOf(b)),
+    groups: [{ title: "Eastern Conference", pick: (t) => t.conf === "Eastern" }, { title: "Western Conference", pick: (t) => t.conf === "Western" }],
+    row,
+    // Seeds 1-10 reach the postseason bracket (7-10 via the play-in).
+    playoff: live ? () => (t) => t.playoff_seed !== null && t.playoff_seed <= 10 : undefined,
+    cutNote: "Seeds 1-10 in each conference reach the postseason; 7-10 through the play-in.",
+  });
+}
+
+async function nhlBlock(): Promise<Block | null> {
+  const s = await getCurrentNhlStandings();
+  const teams = Object.values(s.by_canonical);
+  if (teams.length === 0) return null;
+  const fr = new Map(nhlFranchises().map((f) => [f.canonical, f]));
+  const live = isLeagueLive("nhl", teams.map((t) => t.games_played), 82);
+  const nameOf = (t: (typeof teams)[number]) => fr.get(t.canonical)?.name ?? t.display_name;
+  const row = (t: (typeof teams)[number], i: number): SRow => {
+    const f = fr.get(t.canonical); const m = f ? nhlMono(f.slug) : null;
+    return { rank: live ? i + 1 : null, name: nameOf(t), href: f ? `/teams/nhl/${f.slug}` : null,
+      logoUrl: f ? nhlLogo(f.slug) : null, monogram: m ? { text: m.mono, bg: m.bg, fg: m.fg } : null,
+      cells: live ? [t.games_played, t.wins, t.losses, t.ot_losses, t.points, strk(t.streak)] : [DASH, DASH, DASH, DASH, DASH, DASH] };
+  };
+  return buildBlock({
+    league: "NHL", href: "/teams/hockey", note: live ? s.source_label : "Offseason", open: live,
+    items: teams, columns: ["GP", "W", "L", "OTL", "PTS", "STRK"],
+    sort: live ? (a, b) => b.points - a.points || b.wins - a.wins || b.goal_diff - a.goal_diff : (a, b) => nameOf(a).localeCompare(nameOf(b)),
+    groups: [{ title: "Eastern Conference", pick: (t) => t.conference === "E" }, { title: "Western Conference", pick: (t) => t.conference === "W" }],
+    row,
+    // ESPN's playoffSeed carries the divisional top-3 + wild-card rules;
+    // 8 per conference make the field.
+    playoff: live ? () => (t) => t.playoff_seed !== null && t.playoff_seed <= 8 : undefined,
+    cutNote: "Eight per conference make the playoffs: the top three in each division plus two wild cards.",
+  });
+}
+
+async function mlbBlock(): Promise<Block | null> {
+  const [s, sim, post] = await Promise.all([getCurrentMlbStandings(), getMlbSim(), getMlbPostseason().catch(() => null)]);
+  // The Today box takes the POSTSEASON only: the ledger is empty until the
+  // bracket exists (Ashwin, 2026-09-11: the playoffs must show, fifteen
+  // regular-season games a day would make the list too long).
+  const events: LiveEvent[] = (post?.ledger ?? []).filter((g) => g.kickoff).map((g) => ({
+    sport: "Baseball", league: "MLB postseason", href: "/teams/mlb", label: `${g.away} at ${g.home}`, when: g.kickoff,
+    score: g.result ? awayFirst(g.score) : null, live: false }));
+  const teams = Object.values(s.by_canonical);
+  if (teams.length === 0) return null;
+  // Playoff odds from our own Monte Carlo (scripts/predictions/build_mlb_sim.py).
+  // Column appears only when the sim covers all 30 clubs and the season is
+  // under way, so an offseason or a stale/absent file leaves the table exactly
+  // as it was rather than printing a row of dashes.
+  const odds = playoffOddsByCanonical(sim);
+  const showOdds = odds.size >= 30 && (sim?.meta.games_played ?? 0) > 0;
+  // World Series odds ride the same file; the sim computes them already.
+  const wsOdds = new Map((sim?.table ?? []).map((r) => [r.canonical, r.p_ws]));
+  const fr = new Map(mlbFranchises().map((f) => [f.canonical, f]));
+  const live = isLeagueLive("mlb", teams.map((t) => t.games_played), 162);
+  const nameOf = (t: (typeof teams)[number]) => fr.get(t.canonical)?.name ?? t.display_name;
+  const leagueOf = (t: (typeof teams)[number]): "AL" | "NL" | "" => {
+    if (t.league === "AL" || t.league === "NL") return t.league;
+    const d = (t.division || "").toLowerCase();
+    if (d.startsWith("al") || d.includes("american")) return "AL";
+    if (d.startsWith("nl") || d.includes("national")) return "NL";
+    return "";
+  };
+  const gb = new Map<string, Cell>();
+  if (live) {
+    for (const lg of ["AL", "NL"] as const) {
+      const g = teams.filter((t) => leagueOf(t) === lg).sort((a, b) => b.win_pct - a.win_pct || b.wins - a.wins);
+      const leader = g[0];
+      g.forEach((t, i) => {
+        const v = leader ? (leader.wins - t.wins + (t.losses - leader.losses)) / 2 : 0;
+        gb.set(t.canonical, i === 0 || v <= 0 ? DASH : Number.isInteger(v) ? v : v.toFixed(1));
+      });
+    }
+  }
+  const row = (t: (typeof teams)[number], i: number): SRow => {
+    const f = fr.get(t.canonical); const m = f ? mlbMono(f.slug) : null;
+    return { rank: live ? i + 1 : null, name: nameOf(t), href: f ? `/teams/mlb/${f.slug}` : null,
+      logoUrl: f ? mlbLogo(f.slug) : null, monogram: m ? { text: m.mono, bg: m.bg, fg: m.fg } : null,
+      cells: live
+        ? [t.wins, t.losses, pct3(t.win_pct), gb.get(t.canonical) ?? DASH,
+           ...(showOdds ? [fmtOdds(odds.get(t.canonical)), fmtOdds(wsOdds.get(t.canonical))] : []), strk(t.streak)]
+        : [DASH, DASH, DASH, DASH, ...(showOdds ? [DASH, DASH] : []), DASH] };
+  };
+  return buildBlock({
+    league: "MLB", href: "/teams/mlb",
+    note: live ? (showOdds ? `${s.source_label} · odds simulated` : s.source_label) : "Offseason",
+    open: live,
+    items: teams, columns: ["W", "L", "PCT", "GB", ...(showOdds ? ["PO%", "WS%"] : []), "STRK"],
+    sort: live ? (a, b) => b.win_pct - a.win_pct || b.wins - a.wins : (a, b) => nameOf(a).localeCompare(nameOf(b)),
+    groups: [{ title: "American League", pick: (t) => leagueOf(t) === "AL" }, { title: "National League", pick: (t) => leagueOf(t) === "NL" }],
+    row,
+    // Three division winners + three wild cards per league; ESPN's seed
+    // already encodes that, and it is null for eliminated clubs late on.
+    playoff: live ? () => (t) => t.playoff_seed !== null && t.playoff_seed <= 6 : undefined,
+    cutNote: "Six per league make the postseason: three division winners and three wild cards.",
+    events,
+  });
+}
+
+async function wnbaBlock(): Promise<Block | null> {
+  const [s, sim] = await Promise.all([getCurrentWnbaStandings(), getSeasonSim("wnba")]);
+  if (s.rows.length === 0) return null;
+  const live = isLeagueLive("wnba", s.rows.map((t) => t.games_played), 44);
+  const showOdds = live && simIsCurrent(sim);
+  const odds = simByName(sim); // sim rows carry the same ESPN displayName as t.name
+  // WNBA seeding is overall record, conference-blind: the field is the best
+  // eight records across BOTH conferences, so compute it once globally
+  // rather than per displayed sub-table.
+  const field = new Set(
+    s.rows.slice().sort((a, b) => b.win_pct - a.win_pct || b.wins - a.wins).slice(0, 8).map((t) => t.name),
+  );
+  const row = (t: (typeof s.rows)[number], i: number): SRow => {
+    const f = getWnbaFranchiseByTeamName(t.name); const m = f ? wnbaMono(f) : null;
+    const o = odds.get(t.name);
+    return { rank: live ? i + 1 : null, name: f?.name ?? t.name, href: f ? `/teams/wnba/${f.slug}` : null,
+      crestName: f?.name ?? t.name, monogram: m ? { text: m.abbr, bg: m.color, fg: "#fff" } : null,
+      cells: live
+        ? [t.wins, t.losses, pct3(t.win_pct), ...(showOdds ? [fmtOdds(o?.p_playoffs), fmtOdds(o?.p_title)] : []), strk(t.streak)]
+        : [DASH, DASH, DASH, ...(showOdds ? [DASH, DASH] : []), DASH] };
+  };
+  return buildBlock({
+    league: "WNBA", href: "/teams/wnba",
+    note: live ? (showOdds ? `${s.source_label} · odds simulated` : s.source_label) : "Offseason", open: live,
+    items: s.rows, columns: ["W", "L", "PCT", ...(showOdds ? ["PO%", "Title%"] : []), "STRK"],
+    sort: live ? (a, b) => b.win_pct - a.win_pct : (a, b) => a.name.localeCompare(b.name),
+    groups: [{ title: "Eastern Conference", pick: (t) => t.conf === "Eastern" }, { title: "Western Conference", pick: (t) => t.conf === "Western" }],
+    row,
+    playoff: live ? () => (t) => field.has(t.name) : undefined,
+    cutNote: "The best eight records across both conferences make the playoffs; seeding is conference-blind.",
+  });
+}
+
+// ---- everything else ----------------------------------------------------
+
+async function mlsBlock(): Promise<Block | null> {
+  const [s, sim] = await Promise.all([getCurrentMlsStandings(), getSeasonSim("mls")]);
+  const live = inSeasonWindow("mls");
+  const showOdds = live && simIsCurrent(sim);
+  const odds = simByName(sim); // sim rows carry the same ESPN displayName as t.name
+  return buildBlock({
+    league: "MLS", href: "/teams/football",
+    note: showOdds ? `${s.source_label} · odds simulated` : s.source_label, open: live,
+    items: s.rows, columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts", ...(showOdds ? ["PO%", "Cup%"] : [])],
+    sort: (a, b) => b.points - a.points || b.gd - a.gd,
+    groups: [{ title: "Eastern Conference", pick: (t) => t.conf === "Eastern" }, { title: "Western Conference", pick: (t) => t.conf === "Western" }],
+    row: (t, i) => {
+      const c = getFootballClubByName(t.name); const nm = c?.cur_name ?? t.name;
+      const o = odds.get(t.name);
+      return { rank: i + 1, name: nm, href: c ? `/teams/football/${c.slug}` : null, crestName: nm,
+        cells: [t.played, t.wins, t.draws, t.losses, t.gf, t.ga, t.gd, t.points,
+          ...(showOdds ? [fmtOdds(o?.p_playoffs), fmtOdds(o?.p_title)] : [])] };
+    },
+    // Nine per conference reach the postseason (seeds 8 and 9 via the
+    // wild-card game). Rows are sorted by points here, matching seeding.
+    playoff: live ? (sorted) => { const nine = new Set(sorted.slice(0, 9)); return (t) => nine.has(t); } : undefined,
+  });
+}
+
+// ---- Women's club football (wlive bundle -> same source as /teams/wfootball) ----
+// One block per league (WSL / Liga F / NWSL) plus a UWCL fixtures block. All
+// collapsed by default; the green dot lights once a league has played games.
+function wLeagueBlock(
+  l: WLiveLeagueVM | undefined,
+  label: string,
+  odds?: WLiveOddsVM[string],
+): Block | null {
+  if (!l || !l.hasRows) return null;
+  // Odds and the playoff cut only apply to a league that has a simulation
+  // (NWSL). The join is by club slug and has already failed closed upstream
+  // if any club did not resolve -- see getWLiveOdds.
+  const showOdds = !!odds;
+  const spots = odds?.spots ?? 0;
+  const subTables: SubTable[] = l.groups
+    .map((g): SubTable => ({
+      title: l.groups.length > 1 ? g.label : null,
+      columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts", ...(showOdds ? odds!.labels : [])],
+      rows: g.rows.map((r, i): SRow => {
+        const rank = r.rank ?? i + 1;
+        const o = showOdds ? odds!.rows[r.slug ?? ""] : undefined;
+        return {
+          rank, name: r.name,
+          href: r.slug ? `/teams/wfootball/clubs/${r.slug}` : null,
+          crestName: r.name,
+          cells: [...r.cells, ...(showOdds ? [o?.po ?? "—", o?.title ?? "—"] : [])],
+          ...(showOdds && rank <= spots ? { po: true } : null),
+          ...(showOdds && rank === spots && i < g.rows.length - 1 ? { cut: true } : null),
+        };
+      }),
+    }))
+    .filter((st) => st.rows.length > 0);
+  if (subTables.length === 0) return null;
+  const played = l.groups.some((g) => g.rows.some((r) => Number(r.cells[0]) > 0));
+  const note = showOdds ? `${l.seasonLabel} · odds simulated` : l.seasonLabel;
+  return { league: label, href: "/teams/wfootball", note, open: false, live: played, subTables };
+}
+
+function uwclBlock(c: Awaited<ReturnType<typeof getWLiveCompetition>>): Block | null {
+  if (!c || !c.hasContent) return null;
+  const FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
+  const IN_PLAY = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
+  const fx = c.fixtures;
+  const liveFx = fx.filter((f) => f.status && IN_PLAY.has(f.status));
+  const recent = fx.filter((f) => f.status && FIN.has(f.status)).sort((a, b) => String(b.date ?? "").localeCompare(String(a.date ?? ""))).slice(0, 10);
+  const upcoming = fx.filter((f) => !(f.status && (FIN.has(f.status) || IN_PLAY.has(f.status)))).sort((a, b) => String(a.date ?? "").localeCompare(String(b.date ?? ""))).slice(0, 12);
+  const mk = (title: string, items: WLiveFixtureVM[], score: boolean): SubTable | null =>
+    items.length ? {
+      title, columns: [score ? "Score" : "Date"],
+      rows: items.map((f): SRow => ({ rank: null, name: `${f.home.name} v ${f.away.name}`,
+        cells: [score && f.homeGoals != null && f.awayGoals != null ? `${f.homeGoals}\u2013${f.awayGoals}` : kickoff(f.date)] })),
+    } : null;
+  const groupTables: SubTable[] = c.groups
+    .map((g): SubTable => ({
+      title: g.label, columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts"],
+      rows: g.rows.map((r, i): SRow => ({ rank: r.rank ?? i + 1, name: r.name, href: r.slug ? `/teams/wfootball/clubs/${r.slug}` : null, crestName: r.name, cells: r.cells })),
+    }))
+    .filter((st) => st.rows.length > 0);
+  const events: LiveEvent[] = fx.filter((f) => f.date).map((f) => ({
+    sport: "Women's Football", league: "Women's Champions League", href: "/teams/wfootball", label: `${f.home.name} v ${f.away.name}`, when: f.date as string,
+    score: f.status && FIN.has(f.status) && f.homeGoals != null && f.awayGoals != null ? `${f.homeGoals}–${f.awayGoals}` : null,
+    live: !!f.status && IN_PLAY.has(f.status) }));
+  const subTables = [...groupTables, mk("Live", liveFx, true), mk("Upcoming", upcoming, false), mk("Recent", recent, true)]
+    .filter((st): st is SubTable => st !== null);
+  if (subTables.length === 0) return null;
+  // api-football publishes the UWCL league-phase table only after the draw
+  // (2026-27: mid-September, once the second qualifying round is done), so
+  // until then the block carries fixtures alone and says so, rather than
+  // looking like the table was forgotten (Ashwin, 2026-09-07).
+  const note = groupTables.length ? c.seasonLabel : `${c.seasonLabel} · qualifying; league-phase table appears after the draw`;
+  return { league: "Women's Champions League", href: "/teams/wfootball", note, open: false, live: liveFx.length > 0 || upcoming.length > 0, subTables, events };
+}
+
+async function npbBlock(): Promise<Block | null> {
+  const [s, sim] = await Promise.all([getNpbStandings(), getSeasonSim("npb")]);
+  if (!s || (s.central.length === 0 && s.pacific.length === 0)) return null;
+  // Closes for the Japanese offseason. The feed keeps serving the final table
+  // all winter, so without the window this sat open showing a finished season.
+  const npbLive = inSeasonWindow("npb");
+  const showOdds = npbLive && simIsCurrent(sim);
+  const odds = simBySlug(sim);
+  const toRows = (rows: typeof s.central): SRow[] => {
+    const out = rows.map((r): SRow => ({
+      rank: r.rank, name: r.name, href: r.slug ? `/teams/baseball/npb/${r.slug}` : null, crestName: r.name,
+      cells: [r.win, r.lose, r.draw, pct3(r.pct), r.gamesBehind,
+        ...(showOdds ? [fmtOdds(r.slug ? odds.get(r.slug)?.p_playoffs : null), fmtOdds(r.slug ? odds.get(r.slug)?.p_title : null)] : [])],
+    }));
+    // Top three per league reach the Climax Series; rows arrive rank-sorted.
+    if (npbLive) applyPlayoffMarks(rows, out, (r) => rows.indexOf(r) < 3);
+    return out;
+  };
+  const cols = ["W", "L", "T", "PCT", "GB", ...(showOdds ? ["CS%", "Title%"] : [])];
+  const subTables: SubTable[] = [
+    { title: "Central League", columns: cols, rows: toRows(s.central) },
+    { title: "Pacific League", columns: cols, rows: toRows(s.pacific) },
+  ].filter((st) => st.rows.length > 0);
+  return { league: "NPB", href: "/teams/baseball/npb", note: npbLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`, open: npbLive, live: npbLive, subTables };
+}
+
+// ---- club football (api-football -> Supabase -> committed bundles) ------
+
+// English lower divisions (Championship 40, League One 41, League Two 42,
+// National League 43) intentionally NOT surfaced here (2026-08-01): the top
+// five leagues plus the smaller national top flights keep the section tight.
+const DOMESTIC_LIVE: { label: string; id: number }[] = [
+  { label: "Premier League", id: 39 }, { label: "La Liga", id: 140 }, { label: "Bundesliga", id: 78 },
+  { label: "Serie A", id: 135 }, { label: "Ligue 1", id: 61 },
+  { label: "Eredivisie", id: 88 }, { label: "Primeira Liga", id: 94 }, { label: "Scottish Premiership", id: 179 },
+];
+
+function clubRow(r: LiveRow, i: number, cols: "domestic" | "group"): SRow {
+  const c = getFootballClubByName(r.lookup ?? "") ?? getFootballClubByName(r.name ?? "");
+  const nm = c?.cur_name ?? r.name ?? r.lookup ?? "";
+  const cells = cols === "domestic"
+    ? [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gf), num(r.ga), num(r.gd), num(r.points), form5(r.form)]
+    : [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gd), num(r.points)];
+  return { rank: r.rank ?? i + 1, name: nm, href: c ? `/teams/football/${c.slug}` : null, crestName: nm, cells };
+}
+
+const byPtsGd = (a: LiveRow, b: LiveRow) => (b.points ?? 0) - (a.points ?? 0) || (b.gd ?? 0) - (a.gd ?? 0);
+
+// Season odds for a domestic table, keyed by the site's club slug (the PL sim
+// on /predictions/pl carries them); the three that matter at both ends.
+type DomesticOdds = Map<string, { p_title: number; p_top5: number; p_releg: number }>;
+
+function domesticLiveBlock(league: LiveLeague | undefined, label: string, odds?: DomesticOdds, events?: LiveEvent[]): Block | null {
+  if (!league) return null;
+  const showOdds = !!odds && odds.size > 0;
+  // A table carrying odds reads P, GD, Pts, the odds and Form; W, D, L, GF
+  // and GA live on the hub (Ashwin, 2026-09-11, on the Premier League: "too
+  // little room to show win, draw, loss"). The leagues without odds keep the
+  // full nine.
+  const subTables: SubTable[] = league.groups
+    .map((g): SubTable => ({
+      title: league.groups.length > 1 ? g.group_label : null,
+      columns: showOdds ? ["P", "GD", "Pts", "Title%", "Top5%", "Rel%", "Form"] : ["P", "W", "D", "L", "GF", "GA", "GD", "Pts", "Form"],
+      rows: g.rows.slice().sort(byPtsGd).map((r, i) => {
+        const row = clubRow(r, i, "domestic");
+        if (!showOdds) return row;
+        const slug = row.href?.replace("/teams/football/", "") ?? "";
+        const o = odds!.get(slug);
+        const [p, , , , , , gd, pts, form] = row.cells;
+        return { ...row, cells: [p, gd, pts, fmtOdds(o?.p_title), fmtOdds(o?.p_top5), fmtOdds(o?.p_releg), form] };
+      }),
+    }))
+    .filter((st) => st.rows.length > 0);
+  if (subTables.length === 0) return null;
+  return { league: label, href: "/teams/football/2026-27", note: showOdds ? "live · odds simulated" : "live", open: true, subTables, events };
+}
+
+// ---- International Football section -------------------------------------
+// Fed by the same api-football bundle as the club comps ("international" key:
+// league_id 5 = UEFA Nations League, 7 = AFC Asian Cup). Group tables once a
+// tournament's group stage starts; fixtures before and between matchdays.
+// Nations render with flags, not club crests; names come straight from the
+// bundle (nation passthrough — no Lookup involved).
+// Generic over the international comps carried in the bundle: the Nations
+// League and the AFC Asian Cup are structurally identical here (group tables
+// plus a fixture list), so the label, hub anchor and the two notes are the
+// only things that vary.
+function intlCompBlock(
+  comp: LiveComp | undefined,
+  opts: { label: string; href: string; liveNote: string; closedNote: string },
+): Block | null {
+  if (!comp) return null;
+  const FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
+  const IN_PLAY = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
+  const nation = (t: LiveTeamRef) => t.name ?? t.lookup ?? "TBD";
+  const groupTables: SubTable[] = comp.groups
+    .slice().sort((a, b) => a.group_label.localeCompare(b.group_label))
+    .map((g): SubTable => ({
+      title: g.group_label,
+      columns: ["P", "W", "D", "L", "GD", "Pts"],
+      rows: g.rows.slice().sort(byPtsGd).map((r, i): SRow => ({
+        rank: r.rank ?? i + 1, name: r.name ?? "", flagUrl: _crFlag(r.name ?? ""),
+        cells: [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gd), num(r.points)],
+      })),
+    }))
+    .filter((st) => st.rows.length > 0);
+  const fx = comp.fixtures ?? [];
+  const byKo = (dir: number) => (a: LiveFixture, b: LiveFixture) => dir * String(a.kickoff ?? "").localeCompare(String(b.kickoff ?? ""));
+  const live = fx.filter((f) => f.status && IN_PLAY.has(f.status)).sort(byKo(1));
+  const recent = fx.filter((f) => f.status && FIN.has(f.status)).sort(byKo(-1)).slice(0, 12);
+  const upcoming = fx.filter((f) => !(f.status && (FIN.has(f.status) || IN_PLAY.has(f.status)))).sort(byKo(1)).slice(0, 20);
+  const mkFx = (title: string, items: LiveFixture[], score: boolean): SubTable | null =>
+    items.length ? {
+      title, columns: [score ? "Score" : "Date"],
+      rows: items.map((f): SRow => ({ rank: null, name: `${nation(f.home)} v ${nation(f.away)}`, flagUrl: _crFlag(nation(f.home)),
+        cells: [score && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : kickoff(f.kickoff)] })),
+    } : null;
+  const subTables = [...groupTables,
+    ...[mkFx("Live", live, true), mkFx("Upcoming", upcoming, false), mkFx("Recent", recent, true)]
+      .filter((st): st is SubTable => st !== null)];
+  if (subTables.length === 0) return null;
+
+  // DATE GATE (Ashwin, 2026-08-06): show an international competition only
+  // while it is actually happening. The bundle carries a tournament's whole
+  // fixture list from the moment the draw is made, so "do we have data" left
+  // the AFC Asian Cup on this page from August with a first kickoff in
+  // January. Data-driven rather than a hardcoded calendar, so a tournament
+  // that moves needs no code change: in play now, or group games already
+  // played, or a kickoff within a fortnight, or a result in the last ten days.
+  const current = tournamentIsCurrent({
+    hasLive: live.length > 0,
+    hasPlayedGroupGames: comp.groups.some((g) => g.rows.some((r) => Number(r.played ?? 0) > 0)),
+    nextKickoff: upcoming[0]?.kickoff ?? null,
+    lastFinished: recent[0]?.kickoff ?? null,
+  });
+  if (!current) return null;
+
+  const events: LiveEvent[] = fx.filter((f) => f.kickoff).map((f) => ({
+    sport: "International Football", league: opts.label, href: opts.href, label: `${nation(f.home)} v ${nation(f.away)}`, when: f.kickoff as string,
+    score: f.status && FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
+    live: !!f.status && IN_PLAY.has(f.status) }));
+  return {
+    league: opts.label, href: opts.href,
+    note: groupTables.length ? opts.liveNote : opts.closedNote,
+    open: false, live: live.length > 0, subTables, events,
+  };
+}
+
+// The Libertadores knockout, in the order api-football labels the rounds.
+// Anything not listed (the three Qualification rounds, "Group Stage - N") is
+// pre-knockout and is not drawn as a bracket round.
+const LIB_KO_ROUNDS = ["Round of 16", "Quarter-finals", "Semi-finals", "3rd Place Final", "Final"];
+
+function libertadoresBlock(comp: LiveComp | undefined): Block | null {
+  if (!comp || comp.groups.length === 0) return null;
+
+  // 🔴 This block used to render comp.groups and NOTHING else, with the note
+  // hardcoded to "group stage". So it could not follow the competition past the
+  // groups however much the feed moved on: on 2026-09-11 the group stage was
+  // long finished, the Round of 16 was complete and the quarter-finals half
+  // played, while Live Standings still showed eight group tables labelled
+  // "group stage". The rounds below are read from the fixtures, so this now
+  // follows the competition on its own.
+  const fx = comp.fixtures ?? [];
+  const FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
+  const nm = (t: LiveTeamRef) => {
+    const c = getFootballClubByName(t.lookup ?? "") ?? getFootballClubByName(t.name ?? "");
+    return c?.cur_name ?? t.lookup ?? t.name ?? "TBD";
+  };
+  const byKickoff = (a: LiveFixture, b: LiveFixture) =>
+    String(a.kickoff ?? "").localeCompare(String(b.kickoff ?? ""));
+
+  const koTables: SubTable[] = [];
+  let liveRound: string | null = null;
+  for (const round of LIB_KO_ROUNDS) {
+    const games = fx.filter((f) => f.round === round).sort(byKickoff);
+    if (games.length === 0) continue;
+    const done = games.every((f) => f.status && FIN.has(f.status));
+    // The live round is the FIRST knockout round still carrying an unplayed
+    // game -- not the last round with any fixture, which would jump the label
+    // to the Final the moment its placeholder fixtures appear.
+    if (!done && liveRound === null) liveRound = round;
+    koTables.push({
+      title: round,
+      // A round in progress carries both: results for the legs already played
+      // and kick-offs for the rest. Header follows whether ANY are played, so a
+      // half-finished round is not labelled "Date" over a column of scores.
+      columns: [games.some((f) => f.home_goals != null && f.away_goals != null) ? "Score" : "Date"],
+      fixtures: true,
+      rows: games.map((f): SRow => ({
+        rank: null, name: `${nm(f.home)} v ${nm(f.away)}`,
+        cells: [f.home_goals != null && f.away_goals != null
+          ? `${f.home_goals}–${f.away_goals}`
+          : kickoff(f.kickoff)],
+      })),
+    });
+  }
+
+  const groupTables: SubTable[] = comp.groups
+    .slice().sort((a, b) => a.group_label.localeCompare(b.group_label))
+    .map((g): SubTable => ({
+      title: g.group_label,
+      columns: ["P", "W", "D", "L", "GD", "Pts"],
+      rows: g.rows.slice().sort(byPtsGd).map((r, i) => clubRow(r, i, "group")),
+    }))
+    .filter((st) => st.rows.length > 0);
+
+  // Knockout first once it exists: it is where the competition actually is.
+  // The groups stay below as the season's record rather than being dropped.
+  const subTables = [...koTables, ...groupTables];
+  if (subTables.length === 0) return null;
+  const note = koTables.length === 0
+    ? "group stage"
+    : (liveRound ? liveRound.toLowerCase() : `${koTables[koTables.length - 1].title?.toLowerCase()} complete`);
+  return { league: "Copa Libertadores", href: "/teams/football/2026-27", note, open: true, subTables };
+}
+
+async function cflBlock(): Promise<Block | null> {
+  const [s, sim] = await Promise.all([getLiveCflStandings(new Date().getFullYear()), getSeasonSim("cfl")]);
+  if (!s) return null;
+  const cflLive = inSeasonWindow("cfl");
+  const showOdds = cflLive && simIsCurrent(sim);
+  const odds = simBySlug(sim);
+  const order = ["East", "West"];
+  const sorted = s.divisions.slice().sort((a, b) => order.indexOf(a.division) - order.indexOf(b.division));
+  // Current playoff field, crossover rule included: top 3 per division, but a
+  // 4th place strictly ahead of the other division's 3rd on points crosses
+  // over and takes that spot (a tie stays with the 3rd-place team).
+  const field = new Set<string>();
+  if (cflLive && sorted.length === 2) {
+    const [d1, d2] = sorted;
+    for (const [own, other] of [[d1, d2], [d2, d1]] as const) {
+      const third = own.rows[2];
+      const cross = other.rows[3];
+      for (const t of own.rows.slice(0, 2)) field.add(t.slug);
+      if (third) field.add(cross && third && cross.pts > third.pts ? cross.slug : third.slug);
+    }
+  }
+  const subTables = sorted.map((d): SubTable => {
+    const rows = d.rows.map((t): SRow => ({
+      rank: null, name: t.name, href: t.slug ? `/teams/cfl/${t.slug}` : null, crestName: t.name,
+      cells: [t.gp, t.w, t.l, t.t, t.pts, t.pf, t.pa,
+        ...(showOdds ? [fmtOdds(odds.get(t.slug)?.p_playoffs), fmtOdds(odds.get(t.slug)?.p_title)] : [])],
+    }));
+    if (cflLive) applyPlayoffMarks(d.rows, rows, (t) => field.has(t.slug));
+    return { title: `${d.division} Division`, columns: ["GP", "W", "L", "T", "Pts", "PF", "PA", ...(showOdds ? ["PO%", "Cup%"] : [])], rows };
+  }).filter((st) => st.rows.length > 0);
+  if (subTables.length === 0) return null;
+  return { league: "CFL", href: "/teams/cfl", note: cflLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`, open: cflLive, live: cflLive, subTables };
+}
+
+async function footyBlock(league: "afl" | "nrl"): Promise<Block | null> {
+  const [s, sim, finals] = await Promise.all([
+    getFootyLiveStandings(league), getSeasonSim(league), getFootyFinals(league),
+  ]);
+  if (!s || s.rows.length === 0) return null;
+  // September: a finals strip above the ladder (real fixtures from
+  // scripts/ingest/footy_finals.py; the full bracket lives on the hub).
+  const finalsSubs: SubTable[] = finalsIsCurrent(finals)
+    ? finals.weeks.map((w): SubTable => ({
+        title: `${finals.meta.season} Finals: ${w.label}`,
+        columns: ["Result / Date", "Venue"],
+        fixtures: true,
+        rows: w.games.map((g): SRow => {
+          const nm = (side: typeof g.home) => side?.name ?? "TBC";
+          const matchup =
+            g.completed && g.winner
+              ? `${nm(g.winner === "home" ? g.home : g.away)} def. ${nm(g.winner === "home" ? g.away : g.home)}`
+              : `${nm(g.home)} v ${nm(g.away)}`;
+          const label = g.code ? `${g.code} · ${matchup}` : matchup;
+          // An upcoming final reads in the VIEWER's zone like every other
+          // fixture on this page. It used to be formatted in Australia/Sydney,
+          // which is the right zone for the ground and the wrong one for the
+          // reader -- and it showed no kick-off at all, though the feed carries
+          // a full instant ("2026-09-11T09:50Z").
+          const when: Cell =
+            g.state !== "pre" && g.home?.score !== null && g.home?.score !== undefined && g.away
+              ? `${g.home.score}–${g.away.score}`
+              : g.date
+                ? kickoff(g.date)
+                : DASH;
+          return { rank: null, name: label, cells: [when, g.venue ?? DASH] };
+        }),
+      }))
+    : [];
+  const footyLive = inSeasonWindow(league); // "afl" | "nrl" are both SeasonKeys
+  const showOdds = footyLive && simIsCurrent(sim);
+  const odds = simBySlug(sim);
+  // Finals spots: the AFL's 2026 format takes ten (7-10 via the wildcard
+  // round); the NRL keeps its top eight.
+  const spots = league === "afl" ? 10 : 8;
+  const franchises = league === "afl" ? getAllAflFranchises() : getAllNrlFranchises();
+  const bySlug = new Map(franchises.map((f) => [f.slug, f]));
+  const cols = [
+    ...(league === "afl" ? ["P", "W", "L", "D", "For", "Agst", "Pts"] : ["P", "W", "D", "L", "For", "Agst", "Pts"]),
+    ...(showOdds ? ["Finals%", "Prem%"] : []),
+  ];
+  const rows: SRow[] = s.rows.map((t) => {
+    const f = t.slug ? bySlug.get(t.slug) : undefined;
+    const name = f?.name ?? t.name;
+    const o = t.slug ? odds.get(t.slug) : undefined;
+    return {
+      rank: t.rank, name,
+      href: t.slug ? `/teams/${league}/${t.slug}` : null,
+      crestName: name,
+      monogram: f ? { text: f.abbr, bg: f.color, fg: "#fff" } : null,
+      cells: [
+        ...(league === "afl"
+          ? [num(t.played), num(t.w), num(t.l), num(t.d), num(t.pf), num(t.pa), num(t.pts)]
+          : [num(t.played), num(t.w), num(t.d), num(t.l), num(t.pf), num(t.pa), num(t.pts)]),
+        ...(showOdds ? [fmtOdds(o?.p_playoffs), fmtOdds(o?.p_title)] : []),
+      ],
+    };
+  });
+  if (footyLive) applyPlayoffMarks(s.rows, rows, (t) => (t.rank ?? 99) <= spots);
+  // Finals games with both sides named feed the Today box.
+  const events: LiveEvent[] = finalsIsCurrent(finals)
+    ? finals.weeks.flatMap((w) => w.games.filter((g) => g.date && g.home && g.away).map((g) => ({
+        sport: league === "afl" ? "Aussie Rules" : "Rugby League", league: `${league.toUpperCase()} finals, ${w.label}`, href: `/teams/${league}`,
+        label: `${g.home!.name} v ${g.away!.name}`, when: g.date as string,
+        score: g.state === "post" && g.home!.score != null && g.away!.score != null ? `${g.home!.score}–${g.away!.score}` : null, live: g.state === "in" })))
+    : [];
+  return {
+    league: league.toUpperCase(), href: `/teams/${league}`,
+    note: finalsSubs.length ? `${s.year} finals` : footyLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`,
+    open: footyLive, live: footyLive,
+    subTables: [
+      ...finalsSubs,
+      { title: finalsSubs.length ? `${s.year} Ladder` : null, columns: cols, rows },
+    ],
+    events,
+  };
+}
+
+async function f1Block(): Promise<Block | null> {
+  const [s, oddsFile] = await Promise.all([getLiveF1Standings(), getF1TitleOdds().catch(() => null)]);
+  if (s.drivers.length === 0) return null;
+  const f1Live = inSeasonWindow("f1");
+  // Title odds from scripts/f1/build_title_odds.py, joined on the driver's and
+  // the constructor's name; shown only while the odds are current for THIS
+  // season, and a name the file does not know reads a dash rather than a
+  // neighbour's number.
+  const showOdds = f1Live && f1OddsAreCurrent(oddsFile, s.season);
+  const odds = f1OddsByName(showOdds ? oddsFile : null);
+  const titleCell = (r: { p_title: number; clinched: boolean; eliminated: boolean } | undefined): Cell =>
+    r ? (r.clinched ? "clinched" : r.eliminated ? "out" : fmtOdds(r.p_title)) : DASH;
+  const drivers: SubTable = {
+    title: "Drivers",
+    columns: ["Team", "Pts", "Wins", ...(showOdds ? ["Title%"] : [])],
+    rows: s.drivers.map((d): SRow => ({ rank: d.pos, name: d.driver, crestName: f1ConstructorCrestName(d.team),
+      cells: [d.team ?? DASH, num(d.points), num(d.wins), ...(showOdds ? [titleCell(odds.drivers.get(normDriver(d.driver)))] : [])] })),
+  };
+  const constructors: SubTable = {
+    title: "Constructors",
+    columns: ["Pts", "Wins", ...(showOdds ? ["Title%"] : [])],
+    rows: s.constructors.map((c): SRow => ({ rank: c.pos, name: c.constructor, crestName: f1ConstructorCrestName(c.constructor),
+      cells: [num(c.points), num(c.wins), ...(showOdds ? [titleCell(odds.constructors.get(normConstructor(c.constructor)))] : [])] })),
+  };
+  const note = f1Live ? (s.source === "espn" ? "live" : `${s.season}`) : `${s.season} final`;
+  // The Today box: a race weekend as its sessions (practice, qualifying, the
+  // sprint, the race), each at its own instant, and the race and sprint as
+  // results once run, the winner in the score column. Ashwin, 2026-09-11:
+  // "we want to know if a Formula One race is happening ... maybe it is just
+  // listing the race time." The sessions come from the odds file's calendar
+  // (Jolpica), taken for this season only.
+  const cal = oddsFile?.meta.season === s.season ? oddsFile.calendar ?? [] : [];
+  const surname = (d: string) => d.split(" ").slice(-1)[0];
+  // Practice stays off the strip: qualifying, the sprint and the race are the events.
+  const events: LiveEvent[] = cal.flatMap((r) => r.sessions.filter((se) => !/^Practice/.test(se.label)).map((se) => {
+    const won = se.label === "Race" ? r.winner : se.label === "Sprint" ? r.sprint_winner : null;
+    return { sport: "Motorsport", league: "Formula 1", href: "/teams/f1", label: `${r.name} · ${se.label}`, when: se.when,
+      score: won ? `${surname(won.driver)} (${won.constructor})` : null, live: false };
+  }));
+  return { league: "Formula 1", href: "/teams/f1", note: showOdds ? `${note} · odds simulated` : note, open: f1Live, live: f1Live, cols: true, subTables: [drivers, constructors], events };
+}
+
+async function wtcBlock(): Promise<Block | null> {
+  const s = await getWtcStandings();
+  if (!s || s.rows.length === 0) return null;
+  const rows: SRow[] = s.rows.map((r) => ({ rank: r.position, name: r.name, flagUrl: r.logoUrl, cells: [r.played, r.won, r.lost, r.drawn, r.points, r.pct] }));
+  return { league: "World Test Championship", href: "/teams/cricket", note: "live", open: true, subTables: [{ title: null, columns: ["P", "W", "L", "D", "Pts", "PCT"], rows }] };
+}
+
+async function golfBlock(): Promise<Block | null> {
+  const g = await getLiveGolfMajor();
+  if (!g) return null;
+  const rows: SRow[] = g.rows.map((r) => ({ rank: r.pos, name: r.name, flagUrl: r.flagUrl, cells: [r.toPar, r.thru] }));
+  return { league: g.name, href: "/teams/golf", note: g.live ? "live" : null, open: true, subTables: [{ title: null, columns: ["To Par", "Thru"], rows }] };
+}
+
+async function tennisBlock(): Promise<Block | null> {
+  const [men, women] = await Promise.all([getLiveTennisSlam("atp"), getLiveTennisSlam("wta")]);
+  if (!men && !women) return null;
+  const tournament = men?.tournament ?? women?.tournament ?? "Grand Slam";
+  const toSub = (d: Awaited<ReturnType<typeof getLiveTennisSlam>>, label: string): SubTable | null =>
+    d ? { title: `${label}: ${d.round}`, columns: ["Score"],
+          rows: d.matches.map((m): SRow => ({ rank: null, name: m.label, flagUrl: m.flagUrl,
+            // An upcoming match has no score to show, so show when it starts.
+            cells: [m.upcoming && m.kickoff ? kickoff(m.kickoff) : m.score] })) } : null;
+  const subTables = [toSub(men, "Men's Singles"), toSub(women, "Women's Singles")].filter((st): st is SubTable => st !== null);
+  if (subTables.length === 0) return null;
+  // Upcoming matches only: a finished match carries no instant in the feed
+  // we keep, so results stay in the draw table below.
+  const events: LiveEvent[] = [men, women].flatMap((d, i) => (d ? d.matches : []).filter((m) => m.upcoming && m.kickoff).map((m) => ({
+    sport: "Tennis", league: `${tournament}, ${i === 0 ? "men" : "women"}`, href: "/teams/tennis",
+    label: m.label, when: m.kickoff as string, score: null, live: m.live })));
+  return { league: `Tennis: ${tournament}`, href: "/teams/tennis", note: "live", open: true, subTables, events };
+}
+
+const _slugName = (n: string) => n.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+const _ruOverride: Record<string, string> = { "Ivory Coast": "ivory-coast", "Western Samoa": "samoa" };
+const _ruFlag = (n: string) => flagCdnUrl(_ruOverride[n] ?? _slugName(n));
+const _crFlag = (n: string) => flagCdnUrl(_slugName(n));
+
+// Club rugby union boards, all three off the same ESPN v2 standings shape
+// (lib/rugbyStandings.ts). Playoff fields are the PUBLISHED format, checked
+// against sources on 2026-09-01 rather than recalled:
+//  - Top 14: top six, with first and second seeded straight to the semi-finals
+//    and third-to-sixth playing quarter-finals hosted by third and fourth.
+//  - Premiership: 10 clubs, 18 rounds, semi-finals then a final, so top four.
+//  - Champions Cup: EPCR CHANGED THIS FOR 2026-27. It is no longer top four
+//    per pool. Only the top THREE in each pool are guaranteed a knockout
+//    place; the last four spots go to the best-ranked remaining clubs across
+//    all pools on competition points. The cut line therefore marks three, and
+//    the note carries the cross-pool half, which no contiguous line can show.
+//    Same overhaul moved the try bonus to a three-try margin and put wins
+//    above points difference as the first tie-break. Re-verify before the pool
+//    stage opens in December.
+const RUGBY_BOARDS: Record<RugbyCompKey, { seasonKey: SeasonKey; field: number; cutNote: string }> = {
+  top14: { seasonKey: "top14", field: 6,
+    cutNote: "Top six reach the play-offs; the top two go straight to the semi-finals." },
+  prem: { seasonKey: "premrugby", field: 4,
+    cutNote: "Top four reach the play-offs." },
+  "champions-cup": { seasonKey: "championscup", field: 3,
+    cutNote: "Top three in each pool qualify for the round of 16; the last four places go to the best-ranked remaining clubs across all pools." },
+};
+
+async function rugbyStandingsBlock(key: RugbyCompKey): Promise<Block | null> {
+  const s = await getRugbyStandings(key);
+  const rows = rugbyAllRows(s);
+  if (rows.length === 0) return null;
+  const board = RUGBY_BOARDS[key];
+  const played = rows.map((r) => r.played);
+  const live = isLeagueLive(board.seasonKey, played, RUGBY_COMPS[key].fullSeason);
+  // Three states, not two. A season that has FINISHED still has a real table
+  // worth reading, so it keeps its numbers and is merely labelled and closed;
+  // only a genuinely empty pre-season shell (every club on zero, which is what
+  // ESPN serves the moment it rolls a competition over) falls back to dashes.
+  const anyPlayed = Math.max(0, ...played) > 0;
+  const showNums = live || anyPlayed;
+  const season = s.season_label ? ` · ${s.season_label}` : "";
+  const note = live ? (s.season_label || "live") : anyPlayed ? `Final${season}` : `Opens soon${season}`;
+  const pools = Array.from(new Set(rows.map((r) => r.pool).filter((p): p is string => !!p)));
+  const row = (r: RugbyStandingRow, i: number): SRow => {
+    const c = rugbyClubColor(r.display);
+    return {
+      rank: showNums ? (r.rank ?? i + 1) : null,
+      name: r.display,
+      // No per-club rugby page exists, so the club links to its metro, which
+      // is the page this site is actually about.
+      href: r.metro_slug ? `/rankings/${r.metro_slug}` : null,
+      crestName: r.team ?? r.display,
+      monogram: { text: rugbyMonogram(r.display), bg: c.bg, fg: c.fg },
+      cells: showNums
+        ? [r.played, r.won, r.drawn, r.lost, r.bonus, r.pf, r.pa,
+           r.pd > 0 ? `+${r.pd}` : r.pd, r.points, r.form ?? DASH]
+        : [DASH, DASH, DASH, DASH, DASH, DASH, DASH, DASH, DASH, DASH],
+    };
+  };
+  return buildBlock({
+    league: RUGBY_COMPS[key].label, href: "/teams/rugby-union", note, open: live,
+    items: rows,
+    columns: ["P", "W", "D", "L", "BP", "PF", "PA", "PD", "Pts", "Form"],
+    // ESPN publishes the official order, tie-breaks included, in `rank`.
+    // Recomputing it here would only invent a second, worse table; points and
+    // difference are the fallback for a feed that omits the rank stat.
+    sort: showNums
+      ? (a, b) => (a.rank ?? 99) - (b.rank ?? 99) || b.points - a.points || b.pd - a.pd
+      : (a, b) => a.display.localeCompare(b.display),
+    groups: pools.map((p) => ({ title: p, pick: (r: RugbyStandingRow) => r.pool === p })),
+    row,
+    playoff: live
+      ? (sorted) => { const f = new Set(sorted.slice(0, board.field)); return (r) => f.has(r); }
+      : undefined,
+    cutNote: board.cutNote,
+  });
+}
+
+async function euroleagueBlock(): Promise<Block | null> {
+  const s = await getEuroleagueStandings();
+  if (s.rows.length === 0) return null;
+  const played = s.rows.map((r) => r.played);
+  const live = isLeagueLive("euroleague", played, EUROLEAGUE_FULL_SEASON);
+  const anyPlayed = Math.max(0, ...played) > 0;
+  const showNums = live || anyPlayed;
+  const season = s.season_label ? ` · ${s.season_label}` : "";
+  const note = live ? (s.season_label || "live") : anyPlayed ? `Final${season}` : `Opens soon${season}`;
+  const row = (r: EuroleagueRow, i: number): SRow => {
+    const c = euroleagueClubColor(r.display);
+    return {
+      rank: showNums ? (r.rank ?? i + 1) : null,
+      name: r.display,
+      href: r.metro_slug ? `/rankings/${r.metro_slug}` : null,
+      crestName: r.team ?? r.display,
+      monogram: { text: euroleagueMonogram(r.display), bg: c.bg, fg: c.fg },
+      cells: showNums
+        ? [r.played, r.won, r.lost, pct3(r.played > 0 ? r.won / r.played : null),
+           r.pf, r.pa, r.pd > 0 ? `+${r.pd}` : r.pd]
+        : [DASH, DASH, DASH, DASH, DASH, DASH, DASH],
+    };
+  };
+  return buildBlock({
+    league: "EuroLeague", href: "/teams/basketball", note, open: live,
+    items: s.rows, columns: ["P", "W", "L", "PCT", "PF", "PA", "PD"],
+    sort: showNums
+      ? (a, b) => (a.rank ?? 99) - (b.rank ?? 99) || b.won - a.won || b.pd - a.pd
+      : (a, b) => a.display.localeCompare(b.display),
+    groups: [],
+    row,
+    // 20 clubs, 38 rounds, ten through to the post-season (euroleaguebasketball.net
+    // format page, checked 2026-09-01). The contiguous line falls at ten; the
+    // six/four split inside it is what the note is for.
+    playoff: live
+      ? (sorted) => { const f = new Set(sorted.slice(0, 10)); return (r) => f.has(r); }
+      : undefined,
+    cutNote: "Top ten reach the post-season: the top six go straight to the quarter-finals, seventh to tenth into the play-in.",
+  });
+}
+
+async function rugbyFixturesBlock(): Promise<Block | null> {
+  const f = await getRugbyFixtures();
+  if (!f) return null;
+  const mk = (title: string, items: RugbyMatch[], score: boolean): SubTable | null =>
+    items.length ? {
+      title, columns: [score ? "Score" : "Date"],
+      rows: items.map((m): SRow => ({ rank: null, name: `${m.teamA} v ${m.teamB}`, flagUrl: _ruFlag(m.teamA),
+        cells: [score && m.scoreA != null && m.scoreB != null ? `${m.scoreA}\u2013${m.scoreB}`
+          // Prefer the real kick-off; fall back to the date-only value for
+          // any match whose source row had no usable timestamp.
+          : m.kickoff ? kickoff(m.kickoff) : kickoff(m.date, false)] })),
+    } : null;
+  const subTables = [mk("Live", f.live, true), mk("Upcoming", f.upcoming, false), mk("Recent", f.recent, true)]
+    .filter((st): st is SubTable => st !== null);
+  if (subTables.length === 0) return null;
+  const events: LiveEvent[] = [...f.live, ...f.upcoming, ...f.recent].map((m) => ({
+    sport: "Rugby Union", league: "Internationals", href: "/teams/rugby-union", label: `${m.teamA} v ${m.teamB}`,
+    // A match with no kick-off instant carries its date at midnight UTC, and
+    // the Today box treats that as "some time that day".
+    when: m.kickoff ?? `${m.date}T00:00:00Z`,
+    score: m.status === "recent" && m.scoreA != null && m.scoreB != null ? `${m.scoreA}–${m.scoreB}` : null, live: m.status === "live" }));
+  return { league: "Internationals", href: "/teams/rugby-union", note: f.live.length ? "live" : "fixtures", open: true, subTables, events };
+}
+
+async function cricketFixturesBlock(): Promise<Block | null> {
+  const f = await getCricketFixtures();
+  if (!f) return null;
+  const info = (m: CricketMatch, score: boolean): Cell =>
+    score && (m.scoreA || m.scoreB) ? `${m.scoreA ?? ""} / ${m.scoreB ?? ""}`.trim() : kickoff(m.date);
+  const mk = (title: string, items: CricketMatch[], score: boolean): SubTable | null =>
+    items.length ? {
+      title, columns: [score ? "Score" : "Date"],
+      rows: items.map((m): SRow => ({ rank: null, name: `${m.format} \u00b7 ${m.teamA} v ${m.teamB}`, flagUrl: _crFlag(m.teamA), cells: [info(m, score)] })),
+    } : null;
+  const subTables = [mk("Live", f.live, true), mk("Upcoming", f.upcoming, false), mk("Recent", f.recent, true)]
+    .filter((st): st is SubTable => st !== null);
+  if (subTables.length === 0) return null;
+  const events: LiveEvent[] = [...f.live, ...f.upcoming, ...f.recent].map((m) => ({
+    sport: "Cricket", league: m.format, href: "/teams/cricket", label: `${m.teamA} v ${m.teamB}`, when: m.date,
+    score: m.status === "recent" && (m.scoreA || m.scoreB) ? `${m.scoreA ?? ""} / ${m.scoreB ?? ""}`.trim() : null, live: m.status === "live" }));
+  return { league: "Internationals", href: "/teams/cricket", note: f.live.length ? "live" : "fixtures", open: true, subTables, events };
+}
+
+// European club-competition fixtures for the standings page, fed from the unified
+// api-football -> Supabase -> ISR bundle (getClubCompetitions), same source as the
+// tournament hubs. Team names resolve to their canonical Lookup name, never the raw
+// api name (which the retired euro-comps.json feed used to surface here).
+// Standings-first (Ashwin, 2026-08-29): each UEFA comp block leads with its
+// league-phase table — api-football's real standings when published, else a
+// table computed from the comp's own fixtures (lib/euroCompDerive: zeros the
+// moment the 36 are drawn, real W/D/L/Pts as results land). Fixture lists are
+// hidden from this page by default; only matches actually in play surface, as
+// a "Live" sub-table above the standings. Full fixtures stay on the
+// tournament hubs behind their own collapsed shell. Before a season's draw
+// (July), the old fixture-list block returns as a collapsed fallback.
+// Champions League odds by the club's canonical name (lib/uclSim's rows carry
+// the site's Lookup names, resolved through the same getFootballClubByName the
+// table rows use, so both sides meet on cur_name).
+type UclOdds = Map<string, { p_top8: number; p_top24: number; p_champion: number }>;
+
+function euroCompBlocks(comps: LiveComp[], uclOdds?: UclOdds): Block[] {
+  const WANT: Array<[number, string, string]> = [
+    [2, "champions-league", "Champions League"],
+    [3, "europa-league", "Europa League"],
+    [848, "conference-league", "Conference League"],
+  ];
+  const FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
+  const IN_PLAY = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
+  const nm = (t: LiveTeamRef) => {
+    const c = getFootballClubByName(t.lookup ?? "") ?? getFootballClubByName(t.name ?? "");
+    return c?.cur_name ?? t.lookup ?? t.name ?? "TBD";
+  };
+  const byKo = (dir: number) => (a: LiveFixture, b: LiveFixture) => dir * String(a.kickoff ?? "").localeCompare(String(b.kickoff ?? ""));
+  const blocks: Block[] = [];
+  for (const [id, slug, label] of WANT) {
+    const comp = comps.find((c) => c.league_id === id);
+    if (!comp) continue;
+    const fx = comp.fixtures ?? [];
+    const live = fx.filter((f) => f.status && IN_PLAY.has(f.status)).sort(byKo(1));
+    const mkFx = (title: string, items: LiveFixture[], score: boolean): SubTable | null =>
+      items.length ? {
+        title, columns: [score ? "Score" : "Date"],
+        rows: items.map((f): SRow => ({ rank: null, name: `${nm(f.home)} v ${nm(f.away)}`,
+          cells: [score && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : kickoff(f.kickoff)] })),
+      } : null;
+    const liveTable = mkFx("Live", live, true);
+
+    const { groups, computed } = deriveLeaguePhaseGroups(comp);
+    const odds = id === 2 && uclOdds && uclOdds.size > 0 ? uclOdds : null;
+    // The Champions League table reads P, GD, Pts and the three odds; W, D and
+    // L live on the hub (Ashwin, 2026-09-11: "it's getting a little too busy").
+    // The other two comps keep the full six until they carry odds of their own.
+    const slim = id === 2;
+    const groupTables: SubTable[] = groups
+      .slice().sort((a, b) => a.group_label.localeCompare(b.group_label))
+      .map((g): SubTable => ({
+        title: groups.length > 1 ? g.group_label : null,
+        columns: slim ? ["P", "GD", "Pts", ...(odds ? ["Top8%", "Top24%", "Title%"] : [])] : ["P", "W", "D", "L", "GD", "Pts"],
+        rows: g.rows.slice().sort(byPtsGd).map((r, i) => {
+          const row = clubRow(r, i, "group");
+          if (!slim) return row;
+          const [p, , , , gd, pts] = row.cells;
+          const o = odds ? odds.get(row.name) : undefined;
+          return { ...row, cells: [p, gd, pts, ...(odds ? [fmtOdds(o?.p_top8), fmtOdds(o?.p_top24), fmtOdds(o?.p_champion)] : [])] };
+        }),
+      }))
+      .filter((st) => st.rows.length > 0);
+
+    if (groupTables.length > 0) {
+      const anyPlayed = groups.some((g) => g.rows.some((r) => Number(r.played ?? 0) > 0));
+      const note = (live.length ? "live"
+        : computed ? (anyPlayed ? "computed from results" : "league phase drawn") : "league phase") + (odds ? " · odds simulated" : "");
+      blocks.push({
+        league: label, href: `/teams/football/tournaments/${slug}`, note,
+        open: true, live: live.length > 0,
+        subTables: [...(liveTable ? [liveTable] : []), ...groupTables],
+      });
+      continue;
+    }
+
+    // Pre-draw fallback: qualifying fixtures only, collapsed by default.
+    const recent = fx.filter((f) => f.status && FIN.has(f.status)).sort(byKo(-1)).slice(0, 12);
+    const upcoming = fx.filter((f) => !(f.status && (FIN.has(f.status) || IN_PLAY.has(f.status)))).sort(byKo(1)).slice(0, 20);
+    const subTables = [liveTable, mkFx("Upcoming", upcoming, false), mkFx("Recent", recent, true)]
+      .filter((st): st is SubTable => st !== null);
+    if (!subTables.length) continue;
+    blocks.push({ league: label, href: `/teams/football/tournaments/${slug}`, note: live.length ? "live" : "qualifying", open: false, live: live.length > 0, subTables });
+  }
+  return blocks;
+}
+
+// ---- College Football (rankings only on this page) ----------------------
+// The full FBS conference standings live on the /teams/cfb hub; here the block
+// carries the current AP / Coaches / CFP Top 25s, resolved to canonical program
+// pages. Collapsed until the 2026 kickoff (CFB_KICKOFF_UTC in lib/cfb-live),
+// with the poll date always visible in the accordion note.
+async function cfbBlock(): Promise<Block | null> {
+  const [s, sim, preds] = await Promise.all([getCfbRankings(), getCfbSim().catch(() => null), getCfbPredictions().catch(() => null)]);
+  if (s.polls.length === 0) return null;
+  // Playoff and national-title odds from the points-v3 season sim
+  // (/predictions/cfb), joined on the school's site slug; a ranked school the
+  // sim does not carry reads a dash.
+  const started0 = cfbSeasonStarted();
+  const showOdds = started0 && simFresh(sim?.meta.generated_at) && (sim?.table.length ?? 0) > 0;
+  const odds = new Map((showOdds ? sim!.table : []).map((r) => [r.slug, r]));
+  const dt = (iso: string | null) =>
+    iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }) : null;
+
+  // ONE combined comparison table instead of three stacked Top 25s (mobile:
+  // ~25 rows with a slim rank column per poll, not 75 rows of scrolling).
+  // Rows ordered by the lead poll (CFP when live, else AP); teams ranked only
+  // in a trailing poll append underneath, sorted by their best rank.
+  const COL: Record<string, string> = { cfp: "CFP", ap: "AP", coaches: "Coach" };
+  type Agg = { school: string; slug: string | null; record: string; ranks: (number | null)[] };
+  const bySchool = new Map<string, Agg>();
+  s.polls.forEach((p, pi) => {
+    for (const r of p.rows) {
+      let a = bySchool.get(r.school);
+      if (!a) { a = { school: r.school, slug: r.slug, record: r.record, ranks: s.polls.map(() => null) }; bySchool.set(r.school, a); }
+      a.ranks[pi] = r.rank;
+      if (r.record) a.record = r.record;
+    }
+  });
+  const best = (a: Agg) => Math.min(...a.ranks.map((x) => x ?? 99));
+  const teams = [...bySchool.values()].sort((a, b) =>
+    (a.ranks[0] ?? 99) - (b.ranks[0] ?? 99) || best(a) - best(b) || a.school.localeCompare(b.school));
+  const rows: SRow[] = teams.map((a): SRow => {
+    const o = a.slug ? odds.get(a.slug) : undefined;
+    return {
+      rank: a.ranks[0] ?? DASH, name: a.school,
+      href: a.slug ? `/teams/cfb/${a.slug}` : null, crestName: a.school,
+      cells: [...a.ranks.slice(1).map((x) => x ?? DASH), a.record || DASH, ...(showOdds ? [fmtOdds(o?.p_playoff), fmtOdds(o?.p_natty)] : [])],
+    };
+  });
+  const columns = [...s.polls.slice(1).map((p) => COL[p.kind] ?? p.name), "Rec", ...(showOdds ? ["PO%", "Title%"] : [])];
+
+  const started = cfbSeasonStarted();
+  const lead = s.polls[0];
+  const title = s.polls.length > 1
+    ? `# = ${COL[lead.kind] ?? lead.name} \u00b7 ${[lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ")}`
+    : [lead.name, lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ");
+  const note = ([COL[lead.kind] ?? lead.name, lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ") || null) + (showOdds ? " \u00b7 odds simulated" : "");
+  // The Today box: games on the predictions slate (AP Top 25 involvement, the
+  // slate's own scope), with the poll ranks in the label.
+  const rk = (n: number | null | undefined) => (n ? `#${n} ` : "");
+  const events: LiveEvent[] = (preds?.ledger ?? []).filter((g) => g.kickoff).map((g) => ({
+    sport: "Gridiron", league: "College Football", href: "/teams/cfb", label: `${rk(g.ap?.away)}${g.away} at ${rk(g.ap?.home)}${g.home}`, when: g.kickoff as string,
+    score: g.result ? awayFirst(g.score) : null, live: false, teams: { home: g.home, away: g.away } }));
+  return {
+    league: "College Football", href: "/teams/cfb", note,
+    open: started, live: started,
+    subTables: [{ title, columns, rows }], events,
+  };
+}
+
+
+/** The standings page's full data: sport groups for the tables, and the On today / Recent results / Coming up events. */
+export async function loadLiveStandings(): Promise<{ groups: SportGroup[]; today: ReturnType<typeof collectEvents> }> {
+  const [nfl, nba, wnba, nhl, mlb, npb, mls, cfl, cfb, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, top14, premRugby, championsCup, euroleague, clubStandings, clubComps, wLeagues, uwclComp, wOdds] = await Promise.all([
+    nflBlock(), nbaBlock(), wnbaBlock(), nhlBlock(), mlbBlock(), npbBlock(),
+    mlsBlock(), cflBlock(), cfbBlock(), footyBlock("afl"), footyBlock("nrl"), f1Block(),
+    golfBlock(), tennisBlock(), wtcBlock(), rugbyFixturesBlock(), cricketFixturesBlock(),
+    rugbyStandingsBlock("top14"), rugbyStandingsBlock("prem"), rugbyStandingsBlock("champions-cup"),
+    euroleagueBlock(),
+    getClubStandings(), getClubCompetitions(), getWLiveLeagues(), getWLiveCompetition("uwcl"),
+    getWLiveOdds(),
+  ]);
+  // Cup fixtures feed the Today box without a block of their own (the cups
+  // live on the season hub): the FA Cup and its peers, the super cups.
+  const [domesticCups, superCups] = await Promise.all([getDomesticCups().catch(() => []), getSuperCups().catch(() => [])]);
+  const cupName = (t: LiveTeamRef) => {
+    const c = getFootballClubByName(t.lookup ?? "") ?? getFootballClubByName(t.name ?? "");
+    return c?.cur_name ?? t.lookup ?? t.name ?? "TBD";
+  };
+  const CUP_FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
+  const CUP_LIVE = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
+  // Qualifying and preliminary rounds stay out: the FA Cup's first-round
+  // qualifying replays are not what a reader opening "On today" came for.
+  // A cup name two countries share carries the country's code, England's
+  // excepted (Ashwin, 2026-09-11: "League Cup" for the English one, "SCO" or
+  // similar for the Scottish one), so "League Cup" and "SCO League Cup" sit
+  // apart and neither takes a long name.
+  const CC: Record<string, string> = { England: "ENG", Scotland: "SCO", Italy: "ITA", Germany: "GER", Spain: "ESP", France: "FRA", Portugal: "POR", Netherlands: "NED" };
+  const allCups = [...domesticCups, ...superCups];
+  const nameCount = new Map<string, number>();
+  for (const c of allCups) nameCount.set(c.name, (nameCount.get(c.name) ?? 0) + 1);
+  const cupLabel = (cup: { name: string; country: string }) =>
+    (nameCount.get(cup.name) ?? 0) > 1 && cup.country !== "England" ? `${CC[cup.country] ?? cup.country} ${cup.name}` : cup.name;
+  const cupEvents: LiveEvent[] = allCups.flatMap((cup) => (cup.fixtures ?? []).filter((f) => f.kickoff && !/qualif|prelim/i.test(f.round ?? "")).map((f) => ({
+    sport: "Football", league: cupLabel(cup), href: "/teams/football/2026-27", label: `${cupName(f.home)} v ${cupName(f.away)}`, when: f.kickoff as string,
+    score: f.status && CUP_FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
+    live: !!f.status && CUP_LIVE.has(f.status) })));
+  // The Premier League and Champions League sims (Ashwin, 2026-09-11: "fit in
+  // the probabilities that we have for both ... on the live standings tables").
+  // Both are joined only when fresh and for the season on the table.
+  const [plSim, uclSim, plPreds] = await Promise.all([getPlSim().catch(() => null), getUclSim().catch(() => null), getPlPredictions().catch(() => null)]);
+  // Premier League fixtures and results for the Today box come from the
+  // predictions ledger (kick-off instants, scores once graded); the standings
+  // bundle carries tables only.
+  const plEvents: LiveEvent[] = (plPreds?.ledger ?? []).filter((g) => g.kickoff).map((g) => ({
+    sport: "Football", league: "Premier League", href: "/teams/football/2026-27", label: `${g.home} v ${g.away}`, when: g.kickoff as string,
+    score: g.result && g.score ? g.score.replace("-", "–") : null, live: false, teams: { home: g.home, away: g.away } }));
+  const plOdds: DomesticOdds = new Map(
+    plSim && plSim.meta.season === "2026-27" && simFresh(plSim.meta.generated_at)
+      ? plSim.table.map((r) => [r.slug, { p_title: r.p_title, p_top5: r.p_top5, p_releg: r.p_releg }])
+      : [],
+  );
+  const uclOdds: UclOdds = new Map(
+    uclSim && uclSim.meta.season === "2026-27" && simFresh(uclSim.meta.generated_at)
+      ? uclSim.table.map((r) => [getFootballClubByName(r.name)?.cur_name ?? r.name, { p_top8: r.p_top8, p_top24: r.p_top24, p_champion: r.p_champion }])
+      : [],
+  );
+  const intlComps = await getInternationalComps();
+  // International fixtures feed the Today box whether or not their block is
+  // showing (the block hides outside a tournament window; a qualifier on a
+  // Tuesday still belongs in "On today"). Ashwin, 2026-09-11: "you should be
+  // including international football if and when it pops up".
+  const INTL_FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
+  const INTL_LIVE = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
+  const intlEvents: LiveEvent[] = intlComps.flatMap((comp) => (comp.fixtures ?? []).filter((f) => f.kickoff).map((f) => ({
+    sport: "International Football", league: comp.name ?? "International", href: "/teams/national",
+    label: `${f.home.name ?? f.home.lookup ?? "TBD"} v ${f.away.name ?? f.away.lookup ?? "TBD"}`, when: f.kickoff as string,
+    score: f.status && INTL_FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
+    live: !!f.status && INTL_LIVE.has(f.status) })));
+  const unl = intlCompBlock(intlComps.find((c) => c.league_id === 5), {
+    label: "UEFA Nations League", href: "/teams/national#nations-league",
+    liveNote: "league phase", closedNote: "Sept–Nov 2026",
+  });
+  const asianCup = intlCompBlock(intlComps.find((c) => c.league_id === 7), {
+    label: "AFC Asian Cup", href: "/teams/national#asian-cup",
+    liveNote: "group stage", closedNote: "Jan 2027",
+  });
+  const wsl = wLeagueBlock(wLeagues.find((l) => l.compSlug === "wsl"), "WSL");
+  const ligaF = wLeagueBlock(wLeagues.find((l) => l.compSlug === "liga-f"), "Liga F");
+  const nwslW = wLeagueBlock(wLeagues.find((l) => l.compSlug === "nwsl"), "NWSL", wOdds.nwsl);
+  const uwcl = uwclBlock(uwclComp);
+  const euro = euroCompBlocks(clubComps, uclOdds);
+  const clubById = new Map(clubStandings.map((l) => [l.league_id, l]));
+  const domestics = DOMESTIC_LIVE
+    .map((d) => domesticLiveBlock(clubById.get(d.id), d.label, d.label === "Premier League" ? plOdds : undefined, d.label === "Premier League" ? plEvents : undefined))
+    .filter((b): b is Block => b !== null);
+  const liber = libertadoresBlock(clubComps.find((c) => c.league_id === 13));
+
+  // Collapse a block so the user opens it on demand (keeps a busy section tidy),
+  // but preserve its in-season state as `live` so the green dot still shows.
+  const collapse = (b: Block | null): Block | null => (b ? { ...b, live: b.open, open: false } : b);
+  // Marquee exceptions (Ashwin, 2026-08-01): the Champions League and the Premier
+  // League stay OPEN by default once their season is underway (the PL bundle
+  // carries played games; CL fixtures exist from qualifying onward). NFL/NBA/NHL
+  // already open via their own `open: live` logic.
+  // Amendment (Ashwin, 2026-08-03): the CL stays CLOSED until the 2026-27
+  // league-phase draw — Nyon, Thu 27 Aug 2026 17:00 BST (16:00 UTC), verified
+  // via UEFA.com. Before then the block only carries qualifying fixtures.
+  const UCL_DRAW_UTC = Date.UTC(2026, 7, 27, 16, 0, 0);
+  const uclDrawn = Date.now() >= UCL_DRAW_UTC;
+  const KEEP_OPEN = new Set(["Premier League", ...(uclDrawn ? ["Champions League"] : [])]);
+  const collapseExcept = (b: Block | null): Block | null => {
+    if (!b) return b;
+    if (!KEEP_OPEN.has(b.league)) return collapse(b);
+    if (b.league === "Premier League") {
+      const played = b.subTables.some((st) => st.rows.some((r) => Number(r.cells[0]) > 0));
+      return played ? { ...b, live: true, open: true } : collapse(b);
+    }
+    return { ...b, live: b.open, open: b.open };
+  };
+
+  // Ordered to match the League Hubs (lib/sportsCatalog FAMILY_ORDER), with
+  // Football first for the World Cup. Olympics/Cricket/Rugby Union/Handball/
+  // Volleyball have no live feed here, so they are simply absent.
+  const groups: SportGroup[] = [
+    // Left column = continental comps (European + Copa Libertadores), right column =
+    // domestic league tables; all collapsed so the section stays tidy. Left/right
+    // placement and order are enforced by FOOTBALL_LEFT/RIGHT in the normalization
+    // step below.
+    { sport: "Football", blocks: [collapse(liber), ...euro.map(collapseExcept), collapse(mls), ...domestics.map(collapseExcept)] },
+    // International (national-team) football — Nations League and the AFC
+    // Asian Cup; World Cup qualifiers and more can join the same bundle-fed
+    // section. Blocks with no subTables are dropped downstream, so an
+    // out-of-window tournament costs nothing here.
+    { sport: "International Football", blocks: [unl, asianCup] },
+    // Women's Football (below Football, all collapsed by default; feeds are the
+    // same wlive bundle that powers /teams/wfootball).
+    { sport: "Women's Football", blocks: [wsl, ligaF, nwslW, uwcl].map(collapse) },
+    // F1 is collapsed like every other long board: two tables of twenty-plus
+    // rows side by side, force-opened on desktop, was a wall the reader could
+    // not fold (Ashwin, 2026-09-07). The green dot still says it is in season.
+    { sport: "Motorsport", blocks: [collapse(f1)] },
+    { sport: "Golf", blocks: [golf] },
+    { sport: "Tennis", blocks: [tennis] },
+    { sport: "Gridiron", blocks: [nfl, cfb, cfl] },
+    // EuroLeague sits under the two North American leagues and is collapsed by
+    // default: 20 clubs over 38 rounds is a long table, and the NBA is what
+    // most arrivals came for.
+    { sport: "Basketball", blocks: [nba, wnba, collapse(euroleague)] },
+    { sport: "Baseball", blocks: [mlb, npb] },
+    { sport: "Hockey", blocks: [nhl] },
+    // The World Test Championship table runs a two-year cycle, so it is rarely
+    // news on any given day. Collapsed by default (Ashwin, 2026-08-30);
+    // collapse() keeps `live` true, so the green dot still shows when a
+    // cycle is under way.
+    { sport: "Cricket", blocks: [collapse(wtc), cricketFix] },
+    // Internationals first: a test week is the reason anyone opens this
+    // section, and the club tables run all season underneath. Champions Cup
+    // ahead of the two domestic leagues, mirroring the Football section's
+    // continental-before-domestic order. All three club boards collapse, so
+    // the section opens at a readable length; collapse() keeps `live` true so
+    // an in-season board still shows its green dot.
+    { sport: "Rugby Union", blocks: [rugbyFix, championsCup, top14, premRugby].map((b, i) => (i === 0 ? b : collapse(b))) },
+    { sport: "Rugby League", blocks: [nrl] },
+    { sport: "Aussie Rules", blocks: [afl] },
+  ]
+    .map((g) => {
+      let blocks = g.blocks
+        .filter((b): b is Block => b !== null && b.subTables.length > 0)
+        .map((b) => ({ ...b, live: b.live ?? b.open }));
+      if (g.sport === "Football") {
+        const known = new Set([...FOOTBALL_LEFT, ...FOOTBALL_RIGHT]);
+        const left = blocks.filter((b) => FOOTBALL_LEFT.includes(b.league)).sort(orderBy(FOOTBALL_LEFT));
+        const right = blocks.filter((b) => FOOTBALL_RIGHT.includes(b.league)).sort(orderBy(FOOTBALL_RIGHT));
+        const other = blocks.filter((b) => !known.has(b.league)); // unlisted: park at end of right, ask where it belongs
+        return { sport: g.sport, blocks, columns: [left, [...right, ...other]] as [Block[], Block[]] };
+      }
+      return { sport: g.sport, blocks };
+    })
+    .filter((g) => g.blocks.length > 0);
+  // The three UEFA club competitions feed the strips from the competitions
+  // bundle (Ashwin, 2026-09-11: "make sure that those are also in those
+  // three"), and the domestic leagues whose bundles carry tables only come
+  // through live-fixtures-2026.json, the builder's window a week either side
+  // of today. Women's leagues sit under Women's Football beside the UWCL.
+  const EURO_LABEL: Record<number, string> = { 2: "Champions League", 3: "Europa League", 848: "Conference League" };
+  const euroEvents: LiveEvent[] = clubComps.filter((c) => EURO_LABEL[c.league_id]).flatMap((comp) => (comp.fixtures ?? []).filter((f) => f.kickoff && !/qualif|prelim/i.test(f.round ?? "")).map((f) => ({
+    sport: "Football", league: EURO_LABEL[comp.league_id], href: `/teams/football/tournaments/${comp.league_id === 2 ? "champions-league" : comp.league_id === 3 ? "europa-league" : "conference-league"}`,
+    label: `${cupName(f.home)} v ${cupName(f.away)}`, when: f.kickoff as string,
+    score: f.status && CUP_FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
+    live: !!f.status && CUP_LIVE.has(f.status) })));
+  const leagueFixtures = await getLeagueFixtures().catch(() => []);
+  const leagueEvents: LiveEvent[] = leagueFixtures.flatMap((lg) => (lg.fixtures ?? []).filter((f) => f.kickoff).map((f) => ({
+    sport: lg.women ? "Women's Football" : "Football", league: lg.name, href: lg.women ? "/teams/wfootball" : "/teams/football/2026-27",
+    label: `${cupName(f.home)} v ${cupName(f.away)}`, when: f.kickoff as string,
+    score: f.status && CUP_FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
+    live: !!f.status && CUP_LIVE.has(f.status) })));
+  // Finals from ESPN across the results window (today's window back three days), so a
+  // game the grading jobs have not reached still lands in Recent results.
+  const [windowFrom] = todayWindow(Date.now());
+  const espnFinals = await getEspnFinals(windowFrom - RESULTS_BACK_MS, Date.now()).catch(() => []);
+  const today = collectEvents(groups, [...cupEvents, ...intlEvents, ...euroEvents, ...leagueEvents], espnFinals);
+  return { groups, today };
+}
