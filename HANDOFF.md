@@ -14541,10 +14541,10 @@ sweep, then one push on his explicit yes ("push it once the build passes").
   `next build --webpack`, function-size all OK. Release note 2026-09-13 bullet updated (every story plus
   the archive back to 29 June). Applied patch retired to
   `~/metro-mini-jobs/pending/digest-entity-routes-2026-09-13.*.applied-cb25a991a`.
-- **Deploy:** the watcher was still waiting on `/deployed` when this was written. Verify: `/deployed` sha
-  `cb25a991a…`; `/digest` shows "The archive" with "75 days and 1,493 stories"; `/digest/2026-08-17` shows
-  "Show all 43 stories"; `/digest/2026-06-29` 200; `/digest/2026-07-13` 404; `/updates` carries "and an
-  archive back to 29 June".
+- **Deploy: LIVE, verified.** `/deployed` returned `cb25a991a…` ~450s after push. On production: `/digest`
+  200 with "The archive", "75 days and 1,493 stories" and "Show all 34 stories" (09-13); `/digest/2026-08-17`
+  200 with "Show all 43"; `/digest/2026-06-29` 200; `/digest/2026-07-13` 404; homepage "From the digest"
+  200; `/updates` carries "and an archive back to 29 June"; Washington-Baltimore In the news 200.
 
 **Open:**
 - The live morning run (09-14 ~08:20 BST) still writes the curated 8–12 via `editorial-prompt.md`, while
