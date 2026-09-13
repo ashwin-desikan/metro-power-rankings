@@ -14350,7 +14350,7 @@ Ashwin asked for a pointer message for Windows Claude. The facts it rests on, ea
   | 08:00 daily | `com.newsletter.daily` → `run-daily.sh` | headless `claude -p` reads Gmail newsletters → digest script; `daily.py` TTS + cover → publishes to the Daily Newsletter Digest Spotify show |
   | end of daily | `post-socials.sh` | headless Claude makes TWO Gmail **drafts** to ashwind@gmail.com: "LinkedIn draft - Daily Digest <date>", "Substack draft - Daily Digest <date>". Never sends (connector has no send tool). Failure is non-fatal |
   | 09:30 daily | `com.newsletter.watchdog` → `watchdog.sh` | final.mp3 present AND Spotify says READY |
-  | Sun 09:00 | `com.newsletter.weekly` → `run-weekly.sh` | Metro weekly from newest unnarrated Substack post; builds only, manual upload to Spotify for Creators. Clean-skipping: no new Substack post in its 14-day window |
+  | Sun 09:00 | `com.newsletter.weekly` → `run-weekly.sh` | Metro weekly from newest unnarrated Substack post; builds only, manual upload to Spotify for Creators. It had skipped since July (no new post), but **09-13 09:06 it BUILT "Four seasons, one ledger"** (Substack 09-09, 23:30, 10 chapters): manual upload pending. (The "skipping" reading in the first draft of this section came from a stale line in `launchd-weekly.out`, not today's run.) |
   | 12:00 daily | `com.newsletter.retention` → `retention-spotify.sh` | deletes daily-show episodes older than 7 days (irreversible) |
 - **Latest:** 09-13 daily published (`0PdQ035e6LkvlCRbvsXw6z`), drafts created 08:19 local; 09-12
   retention deleted the 09-04 episode. Auth risk is covered by `claude-auth-canary` (00:30/06:30 UTC).
