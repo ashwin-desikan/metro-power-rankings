@@ -14643,7 +14643,7 @@ news without a podcast; no redundant content on the site; the morning podcast st
 rule".
 
 **How it avoids repeats: one story, one day, the next morning wins.**
-- 20:00 (`com.newsletter.evening` → `hc-run.sh newsletter-evening` → `run-evening.sh`): headless Claude,
+- 20:00 (`com.newsletter.evening` → `hc-run.sh newsletter-daily` → `run-evening.sh`; it shares the morning job's tile): headless Claude,
   feed only, Gmail `category:social after:<today 08:00 epoch>`. Its prompt lists what today's page
   already carries (`push_feed.py DATE --list`) and takes the link, feed and filtering rules straight from
   `editorial-prompt.md` (three headings extracted at run time; the run fails loudly if one is renamed).
@@ -14692,14 +14692,15 @@ story…"; Backlog "Evening news refresh … confirm the first live run and the 
 In progress) and "Create the healthchecks.io check 'newsletter-evening'" (Ashwin, Open).
 
 **Open:**
-- 🔴 No healthchecks tile yet, and I misread why at first: `POST /api/v3/checks/` returned 403 because
-  the project is at its **20-check plan limit**, not because `HC_API_KEY` is read-only (it has full
-  write access; every check lists an `update_url`). Same trap as 2026-09-10 section I. NOT worked
-  around with `?create=1`. Until Ashwin frees a slot (give up the tile most covered elsewhere, record its
-  config first) or raises the plan, `com.newsletter.evening` pings slug `newsletter-evening`, which does
-  not exist: hc-run.sh swallows the 404, so the job has NO tile. Its failures still reach ntfy via
-  run-evening.sh. When a slot exists: create it via the Management API, cron `0 20 * * *`,
-  Europe/London, grace 14400.
+- Healthchecks: the evening run SHARES the `newsletter-daily` tile (Ashwin: "since we're at the 20 check
+  limit, can you add this to any existing check?"). That check is now cron `0 8,20 * * *`, Europe/London,
+  grace 14400, with a description naming both runs; the plist's hc-run slug is `newsletter-daily`. A red
+  tile means either run failed or went silent: `newsletter-podcast/logs/DATE.log` is the morning,
+  `DATE-evening.log` the evening. ops-autofix cannot re-run it (launchd agents are not in `jobs.toml`), so
+  an evening failure can never re-trigger the podcast. I first misread the create 403 as a read-only key;
+  it is the plan's 20-check QUOTA (same trap as 2026-09-10 section I; `HC_API_KEY` has write access). No
+  `?create=1`, no check deleted. (A `plutil -replace` on the plist's slug INSERTED instead of replacing;
+  caught and removed before the first run, arguments verified exactly.)
 - Check after 2026-09-14 08:00: yesterday lost exactly the evening urls the morning feed carries, item
   counts match on both days, and the morning feed is the new ~30-item size.
 - `topics`: now tagged in both jobs (Ashwin, same day). `build_topics.py --write --date <today>` runs after
