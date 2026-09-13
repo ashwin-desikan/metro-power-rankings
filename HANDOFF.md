@@ -14288,8 +14288,10 @@ removed its "Selected changes" table and that run overwrote 60 rows. The constit
   tree), `check:release-notes` OK, `tsc --noEmit` exit 0 (`getSp500` types `changes` as
   `Sp500Change[]`, so no JSON-inference risk). At apply time: tree clean, local == origin, `changes`
   still `[]`, no competing 09-13 release entry; hook `touches_build=1 tagged=0`; pushed alone as HEAD.
-- **Deploy:** `dpl_HyZNJiLEdZEE1fKCvHxfeK8cFBge` was BUILDING when this was written. First paid build
-  of 09-13 UTC. Verify: `/deployed` sha `55074565a…` and the page reads "61 on record".
+- **Deploy: LIVE, verified.** `dpl_HyZNJiLEdZEE1fKCvHxfeK8cFBge`, first paid build of 09-13 UTC;
+  `/deployed` returned `55074565a…` ~7 min after push. Live page reads "Index changes, newest first
+  (61 on record)", top row Reddit/AvalonBay, bottom row Hubbell/Organon; /updates shows the entry.
+  (Scraping tip: React splits the count into its own text node, so match `\(\s*\d+\s*on record\)`.)
 - **Mixed date formats are expected, cosmetic only.** Recovered rows say "August 5, 2026"; rows the
   fallback writes say "2026-09-26". The page renders `ch.date` verbatim and nothing sorts on it.
 - **Next proof:** the 09-21 rebalance (Bloom Energy, Everpure, Illumina in; Molson Coors, The Trade
