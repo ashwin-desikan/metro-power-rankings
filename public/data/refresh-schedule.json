@@ -1,25 +1,6 @@
 {
-  "generated_at": "2026-09-13T06:22:04.814980+00:00",
+  "generated_at": "2026-09-13T06:32:08.794524+00:00",
   "jobs": [
-    {
-      "id": "claude-auth-canary",
-      "label": "Claude auth canary (report-only)",
-      "schedule_text": "Daily at 00:30, 06:30 UTC",
-      "cadence": "daily",
-      "times": [
-        "00:30",
-        "06:30"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-13T06:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-13",
-        "status": "ok",
-        "slot": "2026-09-13T00:30:00+00:00"
-      }
-    },
     {
       "id": "mlb-sim",
       "label": "MLB + season playoff odds (7 leagues)",
@@ -200,6 +181,25 @@
         "date": "2026-09-06",
         "status": "ok",
         "slot": "2026-09-06T23:40:00+00:00"
+      }
+    },
+    {
+      "id": "claude-auth-canary",
+      "label": "Claude auth canary (report-only)",
+      "schedule_text": "Daily at 00:30, 06:30 UTC",
+      "cadence": "daily",
+      "times": [
+        "00:30",
+        "06:30"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-14T00:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-13",
+        "status": "ok",
+        "slot": "2026-09-13T06:30:00+00:00"
       }
     },
     {
