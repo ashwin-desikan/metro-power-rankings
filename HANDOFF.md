@@ -15099,3 +15099,9 @@ Ashwin asked for the list with each club's competition so he can add them to the
   venue in Gaborone, club is Namibian).
 - **Next:** Ashwin edits the workbook and runs `cl-lookup-sync`; the following football-standings run should log
   `unmatched=0` (or fewer) and the twice-daily UNMATCHED ntfy stops.
+- **Scheduled: Friday 2026-09-18, 10:00-10:45 BST, on the Windows box** (Ashwin is travelling with the MacBook and
+  the Lookup workbook lives on Windows). Google Calendar event "Map the 45 unmatched AFC/CAF clubs into the Lookup
+  (Windows)" on ashwind@gmail.com, marked free, popup 30 min and email 60 min before, no invitees; the description
+  carries the steps and the three checks. The workbook is not reachable from Windows at its mini path: Ashwin was
+  asked to save the copy sent in chat somewhere Windows can open (e.g. OneDrive). Until the sync, the UNMATCHED ntfy
+  keeps firing twice a day; that is expected, not a new fault.
