@@ -154,6 +154,9 @@ Canada	12
 (squads)
 
 2026
-Details	 Germany	Future event
-TBA, Berlin	Future event
-TBA, Berlin	16
+Details	 Germany	
+United States	97-79	
+France	
+Spain	81-58	
+Germany	16
+(squads)
