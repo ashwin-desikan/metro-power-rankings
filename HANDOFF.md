@@ -14909,3 +14909,47 @@ was absent from both.
 - `device_bash` is still down on this box (Windows update, 8 Sept). Everything here went
   through Desktop Commander. PowerShell nesting mangles `$_`, `$env:` and parentheses, so
   every non-trivial command was written to `_scratch/*.py` and run with `python`.
+
+## 2026-09-14 — laptop (Ashwin's MacBook Air, not the mini) → mini and next session: DISPLAY-ONLY CONTINENTAL COMPS FALL BACK TO API NAMES; gap-league-watch FAILED 05:00Z, CAUSE UNREAD
+
+Interactive session investigating the morning's ntfy alerts from the laptop. The mini
+could not be reached (the venue Wi-Fi's WebTitan filter intercepts TLS to tailscale.com),
+so everything below comes from the repo, `public/data/refresh-schedule.json` and `gh`.
+
+### A. `gap-league-watch` failed its 05:00Z slot — NOT diagnosed
+
+Only non-ok job today; still `failed` after the 06:15Z ops-autofix slot, so the autofix
+rerun presumably failed too. First run since `26987d2ee` (09-13 15:23Z), which rewrote
+`watch_gap_leagues.py` and added the three World entries (16, 27, 536) with
+`target_season: null` and `ready_on: window`. `--self-test` passes on current `main` from
+the laptop, so the fault is in the live `--write` path (api-football, the
+`football_league_watch` upsert, or the git ff/commit step). **Mini: read
+`~/metro-mini-jobs/logs/gap-league-watch-2026-09-14.log` and fix.** Low stakes: the job
+writes nothing to the site and any missed transition is re-observed next run.
+
+### B. Unmatched CAF/AFC clubs now display under api-football's name (this commit)
+
+The 45 UNMATCHED clubs from 26987d2ee (daily sweep 09-14, item 1) were not only an alert:
+`football_fixtures` stores team ids only, and `export_bundles.py` took names solely from
+`football_team`, so every unmatched side shipped `name: null` and rendered "TBD" (live
+bundle: CAF 49 of 74 fixtures, AFC 26 sides). The domestic cups never had this because
+`refresh_domestic_cups.py` already falls back to the api name.
+
+- `refresh.py` caches api team names (id → name, merged across runs) to
+  `scripts/apifootball/_scratch/api_team_names.json` right after fetching. Gitignored, so
+  it cannot dirty the tree and stand ops-autofix down.
+- `leagues.json`: `"display_only": true` on 17 (AFC CL Elite), 12 (CAF CL) and 1168
+  (Intercontinental Cup). Ashwin's ruling: these are scores and fixtures only, linked into
+  nothing else. UEFA comps and Libertadores deliberately NOT flagged (badges, club pages,
+  rankings).
+- `export_bundles.py` uses the cached name only for display_only comps and only when
+  `canonical_name` is missing; `lookup` stays null, so it never reads as a resolved club.
+- **The UNMATCHED alert is unchanged, on Ashwin's instruction**: it is his reminder to add
+  the clubs to Lookup, which he plans to do by hand later today (via `cl-lookup-sync`, not
+  `sync_lookup.py` directly).
+
+Verified offline only (the laptop has no Supabase key): both self-tests, compile, and unit
+checks of the cache and fallback. **Mini, first football-standings run after this lands:**
+confirm the log line `api team names cached for export: N` and that
+`live-competitions-2026.json` has no `name: null` in leagues 12/17 (a club whose api name
+was never fetched would still be null).

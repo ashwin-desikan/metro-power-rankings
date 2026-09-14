@@ -16,9 +16,26 @@ from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from refresh import supa_get, supa_key, CONTINENTAL, INTERNATIONAL, WOMEN_INTL
+from refresh import supa_get, supa_key, CONTINENTAL, INTERNATIONAL, WOMEN_INTL, API_NAMES
 
 OUT = os.path.abspath(os.path.join(HERE, "..", "..", "public", "data", "football"))
+
+# Competitions shown as scores and fixtures only, linked into nothing else on the site
+# (leagues.json "display_only": true: the AFC, CAF and Intercontinental trackers). A club
+# there that the Lookup has not resolved yet ships under api-football's own name instead of
+# no name at all. Everywhere else a missing name stays missing, because those clubs feed
+# badges, club pages and rankings, where a guessed name would be wrong rather than merely
+# plain. refresh.py still raises the UNMATCHED alert either way.
+def _display_only():
+    rows = json.load(open(os.path.join(HERE, "leagues.json"), encoding="utf-8"))
+    return {r["league_id"] for r in rows if r.get("display_only")}
+DISPLAY_ONLY = _display_only()
+
+def load_api_names(path=API_NAMES):
+    try:
+        with open(path, encoding="utf-8") as f: return json.load(f)
+    except (OSError, ValueError):
+        return {}
 
 # Non-UEFA confederations for the tracked domestic leagues; every other tracked
 # country is UEFA (the site tracks no other European-adjacent edge cases).
@@ -32,13 +49,18 @@ CONF_OVERRIDE = {
 def confed(country):
     return CONF_OVERRIDE.get(country or "", "UEFA")
 
-def tref(teams, tid):
+def tref(teams, tid, api_names=None):
+    """api_names is passed only for DISPLAY_ONLY competitions. lookup stays None on a
+    fallback, so the page never treats an api-football name as a resolved Lookup club."""
     t = teams.get(tid) or {}
-    return {"team_id": tid, "name": t.get("canonical_name"), "lookup": t.get("lookup_name"),
+    name = t.get("canonical_name")
+    if name is None and api_names:
+        name = api_names.get(str(tid))
+    return {"team_id": tid, "name": name, "lookup": t.get("lookup_name"),
             "country": t.get("country")}
 
-def srow(s, teams):
-    return {"rank": s.get("rank"), **tref(teams, s.get("team_id")),
+def srow(s, teams, api_names=None):
+    return {"rank": s.get("rank"), **tref(teams, s.get("team_id"), api_names),
             "played": s.get("played"), "win": s.get("win"), "draw": s.get("draw"), "lose": s.get("lose"),
             "gf": s.get("goals_for"), "ga": s.get("goals_against"), "gd": s.get("goal_diff"),
             "points": s.get("points"), "form": s.get("form")}
@@ -61,16 +83,19 @@ def main():
         if lid in CONTINENTAL: return comps
         if lid in INTERNATIONAL: return intl
         return dom
+    api_names = load_api_names()
+    fallback = lambda lid: api_names if lid in DISPLAY_ONLY else None
     for s in standings:
         lid = s["league_id"]
         L = bucket_for(lid).setdefault(lid, {"groups": {}, "fixtures": []})
-        L["groups"].setdefault(s.get("group_label") or "", []).append(srow(s, teams))
+        L["groups"].setdefault(s.get("group_label") or "", []).append(srow(s, teams, fallback(lid)))
     for f in fixtures:
         lid = f["league_id"]
         if lid not in CONTINENTAL and lid not in INTERNATIONAL: continue
         bucket_for(lid).setdefault(lid, {"groups": {}, "fixtures": []})["fixtures"].append({
             "fixture_id": f.get("fixture_id"), "round": f.get("round"), "kickoff": f.get("kickoff"),
-            "home": tref(teams, f.get("home_team_id")), "away": tref(teams, f.get("away_team_id")),
+            "home": tref(teams, f.get("home_team_id"), fallback(lid)),
+            "away": tref(teams, f.get("away_team_id"), fallback(lid)),
             "home_goals": f.get("home_goals"), "away_goals": f.get("away_goals"), "status": f.get("status")})
 
     def pack(bucket, include_fixtures):

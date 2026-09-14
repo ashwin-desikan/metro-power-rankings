@@ -429,6 +429,29 @@ def league_meta_rows(leagues):
             for lg in leagues]
 
 
+# api-football's own team names, id -> name, cached for export_bundles.py. A fixture row
+# stores only team ids, so a club the Lookup cannot resolve yet has no football_team row and
+# would reach the site with no name at all ("TBD"). export_bundles.py shows this name for
+# such a club in the display_only competitions. The UNMATCHED alert is unaffected: nothing
+# here writes football_team, so the Lookup entry is still asked for on every run.
+# In _scratch/ because that is gitignored: an untracked file would read as a dirty tree
+# and stand ops-autofix down. Merged rather than replaced, so a league whose fetch errored
+# this run keeps last run's names.
+API_NAMES = os.path.join(HERE, "_scratch", "api_team_names.json")
+
+def save_api_names(teams_seen, path=API_NAMES):
+    try:
+        with open(path, encoding="utf-8") as f: names = json.load(f)
+    except (OSError, ValueError):
+        names = {}
+    names.update({str(tid): nm for tid, nm in teams_seen.items() if nm})
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f: json.dump(names, f, ensure_ascii=False)
+    os.replace(tmp, path)
+    return len(names)
+
+
 def main():
     if "--self-test" in sys.argv: return selftest()
     write = "--write" in sys.argv
@@ -460,6 +483,10 @@ def main():
     log(f"fetched: standings={len(standings)} fixtures={len(fixtures)} teams_seen={len(teams_seen)} "
         f"empty={len(empty)} errors={len(errors)}")
     for lid, e in errors: log(f"  ERROR league {lid}: {str(e)[:100]}")
+    try:
+        log(f"api team names cached for export: {save_api_names(teams_seen)}")
+    except OSError as e:   # a display nicety must never cost the refresh
+        log(f"  WARN: could not cache api team names: {e}")
     if not write:
         log("DRY RUN — no writes. Pass --write to upsert.")
         return
