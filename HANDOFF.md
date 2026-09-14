@@ -14990,3 +14990,57 @@ Verification on the laptop: `check:live-data`, `check:data-reads`, `check:releas
 `check:client-imports`, `dispatcher.py --self-test` and `bash -n` all pass; typecheck
 reports no errors in any touched file (the laptop's `node_modules` is stale, so the
 full `npm run verify` and `next build` status is recorded in the commit message).
+
+## 2026-09-14 — mini → laptop and next session: gap-league-watch FIXED (schema), WWC final RECORDED, laptop's checks confirmed
+
+Ashwin asked why the day's ntfys piled up, then "apply both fixes". This answers both laptop entries above.
+
+### A. gap-league-watch: the cause was a NOT NULL column, not the script (migration only, no code change)
+
+- **Failure:** `football_league_watch.target_season` was `NOT NULL`. `26987d2ee` added World 16 (CONCACAF Champions League),
+  27 (OFC Champions League) and 536 (CONCACAF Nations League) with `target_season: null`, correctly: `ready_on: window`
+  ignores it. The whole upsert was rejected (HTTP 400, Postgres `23502`, failing row `World, 16, CONCACAF Champions
+  League, null, ...`), so ALL four leagues went unwritten at 05:00Z and on every autofix rerun (06:27, 08:21, 10:16Z;
+  six ntfys, then the 3/day cap). The laptop's `--self-test` passed because it never touches Supabase.
+- **Fix (Ashwin approved):** migration `football_league_watch_target_season_nullable` drops `NOT NULL` and comments the
+  column (null = window-gated).
+- **Verified:** `run-gap-league-watch.sh` re-run 17:40Z: self-test OK, "wrote watch state for 4 leagues", no
+  transitions. India L1 awaiting 2026; the three World comps have no live season (latest ended 2026-05-31, 08-22,
+  2025-03-24); their rows store `target_season` null. `dispatcher.py --mark-ok gap-league-watch`; `detect_issues.py`
+  0 findings. Notion Backlog row closed with the cause.
+
+### B. Women's Basketball World Cup: parser fixed a second time, result recorded (`f1b438170`, `8f43c6971`, no build)
+
+- The 09-14 scheduled run (started 12:16Z) found the final PLAYED and failed "Final box has a score (97-79) but no
+  teams". Once a game is over Wikipedia bolds the winner's cell (`'''{{bkw-rt|USA}}'''`); `clean_team` stripped the
+  template first, leaving a non-empty `''''''`, so the flag code was never read. Quotes are now stripped first;
+  self-test adds a bold cell and a played bold box. Autofix had re-run it three times (13:18, 15:18, 17:16 BST).
+- Dispatch 34876273431 on `f1b438170`: success, committed `8f43c6971` "Auto: 2026 Women's Basketball World Cup result
+  [vercel skip]". **United States 97-79 France; third Spain 81-58 Germany.** `nations.json`: United States 12 titles
+  (2026 added), France runner-up 2026, Spain and Germany one more final four each. Read at runtime, no build.
+- The tracker's schedule runs to 30 Sept; from now on it prints "2026 already in ..." and exits 0.
+
+### C. The laptop's three checks
+
+1. **gap-league-watch:** diagnosed and fixed, section A.
+2. **owners-weekly (`0cd37969a`):** `dispatcher.py --check-sync` reports in sync. The live `jobs.toml` HAD drifted (only
+   the owners-weekly comments and label); synced by hand at ~17:45Z after diffing it, which also kept the
+   `claude-auth-canary` 19:30 slot from 09-13. `REVALIDATE_SECRET` is set (non-empty) in `config.env`. `VERCEL_TOKEN`
+   left out, as asked. This morning's `~/metro-mini-jobs/pending/owners-2026-09-14.patch` (3 moved: Lakers,
+   Timberwolves, one more) was saved under the OLD build-time rules (it may touch `lib/releases.ts`); re-run the job or
+   re-derive it rather than applying it as is.
+3. **API-name fallback (`68eeb6360`):** `scripts/apifootball/_scratch/api_team_names.json` exists (2,158 entries,
+   written 18:07), gitignored. Log: "api team names cached for export: 2157" (12:06 run) and "2158" (18:06 run).
+   `public/data/football/live-competitions-2026.json` has no `name: null` anywhere. The UNMATCHED alert is still
+   firing, as intended, until Ashwin maps the 45 clubs.
+
+### D. Evening news refresh: first morning move verified (09-13 section K)
+
+The 09-14 08:00 push carried 57 morning items (the new every-linked-story size). All 12 of 09-13's evening stories
+moved to 09-14 ("moves from 2026-09-13 evening to today" x12); 09-13 now holds 34, 09-14 holds 57, both
+`digest_run.item_count`s match, positions have no gaps, and no url is on both days. Topics patched 24 of 57 rows.
+
+### E. Remote Control
+
+The laptop asked which reachable session is the mini: this interactive one is titled **"Latest commits review"**.
+"Ops sweep" is not it (likely the headless daily-ops-sweep, which is report-only and cannot act on a message).
