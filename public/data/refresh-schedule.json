@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-14T07:15:35.420229+00:00",
+  "generated_at": "2026-09-14T07:25:54.519285+00:00",
   "jobs": [
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-14T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-09-13",
-        "status": "ok",
-        "slot": "2026-09-13T07:20:00+00:00"
-      }
-    },
     {
       "id": "nfl-elo",
       "label": "NFL live Elo, seeds, odds (and the bracket in Jan/Feb)",
@@ -333,6 +315,24 @@
         "date": "2026-09-08",
         "status": "ok",
         "slot": "2026-09-08T07:05:00+00:00"
+      }
+    },
+    {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-15T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-09-14",
+        "status": "ok",
+        "slot": "2026-09-14T07:20:00+00:00"
       }
     },
     {
