@@ -15074,3 +15074,28 @@ warm `/sports/owners` 200 and `/sports/valuations` 200; "Owners weekly done" 19:
 
 **Next:** the scheduled run is Monday 2026-09-21 08:30Z. Timberwolves/Lynx review falls due 18 Sept, so that run should
 re-check them first.
+
+### G. The 45 unmatched AFC/CAF clubs, triaged for Ashwin's Lookup edit (no code change)
+
+Ashwin asked for the list with each club's competition so he can add them to the Lookup and sync. Delivered as
+`~/metro-mini-jobs/pending/unmatched-afc-caf-clubs-2026-09-14.xlsx` (plus `.csv`); not in git.
+
+- **Source:** the 18:06 football-standings log ("unmatched=45"), competitions from `football_fixtures` joined to
+  `football_league`, country/city/venue from api-football `/teams?id=` (45 calls).
+- **By competition:** AFC Champions League Elite (17): 4 clubs. CAF Champions League (12): 41. Intercontinental Cup: 0.
+- **15 are already in the Lookup and only lack `API Name`** (the resolver's first key; Lookup last synced 2026-08-30):
+  Al Hussein -> Hussein Irbid, Johor Darul Takzim FC -> Johor Darul Ta'zim, Neftchi -> FK Neftchi Farg'ona,
+  Công An Nhân Dân -> Cong An Hanoi FC, Colombe, Fomboni, TP Mazembe, Mangasport, Horoya, Stade Malien, Nouadhibou,
+  APR, Simba, Vipers, and ASC Kara -> ASKO Kara (**unconfirmed**, may be a different Kara club). Sheet 1 carries each
+  Lookup row id.
+- **TP Mazembe is the instructive one:** its name IS in the Lookup, but the separate "TP Englebert" row (id 139470) also
+  has Cur. Name "TP Mazembe", so `build_resolver` marks the name AMBIG and returns nothing. An `API Name` on row 139465
+  fixes it, because `by_api` is consulted before `by_name`. Any club listed under a former name on another row has
+  the same trap.
+- **30 are new rows** (sheet 2, Lookup column order Cur. Name..Long, country spelled the Lookup's way: Côte d'Ivoire,
+  Congo DR, Sierra Leone). Fuzzy near-misses rejected by hand as different clubs: Port (not AS Port Louis 2000),
+  Medina United (not Brikama United), NIGELEC (not the "Niger" row), 15 de Agosto (not Primeiro de Agosto).
+- **Data to confirm:** 15 de Agosto (api says Paraguay, impossible for CAF; country left blank); African Stars (api
+  venue in Gaborone, club is Namibian).
+- **Next:** Ashwin edits the workbook and runs `cl-lookup-sync`; the following football-standings run should log
+  `unmatched=0` (or fewer) and the twice-daily UNMATCHED ntfy stops.
