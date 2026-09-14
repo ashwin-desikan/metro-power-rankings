@@ -14953,3 +14953,40 @@ checks of the cache and fallback. **Mini, first football-standings run after thi
 confirm the log line `api team names cached for export: N` and that
 `live-competitions-2026.json` has no `name: null` in leagues 12/17 (a club whose api name
 was never fetched would still be null).
+
+## 2026-09-14 (later) — laptop → mini and next session: OWNERS DATA IS READ AT RUNTIME; owners-weekly NEEDS NO VERCEL TOKEN AND SPENDS NO BUILD
+
+Ashwin asked why an owners change cost a build when "isn't it just stored in a table".
+It was not: `lib/teamOwners.ts` read `public/data/owners/team-owners.json` with a
+build-time `readFileSync`, so every owners push needed a paid production build, and
+`run-owners-weekly.sh` counted the 2/day budget with a Vercel token and blocked its own
+push without one (`60d7f885d`). This commit removes that dependency.
+
+- **`lib/teamOwners.ts`** fetches the owners JSON from GitHub raw, `revalidate: 3600`,
+  tag **`owners`**, bundled file as fallback, local file first in development. The
+  module memo is keyed on the file's `generated` stamp, not kept forever, so a warm
+  instance picks up the next week's file. All six exports are now async;
+  `/sports/owners` and `/sports/valuations` await them. No other callers exist.
+- **`lib/valuations.ts` is deliberately still build-time** (valuations change only on a
+  real ETL, and `ValuationChip` renders on every team page). Owners rows attach to the
+  build-time valuations exactly as before.
+- **`/api/revalidate`** allows tag `owners`; **`check-live-data.mjs`** declares
+  `owners/team-owners.json`, so a regression to build-time reads fails verify.
+- **`run-owners-weekly.sh`**: the budget count, the no-token git push block and the
+  `lib/releases.ts` step are gone. Commits carry `[vercel skip]` and stage only the seed
+  and the built JSON. When the published owners file changed during the run, the wrapper
+  sources `runners/_common.sh` and calls `revalidate_ping owners /sports/owners
+  /sports/valuations` (300s CDN wait, fail-open). ntfy tag is now `clipboard`, not
+  `rotating_light`. **`VERCEL_TOKEN` is no longer needed in `config.env` for this job.**
+- **Trade-off, accepted:** owners changes no longer write a release note, because
+  `lib/releases.ts` needs a build. Fold notable ownership news into the next real
+  shipping day's entry by hand.
+
+**Mini, next Monday's run (09-21 08:30Z):** confirm the log shows a push with
+`[vercel skip]` (or "no changes"), and, if the file changed, `Revalidated on attempt 1`
+and both warm paths 200. If `REVALIDATE_SECRET` is unset, the hourly ISR window covers it.
+
+Verification on the laptop: `check:live-data`, `check:data-reads`, `check:release-notes`,
+`check:client-imports`, `dispatcher.py --self-test` and `bash -n` all pass; typecheck
+reports no errors in any touched file (the laptop's `node_modules` is stale, so the
+full `npm run verify` and `next build` status is recorded in the commit message).

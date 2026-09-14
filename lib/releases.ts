@@ -18,6 +18,14 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-14",
+    headline: "Ownership changes appear within minutes",
+    items: [
+      "Confirmed changes of team ownership now reach The Owners and Team Valuations within minutes, rather than waiting for the next site update.",
+      "AFC and CAF Champions League fixtures name every club, including sides not yet in our club records, instead of showing TBD.",
+    ],
+  },
+  {
     date: "2026-09-13",
     headline: "A daily news digest and clearer standings",
     items: [

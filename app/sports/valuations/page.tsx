@@ -26,20 +26,20 @@ export const metadata: Metadata = {
   twitter: { images: [ogImage(PAGE_TITLE, PAGE_URL)], card: "summary_large_image", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
 };
 
-export default function ValuationsPage() {
+export default async function ValuationsPage() {
   // Owner is attached here rather than inside lib/valuations so the valuations
   // module stays the single source of truth for figures and knows nothing about
   // ownership. The join is by (team, league), the same key the build script
   // validates, so a missing owner row fails the data build rather than
   // rendering a blank cell here.
-  const rows = getAllValuations().map((r) => {
-    const owner = getTeamOwnerByName(r.team, r.league);
+  const rows = await Promise.all(getAllValuations().map(async (r) => {
+    const owner = await getTeamOwnerByName(r.team, r.league);
     return {
       ...r,
       owner: owner?.ownerDisplay ?? null,
       ownerHref: owner ? "/sports/owners" : null,
     };
-  });
+  }));
   const linked = rows.filter((r) => r.href).length;
   const leagues = new Set(rows.map((r) => r.league)).size;
   const top = rows[0];

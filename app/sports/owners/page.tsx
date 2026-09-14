@@ -31,10 +31,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function OwnersPage() {
-  const all = getOwnerPortfolios();
-  const multi = getMultiTeamPortfolios();
-  const watchlist = getWatchlist();
+export default async function OwnersPage() {
+  const [all, multi, watchlist] = await Promise.all([
+    getOwnerPortfolios(),
+    getMultiTeamPortfolios(),
+    getWatchlist(),
+  ]);
   const teams = all.reduce((s, p) => s + p.teams.length, 0);
   const crossCode = multi.filter((p) => p.crossesCodes).length;
   const top = all[0];

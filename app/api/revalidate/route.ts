@@ -29,6 +29,7 @@ const ALLOWED_TAGS = new Set([
   "economy-prices",     // economy-prices.sh (mac-mini-jobs), Sundays 07:30 UTC
   "nfl-elo",            // nfl-elo.sh (mac-mini-jobs), 08:00 UTC daily in season: lib/nflElo.ts
   "nfl-playoffs",       // nfl-elo.sh, January and February: lib/nflPlayoffs.ts
+  "owners",             // run-owners-weekly.sh (mac-mini-jobs), Mondays 08:30 UTC: lib/teamOwners.ts
 ]);
 
 export const runtime = "nodejs";

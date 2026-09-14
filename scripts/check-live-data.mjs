@@ -78,6 +78,11 @@ const OUT_OF_BAND = [
     paths: ["refresh-schedule.json"],
     refreshedBy: "mac-mini-jobs/export_schedule.py (run after every dispatcher tick, not a jobs.toml entry)",
   },
+  {
+    lib: "lib/teamOwners.ts",
+    paths: ["owners/team-owners.json"],
+    refreshedBy: "mac-mini-jobs/run-owners-weekly.sh (Mondays 08:30 UTC)",
+  },
 ];
 
 /** Deliberate exemptions, each with the reason it is safe. */
