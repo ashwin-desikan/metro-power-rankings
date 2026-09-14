@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T17:08:36.598549+00:00",
+  "generated_at": "2026-09-14T17:48:40.641081+00:00",
   "jobs": [
     {
       "id": "ops-autofix",
@@ -163,7 +163,7 @@
       "next_run": "2026-09-15T05:00:00+00:00",
       "last_run": {
         "date": "2026-09-14",
-        "status": "failed",
+        "status": "ok (manual)",
         "slot": "2026-09-14T05:00:00+00:00"
       }
     },
@@ -579,7 +579,7 @@
     },
     {
       "id": "owners-weekly",
-      "label": "Team owners weekly (apply-mode, may spend a build)",
+      "label": "Team owners weekly (apply-mode)",
       "schedule_text": "Mon at 08:30 UTC",
       "cadence": "weekly",
       "times": [
