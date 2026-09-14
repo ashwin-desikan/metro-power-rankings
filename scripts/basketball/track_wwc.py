@@ -106,8 +106,13 @@ def clean_team(raw):
     template's IOC code and not the link target. A bare IOC code is refused
     rather than credited: "CHN" would join to no nation and would do it
     silently.
+
+    Bold and italic quotes go FIRST. Once a game is played Wikipedia bolds the
+    winner's cell (`'''{{bkw-rt|USA}}'''`, 2026-09-14): stripping the template
+    then left a non-empty `''''''`, so the flag code was never read and a real
+    final failed as "a score but no teams".
     """
-    s = raw.strip()
+    s = raw.replace("'''", "").replace("''", "").strip()
     m = _WIKILINK.search(s)
     if m:
         s = m.group(2) or m.group(1)
@@ -579,6 +584,11 @@ def self_test():
     raises("split, final played but third-place box empty",
            lambda: parse_edition(FIXTURE_SPLIT_MAIN, host, teams, fetch=split_pages(("80", "70"))))
     check("code_name USA", code_name("USA"), "United States")
+    # The played 2026 final bolds the winner's cell and score (2026-09-14).
+    check("bold winner cell", clean_team("'''{{bkw-rt|USA}}'''"), "United States")
+    check("bold winner, played box", parse_game(
+        "{{basketballbox\n|teamA='''{{bkw-rt|USA}}'''\n|scoreA='''97'''\n|teamB={{bkw|FRA}}\n|scoreB=79\n}}",
+        "Final", rows_ok=False), ("United States", "France", "97-79"))
 
     # 4. Round trip through the dump, then idempotence.
     tmp = tempfile.mkdtemp()
