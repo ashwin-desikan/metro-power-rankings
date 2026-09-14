@@ -15044,3 +15044,33 @@ moved to 09-14 ("moves from 2026-09-13 evening to today" x12); 09-13 now holds 3
 
 The laptop asked which reachable session is the mini: this interactive one is titled **"Latest commits review"**.
 "Ops sweep" is not it (likely the headless daily-ops-sweep, which is report-only and cannot act on a message).
+
+### F. owners-weekly re-run under the new runtime-read job: 4 moved, APPLIED (`d926034f1`, no build)
+
+Ashwin: "re-run owners-weekly under the new job". Hand-launched `~/metro-mini-jobs/run-owners-weekly.sh` at 18:55
+BST on a clean tree (after the jobs.toml sync in C). This morning's log, summary and patch were first copied to
+`*.morning-oldrules`; the job then retired both patch files to `.applied-d926034f1`, so `pending/` holds
+`owners-2026-09-14.patch.applied-d926034f1` and `owners-2026-09-14.patch.morning-oldrules.applied-d926034f1`.
+
+**Applied, `d926034f1` "Owners: Lakers not on the Sep BoG docket, Wolves/Lynx and Palace moved [vercel skip]"**, on
+`origin/main`; stages only `scripts/data/team-owners-seed.json` and `public/data/owners/team-owners.json`. 0 resolved,
+4 moved, 0 new; control unchanged on every row (no league approval or closing reported).
+- **Lakers:** Kushner/Iger purchase not expected at the 14-15 Sep NBA Board of Governors (SBJ; L.A. Times via SI).
+  Adds the Buss family's 17.8% also going to the buyers (ESPN, 17 Aug), Jeanie Buss's petition (hearing 9 Dec) and the
+  federal probe of related-party accounting at two insurers Mark Walter controls, which TWG Global denies is fraud
+  (CNBC, ESPN, 26 Aug). Drops the claim the buyers would keep her as Governor. Review 2026-09-18 -> 2026-10-15.
+- **Timberwolves and Lynx:** BoG dates corrected to 14-15 Sep; 11 Sep agenda previews did not list the Stad sale
+  (Hoops Rumors, TSN). Review stays 2026-09-18.
+- **Crystal Palace:** FT (16 Jun, via Irish Times) reported all three American holders, Woody Johnson included,
+  exploring a sale via Raine Group and open to a full sale, wider than the 30% the board carried.
+- Re-checked, no change: West Ham, Angels, Sevilla, Vancouver Whitecaps, Seattle Sounders, San Jose Earthquakes,
+  Tampa Bay Lightning. The sweep found nothing the board lacks.
+- Gates: `--self-test` PASS, build 220 franchises / 11 contested, `check-owners-watchlist` OK; tree clean, HEAD ==
+  origin/main. ntfy "Owners weekly -- 2026-09-14" at 19:02.
+
+**Revalidate:** the wrapper waited out the 300s raw CDN TTL, then "Revalidated on attempt 1" at 19:07:41 BST;
+warm `/sports/owners` 200 and `/sports/valuations` 200; "Owners weekly done" 19:07:52, exit 0. At 19:08 the live
+`/sports/owners` shows the new Crystal Palace text ("Raine Group; a full club sale is among the options").
+
+**Next:** the scheduled run is Monday 2026-09-21 08:30Z. Timberwolves/Lynx review falls due 18 Sept, so that run should
+re-check them first.
