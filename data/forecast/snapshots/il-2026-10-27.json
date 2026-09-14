@@ -2,8 +2,8 @@
  "code": "il",
  "election": "2026-10-27",
  "confidence": "confirmed",
- "built": "2026-09-11",
- "daysBefore": 46,
+ "built": "2026-09-14",
+ "daysBefore": 43,
  "block": {
   "electionAssumed": "2026-10-27",
   "electionDate": "2026-10-27",
@@ -11,42 +11,54 @@
   "parties": [
    {
     "name": "Haredi Public",
-    "seats": 48.8
+    "seats": 36.2
+   },
+   {
+    "name": "Dems",
+    "seats": 17.7
    },
    {
     "name": "Likud",
-    "seats": 20.2
+    "seats": 15.5
    },
    {
-    "name": "Joint List",
-    "seats": 10.6
+    "name": "Together",
+    "seats": 10.7
    },
    {
     "name": "UTJ",
-    "seats": 9.6
+    "seats": 7.0
    },
    {
-    "name": "RZP- Zehut",
-    "seats": 8.5
+    "name": "Joint List",
+    "seats": 6.6
    },
    {
     "name": "Blue & White",
-    "seats": 7.4
+    "seats": 6.3
    },
    {
     "name": "Shas",
-    "seats": 7.4
+    "seats": 5.9
+   },
+   {
+    "name": "RZP- Zehut",
+    "seats": 5.2
    },
    {
     "name": "Ra'am",
-    "seats": 7.4
+    "seats": 5.2
    },
    {
-    "name": "",
-    "seats": 0.0
+    "name": "Yisrael Beiteinu",
+    "seats": 3.7
    },
    {
     "name": "Otzma",
+    "seats": 0.0
+   },
+   {
+    "name": "Yashar",
     "seats": 0.0
    },
    {
@@ -58,14 +70,14 @@
     "seats": 0.0
    }
   ],
-  "polls": 2,
-  "pollsters": 1,
+  "polls": 3,
+  "pollsters": 2,
   "latestPollDate": "2026-09-10",
   "gov": {
    "avg": null,
    "pMajority": null
   },
-  "monthsOut": 1.5,
+  "monthsOut": 1.4,
   "sims": 8000,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Israeli legislative election (CC BY-SA 4.0)"

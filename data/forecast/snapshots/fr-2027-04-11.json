@@ -2,31 +2,33 @@
  "code": "fr",
  "election": "2027-04-11",
  "confidence": "assumed",
- "built": "2026-09-11",
- "daysBefore": 212,
+ "built": "2026-09-14",
+ "daysBefore": 209,
  "block": {
   "electionAssumed": "2027-04-11",
   "electionDate": "2027-04-11",
   "electionConfidence": "assumed",
   "firstRound": {
    "shares": {
-    "Marine Le Pen": 33.4,
-    "Jean-Luc Mélenchon": 16.1,
-    "Édouard Philippe": 15.9,
-    "Raphaël Glucksmann": 11.5,
-    "Gabriel Attal": 9.5,
-    "Bruno Retailleau": 7.5,
+    "Marine Le Pen": 33.2,
+    "Jean-Luc Mélenchon": 15.8,
+    "Édouard Philippe": 15.5,
+    "Raphaël Glucksmann": 11.1,
+    "Gabriel Attal": 8.3,
+    "Bruno Retailleau": 7.4,
     "François Hollande": 7.0,
     "Sarah Knafo": 4.8,
+    "Marine Tondelier": 3.3,
     "Éric Zemmour": 3.3,
-    "Marine Tondelier": 3.2,
     "Dominique de Villepin": 2.8,
-    "Fabien Roussel": 2.6,
-    "Nicolas Dupont-Aignan": 2.3,
+    "Fabien Roussel": 2.5,
+    "Nicolas Dupont-Aignan": 2.2,
+    "David Lisnard": 2.0,
+    "Karim Bouamrane": 1.0,
     "Nathalie Arthaud": 0.9
    },
-   "polls": 15,
-   "latest": "2026-09-03"
+   "polls": 18,
+   "latest": "2026-09-10"
   },
   "runoffs": [
    {
@@ -34,7 +36,7 @@
     "b": "Philippe HOR",
     "avgA": 52.5,
     "avgB": 47.5,
-    "pA": 78.9,
+    "pA": 79.0,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -43,7 +45,7 @@
     "b": "Attal RE",
     "avgA": 54.9,
     "avgB": 45.1,
-    "pA": 94.0,
+    "pA": 94.1,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -70,7 +72,7 @@
     "b": "Attal RE",
     "avgA": 57.0,
     "avgB": 43.0,
-    "pA": 98.6,
+    "pA": 98.7,
     "polls": 1,
     "latest": "2026-05-27"
    },
@@ -88,7 +90,7 @@
     "b": "Glucksmann PP",
     "avgA": 58.5,
     "avgB": 41.5,
-    "pA": 99.7,
+    "pA": 99.8,
     "polls": 1,
     "latest": "2026-03-27"
    },
@@ -102,7 +104,7 @@
     "latest": "2026-03-27"
    }
   ],
-  "monthsOut": 7.0,
+  "monthsOut": 6.9,
   "sources": [
    "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)"
   ]

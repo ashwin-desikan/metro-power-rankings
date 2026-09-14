@@ -2,55 +2,55 @@
  "code": "us",
  "election": "2026-11-03",
  "confidence": "confirmed",
- "built": "2026-09-11",
- "daysBefore": 53,
+ "built": "2026-09-14",
+ "daysBefore": 50,
  "block": {
-  "margin": 6.2,
+  "margin": 6.8,
   "sigma": 2.5,
   "aggregators": [
    {
     "source": "Decision Desk HQ",
-    "dem": 45.6,
-    "rep": 38.6,
-    "updated": "2026-09-06"
+    "dem": 48.6,
+    "rep": 41.9,
+    "updated": "2026-09-13"
    },
    {
     "source": "FiftyPlusOne",
-    "dem": 49.8,
-    "rep": 43.7,
-    "updated": "2026-09-06"
+    "dem": 49.9,
+    "rep": 43.4,
+    "updated": "2026-09-13"
    },
    {
     "source": "RealClearPolitics",
-    "dem": 48.1,
-    "rep": 42.3,
-    "updated": "2026-09-06"
+    "dem": 48.6,
+    "rep": 42.0,
+    "updated": "2026-09-13"
    },
    {
     "source": "Silver Bulletin",
-    "dem": 48.0,
-    "rep": 41.6,
-    "updated": "2026-09-06"
+    "dem": 48.6,
+    "rep": 41.4,
+    "updated": "2026-09-13"
    },
    {
     "source": "VoteHub",
-    "dem": 47.0,
-    "rep": 41.4,
-    "updated": "2026-09-06"
+    "dem": 47.8,
+    "rep": 41.3,
+    "updated": "2026-09-13"
    },
    {
     "source": "Race to the WH",
-    "dem": 48.1,
+    "dem": 49.0,
     "rep": 41.6,
-    "updated": "2026-09-06"
+    "updated": "2026-09-13"
    }
   ],
   "demSeats": {
-   "median": 227,
-   "lo": 205,
-   "hi": 248
+   "median": 228,
+   "lo": 207,
+   "hi": 250
   },
-  "pDemHouse": 75.3,
+  "pDemHouse": 79.0,
   "fit": {
    "a": 209.5,
    "b": 2.71,
@@ -93,7 +93,7 @@
     ]
    ]
   },
-  "monthsOut": 1.7,
+  "monthsOut": 1.6,
   "sims": 20000,
   "election": "2026-11-03",
   "electionDate": "2026-11-03",
@@ -122,7 +122,7 @@
     "lo": 47,
     "hi": 54
    },
-   "pDemControl": 44.7,
+   "pDemControl": 45.7,
    "competitive": [
     {
      "state": "Alaska",
@@ -141,9 +141,9 @@
     {
      "state": "Iowa",
      "held": "R",
-     "score": -0.32,
+     "score": -0.23,
      "retiring": true,
-     "pDem": 41.0
+     "pDem": 43.0
     },
     {
      "state": "Maine",

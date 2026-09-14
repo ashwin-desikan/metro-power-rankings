@@ -592,6 +592,56 @@
     "Marine Le Pen": 35.0,
     "Éric Zemmour": 3.0
    }
+  },
+  {
+   "date": "2026-09-09",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Jean-Luc Mélenchon": 15.0,
+    "Fabien Roussel": 2.0,
+    "Marine Tondelier": 3.0,
+    "Raphaël Glucksmann": 9.0,
+    "Gabriel Attal": 8.0,
+    "Édouard Philippe": 15.0,
+    "Bruno Retailleau": 8.0,
+    "Nicolas Dupont-Aignan": 2.0,
+    "Marine Le Pen": 34.0,
+    "Éric Zemmour": 4.0
+   }
+  },
+  {
+   "date": "2026-09-09",
+   "shares": {
+    "Nathalie Arthaud": 0.5,
+    "Jean-Luc Mélenchon": 15.5,
+    "Fabien Roussel": 2.5,
+    "Marine Tondelier": 4.0,
+    "Raphaël Glucksmann": 11.5,
+    "Gabriel Attal": 6.0,
+    "Édouard Philippe": 14.0,
+    "Bruno Retailleau": 7.0,
+    "Nicolas Dupont-Aignan": 2.0,
+    "Marine Le Pen": 33.0,
+    "Éric Zemmour": 4.0
+   }
+  },
+  {
+   "date": "2026-09-10",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Jean-Luc Mélenchon": 16.0,
+    "Fabien Roussel": 3.0,
+    "Marine Tondelier": 3.0,
+    "Karim Bouamrane": 1.0,
+    "François Hollande": 7.0,
+    "Gabriel Attal": 8.0,
+    "Édouard Philippe": 16.0,
+    "David Lisnard": 2.0,
+    "Bruno Retailleau": 7.0,
+    "Nicolas Dupont-Aignan": 2.0,
+    "Marine Le Pen": 32.0,
+    "Éric Zemmour": 2.0
+   }
   }
  ],
  "matchups": [
