@@ -1,13 +1,118 @@
 {
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-14",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-14",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL, College football.",
+      "commit": "d41357863"
+    },
     {
       "date": "2026-09-13",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "f90c1e920"
+      "text": "Data refreshed — Football, Basketball, F1, Leaders, and 4 more.",
+      "commit": "2eeca1152"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "hub",
+      "hub": null,
+      "text": "The homepage leads with the digest, and the ticker says what it is.",
+      "commit": "838637b8a"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "hub",
+      "hub": "Digest",
+      "text": "A filter rail on the digest, tags on every story, and the archive out of sight.",
+      "commit": "cfb4418f0"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "hub",
+      "hub": "Digest",
+      "text": "What's on: the seasons, the knockouts and the elections, from the data we hold.",
+      "commit": "37684c2b7"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "hub",
+      "hub": null,
+      "text": "Four topics, umbrella tags, and a sport pass that finds what the tagger missed.",
+      "commit": "4af7ff467"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "hub",
+      "hub": null,
+      "text": "Crests for the clubs that had none, and the generator moves into the repo.",
+      "commit": "6be9620fa"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "CFL comes back, on the league's own JSON, and brings its fixtures with it.",
+      "commit": "dc0b24284"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Live trackers carry the confederation and national-team competitions, and the watched set moves into the data.",
+      "commit": "26987d2ee"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "hub",
+      "hub": "Business",
+      "text": "Leaders board on one refresh path, two ESPN feeds stop asking for a cache they cannot have, digest tags stop guessing.",
+      "commit": "7aca1723e"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "hub",
+      "hub": "Digest",
+      "text": "Standings sport icons and one-click competitions; digest topics; workbook refresh.",
+      "commit": "a764f6ee5"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "fix",
+      "hub": "Api",
+      "text": "Homepage headline and fixtures tickers; country collapse fix; standings results.",
+      "commit": "bed0ae366"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "hub",
+      "hub": "Digest",
+      "text": "Digest archive on site; club and league tags link to their real /teams pages.",
+      "commit": "cb25a991a"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "new-hub",
+      "hub": "Digest",
+      "text": "New hub: Digest.",
+      "commit": "e902e4727"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "hub",
+      "hub": null,
+      "text": "Add digest feed data layer for the on-site news feed.",
+      "commit": "9e13dadce"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "hub",
+      "hub": null,
+      "text": "Restore S&P 500 index-changes history (61 rows).",
+      "commit": "55074565a"
     },
     {
       "date": "2026-09-12",
@@ -4096,111 +4201,6 @@
       "hub": "Expandable Map",
       "text": "Eight polish fixes.",
       "commit": "4c6499202"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "fix",
-      "hub": null,
-      "text": "Stage missing MetroMap.tsx preferCanvas wiring.",
-      "commit": "9b7869967"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "fix",
-      "hub": "Expandable Map",
-      "text": "Expandable-map + data: continent join, tier color markers, country picker.",
-      "commit": "7ee35d3e8"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "hub",
-      "hub": null,
-      "text": "Wire forty-seven mid-size countries whose workbook fills shipped earlier today without builder entries.",
-      "commit": "36278c1ad"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "new-hub",
-      "hub": "Expandable Map",
-      "text": "New hub: Expandable Map.",
-      "commit": "0df0f37db"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "fix",
-      "hub": null,
-      "text": "Mass expansion across dependencies, UK overseas territories, French overseas, and the long Caribbean/Pacific tail.",
-      "commit": "3a09278ec"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "fix",
-      "hub": null,
-      "text": "Cross-border join-key fix plus six countries newly resolve.",
-      "commit": "00b95ed44"
-    },
-    {
-      "date": "2026-05-23",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Leaders, Populations.",
-      "commit": "745c2d74f"
-    },
-    {
-      "date": "2026-05-23",
-      "category": "hub",
-      "hub": null,
-      "text": "Middle East expansion (Bahrain, Lebanon, Oman, Palestine, Saudi Arabia, Syria, UAE) plus cross-border routing infrastructure.",
-      "commit": "608f15e02"
-    },
-    {
-      "date": "2026-05-23",
-      "category": "hub",
-      "hub": null,
-      "text": "Afghanistan, Azerbaijan, Iran, Iraq newly resolve to administrative polygons.",
-      "commit": "e00243f21"
-    },
-    {
-      "date": "2026-05-22",
-      "category": "hub",
-      "hub": null,
-      "text": "42 more countries newly resolve to administrative polygons.",
-      "commit": "7a6415650"
-    },
-    {
-      "date": "2026-05-21",
-      "category": "hub",
-      "hub": null,
-      "text": "Puerto Rico polygons via generalized city-state path.",
-      "commit": "7656a9e3f"
-    },
-    {
-      "date": "2026-05-21",
-      "category": "hub",
-      "hub": null,
-      "text": "Ten more countries wire and resolve to administrative polygons.",
-      "commit": "a54653686"
-    },
-    {
-      "date": "2026-05-21",
-      "category": "hub",
-      "hub": null,
-      "text": "Ten more countries wired and resolved to administrative polygons.",
-      "commit": "41ec13f6a"
-    },
-    {
-      "date": "2026-05-21",
-      "category": "hub",
-      "hub": null,
-      "text": "Revert /updates edge-defense disclosure and soften llms.txt access policy.",
-      "commit": "013f26545"
-    },
-    {
-      "date": "2026-05-21",
-      "category": "hub",
-      "hub": null,
-      "text": "Drop ambiguous no-scraping line, add explicit Access policy listing verified AI crawlers (GPTBot, ClaudeBot, etc.) welcome under CC-BY with…",
-      "commit": "efe81ea65"
     }
   ]
 }
