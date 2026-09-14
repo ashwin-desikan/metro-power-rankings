@@ -15105,3 +15105,48 @@ Ashwin asked for the list with each club's competition so he can add them to the
   carries the steps and the three checks. The workbook is not reachable from Windows at its mini path: Ashwin was
   asked to save the copy sent in chat somewhere Windows can open (e.g. OneDrive). Until the sync, the UNMATCHED ntfy
   keeps firing twice a day; that is expected, not a new fault.
+
+### H. Tonight's evening run, a headline rule, the worktree cleanup, and the site feed's new shape rules (newsletter-podcast `a0e4de4`, `c62c56c`; no build)
+
+**Evening run, 2026-09-14 20:00.** Exit 0 (launchd runs = 2). Claude picked 11 new stories; only 3 went on (positions
+58-60), because the morning feed had already filled the day to 57 of `MAX_ITEMS` 60 and 8 were skipped "today already
+holds 60". It again flagged that Business Insider's newsletter did not show a title, so it wrote the Anthropic-Nasdaq
+headline itself.
+
+**Headline rule (`a0e4de4`, `run-evening.sh`).** "REAL HEADLINES ONLY": the headline must be the article's own title
+word for word; open the article to copy it when the newsletter does not print it; otherwise leave the story out.
+Applies from the 09-15 evening run. The morning recipe already had the rule and has not shown the problem.
+
+**Scratch worktree removed.** The ticker/standings build worktree (`bed0ae366`, already on `origin/main`, 5.7 GB of
+build output, `node_modules` only a symlink) was removed with `git worktree remove --force` and pruned; the main repo's
+`node_modules` is intact. Its scratch folder (logs, screenshots, draft commit message) was deleted with it.
+
+**Why 57 was too many (Ashwin: "I saw a lot of Washington Post headlines").** Three causes stacked:
+1. The first every-linked-story morning (section K, `a476ad1`): `feed.json` copied all 59 links in the day's
+   `socials/substack.md`. Archive days built the same way run 20-38.
+2. Sunday list newsletters: WaPo's weekly *Week in Ideas* and Business Insider's Sunday edition. The day had 22 WaPo
+   stories (the archive's highest ever; 1-12 is normal, and 09-11 and 09-12 had none) and 14 Business Insider. One post
+   section, "AI Hits the Ballot", was 9 WaPo links of 9.
+3. 13 of the 60 were articles published 4-7 days earlier; the 2-day age rule then applied only to the evening edition.
+
+**Fix, Ashwin's choice "A plus B, 6 per publication, re-push today" (`c62c56c`, `push_feed.py`).**
+- `morning_filter()`: after validation, drop a url dated more than `FEED_MAX_AGE_DAYS` (2) before the digest date
+  (undated urls pass), keep at most `MAX_PER_SOURCE` (6) per publication in post order (source names case- and
+  whitespace-folded), then `MAX_ITEMS`. `validate()` gained a `limit` so the filter sees every valid story before the cap.
+- `plan_evening()` applies the same per-publication cap, counting what the day already holds.
+- `--all-stories` bypasses both, for archive re-pushes (`archive/qa.py` reads only the "valid, dropped" line, which
+  still prints before the filter, so its checks are unaffected). The podcast, script and socials are untouched.
+- Self-test covers age, cap order, source folding, the day cap and the evening count.
+
+**Re-push of 2026-09-14.** 31 of 57 morning stories kept (13 too old, 13 over the cap), plus the 3 evening stories: 34,
+`digest_run.item_count` 34, positions contiguous, `/digest/2026-09-14` shows "Show all 34 stories". Topics re-tagged
+(a re-push rewrites morning rows and clears their topics): 19 of 34 tagged. WaPo and Business Insider show 7 each, not
+6: six morning plus one evening story appended at 20:02, before the rule; from 09-15 the evening counts the day.
+Side effect, intended: some 09-13 evening stories that had moved to 09-14 this morning (e.g. "Bye, America", "Will the
+real Elizabeth Holmes please stand up?") fell over the cap and are no longer on the site.
+
+**Consequence for the cap question.** With mornings around 30, the evening has room under 60 again, so `MAX_ITEMS` was
+NOT raised. Notion Decision "The live daily news feed carries every linked story" amended with both rules.
+
+**Watch 2026-09-15:** the morning log's "N of M kept after the age and per-publication rules" line, and that the evening
+run's headlines are all real titles.
