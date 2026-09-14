@@ -1,6 +1,26 @@
 {
-  "generated_at": "2026-09-14T08:11:31.234325+00:00",
+  "generated_at": "2026-09-14T08:21:49.076739+00:00",
   "jobs": [
+    {
+      "id": "owners-weekly",
+      "label": "Team owners weekly (apply-mode, may spend a build)",
+      "schedule_text": "Mon at 08:30 UTC",
+      "cadence": "weekly",
+      "times": [
+        "08:30"
+      ],
+      "weekdays": [
+        1
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-14T08:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-07",
+        "status": "missed",
+        "slot": "2026-09-07T08:30:00+00:00"
+      }
+    },
     {
       "id": "ops-autofix",
       "label": "Ops autofix (whitelist, acts on production)",
@@ -23,31 +43,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-14T08:15:00+00:00",
+      "next_run": "2026-09-14T10:15:00+00:00",
       "last_run": {
         "date": "2026-09-14",
         "status": "ok",
-        "slot": "2026-09-14T06:15:00+00:00"
-      }
-    },
-    {
-      "id": "owners-weekly",
-      "label": "Team owners weekly (apply-mode, may spend a build)",
-      "schedule_text": "Mon at 08:30 UTC",
-      "cadence": "weekly",
-      "times": [
-        "08:30"
-      ],
-      "weekdays": [
-        1
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-14T08:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-07",
-        "status": "missed",
-        "slot": "2026-09-07T08:30:00+00:00"
+        "slot": "2026-09-14T08:15:00+00:00"
       }
     },
     {
