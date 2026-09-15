@@ -15181,8 +15181,10 @@ Afghanistan v India rows". `git pull`: nothing new on either repo.
   `PYTHON_BIN=~/Projects/Metro Area Project/.venv/bin/python` (typecheck, every check:*, vitest 294, pytest 112,
   `next build --webpack`, function-size under 220 MB) passed. Trace after: `/teams/national` 11 international files
   (was 0), `/teams/national/[slug]` 12. Pushed alone as HEAD at 10:12 BST on Ashwin's yes; the day's first paid build.
-- **Deploy:** PENDING when written (10:16, production still on `0cd37969a`). A watcher counts teams in the live HTML
-  after the deploy and again after two ISR re-renders (the re-render is what used to empty it).
+- **Deploy: LIVE, verified through two ISR re-renders.** `/deployed` returned `f24f4bde6` at 10:19 BST (~6.5 min).
+  Live HTML: 10:19 `PRERENDER` 347 `cur_name` entries and 9 hub links; 10:21:33 `STALE` (the request that triggers a
+  re-render) still full; 10:21:54 `HIT` age 19 (the re-rendered copy, the one that used to come back empty) still 347
+  and 9; the same again at 10:24:25 / 10:24:45. No "0 teams" text in any of them.
 - **Open, worth a sweep:** the same trace gap showed for `/teams/national/womens-world-cup/[slug]` (0 international)
   and `/teams/national/tournaments/[slug]` (0) in a 09-11 build; now fixed for anything reading `lib/international`, but
   any OTHER reader converted to literal-join maps in `6edc58ecb` may fail the same silent way. Not yet swept.
