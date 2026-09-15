@@ -603,8 +603,17 @@ def self_test():
     check("2022 third", by_year[2022]["third"], "Australia")
     check("2022 fourth", by_year[2022]["fourth"], "Canada")
     check("2022 teams", by_year[2022]["teams"], 12)
-    check("WC editions", len(wc), 19)
-    check("2026 not counted as played", [s["year"] for s in sched], [2026])
+    # State-agnostic since 2026-09-15: this used to assert 19 played editions and 2026
+    # scheduled, so recording the 2026 final (8f43c6971) failed the tracker workflow's
+    # self-test gate every day after. What must hold either way: every edition is
+    # counted exactly once, as played or as scheduled. Bump the total when a new
+    # edition (2030) is added to the dump.
+    played_years = [e["year"] for e in wc]
+    sched_years = [s["year"] for s in sched]
+    check("WC editions, played + scheduled", len(wc) + len(sched), 20)
+    check("2026 counted exactly once", (2026 in played_years) + (2026 in sched_years), 1)
+    if 2026 in played_years:
+        check("2026, if played, has a champion", bool(by_year[2026]["champion"]), True)
 
     # Lineage: the Soviet Union's 1983 world title is Russia's row, attributed.
     hub, rows, _fiba, details = build()

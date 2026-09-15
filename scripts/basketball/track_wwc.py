@@ -347,16 +347,27 @@ def render_block(e):
     ])
 
 
+# The 2026 block as the dump carried it before the final was played (git history,
+# before 8f43c6971). The self-test resets a copy to this so its round trip does not
+# depend on whether the real dump already holds the result.
+SCHEDULED_BLOCK_2026 = "2026\nDetails\t Germany\tFuture event\nTBA, Berlin\tFuture event\nTBA, Berlin\t16"
+
+
 def replace_block(text, e):
     """Swap the `2026 ... ` block in the dump for a rendered results block."""
+    return swap_block(text, e["year"], render_block(e).splitlines())
+
+
+def swap_block(text, year, block_lines):
+    """Replace the dump's block for `year` with `block_lines`."""
     lines = text.splitlines()
     start = None
     for i, ln in enumerate(lines):
-        if ln.strip() == str(e["year"]):
+        if ln.strip() == str(year):
             start = i
             break
     if start is None:
-        raise ParseError("no %d block in %s to replace" % (e["year"], WC_TXT))
+        raise ParseError("no %d block in %s to replace" % (year, WC_TXT))
     end = len(lines)
     for j in range(start + 1, len(lines)):
         if lines[j].strip() == "(squads)":
@@ -365,7 +376,7 @@ def replace_block(text, e):
         if re.fullmatch(r"(19|20)\d\d", lines[j].strip()):
             end = j
             break
-    return "\n".join(lines[:start] + render_block(e).splitlines() + lines[end:]) + "\n"
+    return "\n".join(lines[:start] + list(block_lines) + lines[end:]) + "\n"
 
 
 def already_present(path=None):
@@ -590,11 +601,16 @@ def self_test():
         "{{basketballbox\n|teamA='''{{bkw-rt|USA}}'''\n|scoreA='''97'''\n|teamB={{bkw|FRA}}\n|scoreB=79\n}}",
         "Final", rows_ok=False), ("United States", "France", "97-79"))
 
-    # 4. Round trip through the dump, then idempotence.
+    # 4. Round trip through the dump, then idempotence. The copy's 2026 block is reset
+    #    to the pre-final "Future event" shape first, so this tests the write whether or
+    #    not the real dump has the result yet (it has since 2026-09-15, 8f43c6971, and
+    #    this test then failed the workflow's gate every day).
     tmp = tempfile.mkdtemp()
     try:
         path = os.path.join(tmp, "wc.txt")
-        shutil.copyfile(WC_TXT, path)
+        live = io.open(WC_TXT, encoding="utf-8").read()
+        io.open(path, "w", encoding="utf-8", newline="\n").write(
+            swap_block(live, YEAR, SCHEDULED_BLOCK_2026.splitlines()))
         check("2026 absent before", already_present(path), False)
         text = io.open(path, encoding="utf-8").read()
         io.open(path, "w", encoding="utf-8", newline="\n").write(replace_block(text, e))

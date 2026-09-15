@@ -16,9 +16,15 @@ name: 2026 Women's Basketball World Cup tracker
 # article has a Final section it cannot parse, which fails this job loudly
 # rather than reporting "not played yet" for the rest of the tournament.
 
+#
+# SCHEDULE RETIRED 2026-09-15 (Ashwin). The job is done: the final (United States 97-79
+# France, third Spain 81-58 Germany) was recorded on 09-14 in 8f43c6971. Every run after
+# that could only say "2026 already present", and while the self-tests still assumed an
+# unplayed 2026 each daily run failed, emailed and drew an ops-autofix re-run and ntfy.
+# workflow_dispatch stays as the manual trigger; re-enable the cron for 2030.
 on:
-  schedule:
-    - cron: "0 6 8-30 9 *"   # 06:00 UTC daily, 8-30 September
+  # schedule:
+  #   - cron: "0 6 8-30 9 *"   # 06:00 UTC daily, 8-30 September
   workflow_dispatch: {}
 
 permissions:
