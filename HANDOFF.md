@@ -15150,3 +15150,61 @@ NOT raised. Notion Decision "The live daily news feed carries every linked story
 
 **Watch 2026-09-15:** the morning log's "N of M kept after the age and per-publication rules" line, and that the evening
 run's headlines are all real titles.
+
+## 2026-09-15 — mini → next session: INTERNATIONAL FOOTBALL HUB WAS SILENTLY EMPTY (fixed, one paid build); cricket REVIEW rows fixed
+
+Ashwin, the morning of 09-15 (conference day): "why have all of the countries disappeared from the home page of
+international football", then "build the static-import fix and push once the build passes", then "fix the
+Afghanistan v India rows". `git pull`: nothing new on either repo.
+
+### A. `/teams/national` showed "0 teams", no tournament hubs, no top games (`f24f4bde6`, one paid build)
+
+- **Symptom, production:** the National teams list read "0 teams match the current filters" with no filter set; the
+  Tournament hubs cards and "Top games of all-time" rows were empty too. Only the World Cup 2026 section (fetched from
+  GitHub raw) rendered. Response `x-vercel-cache: STALE`, i.e. an ISR re-render. `public/data/international/index.json`
+  itself was fine (235 teams). Country pages (`/teams/national/france`) still rendered.
+- **Cause:** `lib/international.ts` read its eleven JSON files with `readFileSync` through a map of arrow functions,
+  each a fully literal `join()`, called as `MAP[name]()` (`6edc58ecb`, 09-08, the file-tracer scoping; rule 1 of
+  `scripts/DATA-READS-RECIPE.md`). In the real build, `.next/server/app/teams/national/page.js.nft.json` listed **0**
+  international files. The build machine has the whole repo, so every deploy prerendered the page complete; the first
+  ISR re-render on Vercel found no file, `existsSync()` returned false and `loadJson()` returned its empty fallback,
+  logging nothing. `check:data-reads` passed. So the hub has most likely been empty between every deploy and the next
+  revalidation since 09-08, and "came back" with each build.
+- **Fix:** static JSON imports for all eleven files (~1.35 MB) in `lib/international.ts`; `fs`/`path` removed. Safe for
+  the client: the module is `import "server-only"` and listed in `check-client-imports`, and all four client components
+  that touch it (`WorldCup2026`, `TopGamesTable`, `TeamTopGames`, `RadialKnockout`) import types only.
+  `getWorldCup2026` now copies the bundled object before attaching `.sim`. Data still changes with a build, as before.
+- **Recipe updated:** `DATA-READS-RECIPE.md` gains the "too FEW files fails silently" section: verify the route's real
+  `page.js.nft.json` after a build, prefer a static import for a small fixed build-time set, and do not hide a missing
+  file behind an `existsSync()` fallback.
+- **Verified** in a scratch worktree on `origin/main`: `npm run verify` with
+  `PYTHON_BIN=~/Projects/Metro Area Project/.venv/bin/python` (typecheck, every check:*, vitest 294, pytest 112,
+  `next build --webpack`, function-size under 220 MB) passed. Trace after: `/teams/national` 11 international files
+  (was 0), `/teams/national/[slug]` 12. Pushed alone as HEAD at 10:12 BST on Ashwin's yes; the day's first paid build.
+- **Deploy:** PENDING when written (10:16, production still on `0cd37969a`). A watcher counts teams in the live HTML
+  after the deploy and again after two ISR re-renders (the re-render is what used to empty it).
+- **Open, worth a sweep:** the same trace gap showed for `/teams/national/womens-world-cup/[slug]` (0 international)
+  and `/teams/national/tournaments/[slug]` (0) in a 09-11 build; now fixed for anything reading `lib/international`, but
+  any OTHER reader converted to literal-join maps in `6edc58ecb` may fail the same silent way. Not yet swept.
+
+### B. Cricket weekly REVIEW (09-15 10:07 ntfy): Afghanistan v India fixed (`b26709cfe`, no build)
+
+- The ntfy body arrived nearly empty ("REVIEW BEFORE PASTING" twice): the wrapper's `grep -i REVIEW` keeps only the
+  header lines, not the items under them. The items are in `~/metro-mini-jobs/logs/cricket-weekly-DATE.log`. Not fixed.
+- **Gahanga B Ground, Rwanda (8 rows, 8-9 Sep, Africa Continental Cup):** flagged only because the ground is new and
+  the country was inferred from the city; every field is correct. No change.
+- **Afghanistan v India T20I, 13 Sep (cricket_matches 22711, 22712):** were "Arun Jaitley Cricket Stadium, New Delhi" /
+  "New Delhi" with `venue_country`, `host_country`, `tournament_series` null. Set, on Ashwin's instruction, to the
+  existing convention: "Arun Jaitley Stadium, Delhi", Delhi, India, India, "Afghanistan v India T20I Series, Sep 2026
+  (in India)" (Wikipedia: the Friendship Cup, Afghanistan the designated host, all three T20Is in New Delhi).
+- Portal data rebuilt from Supabase (`build_cricket_portal_data.py`, `build_cricket_top_games.py`; both need
+  `~/.config/metro-supabase/env` sourced for `SUPABASE_URL`, as the wrapper does). Only `team-detail/afghanistan.json`
+  and `india.json` changed.
+- **Not changed:** the 2026-08-05..08-15 Afghanistan rows from the Ireland tour also have no `tournament_series`
+  (never flagged). A Wikipedia 429 skipped "Zimbabwean cricket team against Afghanistan in the UAE in 2026-27"; the next
+  weekly run harvests from the workbook's last Afghanistan match (08-15) again, so it should retry.
+
+### C. The rest of the morning's ntfys
+
+Football UNMATCHED at 00:02 and 06:09 (expected until Friday's Lookup sync); Daily Ops Sweep 02:06: 37 ok, 1 failed
+(the 09-14 gap-league-watch, already fixed). It still reports the build-cap token unset, now irrelevant to owners-weekly.
