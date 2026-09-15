@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-15T07:10:54.903003+00:00",
+  "generated_at": "2026-09-15T07:21:22.764657+00:00",
   "jobs": [
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-15T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-09-14",
-        "status": "ok",
-        "slot": "2026-09-14T07:20:00+00:00"
-      }
-    },
     {
       "id": "nfl-elo",
       "label": "NFL live Elo, seeds, odds (and the bracket in Jan/Feb)",
@@ -338,6 +320,24 @@
       }
     },
     {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-16T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-09-15",
+        "status": "ok",
+        "slot": "2026-09-15T07:20:00+00:00"
+      }
+    },
+    {
       "id": "sound-weekly",
       "label": "Sound of the Metros (music charts)",
       "schedule_text": "Wed at 07:30 UTC",
@@ -592,9 +592,9 @@
       "days_of_month": [],
       "next_run": "2026-09-22T07:05:00+00:00",
       "last_run": {
-        "date": "2026-09-08",
+        "date": "2026-09-15",
         "status": "ok",
-        "slot": "2026-09-08T07:05:00+00:00"
+        "slot": "2026-09-15T07:05:00+00:00"
       }
     },
     {
