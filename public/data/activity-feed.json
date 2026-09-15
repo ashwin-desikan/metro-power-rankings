@@ -1,13 +1,27 @@
 {
-  "generatedAt": "2026-09-14",
+  "generatedAt": "2026-09-15",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-15",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "e30fdd6b8"
+    },
     {
       "date": "2026-09-14",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL, College football.",
-      "commit": "d41357863"
+      "text": "Data refreshed — Football, Basketball, Elections, Screen of the Metros, and 5 more.",
+      "commit": "51c568f19"
+    },
+    {
+      "date": "2026-09-14",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Owners data is read at runtime, so ownership updates no longer need a site build.",
+      "commit": "0cd37969a"
     },
     {
       "date": "2026-09-13",
@@ -4187,20 +4201,6 @@
       "hub": "Expandable Map",
       "text": "Synchronous primaryPins pane, polygon-first interaction model, scroll-wheel zoom on Expandable Map.",
       "commit": "9e16d55b7"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "fix",
-      "hub": null,
-      "text": "Pane race fix plus smaller pin and polygon-first interaction model.",
-      "commit": "15e5e6067"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "fix",
-      "hub": "Expandable Map",
-      "text": "Eight polish fixes.",
-      "commit": "4c6499202"
     }
   ]
 }
