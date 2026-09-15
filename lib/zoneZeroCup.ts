@@ -17,6 +17,20 @@ export type ZzcNation = {
   continent: string | null;
   merit: number;
   rank: number;
+  /** A to G by merit breakpoint, or null for a nation that has never scored. */
+  tier: string | null;
+  /** Winter-sport merit, recomputed at winterWeight 1.0, and its own rank. */
+  meritWinter: number | null;
+  rankWinter: number | null;
+  /** Everything that is not a winter sport, and its own rank. */
+  meritSummer: number | null;
+  rankSummer: number | null;
+  /** Movement against the median change of the same continent. Null below
+      method.moveMinMerit, and null for every nation until the history holds
+      two snapshots. */
+  move: "up" | "down" | "flat" | null;
+  movePct: number | null;
+  moveVsMedian: number | null;
   meritPerCapita: number | null;
   rankPerCapita: number | null;
   meritPerGdp: number | null;
@@ -43,11 +57,22 @@ export type ZzcMethod = {
   rankTop: number;
   prestige: Record<string, number>;
   suspended: Record<string, number>;
+  tierCuts?: { tier: string; minMerit: number }[];
+  tierCounts?: Record<string, number>;
+  winterSports?: string[];
+  seasonNote?: string;
+  /** weeks: 0 until a second snapshot exists, and the arrows stay hidden. */
+  movement?: { weeks: number; since: string | null; medians: Record<string, number> };
+  moveMinMerit?: number;
+  moveFlatBand?: number;
 };
 
 export type ZzcMeta = {
   title: string;
   generated: number;
+  /** ISO date of the run that produced this file. Optional: files written
+      before 2026-09-15 do not carry it. */
+  updated?: string;
   method: ZzcMethod;
   count: number;
 };

@@ -22,6 +22,8 @@ export const RELEASES: Release[] = [
     headline: "New champions appear the day they are crowned",
     items: [
       "A new Grand Slam, golf major or AFL and NRL premier now reaches the Champions board and the tennis and golf hubs within minutes of the result, rather than waiting for the next site update.",
+      "The Zone Zero Cup gains a tier letter for every nation, and two new views that rank winter sport and summer sport separately: Norway is 20th overall but 3rd in winter and 25th in summer, and Canada tops the winter board.",
+      "The Cup has started recording a weekly snapshot, so from next week each nation carries an arrow showing whether it gained ground on the typical nation of its own continent, rather than simply whether its score moved.",
       "The national teams hub lists every team again, after a fault shipped it empty.",
     ],
   },

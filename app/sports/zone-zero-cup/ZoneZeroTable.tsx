@@ -18,6 +18,14 @@ export type ZzcRow = {
   continent: string | null;
   merit: number;
   rank: number;
+  tier: string | null;
+  meritWinter: number | null;
+  rankWinter: number | null;
+  meritSummer: number | null;
+  rankSummer: number | null;
+  move: "up" | "down" | "flat" | null;
+  movePct: number | null;
+  moveVsMedian: number | null;
   meritPerCapita: number | null;
   rankPerCapita: number | null;
   meritPerGdp: number | null;
@@ -33,24 +41,73 @@ export type ZzcRow = {
   defunct: boolean;
 };
 
-type View = "overall" | "percapita" | "pergdp";
+type View = "overall" | "percapita" | "pergdp" | "winter" | "summer";
 type SortKey = "rank" | "name" | "merit" | "titles" | "best";
 
 const GOLD = "#d4af37";
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const ALL = "All";
 
+// Winter and Summer are the two views that rank WITHIN a group rather than
+// blending. The Cup's headline folds winter merit in at winterWeight 0.5, which
+// makes the position of Norway, Austria and Canada partly an artefact of a
+// constant; these two show what each half looks like on its own. Winter is
+// recomputed at weight 1.0 upstream, or it would be the blend again at half
+// scale. Norway is 20th overall, 3rd on winter and 25th on summer, which is the
+// kind of thing the single number hides.
 const VIEWS: { key: View; label: string; blurb: string }[] = [
   { key: "overall", label: "Overall", blurb: "Total sporting merit." },
   { key: "percapita", label: "Per capita", blurb: "Merit per million people." },
   { key: "pergdp", label: "Per GDP", blurb: "Merit per trillion dollars of GDP." },
+  { key: "winter", label: "Winter", blurb: "Winter-sport merit alone, unblended, ranked among nations that score in one." },
+  { key: "summer", label: "Summer", blurb: "Everything that is not a winter sport, ranked on its own." },
 ];
 
 function rowRank(r: ZzcRow, v: View): number | null {
-  return v === "percapita" ? r.rankPerCapita : v === "pergdp" ? r.rankPerGdp : r.rank;
+  if (v === "percapita") return r.rankPerCapita;
+  if (v === "pergdp") return r.rankPerGdp;
+  if (v === "winter") return r.rankWinter;
+  if (v === "summer") return r.rankSummer;
+  return r.rank;
 }
 function rowMerit(r: ZzcRow, v: View): number | null {
-  return v === "percapita" ? r.meritPerCapita : v === "pergdp" ? r.meritPerGdp : r.merit;
+  if (v === "percapita") return r.meritPerCapita;
+  if (v === "pergdp") return r.meritPerGdp;
+  if (v === "winter") return r.meritWinter;
+  if (v === "summer") return r.meritSummer;
+  return r.merit;
+}
+
+// Tier letter. A badge, not a colour scale: the point is that a reader can scan
+// 240 rows and see the shape, and colour-coding seven bands would fight the
+// gold the board already uses for rank.
+function TierBadge({ tier }: { tier: string | null }) {
+  if (!tier) return <span className="text-[var(--text-dim)]">-</span>;
+  return (
+    <span
+      className="inline-block rounded px-1.5 py-0.5 text-[11px] font-semibold leading-none border"
+      style={{ ...mono, borderColor: "var(--border)", color: tier === "A" ? GOLD : "var(--text-dim)" }}
+    >
+      {tier}
+    </span>
+  );
+}
+
+// Movement against the median change of the nation's own continent, NOT against
+// zero. With an 8-year half-life every nation drifts every week, so an absolute
+// arrow would mostly report which flagship tournaments happened to fall in the
+// window. Hidden entirely until the history holds two snapshots.
+function MoveArrow({ row }: { row: ZzcRow }) {
+  if (!row.move || row.moveVsMedian == null) return <span className="text-[var(--text-dim)]">-</span>;
+  const glyph = row.move === "up" ? "▲" : row.move === "down" ? "▼" : "▪";
+  const colour =
+    row.move === "up" ? "var(--pos, #2e9e5b)" : row.move === "down" ? "var(--neg, #c2453f)" : "var(--text-dim)";
+  const sign = row.moveVsMedian > 0 ? "+" : "";
+  return (
+    <span style={{ ...mono, color: colour }} title={`${sign}${row.moveVsMedian}pp vs the median nation in ${row.continent ?? "its group"}`}>
+      {glyph}
+    </span>
+  );
 }
 
 // Expandable per-sport breakdown of a nation's score: every sport it scores in,
@@ -119,10 +176,15 @@ export default function ZoneZeroTable({
   rows,
   regions,
   sports,
+  moveWeeks = 0,
 }: {
   rows: ZzcRow[];
   regions: string[];
   sports: string[];
+  /** Weeks between the two snapshots the arrows compare. 0 means the history
+      holds a single point, and the whole column stays out of the DOM rather
+      than rendering 240 dashes that look like missing data. */
+  moveWeeks?: number;
 }) {
   const [view, setView] = useState<View>("overall");
   const [region, setRegion] = useState<string>(ALL);
@@ -447,7 +509,17 @@ export default function ZoneZeroTable({
               <th className="w-7" scope="col" aria-label="Expand row" />
               <Th label="#" k="rank" right />
               <Th label="Nation" k="name" />
+              {!sportMode && (
+                <th className="py-2 px-3 font-medium text-left" style={{ color: "var(--text-muted)" }} scope="col" title="Merit band. The cuts are round numbers on merit, not equal-sized groups.">
+                  Tier
+                </th>
+              )}
               <Th label={meritLabel} k="merit" right />
+              {moveWeeks > 0 && !sportMode && (
+                <th className="py-2 px-3 font-medium text-center" style={{ color: "var(--text-muted)" }} scope="col" title={`Change over ${moveWeeks} week(s), against the median nation of the same continent`}>
+                  Move
+                </th>
+              )}
               <Th label="World rank" k="best" />
               {!sportMode && (
                 <th className="py-2 px-3 font-medium text-left" style={{ color: "var(--text-muted)" }} scope="col">
@@ -500,9 +572,19 @@ export default function ZoneZeroTable({
                     </div>
                     {r.continent && <div className="text-[11px] text-[var(--text-dim)]">{r.continent}</div>}
                   </td>
+                  {!sportMode && (
+                    <td className="py-2 px-3 align-top">
+                      <TierBadge tier={r.tier} />
+                    </td>
+                  )}
                   <td className="py-2 px-3 align-top text-right tabular-nums" style={{ ...mono, color: GOLD }}>
                     {mt == null ? "" : view === "percapita" && !sportMode ? mt.toFixed(2) : view === "pergdp" && !sportMode ? mt.toFixed(1) : mt.toFixed(sportMode ? 1 : 0)}
                   </td>
+                  {moveWeeks > 0 && !sportMode && (
+                    <td className="py-2 px-3 align-top text-center">
+                      <MoveArrow row={r} />
+                    </td>
+                  )}
                   <td className="py-2 px-3 align-top text-[var(--text-muted)] whitespace-nowrap">
                     {wr ? (
                       <span>
@@ -525,7 +607,8 @@ export default function ZoneZeroTable({
                 </tr>
                 {isOpen && (
                   <tr style={{ borderColor: "var(--border)" }} className="border-t">
-                    <td colSpan={sportMode ? 5 : 7} className="px-3 pt-1 pb-3" style={{ backgroundColor: "var(--bg)" }}>
+                    {/* expand, #, Nation, [Tier], merit, [Move], World rank, [Strongest] */}
+                    <td colSpan={sportMode ? 5 : 8 + (moveWeeks > 0 ? 1 : 0)} className="px-3 pt-1 pb-3" style={{ backgroundColor: "var(--bg)" }}>
                       <Breakdown row={r} cap={CAP} />
                     </td>
                   </tr>

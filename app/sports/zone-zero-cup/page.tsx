@@ -44,6 +44,14 @@ export default async function ZoneZeroCupPage() {
     continent: n.continent,
     merit: n.merit,
     rank: n.rank,
+    tier: n.tier ?? null,
+    meritWinter: n.meritWinter ?? null,
+    rankWinter: n.rankWinter ?? null,
+    meritSummer: n.meritSummer ?? null,
+    rankSummer: n.rankSummer ?? null,
+    move: n.move ?? null,
+    movePct: n.movePct ?? null,
+    moveVsMedian: n.moveVsMedian ?? null,
     meritPerCapita: n.meritPerCapita,
     rankPerCapita: n.rankPerCapita,
     meritPerGdp: n.meritPerGdp,
@@ -67,6 +75,20 @@ export default async function ZoneZeroCupPage() {
   const scoredSports = sportRows.filter((r) => r.total > 0).length;
 
   const podium = [...nations].sort((a, b) => a.rank - b.rank).slice(0, 3);
+
+  // Tier and movement copy is driven off the emitted meta, never retyped here,
+  // so changing a cut in scripts/zzc_v1_multipillar.py changes the page too.
+  const cuts = meta.method.tierCuts ?? [];
+  const tierCutLabel = cuts.length
+    ? cuts.map((c, i) => (i === cuts.length - 1 ? `${c.tier} above zero` : `${c.tier} from ${c.minMerit}`)).join(", ")
+    : "published with the data";
+  const counts = meta.method.tierCounts ?? {};
+  const tierCounts = cuts.length
+    ? cuts.map((c) => `${c.tier} ${counts[c.tier] ?? 0}`).join(", ") +
+      (counts.none ? `, ${counts.none} untiered` : "")
+    : "";
+  const moveWeeks = meta.method.movement?.weeks ?? 0;
+  const moveMin = meta.method.moveMinMerit ?? 2;
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">
@@ -94,6 +116,15 @@ export default async function ZoneZeroCupPage() {
           recent achievement far more heavily than distant history, so the table reflects how nations
           stand today rather than a century of accumulated medals. Read it overall, or switch to the
           per-capita and per-GDP views to see who punches above their size.
+        </p>
+        {/* Scope, not method. The paragraph above says how the Cup is built; this
+            says what it is and is not for, which is the question the page
+            actually attracts. Borrowed in spirit from the EvidenSe index's
+            "attention is not demand and not revenue" line. */}
+        <p className="text-[13px] text-[var(--text-dim)] max-w-3xl mt-3 italic">
+          What it measures: titles won and world rankings held. What it does not: participation,
+          spending, facilities, or whether a country is a good place to play sport. A nation can
+          rise here without a single new player taking up a game.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-[var(--text-muted)] mt-3">
           <div>
@@ -155,7 +186,28 @@ export default async function ZoneZeroCupPage() {
           The full table of every ranked nation. Switch the ranking basis, filter by region, and sort
           by merit or current world ranking.
         </p>
-        <ZoneZeroTable rows={rows} regions={regions} sports={sports} />
+        <ZoneZeroTable rows={rows} regions={regions} sports={sports} moveWeeks={moveWeeks} />
+        <p className="text-[11px] text-[var(--text-dim)] mt-3 max-w-3xl">
+          <strong className="text-[var(--text-muted)]">Tiers</strong> are merit bands, not equal-sized
+          groups: {tierCutLabel}. The bands are deliberately unequal, because the field is.
+          {tierCounts ? ` Today: ${tierCounts}.` : ""}
+          {moveWeeks > 0 ? (
+            <>
+              {" "}
+              <strong className="text-[var(--text-muted)]">Move</strong> compares each nation&apos;s
+              merit change over the last {moveWeeks} week{moveWeeks === 1 ? "" : "s"} with the median
+              change of its own continent, so an arrow means a nation outpaced its neighbours rather
+              than simply that its number went up. Nations under {moveMin} merit carry no arrow.
+            </>
+          ) : (
+            <>
+              {" "}
+              <strong className="text-[var(--text-muted)]">Move</strong> arrives with the next weekly
+              run: the Cup began recording a weekly snapshot on {meta.updated ?? "its latest rebuild"},
+              and movement needs two.
+            </>
+          )}
+        </p>
       </section>
 
       <section id="by-sport" className="mb-12 scroll-mt-24">

@@ -15318,3 +15318,86 @@ PRE-FINAL dump, and recording the final on 09-14 (`8f43c6971`, section L of 09-1
   scheduled; the real dump restored, unchanged). `track_wwc.py` on the real dump: "2026 already in ...; nothing to
   do", exit 0. Dispatched run 34969956543 on `52fab443e`: success, so the workflow's latest run is green and
   `detect_issues.py` reports 0 findings (no more autofix re-runs today).
+
+## 2026-09-15 (late) — windows → mini (Zone Zero Cup: tiers, weekly snapshots, season boards; a Wikipedia attention prototype)
+
+Ashwin was shown index.evidense.io by its owner and asked what the site could take from it. Four ideas
+implemented on the Cup, plus a prototype for the fifth. Commit `TBD-on-push`, one real build.
+
+### A. WHAT EVIDENSE ACTUALLY IS, AND WHY IT IS WORTH COPYING
+
+A monthly ranking of the 43 Olympic International Federations on **demand**: Wikipedia readership across 16
+language editions weighted by market size, plus Google Trends, rescaled 0-100, summer and winter ranked
+SEPARATELY, tier letters A-E plus W and NEW, and a YoY arrow that compares each federation with the **median
+of its group** rather than with zero. Their own framing is the sharp bit: "attention is not demand and not
+revenue; it is an early signal of both."
+
+Every index we run is the opposite half: supply. Titles won, things built, rankings held. That asymmetry is
+the reason this was worth an afternoon.
+
+### B. SHIPPED ON THE CUP
+
+- **Tiers A-G on merit breakpoints, not rank quantiles.** The distribution is 191.2 to 0.0 with a median of
+  3.2, so quantiles would force equal counts across a savagely skewed field. Cuts are round numbers, published
+  in `_meta.method.tierCuts`, and the page prints them and the live counts (6 / 11 / 23 / 33 / 36 / 44 / 46,
+  plus 41 untiered). **Six bands left F holding 105 of 240, which is not a band**, hence seven. `tier_of()`
+  takes the ROUNDED merit so the letter and the printed number cannot disagree on screen.
+- **Weekly snapshots -> `public/data/zone-zero-cup-history.json`.** Merit only, ~3.4 KB a run, one snapshot
+  per DATE (a re-run replaces, never appends a second point), capped at 160 snapshots. Written LAST, after
+  every existing guard, because a snapshot of a board that was refused would poison the series for a year and
+  the series is the one thing here that cannot be rebuilt from current data.
+- **Movement vs the continent median, not vs zero.** With an 8-year half-life every nation drifts weekly, so
+  an absolute arrow would mostly report which flagship tournaments fell in the window. Percentage change,
+  floored at merit 2.0 so the bottom of the board does not generate noise. **The window is honest: it says
+  "vs N weeks" and lengthens on its own toward 52.** Today N = 0 and the column is not rendered at all.
+- **Winter and Summer views.** Two more entries in the existing `VIEWS` toggle, so no new table. Winter is
+  recomputed at `WINTER_WEIGHT = 1.0` (mutate-and-restore, this file's own idiom from HALFLIFE_LOCKED) or it
+  would be the blend again at half scale. The winter sport set is DERIVED from the medal data each run (a
+  sport is winter when it has more winter than summer medals), which correctly keeps Ice Hockey and Figure
+  Skating on the winter side despite 1908/1920.
+  **Verified no leak: `compute()` before and after `season_boards()` gives zero merit drift.**
+  First findings: Norway 20th overall / 3rd winter / 25th summer, Austria 36th / 7th / 48th, Canada 1st on
+  winter ahead of the USA and Norway.
+- **A scope line under the description**, in the spirit of their "attention is not demand" sentence: what the
+  Cup measures and what it does not.
+
+🔴 **Honest narrowing, and say this before anyone "completes" it:** a Cup winter board is NOT their
+summer/winter split. Winter here exists only inside the Olympics pillar plus ice hockey's own competitions,
+because every other pillar is a summer or year-round sport. It is a winter-SPORT board, not half the Cup.
+
+### C. `scripts/attention/wikipedia_attention.py` — PROTOTYPE, NOT WIRED TO THE SITE
+
+Wikimedia REST pageviews across 16 weighted editions. **No Google Trends, deliberately**: no official API,
+every route is a scrape, and this repo has already lost jobs to exactly that (the ESPN UA flip, WDQS limits).
+Writes nothing to `public/data` and refuses to if asked. `--self-test` is offline and passes.
+
+Pointed at one question: do the hand-set PRESTIGE weights match measured attention? **Spearman 0.82 over 15
+sports.** Football and cricket 1-2 on both. Three sports move 4+ places, all the same direction, all rewarded
+more by the Cup than they are read about: **Ice Hockey (8th attention / 4th prestige), Athletics (12th / 8th),
+Road Cycling (15th / 10th)**. Road cycling only became a pillar on 2026-09-04, so that one is worth a look.
+
+🔴 **I shipped a biased comparison first and caught it on the live run.** v1 subtracted two 0-100 scales and
+reported the gap; every sport but football came out negative, which looked like a finding and was an
+artefact of football being a large outlier on attention. Rewritten to compare by RANK. The reasoning is in
+the docstring so nobody reinstates it. Standing caveat on all of it: **a language is a proxy for a market,
+not a country.**
+
+### D. NOT DONE, ON PURPOSE
+
+Movement could have been made to appear today by backdating a baseline. I do not have last week's merit and
+inventing it would have poisoned the series, so the page says plainly that recording started today and
+movement needs two points. **First real arrows come from your Sunday `metro-mini-refresh.sh` run or the next
+`civic-data-refresh.yml`** — worth confirming the arrows appear and the window reads "1 week".
+
+### E. VERIFIED
+
+typecheck, all `check:*`, 294 vitest, 112 pytest, `next build --webpack`, `check:function-size`.
+`/sports/zone-zero-cup` still ISR at 1h. The Cup regenerated clean through the new code path (240 nations,
+history written). Two nations moved merit in this rebuild (germany 127.6 -> 128.3, kazakhstan 19.7 -> 20.6)
+and **that is your women's basketball ranking change from this morning's pull, not my code** — confirmed by
+the zero-drift test above.
+
+### F. STILL OPEN FROM EARLIER TODAY
+
+`VERCEL_BUILD_CAP_TOKEN` is still unset, so the 2/day cap remains inactive and this is the third real build
+today. Fourth day flagged. Notion Backlog P0, owner Ashwin.

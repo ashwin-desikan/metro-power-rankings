@@ -18,6 +18,7 @@ Olympic medals use gold/silver/bronze = 4/2/1 on the same scale (Winter x0.5).
 Prestige multiplier scales the merged canonical sport. All knobs are tunable
 and would be published on the methodology page.
 """
+import datetime
 import json
 import os
 import re
@@ -29,6 +30,56 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = os.path.join(ROOT, "public", "data")
 OUT_MD = os.path.join(ROOT, "internal", "zzc-v1-output.md")
 OUT_JSON = os.path.join(ROOT, "public", "data", "zone-zero-cup.json")
+OUT_HISTORY = os.path.join(ROOT, "public", "data", "zone-zero-cup-history.json")
+
+# --- tiers, movement and the season boards (added 2026-09-15) ---------------
+#
+# Three things the Cup lacked, taken from the EvidenSe Sport Attention Index
+# (index.evidense.io), which ranks the 43 Olympic federations monthly.
+#
+# 1. TIER_CUTS. "Rank 137 of 240" tells a reader nothing. A letter does. The
+#    cuts are on MERIT and they are round numbers, NOT rank quantiles: this
+#    distribution runs from 191.2 to 0.0 with a median of 3.2 and 39 nations on
+#    exactly zero, so equal-sized bands would put genuinely incomparable nations
+#    in the same letter and split comparable ones. The bands are deliberately
+#    unequal and the cuts are published on the page. Nations on zero get no
+#    tier at all rather than a bottom one, because they have not competed, which
+#    is a different statement from competing and scoring nothing.
+#    Seven bands, because six left tier F holding 105 of 240 nations, which is
+#    not a band, it is the absence of one. Counts at these cuts: 6, 11, 23, 33,
+#    36, 44, 46, and 41 nations with no tier.
+TIER_CUTS = [("A", 100.0), ("B", 50.0), ("C", 25.0), ("D", 10.0),
+             ("E", 4.0), ("F", 1.0), ("G", 0.0)]
+
+# 2. Movement. Weekly snapshots of merit, and an arrow that compares a nation's
+#    change with the MEDIAN CHANGE OF ITS CONTINENT rather than with zero. That
+#    distinction is the whole value: with an 8-year half-life every nation's
+#    merit drifts every week, so an absolute arrow would rank nations mostly by
+#    how recently their flagship sport held a tournament. "Kenya gained while
+#    the median African nation lost" is a finding; "Kenya gained" is not.
+#    Percentage change, not absolute, because 1.0 merit means something very
+#    different to the United States on 191.2 and to Fiji on 4. Floored at
+#    MOVE_MIN_MERIT so the 39 nations on or near zero do not generate noise.
+HISTORY_MAX_SNAPSHOTS = 160        # ~3 years of weekly runs, then the oldest drop
+MOVE_MIN_MERIT = 2.0               # tier E and up carry an arrow; below that, none
+MOVE_FLAT_BAND = 0.5               # within 0.5pp of the group median reads as flat
+
+# 3. Season boards. WINTER_WEIGHT halves winter Olympic merit inside one blended
+#    number, which makes the position of Norway, Austria and Canada partly an
+#    artefact of a constant rather than a finding. EvidenSe refuses to blend and
+#    ranks summer and winter federations separately. The Cup keeps the blend as
+#    the headline (it is a Cup, it needs one number) and publishes the two
+#    unblended boards beside it, so the constant is visible rather than load
+#    bearing. The winter board is computed with WINTER_WEIGHT = 1.0, or it would
+#    just be the blend again at half scale.
+#
+# 🔴 Honest scope: a Cup "winter board" is narrower than EvidenSe's. Their split
+# runs across all 43 federations; here winter exists only inside the Olympics
+# pillar plus ice hockey's own competitions, because every other pillar
+# (football, cricket, rugby, golf, tennis, road cycling) is a summer or
+# year-round sport. Read the winter board as "winter-sport merit", not as half
+# of the Cup.
+SEASON_MIN_SPORTS = 1              # a nation needs one scoring sport to be ranked
 
 NOW = 2026
 HALFLIFE = 8                  # years; very harsh decay, current-era index (user-locked)
@@ -1357,6 +1408,191 @@ def compute(boost, suspend_hl=None, gamma=None, olyp=None):
     return merit, tops, counts, sportmap
 
 
+def tier_of(merit):
+    """Merit -> tier letter, or None for a nation that has never scored.
+
+    Takes the ROUNDED merit, the same number the page prints. Tiering the
+    unrounded value put 46 nations on a displayed merit of 0.0 into tier G on
+    the strength of a fourth decimal place, so the letter and the number
+    disagreed on screen. If it shows as zero it is untiered.
+    """
+    merit = round(merit, 1)
+    if merit <= 0:
+        return None
+    for letter, floor in TIER_CUTS:
+        if merit >= floor:
+            return letter
+    return None
+
+
+def winter_sports():
+    """Canonical sport names that belong to the winter board.
+
+    Derived from the medal data rather than hardcoded, so a new winter sport
+    arrives on its own. A sport counts as winter when MORE of its medals were
+    won at Winter Games than at Summer ones, which is what correctly keeps Ice
+    Hockey and Figure Skating on the winter side despite their appearances at
+    the 1908 and 1920 Summer Games, before the Winter Games existed. Names are
+    mapped through OLY_CANON and WOMENS_TEAM_CANON so they match the keys
+    compute() actually uses.
+    """
+    bd = json.load(open(os.path.join(D, "olympics", "medals-breakdown.json"), encoding="utf-8"))
+    sports = bd["sports"]
+    tally = defaultdict(lambda: [0, 0])          # sport -> [summer medals, winter medals]
+    for _si, _year, season, spi, g, s, b in bd["rows"]:
+        tally[sports[spi]][1 if season == 1 else 0] += g + s + b
+    out = set()
+    for sp, (summer, winter) in tally.items():
+        if winter <= summer:
+            continue
+        out.add(OLY_CANON.get(sp, sp))
+        if sp in WOMENS_TEAM_CANON:
+            out.add(WOMENS_TEAM_CANON[sp])
+    return out
+
+
+def season_boards(sportmap_blend):
+    """Unblended winter and summer merit per nation, each ranked in its own field.
+
+    Summer comes from the normal run: WINTER_WEIGHT never touches it. Winter is
+    recomputed with WINTER_WEIGHT = 1.0, because the point of the board is to
+    show what winter merit looks like WITHOUT the blend constant, and the blended
+    sportmap already has the halving baked in.
+
+    Mutating a module global and restoring it is this file's own idiom for
+    exactly this (see HALFLIFE / HALFLIFE_LOCKED and the sensitivity sweep).
+
+    Each board applies the same best-CAP rule as the Cup, within its own group.
+    In practice the cap almost never binds on the winter side: a nation with ten
+    scoring winter sports is Norway and nobody else.
+    """
+    global WINTER_WEIGHT
+    wset = winter_sports()
+
+    saved = WINTER_WEIGHT
+    try:
+        WINTER_WEIGHT = 1.0
+        _m, _t, _c, sportmap_winter = compute(FLAGSHIP_BOOST)
+    finally:
+        WINTER_WEIGHT = saved
+
+    def board(sportmap, keep):
+        tot = {}
+        for slug, sports in sportmap.items():
+            pts = sorted((p for sp, p in sports.items() if keep(sp) and p > 0), reverse=True)
+            if len(pts) < SEASON_MIN_SPORTS:
+                continue
+            tot[slug] = sum(pts[:CAP])
+        order = sorted(tot.items(), key=lambda kv: kv[1], reverse=True)
+        return tot, {s: i for i, (s, _) in enumerate(order, 1)}
+
+    wval, wrank = board(sportmap_winter, lambda sp: sp in wset)
+    sval, srank = board(sportmap_blend, lambda sp: sp not in wset)
+    return {"winterSports": sorted(wset), "winter": (wval, wrank), "summer": (sval, srank)}
+
+
+def _median(xs):
+    xs = sorted(xs)
+    if not xs:
+        return 0.0
+    mid = len(xs) // 2
+    return xs[mid] if len(xs) % 2 else (xs[mid - 1] + xs[mid]) / 2.0
+
+
+def movement(rows, continent):
+    """Percentage merit change against the median change of the same continent.
+
+    Returns slug -> {"pct", "vsMedian", "dir", "weeks", "since"} for the nations
+    that clear MOVE_MIN_MERIT at BOTH ends of the window, and nothing for the
+    rest. An arrow on a nation sitting on 0.3 merit would be noise dressed as a
+    signal.
+
+    The window is "the oldest snapshot we hold", reported in weeks rather than
+    assumed. EvidenSe compares year on year because they have years of monthly
+    data; this file starts empty, so the comparison honestly says "vs 1 week
+    ago" at first and lengthens on its own until it reaches a year, after which
+    the reader gets the nearest snapshot to 52 weeks back. The page prints the
+    window, so the number is never quietly redefined underneath it.
+    """
+    hist = read_history()
+    snaps = hist.get("snapshots", [])
+    if not snaps:
+        return {}, None
+    now_merit = {r["slug"]: r["merit"] for r in rows}
+    # Nearest snapshot to a year back, else the oldest we hold.
+    target = max(0, len(snaps) - 1 - 52)
+    base = snaps[target]
+    weeks = len(snaps) - 1 - target
+    if weeks < 1:
+        return {}, None
+    then = base.get("merit", {})
+
+    pct = {}
+    for slug, m_now in now_merit.items():
+        m_then = then.get(slug)
+        if m_then is None or m_then < MOVE_MIN_MERIT or m_now < MOVE_MIN_MERIT:
+            continue
+        pct[slug] = (m_now - m_then) / m_then * 100.0
+
+    by_cont = defaultdict(list)
+    for slug, p in pct.items():
+        by_cont[continent.get(slug) or "Other"].append(p)
+    med = {c: _median(v) for c, v in by_cont.items()}
+
+    out = {}
+    for slug, p in pct.items():
+        m = med[continent.get(slug) or "Other"]
+        rel = p - m
+        out[slug] = {
+            "pct": round(p, 1),
+            "vsMedian": round(rel, 1),
+            "dir": "flat" if abs(rel) <= MOVE_FLAT_BAND else ("up" if rel > 0 else "down"),
+        }
+    return out, {"weeks": weeks, "since": base.get("date"), "medians": {c: round(v, 1) for c, v in med.items()}}
+
+
+def read_history():
+    if not os.path.exists(OUT_HISTORY):
+        return {"snapshots": []}
+    try:
+        return json.load(open(OUT_HISTORY, encoding="utf-8"))
+    except (ValueError, OSError):
+        # A corrupt history must not stop the Cup regenerating. Movement goes
+        # quiet for a week; the board does not.
+        print("!! zone-zero-cup-history.json unreadable; movement skipped this run")
+        return {"snapshots": []}
+
+
+def write_history(rows, today):
+    """Append today's merit to the history, one snapshot per run date.
+
+    Merit only. Rank is derivable and storing it would double a file that has to
+    live in the repo for years. Re-running on the same date REPLACES that date's
+    snapshot rather than appending a second one, so a manual re-run or a retry
+    cannot put two points on one day and halve the apparent window.
+    """
+    hist = read_history()
+    snaps = [s for s in hist.get("snapshots", []) if s.get("date") != today]
+    snaps.append({"date": today, "merit": {r["slug"]: r["merit"] for r in rows if r["merit"] > 0}})
+    snaps.sort(key=lambda s: s["date"])
+    dropped = max(0, len(snaps) - HISTORY_MAX_SNAPSHOTS)
+    snaps = snaps[dropped:]
+    out = {
+        "_meta": {
+            "title": "Zone Zero Cup history",
+            "cadence": "weekly, written by scripts/zzc_v1_multipillar.py",
+            "note": "Merit only; rank is derived. One snapshot per date, newest last.",
+            "snapshots": len(snaps),
+        },
+        "snapshots": snaps,
+    }
+    text = json.dumps(out, ensure_ascii=False, separators=(",", ":"))
+    open(OUT_HISTORY, "w", encoding="utf-8", newline="").write(text)
+    print(f"history: {len(snaps)} snapshot(s), newest {today}"
+          + (f", dropped {dropped} past the {HISTORY_MAX_SNAPSHOTS} cap" if dropped else ""))
+    return len(snaps)
+
+
 def major_titles():
     """Count world-level titles per nation across the team sports (flagship +
     secondary world championships; continental crowns and Olympics excluded)."""
@@ -1549,6 +1785,14 @@ def emit_json(merit, tops, special, name, sportmap):
     pgrank = {s: i for i, (s, _) in enumerate(pg, 1)}
     pgval = dict(pg)
 
+    # Season boards and tiers are derived from the same numbers the Cup already
+    # has, so they cannot disagree with the headline. Movement is read from the
+    # history BEFORE today's snapshot is appended, or every nation would be
+    # compared with itself.
+    seasons = season_boards(sportmap)
+    wval, wrank = seasons["winter"]
+    sval, srank = seasons["summer"]
+
     rows = []
     for slug, mt in overall:
         br = bestrank.get(slug)
@@ -1564,6 +1808,11 @@ def emit_json(merit, tops, special, name, sportmap):
             "continent": continent.get(slug),
             "merit": round(mt, 1),
             "rank": orank[slug],
+            "tier": tier_of(mt),
+            "meritWinter": round(wval[slug], 1) if slug in wval else None,
+            "rankWinter": wrank.get(slug),
+            "meritSummer": round(sval[slug], 1) if slug in sval else None,
+            "rankSummer": srank.get(slug),
             "meritPerCapita": round(pcval[slug], 3) if slug in pcval else None,
             "rankPerCapita": pcrank.get(slug),
             "meritPerGdp": round(pgval[slug], 2) if slug in pgval else None,
@@ -1582,15 +1831,41 @@ def emit_json(merit, tops, special, name, sportmap):
             "defunct": bool(special.get(slug)),
         })
 
+    # Movement, against the history as it stands BEFORE this run is recorded.
+    today = datetime.date.today().isoformat()
+    moves, window = movement(rows, continent)
+    for r in rows:
+        mv = moves.get(r["slug"])
+        r["move"] = mv["dir"] if mv else None
+        r["movePct"] = mv["pct"] if mv else None
+        r["moveVsMedian"] = mv["vsMedian"] if mv else None
+
+    tier_counts = defaultdict(int)
+    for r in rows:
+        tier_counts[r["tier"] or "none"] += 1
+
     out = {
         "_meta": {
             "title": "Zone Zero Cup",
             "generated": NOW,
+            "updated": today,
             "method": {
                 "halflife": HALFLIFE_LOCKED, "cap": CAP, "winterWeight": WINTER_WEIGHT,
                 "flagshipBoost": FLAGSHIP_BOOST, "diminishGamma": DIMINISH_GAMMA,
                 "suspendHalflife": SUSPEND_HALFLIFE, "rankTop": RANK_TOP,
                 "prestige": PRESTIGE, "suspended": SUSPENDED,
+                # Published so the bands are checkable rather than asserted.
+                "tierCuts": [{"tier": t, "minMerit": f} for t, f in TIER_CUTS],
+                "tierCounts": dict(tier_counts),
+                # The winter set is derived from the medal data every run, so a
+                # new winter sport appears here without a code change.
+                "winterSports": seasons["winterSports"],
+                "seasonNote": ("Winter is recomputed at winterWeight 1.0, so the board shows "
+                               "winter merit unblended. Summer is unaffected by that constant. "
+                               "Winter here means winter-sport merit, not half the Cup."),
+                "movement": (window or {"weeks": 0, "since": None, "medians": {}}),
+                "moveMinMerit": MOVE_MIN_MERIT,
+                "moveFlatBand": MOVE_FLAT_BAND,
             },
             "count": len(rows),
         },
@@ -1622,6 +1897,11 @@ def emit_json(merit, tops, special, name, sportmap):
             "are historical entities, in which case name them." % orphans)
 
     json.dump(out, open(OUT_JSON, "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+    # Written LAST, and only once the Cup itself has survived every guard above.
+    # A snapshot of a board that was refused would poison the movement series
+    # for a year, and the series is the one thing here that cannot be rebuilt
+    # from the current data.
+    write_history(rows, today)
     return len(rows)
 
 
