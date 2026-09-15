@@ -30,6 +30,8 @@ const ALLOWED_TAGS = new Set([
   "nfl-elo",            // nfl-elo.sh (mac-mini-jobs), 08:00 UTC daily in season: lib/nflElo.ts
   "nfl-playoffs",       // nfl-elo.sh, January and February: lib/nflPlayoffs.ts
   "owners",             // run-owners-weekly.sh (mac-mini-jobs), Mondays 08:30 UTC: lib/teamOwners.ts
+  "majors",             // majors-ingest.yml, 05:30 UTC daily: lib/majors.ts
+  "champions",          // majors-ingest.yml and footy-refresh.yml: lib/championsCurrent.ts
 ]);
 
 export const runtime = "nodejs";

@@ -152,8 +152,8 @@ function LeaderTable({ leaders, tours, spans }: { leaders: Leader[]; tours: stri
   );
 }
 
-export default function GolfHubPage() {
-  const data = getGolfMajors();
+export default async function GolfHubPage() {
+  const data = await getGolfMajors();
   if (!data) return null;
   const latest = latestByTournament(data.champions);
   const ryderTally = data.ryderTally;

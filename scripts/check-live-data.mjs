@@ -83,6 +83,18 @@ const OUT_OF_BAND = [
     paths: ["owners/team-owners.json"],
     refreshedBy: "mac-mini-jobs/run-owners-weekly.sh (Mondays 08:30 UTC)",
   },
+  {
+    lib: "lib/majors.ts",
+    paths: ["majors/golf.json", "majors/tennis.json"],
+    refreshedBy: ".github/workflows/majors-ingest.yml (05:30 UTC daily)",
+  },
+  {
+    lib: "lib/championsCurrent.ts",
+    paths: ["champions-current.json"],
+    refreshedBy:
+      ".github/workflows/majors-ingest.yml (05:30 UTC daily) and footy-refresh.yml "
+      + "(the AFL/NRL finalizer); emitted by scripts/champions/build_champions.py",
+  },
 ];
 
 /** Deliberate exemptions, each with the reason it is safe. */
@@ -183,11 +195,63 @@ if (undeclared.size) {
   for (const u of [...undeclared].sort()) console.log(`    - ${u}`);
 }
 
+// --- the same bug the other way round: a job that writes a RUNTIME-READ path
+// and commits WITHOUT [vercel skip], so a data-only change buys a full paid
+// production build that publishes nothing the runtime read would not have
+// fetched by itself.
+//
+// This is not hypothetical. majors-ingest.yml omitted the tag deliberately and
+// documented why: the golf/tennis hubs and the champions board baked their JSON
+// in, so the build WAS the publishing mechanism. Once those three files moved to
+// a runtime read (2026-09-15) the omission became pure waste, and nothing in the
+// repo would have noticed. 6871c2a9d, the US Open champions, is the last one it
+// cost: three changed lines, one Turbo build, and one of the two daily slots
+// scripts/vercel-ignore.sh allows, spent at 05:30 UTC by a bot.
+//
+// The rule: once a path is declared above, every job that writes it must tag the
+// commit. Add to WASTE_EXEMPT only for a job whose commit genuinely has to build
+// something else in the same change, and say what.
+const WASTE_EXEMPT = [];
+const declaredFull = OUT_OF_BAND.flatMap((e) => e.paths);
+const WRITER_DIRS = [join(REPO_ROOT, ".github", "workflows"), SCRIPT_DIR];
+let waste = 0;
+
+for (const dir of WRITER_DIRS) {
+  if (!existsSync(dir)) continue;
+  for (const f of readdirSync(dir).filter((f) => /\.(ya?ml|sh)$/.test(f))) {
+    const rel = `${dir.endsWith("workflows") ? ".github/workflows" : "mac-mini-jobs"}/${f}`;
+    if (WASTE_EXEMPT.some((e) => e.file === rel)) continue;
+    const src = readFileSync(join(dir, f), "utf-8");
+    const writes = declaredFull.filter((p) => src.includes(`public/data/${p}`));
+    if (!writes.length) continue;
+    // Every commit subject this file creates. A tag on the subject is what
+    // vercel-ignore.sh reads, so that is what is checked.
+    for (const m of src.matchAll(/git commit\s+(?:-a\s+)?-m\s+(["'])([^"']*)\1/g)) {
+      const subject = m[2];
+      // A $VAR subject is assembled above the commit; those branches are
+      // checked as literals elsewhere in the same file, so skip the indirection.
+      if (/^\$/.test(subject.trim())) continue;
+      if (subject.includes("[vercel skip]") || subject.includes("[deploy-")) continue;
+      console.error(
+        `\n  FAIL  ${rel} commits "${subject}"\n` +
+        `        without [vercel skip], but it writes ${writes.join(", ")},\n` +
+        `        which ${writes.length > 1 ? "are" : "is"} read at RUNTIME. That commit spends a paid\n` +
+        `        production build to publish data the ISR fetch already carries.\n` +
+        `        Fix: add [vercel skip] to the subject and ping /api/revalidate.`,
+      );
+      waste++;
+    }
+  }
+}
+
 console.log(`\n  exemptions on file: ${EXEMPT.length}`);
 for (const e of EXEMPT) console.log(`    - ${e.lib}`);
 
-if (failures) {
-  console.error(`\ncheck:live-data FAILED (${failures} problem(s))`);
+if (failures || waste) {
+  const parts = [];
+  if (failures) parts.push(`${failures} never-deploys problem(s)`);
+  if (waste) parts.push(`${waste} wasted-build problem(s)`);
+  console.error(`\ncheck:live-data FAILED (${parts.join(", ")})`);
   process.exit(1);
 }
 console.log(

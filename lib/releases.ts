@@ -18,6 +18,14 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-15",
+    headline: "New champions appear the day they are crowned",
+    items: [
+      "A new Grand Slam, golf major or AFL and NRL premier now reaches the Champions board and the tennis and golf hubs within minutes of the result, rather than waiting for the next site update.",
+      "The national teams hub lists every team again, after a fault shipped it empty.",
+    ],
+  },
+  {
     date: "2026-09-14",
     headline: "Ownership changes appear within minutes",
     items: [

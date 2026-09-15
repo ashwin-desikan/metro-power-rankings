@@ -6,8 +6,19 @@ import "server-only";
 // public/data/majors/{golf,tennis}.json. Server-only.
 // Listed in scripts/check-client-imports.mjs SERVER_ONLY_MODULES.
 
-import { existsSync, readFileSync } from "fs";
-import { join } from "path";
+// STATIC IMPORTS, not readFileSync. These three are small, fixed and known at
+// build time, so they compile into the server bundle and there is nothing for
+// the Vercel file tracer to get wrong. That matters more here than it used to:
+// these pages now carry a 1h ISR window, so their fallback path runs on a real
+// Vercel re-render rather than only during `next build`. Measured on the build
+// of 2026-09-15, the .nft.json for /teams/golf and /teams/tennis traced 111
+// files and NONE of the majors JSON, the identical silent miss
+// scripts/DATA-READS-RECIPE.md records for lib/international.ts. A readFileSync
+// fallback here would have been dead code that returned null, and the page
+// renders nothing when data is null.
+import bundledGolf from "@/public/data/majors/golf.json";
+import bundledTennis from "@/public/data/majors/tennis.json";
+import golfMonthsData from "@/public/data/majors/golf-months.json";
 
 export type Champion = {
   year: number;
@@ -51,61 +62,89 @@ export type TennisData = {
   hostMetros: HostMetro[]; davis: DavisNation[];
 };
 
-// Literal per-name path, one entry per file this module ever reads, so the
-// file tracer sees a fully literal join() at each branch instead of a
-// dynamic segment under public/data. See scripts/DATA-READS-RECIPE.md rule 1.
-// "champions-history.json" lives one level up from public/data/majors, at
-// public/data/champions-history.json, mirroring the original `../` rel.
-const MAJORS_FILES = {
-  "golf.json": () => join(process.cwd(), "public", "data", "majors", "golf.json"),
-  "tennis.json": () => join(process.cwd(), "public", "data", "majors", "tennis.json"),
-  "champions-history.json": () => join(process.cwd(), "public", "data", "champions-history.json"),
+// The bundled copies, used when the runtime fetch below cannot be served.
+const BUNDLED = {
+  "golf.json": bundledGolf as unknown as GolfData,
+  "tennis.json": bundledTennis as unknown as TennisData,
 } as const;
-type MajorsFileName = keyof typeof MAJORS_FILES;
 
-function loadJson<T>(rel: MajorsFileName): T | null {
-  const p = MAJORS_FILES[rel]();
-  if (!existsSync(p)) return null;
-  return JSON.parse(readFileSync(p, "utf-8")) as T;
-}
+// Read at RUNTIME from GitHub raw, not baked in at build time (2026-09-15),
+// following lib/teamOwners.ts. .github/workflows/majors-ingest.yml detects a
+// finished major every morning, writes the champion to Supabase, re-emits
+// these two files and commits them with [vercel skip], then pings
+// /api/revalidate?tag=majors. A new US Open or Open Championship champion
+// therefore reaches /teams/tennis and /teams/golf minutes after the push
+// without spending a paid production build.
+//
+// It used to be a build-time readFileSync, and majors-ingest.yml deliberately
+// omitted [vercel skip] for exactly that reason, which is what made a
+// three-line data commit cost a full production build (6871c2a9d, 14 Sep 2026,
+// the US Open champions; seven such builds in the prior 180 days).
+//
+// The hourly revalidate is the backstop if the ping fails; the bundled copy is
+// the fallback if the fetch does. In development the local working copy leads,
+// matching lib/liveData.ts and lib/teamOwners.ts.
+const GH_RAW = {
+  "golf.json": "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/majors/golf.json",
+  "tennis.json": "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/majors/tennis.json",
+} as const;
+type LiveFileName = keyof typeof GH_RAW;
 
-let _golf: GolfData | null = null;
-let _tennis: TennisData | null = null;
+// Memo key. These two files carry no `generated` stamp and deliberately are not
+// given one: build-majors-data.py runs daily and the workflow commits only when
+// the content actually differs, so a timestamp would turn every quiet day into
+// a commit that is pure noise. The response's byte length is the key instead.
+// It moves whenever a champion is added and never otherwise, and the only cost
+// of the theoretical collision (a replacement of exactly equal length) is one
+// re-parse skipped inside a single hourly window.
+const _memo = new Map<LiveFileName, { key: string; data: unknown }>();
 
-export function getGolfMajors(): GolfData | null {
-  if (!_golf) _golf = loadJson<GolfData>("golf.json");
-  return _golf;
-}
-export function getTennisMajors(): TennisData | null {
-  if (!_tennis) _tennis = loadJson<TennisData>("tennis.json");
-  return _tennis;
-}
-
-// Real month each golf major was played, keyed `${year}|${golf.json tournament}`.
-// Sourced from champions-history.json (built from Champions_History.xlsx, which
-// carries a date for every major); Majors.xlsx has no dates. Used to order the
-// golf ledger by the actual calendar of each season (e.g. the PGA closing the
-// year through 2018, then May from 2019). Falls back gracefully when a row is
-// missing a date.
-const GOLF_HISTORY_NAME: Record<string, string> = {
-  "US Open Championship": "U.S. Open",
-  "Masters Tournament": "Masters Tournament",
-  "PGA Championship": "PGA Championship",
-  "The Open Championship": "The Open Championship",
-};
-let _golfMonths: Record<string, number> | null = null;
-export function golfMajorMonths(): Record<string, number> {
-  if (_golfMonths) return _golfMonths;
-  const rows = loadJson<Array<{ competition?: string; year?: number; date?: string }>>("champions-history.json") ?? [];
-  const out: Record<string, number> = {};
-  for (const r of rows) {
-    const g = r.competition ? GOLF_HISTORY_NAME[r.competition] : undefined;
-    if (!g || !r.year || !r.date) continue;
-    const m = Number(String(r.date).slice(5, 7));
-    if (m >= 1 && m <= 12) out[`${r.year}|${g}`] = m;
+async function loadLive<T extends { champions?: unknown[] }>(
+  rel: LiveFileName,
+): Promise<T | null> {
+  if (process.env.NODE_ENV === "production") {
+    try {
+      const res = await fetch(GH_RAW[rel], { next: { revalidate: 3600, tags: ["majors"] } });
+      if (res.ok) {
+        const text = await res.text();
+        const key = `${text.length}`;
+        const hit = _memo.get(rel);
+        if (hit && hit.key === key) return hit.data as T;
+        const parsed = JSON.parse(text) as T;
+        // A truncated or error response must not replace a good bundled file.
+        if (parsed?.champions?.length) {
+          _memo.set(rel, { key, data: parsed });
+          return parsed;
+        }
+      }
+    } catch {
+      /* fall through to the bundled copy */
+    }
   }
-  _golfMonths = out;
-  return out;
+  return BUNDLED[rel] as unknown as T;
+}
+
+export async function getGolfMajors(): Promise<GolfData | null> {
+  return loadLive<GolfData>("golf.json");
+}
+export async function getTennisMajors(): Promise<TennisData | null> {
+  return loadLive<TennisData>("tennis.json");
+}
+
+// Real month each golf major was played, keyed `${year}|${golf.json tournament}`,
+// so /teams/golf orders each season by the actual calendar (the PGA closed the
+// year through 2018, then moved to May) rather than by name. Majors.xlsx has no
+// dates; the champions ledger does.
+//
+// This used to read all 2.6 MB of champions-history.json and do the join here,
+// for 478 integers. scripts/champions/build_champions.py now emits the join as
+// public/data/majors/golf-months.json (12 KB) and this is a static import of it,
+// which also takes /teams/golf off a build-time file read the Vercel tracer was
+// not tracing for that route. A month the ledger does not carry is simply absent
+// and the caller falls back, exactly as before.
+const GOLF_MONTHS: Record<string, number> = golfMonthsData as Record<string, number>;
+export function golfMajorMonths(): Record<string, number> {
+  return GOLF_MONTHS;
 }
 
 // Group a flat champions list by tournament, each sorted most-recent first.

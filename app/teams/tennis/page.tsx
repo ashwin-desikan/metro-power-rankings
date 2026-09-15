@@ -145,8 +145,8 @@ function LeaderTable({ leaders, tours, spans }: { leaders: Leader[]; tours: stri
   );
 }
 
-export default function TennisHubPage() {
-  const data = getTennisMajors();
+export default async function TennisHubPage() {
+  const data = await getTennisMajors();
   if (!data) return null;
 
   // By-nation, consolidated: former states fold into the modern country.

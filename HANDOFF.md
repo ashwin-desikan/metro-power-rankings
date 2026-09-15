@@ -15210,3 +15210,89 @@ Afghanistan v India rows". `git pull`: nothing new on either repo.
 
 Football UNMATCHED at 00:02 and 06:09 (expected until Friday's Lookup sync); Daily Ops Sweep 02:06: 37 ok, 1 failed
 (the 09-14 gap-league-watch, already fixed). It still reports the build-cap token unset, now irrelevant to owners-weekly.
+
+## 2026-09-15 (evening) — windows → mini (champions and majors read at runtime; a new check:live-data guard; the build cap is still a no-op)
+
+Cowork session, Ashwin travelling. He asked why adding the US Open champions cost a full Vercel build and wanted a
+process where it does not. Answer, fix, guard and a finding he should see, below.
+
+### A. WHY `6871c2a9d` BUILT (14 Sep, "Auto: record new major champion(s)")
+
+Not a guardrail gap. A documented decision. The commit changed three files and three lines
+(`majors/tennis.json`, `champions-history.json`, `majors/zzc-titles.json`) and deliberately carried no
+`[vercel skip]`, because `lib/majors.ts` and `lib/champions.ts` both `readFileSync` their JSON, so the build WAS the
+publishing mechanism. `majors-ingest.yml`'s header argued "only ~8 majors a year, so a build each is cheap".
+`footy-refresh.yml` did the same thing, branching its commit message to drop the tag whenever
+`champions-history.json` changed.
+
+Two things were wrong with the premise. It was never only ~8: the ledger in the same commit also carries boxing, the
+AFL/NRL premiers and anything else the finalizers append. **Seven pure champions-data production builds in the 180 days
+to 09-14** (`6871c2a9d`, `1e84f9abf`, `137d66b10`, `166580c7e`, `3cdf4e87e`, `a95599daa`, `f389da010`). And the data was
+already in Supabase the whole time: `majors_ingest.py` writes `tennis_majors`, `majors_to_champions.py` appends to
+`public.champions`, and the JSON is a derived cache. Nothing needed to move. The problem was only ever on the read side.
+
+### B. THE FIX — shipped, modelled on the mini's own `0cd37969a` (owners)
+
+- `lib/majors.ts` — `getGolfMajors`/`getTennisMajors` now async, GitHub raw, `revalidate: 3600`, tag `majors`.
+- `lib/championsCurrent.ts` (new) — the Current board only, tag `champions`.
+- `scripts/champions/build_champions.py` — two new derived files: `champions-current.json` (the `isCurrent` rows alone,
+  **97 rows / 38 KB** vs the ledger's 6,816 / 2.58 MB) and `majors/golf-months.json` (478 dated majors / 12 KB). Both
+  rendered by the existing `render()` so the row shape stays single-source. `build_current` has its own shrink guard
+  (`sys.exit(5)`): a competition does not stop having a reigning holder, and the board is now runtime-read, so a partial
+  Supabase page would empty it with no deploy to notice.
+- `lib/championsHub.ts` — enrichment factored into `enrich()`; `getChampionsWithLinks()` stays SYNC and build-time for
+  its two remaining callers (`championsHistory` competition metadata, `championsTimeline`), new async
+  `getChampionsWithLinksLive()` for the board.
+- Both workflows now `[vercel skip]` and ping `/api/revalidate` (tags `majors`, `champions`), gated on an actual push,
+  then warm `/sports/champions`, `/teams/tennis`, `/teams/golf`. **The 300s sleep before the flush is load-bearing** —
+  same reason as `business-daily-refresh.yml`: raw.githubusercontent has a ~5-min CDN cache and flushing early
+  re-caches the OLD list for the full hour.
+
+**Deliberately NOT converted**, and say so before anyone "finishes the job": the `<ChampionBadge>` on the 54 call sites
+of `getCurrentChampionships`, the metro Championship History, the per-competition rolls and the Time Machine. They pick
+a champion up on the next natural deploy. Converting them means an async ripple through 54 call sites and a fetch
+inside all 4,261 metro pages, to buy a day of freshness on a badge.
+
+### C. THE TRACER BIT ME, EXACTLY AS `DATA-READS-RECIPE.md` SAID IT WOULD
+
+First build after the conversion: `.next/server/app/teams/tennis/page.js.nft.json` traced **111 files and none of the
+majors JSON**. Same silent miss the recipe records for `lib/international.ts` on 09-15, and the `MAJORS_FILES` map was
+rule 1's exact shape. Harmless while those pages were fully static; a blank hub once they carry an ISR window and the
+fallback runs on a real re-render, because both pages do `if (!data) return null`.
+
+Fixed the way the recipe prescribes: **static imports**, not `readFileSync`, for `golf.json`, `tennis.json`,
+`golf-months.json` and `champions-current.json`. That also removed a 2.58 MB build-time ledger read from
+`/teams/golf`, which existed to look up 478 integers. Traces after: tennis/golf 115 files, and the data now compiles
+into the bundle where there is nothing to trace. **Your 09-14 note asked for a sweep of other readers converted to
+literal-join maps in `6edc58ecb` — this is one more confirmed case. The sweep is still open.**
+
+Related, and it vindicates the slice: the build logs `Failed to set Next.js data cache ... items over 2MB can not be
+cached` for `business/companies.json` (2,987,575 bytes). A runtime fetch of the 2.58 MB ledger would have hit the same
+ceiling and re-fetched on every render. 38 KB is nowhere near it.
+
+### D. NEW GUARD — `check:live-data` now enforces the MIRROR case
+
+The script already caught "data refreshed with `[vercel skip]` but read at build time" (never deploys). It now also
+catches "data read at RUNTIME but committed WITHOUT `[vercel skip]`" (wasted build), scanning every `git commit -m`
+subject in `.github/workflows/*` and `mac-mini-jobs/*.sh` against the declared `OUT_OF_BAND` paths. `WASTE_EXEMPT` is
+empty; add to it only for a job whose commit genuinely has to build something else, and say what. Negative-tested by
+stripping the tag back off `majors-ingest.yml`, confirming FAIL, restoring. This is what stops the regression, not the
+comments.
+
+### E. 🔴 THE 2/DAY BUILD CAP IS STILL INACTIVE — third day flagged, still not done
+
+`scripts/vercel-ignore.sh` reads `VERCEL_BUILD_CAP_TOKEN` and, without it, prints `build cap inactive` and applies NO
+cap. Your daily-ops sweep has said so on 09-13, 09-14 and 09-15. So the ceiling that `feedback_vercel_guardrail_must_be_infra_not_memory`
+concluded had to be code rather than a promise is, right now, neither: the code is shipped and disabled. **Anyone with
+Vercel dashboard access should add `VERCEL_BUILD_CAP_TOKEN` (read scope) to project `prj_eGoUAOrnwvNP86s7p74ruILMl3Dr`,
+Production, build-time.** Until then, every "we are capped at 2" statement in this repo is false, mine included — I told
+Ashwin this change saves a daily slot, and it does not yet, because there are no slots being counted.
+
+### F. VERIFIED / OPEN
+
+Verified locally on Windows: typecheck, all 13 `check:*`, 294 vitest, 112 pytest, `next build --webpack`,
+`check:function-size` (92.1 MB `/sports/champions`, under the 220 MB line). `build_champions.py` `py_compile` only —
+the two new emitters could not be run here (no `scripts/mktcap/supabase_key.txt`), so both output files in this commit
+were generated by reproducing the same filter and join against the committed ledger. **First real majors-ingest or
+footy-refresh run should be checked: the files it writes must come back byte-identical, and the ping must log a 200 for
+both tags.** If `champions-current.json` churns, `build_current` is not reproducing `render()` faithfully.

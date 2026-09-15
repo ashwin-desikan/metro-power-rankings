@@ -38,6 +38,19 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 OUT = ROOT / "public" / "data" / "champions-history.json"
 EXTRA = ROOT / "public" / "data" / "champions-metro-extra.json"
+CURRENT = ROOT / "public" / "data" / "champions-current.json"
+GOLF_MONTHS = ROOT / "public" / "data" / "majors" / "golf-months.json"
+
+# Ledger competition name -> the name golf.json uses. lib/majors.ts held this
+# map and did the join itself, which meant /teams/golf paid a 2.6 MB
+# readFileSync of the whole ledger to learn twelve integers a year. The map
+# lives here now and the site reads the result.
+GOLF_HISTORY_NAME = {
+    "US Open Championship": "U.S. Open",
+    "Masters Tournament": "Masters Tournament",
+    "PGA Championship": "PGA Championship",
+    "The Open Championship": "The Open Championship",
+}
 URL = "https://nmprqkmymrdknffwnuur.supabase.co"
 KEY = (ROOT / "scripts" / "mktcap" / "supabase_key.txt").read_text(encoding="utf-8").strip()
 H = {"apikey": KEY, "Authorization": f"Bearer {KEY}"}
@@ -182,6 +195,87 @@ def render(rows):
     return json.dumps(out, ensure_ascii=False, separators=(",", ":"))
 
 
+def build_current(rows, check=False):
+    """Step 5: the reigning holders on their own, so the board can read them live.
+
+    lib/champions.ts already throws away everything except the isCurrent rows of
+    this 2.6 MB ledger, and /sports/champions is the one surface that has to
+    show a new champion the day it is won. Emitting those rows as their own
+    small file lets lib/championsCurrent.ts fetch them from GitHub raw on an
+    hourly ISR interval, which in turn lets majors-ingest.yml and
+    footy-refresh.yml commit a champion with [vercel skip] instead of spending a
+    paid production build. The US Open champions cost one on 2026-09-14
+    (6871c2a9d): three changed lines, a full Turbo build.
+
+    Same row shape and the same renderer as champions-history.json, so the
+    reader parses one format rather than two, and a field added to FIELDS
+    reaches both files at once.
+    """
+    cur = [r for r in rows if r.get("isCurrent")]
+    text = render(cur)
+    old = io.open(CURRENT, encoding="utf-8").read() if CURRENT.exists() else ""
+    same = text == old
+    print(f"champions-current.json: {len(cur):,} reigning holders "
+          f"({'unchanged' if same else 'CHANGED'})")
+
+    # Shrink guard, for the same reason the ledger has one: a competition does
+    # not stop having a reigning holder, so a net loss is a bad read upstream,
+    # not news. Without this a partial Supabase page would silently empty the
+    # board, and because the board is now read at RUNTIME it would do so
+    # without a deploy to notice.
+    if old:
+        before = len(json.loads(old))
+        if len(cur) < before:
+            print(f"ERROR: would drop {before - len(cur):,} reigning holders "
+                  f"({before:,} -> {len(cur):,}). Refusing to write. "
+                  f"Check the table before re-running.")
+            sys.exit(5)
+
+    if not check and not same:
+        io.open(CURRENT, "w", encoding="utf-8", newline="").write(text)
+        print(f"wrote {CURRENT}")
+    return len(cur)
+
+
+def build_golf_months(rows, check=False):
+    """Step 6: the real month each golf major was played.
+
+    /teams/golf orders each season's four majors by the calendar rather than by
+    name (the PGA closed the year through 2018, then moved to May), and the only
+    place carrying a date for them is this ledger. lib/majors.ts used to join the
+    two itself, which cost that page a readFileSync of all 2.6 MB to end up with
+    about a dozen integers per season, and left it depending on a build-time file
+    read that the Vercel tracer does not reliably trace for that route.
+
+    Emitting the join here makes it a 20 KB static import instead, which is the
+    shape scripts/DATA-READS-RECIPE.md prescribes for a small fixed file after
+    lib/international.ts silently shipped an empty hub on 2026-09-15.
+
+    Key: "<year>|<golf.json tournament name>", value: month 1-12.
+    """
+    months = {}
+    for r in rows:
+        g = GOLF_HISTORY_NAME.get(r.get("competition") or "")
+        if not g or not r.get("year") or not r.get("date"):
+            continue
+        m = str(r["date"])[5:7]
+        if m.isdigit() and 1 <= int(m) <= 12:
+            months[f"{r['year']}|{g}"] = int(m)
+
+    # Sorted, so a rerun with unchanged data produces an unchanged file rather
+    # than a reordered one and a commit that means nothing.
+    text = json.dumps(dict(sorted(months.items())), ensure_ascii=False,
+                      separators=(",", ":"))
+    old = io.open(GOLF_MONTHS, encoding="utf-8").read() if GOLF_MONTHS.exists() else ""
+    same = text == old
+    print(f"golf-months.json: {len(months):,} dated majors "
+          f"({'unchanged' if same else 'CHANGED'})")
+    if not check and not same:
+        io.open(GOLF_MONTHS, "w", encoding="utf-8", newline="").write(text)
+        print(f"wrote {GOLF_MONTHS}")
+    return len(months)
+
+
 def build_extra(check=False):
     """Step 4: the club titles the metro pages could not previously show.
 
@@ -303,7 +397,8 @@ def main():
     if missing:
         print(f"!! {len(missing)} rows have no source_ordinal; order is not reproducible")
 
-    text = render([to_row(r) for r in db])
+    rows = [to_row(r) for r in db]
+    text = render(rows)
     old = io.open(OUT, encoding="utf-8").read() if OUT.exists() else ""
 
     if text == old:
@@ -326,6 +421,8 @@ def main():
             print("  same objects, different serialisation (key order or number format)")
 
     if args.check:
+        build_current(rows, check=True)
+        build_golf_months(rows, check=True)
         build_extra(check=True)
         return
 
@@ -344,6 +441,8 @@ def main():
 
     io.open(OUT, "w", encoding="utf-8", newline="").write(text)
     print(f"wrote {OUT}")
+    build_current(rows)
+    build_golf_months(rows)
     build_extra()
 
 

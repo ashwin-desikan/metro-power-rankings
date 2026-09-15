@@ -31,7 +31,9 @@ export type Championship = {
 
 // Raw champions-history row shape (subset we consume). The ledger carries the
 // full all-time history; the reigning holders are the isCurrent rows.
-type HistoryRow = {
+// Exported so lib/championsCurrent.ts can parse champions-current.json, which
+// build_champions.py renders from the same rows with the same writer.
+export type HistoryRow = {
   sport?: string; competition?: string; canonical?: string; champion?: string;
   year?: number | null; date?: string | null; dateAwarded?: string | null;
   scope?: string | null; scopeType?: string | null;
@@ -47,32 +49,40 @@ function yearOf(d: string | null | undefined): number | null {
   return m ? Number(m[1]) : null;
 }
 
+/**
+ * One ledger row -> one Championship. Exported so lib/championsCurrent.ts maps
+ * the runtime slice exactly as the build-time ledger is mapped here: two
+ * readers, one shape, no chance of the live board and the badges disagreeing
+ * about what a row means.
+ */
+export function toChampionship(r: HistoryRow): Championship {
+  return {
+    sport: r.sport ?? "",
+    competition: r.competition ?? "",
+    // Use the era-correct canonical name so the reigning champion resolves to
+    // the current club/team page (matches how ChampionBadge is looked up).
+    team: r.canonical || r.champion || "",
+    year: r.year ?? null,
+    dateAwarded: r.dateAwarded ?? r.date ?? null,
+    scope: r.scope ?? "",
+    scopeType: (r.scopeType as Championship["scopeType"]) ?? null,
+    // The board renders `fmtDate(nextAwardedDate) || nextAwarded`, so the
+    // year is the fallback when a next-title date is known only vaguely.
+    // It was hardcoded null, which made that fallback dead code; derive it
+    // from the date so a row with a date always sorts and reads sensibly.
+    nextAwarded: yearOf(r.nextAwardedDate),
+    nextAwardedDate: r.nextAwardedDate ?? null,
+    nextAwardedEstimated: r.nextAwardedEstimated === true,
+    tier: r.tier ?? null,
+    tierGuide: r.tierGuide ?? null,
+  };
+}
+
 function all(): Championship[] {
   if (_data) return _data;
   const p = join(process.cwd(), "public", "data", "champions-history.json");
   const rows: HistoryRow[] = existsSync(p) ? (JSON.parse(readFileSync(p, "utf-8")) as HistoryRow[]) : [];
-  _data = rows
-    .filter((r) => r.isCurrent === true)
-    .map((r): Championship => ({
-      sport: r.sport ?? "",
-      competition: r.competition ?? "",
-      // Use the era-correct canonical name so the reigning champion resolves to
-      // the current club/team page (matches how ChampionBadge is looked up).
-      team: r.canonical || r.champion || "",
-      year: r.year ?? null,
-      dateAwarded: r.dateAwarded ?? r.date ?? null,
-      scope: r.scope ?? "",
-      scopeType: (r.scopeType as Championship["scopeType"]) ?? null,
-      // The board renders `fmtDate(nextAwardedDate) || nextAwarded`, so the
-      // year is the fallback when a next-title date is known only vaguely.
-      // It was hardcoded null, which made that fallback dead code; derive it
-      // from the date so a row with a date always sorts and reads sensibly.
-      nextAwarded: yearOf(r.nextAwardedDate),
-      nextAwardedDate: r.nextAwardedDate ?? null,
-      nextAwardedEstimated: r.nextAwardedEstimated === true,
-      tier: r.tier ?? null,
-      tierGuide: r.tierGuide ?? null,
-    }));
+  _data = rows.filter((r) => r.isCurrent === true).map(toChampionship);
   return _data;
 }
 

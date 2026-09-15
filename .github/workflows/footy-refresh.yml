@@ -89,21 +89,31 @@ jobs:
         run: python3 scripts/build-afl-nrl-data.py OtherLeagues.xlsx MetroAreas.xlsx public/data
 
       - name: Commit and push only if the data changed
+        id: commit
         run: |
           PATHS="public/data/afl/data.json public/data/nrl/data.json \
                  public/data/afl/finals.json public/data/nrl/finals.json \
-                 public/data/champions-history.json public/data/champions-metro-extra.json"
+                 public/data/champions-history.json public/data/champions-metro-extra.json \
+                 public/data/champions-current.json"
           if git diff --quiet -- $PATHS; then
             echo "No change in AFL/NRL data; nothing to deploy."
+            echo "premier=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          # champions-history.json is baked at build time: the commit that
-          # carries a new premier must trigger a real build. Everything else
-          # is ISR-from-raw and skips.
-          if git diff --quiet -- public/data/champions-history.json; then
+          # 2026-09-15: this used to drop [vercel skip] whenever
+          # champions-history.json changed, because the Current board baked that
+          # file in and a premier could not otherwise be published. The board now
+          # reads public/data/champions-current.json at runtime
+          # (lib/championsCurrent.ts), so a premier is published by the
+          # revalidate ping below and EVERY commit from this job skips. The
+          # message still says which one crowned a premier, because that is worth
+          # seeing in the log, and it gates the ping.
+          if git diff --quiet -- public/data/champions-current.json; then
             MSG="Auto: refresh AFL+NRL live seasons from ESPN [vercel skip]"
+            echo "premier=false" >> "$GITHUB_OUTPUT"
           else
-            MSG="Auto: AFL/NRL premier crowned -- champions + hubs updated"
+            MSG="Auto: AFL/NRL premier crowned -- champions + hubs updated [vercel skip]"
+            echo "premier=true" >> "$GITHUB_OUTPUT"
           fi
           git config user.name "footy-refresh-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -116,3 +126,39 @@ jobs:
             echo "Push race on attempt $attempt; retrying..."; sleep $((attempt * 5))
           done
           echo "Failed to push after retries." >&2; exit 1
+
+      - name: Revalidate the champions board (on-demand ISR)
+        if: steps.commit.outputs.premier == 'true'
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          # Only fires on the one run a season that crowns a premier. Fail-open:
+          # the 1h ISR window on lib/championsCurrent.ts is the backstop, so a
+          # missing secret or a failed ping must never fail the data run.
+          if [ -z "$REVALIDATE_SECRET" ]; then
+            echo "REVALIDATE_SECRET not set; skipping (1h ISR backstop applies)."
+            exit 0
+          fi
+          # Wait out raw.githubusercontent's ~5-min CDN cache first, or the
+          # flush re-renders from the previous list and re-caches THAT for the
+          # hour. Same reasoning as business-daily-refresh.yml.
+          echo "Waiting out the GitHub raw CDN TTL before flushing..."
+          sleep 300
+          for attempt in 1 2 3; do
+            code="$(curl -s -o /tmp/reval.out -w '%{http_code}' -X POST \
+              -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+              "https://rankings.citizenofnowhere.org/api/revalidate?tag=champions")" || code=000
+            if [ "$code" = "200" ]; then
+              cat /tmp/reval.out; echo
+              echo "Revalidated on attempt $attempt."
+              break
+            fi
+            echo "revalidate ping attempt $attempt returned HTTP $code"
+            sleep $((attempt * 5))
+          done
+          # revalidateTag() marks the entry dirty but does not regenerate it, so
+          # the first request after the flush still gets the stale copy. Warm the
+          # board here so this job eats that hit, not a visitor.
+          wcode="$(curl -s -o /dev/null -m 20 -w '%{http_code}' \
+            "https://rankings.citizenofnowhere.org/sports/champions")" || wcode=000
+          echo "warm /sports/champions -> HTTP $wcode"

@@ -7,10 +7,23 @@ name: Majors auto-update (ESPN -> Supabase -> site)
 # Supabase and commits it. It then appends the same champion to the public.champions
 # ledger (scripts/champions/majors_to_champions.py, same template-the-previous-row
 # idiom as the AFL/NRL finalizer) and re-emits public/data/champions-history.json,
-# so /sports/champions and the Time Machine update in this same run too. The
-# golf/tennis hubs and /sports/champions bake their JSON at build time (readFileSync),
-# so the commit intentionally triggers a normal Vercel deploy to publish the champion
-# — only ~8 majors a year, so a build each is cheap.
+# so /sports/champions and the Time Machine update in this same run too.
+#
+# NO BUILD (changed 2026-09-15). This commit used to omit [vercel skip] on
+# purpose, because the golf/tennis hubs and the Current board all baked their
+# JSON at build time, and the header here argued that ~8 majors a year made a
+# build each cheap. Two things were wrong with that. It was not only ~8: the
+# champions ledger in the same commit also carries boxing, the AFL/NRL premiers
+# and anything else the finalizers append, which came to 7 real production
+# builds in the 180 days to 2026-09-14. And the cost that matters is not the
+# money, it is that a 05:30 UTC bot spends one of the 2 daily slots allowed by
+# scripts/vercel-ignore.sh before anyone starts work.
+#
+# lib/majors.ts and lib/championsCurrent.ts now read their JSON at runtime from
+# GitHub raw on an hourly ISR window, so this commit is skip-tagged and the
+# champion is published by the revalidate ping below instead. Deliberately still
+# build-time: the <ChampionBadge> on team pages, the metro Championship History
+# and the all-time rolls, which pick the champion up on the next natural deploy.
 # Idempotent: already-recorded champions are skipped and quiet days commit nothing.
 #
 # Needs the SUPABASE_WRITE_KEY repo secret (Supabase key with insert/update on the
@@ -93,20 +106,78 @@ jobs:
           rm -f scripts/mktcap/supabase_key.txt
 
       - name: Commit refreshed JSON if anything changed
+        id: commit
         run: |
           git add public/data/majors/golf.json public/data/majors/tennis.json public/data/majors/zzc-titles.json \
-                  public/data/champions-history.json public/data/champions-metro-extra.json
+                  public/data/champions-history.json public/data/champions-metro-extra.json \
+                  public/data/champions-current.json
           if git diff --cached --quiet; then
             echo "No change in majors output; nothing to publish."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "majors-update-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "Auto: record new major champion(s)"
+          git commit -m "Auto: record new major champion(s) [vercel skip]"
           for attempt in 1 2 3 4 5; do
             if git pull --rebase --autostash origin main && git push; then
-              echo "Pushed on attempt $attempt."; exit 0
+              echo "Pushed on attempt $attempt."
+              echo "pushed=true" >> "$GITHUB_OUTPUT"
+              exit 0
             fi
             echo "Push race on attempt $attempt; retrying..."; sleep $((attempt * 5))
           done
+          echo "pushed=false" >> "$GITHUB_OUTPUT"
           echo "Failed to push after retries." >&2; exit 1
+
+      - name: Revalidate site caches (on-demand ISR)
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          # Fail-open by design: the 1h ISR window on lib/majors.ts and
+          # lib/championsCurrent.ts is the backstop, so a missing secret or a
+          # failed ping must never fail the data run. See
+          # app/api/revalidate/route.ts. Gated on an actual push, unlike the
+          # business job: majors are crowned about eight times a year, so on
+          # ~357 days of the year there is nothing to flush and no reason to
+          # spend five minutes of runner time sleeping.
+          if [ -z "$REVALIDATE_SECRET" ]; then
+            echo "REVALIDATE_SECRET not set; skipping (1h ISR backstop applies)."
+            exit 0
+          fi
+          # raw.githubusercontent serves from a ~5-min CDN cache; flushing
+          # before it expires would re-render from the PREVIOUS champion list
+          # and re-cache that for the full hour. Wait out the raw TTL, then
+          # flush. Same reasoning as business-daily-refresh.yml.
+          echo "Waiting out the GitHub raw CDN TTL before flushing..."
+          sleep 300
+          for tag in majors champions; do
+            for attempt in 1 2 3; do
+              code="$(curl -s -o /tmp/reval.out -w '%{http_code}' -X POST \
+                -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+                "https://rankings.citizenofnowhere.org/api/revalidate?tag=$tag")" || code=000
+              if [ "$code" = "200" ]; then
+                cat /tmp/reval.out; echo
+                echo "Revalidated '$tag' on attempt $attempt."
+                break
+              fi
+              echo "revalidate ping for '$tag' attempt $attempt returned HTTP $code"
+              sleep $((attempt * 5))
+            done
+          done
+          # revalidateTag() only marks the entry dirty; it does not regenerate
+          # it. Vercel serves the OLD copy to the first request after
+          # invalidation and regenerates behind it, so only the request AFTER
+          # that sees the new champion. Warm the three affected pages here so
+          # THIS job eats the stale hit rather than the first real visitor.
+          # SERIAL with a gap, not parallel: the zone is on Cloudflare's free
+          # plan with a 10-second rate-limit window, and a burst trips it.
+          # Mirrors business-daily-refresh.yml and _warm_paths() in
+          # mac-mini-jobs/runners/_common.sh; keep the three in step.
+          for p in /sports/champions /teams/tennis /teams/golf; do
+            wcode="$(curl -s -o /dev/null -m 20 -w '%{http_code}' \
+              "https://rankings.citizenofnowhere.org$p")" || wcode=000
+            echo "warm $p -> HTTP $wcode"
+            sleep 5
+          done

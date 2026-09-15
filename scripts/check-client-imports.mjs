@@ -40,6 +40,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/heartbreak",
   "@/lib/countryTimeMachine",
   "@/lib/championsHub",
+  "@/lib/championsCurrent",
   "@/lib/championsHistory",
   "@/lib/championsTimeline",
   "@/lib/nfl",

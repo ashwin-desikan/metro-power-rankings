@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
-import { getChampionsWithLinks } from "@/lib/championsHub";
+import { getChampionsWithLinksLive } from "@/lib/championsHub";
 import { type ChampRow } from "./ChampionsTable";
 import ChampionsView from "./ChampionsView";
 import { getCompetitionIndex } from "@/lib/championsHistory";
@@ -46,8 +46,11 @@ function sportRank(s: string): number {
   return i === -1 ? SPORT_ORDER.length : i;
 }
 
-export default function ChampionsHubPage() {
-  const rows = getChampionsWithLinks();
+export default async function ChampionsHubPage() {
+  // Live: the Current board reads champions-current.json at runtime, so a
+  // champion recorded overnight shows here without a production build. The
+  // All-Time index below stays build-time.
+  const rows = await getChampionsWithLinksLive();
   const linked = rows.filter((r) => r.teamHref).length;
   const index = getCompetitionIndex();
 

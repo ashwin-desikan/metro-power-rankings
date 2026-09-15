@@ -9,6 +9,7 @@ import "server-only";
 import { readFileSync } from "fs";
 import { join } from "path";
 import { getAllChampionships, type Championship } from "./champions";
+import { getCurrentChampionsLive } from "./championsCurrent";
 import { resolveTeamLink } from "./teamLinks";
 import { getAllNationalTeams } from "./international";
 import { getAllRlNations } from "./rugbyLeagueIntl";
@@ -435,24 +436,45 @@ function f1ConstructorFor(c: Championship): string | null {
   return (byYear ?? champs.find((x) => x.driver === c.team))?.constructor ?? null;
 }
 
+// One Championship -> one enriched board row. Shared by the build-time reader
+// below and the runtime one, so the live board and every build-time consumer
+// resolve links, geo, region and gold identically.
+function enrich(c: Championship): ChampionRow {
+  const teamHref = c.scopeType === "International" ? intlTeamHref(c) : clubTeamHref(c);
+  const hub = leagueHub(c);
+  return {
+    ...c,
+    teamHref,
+    leagueHref: hub.href,
+    leagueLabel: hub.label,
+    geo: geoFor(c),
+    region: regionFor(geoFor(c)),
+    gold: GOLD_COMPETITIONS.has(c.competition),
+    crestName: f1ConstructorFor(c),
+  };
+}
+
+// BUILD-TIME reader. Stays synchronous on purpose: its two remaining callers
+// need per-competition metadata, not fresh champions. lib/championsHistory.ts
+// reads tier/geo/region/scopeType from it to sort the all-time index, and
+// lib/championsTimeline.ts feeds the Time Machine. Neither changes when a
+// champion is crowned, and making this async would ripple into the 4,261 metro
+// pages, the country pages and the sitemap for no freshness gain.
 let _rows: ChampionRow[] | null = null;
 export function getChampionsWithLinks(): ChampionRow[] {
   if (_rows) return _rows;
-  _rows = getAllChampionships().map((c) => {
-    const teamHref = c.scopeType === "International" ? intlTeamHref(c) : clubTeamHref(c);
-    const hub = leagueHub(c);
-    return {
-      ...c,
-      teamHref,
-      leagueHref: hub.href,
-      leagueLabel: hub.label,
-      geo: geoFor(c),
-      region: regionFor(geoFor(c)),
-      gold: GOLD_COMPETITIONS.has(c.competition),
-      crestName: f1ConstructorFor(c),
-    };
-  });
+  _rows = getAllChampionships().map(enrich);
   return _rows;
+}
+
+// RUNTIME reader, for the Current board on /sports/champions only. Reads the
+// small champions-current.json slice from GitHub raw under the "champions" ISR
+// tag, so a champion recorded by majors-ingest.yml or footy-refresh.yml appears
+// minutes after a [vercel skip] commit rather than costing a production build.
+// See lib/championsCurrent.ts for the full reasoning and what is deliberately
+// left on the build-time path.
+export async function getChampionsWithLinksLive(): Promise<ChampionRow[]> {
+  return (await getCurrentChampionsLive()).map(enrich);
 }
 
 // Scope ordering for the hub's grouped layout.
