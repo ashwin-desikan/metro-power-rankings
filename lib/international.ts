@@ -11,11 +11,30 @@ import "server-only";
 //
 // Client-safe display constants and pure helpers live in
 // lib/international-display.ts so client components can import them without
-// dragging the fs-based loaders into the client bundle. Don't re-export from
-// here on purpose — explicit imports keep the boundary obvious.
+// dragging these loaders (and the ~1.35 MB of JSON they bundle) into the client
+// bundle. Don't re-export from here on purpose — explicit imports keep the
+// boundary obvious.
 
-import { existsSync, readFileSync } from "fs";
-import { join } from "path";
+// 🔴 STATIC IMPORTS, NOT fs READS (2026-09-15). Until then these files were read
+// with readFileSync through a map of literal join() paths (6edc58ecb, the
+// file-tracer scoping). The tracer bundled NONE of them into /teams/national's
+// function: the build prerendered every team, and the first ISR re-render on
+// Vercel found no file, existsSync() returned false, and loadJson() silently
+// returned its empty fallback. The hub showed "0 teams", no tournament hubs and
+// no top games, and every deploy "fixed" it until the next revalidation.
+// An import is compiled into the server bundle, so there is nothing to trace
+// and nothing to go missing. Data still changes with a build, as before.
+import indexData from "@/public/data/international/index.json";
+import appearancesData from "@/public/data/international/appearances.json";
+import finalsData from "@/public/data/international/finals.json";
+import tournamentsData from "@/public/data/international/tournaments.json";
+import topGamesAllTimeData from "@/public/data/international/top-games-all-time.json";
+import topGamesByDecadeData from "@/public/data/international/top-games-by-decade.json";
+import topGamesByTeamData from "@/public/data/international/top-games-by-team.json";
+import honorsLeaderboardData from "@/public/data/international/honors-leaderboard.json";
+import similarTeamsData from "@/public/data/international/similar-teams.json";
+import wc2026SimData from "@/public/data/international/wc2026-sim.json";
+import wc2026Data from "@/public/data/international/wc2026.json";
 
 // ---------- Types ----------
 
@@ -309,41 +328,30 @@ type IndexPayload = {
 
 // ---------- File loading ----------
 
-// Literal per-name path, one entry per file this module ever reads, so the
-// file tracer sees a fully literal join() at each branch instead of a
-// dynamic segment under public/data. See scripts/DATA-READS-RECIPE.md rule 1.
-const INTERNATIONAL_FILES = {
-  "index.json": () => join(process.cwd(), "public", "data", "international", "index.json"),
-  "appearances.json": () =>
-    join(process.cwd(), "public", "data", "international", "appearances.json"),
-  "finals.json": () => join(process.cwd(), "public", "data", "international", "finals.json"),
-  "tournaments.json": () =>
-    join(process.cwd(), "public", "data", "international", "tournaments.json"),
-  "top-games-all-time.json": () =>
-    join(process.cwd(), "public", "data", "international", "top-games-all-time.json"),
-  "top-games-by-decade.json": () =>
-    join(process.cwd(), "public", "data", "international", "top-games-by-decade.json"),
-  "top-games-by-team.json": () =>
-    join(process.cwd(), "public", "data", "international", "top-games-by-team.json"),
-  "honors-leaderboard.json": () =>
-    join(process.cwd(), "public", "data", "international", "honors-leaderboard.json"),
-  "similar-teams.json": () =>
-    join(process.cwd(), "public", "data", "international", "similar-teams.json"),
-  "wc2026-sim.json": () =>
-    join(process.cwd(), "public", "data", "international", "wc2026-sim.json"),
-  "wc2026.json": () => join(process.cwd(), "public", "data", "international", "wc2026.json"),
-} as const;
-type InternationalFileName = keyof typeof INTERNATIONAL_FILES;
+// One entry per file this module reads, each a static import above (see the
+// header for why). Typed through `unknown` at the accessor, so TypeScript never
+// has to reconcile the inferred JSON shapes with the declared types.
+const INTERNATIONAL_DATA: Record<InternationalFileName, unknown> = {
+  "index.json": indexData,
+  "appearances.json": appearancesData,
+  "finals.json": finalsData,
+  "tournaments.json": tournamentsData,
+  "top-games-all-time.json": topGamesAllTimeData,
+  "top-games-by-decade.json": topGamesByDecadeData,
+  "top-games-by-team.json": topGamesByTeamData,
+  "honors-leaderboard.json": honorsLeaderboardData,
+  "similar-teams.json": similarTeamsData,
+  "wc2026-sim.json": wc2026SimData,
+  "wc2026.json": wc2026Data,
+};
+type InternationalFileName =
+  | "index.json" | "appearances.json" | "finals.json" | "tournaments.json"
+  | "top-games-all-time.json" | "top-games-by-decade.json" | "top-games-by-team.json"
+  | "honors-leaderboard.json" | "similar-teams.json" | "wc2026-sim.json" | "wc2026.json";
 
 function loadJson<T>(name: InternationalFileName, fallback: T): T {
-  const path = INTERNATIONAL_FILES[name]();
-  if (!existsSync(path)) return fallback;
-  try {
-    return JSON.parse(readFileSync(path, "utf8")) as T;
-  } catch (e) {
-    console.error(`[lib/international] failed to read ${name}:`, e);
-    return fallback;
-  }
+  const data = INTERNATIONAL_DATA[name];
+  return (data ?? fallback) as T;
 }
 
 let _indexCache: IndexPayload | null = null;
@@ -488,7 +496,8 @@ function buildWc2026Sim(): WorldCup2026Sim | null {
 export function getWorldCup2026(): WorldCup2026Bundle | null {
   if (!_wc2026Checked) {
     const candidate = loadJson<WorldCup2026Bundle | null>("wc2026.json", null);
-    _wc2026Cache = candidate && candidate.tournament ? candidate : null;
+    // A shallow copy: the object below is the bundled import itself, and `.sim` is attached to it.
+    _wc2026Cache = candidate && candidate.tournament ? { ...candidate } : null;
     if (_wc2026Cache) {
       _wc2026Cache.sim = buildWc2026Sim();
     }

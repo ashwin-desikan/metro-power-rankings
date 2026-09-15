@@ -29,6 +29,25 @@ root const is never safe, even with a literal leaf. `lib/data.ts` carried one
 for its whole life; that single const put all of public/data into every
 route that imported it.
 
+🔴 **Too FEW files fails silently, and the fixture table above did not catch it
+(2026-09-15).** `lib/international.ts` used rule 1's exact shape (a map of arrow
+functions, each a fully literal `join()`), called through `MAP[name]()`. In the
+real build `/teams/national` traced ZERO of those eleven files. The build
+prerendered the page with every team; the first ISR re-render on Vercel found
+no file, `existsSync()` was false, the loader returned its empty fallback, and
+the hub showed "0 teams" until the next deploy. Nothing logged it, and
+`check:data-reads` passed. Two lessons:
+- **Verify the real trace, not a fixture:** after `next build --webpack`, open
+  `.next/server/app/<route>/page.js.nft.json` and confirm the route's data
+  files are listed.
+- **For a small, fixed, build-time set of files, prefer a static JSON import**
+  (`import x from "@/public/data/.../x.json"` in a `server-only` module). It
+  compiles into the server bundle, so there is nothing to trace. That is the
+  fix `lib/international.ts` now uses; `lib/goldStandard.ts` and
+  `lib/teamCrest.ts` already did.
+- **An `existsSync()` fallback hides this.** A reader whose file must exist
+  should throw or log, not quietly return empty.
+
 Rules for every fs read under public/data:
 
 1. A reader that is only ever called with a handful of fixed names gets a
