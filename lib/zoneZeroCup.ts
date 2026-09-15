@@ -22,6 +22,10 @@ export type ZzcNation = {
   /** Winter-sport merit, recomputed at winterWeight 1.0, and its own rank. */
   meritWinter: number | null;
   rankWinter: number | null;
+  /** Winter sports at winterWeight 1.0, so a winter breakdown sums to
+      meritWinter. Summer has no equivalent: the constant never touches it, so
+      sportMerit already is the summer breakdown. */
+  sportMeritWinter: Record<string, number>;
   /** Everything that is not a winter sport, and its own rank. */
   meritSummer: number | null;
   rankSummer: number | null;

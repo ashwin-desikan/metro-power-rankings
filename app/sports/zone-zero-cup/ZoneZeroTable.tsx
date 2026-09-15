@@ -21,6 +21,7 @@ export type ZzcRow = {
   tier: string | null;
   meritWinter: number | null;
   rankWinter: number | null;
+  sportMeritWinter: Record<string, number>;
   meritSummer: number | null;
   rankSummer: number | null;
   move: "up" | "down" | "flat" | null;
@@ -110,13 +111,52 @@ function MoveArrow({ row }: { row: ZzcRow }) {
   );
 }
 
+// Which season a sport belongs to. The winter set is emitted by
+// scripts/zzc_v1_multipillar.py (derived from the medal data, not hardcoded),
+// and summer is defined as its complement so a sport can never be in neither.
+type Season = "winter" | "summer" | null;
+
+function seasonOf(v: View): Season {
+  return v === "winter" ? "winter" : v === "summer" ? "summer" : null;
+}
+
+function makeInSeason(season: Season, winterSet: Set<string>) {
+  if (!season) return () => true;
+  return (sport: string) => (season === "winter" ? winterSet.has(sport) : !winterSet.has(sport));
+}
+
 // Expandable per-sport breakdown of a nation's score: every sport it scores in,
 // split into the best-N that are counted toward the (capped) total and the rest
 // that fall outside it, each with the nation's world ranking where one exists.
-function Breakdown({ row, cap }: { row: ZzcRow; cap: number }) {
-  const entries = Object.entries(row.sportMerit).sort((a, b) => b[1] - a[1]);
+//
+// In a season view this is filtered to that season's sports ONLY. Showing a
+// nation's cricket score under a Winter ranking was the single most confusing
+// thing about the first version of these views: the number at the top of the
+// row was winter-only while everything the reader could expand underneath it
+// was the whole Cup, so the two disagreed and neither said which it was.
+function Breakdown({
+  row,
+  cap,
+  season,
+  inSeason,
+}: {
+  row: ZzcRow;
+  cap: number;
+  season: Season;
+  inSeason: (sport: string) => boolean;
+}) {
+  // Winter reads its OWN per-sport map, emitted at winterWeight 1.0, so these
+  // lines sum to the winter total in the row above. Reading the blended
+  // sportMerit here would show a 38.0 header over lines summing to about 19.
+  const source = season === "winter" ? row.sportMeritWinter : row.sportMerit;
+  const entries = Object.entries(source)
+    .filter(([sp]) => inSeason(sp))
+    .sort((a, b) => b[1] - a[1]);
   const counted = entries.slice(0, cap);
   const rest = entries.slice(cap);
+  // The recognition bonus is a sport like any other and follows the same rule:
+  // motorsport has no business appearing under a winter ranking.
+  const national = row.nationalSports.filter((ns) => inSeason(ns.sport));
 
   function Line({ n, sport, merit, gold }: { n: number; sport: string; merit: number; gold: boolean }) {
     const wr = row.sportRank[sport];
@@ -137,19 +177,26 @@ function Breakdown({ row, cap }: { row: ZzcRow; cap: number }) {
   return (
     <div>
       <div className="text-[11px] uppercase tracking-wide text-[var(--text-dim)] mb-1.5">
-        Best {Math.min(cap, entries.length)} international sports — counted toward {row.name}&apos;s score
+        {season ? `${season} sports only — ` : ""}
+        Best {Math.min(cap, entries.length)} international sports — counted toward {row.name}&apos;s
+        {season ? ` ${season}` : ""} score
         {row.suspended ? ", after the suspension penalty" : ""}
       </div>
+      {entries.length === 0 && (
+        <div className="text-[13px] text-[var(--text-dim)]">
+          {row.name} scores in no {season} sport.
+        </div>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5">
         {counted.map(([sp, m], idx) => <Line key={sp} n={idx + 1} sport={sp} merit={m} gold />)}
       </div>
-      {row.nationalSports.length > 0 && (
+      {national.length > 0 && (
         <>
           <div className="text-[11px] uppercase tracking-wide text-[var(--text-dim)] mt-3 mb-1.5">
             National sports — recognition bonus, added on top
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5">
-            {row.nationalSports.map((ns) => (
+            {national.map((ns) => (
               <div key={ns.sport} className="flex items-baseline justify-between gap-2 py-0.5 border-b" style={{ borderColor: "var(--border)" }}>
                 <span className="text-[13px] truncate">{ns.sport}</span>
                 <span className="text-[13px] tabular-nums flex-shrink-0" style={{ ...mono, color: "var(--accent)" }}>+{ns.pts.toFixed(1)}</span>
@@ -177,6 +224,7 @@ export default function ZoneZeroTable({
   regions,
   sports,
   moveWeeks = 0,
+  winterSports = [],
 }: {
   rows: ZzcRow[];
   regions: string[];
@@ -185,6 +233,10 @@ export default function ZoneZeroTable({
       holds a single point, and the whole column stays out of the DOM rather
       than rendering 240 dashes that look like missing data. */
   moveWeeks?: number;
+  /** Canonical winter sport names, from _meta.method.winterSports. Everything
+      not in here is summer. Drives every column in a season view, not just the
+      total. */
+  winterSports?: string[];
 }) {
   const [view, setView] = useState<View>("overall");
   const [region, setRegion] = useState<string>(ALL);
@@ -196,6 +248,42 @@ export default function ZoneZeroTable({
 
   const sportMode = sport !== ALL;
   const CAP = 10; // best-N sports that count toward a nation's score
+
+  // A season view filters EVERY column, not just the total. The first version
+  // filtered only the score, so a nation ranked on winter merit still showed
+  // its best cricket world ranking beside it and its full all-sport breakdown
+  // underneath. Two different questions answered in one row.
+  const season = seasonOf(view);
+  const winterSet = useMemo(() => new Set(winterSports), [winterSports]);
+  const inSeason = useMemo(() => makeInSeason(season, winterSet), [season, winterSet]);
+
+  /** Best world ranking among the sports of the active season, or the nation's
+      overall best when no season is selected. */
+  function seasonBest(r: ZzcRow): { rank: number | null; sport: string | null } {
+    if (!season) return { rank: r.bestRank, sport: r.bestRankSport };
+    let best: { rank: number | null; sport: string | null } = { rank: null, sport: null };
+    for (const [sp, rk] of Object.entries(r.sportRank)) {
+      if (!inSeason(sp) || !rk) continue;
+      if (best.rank == null || rk < best.rank) best = { rank: rk, sport: sp };
+    }
+    return best;
+  }
+
+  /** The strongest sports cell, scoped to the season. Reads sportMerit rather
+      than the precomputed topSports, which is an all-sport top five and would
+      leave most winter nations with an empty cell. */
+  function seasonStrongest(r: ZzcRow): string {
+    const src = season === "winter" ? r.sportMeritWinter : r.sportMerit;
+    const fromMerit = Object.entries(src)
+      .filter(([sp]) => inSeason(sp))
+      .map(([sp, pts]) => ({ sport: sp, pts }));
+    const fromNational = r.nationalSports.filter((ns) => inSeason(ns.sport));
+    return [...fromMerit, ...fromNational]
+      .sort((a, b) => b.pts - a.pts)
+      .slice(0, 4)
+      .map((s) => s.sport)
+      .join(", ");
+  }
 
   function toggleExpand(slug: string) {
     setExpanded((prev) => {
@@ -269,13 +357,26 @@ export default function ZoneZeroTable({
 
   const arrow = (key: SortKey) => (sortKey === key ? (dir === 1 ? " ▲" : " ▼") : "");
   const hasState = region !== ALL || sport !== ALL || sortKey !== "rank" || dir !== 1;
-  const meritLabel = sportMode
-    ? `${sport} merit`
-    : view === "overall"
-      ? "Merit"
-      : view === "percapita"
-        ? "Per M"
-        : "Per $T";
+  // One entry per view. This was a ternary chain ending in "Per $T", so adding
+  // Winter and Summer silently labelled their merit column "Per $T" -- per
+  // trillion dollars of GDP, which has nothing to do with either. A map cannot
+  // fall through to the wrong branch when the next view is added.
+  const MERIT_LABEL: Record<View, string> = {
+    overall: "Merit",
+    percapita: "Per M",
+    pergdp: "Per $T",
+    winter: "Winter merit",
+    summer: "Summer merit",
+  };
+  const meritLabel = sportMode ? `${sport} merit` : MERIT_LABEL[view];
+
+  // Decimals per view, for the same reason the label is a map. Winter merit
+  // tops out around 44 and summer around 142, so both want one decimal rather
+  // than the whole-number rounding the overall column uses.
+  const MERIT_DP: Record<View, number> = {
+    overall: 0, percapita: 2, pergdp: 1, winter: 1, summer: 1,
+  };
+  const fmtMerit = (v: number) => v.toFixed(sportMode ? 1 : MERIT_DP[view]);
 
   function Th({ label, k, right }: { label: string; k: SortKey; right?: boolean }) {
     const active = sortKey === k;
@@ -370,11 +471,42 @@ export default function ZoneZeroTable({
         </div>
       </div>
 
+      {/* A season view changes what EVERY number on the page means, so it says
+          so once, loudly, rather than leaving the reader to infer it from a
+          column header. It also names the sports in scope: "winter sports" is
+          not self-evidently seventeen specific things. */}
+      {season && !sportMode && (
+        <div
+          className="rounded-lg border px-3 py-2 mb-3 text-xs"
+          style={{ borderColor: GOLD, backgroundColor: "var(--bg-card)" }}
+        >
+          <span className="font-semibold uppercase tracking-wide" style={{ color: GOLD }}>
+            {season === "winter" ? "Winter sports only" : "Summer sports only"}
+          </span>
+          <span className="text-[var(--text-muted)]">
+            {" "}— every column below counts {season} sport and nothing else: the score, the world
+            ranking, the strongest sports and the per-sport breakdown. Nations that score in no{" "}
+            {season} sport are not listed.
+          </span>
+          {season === "winter" && winterSports.length > 0 && (
+            <div className="mt-1 text-[11px] text-[var(--text-dim)]">
+              In scope: {winterSports.join(", ")}.
+            </div>
+          )}
+          {season === "summer" && winterSports.length > 0 && (
+            <div className="mt-1 text-[11px] text-[var(--text-dim)]">
+              Everything except {winterSports.join(", ")}.
+            </div>
+          )}
+        </div>
+      )}
+
       <p className="text-xs text-[var(--text-dim)] mb-3">
         {sportMode
           ? `Each nation's merit contribution in ${sport} and its current world ranking in that sport, where one exists.`
           : VIEWS.find((v) => v.key === view)?.blurb}{" "}
-        Click any column to sort, or the + on a row to see a nation&apos;s full per-sport breakdown.
+        Click any column to sort, or the + on a row to see a nation&apos;s
+        {season ? ` ${season}-sport` : " full per-sport"} breakdown.
         § currently suspended from international competition; ‡ defunct or composite state.
       </p>
 
@@ -429,12 +561,11 @@ export default function ZoneZeroTable({
           items={sorted.map((r, i) => {
           const rk = sportMode ? sportPos.get(r.slug) : rowRank(r, view);
           const mt = sportMode ? r.sportMerit[sport] : rowMerit(r, view);
-          const wr = sportMode ? r.sportRank[sport] : r.bestRank;
-          const wrSport = sportMode ? sport : r.bestRankSport;
+          const sb = sportMode ? null : seasonBest(r);
+          const wr = sportMode ? r.sportRank[sport] : sb!.rank;
+          const wrSport = sportMode ? sport : sb!.sport;
           const isOpen = expanded.has(r.slug);
-          const strongest = !sportMode
-            ? [...r.topSports, ...r.nationalSports].sort((a, b) => b.pts - a.pts).slice(0, 4).map((s) => s.sport).join(", ")
-            : "";
+          const strongest = !sportMode ? seasonStrongest(r) : "";
           return (
             <div key={`${r.slug}-card`} className="border-t first:border-t-0" style={{ borderColor: "var(--border)" }}>
               <div className="flex items-start gap-2 px-3 py-2.5">
@@ -473,7 +604,7 @@ export default function ZoneZeroTable({
                   </div>
                   <div className="mt-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs">
                     <span className="tabular-nums font-semibold" style={{ ...mono, color: GOLD }}>
-                      {meritLabel}: {mt == null ? "—" : view === "percapita" && !sportMode ? mt.toFixed(2) : view === "pergdp" && !sportMode ? mt.toFixed(1) : mt.toFixed(sportMode ? 1 : 0)}
+                      {meritLabel}: {mt == null ? "—" : fmtMerit(mt)}
                     </span>
                     <span className="text-[var(--text-muted)]">
                       {wr ? (
@@ -493,7 +624,7 @@ export default function ZoneZeroTable({
               </div>
               {isOpen && (
                 <div className="px-3 pb-3 pt-1" style={{ backgroundColor: "var(--bg)" }}>
-                  <Breakdown row={r} cap={CAP} />
+                  <Breakdown row={r} cap={CAP} season={season} inSeason={inSeason} />
                 </div>
               )}
             </div>
@@ -520,10 +651,10 @@ export default function ZoneZeroTable({
                   Move
                 </th>
               )}
-              <Th label="World rank" k="best" />
+              <Th label={season ? `Best ${season} rank` : "World rank"} k="best" />
               {!sportMode && (
                 <th className="py-2 px-3 font-medium text-left" style={{ color: "var(--text-muted)" }} scope="col">
-                  Strongest sports
+                  {season ? `Strongest ${season} sports` : "Strongest sports"}
                 </th>
               )}
             </tr>
@@ -532,8 +663,12 @@ export default function ZoneZeroTable({
             {sorted.map((r, i) => {
               const rk = sportMode ? sportPos.get(r.slug) : rowRank(r, view);
               const mt = sportMode ? r.sportMerit[sport] : rowMerit(r, view);
-              const wr = sportMode ? r.sportRank[sport] : r.bestRank;
-              const wrSport = sportMode ? sport : r.bestRankSport;
+              // In a season view the world ranking shown is the best one WITHIN
+              // that season, not the nation's overall best. Austria's best rank
+              // is not a winter fact just because we are looking at winter.
+              const sb = sportMode ? null : seasonBest(r);
+              const wr = sportMode ? r.sportRank[sport] : sb!.rank;
+              const wrSport = sportMode ? sport : sb!.sport;
               const isOpen = expanded.has(r.slug);
               return (
                 <Fragment key={r.slug}>
@@ -578,7 +713,7 @@ export default function ZoneZeroTable({
                     </td>
                   )}
                   <td className="py-2 px-3 align-top text-right tabular-nums" style={{ ...mono, color: GOLD }}>
-                    {mt == null ? "" : view === "percapita" && !sportMode ? mt.toFixed(2) : view === "pergdp" && !sportMode ? mt.toFixed(1) : mt.toFixed(sportMode ? 1 : 0)}
+                    {mt == null ? "" : fmtMerit(mt)}
                   </td>
                   {moveWeeks > 0 && !sportMode && (
                     <td className="py-2 px-3 align-top text-center">
@@ -597,11 +732,7 @@ export default function ZoneZeroTable({
                   </td>
                   {!sportMode && (
                     <td className="py-2 px-3 align-top text-[var(--text-muted)] text-[13px]">
-                      {[...r.topSports, ...r.nationalSports]
-                        .sort((a, b) => b.pts - a.pts)
-                        .slice(0, 4)
-                        .map((s) => s.sport)
-                        .join(", ")}
+                      {seasonStrongest(r)}
                     </td>
                   )}
                 </tr>
@@ -609,7 +740,7 @@ export default function ZoneZeroTable({
                   <tr style={{ borderColor: "var(--border)" }} className="border-t">
                     {/* expand, #, Nation, [Tier], merit, [Move], World rank, [Strongest] */}
                     <td colSpan={sportMode ? 5 : 8 + (moveWeeks > 0 ? 1 : 0)} className="px-3 pt-1 pb-3" style={{ backgroundColor: "var(--bg)" }}>
-                      <Breakdown row={r} cap={CAP} />
+                      <Breakdown row={r} cap={CAP} season={season} inSeason={inSeason} />
                     </td>
                   </tr>
                 )}

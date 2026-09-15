@@ -1488,7 +1488,22 @@ def season_boards(sportmap_blend):
 
     wval, wrank = board(sportmap_winter, lambda sp: sp in wset)
     sval, srank = board(sportmap_blend, lambda sp: sp not in wset)
-    return {"winterSports": sorted(wset), "winter": (wval, wrank), "summer": (sval, srank)}
+
+    # The per-sport numbers BEHIND the winter total, at the same weight 1.0 the
+    # total uses. Without this the page shows a winter score of 38.0 for Norway
+    # over a breakdown whose lines are the blended half-weight values and sum to
+    # about 19, which is exactly the kind of quiet disagreement between a
+    # headline and its own detail that makes a board untrustworthy. Summer needs
+    # no equivalent: winterWeight never touches it, so the blended sportMerit
+    # already IS the summer breakdown.
+    wsport = {}
+    for slug, sports in sportmap_winter.items():
+        rows_ = {sp: round(p, 1) for sp, p in sports.items() if sp in wset and p > 0}
+        if rows_:
+            wsport[slug] = dict(sorted(rows_.items(), key=lambda kv: -kv[1]))
+
+    return {"winterSports": sorted(wset), "winter": (wval, wrank), "summer": (sval, srank),
+            "winterSportMerit": wsport}
 
 
 def _median(xs):
@@ -1792,6 +1807,7 @@ def emit_json(merit, tops, special, name, sportmap):
     seasons = season_boards(sportmap)
     wval, wrank = seasons["winter"]
     sval, srank = seasons["summer"]
+    wsport = seasons["winterSportMerit"]
 
     rows = []
     for slug, mt in overall:
@@ -1811,6 +1827,9 @@ def emit_json(merit, tops, special, name, sportmap):
             "tier": tier_of(mt),
             "meritWinter": round(wval[slug], 1) if slug in wval else None,
             "rankWinter": wrank.get(slug),
+            # Winter sports at winterWeight 1.0, so the winter breakdown sums to
+            # the winter total. Summer reads sportMerit directly.
+            "sportMeritWinter": wsport.get(slug) or {},
             "meritSummer": round(sval[slug], 1) if slug in sval else None,
             "rankSummer": srank.get(slug),
             "meritPerCapita": round(pcval[slug], 3) if slug in pcval else None,

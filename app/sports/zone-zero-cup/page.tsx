@@ -47,6 +47,7 @@ export default async function ZoneZeroCupPage() {
     tier: n.tier ?? null,
     meritWinter: n.meritWinter ?? null,
     rankWinter: n.rankWinter ?? null,
+    sportMeritWinter: n.sportMeritWinter ?? {},
     meritSummer: n.meritSummer ?? null,
     rankSummer: n.rankSummer ?? null,
     move: n.move ?? null,
@@ -186,7 +187,13 @@ export default async function ZoneZeroCupPage() {
           The full table of every ranked nation. Switch the ranking basis, filter by region, and sort
           by merit or current world ranking.
         </p>
-        <ZoneZeroTable rows={rows} regions={regions} sports={sports} moveWeeks={moveWeeks} />
+        <ZoneZeroTable
+          rows={rows}
+          regions={regions}
+          sports={sports}
+          moveWeeks={moveWeeks}
+          winterSports={meta.method.winterSports ?? []}
+        />
         <p className="text-[11px] text-[var(--text-dim)] mt-3 max-w-3xl">
           <strong className="text-[var(--text-muted)]">Tiers</strong> are merit bands, not equal-sized
           groups: {tierCutLabel}. The bands are deliberately unequal, because the field is.
