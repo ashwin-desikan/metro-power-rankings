@@ -12,10 +12,12 @@ import "server-only";
 // ESPN marks completed, and lends their score to a ledger game that has none.
 //
 // Read at REQUEST time with ISR, never at build time, so a new result appears
-// within the revalidate window and never costs a Vercel build. Sizes measured
-// 2026-09-13 for a four-day range: eng.1 107 KB, NFL 168 KB, college football
-// (groups=80, the FBS slate) 1.43 MB, all under Next's 2 MB data-cache limit;
-// the results window never spans two Saturdays, so college football stays there.
+// within the revalidate window and never costs a Vercel build. One request per
+// feed per DAY since 2026-09-16: ESPN dropped the hyphenated `dates=A-B` form on
+// 09-15 and every ranged request 400s, which this swallowed with `return []`, so
+// the strip silently lost every ESPN-supplied final. Per-day payloads are well
+// under Next's 2 MB data-cache limit (a single college-football Saturday with
+// groups=80 measured 1.43 MB for four days; one day is a fraction of that).
 //
 // Completed-ness comes from status.type.completed, never from a score being
 // present: ESPN reports 0-0 before kick-off. Any failure returns [] and the page
@@ -37,6 +39,10 @@ const FEEDS: { league: EspnFinal["league"]; path: string; extra: string }[] = [
 ];
 
 const REVALIDATE = 900; // 15 min
+// The results window is a few days, and one request per feed per day is the only
+// shape ESPN still answers. A guard, not a window: if the caller ever widens the
+// window, this caps the fan-out at 8 days x 3 feeds rather than letting it grow.
+const DAYS_MAX = 8;
 
 const ymd = (ms: number) => new Date(ms).toISOString().slice(0, 10).replace(/-/g, "");
 
@@ -56,10 +62,10 @@ function names(c: Competitor | undefined): string[] {
   return [t.displayName, t.shortDisplayName, t.location].filter((n): n is string => !!n);
 }
 
-async function feed(f: (typeof FEEDS)[number], from: string, to: string): Promise<EspnFinal[]> {
+async function feed(f: (typeof FEEDS)[number], day: string): Promise<EspnFinal[]> {
   try {
     const res = await fetch(
-      `https://site.api.espn.com/apis/site/v2/sports/${f.path}/scoreboard?dates=${from}-${to}${f.extra}`,
+      `https://site.api.espn.com/apis/site/v2/sports/${f.path}/scoreboard?dates=${day}${f.extra}`,
       { next: { revalidate: REVALIDATE, tags: ["espn-scores"] } },
     );
     if (!res.ok) return [];
@@ -81,10 +87,26 @@ async function feed(f: (typeof FEEDS)[number], from: string, to: string): Promis
 
 /** Completed Premier League, NFL and college football games kicking off between the two instants. */
 export async function getEspnFinals(fromMs: number, toMs: number): Promise<EspnFinal[]> {
-  const from = ymd(fromMs);
-  const to = ymd(toMs);
-  const all = await Promise.all(FEEDS.map((f) => feed(f, from, to)));
-  return all.flat();
+  // ONE REQUEST PER DAY. ESPN dropped the hyphenated `dates=A-B` form on
+  // 2026-09-15 (measured: any range, even a single day, now 400s), which this
+  // used and which failed silently here: `if (!res.ok) return []` meant the
+  // strip quietly lost every ESPN-supplied final and showed ledger-graded games
+  // only. Days are capped at DAYS_MAX so a widened window cannot fan out.
+  const days: string[] = [];
+  for (let t = fromMs; t <= toMs && days.length < DAYS_MAX; t += 86_400_000) days.push(ymd(t));
+  const last = ymd(toMs);
+  if (days[days.length - 1] !== last && days.length < DAYS_MAX) days.push(last);
+  const all = await Promise.all(FEEDS.flatMap((f) => days.map((d) => feed(f, d))));
+  const out = all.flat();
+  // ESPN can answer a single date with a neighbouring day's late kick-off, so
+  // the same event can arrive twice across two requests.
+  const seen = new Set<string>();
+  return out.filter((e) => {
+    const k = `${e.league}|${e.when}|${e.home[0]}|${e.away[0]}`;
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
 }
 
 const norm = (s: string) =>

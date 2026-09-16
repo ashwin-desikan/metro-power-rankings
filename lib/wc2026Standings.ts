@@ -202,8 +202,34 @@ export async function fetchWc2026Bundle(
 
 const SCOREBOARD_URL =
   "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard";
-// UTC window covering Round of 32 through the Final; one ranged request.
-const KO_DATE_RANGE = "20260628-20260720";
+// The knockout stage spans two calendar months. ESPN dropped the hyphenated
+// `dates=A-B` form on 2026-09-15 (every range 400s now; see lib/espnScores.ts),
+// and the bare year is not a substitute: `dates=2026` caps at 100 events and
+// stops on 12 July, before the Final. Measured 2026-09-16: `dates=202606` gives
+// 79 events (11 Jun to 1 Jul) and `dates=202607` gives 25 (1 to 19 Jul).
+const KO_MONTHS = ["202606", "202607"];
+
+/** Every knockout-month scoreboard event, deduped by id. [] if ESPN is unreachable. */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function koEvents(revalidate: number): Promise<any[]> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const out: any[] = [];
+  const seen = new Set<string>();
+  for (const month of KO_MONTHS) {
+    const res = await fetch(`${SCOREBOARD_URL}?dates=${month}`, { next: { revalidate } });
+    if (!res.ok) continue;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data: any = await res.json();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    for (const ev of (data?.events ?? []) as any[]) {
+      const key = String(ev?.id ?? `${ev?.date}|${ev?.name}`);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      out.push(ev);
+    }
+  }
+  return out;
+}
 
 export type Wc2026LiveMatch = {
   a_name: string; a_score: number; a_win: boolean; a_so: number | null;
@@ -213,12 +239,9 @@ export type Wc2026LiveScores = { source: "espn"; matches: Wc2026LiveMatch[] } | 
 
 export async function getWc2026LiveScores(): Promise<Wc2026LiveScores> {
   try {
-    const res = await fetch(`${SCOREBOARD_URL}?dates=${KO_DATE_RANGE}`, { next: { revalidate: 120 } });
-    if (!res.ok) return null;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const data: any = await res.json();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const events: any[] = data?.events ?? [];
+    const events: any[] = await koEvents(120);
+    if (events.length === 0) return null;
     const matches: Wc2026LiveMatch[] = [];
     for (const ev of events) {
       const comp = ev?.competitions?.[0];
@@ -368,14 +391,9 @@ function stadiumNorm(s: string | null | undefined): string {
 
 export async function getWc2026Kickoffs(): Promise<KickoffRow[]> {
   try {
-    const res = await fetch(`${SCOREBOARD_URL}?dates=${KO_DATE_RANGE}`, {
-      next: { revalidate: 1800 },
-    });
-    if (!res.ok) return [];
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const data: any = await res.json();
     const rows: KickoffRow[] = [];
-    for (const ev of (data?.events ?? []) as any[]) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    for (const ev of (await koEvents(1800)) as any[]) {
       const comp = ev?.competitions?.[0];
       const iso: string | undefined = comp?.date ?? ev?.date;
       const timeValid: boolean = comp?.timeValid !== false;
