@@ -164,13 +164,18 @@ def fetch_json(url):
 
 
 def _windows(season):
-    """Fortnight windows across the postseason months.
+    """Month windows across the postseason months (`dates=YYYYMM`).
 
     Deliberately chunked, and deliberately WITHOUT a `limit=` parameter. Both
     are scars: ESPN's scoreboard silently truncates when `limit=` is passed
     (hit on college football) and silently caps a wide date range at 100
-    events while ignoring any seasontype filter (hit on MLB). Fortnights of a
-    league this size cannot reach either cap.
+    events while ignoring any seasontype filter (hit on MLB). One month of a
+    league this size cannot reach either cap: measured 2026-09-16,
+    `dates=202609` returns 38 events.
+
+    These were fortnight RANGES until 2026-09-15, when ESPN dropped the
+    hyphenated `dates=A-B` form across every team-sport scoreboard (any range,
+    even a single day, now 400s; see scripts/ingest/footy_finals.py).
     """
     start, end = dt.date(season, 8, 1), dt.date(season, 11, 15)
     out, cur = [], start

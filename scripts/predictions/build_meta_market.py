@@ -331,12 +331,22 @@ def espn_games(cfg, today, window_days=WINDOW_DAYS):
     """The canonical game list: ESPN's schedule, with DraftKings' price
     attached because it arrives in the same payload."""
     out = []
-    end = today + timedelta(days=window_days)
-    url = ("%s/site/v2/sports/%s/scoreboard?dates=%s-%s&limit=400%s"
-           % (ESPN, cfg["espn_path"], today.strftime("%Y%m%d"),
-              end.strftime("%Y%m%d"), cfg["scoreboard_extra"]))
-    d = fetch_json(url)
-    for ev in (d or {}).get("events", []):
+    # One request per DAY across the horizon, merged and deduped by event id.
+    # ESPN dropped the hyphenated `dates=A-B` form on 2026-09-15 (see
+    # scripts/ingest/footy_finals.py); single dates still work. fetch_json is
+    # soft here, so a day that fails contributes nothing and the rest stand.
+    events, seen = [], set()
+    for i in range(window_days + 1):
+        day = (today + timedelta(days=i)).strftime("%Y%m%d")
+        url = ("%s/site/v2/sports/%s/scoreboard?dates=%s&limit=400%s"
+               % (ESPN, cfg["espn_path"], day, cfg["scoreboard_extra"]))
+        for ev in (fetch_json(url) or {}).get("events", []):
+            eid = str(ev.get("id") or id(ev))
+            if eid in seen:
+                continue
+            seen.add(eid)
+            events.append(ev)
+    for ev in events:
         comp = (ev.get("competitions") or [{}])[0]
         if comp.get("status", {}).get("type", {}).get("completed"):
             continue

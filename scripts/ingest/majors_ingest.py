@@ -41,10 +41,41 @@ UA = {"Accept": "application/json"}
 # so a transient miss self-heals on the next run instead of persisting.
 LOOKBACK_DAYS = 14
 
-def _windowed(url):
+def _months(url):
+    """The lookback expressed as ESPN month queries, newest month last.
+
+    Was a single `?dates=START-END` range until 2026-09-16. ESPN dropped the
+    hyphenated form across the team-sport scoreboards on 09-15 (those 400
+    outright); golf and tennis still answer 200 to a range but return almost
+    nothing for it, which is worse here: a just-finished major would vanish
+    from detect_*() silently, the exact miss LOOKBACK_DAYS exists to prevent.
+    Measured 2026-09-16: `golf/pga?dates=20260901-20260914` gave 0 events and
+    `?dates=202609` gave 2; ATP gave 1 against 5.
+    """
     end = datetime.date.today()
     start = end - datetime.timedelta(days=LOOKBACK_DAYS)
-    return f"{url}?dates={start:%Y%m%d}-{end:%Y%m%d}"
+    months = [f"{start:%Y%m}"]
+    if f"{end:%Y%m}" != months[0]:
+        months.append(f"{end:%Y%m}")
+    return [f"{url}?dates={m}" for m in months]
+
+
+def _windowed_json(url):
+    """Merged scoreboard payload across the lookback months, deduped by event id."""
+    base, seen = None, set()
+    for u in _months(url):
+        doc = get_json(u)
+        if base is None:
+            base = doc
+            for ev in doc.get("events") or []:
+                seen.add(str(ev.get("id") or id(ev)))
+            continue
+        for ev in doc.get("events") or []:
+            eid = str(ev.get("id") or id(ev))
+            if eid not in seen:
+                seen.add(eid)
+                base.setdefault("events", []).append(ev)
+    return base or {}
 
 def get_json(url):
     req = urllib.request.Request(url, headers=UA)
@@ -107,7 +138,7 @@ def map_tennis(name):
 def detect_golf():
     out = []
     try:
-        root = get_json(_windowed(GOLF_URL))
+        root = _windowed_json(GOLF_URL)
     except Exception as e:
         print(f"golf feed error: {e}", file=sys.stderr); return out
     for ev in root.get("events", []):
@@ -138,7 +169,7 @@ def detect_tennis():
     for tour, url in TENNIS_URL.items():
         gender = "M" if tour == "atp" else "W"
         try:
-            root = get_json(_windowed(url))
+            root = _windowed_json(url)
         except Exception as e:
             print(f"tennis {tour} feed error: {e}", file=sys.stderr); continue
         for ev in root.get("events", []):

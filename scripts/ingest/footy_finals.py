@@ -200,8 +200,12 @@ def build(league, season):
         with open(os.path.join(fx, "espn_%s_score.json" % league), encoding="utf-8") as f:
             data = json.load(f)
     else:
-        url = "%s/site/v2/sports/%s/scoreboard?dates=%d0801-%d1101&limit=1000" % (
-            ESPN, FRAG[league], season, season)
+        # Season year, not a date range: ESPN dropped the hyphenated `dates=A-B`
+        # form across every team-sport scoreboard between 2026-09-15 15:53Z and
+        # 09-16 00:04Z (any range, even one day, now 400s). The year form returns
+        # the whole season and parse_finals() filters to the finals slugs anyway.
+        url = "%s/site/v2/sports/%s/scoreboard?dates=%d&limit=1000" % (
+            ESPN, FRAG[league], season)
         data = fetch_json(url)
     name_map = AFL_CLUBS if league == "afl" else NRL_CLUBS
     games, warn = parse_finals(data, league, name_map)

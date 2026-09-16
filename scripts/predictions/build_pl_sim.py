@@ -605,17 +605,27 @@ def kickoff_iso(raw):
 def espn_fixtures(today, horizon_days):
     """Upcoming PL fixtures within the horizon:
     [(iso_date, home, away, kickoff_iso or None)]."""
-    d0 = today.strftime("%Y%m%d")
-    d1 = (today + timedelta(days=horizon_days)).strftime("%Y%m%d")
-    url = ("https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard"
-           "?dates=%s-%s&limit=100" % (d0, d1))
-    try:
-        doc = json.loads(fetch(url))
-    except Exception as e:
-        print("soft-fetch miss: ESPN scoreboard (%s)" % e)
-        return []
+    # One request per DAY across the horizon: ESPN dropped the hyphenated
+    # `dates=A-B` form on 2026-09-15 (see scripts/ingest/footy_finals.py).
+    # A failed day is skipped rather than losing the whole horizon, which is
+    # the same softness the single ranged fetch had.
+    events, seen = [], set()
+    for i in range(horizon_days + 1):
+        day = (today + timedelta(days=i)).strftime("%Y%m%d")
+        url = ("https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard"
+               "?dates=%s&limit=100" % day)
+        try:
+            doc = json.loads(fetch(url))
+        except Exception as e:
+            print("soft-fetch miss: ESPN scoreboard %s (%s)" % (day, e))
+            continue
+        for ev in doc.get("events", []):
+            eid = str(ev.get("id") or id(ev))
+            if eid not in seen:
+                seen.add(eid)
+                events.append(ev)
     out = []
-    for ev in doc.get("events", []):
+    for ev in events:
         comp = (ev.get("competitions") or [{}])[0]
         if comp.get("status", {}).get("type", {}).get("completed"):
             continue

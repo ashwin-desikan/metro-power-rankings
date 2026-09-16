@@ -354,8 +354,11 @@ def parse_footy_scoreboard(data, name_map, exclude_teams=frozenset()):
 def espn_footy_fixtures(league, season):
     """[(home_key, away_key, played)] for the whole season, fetched live."""
     name_map = NRL_ESPN if league == "nrl" else AFL_ESPN
-    url = "%s/site/v2/sports/%s/scoreboard?dates=%d0201-%d1101&limit=1000" % (
-        ESPN, FOOTY_ESPN_FRAG[league], season, season)
+    # Season year, not a date range (ESPN dropped hyphenated `dates=A-B` on
+    # 2026-09-15; see footy_finals.py). A strict superset of the old window, and
+    # parse_footy_scoreboard() filters by slug as before.
+    url = "%s/site/v2/sports/%s/scoreboard?dates=%d&limit=1000" % (
+        ESPN, FOOTY_ESPN_FRAG[league], season)
     return parse_footy_scoreboard(fetch_json(url), name_map, FOOTY_EXCLUDE_TEAMS[league])
 
 

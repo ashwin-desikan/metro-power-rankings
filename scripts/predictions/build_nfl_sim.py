@@ -254,12 +254,29 @@ def played_results(schedule_window_days=400):
     end = min(date.today(), date(SEASON + 1, 2, 20))
     if end <= start:
         return []
-    url = ("%s/site/v2/sports/football/nfl/scoreboard?dates=%s-%s&limit=400"
-           % (ESPN, start.strftime("%Y%m%d"), end.strftime("%Y%m%d")))
-    d = fetch_json(url, soft=True)
+    # MONTHS, not a date range: ESPN dropped the hyphenated `dates=A-B` form on
+    # 2026-09-15 (see scripts/ingest/footy_finals.py). The bare season year is
+    # NOT a substitute here: `dates=2026` returns 2026-01-03 onwards, i.e. last
+    # season's January playoffs, and the filter below keys on season TYPE only.
+    # So walk the season's months and require season.year == SEASON as well.
+    months, cur = [], start.replace(day=1)
+    while cur <= end:
+        months.append(cur.strftime("%Y%m"))
+        cur = (cur.replace(day=28) + timedelta(days=4)).replace(day=1)
+    events, seen = [], set()
+    for m in months:
+        url = ("%s/site/v2/sports/football/nfl/scoreboard?dates=%s&limit=400"
+               % (ESPN, m))
+        for ev in (fetch_json(url, soft=True) or {}).get("events", []):
+            eid = str(ev.get("id") or id(ev))
+            if eid not in seen:
+                seen.add(eid)
+                events.append(ev)
     out = []
-    for ev in (d or {}).get("events", []):
+    for ev in events:
         if ev.get("season", {}).get("type") not in (2, 3):
+            continue
+        if int(ev.get("season", {}).get("year") or SEASON) != SEASON:
             continue
         comp = (ev.get("competitions") or [{}])[0]
         if not comp.get("status", {}).get("type", {}).get("completed"):
@@ -298,12 +315,21 @@ def upcoming_games(today, window_days):
     [(event_id, iso, home, away, market_pH or None, kickoff_iso or None,
       neutral, spread or None)]."""
     def scan(days):
-        d0 = today.strftime("%Y%m%d")
-        d1 = (today + timedelta(days=days)).strftime("%Y%m%d")
-        d = fetch_json("%s/site/v2/sports/football/nfl/scoreboard?dates=%s-%s&limit=100"
-                       % (ESPN, d0, d1), soft=True)
+        # One request per day (ESPN dropped `dates=A-B` on 2026-09-15; see
+        # scripts/ingest/footy_finals.py). soft=True per day, so a bad day costs
+        # that day only, as the single ranged fetch used to cost the whole window.
+        evs, seen = [], set()
+        for i in range(days + 1):
+            day = (today + timedelta(days=i)).strftime("%Y%m%d")
+            d = fetch_json("%s/site/v2/sports/football/nfl/scoreboard?dates=%s&limit=100"
+                           % (ESPN, day), soft=True)
+            for ev in (d or {}).get("events", []):
+                eid = str(ev.get("id") or id(ev))
+                if eid not in seen:
+                    seen.add(eid)
+                    evs.append(ev)
         out = []
-        for ev in (d or {}).get("events", []):
+        for ev in evs:
             if ev.get("season", {}).get("type") not in (2, 3):
                 continue
             comp = (ev.get("competitions") or [{}])[0]

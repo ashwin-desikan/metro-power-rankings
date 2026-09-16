@@ -147,16 +147,16 @@ def fetch_postseason_events(season):
     approach the scoreboard's silent default cap (a 0925-1120 range came back
     at exactly 100 events, regular-season games included — both trap shapes
     at once). Events are filtered to season.type == 3 and deduped by id."""
-    windows = [
-        ("%d0925" % season, "%d1008" % season),
-        ("%d1009" % season, "%d1022" % season),
-        ("%d1023" % season, "%d1105" % season),
-        ("%d1106" % season, "%d1120" % season),
-    ]
+    # MONTHS, not date ranges: ESPN dropped the hyphenated `dates=A-B` form on
+    # 2026-09-15 (any range now 400s; see footy_finals.py). A month is the widest
+    # form that still keeps both scars above at bay: measured 2026-09-16,
+    # `dates=202610&seasontype=3` returns 45 events across the whole month, far
+    # under the 100-event cap that a wide range silently hit.
+    windows = ["%d09" % season, "%d10" % season, "%d11" % season]
     seen, out = set(), []
-    for a, b in windows:
-        url = ("%s/site/v2/sports/baseball/mlb/scoreboard?dates=%s-%s"
-               "&seasontype=3" % (ESPN, a, b))
+    for win in windows:
+        url = ("%s/site/v2/sports/baseball/mlb/scoreboard?dates=%s"
+               "&seasontype=3" % (ESPN, win))
         d = fetch_json(url, soft=True)
         for ev in (d or {}).get("events", []) or []:
             if (ev.get("season") or {}).get("type") != 3:
