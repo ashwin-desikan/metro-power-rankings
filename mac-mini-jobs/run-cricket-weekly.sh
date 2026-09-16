@@ -45,7 +45,11 @@ log "building top games from supabase"
 "$PY" build_cricket_top_games.py --workbook supabase 2>&1 | tee -a "$LOG" || fail "build_cricket_top_games failed"
 
 cd "$REPO"
-REVIEW="$(printf '%s\n%s\n' "$STAGE_OUT" "$AFG_OUT" | grep -iE 'REVIEW' || true)"
+REVIEW="$(printf '%s\n%s\n' "$STAGE_OUT" "$AFG_OUT" | awk '
+  /^REVIEW BEFORE PASTING:$/ { flag=1; print; next }
+  flag && /^[[:space:]]*$/ { flag=0; next }
+  flag { print; next }
+' || true)"
 
 # Committed alongside the data, not just pushed to ntfy: the
 # cricket-weekly-venue-country-research cloud routine cannot reach ntfy.sh at
