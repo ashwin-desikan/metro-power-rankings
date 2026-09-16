@@ -4,8 +4,8 @@
   "metro": "London",
   "country": "United Kingdom",
   "state": "Greater London",
-  "us_score": 188.5,
-  "uk_score": 723.8,
+  "us_score": 188.6,
+  "uk_score": 723.9,
   "album_score": 4319.7,
   "prestige_score": 385.0,
   "combined": 4805.4,
@@ -682,7 +682,7 @@
   "uk_score": 130.0,
   "album_score": 2301.5,
   "prestige_score": 378.0,
-  "combined": 3347.7,
+  "combined": 3347.6,
   "artist_count": 244,
   "by_decade": {
    "1950s": {
@@ -721,9 +721,9 @@
     "combined": 102.7
    },
    "2020s": {
-    "us": 30.0,
+    "us": 29.9,
     "uk": 20.6,
-    "combined": 110.5
+    "combined": 110.4
    }
   },
   "top_artists": [
@@ -780,7 +780,7 @@
    {
     "name": "Olivia Rodrigo",
     "slug": "olivia-rodrigo",
-    "combined": 76.5
+    "combined": 76.4
    },
    {
     "name": "Red Hot Chili Peppers",
@@ -1060,7 +1060,7 @@
    "2020s": {
     "us": 0.6,
     "uk": 1.6,
-    "combined": 3.6
+    "combined": 3.5
    }
   },
   "top_artists": [
@@ -1462,6 +1462,11 @@
     "combined": 10.8
    },
    {
+    "name": "Jody Watley",
+    "slug": "jody-watley",
+    "combined": 10.3
+   },
+   {
     "name": "Survivor",
     "slug": "survivor",
     "combined": 10.3
@@ -1469,11 +1474,6 @@
    {
     "name": "The Smashing Pumpkins",
     "slug": "the-smashing-pumpkins",
-    "combined": 10.3
-   },
-   {
-    "name": "Jody Watley",
-    "slug": "jody-watley",
     "combined": 10.3
    }
   ],
@@ -1489,7 +1489,7 @@
    {
     "single": "Billie Jean",
     "artist": "Michael Jackson",
-    "score": 1.975,
+    "score": 1.967,
     "peak": 1,
     "year": 1983,
     "chart": "UK / US"
@@ -1545,7 +1545,7 @@
    {
     "single": "Beat It",
     "artist": "Michael Jackson",
-    "score": 1.579,
+    "score": 1.573,
     "peak": 1,
     "year": 1983,
     "chart": "UK / US"
@@ -2362,7 +2362,7 @@
   "uk_score": 38.0,
   "album_score": 408.8,
   "prestige_score": 109.1,
-  "combined": 763.9,
+  "combined": 764.0,
   "artist_count": 35,
   "by_decade": {
    "1950s": {
@@ -2410,7 +2410,7 @@
    {
     "name": "Taylor Swift",
     "slug": "taylor-swift",
-    "combined": 397.2
+    "combined": 397.3
    },
    {
     "name": "Miley Cyrus",
@@ -3036,7 +3036,7 @@
   "uk_score": 23.3,
   "album_score": 308.1,
   "prestige_score": 53.1,
-  "combined": 505.9,
+  "combined": 505.8,
   "artist_count": 21,
   "by_decade": {
    "1960s": {
@@ -3071,15 +3071,15 @@
    },
    "2020s": {
     "us": 19.0,
-    "uk": 7.9,
-    "combined": 65.0
+    "uk": 7.8,
+    "combined": 64.9
    }
   },
   "top_artists": [
    {
     "name": "Drake",
     "slug": "drake",
-    "combined": 194.2
+    "combined": 194.1
    },
    {
     "name": "The Weeknd",
@@ -3142,13 +3142,13 @@
     "combined": 5.0
    },
    {
-    "name": "Deborah Cox",
-    "slug": "deborah-cox",
+    "name": "Snow",
+    "slug": "snow",
     "combined": 4.4
    },
    {
-    "name": "Snow",
-    "slug": "snow",
+    "name": "Deborah Cox",
+    "slug": "deborah-cox",
     "combined": 4.4
    }
   ],
@@ -3796,13 +3796,13 @@
     "combined": 6.1
    },
    {
-    "name": "Fifth Harmony",
-    "slug": "fifth-harmony",
+    "name": "Expos\u00e9",
+    "slug": "expos",
     "combined": 5.2
    },
    {
-    "name": "Expos\u00e9",
-    "slug": "expos",
+    "name": "Fifth Harmony",
+    "slug": "fifth-harmony",
     "combined": 5.2
    },
    {
@@ -3940,7 +3940,7 @@
    {
     "single": "Hate That I Made You Love Me",
     "artist": "Ariana Grande",
-    "score": 1.343,
+    "score": 1.344,
     "peak": 1,
     "year": 2026,
     "chart": "UK / US"
@@ -4701,7 +4701,7 @@
   "uk_score": 18.4,
   "album_score": 300.1,
   "prestige_score": 24.0,
-  "combined": 356.9,
+  "combined": 356.8,
   "artist_count": 29,
   "by_decade": {
    "1950s": {
@@ -4802,13 +4802,13 @@
     "combined": 5.6
    },
    {
-    "name": "Freddy Cannon",
-    "slug": "freddy-cannon",
+    "name": "New Edition",
+    "slug": "new-edition",
     "combined": 5.1
    },
    {
-    "name": "New Edition",
-    "slug": "new-edition",
+    "name": "Freddy Cannon",
+    "slug": "freddy-cannon",
     "combined": 5.1
    },
    {
@@ -4938,7 +4938,7 @@
    {
     "single": "End of Beginning",
     "artist": "Djo",
-    "score": 1.072,
+    "score": 1.06,
     "peak": 1,
     "year": 2024,
     "chart": "UK / US"
@@ -5699,10 +5699,10 @@
   "country": "United Kingdom",
   "state": "Greater Manchester",
   "us_score": 15.8,
-  "uk_score": 71.9,
+  "uk_score": 71.8,
   "album_score": 208.1,
   "prestige_score": 32.2,
-  "combined": 321.5,
+  "combined": 321.4,
   "artist_count": 63,
   "by_decade": {
    "1960s": {
@@ -5798,13 +5798,13 @@
     "combined": 4.5
    },
    {
-    "name": "New Order",
-    "slug": "new-order",
+    "name": "Buzzcocks",
+    "slug": "buzzcocks",
     "combined": 3.8
    },
    {
-    "name": "Buzzcocks",
-    "slug": "buzzcocks",
+    "name": "New Order",
+    "slug": "new-order",
     "combined": 3.8
    },
    {
@@ -5902,7 +5902,7 @@
    {
     "single": "Wonderwall",
     "artist": "Oasis",
-    "score": 1.028,
+    "score": 1.024,
     "peak": 2,
     "year": 1995,
     "chart": "UK / US"
@@ -5996,14 +5996,6 @@
     "chart": "UK"
    },
    {
-    "single": "Aperture",
-    "artist": "Harry Styles",
-    "score": 0.674,
-    "peak": 1,
-    "year": 2026,
-    "chart": "UK / US"
-   },
-   {
     "single": "Mrs. Brown, You've Got a Lovely Daughter",
     "artist": "Herman's Hermits",
     "score": 0.671,
@@ -6012,12 +6004,20 @@
     "chart": "US"
    },
    {
-    "single": "American Girls",
+    "single": "Aperture",
     "artist": "Harry Styles",
-    "score": 0.67,
+    "score": 0.661,
     "peak": 1,
     "year": 2026,
     "chart": "UK / US"
+   },
+   {
+    "single": "Set You Free",
+    "artist": "N-Trance",
+    "score": 0.658,
+    "peak": 2,
+    "year": 1995,
+    "chart": "UK"
    }
   ],
   "signature_decade": "2020s",
@@ -6809,11 +6809,6 @@
     "combined": 2.6
    },
    {
-    "name": "The Dixie Cups",
-    "slug": "the-dixie-cups",
-    "combined": 2.1
-   },
-   {
     "name": "Jean Knight",
     "slug": "jean-knight",
     "combined": 2.1
@@ -6821,6 +6816,11 @@
    {
     "name": "Ernie K-Doe",
     "slug": "ernie-k-doe",
+    "combined": 2.1
+   },
+   {
+    "name": "The Dixie Cups",
+    "slug": "the-dixie-cups",
     "combined": 2.1
    }
   ],
@@ -7146,13 +7146,13 @@
     "combined": 4.2
    },
    {
-    "name": "Benny Blanco",
-    "slug": "benny-blanco",
+    "name": "Tommy Richman",
+    "slug": "tommy-richman",
     "combined": 4.1
    },
    {
-    "name": "Tommy Richman",
-    "slug": "tommy-richman",
+    "name": "Benny Blanco",
+    "slug": "benny-blanco",
     "combined": 4.1
    }
   ],
@@ -7755,13 +7755,13 @@
     "combined": 5.6
    },
    {
-    "name": "Kid Cudi",
-    "slug": "kid-cudi",
+    "name": "Eric Carmen",
+    "slug": "eric-carmen",
     "combined": 4.1
    },
    {
-    "name": "Eric Carmen",
-    "slug": "eric-carmen",
+    "name": "Kid Cudi",
+    "slug": "kid-cudi",
     "combined": 4.1
    },
    {
@@ -8746,8 +8746,8 @@
     "combined": 2.9
    },
    {
-    "name": "Daniel Merriweather",
-    "slug": "daniel-merriweather",
+    "name": "Samantha Sang",
+    "slug": "samantha-sang",
     "combined": 2.1
    }
   ],
@@ -9707,7 +9707,7 @@
    {
     "single": "Merry Christmas Everyone",
     "artist": "Shakin' Stevens",
-    "score": 1.365,
+    "score": 1.364,
     "peak": 1,
     "year": 1985,
     "chart": "UK"
@@ -9903,7 +9903,7 @@
   "uk_score": 8.8,
   "album_score": 77.5,
   "prestige_score": 29.8,
-  "combined": 186.4,
+  "combined": 186.3,
   "artist_count": 4,
   "by_decade": {
    "1970s": {
@@ -9934,7 +9934,7 @@
    "2020s": {
     "us": 3.9,
     "uk": 1.2,
-    "combined": 12.9
+    "combined": 12.8
    }
   },
   "top_artists": [
@@ -10035,7 +10035,7 @@
    {
     "single": "I Just Might",
     "artist": "Bruno Mars",
-    "score": 1.316,
+    "score": 1.291,
     "peak": 1,
     "year": 2026,
     "chart": "UK / US"
@@ -10155,14 +10155,14 @@
    {
     "single": "Risk It All",
     "artist": "Bruno Mars",
-    "score": 0.256,
+    "score": 0.251,
     "peak": 4,
     "year": 2026,
     "chart": "US"
    }
   ],
   "signature_decade": "2010s",
-  "distinctiveness": 4.87,
+  "distinctiveness": 4.88,
   "score_per_artist": 46.6,
   "rank": 31
  },
@@ -10538,13 +10538,13 @@
     "combined": 1.5
    },
    {
-    "name": "John Martin",
-    "slug": "john-martin",
+    "name": "Eric Prydz",
+    "slug": "eric-prydz",
     "combined": 1.2
    },
    {
-    "name": "Eric Prydz",
-    "slug": "eric-prydz",
+    "name": "John Martin",
+    "slug": "john-martin",
     "combined": 1.2
    },
    {
@@ -10575,7 +10575,7 @@
    {
     "single": "Lush Life",
     "artist": "Zara Larsson",
-    "score": 1.444,
+    "score": 1.432,
     "peak": 3,
     "year": 2016,
     "chart": "UK"
@@ -10855,13 +10855,13 @@
     "combined": 5.3
    },
    {
-    "name": "J-Kwon",
-    "slug": "j-kwon",
+    "name": "Michael McDonald",
+    "slug": "michael-mcdonald",
     "combined": 3.5
    },
    {
-    "name": "Michael McDonald",
-    "slug": "michael-mcdonald",
+    "name": "J-Kwon",
+    "slug": "j-kwon",
     "combined": 3.5
    },
    {
@@ -11152,13 +11152,13 @@
     "combined": 4.1
    },
    {
-    "name": "NewJeans",
-    "slug": "newjeans",
+    "name": "Enhypen",
+    "slug": "enhypen",
     "combined": 3.5
    },
    {
-    "name": "Enhypen",
-    "slug": "enhypen",
+    "name": "NewJeans",
+    "slug": "newjeans",
     "combined": 3.5
    },
    {
@@ -11225,20 +11225,20 @@
     "chart": "UK / US"
    },
    {
-    "single": "Swim",
-    "artist": "BTS",
-    "score": 0.617,
-    "peak": 1,
-    "year": 2026,
-    "chart": "UK / US"
-   },
-   {
     "single": "Permission to Dance",
     "artist": "BTS",
     "score": 0.613,
     "peak": 1,
     "year": 2021,
     "chart": "US"
+   },
+   {
+    "single": "Swim",
+    "artist": "BTS",
+    "score": 0.605,
+    "peak": 1,
+    "year": 2026,
+    "chart": "UK / US"
    },
    {
     "single": "Life Goes On",
@@ -11267,7 +11267,7 @@
    {
     "single": "Dracula",
     "artist": "Jennie",
-    "score": 0.245,
+    "score": 0.249,
     "peak": 5,
     "year": 2026,
     "chart": "US"
@@ -12156,8 +12156,8 @@
     "combined": 0.9
    },
    {
-    "name": "Boris Gardiner",
-    "slug": "boris-gardiner",
+    "name": "Ken Boothe",
+    "slug": "ken-boothe",
     "combined": 0.6
    },
    {
@@ -12166,8 +12166,8 @@
     "combined": 0.6
    },
    {
-    "name": "Ken Boothe",
-    "slug": "ken-boothe",
+    "name": "Boris Gardiner",
+    "slug": "boris-gardiner",
     "combined": 0.6
    }
   ],
@@ -12694,7 +12694,7 @@
    {
     "single": "Choosin' Texas",
     "artist": "Ella Langley",
-    "score": 1.775,
+    "score": 1.78,
     "peak": 1,
     "year": 2026,
     "chart": "UK / US"
@@ -12750,7 +12750,7 @@
    {
     "single": "Be Her",
     "artist": "Ella Langley",
-    "score": 0.87,
+    "score": 0.875,
     "peak": 2,
     "year": 2026,
     "chart": "US"
@@ -12862,7 +12862,7 @@
    {
     "single": "I Can't Love You Anymore",
     "artist": "Ella Langley",
-    "score": 0.276,
+    "score": 0.271,
     "peak": 4,
     "year": 2026,
     "chart": "US"
@@ -13067,7 +13067,7 @@
    {
     "single": "Beauty and a Beat",
     "artist": "Justin Bieber",
-    "score": 0.467,
+    "score": 0.464,
     "peak": 3,
     "year": 2012,
     "chart": "UK / US"
@@ -13462,7 +13462,7 @@
   "country": "Puerto Rico",
   "state": "Puerto Rico",
   "us_score": 7.3,
-  "uk_score": 2.4,
+  "uk_score": 2.3,
   "album_score": 94.3,
   "prestige_score": 15.1,
   "combined": 116.9,
@@ -13528,7 +13528,7 @@
    {
     "single": "DTMF",
     "artist": "Bad Bunny",
-    "score": 1.039,
+    "score": 1.035,
     "peak": 1,
     "year": 2025,
     "chart": "UK / US"
@@ -14131,19 +14131,14 @@
     "combined": 0.6
    },
    {
-    "name": "Gerry Monroe",
-    "slug": "gerry-monroe",
-    "combined": 0.5
-   },
-   {
     "name": "Joe McElderry",
     "slug": "joe-mcelderry",
     "combined": 0.5
    },
    {
-    "name": "PJ & Duncan",
-    "slug": "pj-and-duncan",
-    "combined": 0.4
+    "name": "Gerry Monroe",
+    "slug": "gerry-monroe",
+    "combined": 0.5
    },
    {
     "name": "John Miles",
@@ -14151,8 +14146,13 @@
     "combined": 0.4
    },
    {
-    "name": "Ant & Dec",
-    "slug": "ant-and-dec",
+    "name": "PJ & Duncan",
+    "slug": "pj-and-duncan",
+    "combined": 0.4
+   },
+   {
+    "name": "Dave Stewart",
+    "slug": "dave-stewart",
     "combined": 0.3
    }
   ],
@@ -15482,13 +15482,13 @@
     "combined": 0.6
    },
    {
-    "name": "Vanessa Paradis",
-    "slug": "vanessa-paradis",
+    "name": "Lilly Wood and the Prick & Robin Schulz",
+    "slug": "lilly-wood-and-the-prick-and-robin-schulz",
     "combined": 0.5
    },
    {
-    "name": "Lilly Wood and the Prick & Robin Schulz",
-    "slug": "lilly-wood-and-the-prick-and-robin-schulz",
+    "name": "Vanessa Paradis",
+    "slug": "vanessa-paradis",
     "combined": 0.5
    },
    {
@@ -15723,7 +15723,7 @@
   "uk_score": 0.9,
   "album_score": 56.7,
   "prestige_score": 2.6,
-  "combined": 78.6,
+  "combined": 78.7,
   "artist_count": 3,
   "by_decade": {
    "1970s": {
@@ -15739,14 +15739,14 @@
    "2020s": {
     "us": 10.6,
     "uk": 0.6,
-    "combined": 32.4
+    "combined": 32.5
    }
   },
   "top_artists": [
    {
     "name": "Morgan Wallen",
     "slug": "morgan-wallen",
-    "combined": 57.4
+    "combined": 57.5
    },
    {
     "name": "Dolly Parton",
@@ -15795,7 +15795,7 @@
    {
     "single": "9 to 5",
     "artist": "Dolly Parton",
-    "score": 0.988,
+    "score": 1.023,
     "peak": 1,
     "year": 1981,
     "chart": "UK / US"
@@ -15843,7 +15843,7 @@
    {
     "single": "Been By Now",
     "artist": "Morgan Wallen",
-    "score": 0.465,
+    "score": 0.493,
     "peak": 2,
     "year": 2026,
     "chart": "US"
@@ -15867,7 +15867,7 @@
    {
     "single": "I Can't Love You Anymore",
     "artist": "Morgan Wallen",
-    "score": 0.276,
+    "score": 0.271,
     "peak": 4,
     "year": 2026,
     "chart": "US"
@@ -15875,7 +15875,7 @@
    {
     "single": "Jolene",
     "artist": "Dolly Parton",
-    "score": 0.246,
+    "score": 0.243,
     "peak": 6,
     "year": 1976,
     "chart": "UK"
@@ -16284,7 +16284,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 4.58,
+  "distinctiveness": 4.59,
   "score_per_artist": 25.5,
   "rank": 55
  },
@@ -17398,7 +17398,7 @@
   "country": "United Kingdom",
   "state": "Bristol",
   "us_score": 4.0,
-  "uk_score": 15.6,
+  "uk_score": 15.5,
   "album_score": 24.0,
   "prestige_score": 7.4,
   "combined": 59.8,
@@ -17477,23 +17477,23 @@
     "combined": 3.8
    },
    {
-    "name": "Russ Conway",
-    "slug": "russ-conway",
-    "combined": 3.6
-   },
-   {
     "name": "Mr. Acker Bilk",
     "slug": "mr-acker-bilk",
     "combined": 3.6
    },
    {
-    "name": "Racey",
-    "slug": "racey",
-    "combined": 1.0
+    "name": "Russ Conway",
+    "slug": "russ-conway",
+    "combined": 3.6
    },
    {
     "name": "The Wurzels",
     "slug": "the-wurzels",
+    "combined": 1.0
+   },
+   {
+    "name": "Racey",
+    "slug": "racey",
     "combined": 1.0
    },
    {
@@ -17670,7 +17670,7 @@
    {
     "single": "Stateside",
     "artist": "PinkPantheress",
-    "score": 0.465,
+    "score": 0.455,
     "peak": 3,
     "year": 2026,
     "chart": "UK / US"
@@ -18531,7 +18531,7 @@
    {
     "single": "Dai Dai",
     "artist": "Shakira",
-    "score": 0.169,
+    "score": 0.165,
     "peak": 2,
     "year": 2026,
     "chart": "UK"
@@ -19611,13 +19611,13 @@
     "combined": 4.0
    },
    {
-    "name": "Nate Ruess",
-    "slug": "nate-ruess",
+    "name": "Alec Benjamin",
+    "slug": "alec-benjamin",
     "combined": 3.6
    },
    {
-    "name": "Alec Benjamin",
-    "slug": "alec-benjamin",
+    "name": "Nate Ruess",
+    "slug": "nate-ruess",
     "combined": 3.6
    },
    {
@@ -19631,13 +19631,13 @@
     "combined": 2.7
    },
    {
-    "name": "Jimmy Eat World",
-    "slug": "jimmy-eat-world",
+    "name": "CeCe Peniston",
+    "slug": "cece-peniston",
     "combined": 2.1
    },
    {
-    "name": "CeCe Peniston",
-    "slug": "cece-peniston",
+    "name": "Jimmy Eat World",
+    "slug": "jimmy-eat-world",
     "combined": 2.1
    }
   ],
@@ -20656,13 +20656,13 @@
     "combined": 0.9
    },
    {
-    "name": "The Kooks",
-    "slug": "the-kooks",
+    "name": "ArrDee",
+    "slug": "arrdee",
     "combined": 0.7
    },
    {
-    "name": "ArrDee",
-    "slug": "arrdee",
+    "name": "The Kooks",
+    "slug": "the-kooks",
     "combined": 0.7
    },
    {
@@ -21346,7 +21346,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.05,
+  "distinctiveness": 11.06,
   "score_per_artist": 35.9,
   "rank": 87
  },
@@ -24377,7 +24377,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.05,
+  "distinctiveness": 11.06,
   "score_per_artist": 22.4,
   "rank": 108
  },
@@ -24473,7 +24473,7 @@
   "country": "Australia",
   "state": "Western Australia",
   "us_score": 0.7,
-  "uk_score": 2.4,
+  "uk_score": 2.5,
   "album_score": 8.6,
   "prestige_score": 5.1,
   "combined": 22.0,
@@ -24534,7 +24534,7 @@
    {
     "single": "Dracula",
     "artist": "Tame Impala",
-    "score": 0.724,
+    "score": 0.717,
     "peak": 2,
     "year": 2026,
     "chart": "UK / US"
@@ -24577,6 +24577,14 @@
     "score": 0.048,
     "peak": 9,
     "year": 2008,
+    "chart": "UK"
+   },
+   {
+    "single": "Loser",
+    "artist": "Tame Impala",
+    "score": 0.015,
+    "peak": 10,
+    "year": 2026,
     "chart": "UK"
    }
   ],
@@ -25490,13 +25498,13 @@
     "combined": 3.8
    },
    {
-    "name": "Big Mountain",
-    "slug": "big-mountain",
+    "name": "The Cascades",
+    "slug": "the-cascades",
     "combined": 2.2
    },
    {
-    "name": "The Cascades",
-    "slug": "the-cascades",
+    "name": "Big Mountain",
+    "slug": "big-mountain",
     "combined": 2.2
    },
    {
@@ -25657,7 +25665,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.05,
+  "distinctiveness": 11.06,
   "score_per_artist": 19.4,
   "rank": 119
  },
@@ -25987,7 +25995,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 5.84,
+  "distinctiveness": 5.85,
   "score_per_artist": 17.7,
   "rank": 122
  },
@@ -27080,13 +27088,13 @@
     "combined": 1.7
    },
    {
-    "name": "Donna Allen",
-    "slug": "donna-allen",
+    "name": "Aaron Carter",
+    "slug": "aaron-carter",
     "combined": 0.1
    },
    {
-    "name": "Aaron Carter",
-    "slug": "aaron-carter",
+    "name": "Donna Allen",
+    "slug": "donna-allen",
     "combined": 0.1
    }
   ],
@@ -27514,13 +27522,13 @@
     "combined": 1.1
    },
    {
-    "name": "Ronnie Carroll",
-    "slug": "ronnie-carroll",
+    "name": "Feargal Sharkey",
+    "slug": "feargal-sharkey",
     "combined": 0.8
    },
    {
-    "name": "Feargal Sharkey",
-    "slug": "feargal-sharkey",
+    "name": "Ronnie Carroll",
+    "slug": "ronnie-carroll",
     "combined": 0.8
    },
    {
@@ -27837,7 +27845,7 @@
    {
     "single": "Dai Dai",
     "artist": "Burna Boy",
-    "score": 0.169,
+    "score": 0.165,
     "peak": 2,
     "year": 2026,
     "chart": "UK"
@@ -28057,13 +28065,13 @@
     "combined": 0.7
    },
    {
-    "name": "Sam Feldt",
-    "slug": "sam-feldt",
+    "name": "Eva Simons",
+    "slug": "eva-simons",
     "combined": 0.2
    },
    {
-    "name": "Eva Simons",
-    "slug": "eva-simons",
+    "name": "Sam Feldt",
+    "slug": "sam-feldt",
     "combined": 0.2
    }
   ],
@@ -28243,7 +28251,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.05,
+  "distinctiveness": 11.06,
   "score_per_artist": 6.0,
   "rank": 142
  },
@@ -30362,7 +30370,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.05,
+  "distinctiveness": 11.06,
   "score_per_artist": 7.4,
   "rank": 167
  },
@@ -31397,13 +31405,13 @@
     "combined": 1.9
    },
    {
-    "name": "Lieutenant Pigeon",
-    "slug": "lieutenant-pigeon",
+    "name": "King",
+    "slug": "king",
     "combined": 0.7
    },
    {
-    "name": "King",
-    "slug": "king",
+    "name": "Lieutenant Pigeon",
+    "slug": "lieutenant-pigeon",
     "combined": 0.7
    },
    {
@@ -32397,7 +32405,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.05,
+  "distinctiveness": 11.06,
   "score_per_artist": 3.3,
   "rank": 194
  },
@@ -32852,7 +32860,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.05,
+  "distinctiveness": 11.06,
   "score_per_artist": 2.5,
   "rank": 203
  },
@@ -33137,7 +33145,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.05,
+  "distinctiveness": 11.06,
   "score_per_artist": 2.1,
   "rank": 208
  },

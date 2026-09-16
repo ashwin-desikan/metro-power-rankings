@@ -4392,9 +4392,9 @@
    {
     "slug": "los-angeles",
     "metro": "Los Angeles",
-    "us": 30.0,
+    "us": 29.9,
     "uk": 20.6,
-    "combined": 110.5,
+    "combined": 110.4,
     "rank": 1
    },
    {
@@ -4417,8 +4417,8 @@
     "slug": "toronto",
     "metro": "Toronto",
     "us": 19.0,
-    "uk": 7.9,
-    "combined": 65.0,
+    "uk": 7.8,
+    "combined": 64.9,
     "rank": 4
    },
    {
@@ -4450,7 +4450,7 @@
     "metro": "Knoxville",
     "us": 10.6,
     "uk": 0.6,
-    "combined": 32.4,
+    "combined": 32.5,
     "rank": 8
    },
    {
@@ -4530,7 +4530,7 @@
     "metro": "Honolulu",
     "us": 3.9,
     "uk": 1.2,
-    "combined": 12.9,
+    "combined": 12.8,
     "rank": 18
    },
    {
@@ -4686,19 +4686,19 @@
     "rank": 37
    },
    {
-    "slug": "detroit",
-    "metro": "Detroit",
-    "us": 0.6,
-    "uk": 1.6,
-    "combined": 3.6,
-    "rank": 38
-   },
-   {
     "slug": "tulsa",
     "metro": "Tulsa",
     "us": 1.2,
     "uk": 0.0,
     "combined": 3.6,
+    "rank": 38
+   },
+   {
+    "slug": "detroit",
+    "metro": "Detroit",
+    "us": 0.6,
+    "uk": 1.6,
+    "combined": 3.5,
     "rank": 39
    },
    {
@@ -4721,19 +4721,19 @@
     "name": "Drake",
     "slug": "drake",
     "metro": "Toronto",
-    "combined": 44.1
+    "combined": 44.0
    },
    {
     "name": "Morgan Wallen",
     "slug": "morgan-wallen",
     "metro": "Knoxville",
-    "combined": 32.1
+    "combined": 32.2
    },
    {
     "name": "Olivia Rodrigo",
     "slug": "olivia-rodrigo",
     "metro": "Los Angeles",
-    "combined": 26.5
+    "combined": 26.4
    },
    {
     "name": "Ariana Grande",
@@ -4811,7 +4811,7 @@
     "name": "Bruno Mars",
     "slug": "bruno-mars",
     "metro": "Honolulu",
-    "combined": 12.9
+    "combined": 12.8
    },
    {
     "name": "Beyonc\u00e9",
