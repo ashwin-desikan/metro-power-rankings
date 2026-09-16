@@ -15401,3 +15401,83 @@ the zero-drift test above.
 
 `VERCEL_BUILD_CAP_TOKEN` is still unset, so the 2/day cap remains inactive and this is the third real build
 today. Fourth day flagged. Notion Backlog P0, owner Ashwin.
+
+## 2026-09-16 — mini → next session: ESPN DROPPED `dates=A-B` SITE-WIDE; every caller moved to season, month or per-day queries
+
+Ashwin asked why the morning was full of ntfys and GitHub emails, then "fix the python callers now and do the
+standings fix too". Five of the seven pings came from one upstream change.
+
+### A. The break, and what it cost before anyone noticed
+
+Between 2026-09-15T15:53Z (last good run) and 09-16T00:04Z, ESPN's team-sport scoreboards began rejecting **any**
+hyphenated `dates=A-B` range with HTTP 400, including a one-day range. Bisected by the daily sweep and re-measured
+here: single date, month (`202609`) and year (`2026`) all still answer 200. Golf and tennis do NOT 400, but a range
+there now returns almost nothing (`golf/pga` 0 events against 2 for the month, ATP 1 against 5), which is worse,
+because it is silent.
+
+- `AFL + NRL season refresh` failed 00:04Z and again on its autofix rerun; three reruns, three ntfys, GitHub emails.
+- `mlb-sim` failed 07:00Z, "failed leagues: afl, nrl" (the 08:17 "CoN mini job" ping).
+- `lib/espnScores.ts` swallowed it with `return []`: the Recent results strip lost every ESPN-supplied final and
+  nothing logged it.
+- AFL/NRL `finals.json` froze at 09-15 15:54Z, with AFL preliminary finals on 09-18/19 and the Grand Final after.
+
+### B. Python callers (`e7c8ab06b`, no build)
+
+One shape per call site, each measured live before committing:
+- **Whole-season windows -> `dates=<season>`:** `footy_finals.py`, `build_season_sims.py`. AFL `dates=2026` returns
+  226 events of which `parse_finals` keeps exactly the 10 finals; NRL 213 -> exactly 6. Same bundles the last good
+  run committed.
+- **Fortnights -> MONTHS:** `build_mlb_postseason.py`, `wnba_finalize.py`. A month keeps both old scars at bay (a wide
+  range silently caps at 100 events and ignores `seasontype`; `limit=` truncates WNBA): mlb `202610&seasontype=3` = 45
+  events, wnba `202609` = 38.
+- **`build_nfl_sim.py` `played_results`: months + a `season.year` guard.** The bare year is NOT safe here: `dates=2026`
+  returns from 2026-01-03, i.e. LAST season's playoffs, and the filter keys on season TYPE only. `scan()` (upcoming) is
+  per-day.
+- **Per-day across the horizon, deduped by event id:** `build_meta_market.py`, `build_pl_sim.py`, NFL `scan()`. A failed
+  day costs that day, not the window.
+- **`majors_ingest.py`: the 14-day lookback becomes month queries** (current, plus previous when the window straddles),
+  because a range there fails silently rather than loudly.
+
+Self-tests all pass: footy_finals 19 checks, wnba 88, season sims 27, nfl 79, meta-market 56, mlb postseason 8, pl 53.
+
+### C. The two frontend readers (`de5721381`, one paid build, LIVE and verified)
+
+- `lib/espnScores.ts`: one request per feed per DAY across the results window, deduped (ESPN answers a single date with
+  a neighbouring late kick-off), capped at `DAYS_MAX` 8 so a widened window cannot fan out.
+- `lib/wc2026Standings.ts`: both readers share a new `koEvents()` over `dates=202606` and `202607`. The year form is not
+  a substitute: `dates=2026` caps at 100 events and stops on 12 July, before the Final (202606 = 79 events, 202607 = 25
+  ending 07-19).
+- `npm run verify` in a scratch worktree: typecheck, every check:*, vitest 294, pytest 112, `next build --webpack`,
+  function-size. Live at 09:39; the page cycles HIT -> STALE -> HIT on the new code.
+- **Recent results still reads "150 results across 7 sports", and that is correct:** every ledger game played 09-12 to
+  09-15 is already graded, so the ESPN merge has nothing to add today. It earns its keep this weekend, when finals land
+  before the grading jobs run.
+
+### D. Jobs put back green
+
+`footy-refresh` re-run on the fix: success, committed `587d334b0`, so AFL/NRL data is live again ahead of Friday.
+`mlb-sim` re-ran from the shared tree (exit 0, pushed, revalidated, every warm 200) and its 07:00Z slot is
+`--mark-ok`. `detect_issues.py`: 0 findings.
+
+### E. Mistakes worth not repeating
+
+- **The first push of B silently did not land.** `git rebase` refused because the two `lib/*.ts` files were unstaged in
+  the same worktree, so `push` was a non-fast-forward and only my local echo said "pushed". I then dispatched
+  `footy-refresh` and watched it fail on the OLD code at the old line number. Stash the unrelated changes, rebase, push,
+  THEN confirm with `git merge-base --is-ancestor HEAD origin/main` before dispatching anything.
+- **`mlb-sim`'s 09:23 autofix rerun failed for a stale reason:** the shared tree had not been pulled, so it ran the old
+  range. Pull `~/Projects/Metro Area Project` after pushing a job fix; the jobs run from that clone, not from a worktree.
+- Two of my own read errors, both caught by checking rather than assuming: `footy_finals.build()` returns
+  `meta`/`weeks`/`premier`, not `games`, so a first probe printed "0 finals" for a working fetch; and counting
+  "ungraded" ledger rows without excluding FUTURE fixtures made the strip look half-dead when it was not.
+- A `urllib` probe of the live site with `Cache-Control: no-cache` got 403 from the edge; `curl` was fine all morning.
+
+### F. Also today
+
+Another session fixed the cricket REVIEW ntfy that arrived with only its header lines (`21c47d243`, 08:22): the
+wrapper's `grep -iE 'REVIEW'` kept the header and dropped the items under it, now an awk block. That was the gap
+recorded in 09-15 section B.
+
+**Open:** add a range-versus-single-date probe to `feed_shape_monitor.py`, so the next silent ESPN parameter change is
+caught by a job rather than by a finals bracket freezing. The Silent failure register row from 09-15 (a route's data
+missing from its bundle) has a sibling here: two frontend readers swallowed a 400 with `return []` and nothing logged.
