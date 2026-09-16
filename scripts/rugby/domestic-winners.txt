@@ -376,4 +376,4 @@ Season	Champions	Runner-Up	Score	Final Venue
 2022	Pumas	Griquas	26–19	Griqua Park, Kimberley
 2023	Free State Cheetahs	Pumas	25–17	Free State Stadium, Bloemfontein
 2024	Sharks	Golden Lions	16–14	Ellis Park Stadium, Johannesburg
-2025	Griquas	Golden Lions	27–25	Ellis Park Stadium, Johannesburg
+2025	Griquas	Golden Lions	27–25	Ellis Park Stadium, Johannesburg2026	Griquas	Pumas	—N/a	—N/a
