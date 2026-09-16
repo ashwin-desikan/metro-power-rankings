@@ -15481,3 +15481,35 @@ recorded in 09-15 section B.
 **Open:** add a range-versus-single-date probe to `feed_shape_monitor.py`, so the next silent ESPN parameter change is
 caught by a job rather than by a finals bracket freezing. The Silent failure register row from 09-15 (a route's data
 missing from its bundle) has a sibling here: two frontend readers swallowed a 400 with `return []` and nothing logged.
+**CLOSED same day, see section G.**
+
+### G. The ESPN date-form canary (closes F's open item)
+
+`feed_shape_monitor.py` now carries two entries, `ESPN date forms (soccer)` and `ESPN date forms (golf)`, via a new
+`fetch_espn_date_forms` fetcher and `check_espn_date_forms` validator. One team sport (the loud case, read per-day by
+`lib/espnScores.ts`) and one non-team (the silent case, months in `majors_ingest.py`).
+
+**It is deliberately not the probe the open item asked for.** A literal range-versus-single-date check would compare a
+form nothing reads any more against one everything reads, so it would FAIL on every run from now on. That is permanent
+noise, not detection. Inverted instead: it asserts the three forms the callers moved to on 09-16 (`dates=YYYYMMDD`,
+`dates=YYYYMM`, `dates=YYYY`) still answer with a well-formed `events` array, and FAILs when one of *those* breaks.
+That catches the next change in whichever direction it comes, which is what the open item actually wanted.
+
+Two design points worth keeping:
+
+- **The probe day is two days back, not today.** A quiet today would otherwise read as a broken parameter.
+- **A working range is a note, never a failure, and only when it returns events.** First run exposed why: golf answers
+  200 with **0 events** to a range and always has. That is precisely the silent shape that hid the 09-15 break, not a
+  recovery, and noting it every run would be wallpaper. The count has to be non-zero to earn the note.
+
+It also FAILs when the month form returns fewer events than the single day, which is the silent-truncation shape
+itself rather than an outright error.
+
+Verified before it went live: all eight failure paths fire on synthetic docs (each form erroring, all three at once, a
+renamed `events` key, the truncation shape), off-season stays a soft `empty`, and the full 18-entry registry is green,
+so the real run was silent. Live copy synced, `dispatcher.py --check-sync` in sync, run logged `ok` at 09:56. No
+healthchecks change: this rides the existing `feed-monitor` slug at 07:20 UTC.
+
+**Still open from F:** other readers converted in `6edc58ecb` may have the same silent trace gap, and nothing yet
+alerts when a frontend reader swallows an upstream error with `return []`. This canary watches the upstream, not the
+swallowing.

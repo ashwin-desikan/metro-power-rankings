@@ -256,6 +256,74 @@ def check_sportz_wtc(doc):
     return "ok", f"{len(teams)} teams"
 
 
+# --- ESPN date-parameter canary --------------------------------------------
+# 2026-09-15: ESPN dropped the hyphenated `dates=A-B` range across every
+# team-sport scoreboard (any range, even a single day, 400s). Eight jobs and two
+# frontend readers used it. The loud ones failed within hours; the silent ones
+# did not: golf and tennis still answer 200 to a range but return almost nothing
+# for it, and lib/espnScores.ts swallowed its 400 with `return []`, so the Recent
+# results strip lost every ESPN-supplied final with nothing logged anywhere.
+#
+# This canary does NOT re-assert the range. Ranges are dead and nothing reads
+# them any more, so a range probe would FAIL on every run forever, which is
+# noise, not detection. It asserts the three forms the code now depends on --
+# single date, month, season year -- and fails when one of THEM stops answering.
+# That is the next silent change, in whichever direction it comes.
+#
+# A range that starts working again is reported as a note in the detail string,
+# never as a failure: informative, not actionable.
+def fetch_espn_date_forms(base):
+    """{form: (ok, events_or_error)} for the query forms the code relies on.
+
+    Takes the plain scoreboard URL from FEEDS and appends each form itself.
+    Probed against a day two days back, so a quiet 'today' cannot be mistaken
+    for a broken parameter. Same UA discipline as every other ESPN probe here:
+    no User-Agent header at all (see the note by fetch_json above).
+    """
+    day = datetime.date.today() - datetime.timedelta(days=2)
+    forms = {
+        "single": f"{base}?dates={day:%Y%m%d}",
+        "month": f"{base}?dates={day:%Y%m}",
+        "season": f"{base}?dates={day:%Y}",
+        "range": f"{base}?dates={day:%Y%m%d}-{day:%Y%m%d}",  # expected dead; note only
+    }
+    out = {}
+    for form, url in forms.items():
+        try:
+            doc = fetch_json(url)
+            events = doc.get("events")
+            out[form] = (True, len(events)) if isinstance(events, list) else (False, "no 'events' array")
+        except Exception as e:
+            out[form] = (False, str(e)[:60])
+        time.sleep(0.3)
+    return out
+
+
+def check_espn_date_forms(doc):
+    broken = [f"{form} ({detail})" for form in ("single", "month", "season")
+              for ok, detail in [doc.get(form, (False, "not probed"))] if not ok]
+    if broken:
+        return "FAIL", ("ESPN no longer answers " + ", ".join(broken)
+                        + ". Callers use these three forms since 2026-09-16 "
+                          "(HANDOFF 2026-09-16 mini): re-measure and move them again.")
+    single_ok, single_n = doc["single"]
+    month_ok, month_n = doc["month"]
+    if isinstance(single_n, int) and isinstance(month_n, int) and month_n < single_n:
+        return "FAIL", (f"month form returns fewer events than the single date "
+                        f"({month_n} < {single_n}): the silent-truncation shape")
+    note = ""
+    range_ok, range_n = doc.get("range", (False, ""))
+    # Only a range that returns real events counts as revived. Golf and tennis
+    # answer 200 with an empty payload to a range and always have -- that is the
+    # silent shape that hid the 2026-09-15 break, not a recovery. Noting it every
+    # run would be wallpaper, so the count has to be non-zero to earn the note.
+    if range_ok and isinstance(range_n, int) and range_n > 0:
+        note = f"; NB dates=A-B answers again ({range_n} events), still unused"
+    if single_n == 0 and month_n == 0:
+        return "empty", f"no events on the probed day or month (off-season?){note}"
+    return "ok", f"single {single_n}, month {month_n}, season {doc['season'][1]} events{note}"
+
+
 # --- feed registry ---------------------------------------------------------
 # (name, url, validator). URLs mirror the constants in lib/*.ts and
 # scripts/parse-espn-wc2026.py as of this build.
@@ -301,6 +369,15 @@ FEEDS = [
     ("ESPN NRL standings",
      "https://site.api.espn.com/apis/v2/sports/rugby-league/3/standings",
      check_espn_standings),
+    # The date-parameter canary: one team sport (the loud case, read per-day by
+    # lib/espnScores.ts) and one non-team (the silent case, months in
+    # majors_ingest.py). See the note above check_espn_date_forms.
+    ("ESPN date forms (soccer)",
+     "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard",
+     check_espn_date_forms, fetch_espn_date_forms),
+    ("ESPN date forms (golf)",
+     "https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard",
+     check_espn_date_forms, fetch_espn_date_forms),
     ("SPAIA NPB (Central)",
      "https://spaia.jp/baseball/npb/api/official_stats_history?GameAssortment=1&Year="
      + str(datetime.date.today().year),
