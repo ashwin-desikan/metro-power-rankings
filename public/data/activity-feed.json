@@ -1,13 +1,48 @@
 {
-  "generatedAt": "2026-09-15",
+  "generatedAt": "2026-09-16",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-16",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "7dd1cc5c4"
+    },
     {
       "date": "2026-09-15",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL.",
-      "commit": "e30fdd6b8"
+      "text": "Data refreshed — Football, Basketball, Cricket, Rugby, and 3 more.",
+      "commit": "05ec0f620"
+    },
+    {
+      "date": "2026-09-15",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Winter and Summer filter every column, not just the score.",
+      "commit": "d92f9cae7"
+    },
+    {
+      "date": "2026-09-15",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Zone Zero Cup: tier letters, weekly snapshots, and the winter and summer boards.",
+      "commit": "6780abc98"
+    },
+    {
+      "date": "2026-09-15",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Champions and majors are read at runtime, so a new champion no longer needs a build.",
+      "commit": "5429bed4c"
+    },
+    {
+      "date": "2026-09-15",
+      "category": "hub",
+      "hub": null,
+      "text": "International football hub: bundle its data with static imports; the file tracer shipped none of it.",
+      "commit": "f24f4bde6"
     },
     {
       "date": "2026-09-14",
@@ -4166,41 +4201,6 @@
       "hub": null,
       "text": "Bucket A wiring + REGIONLESS additions + cp1252 fix; 8 countries newly render polygons.",
       "commit": "df186723b"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "hub",
-      "hub": null,
-      "text": "Home overlay + verify: switch RankingsTable to useCombinedBoundaries and add scripts/check-public-data.mjs to npm run verify.",
-      "commit": "bb335fd3c"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "hub",
-      "hub": null,
-      "text": "Drop cache: 'force-cache' on both fetch calls.",
-      "commit": "0a62d0406"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Populations.",
-      "commit": "ec4f291dc"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "hub",
-      "hub": "Expandable Map",
-      "text": "Combined boundaries fetch, multi-select regions, viewport-preserving tier toggles, tier None button, polygon-first interaction polish.",
-      "commit": "14d07de1f"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "hub",
-      "hub": "Expandable Map",
-      "text": "Synchronous primaryPins pane, polygon-first interaction model, scroll-wheel zoom on Expandable Map.",
-      "commit": "9e16d55b7"
     }
   ]
 }
