@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-16T07:17:10.041931+00:00",
+  "generated_at": "2026-09-16T07:27:31.641816+00:00",
   "jobs": [
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-16T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-09-15",
-        "status": "ok",
-        "slot": "2026-09-15T07:20:00+00:00"
-      }
-    },
     {
       "id": "sound-weekly",
       "label": "Sound of the Metros (music charts)",
@@ -316,6 +298,24 @@
       }
     },
     {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-17T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-09-16",
+        "status": "ok",
+        "slot": "2026-09-16T07:20:00+00:00"
+      }
+    },
+    {
       "id": "forecast",
       "label": "Election forecast",
       "schedule_text": "Mon/Wed/Fri at 06:10 UTC",
@@ -592,9 +592,9 @@
       "days_of_month": [],
       "next_run": "2026-09-23T07:10:00+00:00",
       "last_run": {
-        "date": "2026-09-09",
+        "date": "2026-09-16",
         "status": "ok",
-        "slot": "2026-09-09T07:10:00+00:00"
+        "slot": "2026-09-16T07:10:00+00:00"
       }
     },
     {
