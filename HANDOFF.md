@@ -15513,3 +15513,37 @@ healthchecks change: this rides the existing `feed-monitor` slug at 07:20 UTC.
 **Still open from F:** other readers converted in `6edc58ecb` may have the same silent trace gap, and nothing yet
 alerts when a frontend reader swallows an upstream error with `return []`. This canary watches the upstream, not the
 swallowing.
+
+### H. The WNBA failure emails, and the assertion that hid the bug
+
+Ashwin asked about the constant GitHub Action failure emails. Measured rather than guessed: 42 failures in the last
+200 runs, but 15 are `Test` from July and early August, and `Test` has been green for 45 straight pushes since. The
+WWC tracker's cron is already commented out, so its four stopped after 09-15. Majors 09-12, NFL Elo 09-08 and CFL
+08-31 are one-offs predating the outage. The only thing still failing on a schedule was **WNBA season refresh**,
+daily, and that one was mine.
+
+**The bug.** This morning's `e7c8ab06b` rewrote `_windows()`'s docstring in `wnba_finalize.py` to say months and left
+the body building fortnight ranges. The 13:09Z run failed on `833002ee8`, a tree that already contained the "fix", so
+this was not a stale-tree artifact. All eight URLs it generated 400d. Fixed in `de5c233a4`: 29 postseason events
+against 0 before.
+
+**The part worth remembering is not the bug, it is the self-test.** It already executed `_windows()` and asserted
+`len(x) == 17 and "-" in x`, which is to say it demanded the exact form ESPN had dropped. The workflow runs
+`--self-test` immediately before `--write`, so that assertion would have REJECTED a correct fix and PASSED the broken
+one. An assertion that encodes the bug is worse than no assertion, because it converts review into rubber-stamping.
+It now pins the month shape and forbids a hyphen outright, and the docstring carries a note saying the body is what
+is checked.
+
+**Method change, applied same day.** Having missed one caller by reading its comment, I re-swept all seven others
+from `e7c8ab06b` by EXECUTING their URL builders and probing what came back, not by reading what they claimed:
+`majors_ingest` months (golf 2 events, tennis 5), `build_nfl_sim` months (48) and per-day, `build_meta_market`
+per-day, `build_pl_sim` per-day, `build_season_sims` season year (AFL 226, NRL 213). All returned real events. WNBA
+was the only miss. Comments in those files were accurate, but that was luck, not verification.
+
+**Note for the canary in section G:** it did not catch this and could not. It asserts ESPN's forms still work, and
+they do. A caller still using the dead form is invisible to it. The gap between "upstream is healthy" and "our
+callers use the healthy thing" is still unmonitored.
+
+**Deliberately not done:** turning off GitHub's Actions failure email. It did its job here, surfacing a real break
+that would otherwise have sat until the next finals weekend. With WNBA fixed the volume should fall to near zero on
+its own, so the setting stays until there is evidence it is noise rather than signal.
