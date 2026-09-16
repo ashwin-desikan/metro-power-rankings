@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-09-16T11:03:26.842779+00:00",
+  "generated_at": "2026-09-16T11:50:11.072218+00:00",
   "jobs": [
-    {
-      "id": "cfb-wed",
-      "label": "CFB predictions (catch a late AP poll, publish the slate, grade midweek)",
-      "schedule_text": "Wed at 11:40 UTC",
-      "cadence": "weekly",
-      "times": [
-        "11:40"
-      ],
-      "weekdays": [
-        3
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-16T11:40:00+00:00",
-      "last_run": {
-        "date": "2026-09-09",
-        "status": "ok",
-        "slot": "2026-09-09T11:40:00+00:00"
-      }
-    },
     {
       "id": "ops-autofix",
       "label": "Ops autofix (whitelist, acts on production)",
@@ -595,6 +575,26 @@
         "date": "2026-09-16",
         "status": "ok",
         "slot": "2026-09-16T07:30:00+00:00"
+      }
+    },
+    {
+      "id": "cfb-wed",
+      "label": "CFB predictions (catch a late AP poll, publish the slate, grade midweek)",
+      "schedule_text": "Wed at 11:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "11:40"
+      ],
+      "weekdays": [
+        3
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-23T11:40:00+00:00",
+      "last_run": {
+        "date": "2026-09-16",
+        "status": "ok",
+        "slot": "2026-09-16T11:40:00+00:00"
       }
     },
     {
