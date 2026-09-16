@@ -1313,6 +1313,28 @@
    "act": 10.5,
    "nzf": 8.4,
    "tpm": 2.0
+  },
+  {
+   "date": "2026-09-10",
+   "pollster": "Anacta",
+   "sample": 1701,
+   "nat": 30.0,
+   "lab": 31.0,
+   "grn": 12.0,
+   "act": 8.0,
+   "nzf": 10.0,
+   "tpm": 2.0
+  },
+  {
+   "date": "2026-09-11",
+   "pollster": "The Post/Freshwater Strategy",
+   "sample": 1011,
+   "nat": 27.0,
+   "lab": 28.0,
+   "grn": 14.0,
+   "act": 9.0,
+   "nzf": 13.0,
+   "tpm": 2.0
   }
  ]
 }

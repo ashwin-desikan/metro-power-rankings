@@ -22,7 +22,7 @@
  "polls": [
   {
    "date": "2026-09-08",
-   "pollster": "Lazar",
+   "pollster": "LRI+P4A",
    "seats": {
     "Likud": 20,
     "Together": 13,
@@ -44,7 +44,7 @@
   },
   {
    "date": "2026-09-10",
-   "pollster": "Lazar",
+   "pollster": "LRI+P4A",
    "seats": {
     "Likud": 19,
     "Together": 14,

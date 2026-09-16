@@ -2,55 +2,55 @@
  "code": "us",
  "election": "2026-11-03",
  "confidence": "confirmed",
- "built": "2026-09-14",
- "daysBefore": 50,
+ "built": "2026-09-16",
+ "daysBefore": 48,
  "block": {
-  "margin": 6.8,
+  "margin": 7.3,
   "sigma": 2.5,
   "aggregators": [
    {
     "source": "Decision Desk HQ",
-    "dem": 48.6,
-    "rep": 41.9,
-    "updated": "2026-09-13"
+    "dem": 47.9,
+    "rep": 41.2,
+    "updated": "2026-09-15"
    },
    {
     "source": "FiftyPlusOne",
-    "dem": 49.9,
+    "dem": 50.3,
     "rep": 43.4,
-    "updated": "2026-09-13"
+    "updated": "2026-09-15"
    },
    {
     "source": "RealClearPolitics",
-    "dem": 48.6,
-    "rep": 42.0,
-    "updated": "2026-09-13"
+    "dem": 49.8,
+    "rep": 41.7,
+    "updated": "2026-09-15"
    },
    {
     "source": "Silver Bulletin",
-    "dem": 48.6,
-    "rep": 41.4,
-    "updated": "2026-09-13"
+    "dem": 49.1,
+    "rep": 41.7,
+    "updated": "2026-09-15"
    },
    {
     "source": "VoteHub",
-    "dem": 47.8,
-    "rep": 41.3,
-    "updated": "2026-09-13"
+    "dem": 49.0,
+    "rep": 41.8,
+    "updated": "2026-09-15"
    },
    {
     "source": "Race to the WH",
-    "dem": 49.0,
-    "rep": 41.6,
-    "updated": "2026-09-13"
+    "dem": 49.5,
+    "rep": 41.8,
+    "updated": "2026-09-15"
    }
   ],
   "demSeats": {
-   "median": 228,
-   "lo": 207,
-   "hi": 250
+   "median": 230,
+   "lo": 208,
+   "hi": 251
   },
-  "pDemHouse": 79.0,
+  "pDemHouse": 81.9,
   "fit": {
    "a": 209.5,
    "b": 2.71,
@@ -122,7 +122,7 @@
     "lo": 47,
     "hi": 54
    },
-   "pDemControl": 45.7,
+   "pDemControl": 46.6,
    "competitive": [
     {
      "state": "Alaska",
@@ -153,18 +153,18 @@
      "pDem": 60.0
     },
     {
-     "state": "Michigan",
-     "held": "D",
-     "score": 0.45,
-     "retiring": true,
-     "pDem": 63.0
-    },
-    {
      "state": "Ohio",
      "held": "R",
-     "score": 0.45,
+     "score": 0.41,
      "retiring": false,
-     "pDem": 63.0
+     "pDem": 62.0
+    },
+    {
+     "state": "Michigan",
+     "held": "D",
+     "score": 0.55,
+     "retiring": true,
+     "pDem": 66.0
     }
    ],
    "sims": 20000,
