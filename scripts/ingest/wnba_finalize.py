@@ -176,14 +176,19 @@ def _windows(season):
     These were fortnight RANGES until 2026-09-15, when ESPN dropped the
     hyphenated `dates=A-B` form across every team-sport scoreboard (any range,
     even a single day, now 400s; see scripts/ingest/footy_finals.py).
+
+    NOTE 2026-09-16 evening: the 09-16 morning fix rewrote this docstring to
+    say months and left the body building fortnight ranges, so every run after
+    it 400d and the 13:09Z job failed on a tree that contained the "fix". The
+    docstring claiming the repair is what let it past review. Body corrected
+    here; the probe below in --self-test now executes this function rather
+    than trusting what it says.
+
+    August covers a late regular season, November a long Finals: both are
+    cheap no-ops when empty (measured 2026-09-16: 202608 has 0 postseason
+    events, 202609 has 8, 202610 has 21, 202611 has 0).
     """
-    start, end = dt.date(season, 8, 1), dt.date(season, 11, 15)
-    out, cur = [], start
-    while cur <= end:
-        stop = min(cur + dt.timedelta(days=13), end)
-        out.append("%s-%s" % (cur.strftime("%Y%m%d"), stop.strftime("%Y%m%d")))
-        cur = stop + dt.timedelta(days=1)
-    return out
+    return ["%d%02d" % (season, m) for m in (8, 9, 10, 11)]
 
 
 def parse_events(payload):
@@ -248,7 +253,7 @@ def fetch_postseason(season):
         payload = fetch_json("%s?dates=%s" % (SCOREBOARD, win))
         for g in parse_events(payload):
             key = (g["date"], g["home"], g["away"])
-            if key in seen:  # fortnight boundaries cannot overlap, but be safe
+            if key in seen:  # month windows cannot overlap, but be safe
                 continue
             seen.add(key)
             games.append(g)
@@ -722,12 +727,19 @@ def self_test():
         if not cond:
             raise SystemExit("self-test FAILED: %s" % name)
 
-    # -- windows: chunked, no limit= ---------------------------------------
+    # -- windows: months, no limit= ----------------------------------------
+    # These asserted the FORTNIGHT shape (len 17, containing "-") until
+    # 2026-09-16 evening. That is why the morning's docstring-only edit shipped
+    # green: the self-test ran ahead of --write in the workflow and demanded the
+    # very form ESPN had dropped, so it would have rejected a correct fix and
+    # passed the broken one. An assertion that encodes the bug is worse than no
+    # assertion. Pin the month shape explicitly, and forbid a hyphen outright.
     w = _windows(2026)
-    check("windows are fortnights", all(len(x) == 17 and "-" in x for x in w))
-    check("windows cover october", any(x.startswith("202610") for x in w))
-    check("windows do not overlap",
-          all(w[i].split("-")[1] < w[i + 1].split("-")[0] for i in range(len(w) - 1)))
+    check("windows are months", all(len(x) == 6 and x.isdigit() for x in w))
+    check("windows carry no hyphenated range", not any("-" in x for x in w))
+    check("windows cover october", any(x == "202610" for x in w))
+    check("windows are ordered and distinct", w == sorted(set(w)))
+    check("windows are in the requested season", all(x.startswith("2026") for x in w))
 
     # -- parse_events: only postseason, TBC dropped ------------------------
     def ev(stype, home, away, done=True, hw=True, score=(90, 80), notes=None):
