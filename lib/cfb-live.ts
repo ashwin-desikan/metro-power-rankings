@@ -119,6 +119,21 @@ function resolve(location: string, fallback: string): { school: string; slug: st
   return t ? { school: t.name, slug: t.slug } : { school: location || fallback, slug: null };
 }
 
+/** An ESPN-style school name mapped to the canonical program name the poll rows
+ * carry, so callers holding a raw ESPN location can join against `CfbPoll.rows`.
+ *
+ * This exists because the two sides genuinely differ: ESPN says "Miami" and
+ * "Ole Miss", the canonical names are "Miami FL" and "Mississippi", so a raw
+ * equality join silently drops exactly the ranked teams. Exported rather than
+ * reimplemented at the call site on purpose: a second copy of CANONICAL_OVERRIDE
+ * would be a parallel source of truth, and a stale duplicate is what broke
+ * wnba_finalize on 2026-09-16. Unresolvable names pass through unchanged, which
+ * simply means no rank is found: never a guess at the wrong program.
+ */
+export function canonicalSchool(location: string): string {
+  return resolve(location, "").school;
+}
+
 // ---- standings ----------------------------------------------------------
 
 const POWER4: RegExp[] = [/southeastern/i, /big ten/i, /big 12/i, /atlantic coast/i];

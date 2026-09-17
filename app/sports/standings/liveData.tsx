@@ -43,7 +43,7 @@ import { getRugbyStandings, rugbyAllRows, RUGBY_COMPS, type RugbyCompKey, type R
 import { getEuroleagueStandings, EUROLEAGUE_FULL_SEASON, type EuroleagueRow } from "@/lib/euroleagueStandings";
 import { rugbyClubColor, rugbyMonogram } from "@/lib/rugby-colors";
 import { euroleagueClubColor, euroleagueMonogram } from "@/lib/euroleague-colors";
-import { getCfbRankings, cfbSeasonStarted } from "@/lib/cfb-live";
+import { getCfbRankings, cfbSeasonStarted, canonicalSchool } from "@/lib/cfb-live";
 import { getWLiveLeagues, getWLiveCompetition, getWLiveOdds, type WLiveLeagueVM, type WLiveFixtureVM, type WLiveOddsVM } from "@/lib/wLive";
 import { getCricketFixtures, type CricketMatch } from "@/lib/cricketFixtures";
 
@@ -1784,10 +1784,30 @@ async function cfbBlock(): Promise<Block | null> {
     : [lead.name, lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ");
   const note = ([COL[lead.kind] ?? lead.name, lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ") || null) + (showOdds ? " \u00b7 odds simulated" : "");
   // The Today box: games on the predictions slate (AP Top 25 involvement, the
-  // slate's own scope), with the poll ranks in the label.
-  const rk = (n: number | null | undefined) => (n ? `#${n} ` : "");
+  // slate's own scope), with the CURRENT poll rank in the label.
+  //
+  // These read `g.ap` from cfb-predictions.json until 2026-09-17. That field is
+  // stamped once, when the job first adds the fixture, so the label kept showing
+  // whatever rank a team held that week: Miami sat at "#7" (its Week 2 entry)
+  // while the live AP poll had it 5th. Worse in both directions over a season, a
+  // team that drops out keeps its old number forever, and one that climbs INTO
+  // the Top 25 after its fixture was added shows nothing, because the stored
+  // value is null. The frozen rank is still right for the ledger's own accuracy
+  // record on /predictions/cfb; it is wrong for a live fixtures strip.
+  //
+  // `lead` is the lead poll from the same snapshot the table above renders: CFP
+  // when ESPN publishes it (November), AP until then, ordered by POLL_ORDER in
+  // lib/cfb-live. So "AP now, CFP later" needs no switch here, it follows the
+  // poll the block is already showing. Ashwin ruled on 2026-09-17 that the live
+  // rank applies everywhere, completed games included, so Recent results agrees
+  // with the table beside it rather than showing two different numbers.
+  const liveRank = new Map(lead.rows.map((r) => [r.school, r.rank]));
+  const rk = (school: string) => {
+    const n = liveRank.get(canonicalSchool(school));
+    return n ? `#${n} ` : "";
+  };
   const events: LiveEvent[] = (preds?.ledger ?? []).filter((g) => g.kickoff).map((g) => ({
-    sport: "Gridiron", league: "College Football", href: "/teams/cfb", label: `${rk(g.ap?.away)}${g.away} at ${rk(g.ap?.home)}${g.home}`, when: g.kickoff as string,
+    sport: "Gridiron", league: "College Football", href: "/teams/cfb", label: `${rk(g.away)}${g.away} at ${rk(g.home)}${g.home}`, when: g.kickoff as string,
     score: g.result ? awayFirst(g.score) : null, live: false, teams: { home: g.home, away: g.away } }));
   return {
     league: "College Football", href: "/teams/cfb", note,
