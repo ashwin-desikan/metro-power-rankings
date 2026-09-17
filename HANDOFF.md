@@ -15582,3 +15582,43 @@ had not started yet. The first scheduled confirmation is due later today. If it 
 Nothing yet alerts when a frontend reader swallows an upstream error with `return []`, and the 09-16 canary cannot
 see a caller still using a dead upstream form: it checks that ESPN's forms work, not that our code uses the working
 ones. Other readers converted in `6edc58ecb` may still have the silent trace gap from 09-15.
+
+### D. Live standings: college football events showed a frozen poll rank
+
+Ashwin reported that On today / Recent / Upcoming for college football carried the wrong ranking, and that it should
+show AP until the CFP rankings exist, then CFP. Fixed in `18eb6a0cd`, verified live at 11:11Z.
+
+**Cause.** The labels read `g.ap` from `cfb-predictions.json`. `build_cfb_sim.py:1084` stamps that field ONCE, when
+the job first adds a fixture, so the label froze at whatever rank the team held that week. Miami read `#7` from its
+Week 2 entry while the live AP poll had it 5th; Ohio State read `#1` against an actual 6th. It is wrong in both
+directions over a season: a team that drops out of the Top 25 keeps its number forever, and one that climbs in after
+its fixture was added shows nothing at all, because the stored value is null.
+
+`cfbBlock` already held the live snapshot. It calls `getCfbRankings()` on its first line and renders it in the table
+immediately above the strip. The events strip simply never read it.
+
+**The CFP half needed no new code.** `lead` is `s.polls[0]`, ordered CFP, AP, Coaches by `POLL_ORDER` in
+`lib/cfb-live.ts`. Joining the labels to the lead poll means they follow whatever poll the block is already showing,
+so when ESPN starts publishing CFP in November the labels switch on their own. Measured 2026-09-17: ESPN's rankings
+feed carries AP, AFCA Coaches, FCS, DII and DIII, and no CFP poll, which is why AP leads today.
+
+**The join is not name equality, and that was the trap.** ESPN says "Miami" and "Ole Miss"; the poll rows carry the
+canonical "Miami FL" and "Mississippi" because they pass through `resolve()`. A raw join would have silently dropped
+exactly the ranked teams, producing a page that looked fine and showed no ranks. Exported `canonicalSchool()` from
+`lib/cfb-live.ts` reusing the existing private `resolve()`, rather than copying `CANONICAL_OVERRIDE` to the call
+site: a duplicated lookup drifting from its original is precisely what broke `wnba_finalize` on 09-16.
+
+**Ruling.** Ashwin chose live rank everywhere, completed games included, so Recent results agrees with the table
+beside it instead of showing two different numbers for the same team. The frozen `g.ap` stays on `/predictions/cfb`,
+where the rank at prediction time is the honest number for an accuracy ledger.
+
+**Verification, in the order it was done.** Replayed the join in Python over the real slate against the live AP poll
+BEFORE spending a build: 7 of the first 10 upcoming labels changed, 25 ranked-team hits, and the three unresolved
+names (Eastern Washington, Northern Iowa, Portland State) are unranked FCS visitors that correctly take no prefix.
+Then `typecheck`, `check:live-data`, `check:data-reads` (1115 files) and a full `npm run build`, exit 0. Pushed alone
+as HEAD so Vercel read the build-required rule from the right commit. Polled production until the label turned over:
+`#7 Miami` to `#5 Miami` at 11:11Z, about four minutes after the push.
+
+**Worth knowing for November.** The ledger's scope is still "games involving AP Top 25 teams only", so when CFP goes
+live the labels will read CFP while the slate is still SELECTED by AP involvement. Defensible, but it is a second
+decision hiding behind the first, and it belongs to `build_cfb_sim.py`, not to this page.
