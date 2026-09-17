@@ -15547,3 +15547,38 @@ callers use the healthy thing" is still unmonitored.
 **Deliberately not done:** turning off GitHub's Actions failure email. It did its job here, surfacing a real break
 that would otherwise have sat until the next finals weekend. With WNBA fixed the volume should fall to near zero on
 its own, so the setting stays until there is evidence it is noise rather than signal.
+
+## 2026-09-17 — mini → next session: HANDOFF entries are now written WITHOUT ASKING (standing rule); first clean night since the ESPN outage
+
+### A. Standing rule from Ashwin
+
+**Always add work to HANDOFF without asking.** Ruled 2026-09-17 after he had to say "add it to HANDOFF" three
+times in a row for entries that were already written, which made the ask pure ceremony.
+
+Treat the entry as part of the definition of done for a change, alongside the code and the verification: write it
+before reporting the work finished, commit it in the same push or the adjacent one tagged `[vercel skip]`, and do
+not report "added it to HANDOFF" as a separate accomplishment. Record the reasoning and the mistakes, not only the
+fix. The entries that have earned their keep are the ones saying why something was built differently from how it was
+asked for (09-16 section G) or which assumption turned out false (09-16 section H). The no-em-dash rule stands, and
+stale open items still get closed in place with a marker rather than left reading as outstanding.
+
+### B. Overnight: nothing failed
+
+First night with no GitHub Actions failure at all since the 09-15 ESPN outage began. Every scheduled run since
+18:00Z yesterday is green, including AFL + NRL at 00:15Z and 10:38Z (the finals data the 09-16 fix unfroze, now
+refreshing unattended), Majors at 10:08Z, ESPN standings snapshot at 05:00Z and the staleness dead-man's switch at
+04:39Z. `Test` is green across every push.
+
+`feed-monitor` ran on schedule at 07:24Z and logged `ok` for all 18 entries, including the two new date-form canary
+rows from 09-16 section G. That is the canary's first unattended run.
+
+**Still unproven:** the WNBA fix (`de5c233a4`) has only been verified by my manual dispatch. Its cron is written
+`0 8 * * *` but GitHub has actually fired it between 11:00Z and 14:00Z every day this week, so at 10:41Z today's run
+had not started yet. The first scheduled confirmation is due later today. If it fails, the place to look is
+`_windows()` in `wnba_finalize.py` and the self-test assertions immediately above it, both rewritten yesterday.
+
+### C. Carried forward, unchanged
+
+Nothing yet alerts when a frontend reader swallows an upstream error with `return []`, and the 09-16 canary cannot
+see a caller still using a dead upstream form: it checks that ESPN's forms work, not that our code uses the working
+ones. Other readers converted in `6edc58ecb` may still have the silent trace gap from 09-15.
