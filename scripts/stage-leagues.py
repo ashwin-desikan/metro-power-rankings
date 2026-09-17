@@ -69,6 +69,15 @@ from pathlib import Path
 WORKBOOKS = {
     "nfl": "NFL_all.xlsx",
     "nba": "NBA.xlsx",
+    # 🔴 SEPARATE WORKBOOK, AND IT IS THE ELO SPINE. NBA.xlsx holds the season
+    # summaries (Year by Year, Playoffs, Awards); NBA_RegSeason.xlsx holds the
+    # 146k-row game log AND the 57k-row Standings sheet that carries ELO
+    # Rating, +/- Change and Rank per team-week. build-nba-elo.py reads the
+    # second one, so leaving it unstaged is the exact shape of the trap that
+    # rebuilt the NFL Elo spine from an August copy (see CLAUDE.md, "Two traps
+    # that cost a day each"). Both must stage together or the Elo and the
+    # season context describe different seasons.
+    "nba_regseason": "NBA_RegSeason.xlsx",
     "nhl": "NHL.xlsx",
     "mlb": "MLB.xlsx",
     # Global football/international database (legacy filename). Feeds
