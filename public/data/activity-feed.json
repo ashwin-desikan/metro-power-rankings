@@ -1,13 +1,27 @@
 {
-  "generatedAt": "2026-09-16",
+  "generatedAt": "2026-09-17",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-17",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "577659861"
+    },
     {
       "date": "2026-09-16",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "7dd1cc5c4"
+      "text": "Data refreshed — Football, Basketball, Elections, Sound of the Metros, and 4 more.",
+      "commit": "ed0b6aa10"
+    },
+    {
+      "date": "2026-09-16",
+      "category": "hub",
+      "hub": null,
+      "text": "Recent results and the World Cup readers follow ESPN's dropped date range.",
+      "commit": "de5721381"
     },
     {
       "date": "2026-09-15",
@@ -4187,20 +4201,6 @@
       "hub": null,
       "text": "Data refreshed — Populations.",
       "commit": "093e11a76"
-    },
-    {
-      "date": "2026-05-25",
-      "category": "fix",
-      "hub": null,
-      "text": "Mixed-region resolution, REGIONLESS-on-Municipality fix, mixed-Region sort fix.",
-      "commit": "72837207b"
-    },
-    {
-      "date": "2026-05-24",
-      "category": "fix",
-      "hub": null,
-      "text": "Bucket A wiring + REGIONLESS additions + cp1252 fix; 8 countries newly render polygons.",
-      "commit": "df186723b"
     }
   ]
 }
