@@ -104,6 +104,33 @@ export function inSeasonFromGames(gamesPlayed: number[], fullSeason: number): bo
 }
 
 /**
+ * Scheduled games per team, per league. ONE PLACE, because this number is an
+ * argument at every call site and a wrong one fails silently.
+ *
+ * 🔴 THE NHL PLAYS 84 FROM 2026-27, NOT 82. The CBA that began its four-year
+ * term on 2026-09-16 expanded the regular season from 82 to 84, the first
+ * change in 33 years: 1,344 games, 42 home and 42 away, with both added games
+ * INTRA-DIVISION so every club now plays each division rival exactly four
+ * times. Confirmed against ESPN's own 2026-27 schedule feed, which returns
+ * exactly 84 per team for all 32 clubs.
+ *
+ * Passing the old 82 here does not throw and does not look wrong. It ends the
+ * season two games early: once every team reaches 82, `min(games) < 82` goes
+ * false, the standings board closes itself and the franchise pages drop their
+ * live row, while two games per club are still to be played. That is a quiet
+ * wrong answer in the last week of a season, which is the worst week to have
+ * one.
+ *
+ * The NBA is still 82. Do not "tidy" these into a single shared number.
+ */
+export const GAMES_PER_SEASON = {
+  nhl: 84,
+  nba: 82,
+  mlb: 162,
+  wnba: 44,
+} as const satisfies Partial<Record<SeasonKey, number>>;
+
+/**
  * Both halves. Use this for any league that has per-team game counts.
  *
  * The window is the authority on "the season is over" (it closes a board the

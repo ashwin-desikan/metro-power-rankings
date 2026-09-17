@@ -6,6 +6,7 @@ import "server-only";
 
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
+import { lineColorFrom } from "@/lib/lineColor";
 
 // ---------- Types ----------
 
@@ -455,6 +456,14 @@ const DEFAULT_MONO = { bg: "#222", fg: "#fff", mono: "NBA" };
 
 export function monogramFor(slug: string): { bg: string; fg: string; mono: string } {
   return MONOGRAM_BY_SLUG[slug] ?? DEFAULT_MONO;
+}
+
+/** Club colour for a chart line, or null when the club has no usable stored
+ *  colour. The ladder and the reasoning live in lib/lineColor.ts; this is
+ *  only the NBA's lookup into it. */
+export function nbaLineColor(slug: string | null): string | null {
+  if (!slug) return null;
+  return lineColorFrom(MONOGRAM_BY_SLUG[slug]);
 }
 
 export function logoUrlFor(slug: string): string | null {

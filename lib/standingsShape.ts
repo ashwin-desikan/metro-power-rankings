@@ -311,6 +311,80 @@ function typeFromCalendar(windows: SeasonWindow[], now: number): SeasonType {
   return "unknown";
 }
 
+/** The season-type fallback for a payload that carries no `season.type`.
+ *
+ *  Pass the payload root and the year already resolved for it. Matching on
+ *  the year is load-bearing: ESPN's `seasons` array is frequently stale (a
+ *  2027 season id carrying 2025-26 windows), and seasonWindows drops any
+ *  entry whose year does not match rather than trusting index 0.
+ *
+ *  ⚠️ MEASURED 2026-09-17: the NBA and NHL standings payloads carry NO
+ *  `seasons` array at all, so this returns "unknown" for both. Call
+ *  seasonTypeFromGroups FIRST; this is only the second resort.
+ */
+export function seasonTypeFromCalendar(
+  root: AnyObj,
+  year: number,
+  now: number = Date.now(),
+): SeasonType {
+  return typeFromCalendar(seasonWindows(root, year), now);
+}
+
+/** Season type read from the per-conference standings groups.
+ *
+ *  🔴 THIS IS THE ONLY SEASON-TYPE FIELD THE NBA AND NHL PAYLOADS ACTUALLY
+ *  CARRY, and it is not where anyone looks for it. Measured against live
+ *  ESPN on 2026-09-17, both leagues return NO top-level `season` object, NO
+ *  `seasons[]` array, NO `types[]`, and no date fields whatsoever. What they
+ *  do carry, repeated once per conference under `children[].standings`, is:
+ *
+ *      "season":2026,"seasonType":2,"seasonDisplayName":"2025-26"
+ *
+ *  A reader that only inspects `root.season.type` therefore resolves nothing
+ *  on either league, which is how lib/nhl-standings.ts ended up falling back
+ *  to "are all the records zero" and lib/nba-standings.ts ended up with a
+ *  permanently-true `is_offseason`.
+ *
+ *  ⚠️ `seasonType` describes WHICH TABLE came back, not where the calendar
+ *  has got to. On 2026-09-17, twelve days before the NHL opener, both
+ *  leagues returned seasonType 2 for the COMPLETED 2025-26 season. So this
+ *  answers "is this the regular-season table"; it does not answer "is the
+ *  season under way". Liveness stays with isLeagueLive's games-played test.
+ *
+ *  ⚠️ UNVERIFIED: whether ESPN flips this to 1 during preseason. It cannot
+ *  be known before the NHL preseason opens ~20 Sep 2026. Documented rather
+ *  than guessed, per the house rule on ambiguous upstream data.
+ */
+export function seasonTypeFromGroups(root: AnyObj): SeasonType {
+  for (const childRaw of asArr(root.children)) {
+    const st = asObj(asObj(childRaw)?.standings);
+    if (!st) continue;
+    switch (asNum(st.seasonType, 0)) {
+      case 1: return "preseason";
+      case 2: return "regular";
+      case 3: return "postseason";
+      case 4: return "offseason";
+    }
+  }
+  return "unknown";
+}
+
+/** ESPN's own label for the season, e.g. "2025-26". Empty when absent.
+ *
+ *  Worth preferring over a bare end-year in any user-facing string: a
+ *  heading that reads "2026 Season" for a league whose season spans two
+ *  calendar years is ambiguous to a reader and was part of what made the
+ *  NFL preseason incident hard to spot.
+ */
+export function seasonDisplayNameFromGroups(root: AnyObj): string {
+  for (const childRaw of asArr(root.children)) {
+    const st = asObj(asObj(childRaw)?.standings);
+    const label = asStr(st?.seasonDisplayName).trim();
+    if (label) return label;
+  }
+  return "";
+}
+
 function pickSeasonType(root: AnyObj): SeasonType {
   const season = asObj(root.season);
   // ESPN sometimes serializes `season.type` as an integer (1-4) and other

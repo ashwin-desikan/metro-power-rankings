@@ -18,6 +18,24 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-17",
+    headline: "Every NBA season, week by week",
+    items: [
+      "New NBA season pages: eighty seasons back to 1947, each with the playoff bracket drawn as two conferences meeting at the final, the twenty best games of that year, and a table you can rewind to any week.",
+      "The NBA hub now opens on the 2026-27 season and its field rather than the year that just finished, and season tables keep the regular season, the postseason and the total apart.",
+      "Rating charts on NBA and NFL season pages read in dates rather than week numbers, and go dashed for the weeks after a team's season ended. College football fixtures carry the current poll rank, not a frozen one.",
+      "Hockey and basketball standings name the season the way a reader does, as 2025-26 rather than 2026, and the hockey board follows the NHL's new 84-game season.",
+    ],
+  },
+  {
+    date: "2026-09-16",
+    headline: "Recent results shows every final again",
+    items: [
+      "Recent results on Live Standings lists every finished game again, after a change at our score supplier quietly dropped about half of them, including 10 of 20 Premier League games on one weekend.",
+      "The World Cup pages follow the knockout rounds through to the Final, rather than stopping in mid July.",
+    ],
+  },
+  {
     date: "2026-09-15",
     headline: "New champions appear the day they are crowned",
     items: [

@@ -1,6 +1,11 @@
 import "server-only";
 
 import { fetchEspnJson } from "@/lib/espnFetch";
+import {
+  seasonDisplayNameFromGroups,
+  seasonTypeFromCalendar,
+  seasonTypeFromGroups,
+} from "@/lib/standingsShape";
 
 // Live NHL standings.
 //
@@ -232,18 +237,27 @@ function shapeStandings(raw: unknown): StandingsSnapshot {
     fetched_at: new Date().toISOString(),
     is_preseason: isPreseason,
     by_canonical: byCanonical,
-    source_label: buildLabel(seasonYear, seasonType, allZero),
+    source_label: buildLabel(
+      seasonDisplayNameFromGroups(root) || String(seasonYear || ""),
+      seasonType,
+      allZero,
+    ),
   };
 }
 
-function buildLabel(year: number, type: SeasonType, allZero: boolean): string {
-  if (!year) return "";
+/** `season` is ESPN's own display label ("2025-26") where available, and the
+ *  bare end-year only as a fallback. A hockey season spans two calendar
+ *  years, so "2026 Season" is ambiguous to a reader in a way "2025-26
+ *  Regular Season" is not -- and that ambiguity is part of why a preseason
+ *  board sat under a season heading unnoticed on the NFL for a month. */
+function buildLabel(season: string, type: SeasonType, allZero: boolean): string {
+  if (!season) return "";
   switch (type) {
-    case "regular": return `${year} Regular Season`;
-    case "postseason": return `${year} Postseason`;
-    case "preseason": return `${year} Preseason`;
-    case "offseason": return `Final ${year}`;
-    default: return allZero ? `${year} Season (opens soon)` : `${year} Season`;
+    case "regular": return `${season} Regular Season`;
+    case "postseason": return `${season} Postseason`;
+    case "preseason": return `${season} Preseason`;
+    case "offseason": return `Final ${season}`;
+    default: return allZero ? `${season} Season (opens soon)` : `${season} Season`;
   }
 }
 
@@ -278,5 +292,15 @@ function pickSeasonType(root: AnyObj): SeasonType {
   if (name.includes("post")) return "postseason";
   if (name.includes("pre")) return "preseason";
   if (name.includes("off")) return "offseason";
-  return "unknown";
+  // 🔴 Every branch above misses on a 2026 NHL payload. Measured against live
+  // ESPN on 2026-09-17: there is no top-level `season` object and no
+  // `seasons[]` array. The ONLY season-type field present is `seasonType`,
+  // nested once per conference under children[].standings. Returning
+  // "unknown" here sent `is_preseason` to its "are all the records zero"
+  // fallback, and preseason records are not zero -- the NFL bug of
+  // 2026-09-04, twelve days from reaching the NHL. Read the real field.
+  const fromGroups = seasonTypeFromGroups(root);
+  if (fromGroups !== "unknown") return fromGroups;
+  // Second resort for any endpoint that does carry a type calendar.
+  return seasonTypeFromCalendar(root, pickSeasonYear(root));
 }

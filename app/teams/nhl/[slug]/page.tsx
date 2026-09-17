@@ -34,6 +34,7 @@ import {
   type HistoricalFranchise,
 } from "@/lib/nhl";
 import { getCurrentNhlStandings } from "@/lib/nhl-standings";
+import { GAMES_PER_SEASON } from "@/lib/seasonWindows";
 import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd, ogImage } from "@/lib/seo";
 import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
 import SeasonsByTeamTable from "./SeasonsByTeamTable";
@@ -137,13 +138,18 @@ export default async function NhlTeamPage({ params }: Props) {
   // Only treat ESPN data as a live in-progress row when the league is genuinely
   // mid-season. ESPN rolls season_year forward right after the Stanley Cup while
   // still serving the completed regular season, so without this guard a finished
-  // 82-game season surfaces as a phantom future "In progress" row (e.g. 2026-27
-  // shown in June). Mirrors the /sports/standings hub's inSeasonFromGames(_, 82).
+  // season surfaces as a phantom future "In progress" row (e.g. 2026-27 shown
+  // in June). Mirrors the /sports/standings hub's inSeasonFromGames.
+  //
+  // 🔴 84, NOT 82, FROM 2026-27. The new CBA expanded the NHL regular season
+  // for the first time in 33 years. Hardcoding 82 here drops this page's live
+  // row two games before the season actually ends, silently, in the last week
+  // of the year. See GAMES_PER_SEASON in lib/seasonWindows.ts.
   const leagueGamesPlayed = Object.values(standings.by_canonical).map((t) => t.games_played);
   const leagueInSeason =
     leagueGamesPlayed.length > 0 &&
     Math.max(...leagueGamesPlayed) > 0 &&
-    Math.min(...leagueGamesPlayed) < 82;
+    Math.min(...leagueGamesPlayed) < GAMES_PER_SEASON.nhl;
   const showLiveRow = leagueInSeason &&
     liveSeasonYear > 0 &&
     liveRow &&

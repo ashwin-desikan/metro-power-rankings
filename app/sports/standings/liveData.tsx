@@ -15,6 +15,12 @@ import LocalTime from "./LocalTime";
 import { getCurrentNflStandings } from "@/lib/standings";
 import { getCurrentNbaStandings } from "@/lib/nba-standings";
 import { getCurrentNhlStandings } from "@/lib/nhl-standings";
+import { getNhlSim, nhlOddsByCanonical, nhlSimIsCurrent } from "@/lib/nhlSim";
+
+// The site's end-year convention: 2027 is the 2026-27 season. The sim file
+// carries the same number, and nhlSimIsCurrent refuses to render a file built
+// for a different one.
+const NHL_SIM_SEASON = 2027;
 import { getCurrentMlbStandings } from "@/lib/mlb-standings";
 import { getMlbSim, getMlbPostseason, playoffOddsByCanonical, fmtOdds } from "@/lib/mlbSim";
 import { getSeasonSim, simIsCurrent, simBySlug, simByName } from "@/lib/seasonSim";
@@ -58,7 +64,7 @@ import { getFootballClubByName } from "@/lib/football";
 import { flagCdnUrl } from "@/lib/international-display";
 // Season gating: see lib/seasonWindows.ts for why a calendar window sits
 // alongside the games check rather than replacing it.
-import { isLeagueLive, inSeasonWindow, tournamentIsCurrent, type SeasonKey } from "@/lib/seasonWindows";
+import { isLeagueLive, inSeasonWindow, tournamentIsCurrent, GAMES_PER_SEASON, type SeasonKey } from "@/lib/seasonWindows";
 import { CappedList } from "@/app/_shared/Disclosure";
 import { DataBar } from "@/app/_shared/DataBar";
 import { getEspnFinals, sameTeam, type EspnFinal } from "@/lib/espnScores";
@@ -809,7 +815,7 @@ async function nbaBlock(): Promise<Block | null> {
   const teams = Object.values(s.by_canonical);
   if (teams.length === 0) return null;
   const fr = new Map(nbaFranchises().map((f) => [f.canonical, f]));
-  const live = isLeagueLive("nba", teams.map((t) => t.games_played), 82);
+  const live = isLeagueLive("nba", teams.map((t) => t.games_played), GAMES_PER_SEASON.nba);
   const nameOf = (t: (typeof teams)[number]) => fr.get(t.canonical)?.name ?? t.display_name;
   const row = (t: (typeof teams)[number], i: number): SRow => {
     const f = fr.get(t.canonical); const m = f ? nbaMono(f.slug) : null;
@@ -830,21 +836,39 @@ async function nbaBlock(): Promise<Block | null> {
 }
 
 async function nhlBlock(): Promise<Block | null> {
-  const s = await getCurrentNhlStandings();
+  const [s, sim] = await Promise.all([getCurrentNhlStandings(), getNhlSim()]);
   const teams = Object.values(s.by_canonical);
   if (teams.length === 0) return null;
   const fr = new Map(nhlFranchises().map((f) => [f.canonical, f]));
-  const live = isLeagueLive("nhl", teams.map((t) => t.games_played), 82);
+  // 84 from 2026-27, not 82: see GAMES_PER_SEASON in lib/seasonWindows.ts.
+  const live = isLeagueLive("nhl", teams.map((t) => t.games_played), GAMES_PER_SEASON.nhl);
+
+  // Playoff and Cup odds from our own Monte Carlo
+  // (scripts/predictions/build_nhl_sim.py). Three gates, the same shape every
+  // other league's block uses, because each one has bitten somewhere:
+  //   - the league is live, so an offseason board never carries odds;
+  //   - the sim describes THIS season and was built recently (nhlSimIsCurrent);
+  //   - every club is present, so a partial file never renders half a column.
+  // A stale or missing file leaves the table exactly as it was rather than
+  // printing a row of dashes that looks like real data with holes in it.
+  const odds = nhlOddsByCanonical(sim);
+  const showOdds = live && nhlSimIsCurrent(sim, NHL_SIM_SEASON) && odds.size >= 32;
+
   const nameOf = (t: (typeof teams)[number]) => fr.get(t.canonical)?.name ?? t.display_name;
   const row = (t: (typeof teams)[number], i: number): SRow => {
     const f = fr.get(t.canonical); const m = f ? nhlMono(f.slug) : null;
+    const o = odds.get(t.canonical);
     return { rank: live ? i + 1 : null, name: nameOf(t), href: f ? `/teams/nhl/${f.slug}` : null,
       logoUrl: f ? nhlLogo(f.slug) : null, monogram: m ? { text: m.mono, bg: m.bg, fg: m.fg } : null,
-      cells: live ? [t.games_played, t.wins, t.losses, t.ot_losses, t.points, strk(t.streak)] : [DASH, DASH, DASH, DASH, DASH, DASH] };
+      cells: live
+        ? [t.games_played, t.wins, t.losses, t.ot_losses, t.points, strk(t.streak),
+           ...(showOdds ? [fmtOdds(o?.p_playoffs), fmtOdds(o?.p_cup)] : [])]
+        : [DASH, DASH, DASH, DASH, DASH, DASH, ...(showOdds ? [DASH, DASH] : [])] };
   };
   return buildBlock({
-    league: "NHL", href: "/teams/hockey", note: live ? s.source_label : "Offseason", open: live,
-    items: teams, columns: ["GP", "W", "L", "OTL", "PTS", "STRK"],
+    league: "NHL", href: "/teams/nhl", note: live ? s.source_label : "Offseason", open: live,
+    items: teams,
+    columns: ["GP", "W", "L", "OTL", "PTS", "STRK", ...(showOdds ? ["PO%", "Cup%"] : [])],
     sort: live ? (a, b) => b.points - a.points || b.wins - a.wins || b.goal_diff - a.goal_diff : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "Eastern Conference", pick: (t) => t.conference === "E" }, { title: "Western Conference", pick: (t) => t.conference === "W" }],
     row,

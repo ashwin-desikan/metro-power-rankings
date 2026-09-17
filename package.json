@@ -29,6 +29,7 @@
     "deploy-status": "node scripts/deploy-status.mjs",
     "check:mobile": "node scripts/check-mobile.mjs",
     "probe:mobile": "node scripts/probe-mobile.mjs",
+    "probe:elo-chart": "node scripts/check-elo-chart.mjs",
     "check:function-size": "node scripts/check-function-size.mjs"
   },
   "dependencies": {

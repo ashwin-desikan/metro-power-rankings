@@ -17,6 +17,8 @@ import LeagueMap from "./LeagueMap";
 import PlayoffBracket from "./PlayoffBracket";
 import TopGamesTable from "./TopGamesTable";
 import HubNav from "@/app/teams/HubNav";
+import { getNbaEloIndex } from "@/lib/nbaElo";
+import { seasonLabel as nbaSeasonLabel } from "@/lib/nba";
 import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
 export const dynamicParams = false;
@@ -56,10 +58,22 @@ function enrichSlugs<T extends { winner_canonical: string; loser_canonical: stri
   }));
 }
 
-export default function NbaIndexPage() {
+export default async function NbaIndexPage() {
   const franchises = getAllFranchises();
   const totalChamps = franchises.reduce((s, f) => s + f.championships, 0);
   const withChamps = franchises.filter(f => f.championships > 0).length;
+
+  // The Elo spine, for the two season cards above the nav. Caught rather than
+  // awaited bare: a hub that 500s because a season index is missing is a worse
+  // failure than a hub without its season cards.
+  const eloIndex = await getNbaEloIndex().catch(() => null);
+  const eloSeasons = eloIndex?.seasons ?? [];
+  const latestSeason = eloSeasons.length ? eloSeasons[eloSeasons.length - 1] : null;
+  // Only a FINISHED season can disagree: a seeded year has a top-rated team
+  // and no champion, which is an unplayed season, not a disagreement.
+  const eloDisagreements = eloSeasons.filter(
+    (r) => r.complete && r.champion && r.top && r.champion.name !== r.top.name,
+  ).length;
   const playoffState = getPlayoffState();
   const isPostseasonOver = playoffState.is_postseason_complete;
   const inPlayoffs = Object.entries(playoffState.by_franchise).filter(
@@ -101,9 +115,82 @@ export default function NbaIndexPage() {
         </div>
       </header>
 
+      {/* ── Season hubs ────────────────────────────────────────────────────
+          The same two cards the NFL hub carries above its nav: the current
+          season highlighted, then the archive. Kept deliberately identical in
+          shape and wording so a reader moving between the two sports meets one
+          idiom rather than two (Ashwin, 2026-09-17). */}
+      {latestSeason ? (
+        <Link
+          href={`/teams/nba/season/${latestSeason.season}`}
+          className="block rounded-xl border-2 p-4 mb-3 transition hover:brightness-110"
+          style={{ background: "var(--bg-card-hover)", borderColor: "var(--accent)" }}
+        >
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2">
+                <span
+                  className="text-[10px] uppercase tracking-widest font-semibold px-1.5 py-0.5 rounded-full border"
+                  style={{ borderColor: "var(--accent)", color: "var(--accent)" }}
+                >
+                  {latestSeason.status === "upcoming" ? "Upcoming"
+                    : latestSeason.status === "final" ? "Final" : "Live"}
+                </span>
+                <span className="text-lg font-semibold">
+                  The {nbaSeasonLabel(latestSeason.season)} season
+                </span>
+              </div>
+              {/* 🔴 THE HUB POINTS FORWARD. Leading with the season that just
+                  finished makes the page read as an archive. The card takes
+                  the LAST season in the index, and the builder now emits an
+                  "upcoming" shell for the season about to start, so this
+                  follows the calendar without a date check living here.
+                  (Ashwin, 2026-09-17.) */}
+              <p className="text-sm text-[var(--text-muted)] mt-1 max-w-2xl">
+                {latestSeason.status === "upcoming"
+                  ? "The field, by division, before a game has been played. Ratings, the table and the bracket fill in as the season goes."
+                  : latestSeason.status === "final"
+                    ? "Every team's rating week by week, and the table as it stood after any week of the year."
+                    : "Every team's rating week by week as it happens, with the table rewindable to any week."}
+                {latestSeason.top ? (
+                  <>{" "}Top rated: {[latestSeason.top.city, latestSeason.top.team].filter(Boolean).join(" ") || latestSeason.top.name}.</>
+                ) : null}
+              </p>
+            </div>
+            <span className="text-sm text-[var(--accent)] font-medium whitespace-nowrap">
+              Open the season hub &rarr;
+            </span>
+          </div>
+        </Link>
+      ) : null}
+
+      {eloSeasons.length ? (
+        <Link
+          href="/teams/nba/season"
+          className="block rounded-xl border p-3 mb-6 transition hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
+          style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+        >
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <span className="text-sm font-semibold">
+              Season archive
+              <span className="font-normal text-[var(--text-muted)]">
+                {" "}&middot; all {eloSeasons.length} seasons since {nbaSeasonLabel(eloSeasons[0].season)},
+                and the {eloDisagreements} years the best team did not win
+              </span>
+            </span>
+            <span className="text-sm text-[var(--accent)] font-medium whitespace-nowrap">
+              Browse every season &rarr;
+            </span>
+          </div>
+        </Link>
+      ) : null}
+
       <HubNav
         items={[
           { label: "Playoffs", href: "#bracket" },
+          ...(eloSeasons.length
+            ? [{ label: `Seasons since ${eloSeasons[0].season}`, href: "/teams/nba/season" }]
+            : []),
           { label: "Map", href: "#map" },
           { label: "All-Time Table", href: "#all-time" },
           { label: "Top Games", href: "#top-games" },

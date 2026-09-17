@@ -1,6 +1,11 @@
 import "server-only";
 
 import { fetchEspnJson } from "@/lib/espnFetch";
+import {
+  seasonDisplayNameFromGroups,
+  seasonTypeFromCalendar,
+  seasonTypeFromGroups,
+} from "@/lib/standingsShape";
 
 // Live NBA standings layer.
 //
@@ -116,13 +121,32 @@ function pickSeasonYear(root: AnyObj): number {
 
 function pickSeasonType(root: AnyObj): SeasonType {
   const season = asObj(root.season);
-  const t = asNum(season?.type, 0);
+  // 🔴 `season.type` arrives in TWO shapes: a bare integer, and an object
+  // carrying .type / .name. This read used to handle only the integer, so on
+  // an object payload `asNum` saw an object, returned 0, and every branch
+  // below missed. lib/standingsShape.ts has covered both since 2026-09-04.
+  const rawType = season?.type;
+  const typeObj = asObj(rawType);
+  const t = asNum(typeObj?.type ?? rawType, 0);
   // ESPN season-type mapping: 1=preseason, 2=regular, 3=postseason, 4=offseason
   if (t === 1) return "preseason";
   if (t === 2) return "regular";
   if (t === 3) return "postseason";
   if (t === 4) return "offseason";
-  return "unknown";
+  const name = asStr(typeObj?.name).toLowerCase();
+  if (name.includes("regular")) return "regular";
+  if (name.includes("post")) return "postseason";
+  if (name.includes("pre")) return "preseason";
+  if (name.includes("off")) return "offseason";
+  // 🔴 A 2026 NBA payload carries no `season.type` and no `seasons[]` array
+  // (measured against live ESPN, 2026-09-17). The only season-type field is
+  // `seasonType`, nested once per conference under children[].standings.
+  // Without this the function returned "unknown" on every single fetch,
+  // which made `is_offseason` below permanently true.
+  const fromGroups = seasonTypeFromGroups(root);
+  if (fromGroups !== "unknown") return fromGroups;
+  // Second resort for any endpoint that does carry a type calendar.
+  return seasonTypeFromCalendar(root, pickSeasonYear(root));
 }
 
 function shapeStandings(raw: unknown): StandingsSnapshot {
@@ -212,6 +236,19 @@ function shapeStandings(raw: unknown): StandingsSnapshot {
     fetched_at: new Date().toISOString(),
     is_offseason: seasonType === "offseason" || seasonType === "unknown",
     by_canonical: byCanonical,
-    source_label: "ESPN NBA standings",
+    // ESPN's own label ("2025-26") beats a bare end-year: an NBA season
+    // spans two calendar years, so "2026 Season" reads as ambiguous. Falls
+    // back to the old fixed string only when the payload carries no label.
+    source_label: (() => {
+      const season = seasonDisplayNameFromGroups(root) || String(seasonYear || "");
+      if (!season) return "ESPN NBA standings";
+      switch (seasonType) {
+        case "regular": return `${season} Regular Season`;
+        case "postseason": return `${season} Postseason`;
+        case "preseason": return `${season} Preseason`;
+        case "offseason": return `Final ${season}`;
+        default: return `${season} Season`;
+      }
+    })(),
   };
 }
