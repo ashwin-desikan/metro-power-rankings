@@ -7,39 +7,39 @@
  "aggregators": [
   {
    "source": "Decision Desk HQ",
-   "updated": "2026-09-15",
-   "rep": 41.2,
-   "dem": 47.9
+   "updated": "2026-09-17",
+   "rep": 40.9,
+   "dem": 48.3
   },
   {
    "source": "FiftyPlusOne",
-   "updated": "2026-09-15",
-   "rep": 43.4,
-   "dem": 50.3
+   "updated": "2026-09-17",
+   "rep": 43.2,
+   "dem": 50.5
   },
   {
    "source": "RealClearPolitics",
-   "updated": "2026-09-15",
-   "rep": 41.7,
-   "dem": 49.8
+   "updated": "2026-09-17",
+   "rep": 41.9,
+   "dem": 50.5
   },
   {
    "source": "Silver Bulletin",
-   "updated": "2026-09-15",
-   "rep": 41.7,
-   "dem": 49.1
+   "updated": "2026-09-17",
+   "rep": 41.6,
+   "dem": 49.5
   },
   {
    "source": "VoteHub",
-   "updated": "2026-09-15",
+   "updated": "2026-09-17",
    "rep": 41.8,
-   "dem": 49.0
+   "dem": 49.7
   },
   {
    "source": "Race to the WH",
-   "updated": "2026-09-15",
+   "updated": "2026-09-17",
    "rep": 41.8,
-   "dem": 49.5
+   "dem": 50.1
   }
  ],
  "polls": []

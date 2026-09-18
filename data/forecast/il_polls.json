@@ -84,6 +84,49 @@
     "Haredi Public": 52
    },
    "gov": null
+  },
+  {
+   "date": "2026-09-17",
+   "pollster": "Kantar",
+   "seats": {
+    "Likud": 20,
+    "Together": 13,
+    "RZP- Zehut": 8,
+    "Otzma": 0,
+    "Blue & White": 7,
+    "Shas": 7,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 5,
+    "Ra'am": 7,
+    "Joint List": 9,
+    "Dems": 24,
+    "Yashar": 4,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 0,
+    "Haredi Public": 48
+   },
+   "gov": null
+  },
+  {
+   "date": "2026-09-17",
+   "pollster": "Yossi Tatika",
+   "seats": {
+    "Likud": 22,
+    "Together": 14,
+    "RZP- Zehut": 7,
+    "Otzma": 0,
+    "Blue & White": 9,
+    "Shas": 9,
+    "UTJ": 9,
+    "Yisrael Beiteinu": 6,
+    "Ra'am": 8,
+    "Joint List": 8,
+    "Dems": 24,
+    "Yashar": 0,
+    "Reserv.- NEP": 0,
+    "Haredi Public": 51
+   },
+   "gov": null
   }
  ]
 }

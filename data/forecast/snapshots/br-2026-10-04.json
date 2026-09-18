@@ -2,36 +2,36 @@
  "code": "br",
  "election": "2026-10-04",
  "confidence": "confirmed",
- "built": "2026-09-16",
- "daysBefore": 18,
+ "built": "2026-09-18",
+ "daysBefore": 16,
  "block": {
   "election": "2026-10-04",
   "electionDate": "2026-10-04",
   "electionConfidence": "confirmed",
   "firstRound": {
    "shares": {
-    "Lula": 39.1,
-    "F. Bolsonaro": 34.0,
+    "Lula": 39.2,
+    "F. Bolsonaro": 34.8,
     "Cury": 6.4,
-    "Santos": 4.1,
-    "Caiado": 3.6,
+    "Santos": 4.0,
+    "Caiado": 3.5,
     "Zema": 1.5
    },
-   "polls": 34,
-   "latest": "2026-09-13"
+   "polls": 35,
+   "latest": "2026-09-16"
   },
   "runoffs": [
    {
     "a": "Lula",
     "b": "F. Bolsonaro",
-    "avgA": 45.1,
-    "avgB": 44.1,
-    "pA": 61.7,
-    "polls": 79,
-    "latest": "2026-09-13"
+    "avgA": 45.2,
+    "avgB": 44.6,
+    "pA": 57.7,
+    "polls": 83,
+    "latest": "2026-09-17"
    }
   ],
-  "monthsOut": 0.6,
+  "monthsOut": 0.5,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Brazilian presidential election (CC BY-SA 4.0)"
   ]

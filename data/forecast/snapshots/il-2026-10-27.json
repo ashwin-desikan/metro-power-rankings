@@ -2,8 +2,8 @@
  "code": "il",
  "election": "2026-10-27",
  "confidence": "confirmed",
- "built": "2026-09-16",
- "daysBefore": 41,
+ "built": "2026-09-18",
+ "daysBefore": 39,
  "block": {
   "electionAssumed": "2026-10-27",
   "electionDate": "2026-10-27",
@@ -11,54 +11,54 @@
   "parties": [
    {
     "name": "Haredi Public",
-    "seats": 36.2
+    "seats": 36.0
    },
    {
     "name": "Dems",
-    "seats": 17.7
+    "seats": 18.0
    },
    {
     "name": "Likud",
-    "seats": 15.5
+    "seats": 15.2
    },
    {
     "name": "Together",
-    "seats": 10.7
-   },
-   {
-    "name": "UTJ",
-    "seats": 7.0
+    "seats": 10.1
    },
    {
     "name": "Joint List",
     "seats": 6.6
    },
    {
+    "name": "UTJ",
+    "seats": 6.4
+   },
+   {
     "name": "Blue & White",
-    "seats": 6.3
+    "seats": 5.7
    },
    {
     "name": "Shas",
-    "seats": 5.9
-   },
-   {
-    "name": "Ra'am",
-    "seats": 5.2
+    "seats": 5.7
    },
    {
     "name": "RZP- Zehut",
-    "seats": 5.2
+    "seats": 5.7
+   },
+   {
+    "name": "Ra'am",
+    "seats": 5.5
    },
    {
     "name": "Yisrael Beiteinu",
-    "seats": 3.7
-   },
-   {
-    "name": "Otzma",
-    "seats": 0.0
+    "seats": 4.0
    },
    {
     "name": "Yashar",
+    "seats": 1.1
+   },
+   {
+    "name": "Otzma",
     "seats": 0.0
    },
    {
@@ -70,9 +70,9 @@
     "seats": 0.0
    }
   ],
-  "polls": 3,
-  "pollsters": 2,
-  "latestPollDate": "2026-09-10",
+  "polls": 5,
+  "pollsters": 3,
+  "latestPollDate": "2026-09-17",
   "gov": {
    "avg": null,
    "pMajority": null
