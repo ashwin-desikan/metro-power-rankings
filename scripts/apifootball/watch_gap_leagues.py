@@ -164,20 +164,56 @@ def selftest():
     assert nations_auto({"comp_type": "international"}) is False
     assert nations_auto({}) is False
     assert nations_auto({"country": "India", "level": 1}) is False   # the pre-existing entry
-    # And the file itself: only 536 may self-promote. If a club competition ever
-    # acquires both flags, this fails rather than letting it go live unchecked.
+    # And the file itself. This asserted `== {536}` against the live file until
+    # 2026-09-18, which made a SUCCESSFUL promotion fail the job: the watcher
+    # promoted CONCACAF Nations League on 09-17 (3df23071c), 536 left the pending
+    # file exactly as designed, and the next run died here at 05:00Z and again on
+    # the ops-autofix retry. A test that demands a transient membership rejects
+    # the correct state; it is the same shape as wnba_finalize's fortnight
+    # assertion two days earlier, and it encodes the bug rather than the rule.
+    #
+    # The RULE is what mattered: nothing may skip the club-Lookup gate unless it
+    # is a known national-team competition. Checked against whatever the file
+    # holds, so it still fails loudly if a club competition acquires both flags,
+    # and it keeps passing as entries legitimately promote out.
+    SELF_PROMOTERS = {536}   # CONCACAF Nations League; add an id only with a reason
     _p = json.load(open(os.path.join(HERE, "leagues_pending.json"), encoding="utf-8"))
-    assert {e["api_league_id"] for e in _p if nations_auto(e)} == {536}, [e["api_league_id"] for e in _p if nations_auto(e)]
+    # Gate on the RAW auto_promote flag, not on nations_auto(). Filtering by
+    # nations_auto() first was a hole, caught by adversarially planting a bad
+    # entry rather than by reading: a club comp carrying
+    # {"auto_promote": true, "comp_type": "continental"} makes nations_auto()
+    # return False, so it fell out of the set and sailed through the check that
+    # exists to stop exactly it. The old `== {536}` test caught that case only as
+    # a side effect of demanding exact membership.
+    _flagged = {e["api_league_id"] for e in _p if e.get("auto_promote")}
+    assert _flagged <= SELF_PROMOTERS, sorted(_flagged - SELF_PROMOTERS)
+    # Anything allowed to self-promote must be an international comp: that is the
+    # property earning the exemption from the club-Lookup gate.
+    assert all(e.get("comp_type") == "international"
+               for e in _p if e.get("auto_promote")), [e for e in _p if e.get("auto_promote")]
 
-    # promoted_row: the row a promotion actually writes. Run the REAL 536 entry through
-    # it, so the day this fires the shape is the one refresh.py's derivation expects.
-    cnl = next(e for e in _p if e["api_league_id"] == 536)
-    row = promoted_row(cnl, {"api_league_id": 536, "season_used": 2026})
+    # promoted_row: the row a promotion actually writes. On FIXTURES, not on rows
+    # read out of the live file. The fixtures below are copies of the real 536 and
+    # 323 entries, so the shape check survives the entry being promoted away; the
+    # old version looked these up with next(...) and would have raised
+    # StopIteration the moment its league went live, which is what 323 was still
+    # setting up to do.
+    cnl = {"country": "World", "api_country": "World", "api_league_id": 536,
+           "intended_name": "CONCACAF Nations League", "level": 536,
+           "target_season": None, "ready_on": "window",
+           "auto_promote": True, "comp_type": "international", "has_standings": False}
+    assert nations_auto(cnl) is True
+    # season_used is api-football's own label for the campaign, NOT the calendar
+    # year: 536 numbers a campaign by the year it starts, so the season running
+    # 23 Sep to 11 Nov 2026 is published as 2025 and refresh.py must query 2025.
+    row = promoted_row(cnl, {"api_league_id": 536, "season_used": 2025})
     assert row == {"league_id": 536, "country": "World", "name": "CONCACAF Nations League",
-                   "season": 2026, "level": None, "comp_type": "international",
+                   "season": 2025, "level": None, "comp_type": "international",
                    "has_standings": False}, row
     # The pre-existing domestic entry must come out exactly as it did before.
-    isl = next(e for e in _p if e["api_league_id"] == 323)
+    isl = {"country": "India", "api_country": "India", "api_league_id": 323,
+           "intended_name": "Indian Super League", "level": 1, "target_season": 2026}
+    assert nations_auto(isl) is False
     assert promoted_row(isl, {"api_league_id": 323, "season_used": 2026}) == {
         "league_id": 323, "country": "India", "name": "Indian Super League",
         "season": 2026, "level": 1, "comp_type": "domestic", "has_standings": True}
