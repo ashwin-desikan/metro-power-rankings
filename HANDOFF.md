@@ -15767,3 +15767,13 @@ confirms three games that day (Tokyo Dome, Yokohama, Koshien). **A short card is
 reading a truncated slice: Aussie Rules "absent" from all strips (it was in On today), and Baseball "absent" from
 Coming up twice, when it sat at offset 14,233 of a 9,000-character read. Each time the executed check said the
 opposite. Grep for the thing itself, or print the whole section; never conclude absence from a prefix.
+
+**SHIPPED, superseding the "all three sit UNPUSHED" line above.** Ashwin said go; `8ea042238` pushed alone as HEAD
+(`touches_build=1 tagged=0`), one paid build, live at 11:46Z about six minutes after the push. Verified on production
+by searching for the rows themselves rather than a slice: On today 38 fixtures across 7 sports with a Baseball group
+of 18 (15 MLB, 3 NPB), Recent results 113 across 5 sports (49 MLB finals), Coming up 293 across 7 sports (91 MLB).
+NPB correctly appears in On today only, which is the SPAIA today-only ceiling described above, not a fault.
+
+One note for whoever runs the em-dash check next: a whole-file `grep '—'` on `liveData.tsx` reports 8 hits and blocks
+the commit, but they are all pre-existing, and one of them is `const DASH = "—"`, the display character itself. The
+check that means anything is the added-lines one, `git diff -U0 <file> | grep '^+' | grep '—'`.
