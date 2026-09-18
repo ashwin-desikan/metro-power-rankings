@@ -15777,3 +15777,46 @@ NPB correctly appears in On today only, which is the SPAIA today-only ceiling de
 One note for whoever runs the em-dash check next: a whole-file `grep '—'` on `liveData.tsx` reports 8 hits and blocks
 the commit, but they are all pre-existing, and one of them is `const DASH = "—"`, the display character itself. The
 check that means anything is the added-lines one, `git diff -U0 <file> | grep '^+' | grep '—'`.
+
+## 2026-09-18 - windows (Cowork, cloud bridged to the Windows box) -> mini and next session: LOOKUP SYNCED, CAF PRELIMS STOP ALERTING, OWNERS SWEPT (CHELSEA), NOTION MADE THE SOURCE OF TRUTH
+
+No paid build from this session. Everything below is `[vercel skip]` or lives outside git.
+
+### A. Lookup sync (cl-lookup-sync, Supabase only)
+
+Ashwin set `API Name` on the clubs already in the Lookup (sheet 1 of the mini's 09-14 triage) and added no new rows. Diff: 17 countries differed; **16 CHANGE + 1 ADD, 0 REMOVE, 0 HELD**. The 16 are the 15 from the triage plus Atletico Petroleos (`api_name` Petro de Luanda). The ADD is Apollon Pontus FC (Greece), Ashwin's own edit. Applied on his explicit yes (the first attempt was blocked by the session's safety check, which is correct for a shared table). **Verified by hash: 9,954 compared rows, `8c6c1d527eeae65435008eacb1b38db0` on both sides.**
+
+### B. CAF Champions League prelims no longer page anyone (ruling)
+
+Ashwin: "I want the ntfy notifications to stop as I'm not going to add any more African teams unless they make the CAF Champions League group stage (not prelims)." Implemented as an opt-in gate, not a mute:
+- `leagues.json` league 12 gains `"lookup_gate": "group_stage"`.
+- `refresh.py`: pure `gate_defer()` plus `MAIN_STAGE_ROUND_RE`. A team is DEFERRED only when every league it appeared in this run carries the gate AND none of those appearances is main stage (a standings row, or a fixture round matching group / quarter / semi / final). Deferred teams are not written to `football_team`, do not count as unmatched and do not exit 3, but each is logged by name (`deferred (CAF prelims, ...)`), and the api-name display fallback still names them on the site.
+- Self-test covers five planted cases (prelim-only defers; group-stage fixture alerts; standings row alerts; prelim plus a non-gated league alerts; a non-gated league's prelim alerts) and was proven to FAIL with the logic inverted.
+- Real round labels in today's bundle are "1st Preliminary Round" and "2nd Preliminary Round"; neither matches. **The group-stage label has never been seen**, so the first run after the CAF draw must show group-stage clubs as UNMATCHED, not deferred. Backlog row filed for the mini.
+- The job does an ff-merge at the start of each run, so the next football-standings slot after the push picks this up.
+
+### C. Owners: full sweep, applied today on Ashwin's instruction (not waiting for Monday)
+
+Research sweep 2026-09-07 to 09-18 over every contested row plus new transactions; curation rules from `run-owners-weekly.sh` and `check-owners-watchlist.py`.
+- **Chelsea RESOLVED:** Clearlake bought out Boehly's and Walter's stakes (reported combined ~$950m, Bloomberg 16 Sep, CNBC 17 Sep), now 99.9% and sole controller; Boehly stepped down as chairman; Wyss keeps an economic interest without control. Dodgers row text that said Walter holds a Chelsea stake corrected.
+- **Timberwolves / Lynx:** no NBA release or official recap of the 14-15 Sep BoG mentions the Stad sale; presumed pending; review moved 09-18 to 10-16. Not proof of non-approval: WebFetch was blocked on startribune.com and sportico.com. **Mini, Monday's run: check a Minneapolis source.**
+- **West Ham:** moved, not resolved; completion expected end of September with reported post-completion stakes noted.
+- No change: Lakers (not on the docket), Crystal Palace, Sevilla, Sounders, Whitecaps, Earthquakes, Lightning, Angels.
+- Flagged, not applied: Giants (Koch 10%) and 49ers (Briger 3.2%) minority sales approved in Oct 2025 are missing from those rows' minority text. Pre-dates the window; left for a curation pass.
+- Gates: build self-test 16/16, 220 franchises, `check-owners-watchlist` OK (11 contested, none due). Runtime read with tag `owners`, so no build; there is no revalidate secret on this box, so the hourly ISR window publishes it.
+
+### D. Notion: why it went stale, and the fix
+
+Measured today: six Backlog rows open for finished work (Sweden, three NFL Friday watches, NRL finals, evening news), one item duplicated, and **no Decisions row since 09-11** although about ten rulings were made. Causes: the Notion rule was one paragraph of advice while HANDOFF had a standing rule; the mini had no ids (they lived in Windows memory); nothing checked; and scheduled jobs had no home at all.
+
+Fixed:
+- **Notion operating contract** page (under Citizen of Nowhere): what lives where, start / during / end duties, the trigger table.
+- **Scheduled jobs** database: 90 rows, every job on every machine (31 dispatcher jobs, launchd agents including the newsletter ones, 34 workflows, 13 Claude cloud tasks, 3 Windows tasks, healthchecks). Built from the REPO copy of `jobs.toml`; Backlog row for the mini to reconcile against the live copy.
+- **CLAUDE.md** section rewritten as a hard rule with every database id inline, so the mini no longer depends on Windows memory.
+- **`.githooks/pre-commit`**: a commit that adds HANDOFF lines without a `**Notion:**` line is rejected (`SKIP_NOTION_CHECK=1` overrides loudly). Tested in a temp clone, five cases plus deletion. `core.hooksPath` is already `.githooks` on Windows; confirm on the mini.
+- **Notion reconciler**, Claude cloud task `trig_01MeTbjkpBua9UMypHz7KRFh`, daily 06:30 UTC: closes finished rows, adds missing rulings and jobs, files doubts, logs one line on the contract page. A backstop, not the process.
+- Reconciled today: 8 Backlog rows closed, 5 added, 11 Decisions rows added (09-13 to 09-18).
+
+Found by the inventory, for Ashwin: the Windows task "Daily Newsletter Digest" has failed daily since 29 June (81 missed runs) while the mini runs the same pipeline. Backlog row filed; likely a leftover to retire.
+
+**Notion:** Backlog closed 8 (NFL seeds watch, NFL Friday refresh, NFL hand dispatch, NRL finals, Sweden, evening news, 45 AFC/CAF clubs, duplicate build-cap row), added 5 (Windows newsletter task, CAF group-stage regex check, reconciler first run, live jobs.toml reconcile, stale REBUILD-RUNBOOK table); Decisions added 11; Scheduled jobs database created with 90 rows; Notion operating contract page created.

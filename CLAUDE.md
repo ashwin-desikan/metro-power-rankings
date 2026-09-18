@@ -46,35 +46,62 @@ and disaster-recovery steps this file doesn't repeat.
   must be down" turned out to be wrong two months running — the actual bug
   was a query-optimizer join order issue. Assume your own code first.
 
-## Notion is the queryable half of the handoff (added 2026-09-09)
+## Notion is the source of truth for state (contract of 2026-09-18, HARD RULE)
 
-`HANDOFF.md` stays in git as the audit trail. The parts of it a session needs
-to QUERY rather than read live in four Notion databases under the private
-page "Citizen of Nowhere" (ids in project memory `reference_notion_workspace`):
-**Backlog** (filter by Owner: Windows session, Mac mini, Ashwin), **Data
-sources** (one row per upstream feed with its quirks, owner script and last
-incident), **Decisions** (one row per ruling) and the **Editorial calendar**.
-At session start, read your open Backlog rows. Before touching a feed, read
-its Data sources row. Before re-deriving a modelling or naming rule, check
-Decisions. When you close an item or make a ruling, update the row in the
-same session you write the HANDOFF entry. On the mini the Notion MCP is
-added with `claude mcp add --transport http notion https://mcp.notion.com/mcp`
-and authorised once with `/mcp`; launchd jobs have no Claude in the loop and
-do not touch Notion.
+> Read the **Notion operating contract** page before any other work:
+> https://app.notion.com/p/3dfedcc4e0f78190a1e2fb17b8b451f3 . On 2026-09-18 Notion
+> was found a week stale (six finished items still open, no ruling recorded since
+> 09-11) because this section was advice and nothing checked it. It is now a rule
+> with a gate.
 
-Alongside the four databases, the **Silent failure register** (a page under the
-same parent) lists the faults that EXIT 0 AND TELL NOBODY, split into the ones
-something now catches and the ones still uncovered. Read it before concluding a
-pipeline is healthy: a green tile, a clean `--status` and a quiet ntfy topic
-mean only that nothing failed loudly, not that the data is right. On 2026-09-10,
-three of six real faults sent no notification at all and the two most damaging
-exited 0. When you find a new way for something to break silently, add a row --
-that is the whole value of the page.
+`HANDOFF.md` is the narrative audit trail. **Notion holds the present state**:
+what is open, what was ruled, which feeds behave how, and which scheduled jobs
+run where. If HANDOFF and Notion disagree about whether something is open,
+closed, active or retired, Notion is wrong and you fix it in the same session.
 
-🔴 The `reference_notion_workspace` memory this section points at does NOT exist
-on the mini; it was written by the Windows session, whose memory lives on its
-own box. Find the databases by searching Notion for "Citizen of Nowhere"
-instead, and do not assume a missing memory means the workspace is unused.
+All under the private page "Citizen of Nowhere"
+(`3d6edcc4-e0f7-813d-8773-f106b7094fcb`). The ids are here, not in memory,
+because memory does not travel between the Windows box, the laptop and the mini.
+
+| Database | Data source id | Holds |
+|---|---|---|
+| Backlog | `2b45ef6d-a130-450e-8f5f-4cc8d7d33dec` | open work, Owner = Windows session / Mac mini / Ashwin / Any session |
+| Decisions | `ae12c4a6-0114-4122-bb5c-99fcb46aea18` | one row per ruling, and where it is enforced |
+| Data sources | `844c694f-f111-4057-ab06-d93d62485219` | one row per upstream feed, quirks, last incident |
+| **Scheduled jobs** | `4945a6d5-64af-4fcf-b9f2-5274102ea8e2` | EVERY scheduled job on every machine: mini dispatcher and launchd, GitHub Actions, Claude cloud and Cowork scheduled tasks, Windows Task Scheduler |
+| Editorial calendar | `2b625c1a-3e67-4053-a3e6-c45bff616a6b` | Substack and LinkedIn pieces |
+| Pipeline | `0be7630b-0dbb-4e28-97f8-949595f117d8` | commercial conversations |
+
+**Start of session:** read your open Backlog rows. Before touching a feed, read
+its Data sources row; before touching a job, read its Scheduled jobs row; before
+re-deriving a rule, search Decisions.
+
+**During the session, same session, never later:** close or open Backlog rows as
+work finishes or appears; add a Decisions row for every ruling; add or edit the
+Scheduled jobs row for ANY job you create, change, move, disable or retire, on
+any machine (a job without a row does not exist); edit Data sources for a new
+feed quirk; add to the Silent failure register for a new silent fault.
+
+**End of session:** every HANDOFF entry ends with a line starting
+`**Notion:**` that lists the rows changed, or `**Notion:** none (no queryable
+state changed)`. `.githooks/pre-commit` rejects a HANDOFF change without it
+(`SKIP_NOTION_CHECK=1` is an emergency override that warns loudly). A daily
+Claude cloud task, "Notion reconciler", catches drift as a backstop; relying on
+it breaks the contract.
+
+On the mini the Notion MCP is added with
+`claude mcp add --transport http notion https://mcp.notion.com/mcp` and
+authorised once with `/mcp`. launchd jobs have no Claude in the loop and do not
+write Notion; the session that changes them does.
+
+The **Silent failure register** (a page under the same parent) lists the faults
+that EXIT 0 AND TELL NOBODY, split into the ones something now catches and the
+ones still uncovered. Read it before concluding a pipeline is healthy: a green
+tile, a clean `--status` and a quiet ntfy topic mean only that nothing failed
+loudly, not that the data is right. On 2026-09-10, three of six real faults sent
+no notification at all and the two most damaging exited 0. When you find a new
+way for something to break silently, add a row; that is the whole value of the
+page.
 
 ## The working loop for data/pipeline fixes
 

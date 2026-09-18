@@ -58,10 +58,11 @@ def _watched_sets():
         {r["league_id"] for r in rows if r.get("comp_type") == "continental"},
         {r["league_id"] for r in rows if r.get("comp_type") == "international"},
         {r["league_id"] for r in rows if r.get("women")},
+        {r["league_id"] for r in rows if r.get("lookup_gate") == "group_stage"},
     )
 
 
-CONTINENTAL, INTERNATIONAL, WOMEN_INTL = _watched_sets()
+CONTINENTAL, INTERNATIONAL, WOMEN_INTL, LOOKUP_GATED_GROUP_STAGE = _watched_sets()
 # International (national-team) competitions: fetched like the continental
 # comps (standings + fixtures), but the teams are NATIONS, not clubs — they
 # BYPASS the club-Lookup invariant and map to themselves (canonical_name =
@@ -87,6 +88,16 @@ CONTINENTAL, INTERNATIONAL, WOMEN_INTL = _watched_sets()
 # two new categories").
 FIXTURE_COMPS = CONTINENTAL | INTERNATIONAL
 SKIP_STANDINGS = {76}
+# CAF Champions League prelims ruling (Ashwin, 2026-09-18): "I want the ntfy notifications to
+# stop as I'm not going to add any more African teams unless they make the CAF Champions League
+# group stage (not prelims)." A league carrying lookup_gate group_stage in leagues.json (today:
+# only 12, CAF CL) defers the UNMATCHED alert for a team until it reaches the group stage or
+# later, matched here on the api-football league.round string. Matches: "Group Stage - 3",
+# "Group A", "Quarter-finals", "Semi-finals", "Final". Deliberately does NOT match "Preliminary
+# Round", "1st Round", "2nd Round", "1st Preliminary" or "Qualifying" (confirmed against the
+# real CAF CL round strings cached in public/data/football/live-competitions-2026.json on
+# 2026-09-18: "1st Preliminary Round" / "2nd Preliminary Round", neither of which matches).
+MAIN_STAGE_ROUND_RE = re.compile(r"\bgroup\b|\bquarter-?final|\bsemi-?final|\bfinal\b", re.IGNORECASE)
 TRANS = str.maketrans({"ø":"o","Ø":"o","ł":"l","Ł":"l","æ":"ae","Æ":"ae","œ":"oe","ð":"d","þ":"th",
                        "ß":"ss","đ":"d","ı":"i","İ":"i","'":" ","’":" "})
 
@@ -226,6 +237,19 @@ def prune_action(owner, teams_seen):
                   duplicate-id churn (France Aizenay, SS Monopoli, ...) that previously needed manual SQL."""
     if owner is None: return "claim"
     return "collide" if owner in teams_seen else "evict"
+
+def gate_defer(tid, team_league_ids, team_mainstage_leagues, gated_leagues):
+    """CAF Champions League prelims ruling (Ashwin, 2026-09-18). Pure, no network: tid's set of
+    leagues it appeared in this run (team_league_ids) and the subset of those where it reached
+    the group stage or later (team_mainstage_leagues, from a standings row or a fixture round
+    matching MAIN_STAGE_ROUND_RE) decide whether an unresolved team is DEFERRED (no alert) rather
+    than UNMATCHED. Deferred only when every league it appeared in carries the gate AND none of
+    those appearances is main-stage; one appearance in a non-gated league, or one main-stage
+    appearance, puts it back on the normal unmatched path."""
+    lids = team_league_ids.get(tid)
+    if not lids: return False
+    if not lids <= gated_leagues: return False
+    return not team_mainstage_leagues.get(tid)
 
 def load_aliases(skey):
     """dup_team_id -> primary_team_id map from football_team_alias. api-football sometimes
@@ -411,6 +435,32 @@ def selftest():
     assert prune_action(None, {}) == "claim"                          # free slot
     assert prune_action(38, {38: "Watford"}) == "collide"             # holder is live this run -> genuine conflict, alert
     assert prune_action(1582, {10138: "SS Monopoli"}) == "evict"      # holder stale (not seen) -> evict + reclaim
+    # gate_defer: CAF Champions League prelims ruling (Ashwin, 2026-09-18). Cases built from the
+    # real per-league tracking shape main() builds (team_league_ids / team_mainstage_leagues),
+    # not synthetic ones -- see the comment on MAIN_STAGE_ROUND_RE for the real api-football
+    # round strings this was checked against.
+    assert 12 in LOOKUP_GATED_GROUP_STAGE
+    assert MAIN_STAGE_ROUND_RE.search("Group Stage - 3")
+    assert MAIN_STAGE_ROUND_RE.search("Group A")
+    assert MAIN_STAGE_ROUND_RE.search("Quarter-finals")
+    assert MAIN_STAGE_ROUND_RE.search("Semi-finals")
+    assert MAIN_STAGE_ROUND_RE.search("Final")
+    assert not MAIN_STAGE_ROUND_RE.search("Preliminary Round")
+    assert not MAIN_STAGE_ROUND_RE.search("1st Round")
+    assert not MAIN_STAGE_ROUND_RE.search("2nd Round")
+    assert not MAIN_STAGE_ROUND_RE.search("1st Preliminary")
+    assert not MAIN_STAGE_ROUND_RE.search("Qualifying")
+    gated = {12}
+    # (a) CAF prelim-only unmatched team -> deferred, no alert.
+    assert gate_defer(900, {900: {12}}, {}, gated) is True
+    # (b) CAF team with a "Group Stage - 1" fixture -> unmatched (main-stage reached).
+    assert gate_defer(901, {901: {12}}, {901: {12}}, gated) is False
+    # (c) CAF team present in league 12 standings -> unmatched (a standings row IS main-stage).
+    assert gate_defer(902, {902: {12}}, {902: {12}}, gated) is False
+    # (d) team in a CAF prelim AND a non-gated league -> unmatched (one non-gated appearance breaks the defer).
+    assert gate_defer(903, {903: {12, 39}}, {}, gated) is False
+    # (e) a league WITHOUT the gate, "Preliminary Round" fixture -> unmatched (the gate is opt-in).
+    assert gate_defer(904, {904: {39}}, {}, gated) is False
     print("self-test OK")
 
 def nation_row(tid, name):
@@ -459,6 +509,11 @@ def main():
     akey = api_key()
     standings, fixtures, teams_seen = [], [], {}
     national_ids = set()   # api team_ids seen in INTERNATIONAL comps -> nation passthrough
+    # Per-league appearance tracking for the CAF prelims gate (gate_defer): which leagues a
+    # team_id showed up in this run, and the subset of those where it reached the group stage
+    # or later. Built alongside teams_seen rather than derived from it, because teams_seen is
+    # flattened across every league and loses exactly the per-league distinction the gate needs.
+    team_league_ids, team_mainstage_leagues = {}, {}
     empty, errors = [], []
     log(f"refresh start ({len(leagues)} leagues, write={write})")
     for lg in leagues:
@@ -469,7 +524,12 @@ def main():
                 errors.append((lid, doc.get("_error") or doc.get("errors")))
             else:
                 s, tm = parse_standings(doc, lid, season)
-                if s: standings += s; teams_seen.update(tm)
+                if s:
+                    standings += s; teams_seen.update(tm)
+                    for row in s:
+                        tid = row["team_id"]
+                        team_league_ids.setdefault(tid, set()).add(lid)
+                        team_mainstage_leagues.setdefault(tid, set()).add(lid)   # a standings row only exists at group stage or later
                 else: empty.append(lid)
                 if lid in INTERNATIONAL: national_ids.update(tm)
             time.sleep(0.2)
@@ -477,7 +537,15 @@ def main():
             doc = api_get("/fixtures", akey, league=lid, season=season)
             if not (doc.get("_error") or doc.get("errors")):
                 f, tm = parse_fixtures(doc, lid, season)
-                if f: fixtures += f; teams_seen.update(tm)
+                if f:
+                    fixtures += f; teams_seen.update(tm)
+                    for fx in f:
+                        is_main = bool(MAIN_STAGE_ROUND_RE.search(str(fx.get("round") or "")))
+                        for k in ("home_team_id", "away_team_id"):
+                            t = fx.get(k)
+                            if t is None: continue
+                            team_league_ids.setdefault(t, set()).add(lid)
+                            if is_main: team_mainstage_leagues.setdefault(t, set()).add(lid)
                 if lid in INTERNATIONAL: national_ids.update(tm)
             time.sleep(0.2)
     log(f"fetched: standings={len(standings)} fixtures={len(fixtures)} teams_seen={len(teams_seen)} "
@@ -504,7 +572,7 @@ def main():
     existing = {row["team_id"] for row in existing_rows}
     claim = {(r.get("canonical_name"), r.get("country")): r["team_id"] for r in existing_rows}
     new_ids = [tid for tid in teams_seen if tid not in existing]
-    resolved_rows, unmatched, collisions, evicted = [], [], [], set()
+    resolved_rows, unmatched, deferred, collisions, evicted = [], [], [], [], set()
     if new_ids:
         resolve = build_resolver(supa_get("/rest/v1/football_lookup?select=cur_name,team,lookup_name,uefa_name,uefa_name_2,efs_name,api_name,api_name_2,country,level", skey))
         for tid in new_ids:
@@ -525,6 +593,8 @@ def main():
                 continue
             rec = resolve(teams_seen[tid])
             if not rec:
+                if gate_defer(tid, team_league_ids, team_mainstage_leagues, LOOKUP_GATED_GROUP_STAGE):
+                    deferred.append(tid); continue
                 unmatched.append(tid); continue
             canon, country = rec.get("team"), rec.get("country")   # Team is the canonical column
             owner = check_collision(canon, country, tid, claim)
@@ -557,7 +627,7 @@ def main():
         log(f"RECONCILED {dropped} standings row(s) left behind by an api-football table rename")
     nf = supa_upsert("football_fixtures", fixtures, "fixture_id", skey)
     log(f"WROTE: standings={ns} fixtures={nf} | new teams resolved to Lookup={len(resolved_rows)} "
-        f"unmatched={len(unmatched)} collisions={len(collisions)}")
+        f"unmatched={len(unmatched)} deferred={len(deferred)} collisions={len(collisions)}")
 
     if collisions:
         log("=" * 64)
@@ -566,6 +636,13 @@ def main():
         for tid, apiname, canon, country, owner in collisions:
             log(f"  team_id {tid} '{apiname}' -> {canon} ({country}) already held by team_id {owner}")
         log("=" * 64)
+
+    if deferred:
+        # CAF prelims ruling (Ashwin, 2026-09-18): quiet, not silent. No alert, no exit 3, but
+        # every deferred team is still named here so nothing about the hold is invisible.
+        log(f"deferred (CAF prelims, Lookup not required until group stage): {len(deferred)}")
+        for tid in deferred:
+            log(f"  DEBUG deferred team_id {tid}  api-name '{teams_seen[tid]}'")
 
     if unmatched:
         log("=" * 64)
