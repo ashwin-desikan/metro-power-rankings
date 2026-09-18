@@ -1,45 +1,6 @@
 {
-  "generated_at": "2026-09-18T04:15:45.664644+00:00",
+  "generated_at": "2026-09-18T05:07:44.988331+00:00",
   "jobs": [
-    {
-      "id": "gap-league-watch",
-      "label": "Football gap-league watch",
-      "schedule_text": "Daily at 05:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-18T05:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-17",
-        "status": "ok",
-        "slot": "2026-09-17T05:00:00+00:00"
-      }
-    },
-    {
-      "id": "football-standings",
-      "label": "Football live standings",
-      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:00",
-        "11:00",
-        "17:00",
-        "23:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-18T05:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-17",
-        "status": "ok",
-        "slot": "2026-09-17T23:00:00+00:00"
-      }
-    },
     {
       "id": "business-daily",
       "label": "Business markets + FX",
@@ -240,6 +201,27 @@
       }
     },
     {
+      "id": "football-standings",
+      "label": "Football live standings",
+      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00",
+        "11:00",
+        "17:00",
+        "23:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-18T11:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-18",
+        "status": "ok",
+        "slot": "2026-09-18T05:00:00+00:00"
+      }
+    },
+    {
       "id": "predictions-fri",
       "label": "PL + NFL predictions (fresh odds)",
       "schedule_text": "Fri at 11:40 UTC",
@@ -331,6 +313,24 @@
         "date": "2026-09-18",
         "status": "ok",
         "slot": "2026-09-18T04:00:00+00:00"
+      }
+    },
+    {
+      "id": "gap-league-watch",
+      "label": "Football gap-league watch",
+      "schedule_text": "Daily at 05:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-19T05:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-18",
+        "status": "failed",
+        "slot": "2026-09-18T05:00:00+00:00"
       }
     },
     {
