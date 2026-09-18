@@ -1,13 +1,34 @@
 {
-  "generatedAt": "2026-09-17",
+  "generatedAt": "2026-09-18",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-18",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "11cde7faa"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "NBA season hubs, NHL playoff odds, and the season Elo chart shared.",
+      "commit": "2f9a0f0d5"
+    },
     {
       "date": "2026-09-17",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL.",
-      "commit": "577659861"
+      "text": "Data refreshed — Football, Basketball, AFL, NFL, and 1 more.",
+      "commit": "29868a445"
+    },
+    {
+      "date": "2026-09-17",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Live standings: college football events show the CURRENT poll rank.",
+      "commit": "18eb6a0cd"
     },
     {
       "date": "2026-09-16",
@@ -4180,27 +4201,6 @@
       "hub": "Club Football",
       "text": "Ship v0 club pages, league hubs, /sports and metro deep-links.",
       "commit": "78030f224"
-    },
-    {
-      "date": "2026-05-25",
-      "category": "hub",
-      "hub": null,
-      "text": "Workbook sync + wire seven countries + French Guiana sheet flip.",
-      "commit": "0299a1f4a"
-    },
-    {
-      "date": "2026-05-25",
-      "category": "hub",
-      "hub": null,
-      "text": "Workbook sync + wire 5 new countries.",
-      "commit": "bf7326a25"
-    },
-    {
-      "date": "2026-05-25",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Populations.",
-      "commit": "093e11a76"
     }
   ]
 }
