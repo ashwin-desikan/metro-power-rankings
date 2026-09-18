@@ -82,14 +82,14 @@
    "owner_display": "Clearlake Capital Group",
    "owner_key": "clearlake-capital",
    "owner_type": "fund",
-   "stake_label": "~61.5%",
-   "stake_pct": 61.5,
+   "stake_label": "99.9%",
+   "stake_pct": 99.9,
    "confidence": "sourced",
    "co_controllers": "Behdad Eghbali, Jose E. Feliciano",
-   "minority": "Todd Boehly group ~38.5% (incl. Mark Walter ~13% of that group, Hansjorg Wyss)",
-   "note": "Held through BlueCo 22. A 2025-26 standoff over which side buys the other out is unresolved, but Clearlake still controls. Feliciano was separately named control person of the San Diego Padres, MLB-approved 17 Aug 2026.",
-   "source_url": "https://theesk.org/2026/05/06/research-clearlake-capitals-investment-and-lending-exposure-to-chelsea-football-club-blueco-22-limited-22-holdco-limited-group-may-2022-may-2026/",
-   "source_date": "2026-05-06"
+   "minority": "Hansjorg Wyss retains an economic interest, no control",
+   "note": "Held through BlueCo 22. On 16-17 Sep 2026 Clearlake Capital bought out Todd Boehly's and Mark Walter's stakes for a reported combined roughly $950m, becoming sole controlling owner at a reported 99.9%. Boehly stepped down as chairman. Feliciano was separately named control person of the San Diego Padres, MLB-approved 17 Aug 2026.",
+   "source_url": "https://www.cnbc.com/2026/09/17/chelsea-mark-walter-bohely-clearlake-capital.html",
+   "source_date": "2026-09-17"
   },
   {
    "team": "Crystal Palace",
@@ -256,7 +256,7 @@
    "confidence": "contested",
    "co_controllers": "",
    "minority": "Daniel Kretinsky (27%), Vanessa Gold family trust (25.1%), WHU LLC / Tripp Smith (8%)",
-   "note": "CONTROL IN TRANSITION. Sullivan stepped down as chairman in Jun 2026. The Aug 2026 Staveley bids were defeated when existing shareholders exercised pre-emption rights: on 3 Sep 2026 the club confirmed that Daniel Kretinsky, via 1890s Holdings, reached an agreement to acquire enough shares to become the single largest shareholder, reported at about 46%. Sullivan retains a large stake and, per the club, no operational role. The transaction had not closed when this data was compiled.",
+   "note": "CONTROL IN TRANSITION. Sullivan stepped down as chairman in Jun 2026. The Aug 2026 Staveley bids were defeated when existing shareholders exercised pre-emption rights: on 3 Sep 2026 the club confirmed that Daniel Kretinsky, via 1890s Holdings, reached an agreement to acquire enough shares to become the single largest shareholder, reported at about 46%. Sullivan retains a large stake and, per the club, no operational role. The transaction had not closed when this data was compiled. Completion was still pending as of 4 Sep 2026; the club said it would comment no further until all transactions complete, with completion reported for the end of September. After completion 1890s Holdings is reported at 46%, Sullivan about 40% and Tripp Smith about 11%.",
    "source_url": "https://www.insideworldfootball.com/2026/09/04/daniel-kretinsky-ups-west-ham-united-shareholding-to-46",
    "source_date": "2026-09-04",
    "pending_summary": "Kretinsky (1890s Holdings) agreed to buy shares taking him to ~46% and single largest shareholder; Staveley purchase blocked in pre-emption",
@@ -864,7 +864,7 @@
    "confidence": "sourced",
    "co_controllers": "Todd Boehly, Stan Kasten",
    "minority": "Magic Johnson, Peter Guber",
-   "note": "Walter is the control person. He separately bought majority control of the Los Angeles Lakers in Oct 2025 and agreed on 12 Aug 2026 to sell that stake to Josh Kushner and Bob Iger; the Dodgers are not part of that deal. He also holds a stake in Chelsea through the Boehly side of BlueCo.",
+   "note": "Walter is the control person. He separately bought majority control of the Los Angeles Lakers in Oct 2025 and agreed on 12 Aug 2026 to sell that stake to Josh Kushner and Bob Iger; the Dodgers are not part of that deal. He sold his Chelsea stake, previously held through the Boehly side of BlueCo, to Clearlake Capital on 16-17 Sep 2026.",
    "source_url": "https://www.nba.com/news/nba-approves-sale-majority-interest-lakers-mark-walter",
    "source_date": "2025-10-30"
   },
@@ -1408,13 +1408,13 @@
    "confidence": "contested",
    "co_controllers": "",
    "minority": "Glen Taylor (former)",
-   "note": "The NBA Board of Governors unanimously approved the sale on 24 Jun 2025 at roughly $1.5B after Lore and Rodriguez won arbitration against Glen Taylor. Lore is Wolves Governor. SALE PENDING: on 21 Aug 2026 Lore agreed to sell his controlling stake to Marc Stad of Dragoneer at a $4.5B valuation for both franchises, with Lore staying on as a limited partner and Rodriguez increasing his equity to become Co-Chairman. Elisa Stad is the designated Timberwolves governor; Rodriguez remains Lynx governor. The NBA Board of Governors meets 14-15 Sep 2026 in New York, earlier reports having said 15-16 Sep; agenda previews published on 11 Sep did not list the sale, and the deal is not approved until the board votes.",
+   "note": "The NBA Board of Governors unanimously approved the sale on 24 Jun 2025 at roughly $1.5B after Lore and Rodriguez won arbitration against Glen Taylor. Lore is Wolves Governor. SALE PENDING: on 21 Aug 2026 Lore agreed to sell his controlling stake to Marc Stad of Dragoneer at a $4.5B valuation for both franchises, with Lore staying on as a limited partner and Rodriguez increasing his equity to become Co-Chairman. Elisa Stad is the designated Timberwolves governor; Rodriguez remains Lynx governor. The NBA Board of Governors meets 14-15 Sep 2026 in New York, earlier reports having said 15-16 Sep; agenda previews published on 11 Sep did not list the sale, and the deal is not approved until the board votes. As of 18 Sep 2026, no NBA release or official recap of the 14-15 Sep Board of Governors meeting mentions the Stad sale; it is presumed still pending.",
    "source_url": "https://www.espn.com/nba/story/_/id/49681800/sources-stad-reaches-deal-controlling-stake-t-wolves-lynx",
    "source_date": "2026-08-21",
    "pending_summary": "Marc Stad (Dragoneer) buying control from Marc Lore, $4.5bn valuation",
    "pending_when": "NBA Board of Governors meets 14-15 Sep 2026; the sale was not listed in agenda previews",
    "pending_kind": "control sale",
-   "pending_review_by": "2026-09-18"
+   "pending_review_by": "2026-10-16"
   },
   {
    "team": "New Orleans Pelicans",
@@ -3292,13 +3292,13 @@
    "confidence": "contested",
    "co_controllers": "",
    "minority": "Michael Bloomberg, Eric Schmidt",
-   "note": "The Lynx were part of the Timberwolves package, not a separate deal. The NBA Board of Governors approved the $1.5bn sale unanimously in Jun 2025 after Glen Taylor declined to appeal the arbitration ruling, and the buyers took the whole thing rather than the 80% originally planned. Rodriguez is Lynx governor. SALE PENDING: on 21 Aug 2026 Lore agreed to sell his controlling stake to Marc Stad of Dragoneer at a $4.5B valuation for both franchises, with Lore staying on as a limited partner and Rodriguez increasing his equity to become Co-Chairman. Elisa Stad is the designated Timberwolves governor; Rodriguez remains Lynx governor. The NBA Board of Governors meets 14-15 Sep 2026 in New York, earlier reports having said 15-16 Sep; agenda previews published on 11 Sep did not list the sale, and the deal is not approved until the board votes.",
+   "note": "The Lynx were part of the Timberwolves package, not a separate deal. The NBA Board of Governors approved the $1.5bn sale unanimously in Jun 2025 after Glen Taylor declined to appeal the arbitration ruling, and the buyers took the whole thing rather than the 80% originally planned. Rodriguez is Lynx governor. SALE PENDING: on 21 Aug 2026 Lore agreed to sell his controlling stake to Marc Stad of Dragoneer at a $4.5B valuation for both franchises, with Lore staying on as a limited partner and Rodriguez increasing his equity to become Co-Chairman. Elisa Stad is the designated Timberwolves governor; Rodriguez remains Lynx governor. The NBA Board of Governors meets 14-15 Sep 2026 in New York, earlier reports having said 15-16 Sep; agenda previews published on 11 Sep did not list the sale, and the deal is not approved until the board votes. As of 18 Sep 2026, no NBA release or official recap of the 14-15 Sep Board of Governors meeting mentions the Stad sale; it is presumed still pending.",
    "source_url": "https://www.espn.com/nba/story/_/id/49681800/sources-stad-reaches-deal-controlling-stake-t-wolves-lynx",
    "source_date": "2026-08-21",
    "pending_summary": "Marc Stad (Dragoneer) buying control from Marc Lore, $4.5bn valuation",
    "pending_when": "NBA Board of Governors meets 14-15 Sep 2026; the sale was not listed in agenda previews",
    "pending_kind": "control sale",
-   "pending_review_by": "2026-09-18"
+   "pending_review_by": "2026-10-16"
   },
   {
    "team": "New York Liberty",

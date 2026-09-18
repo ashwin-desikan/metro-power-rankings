@@ -1,0 +1,68 @@
+#!/bin/sh
+# Pre-commit gate: a HANDOFF.md entry can't be committed without saying
+# what it changed in Notion.
+#
+# Rule: when the staged diff ADDS lines to HANDOFF.md, at least one added
+# line must start with "Notion:" or "**Notion:**" (optionally preceded by
+# "- " or "### "), e.g.:
+#   **Notion:** Backlog closed X; Decisions added Y
+#   Notion: none (no queryable state changed)
+#
+# Why: HANDOFF.md is the git audit trail; the Notion databases (Backlog,
+# Data sources, Decisions, Editorial calendar) are the queryable half of
+# the same handoff. An entry that never says what moved in Notion is
+# exactly how the two drift apart silently, which is what this check
+# exists to catch.
+#
+# Escape hatch for emergencies: SKIP_NOTION_CHECK=1 prints a loud warning
+# and lets the commit through anyway.
+
+REPO_ROOT=$(git rev-parse --show-toplevel) || exit 0
+
+# Skip on merge commits -- nothing here should block a merge.
+[ -f "$REPO_ROOT/.git/MERGE_HEAD" ] && exit 0
+
+# Fast path: the overwhelming majority of commits never touch HANDOFF.md,
+# so bail immediately rather than shelling out to `git diff -U0` for every
+# commit. --diff-filter=ACMR means a HANDOFF.md deletion or a rename AWAY
+# from HANDOFF.md is not "touched" for this purpose -- there is nothing to
+# check added lines against.
+TOUCHES_HANDOFF=$(git diff --cached --name-only --diff-filter=ACMR -- HANDOFF.md)
+[ -z "$TOUCHES_HANDOFF" ] && exit 0
+
+# Added lines only (unified diff, zero context), with the "+++ b/HANDOFF.md"
+# file header stripped out so it can never be mistaken for content.
+ADDED=$(git diff --cached -U0 -- HANDOFF.md | grep '^+' | grep -v '^+++ ')
+
+# Nothing actually added (e.g. a pure deletion within the file) -- nothing
+# to check.
+[ -z "$ADDED" ] && exit 0
+
+if printf '%s\n' "$ADDED" | grep -Eq '^\+(- |### )?(\*\*Notion:\*\*|Notion:)'; then
+  exit 0
+fi
+
+if [ "$SKIP_NOTION_CHECK" = "1" ]; then
+  echo "" >&2
+  echo "pre-commit WARNING: this HANDOFF.md entry has no Notion: line." >&2
+  echo "  SKIP_NOTION_CHECK=1 is set, so the commit is allowed through" >&2
+  echo "  anyway. This is an emergency escape hatch, not normal practice --" >&2
+  echo "  go back and add the Notion line as soon as you can." >&2
+  echo "" >&2
+  exit 0
+fi
+
+echo "" >&2
+echo "pre-commit REJECTED: this commit adds lines to HANDOFF.md but none" >&2
+echo "  of them say what changed in Notion." >&2
+echo "" >&2
+echo "  Add a line starting with 'Notion:' or '**Notion:**', e.g.:" >&2
+echo "    **Notion:** Backlog closed X; Decisions added Y" >&2
+echo "    Notion: none (no queryable state changed)" >&2
+echo "" >&2
+echo "  See the Notion operating contract page and CLAUDE.md's" >&2
+echo "  'Notion is the source of truth' section." >&2
+echo "" >&2
+echo "  Emergency override: SKIP_NOTION_CHECK=1 git commit ..." >&2
+echo "" >&2
+exit 1
