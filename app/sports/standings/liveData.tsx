@@ -23,6 +23,7 @@ import { getNhlSim, nhlOddsByCanonical, nhlSimIsCurrent } from "@/lib/nhlSim";
 const NHL_SIM_SEASON = 2027;
 import { getCurrentMlbStandings } from "@/lib/mlb-standings";
 import { getMlbSim, getMlbPostseason, playoffOddsByCanonical, fmtOdds } from "@/lib/mlbSim";
+import { getMlbFixtures, type MlbGame } from "@/lib/mlbFixtures";
 import { getSeasonSim, simIsCurrent, simBySlug, simByName } from "@/lib/seasonSim";
 import { getCurrentMlsStandings } from "@/lib/mls-standings";
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
@@ -36,6 +37,7 @@ import { getNflSim, getNflPredictions } from "@/lib/nflSim";
 import { getCfbSim, getCfbPredictions } from "@/lib/cfbSim";
 import { getNflSeeds } from "@/lib/nflElo";
 import { getNpbStandings } from "@/lib/npbStandings";
+import { getNpbFixtures, type NpbGame } from "@/lib/npbFixtures";
 import { getClubStandings, getClubCompetitions, getInternationalComps, getDomesticCups, getSuperCups, getLeagueFixtures, type LiveLeague, type LiveComp, type LiveRow, type LiveFixture, type LiveTeamRef } from "@/lib/clubFootballLive";
 import { deriveLeaguePhaseGroups } from "@/lib/euroCompDerive";
 import { getFootyLiveStandings } from "@/lib/_footyStandings";
@@ -360,7 +362,13 @@ const TODAY_END_LAG_MS = 8 * 3600 * 1000;
 const LIVE_GRACE_MS = 5 * 3600 * 1000;
 const RESULTS_BACK_MS = 72 * 3600 * 1000;
 const TODAY_PER_SPORT = 6;
-const COMING_DAYS = 3;
+// Ashwin, 2026-09-18: widened from 3 to 7. Three days left gaps that read as
+// bugs rather than as quiet weeks: the AFL had both Preliminary Finals inside
+// today's window and its Grand Final a week out, so Aussie Rules vanished from
+// Coming up entirely while the finals were the biggest thing on. A week reaches
+// the next round of a knockout competition, which is the unit these brackets
+// actually move in.
+const COMING_DAYS = 7;
 
 function todayWindow(now: number): [number, number] {
   const d = new Date(now);
@@ -410,8 +418,10 @@ export function collectEvents(groups: SportGroup[], extra: LiveEvent[] = [], fin
   const upcoming = open
     .filter((e) => t(e) >= Math.max(from, now - LIVE_GRACE_MS) && t(e) <= to)
     .sort((a, b) => t(a) - t(b));
-  // The three days after today's window, same rules (Ashwin, 2026-09-11:
-  // "anything that's happening tomorrow, let's just say in the next 3 days").
+  // The week after today's window, same rules. Was three days (Ashwin,
+  // 2026-09-11: "anything that's happening tomorrow, let's just say in the next
+  // 3 days"), widened to seven on 2026-09-18: see COMING_DAYS. Results and the
+  // On today window deliberately stay at three days and today respectively.
   const coming = open
     .filter((e) => t(e) > to && t(e) <= to + COMING_DAYS * 24 * 3600 * 1000)
     .sort((a, b) => t(a) - t(b));
@@ -880,13 +890,34 @@ async function nhlBlock(): Promise<Block | null> {
 }
 
 async function mlbBlock(): Promise<Block | null> {
-  const [s, sim, post] = await Promise.all([getCurrentMlbStandings(), getMlbSim(), getMlbPostseason().catch(() => null)]);
-  // The Today box takes the POSTSEASON only: the ledger is empty until the
-  // bracket exists (Ashwin, 2026-09-11: the playoffs must show, fifteen
-  // regular-season games a day would make the list too long).
-  const events: LiveEvent[] = (post?.ledger ?? []).filter((g) => g.kickoff).map((g) => ({
+  const [s, sim, post, fixtures] = await Promise.all([
+    getCurrentMlbStandings(), getMlbSim(), getMlbPostseason().catch(() => null),
+    getMlbFixtures().catch(() => [] as MlbGame[]),
+  ]);
+  // The Today box took the POSTSEASON only until 2026-09-18 (Ashwin, 2026-09-11:
+  // "the playoffs must show, fifteen regular-season games a day would make the
+  // list too long"). The ledger is empty until the bracket exists, so through
+  // September MLB was absent from all three strips. Ashwin overruled that on
+  // 2026-09-18 and asked for the regular season too, so both sources feed in:
+  // the postseason ledger first, then the live scoreboard (lib/mlbFixtures.ts).
+  //
+  // collectEvents dedupes on league|label|when and takes the FIRST occurrence,
+  // so a postseason game carried by both keeps the ledger's label and league.
+  // Away-first throughout, the convention awayFirst() and the gridiron labels
+  // already use: "Away at Home".
+  const postEvents: LiveEvent[] = (post?.ledger ?? []).filter((g) => g.kickoff).map((g) => ({
     sport: "Baseball", league: "MLB postseason", href: "/teams/mlb", label: `${g.away} at ${g.home}`, when: g.kickoff,
     score: g.result ? awayFirst(g.score) : null, live: false }));
+  const fixtureEvents: LiveEvent[] = fixtures.map((g) => ({
+    sport: "Baseball", league: "MLB", href: "/teams/mlb",
+    label: `${g.away} at ${g.home}`, when: g.when,
+    // Away-first, matching the label. Scores arrive only on a finished game:
+    // lib/mlbFixtures.ts nulls them until then, because ESPN sends "0" on a
+    // fixture that has not started.
+    score: g.state === "post" && g.homeScore !== null && g.awayScore !== null
+      ? `${g.awayScore}–${g.homeScore}` : null,
+    live: g.state === "in", teams: { home: g.home, away: g.away } }));
+  const events: LiveEvent[] = [...postEvents, ...fixtureEvents];
   const teams = Object.values(s.by_canonical);
   if (teams.length === 0) return null;
   // Playoff odds from our own Monte Carlo (scripts/predictions/build_mlb_sim.py).
@@ -1076,8 +1107,20 @@ function uwclBlock(c: Awaited<ReturnType<typeof getWLiveCompetition>>): Block | 
 }
 
 async function npbBlock(): Promise<Block | null> {
-  const [s, sim] = await Promise.all([getNpbStandings(), getSeasonSim("npb")]);
+  const [s, sim, fixtures] = await Promise.all([
+    getNpbStandings(), getSeasonSim("npb"), getNpbFixtures().catch(() => [] as NpbGame[]),
+  ]);
   if (!s || (s.central.length === 0 && s.pacific.length === 0)) return null;
+  // NPB had no events at all until 2026-09-18. SPAIA's schedule endpoint is
+  // TODAY ONLY (see lib/npbFixtures.ts: every date parameter is ignored), so
+  // this fills On today and Recent results and cannot fill Coming up. A short
+  // card is a quiet day, not a truncated feed: 18 Sept was three games because
+  // only the Central League played, which npb.jp's own index confirms.
+  const npbEvents: LiveEvent[] = fixtures.map((g) => ({
+    sport: "Baseball", league: "NPB", href: "/teams/baseball/npb",
+    label: `${g.away} at ${g.home}`, when: g.when,
+    score: g.final ? `${g.awayScore}–${g.homeScore}` : null,
+    live: false, teams: { home: g.home, away: g.away } }));
   // Closes for the Japanese offseason. The feed keeps serving the final table
   // all winter, so without the window this sat open showing a finished season.
   const npbLive = inSeasonWindow("npb");
@@ -1098,7 +1141,7 @@ async function npbBlock(): Promise<Block | null> {
     { title: "Central League", columns: cols, rows: toRows(s.central) },
     { title: "Pacific League", columns: cols, rows: toRows(s.pacific) },
   ].filter((st) => st.rows.length > 0);
-  return { league: "NPB", href: "/teams/baseball/npb", note: npbLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`, open: npbLive, live: npbLive, subTables };
+  return { league: "NPB", href: "/teams/baseball/npb", note: npbLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`, open: npbLive, live: npbLive, subTables, events: npbEvents };
 }
 
 // ---- club football (api-football -> Supabase -> committed bundles) ------
