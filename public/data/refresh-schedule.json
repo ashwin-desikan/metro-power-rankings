@@ -1,46 +1,6 @@
 {
-  "generated_at": "2026-09-18T11:11:38.232236+00:00",
+  "generated_at": "2026-09-18T11:56:03.229252+00:00",
   "jobs": [
-    {
-      "id": "predictions-fri",
-      "label": "PL + NFL predictions (fresh odds)",
-      "schedule_text": "Fri at 11:40 UTC",
-      "cadence": "weekly",
-      "times": [
-        "11:40"
-      ],
-      "weekdays": [
-        5
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-18T11:40:00+00:00",
-      "last_run": {
-        "date": "2026-09-11",
-        "status": "ok",
-        "slot": "2026-09-11T11:40:00+00:00"
-      }
-    },
-    {
-      "id": "cfb-fri",
-      "label": "CFB predictions (grade midweek, add late arrivals, refresh the sim)",
-      "schedule_text": "Fri at 11:40 UTC",
-      "cadence": "weekly",
-      "times": [
-        "11:40"
-      ],
-      "weekdays": [
-        5
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-18T11:40:00+00:00",
-      "last_run": {
-        "date": "2026-09-11",
-        "status": "ok",
-        "slot": "2026-09-11T11:40:00+00:00"
-      }
-    },
     {
       "id": "ops-autofix",
       "label": "Ops autofix (whitelist, acts on production)",
@@ -595,6 +555,46 @@
         "date": "2026-09-18",
         "status": "ok",
         "slot": "2026-09-18T07:30:00+00:00"
+      }
+    },
+    {
+      "id": "predictions-fri",
+      "label": "PL + NFL predictions (fresh odds)",
+      "schedule_text": "Fri at 11:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "11:40"
+      ],
+      "weekdays": [
+        5
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-25T11:40:00+00:00",
+      "last_run": {
+        "date": "2026-09-18",
+        "status": "ok",
+        "slot": "2026-09-18T11:40:00+00:00"
+      }
+    },
+    {
+      "id": "cfb-fri",
+      "label": "CFB predictions (grade midweek, add late arrivals, refresh the sim)",
+      "schedule_text": "Fri at 11:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "11:40"
+      ],
+      "weekdays": [
+        5
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-25T11:40:00+00:00",
+      "last_run": {
+        "date": "2026-09-18",
+        "status": "ok",
+        "slot": "2026-09-18T11:40:00+00:00"
       }
     },
     {
