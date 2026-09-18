@@ -1,123 +1,247 @@
-# Daily Ops Sweep -- 2026-09-17
+# Daily Ops Sweep -- 2026-09-18
 
-Window `2026-09-15T23:04Z` -> `2026-09-17T01:04Z` (trailing 26h), selected on each
-dispatcher.log line's own UTC timestamp. Read-only run: nothing re-run, no data
-written, no healthchecks pinged, nothing fixed. This file is the only thing committed.
+Window `2026-09-16T23:05Z` -> `2026-09-18T01:05Z` (trailing 26h), selected on each
+dispatcher.log line's own UTC timestamp. Read-only run: nothing re-run, no data written, no
+healthchecks pinged, nothing fixed. This file is the only thing committed.
 
-## Jobs this window: 37 ok, 1 failed, 1 flagged
+## Jobs this window: 31 ok, 0 failed, 5 flagged
 
-**Dispatcher: 37 DONE, 1 FAIL, 0 MISSED** (plus this sweep, in flight).
+**Dispatcher: 31 DONE, 0 FAIL, 0 MISSED** (plus this sweep, in flight). First window with no
+job-level failure at all since the sweep started reporting.
 
 | job | runs | result |
 |---|---|---|
-| ops-autofix | 13 | all DONE. Findings: AFL+NRL Action rerun x3 (00:23Z, 02:24Z, 04:24Z, stopped at the attempt cap), mlb-sim rerun 08:23Z (failed again, see Self-healed 1), WNBA Action rerun 14:20Z. Other runs: no findings |
-| claude-auth-canary | 4 | DONE; refresh token valid to 2026-10-08 (21.1 days left, alert at 3) |
-| football-standings | 4 | all DONE; every run still `unmatched=45`, so the UNMATCHED ntfy fired each time (known, see Attention 2) |
-| screen-number-ones | 3 | DONE; "no number-ones change this week" x3, nothing committed |
-| mlb-sim | 2 | **FAIL 07:09Z** (`failed leagues: afl, nrl`), then DONE 14:30Z 450s |
-| activity-feed, euro-comps, gap-league-watch, business-daily, forecast, substack-daily, fiba-weekly, feed-monitor, sound-weekly, nfl-elo, cfb-wed, daily-ops-sweep (09-16) | 1 each | DONE |
+| ops-autofix | 13 | all DONE, every one `no findings; nothing to do`. Nothing was re-run all window |
+| football-standings | 4 | all DONE; every run `unmatched=45`, so the UNMATCHED ntfy fired each time (known, Attention 3) |
+| claude-auth-canary | 4 | DONE; refresh token valid to 2026-10-08, 20.11 days left at 00:35Z (alert at 3) |
+| mlb-sim | 2 | DONE 07:06Z 441s and 14:32Z 458s, **no `failed leagues` on either** (yesterday's watch item, cleared) |
+| gap-league-watch | 1 | DONE; **auto-promoted CONCACAF Nations League** (Self-healed 2) |
+| business-daily, substack-daily, euro-comps, nfl-elo, feed-monitor, activity-feed, daily-ops-sweep (09-17) | 1 each | DONE |
 
-**Job logs checked for pushes from DONE jobs:** gap-league-watch has 4 leagues `awaiting_target`
-and `no state transitions`, so no league-ready push. fiba: no ranking change (men 2026-09-01,
-women 2026-04-01). substack: no new posts. euro-comps: 30 fixtures committed. f1 hourly poll idle
-on `2026 R14 already synced`, which is still correct (no race since Madrid, 11-13 Sep).
-Nothing else pushed an ntfy beyond UNMATCHED.
+**Schedule audit (did anything fail to run rather than fail while running).** 2026-09-17 was a
+Thursday, so the weekday-gated jobs (forecast 1/3/5, predictions-tue, predictions-fri, cfb-sun/wed/fri,
+screen-number-ones 1/2/3, rugby-weekly, cricket-weekly, fiba-weekly, sound-weekly, egress-refresh,
+economy-rates/housing/prices, mktcap-refresh, owners-weekly) were correctly not due, and the two
+`days = [1]` monthly jobs (conflicts-monthly, cricket-monthly) fire on the 1st. Every job that WAS due
+appears in the log. claude-auth-canary's four runs match its actual slots `["00:30","06:30","19:30"]`,
+which look like a gap between 06:30Z and 19:30Z but are not one.
 
-**Newsletter (~/newsletter-podcast):** 09-16 morning pushed 44 of 57 (per-publication cap) and
-published the Spotify episode; 09:30 watchdog `Healthy`; 12:00 retention deleted the one episode
-older than 7 days (2026-09-08), 0 failed; evening appended 4 of 12 (8 skipped on the 6-per-
-publication cap), day holds 48. Normal.
+**Job logs checked for pushes from DONE jobs:** the only ntfy pushes this window were the five
+football UNMATCHED alerts (four on 09-17, one at 23:04Z which lands in the 09-18 log). The
+auth canary logged `no alert` four times. gap-league-watch's auto-promotion pushed **nothing**,
+which is itself a finding (Attention 4). f1 hourly poller idle on `2026 R14 already synced` for all
+27 ticks, which is correct: Madrid was 11 to 13 Sep and the next race is Azerbaijan 24 to 26 Sep
+([formula1.com](https://www.formula1.com/en/racing/2026)).
 
-**GitHub Actions in window:** 3 failed runs, all the ESPN date-range break, all now green (Self-healed 2, 3).
-Every run since 14:23Z 09-16 is `success`.
+**Newsletter (~/newsletter-podcast):** 09-17 morning built a 41:33 episode, published Spotify episode
+`200LqyhJQPeAYzuD6Xs6UV`, pushed 48 of 54 items (per-publication cap) and carried 4 of 09-16's evening
+items forward; 09:30 watchdog `Healthy`; 12:00 retention deleted the one episode older than 7 days
+(2026-09-09), 0 failed; 20:00 evening appended 9 of 12, day holds 57. Normal. The morning draft noted
+it had left The Athletic's Arch Manning story out of `feed.json` by mistake; `push_feed` carried it over
+from 09-16 evening anyway, so it landed.
 
-**Vercel, 09-16 UTC:** 1 paid build (READY `de5721381`, 08:33Z), within the 2/day budget. Every
-other deployment that day was CANCELED `[vercel skip]`. 09-17 so far: 0 paid.
+**GitHub Actions in window:** zero failures. The last two (WNBA 09-16 13:09Z, AFL+NRL 09-16 08:30Z)
+are both before this window and both already reported green in yesterday's sweep.
+
+**Vercel, 09-17 UTC:** 1 paid build (READY `dpl_HeBTthpr...`, sha `2f9a0f0d5`, 22:23Z), within the
+2/day budget. Every other deployment that day was CANCELED, which is free. 09-18 so far: 0 paid.
+
+**Deploy ordering on Ashwin's push, checked because it is the rule that bites:** `b9202b255`
+(scripts, `[vercel skip]`) then `2f9a0f0d5` (app + lib + public/data, untagged) was pushed in that
+order, so the build-relevant commit was HEAD and got its own deployment. Correct.
+
+**Disk:** 106 GB used of 926 GB. Not a factor.
 
 ## Self-healed (informational only, no action needed)
 
-**1. mlb-sim FAIL 07:09Z: healed by the ESPN fix, and the 14:30Z run was clean.** This is exactly
-what yesterday's sweep predicted: ESPN started rejecting hyphenated `dates=A-B` ranges with HTTP 400,
-and `build_season_sims.py` failed AFL and NRL. The other five leagues still built and committed
-(`857a5a840`). ops-autofix's 08:23Z rerun failed too, and that was expected: it started 8 minutes
-before the fix landed. A mini session pushed `e7c8ab06b` at 08:32Z (`[vercel skip]`), which moved
-every Python caller to season, month or per-day queries. It then ran mlb-sim by hand (`750dff2b0`
-08:35Z regenerated `afl-sim.json` and `nrl-sim.json`) and marked the slot
-`MARK-OK ... 'ok (manual)'` at 08:41Z. The scheduled 14:30Z run was DONE with no failed leagues.
-Its commit `1230f7de0` does not touch the AFL/NRL files, and that is correct rather than stale: both
-already carry `generated_at: 2026-09-16`, and no games had been played in between.
+**1. Yesterday's Attention 1 is closed: release notes are current.** `npm run check:release-notes`
+now returns `OK (140 entries, newest 2026-09-17)`. Ashwin's `2f9a0f0d5` carried `lib/releases.ts`
+(+18 lines) in the same commit as the app work, adding both the missing 2026-09-16 entry and one for
+09-17, exactly as the report recommended and without spending a second build. Nothing further needed.
 
-**2. AFL + NRL season refresh: green again.** Run `35038445464` failed at 00:04Z. ops-autofix re-ran
-it three times and it failed each time (attempt 4, 04:25Z), then stopped at the attempt cap as designed.
-A workflow_dispatch at 08:30Z also failed before the fix was pushed. Since the fix it has been
-green four times: 08:32Z (dispatch), 10:28Z, 15:45Z and 00:15Z today, and each run
-committed. This is well ahead of the deadline yesterday's report set (AFL preliminary finals on 09-18).
+**2. gap-league-watch auto-promoted CONCACAF Nations League, and it is right.** At 05:07Z the watch
+moved World L536 from `awaiting_target` to `ready` and promoted it into `leagues.json`
+(`3df23071c`), removing it from `leagues_pending.json`. Verified rather than assumed:
 
-**3. WNBA season refresh: a half-applied fix, fixed the same afternoon.** Scheduled run
-`35100107025` failed at 13:09Z. In `e7c8ab06b`, `wnba_finalize._windows()` got a new docstring but its
-body still built fortnight ranges. On top of that, its self-test asserted the hyphenated form, so
-the test would have rejected a correct fix. Fixed in `de5c233a4` (14:23Z): the function now uses
-months and the self-test forbids a hyphen. The dispatch run `35108248420` at 14:23Z succeeded.
-HANDOFF 2026-09-16 section H has the details. The next scheduled run is 08:00Z today.
+- The promotion is by design. The pending entry carried `auto_promote: true` and
+  `comp_type: "international"`, and `watch_gap_leagues.py`'s self-test asserts that 536 is the **only**
+  id in the file allowed to self-promote, precisely because it is national teams and so carries no
+  club-Lookup risk. The two club competitions beside it (CONCACAF Champions League 16, OFC Champions
+  League 27) stayed human-gated and both correctly read `no season still running`.
+- The trigger was real, not a glitch. `ready_on: "window"` ignores season years and reads dates,
+  because these ids disagree about what a season year means. api-football published a season for 536
+  whose end (`2026-11-11`) has not passed, so the window opened.
+- The data that arrived matches the real competition. Supabase `football_fixtures` holds 90 rows for
+  league 536, first kickoff 2026-09-23, last 2026-11-11. Concacaf has confirmed the 2026/27 Nations
+  League, its fifth edition, starting in September 2026 with the League A group stage running
+  24 Sept to 5 Oct and later rounds in the November window
+  ([concacaf.com](https://www.concacaf.com/competitions/nations-league/news/2026-27-concacaf-nations-league-september-october-schedule-confirmed),
+  [Wikipedia](https://en.wikipedia.org/wiki/2026%E2%80%9327_CONCACAF_Nations_League)).
+- The site will handle it correctly. `liveData.tsx` gives a dedicated standings block only to
+  league_id 5 and 7, but `intlEvents` flat-maps **every** international comp's fixtures into the
+  On today / Upcoming strip under Football > International. So the fixtures appear from 23 Sept with
+  no standings table, which is right: the api reports no standings coverage for this competition on
+  any season it has ever had.
 
-**4. The Recent results strip is live again.** `lib/espnScores.ts` and `lib/wc2026Standings.ts`,
-which yesterday's report flagged as silently returning `[]`, were moved to per-day and per-month
-queries in `de5721381` and deployed READY at 08:33Z. The feed-shape monitor now also has an ESPN
-date-form canary (`144bd511b`). A read-only grep finds no live `dates=A-B` callers left: the
-only hyphenated range in the tree is in a docstring in the one-off `scripts/parse-espn-wc2026.py`.
+One cosmetic wrinkle, no action: api-football labels this campaign season **2025** even though it
+starts in September 2026. The pending entry's note already documents that this id numbers a campaign
+by the year it starts, and that note is now off by one. It changes nothing, because the window
+variant never reads the year and the season number is only used to query the api, which returned the
+right 90 fixtures.
+
+**3. Both of yesterday's "watch today" triggers cleared without firing.**
+- **WNBA season refresh** ran at 13:03Z on the fixed `_windows()` and succeeded (`abac92662`).
+  It found 18 postseason games, so the "0 events" trigger did not fire. It correctly logged
+  `NOT YET: expected 8 postseason teams, found 1 (TBD)` and left the postseason flags untouched,
+  which is the script saying the bracket is not seeded yet rather than a fault.
+- **mlb-sim** ran twice on the new query forms with no `failed leagues` on either run.
 
 ## Needs Ashwin's attention
 
-### 1. 09-16 has no release notes entry, so `npm run verify` now fails
+### 1. Formula E season data is overdue, and the 2026 champion is known
 
-**What happened.** `de5721381` ("Recent results and the World Cup readers follow ESPN's dropped
-date range") changed `lib/` and shipped to production on 09-16. `lib/releases.ts` still ends at
-`2026-09-15`. 09-16 is now an earlier day, so the gate has gone from a warning to a hard failure:
+**What happened.** `npm run check:data-currency` reports `current: 28  overdue: 1`:
 
 ```
-check:release-notes - FAIL: 2026-09-16 shipped 1 build-relevant commit(s) and closed with no entry (newest entry is 2026-09-15).
-    Recent results and the World Cup readers follow ESPN's dropped date range
-RELEASE_NOTES_MISSING
+OVERDUE
+  Formula E season                       has 2025, owes 2026
 ```
 
-**Root cause.** The mini session that fixed the ESPN break wrote a HANDOFF entry but did not add the
-public entry in the same commit, as CLAUDE.md requires. The `/updates drift watcher` Action at
-14:01Z could not catch it, because until midnight 09-16 was "today" and only warned.
+**Root cause.** Not a fault. This is the slow-moving-data case the manifest exists for. The
+`formula-e` entry in `scripts/data/data-currency.json` sets `endsMonthDay: "08-01"` with
+`graceDays: 45`, so it tipped from current to overdue on **2026-09-15**. No scheduled job feeds it:
+the probe reads `scripts/data/motorsport-series.json`, which is hand-kept and whose `formula-e`
+`champions`, `runners_up` and `thirds` lists all still end at `{"year": 2025}`. The check is
+warn-only and exits 0, so nothing blocked and nothing alerted. It was not in yesterday's report
+because that sweep did not run this check.
 
-**Consequence.** Every session's `npm run verify` fails until this is fixed. That blocks
-any frontend work, and a session may then push with the gate red.
+**The real-world fact, verified.** The 2025-26 Formula E World Championship (Season 12) finished at
+the London E-Prix in mid-August 2026. **Pascal Wehrlein (German, Porsche) is the 2026 champion**, his
+second title, with **Jake Dennis (British, Andretti) second, five points behind**
+([Porsche race report](https://racing.porsche.com/en-MY/articles/formulae-london-race-report-2026),
+[FIA](https://www.fia.com/news/abb-fia-formula-e-world-championship-goes-down-wire-london-e-prix),
+[Wikipedia](https://en.wikipedia.org/wiki/2025%E2%80%9326_Formula_E_World_Championship)).
 
-**Recommended fix.** Add a `date: "2026-09-16"` block to the top of `lib/releases.ts`, e.g.
-headline "Recent results show every final again", with one bullet:
-"The Recent results strip on sports standings shows every final score again, after a data provider change had hidden some of them."
-Keep to the build-time limits (4 to 8 word headline, at most 220 characters per bullet, no file names).
-`lib/releases.ts` is build-relevant, so a separate commit costs a paid build. **Batch it into the
-next commit that ships real app work**, not a standalone push. If nothing else is shipping today,
-it is still worth that build to unblock verify. Today (09-17) has 0 paid builds so far.
+**Recommended fix.** Add a 2026 row to each of the three lists for `key: "formula-e"` in
+`scripts/data/motorsport-series.json`. The rows carry only `year` and `nat`, so:
 
-### 2. Build cap still inactive (carried, one more day of evidence)
+- `champions`: `{"year": 2026, "nat": "German"}`
+- `runners_up`: `{"year": 2026, "nat": "British"}`
+- `thirds`: **do not fill this from memory.** I could confirm first and second from primary sources
+  but not third: the standings pages the search surfaced were mid-season snapshots, not the final
+  table. Read third place off the official final Season 12 drivers' standings
+  (fiaformulae.com/en/results-and-standings) before adding the row. Per the project rule, an
+  unresolved case gets logged rather than guessed.
 
-The one 09-16 build log shows `vercel-ignore: build cap inactive (no VERCEL_BUILD_CAP_TOKEN or the
-API did not answer)`. 09-16 stayed in budget only by luck. The fix is unchanged from the 09-13 to 09-16
-reports: add a read-scoped `VERCEL_BUILD_CAP_TOKEN` to project `metro-power-rankings`
-(`prj_eGoUAOrnwvNP86s7p74ruILMl3Dr`), Production, available at build time. Then check that the next build log
-prints a count.
+`scripts/data/` is not build-relevant, so this costs no Vercel build and the commit takes
+`[vercel skip]`. Once all three rows are in, `check:data-currency` returns to 29 current, 0 overdue.
 
-### 3. Football UNMATCHED ntfy, 4x/day, until Friday's Lookup edit (already booked, no action before then)
+### 2. The 2/day build cap is still inactive (fifth consecutive day reported)
 
-All 4 football-standings runs: `unmatched=45`, same set. Booked for **Fri 2026-09-18 on the Windows
-box**. Triage sheet: `~/metro-mini-jobs/pending/unmatched-afc-caf-clubs-2026-09-14.xlsx`. Sync with the
-`cl-lookup-sync` skill, not `sync_lookup.py`.
+**Evidence from today, not carried forward on trust.** The head of the build log for the one paid
+build in this window (`dpl_HeBTthpr1zUfPcVZdhxbmEUzgh5b`, sha `2f9a0f0d5`, 22:23:45Z) reads:
 
-## Watch today (09-17), no action unless the trigger fires
+```
+vercel-ignore: build cap inactive (no VERCEL_BUILD_CAP_TOKEN or the API did not answer)
+vercel-ignore: base '18eb6a0cd...' unreachable; falling back to HEAD^
+vercel-ignore: build-relevant change in 2f9a0f0d5^..2f9a0f0d5; building
+```
 
-- **WNBA season refresh 08:00Z** is the first scheduled run on the fixed `_windows()`. **Trigger:** any
-  failure, or a postseason event count of 0.
-- **mlb-sim** is the first full day on the new query forms. **Trigger:** anything in `failed leagues`.
-- Known gap from HANDOFF 09-16 section H: the date-form canary checks that ESPN's forms still work, not that our
-  callers use them. A caller still on the dead form would not be caught. This is worth a row in the Silent failure register.
+So the path check and the fail-closed base fallback both worked, and the guard made the right call.
+The cap itself made no call at all: it is a no-op, and 09-17 stayed inside budget on volume alone.
+
+**Recommended fix, unchanged since 09-13.** Add a read-scoped Vercel API token as
+`VERCEL_BUILD_CAP_TOKEN` to project `metro-power-rankings`
+(`prj_eGoUAOrnwvNP86s7p74ruILMl3Dr`, team `team_yQjbuPwcr40J6AxkjCv6AawD`), Environment: Production,
+available at build time. Then check the next build log prints a count rather than the inactive line.
+This is the one guardrail from the five overage incidents that is still not actually armed.
+
+### 3. Football UNMATCHED ntfy, 5 alerts this window, Lookup edit is booked for today
+
+All four 09-17 runs plus the 23:04Z run report `unmatched=45`, the same set each time, and each fires
+an ntfy. The 05:09Z run also resolved 36 new teams to the Lookup, and the unmatched count still did
+not move, which is consistent with 45 genuinely missing clubs rather than a matching regression.
+Non-fatal by design: the job warns and continues so the site stays fresh.
+
+**Booked for Friday 2026-09-18 on the Windows box, which is today.** Triage sheet:
+`~/metro-mini-jobs/pending/unmatched-afc-caf-clubs-2026-09-14.xlsx` (with a .csv beside it). Use the
+`cl-lookup-sync` skill, **not** `scripts/apifootball/sync_lookup.py`, which is a DELETE-then-INSERT
+full mirror and would revert rulings applied in Supabase but not in the workbook. No action needed
+before that edit; the alerts will stop on their own once the 45 are mapped.
+
+### 4. A live competition went onto the site unannounced: gap-watch does not notify on promotion
+
+**What happened.** The CONCACAF Nations League auto-promotion in Self-healed 2 added a competition to
+the public site, committed and pushed it, and told nobody. The only reason it is in this report is
+that this sweep reads the job logs.
+
+**Root cause, read from the script.** `mac-mini-jobs/run-gap-league-watch.sh:17-18` defines `push()`
+and then calls it from exactly one place, `fail()`. There is no call on the success path. The Python
+prints `=== AUTO-PROMOTED: ... ===` and `=== TRANSITIONS ===` blocks that exist precisely to be
+noticed, and the wrapper drops them. The job exits 0, dispatcher.log shows `DONE`, healthchecks goes
+green, and a new competition is live.
+
+**Why it matters more than it looks.** This is the exact shape the Silent failure register exists to
+record: a success that changes what the public site shows and produces no signal. It also cuts the
+other way. If a promotion is ever WRONG (the wrong league id, a season that turns out to be stale
+api-football metadata, a competition Ashwin did not want live), the same silence applies, and the
+first notice would be someone reading the page.
+
+**Recommended fix.** In `run-gap-league-watch.sh`, capture the Python output that already goes
+through `tee`, and when it contains `AUTO-PROMOTED` or `=== TRANSITIONS ===`, send one `push` at
+default priority after the push to origin succeeds, with the promoted names and ids in the body.
+Keep it to one notification per run regardless of how many leagues promoted, so this does not become
+the noise problem the sweep exists to reduce. Worth a row in the Silent failure register either way,
+since the class ("a job whose success is a state change nothing announces") is broader than this one
+script.
+
+### 5. Low priority: `football_league.has_standings` in Supabase disagrees with its source of truth
+
+`scripts/apifootball/leagues.json` is the declared source of truth and records league 536 with
+`"has_standings": false`, which is correct: api-football reports no standings coverage on any season
+this competition has had. Supabase `public.football_league` holds `has_standings = true` for the same
+league, with 0 rows in `football_standings`.
+
+**Root cause.** `league_meta_rows()` in `scripts/apifootball/refresh.py:423-430` builds its upsert
+from six fields (`league_id, name, country, level, comp_type, season`) and never includes
+`has_standings`, so a newly inserted row takes the column default instead of the value from
+`leagues.json`. Nothing reconciles them afterwards, so the two can disagree indefinitely.
+
+**Impact today: none.** `export_bundles.py:70` does not select the column, and no file under `app/`
+or `lib/` reads it, so nothing user-facing is wrong. Flagged because it is a source-of-truth claim
+the code does not actually keep, and the next consumer to trust the column inherits the drift.
+
+**Recommended fix.** Add `"has_standings": lg.get("has_standings", True)` to the dict in
+`league_meta_rows()`, matching the same default `watch_gap_leagues.py:239` already uses, then let the
+next `refresh.py --write` correct the existing rows. Scripts-only, `[vercel skip]`, no build.
+
+### 6. Low priority: every international competition in the live bundle is labelled `confederation: "UEFA"`
+
+`public/data/football/live-competitions-2026.json` carries six entries under `international`, and all
+six read `"confederation": "UEFA"`, including the AFC Asian Cup, Africa Cup of Nations Qualification,
+the Concacaf women's World Cup qualifiers and now the CONCACAF Nations League.
+
+**Root cause.** `confed()` in `scripts/apifootball/export_bundles.py:42-50` maps a **country** name to
+a confederation from a 16-entry override table and returns `"UEFA"` for anything unlisted. Its comment
+scopes it to "the tracked domestic leagues", which is accurate for its original use. International
+competitions carry `country: "World"`, which is not in the table, so they all fall through to the
+default. This predates the Nations League promotion; that promotion just added a sixth wrong row.
+
+**Impact today: none.** Nothing in `app/` or `lib/` reads `confederation` off the international
+entries, so it is a dead field. Flagged because it is published, wrong, and one `find` away from
+being believed.
+
+**Recommended fix.** Either drop `confederation` from the international rows in `export_bundles.py`
+rather than emitting a value that cannot be right, or give the international branch its own mapping
+keyed on league_id (5 UEFA, 7 AFC, 36 CAF, 536 and 927 CONCACAF, 880 UEFA). Dropping it is the smaller
+reversible change and nothing consumes it. Scripts-only, `[vercel skip]`.
 
 ## Standing
 
-- The Notion MCP is **not authorized** in this headless session, so the Backlog and the Silent failure register were
-  not read or updated. Authorize it with `/mcp` in an interactive session on the mini if sweeps should use it.
+- The **Notion MCP is still not authorized** in this headless session, so the Backlog, the Data
+  sources rows and the Silent failure register were not read or updated. Findings 4, 5 and 6 above are
+  all register-shaped and have nowhere to go until it is. Authorize once with `/mcp` in an interactive
+  session on the mini.
+- Carried from HANDOFF 09-16 section H and 09-17 section C, unchanged: nothing alerts when a frontend
+  reader swallows an upstream error with `return []`, and the ESPN date-form canary checks that
+  upstream forms work, not that our callers use the working ones.
