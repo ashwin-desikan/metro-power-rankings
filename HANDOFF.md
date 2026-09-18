@@ -15721,3 +15721,49 @@ missed, the first fully clean window**, and flagging Formula E data as overdue. 
 
 **Still open:** Formula E is overdue per the 01:15Z sweep, and `run-gap-league-watch.sh` still calls `push()` only
 from `fail()`, so a promotion goes live silently. A wrong promotion would be equally silent.
+
+### E. MLB and NPB in the event strips, and Coming up widened to a week
+
+All three sit UNPUSHED in the shared tree as of this entry: Ashwin said "wait" on the build. `liveData.tsx` modified,
+`lib/mlbFixtures.ts` and `lib/npbFixtures.ts` new and untracked. Build passes, exit 0. One paid build covers all three
+when he says go.
+
+**Coming up is 7 days, results and On today unchanged.** `COMING_DAYS` 3 to 7. Ashwin then said "keep it at 3 days for
+results and upcoming", which was already true and was verified rather than assumed: `COMING_DAYS` feeds only the
+`coming` filter, results use `RESULTS_BACK_MS` (72h) and On today uses `todayWindow`. Measured by serving the build:
+Coming up 135 to 202 fixtures before baseball, page weight up 0.4%.
+
+**MLB overrules the 2026-09-11 ruling.** That ruling is quoted in `mlbBlock` ("the playoffs must show, fifteen
+regular-season games a day would make the list too long") and is why MLB was invisible all September: the postseason
+ledger has 0 rows until the bracket exists. Ashwin overruled it on 09-18. Both sources now feed the strips, postseason
+ledger first so a bracket game keeps its label, then the live scoreboard.
+
+`lib/mlbFixtures.ts` is ONE REQUEST PER DAY across a 13-day window, not the month form: a month of a 15-game-a-day
+league is far more than the window needs and large enough to worry the 2 MB data-cache item limit. Raw bodies are
+fetched `noStore` (2.4 MB across the window) and the SHAPED result is what `unstable_cache` holds, the same lesson as
+`getCfbStandings`. Confirmed in the build log: the only data-cache warning is the pre-existing `companies.json` one.
+
+🔴 **A bug this caught before shipping: ESPN sends `score: "0"` on games that have NOT been played.** Replaying the
+shaping against the live feed showed tonight's fixtures coming back 0-0, and `collectEvents` treats any event carrying
+a score as a RESULT, so every scheduled game would have rendered as a 0-0 final and vanished from On today. Scores are
+now gated on `state === "post"`, not on the field being present.
+
+**NPB uses SPAIA, not Flashscore.** Ashwin suggested Flashscore; SPAIA returns real JSON, is already trusted here for
+the ladder, and is already shape-checked daily by the mini's feed monitor. Flashscore is JS-rendered and scraping it
+would be fragile and against its terms.
+
+🔴 **SPAIA's `game_schedule` is TODAY ONLY.** `Month`, `DateJPN`, `From`/`To`, `GameKindID`, `LeagueCD`, `TeamID` are
+all ignored: every variant returns the identical rows. So NPB fills On today and Recent results and CANNOT fill Coming
+up. Anyone wanting NPB fixtures further out needs npb.jp's monthly page, which carries the full month as
+Japanese-language HTML and means a real parser, not a quick patch.
+
+Also checked before raising a false alarm: 18 Sept returned three games, all Central League, and npb.jp's own index
+confirms three games that day (Tokyo Dome, Yokohama, Koshien). **A short card is a quiet day, not a truncated feed.**
+
+**Verified live, by serving the build:** On today 20 to 38 fixtures (18 Baseball: 3 NPB, 15 MLB), Recent results 64 to
+113 (49 MLB finals with real scores), Coming up 202 to 293 (91 MLB). `/api/on-today` carries the baseball items too.
+
+**Method note, and it is the fourth this week.** Three times in this session I concluded something was MISSING by
+reading a truncated slice: Aussie Rules "absent" from all strips (it was in On today), and Baseball "absent" from
+Coming up twice, when it sat at offset 14,233 of a 9,000-character read. Each time the executed check said the
+opposite. Grep for the thing itself, or print the whole section; never conclude absence from a prefix.
