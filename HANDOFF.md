@@ -15678,3 +15678,46 @@ Two mistakes worth keeping: the award-order list said "MVP" and the sheet says *
 - NOT DONE, and explicitly asked for: **NFL awards and Pro Bowl in the NFL year hubs.** `build-nfl-data.py` already emits `award-winners.json` and `pro-bowl-counts.json`; they need a by-year slice and a component mirroring `SeasonHonours.tsx`.
 - NOT DONE: validating the NHL sim against NHL.xlsx's own "2026 Projections" logreg Cup odds, which was the agreed benchmark.
 - The mobile probe was NOT rerun after the last few edits (sort keys, season jumper, honours). Typecheck and full verify are green; the 390px numbers are from one revision earlier: season pages 7.0 to 7.7 phone screens, the 2027 shell 3.1, the index 6.7, no page-level horizontal scroll anywhere.
+
+## 2026-09-18 — mini → next session: a SUCCESSFUL promotion failed the job; the season 2025 row is correct; ntfy reviewed
+
+### A. gap-league-watch failed for doing its job right
+
+Failed its 05:00Z slot, ops-autofix re-ran it, it failed again and was left for a human. Fixed in `0731cb049`.
+
+The watcher auto-promoted CONCACAF Nations League on 09-17 (`3df23071c`), so 536 left `leagues_pending.json`
+exactly as designed. The self-test then asserted `{ids with nations_auto} == {536}` against the LIVE file, which a
+successful promotion could only fail. Line 174's `next(e for e in _p if ... == 536)` would have raised
+`StopIteration` immediately after, so fixing the assertion alone just moved the error, and the 323 lookup beside it
+was primed to break the same way the day the Indian Super League promotes.
+
+**Third instance this week of a self-test encoding a transient state as an invariant**, after `wnba_finalize`'s
+fortnight shape and its window assertions. The pattern is now worth naming: a test that pins today's data rather than
+the rule will reject the correct future state, and because it runs as a gate before `--write`, it blocks the fix and
+passes the bug. It now asserts the rule, that nothing skips the club-Lookup gate unless it is a known national-team
+competition, against whatever the file holds.
+
+🔴 **The first rewrite leaked, and an adversarial probe caught it, not review.** Gating on `nations_auto()` meant a
+club competition carrying `auto_promote: true` with `comp_type: "continental"` returned False, dropped out of the
+set, and sailed through the very check meant to stop it. The old `== {536}` form caught that case only as a side
+effect of demanding exact membership. Now gated on the raw `auto_promote` flag, with three planted cases proven to
+fail: continental plus auto_promote, an unknown international id, and no comp_type at all. **Plant a bad row and
+watch the test fail before believing a guard works.**
+
+### B. The `season: 2025` row in leagues.json is CORRECT
+
+Worth writing down because it looks like a bug and is not. api-football labels the CONCACAF Nations League campaign
+that runs 23 Sep to 11 Nov 2026 as season **2025**: id 536 numbers a campaign by the year it STARTS, 880 by the World
+Cup it feeds, 36 by the year it ENDS. `classify`'s window variant takes the season year verbatim and ignores the
+target year, which is why `season_used` is 2025, and `refresh.py:465` passes that same label to `/standings` and
+`/fixtures`. Querying 2026 would return nothing. Do not "fix" this to 2026.
+
+### C. ntfy over the last 12 hours: six messages, nothing unexplained
+
+Two `[ALERT] gap-league-watch FAILED` (05:05Z, 06:29Z) plus the ops-autofix note, all section A. Two
+`football: unmatched team(s) -- add to Lookup` (23:04Z, 05:07Z), the standing Neftchi / Johor Darul Takzim backlog
+that Friday's Windows session is booked to clear. One Daily Ops Sweep at 01:15Z reporting **31 jobs ran, 0 failed, 0
+missed, the first fully clean window**, and flagging Formula E data as overdue. No unexplained pages.
+
+**Still open:** Formula E is overdue per the 01:15Z sweep, and `run-gap-league-watch.sh` still calls `push()` only
+from `fail()`, so a promotion goes live silently. A wrong promotion would be equally silent.
