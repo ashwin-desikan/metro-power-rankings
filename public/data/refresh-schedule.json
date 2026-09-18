@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-09-18T07:27:40.090263+00:00",
+  "generated_at": "2026-09-18T07:43:44.915224+00:00",
   "jobs": [
-    {
-      "id": "economy-rates",
-      "label": "Policy rate refresh (/business/economy)",
-      "schedule_text": "Fri at 07:30 UTC",
-      "cadence": "weekly",
-      "times": [
-        "07:30"
-      ],
-      "weekdays": [
-        5
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-18T07:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-11",
-        "status": "ok",
-        "slot": "2026-09-11T07:30:00+00:00"
-      }
-    },
     {
       "id": "nfl-elo",
       "label": "NFL live Elo, seeds, odds (and the bracket in Jan/Feb)",
@@ -595,6 +575,26 @@
         "date": "2026-09-16",
         "status": "ok",
         "slot": "2026-09-16T11:40:00+00:00"
+      }
+    },
+    {
+      "id": "economy-rates",
+      "label": "Policy rate refresh (/business/economy)",
+      "schedule_text": "Fri at 07:30 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:30"
+      ],
+      "weekdays": [
+        5
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-25T07:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-18",
+        "status": "ok",
+        "slot": "2026-09-18T07:30:00+00:00"
       }
     },
     {
