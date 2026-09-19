@@ -28,6 +28,12 @@ const ALLOWED_TAGS = new Set([
   "economy-housing",    // economy-housing.sh (mac-mini-jobs), Saturdays 07:30 UTC
   "economy-prices",     // economy-prices.sh (mac-mini-jobs), Sundays 07:30 UTC
   "nfl-elo",            // nfl-elo.sh (mac-mini-jobs), 08:00 UTC daily in season: lib/nflElo.ts
+  // lib/nbaElo.ts tags every season shard "nba-elo" and is GitHub-raw-first on
+  // a 24h ISR, but the tag was never listed here, so there was no way to flush
+  // it and an NBA data correction waited out the full day. Found 2026-09-19
+  // pushing the 2024 Mavericks/Clippers fix, when the flush returned "unknown
+  // tag" while its NFL twin above worked.
+  "nba-elo",            // NBA season shards rebuilt from the workbook: lib/nbaElo.ts
   "nfl-playoffs",       // nfl-elo.sh, January and February: lib/nflPlayoffs.ts
   "owners",             // run-owners-weekly.sh (mac-mini-jobs), Mondays 08:30 UTC: lib/teamOwners.ts
   "majors",             // majors-ingest.yml, 05:30 UTC daily: lib/majors.ts

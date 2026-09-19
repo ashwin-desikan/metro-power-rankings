@@ -16449,3 +16449,26 @@ test, verified comment-only before tagging `[vercel skip]`.
 **Notion:** Backlog row "NBA Elo: 8 team-seasons disagree" closed, with the correction that it was 10 and that the
 2024 pair was one workbook error; a new row filed for "NBA.xlsx still has the 2024 Mavericks/Clippers first round as
 4-3 and the Clippers postseason as 2-3; fix at source so the build overrides become no-ops".
+
+### R. Nothing could flush the NBA data cache, and nobody knew
+
+Found while shipping section Q. The corrected 2024 data went to GitHub raw fine, but the flush came back
+`{"ok":false,"error":"unknown tag"}`.
+
+`lib/nbaElo.ts` tags every season shard `nba-elo` and is GitHub-raw-first on a 24h ISR, which is what makes an NBA
+data refresh free of a build. But `nba-elo` was never added to `ALLOWED_TAGS` in `app/api/revalidate/route.ts`, even
+though its exact twin `nfl-elo` is listed one line above. So there has never been a way to flush NBA data, and every
+NBA correction since that lib was written has quietly waited out the full 24 hours. Nothing failed loudly; the data
+just took a day.
+
+Now listed. 🔴 **It is INERT until the next build**, because the allowlist is code rather than data, and it was
+committed `[vercel skip]` rather than spending a fourth paid build on a one-line convenience. Nothing is withheld by
+that: the section Q data correction ships from raw and reaches production on the ordinary ISR window either way. This
+only makes the NEXT NBA correction promptable.
+
+The lesson is narrower than "add the tag": a cache tag and its allowlist entry are two halves of one thing, and this
+repo has no check that they match. `lib/nflElo.ts` and `lib/championsCurrent.ts` happen to be complete. Worth a
+check that every `tags: [...]` in lib/ appears in ALLOWED_TAGS, which would have caught this the day it was written.
+
+**Notion:** Backlog row filed for "the nba-elo revalidate tag is listed but inert until the next build", and another
+for "no check that a lib's cache tag appears in ALLOWED_TAGS; nba-elo was missing for the life of lib/nbaElo.ts".
