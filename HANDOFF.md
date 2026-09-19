@@ -16472,3 +16472,34 @@ check that every `tags: [...]` in lib/ appears in ALLOWED_TAGS, which would have
 
 **Notion:** Backlog row filed for "the nba-elo revalidate tag is listed but inert until the next build", and another
 for "no check that a lib's cache tag appears in ALLOWED_TAGS; nba-elo was missing for the life of lib/nbaElo.ts".
+
+## 2026-09-19 (evening) - windows (Cowork, cloud bridged to the Windows box) -> mini and next session: FORECAST HUBS BUILT ON A LOCAL BRANCH (NOT PUSHED), NOTION RECONCILED, THREE PAID BUILDS TODAY
+
+No paid build from this session. Nothing on main changed except this entry.
+
+### A. Build count, and a correction to section O
+
+Vercel `list_deployments` for 2026-09-19 UTC: THREE READY production builds, 09:06 `dda64bbb1` (the Saturday "mktcap: weekly Top Companies refresh", untagged by design), 11:33 `80e1d5671`, 13:05 `d2c3f82e6`. Section O names the first build as `18eb6a0cd`; that build ran on 2026-09-17 11:06. The Saturday mktcap commit takes a slot every week, so Saturdays have ONE spare build, not two. The cap is still inactive (`VERCEL_BUILD_CAP_TOKEN`, Ashwin's P0 row). 2026-09-13 had seven builds and 2026-09-15 had four.
+
+### B. Forecast hubs package: local branch `feature/forecast-hubs`, commit `b5b46f601`, NOT pushed, NOT on main
+
+Ashwin asked for a competitive read of prediction.com, Underdog and Carlo De Marchis's YouTube Football Tracker, then chose this package first and ruled "build locally, hold the push". Order for the rest: midterms map, sign-in gate, daily data recap.
+
+- `app/predictions/_shared/ForecastHeadline.tsx`: one sentence above the first board of every hub ("The Buffalo Bills have a 10.8% chance to win Super Bowl LXI"), 7-day change from the sim-history file, sparkline, one MONO context line. UCL has no history file, so no movement row there.
+- `app/predictions/_shared/HeatBoard.tsx`: generic group / column / tile board on the `--seq` tokens; NFL hub gets 8 divisions by 4 teams in a Disclosure plus a HubNav chip. Tint steps 10 to 45 percent; a stronger `--seq-5` mix drops `var(--text)` below 4.5:1 (3.7:1 at 60 percent).
+- `app/predictions/_shared/Movers.tsx`: largest 7-day title swing per league on `/predictions`.
+- Every hub's `PredHeader sub` is now one reading-key clause under 20 words; the method text already stands in each page's sources section.
+
+Measured on a production build served locally, `probe-mobile` at concurrency 1: `/predictions` 4.8 screens (4.3 on 09-03), nfl 3.7 (3.4), cfb 3.8 (3.6), mlb 2.6 (2.3), pl 2.8 (2.5), ucl 2.7 (2.5); 6/6 clean at 390px. tsc clean, `next build --webpack` compiled, check:mobile, check:sortable, check:table-scroll, check:client-imports, check:data-reads OK. NOT run: vitest and the full `npm run verify` (run it before the merge).
+
+**To ship:** on Ashwin's yes, merge the branch into main with the `lib/releases.ts` entry for the shipping day IN THE SAME COMMIT, as the LAST commit of the push. That build also makes the `nba-elo` revalidate tag live (section R).
+
+**Why a branch and not a dirty tree:** this clone has `pull.rebase` set, so `git pull --ff-only` refuses with "cannot pull with rebase: You have unstaged changes". Six modified files blocked every pull on this box. The work was committed on a new local branch and main switched back clean. A non-main branch without `[preview]` does not build, so a later push of the branch is free.
+
+### C. Notion had drifted inside one day of the contract
+
+Sections J, L, Q and R each end with a `**Notion:**` line that names Backlog rows. A query of rows created on 2026-09-19 found NONE of six: the Hundred strand conflict, the cricket `is_current` producer, footy_finalize anon (add and close), the NBA.xlsx source fix, the inert `nba-elo` tag, the cache-tag check. Two rows stayed open that the entries closed ("NBA Elo: 2 of the 2024 team-seasons", "Formula E data is overdue"). `cricket-champions` had no Scheduled jobs row. The reverse also occurred: the `BUILT_DATE` fix (`3586981f0`) is Done in Notion and has no HANDOFF record.
+
+The pre-commit hook proves that the line exists. It does not prove that the writes happened. A session that loses the Notion connector after it wrote the line leaves a false receipt. Cheap guard worth a row: the reconciler should compare each `**Notion:**` line with rows created that day.
+
+**Notion:** Backlog closed 2 (NBA Elo 2024 pair, Formula E overdue); Backlog added 11 (NBA.xlsx source fix, nba-elo tag inert, cache-tag check, CPL first-promotion watch, Hundred honours row, forecast hubs [In progress], midterms map, sign-in gate, daily data recap, model-against-market board, small items bundle); Scheduled jobs added `cricket-champions` (not yet verified against the live jobs.toml); Decisions added "The champions tables are read with the service key".
