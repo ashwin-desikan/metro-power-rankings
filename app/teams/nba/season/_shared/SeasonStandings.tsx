@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { NbaEloTeam } from "@/lib/nbaElo";
 import SortableBoard, { type BoardCol, type BoardRow } from "@/app/_shared/SortableBoard";
 import { useThroughWeek } from "./WeekScrubber";
-import { winPct, confKey, divKey, recordsAtWeek } from "./standingsSort";
+import { winPct, confKey, divKey, recordsAtWeek, regularSeasonEndWeek } from "./standingsSort";
 
 // One season's table, as it stood after the scrubbed week.
 //
@@ -59,6 +59,18 @@ const signed = (n: number) => `${n > 0 ? "+" : ""}${Math.round(n)}`;
 
 export default function SeasonStandings({ teams, slugByName = {}, colorByName = {}, cup = null }: Props) {
   const through = useThroughWeek();
+  // 🔴 TWO COLUMNS CHANGE MEANING WITH THE SCRUB (Ashwin, 2026-09-19).
+  // `through` is null on the final standings. On any earlier week the last
+  // column is the rating change over THAT WEEK, not the year-over-year number,
+  // and the header says which one it is. Week 0 is the preseason seed, where
+  // "last week" is the end of last season, so it keeps the year label.
+  const weekMode = through != null && through > 0;
+  // The stored seed is the FINAL playoff seed. It is only true once the regular
+  // season is over, so it is withheld on every earlier week rather than shown
+  // as if it were that week's seeding. Week-by-week seeds need an engine that
+  // knows each era's format; until it exists a blank is the honest cell.
+  const regEnd = useMemo(() => regularSeasonEndWeek(teams), [teams]);
+  const seedsFinal = through == null || (regEnd != null && through >= regEnd);
 
   const shown = teams
     .map((t) => ({ t, w: atWeek(t, through) }))
@@ -84,7 +96,10 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
     { key: "team", label: "Team", sortable: true },
     { key: "conf", label: "Conf", right: false, sortable: true, demote: "sm" },
     { key: "div", label: "Division", sortable: true, demote: "md" },
-    { key: "seed", label: "Sd", short: "Sd", right: true, sortable: true, title: "Playoff seed" },
+    { key: "seed", label: "Sd", short: "Sd", right: true, sortable: true,
+      title: seedsFinal
+        ? "Final playoff seed"
+        : "Final playoff seed, shown once the regular season is complete" },
     { key: "reg", label: "Regular", right: true, sortable: true,
       title: "Regular-season record" },
     { key: "post", label: "Playoffs", right: true, sortable: true, demote: "sm",
@@ -99,8 +114,10 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
     // now reports where the team finished against where it finished LAST
     // season, so it spans the offseason and answers the question a year-end
     // table is actually asked: did they get better or worse.
-    { key: "yoy", label: "vs Last", right: true, sortable: true, demote: "sm",
-      title: "Rating at the end of this season against the end of the previous one" },
+    { key: "yoy", label: weekMode ? "vs Last Wk" : "vs Last Yr", right: true, sortable: true, demote: "sm",
+      title: weekMode
+        ? "Rating change over this week"
+        : "Rating at this point against the end of the previous season" },
   ];
 
   const boardRows: BoardRow[] = shown.map(({ t, w }) => {
@@ -126,7 +143,13 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
     // Both halves must exist: an upcoming shell has no `end`, a first season
     // has no `prev_end`. Either way there is no year-over-year number, which
     // is a real absence rather than a zero.
-    const yoy = t.prev_end != null && t.end != null ? t.end - t.prev_end : null;
+    // Against `w.e`, not `t.end`: on the final standings they are the same
+    // number, and at week 0 this reads the offseason reset without borrowing a
+    // rating from later in the season.
+    const yoy = weekMode
+      ? (w.chg ?? null)
+      : t.prev_end != null ? w.e - t.prev_end : null;
+    const seed = seedsFinal ? (t.seed ?? null) : null;
     const name = `${t.city ?? ""} ${t.team ?? t.name}`.trim();
     const colour = colorByName[t.name] ?? null;
 
@@ -161,7 +184,7 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
         team: name,
         conf: confKey(t.conf, at.reg),
         div: divKey(t.conf, t.div, at.reg),
-        seed: t.seed ?? 99,
+        seed: seed ?? 99,
         // Percentage rather than wins, so a 60-game season and an 82-game one
         // rank on the same scale.
         reg: winPct(at.reg) ?? -1,
@@ -174,7 +197,7 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
         nameCell,
         <span key="conf" className="text-xs text-[var(--text-muted)]">{t.conf ?? "—"}</span>,
         <span key="div" className="text-xs text-[var(--text-muted)]">{t.div ?? "—"}</span>,
-        <span key="sd" style={{ fontFamily: MONO }}>{t.seed ?? "—"}</span>,
+        <span key="sd" style={{ fontFamily: MONO, color: seed == null ? "var(--text-dim)" : undefined }}>{seed ?? "—"}</span>,
         <span key="reg" style={{ fontFamily: MONO }}>{rec(at.reg)}</span>,
         <span key="post" style={{ fontFamily: MONO, color: at.post ? undefined : "var(--text-dim)" }}>
           {rec(at.post)}
@@ -202,13 +225,13 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
             {rec(at.reg)}
             {at.post ? <span className="text-[var(--accent)]"> +{rec(at.post)}</span> : null}
             {t.div ? <span> · {t.div}</span> : null}
-            {t.seed ? <span> · seed {t.seed}</span> : null}
+            {seed ? <span> · seed {seed}</span> : null}
           </span>
         ),
         right: <span style={{ fontFamily: MONO }}>{Math.round(w.e)}</span>,
         rightSub: (
           <span style={{ fontFamily: MONO }} className="text-[11px]">
-            {yoy == null ? "—" : `${signed(yoy)} yr`}
+            {yoy == null ? "—" : `${signed(yoy)} ${weekMode ? "wk" : "yr"}`}
           </span>
         ),
         highlight: Boolean(t.flags?.champ),

@@ -135,4 +135,25 @@ export function recordsAtWeek(
   return { reg, post: p, total: rec };
 }
 
-
+/**
+ * The first week by which EVERY team has played its whole regular season, or null
+ * when that cannot be told (an upcoming season, a team with no `reg`).
+ *
+ * The stored `seed` is the final playoff seed, which is only a fact from this week
+ * on. The week that closes the regular season usually also holds the first playoff
+ * games (2001: week 25 ends 04-22, the season ended 04-18), so the test is "at
+ * least the regular-season total", not "exactly".
+ */
+export function regularSeasonEndWeek(
+  teams: { reg?: Record2; weeks: { w: number; rec?: [number, number] | null }[] }[],
+): number | null {
+  let end: number | null = null;
+  for (const t of teams) {
+    if (!t.reg) return null;
+    const games = t.reg[0] + t.reg[1];
+    const hit = t.weeks.find((w) => w.rec && w.rec[0] + w.rec[1] >= games);
+    if (!hit) return null;
+    if (end == null || hit.w > end) end = hit.w;
+  }
+  return end;
+}
