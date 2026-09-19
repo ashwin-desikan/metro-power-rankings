@@ -16,6 +16,8 @@ import ExpectationTowers from "../_shared/ExpectationTowers";
 import WhatIsLeft from "../_shared/WhatIsLeft";
 import TeamCell, { type TeamIdent } from "../_shared/TeamCell";
 import { seasonHasHonours } from "../_shared/HonoursStrip";
+import SeasonHonours from "../_shared/SeasonHonours";
+import { getNflSeasonAwards } from "@/lib/nflSeasonHonours";
 import SeasonStandings, { type StandingsTeam } from "../_shared/SeasonStandings";
 import { WeekScrubberProvider, WeekScrubberControl } from "../_shared/WeekScrubber";
 import SeedTimeline, { type SeedTimelineTeam } from "../_shared/SeedTimeline";
@@ -173,6 +175,24 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
   // board in November would rank three weeks of football against a finished
   // season, so the board waits until a champion is flagged in the workbook.
   const bestGames = data.complete ? getTopGamesForYear(season) : [];
+  // 🔴 ERA NAMES. The awards file is keyed by canonical franchise, so its own
+  // display name is TODAY'S: Earl Campbell, 1980, "Tennessee Titans". This
+  // season's shard knows what each club was called that year, so it wins.
+  const eraName = new Map(data.teams.map((t) => [t.name, `${t.city ?? ""} ${t.team ?? t.name}`.trim()]));
+  const seasonAwards = (data.complete ? getNflSeasonAwards(season) : []).map((a) => {
+    // 🔴 KNOWN WORKBOOK FAULT, measured 2026-09-19: the Awards sheet files every
+    // ST. LOUIS CARDINALS All-Pro of 1960 to 1987 under the canonical "Rams" (301
+    // rows under Rams, ZERO under Cardinals, in 28 seasons; Dan Dierdorf, Larry
+    // Wilson and Jackie Smith all read as Rams). Real Los Angeles Rams picks sit in
+    // the same bucket, so the two cannot be told apart here. A wrong club is worse
+    // than none: those rows show the player and position only, until column J of
+    // the Awards sheet is corrected, when this guard becomes a no-op to remove.
+    if (a.award === "All-Pro" && a.canonical === "Rams" && season >= 1960 && season <= 1987) {
+      return { ...a, team: null, slug: null };
+    }
+    const era = eraName.get(a.canonical);
+    return era ? { ...a, team: era } : a;
+  });
 
   const wk1 = seeded && upcoming?.season === season
     ? upcoming.schedule.filter((g) => g.p_home != null).sort((a, b) => (a.date || "").localeCompare(b.date || ""))
@@ -387,6 +407,29 @@ export default async function NflSeasonPage({ params }: { params: Promise<{ year
               </tbody>
             </table>
           </TableScroll>
+        </section>
+      ) : null}
+
+      {/* -------------------------------------------------------- honours */}
+      {seasonAwards.length ? (
+        <section className="mb-12">
+          <SectionHead
+            id="honours"
+            title="The honours"
+            sub="Who won what, as the workbook records it."
+            more={
+              <p>
+                Every other section on this page is a club. These are the
+                people: the year-end individual awards and every All-Pro
+                selection, all as the workbook records them. Pro Bowl selections
+                are not shown here: the workbook only carries a career total per
+                franchise for those, with no year attached to slice by season.
+              </p>
+            }
+          />
+          <div className="mt-4">
+            <SeasonHonours awards={seasonAwards} />
+          </div>
         </section>
       ) : null}
 
