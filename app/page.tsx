@@ -18,6 +18,7 @@ import { getRecentDigestItems, entityHref } from '@/lib/digestFeed';
 import { topicsFor, type TopicKey } from '@/lib/digestTopics';
 import { facetHref } from '@/lib/digestFacets';
 import { DigestItemRow, entityLabel, fmtDigestDate } from './digest/_shared/ui';
+import SubscribeCta from './_shared/SubscribeCta';
 import HeadlineTicker from './HeadlineTicker';
 import OnTodayTicker from './OnTodayTicker';
 
@@ -855,6 +856,14 @@ export default async function Home() {
             </ul>
           </div>
         </section>
+      )}
+
+      {digest.length > 0 && digestDate && (
+        <div className="px-4 sm:px-6 lg:px-8 pt-10">
+          <div className="max-w-7xl mx-auto">
+            <SubscribeCta variant="home" latestPost={posts[0]} />
+          </div>
+        </div>
       )}
 
       {/* The Atlas */}

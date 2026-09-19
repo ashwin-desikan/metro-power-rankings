@@ -11,6 +11,7 @@ import { Disclosure, ShowMore } from "@/app/_shared/Disclosure";
 import { storyChips, storyThemes, type DigestFacets, type FacetGroup } from "@/lib/digestFacets";
 import WhatsOn from "./WhatsOn";
 import EventsColumn from "./EventsColumn";
+import SubscribeCta from "@/app/_shared/SubscribeCta";
 import { FilterRail } from "./FilterRail";
 
 // Shared shell for /digest and /digest/[date], plus the story row reused by the
@@ -319,6 +320,8 @@ export function DigestDayView({
       </section>
 
       <DigestArchive dates={dates} current={day} />
+
+      <SubscribeCta variant="digest" className="mb-6" />
 
       <DigestSources />
     </main>
