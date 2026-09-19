@@ -15880,3 +15880,63 @@ missing entirely (MLB regular season overrules postseason-only, Coming up 7 days
 CFB labels carry the current lead poll rank, NPB from SPAIA not Flashscore); Backlog added "NPB results history and
 fixtures beyond today need an npb.jp monthly-schedule parser"; Silent failure register added "A feed's field exists on
 every row and is null on every row, so the reader takes the wrong one" under Still silent.
+
+### D. The ntfy trail led to a hardcoded "today" that has been rejecting rate decisions for eleven days
+
+Ashwin asked for the ntfy of the last 24 hours to be examined and anything wrong fixed. Two messages, and the quiet
+one mattered.
+
+**What the ntfy said.** 01:21Z daily ops sweep (34 jobs ok, 1 failed, 1 flagged) and 09:00Z mktcap curation queue. The
+FAIL was `gap-league-watch`, already closed same-day by `0731cb049`. The flagged job was the real finding.
+
+**The first fault: a swallowed exit code.** `economy-rates` logged `DONE ok 361s` and went green on 09-18 while
+`refresh.py` printed `3 builder(s) FAILED` and `sys.exit(1)`. `_common.sh` sets `set -uo pipefail` in the runner's
+shell, but pipefail is a shell option a new `bash -c` does not inherit, so `guarded()` received `tee`'s status.
+Verified on this box rather than taken from the report: the idiom returns 0 with a failing python inside and 1 the
+moment `set -o pipefail;` is added. Fixed in `eb3d5fa61`.
+
+**My own fix was dead code, and the re-run proved it.** The `builder(s) FAILED` watcher I added sat AFTER the guarded
+step, and `guarded()` calls `fail()` which exits immediately, so it could never run on the one run that needed it. The
+only alert Ashwin got was the generic `step failed (rc=1): refresh policy rates (--write)`. Moved into an EXIT trap in
+`92f1432dc`, rehearsed in isolation first, and the duplicate copy left by a failed edit removed.
+
+🔴 **The real fault, and it is live: `BUILT_DATE` is a hardcoded literal.** With the log kept, the re-run named the
+three failures for the first time:
+
+```
+bis-dk:    change on 2026-09-11 is after the build date 2026-09-08
+build_fed: change on 2026-09-17 is after the build date 2026-09-08
+build_ecb: change on 2026-09-16 is after the build date 2026-09-08
+```
+
+`common.py:22` is `BUILT_DATE = "2026-09-08"  # today, per the environment`. `common.py:588` refuses to publish any
+change dated after it, so **the ECB hike to 2.50 (effective 09-16), Denmark's to 2.10 (09-11) and the Fed's 09-17 move
+are all rejected**, and `/business/economy` still reads 2.25% from 2026-06-17 (checked live). It also sets the
+incremental fetch window at `refresh.py:537-538`, so the job asks upstream for a window that ended eleven days ago AND
+refuses what does arrive. `refresh.py --self-test` passes: nothing pins the constant, nothing warns when it rots.
+
+**Two wrong diagnoses corrected, one of them mine.** The sweep concluded "a re-run with the log kept fixes the data";
+it cannot, because the builders compute the new values correctly and the publish guard then refuses them. I then
+restated it as "the base inputs need rebuilding", which was also wrong: the base inputs refreshed fine today
+(`ecb_dfr.csv` 11:01), it is the constant that is stale.
+
+**NOT changed, deliberately.** `BUILT_DATE` drives eleven call sites including the `built` stamp in every bank file
+and `index.json`, `trailing_365_changes`, `print_stale_without_ended` and the BIS splice tails in
+`build_boe`/`build_boj`/`build_snb`, and `refresh.py` writes to Supabase. That is a ruling, not a drive-by: P0 Backlog
+row filed, owner Ashwin.
+
+**Also open from the sweep, neither actionable here:** Formula E still owes a 2026 champion row (third place needs the
+official final table), and the Vercel build cap could not be re-verified because the MCP token returns 403 on
+`projectEnvVars`. The FIFA women's world ranking is one edition behind: `public/data/rankings/womens-football.json` is
+`asOf 2026-04-21` and FIFA published 16 June, 151 days against a 150-day limit in `scripts/data/data-currency.json`.
+`check:data-currency` is warn-only, so it alerted nobody; confirmed by running it (27 current, 2 overdue).
+
+**Coming up is back to three days** at Ashwin's request, with results and On today untouched as before. Built and
+verified; unpushed with the NPB score fix, both waiting on one paid build.
+
+One process note: the sweep could not write Notion at all (connector unauthorized in a headless session), so the row
+its own finding 1 deserved had nowhere to go. That gap is closed from this session.
+
+**Notion:** Backlog added "BUILT_DATE in scripts/macro/rates/common.py is a hardcoded 2026-09-08 and is silently
+rejecting every rate decision since" (P0 watch, owner Ashwin); Silent failure register added "A \"today\" constant is
+hardcoded, so a publish guard silently rejects everything newer than the day it was written" under Still silent.
