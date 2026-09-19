@@ -1,13 +1,27 @@
 {
-  "generatedAt": "2026-09-18",
+  "generatedAt": "2026-09-19",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-19",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "ff1f0f016"
+    },
     {
       "date": "2026-09-18",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL.",
-      "commit": "11cde7faa"
+      "text": "Data refreshed — Football, Basketball, Elections, AFL, and 3 more.",
+      "commit": "2e755eec7"
+    },
+    {
+      "date": "2026-09-18",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Live standings: MLB and NPB in the event strips, Coming up out to a week.",
+      "commit": "8ea042238"
     },
     {
       "date": "2026-09-17",
@@ -4187,20 +4201,6 @@
       "hub": "Sports",
       "text": "Ship v0 plus polish — maps, filters, badges, deep links.",
       "commit": "f2af29b4b"
-    },
-    {
-      "date": "2026-05-25",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Ship v0 club pages, league hubs, /sports and metro deep-links.",
-      "commit": "a8da9372f"
-    },
-    {
-      "date": "2026-05-25",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Ship v0 club pages, league hubs, /sports and metro deep-links.",
-      "commit": "78030f224"
     }
   ]
 }
