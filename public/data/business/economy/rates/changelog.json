@@ -1,5 +1,35 @@
 [
   {
+    "bank": "fed",
+    "date": "2026-09-17",
+    "level": 3.875,
+    "change": 0.25,
+    "source": "own",
+    "era_name": "Fed funds target range",
+    "kind": "policy",
+    "built": "2026-09-19"
+  },
+  {
+    "bank": "ecb",
+    "date": "2026-09-16",
+    "level": 2.5,
+    "change": 0.25,
+    "source": "own",
+    "era_name": "Deposit facility rate",
+    "kind": "policy",
+    "built": "2026-09-19"
+  },
+  {
+    "bank": "bis-dk",
+    "date": "2026-09-11",
+    "level": 2.1,
+    "change": 0.25,
+    "source": "bis",
+    "era_name": "interest rate of the certificates of...",
+    "kind": "policy",
+    "built": "2026-09-19"
+  },
+  {
     "bank": "bis-nz",
     "date": "2026-09-03",
     "level": 2.75,
