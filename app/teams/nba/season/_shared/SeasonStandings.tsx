@@ -107,7 +107,15 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
     .filter((r) => r.w != null) as { t: NbaEloTeam; w: NonNullable<ReturnType<typeof atWeek>> }[];
   if (!shown.length) return null;
 
+  // 🔴 THE BADGES ARE OUTCOMES, SO THEY FOLLOW THE SCRUB LIKE THE SEED DOES. A
+  // CHAMPION pill on a January row tells the reader how the season ends. Before
+  // the regular season is over nobody has a badge; once it is, a playoff team
+  // is a playoff team; how far each one went is a fact of the final standings.
   const honours = (t: NbaEloTeam) => {
+    if (through != null) {
+      if (!seedsFinal) return null;
+      return t.flags?.play_app ? { label: "Playoffs", bg: "#3a3a3a", fg: "#cfcfcf" } : null;
+    }
     if (t.flags?.champ) return { label: "Champion", bg: "#d4af37", fg: "#1a1408" };
     if (t.flags?.champ_app) return { label: "Finals", bg: "#a07a30", fg: "#fff" };
     if (t.flags?.cf_app) return { label: "Conf. Finals", bg: "#5b5b5b", fg: "#fff" };
@@ -264,7 +272,7 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
             {yoy == null ? "—" : `${signed(yoy)} ${weekMode ? "wk" : "yr"}`}
           </span>
         ),
-        highlight: Boolean(t.flags?.champ),
+        highlight: through == null && Boolean(t.flags?.champ),
       },
     };
   });

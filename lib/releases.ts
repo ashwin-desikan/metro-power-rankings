@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-20",
+    headline: "Forecasts that lead with the answer",
+    items: [
+      "Every prediction hub now opens with one sentence naming the favourite and its chance, with the move over the past week. The NFL hub adds a division heat board, and the index lists the week's biggest movers.",
+      "NBA season pages show the playoff seeds as they stood each week, once every team has played five games. The slider now sits between the chart and the table, and both state the date it is set to.",
+      "NFL season pages gain the year's award winners and every All-Pro selection, under the names the clubs carried that season.",
+      "The homepage and the daily digest carry a link to subscribe to the essays on Substack, and Writing joins the About menu.",
+    ],
+  },
+  {
     date: "2026-09-19",
     headline: "College football ranks, and the NBA week slider",
     items: [
