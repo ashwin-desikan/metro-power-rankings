@@ -16072,3 +16072,31 @@ watch if it waits, since the mini's jobs ff-only merge into this clone.
 
 **Notion:** Decisions added "The NBA Cup final counts as a postseason game for standings tracking"; Backlog row "NBA
 Elo: 8 team-seasons disagree..." narrowed to the 2 the Cup does not explain.
+
+### I. Formula E was never blocked on third place, and it is now current
+
+Ashwin: "why do you keep asking about the 2026 Formula E champion? It's already completed in August." He was right to
+push back, and the fault was mine twice over: I relayed the ops sweep's line about it on two consecutive days without
+checking either half of it.
+
+**The sweep's reason was wrong.** It said third place "still needs the official final table, which is why yesterday's
+sweep stopped rather than guessing". But `probeMotorsport` in `check-data-currency.mjs` takes the MAX year across
+`champions`, `runners_up` and `thirds` in `scripts/data/motorsport-series.json`. Any one of the three clears the
+warning, so the champion alone would always have been enough. Nobody had read the probe.
+
+**And the data was obtainable.** The 2025-26 FIA Formula E World Championship ended in August 2026: Pascal Wehrlein
+(German, Porsche) champion, his second; Jake Dennis (British, Andretti) runner-up; Mitch Evans (New Zealander, Jaguar)
+third. Wikipedia carries the full podium in its lead paragraph. The rows in this file hold only `year` and `nat`, so
+the whole fix was three lines.
+
+`check:data-currency` now reports **29 current, 0 overdue**, for the first time since the manifest was written.
+
+**Knock-on worth knowing:** `scripts/zzc_v1_multipillar.py` scores nations from the same file (champion 1.0, runner-up
+0.5, third 0.25), so the next manual Zone Zero Cup rebuild will move Germany, Great Britain and New Zealand slightly.
+That sits alongside the existing Backlog row about the next rebuild moving five nations.
+
+**The lesson, which is the same one as section G:** an inherited finding is not evidence. The sweep is a useful alarm
+and a poor diagnosis, and I passed its reasoning on twice without opening the probe it was describing.
+
+**Notion:** none (no queryable state changed; the currency manifest and series file are repo data, and the Formula E
+row was a warning rather than a Backlog item).

@@ -2367,6 +2367,10 @@
         {
           "year": 2025,
           "nat": "British"
+        },
+        {
+          "year": 2026,
+          "nat": "German"
         }
       ],
       "runners_up": [
@@ -2413,6 +2417,10 @@
         {
           "year": 2025,
           "nat": "New Zealander"
+        },
+        {
+          "year": 2026,
+          "nat": "British"
         }
       ],
       "thirds": [
@@ -2459,6 +2467,10 @@
         {
           "year": 2025,
           "nat": "German"
+        },
+        {
+          "year": 2026,
+          "nat": "New Zealander"
         }
       ]
     },
