@@ -1,31 +1,6 @@
 {
-  "generated_at": "2026-09-19T07:44:21.926791+00:00",
+  "generated_at": "2026-09-19T08:10:00.702580+00:00",
   "jobs": [
-    {
-      "id": "nfl-elo",
-      "label": "NFL live Elo, seeds, odds (and the bracket in Jan/Feb)",
-      "schedule_text": "Daily at 08:00 UTC (Jan/Feb/Sep/Oct/Nov/Dec)",
-      "cadence": "daily",
-      "times": [
-        "08:00"
-      ],
-      "weekdays": [],
-      "months": [
-        1,
-        2,
-        9,
-        10,
-        11,
-        12
-      ],
-      "days_of_month": [],
-      "next_run": "2026-09-19T08:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-18",
-        "status": "ok",
-        "slot": "2026-09-18T08:00:00+00:00"
-      }
-    },
     {
       "id": "ops-autofix",
       "label": "Ops autofix (whitelist, acts on production)",
@@ -289,6 +264,31 @@
         "date": "2026-09-13",
         "status": "ok",
         "slot": "2026-09-13T07:30:00+00:00"
+      }
+    },
+    {
+      "id": "nfl-elo",
+      "label": "NFL live Elo, seeds, odds (and the bracket in Jan/Feb)",
+      "schedule_text": "Daily at 08:00 UTC (Jan/Feb/Sep/Oct/Nov/Dec)",
+      "cadence": "daily",
+      "times": [
+        "08:00"
+      ],
+      "weekdays": [],
+      "months": [
+        1,
+        2,
+        9,
+        10,
+        11,
+        12
+      ],
+      "days_of_month": [],
+      "next_run": "2026-09-20T08:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-19",
+        "status": "ok",
+        "slot": "2026-09-19T08:00:00+00:00"
       }
     },
     {
