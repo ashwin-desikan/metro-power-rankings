@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-19T22:19:13.221042+00:00",
+  "generated_at": "2026-09-19T22:39:29.589706+00:00",
   "jobs": [
-    {
-      "id": "cricket-champions",
-      "label": "Cricket champion promotion",
-      "schedule_text": "Daily at 22:30 UTC",
-      "cadence": "daily",
-      "times": [
-        "22:30"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-19T22:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-18",
-        "status": "missed",
-        "slot": "2026-09-18T22:30:00+00:00"
-      }
-    },
     {
       "id": "football-standings",
       "label": "Football live standings",
@@ -307,6 +289,24 @@
         "date": "2026-09-13",
         "status": "ok",
         "slot": "2026-09-13T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "cricket-champions",
+      "label": "Cricket champion promotion",
+      "schedule_text": "Daily at 22:30 UTC",
+      "cadence": "daily",
+      "times": [
+        "22:30"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-20T22:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-19",
+        "status": "ok",
+        "slot": "2026-09-19T22:30:00+00:00"
       }
     },
     {
