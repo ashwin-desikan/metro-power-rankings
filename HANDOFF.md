@@ -16156,10 +16156,16 @@ published `next_awarded_date` for the CPL. Locally, `champions-history.json` 6,8
 `champions-current.json` 97 to 106. The board now carries 14 of the 15 cricket competitions, all but Lanka Premier
 League.
 
-**Regenerating it without the builder, and why that is safe.** `build_champions.py` needs `requests`, which no
-interpreter on this machine has. Rather than install one, the reproduction was proved first: filtering
-`champions-history.json` to `isCurrent` and re-serialising with the same separators is BYTE-IDENTICAL to the committed
-`champions-current.json`. So the current board is exactly that subset and can be rebuilt by hand with confidence.
+**Regenerating it without the builder, and why that is safe.** The reproduction was proved before being relied on:
+filtering `champions-history.json` to `isCurrent` and re-serialising with the same separators is BYTE-IDENTICAL to the
+committed `champions-current.json`, so the board is exactly that subset and can be rebuilt by hand with confidence.
+
+CORRECTION, made the same day in section L: the stated REASON for doing it by hand was wrong. I wrote that
+`build_champions.py` needs `requests` and no interpreter here has it, having tested only the system pythons. The repo
+has a venv at `.venv/bin/python` with requests 2.34.2, which every cricket runner already uses. The hand edit was
+right and is now independently confirmed: `build_champions.py --check` run against Supabase reports BYTE-IDENTICAL to
+`champions-history.json` and 106 unchanged holders, which validates the inserted T20 Blast row's position and the
+minted next-title dates.
 
 **The trap in doing it by hand, which nearly shipped wrong.** Flipping `isCurrent` is not a one-field edit.
 `to_row()` also MINTS `nextAwardedDate` as the award date plus a year and appends `nextAwardedEstimated: true`
@@ -16183,8 +16189,93 @@ re-fire every day at 12:15 UTC until the tree is clean.
 **Worth recording because I nearly concluded the opposite:** there is no `config.env` and no `logs/` directory in this
 checkout, which made it look like this machine was not the mini and therefore could not be the source of the alert.
 The test that settled it was `_scratch/`, which `.gitignore:169` excludes and git does not track: files in it were
-written at 11:09 today, so they cannot have arrived by pull and a job must have run here. Absence of the config file
-is not absence of the jobs.
+written at 11:09 today, so they cannot have arrived by pull and a job must have run here.
+
+And the reason the config is absent is now known, found while building the job in section L: **the jobs run from a
+LIVE directory, `~/metro-mini-jobs/`, not from the repo.** dispatcher.py copies `*.py`, `*.sh` and `*.toml` from
+`mac-mini-jobs/` into it and deliberately never copies back, because `config.env`, `state.json`, `dispatcher.log` and
+the lock belong only there. `REPO_DIR` then points the runners back at this clone, which is why a dirty tree here
+stops a job that lives somewhere else. A runner edited in the repo is NOT live until that copy happens, and
+dispatcher.py has a drift check for exactly that.
 
 **Notion:** none (no queryable state changed; the finding was our own working tree and clears when it is committed or
 stashed).
+
+### L. Cricket champions now promote themselves
+
+Ashwin, after section J: "Add a job to promote cricket champions automatically". Section J fixed the ten competitions
+that were missing; this is the producer that keeps them right, and it is what section J's Backlog row asked for.
+
+**What was already there, and why none of it could be used.** Three candidate sources were checked before writing
+anything:
+
+- `cricket_matches` (the cricsheet staging the weekly job already refreshes) is TEST CRICKET ONLY. Its 2024-2026 rows
+  are tours, the Ashes and the WTC final; there is not one T20 league or county match in it.
+- The honours strand in Supabase (`source='honours/cricket-t20.json'`) has the T20 leagues, but nothing refreshes it:
+  `load_champions.py` is a manual one-off and `public/data/honours/cricket-t20.json` does not exist in the repo at
+  all. It was a snapshot, not a feed.
+- `.github/workflows/honours-county-cricket.yml` covers one competition, once a year, and writes only the honours
+  roll.
+
+So the detector had to be new: **`scripts/ingest/cricket_finalize.py`**, modelled on `footy_finalize.py` down to the
+dry-run-by-default, the `--self-test`, and the refusal to invent.
+
+**It reads the SEASON article's infobox, not the competition's.** The competition article does carry `champions`, but
+with no season and no date, and it cannot tell a side retaining its title from a page nobody has edited. The season
+article carries champion and final date together. Measured across all eleven competitions on 2026-09-19, the parse
+reproduced the ledger EXACTLY, dates included, for IPL, BBL, CPL, T20 Blast, County Championship, PSL, SA20, BPL,
+ILT20, Super Smash and The Hundred. Eleven confirmations of rows that reached the ledger by a completely different
+route is the reason to trust it.
+
+**Two traps found by testing, both of which would have written a wrong champion:**
+
+1. 🔴 **A year with no season article redirects to the COMPETITION article**, whose infobox `champions` field is the
+   REIGNING champion. Left alone, the job would re-crown the current holder for a season not yet played, every night.
+   Today's markup happens to save it (no `todate`, so the date check refuses), but that is an accident and not a
+   design. They are now told apart by template name: all eleven season articles use `Infobox cricket tournament`,
+   while the competition article uses `Infobox cricket tournament main`. That case is a SILENT skip, not an alert,
+   because it is the normal state of next season for most of the year.
+2. 🔴 **The men's and women's competitions share an article.** The Hundred's infobox reads "'''W''': Trent Rockets
+   ... '''M''': Manchester Super Giants", women FIRST. Taking the first name would have recorded the women's champion
+   as the men's. `GENDER_MARKER` handles it, and a missing marker refuses rather than falling back.
+
+That second one also **settles the Backlog row from section J**: the 2025 season article reads "'''M''': Oval
+Invincibles (3rd title)", so the workbook was right, the honours strand's "MI London" is the wrong row, and the
+promotion in section J took the correct one. The Hundred's women's competition is not tracked in the ledger at all,
+which is a separate question and not a bug.
+
+**What it refuses to do,** the same rule footy_finalize.py follows: a first-time champion whose metro cannot be
+resolved from that competition's own history, a champion with no readable final date, a final dated in the future,
+and a competition with no history to template from are all REFUSED and reported. The runner raises an ntfy on any of
+them. Proved live by monkeypatching the ledger a season behind: County Championship 2025, T20 Blast 2026 and BBL
+2025/26 were all detected with the right champion, metro, season label and exact date, and The Hundred 2026 correctly
+refused, because Manchester Super Giants had never won it before and a metro is curation, never a guess.
+
+**Two incidental fixes were needed to make it work at all:**
+
+- `build_champions.py` read its key only from `scripts/mktcap/supabase_key.txt`, which is gitignored and NOT PRESENT
+  in this clone, so any runner calling it died on FileNotFoundError before reading a row. It now falls back to
+  `SUPABASE_SERVICE_KEY`, which config.env already carries.
+- Its `source` filter now includes `cricket-finalizer`, exactly as `footy-finalizer` was added, or the promoted rows
+  would sit in the table and never reach the JSON.
+
+🔴 **ANON READS ARE DEAD ON THIS PROJECT, WHICH IS A PROBLEM BEYOND CRICKET.** The legacy anon key AND the
+publishable key both return 401 on `champions` (both tested directly). `footy_finalize.py` reads as anon on every
+path, so **the AFL and NRL finalizer would 401 today**, and the AFL Grand Final is days away. cricket_finalize.py
+reads with the service key for this reason. This was not chased down further because it is outside what was asked,
+but it should be, and soon.
+
+Registered as `cricket-champions` in jobs.toml, daily at 22:30 UTC, `runners/cricket-champions.sh`. Daily because
+cricket finals are scattered from January to September and a weekly slot would leave a champion off the board for up
+to six days; the cost on a quiet day is eleven Wikipedia reads and one select. No `hc_slug`: the budget is full, and
+this is the same trade that retired the football-standings tile. NO BUILD, ever: the board reads
+`champions-current.json` from GitHub raw, so a champion ships on a `[vercel skip]` commit plus a tag flush.
+
+**NOT LIVE UNTIL IT IS COPIED.** Per section K, the dispatcher runs from `~/metro-mini-jobs/`, so
+`runners/cricket-champions.sh` and `jobs.toml` have to be copied there before 22:30 UTC or nothing fires. The first
+real test is the CPL final on 20 September 2026, Antigua and Barbuda against Jamaica, which is the day after this was
+written.
+
+**Notion:** Backlog row added for "footy_finalize.py reads as anon and anon is 401 on this project, so the AFL/NRL
+finalizer is probably broken with the Grand Final days away"; the section J row about the two cricket strands is
+resolved (the workbook was right) and can be closed.

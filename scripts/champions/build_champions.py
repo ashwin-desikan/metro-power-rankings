@@ -27,6 +27,7 @@ import argparse
 import datetime
 import io
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -52,8 +53,31 @@ GOLF_HISTORY_NAME = {
     "The Open Championship": "The Open Championship",
 }
 URL = "https://nmprqkmymrdknffwnuur.supabase.co"
-KEY = (ROOT / "scripts" / "mktcap" / "supabase_key.txt").read_text(encoding="utf-8").strip()
-H = {"apikey": KEY, "Authorization": f"Bearer {KEY}"}
+def _key():
+    """The service key, from the untracked file or from the environment.
+
+    The file is the original source and stays first. The env fallback exists
+    because the file is gitignored and simply is not present in the mini's
+    clone, so a runner calling this script died on FileNotFoundError before
+    reaching a single row. config.env already carries SUPABASE_SERVICE_KEY for
+    every other job, so the fallback needs no new secret anywhere.
+    """
+    f = ROOT / "scripts" / "mktcap" / "supabase_key.txt"
+    if f.exists():
+        return f.read_text(encoding="utf-8").strip()
+    k = (os.environ.get("SUPABASE_SERVICE_KEY") or os.environ.get("SUPABASE_WRITE_KEY") or "").strip()
+    if not k:
+        raise SystemExit("no Supabase key: create scripts/mktcap/supabase_key.txt "
+                         "or set SUPABASE_SERVICE_KEY")
+    return k
+
+
+KEY = _key()
+# Only a JWT belongs in Authorization; an sb_secret_ key is an apikey and is
+# rejected as a Bearer token.
+H = {"apikey": KEY}
+if KEY.count(".") == 2:
+    H["Authorization"] = f"Bearer {KEY}"
 SOURCE = "champions-history.json"
 
 # Exact key order of the original writer. Do not sort.
@@ -112,7 +136,12 @@ def fetch():
         # base stream for the same reason.
         r = requests.get(f"{URL}/rest/v1/champions", headers=H, timeout=120,
                          params={"select": COLUMNS + ",source,id",
-                                 "source": f"in.(\"{SOURCE}\",\"footy-finalizer\",\"majors-ingest\")",
+                                 # cricket-finalizer (scripts/ingest/cricket_finalize.py)
+                                 # joins for the same reason footy-finalizer did: an
+                                 # automatically promoted cricket champion must reach
+                                 # /sports/champions and the Time Machine, not just sit
+                                 # in the table. Added 2026-09-19.
+                                 "source": f"in.(\"{SOURCE}\",\"footy-finalizer\",\"majors-ingest\",\"cricket-finalizer\")",
                                  "order": "source_ordinal.asc,id.asc",
                                  "limit": 1000, "offset": offset})
         r.raise_for_status()

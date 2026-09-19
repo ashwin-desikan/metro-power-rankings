@@ -502,6 +502,29 @@ hc_slug = "cricket-monthly"
 catchup_hours = 20
 timeout_minutes = 20
 
+[[job]]
+id = "cricket-champions"        # no plist; born on the dispatcher 2026-09-19
+label = "Cricket champion promotion"
+time = "22:30"                  # UTC. Late enough to catch a UK evening final
+                                 # (County Championship, T20 Blast, The Hundred)
+                                 # and an IPL or PSL final in India or Pakistan
+                                 # the SAME day; an Australian or NZ final from
+                                 # that morning is already hours old. Daily, so
+                                 # the worst case anywhere is about a day.
+command = "runners/cricket-champions.sh"
+# NO hc_slug ON PURPOSE. The healthchecks budget is full, and this is the same
+# trade that retired the tiles for football-standings and gap-league-watch: the
+# job runs every day, so a single missed slot is re-observed within 24 hours,
+# and the thing actually worth knowing about (a champion the finalizer refuses
+# to guess at) raises its own ntfy from the runner rather than relying on a
+# tile going red. Revisit if a slug frees up.
+catchup_hours = 12              # a missed evening slot is still worth running
+                                 # the next morning; beyond that the next
+                                 # scheduled run covers it anyway
+timeout_minutes = 15            # eleven Wikipedia reads, one Supabase select,
+                                 # and only on a champion day the emit + push
+
+
 # --- BATCH 8: egress-refresh. Last of the 14, "nothing new". ---------------
 # Health was unknown before today (exit 126 since 2026-08-02, unexplained).
 # RESOLVED 2026-08-07: root cause was a macOS Full Disk Access gate on
