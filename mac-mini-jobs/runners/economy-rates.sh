@@ -104,8 +104,48 @@ guarded "bootstrap own-source base inputs (restores any that are missing)" boots
 # DECISIONS" block afterward without refresh.py needing to know anything
 # about how this mini alerts.
 REFRESH_LOG="$(mktemp)"
+# 🔴 `set -o pipefail;` INSIDE the bash -c is load-bearing. _common.sh sets
+# `set -uo pipefail` in the RUNNER's shell, but pipefail is a shell option and a
+# new `bash -c` process does not inherit it, so guarded() received tee's status
+# instead of python's. Measured on this box 2026-09-19: the idiom without it
+# returns 0 with a failing python inside, and 1 the moment this is added.
+#
+# What that cost: on 2026-09-18 refresh.py printed "3 builder(s) FAILED" and
+# sys.exit(1)'d exactly as designed, and the job still logged DONE ok 361s, went
+# green on healthchecks and sent no ntfy. The ECB hike to 2.50 effective 09-16
+# and Denmark's to 2.10 on 09-11 never reached the site (the live page still read
+# 2.25% from 2026-06-17), and 37 bis-* files stayed stale from 09-11. The one
+# mechanism meant to make a builder failure loud was disabled by the pipe that
+# captures the log.
 guarded "refresh policy rates (--write)" \
-  bash -c "\"$PY\" scripts/macro/rates/refresh.py --write | tee \"$REFRESH_LOG\""
+  bash -c "set -o pipefail; \"$PY\" scripts/macro/rates/refresh.py --write | tee \"$REFRESH_LOG\""
+
+# A FAILED BUILDER MUST NOT BE SILENT, even if the pipefail fix above ever
+# regresses. There were watchers for "NEW RATE DECISIONS" and for unreachable
+# sources, but none for "builder(s) FAILED", so the fail-open notification path
+# had nothing to match on 09-18 and the only signal was an exit code that was
+# being thrown away. Belt and braces, deliberately: the guard above should now
+# fail the step, and this says WHICH builders went down while we still have the
+# log, because the per-builder tracebacks are otherwise unrecoverable (this
+# mktemp is deleted below, and dispatcher.py keeps only 12 tail lines).
+if grep -q "builder(s) FAILED" "$REFRESH_LOG"; then
+  WHICH="$(grep -E "^builder .*: FAILED" "$REFRESH_LOG" | head -10)"
+  [ -n "$WHICH" ] || WHICH="(no per-builder lines in the log; read the job output)"
+  note "BUILDERS FAILED this run:"
+  note "$WHICH"
+  # Keep the evidence. A copy under logs/ survives the mktemp cleanup and the
+  # dispatcher's 12-line tail, so the next session can read the real traceback
+  # instead of inferring which builders died from output-file mtimes.
+  # $MINI_DIR/logs, not a $LOGDIR: _common.sh defines no such variable, and under
+  # its `set -u` an undefined one would abort the runner at exactly the moment a
+  # builder failed, which is the worst possible time to add a second fault.
+  mkdir -p "$MINI_DIR/logs"
+  KEEP="$MINI_DIR/logs/economy-rates-refresh-$(date +%F).log"
+  cp "$REFRESH_LOG" "$KEEP" 2>/dev/null && note "full refresh log kept at $KEEP"
+  "$PY" "$MINI_DIR/notify.py" "Policy rates: builder(s) FAILED" \
+    "$WHICH
+Published files may be stale. Full log: $KEEP" 1 || true
+fi
 
 commit_paths "Auto: policy rates refresh [vercel skip]" \
   public/data/business/economy/rates
