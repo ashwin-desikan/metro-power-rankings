@@ -15972,3 +15972,60 @@ one, which is the actual objection.
 
 **Notion:** Decisions added "The KHL is not wired into Live Standings: not worth a bespoke scraping job", carrying the
 access findings and the full 22-club crosswalk so the investigation is not repeated.
+
+### F. Seven Live Standings and NBA fixes, and a verification habit that wasted half of them
+
+Shipped as `80e1d5671`, one paid build, all seven verified on production from a FRESH render.
+
+**Upcoming is three days again.** `COMING_DAYS` 7 to 3 after a day at a week: the week bought volume, not reach (135
+fixtures to 293, mostly domestic league games nobody looks a week ahead for). Results and On today were never touched.
+
+**The Football strips are ordered.** They rendered in `collectEvents` emission order, so the Premier League could sit
+below the Taca de Portugal. `FOOTBALL_EVENT_ORDER` keys the supranational entries by COMPETITION and the domestic ones
+by COUNTRY, so a country's cups travel with its league (Coppa Italia under Italy) and a new competition in a listed
+country needs no edit. `LiveEvent` gained an optional `country`. Production now reads Premier League, La Liga, Serie A,
+Bundesliga, Ligue 1, then MLS, Brazil, Argentina, Mexico, then the unlisted.
+
+**Brazil, Argentina and Liga MX carry fixtures and results**, registry rows only (`191f805ab`). The 11:00Z job had
+already committed a TEN-league bundle from a SEVEN-league registry, so a clean checkout would have reverted it.
+
+**Argentina's Clausura and Uruguay's four missing tables are back.** `dedupeLeague` dropped any group whose TEAM SHEET
+matched an earlier one, with a comment asserting Apertura/Clausura were safe; the same clubs contest both halves, so it
+ate them. Keyed on the table's values now, Clausura first, seven new tests including the duplicate-spelling case the
+rule exists for.
+
+**Continental tables on the 2026-27 hub are closed** by default: 88 details, zero `open`.
+
+**NPB results exist at all.** `lib/npbFixtures.ts` read SPAIA's `HScore`/`VScore`, null on every row, so `final` was
+permanently false from the day it shipped. The score is `H_Score_R`/`V_Score_R` and completion is `GameStateID` 4.
+
+**The FIFA ranking is the June edition**, header corrected and ranks 191-198 appended. `check:data-currency` 2 overdue
+to 1.
+
+**The NBA scrubber moves the records, not just the Elo.** `recordsAtWeek` splits the week's cumulative `rec`. Week 17
+of 2026 reads 38-17 with no playoff cell, week 26 reads 62-20 and 1-1, the final week 62-20 and 13-11. Play-in games
+are postseason (Ashwin), so the subtraction applies at every week; production shows `13-11` and no `13-10`. Two bugs
+the tests caught first: a zero difference at the exact end of the regular season printed the season's 13-10 for a team
+with no playoff game yet, and one of my own tests asserted a fallback that never fires.
+
+🔴 **Documented, not hidden:** 8 of 330 played team-seasons disagree by one game between the weekly series and
+`reg + post`, in both directions. NOT a play-in artefact, which was my first explanation and was wrong: those eight are
+seeds 1 to 6. Backlog row filed to reconcile the source.
+
+### G. The habit that cost the most today
+
+Three of today's four false alarms were verification errors, not code errors, and they share one shape: **reading a
+cached or truncated view and reporting it as the state of the world.**
+
+- Aussie Rules "missing from the strips" and Baseball "missing from Coming up" were both present, at offsets past the
+  slice I read.
+- The football order looked wrong on production for several rounds. It was correct; I was reading a pre-deploy
+  prerender. `x-vercel-cache` said `HIT` and then `STALE` the whole time and I did not look until the third attempt.
+  Cache-busting query strings do nothing here: they are not in the cache key.
+- The three new leagues looked absent from a LOCAL render. `getClubFootball`'s loader fetches GitHub raw FIRST and only
+  falls back to disk, so a local build reads the committed bundle, not the file just written.
+
+**The rule for next time: check `x-vercel-cache` and `age` before believing any production read, and grep for the thing
+itself rather than slicing a region.** A stale 200 is the most expensive kind of evidence, because it looks like data.
+
+**Notion:** none (no queryable state changed; the NBA one-game discrepancy Backlog row is filed in the next step).
