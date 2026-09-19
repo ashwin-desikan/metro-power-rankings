@@ -1,247 +1,197 @@
-# Daily Ops Sweep -- 2026-09-18
+# Daily Ops Sweep -- 2026-09-19
 
-Window `2026-09-16T23:05Z` -> `2026-09-18T01:05Z` (trailing 26h), selected on each
-dispatcher.log line's own UTC timestamp. Read-only run: nothing re-run, no data written, no
-healthchecks pinged, nothing fixed. This file is the only thing committed.
+Window: `2026-09-17T23:09Z` to `2026-09-19T01:09Z` (trailing 26h), selected on each
+dispatcher.log line's own UTC timestamp. Read-only run: nothing was written, re-run,
+pinged or fixed except this file. Working tree verified clean after every probe.
 
-## Jobs this window: 31 ok, 0 failed, 5 flagged
+## Jobs this window: 34 ok, 1 failed, 1 flagged
 
-**Dispatcher: 31 DONE, 0 FAIL, 0 MISSED** (plus this sweep, in flight). First window with no
-job-level failure at all since the sweep started reporting.
+35 dispatcher executions completed, 0 MISSED. The one FAIL (`gap-league-watch`) is
+fully closed. The one flagged job (`economy-rates`) exited 0 and went green while
+three of its builders failed, which is the substantive finding below.
 
-| job | runs | result |
-|---|---|---|
-| ops-autofix | 13 | all DONE, every one `no findings; nothing to do`. Nothing was re-run all window |
-| football-standings | 4 | all DONE; every run `unmatched=45`, so the UNMATCHED ntfy fired each time (known, Attention 3) |
-| claude-auth-canary | 4 | DONE; refresh token valid to 2026-10-08, 20.11 days left at 00:35Z (alert at 3) |
-| mlb-sim | 2 | DONE 07:06Z 441s and 14:32Z 458s, **no `failed leagues` on either** (yesterday's watch item, cleared) |
-| gap-league-watch | 1 | DONE; **auto-promoted CONCACAF Nations League** (Self-healed 2) |
-| business-daily, substack-daily, euro-comps, nfl-elo, feed-monitor, activity-feed, daily-ops-sweep (09-17) | 1 each | DONE |
+Ran and clean: `ops-autofix` x13, `football-standings` x4, `claude-auth-canary` x4,
+`mlb-sim` x2, `daily-ops-sweep`, `activity-feed`, `euro-comps`, `business-daily`,
+`forecast`, `substack-daily`, `feed-monitor`, `nfl-elo`, `predictions-fri`, `cfb-fri`.
+`newsletter-podcast` (launchd, not dispatcher) completed clean at 08:22 local:
+episode `6DslVqYwtIAH0Y1o3D7okU`, 44 feed items pushed, both Gmail drafts created.
 
-**Schedule audit (did anything fail to run rather than fail while running).** 2026-09-17 was a
-Thursday, so the weekday-gated jobs (forecast 1/3/5, predictions-tue, predictions-fri, cfb-sun/wed/fri,
-screen-number-ones 1/2/3, rugby-weekly, cricket-weekly, fiba-weekly, sound-weekly, egress-refresh,
-economy-rates/housing/prices, mktcap-refresh, owners-weekly) were correctly not due, and the two
-`days = [1]` monthly jobs (conflicts-monthly, cricket-monthly) fire on the 1st. Every job that WAS due
-appears in the log. claude-auth-canary's four runs match its actual slots `["00:30","06:30","19:30"]`,
-which look like a gap between 06:30Z and 19:30Z but are not one.
-
-**Job logs checked for pushes from DONE jobs:** the only ntfy pushes this window were the five
-football UNMATCHED alerts (four on 09-17, one at 23:04Z which lands in the 09-18 log). The
-auth canary logged `no alert` four times. gap-league-watch's auto-promotion pushed **nothing**,
-which is itself a finding (Attention 4). f1 hourly poller idle on `2026 R14 already synced` for all
-27 ticks, which is correct: Madrid was 11 to 13 Sep and the next race is Azerbaijan 24 to 26 Sep
-([formula1.com](https://www.formula1.com/en/racing/2026)).
-
-**Newsletter (~/newsletter-podcast):** 09-17 morning built a 41:33 episode, published Spotify episode
-`200LqyhJQPeAYzuD6Xs6UV`, pushed 48 of 54 items (per-publication cap) and carried 4 of 09-16's evening
-items forward; 09:30 watchdog `Healthy`; 12:00 retention deleted the one episode older than 7 days
-(2026-09-09), 0 failed; 20:00 evening appended 9 of 12, day holds 57. Normal. The morning draft noted
-it had left The Athletic's Arch Manning story out of `feed.json` by mistake; `push_feed` carried it over
-from 09-16 evening anyway, so it landed.
-
-**GitHub Actions in window:** zero failures. The last two (WNBA 09-16 13:09Z, AFL+NRL 09-16 08:30Z)
-are both before this window and both already reported green in yesterday's sweep.
-
-**Vercel, 09-17 UTC:** 1 paid build (READY `dpl_HeBTthpr...`, sha `2f9a0f0d5`, 22:23Z), within the
-2/day budget. Every other deployment that day was CANCELED, which is free. 09-18 so far: 0 paid.
-
-**Deploy ordering on Ashwin's push, checked because it is the rule that bites:** `b9202b255`
-(scripts, `[vercel skip]`) then `2f9a0f0d5` (app + lib + public/data, untagged) was pushed in that
-order, so the build-relevant commit was HEAD and got its own deployment. Correct.
-
-**Disk:** 106 GB used of 926 GB. Not a factor.
+Nothing was silently skipped. `conflicts-monthly` and `cricket-monthly` are gated
+`days = [1]` (day of month), so they were correctly not due on the 18th or 19th.
+`economy-housing` (Sat 07:30Z) and `mktcap-refresh` (Sat 09:00Z) are due later today.
+`feed_shape_monitor` reported all 18 registry entries `ok`, including both ESPN
+date-form canaries added on 09-16.
 
 ## Self-healed (informational only, no action needed)
 
-**1. Yesterday's Attention 1 is closed: release notes are current.** `npm run check:release-notes`
-now returns `OK (140 entries, newest 2026-09-17)`. Ashwin's `2f9a0f0d5` carried `lib/releases.ts`
-(+18 lines) in the same commit as the app work, adding both the missing 2026-09-16 entry and one for
-09-17, exactly as the report recommended and without spending a second build. Nothing further needed.
+**`gap-league-watch` FAIL at 05:05:51Z, and again on the 06:29Z autofix retry.**
+Both died in `--self-test`, not on the network: `watch_gap_leagues.py` line 170
+asserted `{... nations_auto(e)} == {536}` against the live `leagues_pending.json`,
+and 536 (CONCACAF Nations League) had been correctly promoted out on 09-17, leaving
+the set empty. The test demanded a transient membership, so a *successful* promotion
+failed the job. A mini session fixed it the same morning: commit `0731cb049`
+("the self-test asserted a transient state, not the rule"), which re-expresses the
+check as `_flagged <= SELF_PROMOTERS` plus an international-comp assertion, so it
+still catches a club comp acquiring both flags but survives legitimate promotions.
+That session also re-ran the job by hand at 07:09Z: `self-test OK`, three pending
+leagues classified, watch state written, no transitions. I re-ran `--self-test`
+read-only just now (it returns on main()'s first line, before any key, network or
+write): `self-test OK`, exit 0. Fix is committed and pushed. Next dispatcher slot
+is 05:00Z today. No action.
 
-**2. gap-league-watch auto-promoted CONCACAF Nations League, and it is right.** At 05:07Z the watch
-moved World L536 from `awaiting_target` to `ready` and promoted it into `leagues.json`
-(`3df23071c`), removing it from `leagues_pending.json`. Verified rather than assumed:
-
-- The promotion is by design. The pending entry carried `auto_promote: true` and
-  `comp_type: "international"`, and `watch_gap_leagues.py`'s self-test asserts that 536 is the **only**
-  id in the file allowed to self-promote, precisely because it is national teams and so carries no
-  club-Lookup risk. The two club competitions beside it (CONCACAF Champions League 16, OFC Champions
-  League 27) stayed human-gated and both correctly read `no season still running`.
-- The trigger was real, not a glitch. `ready_on: "window"` ignores season years and reads dates,
-  because these ids disagree about what a season year means. api-football published a season for 536
-  whose end (`2026-11-11`) has not passed, so the window opened.
-- The data that arrived matches the real competition. Supabase `football_fixtures` holds 90 rows for
-  league 536, first kickoff 2026-09-23, last 2026-11-11. Concacaf has confirmed the 2026/27 Nations
-  League, its fifth edition, starting in September 2026 with the League A group stage running
-  24 Sept to 5 Oct and later rounds in the November window
-  ([concacaf.com](https://www.concacaf.com/competitions/nations-league/news/2026-27-concacaf-nations-league-september-october-schedule-confirmed),
-  [Wikipedia](https://en.wikipedia.org/wiki/2026%E2%80%9327_CONCACAF_Nations_League)).
-- The site will handle it correctly. `liveData.tsx` gives a dedicated standings block only to
-  league_id 5 and 7, but `intlEvents` flat-maps **every** international comp's fixtures into the
-  On today / Upcoming strip under Football > International. So the fixtures appear from 23 Sept with
-  no standings table, which is right: the api reports no standings coverage for this competition on
-  any season it has ever had.
-
-One cosmetic wrinkle, no action: api-football labels this campaign season **2025** even though it
-starts in September 2026. The pending entry's note already documents that this id numbers a campaign
-by the year it starts, and that note is now off by one. It changes nothing, because the window
-variant never reads the year and the season number is only used to query the api, which returned the
-right 90 fixtures.
-
-**3. Both of yesterday's "watch today" triggers cleared without firing.**
-- **WNBA season refresh** ran at 13:03Z on the fixed `_windows()` and succeeded (`abac92662`).
-  It found 18 postseason games, so the "0 events" trigger did not fire. It correctly logged
-  `NOT YET: expected 8 postseason teams, found 1 (TBD)` and left the postseason flags untouched,
-  which is the script saying the bracket is not seeded yet rather than a fault.
-- **mlb-sim** ran twice on the new query forms with no `failed leagues` on either run.
+**Football `unmatched=45` cleared to 0.** The 09-18 runs alerted 45 unmapped
+api-football teams three times (00:04Z, 05:05Z, 11:09Z). The Windows/Cowork session
+synced the Lookup sheet during the day; the 17:03Z run and every run since reports
+`unmatched=0` (latest 09-19 00:06Z: `unmatched=0 deferred=29`). Closed by the work
+already booked for it in yesterday's report. The new `deferred=29` counter is a
+by-product of that Lookup work, not an error state.
 
 ## Needs Ashwin's attention
 
-### 1. Formula E season data is overdue, and the 2026 champion is known
+### 1. `economy-rates` went green on 09-18 while 3 builders failed, and the ECB and Denmark rate hikes are NOT on the live site
 
-**What happened.** `npm run check:data-currency` reports `current: 28  overdue: 1`:
+**What happened.** The 07:37Z Friday run printed
+`refresh.py: 3 builder(s) FAILED; review before trusting the published files.`
+then `No changes; nothing to commit`, revalidated, warmed both pages 200, and the
+dispatcher logged `DONE economy-rates: ok 361s`. No ntfy fired, and the
+healthchecks tile went green. This is the exact silent-failure shape the register
+exists for: exit 0, clean `--status`, quiet topic, wrong data.
 
-```
-OVERDUE
-  Formula E season                       has 2025, owes 2026
-```
-
-**Root cause.** Not a fault. This is the slow-moving-data case the manifest exists for. The
-`formula-e` entry in `scripts/data/data-currency.json` sets `endsMonthDay: "08-01"` with
-`graceDays: 45`, so it tipped from current to overdue on **2026-09-15**. No scheduled job feeds it:
-the probe reads `scripts/data/motorsport-series.json`, which is hand-kept and whose `formula-e`
-`champions`, `runners_up` and `thirds` lists all still end at `{"year": 2025}`. The check is
-warn-only and exits 0, so nothing blocked and nothing alerted. It was not in yesterday's report
-because that sweep did not run this check.
-
-**The real-world fact, verified.** The 2025-26 Formula E World Championship (Season 12) finished at
-the London E-Prix in mid-August 2026. **Pascal Wehrlein (German, Porsche) is the 2026 champion**, his
-second title, with **Jake Dennis (British, Andretti) second, five points behind**
-([Porsche race report](https://racing.porsche.com/en-MY/articles/formulae-london-race-report-2026),
-[FIA](https://www.fia.com/news/abb-fia-formula-e-world-championship-goes-down-wire-london-e-prix),
-[Wikipedia](https://en.wikipedia.org/wiki/2025%E2%80%9326_Formula_E_World_Championship)).
-
-**Recommended fix.** Add a 2026 row to each of the three lists for `key: "formula-e"` in
-`scripts/data/motorsport-series.json`. The rows carry only `year` and `nat`, so:
-
-- `champions`: `{"year": 2026, "nat": "German"}`
-- `runners_up`: `{"year": 2026, "nat": "British"}`
-- `thirds`: **do not fill this from memory.** I could confirm first and second from primary sources
-  but not third: the standings pages the search surfaced were mid-season snapshots, not the final
-  table. Read third place off the official final Season 12 drivers' standings
-  (fiaformulae.com/en/results-and-standings) before adding the row. Per the project rule, an
-  unresolved case gets logged rather than guessed.
-
-`scripts/data/` is not build-relevant, so this costs no Vercel build and the commit takes
-`[vercel skip]`. Once all three rows are in, `check:data-currency` returns to 29 current, 0 overdue.
-
-### 2. The 2/day build cap is still inactive (fifth consecutive day reported)
-
-**Evidence from today, not carried forward on trust.** The head of the build log for the one paid
-build in this window (`dpl_HeBTthpr1zUfPcVZdhxbmEUzgh5b`, sha `2f9a0f0d5`, 22:23:45Z) reads:
+**Root cause A, why the failure was invisible.** `refresh.py` is written to be loud:
+lines 769 to 772 `sys.exit(1)` when any builder fails. That exit is thrown away by
+the runner. `runners/economy-rates.sh` calls
 
 ```
-vercel-ignore: build cap inactive (no VERCEL_BUILD_CAP_TOKEN or the API did not answer)
-vercel-ignore: base '18eb6a0cd...' unreachable; falling back to HEAD^
-vercel-ignore: build-relevant change in 2f9a0f0d5^..2f9a0f0d5; building
+guarded "refresh policy rates (--write)" \
+  bash -c "\"$PY\" scripts/macro/rates/refresh.py --write | tee \"$REFRESH_LOG\""
 ```
 
-So the path check and the fail-closed base fallback both worked, and the guard made the right call.
-The cap itself made no call at all: it is a no-op, and 09-17 stayed inside budget on volume alone.
+`guarded()` checks the status correctly, but the status it receives is `tee`'s.
+`_common.sh` sets `set -uo pipefail` in the *runner's* shell, and `pipefail` is a
+shell option that a new `bash -c` process does not inherit. Verified on this box
+just now: the exact idiom returns 0 with a failing python inside, and returns 1 the
+moment `set -o pipefail;` is added inside the `bash -c`. So the one mechanism that
+was supposed to make a builder failure loud is disabled by the pipe that captures
+the log.
 
-**Recommended fix, unchanged since 09-13.** Add a read-scoped Vercel API token as
-`VERCEL_BUILD_CAP_TOKEN` to project `metro-power-rankings`
-(`prj_eGoUAOrnwvNP86s7p74ruILMl3Dr`, team `team_yQjbuPwcr40J6AxkjCv6AawD`), Environment: Production,
-available at build time. Then check the next build log prints a count rather than the inactive line.
-This is the one guardrail from the five overage incidents that is still not actually armed.
+The runner does have watchers, but only for `NEW RATE DECISIONS` and
+`source(s) unreachable this run`. There is no watcher for `builder(s) FAILED`, so
+even the fail-open notification path had nothing to match.
 
-### 3. Football UNMATCHED ntfy, 5 alerts this window, Lookup edit is booked for today
+**Root cause B, which builders failed, and why that is now hard to answer.**
+`refresh.py` prints a `builder <name>: FAILED: <error>` line per builder, but the
+runner captures them to a `mktemp` it deletes on the next line, and `dispatcher.py`
+keeps only `DEFAULT_LOG_TAIL_LINES = 12` of stdout. Both copies of the error strings
+are gone. I identified the three from output-file mtimes instead:
 
-All four 09-17 runs plus the 23:04Z run report `unmatched=45`, the same set each time, and each fires
-an ntfy. The 05:09Z run also resolved 36 new teams to the Lookup, and the unmatched count still did
-not move, which is consistent with 45 genuinely missing clubs rather than a matching regression.
-Non-fatal by design: the job warns and continues so the site stays fresh.
+- `bis-*` (the `build_bis.build_all()` step) crashed partway through. `build_all`
+  iterates `sorted(BIS_ECONOMIES)`; files `bis-ar` through `bis-de` carry the
+  09-18 08:37 rebuild, and `bis-dk` onward are still 09-11 10:16. A perfect
+  alphabetical split at `de|dk` is a crash at DK, not content-based skipping.
+  **37 BIS country files have been stale since 09-11**, including `bis-us`,
+  `bis-xm` (euro area), `bis-gb` and `bis-dk`.
+- `build_fed` and `build_ecb` are the first two entries in `BUILDER_MODULES`, and
+  `fed.json` / `ecb.json` are the only own-source outputs still dated 09-11 10:16.
+  Every builder after them (`boe`, `riksbank`, `boj`, `snb`, `boc`, `rba`, `rbnz`,
+  `norges`, `buba`) plus `index` carries 09-18 08:38. That is exactly three
+  failures, matching the count refresh.py printed.
 
-**Booked for Friday 2026-09-18 on the Windows box, which is today.** Triage sheet:
-`~/metro-mini-jobs/pending/unmatched-afc-caf-clubs-2026-09-14.xlsx` (with a .csv beside it). Use the
-`cl-lookup-sync` skill, **not** `scripts/apifootball/sync_lookup.py`, which is a DELETE-then-INSERT
-full mirror and would revert rulings applied in Supabase but not in the workbook. No action needed
-before that edit; the alerts will stop on their own once the 45 are mapped.
+**Live data impact, verified against the real world.** The published files are
+behind on two confirmed decisions:
 
-### 4. A live competition went onto the site unannounced: gap-watch does not notify on promotion
+| file | published last change | actual |
+|---|---|---|
+| `ecb.json`, `bis-xm.json` | 2026-06-17, 2.25 | **2026-09-16, 2.50** (+0.25) |
+| `bis-dk.json` | 2026-06-12, 1.85 | **2026-09-11, 2.10** (+0.25) |
 
-**What happened.** The CONCACAF Nations League auto-promotion in Self-healed 2 added a competition to
-the public site, committed and pushed it, and told nobody. The only reason it is in this report is
-that this sweep reads the job logs.
+The ECB raised on 10 September effective 16 September, deposit facility to 2.50%,
+MRO 2.65%, marginal lending 2.90%. Danmarks Nationalbank followed on 11 September,
+certificates of deposit to 2.10%. `fed.json` is stale but not *wrong*: the US spine
+still reads 3.625 as of 2026-09-15, unchanged since 2025-12-11.
 
-**Root cause, read from the script.** `mac-mini-jobs/run-gap-league-watch.sh:17-18` defines `push()`
-and then calls it from exactly one place, `fail()`. There is no call on the success path. The Python
-prints `=== AUTO-PROMOTED: ... ===` and `=== TRANSITIONS ===` blocks that exist precisely to be
-noticed, and the wrapper drops them. The job exits 0, dispatcher.log shows `DONE`, healthchecks goes
-green, and a new competition is live.
+This is precisely the loss the runner's own comment predicted in the 09-11 restore
+("the ECB hike announced 09-10 takes effect 09-16, and would have been silently
+missed on the 09-18 run"). It was missed, just through a builder crash rather than
+an unreachable source, which is the one path that block does not watch.
 
-**Why it matters more than it looks.** This is the exact shape the Silent failure register exists to
-record: a success that changes what the public site shows and produces no signal. It also cuts the
-other way. If a promotion is ever WRONG (the wrong league id, a season that turns out to be stale
-api-football metadata, a competition Ashwin did not want live), the same silence applies, and the
-first notice would be someone reading the page.
+**The inputs are fine and the builders now run clean.** I ran the compute paths
+read-only (`build_write=False`, no files touched, `git status` clean afterwards):
 
-**Recommended fix.** In `run-gap-league-watch.sh`, capture the Python output that already goes
-through `tee`, and when it contains `AUTO-PROMOTED` or `=== TRANSITIONS ===`, send one `push` at
-default priority after the push to origin succeeds, with the promoted names and ids in the body.
-Keep it to one notification per run regardless of how many leagues promoted, so this does not become
-the noise problem the sweep exists to reduce. Worth a row in the Silent failure register either way,
-since the class ("a job whose success is a state change nothing announces") is broader than this one
-script.
+```
+build_fed  build(write=False) OK      BIS cross-check: 147 dates, 0 disagree
+build_ecb  build(write=False) OK      BIS cross-check: 8 dates, 0 disagree
+build_bis.build_one('DK'/'ES'/'GB', write=False) OK
+ECB computed last change: 2026-09-16  2.5  (+0.25)  Deposit facility rate
+DK  computed last change: 2026-09-11  2.1  (+0.25)  certificates of deposits
+```
 
-### 5. Low priority: `football_league.has_standings` in Supabase disagrees with its source of truth
+Both computed values match the real-world facts exactly. The 470 MB BIS flat file
+is intact (ends on a complete Saudi Arabia row), every `_scratch/macro` base input
+is present, and the disk is at 12%. So the data needed to correct the site is
+already on the mini; only the 09-18 *write* failed. Since the compute path succeeds
+today and failed on 09-18, the crash most likely sits in the write path
+(`c.write_bank`'s era lookup, which `build_bis.py` line 39 already flags as the
+thing an unclamped instrument-era gap crashes) on the newly arrived observation.
+I could not confirm that without running the write path, which would be a write,
+so this last step is inference, not measurement.
 
-`scripts/apifootball/leagues.json` is the declared source of truth and records league 536 with
-`"has_standings": false`, which is correct: api-football reports no standings coverage on any season
-this competition has had. Supabase `public.football_league` holds `has_standings = true` for the same
-league, with 0 rows in `football_standings`.
+**Recommended fix, in order.**
 
-**Root cause.** `league_meta_rows()` in `scripts/apifootball/refresh.py:423-430` builds its upsert
-from six fields (`league_id, name, country, level, comp_type, season`) and never includes
-`has_standings`, so a newly inserted row takes the column default instead of the value from
-`leagues.json`. Nothing reconciles them afterwards, so the two can disagree indefinitely.
+1. **Get the data right.** Re-run the job with the log kept:
+   `bash ~/metro-mini-jobs/runners/economy-rates.sh 2>&1 | tee /tmp/econ-rates.log`
+   That rebuilds and publishes ECB 2.50, DK 2.10 and the 37 stale `bis-*` files,
+   commits `[vercel skip]` and revalidates, as it does every week. **Read the
+   `builder ...: FAILED:` lines in that log** before anything else: they are the
+   tracebacks this report could not recover, and they will say whether the write
+   path still breaks on DK/fed/ecb or whether 09-18 was transient.
+2. **Stop the masking** (one line, the actual bug):
+   `guarded "refresh policy rates (--write)" bash -c "set -o pipefail; \"$PY\" scripts/macro/rates/refresh.py --write | tee \"$REFRESH_LOG\""`
+   With that, a builder failure fails the step, `fail()` fires, and the job goes red.
+3. **Make it audible even if it stays fail-open.** Add a third watcher block beside
+   the two that exist, matching `builder(s) FAILED` and pushing the failing bank
+   names, same shape as the `source(s) unreachable this run` block.
+4. **Keep the evidence.** `economy-rates` has no `log_tail_lines` in jobs.toml, so
+   it gets the 12-line default and the builder lines fall off every time.
+   `economy-housing` already sets `log_tail_lines = 30`; give `economy-rates` the
+   same, and consider writing `REFRESH_LOG` to `logs/economy-rates-$DATE.log`
+   instead of a `mktemp` that is deleted.
+5. **Silent failure register:** this is a new row. "A builder crash inside
+   `refresh.py` exits 0 because `bash -c`'s pipeline to `tee` drops the non-zero
+   status, publishing stale policy rates with a green tile." Register is
+   unreachable from here, see the note at the end.
 
-**Impact today: none.** `export_bundles.py:70` does not select the column, and no file under `app/`
-or `lib/` reads it, so nothing user-facing is wrong. Flagged because it is a source-of-truth claim
-the code does not actually keep, and the next consumer to trust the column inherits the drift.
+### 2. FIFA women's world ranking is one edition behind, and newly overdue today
 
-**Recommended fix.** Add `"has_standings": lg.get("has_standings", True)` to the dict in
-`league_meta_rows()`, matching the same default `watch_gap_leagues.py:239` already uses, then let the
-next `refresh.py --write` correct the existing rows. Scripts-only, `[vercel skip]`, no build.
+`npm run check:data-currency` (warn-only, so it alerted nobody) reports 2 overdue as
+of today, and this one crossed its limit *today*: `FIFA women's world ranking,
+as of 2026-04-21, 151 days old, 1 over the limit`. FIFA published an update on
+**16 June 2026** that the site does not have, so this is a real gap rather than a
+manifest that is merely impatient. The next FIFA update is scheduled for
+**20 October 2026**, so ingesting the June edition clears the warning and it will
+stay clear until late October. Recommended: load the 2026-06-16 table, in the same
+commit adjusting nothing in the manifest (the limit is behaving correctly).
 
-### 6. Low priority: every international competition in the live bundle is labelled `confederation: "UEFA"`
+### 3. Carried forward from yesterday, still open
 
-`public/data/football/live-competitions-2026.json` carries six entries under `international`, and all
-six read `"confederation": "UEFA"`, including the AFC Asian Cup, Africa Cup of Nations Qualification,
-the Concacaf women's World Cup qualifiers and now the CONCACAF Nations League.
+- **Formula E season is still overdue** (`has 2025, owes 2026`), unchanged since
+  yesterday's report. Wehrlein is the confirmed 2026 champion and Dennis second;
+  third place still needs the official final table, which is why yesterday's sweep
+  stopped rather than guessing. No new information today.
+- **The Vercel build cap could not be re-verified this run.** Yesterday's report had
+  it inactive for a fifth day (`build cap inactive (no VERCEL_BUILD_CAP_TOKEN...)`).
+  The Vercel MCP token here returns `403 forbidden` on `projectEnvVars`, so I could
+  neither confirm nor clear it. Treat yesterday's finding as still standing until
+  someone checks `VERCEL_BUILD_CAP_TOKEN` in the project's build environment.
 
-**Root cause.** `confed()` in `scripts/apifootball/export_bundles.py:42-50` maps a **country** name to
-a confederation from a 16-entry override table and returns `"UEFA"` for anything unlisted. Its comment
-scopes it to "the tracked domestic leagues", which is accurate for its original use. International
-competitions carry `country: "World"`, which is not in the table, so they all fall through to the
-default. This predates the Nations League promotion; that promotion just added a sixth wrong row.
+---
 
-**Impact today: none.** Nothing in `app/` or `lib/` reads `confederation` off the international
-entries, so it is a dead field. Flagged because it is published, wrong, and one `find` away from
-being believed.
+**Caveat on coverage, unchanged from yesterday:** the **Notion connector is not
+authorized in this headless session**, so the Backlog, the Decisions database, the
+Scheduled jobs table and the Silent failure register went unread and unupdated. The
+register row proposed in finding 1 has nowhere to go until someone authorizes the
+connector with `/mcp` in an interactive session on the mini. Per the 2026-09-18
+contract this is a gap in the audit trail, not an optional extra.
 
-**Recommended fix.** Either drop `confederation` from the international rows in `export_bundles.py`
-rather than emitting a value that cannot be right, or give the international branch its own mapping
-keyed on league_id (5 UEFA, 7 AFC, 36 CAF, 536 and 927 CONCACAF, 880 UEFA). Dropping it is the smaller
-reversible change and nothing consumes it. Scripts-only, `[vercel skip]`.
-
-## Standing
-
-- The **Notion MCP is still not authorized** in this headless session, so the Backlog, the Data
-  sources rows and the Silent failure register were not read or updated. Findings 4, 5 and 6 above are
-  all register-shaped and have nowhere to go until it is. Authorize once with `/mcp` in an interactive
-  session on the mini.
-- Carried from HANDOFF 09-16 section H and 09-17 section C, unchanged: nothing alerts when a frontend
-  reader swallows an upstream error with `return []`, and the ESPN date-form canary checks that
-  upstream forms work, not that our callers use the working ones.
+**Nothing in this run wrote to any data file, table, job state or healthcheck.**
+Every probe was a read or a `write=False` compute; `git status` was verified clean
+afterwards. The only write is this report file.
