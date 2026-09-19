@@ -16536,3 +16536,17 @@ New gate `npm run check:cache-tags` (in `verify`): every `tags: [...]` on a fetc
 tsc clean; vitest 339 passed in 28 files; `next build --webpack` compiled; check:function-size OK (largest 138.4 MB); check:release-notes OK (newest 2026-09-20); check:cache-tags OK (24 tags, 19 flushable, 5 upstream-only). Probe at 390 and 1280 for the forecast hubs is in the evening entry; the NBA season page measured 390/390 and 1280/1280 with the control in its new place. NOT run: `npm run verify` end to end, `test:python`, and `probe:mobile` on `/`, `/digest` and the NFL season page. Run the probe on those three before the push.
 
 **Notion:** Backlog closed 4 (subscribe path, Writing in the nav, cache-tag check, NFL year hubs: awards done and the Pro Bowl half impossible from a career file); Backlog edited 2 (midterms map: data finding; forecast hubs: now on local main); Backlog added 3 (Awards sheet column J files St. Louis Cardinals All-Pros under Rams; refresh jobs should ping the seven newly flushable tags; confirm the 2016 and 1975-77 seed-rule boundaries from a source); Decisions added 2 (NBA weekly seeds ruling; subscribe path is an outbound Substack link).
+
+## 2026-09-19 (late) - windows (Cowork, cloud bridged to the Windows box) -> mini and next session: THE RELEASE IS LIVE (`778734ced`), FOURTH PAID BUILD OF THE DAY, ON ASHWIN'S WORD
+
+Ashwin: "Commit and push everything to main". That is the explicit yes, given knowing three builds had run. The scheduled 00:10 UTC push was deleted unused.
+
+- `git pull --rebase` replayed the nine local commits onto `49aa53f00`; the SHAs in the two entries above are PRE-REBASE. On origin: forecast hubs `43077db72`, NBA vs Last `43f298303`, NBA weekly seeds `341bb9f0f`, NFL honours `4db7dba60`, subscribe path `eb3c0f8e9`, check:cache-tags `7f58ffc06`, release `778734ced` (HEAD of the push, no skip marker).
+- Before the push: `npm run verify` EXIT 0 end to end (typecheck, every check, 339 JS tests, 112 Python tests, build, function size). `probe-mobile` at concurrency 1 on a local production build: `/` 17.7 screens, `/digest` 5.6, `/teams/nfl/season/1980` 13.4, `/teams/nba/season/2001` 9.3, `/deep-dives` 6.1; 5/5 clean at 390px. The homepage was 16.5 on 09-13.
+- Deployment `dpl_CqZBtiATwpcPkWsCNrXo5WphB5J9`: BUILDING 20:40 UTC, READY by 20:48. **Builds on 2026-09-19 UTC: FOUR** (09:06 mktcap weekly, 11:33, 13:05, 20:40). The cap is still inactive.
+- Verified on production from fresh fetches (`x-vercel-cache` PRERENDER or MISS, age 0; `/updates` HIT at age 8 and already carrying the new entry): the NFL headline reads "The Buffalo Bills have a 10.8% chance to win Super Bowl LXI, up 1.6pp over 7 days"; heat board, movers strip, the PL headline, the NBA 2000-01 page, "Houston Oilers" on the 1980 NFL honours, the subscribe card on `/` and `/digest`, and Writing on Deep Dives are all present.
+- The release note is dated 2026-09-20 and went live at 21:48 BST on the 19th. It was written for a push after midnight and left as it was rather than squeezed into the 19th's full four bullets.
+- Ashwin ruled the NBA honours badges stay as built: they follow the scrub.
+- Not proven: a real flush of `nba-elo` or the seven new tags. This box has no `REVALIDATE_SECRET`. **Mini: flush `nba-elo` one time and confirm `ok:true`.**
+
+**Notion:** Backlog closed 2 (forecast hubs, nba-elo tag inert); Scheduled jobs: the one-off "Push the 2026-09-20 release" row added and then set to Retired, never fired.
