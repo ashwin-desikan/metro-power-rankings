@@ -15940,3 +15940,35 @@ its own finding 1 deserved had nowhere to go. That gap is closed from this sessi
 **Notion:** Backlog added "BUILT_DATE in scripts/macro/rates/common.py is a hardcoded 2026-09-08 and is silently
 rejecting every rate decision since" (P0 watch, owner Ashwin); Silent failure register added "A \"today\" constant is
 hardcoded, so a publish guard silently rejects everything newer than the day it was written" under Still silent.
+
+### E. KHL: investigated, then declined, and the research is kept
+
+Ashwin asked whether the KHL standings and then its fixtures could be wired into Live Standings against his canonical
+team names, and after seeing the cost ruled it out: "too much work for a league that no one cares about considering
+Russian sanctions... I don't want to create a separate job just for it." Agreed, and recorded in Decisions so nobody
+re-investigates.
+
+**Why it is expensive.** `en.khl.ru` cannot be read server-side. urllib gets 403 with every User-Agent tried (none,
+urllib's own token, curl's); a browser UA gets a 307. With a cookie jar and redirect-following it returns 200 and
+about 92 KB, but that HTML carries ZERO tables and ZERO dates: both `/standings/` and `/calendar/` render entirely in
+the client. Every other Live Standings board is a server-side fetch with ISR, so the KHL alone would need a headless
+browser on a schedule, writing a JSON bundle the site reads. That is a new mini job, a new lib and a Scheduled jobs
+row for one league.
+
+**What the browser does show**, so the feasibility is not in doubt, only the price: a full two-conference table with
+PTS/GP/W/OTW/SOW/SOL/OTL/LEN/L/G, and a calendar with dates, Moscow kick-off times, venues, scores, period-by-period
+splits, overtime flags and future fixtures.
+
+**The expensive half was already solved and is worth keeping.** The canonical names Ashwin asked to match against are
+in `public/data/sports/all-teams.json`, the committed mirror of MetroAreas.xlsx "Team List" (he thought they were in
+Supabase; they are in the repo, and `lib/allTeams.ts` already reads that file). It carries exactly 22 KHL rows, one
+per club, each with division, city and metro_slug, and they line up one-for-one with the 22 clubs the KHL renders.
+The short-form crosswalk is written out in full in the Decisions row, including the two nobody would guess: `Dragons`
+is Shanghai Dragons, the former Kunlun Red Star, and `Metallurg Mg` maps to the disambiguated
+"Metallurg Magnitogorsk (ice hockey)".
+
+**What would change the decision:** a plain JSON feed. That could ride an existing job rather than justifying a new
+one, which is the actual objection.
+
+**Notion:** Decisions added "The KHL is not wired into Live Standings: not worth a bespoke scraping job", carrying the
+access findings and the full 22-club crosswalk so the investigation is not repeated.
