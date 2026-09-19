@@ -86,8 +86,34 @@ def build_from_history(src):
     # "Is Current" flag is not maintained in Champions_History.xlsx (they dropped
     # off the board when it became the single source). Their latest-year row is
     # treated as current regardless of the flag.
+    #
+    # THIS SET IS THE ONLY WAY INTO THE CURRENT BOARD, because the flag that
+    # feeds it is circular. merge-champions-sources.py writes Is Current = "Y"
+    # only for a competition that already has a zz_entry, zz is champions.json,
+    # and champions.json is what THIS script builds from Is Current. A
+    # competition that never entered the set therefore cannot ever enter it, no
+    # matter how recent its champion or how complete its history. Nothing logs
+    # that: the competition simply is not on the board.
+    #
+    # Ashwin, 2026-09-19: "why don't we display the current county championship
+    # winner in cricket, we track it in the Time Machine but it's not in the
+    # Current list of champions", then "why aren't all of the other T20 leagues
+    # on the Champions table (BBL, CPL, etc). We only have Hundred and IPL".
+    # That is this bug, for nine cricket competitions at once. All nine are in
+    # the all-time ledger with a champion (County Championship 128 rows to 2025,
+    # the T20 leagues 4 to 15 rows each to 2025 or 2026) and all nine are live in
+    # the Time Machine, which reads champions-history.json directly and so never
+    # saw the flag. Only the Current board consults it.
+    #
+    # Lanka Premier League is deliberately NOT here. Its last title in the ledger
+    # is July 2024 with no edition since, so its reign has legitimately aged out
+    # and promoting it would put a stale champion on the board. It belongs here
+    # the day a 2025 or later LPL row lands.
     ALWAYS_CURRENT = {"Champions League", "Club World Cup", "SuperLega",
-                      "Europa League", "Europa Conference League"}
+                      "Europa League", "Europa Conference League",
+                      "County Championship", "Big Bash League", "BPL", "CPL",
+                      "International League T20", "Pakistan Super League",
+                      "SA20", "Super Smash", "T20 Blast"}
 
     # Latest year per competition (used by the fallback and by ALWAYS_CURRENT).
     comp_max = {}

@@ -16100,3 +16100,91 @@ and a poor diagnosis, and I passed its reasoning on twice without opening the pr
 
 **Notion:** none (no queryable state changed; the currency manifest and series file are repo data, and the Formula E
 row was a warning rather than a Backlog item).
+
+### J. The Champions Current board is a closed set, and the door is ALWAYS_CURRENT
+
+Ashwin, two questions: "why don't we display the current county championship winner in cricket, we track it in the
+Time Machine but it's not in the Current list of champions", then "why aren't all of the other T20 leagues on the
+Champions table for both Current/Time Machine (BBL, CPL, etc). We only have Hundred and IPL".
+
+**The Time Machine half of the premise is wrong, and checking it first saved a wasted fix.** Fetched the production
+`/api/champions-timeline` and resolved every cricket reign against today: 14 of the 15 cricket competitions are live
+there right now, County Championship and BBL and CPL and BPL and PSL and SA20 and Super Smash and ILT20 and T20 Blast
+included. Only Lanka Premier League is absent, and correctly so, because its last title in the ledger is July 2024 and
+the liveness rule ages a trophy out at the end of the year after it was last won. Nothing is wrong with the Time
+Machine: it reads `champions-history.json` directly and never consults the current flag at all.
+
+**So the whole fault is the Current board, and it is a circular definition.** The chain is
+`champions.json` -> workbook "Is Current" -> Supabase `is_current` -> `champions-current.json` -> the board:
+
+- `scripts/merge-champions-sources.py:169` writes `Is Current = "Y"` only inside `if zz_entry:`, that is, only for a
+  competition that already appears in `public/data/champions.json`.
+- `public/data/champions.json` is built by `scripts/build-champions-data.py`, which emits the rows where
+  `Is Current = "Y"`.
+
+A competition that is not already on the board therefore cannot ever get onto it, no matter how complete its history
+or how recent its champion. That is not a cricket bug; cricket is just where Ashwin noticed it. The roster holds 92
+competitions and the board holds 97, the extra five being the four boxing belts and The Hundred, which were flagged
+directly rather than through the workbook.
+
+**The only door in is `ALWAYS_CURRENT`** in `scripts/build-champions-data.py`, a set whose comment already says it is
+for competitions "whose Is Current flag is not maintained". It held five football and volleyball entries. Added the
+nine cricket competitions that belong on the board, and documented the circularity above it so the next reader does
+not have to re-derive it. Lanka Premier League deliberately left out: promoting it would put a champion from July 2024
+on a board that means "reigning".
+
+**A second fault found while checking, which is why the Supabase half is NOT done.** Cricket is fed by two independent
+strands that disagree:
+
+- the workbook strand, canonical slugs (`t20-blast`), carries `match_date` and `is_current`;
+- the honours strand, alias slugs (`cricket-t20-blast`, resolved through `champion_competitions.alias_of`), written by
+  the GitHub honours workflows, carries runners-up and usually no `year` at all, only a `season` string.
+
+They are not redundant copies. The workbook's T20 Blast stops at 2025 (Somerset) while the honours strand has 2026
+(Northants Steelbacks), so flagging the workbook's latest row would have published a year-stale champion. And the two
+strands give different champions for The Hundred 2025: Oval Invincibles in the workbook, MI London in honours. One of
+those is wrong, or they are men's and women's conflated, and I have not established which.
+
+**Ashwin supplied the two missing facts mid-session, so all nine are done.** "Northamptonshire won the 2026 T20
+Blast on 18 July 2026" settles the strand conflict in the honours strand's favour: the canonical `t20-blast` line was
+simply missing 2026. That could not be fixed by flipping a flag, so a new row was inserted (id 149513, source
+`majors-ingest`, the sanctioned hand-insert channel, borrowing 2025's `source_ordinal` 5572 so `id.asc` lands it
+directly after 2025). He then gave the CPL's next final as 20 September 2026, which replaced a minted estimate.
+
+**What was written.** Supabase: `is_current` on the eight existing rows, one inserted T20 Blast 2026 row, and a
+published `next_awarded_date` for the CPL. Locally, `champions-history.json` 6,816 to 6,817 rows and
+`champions-current.json` 97 to 106. The board now carries 14 of the 15 cricket competitions, all but Lanka Premier
+League.
+
+**Regenerating it without the builder, and why that is safe.** `build_champions.py` needs `requests`, which no
+interpreter on this machine has. Rather than install one, the reproduction was proved first: filtering
+`champions-history.json` to `isCurrent` and re-serialising with the same separators is BYTE-IDENTICAL to the committed
+`champions-current.json`. So the current board is exactly that subset and can be rebuilt by hand with confidence.
+
+**The trap in doing it by hand, which nearly shipped wrong.** Flipping `isCurrent` is not a one-field edit.
+`to_row()` also MINTS `nextAwardedDate` as the award date plus a year and appends `nextAwardedEstimated: true`
+whenever a current row has no published next date. Editing only the flag would have produced a file that the next real
+builder run silently rewrote. All nine needed the mint; the CPL then lost it again when Ashwin's real date arrived.
+
+**Notion:** Backlog row added for "The Hundred 2025 strands disagree (Oval Invincibles in the workbook, MI London in
+honours), likely men's and women's conflated"; and one for "no producer moves cricket is_current forward, so each new
+champion needs a hand promotion" (the CPL crowns one on 20 Sep 2026, the first test of it).
+
+### K. The 13:15 ntfy was our own dirty tree, not a fault
+
+Ashwin got an ntfy mid-session and asked me to investigate. It was `ops-autofix`, which fires daily at 12:15 UTC and
+so landed at 13:15 BST, standing down with "uncommitted work".
+
+Ran `detect_issues.py --json` directly: exactly one finding, `working_tree_dirty`, blocker, listing the eight files of
+the unpushed NBA Cup work plus the `build-champions-data.py` edit from section J. Nothing else is wrong anywhere. The
+guard at `run-ops-autofix.sh:113` refuses to act around a human's work, which is correct behaviour, and it will
+re-fire every day at 12:15 UTC until the tree is clean.
+
+**Worth recording because I nearly concluded the opposite:** there is no `config.env` and no `logs/` directory in this
+checkout, which made it look like this machine was not the mini and therefore could not be the source of the alert.
+The test that settled it was `_scratch/`, which `.gitignore:169` excludes and git does not track: files in it were
+written at 11:09 today, so they cannot have arrived by pull and a job must have run here. Absence of the config file
+is not absence of the jobs.
+
+**Notion:** none (no queryable state changed; the finding was our own working tree and clears when it is committed or
+stashed).
