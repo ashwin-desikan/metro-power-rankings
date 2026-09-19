@@ -2,8 +2,8 @@
  "_meta": {
   "sport": "womens-football",
   "source": "FIFA/Coca-Cola Women's World Ranking",
-  "asOf": "2026-04-21",
-  "count": 190
+  "asOf": "2026-06-16",
+  "count": 198
  },
  "rows": [
   {
@@ -1335,6 +1335,62 @@
    "points": 725.35,
    "slug": "liechtenstein",
    "engineSlug": "liechtenstein"
+  },
+  {
+   "rank": 191,
+   "name": "Madagascar",
+   "points": 724.45,
+   "slug": "madagascar",
+   "engineSlug": "madagascar"
+  },
+  {
+   "rank": 192,
+   "name": "Anguilla",
+   "points": 681.6,
+   "slug": "anguilla",
+   "engineSlug": "anguilla"
+  },
+  {
+   "rank": 193,
+   "name": "Bahamas",
+   "points": 665.71,
+   "slug": "bahamas",
+   "engineSlug": "bahamas"
+  },
+  {
+   "rank": 194,
+   "name": "Sudan",
+   "points": 628.74,
+   "slug": "sudan",
+   "engineSlug": "sudan"
+  },
+  {
+   "rank": 195,
+   "name": "South Sudan",
+   "points": 628.66,
+   "slug": "south-sudan",
+   "engineSlug": "south-sudan"
+  },
+  {
+   "rank": 196,
+   "name": "Turks and Caicos Islands",
+   "points": 627.14,
+   "slug": "turks-caicos-islands",
+   "engineSlug": "turks-caicos-islands"
+  },
+  {
+   "rank": 197,
+   "name": "Djibouti",
+   "points": 556.64,
+   "slug": "djibouti",
+   "engineSlug": "djibouti"
+  },
+  {
+   "rank": 198,
+   "name": "Mauritius",
+   "points": 433.66,
+   "slug": "mauritius",
+   "engineSlug": "mauritius"
   }
  ]
 }

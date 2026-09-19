@@ -12,10 +12,13 @@ import { unstable_cache } from "next/cache";
 // 🔴 TODAY ONLY, AND THAT IS THE ENDPOINT, NOT A BUG. Measured 2026-09-18:
 // `game_schedule?Year=2026` returns only the current day's card, and Month,
 // DateJPN, From/To, GameKindID, LeagueCD, TeamID and friends are all ignored -
-// every variant returns the identical rows. So NPB can fill On today and (once
-// games finish) Recent results, but it CANNOT fill Coming up. A future session
-// wanting NPB fixtures further out needs npb.jp's monthly schedule page, which
-// carries the full month as Japanese-language HTML and means a real parser.
+// every variant returns the identical rows. So NPB fills On today, and fills
+// Recent results ONLY for games that finished earlier the same day: once the
+// date rolls over in Japan the feed drops them, so yesterday's results are gone
+// rather than ageing out of the 72h window like every other sport's. It CANNOT
+// fill Coming up at all. A session wanting either a real results history or
+// fixtures further out needs npb.jp's monthly schedule page, which carries the
+// full month as Japanese-language HTML and means a real parser.
 //
 // Also measured that day, to avoid a false alarm: the card was three games, all
 // Central League, and npb.jp's own index for 9/18 confirms three games that day
@@ -52,12 +55,29 @@ export type NpbGame = {
   homeScore: number | null;
   awayScore: number | null;
   final: boolean;
+  inPlay: boolean;
 };
+
+// 🔴 THE SCORE IS NOT IN HScore/VScore. Those are present on every row and null
+// on every row, including a finished game. The live score is H_Score_R /
+// V_Score_R. Shipped 2026-09-18 reading the wrong pair, which made `final`
+// permanently false, so NPB could never produce a result and Recent results
+// carried no NPB at all. Measured 2026-09-19 on a completed game:
+// HScore=null, VScore=null, H_Score_R=4, V_Score_R=7.
+//
+// Completion is GameStateID, NOT GameState. GameState is 1 on a game in the 2nd
+// inning AND on one that has ended, so it says nothing. GameStateID 4 carries
+// GameStateName 試合終了 ("game over"); GameStateID 1 carries 試合中 ("in
+// progress"). Keyed on the id rather than the Japanese string so a label change
+// upstream cannot silently turn every finished game back into a fixture.
+const STATE_FINAL = 4;
+const STATE_IN_PLAY = 1;
 
 type Row = {
   GameID?: unknown; DateJPN?: unknown; TimeJPN?: unknown;
   HTeamID?: unknown; VTeamID?: unknown;
-  HScore?: unknown; VScore?: unknown;
+  H_Score_R?: unknown; V_Score_R?: unknown;
+  GameStateID?: unknown; Inning?: unknown;
 };
 
 const num = (v: unknown): number | null =>
@@ -108,14 +128,21 @@ async function buildNpbFixtures(): Promise<NpbGame[]> {
     const when = jstToIso(date, typeof r.TimeJPN === "string" ? r.TimeJPN : "");
     if (!when) continue;
     // A score of 0 is a real score (a shutout), so test for null explicitly
-    // rather than truthiness. Scores stay null until the game is played, which
-    // is what marks it as a fixture rather than a result.
-    const hs = num(r.HScore), as = num(r.VScore);
+    // rather than truthiness. A game that has not started carries no _R fields
+    // at all, which is what marks it as a fixture rather than a result.
+    const hs = num(r.H_Score_R), as = num(r.V_Score_R);
+    const stateId = num(r.GameStateID);
+    const final = stateId === STATE_FINAL && hs !== null && as !== null;
     out.push({
       id: String(num(r.GameID) ?? `${date}|${home.slug}`),
       when, home: home.name, away: away.name,
-      homeScore: hs, awayScore: as,
-      final: hs !== null && as !== null,
+      // Only a finished game reports a score. An in-progress one has a running
+      // _R total, but these strips are a schedule and not a scoreboard (see the
+      // note in collectEvents), so a live game shows as on today with no score.
+      homeScore: final ? hs : null,
+      awayScore: final ? as : null,
+      final,
+      inPlay: stateId === STATE_IN_PLAY && (num(r.Inning) ?? 0) > 0,
     });
   }
   out.sort((a, b) => a.when.localeCompare(b.when));

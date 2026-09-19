@@ -243,7 +243,14 @@ function CompCard({ comp }: { comp: LiveComp }) {
     // competition now fills its card, and every card takes the whole row: the
     // Libertadores' eight group tables were 329px wide in 226px cells at the
     // half-row width, so they scrolled sideways too.
-    <details className="rounded-xl border overflow-hidden" style={cardStyle} open={comp.groups.length > 0 && !isLibertadores}>
+    //
+    // CLOSED BY DEFAULT, every one of them (Ashwin, 2026-09-19). The open state
+    // was `comp.groups.length > 0 && !isLibertadores`, so a competition with
+    // groups opened itself and put several expanded group stages between the
+    // reader and everything below. The Libertadores was already excepted for
+    // that reason; this applies the same judgement to all of them. No `open`
+    // attribute at all now, so the reader decides.
+    <details className="rounded-xl border overflow-hidden" style={cardStyle}>
       <summary className="cursor-pointer select-none px-4 py-2.5 flex items-center justify-between gap-2">
         <span className="font-semibold text-sm">{name}</span>
         {hub && <Link href={hub} className="text-xs font-medium whitespace-nowrap text-[var(--accent)] hover:underline">Open hub →</Link>}

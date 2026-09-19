@@ -49,13 +49,44 @@ async function load<T>(file: string): Promise<T | null> {
 // seen across ~12 leagues 2026-08-02), and occasionally pads a table with a
 // nameless duplicate row (Brazil's double rank-20). Normalize at read time so
 // every consumer heals, whatever the refresh wrote: drop nameless rows, drop
-// same-team duplicate rows inside a group, then drop any group whose team
-// sheet duplicates an earlier group's (first label wins — it matches the
-// league's own name in the observed cases). Genuine multi-group leagues (MLS
-// conferences, Apertura/Clausura, promotion splits) have different sheets and
-// are untouched.
+// same-team duplicate rows inside a group, then drop any group that repeats an
+// earlier group's table (first label wins, matching the league's own name in
+// the observed cases).
+//
+// 🔴 THE DUPLICATE KEY IS THE TABLE, NOT THE TEAM SHEET. Until 2026-09-19 it was
+// the sorted team names alone, with a comment asserting that "genuine multi-group
+// leagues (MLS conferences, Apertura/Clausura, promotion splits) have different
+// sheets and are untouched". That is false for exactly the leagues it names: the
+// same clubs contest both halves of a split season. Measured against the live
+// bundle that day, it silently dropped Argentina's Clausura Group A and B, and
+// Uruguay's Clausura, Promedios, Tabla Anual and Torneo Intermedio, so the hub
+// showed the Apertura alone and nothing logged (Ashwin spotted it on the page).
+// A real duplicate-spelling pair is the same standings twice, identical rank and
+// points, so the key now includes those values and the two cases separate.
+//
+// Residual, accepted: two tables that are genuinely identical in teams AND values
+// still collapse. That happens only before either has been played (all zeros),
+// when there is nothing to tell them apart anyway, and they separate on the first
+// result.
+function tableKey(rows: LiveRow[]): string {
+  return rows
+    .map((r) => `${(r.name ?? "").toLowerCase()}:${r.rank ?? ""}:${r.points ?? ""}`)
+    .sort()
+    .join("|");
+}
+
+// Ashwin, 2026-09-19: "For Apertura/Clausura countries, it should show both
+// tables with Clausura listed first". The Clausura is the half being played now,
+// so it leads. Everything else (Tabla Anual, Promedios, Torneo Intermedio,
+// plain groups) keeps the order the feed gave it, because the sort is stable.
+function splitSeasonRank(label: string): number {
+  if (/clausura/i.test(label)) return 0;
+  if (/apertura/i.test(label)) return 1;
+  return 2;
+}
+
 function dedupeLeague(l: LiveLeague): LiveLeague {
-  const seenSheets = new Set<string>();
+  const seenTables = new Set<string>();
   const groups: LiveGroup[] = [];
   for (const g of l.groups ?? []) {
     const seenTeams = new Set<string>();
@@ -68,13 +99,18 @@ function dedupeLeague(l: LiveLeague): LiveLeague {
       return true;
     });
     if (rows.length === 0) continue;
-    const sheet = rows.map((r) => (r.name ?? "").toLowerCase()).sort().join("|");
-    if (seenSheets.has(sheet)) continue;
-    seenSheets.add(sheet);
+    const key = tableKey(rows);
+    if (seenTables.has(key)) continue;
+    seenTables.add(key);
     groups.push({ ...g, rows });
   }
+  groups.sort((a, b) => splitSeasonRank(a.group_label ?? "") - splitSeasonRank(b.group_label ?? ""));
   return { ...l, groups };
 }
+
+/** Exported for lib/clubFootballLive.test.ts only. A dedupe that silently eats
+ *  real tables is worth pinning: this one did, for six weeks. */
+export const __testing = { dedupeLeague, tableKey, splitSeasonRank };
 
 export async function getClubStandings(): Promise<LiveLeague[]> {
   const doc = await load<{ leagues: LiveLeague[] }>("live-standings-2026.json");

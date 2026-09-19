@@ -100,7 +100,12 @@ type SubTable = { title: string | null; columns: string[]; rows: SRow[]; fixture
  *  and Women's Football, create a separate section to show the International games rather
  *  than creating two new categories". Unset for everything else, which reads exactly as
  *  it did before. */
-export type LiveEvent = { sport: string; league: string; href: string | null; label: string; when: string; score: string | null; live: boolean; section?: string; teams?: { home: string; away: string } };
+/** `country` exists only to order the Football strips (see FOOTBALL_EVENT_ORDER).
+ *  Ashwin's 2026-09-19 order is written in COUNTRIES for the domestic entries
+ *  ("England, Spain, Italy...") and in COMPETITION labels for the supranational
+ *  ones ("Champions League", "Europa/Conference"), so a group is ranked by its
+ *  label first and its country second. It is optional and unset outside football. */
+export type LiveEvent = { sport: string; league: string; href: string | null; label: string; when: string; score: string | null; live: boolean; section?: string; country?: string; teams?: { home: string; away: string } };
 type Block = { league: string; href: string | null; note: string | null; open: boolean; subTables: SubTable[]; cols?: boolean; live?: boolean; cutNote?: string | null; events?: LiveEvent[] };
 export type SportGroup = { sport: string; blocks: Block[]; columns?: [Block[], Block[]] };
 
@@ -362,13 +367,20 @@ const TODAY_END_LAG_MS = 8 * 3600 * 1000;
 const LIVE_GRACE_MS = 5 * 3600 * 1000;
 const RESULTS_BACK_MS = 72 * 3600 * 1000;
 const TODAY_PER_SPORT = 6;
-// Ashwin, 2026-09-18: widened from 3 to 7. Three days left gaps that read as
-// bugs rather than as quiet weeks: the AFL had both Preliminary Finals inside
-// today's window and its Grand Final a week out, so Aussie Rules vanished from
-// Coming up entirely while the finals were the biggest thing on. A week reaches
-// the next round of a knockout competition, which is the unit these brackets
-// actually move in.
-const COMING_DAYS = 7;
+// How far forward the Coming up strip reaches. THREE DAYS, and it has been
+// argued both ways, so do not "fix" this to a week without asking.
+//
+// Widened 3 to 7 on 2026-09-18 on the reasoning that three days left gaps that
+// read as bugs rather than quiet weeks: the AFL had both Preliminary Finals
+// inside today's window and its Grand Final a week out, so Aussie Rules showed
+// nothing in Coming up while the finals were the biggest thing on.
+//
+// Ashwin reverted it to 3 on 2026-09-19, having seen the week live. What a week
+// actually bought was volume, not reach: Coming up went from 135 fixtures to
+// 293, and the added 158 were mostly football league fixtures nobody is looking
+// a week ahead for. A knockout bracket's next round is worth reaching for; six
+// days of domestic league fixtures are not.
+const COMING_DAYS = 3;
 
 function todayWindow(now: number): [number, number] {
   const d = new Date(now);
@@ -483,9 +495,15 @@ function splitSections(list: LiveEvent[]): { main: LiveEvent[]; sections: [strin
 function EventGroup({ items, kind, noun, showHeads }: { items: LiveEvent[]; kind: "upcoming" | "results"; noun: string; showHeads: boolean }) {
   const byLeague = new Map<string, LiveEvent[]>();
   for (const e of items) byLeague.set(e.league, [...(byLeague.get(e.league) ?? []), e]);
+  // Ordered, not insertion-ordered. Until 2026-09-19 these rendered in whatever
+  // order collectEvents happened to emit, so the Premier League could sit below
+  // the Taça de Portugal on a cup weekend. Anything unlisted keeps its relative
+  // order at the end, which is where "any other competition" belongs.
+  const groups = [...byLeague.entries()].sort(
+    (a, b) => footballRank(a[1][0]) - footballRank(b[1][0]));
   return (
     <div className="space-y-1.5">
-      {[...byLeague.entries()].map(([league, list]) =>
+      {groups.map(([league, list]) =>
         list.length <= TODAY_PER_SPORT ? (
           <div key={league}>
             {showHeads && byLeague.size > 1 && <div className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]">{league}</div>}
@@ -519,6 +537,40 @@ function EventGroup({ items, kind, noun, showHeads }: { items: LiveEvent[]; kind
       )}
     </div>
   );
+}
+
+/** Ashwin's reading order for the Football strips, 2026-09-19: "Champions League,
+ *  England, Spain, Italy, Germany, France, Europa/Conference, Portugal,
+ *  Netherlands, Scotland, MLS, Brazil, Argentina, Mexico, any other competition".
+ *
+ *  Mixed on purpose, because the instruction is mixed: the supranational entries
+ *  are COMPETITION labels and the domestic ones are COUNTRIES. Keying countries
+ *  rather than league names means a country's cups travel with its league (the
+ *  FA Cup sits under England, not adrift at the end), which is what "order for
+ *  countries" asks for, and it needs no edit when a new competition appears in a
+ *  country already listed.
+ *
+ *  MLS is its own entry rather than "USA" so the NWSL is not dragged up with it;
+ *  the women's competitions live under the Women's Football sport anyway, where
+ *  this ordering does not apply. */
+const FOOTBALL_EVENT_ORDER: string[] = [
+  "Champions League",
+  "England", "Spain", "Italy", "Germany", "France",
+  "Europa League", "Conference League",
+  "Portugal", "Netherlands", "Scotland",
+  "MLS",
+  "Brazil", "Argentina", "Mexico",
+];
+
+/** Rank one competition group for the Football strips. Label first, then country,
+ *  so "Champions League" beats its country (World) and the FA Cup inherits
+ *  England's place. An unlisted group sorts last and keeps its relative order,
+ *  because Array.prototype.sort is stable. */
+function footballRank(e: LiveEvent): number {
+  const byLabel = FOOTBALL_EVENT_ORDER.indexOf(e.league);
+  if (byLabel !== -1) return byLabel;
+  const byCountry = e.country ? FOOTBALL_EVENT_ORDER.indexOf(e.country) : -1;
+  return byCountry === -1 ? FOOTBALL_EVENT_ORDER.length : byCountry;
 }
 
 /** The heading a section carries inside its sport. Deliberately distinct from a
@@ -1113,14 +1165,16 @@ async function npbBlock(): Promise<Block | null> {
   if (!s || (s.central.length === 0 && s.pacific.length === 0)) return null;
   // NPB had no events at all until 2026-09-18. SPAIA's schedule endpoint is
   // TODAY ONLY (see lib/npbFixtures.ts: every date parameter is ignored), so
-  // this fills On today and Recent results and cannot fill Coming up. A short
-  // card is a quiet day, not a truncated feed: 18 Sept was three games because
-  // only the Central League played, which npb.jp's own index confirms.
+  // this fills On today, fills Recent results only for games that finished
+  // earlier the SAME DAY, and cannot fill Coming up at all. A short card is a
+  // quiet day, not a truncated feed: 18 Sept was three games because only the
+  // Central League played (npb.jp's own index confirms), and 19 Sept was a full
+  // six with both leagues in.
   const npbEvents: LiveEvent[] = fixtures.map((g) => ({
     sport: "Baseball", league: "NPB", href: "/teams/baseball/npb",
     label: `${g.away} at ${g.home}`, when: g.when,
     score: g.final ? `${g.awayScore}–${g.homeScore}` : null,
-    live: false, teams: { home: g.home, away: g.away } }));
+    live: g.inPlay, teams: { home: g.home, away: g.away } }));
   // Closes for the Japanese offseason. The feed keeps serving the final table
   // all winter, so without the window this sat open showing a finished season.
   const npbLive = inSeasonWindow("npb");
@@ -1918,6 +1972,10 @@ export async function loadLiveStandings(): Promise<{ groups: SportGroup[]; today
     (nameCount.get(cup.name) ?? 0) > 1 && cup.country !== "England" ? `${CC[cup.country] ?? cup.country} ${cup.name}` : cup.name;
   const cupEvents: LiveEvent[] = allCups.flatMap((cup) => (cup.fixtures ?? []).filter((f) => f.kickoff && !/qualif|prelim/i.test(f.round ?? "")).map((f) => ({
     sport: "Football", league: cupLabel(cup), href: "/teams/football/2026-27", label: `${cupName(f.home)} v ${cupName(f.away)}`, when: f.kickoff as string,
+    // country carries the cup to its nation's place in FOOTBALL_EVENT_ORDER, so
+    // the FA Cup sits under England beside the Premier League rather than at the
+    // end with the unlisted competitions.
+    country: cup.country,
     score: f.status && CUP_FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
     live: !!f.status && CUP_LIVE.has(f.status) })));
   // The Premier League and Champions League sims (Ashwin, 2026-09-11: "fit in
@@ -1928,6 +1986,12 @@ export async function loadLiveStandings(): Promise<{ groups: SportGroup[]; today
   // predictions ledger (kick-off instants, scores once graded); the standings
   // bundle carries tables only.
   const plEvents: LiveEvent[] = (plPreds?.ledger ?? []).filter((g) => g.kickoff).map((g) => ({
+    // country, so FOOTBALL_EVENT_ORDER can place it. This one comes from the
+    // predictions ledger rather than the fixtures registry, so it carried no
+    // country and sorted to the end with the unlisted competitions: measured
+    // 2026-09-19, the Premier League rendered FIFTH, behind La Liga, Serie A,
+    // the Bundesliga and Ligue 1, which is the opposite of what was asked for.
+    country: "England",
     sport: "Football", league: "Premier League", href: "/teams/football/2026-27", label: `${g.home} v ${g.away}`, when: g.kickoff as string,
     score: g.result && g.score ? g.score.replace("-", "–") : null, live: false, teams: { home: g.home, away: g.away } }));
   const plOdds: DomesticOdds = new Map(
@@ -2085,6 +2149,10 @@ export async function loadLiveStandings(): Promise<{ groups: SportGroup[]; today
   const leagueFixtures = await getLeagueFixtures().catch(() => []);
   const leagueEvents: LiveEvent[] = leagueFixtures.flatMap((lg) => (lg.fixtures ?? []).filter((f) => f.kickoff).map((f) => ({
     sport: lg.women ? "Women's Football" : "Football", league: lg.name, href: lg.women ? "/teams/wfootball" : "/teams/football/2026-27",
+    // The registry's country ("Brazil", "Argentina", "Mexico", "Spain"...), which
+    // is what FOOTBALL_EVENT_ORDER keys the domestic entries on. MLS is ordered by
+    // its label instead, so its "USA" country never has to compete with the NWSL.
+    country: lg.country,
     label: `${cupName(f.home)} v ${cupName(f.away)}`, when: f.kickoff as string,
     score: f.status && CUP_FIN.has(f.status) && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : null,
     live: !!f.status && CUP_LIVE.has(f.status) })));

@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { NbaEloTeam } from "@/lib/nbaElo";
 import SortableBoard, { type BoardCol, type BoardRow } from "@/app/_shared/SortableBoard";
 import { useThroughWeek } from "./WeekScrubber";
-import { winPct, confKey, divKey } from "./standingsSort";
+import { winPct, confKey, divKey, recordsAtWeek } from "./standingsSort";
 
 // One season's table, as it stood after the scrubbed week.
 //
@@ -33,12 +33,6 @@ const MONO = "'JetBrains Mono', monospace";
 /** "62-20", or the null-fallback glyph when there is no record to show. */
 function rec(r: [number, number] | null | undefined): string {
   return r ? `${r[0]}-${r[1]}` : "—";
-}
-
-function total(t: NbaEloTeam): [number, number] | null {
-  if (!t.reg) return null;
-  if (!t.post) return t.reg;
-  return [t.reg[0] + t.post[0], t.reg[1] + t.post[1]];
 }
 
 /** The team's row as it stood after `through`, or its last week when null. */
@@ -108,7 +102,13 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
   const boardRows: BoardRow[] = shown.map(({ t, w }) => {
     const h = honours(t);
     const slug = slugByName[t.name];
-    const tot = total(t);
+    // The records AS THEY STOOD after the scrubbed week, not the season's final
+    // ones. `w` is already the scrubbed week (atWeek above), and w.rec is the
+    // cumulative [wins, losses] through it; recordsAtWeek splits that into the
+    // regular season and the playoffs. Unscrubbed, atWeek returns the last week
+    // and this reduces to the season row.
+    const at = recordsAtWeek(t.reg, t.post, w.rec);
+    const tot = at.total;
     // Both halves must exist: an upcoming shell has no `end`, a first season
     // has no `prev_end`. Either way there is no year-over-year number, which
     // is a real absence rather than a zero.
@@ -145,13 +145,13 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
       key: t.name,
       sort: {
         team: name,
-        conf: confKey(t.conf, t.reg),
-        div: divKey(t.conf, t.div, t.reg),
+        conf: confKey(t.conf, at.reg),
+        div: divKey(t.conf, t.div, at.reg),
         seed: t.seed ?? 99,
         // Percentage rather than wins, so a 60-game season and an 82-game one
         // rank on the same scale.
-        reg: winPct(t.reg) ?? -1,
-        post: t.post ? t.post[0] : -1,
+        reg: winPct(at.reg) ?? -1,
+        post: at.post ? at.post[0] : -1,
         total: tot ? tot[0] : -1,
         elo: w.e,
         yoy: yoy ?? Number.NEGATIVE_INFINITY,
@@ -161,9 +161,9 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
         <span key="conf" className="text-xs text-[var(--text-muted)]">{t.conf ?? "—"}</span>,
         <span key="div" className="text-xs text-[var(--text-muted)]">{t.div ?? "—"}</span>,
         <span key="sd" style={{ fontFamily: MONO }}>{t.seed ?? "—"}</span>,
-        <span key="reg" style={{ fontFamily: MONO }}>{rec(t.reg)}</span>,
-        <span key="post" style={{ fontFamily: MONO, color: t.post ? undefined : "var(--text-dim)" }}>
-          {rec(t.post)}
+        <span key="reg" style={{ fontFamily: MONO }}>{rec(at.reg)}</span>,
+        <span key="post" style={{ fontFamily: MONO, color: at.post ? undefined : "var(--text-dim)" }}>
+          {rec(at.post)}
         </span>,
         <span key="tot" style={{ fontFamily: MONO, color: "var(--text-muted)" }}>{rec(tot)}</span>,
         <span key="elo" style={{ fontFamily: MONO }}>{Math.round(w.e)}</span>,
@@ -185,8 +185,8 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
         // reader loses first when the table narrows.
         sub: (
           <span style={{ fontFamily: MONO }} className="text-[11px] text-[var(--text-dim)]">
-            {rec(t.reg)}
-            {t.post ? <span className="text-[var(--accent)]"> +{rec(t.post)}</span> : null}
+            {rec(at.reg)}
+            {at.post ? <span className="text-[var(--accent)]"> +{rec(at.post)}</span> : null}
             {t.div ? <span> · {t.div}</span> : null}
             {t.seed ? <span> · seed {t.seed}</span> : null}
           </span>

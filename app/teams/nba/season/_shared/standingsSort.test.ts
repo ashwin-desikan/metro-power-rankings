@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { winPct, pctKey, confKey, divKey } from "./standingsSort";
+import { winPct, pctKey, confKey, divKey, recordsAtWeek } from "./standingsSort";
 
 // The property under test is an ORDERING, so the tests sort real-shaped data
 // and assert the sequence. Asserting the key strings alone would pass on a key
@@ -85,5 +85,92 @@ describe("grouped sorts keep the group together and order within it", () => {
     const byConf = order((t) => confKey(t.conf, t.reg));
     expect(byConf[0]).toBe("Bulls");
     expect(byConf.indexOf("Spurs")).toBeGreaterThan(byConf.indexOf("Celtics"));
+  });
+});
+
+describe("recordsAtWeek splits a week's cumulative record", () => {
+  // The 2026 Spurs, from public/data/nba/elo/seasons/2026.json: reg 62-20,
+  // post 13-10, weekly rec running 0-0 -> 38-17 (wk 17) -> 75-31 (final).
+  const REG: [number, number] = [62, 20];
+  const POST: [number, number] = [13, 10];
+
+  it("mid regular season: the week's record IS the regular season, no playoffs yet", () => {
+    const at = recordsAtWeek(REG, POST, [38, 17]);
+    expect(at.reg).toEqual([38, 17]);
+    expect(at.total).toEqual([38, 17]);
+    // 🔴 Blank, not 0-0. 0-0 would claim they played the playoffs and lost none.
+    expect(at.post).toBeNull();
+  });
+
+  it("past the regular season: regular fixed, playoffs are the difference", () => {
+    const at = recordsAtWeek(REG, POST, [68, 24]);
+    expect(at.reg).toEqual(REG);
+    expect(at.post).toEqual([6, 4]);
+    expect(at.total).toEqual([68, 24]);
+  });
+
+  // 🔴 REGRESSION. This returned `post` (13-10) at a week where no playoff game
+  // had been played, because rec == reg falls past the "still in the regular
+  // season" test and the zero difference was treated as "unusable" and fell back
+  // to the season record. Blank is the only honest answer here.
+  it("at the exact end of the regular season there are still no playoffs", () => {
+    const at = recordsAtWeek(REG, POST, [62, 20]);
+    expect(at.reg).toEqual(REG);
+    expect(at.post).toBeNull();
+    expect(at.total).toEqual([62, 20]);
+  });
+
+  // Ashwin, 2026-09-19: "play-in are postseason", so the subtraction applies at
+  // the final week too and is not special-cased back to `post`. For the Spurs
+  // that means 13-11 rather than the workbook's 13-10, a known one-game
+  // disagreement between the weekly series and the season totals.
+  it("derives the final week too, play-in included", () => {
+    const at = recordsAtWeek(REG, POST, [75, 31]);
+    expect(at.reg).toEqual(REG);
+    expect(at.post).toEqual([13, 11]);
+    expect(at.total).toEqual([75, 31]);
+  });
+
+  it("a team that missed the playoffs never grows a playoff record", () => {
+    const at = recordsAtWeek([30, 52], null, [30, 52]);
+    expect(at.reg).toEqual([30, 52]);
+    expect(at.post).toBeNull();
+    expect(at.total).toEqual([30, 52]);
+  });
+
+  it("no weekly record (an upcoming shell) leaves the season row untouched", () => {
+    const at = recordsAtWeek(REG, POST, null);
+    expect(at.reg).toEqual(REG);
+    expect(at.post).toEqual(POST);
+    expect(at.total).toEqual([75, 30]);
+  });
+
+  it("no regular-season total: the week is all there is, none of it called playoffs", () => {
+    const at = recordsAtWeek(null, null, [12, 4]);
+    expect(at.reg).toEqual([12, 4]);
+    expect(at.post).toBeNull();
+    expect(at.total).toEqual([12, 4]);
+  });
+
+  // The 2024 Mavericks are the disagreement in the other direction: rec 63-41
+  // against reg+post 63-42. Both components of the subtraction are still
+  // non-negative, so the rule applies and the derived playoff record is 13-9, one
+  // loss fewer than the workbook's 13-10. Asserted as the rule's real output, not
+  // as a fallback: an earlier version of this test expected 13-10 and was simply
+  // wrong about what the code does.
+  it("derives 13-9 for the 2024 Mavericks, one loss off the workbook", () => {
+    const at = recordsAtWeek([50, 32], [13, 10], [63, 41]);
+    expect(at.reg).toEqual([50, 32]);
+    expect(at.post).toEqual([13, 9]);
+    expect(at.total).toEqual([63, 41]);
+  });
+
+  // A constructed case, because no real season exhibits it: if the weekly series
+  // ever ran BEHIND the regular-season total in a component, the subtraction would
+  // print a negative record. Blank instead, and never `post`.
+  it("shows no playoff record rather than a negative one", () => {
+    const at = recordsAtWeek([50, 32], [13, 10], [63, 30]);
+    expect(at.post).toBeNull();
+    expect(at.total).toEqual([63, 30]);
   });
 });

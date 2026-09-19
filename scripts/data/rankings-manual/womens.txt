@@ -1,8 +1,17 @@
 # FIFA/Coca-Cola Women's World Ranking
 # url: https://www.fifa.com
-# asOf: 2026-04-21
+# asOf: 2026-06-16
 # separator: ~
 # Edit this file to update the ranking. It is data, not code.
+# 2026-09-19: asOf corrected 2026-04-21 -> 2026-06-16. The 190 rows below
+# already WERE the 16 June edition, verified row for row against FIFA's own
+# table (inside.fifa.com, "Last official update: 16 June 2026"): same names,
+# same points, same order, Spain 2105.36 to Liechtenstein 725.35. Only the
+# header was stale, which is what check:data-currency measures. Ranks 191-198
+# appended the same day; FIFA now ranks 198 teams. Six further teams are
+# listed unranked by FIFA (Mauritania, Kuwait, Eritrea, Qatar, British Virgin
+# Islands, Afghanistan) and are deliberately not carried here.
+# Next FIFA update: 20 October 2026.
 Spain~2105.36
 USA~2057.92
 Germany~2028.99
@@ -193,3 +202,11 @@ Comoros~745.47
 Libya~739.94
 Gibraltar~734.15
 Liechtenstein~725.35
+Madagascar~724.45
+Anguilla~681.60
+Bahamas~665.71
+Sudan~628.74
+South Sudan~628.66
+Turks and Caicos Islands~627.14
+Djibouti~556.64
+Mauritius~433.66
