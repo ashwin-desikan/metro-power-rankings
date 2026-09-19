@@ -18,12 +18,53 @@ DRY_RUN="${DRY_RUN:-0}"
 [ -f "$HOME/.config/metro-supabase/env" ] && { set -a; source "$HOME/.config/metro-supabase/env"; set +a; }
 export F1_SUPABASE=1
 push(){ [ -n "${NTFY_TOPIC:-}" ] || return 0; curl -s -o /dev/null -H "Title: $1" -H "Priority: $2" -H "Tags: $3" -d "$4" "https://ntfy.sh/$NTFY_TOPIC" || true; }
-fail(){ log "ERROR: $1"; push "[ALERT] F1 sync FAILED -- $DATE" urgent rotating_light "$1"; exit 1; }
+
+# AN UPSTREAM OUTAGE MUST NOT PAGE ONCE AN HOUR. This poller runs hourly and
+# used to send an URGENT ntfy on every single failed run, so a third-party API
+# being down for an afternoon meant an afternoon of identical urgent alerts.
+# That is the same trap run-ops-autofix.sh already names: an alert channel that
+# cries wolf on a schedule trains you to swipe it away. Persistence is already
+# carried by the healthchecks tile (hc-run.sh wraps this job and the run still
+# exits 1), so the ntfy only needs to fire on the EDGES: the first failure, and
+# the recovery.
+OUTAGE="$LOGDIR/.f1-outage"
+fail(){
+  log "ERROR: $1"
+  if [ -f "$OUTAGE" ] && [ "$(head -1 "$OUTAGE")" = "$1" ]; then
+    log "same failure as the previous run (since $(sed -n 2p "$OUTAGE")); not re-notifying -- the healthchecks tile carries it"
+  else
+    printf '%s\n%s\n' "$1" "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" > "$OUTAGE"
+    push "[ALERT] F1 sync FAILED -- $DATE" urgent rotating_light "$1"
+  fi
+  exit 1
+}
+clear_outage(){
+  [ -f "$OUTAGE" ] || return 0
+  local since; since="$(sed -n 2p "$OUTAGE")"
+  log "recovered: the failure that began $since is over"
+  push "F1 sync recovered -- $DATE" low white_check_mark "Back to normal after the failure that began $since."
+  rm -f "$OUTAGE"
+}
+
+# RETRY, AND NEVER HANG. Measured 2026-09-19 during a jolpica outage: DNS
+# resolved to Cloudflare and every request hung, while jolpi.ca itself served
+# 200, so the failure mode is a hang rather than a refusal. Plain curl has NO
+# timeout, so without -m this job can sit here until launchd kills it and the
+# hourly poller starts overlapping itself.
+curl_retry(){ # curl_retry <outfile> <url>
+  local a
+  for a in 1 2 3; do
+    curl -fsSL -m 30 "$2" -o "$1" && return 0
+    log "fetch attempt $a failed: $2"
+    [ "$a" -lt 3 ] && sleep $((a * 10))
+  done
+  return 1
+}
 [ -n "${SUPABASE_SERVICE_KEY:-}" ] || fail "SUPABASE_SERVICE_KEY not set"
 
 # 1. fetch just the last-race results and decide
 mkdir -p "$INCOMING"; rm -f "$INCOMING"/*.json
-curl -fsSL "https://api.jolpi.ca/ergast/f1/current/last/results.json" -o "$INCOMING/results.json" || fail "jolpica fetch failed"
+curl_retry "$INCOMING/results.json" "https://api.jolpi.ca/ergast/f1/current/last/results.json" || fail "jolpica fetch failed"
 DECISION="$("$PY" - "$INCOMING/results.json" <<'PYEOF'
 import sys, json, os
 from supabase import create_client
@@ -46,7 +87,7 @@ season=$(echo "$DECISION" | awk '{print $2}'); jrnd=$(echo "$DECISION" | awk '{p
 racename=$(echo "$DECISION" | cut -d' ' -f5-)
 
 case "$kind" in
-  IDLE) log "idle: $season R$jrnd already synced (stored R$stored)."; rm -f "$INCOMING"/*.json; exit 0 ;;
+  IDLE) log "idle: $season R$jrnd already synced (stored R$stored)."; rm -f "$INCOMING"/*.json; clear_outage; exit 0 ;;
   ERR)  fail "round check failed: $racename" ;;
   GAP)  rm -f "$INCOMING"/*.json
         push "F1: manual catch-up needed -- $DATE" urgent rotating_light "Jolpica is at $season R$jrnd but Supabase has only R$stored (gap > 1). Not auto-syncing — run a full-season catch-up by hand."
@@ -59,7 +100,7 @@ cd "$REPO" || fail "repo not found"
 git fetch origin main --quiet || fail "git fetch failed"
 git merge --ff-only origin/main --quiet || fail "cannot fast-forward"
 BASE="https://api.jolpi.ca/ergast/f1"
-fetch(){ curl -fsSL "$BASE/$2" -o "$INCOMING/$1" || fail "fetch $1 failed"; "$PY" -c "import json;json.load(open('$INCOMING/$1'))" 2>/dev/null || fail "$1 not JSON"; }
+fetch(){ curl_retry "$INCOMING/$1" "$BASE/$2" || fail "fetch $1 failed"; "$PY" -c "import json;json.load(open('$INCOMING/$1'))" 2>/dev/null || fail "$1 not JSON"; }
 fetch qualifying.json           current/last/qualifying.json
 fetch sprint.json               current/last/sprint.json
 fetch driverStandings.json      current/driverStandings.json
@@ -91,4 +132,5 @@ else
   push "F1 synced -- $DATE" default checkered_flag "$season R$jrnd $racename is live."
   log "committed + pushed."
 fi
+clear_outage
 log "=== F1 sync done ==="

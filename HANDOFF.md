@@ -16363,3 +16363,44 @@ here, not `python3`.
 Everything else green: typecheck clean, 322 JS tests in 26 files, all fifteen data checks, and the production build.
 
 **Notion:** none (no queryable state changed; the gate findings are repo hygiene and are recorded here).
+
+### P. The F1 poller paged hourly for a one-hour upstream outage
+
+Ashwin: "just got a ntfy". It was `run-f1-weekly.sh` at 14:07 BST with "ERROR: jolpica fetch failed", carrying
+`curl: (6) Could not resolve host: api.jolpi.ca`.
+
+**Nothing was wrong on our side and nothing was missed.** Measured minutes later: `api.jolpi.ca` resolved fine to
+Cloudflare, but every request to it hung and returned nothing after 25s, while `jolpi.ca` itself served 200 and a
+GitHub raw control served 200. So the API was down, not our egress and not DNS despite what the error said. It came
+back about an hour later, 200 in 0.06s. The day's log is "idle: 2026 R14 already synced" on every hourly poll, so no
+race was pending and the next poll simply carries on.
+
+**The actual defect is the alerting, and it would have paged once an hour until the API returned.** `fail()` sent an
+URGENT ntfy on every failed run and this poller runs HOURLY, so an afternoon-long outage means an afternoon of
+identical urgent alerts. That is precisely the trap `run-ops-autofix.sh` already names in its own comments: an alert
+channel that cries wolf on a schedule trains you to swipe it away.
+
+Fixed on the edges rather than by silencing it. `fail()` now records the failure reason and time in
+`$LOGDIR/.f1-outage`; an identical failure on the next run logs and does NOT re-notify, while a DIFFERENT failure
+still pages immediately, and `clear_outage()` sends one low-priority recovery note. Every path still exits 1, so the
+healthchecks tile still goes red and carries the persistence the ntfy no longer needs to.
+
+Also fixed while in there: the fetches had **no timeout and no retry**. Plain `curl` has no timeout at all, so against
+an endpoint that HANGS rather than refuses, an hourly job can sit there until launchd kills it and then overlap
+itself. Both the round-check fetch and the four per-file fetches now go through `curl_retry`, which is 3 attempts with
+backoff and `-m 30`.
+
+Tested by extracting the shipped functions and exercising them against stubs, rather than reimplementing them: first
+failure pages, an identical repeat is silent, a different failure pages, recovery notifies once and clears the marker,
+and a second recovery is silent.
+
+🔴 **CORRECTION TO SECTION K, AND IT MATTERS FOR DEPLOYING ANYTHING HERE.** I wrote that the dispatcher runs from
+`~/metro-mini-jobs/` and that a runner edited in the repo is not live until it is copied. That is only half true. Most
+live files, including every runner in `runners/` and `run-f1-weekly.sh` itself, are **SYMLINKS into the repo**, so
+editing the repo file IS the deployment and no copy happens. Only some are real files: `jobs.toml`, `dispatcher.py`
+and, until now, the `cricket-champions.sh` I added in section L, which I copied in by hand and which was therefore the
+only runner in that directory that would silently go stale on its next edit. It is now a symlink like its siblings,
+and `--check-sync` is clean.
+
+**Notion:** none (no queryable state changed; the outage was upstream and transient, and the alerting change is repo
+behaviour recorded here).
