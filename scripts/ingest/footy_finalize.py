@@ -71,9 +71,26 @@ VENUES = {
 
 
 def _headers(write=False):
-    key = WRITE_KEY if write else ANON
+    """Use the service key when there is one, for reads as well as writes.
+
+    🔴 ANON CANNOT READ `champions`. Measured 2026-09-19: the table answers an
+    anon or publishable key with HTTP 401 and Postgres 42501, "Grant the
+    required privileges", because there is no SELECT grant for that role. It is
+    NOT a project-wide outage, which is what made it easy to miss: the same key
+    reads afl_nrl_ladders and cricket_matches with a 200, so this script's
+    ladder stages all work and only the champions stage fails. That stage is
+    the one that appends the premier and flips is_current, so the AFL or NRL
+    premier would silently never reach /sports/champions, with the Grand Final
+    days away when this was found.
+
+    The reads are the ONLY thing that changes here. Every write already used
+    WRITE_KEY and is untouched.
+    """
+    key = WRITE_KEY or ANON
     h = {"apikey": key, "Content-Type": "application/json"}
-    if key.count(".") == 2 or not write:
+    # Only a JWT belongs in Authorization; an sb_secret_ key is an apikey and
+    # is rejected when sent as a Bearer token.
+    if key.count(".") == 2:
         h["Authorization"] = "Bearer %s" % key
     return h
 

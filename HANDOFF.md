@@ -16297,9 +16297,43 @@ on "CONCACAF" and changing everything that came back would have mis-scoped the G
 Verified by parsing both versions rather than reading the minified diff: 6,817 rows before and after, 191 changed,
 `scopeType` the ONLY field that differs on any of them, and no competition touched beyond the four.
 
-**Still inconsistent, and deliberately not changed:** the Europa League and the Europa Conference League are also
-continental club competitions and are also `International`. They were not in the list, so they were left as they are
-rather than quietly widening the request. Worth a yes or no.
+**Europa and Conference followed.** They are the same kind of competition and were also `International`. They were
+left out of the first pass rather than quietly widening the request, Ashwin said yes, and they moved in a second pass:
+60 more rows, Europa League 55 and Europa Conference League 5, verified the same way. The Current board now carries 13
+Continental competitions.
 
-**Notion:** Backlog row added for "Europa League and Europa Conference League are scoped International like the four
-that were just moved to Continental; confirm whether they should move too".
+**Notion:** none (no queryable state beyond the ledger itself; the Backlog row that would have asked about Europa and
+Conference was answered in the same session and never filed).
+
+### N. footy_finalize.py could not read the champions table, with the Grand Final a week out
+
+Flagged at the end of section L and Ashwin said fix it. It was real.
+
+**The fault.** `_headers(write=False)` returned the ANON key, and `champions` answers anon with HTTP 401 and Postgres
+42501, "Grant the required privileges to the current role". There is simply no SELECT grant for anon on that table.
+
+**Why it had gone unnoticed, which is the interesting part.** It is NOT a project-wide outage. The same anon key reads
+`afl_nrl_ladders` and `cricket_matches` with a 200, and those are the tables the script's early stages use. So every
+ladder stage worked, the run looked healthy, and only the final stage, the one that appends the premier and flips
+`is_current`, would have thrown. The premier would have reached the AFL and NRL pages and never reached
+/sports/champions or the Time Machine. Both tables that refuse anon are the champions pair: `champions` and
+`champion_competitions`.
+
+**The fix** is one line of behaviour: use the service key for reads as well as writes, exactly as
+`majors_to_champions.py` already does. That script sets `CHAMPIONS_KEY = WRITE_KEY` unconditionally and its docstring
+already says reading champions "needs the SAME elevated key as writing", so this was the house pattern all along and
+footy_finalize was the one that missed it. No write path changed.
+
+**Verified, not assumed.** The champions read now returns the AFL's 2025 Brisbane Lions and the NRL's 2025 Brisbane
+Broncos with `is_current` true, the ladder read still returns its 18 rows, the self-test passes 19 checks, and a full
+dry run reports "ladder flags already exact / Grand Final not decided yet" for both leagues, which is the correct
+state for 19 September.
+
+**Blast radius checked rather than guessed.** Nine scripts carry a hardcoded anon key. Seven of them read
+sport-specific tables (`golf_majors`, `cws_standings`, `wnba_seasons` and friends) where anon works fine and matched
+the search only because they mention champions in prose. Of the three that touch the champions tables,
+`majors_to_champions.py` was already correct and `cricket_finalize.py` was written with the service key yesterday.
+footy_finalize was the only broken one.
+
+**Notion:** Backlog row "footy_finalize.py reads as anon" closed as fixed; the underlying fact that anon has no SELECT
+on `champions`/`champion_competitions` is worth keeping, since the next script to read that table will hit it too.
