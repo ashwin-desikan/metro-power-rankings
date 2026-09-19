@@ -91,7 +91,10 @@ def self_test():
     a, b = window(datetime(2026, 9, 11).date())
     assert (a, b) == ("2026-09-04", "2026-09-18"), (a, b)
     reg = json.load(open(os.path.join(HERE, "league_fixtures.json"), encoding="utf-8"))
-    assert len({r["league_id"] for r in reg}) == len(reg) == 7
+    # 10 since 2026-09-19: Brazil 71, Argentina 128 and Liga MX 262 joined the
+    # original seven at Ashwin's request. The count is asserted so a registry
+    # edit that drops a league fails here rather than emptying a strip quietly.
+    assert len({r["league_id"] for r in reg}) == len(reg) == 10
     assert all({"league_id", "country", "name", "comp_slug", "women", "season"} <= set(r) for r in reg)
     print("refresh_league_fixtures self-test OK")
 
