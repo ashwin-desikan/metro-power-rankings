@@ -17,6 +17,7 @@ import TopGames from "../_shared/TopGames";
 import SeasonHonours from "../_shared/SeasonHonours";
 import SeasonJumper from "../_shared/SeasonJumper";
 import { WeekScrubberProvider, WeekScrubberControl } from "../_shared/WeekScrubber";
+import { getNbaCupFinalForYear } from "@/lib/nbaCup";
 
 // One NBA season, week by week.
 //
@@ -79,6 +80,12 @@ export default async function NbaSeasonPage({ params }: Props) {
     slugByName[t.name] = f?.slug ?? null;
     colorByName[t.name] = nbaLineColor(f?.slug ?? null);
   }
+
+  // That season's NBA Cup final, if it had one. The standings need its DATE, not
+  // just who won: the final counts toward neither season column in the workbook, so
+  // before it a week's record is all regular season and from it the Cup result
+  // belongs in the Playoffs column (Ashwin, 2026-09-19).
+  const cupFinal = getNbaCupFinalForYear(Number(year));
 
   // 🔴 AN UPCOMING SEASON HAS A FIELD AND NOTHING ELSE. No ratings, no weeks,
   // no bracket. Every plotting component below is given only RATED teams, so
@@ -209,11 +216,20 @@ export default async function NbaSeasonPage({ params }: Props) {
               Playoffs is the postseason run, blank for a team that did not
               make it, which is not the same as 0-0. Total is the two added
               together. The Elo column keeps moving through the postseason, so
-              a team can climb after its regular season has finished.
+              a team can climb after its regular season has finished. The NBA
+              Cup final counts toward neither the regular season nor the
+              playoffs officially; from its date it is carried in the Playoffs
+              column here, so the two finalists read one game more than the
+              official postseason record.
             </p>
           }
         />
-        <SeasonStandings teams={data.teams} slugByName={slugByName} colorByName={colorByName} />
+        <SeasonStandings
+          teams={data.teams}
+          slugByName={slugByName}
+          colorByName={colorByName}
+          cup={cupFinal ? { date: cupFinal.date, winner: cupFinal.winner, loser: cupFinal.loser } : null}
+        />
       </section>
 
       {data.bracket?.length ? (

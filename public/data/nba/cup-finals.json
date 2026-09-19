@@ -1,0 +1,45 @@
+{
+  "_meta": {
+    "source": "NBA Cup (In-Season Tournament) championship game, one row per edition",
+    "note": "The championship game does NOT count toward the regular season. Ashwin ruled 2026-09-19 that it counts as a POSTSEASON game for standings tracking, so the season table's playoff column includes it. `year` is the season's END year, matching public/data/nba/elo/seasons/<year>.json. `west`/`east` are the conference champions as the Elo data names them, and `score` is west-first.",
+    "asOf": "2026-09-19"
+  },
+  "finals": [
+    {
+      "year": 2024,
+      "season": "2023-24",
+      "date": "2023-12-09",
+      "west": "Lakers",
+      "east": "Pacers",
+      "score": "123-109",
+      "winner": "Lakers",
+      "loser": "Pacers",
+      "mvp": "LeBron James",
+      "viewers_m": 4.58
+    },
+    {
+      "year": 2025,
+      "season": "2024-25",
+      "date": "2024-12-17",
+      "west": "Thunder",
+      "east": "Bucks",
+      "score": "81-97",
+      "winner": "Bucks",
+      "loser": "Thunder",
+      "mvp": "Giannis Antetokounmpo",
+      "viewers_m": 2.99
+    },
+    {
+      "year": 2026,
+      "season": "2025-26",
+      "date": "2025-12-16",
+      "west": "Spurs",
+      "east": "Knicks",
+      "score": "113-124",
+      "winner": "Knicks",
+      "loser": "Spurs",
+      "mvp": "Jalen Brunson",
+      "viewers_m": 3.07
+    }
+  ]
+}

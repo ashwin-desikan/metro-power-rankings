@@ -48,45 +48,57 @@ export function divKey(conf: string | null, div: string | null, reg: Record2): s
   return `${conf ?? "zz"}|${div ?? "zz"}|${pctKey(reg)}`;
 }
 
+/** The NBA Cup final as the standings need it: when it was played, and what it did
+ *  to this team's record. */
+export type CupFinal = { date: string; result: [number, number] };
+
 /**
- * The three records a season standings row shows, AS THEY STOOD after a
- * scrubbed week. Split out here so it can be tested.
+ * The three records a season standings row shows, AS THEY STOOD after a scrubbed
+ * week. Split out here so it can be tested.
  *
- * The inputs are of two kinds, which is the whole reason this exists. `reg` is a
- * season outcome from NBA.xlsx Year by Year and never moves as the reader
- * scrubs. The weekly `rec` is a CUMULATIVE [wins, losses] that keeps counting
- * through the playoffs, so the 2026 Spurs run 0-0, 3-0, ... 38-17 at week 17 and
- * finish 75-31 while `reg` is 62-20.
+ * `reg` and `post` are season outcomes from NBA.xlsx Year by Year and never move as
+ * the reader scrubs. The weekly `rec` is a CUMULATIVE [wins, losses] over EVERY
+ * game the team played.
  *
- * Until 2026-09-19 the table showed `reg`, `post` and their sum whatever the
- * scrub said, so only the Elo column moved and every record read as the season's
- * final one (Ashwin: "the standings table only displays the final regular
+ * Until 2026-09-19 the table showed `reg`, `post` and their sum whatever the scrub
+ * said, so only the Elo column moved and every record read as the season's final
+ * one (Ashwin: "the standings table only displays the final regular
  * season/postseason w-l not the current state of the teams on that week").
  *
- * The rule, per Ashwin 2026-09-19: the weekly cumulative total is the truth, the
- * regular season is whatever of it precedes the playoffs, and the playoff record
- * is the difference. Play-in games ARE postseason (his ruling), so nothing is
- * carved out of the subtraction.
- *   - Inside the regular season: the week's `rec` IS the regular-season record,
- *     and the playoff cell reads blank, not 0-0, which would claim they played
- *     and lost everything.
- *   - Past the regular-season game count: the regular season is fixed at `reg`
- *     and the playoff record is `rec - reg`.
+ * 🔴 THE NBA CUP FINAL IS IN `rec` AND IN NEITHER SEASON COLUMN. Ashwin identified
+ * this: the In-Season Tournament final counts toward neither the regular season nor
+ * the playoffs in the workbook, so for the two finalists `rec` carries one extra
+ * game. It is why a naive `rec - reg` inflated their playoff record. Confirmed
+ * against the data: the six teams it explains are exactly the three finals in
+ * public/data/nba/cup-finals.json (2024 Lakers beat Pacers, 2025 Bucks beat
+ * Thunder, 2026 Knicks beat Spurs), each winner a win up and each loser a loss up.
  *
- * ⚠️ KNOWN ONE-GAME DISAGREEMENT, deliberately not hidden. For 8 of 330 played
- * team-seasons the final weekly `rec` and `reg + post` differ by exactly one
- * game, in BOTH directions: the 2026 Spurs' derived playoffs come out 13-11
- * against `post` 13-10, while the 2024 Mavericks come out 13-9 against 13-10. It
- * is not a play-in artefact (the eight are seeds 1 to 6, not 7 to 10), so the
- * cause is an unreconciled difference between the workbook's season totals and
- * the weekly series. The subtraction is applied anyway, because a special case at
- * the final week would make the same column mean two different things depending
- * on where the scrubber sits. Backlog row filed to reconcile the source.
+ * His ruling, 2026-09-19: "you can consider the final a playoff game for the
+ * standings tracking purposes... after those dates you would show the regular
+ * season totals as expected and the extra cup final games in the playoffs section".
+ * So the Cup date does the work an inferred residual used to:
+ *   - Before the Cup final (or for a team that never played one): the week's `rec`
+ *     IS the running regular-season record, and the playoff cell reads blank, not
+ *     0-0, which would claim they played and lost everything.
+ *   - From the Cup final until the regular season ends: the regular-season record
+ *     is `rec` MINUS the Cup result, and the playoff cell carries the Cup result.
+ *   - Once the regular season is complete: the regular column is fixed at `reg` and
+ *     the playoff column is `rec - reg`, which includes the Cup game by design.
+ *
+ * Worked example, the 2026 Spurs (Cup final 2025-12-16, lost): week 8 ending 12-14
+ * reads 18-7 with no playoff cell; week 9 ending 12-21 reads 21-7 and 0-1; the
+ * final week reads 62-20 and 13-11, being the workbook's 13-10 plus the Cup loss.
+ *
+ * ⚠️ 2024 has two teams this does NOT explain: four are off by a game, and the
+ * Mavericks are a loss DOWN where a single final can only put one team up. Backlog
+ * row filed; their playoff column falls back to `post` rather than showing a
+ * negative.
  */
 export function recordsAtWeek(
   reg: Record2,
   post: Record2,
   rec: [number, number] | null | undefined,
+  opts: { weekDate?: string | null; cup?: CupFinal | null } = {},
 ): { reg: Record2; post: Record2; total: Record2 } {
   const seasonTotal: Record2 =
     reg && post ? [reg[0] + post[0], reg[1] + post[1]] : reg ?? null;
@@ -96,17 +108,25 @@ export function recordsAtWeek(
   // No season regular-season total to measure against: the week's record is all
   // there is, and calling any of it postseason would be a guess.
   if (!reg) return { reg: rec, post: null, total: rec };
-  if (rec[0] + rec[1] < reg[0] + reg[1]) return { reg: rec, post: null, total: rec };
+
+  // ISO dates, so a string compare is a date compare. A week whose end date is on
+  // or after the final has the Cup game inside it.
+  const { weekDate, cup } = opts;
+  const cupPlayed = Boolean(cup && weekDate && weekDate >= cup.date);
+  const cupRes: [number, number] = cupPlayed && cup ? cup.result : [0, 0];
+
+  const regNow: [number, number] = [rec[0] - cupRes[0], rec[1] - cupRes[1]];
+  if (regNow[0] + regNow[1] < reg[0] + reg[1]) {
+    return { reg: regNow, post: cupPlayed ? cupRes : null, total: rec };
+  }
+
   const p: [number, number] = [rec[0] - reg[0], rec[1] - reg[1]];
-  // Nothing played beyond the regular season yet: blank, NOT `post`. Falling back
-  // to the season's playoff record here was a real bug, caught by the test for the
-  // exact-end-of-regular-season week: at rec == reg it printed 13-10 for a team
-  // that had not yet played a playoff game.
-  //
-  // A negative component means the weekly series and the season totals disagree in
-  // the other direction (8 of 330 team-seasons, see above). Blank rather than a
-  // negative record, and never `post`, so this column means one thing at every
-  // week: what the subtraction can actually support.
-  if (p[0] < 0 || p[1] < 0 || p[0] + p[1] === 0) return { reg, post: null, total: rec };
+  // Nothing beyond the regular season yet, or a week the split cannot support
+  // (2024's unexplained pair): blank rather than 0-0 or a negative record.
+  if (p[0] < 0 || p[1] < 0 || p[0] + p[1] === 0) {
+    return { reg, post: p[0] < 0 || p[1] < 0 ? post : null, total: rec };
+  }
   return { reg, post: p, total: rec };
 }
+
+

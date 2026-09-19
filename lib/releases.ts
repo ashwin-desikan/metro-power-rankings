@@ -18,6 +18,24 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-19",
+    headline: "College football ranks, and the NBA week slider",
+    items: [
+      "College football fixtures and results carry the live AP poll ranking everywhere, switching to the CFP ranking once that is published.",
+      "Coming up on Live Standings now looks three days ahead, and the football sections run in a fixed country order with Brazil, Argentina and Mexico added.",
+      "On NBA season pages the week slider moves the standings table with it, so a week in midseason shows the record as it stood rather than the final one.",
+      "The NBA hub gains a short NBA Cup finals section, and the Champions board gains the County Championship and nine other cricket competitions.",
+    ],
+  },
+  {
+    date: "2026-09-18",
+    headline: "Baseball joins the live event strips",
+    items: [
+      "MLB and NPB games now appear on Live Standings under On today, Recent results and Coming up, alongside the sports already there.",
+      "Coming up looks further ahead, so the list is not empty on a quiet evening.",
+    ],
+  },
+  {
     date: "2026-09-17",
     headline: "Every NBA season, week by week",
     items: [

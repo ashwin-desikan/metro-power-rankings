@@ -26,6 +26,10 @@ type Props = {
   teams: NbaEloTeam[];
   slugByName?: Record<string, string | null>;
   colorByName?: Record<string, string | null>;
+  /** That season's NBA Cup final, flattened to what the table needs. A plain object
+   *  rather than the lib type, because lib/nbaCup is server-only and this is a
+   *  client component. Null for a season before the Cup existed. */
+  cup?: { date: string; winner: string; loser: string } | null;
 };
 
 const MONO = "'JetBrains Mono', monospace";
@@ -53,7 +57,7 @@ const signed = (n: number) => `${n > 0 ? "+" : ""}${Math.round(n)}`;
 // The sort keys live in ./standingsSort so they can be unit-tested; the
 // reasoning behind the inverted, zero-padded percentage is documented there.
 
-export default function SeasonStandings({ teams, slugByName = {}, colorByName = {} }: Props) {
+export default function SeasonStandings({ teams, slugByName = {}, colorByName = {}, cup = null }: Props) {
   const through = useThroughWeek();
 
   const shown = teams
@@ -107,7 +111,17 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
     // cumulative [wins, losses] through it; recordsAtWeek splits that into the
     // regular season and the playoffs. Unscrubbed, atWeek returns the last week
     // and this reduces to the season row.
-    const at = recordsAtWeek(t.reg, t.post, w.rec);
+    // The Cup final counts toward neither season column in the workbook, so the
+    // split needs its DATE: before it the week's record is all regular season,
+    // from it the Cup result belongs in the playoff column (Ashwin, 2026-09-19).
+    const cupFor: { date: string; result: [number, number] } | null = !cup
+      ? null
+      : cup.winner === t.name
+        ? { date: cup.date, result: [1, 0] }
+        : cup.loser === t.name
+          ? { date: cup.date, result: [0, 1] }
+          : null;
+    const at = recordsAtWeek(t.reg, t.post, w.rec, { weekDate: w.d ?? null, cup: cupFor });
     const tot = at.total;
     // Both halves must exist: an upcoming shell has no `end`, a first season
     // has no `prev_end`. Either way there is no year-over-year number, which

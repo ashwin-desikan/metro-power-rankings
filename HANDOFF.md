@@ -16337,3 +16337,29 @@ footy_finalize was the only broken one.
 
 **Notion:** Backlog row "footy_finalize.py reads as anon" closed as fixed; the underlying fact that anon has no SELECT
 on `champions`/`champion_competitions` is worth keeping, since the next script to read that table will hit it too.
+
+### O. Pushing the NBA Cup work, and what the gate caught on the way
+
+Ashwin: "push everything to main". That is the explicit yes the standing rule needs for a build-triggering push, and
+it is a THIRD paid build today, after `18eb6a0cd` and `80e1d5671`. He asked for it knowing that.
+
+Running `npm run verify` before spending it was worth doing twice over, because it failed twice for reasons a Vercel
+build would never have reported:
+
+1. **`check:sortable`** rejected the new NBA Cup finals table: a fixed-order board with 5 or more columns, against a
+   baseline of 0 for that file. Vercel runs `next build`, not this gate, so this would have shipped and only surfaced
+   the next time someone ran verify. Fixed with `data-static-sort` and a reason rather than a sortable board: three
+   rows in the chronological order the editions happened, where the DATE column is the table's whole purpose, since
+   the season standings key their Cup handling on it.
+2. **`check:release-notes`** refused a day with build-relevant commits and no entry. 2026-09-18 had closed with none
+   at all and 2026-09-19 had two before this push. Both entries written, inside the house limits (4 bullets, one
+   sentence each, 220 chars, headline 4 to 8 words).
+
+**`test:python` cannot run from the system python** and says so honestly: "python3 cannot import pytest ... This is a
+missing dependency, not a failing test". The suite was run against `.venv/bin/python` instead and passes 112 tests.
+Worth knowing for the next session, and it is the same lesson as section J's correction: reach for `.venv/bin/python`
+here, not `python3`.
+
+Everything else green: typecheck clean, 322 JS tests in 26 files, all fifteen data checks, and the production build.
+
+**Notion:** none (no queryable state changed; the gate findings are repo hygiene and are recorded here).

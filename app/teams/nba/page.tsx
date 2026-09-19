@@ -18,6 +18,7 @@ import PlayoffBracket from "./PlayoffBracket";
 import TopGamesTable from "./TopGamesTable";
 import HubNav from "@/app/teams/HubNav";
 import { getNbaEloIndex } from "@/lib/nbaElo";
+import { getNbaCupFinals } from "@/lib/nbaCup";
 import { seasonLabel as nbaSeasonLabel } from "@/lib/nba";
 import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
@@ -60,6 +61,7 @@ function enrichSlugs<T extends { winner_canonical: string; loser_canonical: stri
 
 export default async function NbaIndexPage() {
   const franchises = getAllFranchises();
+  const cupFinals = getNbaCupFinals();
   const totalChamps = franchises.reduce((s, f) => s + f.championships, 0);
   const withChamps = franchises.filter(f => f.championships > 0).length;
 
@@ -231,6 +233,62 @@ export default async function NbaIndexPage() {
       <div id="top-games">
         <TopGamesTable allTime={topGamesAllTime} byDecade={topGamesByDecade} />
       </div>
+
+      {/* The NBA Cup, small and at the bottom (Ashwin, 2026-09-19). It earns a place
+          because the final is the one game that counts toward NEITHER the regular
+          season nor the playoffs, which is what made the season table's derived
+          playoff record a game high for the two finalists until its date was
+          known. Winners only, one row an edition; the table is the record of the
+          dates the season standings depend on. */}
+      {cupFinals.length > 0 && (
+        <div id="nba-cup" className="mt-8">
+          <h2 className="text-lg font-semibold mb-1">NBA Cup finals</h2>
+          <p className="text-xs text-[var(--text-muted)] mb-3">
+            The In-Season Tournament championship game. It counts toward neither
+            the regular season nor the playoffs officially, so the season tables
+            carry it in the Playoffs column from the date below.
+          </p>
+          <div className="overflow-x-auto">
+            {/* Static on purpose: one row an edition, three of them, in the
+                chronological order the seasons happened. The date column is the
+                point of the table (the season standings key their Cup handling
+                on it), so re-sorting by MVP or score would only obscure it, and
+                a sortable board for three rows is furniture. */}
+            <table className="w-full text-sm" data-static-sort="three editions in chronological order; the dates are the table's purpose">
+              <thead>
+                <tr className="text-left text-[11px] uppercase tracking-wider text-[var(--text-dim)]">
+                  <th className="py-1 pr-3 font-medium">Season</th>
+                  <th className="py-1 pr-3 font-medium">Date</th>
+                  <th className="py-1 pr-3 font-medium">Champion</th>
+                  <th className="py-1 pr-3 font-medium text-right">Score</th>
+                  <th className="py-1 pr-3 font-medium">Runner-up</th>
+                  <th className="py-1 pr-3 font-medium">MVP</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cupFinals.map((f) => (
+                  <tr key={f.year} className="border-t" style={{ borderColor: "var(--border)" }}>
+                    <td className="py-1.5 pr-3 whitespace-nowrap">
+                      <Link href={`/teams/nba/season/${f.year}`} className="hover:text-[var(--accent)]">
+                        {f.season}
+                      </Link>
+                    </td>
+                    <td className="py-1.5 pr-3 whitespace-nowrap text-[var(--text-muted)]">
+                      {new Date(`${f.date}T00:00:00Z`).toLocaleDateString("en-GB", {
+                        day: "numeric", month: "short", year: "numeric", timeZone: "UTC",
+                      })}
+                    </td>
+                    <td className="py-1.5 pr-3 font-medium whitespace-nowrap">{f.winner}</td>
+                    <td className="py-1.5 pr-3 text-right whitespace-nowrap tabular-nums">{f.score}</td>
+                    <td className="py-1.5 pr-3 whitespace-nowrap text-[var(--text-muted)]">{f.loser}</td>
+                    <td className="py-1.5 pr-3 whitespace-nowrap text-[var(--text-muted)]">{f.mvp}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
 
       <p className="text-xs text-[var(--text-dim)] mt-8">
         Source: <Link href="/methodology" className="hover:text-[var(--text-muted)]">methodology</Link>.
