@@ -15820,3 +15820,63 @@ Fixed:
 Found by the inventory, for Ashwin: the Windows task "Daily Newsletter Digest" has failed daily since 29 June (81 missed runs) while the mini runs the same pipeline. Backlog row filed; likely a leftover to retire.
 
 **Notion:** Backlog closed 8 (NFL seeds watch, NFL Friday refresh, NFL hand dispatch, NRL finals, Sweden, evening news, 45 AFC/CAF clubs, duplicate build-cap row), added 5 (Windows newsletter task, CAF group-stage regex check, reconciler first run, live jobs.toml reconcile, stale REBUILD-RUNBOOK table); Decisions added 11; Scheduled jobs database created with 90 rows; Notion operating contract page created.
+
+## 2026-09-19 — mini → next session: the NPB score fields were the WRONG ONES; yesterday's NPB results never existed
+
+### A. NPB read HScore/VScore, which are always null
+
+Shipped yesterday in `8ea042238` and wrong on arrival. Noticed because Recent results carried **zero** NPB rows the
+morning after, while On today carried six.
+
+`HScore` and `VScore` are present on every SPAIA row and **null on every SPAIA row**, including a finished game. The
+live score is `H_Score_R` / `V_Score_R`. Measured 2026-09-19 on a completed game: `HScore=null, VScore=null,
+H_Score_R=4, V_Score_R=7`. So `final` was permanently false and NPB could never produce a result at all.
+
+**Completion is `GameStateID`, not `GameState`.** `GameState` is 1 on a game in the 2nd inning AND on one that has
+ended, so it carries no information. `GameStateID` 4 goes with `GameStateName` 試合終了 ("game over"), 1 with 試合中
+("in progress"). Keyed on the id, not the Japanese label, so an upstream wording change cannot turn every finished
+game back into a fixture. In-progress games now set `live` and show no score, because these strips are a schedule and
+not a scoreboard.
+
+Verified by replaying the corrected shaping against the live feed: 3 final with real scores (Orix 7-4 Nippon-Ham,
+SoftBank 2-5 Rakuten, Chunichi 1-14 Yomiuri), 3 in play with no score. The shipped code would have produced 0 finals.
+
+**Correcting section E of 09-17, which overstated the source.** SPAIA fills On today, fills Recent results ONLY for
+games that finished earlier the SAME DAY, and cannot fill Coming up. Once the date rolls over in Japan the feed drops
+those games, so NPB results vanish rather than ageing out of the 72h window like every other sport's. A real NPB
+results history needs npb.jp's monthly page and a parser.
+
+### B. What went right, and what that says
+
+The rest of yesterday's change held: MLB is serving 15 on today, 54 recent, 91 coming up, the AFL finals rows are
+there, the only data-cache warning is still the pre-existing `companies.json` one, and no job or Action has failed
+since 09-18 08:00Z. `feed-monitor` green today at 08:29Z.
+
+**The NPB bug is the same class as the ESPN `score: "0"` bug I caught the day before, and I only caught that one.**
+Both are "the field exists, so the value must mean what I assume". The ESPN one I found by replaying the shaping
+against the live feed before building; the NPB one I did not, because the three games that day had not started yet, so
+every score was legitimately null and the broken and correct code were indistinguishable. **A shaping replay proves
+nothing unless the sample contains the state you care about.** Next time a source has states (scheduled, live, final),
+wait for or find a row in each state before believing the mapping.
+
+### C. The Notion contract caught me out, and it was right to
+
+The pre-commit hook rejected this entry: a HANDOFF change with no `**Notion:**` line. My first push then printed
+"HANDOFF pushed and confirmed" anyway, because `git push` succeeded at pushing NOTHING and HEAD was still someone
+else's commit. That is the same false-success trap as 09-16 section E, so the check is the SHA, never the exit code.
+
+Reading Notion at session start is a hard rule in CLAUDE.md and I had not done it. The cost was concrete: the ESPN
+Data sources row has said since 2026-09-13 that **"SCOREBOARDS SHOW 0-0 BEFORE KICK-OFF: a score's presence means
+nothing; use status.type.completed"**. That is exactly the bug I "discovered" on 09-18 and wrote up as a finding. It
+was already written down, in the store whose whole purpose is to be queried, and I rediscovered it from first
+principles a day later. The NPB bug in section A is the same class again, third time in three days.
+
+Notion also had **no row at all for SPAIA**, a source that has backed the NPB ladder since August, so there was
+nowhere for the field-level quirks to live. There is now.
+
+**Notion:** Data sources added "SPAIA (spaia.jp unofficial NPB API)" with the field-level quirks (H_Score_R not
+HScore, GameStateID not GameState, today-only endpoint) and the 09-19 incident; Decisions added 4 rows that were
+missing entirely (MLB regular season overrules postseason-only, Coming up 7 days with results and On today unchanged,
+CFB labels carry the current lead poll rank, NPB from SPAIA not Flashscore); Backlog added "NPB results history and
+fixtures beyond today need an npb.jp monthly-schedule parser"; Silent failure register added "A feed's field exists on
+every row and is null on every row, so the reader takes the wrong one" under Still silent.
