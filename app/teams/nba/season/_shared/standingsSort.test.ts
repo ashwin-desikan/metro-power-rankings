@@ -167,9 +167,28 @@ describe("recordsAtWeek splits a week's cumulative record", () => {
     expect(at.total).toEqual([12, 4]);
   });
 
-  // 2024 has two teams the Cup does not explain (the Mavericks are a loss DOWN,
-  // where one final can only put one team up). Fall back to the workbook rather
-  // than print a negative record. Backlog row filed.
+  // The 2024 pair that exposed the workbook error, with the CORRECTED figures.
+  // Dallas beat the Clippers 4-2 in six games, so Dallas went 13-9 in the
+  // playoffs and the Clippers 2-4, and both now split cleanly with no fallback.
+  // Neither played in the Cup final that year (the Lakers beat the Pacers), so
+  // cup is null and the weekly total is the plain sum.
+  it("2024 Mavericks and Clippers reconcile after the source fix", () => {
+    const mavs = recordsAtWeek([50, 32], [13, 9], [63, 41], { weekDate: "2024-06-23", cup: null });
+    expect(mavs.reg).toEqual([50, 32]);
+    expect(mavs.post).toEqual([13, 9]);
+    expect(mavs.total).toEqual([63, 41]);
+
+    const clips = recordsAtWeek([51, 31], [2, 4], [53, 35], { weekDate: "2024-05-05", cup: null });
+    expect(clips.reg).toEqual([51, 31]);
+    expect(clips.post).toEqual([2, 4]);
+    expect(clips.total).toEqual([53, 35]);
+  });
+
+  // The guard for a week that cannot support the split: print the workbook's
+  // record rather than a negative one. The 2024 case that prompted it (the
+  // Mavericks a loss down, the Clippers a loss up) was a workbook error and is
+  // fixed at source, but the guard stays: two 1953 team-seasons are still
+  // unreconciled, and a hand-maintained sheet can always disagree again.
   it("falls back to post when a week cannot support the split", () => {
     const at = recordsAtWeek([50, 32], [13, 10], [63, 30], { weekDate: "2024-06-01", cup: null });
     expect(at.post).toEqual([13, 10]);

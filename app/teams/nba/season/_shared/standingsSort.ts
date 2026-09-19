@@ -89,10 +89,16 @@ export type CupFinal = { date: string; result: [number, number] };
  * reads 18-7 with no playoff cell; week 9 ending 12-21 reads 21-7 and 0-1; the
  * final week reads 62-20 and 13-11, being the workbook's 13-10 plus the Cup loss.
  *
- * ⚠️ 2024 has two teams this does NOT explain: four are off by a game, and the
- * Mavericks are a loss DOWN where a single final can only put one team up. Backlog
- * row filed; their playoff column falls back to `post` rather than showing a
- * negative.
+ * The 2024 pair that this did NOT explain is now FIXED AT SOURCE (2026-09-19).
+ * The Mavericks were a loss down and the Clippers a loss up, which no single extra
+ * game can produce, and the cause was the workbook: their first-round series went
+ * six games, Dallas 4-2, but the bracket recorded 4-3 and Year by Year carried the
+ * resulting 13-10 for Dallas plus an unrelated 2-3 for the Clippers. Corrected in
+ * scripts/build-nba-elo.py, which now also reconciles reg + post against the final
+ * weekly record on every build so the next one cannot pass unnoticed.
+ *
+ * The fallback below still stands, because a source can always disagree again: two
+ * 1953 team-seasons remain unreconciled and are listed as known there.
  */
 export function recordsAtWeek(
   reg: Record2,

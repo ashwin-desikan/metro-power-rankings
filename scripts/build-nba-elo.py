@@ -264,6 +264,48 @@ S = {
 }
 S_WANT = set(S.values())
 
+# WORKBOOK CORRECTIONS, applied on read. Keyed (year, team name).
+#
+# These are errors in NBA.xlsx itself, not in this script, and they are fixed
+# here because the workbook lives on the Windows box and the site should not
+# stay wrong until it is next opened. FIX THE WORKBOOK TOO and then this table
+# becomes a no-op rather than a lie: each entry re-asserts the corrected value,
+# so once the source agrees the override changes nothing.
+#
+# 🔴 2024 DALLAS AND THE CLIPPERS. Their first-round series was SIX games,
+# Dallas 4-2, closed out at home on 3 May 2024. Three places in the workbook
+# disagreed about it and only the weekly Standings series was right:
+#   * the bracket recorded Mavericks 4-3, a seventh game that was never played;
+#   * Year by Year gave the Mavericks a postseason of 13-10, which is exactly
+#     what that phantom loss produces (4-3, 4-2, 4-1, 1-4 sums to 13-10, while
+#     the real 4-2, 4-2, 4-1, 1-4 sums to 13-9);
+#   * Year by Year gave the Clippers 2-3, which matches NEITHER reading of the
+#     series and is simply a second, independent typo for 2-4.
+# Found 2026-09-19 because the season table's derived playoff record refused to
+# reconcile: the Mavericks came out a loss SHORT of their recorded postseason
+# and the Clippers a loss LONG, which no single missing game can explain. The
+# weekly cumulative record is the arbiter here, being a running total of games
+# actually played rather than a hand-typed summary.
+POST_CORRECTIONS: dict[tuple[int, str], list[int]] = {
+    (2024, "Mavericks"): [13, 9],
+    (2024, "Clippers"): [2, 4],
+}
+
+# Mismatches that are REAL and are not workbook errors, so the reconciliation
+# check below stays quiet about them. Both are 1953 teams whose weekly series
+# carries one game more than their season line and who played no postseason;
+# the cause is in the 1950s source data and has not been run down. Listed rather
+# than silently tolerated, so the check still speaks up for anything new.
+KNOWN_UNRECONCILED: set[tuple[int, str]] = {
+    (1953, "Hawks"),
+    (1953, "Warriors"),
+}
+
+# Same three-way disagreement, the bracket half. (year, winner, loser) -> (w, l).
+BRACKET_CORRECTIONS: dict[tuple[int, str, str], tuple[int, int]] = {
+    (2024, "Mavericks", "Clippers"): (4, 2),
+}
+
 # NBA.xlsx "Year by Year". Everything the Standings sheet does not carry.
 # Col A is the lookup key, Year & Name, e.g. "2026Thunder".
 Y = {
@@ -361,8 +403,9 @@ def read_year_context(book: Book) -> dict[tuple[int, str], dict]:
             # A team that missed the playoffs has blanks here, not zeroes, and
             # the difference matters: 0-0 says "played and went nowhere",
             # absent says "was not there". Kept as None so the page can choose.
-            "post": [int(pw), int(pl)] if pw is not None and pl is not None
-                    and (pw or pl) else None,
+            "post": POST_CORRECTIONS.get((int(year), str(name).strip()))
+                    or ([int(pw), int(pl)] if pw is not None and pl is not None
+                        and (pw or pl) else None),
             "seed": int(seed) if seed else None,
             "flags": {
                 "play_app": flag(row.get("play_app")),
@@ -1010,6 +1053,54 @@ def main(argv=None) -> int:
               f"{' ...' if len(missing_ctx) > 12 else ''}")
         print("      The two workbooks disagree about team names for those years.")
 
+    # RECONCILIATION. The season line (reg + post) and the weekly cumulative
+    # record are two independent statements about the same games, so they must
+    # agree, and when they do not one of them is wrong. This is the check that
+    # was missing on 2026-09-19, when the Mavericks and the Clippers disagreed
+    # in OPPOSITE directions and nothing anywhere said so.
+    #
+    # One mismatch is legitimate: the NBA Cup final counts toward neither
+    # column in the workbook, so each finalist's weekly total carries one extra
+    # game, the winner a win and the loser a loss. That is read from the same
+    # file the season pages use rather than hardcoded here.
+    try:
+        with open(ROOT / "public" / "data" / "nba" / "cup-finals.json",
+                  encoding="utf-8") as fh:
+            cup = {f["year"]: f for f in json.load(fh)["finals"]}
+    except (OSError, ValueError, KeyError):
+        cup = {}
+    unreconciled = []
+    for r in data["seasons"]:
+        if not r.get("complete"):
+            continue
+        for t in r["teams"]:
+            reg, weeks = t.get("reg"), t.get("weeks") or []
+            if not reg or not weeks or not weeks[-1].get("rec"):
+                continue
+            post = t.get("post") or [0, 0]
+            rec = weeks[-1]["rec"]
+            dw = rec[0] - (reg[0] + post[0])
+            dl = rec[1] - (reg[1] + post[1])
+            if not dw and not dl:
+                continue
+            c = cup.get(r["season"])
+            if c and t["name"] == c["winner"] and (dw, dl) == (1, 0):
+                continue
+            if c and t["name"] == c["loser"] and (dw, dl) == (0, 1):
+                continue
+            if (r["season"], t["name"]) in KNOWN_UNRECONCILED:
+                continue
+            unreconciled.append((r["season"], t["name"], reg, post, rec, dw, dl))
+    if unreconciled:
+        print(f"  ⚠️  {len(unreconciled)} team-season(s) where reg + post does NOT "
+              f"equal the final weekly record:")
+        for y, n, reg, post, rec, dw, dl in unreconciled[:12]:
+            print(f"      {y} {n}: reg={reg} post={post} weekly={rec} "
+                  f"(dW {dw:+d}, dL {dl:+d})")
+        print("      One of the two is wrong in NBA.xlsx. The weekly series is a "
+              "running total of games played and is usually the arbiter; add a "
+              "POST_CORRECTIONS or BRACKET_CORRECTIONS entry once you know which.")
+
     meta = {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "source": "NBA_RegSeason.xlsx Standings + NBA.xlsx Year by Year",
@@ -1161,6 +1252,12 @@ def read_brackets(book: Book, ctx: dict[tuple[int, str], dict]) -> dict[int, lis
             cw = (ctx.get((year, s["winner"])) or {}).get("conf")
             cl = (ctx.get((year, s["loser"])) or {}).get("conf")
             s["conf"] = cw if (cw and cw == cl) else None
+            # See BRACKET_CORRECTIONS. Applied here rather than on read because
+            # the key is the finished pairing, which only exists once both the
+            # winner's and the loser's rows have been folded into the slot.
+            fix = BRACKET_CORRECTIONS.get((year, s["winner"], s["loser"]))
+            if fix:
+                s["w"], s["l"] = fix
         # Deepest round last, so a renderer reading in order walks the bracket
         # from the first round toward the Finals.
         rows.sort(key=lambda s: (-(s["round"] or 0), s["conf"] or "",

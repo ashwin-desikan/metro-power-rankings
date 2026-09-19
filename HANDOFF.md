@@ -16404,3 +16404,48 @@ and `--check-sync` is clean.
 
 **Notion:** none (no queryable state changed; the outage was upstream and transient, and the alerting change is repo
 behaviour recorded here).
+
+### Q. The two 2024 NBA discrepancies were a workbook error, and the series was six games
+
+Ashwin: "fix the two 2024 discrepancies". They are fixed, and the diagnosis is better than the Backlog row assumed.
+
+**First, the count was wrong.** Rescanning every complete season rather than trusting the earlier note: TEN
+team-seasons fail to reconcile, not eight. Six are the NBA Cup finalists from section H and are legitimate. The other
+four are 2024 Mavericks and Clippers, and 1953 Hawks and Warriors, which the earlier note never mentioned.
+
+**The 2024 pair is one error, not two.** They fail in OPPOSITE directions, the Mavericks a loss short of their
+recorded postseason and the Clippers a loss long, which no single missing game can produce. That asymmetry is the
+clue: the two met in the first round. Dallas won that series 4-2, in six games, closing it out at home on 3 May 2024.
+Three places in the workbook disagreed about it and only one was right:
+
+- the bracket recorded **Mavericks 4-3**, a seventh game that was never played;
+- Year by Year gave Dallas a postseason of **13-10**, which is exactly what that phantom loss produces: 4-3, 4-2,
+  4-1, 1-4 sums to 13-10, while the real 4-2, 4-2, 4-1, 1-4 sums to 13-9;
+- Year by Year gave the Clippers **2-3**, which matches NEITHER reading of the series and is a second, independent
+  typo for 2-4.
+
+The weekly cumulative record had Dallas 13-9 and the Clippers 2-4 all along. It is the arbiter here because it is a
+running total of games actually played rather than a hand-typed summary, and the bracket's other three Mavericks
+series sum correctly against it.
+
+**Fixed in two places, because the workbook is not in this clone.** `POST_CORRECTIONS` and `BRACKET_CORRECTIONS` in
+`scripts/build-nba-elo.py` re-assert the right values on read, and the generated `seasons/2024.json` is corrected
+directly so the site is right now rather than at the next Windows rebuild. The corrections are written to become
+no-ops once NBA.xlsx itself is fixed, which is worth doing: **the workbook is still wrong at source.**
+
+**And the check that was missing.** The builder now reconciles reg + post against the final weekly record for every
+complete season on every run, allows the Cup finalists by reading `cup-finals.json` rather than hardcoding them,
+carries the 1953 pair in `KNOWN_UNRECONCILED`, and prints a loud warning for anything else. Nothing said a word about
+this before; that is why it survived as a Backlog row instead of being found.
+
+**Still open, deliberately:** 1953 Hawks and 1953 Warriors each carry one game more in the weekly series than their
+season line, with no postseason. Not chased down; they are listed rather than silently tolerated, so the new check
+still speaks up for anything new.
+
+No build needed: `lib/nbaElo.ts` is GitHub-raw-first with a 24h ISR and an `nba-elo` tag, which the file's own comment
+calls "what makes a data refresh free of a build". The only `app/` changes in this commit are a stale comment and a
+test, verified comment-only before tagging `[vercel skip]`.
+
+**Notion:** Backlog row "NBA Elo: 8 team-seasons disagree" closed, with the correction that it was 10 and that the
+2024 pair was one workbook error; a new row filed for "NBA.xlsx still has the 2024 Mavericks/Clippers first round as
+4-3 and the Clippers postseason as 2-3; fix at source so the build overrides become no-ops".
