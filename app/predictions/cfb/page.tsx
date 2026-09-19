@@ -23,6 +23,7 @@ import { Sparkline } from "@/app/predictions/_shared/Sparkline";
 import { Band } from "@/app/predictions/_shared/Band";
 import { TierTabs } from "@/app/predictions/_shared/TierTabs";
 import { deltaSince, series } from "@/app/predictions/_shared/deltas";
+import { ForecastHeadline } from "@/app/predictions/_shared/ForecastHeadline";
 import { DataBar } from "@/app/_shared/DataBar";
 import SortableBoard, { type BoardCol, type BoardRow } from "@/app/_shared/SortableBoard";
 
@@ -271,6 +272,9 @@ export default async function CfbPredictionsPage() {
     .filter((r): r is CfbSimRow & { p_bubble: number } => r.p_bubble != null)
     .sort((a, b) => b.p_bubble - a.p_bubble)
     .slice(0, 8);
+  const topRow = rows.length > 0 ? rows.reduce((a, b) => (b.p_natty > a.p_natty ? b : a)) : null;
+  const top5NattySum = rows.slice().sort((a, b) => b.p_natty - a.p_natty).slice(0, 5).reduce((s, r) => s + r.p_natty, 0);
+  const fieldPct = Math.max(0, Math.round(100 - top5NattySum));
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -279,14 +283,7 @@ export default async function CfbPredictionsPage() {
         emoji="🏈"
         title="College Football 2026"
         live
-        sub={
-          <>
-            {meta ? `${meta.sims.toLocaleString()} simulations` : "Thousands of simulations"} of the real
-            {meta ? ` ${meta.schedule_games}-game` : ""} FBS schedule, all ten conference title games and the
-            twelve-team playoff - a ratings model built from three seasons of opponent-adjusted margins,
-            anchored to the AP poll and the title market, predicting every Top 25 game as the season plays out.
-          </>
-        }
+        sub="Playoff, conference title and national championship odds for every FBS team, updated weekly."
         stamp={
           meta
             ? `${meta.model} · AP ${meta.poll.label ?? "poll"} ${meta.poll.date ?? ""} · updated ${meta.generated_at}${meta.games_played > 0 ? ` · after ${meta.games_played} games` : " · preseason"}`
@@ -319,6 +316,17 @@ export default async function CfbPredictionsPage() {
 
       {rows.length > 0 && (
         <>
+          {topRow && (
+            <ForecastHeadline
+              subject={topRow.name}
+              href={topRow.slug ? href(topRow.slug) : null}
+              pctLabel={pct(topRow.p_natty)}
+              outcome="to win the national championship"
+              delta={topRow.slug && history ? deltaSince(history, topRow.slug, "title", 7) : null}
+              spark={topRow.slug && history ? series(history, topRow.slug, "title") : undefined}
+              context={meta ? `${meta.sims.toLocaleString()} simulations \u00b7 anchored to the AP poll and the title market \u00b7 field ${fieldPct}%` : undefined}
+            />
+          )}
           {/* National title board */}
           <section id="natty" className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
             <h2 className="text-2xl font-bold mb-1">The race for the national title</h2>

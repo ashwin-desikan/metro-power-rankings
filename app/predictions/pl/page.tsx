@@ -19,6 +19,7 @@ import { Band } from "../_shared/Band";
 import { Delta } from "../_shared/Delta";
 import { Sparkline } from "../_shared/Sparkline";
 import { deltaSince, series } from "../_shared/deltas";
+import { ForecastHeadline } from "../_shared/ForecastHeadline";
 import { DataBar } from "@/app/_shared/DataBar";
 import SortableBoard from "@/app/_shared/SortableBoard";
 
@@ -98,6 +99,9 @@ export default async function PlPredictionsPage() {
   const rows = sim?.table ?? [];
   const meta = sim?.meta ?? null;
   const maxTitle = rows.length ? rows[0].p_title || 1 : 1;
+  const topRow = rows.length > 0 ? rows.reduce((a, b) => (b.p_title > a.p_title ? b : a)) : null;
+  const top5TitleSum = rows.slice().sort((a, b) => b.p_title - a.p_title).slice(0, 5).reduce((s, r) => s + r.p_title, 0);
+  const fieldPct = Math.max(0, Math.round(100 - top5TitleSum));
   const ledger = preds?.ledger ?? [];
   const upcoming = ledger.filter((e) => !e.result);
   const graded = ledger.filter((e) => e.result).slice(-10).reverse();
@@ -111,13 +115,7 @@ export default async function PlPredictionsPage() {
         emoji="⚽"
         title="Premier League 2026-27"
         live
-        sub={
-          <>
-            {meta ? `${meta.sims.toLocaleString()} simulated seasons` : "Thousands of simulated seasons"} from a
-            model that blends this site&apos;s own season data with market odds, replays the real results as they
-            land, and predicts every fixture - then keeps score on itself all season.
-          </>
-        }
+        sub="Title, top-five and relegation odds for every club, from simulations of the remaining fixtures."
         stamp={
           meta
             ? `${meta.model} · updated ${meta.generated_at}${meta.matches_played > 0 ? ` · after ${meta.matches_played} matches` : " · preseason"}`
@@ -137,6 +135,17 @@ export default async function PlPredictionsPage() {
 
       {rows.length > 0 && (
         <>
+          {topRow && (
+            <ForecastHeadline
+              subject={topRow.name}
+              href={clubLink(clubSlugs, topRow.slug)}
+              pctLabel={pct(topRow.p_title)}
+              outcome="to win the Premier League"
+              delta={history ? deltaSince(history, topRow.slug, "title", 7) : null}
+              spark={history ? series(history, topRow.slug, "title") : undefined}
+              context={meta ? `${meta.sims.toLocaleString()} simulated seasons \u00b7 site data blended with the market \u00b7 field ${fieldPct}%` : undefined}
+            />
+          )}
           {/* Title odds board */}
           <section id="title" className="mb-10 rounded-2xl border p-5 sm:p-6" style={BORD}>
             <h2 className="text-2xl font-bold mb-1">The title race</h2>

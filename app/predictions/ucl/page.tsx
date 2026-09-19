@@ -10,6 +10,7 @@ import { PredCrumbs, PredHeader, SourcesCard, MONO, SMCOL, plural } from "../_sh
 import PredictionsNav from "../_shared/PredictionsNav";
 import { FixtureRow } from "../_shared/rows";
 import SortableBoard from "@/app/_shared/SortableBoard";
+import { ForecastHeadline } from "../_shared/ForecastHeadline";
 
 // Champions League 2026-27 prediction hub — built 2026-08-29, rebuilt as v2
 // on 2026-08-30 after the strength formula was re-derived from research
@@ -72,6 +73,10 @@ export default async function UclPredictionsPage() {
   const meta = sim?.meta ?? null;
   const calls = sim?.fixtures_called ?? [];
   const maxChamp = rows.length ? rows[0].p_champion || 1 : 1;
+  const topRow = rows.length > 0 ? rows.reduce((a, b) => (b.p_champion > a.p_champion ? b : a)) : null;
+  const topClub = topRow ? getFootballClubByName(topRow.name) : null;
+  const top5ChampSum = rows.slice().sort((a, b) => b.p_champion - a.p_champion).slice(0, 5).reduce((s, r) => s + r.p_champion, 0);
+  const fieldPct = Math.max(0, Math.round(100 - top5ChampSum));
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -80,13 +85,7 @@ export default async function UclPredictionsPage() {
         emoji="🏆"
         title="Champions League 2026-27"
         live
-        sub={
-          <>
-            {meta ? `${meta.sims.toLocaleString()} simulated seasons` : "Thousands of simulated seasons"}{" "}
-            of the drawn league phase and the seeded knockout that follows it: every club&apos;s road from the
-            36-team table to the final, replayed with real results as they land.
-          </>
-        }
+        sub="Champion, top-eight and knockout odds for every club, updated as fixtures land."
         stamp={
           meta
             ? `${meta.model} · updated ${meta.generated_at}${meta.matches_played > 0 ? ` · after ${meta.matches_played} matches` : " · preseason"}`
@@ -106,6 +105,16 @@ export default async function UclPredictionsPage() {
 
       {rows.length > 0 && (
         <>
+          {topRow && (
+            <ForecastHeadline
+              subject={topClub?.cur_name ?? topRow.name}
+              href={topClub?.slug ? `/teams/football/${topClub.slug}` : null}
+              pctLabel={pct(topRow.p_champion)}
+              outcome="to win the Champions League"
+              delta={null}
+              context={meta ? `${meta.sims.toLocaleString()} simulated seasons \u00b7 model only, no market blend yet \u00b7 field ${fieldPct}%` : undefined}
+            />
+          )}
           {/* Champion odds board */}
           <section id="champion" className="mb-10 rounded-2xl border p-5 sm:p-6" style={BORD}>
             <h2 className="text-2xl font-bold mb-1">The champion board</h2>

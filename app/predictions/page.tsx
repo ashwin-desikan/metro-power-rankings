@@ -4,6 +4,7 @@ import { getForecast } from "@/lib/forecast";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { PredCrumbs, PredHeader, SourcesCard, MONO, CARD } from "./_shared/ui";
 import PredictionsNav from "./_shared/PredictionsNav";
+import { Movers } from "./_shared/Movers";
 
 export const revalidate = 21600; // pick up the forecast refresh without a build
 
@@ -61,6 +62,8 @@ export default async function PredictionsPage() {
         stamp="Ranges first, probabilities second, humility throughout"
       />
       <PredictionsNav />
+
+      <Movers />
 
       {/* Elections - live */}
       <section id="elections" className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>

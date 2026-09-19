@@ -10,7 +10,7 @@ import {
   type NflSimTierRow,
   type SimHistoryFile,
 } from "@/lib/nflSim";
-import { getAllFranchises as nflFranchises, logoUrlFor as nflLogo } from "@/lib/nfl";
+import { getAllFranchises as nflFranchises, logoUrlFor as nflLogo, getFranchiseBySlug } from "@/lib/nfl";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { Disclosure } from "@/app/_shared/Disclosure";
 import HubNav from "@/app/teams/HubNav";
@@ -23,6 +23,8 @@ import { Sparkline } from "../_shared/Sparkline";
 import { Band } from "../_shared/Band";
 import { TierTabs } from "../_shared/TierTabs";
 import { deltaSince, series } from "../_shared/deltas";
+import { ForecastHeadline } from "../_shared/ForecastHeadline";
+import { HeatBoard, type HeatGroup } from "../_shared/HeatBoard";
 import { DataBar } from "@/app/_shared/DataBar";
 import SortableBoard, { type BoardCol, type BoardRow } from "@/app/_shared/SortableBoard";
 
@@ -218,6 +220,28 @@ function DivisionTable({
 const AFC_DIVISIONS = ["AFC East", "AFC North", "AFC South", "AFC West"];
 const NFC_DIVISIONS = ["NFC East", "NFC North", "NFC South", "NFC West"];
 
+/** Division heat board groups: AFC/NFC, each division sorted by p_division desc. */
+function nflHeatGroups(rows: NflSimRow[], href: (s: string) => string | null): HeatGroup[] {
+  const forDivisions = (divisions: string[]) =>
+    divisions.map((d) => ({
+      label: d,
+      cells: rows
+        .filter((r) => r.division === d)
+        .sort((a, b) => b.p_division - a.p_division)
+        .map((r) => ({
+          key: r.slug,
+          abbr: getFranchiseBySlug(r.slug)?.team ?? r.name,
+          title: r.name,
+          value: r.p_division,
+          href: href(r.slug),
+        })),
+    }));
+  return [
+    { label: "AFC", columns: forDivisions(AFC_DIVISIONS) },
+    { label: "NFC", columns: forDivisions(NFC_DIVISIONS) },
+  ];
+}
+
 function DivisionGrid({
   rows, href, logo, history, withHistory,
 }: {
@@ -278,6 +302,9 @@ export default async function NflPredictionsPage() {
     .sort((a, b) => b.p_bubble - a.p_bubble)
     .slice(0, 8);
   const bubblePlayoffMax = Math.max(...bubbleRows.map((r) => r.p_playoffs), 0.0001);
+  const topRow = rows.length > 0 ? rows.reduce((a, b) => (b.p_sb > a.p_sb ? b : a)) : null;
+  const top5SbSum = rows.slice().sort((a, b) => b.p_sb - a.p_sb).slice(0, 5).reduce((s, r) => s + r.p_sb, 0);
+  const fieldPct = Math.max(0, Math.round(100 - top5SbSum));
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -286,14 +313,7 @@ export default async function NflPredictionsPage() {
         emoji="🏈"
         title="NFL 2026"
         live
-        sub={
-          <>
-            {meta ? `${meta.sims.toLocaleString()} simulations` : "Thousands of simulations"} of the real
-            {meta ? ` ${meta.schedule_games}-game` : ""} 2026 schedule and the full playoff bracket, through to
-            Super Bowl LXI - a ratings model built from three seasons of scoring margins, replaying real
-            results as they land, and predicting every game with the market alongside.
-          </>
-        }
+        sub="Playoff, division, conference and Super Bowl odds for every team, from simulations of the real schedule."
         stamp={
           meta
             ? `${meta.model} · ${meta.market} · updated ${meta.generated_at}${meta.games_played > 0 ? ` · after ${meta.games_played} games` : " · preseason"}`
@@ -304,6 +324,7 @@ export default async function NflPredictionsPage() {
       <HubNav
         items={[
           { label: "Super Bowl race", href: "#sb" },
+          { label: "Heat board", href: "#heat" },
           { label: "Next games", href: "#games" },
           { label: "Games that matter", href: "#leverage" },
           { label: "Bubble watch", href: "#bubble" },
@@ -324,6 +345,19 @@ export default async function NflPredictionsPage() {
 
       {rows.length > 0 && (
         <>
+          {topRow && (
+            <ForecastHeadline
+              subject={`The ${topRow.name}`}
+              href={teamHref(topRow.slug)}
+              logo={teamLogo(topRow.slug)}
+              pctLabel={pct(topRow.p_sb)}
+              outcome="to win Super Bowl LXI"
+              plural
+              delta={history ? deltaSince(history, topRow.slug, "title", 7) : null}
+              spark={history ? series(history, topRow.slug, "title") : undefined}
+              context={meta ? `${meta.sims.toLocaleString()} simulations \u00b7 ${meta.model} blended with the market \u00b7 field ${fieldPct}%` : undefined}
+            />
+          )}
           {/* Super Bowl board */}
           <section id="sb" className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
             <h2 className="text-2xl font-bold mb-1">The race for Super Bowl LXI</h2>
@@ -348,6 +382,14 @@ export default async function NflPredictionsPage() {
               ))}
             </div>
           </section>
+
+          {/* Division heat board */}
+          <Disclosure id="heat" title="Division heat board" meta="32 teams" className="mb-10" bodyClassName="p-4 sm:p-5">
+            <p className="text-sm text-[var(--text-muted)] mb-4">
+              Each team&apos;s chance to win its division, brighter means likelier.
+            </p>
+            <HeatBoard groups={nflHeatGroups(rows, teamHref)} valueLabel={pct} />
+          </Disclosure>
 
           {/* Next games */}
           {upcoming.length > 0 && (

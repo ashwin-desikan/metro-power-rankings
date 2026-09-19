@@ -19,6 +19,7 @@ import { Delta } from "@/app/predictions/_shared/Delta";
 import { Sparkline } from "@/app/predictions/_shared/Sparkline";
 import { Band } from "@/app/predictions/_shared/Band";
 import { deltaSince, series } from "@/app/predictions/_shared/deltas";
+import { ForecastHeadline } from "@/app/predictions/_shared/ForecastHeadline";
 import { DataBar } from "@/app/_shared/DataBar";
 import SortableBoard, { type BoardCol, type BoardRow } from "@/app/_shared/SortableBoard";
 
@@ -218,6 +219,9 @@ export default async function MlbPredictionsPage() {
   const meta = sim?.meta ?? null;
   const { href, logo } = teamHrefs();
   const maxWs = rows.length ? rows[0].p_ws || 1 : 1;
+  const topRow = rows.length > 0 ? rows.reduce((a, b) => (b.p_ws > a.p_ws ? b : a)) : null;
+  const top5WsSum = rows.slice().sort((a, b) => b.p_ws - a.p_ws).slice(0, 5).reduce((s, r) => s + r.p_ws, 0);
+  const fieldPct = Math.max(0, Math.round(100 - top5WsSum));
 
   // The live races, ordered by how close they are to a coin flip. This is the
   // page's editorial centre: it answers "what is still being decided", which
@@ -236,14 +240,7 @@ export default async function MlbPredictionsPage() {
         emoji="⚾"
         title="MLB 2026"
         live
-        sub={
-          <>
-            {meta ? `${meta.sims.toLocaleString()} simulations` : "Thousands of simulations"} of every
-            {meta ? ` one of the ${meta.games_remaining.toLocaleString()}` : " remaining"} games left on the
-            real schedule, then the full twelve-team bracket played out to the World Series - a ratings
-            model built from run differential, folding in results as they land.
-          </>
-        }
+        sub="World Series, pennant, division and playoff odds for all 30 clubs, refreshed daily."
         stamp={
           meta
             ? `${meta.model} · ${meta.market} · updated ${meta.generated_at}${meta.games_played > 0 ? ` · after ${meta.games_played.toLocaleString()} games` : " · preseason"} · ${meta.wins_check}`
@@ -263,6 +260,19 @@ export default async function MlbPredictionsPage() {
 
       {rows.length > 0 && (
         <>
+          {topRow && (
+            <ForecastHeadline
+              subject={`The ${topRow.name}`}
+              href={href(topRow.canonical)}
+              logo={logo(topRow.canonical)}
+              pctLabel={pct(topRow.p_ws)}
+              outcome="to win the World Series"
+              plural
+              delta={history ? deltaSince(history, topRow.canonical, "title", 7) : null}
+              spark={history ? series(history, topRow.canonical, "title") : undefined}
+              context={meta ? `${meta.sims.toLocaleString()} simulations \u00b7 ${meta.model} \u00b7 field ${fieldPct}%` : undefined}
+            />
+          )}
           {/* World Series board */}
           <section id="ws" className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
             <h2 className="text-2xl font-bold mb-1">The race for the World Series</h2>
