@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-19T07:08:34.552816+00:00",
+  "generated_at": "2026-09-19T07:29:01.333414+00:00",
   "jobs": [
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-19T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-09-18",
-        "status": "ok",
-        "slot": "2026-09-18T07:20:00+00:00"
-      }
-    },
     {
       "id": "economy-housing",
       "label": "House price refresh (/business/economy/housing)",
@@ -289,6 +271,24 @@
         "date": "2026-09-19",
         "status": "ok",
         "slot": "2026-09-19T06:00:00+00:00"
+      }
+    },
+    {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-20T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-09-19",
+        "status": "ok",
+        "slot": "2026-09-19T07:20:00+00:00"
       }
     },
     {
