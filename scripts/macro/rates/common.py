@@ -19,7 +19,20 @@ SCRATCH = os.path.join(REPO_ROOT, "_scratch", "macro")
 OUT_DIR = os.path.join(REPO_ROOT, "public", "data", "business", "economy", "rates")
 BIS_CSV = os.path.join(SCRATCH, "bis", "WS_CBPOL_csv_flat.csv")
 
-BUILT_DATE = "2026-09-08"  # today, per the environment; stamped into every file
+# Today, stamped into every file. DERIVED, not written down: it was the literal
+# "2026-09-08" from 2026-09-08 until 2026-09-19, and in those eleven days it
+# silently rejected every rate decision that happened. The publish guard in
+# check_and_write() refuses any change dated after BUILT_DATE, so the ECB hike to
+# 2.50 (effective 09-16), Denmark's to 2.10 (09-11) and the Fed's 09-17 move were
+# all thrown away, and /business/economy sat on 2.25% from 2026-06-17. It also
+# sets the incremental fetch window in refresh.py (start = BUILT_DATE - days,
+# end = BUILT_DATE), so the job was additionally asking upstream for a window
+# that had ended eleven days earlier. Nothing pinned it and nothing warned:
+# refresh.py --self-test passed throughout.
+#
+# RATES_BUILT_DATE overrides it, for reproducing a historical build or testing
+# the guard. Leave it unset in production.
+BUILT_DATE = os.environ.get("RATES_BUILT_DATE") or date.today().isoformat()
 
 MAX_DISAGREEMENT_RATE = 0.02  # 2% refusal rule
 MIN_OVERLAP_FOR_REFUSAL = 10  # don't refuse on a handful of noisy overlap dates
