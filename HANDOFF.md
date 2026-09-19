@@ -16279,3 +16279,27 @@ written.
 **Notion:** Backlog row added for "footy_finalize.py reads as anon and anon is 401 on this project, so the AFL/NRL
 finalizer is probably broken with the Grand Final days away"; the section J row about the two cricket strands is
 resolved (the workbook was right) and can be closed.
+
+### M. Four continental club cups were scoped International
+
+Ashwin: "In Champions hub, please ensure CONCACAF Champions Cup, AFC Champions League Elite, CAF Champions League, OFC
+Champions League are scoped as Continental and not International".
+
+All four carried `scope_type = 'International'` across every row. `Continental` already existed and already held the
+exact analogues, Champions League and Copa Libertadores, alongside EuroLeague, rugby union's Champions Cup and the
+UEFA Women's Champions League, so the category is "club competition above domestic level" and the four plainly belong
+in it. 191 rows moved: CONCACAF 63, CAF 61, AFC 44, OFC 23.
+
+**One near miss worth recording.** The search for those four also returned `concacaf-championship-gold-cup`, which is
+a NATIONAL TEAM competition and genuinely International. It was not in Ashwin's list and it was left alone. Matching
+on "CONCACAF" and changing everything that came back would have mis-scoped the Gold Cup.
+
+Verified by parsing both versions rather than reading the minified diff: 6,817 rows before and after, 191 changed,
+`scopeType` the ONLY field that differs on any of them, and no competition touched beyond the four.
+
+**Still inconsistent, and deliberately not changed:** the Europa League and the Europa Conference League are also
+continental club competitions and are also `International`. They were not in the list, so they were left as they are
+rather than quietly widening the request. Worth a yes or no.
+
+**Notion:** Backlog row added for "Europa League and Europa Conference League are scoped International like the four
+that were just moved to Continental; confirm whether they should move too".
