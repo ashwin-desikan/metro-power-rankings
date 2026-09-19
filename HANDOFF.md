@@ -16503,3 +16503,36 @@ Sections J, L, Q and R each end with a `**Notion:**` line that names Backlog row
 The pre-commit hook proves that the line exists. It does not prove that the writes happened. A session that loses the Notion connector after it wrote the line leaves a false receipt. Cheap guard worth a row: the reconciler should compare each `**Notion:**` line with rows created that day.
 
 **Notion:** Backlog closed 2 (NBA Elo 2024 pair, Formula E overdue); Backlog added 11 (NBA.xlsx source fix, nba-elo tag inert, cache-tag check, CPL first-promotion watch, Hundred honours row, forecast hubs [In progress], midterms map, sign-in gate, daily data recap, model-against-market board, small items bundle); Scheduled jobs added `cricket-champions` (not yet verified against the live jobs.toml); Decisions added "The champions tables are read with the service key".
+
+## 2026-09-19 (night) - windows (Cowork, cloud bridged to the Windows box) -> mini and next session: ONE RELEASE QUEUED ON LOCAL MAIN (NOT PUSHED), SEVEN UNFLUSHABLE CACHE TAGS, A WORKBOOK FAULT IN THE NFL AWARDS SHEET
+
+Nothing pushed, no paid build. Local `main` carries the whole release as a stack of commits; the LAST one is build-relevant and holds the `lib/releases.ts` entry dated 2026-09-20. **To ship: `git pull --rebase`, confirm `git log origin/main..HEAD --format=%s | head -1` has no `[vercel skip]`, push after 00:00 UTC so it counts against 20 September.** If a job commit lands on top first, the release commit must be moved back to the top or the build never runs (2026-08-18 and 2026-09-04).
+
+### A. What the release holds
+
+- **Forecast hubs** (section B of the evening entry), cherry-picked onto main as `7a1943368`. The local branch `feature/forecast-hubs` and the worktree `C:\Users\ashwi\wt-forecast` are leftovers to remove.
+- **NBA season hubs, Ashwin's four asks.** "vs Last" reads against last WEEK on a scrubbed week and against last YEAR on the final standings. Weekly playoff seeds (`weeklySeeds.ts`): record and division-leader rules only, ties to the eventual higher seed, numbers only for teams in a playoff or play-in place, and nothing until EVERY team has played `MIN_GAMES_FOR_SEEDS` (5). The date is stated on the control, on the chart's scrub line and above the table. The control sits between the chart and the table. The honours badges follow the scrub too.
+- **NFL season hubs gain "The honours"**: that year's award winners and every All-Pro pick, under the ERA name of each club (1980: Houston Oilers, Oakland Raiders). `pro-bowl-counts.json` is a per-franchise CAREER count with no year, so there is no Pro Bowl block and none was invented.
+- **Subscribe path**: `app/_shared/SubscribeCta.tsx`, an outbound Substack link (no form, no data kept), after the digest module on `/` and before the sources card on `/digest` and `/digest/[date]`. "Writing" joins the About menu, pointing at `/deep-dives#writing` (the Deep Dives group is at its 10-item cap).
+
+### B. The seed era table, and where the evidence runs out
+
+Confirmed against the stored final seeds: 1947-70 record; 1973-77 record; 1978-2006 division leaders on top; 2007-15 leaders guaranteed the top four; 2016 on record. Golden test 152 of 157 season-conferences; the five misses are named in `KNOWN_SEED_MISMATCHES` (1948 W, 1956 E, 1969 W, 1976 W, and 2023 E where a play-in game put Miami above Atlanta). **2016 and 2017 reproduce under both of the last two rules**, so that boundary comes from the NBA's rule change, not from the data; 1975-77 reproduce under all three. On a scrubbed week the rules differ, so a wrong boundary is invisible to the golden test. Worth one source check.
+
+### C. 🔴 Seven data tags could never be flushed (the nba-elo fault, seven more times)
+
+New gate `npm run check:cache-tags` (in `verify`): every `tags: [...]` on a fetch in `lib/` or `app/` must be in `ALLOWED_TAGS` or named in the script's `UPSTREAM_ONLY` with a reason. Its first run FAILED on `club-value`, `club-money`, `expectation`, `nfl-expectation`, `pl-expectation`, `intl-expectation` and `footy-finals`: all GitHub-raw reads that answer "unknown tag" to a flush. All seven are now listed; five ESPN and SPAIA upstream caches are exempt by name. **Listing makes a tag flushable, it does not make any job ping it.** `footy-finals` matters this week: the AFL Grand Final result will otherwise wait out its 15 minute window, which is fine, but the expectation files wait 24 hours. Inert until the build lands, like `nba-elo`.
+
+### D. 🔴 Workbook fault: St. Louis Cardinals All-Pros are filed under the Rams
+
+`public/data/nfl/award-winners.json` (from the Awards sheet, canonical in column J): 301 All-Pro rows sit under `Rams` for 1960-87 and ZERO under `Cardinals` in those 28 seasons. Dan Dierdorf, Larry Wilson, Jackie Smith, Roger Wehrli and Conrad Dobler all read as Rams. Single-winner awards are filed correctly (1979 Ottis Anderson, Cardinals), and the other relocations probed are right (Unitas Colts, Long Raiders, Moon Titans, Fouts Chargers). It looks like a "St. Louis" lookup resolving to the Rams on the All-Pro rows only. It is PRE-EXISTING on the Rams and Cardinals team pages. The new season section shows player and position only for `All-Pro` + `Rams` + 1960-87, because a wrong club is worse than none; the guard is a no-op to delete once column J is fixed and the file rebuilt.
+
+### E. Midterms map: what the forecast file can and cannot feed
+
+`forecast.json` `us.senate.competitive` (6 races) and `us.governors.competitive` (8) carry `state`, `held`, `pDem`; the other races have no per-state probability in the file. A battleground board can be built today. A full tinted map needs `scripts/forecast` to emit every race, which is a builder change and a first dry run.
+
+### F. Gates
+
+tsc clean; vitest 339 passed in 28 files; `next build --webpack` compiled; check:function-size OK (largest 138.4 MB); check:release-notes OK (newest 2026-09-20); check:cache-tags OK (24 tags, 19 flushable, 5 upstream-only). Probe at 390 and 1280 for the forecast hubs is in the evening entry; the NBA season page measured 390/390 and 1280/1280 with the control in its new place. NOT run: `npm run verify` end to end, `test:python`, and `probe:mobile` on `/`, `/digest` and the NFL season page. Run the probe on those three before the push.
+
+**Notion:** Backlog closed 4 (subscribe path, Writing in the nav, cache-tag check, NFL year hubs: awards done and the Pro Bowl half impossible from a career file); Backlog edited 2 (midterms map: data finding; forecast hubs: now on local main); Backlog added 3 (Awards sheet column J files St. Louis Cardinals All-Pros under Rams; refresh jobs should ping the seven newly flushable tags; confirm the 2016 and 1975-77 seed-rule boundaries from a source); Decisions added 2 (NBA weekly seeds ruling; subscribe path is an outbound Substack link).
