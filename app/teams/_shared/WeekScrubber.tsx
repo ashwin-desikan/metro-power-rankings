@@ -43,6 +43,9 @@ type Ctx = {
   maxWeek: number;
   /** Last regular-season week, when known, so the control can label it. */
   regEndWeek: number | null;
+  /** week -> ISO date that week ended, when the page knows it. Lets the control
+   *  say WHEN the scrub is, which a week number does not. */
+  weekDates: Record<number, string> | null;
 };
 
 const WeekCtx = createContext<Ctx | null>(null);
@@ -51,18 +54,20 @@ export function WeekScrubberProvider({
   minWeek,
   maxWeek,
   regEndWeek = null,
+  weekDates = null,
   children,
 }: {
   minWeek: number;
   maxWeek: number;
   regEndWeek?: number | null;
+  weekDates?: Record<number, string> | null;
   children: ReactNode;
 }) {
   const [week, setWeek] = useState(maxWeek);
   const through = useDeferredValue(week);
   const clamp = (w: number) => Math.min(maxWeek, Math.max(minWeek, Math.round(w)));
   return (
-    <WeekCtx.Provider value={{ week, through, setWeek: (w) => setWeek(clamp(w)), minWeek, maxWeek, regEndWeek }}>
+    <WeekCtx.Provider value={{ week, through, setWeek: (w) => setWeek(clamp(w)), minWeek, maxWeek, regEndWeek, weekDates }}>
       {children}
     </WeekCtx.Provider>
   );
@@ -94,8 +99,18 @@ export function WeekScrubberControl({ className = "" }: { className?: string }) 
   const ctx = useContext(WeekCtx);
   const id = useId();
   if (!ctx) return null;
-  const { week, setWeek, minWeek, maxWeek, regEndWeek } = ctx;
+  const { week, setWeek, minWeek, maxWeek, regEndWeek, weekDates } = ctx;
   const atEnd = week >= maxWeek;
+  // The date the scrubbed week ended, in full. Its own full-width line, so its
+  // changing length can never push the range input sideways under the thumb.
+  const iso = weekDates ? weekDates[week] : undefined;
+  const dateText = week === 0 && !atEnd
+    ? "Before the first game"
+    : iso
+      ? new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", {
+          weekday: "short", day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
+        })
+      : null;
   const label =
     week === 0 ? "preseason seed"
       : regEndWeek && week > regEndWeek ? `playoffs, week ${week}`
@@ -103,6 +118,12 @@ export function WeekScrubberControl({ className = "" }: { className?: string }) 
   const btn = "inline-flex items-center justify-center min-h-11 min-w-11 sm:min-h-8 sm:min-w-8 rounded-md border text-xs";
   return (
     <div className={`flex flex-wrap items-center gap-2 ${className}`} role="group" aria-label="Show the season through a week">
+      {dateText ? (
+        <p className="w-full text-base font-semibold tabular-nums" aria-live="polite"
+          style={{ color: atEnd ? "var(--text-muted)" : "var(--accent)" }}>
+          {atEnd ? `Final standings, ${dateText}` : `Through ${dateText}`}
+        </p>
+      ) : null}
       <label htmlFor={`${id}-range`} className="text-[11px] uppercase tracking-wider text-[var(--text-dim)]">
         Through
       </label>

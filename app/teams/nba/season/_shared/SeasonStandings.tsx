@@ -6,6 +6,7 @@ import type { NbaEloTeam } from "@/lib/nbaElo";
 import SortableBoard, { type BoardCol, type BoardRow } from "@/app/_shared/SortableBoard";
 import { useThroughWeek } from "./WeekScrubber";
 import { winPct, confKey, divKey, recordsAtWeek, regularSeasonEndWeek } from "./standingsSort";
+import { seedsAtWeek, MIN_GAMES_FOR_SEEDS, type SeedTeam } from "./weeklySeeds";
 
 // One season's table, as it stood after the scrubbed week.
 //
@@ -30,6 +31,11 @@ type Props = {
    *  rather than the lib type, because lib/nbaCup is server-only and this is a
    *  client component. Null for a season before the Cup existed. */
   cup?: { date: string; winner: string; loser: string } | null;
+  /** The season year (the END year: 2026 is the 2025-26 season), so the weekly
+   *  seed engine in ./weeklySeeds knows which era's rule applies. Optional
+   *  because a caller might not have it handy; weeklySeeds falls back to the
+   *  current "record" rule when it is missing. */
+  season?: number;
 };
 
 const MONO = "'JetBrains Mono', monospace";
@@ -57,7 +63,7 @@ const signed = (n: number) => `${n > 0 ? "+" : ""}${Math.round(n)}`;
 // The sort keys live in ./standingsSort so they can be unit-tested; the
 // reasoning behind the inverted, zero-padded percentage is documented there.
 
-export default function SeasonStandings({ teams, slugByName = {}, colorByName = {}, cup = null }: Props) {
+export default function SeasonStandings({ teams, slugByName = {}, colorByName = {}, cup = null, season }: Props) {
   const through = useThroughWeek();
   // 🔴 TWO COLUMNS CHANGE MEANING WITH THE SCRUB (Ashwin, 2026-09-19).
   // `through` is null on the final standings. On any earlier week the last
@@ -66,11 +72,35 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
   // "last week" is the end of last season, so it keeps the year label.
   const weekMode = through != null && through > 0;
   // The stored seed is the FINAL playoff seed. It is only true once the regular
-  // season is over, so it is withheld on every earlier week rather than shown
-  // as if it were that week's seeding. Week-by-week seeds need an engine that
-  // knows each era's format; until it exists a blank is the honest cell.
+  // season is over, so on every earlier week the cell instead shows what
+  // ./weeklySeeds computes: record and division-leader rules only, per the
+  // owner's ruling (Ashwin, 2026-09-19), never anything the playoffs
+  // themselves decided (a head-to-head game, a play-in result).
   const regEnd = useMemo(() => regularSeasonEndWeek(teams), [teams]);
   const seedsFinal = through == null || (regEnd != null && through >= regEnd);
+
+  // 🔴 ONE PASS OVER THE WHOLE FIELD, NOT PER ROW. A team's weekly seed
+  // depends on every OTHER team's record that week within its conference, so
+  // it cannot be computed row-by-row the way the rest of this table is; it is
+  // computed once here and looked up per row below.
+  const weeklySeeds = useMemo(() => {
+    if (seedsFinal) return new Map<string, number>();
+    const atWeekTeams: (SeedTeam & { atReg: SeedTeam["reg"] })[] = [];
+    for (const t of teams) {
+      const w = atWeek(t, through);
+      if (!w) continue;
+      const cupFor: { date: string; result: [number, number] } | null = !cup
+        ? null
+        : cup.winner === t.name
+          ? { date: cup.date, result: [1, 0] }
+          : cup.loser === t.name
+            ? { date: cup.date, result: [0, 1] }
+            : null;
+      const at = recordsAtWeek(t.reg, t.post, w.rec, { weekDate: w.d ?? null, cup: cupFor });
+      atWeekTeams.push({ name: t.name, conf: t.conf, div: t.div, seed: t.seed, reg: t.reg, atReg: at.reg });
+    }
+    return seedsAtWeek(atWeekTeams, season, (x) => x.atReg);
+  }, [teams, through, seedsFinal, cup, season]);
 
   const shown = teams
     .map((t) => ({ t, w: atWeek(t, through) }))
@@ -99,7 +129,7 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
     { key: "seed", label: "Sd", short: "Sd", right: true, sortable: true,
       title: seedsFinal
         ? "Final playoff seed"
-        : "Final playoff seed, shown once the regular season is complete" },
+        : "Seed if the season ended this week. Record and division-leader rules only; ties go to the eventual higher seed." },
     { key: "reg", label: "Regular", right: true, sortable: true,
       title: "Regular-season record" },
     { key: "post", label: "Playoffs", right: true, sortable: true, demote: "sm",
@@ -149,7 +179,7 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
     const yoy = weekMode
       ? (w.chg ?? null)
       : t.prev_end != null ? w.e - t.prev_end : null;
-    const seed = seedsFinal ? (t.seed ?? null) : null;
+    const seed = seedsFinal ? (t.seed ?? null) : (weeklySeeds.get(t.name) ?? null);
     const name = `${t.city ?? ""} ${t.team ?? t.name}`.trim();
     const colour = colorByName[t.name] ?? null;
 
@@ -239,7 +269,28 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
     };
   });
 
+  // The date the table is showing, stated on the table itself. Taken from the
+  // scrubbed rows, so it cannot disagree with the records beside it.
+  const asOfIso = shown.reduce<string | null>((m, r) => (r.w.d && (!m || r.w.d > m) ? r.w.d : m), null);
+  const asOfText = through === 0
+    ? "Before the first game"
+    : asOfIso
+      ? new Date(`${asOfIso}T00:00:00Z`).toLocaleDateString("en-GB", {
+          weekday: "short", day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
+        })
+      : null;
+
   return (
+    <>
+    {asOfText ? (
+      <p className="mb-2 text-[11px] uppercase tracking-wider" style={{ fontFamily: MONO, color: through == null ? "var(--text-dim)" : "var(--accent)" }}>
+        {through == null ? `Final standings · ${asOfText}` : `Standings through ${asOfText}`}
+        {!seedsFinal && through != null && through > 0 && teams.some((t) => t.seed != null)
+          && shown.some((r) => !r.w.rec || r.w.rec[0] + r.w.rec[1] < MIN_GAMES_FOR_SEEDS)
+          ? ` · seeds start when every team has played ${MIN_GAMES_FOR_SEEDS} games`
+          : ""}
+      </p>
+    ) : null}
     <SortableBoard
       cols={cols}
       rows={boardRows}
@@ -248,5 +299,6 @@ export default function SeasonStandings({ teams, slugByName = {}, colorByName = 
       mobileNoun="teams"
       mobileInitial={12}
     />
+    </>
   );
 }

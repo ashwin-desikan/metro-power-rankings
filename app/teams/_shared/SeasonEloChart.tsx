@@ -501,8 +501,28 @@ function Plot({
             ))}
 
             {through != null && through > x0 ? (
-              <line x1={px(through)} x2={px(through)} y1={M.top} y2={H - M.bottom}
-                stroke="var(--accent)" strokeWidth={1} strokeOpacity={0.6} strokeDasharray="2 3" />
+              <g>
+                <line x1={px(through)} x2={px(through)} y1={M.top} y2={H - M.bottom}
+                  stroke="var(--accent)" strokeWidth={1} strokeOpacity={0.6} strokeDasharray="2 3" />
+                {/* The scrub line says WHEN it is (Ashwin, 2026-09-19: "sometimes I
+                    have to look around and see what date it actually is"). The
+                    label flips to the left of the line past the midpoint so it
+                    never runs off the plot. */}
+                {dateOfWeek.get(through) ? (
+                  <text
+                    x={px(through) + (px(through) > (M.left + width - M.right) / 2 ? -5 : 5)}
+                    y={M.top + 11}
+                    textAnchor={px(through) > (M.left + width - M.right) / 2 ? "end" : "start"}
+                    fontSize={FONT} fontWeight={600} fill="var(--accent)"
+                    stroke="var(--bg)" strokeWidth={3} paintOrder="stroke"
+                    style={{ fontFamily: MONO }}
+                  >
+                    {new Date(`${dateOfWeek.get(through)}T00:00:00Z`).toLocaleDateString("en-GB", {
+                      day: "numeric", month: "short", year: "numeric", timeZone: "UTC",
+                    })}
+                  </text>
+                ) : null}
+              </g>
             ) : null}
 
             {/* 🔴 DATES, NOT WEEK NUMBERS. The week number is an internal

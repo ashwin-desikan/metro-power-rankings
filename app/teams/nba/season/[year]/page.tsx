@@ -101,6 +101,10 @@ export default async function NbaSeasonPage({ params }: Props) {
   const weekNums = data.teams.flatMap((t) => t.weeks.map((w) => w.w));
   const scrubMin = weekNums.length ? Math.min(...weekNums) : 0;
   const scrubMax = weekNums.length ? Math.max(...weekNums) : 0;
+  // week -> the date it ended, for the scrub control. The dates belong to the
+  // SEASON, so the first team that carries one for a week answers for all.
+  const weekDates: Record<number, string> = {};
+  for (const t of data.teams) for (const w of t.weeks) if (w.d && !(w.w in weekDates)) weekDates[w.w] = w.d;
 
   const champion = data.teams.find((t) => t.flags?.champ) ?? null;
   const top = [...rated].sort((a, b) => b.end - a.end)[0] ?? null;
@@ -199,16 +203,24 @@ export default async function NbaSeasonPage({ params }: Props) {
             </>
           }
         />
-        {!seeded && scrubMax > scrubMin && <WeekScrubberControl className="mt-3 mb-3" />}
         {/* Only rated teams are plotted. An upcoming season never reaches
             here, but a seeded one can carry a club with no weeks yet. */}
         <WeeklyEloChart teams={rated} season={season} colorByName={colorByName} />
       </section>
 
+      {/* 🔴 BETWEEN THE CHART AND THE TABLE, because it drives both (Ashwin,
+          2026-09-19). Above the chart, the table it also moves was a scroll
+          away, so half of what the control does was always off screen. */}
+      {!seeded && scrubMax > scrubMin && (
+        <div className="mb-8 rounded-xl border p-3 sm:p-4" style={{ borderColor: "var(--border)" }}>
+          <WeekScrubberControl />
+        </div>
+      )}
+
       <section className="mb-8">
         <SectionHead
           title="The table"
-          sub="Where every team stood, scrubbed to the week above."
+          sub="Where every team stood on the date set above."
           more={
             <p>
               Three records, because they are three different things. Regular
@@ -229,6 +241,7 @@ export default async function NbaSeasonPage({ params }: Props) {
           slugByName={slugByName}
           colorByName={colorByName}
           cup={cupFinal ? { date: cupFinal.date, winner: cupFinal.winner, loser: cupFinal.loser } : null}
+          season={season}
         />
       </section>
 
@@ -400,7 +413,7 @@ export default async function NbaSeasonPage({ params }: Props) {
       {seeded || scrubMax <= scrubMin ? (
         body
       ) : (
-        <WeekScrubberProvider minWeek={scrubMin} maxWeek={scrubMax}>
+        <WeekScrubberProvider minWeek={scrubMin} maxWeek={scrubMax} weekDates={weekDates}>
           {body}
         </WeekScrubberProvider>
       )}
