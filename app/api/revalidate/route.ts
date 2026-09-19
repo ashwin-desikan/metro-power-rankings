@@ -38,6 +38,18 @@ const ALLOWED_TAGS = new Set([
   "owners",             // run-owners-weekly.sh (mac-mini-jobs), Mondays 08:30 UTC: lib/teamOwners.ts
   "majors",             // majors-ingest.yml, 05:30 UTC daily: lib/majors.ts
   "champions",          // majors-ingest.yml and footy-refresh.yml: lib/championsCurrent.ts
+  // The seven below were tagged in lib/ and never listed, the nba-elo fault
+  // again: GitHub-raw reads on a 15 minute to 24h ISR that no flush could reach.
+  // Found by scripts/check-cache-tags.mjs the day it was written (2026-09-19),
+  // which now fails the build gate on the next one. Listing a tag only makes
+  // it flushable; a job still has to ping it after its commit lands.
+  "club-value",         // lib/clubValue.ts
+  "club-money",         // lib/footballMoney.ts
+  "expectation",        // lib/expectation.ts
+  "nfl-expectation",    // lib/nflExpectation.ts
+  "pl-expectation",     // lib/plExpectation.ts
+  "intl-expectation",   // lib/intlExpectation.ts
+  "footy-finals",       // lib/footyFinals.ts, 15 minute ISR during the AFL and NRL finals
 ]);
 
 export const runtime = "nodejs";
