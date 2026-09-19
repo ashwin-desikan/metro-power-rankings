@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-09-19T00:18:27.998113+00:00",
+  "generated_at": "2026-09-19T00:38:32.199007+00:00",
   "jobs": [
-    {
-      "id": "claude-auth-canary",
-      "label": "Claude auth canary (report-only)",
-      "schedule_text": "Daily at 00:30, 06:30, 19:30 UTC",
-      "cadence": "daily",
-      "times": [
-        "00:30",
-        "06:30",
-        "19:30"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-19T00:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-18",
-        "status": "ok",
-        "slot": "2026-09-18T19:30:00+00:00"
-      }
-    },
     {
       "id": "daily-ops-sweep",
       "label": "Daily ops sweep (report-only)",
@@ -177,6 +157,26 @@
         "date": "2026-09-18",
         "status": "ok",
         "slot": "2026-09-18T06:00:00+00:00"
+      }
+    },
+    {
+      "id": "claude-auth-canary",
+      "label": "Claude auth canary (report-only)",
+      "schedule_text": "Daily at 00:30, 06:30, 19:30 UTC",
+      "cadence": "daily",
+      "times": [
+        "00:30",
+        "06:30",
+        "19:30"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-19T06:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-19",
+        "status": "ok",
+        "slot": "2026-09-19T00:30:00+00:00"
       }
     },
     {
