@@ -16029,3 +16029,46 @@ cached or truncated view and reporting it as the state of the world.**
 itself rather than slicing a region.** A stale 200 is the most expensive kind of evidence, because it looks like data.
 
 **Notion:** none (no queryable state changed; the NBA one-game discrepancy Backlog row is filed in the next step).
+
+### H. The NBA Cup final is the missing game, and it now has a date
+
+Ashwin worked out what the one-game discrepancy was: **the NBA Cup final counts toward neither the regular season nor
+the playoffs.** For the two finalists the weekly cumulative `rec` carries a game that appears in neither `reg` nor
+`post`, which is why a naive `rec - reg` read the 2026 Spurs' playoffs as 13-11 against the workbook's 13-10.
+
+Confirmed against the data before building on it: of the 8 mismatched team-seasons, **6 are exactly the three Cup
+finals** and pair perfectly, one team a win up and one a loss up. 2024 Lakers beat Pacers, 2025 Bucks beat Thunder,
+2026 Knicks beat Spurs.
+
+**His ruling:** "you can consider the final a playoff game for the standings tracking purposes... after those dates you
+would show the regular season totals as expected and the extra cup final games in the playoffs section."
+
+So the DATE does the work, and an earlier version of this that inferred a residual from the final week is gone. New
+`public/data/nba/cup-finals.json` (three editions, hand-maintained, one row a year in December) and `lib/nbaCup.ts`.
+`recordsAtWeek` now takes the week's date and the team's Cup result:
+
+- before the final: the week's record is all regular season, playoff cell blank
+- from the final to the end of the regular season: regular season is `rec` MINUS the Cup result, and the Cup result
+  sits alone in the playoff column
+- once the regular season is complete: regular fixed at `reg`, playoffs `rec - reg`, which includes the Cup game by
+  design
+
+Verified against the real seasons, not just the unit tests. 2026 Spurs: week 8 (ending 12-14) 18-7 and no playoff cell;
+week 9 (ending 12-21, the 12-16 final inside it) 21-7 and 0-1; final week 62-20 and 13-11. Knicks the mirror: 20-8 and
+1-0, ending 53-29 and 17-3. 2025 Thunder and Bucks likewise.
+
+**The Cup also has a home now:** a small table at the foot of the NBA hub, winners with date, score, runner-up and MVP,
+each season linking to its year hub. It is there because the dates are load-bearing for the standings, not only as a
+record.
+
+⚠️ **2024 is still not fully explained.** Four teams are off, and the Mavericks are a loss DOWN, where one final can
+only put one team up. Those weeks fall back to the workbook's `post` rather than printing a negative. The Backlog row
+is narrowed to the two teams the Cup does not account for.
+
+**State: NOT PUSHED.** Seven files sit in the shared tree, built and green (20 Cup tests, 322 in the suite, build exit
+0). It touches `app/`, so it needs a paid build, and both of today's two are already spent on `18eb6a0cd` and
+`80e1d5671`. Waiting on Ashwin: push now as a third build, or hold until tomorrow. A dirty shared tree is the hazard to
+watch if it waits, since the mini's jobs ff-only merge into this clone.
+
+**Notion:** Decisions added "The NBA Cup final counts as a postseason game for standings tracking"; Backlog row "NBA
+Elo: 8 team-seasons disagree..." narrowed to the 2 the Cup does not explain.
