@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-09-19T07:29:01.333414+00:00",
+  "generated_at": "2026-09-19T07:44:21.926791+00:00",
   "jobs": [
-    {
-      "id": "economy-housing",
-      "label": "House price refresh (/business/economy/housing)",
-      "schedule_text": "Sat at 07:30 UTC",
-      "cadence": "weekly",
-      "times": [
-        "07:30"
-      ],
-      "weekdays": [
-        6
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-19T07:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-12",
-        "status": "ok",
-        "slot": "2026-09-12T07:30:00+00:00"
-      }
-    },
     {
       "id": "nfl-elo",
       "label": "NFL live Elo, seeds, odds (and the bracket in Jan/Feb)",
@@ -595,6 +575,26 @@
         "date": "2026-09-18",
         "status": "ok",
         "slot": "2026-09-18T11:40:00+00:00"
+      }
+    },
+    {
+      "id": "economy-housing",
+      "label": "House price refresh (/business/economy/housing)",
+      "schedule_text": "Sat at 07:30 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:30"
+      ],
+      "weekdays": [
+        6
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-26T07:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-19",
+        "status": "ok",
+        "slot": "2026-09-19T07:30:00+00:00"
       }
     },
     {
