@@ -1,7 +1,7 @@
 {
  "meta": {
-  "as_of": "2026-09-12",
-  "generated_at": "2026-09-12T09:02:17Z",
+  "as_of": "2026-09-19",
+  "generated_at": "2026-09-19T09:01:10Z",
   "unicorns": 1396,
   "graduated": 8,
   "private": 372
@@ -15375,7 +15375,7 @@
    "investors": "Durable Capital Partners, Adjacent, Creator Partners",
    "metro": "Milan",
    "metroSlug": "milan",
-   "publicCap": 24627453952.0
+   "publicCap": 24189153280.0
   },
   {
    "name": "Netskope",
@@ -15387,7 +15387,7 @@
    "investors": "Lightspeed Venture Partners, Social Capital, Accel",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "publicCap": 6006239744.0
+   "publicCap": 7146199552.0
   },
   {
    "name": "Navan",
@@ -15399,7 +15399,7 @@
    "investors": "Andreessen Horowitz, Lightspeed Venture Partners, Zeev Ventures",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "publicCap": 5346043392.0
+   "publicCap": 5562368512.0
   },
   {
    "name": "HeartFlow",
@@ -15411,7 +15411,7 @@
    "investors": "BlueCross BlueShield Venture Partners, US Venture Partners",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "publicCap": 4337246720.0
+   "publicCap": 4412896256.0
   },
   {
    "name": "Ionic Digital",
@@ -15423,7 +15423,7 @@
    "investors": "Attestor, Citadel, Oaktree Capital Management",
    "metro": null,
    "metroSlug": "",
-   "publicCap": 3752231168.0
+   "publicCap": 3812975872.0
   },
   {
    "name": "Firefly Aerospace",
@@ -15435,7 +15435,7 @@
    "investors": "Noosphere Ventures, RPM Ventures, SMS Capital Investment",
    "metro": "Austin",
    "metroSlug": "austin",
-   "publicCap": 3537259776.0
+   "publicCap": 3510475264.0
   },
   {
    "name": "Omada Health",
@@ -15447,7 +15447,7 @@
    "investors": "U.S. Venture Partners, dRx Capital, Andreessen Horowitz",
    "metro": null,
    "metroSlug": "",
-   "publicCap": 1203520384.0
+   "publicCap": 1250657280.0
   },
   {
    "name": "Mercor",
@@ -15459,7 +15459,7 @@
    "investors": "Felicis, Benchmark",
    "metro": null,
    "metroSlug": "",
-   "publicCap": 62207785.0
+   "publicCap": 60626786.0
   }
  ],
  "private": [
