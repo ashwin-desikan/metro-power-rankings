@@ -58,6 +58,16 @@ DEFAULT_LOG_TAIL_LINES = 12
 # Raise it per job via lookback_days for anything monthly or rarer.
 DEFAULT_LOOKBACK_DAYS = 8
 
+# dispatcher.log had no rotation until 2026-09-20 and was 822 KB after two
+# months. Bringing deploy-watch in here that evening added roughly 430 lines a
+# day on its own (RUN + one output line + DONE, 144 times), so the file was set
+# to grow several times faster than it ever had. 5 MB is about 100 days at that
+# rate, and 5 generations keeps well over a year of history -- enough to answer
+# "what did this job do last autumn" without letting one file grow unbounded on
+# a machine nobody logs into.
+LOG_MAX_BYTES = 5 * 1024 * 1024
+LOG_KEEP = 5
+
 
 # --- pure scheduling logic (covered by --self-test) -------------------------
 
@@ -196,6 +206,40 @@ def log(msg):
             fh.write(line + "\n")
     except OSError:
         pass
+
+
+def rotate_log(path=None, max_bytes=LOG_MAX_BYTES, keep=LOG_KEEP):
+    """Roll dispatcher.log over once it passes max_bytes. Returns 1 if it did.
+
+    RENAMES rather than truncating in place, which is safe precisely because
+    log() opens the file with "a" for every single line and holds no handle
+    between calls: the rename takes the old bytes out of the way and the very
+    next log() recreates the file. Truncating would also work but would throw
+    the history away, and the history is the only record of what the fleet did.
+
+    Oldest generation first, then shift each one up, then move the live file to
+    .1 -- in that order, so a crash midway leaves every surviving generation
+    still correctly numbered rather than overwriting one.
+
+    Never raises. A dispatcher that dies because it could not tidy its own log
+    would be a strictly worse failure than an oversized log, so every OSError
+    here is swallowed and the tick carries on.
+    """
+    path = Path(path) if path is not None else LOG_FILE
+    try:
+        if not path.exists() or path.stat().st_size < max_bytes:
+            return 0
+        oldest = path.with_name(f"{path.name}.{keep}")
+        if oldest.exists():
+            oldest.unlink()
+        for n in range(keep - 1, 0, -1):
+            src = path.with_name(f"{path.name}.{n}")
+            if src.exists():
+                src.rename(path.with_name(f"{path.name}.{n + 1}"))
+        path.rename(path.with_name(f"{path.name}.1"))
+        return 1
+    except OSError:
+        return 0
 
 
 def notify(title, body):
@@ -588,6 +632,51 @@ def self_test():
         [{"id": "g", "command": "x.sh", "every_minutes": True}])), 1)
     check("every_minutes alone is valid", validate_jobs(
         [{"id": "g", "command": "x.sh", "every_minutes": 10}]), [])
+
+    # --- dispatcher.log rotation, added 2026-09-20 --------------------------
+    # The log had no rotation at all and deploy-watch moving in here the same
+    # evening roughly quadrupled its growth rate.
+    import tempfile as _tf
+    with _tf.TemporaryDirectory() as _td:
+        lp = Path(_td) / "dispatcher.log"
+        lp.write_text("x" * 100)
+        check("rotate: under the threshold does nothing",
+              rotate_log(lp, max_bytes=1000, keep=3), 0)
+        check("rotate: under the threshold leaves the live file",
+              lp.exists(), True)
+
+        # Each generation is filled with a distinct marker char, and the checks
+        # compare only that char: a 2000-character got/want would make the
+        # self-test output unreadable for no extra assurance.
+        def gen(n):
+            q = Path(_td) / f"dispatcher.log.{n}"
+            return q.read_text()[:1] if q.exists() else None
+
+        lp.write_text("y" * 2000)
+        check("rotate: over the threshold rotates", rotate_log(lp, 1000, 3), 1)
+        check("rotate: live file is moved out of the way", lp.exists(), False)
+        check("rotate: its bytes are now generation .1", gen(1), "y")
+
+        # A second rotation must SHIFT .1 to .2, not clobber it.
+        lp.write_text("z" * 2000)
+        rotate_log(lp, 1000, 3)
+        check("rotate: previous generation shifted to .2", gen(2), "y")
+        check("rotate: newest generation is .1", gen(1), "z")
+
+        # Past `keep`, the oldest is dropped rather than accumulating forever.
+        for marker in ("a", "b"):
+            lp.write_text(marker * 2000)
+            rotate_log(lp, 1000, 3)
+        check("rotate: never keeps more than `keep` generations",
+              sorted(q.name for q in Path(_td).glob("dispatcher.log.*")),
+              ["dispatcher.log.1", "dispatcher.log.2", "dispatcher.log.3"])
+        # a, then b, each rotating: newest .1=b, .2=a, .3=z, and y fell off.
+        check("rotate: generations are in newest-first order",
+              [gen(1), gen(2), gen(3)], ["b", "a", "z"])
+
+        # Must never raise, whatever it finds.
+        check("rotate: a missing file is a no-op",
+              rotate_log(Path(_td) / "not-there.log", 1, 3), 0)
 
     # the real jobs.toml must always validate
     with JOBS_FILE.open("rb") as fh:
@@ -1125,6 +1214,12 @@ def main():
         log("previous tick still running; skipping")
         return 0
     try:
+        # Under the lock and once per real tick, so two dispatchers can never
+        # rotate at the same moment, and --dry-run / --self-test never write.
+        # The first line of the fresh file says why it is fresh.
+        if not args.dry_run and rotate_log():
+            log(f"rotated dispatcher.log past {LOG_MAX_BYTES // (1024 * 1024)} MB; "
+                f"keeping {LOG_KEEP} generations")
         state = tick(now, jobs, state, dry_run=args.dry_run)
         if not args.dry_run:
             save_state(state)
