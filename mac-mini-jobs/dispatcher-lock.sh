@@ -18,7 +18,9 @@
 # Re-entrancy matters: when the DISPATCHER runs deploy-watch as a job it
 # already holds the lock, and a child that tried to take it again would
 # deadlock the job permanently. dispatcher.py exports DISPATCHER_LOCK_HELD for
-# exactly this, and seeing it means "your parent holds it, carry on".
+# exactly this. The marker is honoured only when it names the lock file's
+# CURRENT owner and that PID is alive, the same strict test dispatcher.py's
+# own acquire_lock() applies: the two are deliberately one rule, not two.
 #
 # NOTE, inherited from dispatcher.py rather than introduced here: the
 # check-then-write is not atomic, so two processes starting in the same
@@ -35,10 +37,21 @@ DISPATCHER_LOCK_FILE="${DISPATCHER_LOCK_FILE:-$HOME/metro-mini-jobs/.dispatcher.
 _DL_HELD_BY_US=0
 
 dispatcher_lock_acquire() {
-  local label="${1:-manual run}" pid
+  local label="${1:-manual run}" pid parent owner
   # Inside a dispatcher tick already: it holds the lock on our behalf.
-  if [ -n "${DISPATCHER_LOCK_HELD:-}" ]; then
-    return 0
+  #
+  # Checked STRICTLY, matching dispatcher.py's acquire_lock() as of 2026-09-20:
+  # the marker must name the PID the lock file CURRENTLY holds, and that PID
+  # must be alive. Merely being set is not enough -- an env var that leaked into
+  # an unrelated shell would otherwise wave a manual run straight past a live
+  # tick, which is the exact collision this file exists to prevent. When it does
+  # not match a live owner we say nothing and decide normally below.
+  parent="$(printf '%s' "${DISPATCHER_LOCK_HELD:-}" | tr -d '[:space:]')"
+  if [ -n "$parent" ]; then
+    owner="$(cat "$DISPATCHER_LOCK_FILE" 2>/dev/null | tr -d '[:space:]')"
+    if [ -n "$owner" ] && [ "$owner" = "$parent" ] && kill -0 "$parent" 2>/dev/null; then
+      return 0
+    fi
   fi
   if [ -e "$DISPATCHER_LOCK_FILE" ]; then
     pid="$(cat "$DISPATCHER_LOCK_FILE" 2>/dev/null | tr -d '[:space:]')"
