@@ -1,6 +1,26 @@
 {
-  "generated_at": "2026-09-20T23:26:23.762153+00:00",
+  "generated_at": "2026-09-20T23:36:29.823246+00:00",
   "jobs": [
+    {
+      "id": "cfb-sun",
+      "label": "CFB predictions (grade the week, publish AP-25 slate)",
+      "schedule_text": "Sun at 23:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "23:40"
+      ],
+      "weekdays": [
+        7
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-20T23:40:00+00:00",
+      "last_run": {
+        "date": "2026-09-13",
+        "status": "ok",
+        "slot": "2026-09-13T23:40:00+00:00"
+      }
+    },
     {
       "id": "deploy-watch",
       "label": "Vercel canceled-build auto-heal",
@@ -155,31 +175,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-20T23:30:00+00:00",
+      "next_run": "2026-09-20T23:40:00+00:00",
       "last_run": {
         "date": "2026-09-20",
         "status": "ok",
-        "slot": "2026-09-20T23:20:00+00:00"
-      }
-    },
-    {
-      "id": "cfb-sun",
-      "label": "CFB predictions (grade the week, publish AP-25 slate)",
-      "schedule_text": "Sun at 23:40 UTC",
-      "cadence": "weekly",
-      "times": [
-        "23:40"
-      ],
-      "weekdays": [
-        7
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-20T23:40:00+00:00",
-      "last_run": {
-        "date": "2026-09-13",
-        "status": "ok",
-        "slot": "2026-09-13T23:40:00+00:00"
+        "slot": "2026-09-20T23:30:00+00:00"
       }
     },
     {
