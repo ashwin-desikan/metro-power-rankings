@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T20:51:42.331550+00:00",
+  "generated_at": "2026-09-20T21:21:46.291570+00:00",
   "jobs": [
     {
       "id": "ops-autofix",
@@ -573,6 +573,26 @@
         "date": "2026-09-19",
         "status": "ok",
         "slot": "2026-09-19T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "metro-rankings",
+      "label": "Metro rankings recalculation",
+      "schedule_text": "Sat at 10:30 UTC",
+      "cadence": "weekly",
+      "times": [
+        "10:30"
+      ],
+      "weekdays": [
+        6
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-26T10:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-19",
+        "status": "missed",
+        "slot": "2026-09-19T10:30:00+00:00"
       }
     },
     {
