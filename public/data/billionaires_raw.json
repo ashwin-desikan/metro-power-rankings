@@ -7507,7 +7507,7 @@
     "name": "Satyanarayan Nuwal",
     "networth": 8245.353,
     "rank": 464,
-    "countryCode": "in",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -12040,7 +12040,7 @@
     "name": "Renuka Jagtiani",
     "networth": 5600,
     "rank": 745,
-    "countryCode": "in",
+    "countryCode": null,
     "industries": [
       "Fashion & Retail"
     ],
@@ -51028,7 +51028,7 @@
     "name": "Xia Xinde",
     "networth": 1158.145,
     "rank": 3166,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Manufacturing"
     ],
@@ -52054,7 +52054,7 @@
     "name": "Michael Chae",
     "networth": 1118.058,
     "rank": 3230,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Finance & Investments"
     ],
@@ -52633,7 +52633,7 @@
     "name": "Liu Shengjun",
     "networth": 1092.117,
     "rank": 3267,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -52713,7 +52713,7 @@
     "name": "Zheng Xiaodong",
     "networth": 1088.41,
     "rank": 3272,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Manufacturing"
     ],
@@ -52858,7 +52858,7 @@
     "name": "Elizabeth Sy",
     "networth": 1083.883,
     "rank": 3281,
-    "countryCode": "ph",
+    "countryCode": null,
     "industries": [
       "Diversified"
     ],
@@ -53321,7 +53321,7 @@
     "name": "Liu Xiucai & family",
     "networth": 1061.005,
     "rank": 3310,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -53463,7 +53463,7 @@
     "name": "Eric Ya Shen",
     "networth": 1056.16,
     "rank": 3319,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Technology"
     ],
@@ -53785,7 +53785,7 @@
     "name": "Li Hongjing",
     "networth": 1040.121,
     "rank": 3339,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Automotive"
     ],
@@ -53833,7 +53833,7 @@
     "name": "Delfin Jorge Ezequiel Carballo",
     "networth": 1038.663,
     "rank": 3342,
-    "countryCode": "ar",
+    "countryCode": null,
     "industries": [
       "Finance & Investments"
     ],
@@ -54074,7 +54074,7 @@
     "name": "Xu Yingtong",
     "networth": 1029.814,
     "rank": 3357,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Energy"
     ],
@@ -54090,7 +54090,7 @@
     "name": "Nguyen Dang Quang",
     "networth": 1029.363,
     "rank": 3358,
-    "countryCode": null,
+    "countryCode": "vn",
     "industries": [
       "Food & Beverage"
     ],
@@ -54107,7 +54107,7 @@
     "name": "Ashok Kajaria",
     "networth": 1028.89,
     "rank": 3359,
-    "countryCode": "in",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -54269,7 +54269,7 @@
     "name": "Rao Wei & family",
     "networth": 1018.713,
     "rank": 3369,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Healthcare"
     ],
@@ -54398,7 +54398,7 @@
     "name": "Ninian Mogan Lourdenadin",
     "networth": 1012.358,
     "rank": 3377,
-    "countryCode": "my",
+    "countryCode": null,
     "industries": [
       "Real Estate"
     ],
@@ -54594,7 +54594,7 @@
     "name": "Saket Burman",
     "networth": 1003.887,
     "rank": 3389,
-    "countryCode": null,
+    "countryCode": "gb",
     "industries": [
       "Food & Beverage"
     ],
@@ -54642,7 +54642,7 @@
     "name": "Yuri Shefler",
     "networth": 1002.12,
     "rank": 3392,
-    "countryCode": "ru",
+    "countryCode": null,
     "industries": [
       "Food & Beverage"
     ],
@@ -54706,7 +54706,7 @@
     "name": "Jin Lei & family",
     "networth": 1000.092,
     "rank": 3396,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Healthcare"
     ],
