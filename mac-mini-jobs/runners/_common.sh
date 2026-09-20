@@ -69,7 +69,7 @@ mini_sync() {
   # because then origin is already an ancestor of HEAD and there is nothing
   # to do.
   if git merge --ff-only "$GIT_REMOTE/$GIT_BRANCH" --quiet 2>/dev/null; then
-    _mini_sync_note_unpushed
+    _mini_sync_flush_unpushed
     return 0
   fi
 
@@ -91,23 +91,69 @@ mini_sync() {
   note "diverged from $GIT_REMOTE/$GIT_BRANCH (local $ahead, remote $behind); rebasing the local commit(s) on top"
   if git rebase "$GIT_REMOTE/$GIT_BRANCH" --quiet; then
     note "rebased $ahead local commit(s) onto $GIT_REMOTE/$GIT_BRANCH"
-    _mini_sync_note_unpushed
+    _mini_sync_flush_unpushed
     return 0
   fi
   git rebase --abort >/dev/null 2>&1 || true
   fail "diverged and the rebase of $ahead local commit(s) CONFLICTED; aborted and left the branch exactly as it was (resolve by hand)"
 }
 
-# Say so when commits are sitting local. A rebase clears the DIVERGENCE, which
-# is what was breaking every job, but it does not push -- mini_sync deliberately
-# does not, because whether a given commit may reach origin is a tagging
-# question (see the [vercel skip] rule) and not a sync function's call. They
-# ride out with the next job that commits, since commit_paths pushes HEAD.
-_mini_sync_note_unpushed() {
-  local n
-  n="$(git rev-list --count "$GIT_REMOTE/$GIT_BRANCH..HEAD" 2>/dev/null || echo 0)"
-  if [ "${n:-0}" -gt 0 ]; then
-    note "NOTE: $n local commit(s) are not on $GIT_REMOTE/$GIT_BRANCH yet; the next job that commits pushes HEAD and carries them along"
+# Flush commits that are sitting local. Rebasing clears the DIVERGENCE, which
+# is what was breaking every job, but on its own it leaves the commit stranded:
+# quieter than a hard failure and worse in its own way, because data meant to
+# be published can sit unpushed indefinitely with nothing alerting. Ashwin
+# ruled 2026-09-20: push the tagged ones automatically, alert on the untagged.
+#
+# The split is the [vercel skip] rule. A commit carrying the tag cannot trigger
+# a build, so pushing it needs nobody's permission and is simply finishing the
+# job the committing runner started. A commit WITHOUT the tag is a production
+# build, which is Ashwin's call for that specific push, so this never pushes
+# one -- it says so instead, and keeps saying so only once per distinct HEAD.
+#
+# Note the batching hazard this also avoids: Vercel reads the ignore rule from
+# the PUSHED HEAD COMMIT ONLY (learned 2026-09-02). Pushing a mixed batch whose
+# HEAD happens to be tagged would ship the untagged commit's changes with NO
+# build at all. All-or-nothing on the tag is what makes that impossible here.
+#
+# Never fails the job: this is a self-heal, and a job must not die because a
+# best-effort push did not go through.
+_mini_sync_flush_unpushed() {
+  local range n untagged subject head_sha stamp
+  range="$GIT_REMOTE/$GIT_BRANCH..HEAD"
+  stamp="$MINI_DIR/.mini-sync-untagged"
+  n="$(git rev-list --count "$range" 2>/dev/null || echo 0)"
+  if [ "${n:-0}" -eq 0 ]; then
+    rm -f "$stamp" 2>/dev/null
+    return 0
+  fi
+
+  # The post-commit hook's own test, character for character (.githooks/
+  # post-commit): a subject containing the literal [vercel skip]. Two copies of
+  # one rule is the bug class this repo keeps finding, so it is a deliberate
+  # quote, not a paraphrase -- if that hook's definition changes, change this.
+  untagged=0
+  while IFS= read -r subject; do
+    case "$subject" in *"[vercel skip]"*) ;; *) untagged=$((untagged + 1));; esac
+  done < <(git log --format=%s "$range" 2>/dev/null)
+
+  if [ "$untagged" -eq 0 ]; then
+    if git push --quiet "$GIT_REMOTE" "HEAD:$GIT_BRANCH" 2>/dev/null; then
+      note "pushed $n stranded [vercel skip] commit(s) to $GIT_REMOTE/$GIT_BRANCH"
+      rm -f "$stamp" 2>/dev/null
+    else
+      note "could not push $n stranded [vercel skip] commit(s) this run (origin moved, or no network); the next job carries them"
+    fi
+    return 0
+  fi
+
+  head_sha="$(git rev-parse --short HEAD 2>/dev/null)"
+  note "NOTE: $n local commit(s) unpushed, $untagged of them UNTAGGED (build-triggering); not pushing those from here"
+  # One alert per distinct HEAD, not one per runner: every job starts with
+  # mini_sync, so an unqualified alert here would fire dozens of times a day
+  # for as long as the commit sat there, and be ignored by the second day.
+  if [ "$(cat "$stamp" 2>/dev/null)" != "$head_sha" ]; then
+    alert "$untagged untagged (build-triggering) commit(s) sitting unpushed on the mini at $head_sha. mini_sync will not push these -- push by hand when you want the build."
+    echo "$head_sha" > "$stamp" 2>/dev/null || true
   fi
   return 0
 }
