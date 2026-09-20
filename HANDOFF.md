@@ -16961,3 +16961,22 @@ dangling in unloaded plists:  NONE
 Nothing anywhere on this machine -- running, dormant or in the repo -- pings a healthchecks check that does not exist. That statement was false in three separate places when the evening started.
 
 **Notion:** no row changes. Nothing was created, retired or rescheduled; five dormant fallbacks stopped claiming monitoring they never had. The Scheduled jobs rows for these jobs already describe their real alerting, and the cricket-monthly row was rewritten earlier tonight when its tile was given up.
+
+
+## 2026-09-20 (night, last +13) - mini -> windows and next session: THE football-standings FALLBACK PLIST NOW MATCHES WHAT WOULD ACTUALLY RUN
+
+Ashwin: "sync the repo copy to the live football-standings schedule". Commit `2e2b68dab`, `[vercel skip]`.
+
+**What was wrong.** The repo copy had TWO wake slots, 05:00 and 06:00 local; the live `~/Library/LaunchAgents` copy had EIGHT: 05/06, 11/12, 17/18, 23/00. The live one is right -- those four pairs are the four UTC hours in this job's `times` in jobs.toml (05:00, 11:00, 17:00, 23:00), each scheduled twice, an hour apart in LOCAL time, so the pair straddles GMT/BST and the script's own UTC guard then runs the real job only on the intended UTC hour. The repo copy had never been updated when the job went from daily to four times a day. Since the repo copy is the one the install instruction says to `cp` into place, the documented fallback was a QUARTER of the real schedule: reinstall it and football data would refresh once a day while everything assumed four times.
+
+**The comment was wrong too, and that is the half that is easy to miss.** It read "Wakes at 05:00 AND 06:00 LOCAL; the script's UTC guard runs the real job only at 05:00 UTC" -- an accurate description of a schedule that no longer existed. Rewritten to describe the four runs and the DST pairing, with a line saying where the slots came from and when. Copying the array across without touching the prose would have left a file that contradicted itself, which is the same failure as a dangling slug: something that reads as documentation and is not.
+
+**Method, after last round's two self-inflicted errors.** The new slots were GENERATED from the parsed live plist rather than retyped, so there is no transcription risk; the edit was a targeted text splice, not a `plistlib.dumps` rewrite, so the comment block and the file's compact one-dict-per-line style survive; and it was validated by strict `plistlib` parse AND checked for `--` inside comments, not just `plutil -lint`, which passed malformed XML earlier this evening.
+
+**Verified:** both copies now parse to EQUAL dictionaries -- Label, ProgramArguments, StandardOutPath, StandardErrorPath and all eight StartCalendarInterval entries match key for key. The only remaining difference between the two files is textual: the repo copy carries the explanatory comment and two-space indentation, the live copy has neither (it was rewritten by a tool at some point, which is how it lost its comments and gained tabs). Behaviourally they are now the same file.
+
+**Not done, deliberately:** the live copy was NOT overwritten with the repo copy. It would be harmless -- they are behaviourally identical and the agent is unloaded -- and it would restore the documentation to the installed file, but the instruction was to sync in the other direction and that is the direction taken. One `cp` whenever it is wanted.
+
+**Still open from earlier tonight, unchanged:** nothing. Every Backlog row opened this session is Done, and there are no dangling slugs anywhere on the machine.
+
+**Notion:** no row changes. The schedule in the Scheduled jobs row for football-standings already describes the dispatcher's `times` (05:00, 11:00, 17:00, 23:00 UTC), which is what the job actually runs on; this fixed the dormant fallback's copy of it, not the live schedule.
