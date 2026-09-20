@@ -48,6 +48,15 @@ guarded "rebuild markets overlay" "$PY" scripts/business/emit_market_series.py -
 # so an override must be deleted once Wikidata catches up or that seat stays frozen.
 guarded "refresh business leaders (Wikidata)" "$PY" scripts/business/build_leaders.py
 
+# scripts/business/data/leader-qids.json is in this list, and it is the only
+# non-public/data path here. build_leaders.py resolves an unknown entity's QID by
+# name and APPENDS it to that cache, which is tracked (deliberately, so a bad
+# match is hand-correctable). Until 2026-09-20 no job committed it, so every new
+# entity left the repo permanently dirty -- and a dirty tree is a HARD STOP for
+# run-ops-autofix.sh, which then stands the whole fleet's autofix down until a
+# human commits. Found when "Bank of China" -> Q790068 landed on 09-20 and blocked
+# the mlb-sim re-run for the rest of the day. The cache is not build-relevant
+# (nothing under lib/ or app/ reads it), so this commit still rides [vercel skip].
 commit_paths "Auto: daily markets + FX refresh [vercel skip]" \
   public/data/business/leaders.json \
   public/data/business/leaders-changes.json \
@@ -57,7 +66,8 @@ commit_paths "Auto: daily markets + FX refresh [vercel skip]" \
   public/data/business/markets-overlay.json \
   public/data/business/fx.json \
   public/data/business/fx-history.json \
-  public/data/business/fx-series
+  public/data/business/fx-series \
+  scripts/business/data/leader-qids.json
 
 # Runs even on no-change days; a redundant flush is harmless.
 revalidate_ping "business-daily" "/business" "/business/markets" "/business/currencies" "/business/leaders"

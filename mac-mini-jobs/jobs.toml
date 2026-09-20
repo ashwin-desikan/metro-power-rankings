@@ -550,6 +550,16 @@ command = "metro-mini-refresh.sh"    # predates the run-*.sh naming convention
 hc_slug = "egress-refresh"
 catchup_hours = 20
 timeout_minutes = 45
+# 16 best-effort steps, and a subset failing is deliberately NOT a job failure:
+# metro-mini-refresh.sh alerts on ntfy and exits 0 so the healthchecks tile stays
+# green. But dispatcher.py keeps stderr only when the job exits nonzero OR sets
+# log_tail_lines, and keeps just the last 12 stdout lines by default -- which the
+# commit/push epilogue alone fills. So on 2026-09-20, "2/16 best-effort steps
+# errored" arrived with the tracebacks discarded and the "step FAILED (rc=)" lines
+# already pushed out of the window: the alert said something broke and destroyed
+# the evidence of what. 40 covers the epilogue plus every step label, and setting
+# the key at all is the opt-in that retains stderr on an exit-0 run.
+log_tail_lines = 40
 
 # --- mktcap-refresh: NEW 2026-08-08. Not a legacy-launchd port -- a fresh --
 # cutover of the Supabase-only half of the CompaniesMarketCap Saturday ritual.
