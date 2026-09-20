@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-20T05:03:19.681286+00:00",
+  "generated_at": "2026-09-20T05:59:27.327520+00:00",
   "jobs": [
-    {
-      "id": "business-daily",
-      "label": "Business markets + FX",
-      "schedule_text": "Daily at 05:50 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:50"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-20T05:50:00+00:00",
-      "last_run": {
-        "date": "2026-09-19",
-        "status": "ok",
-        "slot": "2026-09-19T05:50:00+00:00"
-      }
-    },
     {
       "id": "substack-daily",
       "label": "Substack feed sync",
@@ -351,6 +333,24 @@
         "date": "2026-09-16",
         "status": "ok",
         "slot": "2026-09-16T21:00:00+00:00"
+      }
+    },
+    {
+      "id": "business-daily",
+      "label": "Business markets + FX",
+      "schedule_text": "Daily at 05:50 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:50"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-21T05:50:00+00:00",
+      "last_run": {
+        "date": "2026-09-20",
+        "status": "ok",
+        "slot": "2026-09-20T05:50:00+00:00"
       }
     },
     {
