@@ -16760,3 +16760,26 @@ The original reasoning survives intact: refusing beats silently discarding, and 
 **🔴 The gap this leaves, and it is a real one.** Nobody owns PUSHING a stranded commit. mini_sync now clears the divergence but still will not push, so the commit sits local until some later job happens to commit. For a `[vercel skip]` bot commit that is harmless. For an UNTAGGED one it means data that was meant to trigger a build can sit unpublished indefinitely with nothing alerting -- quieter than tonight's failure, and therefore worse in its own way. Filed as the open question on the new Decisions row: should mini_sync push tagged commits automatically and alert on untagged ones?
 
 **Notion:** Backlog: the `mini_sync` P1 row CLOSED (Done), with the four refusal cases and the verification recorded. Decisions +1 ("The mini's pull path self-heals", Infra / deploy, Ashwin 2026-09-20), carrying the unpushed-commit gap as its open question. Scheduled jobs unchanged -- no job's schedule moved. Still open in Backlog: `verify_wins` in-progress-game skew (P2), which still wants a ruling rather than code.
+
+
+## 2026-09-20 (night, last +4) - mini -> windows and next session: mini_sync NOW FLUSHES WHAT IT REBASES. TAGGED COMMITS PUSH THEMSELVES, UNTAGGED ONES ALERT
+
+Ashwin, on the gap the previous entry opened: "push tagged commits automatically and alert on untagged ones". Commit `755ee51d9`, `[vercel skip]`.
+
+**The gap it closes.** Rebasing cleared the DIVERGENCE, which is what was breaking every job, but left the commit stranded -- quieter than a hard failure and worse in its own way, because data meant to be published could sit unpushed indefinitely with nothing alerting. `_mini_sync_note_unpushed` only said so into a log.
+
+**The split is the `[vercel skip]` rule, and it is the whole design.** A tagged commit cannot trigger a build, so pushing it needs nobody's permission -- it is just finishing the job the committing runner started. An untagged commit IS a production build, which is Ashwin's call for that specific push, so this never pushes one; it alerts instead.
+
+**All-or-nothing on the tag, and that is not tidiness.** Vercel reads the ignore rule from the PUSHED HEAD COMMIT ONLY (learned 2026-09-02). A mixed batch whose HEAD happens to be tagged would ship the untagged commit's changes with NO BUILD AT ALL -- silently. So one untagged commit anywhere in the range blocks the whole push. Scenario 11 in the harness exists specifically to hold that line: three commits, tagged / untagged / tagged, and it asserts origin stays untouched despite the tagged HEAD.
+
+**The tag test is a deliberate quote**, character for character, of `.githooks/post-commit`'s own `case "$SUBJECT" in *"[vercel skip]"*)`. Two copies of one rule is the bug class this repo keeps finding (the hardcoded build-paths list in deploy-watch, the two divergent plists), so the comment says plainly: if the hook's definition changes, change this too.
+
+**Alert dedupe, because the obvious version would be useless.** Every runner starts with `mini_sync`, so an unqualified alert would fire dozens of times a day for as long as the commit sat there, and be ignored by the second day. It keys on the short HEAD sha in `~/metro-mini-jobs/.mini-sync-untagged`: one alert per distinct state. The stamp is cleared when there is nothing unpushed, so a later recurrence alerts again. Delete the file and the next run re-alerts -- the intended failure direction.
+
+**It cannot fail a job.** Every path returns 0. A push that does not go through (origin moved, no network) is a note, not a failure; the next job carries the commits. A self-heal that can kill a data job is not a self-heal.
+
+**Verified: the harness is now 12 scenarios, 36 assertions, all passing**, still run against the text EXTRACTED FROM the shipped `_common.sh` rather than a draft. The five new ones: all-tagged pushes and reaches origin with no alert and no stamp; one untagged does NOT reach origin, alerts exactly once, writes the stamp; a second call on the same HEAD does not re-alert; the mixed batch pushes nothing; and diverged-plus-tagged both rebases AND pushes, ending level with origin with both sides' files present. Plus a live no-op on the real repo and a full `metro-rankings` dry run through it (exit 0, `guard verdict: pass`).
+
+**Where tonight leaves the mini.** Every scheduled writer runs under one dispatcher lock; gc is off git's hands and has its own 03:00 slot that also sweeps stale locks; dispatcher.log rotates; the pull path self-heals a divergence and now flushes what it heals. The three failure modes that cost 7h27m today -- a crashed background gc, a stranded commit, and a pull path that could only refuse -- are each closed, and each closure is covered by tests that run from a self-test rather than from memory.
+
+**Notion:** Decisions: the "pull path self-heals" row's Rule extended with the flush behaviour and its open question CLOSED. Backlog unchanged -- `verify_wins` in-progress-game skew (P2) is the last row still open from tonight, and Ashwin asked what ruling it wants; that answer is in the session, not yet in Notion. Scheduled jobs unchanged.
