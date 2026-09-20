@@ -16865,3 +16865,26 @@ Ashwin asked for the feed to be checked again. Fifteen messages in twelve hours;
 **Everything else in the feed is quiet, and that is the real result.** Nothing has failed since the fixes went in. deploy-watch ran clean under the dispatcher at 22:10Z; `ops-autofix`, `football-standings` and `mlb-sim` have sent nothing since their pre-fix failures; no divergence alert since 21:21, when there had been one every two hours all evening.
 
 **Notion:** Scheduled jobs: the `git-maintenance` row's Notes now carry the false-alert bug, the fix, and the re-verification -- recorded rather than quietly corrected, because the row previously claimed the dry run changed nothing, and that claim was incomplete. No other rows changed.
+
+
+## 2026-09-20 (night, last +9) - mini -> windows and next session: HEALTHCHECKS IS ALL GREEN, AND TWO LIVE JOBS ARE PINGING TILES THAT DO NOT EXIST
+
+Ashwin asked for the dashboard. Pulled all 20 checks through the API (`/api/v3/checks/`). **Every one is `up`. No red, no amber, nothing paused.** After tonight that is the answer that matters: the fleet recovered and stayed recovered.
+
+Freshness is consistent with each check's own period -- `mac-mini` 14m, `f1-weekly` 13m, `claude-auth-canary` 2.8h, `egress-refresh` 12.9h (Sunday job), the weeklies 4-6d, the monthlies 18-19d.
+
+**But the dashboard is not the whole monitoring story, and the gap is the finding.** I compared every configured `hc_slug` against the tiles that actually exist:
+
+🔴 **`deploy-watch` has NO TILE.** jobs.toml sets `hc_slug = "deploy-watch"` and hc-run.sh dutifully pings it every 10 minutes, 144 times a day; the check does not exist, the ping 404s, and `|| true` swallows it. The job LOOKS monitored and is not. **This predates tonight** -- the retired plist pinged the same dead slug -- but I made it worse in the record: when I moved deploy-watch under the dispatcher I deliberately kept `hc_slug` "to keep the existing healthchecks tile alive" and wrote that into Notion. There was no tile to keep alive. The Scheduled jobs row now says so plainly. This is exactly the dangling-slug trap the football-standings row warned about in its own comment, and it caught me because I trusted the config instead of the dashboard.
+
+🔴 **`newsletter-retention` has NO TILE either**, and its launchd agent IS loaded, so it is a live job in the same state.
+
+Dangling-but-harmless: `activity-feed`, `football-standings`, `gap-league-watch`, `screen-number-ones` all ping dead slugs from plists that are UNLOADED, so nothing is pinging today. They matter only if someone reloads one as the manual fallback, at which point it would silently not report. Worth clearing when those plists are next touched.
+
+Not a fault: the `mac-mini` tile has no `hc_slug` behind it because `run-heartbeat.sh` pings `$HEALTHCHECK_URL` directly rather than through hc-run.sh. Green and 14m fresh.
+
+**Why it cannot simply be fixed.** The project holds EXACTLY 20 checks, which is its documented cap -- the football-standings and other tiles were given up on 2026-09-10 to get under it. Restoring a `deploy-watch` tile means deleting another or raising the plan, and that is a trade about what deserves remote visibility, not a mechanical fix. Ashwin's call. My view if asked: deploy-watch is a reasonable candidate BECAUSE it runs 144 times a day and its failure mode is silence -- a canceled build that never heals -- whereas several monthlies on the board fail loudly and rarely.
+
+**Method note.** Two nights running, the thing that was wrong was invisible in the place you would naturally look. The dry-run false alert was invisible in the job's own output and showed up only in the ntfy feed; this dangling slug is invisible in jobs.toml and the dashboard alike -- the config says monitored, the dashboard simply has no row, and nothing anywhere says "these disagree". Comparing the two lists is a five-line script; it is now in this entry's history and worth re-running whenever a tile is deleted.
+
+**Notion:** Scheduled jobs: the `deploy-watch` row's "Alerts via" corrected from claiming healthchecks coverage to stating there is no tile and why, with Last verified set. No other rows changed; no job or schedule touched.
