@@ -17087,3 +17087,20 @@ Four consecutive clean deploy-watch ticks plus two other jobs, all after `_commo
 **What to watch at the next ops-autofix tick (00:15Z).** Two things should now be different. It should find NO `job_failed` finding at all, because mlb-sim and football-standings were marked ok at 22:47 and no job records a failure any more. And the next time it does fix something, its `--mark-ok` should SUCCEED rather than report "a tick may have held the lock", because `acquire_lock()` now lets the tick's own children through. If that line ever appears again, the re-entrancy is not working and `e3d83ac7e` is the commit to look at.
 
 **Notion:** no row changes. Nothing was created, changed or retired; this was a verification pass that found the fleet healthy.
+
+
+## 2026-09-21 - mini -> windows and next session: THE RUNNERS DIRECTORY IS 13 SYMLINKS AND NO EXCEPTIONS
+
+Ashwin, ruling the open convention question from last night: "make the runner a symlink like the others". `metro-rankings.sh` in `~/metro-mini-jobs/runners/` is now a symlink into the checkout like the other twelve. No repo commit: `~/metro-mini-jobs` is not tracked.
+
+**Why it was the odd one out.** Its phase 2 build entry said "separate copy, not a symlink" in as many words, so that is how it went in on 09-20 -- an explicit instruction beats an unstated convention, even against 11 symlinks. It was flagged at the time as needing a ruling rather than quietly overridden. This is the ruling.
+
+**What the copy actually cost.** A real file does not track a `git pull`, so an edit to the runner would reach the repo and silently never reach the mini until someone remembered to re-copy it. That is the same quiet-staleness shape this project keeps finding in other clothes: the hardcoded build-paths list in deploy-watch, the two divergent plists, and last night's football-standings fallback that held a quarter of the real schedule. Nothing would have failed; it would just have been running yesterday's code.
+
+**The fleet had already voted.** `ops-autofix` deployed `dispatcher-lock.sh` into that same directory as a SYMLINK, unprompted, hours earlier. The automation's own convention and the written instruction disagreed, which is exactly the situation that deserved a human ruling rather than a judgement call at midnight.
+
+**Verified, not assumed:** the link resolves to the repo file byte for byte; `build_argv()` still resolves the command to `~/metro-mini-jobs/runners/metro-rankings.sh`; dispatcher self-test 121 cases; and a full `DRY_RUN=1` run THROUGH the symlink exits 0 with `guard verdict: pass (rc=0)` and `unmatched metros: 3` (the calamine baseline), `public/data` restored, nothing committed, clean tree. 13 of 13 runners are symlinks.
+
+**One consequence worth stating plainly:** a runner edit in the checkout is now LIVE on the mini the moment it is saved, with no install step. That is the convenience being bought, and it is also why `_common.sh` work last night was developed and proven in throwaway repos before being written to the real file. The same care applies to every runner now.
+
+**Notion:** Decisions +1 ("Every runner in ~/metro-mini-jobs/runners/ is a symlink into the repo, without exception", Infra / deploy, Ashwin 2026-09-21), recording that it supersedes the phase 2 row's wording and noting that jobs.toml, dispatcher.py and state.json deliberately stay real files. Scheduled jobs: the metro-rankings row updated to say symlink and why. Backlog: the phase 2 row's Needs updated the same way; shadow Saturdays and the cutover remain its only open work.
