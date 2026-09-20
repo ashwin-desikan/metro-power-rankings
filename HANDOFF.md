@@ -16735,3 +16735,28 @@ A note on my own test-writing: I first compared two 2000-character strings in th
 **Where the rotated files live:** `~/metro-mini-jobs/dispatcher.log.1` through `.5`, outside the git checkout, so nothing to gitignore.
 
 **Notion:** Decisions: the gc ruling's open questions are now BOTH closed (deploy-watch under the lock; dispatcher.log rotating), leaving only the human-at-a-terminal case. Scheduled jobs: the deploy-watch row's log-volume note updated from a concern to a handled one. No new rows -- this changed no job's schedule. Backlog unchanged; `mini_sync` rebase fallback (P1) and `verify_wins` skew (P2) are still open and still want a ruling rather than code.
+
+
+## 2026-09-20 (night, last +3) - mini -> windows and next session: mini_sync REBASES NOW. THE PULL PATH SELF-HEALS, WHICH IS THE ACTUAL FIX FOR TODAY'S 7h27m
+
+Ashwin: "make mini_sync rebase instead of failing". The P1 filed at the start of tonight's triage, now shipped. Commit `f091a06ec`, `[vercel skip]`.
+
+**What it was.** `git merge --ff-only` plus `fail "cannot fast-forward ... (resolve by hand)"`, no fallback. Every runner calls `mini_sync` as its first step, so ONE stranded bot commit -- `f5687d931`, left unpushed by the crashed gc at 14:17:50 -- diverged main by a single commit and hard-failed the entire mini for 7h27m, 7 of the day's 14 alerts, waiting for a human to type one rebase. The push path in the SAME FILE has auto-rebased on rejection for months and nobody has ever regretted it. The asymmetry was the bug, not the strictness.
+
+**What it is now.** Fast-forward when it can; rebase our own commits on top when it cannot. It still refuses in four cases, each one deliberate rather than leftover:
+- **0 ahead** -- nothing of ours to replay, so a rebase would hide whatever is really wrong (usually a dirty tree).
+- **Dirty working tree** -- replaying commits underneath someone's half-finished output is not a safe thing to do unasked. Tonight that output was 775 restored files.
+- **Past `MINI_SYNC_MAX_REBASE`** (default 50) -- the stranded-commit case is one or two. Dozens means a wrong branch or an unrelated history, and replaying it silently would turn a visible problem into an invisible one.
+- **A conflict** -- `rebase --abort`, so the branch is left exactly where it was. Same outcome for the human as the old hard failure, minus any chance of finding the repo mid-rebase.
+
+The original reasoning survives intact: refusing beats silently discarding, and a rebase discards nothing -- it replays.
+
+**It does NOT push, on purpose.** Whether a given commit may reach origin is a tagging question (the `[vercel skip]` rule), not a sync function's call. So it clears the DIVERGENCE -- which is what was breaking every job -- and then says how many commits are sitting local, to ride out with the next job that commits, since `commit_paths` pushes HEAD.
+
+**Verified against real git, not mocks.** A 7-scenario harness builds a real bare origin and clone per case: fast-forward, no-op, ahead-only, diverged-and-rebases, diverged-and-conflicts, diverged-with-a-dirty-tree, and over-the-limit. **16 assertions, all passing** -- and deliberately run against the text EXTRACTED FROM the shipped `_common.sh`, not against my draft, because those are not the same thing and only one of them runs tomorrow. The conflict case asserts the properties that matter: `rc=1`, HEAD byte-identical to where it started, no `.git/rebase-merge` left behind, working tree clean. Then a live no-op against the real repo, and a full `metro-rankings` dry run through the new code (exit 0, `guard verdict: pass`).
+
+**Worth knowing:** `_common.sh` is a SYMLINK into the repo on the mini, so editing it in the checkout is live immediately, with no install step. That is why the whole thing was developed and proven in scratch repos first and only then written to the real file.
+
+**🔴 The gap this leaves, and it is a real one.** Nobody owns PUSHING a stranded commit. mini_sync now clears the divergence but still will not push, so the commit sits local until some later job happens to commit. For a `[vercel skip]` bot commit that is harmless. For an UNTAGGED one it means data that was meant to trigger a build can sit unpublished indefinitely with nothing alerting -- quieter than tonight's failure, and therefore worse in its own way. Filed as the open question on the new Decisions row: should mini_sync push tagged commits automatically and alert on untagged ones?
+
+**Notion:** Backlog: the `mini_sync` P1 row CLOSED (Done), with the four refusal cases and the verification recorded. Decisions +1 ("The mini's pull path self-heals", Infra / deploy, Ashwin 2026-09-20), carrying the unpushed-commit gap as its open question. Scheduled jobs unchanged -- no job's schedule moved. Still open in Backlog: `verify_wins` in-progress-game skew (P2), which still wants a ruling rather than code.
