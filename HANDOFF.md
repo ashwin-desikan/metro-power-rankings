@@ -16550,3 +16550,23 @@ Ashwin: "Commit and push everything to main". That is the explicit yes, given kn
 - Not proven: a real flush of `nba-elo` or the seven new tags. This box has no `REVALIDATE_SECRET`. **Mini: flush `nba-elo` one time and confirm `ok:true`.**
 
 **Notion:** Backlog closed 2 (forecast hubs, nba-elo tag inert); Scheduled jobs: the one-off "Push the 2026-09-20 release" row added and then set to Retired, never fired.
+
+
+## 2026-09-20 (evening) - windows (Cowork, cloud bridged to the Windows box) -> mini and next session: METRO RANKINGS GO WORKBOOK-FREE, PHASE 1 OF 3 (MIRROR LOADED AND PROVEN; NOTHING COMMITTED, NOTHING SCHEDULED)
+
+Ashwin's ask: stop rebuilding the site by hand each week. MetroAreas.xlsx syncs to Supabase, the rankings calculate from there, and he edits the workbook only now and then. Four rulings, all by multiple choice: scope = all 15 sheets extract.py reads; truth splits by data type (workbook wins curated sheets, Supabase wins feeds, so MktCap_Data is NOT mirrored); the site keeps reading public/data and a job makes one build a week; workbook edits reach Supabase through a Windows watcher.
+
+**Built (in the working tree, UNCOMMITTED, no build-relevant path touched):**
+- `scripts/metro_sync/` : `sync_workbook.py` (dry run default, `--write`, `--self-test`, `--json`; guards: Excel lock file, 120 s settle, shrink over 2 percent or 50 rows, error cells up by more than 10, Metro Areas header change, BG blank on over 1 percent of rows, missing sheet; exit 0 / 10 written / 20 held / 1 error), `supabase_workbook.py` (a shim with openpyxl's `sheetnames` / `iter_rows` surface, local chunk cache in `.cache/metro_sync`, serves MktCap_Data from `scripts/mktcap/out/mktcap_export.csv`), `codec.py`, `backends.py` (REST and `file:<dir>`), `parity_cells.py`, README. `scripts/tests/test_metro_sync.py` (22 cases).
+- `scripts/extract.py` : `METRO_WORKBOOK_SOURCE=supabase` runs the whole ETL with no workbook on disk. Default is unchanged. In that mode the display dims AQ to BF come from the score engine, not the cached cells, and `meta.lastUpdate` is the newer of the workbook save and the mktcap snapshot.
+- Supabase migration `create_workbook_mirror_tables`: `wb_sheet` (written last; `content_hash` is the commit marker), `wb_chunk` (500-row jsonb windows), `wb_sync_run` (service role only). Chunked because the project is on the FREE plan at 439 of 500 MB.
+
+**Measured, not inferred:**
+- First live `--write` from the Windows box: 15 sheets, 459 chunks, 221,404 rows, 45 s, 9.8 MB in Postgres. Second run: no change, exit 0, so the hashes survive real jsonb normalisation.
+- `parity_cells.py --backend rest` against the OneDrive master: 15 of 15 sheets, zero mismatches, value AND type per cell.
+- Offline end to end (clone of origin at `a45994f`, workbook renamed away for the mirror run): 777 files written each way, 774 byte-identical. The three: `quiz_queue.json` (unseeded RNG, differs on any two runs), and `metros.json` + `details/crewe.json` on one field, Crewe marketCap 1070000000.0000001 against 1070000000.0, float addition order. Fixed by rounding AU to cents in `patch_metro_derived` and re-run: 776 of 777 byte-identical, `quiz_queue.json` the only difference.
+- Two faults only the live run could find, both fixed: PostgREST rejects an epoch float for a timestamptz (conversion now lives in `RestBackend`), and `mkstemp` leaves an open descriptor that blocks the temp unlink on Windows.
+
+**Not done:** phase 2, the mini's weekly job (it must REPLACE the `update_top_companies` commit in `run-mktcap-refresh.sh`, or Saturday spends both builds; shadow two Saturdays first). Phase 3, the Task Scheduler watcher. No scheduled job was created or changed today. The metro-join builders (states, similar, relocations) were not checked for workbook reads.
+
+**Notion:** Decisions +2 (workbook-free metro rankings; positional chunked mirror). Backlog +3 (phase 2 mini job; phase 3 Windows watcher; Supabase free plan at 439 of 500 MB, owner Ashwin). Scheduled jobs: none changed.

@@ -29,6 +29,14 @@ except ImportError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "openpyxl", "--quiet", "--break-system-packages"])
     import openpyxl
 
+# METRO_WORKBOOK_SOURCE=supabase runs the ETL against the metro_sync mirror
+# instead of the .xlsx file, so a machine with no copy of the workbook (and
+# no OneDrive access) can still run extract.py. See scripts/metro_sync/README.md.
+# METRO_SYNC_BACKEND selects rest (default, Supabase) or file:<dir> (offline
+# mirror, e.g. for parity testing). The default cache dir keeps a local copy
+# of the mirror's chunks so a rest-backed run only re-fetches what changed.
+WORKBOOK_SOURCE = os.environ.get("METRO_WORKBOOK_SOURCE", "workbook").lower()
+
 
 # Characters that Unicode decomposition does NOT split into base + combining
 # mark. Without these, NFKD leaves them whole and the ASCII filter deletes
@@ -158,7 +166,7 @@ def build_country_continent_map(wb):
     return out
 
 
-def build_score_index(wb, xlsx_path):
+def build_score_index(wb, xlsx_path, return_engine_rows=False):
     """Score every metro in Python, replacing the workbook's cached column BG.
 
     Until 2026-08-10 the score was read straight out of BG. That made Excel a
@@ -179,7 +187,7 @@ def build_score_index(wb, xlsx_path):
     """
     if os.environ.get("METRO_SCORE_SOURCE", "engine").lower() == "workbook":
         print("  score: reading cached BG from the workbook (METRO_SCORE_SOURCE=workbook)")
-        return None
+        return (None, []) if return_engine_rows else None
     # extract.py is always run as a script, so scripts/ is already sys.path[0]
     # and the package resolves. Belt and braces for anyone importing it.
     _here = str(Path(__file__).resolve().parent)
@@ -191,11 +199,14 @@ def build_score_index(wb, xlsx_path):
     # by the engine's internal join key, which is deliberately unstripped to
     # match Excel. Getting this wrong would silently fall back to the cached BG
     # for the affected metro, so a miss is reported rather than swallowed.
-    index, drift = {}, []
-    for name, _k, cached, computed, _terms, _cols in engine.rows():
+    index, drift, all_rows = {}, [], []
+    for row in engine.rows():
+        name, _k, cached, computed, _terms, _cols = row
         index[name.strip().lower()] = computed
         if abs(computed - cached) > 1e-9:
             drift.append((abs(computed - cached), name, cached, computed))
+        if return_engine_rows:
+            all_rows.append(row)
     drift.sort(reverse=True)
     print(f"  score: computed in Python for {len(index):,} metros")
     if drift:
@@ -205,10 +216,12 @@ def build_score_index(wb, xlsx_path):
             print(f"           {name:<30} BG {cached:12.6f} -> {computed:12.6f}  (+{computed - cached:.6f})")
         if len(drift) > 10:
             print(f"           ... and {len(drift) - 10} more")
+    if return_engine_rows:
+        return index, all_rows
     return index
 
 
-def extract_metros(wb, score_index=None):
+def extract_metros(wb, score_index=None, derived_override=None):
     """Extract main metro data from the Metro Areas sheet."""
     ws = wb["Metro Areas"]
     metros = []
@@ -234,6 +247,18 @@ def extract_metros(wb, score_index=None):
                 unscored.append(name)
             else:
                 score = computed
+        # supabase mode: the mirrored Metro Areas cells for the display
+        # dims (companies, marketCap, etc.) are the workbook's frozen cache;
+        # overwrite with the score engine's live-recomputed columns (fed by
+        # the same mktcap CSV extract_mktcap() reads) so they stay in sync
+        # with score/rank instead of quietly going stale. No-op in workbook
+        # mode (derived_override is always None there).
+        if derived_override is not None:
+            overrides = derived_override.get(name.strip().lower())
+            if overrides:
+                for idx, val in overrides.items():
+                    if idx < len(v):
+                        v[idx] = val
 
         pop = safe_int(v[9])
         lat = safe_float(v[63])
@@ -1548,29 +1573,59 @@ def main():
     script_dir = Path(__file__).parent
     site_dir = script_dir.parent
 
-    if len(sys.argv) > 1:
-        xlsx_path = Path(sys.argv[1])
+    derived_override = None
+    workbook_mtime_override = None
+
+    if WORKBOOK_SOURCE == "supabase":
+        # No workbook file is required to exist in this mode; the mirror
+        # (Supabase or a local file: backend) is the source of truth. See
+        # scripts/metro_sync/README.md.
+        sys.path.insert(0, str(script_dir))
+        from metro_sync import supabase_workbook as _sw
+        from metro_sync.backends import parse_backend_spec as _parse_backend
+
+        backend_spec = os.environ.get("METRO_SYNC_BACKEND", "rest")
+        backend = _parse_backend(backend_spec)
+        cache_dir = str(site_dir / ".cache" / "metro_sync")
+        mktcap_from_sheet = os.environ.get("METRO_SYNC_MKTCAP") == "sheet"
+        print(f"Reading workbook mirror (backend={backend_spec})...")
+        wb = _sw.load(backend, cache_dir=cache_dir, mktcap_from_sheet=mktcap_from_sheet)
+        # xlsx_path stays meaningful downstream (find_companies_source's
+        # fallback, error messages) but need not point at a real file.
+        xlsx_path = site_dir / "MetroAreas.xlsx"
+        sheet_metas = backend.get_sheets()
+        if sheet_metas:
+            workbook_mtime_override = max(m["workbook_mtime"] for m in sheet_metas.values())
+
+        print("Extracting metro data...")
+        score_index, engine_rows = build_score_index(wb, xlsx_path, return_engine_rows=True)
+        derived_override = _sw.patch_metro_derived(engine_rows) if engine_rows else {}
+        metros = extract_metros(wb, score_index, derived_override=derived_override)
+        print(f"  {len(metros)} metros")
     else:
-        # Prefer the project-root copy maintained by sync_source_xlsx.py;
-        # fall back to a sibling 'MetroAreas.xlsx' next to the project root
-        # for legacy layouts.
-        primary = site_dir / "MetroAreas.xlsx"
-        legacy = site_dir.parent / "MetroAreas.xlsx"
-        xlsx_path = primary if primary.exists() else legacy
+        if len(sys.argv) > 1:
+            xlsx_path = Path(sys.argv[1])
+        else:
+            # Prefer the project-root copy maintained by sync_source_xlsx.py;
+            # fall back to a sibling 'MetroAreas.xlsx' next to the project root
+            # for legacy layouts.
+            primary = site_dir / "MetroAreas.xlsx"
+            legacy = site_dir.parent / "MetroAreas.xlsx"
+            xlsx_path = primary if primary.exists() else legacy
 
-    if not xlsx_path.exists():
-        print(f"ERROR: Cannot find {xlsx_path}")
-        print(f"Usage: python {sys.argv[0]} [path/to/MetroAreas.xlsx]")
-        sys.exit(1)
+        if not xlsx_path.exists():
+            print(f"ERROR: Cannot find {xlsx_path}")
+            print(f"Usage: python {sys.argv[0]} [path/to/MetroAreas.xlsx]")
+            sys.exit(1)
 
-    print(f"Reading {xlsx_path}...")
-    wb = openpyxl.load_workbook(str(xlsx_path), read_only=True, data_only=True)
+        print(f"Reading {xlsx_path}...")
+        wb = openpyxl.load_workbook(str(xlsx_path), read_only=True, data_only=True)
 
-    # Extract all data
-    print("Extracting metro data...")
-    score_index = build_score_index(wb, xlsx_path)
-    metros = extract_metros(wb, score_index)
-    print(f"  {len(metros)} metros")
+        # Extract all data
+        print("Extracting metro data...")
+        score_index = build_score_index(wb, xlsx_path)
+        metros = extract_metros(wb, score_index)
+        print(f"  {len(metros)} metros")
 
     print("Extracting teams...")
     teams = extract_teams(wb)
@@ -1819,10 +1874,19 @@ def main():
     with open(data_dir / "metros.json", 'w', encoding='utf-8') as f:
         json.dump(slim_metros, f, separators=(',', ':'))
 
-    # Write meta.json with last update date from the Excel file
+    # Write meta.json with last update date from the Excel file (or, in
+    # supabase mode, the mirror's wb_sheet.workbook_mtime -- there is no
+    # local file to stat).
     import datetime
-    xlsx_mtime = os.path.getmtime(str(xlsx_path))
+    if workbook_mtime_override is not None:
+        xlsx_mtime = workbook_mtime_override
+    else:
+        xlsx_mtime = os.path.getmtime(str(xlsx_path))
     last_update = datetime.datetime.fromtimestamp(xlsx_mtime).strftime('%Y-%m-%d')
+    if WORKBOOK_SOURCE == "supabase" and isinstance(mktcap_as_of, str) and mktcap_as_of[:10] > last_update:
+        # With no workbook in the loop the rankings move when market cap does,
+        # so the newer of the two dates is the honest "last updated".
+        last_update = mktcap_as_of[:10]
     meta = {'lastUpdate': last_update}
     if mktcap_as_of:
         meta['companiesAsOf'] = mktcap_as_of
