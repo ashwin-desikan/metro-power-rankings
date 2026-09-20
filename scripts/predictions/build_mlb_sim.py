@@ -98,6 +98,7 @@ ESPN = "https://site.api.espn.com/apis"
 
 # rundiff-v1-v3: correlated season-noise layers, the adaptive-sigma / market
 # disagreement knob, and history-file cap (contract 2026-09-03).
+SETTLING_TEAMS_MAX = 2  # teams allowed to be mid-settle at once (see verify_wins)
 SEED = SEASON              # common random numbers seed
 HFA_SD = 0.01               # sd of the per-season league-wide HFA-logit jitter
 DIV_SD = 0.03                # sd of the per-season, per-division jitter
@@ -225,6 +226,44 @@ def season_rundiff(season):
     return out
 
 
+def classify_win_mismatch(base_wins, espn, max_teams=SETTLING_TEAMS_MAX):
+    """Sort a derived-vs-ESPN disagreement into match / settling / broken.
+
+    THE SKEW THIS EXISTS FOR (Ashwin's ruling, 2026-09-20). ESPN's standings
+    endpoint increments a team's wins the moment a game goes final; the
+    per-team schedule endpoint's `completed` flag lags it by a few minutes. In
+    that window the two sources genuinely disagree about exactly one game for
+    exactly one team, and the old exact-equality gate hard-failed mlb-sim for
+    it: twice in five days (09-16 and 09-20), both self-healing on the next
+    slot, each costing an alert and ops-autofix's 3/day retry budget. Measured
+    live on 09-20: the same parse read Cardinals 75 at 21:49 and 76 at 21:52.
+
+    Tolerating it does NOT weaken what the gate is actually for. verify_wins
+    exists to catch a SILENT SYSTEMATIC parse break -- the incident where every
+    game was discarded and all 30 teams sat at ~40% playoff odds. That failure
+    is off by hundreds of wins across the whole league, not by one win on two
+    teams, so the bound below still catches it with room to spare. The sibling
+    script build_season_sims.py already tolerates precisely this shape in its
+    own self-test ("gp ahead of remaining+records by 1, consistent with an
+    in-progress match -- proceeding (not a hard mismatch)"); this brings the
+    two into line.
+
+    Either direction counts as settling. Standings-ahead is the diagnosed
+    cause, but a cached standings response with a fresher schedule gives the
+    mirror image, and failing on that would just reintroduce the false red.
+    Magnitude is what matters: off by one is a game in flight, off by two is
+    not a story about timing.
+
+    Pure on purpose -- no network -- so the self-test can exercise every branch.
+    """
+    bad = sorted(t for t in TEAMS if espn.get(t) != base_wins.get(t))
+    if not bad:
+        return "match", bad
+    if len(bad) <= max_teams and all(abs(espn[t] - base_wins[t]) == 1 for t in bad):
+        return "settling", bad
+    return "broken", bad
+
+
 def verify_wins(base_wins, played):
     """Hard gate: the W-L we derived from 30 team schedules must equal ESPN's
     own current standings.
@@ -263,11 +302,16 @@ def verify_wins(base_wins, played):
         raise SystemExit("ESPN standings show %d league wins but we parsed 0 completed "
                          "games - the schedule parse is broken (see team_schedules)"
                          % sum(espn.values()))
-    bad = sorted(t for t in TEAMS if espn[t] != base_wins[t])
-    if bad:
+    verdict, bad = classify_win_mismatch(base_wins, espn)
+    detail = ", ".join("%s %d vs %d" % (t, base_wins[t], espn[t]) for t in bad[:6])
+    if verdict == "settling":
+        # Not a fault: see classify_win_mismatch. Said out loud in meta rather
+        # than swallowed, so a run that published under a skew can be found.
+        return ("verified against ESPN standings, %d team(s) still settling "
+                "(off by one: %s)" % (len(bad), detail))
+    if verdict == "broken":
         raise SystemExit("derived wins disagree with ESPN standings for %d team(s): %s"
-                         % (len(bad), ", ".join("%s %d vs %d" % (t, base_wins[t], espn[t])
-                                                for t in bad[:6])))
+                         % (len(bad), detail))
     return "verified against ESPN standings (30/30 teams)"
 
 
@@ -786,6 +830,37 @@ def self_test():
     check("divisions-30", len(TEAMS) == 30 and len(DIVISIONS) == 6
           and all(len(v) == 5 for v in DIVISIONS.values()))
     check("leagues-15", sum(1 for t in TEAMS if TEAM_LG[t] == "AL") == 15)
+
+    # --- verify_wins skew classifier (Ashwin's ruling, 2026-09-20) ----------
+    # The gate is there to catch a silent SYSTEMATIC parse break, not a game
+    # that went final between two ESPN endpoints. These pin the boundary.
+    _base = {t: 80 for t in TEAMS}
+
+    def _espn(**deltas):
+        e = dict(_base)
+        for team, d in deltas.items():
+            e[team] = _base[team] + d
+        return e
+
+    _t = sorted(TEAMS)
+    check("skew-match", classify_win_mismatch(_base, _espn())[0] == "match")
+    check("skew-one-team-off-by-one",
+          classify_win_mismatch(_base, _espn(**{_t[0]: 1}))[0] == "settling")
+    check("skew-other-direction-too",
+          classify_win_mismatch(_base, _espn(**{_t[0]: -1}))[0] == "settling")
+    check("skew-two-teams-is-the-cap",
+          classify_win_mismatch(_base, _espn(**{_t[0]: 1, _t[1]: 1}))[0] == "settling")
+    check("skew-three-teams-is-broken",
+          classify_win_mismatch(_base, _espn(**{_t[0]: 1, _t[1]: 1, _t[2]: 1}))[0] == "broken")
+    check("skew-off-by-two-is-broken",
+          classify_win_mismatch(_base, _espn(**{_t[0]: 2}))[0] == "broken")
+    check("skew-one-plus-a-big-one-is-broken",
+          classify_win_mismatch(_base, _espn(**{_t[0]: 1, _t[1]: 4}))[0] == "broken")
+    # the failure the gate was built for: a broken parse, whole league at zero
+    check("skew-empty-parse-is-broken",
+          classify_win_mismatch({t: 0 for t in TEAMS}, _base)[0] == "broken")
+    check("skew-names-the-teams",
+          classify_win_mismatch(_base, _espn(**{_t[0]: 1}))[1] == [_t[0]])
 
     # run differential -> win pct on the ten-runs-per-win scale, and the clamp
     check("rd-even", abs(wpct_from_rd(0.0) - 0.5) < 1e-12)
