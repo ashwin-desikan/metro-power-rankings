@@ -16933,3 +16933,31 @@ Worth stating plainly because the job is irreversible: ARM=1 and KEEP_DAYS=7 in 
 So: **nothing that currently runs pings a check that does not exist.** That statement was false twice tonight, in two different projects, and neither jobs.toml nor the dashboard could have told you on its own -- only comparing the two lists does, which is the five-line audit now recorded in these entries.
 
 **Notion:** Scheduled jobs: the "Newsletter retention (mini)" row rewritten -- "Alerts via" corrected from `unknown, outside this repo` to the actual ntfy paths, and Notes now carry what the job deletes, its guards, the dangling-slug fix and why removal beat a tile. No other rows; no schedule changed.
+
+
+## 2026-09-20 (night, last +12) - mini -> windows and next session: ZERO DANGLING SLUGS ANYWHERE. TWO SELF-INFLICTED MISTAKES ON THE WAY, BOTH CAUGHT BEFORE COMMIT
+
+Ashwin: "clear the dangling slugs in the unloaded plists too". Done for all five -- `cricket-monthly`, `activity-feed`, `football-standings`, `gap-league-watch`, `screen-number-ones`. Commit `b65225cdc`, `[vercel skip]`.
+
+Each wrapped its job in `hc-run.sh <slug>` for a check that no longer exists. Dormant today because the agents are unloaded, but these plists exist precisely to be RELOADED as the manual fallback when the dispatcher is down -- the worst moment to discover a job is silently not reporting. Each now runs its script directly.
+
+**Both copies, deliberately.** All five live in `mac-mini-jobs/launchd/` AND `~/Library/LaunchAgents/`. Editing one is how this repo gets the two-divergent-plists bug it has been bitten by before, so all ten files were changed together, and `ProgramArguments` now match across every pair.
+
+**A pre-existing divergence found and NOT touched:** `football-standings`' live copy carries six more `StartCalendarInterval` slots than the repo copy (11:00, 12:00, 17:00, 18:00, 23:00, 00:00 -- the DST-paired set). Nothing to do with slugs. Both are unloaded and the job runs from the dispatcher, so it changes nothing today, but it means the repo copy is NOT what would run if someone reloaded the fallback. Left exactly as found, and edited in place rather than by copying one file over the other, precisely so the difference survived to be decided on deliberately.
+
+**🔴 MISTAKE ONE: plistlib ate the documentation.** First pass rewrote the files with `plistlib.dumps`, which produced a 121-line diff on a one-line change and, worse, **silently deleted every XML comment** -- including the block explaining why screen-number-ones runs nine slots a week instead of one. Caught by reading the staged diff rather than trusting "5 files changed". Reverted both copies (repo via git, LaunchAgents from backup) and redone as minimal text edits: the diff is now 10 insertions and 8 deletions, and the comments are intact.
+
+**🔴 MISTAKE TWO, worse, and it passed a linter.** Two of those comments claimed "through hc-run.sh for a healthchecks tile", so leaving them would have been the same class of lie as the slug. Rewriting them, I wrote ` -- ` inside the comment text. **`--` is illegal inside an XML comment**, so `activity-feed` and `screen-number-ones` became malformed XML. `plutil -lint` reported all ten OK. Python's expat parser rejected them. Caught only because the verification step parsed the files with plistlib instead of stopping at the lint. **Lesson worth keeping: `plutil -lint` is not a validator for hand-edited plists -- parse them strictly as well.** Repaired, re-validated strictly, and a check added that no comment contains `--`.
+
+**Verified after repair:** all ten parse strictly; no `hc-run` reference survives in any of them; every `-lc` command passes `bash -n`; every target script exists; all five remain UNLOADED; and the football-standings divergence is still there.
+
+**Fleet-wide audit, the whole point of the exercise:**
+```
+tiles: 20   jobs.toml hc_slugs: 15
+dangling in jobs.toml:        NONE
+dangling in LOADED plists:    NONE
+dangling in unloaded plists:  NONE
+```
+Nothing anywhere on this machine -- running, dormant or in the repo -- pings a healthchecks check that does not exist. That statement was false in three separate places when the evening started.
+
+**Notion:** no row changes. Nothing was created, retired or rescheduled; five dormant fallbacks stopped claiming monitoring they never had. The Scheduled jobs rows for these jobs already describe their real alerting, and the cricket-monthly row was rewritten earlier tonight when its tile was given up.
