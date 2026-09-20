@@ -16621,3 +16621,28 @@ Not a fault: files this session's shell writes under `%LOCALAPPDATA%` land in th
 **Still open:** the mini install of `metro-rankings` (evening entry, five steps); two clean shadow Saturdays, then the cutover; Municipality row 93191 (`Utqiag_x001A_vik city`) for Ashwin to retype, which will be the watcher's first real write.
 
 **Notion:** Scheduled jobs +1 (`Metro workbook sync watcher`, Active). Decisions +3 (edit timing; guard thresholds; owner of state-metro-scores.json). Backlog: phase 3 row Done; two-writers row Done; Supabase free plan row Done.
+
+
+## 2026-09-20 (night) - mini -> next session and windows: TODAY'S 14 ntfy ALERTS WERE ONE STRANDED COMMIT; A CRASHED GC LEFT THREE LOCKS; `mini_sync` HAS NO REBASE FALLBACK
+
+Triage of every ntfy message dated 2026-09-20. Fourteen alerts, one systemic cause, two racy-but-healthy jobs. Nothing left red.
+
+**The chain.** 14:17:44 the business job committed `f5687d931` (leader QID, Bank of China). Six seconds later, 14:17:50, a git gc/maintenance pass took `index.lock`, `HEAD.lock` and `objects/maintenance.lock` and died without releasing them — `.git/objects` still held two `tmp_obj_*` files, the signature of an interrupted object write. The commit never pushed and sat local-only. From then, every job that calls `mini_sync()` failed: it is `git merge --ff-only` with `fail "cannot fast-forward ... (resolve by hand)"` and **no rebase fallback** — while the PUSH path in the same codebase auto-rebases on rejection (football-standings did exactly that at 21:56:50 tonight). One stranded bot commit reds the whole fleet until a human turns up. 7h27m today.
+
+**Fixed:** the three stale locks moved aside (backed up, not deleted), `git pull --rebase` (local 1 / remote 7, zero overlapping files — checked before rebasing), pushed `3fd6a6061`. Tree clean, in sync.
+
+**The 14, by cause:**
+- **7 = the chain above.** `cannot fast-forward` at 15:18 / 15:38 / 17:19 / 19:20, plus football-standings ALERT at 18:09 / 19:20 / 21:21. Re-ran football-standings tonight: exit 0, bundles pushed.
+- **4 = mlb-sim `job_failed`, then its 3/day autofix cap.** Not a code bug. `verify_wins()` in `build_mlb_sim.py` is an exact-equality gate against ESPN standings and at 07:09 read `Cardinals 75 vs 76`. ESPN's standings endpoint increments the moment a game goes final; the per-team schedule endpoint's `completed` flag lags a few minutes. Reproduced live tonight — the same parse gave 75 at 21:49 and 76 at 21:52. The 21:58 run is `wins: verified against ESPN standings (30/30 teams)`. 09-16 failed the same way and self-healed on its next slot. I did **not** touch the gate: it is the reason the model is trustworthy and the runner header says never route around it.
+- **2 = ops-autofix "stood down -- uncommitted work"** (11:15, 13:18). A dirty tree it refused to act through. Clean now.
+- **1 = refresh "2/16 best-effort steps errored"** (10:25): `leaders (auto-apply)` and `uk offices (check)`, both transient Wikidata. Re-ran tonight: uk offices `current holders unchanged in all 8 offices`; leaders exit 0, 204 countries, 6 changed (nigeria, kazakhstan, estonia, mauritius, madagascar, malawi). I **reverted** those 6 rather than commit them — `public/data/leaders/_changes.json` is on `scripts/refresh-needs-build-paths.txt`, so that commit is build-triggering and needs Ashwin's word. They re-apply at the next 09:00 egress-refresh.
+
+**Open for Ashwin (two):**
+1. `mini_sync()` should rebase, or at least retry once, instead of `fail ... resolve by hand`. The push path already proves the pattern is safe here. As it stands, any unpushed local commit is a fleet-wide outage with no self-heal.
+2. `verify_wins()` could tolerate a one-team, one-game skew (or retry after a few minutes). The season-sims self-test already tolerates exactly this — `gp ahead of remaining+records by 1, consistent with an in-progress match -- proceeding`. verify_wins does not, so an in-flight game is a guaranteed red at the 07:00 and 14:30 slots.
+
+**Two mistakes worth recording.** I first reproduced the leaders step with plain `python3`, got `ModuleNotFoundError: No module named 'requests'`, and nearly filed that as the bug — the jobs use `PYTHON_BIN="$REPO/.venv/bin/python"`, which has requests 2.34.2. Repro a step with the job's interpreter, never the shell's. And a bulk `git diff --quiet -- $NEEDS_BUILD_PATHS` answered "no build needed" when `_changes.json` **had** changed; the per-path loop was right. Check needs-build paths one at a time before concluding a commit can be tagged `[vercel skip]`.
+
+**Left alone deliberately:** `.autofix-attempts.json` still shows mlb-sim at its 3/day cap (resets at midnight; the job is green now). Two `tmp_obj_*` garbage objects remain in `.git/objects` — harmless; `git prune` clears them when no job is running. I did not run gc while jobs were live, since that is what started this.
+
+**Notion:** Backlog +2 (`mini_sync()` should rebase or retry, P1, owner Ashwin; `verify_wins()` hard-fails on an in-progress game, P2, owner Ashwin — both need a ruling, not code). Data sources: the ESPN row gains a quirk, STANDINGS LEAD THE SCHEDULE ENDPOINT, with the measured times. Scheduled jobs unchanged — no job was created, moved, disabled or retired tonight. Decisions: none new (I made no ruling; both are Ashwin's).
