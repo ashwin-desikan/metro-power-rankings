@@ -8,7 +8,9 @@
      it re-scrapes the Wikipedia page and commits [vercel skip] ONLY on a real
      change, so the extra runs are cheap no-ops and the hub goes live within a few
      hours of the new week appearing. Nothing changes Thu-Sun (data is set by then).
-     Runs the repo wrapper directly through hc-run.sh for a healthchecks tile.
+     Runs the repo wrapper directly. NO healthchecks tile: the check was
+     deleted and this slug removed 2026-09-20; the project is capped at 20 and
+     a dead slug would 404 into `|| true`, making the job LOOK monitored.
      Install:  cp this plist to ~/Library/LaunchAgents/ ; launchctl bootstrap it. -->
 <plist version="1.0">
 <dict>
@@ -18,7 +20,7 @@
   <array>
     <string>/bin/bash</string>
     <string>-lc</string>
-    <string>exec "$HOME/metro-mini-jobs/hc-run.sh" screen-number-ones /bin/bash "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-screen-number-ones.sh"</string>
+    <string>exec /bin/bash "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-screen-number-ones.sh"</string>
   </array>
   <key>StartCalendarInterval</key>
   <array>

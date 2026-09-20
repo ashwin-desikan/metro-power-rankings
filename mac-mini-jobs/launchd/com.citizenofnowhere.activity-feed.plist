@@ -3,7 +3,9 @@
 <!-- Site Activity feed regeneration. Daily 03:30 local: rebuilds public/data/activity-feed.json
      from git history and commits it [vercel skip]. Early-morning slot captures the previous
      day's data-job and manual commits. Runs the repo wrapper directly (no ~/metro-mini-jobs
-     copy) through hc-run.sh for a healthchecks tile.
+     copy). NO healthchecks tile: the check was deleted and this slug removed
+     2026-09-20; the project is capped at 20, and a dead slug would 404 into
+     `|| true`, making the job LOOK monitored when it is not.
      Install:  cp this plist to ~/Library/LaunchAgents/ ; launchctl bootstrap it. -->
 <plist version="1.0">
 <dict>
@@ -13,7 +15,7 @@
   <array>
     <string>/bin/bash</string>
     <string>-lc</string>
-    <string>exec "$HOME/metro-mini-jobs/hc-run.sh" activity-feed /bin/bash "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-activity-feed.sh"</string>
+    <string>exec /bin/bash "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-activity-feed.sh"</string>
   </array>
   <key>StartCalendarInterval</key>
   <dict>

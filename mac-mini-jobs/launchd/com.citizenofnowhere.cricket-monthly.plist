@@ -7,8 +7,6 @@
 	<key>ProgramArguments</key>
 	<array>
 		<string>/bin/bash</string>
-		<string>/Users/ashwindesikan/metro-mini-jobs/hc-run.sh</string>
-		<string>cricket-monthly</string>
 		<string>/bin/bash</string>
 		<string>/Users/ashwindesikan/metro-mini-jobs/run-cricket-monthly.sh</string>
 	</array>
