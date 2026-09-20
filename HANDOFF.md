@@ -17041,3 +17041,25 @@ Ashwin: "make acquire_lock honour DISPATCHER_LOCK_HELD". Commit `e3d83ac7e`, `[v
 **🔴 One asymmetry left, deliberately.** `dispatcher-lock.sh` checks only that `DISPATCHER_LOCK_HELD` is PRESENT; the python side now checks that it MATCHES the live lock owner. Harmless today, because every caller of the shell helper really is a child of a tick, so the strict test would pass anyway. But two implementations of one rule that disagree is the bug class this repo keeps re-finding, and tightening the shell side to match costs nothing. Not done tonight; worth doing next time that file is open.
 
 **Notion:** Backlog: the `--mark-ok` row filed an hour ago is CLOSED (Done), rewritten with the fix, the strict-marker reasoning, the release guard, the verification and the remaining shell asymmetry. No other rows; nothing scheduled changed.
+
+
+## 2026-09-20 (night, last +17) - mini -> windows and next session: THE LOCK RULE IS NOW ONE RULE, NOT TWO
+
+Ashwin: "tighten the shell side to match". Commit `a559b3ead`, `[vercel skip]`.
+
+`dispatcher-lock.sh` had accepted `DISPATCHER_LOCK_HELD` on mere PRESENCE, while `dispatcher.py`'s `acquire_lock()` (tightened an hour earlier) required it to name the lock file's CURRENT owner and that PID to be ALIVE. Harmless in practice -- every caller of the shell helper really is a child of a tick, so the strict test would have passed anyway -- but two implementations of one rule that disagree is the exact bug class this repo keeps re-finding: the hardcoded build-paths list in deploy-watch, the two divergent plists, the inert githooks. The shell now applies the identical test, and both files say so in their headers.
+
+**What the strictness buys.** A loose check means an env var that leaked into an unrelated shell -- inherited by a long-lived session, exported by hand while debugging -- would wave a manual run straight past a LIVE tick, which is the precise collision the helper exists to prevent. The strict check cannot be fooled that way: a marker that does not match a live owner decides nothing, and the normal path then blocks as it always did.
+
+**Verified, 13 -> 19 assertions.** The rewritten scenarios use a real live PID as the tick rather than an invented number, because the old test 4 had passed a MISMATCHED marker (lock 99999, marker 12345) and asserted pass-through -- correct under the loose rule and wrong under the strict one. That test now pins the right behaviour instead: a child of the live owner is let through and neither takes over nor deletes the lock; a run with NO marker blocks; a run with a WRONG marker blocks too (the leaked-env-var case); a marker with no lock file falls back to a normal acquire that IS the caller's to release; and a stray release still cannot touch someone else's lock.
+
+**Then both real consumers, through the dispatcher's own `run_job` path**, as a four-way matrix -- `runners/_common.sh` (via git-maintenance) and the standalone `run-deploy-watch.sh`, each with and without the marker, against a live tick holding the lock:
+```
+with marker:     both RUN, do not stand down, tick's lock intact
+without marker:  both STAND DOWN (exit 0), tick's lock intact
+```
+Identical behaviour from the two entry points, which is the point of having one rule.
+
+**Note on method, twice over tonight.** The first edit attempt asserted on comment text I had retyped from memory and failed -- twice, once on each anchor -- and because every assertion runs BEFORE the write, the file was left untouched both times rather than half-edited. Then I read the real wording out of the file and matched it. Retyping an anchor from memory is how a "targeted" edit silently lands in the wrong place; the assert-then-write shape is what made the mistake free.
+
+**Notion:** Backlog: the `--mark-ok` row (closed earlier tonight) extended with the shell tightening, so the row records both halves of one rule rather than implying only python was fixed. No other rows; nothing scheduled changed.
