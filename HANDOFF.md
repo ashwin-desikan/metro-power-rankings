@@ -16713,3 +16713,25 @@ One of those new cases caught me rather than the code: I asserted that just afte
 **Also explained, a loose end from earlier tonight:** the self-test case count differs by one between machines (86 vs 87 before, 100 vs 101 now) because `no NOT_DEPLOYED entry names a file that is gone` only runs from the repo checkout, not from `~/metro-mini-jobs`. Nothing is missing on the mini.
 
 **Notion:** Scheduled jobs: the `Deploy watch` row rewritten as `deploy-watch`, Runs on launchd -> **Mac mini (dispatcher)**, with the every_minutes rationale, the live verification and the trade. Decisions: the gc ruling's open question CLOSED -- deploy-watch was the named gap -- leaving only the human-at-a-terminal case and dispatcher.log rotation. Backlog unchanged; the two rows from earlier tonight (`mini_sync` rebase fallback P1, `verify_wins` skew P2) are still open and still want a ruling.
+
+
+## 2026-09-20 (night, last +2) - mini -> windows and next session: dispatcher.log ROTATES NOW, 5 MB AND FIVE GENERATIONS
+
+Ashwin: "add log rotation to dispatcher.log". The last loose end from tonight. Commit `26e6cd53b`, `[vercel skip]`.
+
+**Why it mattered now.** The log had NO rotation and was 823 KB after roughly two months -- about 14 KB a day, which nobody would ever have noticed. Bringing deploy-watch under the dispatcher an hour earlier added ~430 lines a day on its own (RUN + one output line + DONE, 144 times), quadrupling the growth rate on a machine nobody logs into. Unbounded from there.
+
+**`rotate_log()` in dispatcher.py.** 5 MB, five generations -- about 100 days per generation at the new rate, so well over a year of history retained, and 30 MB worst case on disk. Called ONCE per real tick, from inside the `try` that already holds the dispatcher's lock, so two dispatchers can never rotate at the same moment and neither `--dry-run` nor `--self-test` ever writes. When it fires, the first line of the fresh file says why it is fresh.
+
+Three decisions worth keeping:
+- **It renames, it does not truncate.** That is safe precisely because `log()` opens the file with `"a"` for every single line and holds no handle between calls -- the rename moves the old bytes aside and the very next `log()` recreates the file. Truncating would also work and would throw the history away, and the history is the only record of what the fleet did.
+- **Oldest first, then shift up, then move the live file** -- in that order, so a crash midway leaves every surviving generation still correctly numbered instead of overwriting one.
+- **It never raises.** Every `OSError` is swallowed and the tick carries on. A dispatcher that died because it could not tidy its own log would be a strictly worse failure than an oversized log.
+
+**Verified, including against the real file.** Ten new self-test cases cover the threshold, the rename, the `.1 -> .2` shift, dropping the oldest past `keep`, and a missing file being a no-op. Then a live proof rather than a synthetic one: the real 823 KB `dispatcher.log` was copied to a temp dir, rotated with a low threshold, and came back byte-identical as `.1`, with `log()` recreating the live file immediately after -- which is the `open("a")` assumption above, demonstrated rather than asserted. On the mini it correctly does NOT rotate yet (0.79 MB against a 5 MB threshold) and a live tick runs clean. **Self-test 86 -> 111 cases across tonight's three changes, all green.**
+
+A note on my own test-writing: I first compared two 2000-character strings in the generation checks, which passed but made the self-test output unreadable. Rewritten to compare a single marker character per generation, so the ordering check now reads `['b', 'a', 'z']` and actually tells you the shift chain is right. A test whose output nobody can read is most of the way to no test.
+
+**Where the rotated files live:** `~/metro-mini-jobs/dispatcher.log.1` through `.5`, outside the git checkout, so nothing to gitignore.
+
+**Notion:** Decisions: the gc ruling's open questions are now BOTH closed (deploy-watch under the lock; dispatcher.log rotating), leaving only the human-at-a-terminal case. Scheduled jobs: the deploy-watch row's log-volume note updated from a concern to a handled one. No new rows -- this changed no job's schedule. Backlog unchanged; `mini_sync` rebase fallback (P1) and `verify_wins` skew (P2) are still open and still want a ruling rather than code.
