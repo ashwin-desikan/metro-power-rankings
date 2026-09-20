@@ -17063,3 +17063,27 @@ Identical behaviour from the two entry points, which is the point of having one 
 **Note on method, twice over tonight.** The first edit attempt asserted on comment text I had retyped from memory and failed -- twice, once on each anchor -- and because every assertion runs BEFORE the write, the file was left untouched both times rather than half-edited. Then I read the real wording out of the file and matched it. Retyping an anchor from memory is how a "targeted" edit silently lands in the wrong place; the assert-then-write shape is what made the mistake free.
 
 **Notion:** Backlog: the `--mark-ok` row (closed earlier tonight) extended with the shell tightening, so the row records both halves of one rule rather than implying only python was fixed. No other rows; nothing scheduled changed.
+
+
+## 2026-09-20 (night, last +18) - mini -> windows and next session: ALL CLEAR, AND CHECKED POSITIVELY RATHER THAN BY SILENCE
+
+Ashwin asked for the feed once more, as the closing check on the night's changes. **No new ntfy since 23:23 BST** -- but silence is the same signal whether everything is healthy or nothing is running, so this was verified from the dispatcher's own log instead.
+
+**Jobs really are running, through all of tonight's lock code:**
+```
+22:22Z  deploy-watch        DONE ok 2s
+22:22Z  ops-autofix         DONE ok 104s
+22:34Z  cricket-champions   DONE ok 13s
+22:34Z  deploy-watch        DONE ok 2s
+22:44Z  deploy-watch        DONE ok 2s
+22:54Z  deploy-watch        DONE ok 2s
+```
+Four consecutive clean deploy-watch ticks plus two other jobs, all after `_common.sh` started taking the dispatcher lock and after `acquire_lock()` became re-entrant. No FAIL, no MISSED.
+
+**The specific regression I was looking for did not happen.** My stand-down wording (`NOTHING WAS DONE`, `dispatcher lock held by pid`) appears **zero** times in the whole dispatcher log. That is the correct result, not a lucky one: under a tick the marker always names the live lock owner, so a scheduled job can never stand down, and only a genuine outsider can. Had the strict marker check been wrong in either direction, this is where it would have shown -- every job standing down, or the log silent because nothing ran at all.
+
+**The six `standing down` lines in the log are not mine either** -- all six are ops-autofix's own 3/day attempt-cap message, dating back to 09-12 and 09-14. Checked rather than assumed, because "standing down" was exactly the phrase to be suspicious of tonight.
+
+**What to watch at the next ops-autofix tick (00:15Z).** Two things should now be different. It should find NO `job_failed` finding at all, because mlb-sim and football-standings were marked ok at 22:47 and no job records a failure any more. And the next time it does fix something, its `--mark-ok` should SUCCEED rather than report "a tick may have held the lock", because `acquire_lock()` now lets the tick's own children through. If that line ever appears again, the re-entrancy is not working and `e3d83ac7e` is the commit to look at.
+
+**Notion:** no row changes. Nothing was created, changed or retired; this was a verification pass that found the fleet healthy.
