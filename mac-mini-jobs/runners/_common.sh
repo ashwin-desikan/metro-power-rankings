@@ -36,6 +36,41 @@ note()  { echo "[$(date '+%F %T')] $*"; }
 alert() { "$PY" "$MINI_DIR/notify.py" "CoN mini job" "$1" 1 || true; }
 fail()  { note "FAIL: $1"; alert "$1"; exit 1; }
 
+# EVERY runner takes the dispatcher's lock, so a run started BY HAND cannot
+# collide with a scheduled tick. This is the case that actually did damage on
+# 2026-09-20: a hand-run metro-rankings and a scheduled bot commit touched the
+# index at the same moment, the run's restore of public/data failed, and 775
+# files were left modified. deploy-watch got this first; this is the rest of
+# the fleet, and it covers runners that never call mini_sync (git-maintenance).
+#
+# Under a dispatcher tick it is a NO-OP: the tick holds the lock already and
+# exports DISPATCHER_LOCK_HELD, which dispatcher_lock_acquire honours. Only a
+# manual run can stand down, so no scheduled job can be silently skipped by it.
+#
+# 🔴 NO `trap dispatcher_lock_release EXIT` HERE, AND THAT IS DELIBERATE.
+# bash's `trap ... EXIT` REPLACES any previous EXIT trap, and two runners own
+# theirs for real work -- metro-rankings.sh (`_restore_public_data`, the
+# guarantee that public/data is put back after a shadow run) and
+# economy-rates.sh (`report_failed_builders`). They set theirs AFTER sourcing
+# this file, so a trap here would be silently replaced and never release;
+# setting one later would be far worse, silently killing that restore. Measured
+# both ways before writing this.
+#
+# Not releasing is SAFE, because the lock is a PID and both implementations
+# (dispatcher.py's acquire_lock and dispatcher-lock.sh) probe it with signal 0
+# and take over a dead one. A manual run that exits leaves a file whose owner
+# is gone, and the next acquirer takes it over and says so. Releasing would be
+# tidier; being correct without depending on trap ordering is worth more.
+if [ -r "$REPO_DIR/mac-mini-jobs/dispatcher-lock.sh" ]; then
+  . "$REPO_DIR/mac-mini-jobs/dispatcher-lock.sh"
+  if ! dispatcher_lock_acquire "$(basename "${BASH_SOURCE[1]:-a runner}")"; then
+    note "STANDING DOWN: a dispatcher tick holds the lock. NOTHING WAS DONE -- no data was built, fetched or committed. Wait for the tick to finish, then run this again."
+    exit 0
+  fi
+fi
+# Fails OPEN when the helper is missing: an absent lock file must not take the
+# whole fleet down, and the behaviour without it is exactly what it was before.
+
 # Get onto the latest history so we build and commit on top of it.
 #
 # WAS ff-only-or-die until 2026-09-20, on the reasoning that refusing beats
