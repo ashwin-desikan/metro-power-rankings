@@ -16845,3 +16845,23 @@ Both set theirs AFTER sourcing `_common.sh`. I measured it before writing anythi
 **Where the mini stands now.** Every writer of this repo's git -- scheduled or by hand -- is serialised by one lock. gc is off git's hands with its own 03:00 slot that sweeps stale locks. dispatcher.log rotates. The pull path rebases a divergence and flushes tagged commits, alerting on untagged ones. verify_wins tolerates a settling game. Every Backlog row opened tonight is Done, and the four Decisions rows carry their own residual notes rather than a clean bill of health.
 
 **Notion:** Decisions: the gc/lock row's Rule rewritten to describe the whole lock regime, and its open questions CLOSED -- with the no-trap decision recorded there explicitly, as a design note rather than a gap, so the next person does not "fix" it. No new rows; no job or schedule changed.
+
+
+## 2026-09-20 (night, last +8) - mini -> windows and next session: RE-READ THE ntfy FEED AFTER THE CHANGES AND CAUGHT MY OWN FALSE ALARM
+
+Ashwin asked for the feed to be checked again. Fifteen messages in twelve hours; twelve are the original incident, already triaged and fixed. Three are new since 21:56, and one of them was a bug I had just shipped. Commit `4f91825d9`, `[vercel skip]`.
+
+**The three new ones.**
+- `21:56:42` "one or more leagues failed to build" -- my own first mlb-sim re-run, the Cardinals race. Explained at the time and the 21:58 run was clean.
+- `22:28:07` "git-maintenance swept 1 stale lock(s)" -- the REAL test run quarantining a planted fixture. Correct, and useful: it proved the alert path works.
+- `22:27:53` the same alert, **from the DRY RUN 14 seconds earlier. That one was a lie.**
+
+**🔴 The bug.** In `git-maintenance.sh` the sweep counter is incremented in BOTH branches -- the real `mv` and the `DRY_RUN: would quarantine` note -- because it counts what a real run WOULD do, which is right for the note. But the alert was `[ "$swept" -gt 0 ] && alert ...`, ungated. So a rehearsal paged Ashwin with "something crashed mid-write; check dispatcher.log" while having quarantined precisely nothing. DRY_RUN's entire contract is that it has no side effects, and sending a push notification is a side effect. Gated on `DRY_RUN` now.
+
+**How it was caught, which is the part worth keeping.** Not by the run's own output -- that said `DRY_RUN: would quarantine`, exactly as designed, and looked perfect. It was caught by re-reading the ntfy feed afterwards and finding a message that should not exist. A job's self-report cannot tell you about a side effect the job does not know it has. The same is true of the earlier 22:15 crash, which no job reported at all.
+
+**Verified two ways.** The gate itself, across all six combinations of `swept` in {0,1,2} and `DRY_RUN` in {0,1}: fires only when `swept>0` AND `DRY_RUN` is not 1. Then end to end against the live feed: a stale lock planted, `DRY_RUN=1` run, fixture left untouched, and **zero** ntfy messages in the window afterwards.
+
+**Everything else in the feed is quiet, and that is the real result.** Nothing has failed since the fixes went in. deploy-watch ran clean under the dispatcher at 22:10Z; `ops-autofix`, `football-standings` and `mlb-sim` have sent nothing since their pre-fix failures; no divergence alert since 21:21, when there had been one every two hours all evening.
+
+**Notion:** Scheduled jobs: the `git-maintenance` row's Notes now carry the false-alert bug, the fix, and the re-verification -- recorded rather than quietly corrected, because the row previously claimed the dry run changed nothing, and that claim was incomplete. No other rows changed.
