@@ -16980,3 +16980,24 @@ Ashwin: "sync the repo copy to the live football-standings schedule". Commit `2e
 **Still open from earlier tonight, unchanged:** nothing. Every Backlog row opened this session is Done, and there are no dangling slugs anywhere on the machine.
 
 **Notion:** no row changes. The schedule in the Scheduled jobs row for football-standings already describes the dispatcher's `times` (05:00, 11:00, 17:00, 23:00 UTC), which is what the job actually runs on; this fixed the dormant fallback's copy of it, not the live schedule.
+
+
+## 2026-09-20 (night, last +14) - mini -> windows and next session: EVERY PLIST PAIR NOW BYTE-IDENTICAL, REPO AND INSTALLED
+
+Ashwin: "do that cp too". The repo copy of the football-standings plist was copied over `~/Library/LaunchAgents`, restoring the explanatory comment and the two-space style the installed copy had lost when some tool rewrote it (that rewrite is also how it gained tabs and dropped its documentation). No repo commit: `~/Library/LaunchAgents` is not tracked.
+
+Safe by construction rather than by assumption: the two files were re-confirmed to parse to EQUAL dictionaries immediately before the copy, with the script asserting equality and refusing to proceed otherwise, so nothing behavioural could change. A fresh backup of the installed file was taken first. After: byte-identical, strict `plistlib` parse OK, `plutil -lint` OK, all eight schedule slots present, comment restored, no `hc-run` wrapper, `bash -n` clean on the command, target script exists, and the agent still **unloaded** -- it is a fallback and was left one.
+
+**Then the obvious question: was football-standings the only drifted pair?** Audited all 17 plists that exist in both `mac-mini-jobs/launchd/` and `~/Library/LaunchAgents/`, comparing text AND parsed dictionaries:
+
+```
+17 pairs: TEXT identical, PARSED equal, in every single case
+LOADED: f1-weekly, heartbeat   (the two jobs still genuinely on launchd)
+unloaded: the other 15         (dispatcher-owned; plists kept as manual fallbacks)
+```
+
+So the answer is yes -- football-standings was the only one, and there is now no divergence anywhere between what the repo documents and what is installed. Worth saying because "the two copies disagree" has bitten this project more than once, and until tonight nothing compared them.
+
+**State of the fallbacks at the end of the evening.** All 15 dormant plists run their job directly, none pings a dead healthchecks slug, and each matches its repo copy exactly, so reinstalling any of them does what its comment says. `deploy-watch`'s plist deliberately still carries its `hc-run.sh` wrapper, because that slug became VALID tonight when the tile was created -- reload it as a fallback and it reports properly.
+
+**Notion:** no row changes. Nothing created, retired or rescheduled; this restored documentation to an installed file and confirmed the rest were already in step.
