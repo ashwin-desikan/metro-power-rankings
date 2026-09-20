@@ -16888,3 +16888,24 @@ Not a fault: the `mac-mini` tile has no `hc_slug` behind it because `run-heartbe
 **Method note.** Two nights running, the thing that was wrong was invisible in the place you would naturally look. The dry-run false alert was invisible in the job's own output and showed up only in the ntfy feed; this dangling slug is invisible in jobs.toml and the dashboard alike -- the config says monitored, the dashboard simply has no row, and nothing anywhere says "these disagree". Comparing the two lists is a five-line script; it is now in this entry's history and worth re-running whenever a tile is deleted.
 
 **Notion:** Scheduled jobs: the `deploy-watch` row's "Alerts via" corrected from claiming healthchecks coverage to stating there is no tile and why, with Last verified set. No other rows changed; no job or schedule touched.
+
+
+## 2026-09-20 (night, last +10) - mini -> windows and next session: deploy-watch HAS A TILE AT LAST, PAID FOR WITH cricket-monthly
+
+Ashwin: "swap a monthly tile for deploy-watch". Done. Commit `f86af4439`, `[vercel skip]`.
+
+**The cap is real and it is 20.** Confirmed the hard way rather than from the comments: a create returns **HTTP 403** while the project is full, and a GET on the same key returns 200, so it is the limit and not the credentials. There is no add-then-remove; the delete has to come first. Ashwin ran the DELETE himself -- the session's permission layer refused it, which is the right default for an irreversible call against live monitoring.
+
+**Which monthly, and why.** `cricket-monthly` over `conflicts-monthly`: the conflicts refresh has a catastrophic failure in its history -- the run that wiped five centuries of war data -- and cricket had 7 pings of history to lose against conflicts' 11. The underlying argument for spending a monthly at all: the dispatcher ALREADY pushes an ntfy on a missed slot ("Metro: scheduled job missed") as well as on a failed run, so for a job that runs 12 times a year a tile was adding remote visibility and little else. deploy-watch runs 144 times a day and its failure mode is silence -- a canceled Vercel build that never heals.
+
+**The new tile:** uuid `e9a03a8e-28b0-4477-b042-05283aae4376`, period **1h**, grace **30m**, same notification channel as the rest. NOT 10 minutes, deliberately: the dispatcher can skip a tick while a long job holds its lock (mlb-sim up to 45m), and a run that stands down on the lock still pings success, so a gap that size means it is genuinely not running. Verified up: a real `hc-run.sh deploy-watch ...` run took it from `new` to `up`, 2 pings, 2s.
+
+**🔴 A TRAP WORTH KNOWING, found in the act.** A check created through the API does **NOT** get a slug. It came back `slug: ''`, and hc-run.sh pings `hc-ping.com/<key>/<slug>` -- so the tile would have existed, looked healthy in the UI, and never received a single ping. Exactly the failure being fixed, recreated by the fix. `slug` turns out to be writable, so a follow-up POST with `{"slug":"deploy-watch"}` set it, and only then did the end-to-end ping register. Anyone scripting a check must set the slug explicitly and then prove it with a real ping, not assume the name derives it.
+
+**And the other half of the swap, which is the part that is easy to skip:** `hc_slug = "cricket-monthly"` is GONE from jobs.toml, in the same commit. Leaving it would have left hc-run.sh pinging a slug with no check behind it, 404ing into `|| true`, so the job would look monitored and not be -- the dangling-slug trap the football-standings row warns about, and which an audit found live on deploy-watch itself an hour earlier. The removed line carries the full recreation recipe (cron `0 11 1 * *`, tz Europe/London, grace 48h, channel uuid) so the tile can be rebuilt exactly if the cap ever lifts.
+
+**Re-audited after the change: 20 tiles, 15 configured `hc_slug`s, ZERO dangling.** dispatcher self-test 113 cases green, jobs.toml installed to the mini.
+
+Still dangling, unchanged and harmless because their plists are UNLOADED: `activity-feed`, `football-standings`, `gap-league-watch`, `screen-number-ones`. Still genuinely unmonitored and LOADED: `newsletter-retention`, which pings a slug with no tile -- the same class as deploy-watch was, in the newsletter project, and the next candidate if a slot ever frees up.
+
+**Notion:** Scheduled jobs: `deploy-watch` row's "Alerts via" corrected again -- from "no tile exists" (this evening's audit) to the created tile with its uuid and period, plus why 1h; `cricket-monthly` row rewritten with the tile given up, the reasoning, and the exact recreation recipe including the slug trap. No other rows; no schedule changed.
