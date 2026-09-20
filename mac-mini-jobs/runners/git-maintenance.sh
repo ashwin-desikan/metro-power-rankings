@@ -105,7 +105,14 @@ while IFS= read -r f; do
   swept=$((swept + 1))
 done < <(find "$REPO_DIR/.git" -maxdepth 1 -name 'next-index-*.lock' 2>/dev/null)
 
-[ "$swept" -gt 0 ] && alert "git-maintenance swept $swept stale lock(s) in the rankings repo -- something crashed mid-write; check dispatcher.log around the timestamps"
+# DRY_RUN must not page anyone. `swept` counts what a real run WOULD do, so it
+# is non-zero in a rehearsal too; alerting on it sent a false "something
+# crashed mid-write" at 22:27 on 2026-09-20 from a dry run that had quarantined
+# nothing. Found by re-reading the ntfy feed after the change, which is the
+# only reason it did not sit there as a standing lie.
+if [ "$swept" -gt 0 ] && [ "$DRY_RUN" != "1" ]; then
+  alert "git-maintenance swept $swept stale lock(s) in the rankings repo -- something crashed mid-write; check dispatcher.log around the timestamps"
+fi
 
 # --- 2. stale temporary objects ---------------------------------------------
 # tmp_obj_* is a half-written object from a crashed writer. A live one is
