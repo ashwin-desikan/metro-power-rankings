@@ -16909,3 +16909,27 @@ Ashwin: "swap a monthly tile for deploy-watch". Done. Commit `f86af4439`, `[verc
 Still dangling, unchanged and harmless because their plists are UNLOADED: `activity-feed`, `football-standings`, `gap-league-watch`, `screen-number-ones`. Still genuinely unmonitored and LOADED: `newsletter-retention`, which pings a slug with no tile -- the same class as deploy-watch was, in the newsletter project, and the next candidate if a slot ever frees up.
 
 **Notion:** Scheduled jobs: `deploy-watch` row's "Alerts via" corrected again -- from "no tile exists" (this evening's audit) to the created tile with its uuid and period, plus why 1h; `cricket-monthly` row rewritten with the tile given up, the reasoning, and the exact recreation recipe including the slug trap. No other rows; no schedule changed.
+
+
+## 2026-09-20 (night, last +11) - mini -> windows and next session: newsletter-retention'S DEAD SLUG IS GONE. NOTHING RUNNING PINGS A CHECK THAT DOES NOT EXIST
+
+Ashwin: "fix the newsletter-retention dangling slug". Done. No repo commit -- the change is a launchd plist in `~/Library/LaunchAgents`, which has no copy in the newsletter-podcast repo (checked, so no divergent-plist risk).
+
+**What it was.** `com.newsletter.retention` is LOADED and wrapped its script in `hc-run.sh newsletter-retention`. No such check exists, so every ping 404'd into `|| true`. The job looked monitored and was not -- the same shape as deploy-watch, in the newsletter project.
+
+**Why the fix was removal and not a tile.** The project is hard-capped at 20 and is exactly at it (a create returns HTTP 403), and the `cricket-monthly` slot freed earlier tonight had already gone to deploy-watch. So the choice was an honest config or a second sacrifice, and the job does not warrant one: `retention-spotify.sh` already pushes its own ntfy on every meaningful path -- an unparseable episode list (aborts, deletes nothing), a refusal when the count exceeds `MAX_DELETE`, any failed delete, and a routine daily success summary. A tile would have added only a hard dead-man's switch for "did not run at all", and THAT failure mode is benign here: episodes accumulate on the feed, nothing is destroyed. The dangerous paths self-alert already.
+
+Worth stating plainly because the job is irreversible: ARM=1 and KEEP_DAYS=7 in the plist mean it really deletes published Spotify episodes older than a week. It is guarded -- dry run unless ARM=1, `MAX_DELETE=10` refuses a bulk purge unless FORCE=1 (a big number means the parse broke, not that the back catalogue aged), abort on an unparseable list -- and none of those guards were touched.
+
+**A mistake I made and caught.** Rebuilding `ProgramArguments` as `[old[0]] + old[3:]` produced `["/bin/bash", "/bin/bash", "<script>"]`, because element 0 was bash-for-hc-run and element 3 was bash-for-the-script. It would have RUN -- bash invoking bash invoking the script -- which is exactly why it was worth reading the result instead of trusting the splice. Rewritten explicitly as the two elements it should be.
+
+**Verified rather than assumed:** `plutil -lint` OK; agent booted out and re-bootstrapped; `launchctl list` confirms the two-element ProgramArguments launchd actually holds; and the script executed end to end through the new invocation as a DRY RUN -- 8 episodes, 0 older than 7 days, exit 0, and no stray ntfy, because the dry-run push only fires when there is something to prune. Everything else in the plist is untouched: ARM, KEEP_DAYS, the 12:00 slot, both log paths.
+
+**Fleet-wide audit after the change -- 20 tiles, 15 jobs.toml slugs, and:**
+- dangling in jobs.toml: **NONE**
+- dangling in LOADED plists: **NONE**
+- dangling in unloaded plists: `cricket-monthly`, `activity-feed`, `football-standings`, `gap-league-watch`, `screen-number-ones` -- all dormant, nothing pinging them. They matter only the day someone reloads one as the manual fallback, at which point it would silently not report. Clear them when those plists are next touched.
+
+So: **nothing that currently runs pings a check that does not exist.** That statement was false twice tonight, in two different projects, and neither jobs.toml nor the dashboard could have told you on its own -- only comparing the two lists does, which is the five-line audit now recorded in these entries.
+
+**Notion:** Scheduled jobs: the "Newsletter retention (mini)" row rewritten -- "Alerts via" corrected from `unknown, outside this repo` to the actual ntfy paths, and Notes now carry what the job deletes, its guards, the dangling-slug fix and why removal beat a tile. No other rows; no schedule changed.
