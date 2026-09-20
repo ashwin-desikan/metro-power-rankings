@@ -17022,3 +17022,22 @@ Ashwin asked for the feed again. Three messages since the last check, and the 23
 **Everything else is quiet.** No failure alert since the pre-fix ones; the two git-maintenance alerts at 22:27/22:28 are the planted-fixture test and the false dry-run page already fixed in `4f91825d9`.
 
 **Notion:** Backlog +1 (the `--mark-ok` re-entrancy ruling, P2, owner Ashwin, with the proposed fix and the evidence that it predates tonight). No other rows.
+
+
+## 2026-09-20 (night, last +16) - mini -> windows and next session: AUTOFIX CAN FINISH ITS OWN REMEDY NOW. acquire_lock IS RE-ENTRANT FOR THE TICK'S OWN CHILDREN
+
+Ashwin: "make acquire_lock honour DISPATCHER_LOCK_HELD". Commit `e3d83ac7e`, `[vercel skip]`.
+
+**The bug, restated.** ops-autofix IS a dispatcher job, so the tick holds `.dispatcher.lock` with a live PID for its whole run, and `dispatcher.py --mark-ok` deliberately acquires that same lock (2026-08-07, to stop a concurrent tick clobbering `state.json`). A child could therefore never win it. Autofix's remedy was permanently half-applied: re-run the job green, then fail to record it, so the next tick found the same `job_failed` and re-ran a healthy job until the 3/day cap.
+
+**The fix.** `acquire_lock()` now lets a caller through when `DISPATCHER_LOCK_HELD` says its parent tick already holds the lock -- the same marker `job_env()` already exports to every job subprocess and that `dispatcher-lock.sh` already honours for shell runners. **Checked strictly, not merely present:** the marker must name the PID the lock file CURRENTLY HOLDS, and that PID must be ALIVE. So an env var that leaked into an unrelated shell proves nothing, and a real conflict with another tick still blocks.
+
+**The half that carries the risk is `release_lock()`,** which now only releases a lock this process actually TOOK. Without that guard, a child waved through on the marker would delete the tick's lock on its way out and the very next tick could start on top of a run still in progress -- strictly worse than the bug being fixed. Same shape as the `_DL_HELD_BY_US` guard in the shell helper, and two of the new self-tests exist purely to pin it.
+
+**Verified twice over.** Nine new self-test cases, 113 -> 122: the child is let through; it does NOT take the lock over; its release does NOT delete the tick's lock; the tick's lock still reads the tick's PID afterwards; a marker naming someone OTHER than the lock's owner still blocks; and a marker with no lock file at all falls back to a normal acquire that IS ours to release. Then the real thing, not a simulation of it: with a live process holding `.dispatcher.lock`, `dispatcher.py --mark-ok football-standings` **exits 1 without the marker and 0 with it**, and the lock is intact afterwards. That is the exact before/after of what autofix does.
+
+**Also cleaned up on the way in.** `state.json` still carried `failed` for football-standings (17:00Z) and mlb-sim (14:30Z) although both had been green for hours -- the stale statuses this bug leaves behind. Marked ok by hand at 22:47 from outside a tick. No job on the mini now records a failure.
+
+**🔴 One asymmetry left, deliberately.** `dispatcher-lock.sh` checks only that `DISPATCHER_LOCK_HELD` is PRESENT; the python side now checks that it MATCHES the live lock owner. Harmless today, because every caller of the shell helper really is a child of a tick, so the strict test would pass anyway. But two implementations of one rule that disagree is the bug class this repo keeps re-finding, and tightening the shell side to match costs nothing. Not done tonight; worth doing next time that file is open.
+
+**Notion:** Backlog: the `--mark-ok` row filed an hour ago is CLOSED (Done), rewritten with the fix, the strict-marker reasoning, the release guard, the verification and the remaining shell asymmetry. No other rows; nothing scheduled changed.
