@@ -64,11 +64,24 @@ DEFAULT_LOOKBACK_DAYS = 8
 def job_times(job):
     """Every UTC slot a job has in a day, as (hh, mm), earliest first.
 
-    `time = "05:50"` and `times = ["04:00", "05:00"]` are both accepted; a job
-    must use exactly one of them. The list form exists because four of the
-    legacy launchd jobs have more than one slot a day (euro-comps and
-    football-standings run twice, screen-number-ones three times).
+    `time = "05:50"`, `times = ["04:00", "05:00"]` and `every_minutes = 10`
+    are all accepted; a job must use exactly one of them. The list form exists
+    because four of the legacy launchd jobs have more than one slot a day
+    (euro-comps and football-standings run twice, screen-number-ones three).
+
+    `every_minutes` was added 2026-09-20 for deploy-watch, which reconciles
+    Vercel's live commit against origin/main and must run far more often than
+    its own 20-minute staleness threshold. Writing that as 144 entries in
+    `times` would work and would be unreadable, so it is expanded HERE, in the
+    one pure function every scheduling decision reads its slots from.
+    Everything downstream -- previous_occurrence, catchup, MISSED, last_slot --
+    is untouched and keeps working on the same sorted (hh, mm) list it always
+    received. The interval must divide 1440 (validated in validate_jobs) so the
+    pattern is identical every day instead of drifting across midnight.
     """
+    every = job.get("every_minutes")
+    if every:
+        return [(m // 60, m % 60) for m in range(0, 24 * 60, int(every))]
     raw = job.get("times") or ([job["time"]] if job.get("time") else [])
     out = []
     for t in raw:
@@ -444,6 +457,37 @@ def self_test():
     check("time and times are interchangeable for one slot",
           job_times({"time": "06:10"}), job_times({"times": ["06:10"]}))
 
+    # --- every_minutes, added 2026-09-20 to bring deploy-watch in here -------
+    # deploy-watch ran on its own launchd agent every 10 min and did git
+    # (fetch, and pull --rebase) OUTSIDE this dispatcher's lock, which is the
+    # last way a scheduled job could still collide with another one mid-write.
+    ev10 = {"id": "e", "every_minutes": 10}
+    check("every_minutes: 10 gives 144 slots", len(job_times(ev10)), 144)
+    check("every_minutes: first slot is midnight", job_times(ev10)[0], (0, 0))
+    check("every_minutes: last slot is 23:50", job_times(ev10)[-1], (23, 50))
+    check("every_minutes: slots are sorted",
+          job_times(ev10) == sorted(job_times(ev10)), True)
+    check("every_minutes: 60 gives hourly", len(job_times({"every_minutes": 60})), 24)
+    # The integration that matters: previous_occurrence must work on the
+    # expanded list exactly as it does on a hand-written one.
+    def ev_occ(h, m):
+        o = previous_occurrence(
+            datetime(2026, 8, 5, h, m, tzinfo=timezone.utc), ev10)
+        return o.strftime("%m-%d %H:%M") if o else None
+
+    check("every_minutes: mid-interval picks the slot just passed",
+          ev_occ(3, 7), "08-05 03:00")
+    check("every_minutes: exactly on a slot picks that slot",
+          ev_occ(3, 10), "08-05 03:10")
+    # NOT a fallback to yesterday, unlike the `times` case above: an
+    # every_minutes job always owns a 00:00 slot, so the most recent
+    # occurrence is today's midnight from 00:00 onward. That is the property
+    # that makes a missed tick harmless -- there is always a slot just behind.
+    check("every_minutes: just after midnight picks today's 00:00 slot",
+          ev_occ(0, 3), "08-05 00:00")
+    check("every_minutes: exactly midnight picks today's 00:00 slot",
+          ev_occ(0, 0), "08-05 00:00")
+
     # THE REASON last_slot EXISTS: having run the 04:00 slot, the 05:00 slot on
     # the SAME DAY is still due. A date-only comparison swallows it.
     at0530 = datetime(2026, 8, 5, 5, 30, tzinfo=timezone.utc)
@@ -534,6 +578,16 @@ def self_test():
         [{"id": "g", "command": "x.sh", "time": "05:50", "args": "conflicts"}])), 1)
     check("garbage time is rejected", len(validate_jobs(
         [{"id": "g", "command": "x.sh", "time": "half past four"}])), 1)
+    check("every_minutes with time is rejected", len(validate_jobs(
+        [{"id": "g", "command": "x.sh", "time": "05:50", "every_minutes": 10}])), 1)
+    check("every_minutes that does not divide 1440 is rejected", len(validate_jobs(
+        [{"id": "g", "command": "x.sh", "every_minutes": 7}])), 1)
+    check("every_minutes of 0 is rejected", len(validate_jobs(
+        [{"id": "g", "command": "x.sh", "every_minutes": 0}])), 1)
+    check("every_minutes as a bool is rejected", len(validate_jobs(
+        [{"id": "g", "command": "x.sh", "every_minutes": True}])), 1)
+    check("every_minutes alone is valid", validate_jobs(
+        [{"id": "g", "command": "x.sh", "every_minutes": 10}]), [])
 
     # the real jobs.toml must always validate
     with JOBS_FILE.open("rb") as fh:
@@ -847,10 +901,16 @@ def validate_jobs(jobs):
         if not job.get("command"):
             problems.append(f"{where}: missing command")
         has_t, has_ts = bool(job.get("time")), bool(job.get("times"))
-        if has_t and has_ts:
-            problems.append(f"{where}: set time OR times, not both")
-        elif not has_t and not has_ts:
-            problems.append(f"{where}: needs time or times")
+        ev = job.get("every_minutes")
+        has_ev = ev is not None
+        if sum((has_t, has_ts, has_ev)) > 1:
+            problems.append(f"{where}: set exactly one of time, times, every_minutes")
+        elif not (has_t or has_ts or has_ev):
+            problems.append(f"{where}: needs time, times or every_minutes")
+        elif has_ev and (isinstance(ev, bool) or not isinstance(ev, int)
+                         or not 1 <= ev <= 720 or 1440 % ev):
+            problems.append(f"{where}: every_minutes {ev!r} must be a whole number "
+                            f"of minutes that divides 1440 evenly (max 720)")
         else:
             try:
                 for hh, mm in job_times(job):

@@ -728,6 +728,45 @@ catchup_hours = 6               # daily; a slot missed by more than 6h waits for
 timeout_minutes = 20
 log_tail_lines = 40             # keep the whole report, per 0880b185a's lesson
 
+# --- deploy-watch: MOVED IN FROM launchd 2026-09-20. ----------------------
+# Was com.citizenofnowhere.deploy-watch, StartInterval 600, its own agent. It
+# ran `git fetch`, `git log`, and on a re-trigger `git pull --rebase
+# --autostash` plus a commit and push -- every 10 minutes, OUTSIDE this
+# dispatcher's lock. After gc was taken off git's hands the same day (see the
+# git-maintenance row), that made deploy-watch the LAST way two scheduled jobs
+# could still touch this repo's index at the same moment. Tonight it did
+# exactly that: its git raced a metro-rankings shadow run at 22:15, the run's
+# restore of public/data failed, and 775 files were left modified.
+#
+# Same cadence, same script, same healthchecks slug -- the only change is that
+# it now takes its turn. dispatcher.py holds ONE lock across every job it runs,
+# so nothing in this file can overlap anything else in it.
+#
+# 🔴 FLIP RULE, as for the GitHub Actions rows above: the launchd agent is
+# unloaded in the SAME change as this row (done 2026-09-20). The plist is left
+# on disk, unloaded, as the manual fallback for when the dispatcher is down --
+# the same treatment football-standings and the other migrated jobs got. Never
+# have both live: two copies of this watcher would fight over the same
+# re-trigger cooldown in .deploy-watch-state.
+#
+# THE TRADE, stated because it is real: on its own agent it ran every 10 min
+# no matter what. In here, a long job holds the lock -- mlb-sim can take 45
+# min -- so a tick can be skipped and a canceled build can sit un-healed that
+# much longer. That is acceptable because the script is threshold-based, not
+# schedule-based: STALE_MIN=20 decides what counts as canceled, COOLDOWN_MIN=18
+# spaces the retries, MAX_ATTEMPTS=3 bounds them. A late run sees a slightly
+# staler build and does the same thing. It is not acceptable to go much coarser
+# than 10 minutes, though: the cadence must stay well inside STALE_MIN.
+[[job]]
+id = "deploy-watch"
+label = "Vercel canceled-build auto-heal"
+every_minutes = 10              # matches the retired plist's StartInterval 600
+command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-deploy-watch.sh"
+hc_slug = "deploy-watch"        # keeps the existing healthchecks tile alive
+catchup_hours = 1
+timeout_minutes = 8             # under the 10-min slot spacing on purpose
+log_tail_lines = 40
+
 # --- daily-ops-sweep: NEW 2026-08-30. Report-only, no writes. --------------
 # Commissioned after Ashwin had to separately name several same-morning ntfy
 # alerts before any got investigated. Runs headless Claude Code once daily
