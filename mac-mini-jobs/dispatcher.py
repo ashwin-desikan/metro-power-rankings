@@ -257,9 +257,45 @@ def notify(title, body):
 
 # --- execution ---------------------------------------------------------------
 
+_LOCK_HELD_BY_US = False
+
+
 def acquire_lock():
     """Refuse to overlap ticks. A long business-daily run (the revalidate step
-    sleeps 300s) must not be re-entered by the next 10-minute tick."""
+    sleeps 300s) must not be re-entered by the next 10-minute tick.
+
+    RE-ENTRANT FOR OUR OWN CHILDREN, added 2026-09-20. ops-autofix IS a
+    dispatcher job, so the tick holds this lock with a live PID for its whole
+    run; every `dispatcher.py --mark-ok` it spawned therefore lost the race by
+    construction and could never record the fix it had just made. Seen live
+    that evening: autofix re-ran football-standings successfully, reported
+    "mark-ok failed", and state.json kept saying `failed` for hours, so the
+    next tick found the same job_failed and re-ran a healthy job.
+
+    The marker is DISPATCHER_LOCK_HELD, which job_env() already exports to
+    every job subprocess, and which mac-mini-jobs/dispatcher-lock.sh already
+    honours for shell runners. Checked STRICTLY rather than merely present: it
+    must name the PID the lock file currently holds, and that PID must be
+    alive. An env var that leaked into an unrelated shell therefore proves
+    nothing, and a genuine conflict with some other tick still blocks.
+    """
+    global _LOCK_HELD_BY_US
+    parent = (os.environ.get("DISPATCHER_LOCK_HELD") or "").strip()
+    if parent:
+        try:
+            owner = LOCK_FILE.read_text().strip()
+        except OSError:
+            owner = ""
+        if owner and owner == parent:
+            try:
+                os.kill(int(parent), 0)
+            except (ValueError, OSError):
+                pass             # not a live owner: fall through, decide normally
+            else:
+                # Our parent tick holds it. Proceed WITHOUT taking it, and
+                # leave _LOCK_HELD_BY_US false so we can never release it.
+                _LOCK_HELD_BY_US = False
+                return True
     if LOCK_FILE.exists():
         try:
             pid = int(LOCK_FILE.read_text().strip())
@@ -268,14 +304,26 @@ def acquire_lock():
         except (ValueError, OSError, ProcessLookupError):
             log("stale lock file; taking it over")
     LOCK_FILE.write_text(str(os.getpid()))
+    _LOCK_HELD_BY_US = True
     return True
 
 
 def release_lock():
+    """Only ever releases a lock THIS process actually took.
+
+    The guard is the whole safety of the re-entrancy above: a child that was
+    waved through on DISPATCHER_LOCK_HELD must not delete the tick's lock on
+    its way out, which would let the very next tick start on top of a run that
+    is still going -- strictly worse than the problem being fixed.
+    """
+    global _LOCK_HELD_BY_US
+    if not _LOCK_HELD_BY_US:
+        return
     try:
         LOCK_FILE.unlink()
     except OSError:
         pass
+    _LOCK_HELD_BY_US = False
 
 
 def build_argv(job):
@@ -824,6 +872,42 @@ def self_test():
         LOCK_FILE.write_text("not-a-pid")
         check("a corrupt lock file is taken over, not fatal", acquire_lock(), True)
         release_lock()
+
+        # --- re-entrancy for our own children, added 2026-09-20 -------------
+        # ops-autofix runs INSIDE a tick, so its `--mark-ok` child could never
+        # win this lock and its successful re-runs were never recorded.
+        # Simulated in-process: this PID plays the tick, the marker plays the
+        # child. The last two are the ones that matter -- a child must never
+        # take over or delete the tick's lock.
+        check("setup: tick holds the lock", acquire_lock(), True)
+        _tick_pid = LOCK_FILE.read_text().strip()
+        os.environ["DISPATCHER_LOCK_HELD"] = _tick_pid
+        check("a child of the tick that owns the lock is let through",
+              acquire_lock(), True)
+        check("the child did NOT take the lock over",
+              LOCK_FILE.read_text().strip(), _tick_pid)
+        release_lock()
+        check("the child's release did NOT delete the tick's lock",
+              LOCK_FILE.exists(), True)
+        check("the tick's lock is still the tick's",
+              LOCK_FILE.read_text().strip(), _tick_pid)
+
+        # A marker naming someone OTHER than the lock's owner proves nothing:
+        # a real conflict must still block, or a leaked env var would wave a
+        # second tick straight through a running one.
+        os.environ["DISPATCHER_LOCK_HELD"] = "999999"
+        check("a marker that does not match the lock owner still blocks",
+              acquire_lock(), False)
+
+        # Marker set but no lock file at all: nothing to be re-entrant INTO,
+        # so behave normally and take it.
+        LOCK_FILE.unlink()
+        os.environ["DISPATCHER_LOCK_HELD"] = _tick_pid
+        check("a marker with no lock file falls back to a normal acquire",
+              acquire_lock(), True)
+        check("and that one IS ours to release", (release_lock(), LOCK_FILE.exists())[1],
+              False)
+        os.environ.pop("DISPATCHER_LOCK_HELD", None)
     finally:
         if LOCK_FILE.exists():
             LOCK_FILE.unlink()
