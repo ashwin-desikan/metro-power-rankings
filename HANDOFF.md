@@ -17001,3 +17001,24 @@ So the answer is yes -- football-standings was the only one, and there is now no
 **State of the fallbacks at the end of the evening.** All 15 dormant plists run their job directly, none pings a dead healthchecks slug, and each matches its repo copy exactly, so reinstalling any of them does what its comment says. `deploy-watch`'s plist deliberately still carries its `hc-run.sh` wrapper, because that slug became VALID tonight when the tile was created -- reload it as a fallback and it reports properly.
 
 **Notion:** no row changes. Nothing created, retired or rescheduled; this restored documentation to an installed file and confirmed the rest were already in step.
+
+
+## 2026-09-20 (night, last +15) - mini -> windows and next session: THE FIRST GREEN football-standings SINCE THE INCIDENT, AND AUTOFIX CANNOT FINISH ITS OWN REMEDY
+
+Ashwin asked for the feed again. Three messages since the last check, and the 23:23 one carries three separate facts worth having.
+
+**1. `re-ran football-standings successfully`.** That is the first clean football-standings run since it started failing at 18:09, and it was done by ops-autofix on its own, not by me. The pull-path fixes hold under the fleet's own machinery.
+
+**2. `deployed dispatcher-lock.sh (symlink)`.** ops-autofix noticed the new file in the repo and installed it into `~/metro-mini-jobs` itself, AS A SYMLINK. Two things follow: the deploy path works unprompted, and the fleet's own automation treats symlink as the convention for `mac-mini-jobs` files, which is a data point for the still-unruled question of whether `metro-rankings.sh` should stay a copy.
+
+**3. 🔴 `mark-ok failed; a tick may have held the lock` -- and it is structural.** ops-autofix IS a dispatcher job, so the tick holds `.dispatcher.lock` with a LIVE pid for its whole run, and `dispatcher.py --mark-ok` deliberately acquires that same lock (added 2026-08-07 so a concurrent tick cannot clobber `state.json`). A child process can therefore NEVER get it. So autofix's remedy is only ever half-applied: it re-runs the job successfully and then cannot record that success.
+
+**The consequence was live on this machine.** `state.json` still read `last_status: failed` for football-standings' 17:00Z slot and mlb-sim's 14:30Z slot, though both had been re-run green hours earlier. Left alone, every autofix tick would keep finding the same `job_failed`, re-running healthy jobs, and burning the 3/day cap -- which is exactly what mlb-sim's "hit its 3/day attempt cap" line was, in part. Corrected by hand at 22:47 with `--mark-ok` for both, from outside a tick, where the lock is free. No job now records a failure.
+
+**Not mine, and I checked rather than assumed.** The obvious suspicion was that tonight's `_common.sh` lock change caused it. It did not: the message wording lives at `run-ops-autofix.sh:222` and `git log -S` puts it in commit `4993d5efb`, the tiered-autofix commit, so this has been true since autofix shipped. It stayed invisible because nothing ever compared the autofix report against `state.json` afterwards -- the report says "re-ran successfully", which is true, and the stale status sits somewhere nobody looks.
+
+**Filed, not fixed** (Backlog, P2, owner Ashwin): `dispatcher.py`'s `acquire_lock()` could honour `DISPATCHER_LOCK_HELD` exactly as `dispatcher-lock.sh` already does -- the marker is already exported to every job subprocess by `job_env()` -- which would let a child `--mark-ok` through while still blocking an unrelated process. Small, and it matches a pattern now proven in shell. It also changes the most safety-critical function on the mini, so it is a ruling rather than a drive-by at midnight.
+
+**Everything else is quiet.** No failure alert since the pre-fix ones; the two git-maintenance alerts at 22:27/22:28 are the planted-fixture test and the false dry-run page already fixed in `4f91825d9`.
+
+**Notion:** Backlog +1 (the `--mark-ok` re-entrancy ruling, P2, owner Ashwin, with the proposed fix and the evidence that it predates tonight). No other rows.
