@@ -36,15 +36,80 @@ note()  { echo "[$(date '+%F %T')] $*"; }
 alert() { "$PY" "$MINI_DIR/notify.py" "CoN mini job" "$1" 1 || true; }
 fail()  { note "FAIL: $1"; alert "$1"; exit 1; }
 
-# Fast-forward to origin so we build and commit on top of the latest history.
-# The Actions equivalent is a fresh checkout; on a persistent clone the honest
-# equivalent is ff-only, which refuses rather than silently discarding a local
-# divergence.
+# Get onto the latest history so we build and commit on top of it.
+#
+# WAS ff-only-or-die until 2026-09-20, on the reasoning that refusing beats
+# silently discarding a divergence. That reasoning was right about discarding
+# and wrong about refusing, and 2026-09-20 showed the cost: a crashed gc left
+# bot commit f5687d931 committed but unpushed, main diverged by one commit, and
+# because EVERY runner starts here, every job on the mini hard-failed for 7h27m
+# -- 14 ntfy alerts -- waiting for a human to run one rebase. The push path in
+# this same file has auto-rebased on rejection for months and nobody has ever
+# regretted it; the asymmetry was the bug, not the strictness.
+#
+# So: fast-forward when we can, rebase our own commits on top when we cannot,
+# and still refuse in the cases where refusing is genuinely right --
+#   * nothing of ours to replay (0 ahead): a rebase would hide the real cause.
+#   * a dirty tree: replaying commits underneath someone's half-finished
+#     output is not a safe thing to do unasked. On 2026-09-20 that output was
+#     775 restored files.
+#   * an absurd divergence (> MINI_SYNC_MAX_REBASE, default 50): the stranded-
+#     commit case is one or two commits. Dozens means a wrong branch or an
+#     unrelated history, and replaying it silently would turn a visible problem
+#     into an invisible one.
+#   * a CONFLICT: abort, so the branch is left exactly where it was. Same
+#     outcome for the human as the old hard failure, minus any chance of
+#     finding the repo mid-rebase.
+# Never discards anything: a rebase replays our commits, it does not drop them.
 mini_sync() {
   cd "$REPO_DIR" || fail "REPO_DIR not found: $REPO_DIR"
   git fetch "$GIT_REMOTE" "$GIT_BRANCH" --quiet || fail "git fetch failed"
-  git merge --ff-only "$GIT_REMOTE/$GIT_BRANCH" --quiet \
-    || fail "cannot fast-forward; local branch has diverged from $GIT_REMOTE/$GIT_BRANCH (resolve by hand)"
+
+  # Happy path, still the common one. Also succeeds when we are merely AHEAD,
+  # because then origin is already an ancestor of HEAD and there is nothing
+  # to do.
+  if git merge --ff-only "$GIT_REMOTE/$GIT_BRANCH" --quiet 2>/dev/null; then
+    _mini_sync_note_unpushed
+    return 0
+  fi
+
+  local ahead behind dirty
+  ahead="$(git rev-list --count "$GIT_REMOTE/$GIT_BRANCH..HEAD" 2>/dev/null || echo 0)"
+  behind="$(git rev-list --count "HEAD..$GIT_REMOTE/$GIT_BRANCH" 2>/dev/null || echo 0)"
+  dirty="$(git status --porcelain 2>/dev/null | wc -l | tr -d ' ')"
+
+  if [ "${ahead:-0}" -eq 0 ]; then
+    fail "cannot fast-forward to $GIT_REMOTE/$GIT_BRANCH and there is nothing to rebase (0 ahead, $behind behind, $dirty modified path(s)) (resolve by hand)"
+  fi
+  if [ "${dirty:-0}" -ne 0 ]; then
+    fail "diverged (local $ahead, remote $behind) but the working tree has $dirty modified path(s), so a rebase would not be safe; commit or clean it (resolve by hand)"
+  fi
+  if [ "$ahead" -gt "${MINI_SYNC_MAX_REBASE:-50}" ]; then
+    fail "diverged by $ahead local commits, past the ${MINI_SYNC_MAX_REBASE:-50} limit -- not the usual stranded-commit case, so stopping instead of replaying it (resolve by hand)"
+  fi
+
+  note "diverged from $GIT_REMOTE/$GIT_BRANCH (local $ahead, remote $behind); rebasing the local commit(s) on top"
+  if git rebase "$GIT_REMOTE/$GIT_BRANCH" --quiet; then
+    note "rebased $ahead local commit(s) onto $GIT_REMOTE/$GIT_BRANCH"
+    _mini_sync_note_unpushed
+    return 0
+  fi
+  git rebase --abort >/dev/null 2>&1 || true
+  fail "diverged and the rebase of $ahead local commit(s) CONFLICTED; aborted and left the branch exactly as it was (resolve by hand)"
+}
+
+# Say so when commits are sitting local. A rebase clears the DIVERGENCE, which
+# is what was breaking every job, but it does not push -- mini_sync deliberately
+# does not, because whether a given commit may reach origin is a tagging
+# question (see the [vercel skip] rule) and not a sync function's call. They
+# ride out with the next job that commits, since commit_paths pushes HEAD.
+_mini_sync_note_unpushed() {
+  local n
+  n="$(git rev-list --count "$GIT_REMOTE/$GIT_BRANCH..HEAD" 2>/dev/null || echo 0)"
+  if [ "${n:-0}" -gt 0 ]; then
+    note "NOTE: $n local commit(s) are not on $GIT_REMOTE/$GIT_BRANCH yet; the next job that commits pushes HEAD and carries them along"
+  fi
+  return 0
 }
 
 # guarded "label" cmd...  -- hard-fails the run, matching the YAML's `set -e`.
