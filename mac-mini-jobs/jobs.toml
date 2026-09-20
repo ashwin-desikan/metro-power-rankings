@@ -498,7 +498,22 @@ label = "Cricket ICC rankings"
 time = "10:00"                  # was 11:00 LOCAL
 days = [1]
 command = "run-cricket-monthly.sh"
-hc_slug = "cricket-monthly"
+# hc_slug REMOVED 2026-09-20 (check DELETED, 7 pings, cron "0 11 1 * *",
+# grace 48h, tz Europe/London -- recorded here so the tile can be recreated
+# exactly). Its slot was spent on deploy-watch, which runs 144x a day and whose
+# failure mode is SILENCE (a canceled Vercel build that never heals), where
+# this one runs 12 times a year and already has two other layers: dispatcher
+# notify() pushes an ntfy the moment a run fails, and the dispatcher fires its
+# own "scheduled job missed" ntfy when a slot passes unrun -- which is most of
+# what a healthchecks tile was adding for a monthly job. The project is capped
+# at 20 checks and was exactly at it; a create returns HTTP 403 until something
+# is deleted.
+#
+# Removing this LINE is the point, not paperwork: leaving it would have kept
+# hc-run.sh pinging a slug with no check behind it, 404ing into `|| true`, so
+# the job would LOOK monitored and not be -- the dangling-slug trap that the
+# football-standings row warns about and that an audit found live on
+# deploy-watch itself the same evening.
 catchup_hours = 20
 timeout_minutes = 20
 
