@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-09-20T07:27:16.907359+00:00",
+  "generated_at": "2026-09-20T07:42:35.199017+00:00",
   "jobs": [
-    {
-      "id": "economy-prices",
-      "label": "Consumer price refresh (/business/economy/prices)",
-      "schedule_text": "Sun at 07:30 UTC",
-      "cadence": "weekly",
-      "times": [
-        "07:30"
-      ],
-      "weekdays": [
-        7
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-20T07:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-13",
-        "status": "ok",
-        "slot": "2026-09-13T07:30:00+00:00"
-      }
-    },
     {
       "id": "nfl-elo",
       "label": "NFL live Elo, seeds, odds (and the bracket in Jan/Feb)",
@@ -613,6 +593,26 @@
         "date": "2026-09-19",
         "status": "ok",
         "slot": "2026-09-19T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "economy-prices",
+      "label": "Consumer price refresh (/business/economy/prices)",
+      "schedule_text": "Sun at 07:30 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:30"
+      ],
+      "weekdays": [
+        7
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-27T07:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-20",
+        "status": "ok",
+        "slot": "2026-09-20T07:30:00+00:00"
       }
     },
     {
