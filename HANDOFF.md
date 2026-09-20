@@ -16823,3 +16823,25 @@ Ashwin: "bring deploy-watch under the dispatcher lock for manual runs too". Comm
 **🔴 What this does NOT cover, and it is the case that actually caused the damage.** Only deploy-watch is wired up. The hand-run that collided at 22:15 and cost a metro-rankings shadow run its restore -- 775 files left modified -- was `metro-rankings`, not deploy-watch. Sourcing the same helper from `runners/_common.sh` would cover every runner's manual invocation in one place, following the identical pattern (`dispatcher_lock_acquire` then `trap dispatcher_lock_release EXIT`), and the re-entrancy marker already exists for it. NOT done: Ashwin scoped this to deploy-watch, and widening a lock across the whole fleet unasked is how you get a job that silently never runs. Worth a decision.
 
 **Notion:** Decisions: the gc ruling's row updated -- its third item (manual runs) now closed for deploy-watch, with the `_common.sh` extension recorded as what remains. No new rows: this created no job and changed no schedule. Backlog unchanged and still empty of tonight's rows.
+
+
+## 2026-09-20 (night, last +7) - mini -> windows and next session: EVERY RUNNER TAKES THE DISPATCHER LOCK. THE HAND-RUN HOLE IS SHUT
+
+Ashwin: "do _common.sh too". Commit `fea5fe445`, `[vercel skip]`. This closes the case that actually did the damage -- the 22:15 collision was a hand-run `metro-rankings`, not deploy-watch.
+
+**What it does.** `_common.sh` sources `dispatcher-lock.sh` and acquires at source time, so EVERY runner is covered, including ones that never call `mini_sync` (git-maintenance). Under a tick it is a no-op, because the tick exports `DISPATCHER_LOCK_HELD`; only a manual run can stand down, so no scheduled job can be silently skipped by this. Standing down is exit 0 with an explicit "NOTHING WAS DONE -- no data was built, fetched or committed", because a person reading their terminal must not mistake a stood-down run for a completed one.
+
+**🔴 THE THING THAT WOULD HAVE BITTEN, and the reason this took measuring rather than typing.** The obvious implementation is `trap dispatcher_lock_release EXIT` in `_common.sh`. Do NOT. bash's `trap ... EXIT` REPLACES any previous EXIT trap, and TWO runners own theirs for real work:
+- `metro-rankings.sh:70` -> `_restore_public_data`, which is the guarantee that `public/data` is put back after a shadow run;
+- `economy-rates.sh:146` -> `report_failed_builders`.
+Both set theirs AFTER sourcing `_common.sh`. I measured it before writing anything: with two EXIT traps registered, only the SECOND runs and the first is silently dropped. So a release trap here would never fire -- and had I ordered it the other way, it would have silently killed metro-rankings' restore, which is precisely the failure that left 775 files modified in the first place. A tidy-looking one-liner would have reintroduced tonight's worst outcome.
+
+**Not releasing is safe, and that is the design, not a shortcut.** The lock is a PID, and both implementations probe it with signal 0 and take over a dead one. A manual run leaves a file whose owner is gone; the next acquirer reclaims it and says so. Correctness that does not depend on trap ordering is worth more than tidiness. Proven on the real lock file: after a hand-run metro-rankings exited, `.dispatcher.lock` held dead pid 5868, and the next runner printed `stale dispatcher lock (pid 5868); taking it over` and ran.
+
+**Verified, five ways.** (1) Manual, lock free -> runs. (2) Manual, lock held by a live pid -> stands down, exit 0, ZERO work done, lock not stolen; the message names the runner, from `BASH_SOURCE[1]`. (3) `DISPATCHER_LOCK_HELD` set with the lock held -> runs normally, tick's lock intact. (4) **The trap regression**: a full `metro-rankings` dry run, where the log shows `shadow mode: restoring public/data` and the tree came back clean -- its own EXIT trap still fires. (5) The whole chain through the dispatcher's real `run_job` path: tick holds the lock, `job_env()` sets the marker, the runner sources `_common.sh`, does not stand down, does real work, and the tick's lock is intact afterwards.
+
+**Fails open.** If `dispatcher-lock.sh` is ever missing, the `[ -r ... ]` guard skips locking entirely and behaviour is exactly what it was before. An absent helper must not take the fleet down.
+
+**Where the mini stands now.** Every writer of this repo's git -- scheduled or by hand -- is serialised by one lock. gc is off git's hands with its own 03:00 slot that sweeps stale locks. dispatcher.log rotates. The pull path rebases a divergence and flushes tagged commits, alerting on untagged ones. verify_wins tolerates a settling game. Every Backlog row opened tonight is Done, and the four Decisions rows carry their own residual notes rather than a clean bill of health.
+
+**Notion:** Decisions: the gc/lock row's Rule rewritten to describe the whole lock regime, and its open questions CLOSED -- with the no-trap decision recorded there explicitly, as a design note rather than a gap, so the next person does not "fix" it. No new rows; no job or schedule changed.
