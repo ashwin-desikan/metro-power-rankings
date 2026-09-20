@@ -270,7 +270,11 @@ def check_settle_and_lock(path: Path, no_settle: bool) -> None:
 def copy_and_validate(src: Path) -> Path:
     sys.path.insert(0, str(_SCRIPTS))
     import sync_source_xlsx as _sx
-    tmp = Path(tempfile.mkstemp(suffix=".xlsx")[1])
+    # mkstemp returns an OPEN descriptor. Left open, Windows refuses both the
+    # copy-over and the final unlink (WinError 32, first live run 2026-09-20).
+    _fd, _name = tempfile.mkstemp(suffix=".xlsx")
+    os.close(_fd)
+    tmp = Path(_name)
     import shutil
     shutil.copy2(str(src), str(tmp))
     ok, reason = _sx.validate_xlsx(tmp)
@@ -323,7 +327,7 @@ def run_sync(workbook_path: Path, backend, sheets: Sequence[str], write: bool,
                 )
 
         workbook_mtime = os.path.getmtime(str(workbook_path))
-        now_iso = __import__("datetime").datetime.utcnow().isoformat() + "Z"
+        now_iso = __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat()
         host = socket.gethostname()
 
         summary = {
@@ -616,7 +620,10 @@ def main(argv=None) -> int:
                 emit=(lambda s: lines.append(s)) if args.json else print,
             )
         finally:
-            tmp_copy.unlink(missing_ok=True)
+            try:
+                tmp_copy.unlink(missing_ok=True)
+            except PermissionError:
+                pass  # a leftover temp file is harmless; a failed sync report is not
     except HoldError as e:
         if args.json:
             print(json.dumps({"status": "held", "reasons": e.reasons}))

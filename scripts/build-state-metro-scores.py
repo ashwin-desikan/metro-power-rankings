@@ -11,7 +11,7 @@ We allocate the metro's composite score (from public/data/metros.json) to each
 state by that share, so a metro spanning state lines (New York across NY/NJ/CT/PA,
 Kansas City across MO/KS, etc.) is split rather than counted in full for each.
 
-Output: public/data/state-metro-scores.json
+Output: public/data/state-metro-scores.weighted-experiment.json (NOT read by the site; see the ruling at OUT)
   { "<state-slug>": { "score": <weighted sum>, "metros": <distinct metros in state> } }
 
 Usage:
@@ -29,7 +29,12 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from metro_sync.open_workbook import open_metro_workbook  # noqa: E402
 
 METROS = ROOT / "public" / "data" / "metros.json"
-OUT = ROOT / "public" / "data" / "state-metro-scores.json"
+# RULED 2026-09-20 (Ashwin): build-states-directory.py owns
+# public/data/state-metro-scores.json. It is the one run-workbook-sync.py and the
+# weekly metro-rankings job run, so it is what the live site shows. This script
+# used to write the SAME path with different arithmetic, which meant whichever
+# ran last silently won. It now writes beside it, for comparison only.
+OUT = ROOT / "public" / "data" / "state-metro-scores.weighted-experiment.json"
 
 # State display name -> site slug (three collide with same-named foreign states).
 SPECIAL = {

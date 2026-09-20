@@ -16599,3 +16599,25 @@ Phase 1 went to main as `7ae9c1aed` on Ashwin's word. This entry is phase 2: the
 **Not done:** phase 3, the Windows Task Scheduler watcher. `relocations` reads the league workbooks, not MetroAreas, and is out of scope. `build-state-metro-scores.py` is switched to the mirror but NOT run by the job: it writes the same file as `build-states-directory.py` with different arithmetic (Backlog row, Ashwin to rule).
 
 **Notion:** Scheduled jobs +1 (`metro-rankings`, Disabled until installed). Backlog: phase 2 row rewritten as the install and cutover, owner Mac mini; +2 (two writers of state-metro-scores.json; the Utqiagvik control character in Municipality row 93191). Decisions: none new.
+
+
+## 2026-09-20 (late) - windows (Cowork, cloud bridged to the Windows box) -> next session and mini: METRO RANKINGS PHASE 3, THE WINDOWS WATCHER IS INSTALLED; ONE PHASE 1 FIX HAD NEVER REACHED GIT; SUPABASE IS ON PRO
+
+**Rulings today (Ashwin, all in Notion Decisions):** a workbook edit goes live with the Saturday run, never at once; the publish guard keeps its default thresholds; `build-states-directory.py` owns `public/data/state-metro-scores.json` (`build-state-metro-scores.py` now writes `state-metro-scores.weighted-experiment.json`, which the site does not read).
+
+**Supabase moved to Pro** (verified through the API: plan `pro`). The 500 MB read-only risk is closed: 8 GB included, 439 MB used. Compute still shows the free-plan settings (60 connections, 224 MB shared buffers); Nano bills at the Micro price in a paid org, so Ashwin should move it to Micro in Settings, Compute and Disk, outside Saturday 09:00 to 11:00 UTC.
+
+**The watcher (Scheduled jobs row: Active):**
+- Task Scheduler task `Metro workbook sync watcher` on AshGaming, every 15 minutes while logged on plus at logon, current user, no elevation. `scripts/metro_sync/install_watcher_task.ps1` installs it; `-Uninstall` removes it.
+- `scripts/metro_sync/watch_workbook.ps1`, one tick: exits silently when the OneDrive master has the stamp it last handled; waits if Excel has the file open or it was saved under 180 s ago; else `sync_workbook.py --json` dry, then `--write` only if no guard held. Alerts by Windows toast, and by ntfy if `%LOCALAPPDATA%\metro_sync\config.env` holds `NTFY_TOPIC=` (not set today). A hold or an error alerts once per save. It writes Supabase only: never git, never `public/data`, never a build.
+- Proven on this machine: a no-change tick and a silent repeat; a copy of the workbook with ONE shared string changed gives `Municipality: 133584 -> 133584, 1 chunks`; a workbook missing its sheets is held, alerts once and does not re-alert; one tick through the scheduler, result 0, logged `no_change`. NOT exercised: the `--write` leg inside the watcher. It is the same CLI call that loaded the mirror by hand, and a failure alerts.
+
+**Three faults the live runs found:**
+1. 🔴 The phase 1 Windows fix to `sync_workbook.py` (close the `mkstemp` descriptor, tolerate the temp unlink, no `utcnow`) NEVER reached the repo. Commit `7ae9c1aed` carried the unfixed file; the 09-20 evening entry's claim that it was fixed was true of my workspace and false of git. Cause: re-sending a file to this machine under a name already sent once can deliver the EARLIER bytes. It is in this commit now, and every file sent since was checked by sha256 on the Windows side. The mirror itself was unaffected: the fault fired after the write, at temp cleanup, and exit 1 was the only symptom.
+2. PowerShell turns a one-line pipeline result into a string, so `$lines[$lines.Count - 1]` returned the character `{` and the watcher called valid JSON unparseable. Wrapped in `@()`.
+3. A lock file `~$MetroAreas.xlsx` dated July 2025 sits in the OneDrive folder. The watcher now uses the rule `sync_workbook.py` already had: a lock file counts only if it is at least as new as the workbook.
+Not a fault: files this session's shell writes under `%LOCALAPPDATA%` land in the desktop app's private copy of that folder, so its `watch.log` and the scheduler's were two different files for a while. The scheduler's is the real one.
+
+**Still open:** the mini install of `metro-rankings` (evening entry, five steps); two clean shadow Saturdays, then the cutover; Municipality row 93191 (`Utqiag_x001A_vik city`) for Ashwin to retype, which will be the watcher's first real write.
+
+**Notion:** Scheduled jobs +1 (`Metro workbook sync watcher`, Active). Decisions +3 (edit timing; guard thresholds; owner of state-metro-scores.json). Backlog: phase 3 row Done; two-writers row Done; Supabase free plan row Done.
