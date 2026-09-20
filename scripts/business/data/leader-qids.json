@@ -484,5 +484,9 @@
  "Dell": {
   "entityQid": "Q30873",
   "matchedLabel": "Dell"
+ },
+ "Bank of China": {
+  "entityQid": "Q790068",
+  "matchedLabel": "Bank of China"
  }
 }
