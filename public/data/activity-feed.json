@@ -1,13 +1,97 @@
 {
-  "generatedAt": "2026-09-19",
+  "generatedAt": "2026-09-20",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-20",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "484ab410f"
+    },
     {
       "date": "2026-09-19",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL.",
-      "commit": "ff1f0f016"
+      "text": "Data refreshed — Football, Basketball, Rugby, AFL, and 2 more.",
+      "commit": "f3a5ecaf4"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Release 2026-09-20: forecasts that lead with the answer.",
+      "commit": "778734ced"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Cache-tags, and the seven data tags it found that no flush could reach.",
+      "commit": "7f58ffc06"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "hub",
+      "hub": "Digest",
+      "text": "A subscribe path on the homepage and the digest, and Writing in the About menu.",
+      "commit": "eb3c0f8e9"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NFL season hubs: the year's award winners and All-Pro picks, under era club names.",
+      "commit": "4db7dba60"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NBA season hubs: weekly seeds, the date on the scrub, and the control between chart and table.",
+      "commit": "341bb9f0f"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NBA season standings: vs Last follows the scrub, and the final seed waits for the final standings.",
+      "commit": "43f298303"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "Forecast hubs: headline sentence, NFL division heat board, movers strip.",
+      "commit": "43077db72"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Allow the nba-elo tag, which nothing could flush.",
+      "commit": "915ce45f2"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NBA 2024: the Mavericks/Clippers series was six games, not seven.",
+      "commit": "58e0be6de"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NBA season standings follow the week slider, and the NBA Cup final gets a date.",
+      "commit": "d2c3f82e6"
+    },
+    {
+      "date": "2026-09-19",
+      "category": "fix",
+      "hub": "Sports",
+      "text": "Live Standings and the NBA scrubber: seven fixes Ashwin asked for on 2026-09-19.",
+      "commit": "80e1d5671"
     },
     {
       "date": "2026-09-18",
@@ -4117,90 +4201,6 @@
       "hub": null,
       "text": "Add International Football entry to Sports menu.",
       "commit": "f4ead1abd"
-    },
-    {
-      "date": "2026-05-26",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Football, Basketball.",
-      "commit": "58bc07a89"
-    },
-    {
-      "date": "2026-05-26",
-      "category": "fix",
-      "hub": null,
-      "text": "Include lib/international.ts WC2026 exports.",
-      "commit": "177feb2d7"
-    },
-    {
-      "date": "2026-05-26",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Historical-entity marker for predecessor identities.",
-      "commit": "fc20638a5"
-    },
-    {
-      "date": "2026-05-26",
-      "category": "fix",
-      "hub": null,
-      "text": "Add missing lib files that weren't staged in previous commit.",
-      "commit": "285cc0215"
-    },
-    {
-      "date": "2026-05-26",
-      "category": "fix",
-      "hub": "Club Football",
-      "text": "Real intercontinental names, country flags, ELO-ranked index table.",
-      "commit": "8302311f4"
-    },
-    {
-      "date": "2026-05-26",
-      "category": "fix",
-      "hub": "Club Football",
-      "text": "Era-correct European competition labels and intra-season sort.",
-      "commit": "f006bb4a2"
-    },
-    {
-      "date": "2026-05-26",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Expand canonical coverage to eight country leagues.",
-      "commit": "32689216e"
-    },
-    {
-      "date": "2026-05-26",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Space numeric columns; rename Lg Cup label.",
-      "commit": "67ef5ac18"
-    },
-    {
-      "date": "2026-05-26",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Unified finals signal across Domestic Cup and Eur Comp.",
-      "commit": "c4cfeaee1"
-    },
-    {
-      "date": "2026-05-26",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Add Domestic Cup column to club season tables.",
-      "commit": "9c45427b1"
-    },
-    {
-      "date": "2026-05-26",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Hide non-essential standings columns on mobile.",
-      "commit": "d4dae5e22"
-    },
-    {
-      "date": "2026-05-25",
-      "category": "fix",
-      "hub": "Sports",
-      "text": "Ship v0 plus polish — maps, filters, badges, deep links.",
-      "commit": "f2af29b4b"
     }
   ]
 }
