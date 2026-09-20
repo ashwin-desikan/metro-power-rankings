@@ -692,6 +692,42 @@ command = "runners/metro-rankings.sh"
 catchup_hours = 24              # weekly cadence
 timeout_minutes = 30
 
+# --- git-maintenance: NEW 2026-09-20. The ONE controlled gc. ---------------
+# Git's own auto-maintenance crashed TWICE on 2026-09-20 (14:17:50 and 22:15),
+# each time leaving index.lock + HEAD.lock + objects/maintenance.lock behind.
+# The first stranded bot commit f5687d931 unpushed, diverged main, and
+# hard-failed every job calling mini_sync() for 7h27m -- 14 ntfy alerts. The
+# second collided with a metro-rankings shadow run and left 775 files
+# unrestored. Cause: gc.auto / gc.autoDetach / maintenance.auto were all unset,
+# so auto-gc fired off the back of a commit and DETACHED into the background,
+# racing the next job's git command. With a dozen jobs committing here daily it
+# was going to keep happening.
+#
+# The clone now carries gc.auto=0 and maintenance.auto=false, so git never
+# starts maintenance on its own. This row is where the work actually happens:
+# the same gc, at the same loose-object threshold (the runner re-applies 6700
+# with -c), but in the FOREGROUND and inside the dispatcher's single lock, so
+# it cannot collide with any other dispatcher job.
+#
+# 03:00 is the quietest slot in the day: activity-feed (02:30, timeout 20) is
+# done by 02:50, ops-autofix's 02:15 tick by 02:40, and nothing else runs until
+# euro-comps at 04:00. NOT collision-proof even so -- run-deploy-watch.sh has
+# its own launchd agent and does git every 10 minutes outside this lock -- so
+# the runner treats "another git holds the lock" as a skip, not a failure.
+#
+# NO hc_slug: the healthchecks project is capped at 20 and full (see the
+# football-standings row). This job alerts through notify.py when it sweeps a
+# stale lock, which is the event worth knowing about; a silent no-op night is
+# not. It writes nothing to the repo contents -- no commit, no push.
+[[job]]
+id = "git-maintenance"
+label = "Git gc and stale-lock sweep (rankings clone)"
+time = "03:00"
+command = "runners/git-maintenance.sh"
+catchup_hours = 6               # daily; a slot missed by more than 6h waits for tomorrow
+timeout_minutes = 20
+log_tail_lines = 40             # keep the whole report, per 0880b185a's lesson
+
 # --- daily-ops-sweep: NEW 2026-08-30. Report-only, no writes. --------------
 # Commissioned after Ashwin had to separately name several same-morning ntfy
 # alerts before any got investigated. Runs headless Claude Code once daily
