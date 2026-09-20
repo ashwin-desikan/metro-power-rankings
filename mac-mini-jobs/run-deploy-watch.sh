@@ -26,6 +26,20 @@ push(){ [ -n "${NTFY_TOPIC:-}" ] || return 0
   curl -s -o /dev/null -H "Title: $1" -H "Tags: $2" -d "$3" "https://ntfy.sh/$NTFY_TOPIC" || true; }
 cd "$REPO" || { echo "repo missing at $REPO"; exit 1; }
 
+# Take the dispatcher's lock. Under a tick this is a no-op (the tick already
+# holds it and exports DISPATCHER_LOCK_HELD); run BY HAND -- or from the
+# launchd plist that is kept, unloaded, as the fallback for when the dispatcher
+# is down -- it is what stops this script's git racing a scheduled job, which
+# is how 775 files were left unrestored on 2026-09-20.
+#
+# Standing down is exit 0, not a failure: this watcher is threshold-based
+# (STALE_MIN=20) and reconciles on its next run, so a skipped pass costs
+# nothing, while a red healthchecks tile for "the dispatcher was busy" would
+# cost attention that should be spent on real breakage.
+. "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/dispatcher-lock.sh"
+dispatcher_lock_acquire "deploy-watch" || exit 0
+trap dispatcher_lock_release EXIT
+
 git fetch -q origin main || { echo "git fetch failed (transient) — next run"; exit 0; }
 
 # TARGET: newest origin/main commit that Vercel's ignoreCommand would build.

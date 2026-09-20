@@ -317,12 +317,27 @@ def build_argv(job):
     return argv
 
 
+def job_env():
+    """The environment a job subprocess gets: ours, plus DISPATCHER_LOCK_HELD.
+
+    Scripts that can also be run BY HAND take .dispatcher.lock themselves via
+    dispatcher-lock.sh, so a manual run cannot collide with a tick (2026-09-20:
+    a hand-run metro-rankings raced a scheduled bot commit and cost a shadow
+    run its restore, leaving 775 files modified). When the DISPATCHER is the
+    one running them, the tick already holds that lock, and a child trying to
+    take it again would block forever. This marker is how the child tells the
+    difference. Returns a COPY -- mutating os.environ here would leak the
+    marker into the dispatcher's own later work.
+    """
+    return dict(os.environ, DISPATCHER_LOCK_HELD=str(os.getpid()))
+
+
 def run_job(job):
     timeout = job.get("timeout_minutes", DEFAULT_TIMEOUT_MINUTES) * 60
     argv = build_argv(job)
     started = datetime.now(timezone.utc)
     try:
-        proc = subprocess.run(argv, cwd=str(HERE),
+        proc = subprocess.run(argv, cwd=str(HERE), env=job_env(),
                               capture_output=True, text=True, timeout=timeout)
     except subprocess.TimeoutExpired:
         return "timeout", f"exceeded {timeout // 60}m"
@@ -632,6 +647,15 @@ def self_test():
         [{"id": "g", "command": "x.sh", "every_minutes": True}])), 1)
     check("every_minutes alone is valid", validate_jobs(
         [{"id": "g", "command": "x.sh", "every_minutes": 10}]), [])
+
+    # --- job_env: the marker that keeps a hand-runnable script re-entrant ---
+    _env = job_env()
+    check("job_env marks the lock as held", _env.get("DISPATCHER_LOCK_HELD"),
+          str(os.getpid()))
+    check("job_env keeps the rest of the environment",
+          all(_env.get(k) == v for k, v in os.environ.items()), True)
+    check("job_env does not leak into our own environ",
+          "DISPATCHER_LOCK_HELD" in os.environ, False)
 
     # --- dispatcher.log rotation, added 2026-09-20 --------------------------
     # The log had no rotation at all and deploy-watch moving in here the same
