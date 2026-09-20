@@ -16570,3 +16570,32 @@ Ashwin's ask: stop rebuilding the site by hand each week. MetroAreas.xlsx syncs 
 **Not done:** phase 2, the mini's weekly job (it must REPLACE the `update_top_companies` commit in `run-mktcap-refresh.sh`, or Saturday spends both builds; shadow two Saturdays first). Phase 3, the Task Scheduler watcher. No scheduled job was created or changed today. The metro-join builders (states, similar, relocations) were not checked for workbook reads.
 
 **Notion:** Decisions +2 (workbook-free metro rankings; positional chunked mirror). Backlog +3 (phase 2 mini job; phase 3 Windows watcher; Supabase free plan at 439 of 500 MB, owner Ashwin). Scheduled jobs: none changed.
+
+
+## 2026-09-20 (night) - windows (Cowork, cloud bridged to the Windows box) -> MINI (action needed) and next session: METRO RANKINGS PHASE 2 BUILT, THE WEEKLY JOB IS IN THE REPO IN SHADOW MODE AND NOT YET INSTALLED
+
+Phase 1 went to main as `7ae9c1aed` on Ashwin's word. This entry is phase 2: the job that recalculates the rankings every Saturday with no workbook and no person.
+
+**In this commit (all `[vercel skip]`, no build path touched):**
+- `mac-mini-jobs/runners/metro-rankings.sh` : sources `_common.sh`. Steps: `mini_sync`; three self-tests (sync shim, publish guard, score parity); `METRO_WORKBOOK_SOURCE=supabase extract.py`; revert `quiz_queue.json`; `build-states-directory.py` from the mirror; the publish guard; then by `METRO_RANKINGS_MODE`: **shadow (default)** restores every output and commits only `mac-mini-jobs/reports/metro-rankings-<date>.md` tagged `[vercel skip]`; **publish** runs `check-slug-drift` and commits the literal output paths UNTAGGED, which is the weekly build. A hold restores the outputs, commits the report tagged, and `fail`s with the first reason so the alert names it. `DRY_RUN=1` commits nothing in any mode. The restore touches only this job's own paths, never a blanket `git checkout -- public/data`, so it cannot wipe another job's uncommitted output.
+- `scripts/metro_sync/publish_guard.py` : seven rules, each a constant with an env override `METRO_GUARD_<NAME>`: metro count falls; a slug disappears; an old top-100 metro moves more than 10 places; a score moves more than 3.0; total market cap moves more than 15 percent; zero-score metros rise by more than 50; fewer than 1,000 metros or a parse failure. Exit 0 pass or no_change, 20 held. `--self-test` 12 cases.
+- `scripts/metro_sync/open_workbook.py` : lets the two calamine readers (`build-states-directory.py`, `build-state-metro-scores.py`) run from the mirror. Calamine and openpyxl disagree on three things, measured cell by cell: empty is `''` not `None`, every number is a float, an error cell is `''`. The adapter converts, and decodes OOXML `_xHHHH_` escapes. After the fix: Municipality, Counties, States and Metro Areas match calamine exactly, value and type. Before it the JSON was already byte-identical but one builder logged 215 unmatched metros against 3, so identical output had hidden a different code path.
+- `mac-mini-jobs/jobs.toml` : `metro-rankings`, Saturday 10:30 UTC, after `mktcap-refresh` (09:00, timeout 20). `dispatcher.py --self-test` 87 of 87.
+
+**Measured:**
+- Real Supabase REST, end to end, from the Windows box: `extract.py` 11 s on a warm chunk cache, `metros.json` sha256 `0cc06c867e8d5036...`, identical to the offline mirror run; guard `pass`; 774 files differ from HEAD (718 metros move, largest move 40 places, Carlsbad NM 3617 to 3657; total market cap down 0.45 percent). That difference is the update the site is waiting for. Every file was restored; nothing was published.
+- Two mirror-fed runs give the same `metros.json` hash. The run is deterministic.
+- Offline runner proofs (fake mini dir, local bare remote): dry run clean in both modes; forced hold exits 1, restores, names the reason; a live shadow run commits the report file only, subject tagged.
+
+**MINI, to install (nothing runs until this is done; the dispatcher reads `~/metro-mini-jobs`, not the repo):**
+1. `git pull --ff-only`
+2. `cp mac-mini-jobs/jobs.toml ~/metro-mini-jobs/ && cp mac-mini-jobs/runners/metro-rankings.sh ~/metro-mini-jobs/runners/ && chmod +x ~/metro-mini-jobs/runners/metro-rankings.sh`
+3. Confirm the venv has `openpyxl`, and that `~/.config/metro-supabase/env` exports `MKTCAP_SUPABASE_KEY` (the runner also maps `SUPABASE_SERVICE_KEY` onto it).
+4. `python3 ~/metro-mini-jobs/dispatcher.py --self-test`, then `DRY_RUN=1 ~/metro-mini-jobs/runners/metro-rankings.sh`. Expect `guard verdict: pass` and a clean tree.
+5. Set the Notion Scheduled jobs row `metro-rankings` from Disabled to Active.
+
+**Cutover rule (not now):** after two clean shadow Saturdays, set `METRO_RANKINGS_MODE=publish` AND remove the `update_top_companies` step from the tail of `run-mktcap-refresh.sh` IN THE SAME CHANGE. Both are untagged Saturday commits; together they spend the whole daily build budget. Open at cutover: `check:release-notes` wants a `lib/releases.ts` entry for a day with an untagged `public/` commit, and the existing Top Companies commit already has that gap.
+
+**Not done:** phase 3, the Windows Task Scheduler watcher. `relocations` reads the league workbooks, not MetroAreas, and is out of scope. `build-state-metro-scores.py` is switched to the mirror but NOT run by the job: it writes the same file as `build-states-directory.py` with different arithmetic (Backlog row, Ashwin to rule).
+
+**Notion:** Scheduled jobs +1 (`metro-rankings`, Disabled until installed). Backlog: phase 2 row rewritten as the install and cutover, owner Mac mini; +2 (two writers of state-metro-scores.json; the Utqiagvik control character in Municipality row 93191). Decisions: none new.

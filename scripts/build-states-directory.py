@@ -5,11 +5,12 @@ full-credit fallback where population is missing) + the slim states-directory.js
 feeding /states. Usage: python scripts/build-states-directory.py [path/to/MetroAreas.xlsx]"""
 import json
 from collections import defaultdict
-from python_calamine import CalamineWorkbook
 
 import sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from metro_sync.open_workbook import open_metro_workbook  # noqa: E402
 WB = sys.argv[1] if len(sys.argv) > 1 else str(ROOT.parent / "MetroAreas.xlsx")
 
 def _load(name):
@@ -35,7 +36,7 @@ for s in states:
     state_slug[(s.get("country","").strip(), s.get("name","").strip())] = s["slug"]
     meta[s["slug"]] = s
 
-wb = CalamineWorkbook.from_path(WB)
+wb = open_metro_workbook(WB)
 muni = wb.get_sheet_by_name("Municipality").to_python(skip_empty_area=True)
 cnty = wb.get_sheet_by_name("Counties").to_python(skip_empty_area=True)
 

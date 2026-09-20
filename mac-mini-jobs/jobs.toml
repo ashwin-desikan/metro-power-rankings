@@ -654,6 +654,34 @@ hc_slug = "mktcap-refresh"
 catchup_hours = 24              # weekly cadence
 timeout_minutes = 20
 
+# --- metro-rankings: NEW 2026-09-20. Shadow mode until proven. -------------
+# Weekly metro recalculation from the Supabase mirror of MetroAreas.xlsx (see
+# scripts/metro_sync/README.md and mac-mini-jobs/runners/metro-rankings.sh's
+# own header for the full step order and the publish guard it runs). Slotted
+# at 10:30, after mktcap-refresh's 09:00 (timeout 20) so the two Saturday jobs
+# never overlap.
+#
+# SHADOW MODE (the runner's default, METRO_RANKINGS_MODE unset) until two
+# consecutive clean Saturday runs are hand-verified: it runs the full ETL and
+# the publish guard against real Supabase data every week, but restores
+# public/data afterward and commits only its report, tagged [vercel skip], so
+# nothing it does can affect the live site yet.
+#
+# CUTOVER: flipping this job to publish mode (METRO_RANKINGS_MODE=publish)
+# MUST happen in the SAME change that removes the update_top_companies.py /
+# details+meta.json step from the tail of run-mktcap-refresh.sh. Never run
+# both live at once -- each is an untagged Saturday commit that triggers a
+# paid production build, and two of those in one day spends the whole 2-build
+# daily budget on data that came from the same underlying workbook sync.
+[[job]]
+id = "metro-rankings"
+label = "Metro rankings recalculation"
+time = "10:30"                  # Saturday, after mktcap-refresh (09:00, timeout 20)
+weekdays = [6]                  # Saturday
+command = "runners/metro-rankings.sh"
+catchup_hours = 24              # weekly cadence
+timeout_minutes = 30
+
 # --- daily-ops-sweep: NEW 2026-08-30. Report-only, no writes. --------------
 # Commissioned after Ashwin had to separately name several same-morning ntfy
 # alerts before any got investigated. Runs headless Claude Code once daily

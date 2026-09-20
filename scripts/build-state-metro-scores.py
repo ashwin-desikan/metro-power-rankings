@@ -24,9 +24,10 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-from python_calamine import CalamineWorkbook  # pip install python-calamine
-
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from metro_sync.open_workbook import open_metro_workbook  # noqa: E402
+
 METROS = ROOT / "public" / "data" / "metros.json"
 OUT = ROOT / "public" / "data" / "state-metro-scores.json"
 
@@ -45,8 +46,9 @@ def state_slug(name: str) -> str:
 
 
 def main() -> None:
+    import os
     xlsx = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT.parent / "MetroAreas.xlsx"
-    if not xlsx.exists():
+    if os.environ.get("METRO_WORKBOOK_SOURCE", "workbook").lower() != "supabase" and not xlsx.exists():
         sys.exit(f"workbook not found: {xlsx} (pass the path as an argument)")
 
     metros = json.loads(METROS.read_text(encoding="utf-8"))
@@ -57,7 +59,7 @@ def main() -> None:
         if m.get("countrySlug") == "united-states"
     }
 
-    rows = CalamineWorkbook.from_path(str(xlsx)).get_sheet_by_name("Municipality").to_python(
+    rows = open_metro_workbook(str(xlsx)).get_sheet_by_name("Municipality").to_python(
         skip_empty_area=True
     )
     hdr = rows[0]
