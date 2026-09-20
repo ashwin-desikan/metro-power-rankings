@@ -1,197 +1,282 @@
-# Daily Ops Sweep -- 2026-09-19
+# Daily Ops Sweep -- 2026-09-20
 
-Window: `2026-09-17T23:09Z` to `2026-09-19T01:09Z` (trailing 26h), selected on each
-dispatcher.log line's own UTC timestamp. Read-only run: nothing was written, re-run,
-pinged or fixed except this file. Working tree verified clean after every probe.
+Window `2026-09-18T23:02Z` to `2026-09-20T01:02Z` (trailing 26h), selected on each
+dispatcher line's own UTC timestamp. Read-only run: nothing was executed, re-run,
+pinged, written or fixed. This report file is the only thing this session changed.
 
-## Jobs this window: 34 ok, 1 failed, 1 flagged
+## Jobs this window: 35 ok, 0 failed, 5 flagged
 
-35 dispatcher executions completed, 0 MISSED. The one FAIL (`gap-league-watch`) is
-fully closed. The one flagged job (`economy-rates`) exited 0 and went green while
-three of its builders failed, which is the substantive finding below.
+36 executions across 20 distinct jobs. 35 returned `DONE ok`; the 36th is this
+sweep. **Zero `FAIL` lines.** Two `MISSED` lines, both for one job, both benign
+and explained below.
 
-Ran and clean: `ops-autofix` x13, `football-standings` x4, `claude-auth-canary` x4,
-`mlb-sim` x2, `daily-ops-sweep`, `activity-feed`, `euro-comps`, `business-daily`,
-`forecast`, `substack-daily`, `feed-monitor`, `nfl-elo`, `predictions-fri`, `cfb-fri`.
-`newsletter-podcast` (launchd, not dispatcher) completed clean at 08:22 local:
-episode `6DslVqYwtIAH0Y1o3D7okU`, 44 feed items pushed, both Gmail drafts created.
+Ran and green: `football-standings` x4, `ops-autofix` x12, `claude-auth-canary` x3,
+`mlb-sim` x2, `daily-ops-sweep`, `activity-feed`, `euro-comps`, `gap-league-watch`,
+`business-daily`, `substack-daily`, `feed-monitor`, `economy-housing`, `nfl-elo`,
+`mktcap-refresh`, `cricket-champions`.
 
-Nothing was silently skipped. `conflicts-monthly` and `cricket-monthly` are gated
-`days = [1]` (day of month), so they were correctly not due on the 18th or 19th.
-`economy-housing` (Sat 07:30Z) and `mktcap-refresh` (Sat 09:00Z) are due later today.
-`feed_shape_monitor` reported all 18 registry entries `ok`, including both ESPN
-date-form canaries added on 09-16.
+I reconciled the schedule as well as the log, so a job that never fired at all
+would still be caught. 2026-09-19 was a Saturday: `forecast` (Mon/Wed/Fri),
+`screen-number-ones` (Mon/Tue/Wed), `predictions-*`, `cfb-*`, `rugby/cricket/fiba/
+sound-weekly`, `owners-weekly` (Mon), `conflicts-monthly` and `cricket-monthly`
+(day 1) are all correctly absent, not silently missing. `egress-refresh`,
+`economy-prices` and `cfb-sun` are Sunday jobs whose slots fall later today.
+
+Off-dispatcher jobs checked too: the F1 poller (hourly launchd), the
+newsletter-podcast daily, and its evening / watchdog / retention sidecars. All
+completed. `npm run check:data-currency`: 29 current, 0 overdue, 0 unreadable.
 
 ## Self-healed (informational only, no action needed)
 
-**`gap-league-watch` FAIL at 05:05:51Z, and again on the 06:29Z autofix retry.**
-Both died in `--self-test`, not on the network: `watch_gap_leagues.py` line 170
-asserted `{... nations_auto(e)} == {536}` against the live `leagues_pending.json`,
-and 536 (CONCACAF Nations League) had been correctly promoted out on 09-17, leaving
-the set empty. The test demanded a transient membership, so a *successful* promotion
-failed the job. A mini session fixed it the same morning: commit `0731cb049`
-("the self-test asserted a transient state, not the rule"), which re-expresses the
-check as `_flagged <= SELF_PROMOTERS` plus an international-comp assertion, so it
-still catches a club comp acquiring both flags but survives legitimate promotions.
-That session also re-ran the job by hand at 07:09Z: `self-test OK`, three pending
-leagues classified, watch state written, no transitions. I re-ran `--self-test`
-read-only just now (it returns on main()'s first line, before any key, network or
-write): `self-test OK`, exit 0. Fix is committed and pushed. Next dispatcher slot
-is 05:00Z today. No action.
+**1. `cricket-champions` logged `MISSED` twice, because it was born yesterday.**
+`MISSED cricket-champions (slot 2026-09-18 22:30Z, 859m late)` at 12:49:02Z and
+again at 12:58:57Z. Not an outage. The job was created by commit `13bfc18b3`
+("Cricket champions promote themselves") at 12:48Z, and `jobs.toml` says so in
+its own comment (`# no plist; born on the dispatcher 2026-09-19`). The dispatcher
+computed the job's previous slot as 2026-09-18 22:30Z, which predates its
+existence, found it past the 12h `catchup_hours` window, and skipped to the next
+slot exactly as designed. That next slot ran clean: 2026-09-19T22:39Z, 12s,
+self-test 26 checks OK, "0 new champion(s); 0 needing attention". Nothing to fix.
+Cosmetic only: the MISSED notice was emitted on two consecutive ticks before
+state settled, so a new daily job will always log this twice. Not worth a change
+unless it recurs for a job that is not brand new.
 
-**Football `unmatched=45` cleared to 0.** The 09-18 runs alerted 45 unmapped
-api-football teams three times (00:04Z, 05:05Z, 11:09Z). The Windows/Cowork session
-synced the Lookup sheet during the day; the 17:03Z run and every run since reports
-`unmatched=0` (latest 09-19 00:06Z: `unmatched=0 deferred=29`). Closed by the work
-already booked for it in yesterday's report. The new `deferred=29` counter is a
-by-product of that Lookup work, not an error state.
+**2. `economy-rates`: yesterday's headline finding is fixed, and I verified the
+data rather than trusting the commit message.** The `pipefail`-inside-`bash -c`
+bug was fixed on 09-19 (`eb3d5fa61`, `92f1432dc`, plus `3586981f0` for the
+hardcoded `BUILT_DATE`), and the rates were rebuilt at 11:10 BST (`6ba4407ce`).
+Checked against the real files: all 62 rate files carry `built: 2026-09-19`, and
+the three real-world moves yesterday's sweep named as missing are now present:
+ECB 2.50 effective 2026-09-16, Denmark 2.10 effective 2026-09-11, Fed 3.875
+effective 2026-09-17. No BIS file is stale on the site: `bis-us` (3.625),
+`bis-xm` (2.25), `bis-gb`, `bis-ca`, `bis-se`, `bis-ch`, `bis-au`, `bis-no`,
+`bis-jp`, `bis-nz` and `bis-de` all lag, but every one of them is
+`"listed": false` with a `superseded_by` pointing at its dedicated builder, so
+the board never shows the stale twin. Closed, no action.
+
+**3. F1 poller: one transient upstream failure, already self-healed and already
+hardened.** `14:07:06 ERROR: jolpica fetch failed` in `logs/f1-2026-09-19.log`,
+recovered on the very next hourly tick at 15:07 and clean through 01:07 today.
+The commit that makes this retry rather than page hourly (`b0b43e2f8`, "F1
+poller: retry, never hang, and stop paging hourly for one outage") landed five
+minutes after the error, so this was the incident that motivated the fix. Zero
+errors in the six preceding daily logs. No action.
+
+**4. `ops-autofix` refused to act at 12:18Z, correctly.** It reported
+`[blocker] working_tree_dirty -- repo has 7 uncommitted change(s)` and stopped
+with "Refusing to act around a human's work." That was a live session mid-flight
+(commits landed 12:08 through 12:33). Clean again by the 14:19Z run. Working as
+designed; noted only so it is not mistaken for a fault on a future read.
+
+**5. The S&P 500 "recent changes" list was silently empty for four weeks, and
+repaired itself before this window.** `[mktcap] WARNING: table id=changes not
+found` has fired every weekly run since 2026-08-17, falling back to a
+week-over-week constituent diff. That fallback produced **0 rows** on 08-17,
+08-22, 08-29, 09-05 and 09-12, which on the site is indistinguishable from "no
+index changes happened". It started working on 09-13 (61 rows) and holds at 60
+today. Confirmed by walking `sp500.json` through git history. Already healed,
+but it is a clean example for the Silent failure register if it is not there
+yet: a warn-and-fall-back path returning an empty list looks exactly like good
+news.
 
 ## Needs Ashwin's attention
 
-### 1. `economy-rates` went green on 09-18 while 3 builders failed, and the ECB and Denmark rate hikes are NOT on the live site
+### 1. The Vercel 2/day build cap is still not enforcing, and I can now prove it from behaviour
 
-**What happened.** The 07:37Z Friday run printed
-`refresh.py: 3 builder(s) FAILED; review before trusting the published files.`
-then `No changes; nothing to commit`, revalidated, warmed both pages 200, and the
-dispatcher logged `DONE economy-rates: ok 361s`. No ntfy fired, and the
-healthchecks tile went green. This is the exact silent-failure shape the register
-exists for: exit 0, clean `--status`, quiet topic, wrong data.
+**What happened.** Four paid production builds ran on 2026-09-19 UTC against a
+budget of two:
 
-**Root cause A, why the failure was invisible.** `refresh.py` is written to be loud:
-lines 769 to 772 `sys.exit(1)` when any builder fails. That exit is thrown away by
-the runner. `runners/economy-rates.sh` calls
+| UTC | Deployment | Commit | Subject |
+|---|---|---|---|
+| 09:06:27 | `dpl_93ctYyxBSVoy35MzASvBQY72g6dA` | `dda64bbb1` | mktcap: weekly Top Companies refresh 2026-09-19 |
+| 11:33:54 | `dpl_FNu4bjNsiVNX5yhms89JG59LEop8` | `80e1d5671` | Live Standings and the NBA scrubber |
+| 13:05:31 | `dpl_HcW7NEVmcinuoiJgmDtPQH8PArXU` | `d2c3f82e6` | NBA season standings follow the week slider |
+| 20:40:36 | `dpl_CqZBtiATwpcPkWsCNrXo5WphB5J9` | `778734ced` | Release 2026-09-20: forecasts that lead with the answer |
 
-```
-guarded "refresh policy rates (--write)" \
-  bash -c "\"$PY\" scripts/macro/rates/refresh.py --write | tee \"$REFRESH_LOG\""
-```
+All other production deployments in the window are `CANCELED`, which is free and
+is what the ignore guard produces on a skip. Today, 2026-09-20 UTC, the count so
+far is **0 paid builds**.
 
-`guarded()` checks the status correctly, but the status it receives is `tee`'s.
-`_common.sh` sets `set -uo pipefail` in the *runner's* shell, and `pipefail` is a
-shell option that a new `bash -c` process does not inherit. Verified on this box
-just now: the exact idiom returns 0 with a failing python inside, and returns 1 the
-moment `set -o pipefail;` is added inside the `bash -c`. So the one mechanism that
-was supposed to make a builder failure loud is disabled by the pipe that captures
-the log.
+**Root cause, and why this is now evidence rather than inference.** The Windows
+session's HANDOFF entry of 09-19 (late) states "the cap is still inactive", and
+yesterday's sweep could not check it because the Vercel MCP token returns
+`403 forbidden` on `projectEnvVars`. It still does; I retried and got the same.
+But the cap's own contract makes a direct test possible.
+`scripts/vercel-ignore.sh` line 80 says `[deploy-now]` on the SUBJECT is the only
+override, and line 88 sets `MAX_DAILY_BUILDS` to 2. **None of the four subjects
+above carries `[deploy-now]`.** If the cap were live, builds three and four would
+have been skipped. They were not. So the cap is inactive, independent of anyone's
+report of it.
 
-The runner does have watchers, but only for `NEW RATE DECISIONS` and
-`source(s) unreachable this run`. There is no watcher for `builder(s) FAILED`, so
-even the fail-open notification path had nothing to match.
+I also pulled the build log of a skipped deployment to try to read the guard's
+own cap line. It is not there and cannot be: the guard exits at the `[vercel skip]`
+subject check (rule 1) before it ever queries the API, so a skipped build's log
+can never tell you the cap's state. Worth knowing before someone else tries it.
 
-**Root cause B, which builders failed, and why that is now hard to answer.**
-`refresh.py` prints a `builder <name>: FAILED: <error>` line per builder, but the
-runner captures them to a `mktemp` it deletes on the next line, and `dispatcher.py`
-keeps only `DEFAULT_LOG_TAIL_LINES = 12` of stdout. Both copies of the error strings
-are gone. I identified the three from output-file mtimes instead:
+**Recommended fix.** Add `VERCEL_BUILD_CAP_TOKEN` to the metro-power-rankings
+project's **build** environment as a Vercel read token. Until it exists, the guard
+prints "build cap inactive (no VERCEL_BUILD_CAP_TOKEN or the API did not answer)"
+and passes everything through, and the 2/day budget remains a promise rather than
+code, which is the exact condition CLAUDE.md says caused five prior overages. This
+is already Ashwin's P0 Backlog row; this entry just adds the behavioural proof.
+Two supporting asks: grant the MCP token `projectEnvVars:read` so this sweep can
+verify it directly instead of inferring, and note that the guard fails open on the
+API call (`curl ... || return 0`), so a token that exists but is rejected would
+also read as "inactive" and look identical.
 
-- `bis-*` (the `build_bis.build_all()` step) crashed partway through. `build_all`
-  iterates `sorted(BIS_ECONOMIES)`; files `bis-ar` through `bis-de` carry the
-  09-18 08:37 rebuild, and `bis-dk` onward are still 09-11 10:16. A perfect
-  alphabetical split at `de|dk` is a crash at DK, not content-based skipping.
-  **37 BIS country files have been stale since 09-11**, including `bis-us`,
-  `bis-xm` (euro area), `bis-gb` and `bis-dk`.
-- `build_fed` and `build_ecb` are the first two entries in `BUILDER_MODULES`, and
-  `fed.json` / `ecb.json` are the only own-source outputs still dated 09-11 10:16.
-  Every builder after them (`boe`, `riksbank`, `boj`, `snb`, `boc`, `rba`, `rbnz`,
-  `norges`, `buba`) plus `index` carries 09-18 08:38. That is exactly three
-  failures, matching the count refresh.py printed.
+### 2. Vivmark Residential (VMRK), $47.4B, has sat unmapped for two weeks and needs your ruling
 
-**Live data impact, verified against the real world.** The published files are
-behind on two confirmed decisions:
+**What happened.** `mktcap-refresh` on 2026-09-19 reported
+`METRO QUEUE (notable, unmapped): Vivmark Residential [VMRK] $47.4B (United States)`.
+It is the only notable (>=$10B) unmapped company this week, and it also appeared
+last week at $50.7B. The two other notables from 09-12, Sunbelt Rentals and
+Quantinuum, have since resolved. This one has not.
 
-| file | published last change | actual |
-|---|---|---|
-| `ecb.json`, `bis-xm.json` | 2026-06-17, 2.25 | **2026-09-16, 2.50** (+0.25) |
-| `bis-dk.json` | 2026-06-12, 1.85 | **2026-09-11, 2.10** (+0.25) |
+**Root cause.** Checked against the real world: Vivmark Residential is the merged
+AvalonBay Communities + Equity Residential, completed 2026-08-17, trading on NYSE
+as VMRK since 2026-08-18. It has **dual headquarters**, Arlington VA
+(4040 Wilson Blvd) and Chicago IL, and has said it intends an ongoing presence in
+both. So the mapper has no single right answer, which is precisely the case
+`civic_common`-style rules say to log and leave alone rather than guess. It is
+correctly sitting in the queue waiting for a human.
 
-The ECB raised on 10 September effective 16 September, deposit facility to 2.50%,
-MRO 2.65%, marginal lending 2.90%. Danmarks Nationalbank followed on 11 September,
-certificates of deposit to 2.10%. `fed.json` is stale but not *wrong*: the US spine
-still reads 3.625 as of 2026-09-15, unchanged since 2025-12-11.
+**Evidence.** Supabase read-only confirms the merge was handled correctly on the
+dedup side, so nothing is double counted:
 
-This is precisely the loss the runner's own comment predicted in the 09-11 restore
-("the ECB hike announced 09-10 takes effect 09-16, and would have been silently
-missed on the 09-18 run"). It was missed, just through a builder crash rather than
-an unreachable source, which is the one path that block does not watch.
+| symbol | name | is_active | last_seen | latest mcap | metro |
+|---|---|---|---|---|---|
+| AVB | AvalonBay Communities | false | 2026-08-22 | $26.28B | Washington-Baltimore |
+| EQR | Equity Residential | false | 2026-08-22 | $24.61B | Chicago |
+| VMRK | Vivmark Residential | true | 2026-09-19 | $47.37B | **null** |
 
-**The inputs are fine and the builders now run clean.** I ran the compute paths
-read-only (`build_write=False`, no files touched, `git status` clean afterwards):
+`mktcap_geo` has a stub row for VMRK with `metro`, `city` and `state` all null.
+Independently corroborated by `public/data/business/sp500.json`, whose newest
+change row reads "August 18, 2026 ... removed AvalonBay Communities ... the
+combined company trades as Vivmark Residential (VMRK)".
 
-```
-build_fed  build(write=False) OK      BIS cross-check: 147 dates, 0 disagree
-build_ecb  build(write=False) OK      BIS cross-check: 8 dates, 0 disagree
-build_bis.build_one('DK'/'ES'/'GB', write=False) OK
-ECB computed last change: 2026-09-16  2.5  (+0.25)  Deposit facility rate
-DK  computed last change: 2026-09-11  2.1  (+0.25)  certificates of deposits
-```
+**Impact.** A rank-632 company worth $47.4B is currently attributed to no metro
+at all, so whichever metro should hold it is understated by that amount on
+`/business` and its metro page.
 
-Both computed values match the real-world facts exactly. The 470 MB BIS flat file
-is intact (ends on a complete Saudi Arabia row), every `_scratch/macro` base input
-is present, and the disk is at 12%. So the data needed to correct the site is
-already on the mini; only the 09-18 *write* failed. Since the compute path succeeds
-today and failed on 09-18, the crash most likely sits in the write path
-(`c.write_bank`'s era lookup, which `build_bis.py` line 39 already flags as the
-thing an unclamped instrument-era gap crashes) on the newly arrived observation.
-I could not confirm that without running the write path, which would be a write,
-so this last step is inference, not measurement.
+**Recommended fix.** Your ruling, then one row. Precedent from the predecessors
+is split: AVB was mapped to Washington-Baltimore, EQR to Chicago. If the house
+rule is "one HQ, the primary one", Arlington VA is the registered principal
+office, which maps to Washington-Baltimore. Set `mktcap_geo` for symbol `VMRK`
+with `metro`, `city`, `state`, `mapped_by` and `mapped_at`, via the mktcap-refresh
+skill's curation path rather than a raw write, and it will hold through the next
+weekly run. Worth deciding this week: it is the largest single unattributed
+company on the board. Minor, non-blocking: the retired `AVB` geo row records
+`state: "DC"` for a city in Virginia; harmless now that the row is inactive, but
+do not copy it forward.
 
-**Recommended fix, in order.**
+### 3. `nba-elo` and seven more cache tags are live in production but have never been flushed, and the mini owes the one verification ping
 
-1. **Get the data right.** Re-run the job with the log kept:
-   `bash ~/metro-mini-jobs/runners/economy-rates.sh 2>&1 | tee /tmp/econ-rates.log`
-   That rebuilds and publishes ECB 2.50, DK 2.10 and the 37 stale `bis-*` files,
-   commits `[vercel skip]` and revalidates, as it does every week. **Read the
-   `builder ...: FAILED:` lines in that log** before anything else: they are the
-   tracebacks this report could not recover, and they will say whether the write
-   path still breaks on DK/fed/ecb or whether 09-18 was transient.
-2. **Stop the masking** (one line, the actual bug):
-   `guarded "refresh policy rates (--write)" bash -c "set -o pipefail; \"$PY\" scripts/macro/rates/refresh.py --write | tee \"$REFRESH_LOG\""`
-   With that, a builder failure fails the step, `fail()` fires, and the job goes red.
-3. **Make it audible even if it stays fail-open.** Add a third watcher block beside
-   the two that exist, matching `builder(s) FAILED` and pushing the failing bank
-   names, same shape as the `source(s) unreachable this run` block.
-4. **Keep the evidence.** `economy-rates` has no `log_tail_lines` in jobs.toml, so
-   it gets the 12-line default and the builder lines fall off every time.
-   `economy-housing` already sets `log_tail_lines = 30`; give `economy-rates` the
-   same, and consider writing `REFRESH_LOG` to `logs/economy-rates-$DATE.log`
-   instead of a `mktemp` that is deleted.
-5. **Silent failure register:** this is a new row. "A builder crash inside
-   `refresh.py` exits 0 because `bash -c`'s pipeline to `tee` drops the non-zero
-   status, publishing stale policy rates with a green tile." Register is
-   unreachable from here, see the note at the end.
+**What happened.** The 09-19 (late) HANDOFF entry closes with an explicit request
+addressed to this machine: "**Mini: flush `nba-elo` one time and confirm
+`ok:true`.**" The Windows box could not do it, having no `REVALIDATE_SECRET`.
+This sweep is read-only by charter, so I did not run it. Reporting it instead,
+with the blockers cleared so it is a one-liner when you want it.
 
-### 2. FIFA women's world ranking is one edition behind, and newly overdue today
+**Root cause and current state.** `lib/nbaElo.ts` tagged every NBA season shard
+`nba-elo` for the life of the file while the tag was missing from `ALLOWED_TAGS`,
+so every NBA correction silently waited out a full 24h ISR instead of flushing.
+`check:cache-tags`, written the same day, then found seven more in the same
+condition: `club-value`, `club-money`, `expectation`, `nfl-expectation`,
+`pl-expectation`, `intl-expectation`, `footy-finals`. Both entries note the
+allowlist was inert until the next build. **That build has since landed.** I
+verified `915ce45f2` (nba-elo) and `7f58ffc06` (the seven) are both ancestors of
+`778734ced`, which went READY at 20:48Z on 09-19, and all eight tags are present
+in `app/api/revalidate/route.ts` on disk. So the flush should now answer
+`ok:true` where it previously answered `{"ok":false,"error":"unknown tag"}`.
 
-`npm run check:data-currency` (warn-only, so it alerted nobody) reports 2 overdue as
-of today, and this one crossed its limit *today*: `FIFA women's world ranking,
-as of 2026-04-21, 151 days old, 1 over the limit`. FIFA published an update on
-**16 June 2026** that the site does not have, so this is a real gap rather than a
-manifest that is merely impatient. The next FIFA update is scheduled for
-**20 October 2026**, so ingesting the June edition clears the warning and it will
-stay clear until late October. Recommended: load the 2026-06-16 table, in the same
-commit adjusting nothing in the manifest (the limit is behaving correctly).
+**Recommended fix.** Two things, in order.
+First, the one-off verification, on the mini, which does have `REVALIDATE_SECRET`
+in `~/metro-mini-jobs/config.env`: flush `nba-elo` once and confirm `ok:true`.
+That closes the HANDOFF request and proves the whole allowlist change worked,
+rather than assuming it from the build landing.
+Second, the real follow-through, which is the open Backlog row "refresh jobs
+should ping the seven newly flushable tags": listing a tag only makes it
+flushable, nothing pings it. `expectation`, `nfl-expectation`, `pl-expectation`
+and `intl-expectation` sit on 24h ISRs, so until a job pings them their data is
+up to a day late by default. `footy-finals` is a 15 minute window and matters
+this week for the AFL Grand Final result.
 
-### 3. Carried forward from yesterday, still open
+### 4. The news digest silently drops entity links whose slug does not exist
 
-- **Formula E season is still overdue** (`has 2025, owes 2026`), unchanged since
-  yesterday's report. Wehrlein is the confirmed 2026 champion and Dennis second;
-  third place still needs the official final table, which is why yesterday's sweep
-  stopped rather than guessing. No new information today.
-- **The Vercel build cap could not be re-verified this run.** Yesterday's report had
-  it inactive for a fifth day (`build cap inactive (no VERCEL_BUILD_CAP_TOKEN...)`).
-  The Vercel MCP token here returns `403 forbidden` on `projectEnvVars`, so I could
-  neither confirm nor clear it. Treat yesterday's finding as still standing until
-  someone checks `VERCEL_BUILD_CAP_TOKEN` in the project's build environment.
+**What happened.** `~/newsletter-podcast/logs/2026-09-19.log` shows four dropped
+entity links in one morning run, all the same target:
+`[push_feed] entity dropped on 'OpenAI unveils a system for reporting rogue AI age': metro/san-francisco (no page at that slug)`
+plus three more across other AI stories. The job exited clean, pushed 49 items,
+and raised nothing.
+
+**Root cause.** The site's slug is `san-francisco-san-jose`, not `san-francisco`.
+Confirmed against `public/data/metros.json` (4,315 metros, the only San Francisco
+entry is `san-francisco-san-jose`) and `public/data/details/`, which holds
+`san-francisco-san-jose.json` and no `san-francisco.json`. The tagger is
+generating a plausible slug from the city name rather than resolving against the
+real slug table, and the push path fails open, dropping the link and continuing.
+
+**Scope, measured rather than assumed.** I grepped every newsletter log on the
+box. This is new and small, not a long-running leak: 0 occurrences through 09-17,
+1 on 09-18 (`club/football/brighton`, where the real slug is `brighton-hove`),
+4 on 09-19. Two distinct bad slugs, both of them a shortened form of a real
+hyphenated one.
+
+**Impact.** Low but growing, and invisible. San Francisco is the single most
+common metro in an AI-heavy news feed, so this is likely the most-linked entity
+on the site losing its link on most days. Nobody would notice: the item still
+publishes, just unlinked.
+
+**Recommended fix.** Resolve entity slugs against the real vocabulary instead of
+generating them: `public/data/slug-lookup.json` already exists for exactly this
+in the football path, and `metros.json` is the authority for metros. Cheapest
+useful change is an alias map plus a louder failure, so an unresolved slug raises
+once per new slug rather than being swallowed. Pure alias fixes if you want the
+two known ones closed first: `san-francisco` to `san-francisco-san-jose`, and
+`brighton` to `brighton-hove`. This is not urgent, but it is the kind of
+fail-open drop that the Silent failure register exists to name.
+
+### 5. Notion is unauthorized in this headless session, for the second day running
+
+**What happened.** The `notion` MCP server needs OAuth and this session is
+non-interactive, so it cannot be authorized here. Yesterday's sweep reported the
+same thing and it has not changed.
+
+**Why it matters.** CLAUDE.md makes Notion the source of truth for state, as a
+hard rule with a gate: every ruling gets a Decisions row, every new silent fault
+gets a Silent failure register row, in the same session. This job is the one that
+finds those faults, and it is structurally incapable of recording them. Items 1
+through 4 above each deserve a row and none can be written. The 09-19 evening
+HANDOFF entry already found Notion had drifted inside a single day of the
+contract, with none of six named Backlog rows actually created, so the daily
+"Notion reconciler" backstop is carrying more than it was meant to.
+
+**Recommended fix.** Run `claude` interactively on the mini once and complete
+`/mcp` for the Notion connector, then confirm the token survives a headless
+invocation of `run-daily-ops-sweep.sh`. If it does not persist into headless runs,
+that is the finding, and the honest fix is to change the contract for this job
+rather than let it silently owe rows every night: either give the sweep a
+narrow Notion write path that works headless, or state in `jobs.toml` that the
+sweep reports to this file only and the reconciler owns its rows.
+
+## One piece of log noise worth silencing
+
+`mktcap-refresh`'s log opens with
+`[mktcap:selftest] WARNING: rename NVDA -> MSTR SKIPPED: both symbols live in this week's feed (recycled-ticker signature). Fix mktcap_symbol_changes.`
+That is **a test fixture, not a live data fault.** It is emitted from inside the
+self-test block, and the assertion it belongs to passes two lines later
+(`PASS merge: recycled-ticker rename SKIPPED (NVDA->MSTR, both live in feed)`).
+The live run on the same page reports `rename guard: 0 recycled-ticker renames
+skipped: []`, so nothing is wrong with `mktcap_symbol_changes`.
+
+The problem is that it is indistinguishable from a real alert to any grep, and it
+ends with an imperative instruction to go fix a table that is fine. It cost this
+sweep a detour and it will cost the next one the same. Suggest the self-test
+harness prefix fixture output (`[selftest-fixture]`) or suppress `push()`-shaped
+strings while running under `--self-test`.
 
 ---
 
-**Caveat on coverage, unchanged from yesterday:** the **Notion connector is not
-authorized in this headless session**, so the Backlog, the Decisions database, the
-Scheduled jobs table and the Silent failure register went unread and unupdated. The
-register row proposed in finding 1 has nowhere to go until someone authorizes the
-connector with `/mcp` in an interactive session on the mini. Per the 2026-09-18
-contract this is a gap in the audit trail, not an optional extra.
-
-**Nothing in this run wrote to any data file, table, job state or healthcheck.**
-Every probe was a read or a `write=False` compute; `git status` was verified clean
-afterwards. The only write is this report file.
+*Generated by the unattended daily ops sweep on the Mac mini. Read-only run: no
+jobs re-run, no healthchecks pinged, no Supabase writes, no data or code changed.
+Supabase was queried with SELECTs only. This report file is the only write.*
