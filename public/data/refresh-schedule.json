@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T21:21:46.291570+00:00",
+  "generated_at": "2026-09-20T21:31:49.691505+00:00",
   "jobs": [
     {
       "id": "ops-autofix",
@@ -143,6 +143,24 @@
         "date": "2026-09-20",
         "status": "ok",
         "slot": "2026-09-20T02:30:00+00:00"
+      }
+    },
+    {
+      "id": "git-maintenance",
+      "label": "Git gc and stale-lock sweep (rankings clone)",
+      "schedule_text": "Daily at 03:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "03:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-21T03:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-20",
+        "status": "missed",
+        "slot": "2026-09-20T03:00:00+00:00"
       }
     },
     {
