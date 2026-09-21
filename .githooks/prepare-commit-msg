@@ -46,6 +46,13 @@ case "$SUBJECT" in *"[vercel skip]"*) exit 0;; esac
 # point of view a skip is a normal outcome. Leave the message alone.
 case "$SUBJECT" in *"[deploy-now]"*) exit 0;; esac
 
+# Same for [deploy-retry]. The documented recovery for an app commit that went
+# up underneath a skip-tagged HEAD is an EMPTY commit carrying [deploy-retry],
+# and an empty commit stages nothing build-relevant, so this hook stamped it
+# and rule 1 of vercel-ignore.sh then skipped the very build it was made to
+# start (2026-09-21, the Sweden result, caught before the push).
+case "$SUBJECT" in *"[deploy-retry]"*) exit 0;; esac
+
 REPO_ROOT=$(git rev-parse --show-toplevel) || exit 0
 PATHS_FILE="$REPO_ROOT/scripts/vercel-build-paths.txt"
 [ -f "$PATHS_FILE" ] || exit 0   # fail open: no list, don't touch the message
