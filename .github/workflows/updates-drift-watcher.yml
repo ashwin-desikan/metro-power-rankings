@@ -100,10 +100,26 @@ jobs:
             ':!CONTENT.md'
           )
 
-          # Commits strictly newer than the last /updates touch.
+          # Commits strictly newer than the last /updates touch THAT A READER
+          # COULD NOTICE: they touch app/, lib/ or public/, and their SUBJECT
+          # does not carry [vercel skip]. This is the same definition that
+          # `npm run check:release-notes` gates on.
+          #
+          # Until 2026-09-21 this counted every commit outside a short exclude
+          # list. The mini rewrites public/data/refresh-schedule.json about
+          # every ten minutes, so the count passed the threshold of 3 within
+          # half an hour of any /updates edit and the issue could never close:
+          # it read "43 commits behind" one day after a release entry, and 40
+          # of the 43 were bot data commits. A watcher that is always red is
+          # the same as no watcher.
+          #
+          # The filter reads the SUBJECT column only (the third field onward),
+          # never the body: a body that discusses the marker must not hide a
+          # shipping commit.
           COMMITS=$(git log "${LAST_UPDATES_SHA}..HEAD" \
                       --pretty=format:'%h %cd %s' --date=short \
-                      -- "${EXCLUDES[@]}" 2>/dev/null || true)
+                      -- app lib public "${EXCLUDES[@]}" 2>/dev/null \
+                    | grep -vF '[vercel skip]' || true)
 
           if [ -z "$COMMITS" ]; then
             COUNT=0

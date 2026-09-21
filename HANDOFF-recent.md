@@ -9,10 +9,21 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 47, 2026-09-14 to 2026-09-21
-     If the reader counts fewer than 47 entries, its fetch window stopped
+     entries: 48, 2026-09-14 to 2026-09-21
+     If the reader counts fewer than 48 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
+## 2026-09-21 (late) - windows cowork -> mini and next session: THE THREE OPEN GITHUB ISSUES, AND WHY TWO OF THEM COULD NEVER CLOSE
+
+**#23 (data watch).** Every dataset was inside its budget. The one real alert was the Lanka Premier League: no current holder, last crowned 2024-07-21. Facts: the 2025 edition was postponed and never played; the 2026 final was 8 Aug 2026, Galle Gallants beat Jaffna Kings by 5 wickets at R. Premadasa (Wikipedia final article and the ESPNcricinfo scorecard title agree). Inserted by hand in the `build_row` shape: `public.champions` id 149515, source `cricket-finalizer`, metro Galle / `galle` (already resolved on the franchise's runner-up rows as Galle Gladiators and Galle Marvels), `date_awarded` 2026-08-08, `is_current` true. `lanka-premier-league` is now in the `cricket_finalize.py` REGISTRY (calendar style), self-test 26 of 26, so 2027 is automatic unless the winner is again a first-time champion. The JSON re-emit rides this commit; the issue closes itself at the next 6-hourly run if the board is then clean.
+
+**#26 (/updates drift).** The watcher counted every commit outside a short exclude list. The mini rewrites `refresh-schedule.json` about every ten minutes, so the count passed the threshold of 3 within half an hour of any release entry and the issue could not close: "43 commits behind" one day after an entry, about 40 of them bot data commits. It now counts only commits that touch `app/`, `lib/` or `public/` AND carry no `[vercel skip]` in the SUBJECT, the same definition `check:release-notes` gates on. Measured on the Windows clone before this commit: old rule 13, new rule 0. Today's release entry also gains two bullets a reader should have: the Israel correction (wrong numbers 11 to 21 Sep) and the two cricket champions.
+
+**#22** is a third-party marketplace notice (a README badge and an opt-in monetisation SDK). Nothing in the repo changes for it. Ashwin's to close.
+
+**This commit is UNTAGGED on purpose:** it touches `lib/releases.ts` and the champions JSON, so it is the day's second production build (the first was `7cb1f3d1f`). It must be the LAST commit of its push.
+
+**Notion:** Decisions +1 (the drift watcher counts shipping commits only). Backlog: cricket watch row gains the LPL insert and the REGISTRY addition.
 ## 2026-09-21 (evening) - windows cowork -> mini and next session: THE TWO GENERATED FILES NOW MERGE BY UNION, PLUS A CORRECTION TO THE AFTERNOON ENTRY
 
 **`.gitattributes`: `commits-recent.txt` and `HANDOFF-recent.md` are `merge=union`.** The pre-commit hook rewrites both on every commit on every machine, so two machines that commit between pulls change the same top lines. It happened on the Windows box today: `git pull --rebase` stopped on `commits-recent.txt` with nothing else in conflict. **Mini: the same conflict inside `commit_paths` (`git pull --rebase --autostash`, five tries) would fail the push and could leave `~/metro-power-rankings` mid-rebase.** Read from the code, not seen on the mini. Bot commits whose subjects are excluded from the file (`Auto:`, `data: refresh-schedule`) leave it unchanged and are safe; owners, champions and handoff commits are not. Proof in a scratch repo: the same two-sided edit conflicts without the attribute and rebases clean with it, both sides' lines kept. The merged content can be wrong for one commit; the hook rewrites the file at the next one. `HANDOFF.md` is NOT union: a person resolves that one.
@@ -22,6 +33,7 @@
 **Coalition model, state.** `scripts/forecast/il_seat_sim.py` is in (`77c0d0aa6`): report only, 25 self-tests, Bader-Ofer with surplus agreements reproduces all seven real seat tables 2013 to 2022. `data/forecast/coalitions/polls-il.json` holds the results (proven) and the final polls (PROVISIONAL: transcribed through a page summariser, 2013 and 2015 rejected). **Mini, when convenient (step B2):** re-read the seven "Opinion polling for the ... Israeli legislative election" articles from raw wikitext with `parse_tables` and replace those rows. Nothing schedules the new script and nothing publishes from it.
 
 **Notion:** Decisions +4 (q_haredi 0.75; pledge break 0.15 rising toward 0.35; blocs first; generated files merge by union). Backlog: coalition row carries steps B and C done and the next steps. Silent failure register: correction added under the `commit_paths` entry.
+
 ## 2026-09-21 (afternoon) - windows cowork -> mini and next session: CPL 2026 DONE BY HAND, AND THE CRICKET RUNNER WOULD HAVE LOST ITS FIRST REAL PROMOTION
 
 **CPL.** The 20 to 21 Sep watch did not produce a promotion. Antigua & Barbuda Falcons are a first-time champion, which `cricket_finalize.py` refuses by design, and the Wikipedia final article still had no result at 11:00 UTC. Ashwin gave the result. Inserted by hand in the shape `build_row` writes: `public.champions` id 149514, source `cricket-finalizer`, metro St. John's (ANT) / `st-johns-ant`, `date_awarded` 2026-09-20, `is_current` true; id 148270 (Trinbago 2025) cleared. Not confirmed: whether the 22:30 UTC run sent a REFUSED ntfy or was a quiet no-op. **Mini: read that log.**

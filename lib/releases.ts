@@ -23,6 +23,8 @@ export const RELEASES: Release[] = [
     items: [
       "The Swedish hub carries the 13 September result: seats and vote shares for all eight Riksdag parties, taken from the Election Authority's final count.",
       "No government is recorded yet. Swedish coalition talks run long, so the hub will name a prime minister only once one takes office.",
+      "The Israel forecast showed wrong seat numbers from 11 to 21 September after the source table changed shape; it is corrected, and a poll that does not add up to 120 seats is now refused.",
+      "Two cricket champions are in: Antigua & Barbuda Falcons won the Caribbean Premier League on 20 September, and Galle Gallants won the Lanka Premier League on 8 August.",
     ],
   },
   {

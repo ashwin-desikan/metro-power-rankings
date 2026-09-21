@@ -109,6 +109,11 @@ CALENDAR, SPLIT = "calendar", "split"
 REGISTRY = {
     "ipl":                      {"page": "%s Indian Premier League",            "style": CALENDAR, "gender": None},
     "cpl":                      {"page": "%s Caribbean Premier League",         "style": CALENDAR, "gender": None},
+    # Added 2026-09-21. The LPL sat on the board with NO current holder for two months
+    # after the 8 Aug 2026 final (the 2025 edition was postponed and never played), and
+    # only the dormant check in check_overdue_titles.py said so. Calendar style: the
+    # split-season labels ("2022/23") ended with the 2023 edition.
+    "lanka-premier-league":     {"page": "%s Lanka Premier League",             "style": CALENDAR, "gender": None},
     "t20-blast":                {"page": "%s T20 Blast",                        "style": CALENDAR, "gender": None},
     "county-championship":      {"page": "%s County Championship",              "style": CALENDAR, "gender": None},
     "pakistan-super-league":    {"page": "%s Pakistan Super League",            "style": CALENDAR, "gender": None},
