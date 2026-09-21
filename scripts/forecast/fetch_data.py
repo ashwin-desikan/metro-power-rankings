@@ -113,7 +113,14 @@ def parse_tables(wt):
                 in_header = False
                 for c in re.split(r"\|\|", ln[1:]):
                     t, rs, cs = cell_parts(c)
-                    current.append(t)
+                    # A DATA cell can span columns too. When two lists merge,
+                    # Wikipedia keeps both header columns and writes one data
+                    # cell with colspan=2. Dropping the span left every later
+                    # value one column to the left of its header (Israel,
+                    # 2026-09-02 to 09-21: the Gov. bloc total was published as
+                    # a 46-seat party). Wide spans are event and note rows and
+                    # stay one cell, as before.
+                    current.extend([t] * (cs if 1 < cs <= 4 else 1))
             else:
                 # wikitext lets a cell continue on the next plain line
                 # (e.g. "! rowspan=3 |Polling\nperiod") — glue it on
@@ -604,6 +611,19 @@ def fetch_il():
     m = re.search(r"#REDIRECT\s*\[\[([^\]]+)\]\]", wt, re.I)
     if m:
         wt = wikitext(m.group(1))
+    parties, polls = il_polls_from_wikitext(wt)
+    json.dump({"source": "Wikipedia: Opinion polling for the 2026 Israeli legislative election (CC BY-SA 4.0)",
+               "parties": parties or [], "polls": polls},
+              open(os.path.join(OUT, "il_polls.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    print("IL seat polls:", len(polls), "parties:", parties)
+    if polls:
+        print("  latest:", polls[-1])
+
+
+IL_SEATS = 120
+
+def il_polls_from_wikitext(wt):
+    """(parties, polls) from the page wikitext. Pure, so the self-test can run it."""
     parties, polls = None, []
     for cols, rows in parse_tables(wt):
         joined = " ".join(cols).lower()
@@ -643,6 +663,12 @@ def fetch_il():
                         seats[k] = int(mnum.group(1))
             if sum(seats.values()) < 100:  # not a national seat row
                 continue
+            # The Knesset has 120 seats. A row that does not add up to it is a
+            # misread row, never a poll: publish nothing rather than a guess.
+            if abs(sum(seats.values()) - IL_SEATS) > 2:
+                print("  IL row REJECTED, seats sum to %d: %s %s"
+                      % (sum(seats.values()), date, r[firm_i][:40] if firm_i < len(r) else "?"))
+                continue
             gov = None
             if gov_i is not None and gov_i < len(r):
                 mg = re.search(r"(\d{2,3})", r[gov_i])
@@ -651,12 +677,9 @@ def fetch_il():
             polls.append({"date": date, "pollster": r[firm_i][:40] if firm_i < len(r) else "?",
                           "seats": seats, "gov": gov})
     polls.sort(key=lambda p: p["date"])
-    json.dump({"source": "Wikipedia: Opinion polling for the 2026 Israeli legislative election (CC BY-SA 4.0)",
-               "parties": parties or [], "polls": polls},
-              open(os.path.join(OUT, "il_polls.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print("IL seat polls:", len(polls), "parties:", parties)
-    if polls:
-        print("  latest:", polls[-1])
+    # a merged list spans two header columns, so its name arrives twice
+    parties = list(dict.fromkeys(parties or []))
+    return parties, polls
 
 # ---------------- Brazil & France (candidate-scenario polls) ----------------
 
@@ -831,6 +854,18 @@ _R2_WORDS = _R2_L4.replace("==== Second round ====", "==== Second-round matchups
 _R2_NONE = _R2_L4.replace("==== Second round ====", "==== Regional breakdown ====")
 
 
+_IL_MERGED = """{| class="wikitable"
+! Fieldwork date !! Polling firm !! Publisher !! Sample size !! Likud !! Together !! colspan=2 | RZP-Zehut !! Otzma !! Shas !! Others !! Gov.
+|-
+| colspan=12 | 1 Sep 2026: RZP and Zehut agree a joint list
+|-
+| 8 Sep 2026 || LRI || P4A || 500 || 50 || 50 || colspan=2 | 5 || 8 || 7 || 1.0% || 70
+|-
+| 10 Sep 2026 || Short || X || 500 || 50 || 50 || 5 || 8 || 40 || 1.0% || 70
+|}
+"""
+
+
 def _self_test():
     fails = []
 
@@ -862,12 +897,26 @@ def _self_test():
     check("slice keeps its table", "49" in body, True)
     check("no match returns empty", find_section(_R2_L4, r"zzz nothing"), "")
 
+    # Israel, 2026-09: a merged list is ONE data cell with colspan=2 under TWO
+    # header columns. The span was dropped, every later value moved one column
+    # left, and the Gov. bloc total was published as a party.
+    il_parties, il_polls = il_polls_from_wikitext(_IL_MERGED)
+    check("IL merged list: one poll survives", [p["pollster"] for p in il_polls], ["LRI"])
+    if il_polls:
+        check("IL merged list: seats land under their own header", il_polls[0]["seats"],
+              {"Likud": 50, "Together": 50, "RZP-Zehut": 5, "Otzma": 8, "Shas": 7})
+        check("IL merged list: Gov. column is read as gov", il_polls[0]["gov"], 70)
+    check("IL merged list: party named once", il_parties.count("RZP-Zehut"), 1)
+    # The third fixture row is the old failure shape (span missing, so values
+    # shift and the row sums to 148). It must be rejected, not averaged.
+    check("IL misread row is rejected", "Short" in [p["pollster"] for p in il_polls], False)
+
     if fails:
         print("SELF-TEST FAILED")
         for f in fails:
             print("  -", f)
         return 1
-    print("fetch_data self-test OK (%d cases)" % 7)
+    print("fetch_data self-test OK (%d cases)" % 12)
     return 0
 
 if __name__ == "__main__":

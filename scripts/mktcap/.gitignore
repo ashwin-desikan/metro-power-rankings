@@ -3,3 +3,4 @@ drop/
 seed/
 supabase_key.txt
 *.zip
+typesafe_key.txt

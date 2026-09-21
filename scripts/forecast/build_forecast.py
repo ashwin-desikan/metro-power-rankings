@@ -399,6 +399,13 @@ def il_forecast(ildata, sims=8000):
     if not polls:
         return None
     HALF_LIFE = 21.0
+    # 120 seats, always. A poll that does not add up is a misread table row
+    # (2026-09: the Gov. bloc total arrived as a 46-seat party and every real
+    # party was scaled down by a quarter). No valid poll means no block.
+    polls = [p for p in polls if abs(sum(p["seats"].values()) - 120) <= 2]
+    if not polls:
+        print("IL: every poll failed the 120-seat check, block withheld")
+        return None
     latest = {}
     for p in polls:
         key = p["pollster"].lower()

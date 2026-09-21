@@ -968,72 +968,72 @@
   "electionConfidence": "confirmed",
   "parties": [
    {
-    "name": "Haredi Public",
-    "seats": 36.2
-   },
-   {
-    "name": "Dems",
-    "seats": 17.2
+    "name": "Yashar",
+    "seats": 24.4
    },
    {
     "name": "Likud",
-    "seats": 15.0
+    "seats": 21.1
    },
    {
     "name": "Together",
-    "seats": 10.0
-   },
-   {
-    "name": "UTJ",
-    "seats": 6.5
-   },
-   {
-    "name": "Joint List",
-    "seats": 6.5
-   },
-   {
-    "name": "RZP- Zehut",
-    "seats": 5.7
-   },
-   {
-    "name": "Blue & White",
-    "seats": 5.7
-   },
-   {
-    "name": "Shas",
-    "seats": 5.7
-   },
-   {
-    "name": "Ra'am",
-    "seats": 5.5
+    "seats": 13.6
    },
    {
     "name": "Yisrael Beiteinu",
-    "seats": 4.0
+    "seats": 9.0
    },
    {
-    "name": "Yashar",
-    "seats": 2.0
+    "name": "Dems",
+    "seats": 8.9
+   },
+   {
+    "name": "Shas",
+    "seats": 8.1
+   },
+   {
+    "name": "UTJ",
+    "seats": 8.1
+   },
+   {
+    "name": "Joint List",
+    "seats": 7.6
    },
    {
     "name": "Otzma",
-    "seats": 0.0
+    "seats": 7.4
+   },
+   {
+    "name": "Ra'am",
+    "seats": 5.6
+   },
+   {
+    "name": "RZP- Zehut",
+    "seats": 4.4
    },
    {
     "name": "Reserv.- NEP",
+    "seats": 1.7
+   },
+   {
+    "name": "Blue & White",
     "seats": 0.0
    },
    {
     "name": "Amcha Yisrael",
     "seats": 0.0
+   },
+   {
+    "name": "Haredi Public",
+    "seats": 0.0
    }
   ],
-  "polls": 6,
-  "pollsters": 3,
+  "polls": 3,
+  "pollsters": 2,
   "latestPollDate": "2026-09-17",
   "gov": {
-   "avg": null,
-   "pMajority": null
+   "avg": 49.3,
+   "pMajority": 0.0
   },
   "monthsOut": 1.2,
   "sims": 8000,
