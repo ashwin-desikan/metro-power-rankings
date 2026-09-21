@@ -1,6 +1,35 @@
 {
-  "generated_at": "2026-09-21T22:03:21.862754+00:00",
+  "generated_at": "2026-09-21T22:13:27.724364+00:00",
   "jobs": [
+    {
+      "id": "ops-autofix",
+      "label": "Ops autofix (whitelist, acts on production)",
+      "schedule_text": "Daily at 00:15, 02:15, 04:15, 06:15, 08:15, 10:15, 12:15, 14:15, 16:15, 18:15, 20:15, 22:15 UTC",
+      "cadence": "daily",
+      "times": [
+        "00:15",
+        "02:15",
+        "04:15",
+        "06:15",
+        "08:15",
+        "10:15",
+        "12:15",
+        "14:15",
+        "16:15",
+        "18:15",
+        "20:15",
+        "22:15"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-21T22:15:00+00:00",
+      "last_run": {
+        "date": "2026-09-21",
+        "status": "ok",
+        "slot": "2026-09-21T20:15:00+00:00"
+      }
+    },
     {
       "id": "deploy-watch",
       "label": "Vercel canceled-build auto-heal",
@@ -155,40 +184,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-21T22:10:00+00:00",
+      "next_run": "2026-09-21T22:20:00+00:00",
       "last_run": {
         "date": "2026-09-21",
         "status": "ok",
-        "slot": "2026-09-21T22:00:00+00:00"
-      }
-    },
-    {
-      "id": "ops-autofix",
-      "label": "Ops autofix (whitelist, acts on production)",
-      "schedule_text": "Daily at 00:15, 02:15, 04:15, 06:15, 08:15, 10:15, 12:15, 14:15, 16:15, 18:15, 20:15, 22:15 UTC",
-      "cadence": "daily",
-      "times": [
-        "00:15",
-        "02:15",
-        "04:15",
-        "06:15",
-        "08:15",
-        "10:15",
-        "12:15",
-        "14:15",
-        "16:15",
-        "18:15",
-        "20:15",
-        "22:15"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-21T22:15:00+00:00",
-      "last_run": {
-        "date": "2026-09-21",
-        "status": "ok",
-        "slot": "2026-09-21T20:15:00+00:00"
+        "slot": "2026-09-21T22:10:00+00:00"
       }
     },
     {
