@@ -8,7 +8,7 @@ import { StatTile, JumpNav, Chronology, RecordsGrid, HowItWorks, HubFooter, HubT
 const PATH = "/elections/se";
 const TITLE = "Swedish General Elections";
 const DESC =
-  "Every Swedish general election from the first Second Chamber of 1866 to September 2022: forty years of a franchise that reached one adult man in five, the proportional breakthrough of 1911, the Social Democratic century, the four per cent threshold that has shaped every result since 1970, and the arrival of a party the others spent a decade refusing to talk to.";
+  "Every Swedish general election from the first Second Chamber of 1866 to September 2026: forty years of a franchise that reached one adult man in five, the proportional breakthrough of 1911, the Social Democratic century, the four per cent threshold that has shaped every result since 1970, and the arrival of a party the others spent a decade refusing to talk to.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -57,7 +57,7 @@ export default function SeElectionsPage() {
         <HubTitle code="se" title={TITLE} />
         <p className="text-[var(--text-muted)] max-w-3xl">{DESC}</p>
         <p className="mt-2 text-xs uppercase tracking-widest text-[var(--text-dim)]">
-          Source: Wikipedia election articles · as of {meta.built}
+          Sources: Wikipedia election articles and Valmyndigheten (val.se) · as of {meta.built}
         </p>
       </header>
 

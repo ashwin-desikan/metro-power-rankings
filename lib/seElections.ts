@@ -146,6 +146,6 @@ export function computeSeRecords(): SeElectionRecord[] {
     recs.push({ label: "Most seats won", value: seFmtInt(haul.p.seats), electionId: haul.e.id, detail: `${haul.p.name}, ${haul.e.label}` });
   }
   recs.push({ label: "The threshold", value: "4%", electionId: "1970", detail: "in force at every election since the chamber was unified in 1970" });
-  recs.push({ label: "Social Democratic firsts", value: "38", electionId: "2022", detail: "the party has come first at every election since 1917" });
+  recs.push({ label: "Social Democratic firsts", value: "39", electionId: "2026", detail: "the party has come first at every election since 1917" });
   return recs;
 }

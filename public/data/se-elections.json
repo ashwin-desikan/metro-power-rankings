@@ -2,10 +2,11 @@
  "meta": {
   "title": "Swedish General Elections",
   "sources": [
-   "Wikipedia: Swedish general election articles 1866-2022 (results tables and infoboxes)",
-   "Valmyndigheten and Statistics Sweden figures as reported there"
+   "Wikipedia: Swedish general election articles 1866-2026 (results tables and infoboxes)",
+   "Valmyndigheten and Statistics Sweden figures as reported there",
+   "Valmyndigheten (val.se), final result for the 2026 Riksdag election, read 21 September 2026"
   ],
-  "built": "2026-08-30"
+  "built": "2026-09-21"
  },
  "eras": [
   {
@@ -41,7 +42,7 @@
   {
    "key": "current",
    "label": "After the Sweden Democrats",
-   "span": "2014–2022",
+   "span": "2014–2026",
    "blurb": "The Sweden Democrats entered the Riksdag in 2010 and every election since has turned on who will and will not deal with them. In 2022 they finished second with 20.5% and supported a government from outside it under a written agreement, the arrangement that ended thirty years of the parties refusing to speak to them."
   }
  ],
@@ -5782,6 +5783,200 @@
    "pmAfter": null,
    "knownAs": null,
    "summary": "Social Democrats (S) finished first with 107 of 349 seats on 30.3% of the vote. Turnout 84.2%.",
+   "seatLeader": "Social Democrats (S)",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "2026",
+   "label": "2026",
+   "year": 2026,
+   "kind": "legislative",
+   "date": "13 September 2026",
+   "era": "current",
+   "totalSeats": 349,
+   "majoritySeats": 175,
+   "turnout": 84.9,
+   "parties": [
+    {
+     "name": "Social Democrats (S)",
+     "leader": null,
+     "seats": 99,
+     "seatChange": -8,
+     "votes": 1895989,
+     "share": 28.02,
+     "swing": null
+    },
+    {
+     "name": "Moderate Party (M)",
+     "leader": null,
+     "seats": 70,
+     "seatChange": 2,
+     "votes": 1343448,
+     "share": 19.85,
+     "swing": null
+    },
+    {
+     "name": "Sweden Democrats (SD)",
+     "leader": null,
+     "seats": 62,
+     "seatChange": -11,
+     "votes": 1183248,
+     "share": 17.48,
+     "swing": null
+    },
+    {
+     "name": "Left Party (V)",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 6,
+     "votes": 568781,
+     "share": 8.4,
+     "swing": null
+    },
+    {
+     "name": "Centre Party (C)",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 1,
+     "votes": 475780,
+     "share": 7.03,
+     "swing": null
+    },
+    {
+     "name": "Christian Democrats (KD)",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 3,
+     "votes": 417490,
+     "share": 6.17,
+     "swing": null
+    },
+    {
+     "name": "Green Party (MP)",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 4,
+     "votes": 414307,
+     "share": 6.12,
+     "swing": null
+    },
+    {
+     "name": "Liberals (L)",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 3,
+     "votes": 361187,
+     "share": 5.34,
+     "swing": null
+    },
+    {
+     "name": "Örebro Party (ÖrP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 39644,
+     "share": 0.59,
+     "swing": null
+    },
+    {
+     "name": "Alternative for Sweden (AfS)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 26729,
+     "share": 0.39,
+     "swing": null
+    },
+    {
+     "name": "Christian Values Party (KVp)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 9017,
+     "share": 0.13,
+     "swing": null
+    },
+    {
+     "name": "Ambition Sweden (Ambi)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 7679,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Pirate Party (PP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 7464,
+     "share": 0.11,
+     "swing": null
+    },
+    {
+     "name": "Citizens' Coalition (MED)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 4118,
+     "share": 0.06,
+     "swing": null
+    },
+    {
+     "name": "Human Rights and Democracy (MoD)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 3556,
+     "share": 0.05,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Sweden (SKP)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 2167,
+     "share": 0.03,
+     "swing": null
+    },
+    {
+     "name": "Enad Röst (ER)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1286,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "Nuance Party (PNy)",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 0,
+     "votes": 1069,
+     "share": 0.02,
+     "swing": null
+    },
+    {
+     "name": "106 other parties (fewer than 1,000 votes)",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": 4470,
+     "share": 0.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ulf Kristersson",
+    "party": "Moderate Party"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Social Democrats (S) finished first with 99 of 349 seats on 28.0% of the vote. Turnout 84.9%.",
    "seatLeader": "Social Democrats (S)",
    "caveat": null,
    "unfree": null

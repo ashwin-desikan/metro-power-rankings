@@ -218,9 +218,10 @@ export const ELECTION_HUBS: Record<string, ElectionHubMeta> = {
   // Norway's polling day is fixed by statute to a Monday in September; the 2029
   // day itself is not named in the source, so it sorts as expected.
   no: { code: "no", flag: "no", name: "Norway", href: "/elections/no", last: "parliamentary, 8 September 2025", next: "parliamentary, September 2029", nextDate: "2029-09-10", nextConfidence: "expected", tier: "compact", governmentType: "parliamentary" },
-  // Sweden votes on the second Sunday of September every fourth year, which the
-  // 2022 article states outright. For 2026 that is 13 September.
-  se: { code: "se", flag: "se", name: "Sweden", href: "/elections/se", last: "general election, 11 September 2022", next: "general election, 13 September 2026", nextDate: "2026-09-13", nextConfidence: "confirmed", tier: "compact", governmentType: "parliamentary" },
+  // Sweden votes on the second Sunday of September every fourth year, fixed by
+  // the Elections Act rather than by a proclamation, so the day is confirmed
+  // four years out. For 2030 that is 8 September.
+  se: { code: "se", flag: "se", name: "Sweden", href: "/elections/se", last: "general election, 13 September 2026", next: "general election, 8 September 2030", nextDate: "2030-09-08", nextConfidence: "confirmed", tier: "compact", governmentType: "parliamentary" },
   co: { code: "co", flag: "co", name: "Colombia", href: "/elections/co", last: "presidential runoff, 21 June 2026", next: "congressional and presidential, expected 2030", nextDate: "2030-03-10", nextConfidence: "expected", tier: "compact", governmentType: "presidential" },
   cd: { code: "cd", flag: "cd", name: "DR Congo", href: "/elections/cd", last: "general election, 20 December 2023", next: "general election, expected December 2028", nextDate: "2028-12-20", nextConfidence: "expected", tier: "compact", governmentType: "semi-presidential" },
   cl: { code: "cl", flag: "cl", name: "Chile", href: "/elections/cl", last: "presidential runoff, 14 December 2025", next: "general election, expected 2029", nextDate: "2029-11-18", nextConfidence: "expected", tier: "compact", governmentType: "presidential" },

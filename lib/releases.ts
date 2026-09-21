@@ -18,6 +18,14 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-21",
+    headline: "Sweden's 2026 general election is in",
+    items: [
+      "The Swedish hub carries the 13 September result: seats and vote shares for all eight Riksdag parties, taken from the Election Authority's final count.",
+      "No government is recorded yet. Swedish coalition talks run long, so the hub will name a prime minister only once one takes office.",
+    ],
+  },
+  {
     date: "2026-09-20",
     headline: "Forecasts that lead with the answer",
     items: [
