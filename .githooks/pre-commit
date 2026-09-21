@@ -16,6 +16,14 @@
 #
 # Escape hatch for emergencies: SKIP_NOTION_CHECK=1 prints a loud warning
 # and lets the commit through anyway.
+#
+# SECOND JOB, added 2026-09-21: regenerate the two small files the Notion
+# reconciler actually reads -- HANDOFF-recent.md and commits-recent.txt. It
+# cannot fetch a 1 MB HANDOFF.md and cannot reach GitHub's API or commits
+# page, so without these it reconciles Notion against sources it cannot see.
+# Note the Notion check below can exit 0 through several paths, so that check
+# is a FUNCTION and the generation runs after it either way -- appending to
+# the bottom of this file would have run only on the rejection path.
 
 REPO_ROOT=$(git rev-parse --show-toplevel) || exit 0
 
@@ -27,8 +35,9 @@ REPO_ROOT=$(git rev-parse --show-toplevel) || exit 0
 # commit. --diff-filter=ACMR means a HANDOFF.md deletion or a rename AWAY
 # from HANDOFF.md is not "touched" for this purpose -- there is nothing to
 # check added lines against.
+notion_line_check() {
 TOUCHES_HANDOFF=$(git diff --cached --name-only --diff-filter=ACMR -- HANDOFF.md)
-[ -z "$TOUCHES_HANDOFF" ] && exit 0
+[ -z "$TOUCHES_HANDOFF" ] && return 0
 
 # Added lines only (unified diff, zero context), with the "+++ b/HANDOFF.md"
 # file header stripped out so it can never be mistaken for content.
@@ -36,10 +45,10 @@ ADDED=$(git diff --cached -U0 -- HANDOFF.md | grep '^+' | grep -v '^+++ ')
 
 # Nothing actually added (e.g. a pure deletion within the file) -- nothing
 # to check.
-[ -z "$ADDED" ] && exit 0
+[ -z "$ADDED" ] && return 0
 
 if printf '%s\n' "$ADDED" | grep -Eq '^\+(- |### )?(\*\*Notion:\*\*|Notion:)'; then
-  exit 0
+  return 0
 fi
 
 if [ "$SKIP_NOTION_CHECK" = "1" ]; then
@@ -49,7 +58,7 @@ if [ "$SKIP_NOTION_CHECK" = "1" ]; then
   echo "  anyway. This is an emergency escape hatch, not normal practice --" >&2
   echo "  go back and add the Notion line as soon as you can." >&2
   echo "" >&2
-  exit 0
+  return 0
 fi
 
 echo "" >&2
@@ -65,4 +74,40 @@ echo "  'Notion is the source of truth' section." >&2
 echo "" >&2
 echo "  Emergency override: SKIP_NOTION_CHECK=1 git commit ..." >&2
 echo "" >&2
-exit 1
+return 1
+}
+
+notion_line_check || exit 1
+
+# --- generated inputs for the Notion reconciler ------------------------------
+# Both files are GENERATED and staged automatically; edit HANDOFF.md, never
+# these. Kept in the repo rather than produced on demand because the thing that
+# reads them cannot run scripts -- it can only read files it is handed.
+
+# HANDOFF-recent.md, only when HANDOFF.md is part of this commit. Reads the
+# STAGED blob, so what gets summarised is exactly what is being committed.
+if [ -n "$(git diff --cached --name-only --diff-filter=ACMR -- HANDOFF.md)" ]; then
+  if ! git show :HANDOFF.md | python3 "$REPO_ROOT/scripts/handoff_recent.py" --stdin --days 7; then
+    echo "" >&2
+    echo "pre-commit REJECTED: scripts/handoff_recent.py failed on the staged" >&2
+    echo "  HANDOFF.md, so HANDOFF-recent.md would go stale without anyone" >&2
+    echo "  noticing. Fix the error above and commit again." >&2
+    echo "" >&2
+    exit 1
+  fi
+  git add "$REPO_ROOT/HANDOFF-recent.md"
+fi
+
+# commits-recent.txt every time, since any commit changes the log. `Auto:` bot
+# commits are excluded: they are the bulk of the history and say nothing a
+# human reconciling Notion needs. NOTE it is generated from HEAD, so it always
+# lags by exactly this commit -- inherent to a pre-commit hook, and harmless
+# for its purpose, which is "what has been going on lately".
+if git log --no-merges --invert-grep --grep='^Auto:' --date=iso-strict \
+     --pretty='%ad  %h  %s' -n 80 > "$REPO_ROOT/commits-recent.txt"; then
+  git add "$REPO_ROOT/commits-recent.txt"
+else
+  echo "pre-commit WARNING: could not regenerate commits-recent.txt" >&2
+fi
+
+exit 0
