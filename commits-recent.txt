@@ -1,5 +1,5 @@
-2026-09-21T11:21:07+01:00  48165a0fb  deploy: build 19b8c9b0e, Sweden 2026 result [deploy-retry] [vercel skip]
-2026-09-21T11:21:05+01:00  0918766dc  handoff: Israel forecast fix, Sweden push incident, handoff_recent UTF-8 fix [vercel skip]
+2026-09-21T11:21:07+01:00  7cb1f3d1f  deploy: build 19b8c9b0e, Sweden 2026 result [deploy-retry]
+2026-09-21T11:21:05+01:00  d93c11661  handoff: Israel forecast fix, Sweden push incident, handoff_recent UTF-8 fix [vercel skip]
 2026-09-21T11:14:23+01:00  1d811d4de  forecast: Israel colspan fix, 120-seat guard, hand-corrected il block [vercel skip]
 2026-09-21T10:19:56+01:00  19b8c9b0e  elections(se): file the 2026 general election result
 2026-09-21T10:00:13+01:00  7fb8881e9  reconciler: entry count in the HANDOFF-recent banner, plus workflows-list.txt for the Monday audit [vercel skip]
