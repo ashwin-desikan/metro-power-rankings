@@ -1,3 +1,4 @@
+2026-09-21T11:52:53+01:00  e00b88927  Champions: CPL 2026, Antigua & Barbuda Falcons; cricket runner path fix; coalition research [vercel skip]
 2026-09-21T11:21:07+01:00  7cb1f3d1f  deploy: build 19b8c9b0e, Sweden 2026 result [deploy-retry]
 2026-09-21T11:21:05+01:00  d93c11661  handoff: Israel forecast fix, Sweden push incident, handoff_recent UTF-8 fix [vercel skip]
 2026-09-21T11:14:23+01:00  1d811d4de  forecast: Israel colspan fix, 120-seat guard, hand-corrected il block [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-19T18:08:46+01:00  59bdcfded  football: refresh live bundles [vercel skip]
 2026-09-19T14:19:59+01:00  915ce45f2  revalidate: allow the nba-elo tag, which nothing could flush [vercel skip]
 2026-09-19T14:17:49+01:00  58e0be6de  NBA 2024: the Mavericks/Clippers series was six games, not seven [vercel skip]
-2026-09-19T14:12:05+01:00  b0b43e2f8  F1 poller: retry, never hang, and stop paging hourly for one outage [vercel skip]
