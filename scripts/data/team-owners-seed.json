@@ -936,12 +936,12 @@
    "owner_type": "family",
    "stake_label": "Majority",
    "stake_pct": null,
-   "confidence": "cross-checked",
+   "confidence": "sourced",
    "co_controllers": "",
-   "minority": "",
-   "note": "Yankee Global Enterprises also holds 10% of New York City FC.",
-   "source_url": "https://fanancialsports.com/team-owners",
-   "source_date": "2026-08-11"
+   "minority": "Apollo Sports Capital (agreed Aug 2026; reported at 4% or more of Yankee Global Enterprises, with a larger structure reported single-source)",
+   "note": "Apollo Sports Capital agreed a $2.6bn investment in Yankee Global Enterprises, announced by Apollo on 11 Aug 2026 as a mix of credit and equity. Apollo's release says the Steinbrenner family keeps full control of the Yankees, Hal Steinbrenner remains Managing General Partner and MLB control person, and Apollo Sports Capital chief executive Al Tylis takes a newly created seat on the YGE board. Sportico reported on 20 Sep 2026 that the Steinbrenners and some limited partners sold at least 4% of YGE as part of the deal, that the family retains more than 60%, and that the investment values YGE above $10bn. The New York Post reported a larger structure, 8% in equity now plus 8% in preferred stock convertible after four years, at a valuation above $12bn; that version is single-source and would need MLB to waive its 15% cap on a single private equity fund. Control is unchanged either way. Yankee Global Enterprises also holds 10% of New York City FC.",
+   "source_url": "https://www.sportico.com/business/team-sales/2026/steinbrenner-family-sell-yankees-stake-apollo-1234945365/",
+   "source_date": "2026-09-20"
   },
   {
    "team": "Philadelphia Phillies",
