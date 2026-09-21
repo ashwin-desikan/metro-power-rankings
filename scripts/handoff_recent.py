@@ -27,7 +27,7 @@ MIN_ENTRIES = 4
 # Deliberately carries NO timestamp. A generated-at line would make the output
 # differ on every run, which would defeat the unchanged-file check below and
 # put a pointless diff in every single commit.
-BANNER = """<!-- GENERATED FILE - DO NOT EDIT BY HAND.
+BANNER_TEMPLATE = """<!-- GENERATED FILE - DO NOT EDIT BY HAND.
      Written by scripts/handoff_recent.py from HANDOFF.md, which is the source
      of truth. Holds only the most recent entries, because the Notion
      reconciler cannot fetch the full HANDOFF.md. Edits here are overwritten.
@@ -36,7 +36,11 @@ BANNER = """<!-- GENERATED FILE - DO NOT EDIT BY HAND.
      point: the reader fetches this over HTTP and its window can stop partway,
      so whatever it does see must be the most recent. Chronological order put
      2026-09-14 at the top and today's entry out of reach, which is exactly how
-     the 2026-09-21 run failed even after this file existed. -->
+     the 2026-09-21 run failed even after this file existed.
+
+     entries: {n}, {oldest} to {newest}
+     If the reader counts fewer than {n} entries, its fetch window stopped
+     short and the entries it did not see are the OLDEST ones. -->
 """
 
 
@@ -105,7 +109,15 @@ def main(argv=None):
     # Newest first: see the banner. select() works in file order because the
     # oldest-first trimming is easier to reason about there; only the OUTPUT
     # is reversed.
-    body = BANNER + "\n" + "".join(e[2] for e in reversed(kept))
+    # The count and range let the reader PROVE it saw the whole file rather
+    # than infer it: if it counts fewer entries than the banner promises, its
+    # window stopped short. Every value here is derived from `kept`, so the
+    # banner only changes when the selection does and the unchanged-file check
+    # below still holds.
+    banner = BANNER_TEMPLATE.format(n=len(kept),
+                                    oldest=kept[0][0].isoformat(),
+                                    newest=kept[-1][0].isoformat())
+    body = banner + "\n" + "".join(e[2] for e in reversed(kept))
     if not body.endswith("\n"):
         body += "\n"
 

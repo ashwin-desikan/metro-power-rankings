@@ -118,4 +118,22 @@ else
   echo "pre-commit WARNING: could not regenerate commits-recent.txt" >&2
 fi
 
+# workflows-list.txt, also every time. The reconciler's Monday audit needs to
+# know which GitHub Actions exist and when they fire, and it CANNOT list a
+# directory: the .github/workflows tree page is disallowed by robots.txt, which
+# is what its 2026-09-21 run hit. One line per workflow, each followed by its
+# indented cron lines (with line numbers, so a mismatch can be pointed at).
+# Anchored on $REPO_ROOT like the rest of this hook so it does not depend on
+# the cwd, but printed repo-relative, which is how the audit refers to them.
+# Never fails the commit: a missing directory or an unreadable file is a
+# warning, not a reason to block work.
+{
+  for f in "$REPO_ROOT"/.github/workflows/*.yml "$REPO_ROOT"/.github/workflows/*.yaml; do
+    [ -e "$f" ] || continue
+    printf '%s\n' "${f#"$REPO_ROOT"/}"
+    grep -nE '^[[:space:]]*-?[[:space:]]*cron:' "$f" | sed 's/^/    /'
+  done
+} > "$REPO_ROOT/workflows-list.txt" 2>/dev/null || true
+git add "$REPO_ROOT/workflows-list.txt" 2>/dev/null || true
+
 exit 0

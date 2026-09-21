@@ -1,0 +1,46 @@
+.github/workflows/anomaly-digest.yml
+    28:    - cron: "0 6 * * 1"
+.github/workflows/billionaires-refresh.yml
+.github/workflows/business-daily-refresh.yml
+.github/workflows/cfl-refresh.yml
+    12:    - cron: "0 12 * * *"     # 12:00 UTC daily; ingest is a no-op in the offseason
+.github/workflows/civic-data-refresh.yml
+.github/workflows/cloudflare-purge.yml
+.github/workflows/conflicts-refresh.yml
+.github/workflows/daily-rebuild.yml
+.github/workflows/espn-standings-snapshot.yml
+    17:    - cron: "25 */3 * * *"
+.github/workflows/euro-comps-refresh.yml
+.github/workflows/external-url-monitor.yml
+    30:    - cron: "30 7 * * *"
+.github/workflows/f1-refresh.yml
+.github/workflows/fiba-ranking.yml
+.github/workflows/footy-refresh.yml
+    31:    - cron: "0 22 * * *"     # 22:00 UTC daily; ingests are a no-op in the offseason
+    32:    - cron: "0 6,12 * 9,10 *"  # finals season: post-match AEST catch-ups (Sep-Oct)
+.github/workflows/forecast-weekly.yml
+.github/workflows/honours-2026-champions.yml
+    17:    - cron: "10 8 * 8-10 3,6"   # Wed + Sat 08:10 UTC, Aug-Oct
+.github/workflows/honours-county-cricket.yml
+    12:    - cron: "0 6 5 10 *"   # 05 Oct, 06:00 UTC
+.github/workflows/honours-rugby-league.yml
+    11:    - cron: "0 6 5 11 *"   # 05 Nov, 06:00 UTC
+.github/workflows/leaders-refresh.yml
+.github/workflows/majors-ingest.yml
+    35:    - cron: "30 5 * * *"   # daily 05:30 UTC (finals finish the prior day)
+.github/workflows/mlb-sim-refresh.yml
+.github/workflows/nfl-live-refresh.yml
+.github/workflows/orgs-monthly.yml
+    22:    - cron: "0 7 1 * *"
+.github/workflows/predictions-refresh.yml
+.github/workflows/rugby-rankings.yml
+.github/workflows/season-sims-refresh.yml
+.github/workflows/staleness-watch.yml
+    26:    - cron: "0 */6 * * *"
+.github/workflows/test.yml
+.github/workflows/updates-drift-watcher.yml
+    40:    - cron: "0 9 * * *"
+.github/workflows/wc2026-daily.yml
+.github/workflows/wnba-refresh.yml
+    16:    - cron: "0 8 * * *"     # 08:00 UTC daily (after night games); ingest is a no-op in the offseason
+.github/workflows/wwc-2026-tracker.yml
