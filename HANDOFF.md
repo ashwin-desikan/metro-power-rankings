@@ -17128,3 +17128,25 @@ One of those failures was mine, twice over: a first test asserted the 7-day wind
 **Two known limits, stated rather than hidden.** `commits-recent.txt` is written in a PRE-commit hook, so it is generated from HEAD and always lags by exactly the commit being made; a post-commit hook cannot fix that without amending. And `^Auto:` does not catch the `data: refresh-schedule.json` bot commits -- **56 of the 80 lines** on the day this shipped -- so roughly 70 percent of the file is still routine noise. Widening the filter or raising `-n` would help; not done, because the command was specified exactly.
 
 **Notion:** Decisions +1 ("The Notion reconciler reads small generated files, not HANDOFF.md or GitHub", Infra / deploy, Ashwin 2026-09-21), carrying both known limits as its open questions. Scheduled jobs: the "Notion reconciler (Citizen of Nowhere)" row updated -- Purpose now names the two generated files instead of "the last 36h of HANDOFF.md and commits", Notes carry the sizes, the why and the limits, Last verified 2026-09-21. Backlog unchanged.
+
+
+## 2026-09-21 (later) - mini -> windows and next session: commits-recent.txt IS MOSTLY SIGNAL NOW
+
+Ashwin, on the noise limit filed an hour earlier: "widen the filter to exclude the data: refresh-schedule commits too". Done in the pre-commit hook.
+
+**The measurement that prompted it.** With only `^Auto:` excluded, **56 of the 80 lines** were `data: refresh-schedule.json` -- the dispatcher rewriting its own schedule export, which lands several times an hour. The file built specifically so the reconciler could read something useful was about 70 percent filler.
+
+**The change** is one more `--grep` on the existing `--invert-grep`. Worth knowing why that works rather than assuming it: multiple `--grep` patterns are OR'd, and `--invert-grep` then inverts the whole match, so a commit matching EITHER pattern is dropped. Verified before committing rather than after -- zero survivors matched either pattern.
+
+**What it bought, measured both ways:**
+```
+content: 56 of 80 lines were noise  ->  67 of 80 are substantive
+reach:   the same 80 lines covered 2 days  ->  they cover 3
+```
+The reach matters as much as the content: the file is capped at 80 lines, so every line of filler was costing a line of real history the reconciler could have seen.
+
+**What was deliberately left in.** About 13 lines are still routine -- `football: refresh live bundles`, `chore(substack)`, `chore(activity)`, `screen: weekly`. They stay because they are low-volume and occasionally meaningful (a football bundle refresh failing IS news), unlike a schedule export that fires several times an hour and never says anything. The rule being applied is "exclude what cannot carry information", not "exclude everything automated".
+
+**Still true, and structural:** `commits-recent.txt` is generated in a PRE-commit hook, so it is written from HEAD and always lags by exactly the commit being made. A post-commit hook cannot fix that without amending. It is recorded on the Decisions row as the one remaining open question.
+
+**Notion:** Decisions: the reconciler-inputs row updated -- its Rule now names both excluded bot families, and its Open questions are down to the pre-commit lag, with the noise limit marked CLOSED and the before/after numbers recorded. Scheduled jobs: the "Notion reconciler (Citizen of Nowhere)" row's Notes updated with the widened filter and the same measurements, Last verified 2026-09-21. Backlog unchanged.

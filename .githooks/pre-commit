@@ -98,13 +98,21 @@ if [ -n "$(git diff --cached --name-only --diff-filter=ACMR -- HANDOFF.md)" ]; t
   git add "$REPO_ROOT/HANDOFF-recent.md"
 fi
 
-# commits-recent.txt every time, since any commit changes the log. `Auto:` bot
-# commits are excluded: they are the bulk of the history and say nothing a
-# human reconciling Notion needs. NOTE it is generated from HEAD, so it always
-# lags by exactly this commit -- inherent to a pre-commit hook, and harmless
-# for its purpose, which is "what has been going on lately".
-if git log --no-merges --invert-grep --grep='^Auto:' --date=iso-strict \
-     --pretty='%ad  %h  %s' -n 80 > "$REPO_ROOT/commits-recent.txt"; then
+# commits-recent.txt every time, since any commit changes the log. Two families
+# of bot commit are excluded, because they are the bulk of the history and say
+# nothing a human reconciling Notion needs: `Auto:` (the refresh bots) and
+# `data: refresh-schedule` (the dispatcher rewriting its own schedule export,
+# which lands several times an hour). Widened 2026-09-21 after measuring the
+# first version: `^Auto:` alone left 56 of 80 lines as refresh-schedule noise,
+# so the file the reconciler reads was about 70 percent filler. Multiple
+# --grep are OR'd and --invert-grep then inverts the lot, so this excludes a
+# commit matching EITHER pattern.
+#
+# NOTE it is generated from HEAD, so it always lags by exactly this commit --
+# inherent to a pre-commit hook, and harmless for its purpose, which is "what
+# has been going on lately".
+if git log --no-merges --invert-grep --grep='^Auto:' --grep='^data: refresh-schedule' \
+     --date=iso-strict --pretty='%ad  %h  %s' -n 80 > "$REPO_ROOT/commits-recent.txt"; then
   git add "$REPO_ROOT/commits-recent.txt"
 else
   echo "pre-commit WARNING: could not regenerate commits-recent.txt" >&2
