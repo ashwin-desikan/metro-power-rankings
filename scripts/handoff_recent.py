@@ -96,7 +96,11 @@ def main(argv=None):
     args = ap.parse_args(argv)
 
     root = Path(__file__).resolve().parent.parent
-    text = sys.stdin.read() if args.stdin else (root / "HANDOFF.md").read_text()
+    # Bytes in, UTF-8 decoded here. The locale default is cp1252 on the Windows
+    # box, where the first trophy emoji in an entry failed the pre-commit hook
+    # (2026-09-21); on the mini the default happens to be UTF-8, so it passed.
+    raw = sys.stdin.buffer.read() if args.stdin else (root / "HANDOFF.md").read_bytes()
+    text = raw.decode("utf-8").replace("\r\n", "\n")
     out_path = Path(args.out) if args.out else root / "HANDOFF-recent.md"
 
     entries = split_entries(text)
@@ -122,15 +126,15 @@ def main(argv=None):
         body += "\n"
 
     try:
-        unchanged = out_path.read_text() == body
-    except OSError:
+        unchanged = out_path.read_bytes().decode("utf-8").replace("\r\n", "\n") == body
+    except (OSError, UnicodeDecodeError):
         unchanged = False
     if unchanged:
         print(f"handoff_recent: {out_path.name} already current "
               f"({len(kept)} of {len(entries)} entries, {len(body.encode())} bytes)")
         return 0
 
-    out_path.write_text(body)
+    out_path.write_bytes(body.encode("utf-8"))
     print(f"handoff_recent: wrote {out_path.name} "
           f"({len(kept)} of {len(entries)} entries, {len(body.encode())} bytes)")
     return 0

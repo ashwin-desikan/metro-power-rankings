@@ -9,10 +9,31 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 44, 2026-09-14 to 2026-09-21
-     If the reader counts fewer than 44 entries, its fetch window stopped
+     entries: 45, 2026-09-14 to 2026-09-21
+     If the reader counts fewer than 45 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
+## 2026-09-21 (midday) - windows cowork -> mini and next session: THE ISRAEL FORECAST PUBLISHED A BLOC TOTAL AS A PARTY FOR THREE WEEKS. FIX PUSHED AS `1d811d4de`. ALSO: `19b8c9b0e` (SWEDEN) WENT UP UNDER A SKIP-TAGGED HEAD AND HAS NO BUILD
+
+**What was wrong.** `public/data/forecast.json` showed "Haredi Public 36.2" as the largest Israeli party and Likud at 15.0 against polls of 18 to 23. `gov.avg` and `pMajority` were null. History from `git show <sha>:data/forecast/il_polls.json`: clean on 08-26 (16 parties, gov 49, sum 120); ZERO polls from 09-02 (the RZP-Zehut and Joint List mergers changed the header); wrong numbers from 09-11.
+
+**Cause (inferred, strong).** A merged list is ONE data cell with `colspan=2` under TWO header columns. `parse_tables` kept header spans and dropped data-cell spans, so every later value moved one column left and the Gov. total landed under the last party header. Evidence: on the three polls kept, RZP-Zehut recovered as `120 - other seats` equals RZP-Zehut recovered as `gov - (Likud + Otzma + Shas + UTJ)`, and the re-aligned averages match the last clean poll (08-20 Lazar) party by party. No session here could read the raw wikitext (Wikipedia is not reachable from cowork), so **the mini's next forecast run is the live proof.**
+
+**Shipped in `1d811d4de`:**
+- `scripts/forecast/fetch_data.py`: data cells expand `colspan` of 2 to 4 (wider spans are note rows and stay one cell); `fetch_il` split so `il_polls_from_wikitext(wt)` is pure; a row whose seats are not 120 (tolerance 2) is REJECTED and logged; party names de-duplicated. Self-test 7 -> 12 cases, fixture carries the real failure shape.
+- `scripts/forecast/build_forecast.py`: `il_forecast` filters on the same 120 check and returns None when nothing survives. It no longer hides a wrong total by rescaling it.
+- `data/forecast/il_polls.json`, `public/data/forecast.json` (`il` key only, verified), `data/forecast/snapshots/il-2026-10-27.json`: hand-corrected at Ashwin's ruling. 3 of 6 polls kept (LRI 09-08, Tatika 09-10 and 09-17). Three were dropped because a second lost column (Amcha Yisrael, probably 4 seats) left one identity only. Result: Yashar 24.4, Likud 21.1, Together 13.6, gov 49.3. The next fetch overwrites `il_polls.json` by design.
+- `scripts/mktcap/jev_metro_pilot.py` (evaluation only, no `--write`) and a `typesafe_key.txt` line in `scripts/mktcap/.gitignore`. Deferred: no TypeSafe key.
+
+**For the mini, on the first forecast run after this lands:** PASS is `IL seat polls: N` with N >= 6, no `IL row REJECTED` lines, gov not null. If EVERY row is rejected and `il` leaves forecast.json, the guard worked and the colspan diagnosis is wrong: print the raw header of the first Likud table and post it here.
+
+**The push, and what it swept up.** Two sessions were working in the one Windows clone. (1) The index already held `HANDOFF-recent.md` and `scripts/handoff_recent.py`, staged by an earlier session and older than the remote's copies (89 lines against 140). They were taken out of the commit and moved to `%TEMP%`; the remote versions stand. (2) `git pull --rebase` replayed TWO local commits, not one: underneath was `19b8c9b0e` "elections(se): file the 2026 general election result" (author time 10:19 BST, session_014ZkZvdmw1MgEKQt84WVQdK, touches `app/`, `lib/`, `public/`, carries today's release note, untagged on purpose). It reached origin beneath a `[vercel skip]` HEAD, so GitHub made one deployment for the push HEAD only and Vercel CANCELED it. **Sweden has no build.** Measured with the Vercel MCP at 10:20 UTC: paid production builds today 0; the last READY is `6d6a29447` from 09-20 09:25 UTC. Recovery is the documented one, an empty commit whose subject carries `[deploy-retry]`, pushed LAST. Whether `19b8c9b0e` passed `npm run verify` is not known to this session.
+
+**Also noted.** `check_forecast_health` warned "Israel: gov.avg is empty" on every run since 09-11 and nobody read it.
+
+**`scripts/handoff_recent.py` failed its first run on Windows and is fixed in this commit.** It read stdin and wrote its output in the locale encoding. That is UTF-8 on the mini and cp1252 on the Windows box, where the first emoji inside the seven-day window raised `UnicodeEncodeError: surrogates not allowed` and the pre-commit hook rejected every commit that staged HANDOFF.md (an empty `--allow-empty` commit too, because HANDOFF.md was still staged). It now reads bytes, decodes UTF-8, normalises CRLF and writes bytes. Reproduced before the fix with `LC_ALL=C PYTHONUTF8=0`; after it, output is byte-identical under both locales (45 of 198 entries).
+
+**Notion:** Decisions +3 (Arab lists differentiated; P(no government) a headline for both countries; 120-seat rejection rule). Backlog: coalition probabilities row -> In progress with the rulings and the NZ date of 7 Nov; +1 P0 watch (first mini forecast run after the parser fix); +1 Jev pilot row (Blocked, P3). Silent failure register +1 entry.
 ## 2026-09-21 (evening) - mini -> windows and next session: THE RECONCILER CAN NOW COUNT ITS INPUT AND SEE THE WORKFLOWS
 
 Two small changes, both closing Backlog rows the reconciler filed about itself this morning.
@@ -34,6 +55,7 @@ The count is derived only from the selection, so the file is still not rewritten
 **Two implementation notes worth keeping.** The hook's cron grep uses `[[:space:]]` rather than `\s`, because `\s` is a GNU extension and this hook runs under `/bin/sh` on macOS; both were measured against the real files and match the same 14 lines. And the hand-run of that block failed first time under zsh, which aborts on an unmatched glob, where `/bin/sh` passes the pattern through for `[ -e "$f" ] || continue` to skip. The hook is `#!/bin/sh`, so it was the ad-hoc invocation that was wrong, not the code; worth remembering before "fixing" a glob that only fails when pasted into a terminal.
 
 **Notion:** Backlog: "Reconciler: cannot prove it saw every 2026-09-20 HANDOFF entry" set Done with the count-and-range design and its verification; "Reconciler: the Monday GitHub Actions audit cannot list .github/workflows from the cloud" set Done on the repo side, with the prompt gap recorded on the row rather than left implied. Notion operating contract: `workflows-list.txt` added as input 3 under the backstop, with the instruction to use it in step 3 instead of listing the directory. No Decisions or Scheduled jobs rows changed: no ruling was made and no job's schedule moved.
+
 ## 2026-09-21 (later still) - mini -> windows and next session: RAN THE RECONCILER, IT STILL COULD NOT SEE TODAY, AND THE FIX WAS ORDERING NOT SIZE
 
 Ashwin: "run the reconciler now". Running it exposed that this morning's work was not finished, which is the point of running a thing rather than declaring it done.
