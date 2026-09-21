@@ -1,3 +1,4 @@
+2026-09-22T00:05:58+01:00  5fe3b7594  football: refresh live bundles [vercel skip]
 2026-09-21T20:52:41+01:00  000351242  forecast(il): step B2, re-read the seven polling articles from raw wikitext [vercel skip]
 2026-09-21T19:11:10+01:00  5d10d273f  Release notes: trim 21 Sep entry
 2026-09-21T18:09:30+01:00  1bcd25e73  football: refresh live bundles [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-19T21:30:22+01:00  6e0df2fea  HANDOFF: 2026-09-19 night, one release queued on local main, seven unflushable tags, an Awards sheet fault [vercel skip]
 2026-09-19T21:30:21+01:00  7f58ffc06  check:cache-tags, and the seven data tags it found that no flush could reach
 2026-09-19T21:30:20+01:00  eb3c0f8e9  A subscribe path on the homepage and the digest, and Writing in the About menu
-2026-09-19T21:30:19+01:00  4db7dba60  NFL season hubs: the year's award winners and All-Pro picks, under era club names
