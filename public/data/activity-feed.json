@@ -1,13 +1,20 @@
 {
-  "generatedAt": "2026-09-20",
+  "generatedAt": "2026-09-21",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-21",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL, College football.",
+      "commit": "60db18216"
+    },
     {
       "date": "2026-09-20",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL.",
-      "commit": "484ab410f"
+      "text": "Data refreshed — Football, Basketball, Billionaires, AFL, and 2 more.",
+      "commit": "3c5660c67"
     },
     {
       "date": "2026-09-19",
@@ -4194,13 +4201,6 @@
       "hub": "Sports",
       "text": "Club tournament hubs, international comparable programs + quiz.",
       "commit": "8badafbcd"
-    },
-    {
-      "date": "2026-05-27",
-      "category": "fix",
-      "hub": null,
-      "text": "Add International Football entry to Sports menu.",
-      "commit": "f4ead1abd"
     }
   ]
 }
