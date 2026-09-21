@@ -2,22 +2,22 @@
  "code": "uk",
  "election": "2029-05-03",
  "confidence": "assumed",
- "built": "2026-09-18",
- "daysBefore": 958,
+ "built": "2026-09-21",
+ "daysBefore": 955,
  "block": {
   "electionAssumed": "2029-05-03",
   "electionDate": "2029-05-03",
   "electionConfidence": "assumed",
   "average": {
-   "con": 20.3,
-   "lab": 26.4,
-   "ld": 10.3,
-   "ref": 23.4,
-   "grn": 10.3,
-   "snp": 2.6
+   "con": 20.2,
+   "lab": 27.0,
+   "ld": 9.9,
+   "ref": 23.2,
+   "grn": 10.4,
+   "snp": 2.8
   },
   "pollsters": 11,
-  "latestPollDate": "2026-09-15",
+  "latestPollDate": "2026-09-18",
   "trend": [
    {
     "date": "2024-07-12",
@@ -570,47 +570,47 @@
     "snp": 2.7
    },
    {
-    "date": "2026-09-14",
-    "n": 4,
-    "con": 20.5,
-    "lab": 25.8,
-    "ld": 10.8,
+    "date": "2026-09-15",
+    "n": 8,
+    "con": 20.1,
+    "lab": 27.0,
+    "ld": 9.9,
     "ref": 23.5,
-    "grn": 9.8,
-    "snp": 2.5
+    "grn": 10.1,
+    "snp": 2.9
    }
   ],
   "sim": {
    "seats": {
     "con": {
-     "median": 96,
+     "median": 95,
      "lo": 0,
-     "hi": 343
+     "hi": 341
     },
     "lab": {
-     "median": 205,
-     "lo": 17,
-     "hi": 455
+     "median": 215,
+     "lo": 22,
+     "hi": 460
     },
     "ld": {
-     "median": 65,
+     "median": 62,
      "lo": 0,
-     "hi": 105
+     "hi": 103
     },
     "ref": {
-     "median": 145,
+     "median": 138,
      "lo": 2,
-     "hi": 393
+     "hi": 390
     },
     "grn": {
      "median": 9,
      "lo": 0,
-     "hi": 78
+     "hi": 77
     },
     "snp": {
-     "median": 20,
+     "median": 23,
      "lo": 0,
-     "hi": 56
+     "hi": 57
     },
     "pc": {
      "median": 4,
@@ -618,7 +618,7 @@
      "hi": 8
     },
     "oth": {
-     "median": 15,
+     "median": 14,
      "lo": 6,
      "hi": 24
     }
@@ -626,19 +626,19 @@
    "niSeats": 18,
    "majorityNeeds": 326,
    "pLargest": {
-    "con": 22.1,
-    "lab": 43.0,
-    "ld": 0.1,
-    "ref": 34.8,
+    "con": 21.3,
+    "lab": 45.2,
+    "ld": 0.0,
+    "ref": 33.4,
     "grn": 0.1
    },
    "pMajority": {
-    "con": 7.0,
-    "lab": 24.3,
-    "ref": 15.3
+    "con": 6.8,
+    "lab": 26.1,
+    "ref": 14.4
    },
-   "pHung": 53.5,
-   "monthsOut": 31.5,
+   "pHung": 52.8,
+   "monthsOut": 31.4,
    "sims": 4000,
    "nat2024": {
     "con": 23.6,

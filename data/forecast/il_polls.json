@@ -87,6 +87,28 @@
   },
   {
    "date": "2026-09-17",
+   "pollster": "LRI+P4A",
+   "seats": {
+    "Likud": 18,
+    "Together": 13,
+    "RZP- Zehut": 8,
+    "Otzma": 0,
+    "Blue & White": 7,
+    "Shas": 7,
+    "UTJ": 9,
+    "Yisrael Beiteinu": 5,
+    "Ra'am": 7,
+    "Joint List": 9,
+    "Dems": 23,
+    "Yashar": 4,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 0,
+    "Haredi Public": 46
+   },
+   "gov": null
+  },
+  {
+   "date": "2026-09-17",
    "pollster": "Kantar",
    "seats": {
     "Likud": 20,
@@ -99,7 +121,7 @@
     "Yisrael Beiteinu": 5,
     "Ra'am": 7,
     "Joint List": 9,
-    "Dems": 24,
+    "Dems": 22,
     "Yashar": 4,
     "Reserv.- NEP": 0,
     "Amcha Yisrael": 0,

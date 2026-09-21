@@ -2,8 +2,8 @@
  "code": "br",
  "election": "2026-10-04",
  "confidence": "confirmed",
- "built": "2026-09-18",
- "daysBefore": 16,
+ "built": "2026-09-21",
+ "daysBefore": 13,
  "block": {
   "election": "2026-10-04",
   "electionDate": "2026-10-04",
@@ -26,7 +26,7 @@
     "b": "F. Bolsonaro",
     "avgA": 45.2,
     "avgB": 44.6,
-    "pA": 57.7,
+    "pA": 57.8,
     "polls": 83,
     "latest": "2026-09-17"
    }
