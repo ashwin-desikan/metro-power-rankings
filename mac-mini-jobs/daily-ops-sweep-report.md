@@ -1,282 +1,156 @@
-# Daily Ops Sweep -- 2026-09-20
+# Daily Ops Sweep -- 2026-09-21
 
-Window `2026-09-18T23:02Z` to `2026-09-20T01:02Z` (trailing 26h), selected on each
-dispatcher line's own UTC timestamp. Read-only run: nothing was executed, re-run,
-pinged, written or fixed. This report file is the only thing this session changed.
+Window: 2026-09-19T23:04Z .. 2026-09-21T01:04Z (trailing 26h). Read-only run: nothing
+was re-run, pinged, written or fixed. Fleet is green as of 01:04Z.
 
-## Jobs this window: 35 ok, 0 failed, 5 flagged
+## Jobs this window: 15 ok, 2 failed (both now green), 2 flagged
 
-36 executions across 20 distinct jobs. 35 returned `DONE ok`; the 36th is this
-sweep. **Zero `FAIL` lines.** Two `MISSED` lines, both for one job, both benign
-and explained below.
+**Clean throughout (15):** deploy-watch (21 runs), ops-autofix (12), claude-auth-canary (4),
+egress-refresh, business-daily, substack-daily, euro-comps, gap-league-watch, activity-feed,
+feed-monitor, economy-prices, nfl-elo, cricket-champions, cfb-sun, daily-ops-sweep.
 
-Ran and green: `football-standings` x4, `ops-autofix` x12, `claude-auth-canary` x3,
-`mlb-sim` x2, `daily-ops-sweep`, `activity-feed`, `euro-comps`, `gap-league-watch`,
-`business-daily`, `substack-daily`, `feed-monitor`, `economy-housing`, `nfl-elo`,
-`mktcap-refresh`, `cricket-champions`.
+**Failed and recovered (2):**
+- `mlb-sim` -- FAIL 07:16Z (`one or more leagues failed to build`) and FAIL 14:38Z
+  (`cannot fast-forward`). Now `ok (manual)` for its 14:30Z slot.
+- `football-standings` -- FAIL 17:09Z (`cannot fast-forward`). Re-ran clean at 22:23Z via
+  ops-autofix and again on its own 23:00Z slot (`ok 102s`).
 
-I reconciled the schedule as well as the log, so a job that never fired at all
-would still be caught. 2026-09-19 was a Saturday: `forecast` (Mon/Wed/Fri),
-`screen-number-ones` (Mon/Tue/Wed), `predictions-*`, `cfb-*`, `rugby/cricket/fiba/
-sound-weekly`, `owners-weekly` (Mon), `conflicts-monthly` and `cricket-monthly`
-(day 1) are all correctly absent, not silently missing. `egress-refresh`,
-`economy-prices` and `cfb-sun` are Sunday jobs whose slots fall later today.
+**Flagged, not failures (2):** `MISSED metro-rankings` (21:21Z) and `MISSED git-maintenance`
+(21:31Z). See "Needs Ashwin's attention" #1 -- these are install artifacts, not missed work.
 
-Off-dispatcher jobs checked too: the F1 poller (hourly launchd), the
-newsletter-podcast daily, and its evening / watchdog / retention sidecars. All
-completed. `npm run check:data-currency`: 29 current, 0 overdue, 0 unreadable.
+**Not under the dispatcher:** the hourly `f1` launchd job logged `idle: 2026 R14 already
+synced` 26 times. Verified correct, not stuck: R14 was the Spanish GP (2026-09-13) and R15
+is Azerbaijan on **Saturday** 2026-09-26, so no race has run since. Nothing to sync.
+newsletter-podcast ran its morning (25 items pushed), evening (4 appended) and weekly
+(clean skip, no unnarrated post in the 14-day window) slots without error.
 
 ## Self-healed (informational only, no action needed)
 
-**1. `cricket-champions` logged `MISSED` twice, because it was born yesterday.**
-`MISSED cricket-champions (slot 2026-09-18 22:30Z, 859m late)` at 12:49:02Z and
-again at 12:58:57Z. Not an outage. The job was created by commit `13bfc18b3`
-("Cricket champions promote themselves") at 12:48Z, and `jobs.toml` says so in
-its own comment (`# no plist; born on the dispatcher 2026-09-19`). The dispatcher
-computed the job's previous slot as 2026-09-18 22:30Z, which predates its
-existence, found it past the 12h `catchup_hours` window, and skipped to the next
-slot exactly as designed. That next slot ran clean: 2026-09-19T22:39Z, 12s,
-self-test 26 checks OK, "0 new champion(s); 0 needing attention". Nothing to fix.
-Cosmetic only: the MISSED notice was emitted on two consecutive ticks before
-state settled, so a new daily job will always log this twice. Not worth a change
-unless it recurs for a job that is not brand new.
+**All four failures above are one root cause, and it was diagnosed and FIXED last night
+before this sweep ran.** Reconstructed from dispatcher.log, the reflog and HANDOFF.md:
 
-**2. `economy-rates`: yesterday's headline finding is fixed, and I verified the
-data rather than trusting the commit message.** The `pipefail`-inside-`bash -c`
-bug was fixed on 09-19 (`eb3d5fa61`, `92f1432dc`, plus `3586981f0` for the
-hardcoded `BUILT_DATE`), and the rates were rebuilt at 11:10 BST (`6ba4407ce`).
-Checked against the real files: all 62 rate files carry `built: 2026-09-19`, and
-the three real-world moves yesterday's sweep named as missing are now present:
-ECB 2.50 effective 2026-09-16, Denmark 2.10 effective 2026-09-11, Fed 3.875
-effective 2026-09-17. No BIS file is stale on the site: `bis-us` (3.625),
-`bis-xm` (2.25), `bis-gb`, `bis-ca`, `bis-se`, `bis-ch`, `bis-au`, `bis-no`,
-`bis-jp`, `bis-nz` and `bis-de` all lag, but every one of them is
-`"listed": false` with a `superseded_by` pointing at its dedicated builder, so
-the board never shows the stale twin. Closed, no action.
+- 13:17Z, business-daily committed `f5687d931` (Bank of China leader QID). Six seconds
+  later a background `git gc` died holding `index.lock`, `HEAD.lock` and
+  `objects/maintenance.lock`, so the commit never pushed.
+- From 14:18Z that single unpushed commit had main diverged from origin. `mini_sync()` was
+  `merge --ff-only` with no fallback, and every runner calls it first, so the whole fleet
+  hard-failed for **6h27m** (14:18Z to 20:41Z) -- 30 `cannot fast-forward` events across
+  mlb-sim, football-standings, export_schedule and every ops-autofix retry.
+- 20:45Z an interactive mini session cleared the locks, rebased, pushed `3fd6a6061`, and
+  shipped four fixes the same evening: `f091a06ec` (mini_sync rebases), `755ee51d9`
+  (mini_sync pushes stranded tagged commits, alerts on untagged), `0689e3906` (gc.auto=0 +
+  maintenance.auto=false + the new git-maintenance slot), `baeb6d021` (deploy-watch moved
+  under the dispatcher lock).
 
-**3. F1 poller: one transient upstream failure, already self-healed and already
-hardened.** `14:07:06 ERROR: jolpica fetch failed` in `logs/f1-2026-09-19.log`,
-recovered on the very next hourly tick at 15:07 and clean through 01:07 today.
-The commit that makes this retry rather than page hourly (`b0b43e2f8`, "F1
-poller: retry, never hang, and stop paging hourly for one outage") landed five
-minutes after the error, so this was the incident that motivated the fix. Zero
-errors in the six preceding daily logs. No action.
+**The 07:16Z mlb-sim failure is separate and also fixed.** `verify_wins()` demanded exact
+equality with ESPN standings and read `Cardinals 75 vs 76` -- ESPN's standings endpoint
+increments the moment a game goes final while the schedule endpoint's `completed` flag lags
+minutes. `4a3ea669d` replaced that with `classify_win_mismatch()`, which tolerates up to 2
+teams off by exactly 1 win and still hard-fails a systematic parse break.
 
-**4. `ops-autofix` refused to act at 12:18Z, correctly.** It reported
-`[blocker] working_tree_dirty -- repo has 7 uncommitted change(s)` and stopped
-with "Refusing to act around a human's work." That was a live session mid-flight
-(commits landed 12:08 through 12:33). Clean again by the 14:19Z run. Working as
-designed; noted only so it is not mistaken for a fault on a future read.
+**Verified live on the mini rather than taken from the handoff:** `_common.sh` is a symlink
+into the repo, so all of it is already in effect; `classify_win_mismatch` is present in
+`build_mlb_sim.py:229`; `gc.auto=0` and `maintenance.auto=false` are set on the clone; zero
+stale `.lock` files and zero `tmp_obj_*` remain; tree clean and level with origin/main.
 
-**5. The S&P 500 "recent changes" list was silently empty for four weeks, and
-repaired itself before this window.** `[mktcap] WARNING: table id=changes not
-found` has fired every weekly run since 2026-08-17, falling back to a
-week-over-week constituent diff. That fallback produced **0 rows** on 08-17,
-08-22, 08-29, 09-05 and 09-12, which on the site is indistinguishable from "no
-index changes happened". It started working on 09-13 (61 rows) and holds at 60
-today. Confirmed by walking `sp500.json` through git history. Already healed,
-but it is a clean example for the Silent failure register if it is not there
-yet: a warn-and-fall-back path returning an empty list looks exactly like good
-news.
+**Also clean, checked rather than assumed:**
+- Vercel: **1 paid production build** for this project since 2026-09-20T00:00Z
+  (`6d6a29447`, READY -- the legitimate untagged build-time-read data change at 09:25Z) and
+  **0 so far today UTC**. Every other deployment in the window is CANCELED, i.e. skipped by
+  the guard and free. No ERROR builds. Well inside the 2/day budget.
+- `npm run check:release-notes` -- OK, 143 entries, newest 2026-09-20 (the untagged commit
+  above is covered).
+- `npm run check:data-currency` -- 29 current, 0 overdue, 0 unreadable.
+- `feed-monitor` 07:26Z -- all 12 probes ok.
+- `gap-league-watch` -- no state transitions; 3 leagues still `awaiting_target`.
+- Supabase spot-check: Premier League standings read Man City 1st, P5, 15pts, WWWWW.
+  Confirmed against the real 2026-27 table for 2026-09-20. Football data is current.
 
 ## Needs Ashwin's attention
 
-### 1. The Vercel 2/day build cap is still not enforcing, and I can now prove it from behaviour
+### 1. Two false "scheduled job missed" ntfy alerts, and this will repeat on every new job
 
-**What happened.** Four paid production builds ran on 2026-09-19 UTC against a
-budget of two:
+**What happened.** At 21:21Z and 21:31Z the dispatcher fired `Metro: scheduled job missed`
+for `metro-rankings` (slot 2026-09-19 10:30Z, 2092m late) and `git-maintenance` (slot
+2026-09-20 03:00Z, 1112m late). Both alerts carry the text *"The mini was probably off."*
+The mini was not off -- it was running normally all day.
 
-| UTC | Deployment | Commit | Subject |
-|---|---|---|---|
-| 09:06:27 | `dpl_93ctYyxBSVoy35MzASvBQY72g6dA` | `dda64bbb1` | mktcap: weekly Top Companies refresh 2026-09-19 |
-| 11:33:54 | `dpl_FNu4bjNsiVNX5yhms89JG59LEop8` | `80e1d5671` | Live Standings and the NBA scrubber |
-| 13:05:31 | `dpl_HcW7NEVmcinuoiJgmDtPQH8PArXU` | `d2c3f82e6` | NBA season standings follow the week slider |
-| 20:40:36 | `dpl_CqZBtiATwpcPkWsCNrXo5WphB5J9` | `778734ced` | Release 2026-09-20: forecasts that lead with the answer |
+**Root cause.** Both jobs were installed into `jobs.toml` the same evening (metro-rankings
+22:20 BST, git-maintenance 22:28 BST). On the next tick, `previous_occurrence()` looked back
+and found the most recent slot matching their schedule -- a Saturday 10:30Z and a 03:00Z --
+both of which fell *before the job existed*. Past its catch-up window, so `dispatcher.py:430`
+recorded MISSED and notified. The code is behaving exactly as written; it has no notion of
+when a job was installed, so a back-dated slot is indistinguishable from real missed work.
 
-All other production deployments in the window are `CANCELED`, which is free and
-is what the ignore guard produces on a skip. Today, 2026-09-20 UTC, the count so
-far is **0 paid builds**.
+**Evidence.** `dispatcher.py:428-436` (the MISSED branch calls `notify()` unconditionally);
+`jobs.toml:702-708` and `:738-744`; `state.json` now holds `"last_status": "missed"` for both;
+`git log` puts both rows' commits at 22:21 and 22:30 BST, after the slots they were faulted for.
 
-**Root cause, and why this is now evidence rather than inference.** The Windows
-session's HANDOFF entry of 09-19 (late) states "the cap is still inactive", and
-yesterday's sweep could not check it because the Vercel MCP token returns
-`403 forbidden` on `projectEnvVars`. It still does; I retried and got the same.
-But the cap's own contract makes a direct test possible.
-`scripts/vercel-ignore.sh` line 80 says `[deploy-now]` on the SUBJECT is the only
-override, and line 88 sets `MAX_DAILY_BUILDS` to 2. **None of the four subjects
-above carries `[deploy-now]`.** If the cap were live, builds three and four would
-have been skipped. They were not. So the cap is inactive, independent of anyone's
-report of it.
+**Impact.** Low but corrosive: two alerts with an actively misleading explanation, on the same
+night Ashwin was already triaging 14 real ones. Every future job added to `jobs.toml` will do
+this once, and the alert text will point at the wrong cause each time.
 
-I also pulled the build log of a skipped deployment to try to read the guard's
-own cap line. It is not there and cannot be: the guard exits at the `[vercel skip]`
-subject check (rule 1) before it ever queries the API, so a skipped build's log
-can never tell you the cap's state. Worth knowing before someone else tries it.
+**Recommended fix (pick one, both small):**
+- *Cheapest:* when installing a job, seed its `state.json` row with the current slot so the
+  first tick sees `already-ran`. Needs a documented install step, which is the weakness.
+- *Better, and what I'd do:* record `first_seen` (UTC date) in `state.json` the first tick a
+  job id is observed, and in the MISSED branch skip both the log line and `notify()` when
+  `occ < first_seen`. Self-testable as a pure scheduling case alongside the existing 111.
 
-**Recommended fix.** Add `VERCEL_BUILD_CAP_TOKEN` to the metro-power-rankings
-project's **build** environment as a Vercel read token. Until it exists, the guard
-prints "build cap inactive (no VERCEL_BUILD_CAP_TOKEN or the API did not answer)"
-and passes everything through, and the 2/day budget remains a promise rather than
-code, which is the exact condition CLAUDE.md says caused five prior overages. This
-is already Ashwin's P0 Backlog row; this entry just adds the behavioural proof.
-Two supporting asks: grant the MCP token `projectEnvVars:read` so this sweep can
-verify it directly instead of inferring, and note that the guard fails open on the
-API call (`curl ... || return 0`), so a token that exists but is rejected would
-also read as "inactive" and look identical.
+Neither is urgent. Both MISSED rows are now marked `already-ran`, so they will not re-alert,
+and neither job's real schedule is affected (`git-maintenance` next fires 2026-09-21 03:00Z,
+`metro-rankings` Sat 2026-09-26 10:30Z).
 
-### 2. Vivmark Residential (VMRK), $47.4B, has sat unmapped for two weeks and needs your ruling
+### 2. git-maintenance's first run will be a vacuous pass -- do not read green as proof
 
-**What happened.** `mktcap-refresh` on 2026-09-19 reported
-`METRO QUEUE (notable, unmapped): Vivmark Residential [VMRK] $47.4B (United States)`.
-It is the only notable (>=$10B) unmapped company this week, and it also appeared
-last week at $50.7B. The two other notables from 09-12, Sunbelt Rentals and
-Quantinuum, have since resolved. This one has not.
+**What happened.** Last night's entry deliberately left the eight genuine `tmp_obj_*` files
+from the day's two gc crashes in place, stating: *"tomorrow's 03:00 run is a live test of
+step 2, and if they are gone on Monday the job works."*
 
-**Root cause.** Checked against the real world: Vivmark Residential is the merged
-AvalonBay Communities + Equity Residential, completed 2026-08-17, trading on NYSE
-as VMRK since 2026-08-18. It has **dual headquarters**, Arlington VA
-(4040 Wilson Blvd) and Chicago IL, and has said it intends an ongoing presence in
-both. So the mapper has no single right answer, which is precisely the case
-`civic_common`-style rules say to log and leave alone rather than guess. It is
-correctly sitting in the queue waiting for a human.
+**They are already gone.** `ls .git/objects/tmp_obj_*` returns nothing as of 01:04Z, before
+`git-maintenance` has ever run (there is no `logs/git-maintenance-*.log`, and its state row
+reads `missed`). Something between roughly 00:00 and 01:00 BST cleared them -- most likely a
+repack (`git count-objects -v` now shows 3 packs, 568 loose).
 
-**Evidence.** Supabase read-only confirms the merge was handled correctly on the
-dedup side, so nothing is double counted:
+**Why it matters.** Step 2 only deletes `tmp_obj_*` older than 1 day (`git-maintenance.sh:121`),
+so even had they survived they were under the floor and would *not* have been deleted at
+03:00Z today -- the test as designed could not have passed today regardless. Either way the
+run will report `removed 0` and a future session could easily read that as "step 2 works".
 
-| symbol | name | is_active | last_seen | latest mcap | metro |
-|---|---|---|---|---|---|
-| AVB | AvalonBay Communities | false | 2026-08-22 | $26.28B | Washington-Baltimore |
-| EQR | Equity Residential | false | 2026-08-22 | $24.61B | Chicago |
-| VMRK | Vivmark Residential | true | 2026-09-19 | $47.37B | **null** |
+**Recommended:** it is not broken and needs no fix. But if you want step 2 genuinely proven,
+plant a fixture with a backdated mtime and watch one run:
+`touch -t 202609180000 .git/objects/tmp_obj_probe` then check the next 03:00Z log. (I did
+not do this -- it is a write.)
 
-`mktcap_geo` has a stub row for VMRK with `metro`, `city` and `state` all null.
-Independently corroborated by `public/data/business/sp500.json`, whose newest
-change row reads "August 18, 2026 ... removed AvalonBay Communities ... the
-combined company trades as Vivmark Residential (VMRK)".
+### 3. Two watch items for the next 8 hours, no action now
 
-**Impact.** A rank-632 company worth $47.4B is currently attributed to no metro
-at all, so whichever metro should hold it is understated by that amount on
-`/business` and its metro page.
+- **egress-refresh, 09:00Z today.** Yesterday's run exited 0 with `2/16 non-fatal step
+  failures` -- `leaders (auto-apply)` and `uk offices (check)`, both diagnosed as transient
+  Wikidata. Last night's session re-ran them by hand successfully (204 countries, 6 changed:
+  nigeria, kazakhstan, estonia, mauritius, madagascar, malawi) and **reverted** rather than
+  committed, because `public/data/leaders/_changes.json` is build-triggering. Today's 09:00Z
+  run should re-apply and commit them untagged, spending one production build. That is within
+  budget (0 used today) and is the job's normal path, but it is the build to expect. **If the
+  same 2/16 steps error again, it stops being transient and wants a real look.**
+- **mlb-sim, 07:00Z today** is the first unattended run through the new `verify_wins`
+  tolerance. `.autofix-attempts.json` still shows yesterday's 3/day cap for mlb-sim and
+  football-standings; it keys on date and resets today.
 
-**Recommended fix.** Your ruling, then one row. Precedent from the predecessors
-is split: AVB was mapped to Washington-Baltimore, EQR to Chicago. If the house
-rule is "one HQ, the primary one", Arlington VA is the registered principal
-office, which maps to Washington-Baltimore. Set `mktcap_geo` for symbol `VMRK`
-with `metro`, `city`, `state`, `mapped_by` and `mapped_at`, via the mktcap-refresh
-skill's curation path rather than a raw write, and it will hold through the next
-weekly run. Worth deciding this week: it is the largest single unattributed
-company on the board. Minor, non-blocking: the retired `AVB` geo row records
-`state: "DC"` for a city in Virginia; harmless now that the row is inactive, but
-do not copy it forward.
+### 4. Worth recording: `football_standings.updated_at` is not a freshness signal
 
-### 3. `nba-elo` and seven more cache tags are live in production but have never been flushed, and the mini owes the one verification ping
+Chasing what looked like a 24h-stale standings table, I confirmed `scripts/apifootball/refresh.py`
+never sets `updated_at` anywhere -- the column is `default now()`, so it records each row's
+INSERT time and is never touched by the conflict-update. Premier League rows therefore read
+`updated_at = 2026-07-26` while their values are current (verified against the real table above).
 
-**What happened.** The 09-19 (late) HANDOFF entry closes with an explicit request
-addressed to this machine: "**Mini: flush `nba-elo` one time and confirm
-`ok:true`.**" The Windows box could not do it, having no `REVALIDATE_SECRET`.
-This sweep is read-only by charter, so I did not run it. Reporting it instead,
-with the blockers cleared so it is a one-liner when you want it.
-
-**Root cause and current state.** `lib/nbaElo.ts` tagged every NBA season shard
-`nba-elo` for the life of the file while the tag was missing from `ALLOWED_TAGS`,
-so every NBA correction silently waited out a full 24h ISR instead of flushing.
-`check:cache-tags`, written the same day, then found seven more in the same
-condition: `club-value`, `club-money`, `expectation`, `nfl-expectation`,
-`pl-expectation`, `intl-expectation`, `footy-finals`. Both entries note the
-allowlist was inert until the next build. **That build has since landed.** I
-verified `915ce45f2` (nba-elo) and `7f58ffc06` (the seven) are both ancestors of
-`778734ced`, which went READY at 20:48Z on 09-19, and all eight tags are present
-in `app/api/revalidate/route.ts` on disk. So the flush should now answer
-`ok:true` where it previously answered `{"ok":false,"error":"unknown tag"}`.
-
-**Recommended fix.** Two things, in order.
-First, the one-off verification, on the mini, which does have `REVALIDATE_SECRET`
-in `~/metro-mini-jobs/config.env`: flush `nba-elo` once and confirm `ok:true`.
-That closes the HANDOFF request and proves the whole allowlist change worked,
-rather than assuming it from the build landing.
-Second, the real follow-through, which is the open Backlog row "refresh jobs
-should ping the seven newly flushable tags": listing a tag only makes it
-flushable, nothing pings it. `expectation`, `nfl-expectation`, `pl-expectation`
-and `intl-expectation` sit on 24h ISRs, so until a job pings them their data is
-up to a day late by default. `footy-finals` is a 15 minute window and matters
-this week for the AFL Grand Final result.
-
-### 4. The news digest silently drops entity links whose slug does not exist
-
-**What happened.** `~/newsletter-podcast/logs/2026-09-19.log` shows four dropped
-entity links in one morning run, all the same target:
-`[push_feed] entity dropped on 'OpenAI unveils a system for reporting rogue AI age': metro/san-francisco (no page at that slug)`
-plus three more across other AI stories. The job exited clean, pushed 49 items,
-and raised nothing.
-
-**Root cause.** The site's slug is `san-francisco-san-jose`, not `san-francisco`.
-Confirmed against `public/data/metros.json` (4,315 metros, the only San Francisco
-entry is `san-francisco-san-jose`) and `public/data/details/`, which holds
-`san-francisco-san-jose.json` and no `san-francisco.json`. The tagger is
-generating a plausible slug from the city name rather than resolving against the
-real slug table, and the push path fails open, dropping the link and continuing.
-
-**Scope, measured rather than assumed.** I grepped every newsletter log on the
-box. This is new and small, not a long-running leak: 0 occurrences through 09-17,
-1 on 09-18 (`club/football/brighton`, where the real slug is `brighton-hove`),
-4 on 09-19. Two distinct bad slugs, both of them a shortened form of a real
-hyphenated one.
-
-**Impact.** Low but growing, and invisible. San Francisco is the single most
-common metro in an AI-heavy news feed, so this is likely the most-linked entity
-on the site losing its link on most days. Nobody would notice: the item still
-publishes, just unlinked.
-
-**Recommended fix.** Resolve entity slugs against the real vocabulary instead of
-generating them: `public/data/slug-lookup.json` already exists for exactly this
-in the football path, and `metros.json` is the authority for metros. Cheapest
-useful change is an alias map plus a louder failure, so an unresolved slug raises
-once per new slug rather than being swallowed. Pure alias fixes if you want the
-two known ones closed first: `san-francisco` to `san-francisco-san-jose`, and
-`brighton` to `brighton-hove`. This is not urgent, but it is the kind of
-fail-open drop that the Silent failure register exists to name.
-
-### 5. Notion is unauthorized in this headless session, for the second day running
-
-**What happened.** The `notion` MCP server needs OAuth and this session is
-non-interactive, so it cannot be authorized here. Yesterday's sweep reported the
-same thing and it has not changed.
-
-**Why it matters.** CLAUDE.md makes Notion the source of truth for state, as a
-hard rule with a gate: every ruling gets a Decisions row, every new silent fault
-gets a Silent failure register row, in the same session. This job is the one that
-finds those faults, and it is structurally incapable of recording them. Items 1
-through 4 above each deserve a row and none can be written. The 09-19 evening
-HANDOFF entry already found Notion had drifted inside a single day of the
-contract, with none of six named Backlog rows actually created, so the daily
-"Notion reconciler" backstop is carrying more than it was meant to.
-
-**Recommended fix.** Run `claude` interactively on the mini once and complete
-`/mcp` for the Notion connector, then confirm the token survives a headless
-invocation of `run-daily-ops-sweep.sh`. If it does not persist into headless runs,
-that is the finding, and the honest fix is to change the contract for this job
-rather than let it silently owe rows every night: either give the sweep a
-narrow Notion write path that works headless, or state in `jobs.toml` that the
-sweep reports to this file only and the reconciler owns its rows.
-
-## One piece of log noise worth silencing
-
-`mktcap-refresh`'s log opens with
-`[mktcap:selftest] WARNING: rename NVDA -> MSTR SKIPPED: both symbols live in this week's feed (recycled-ticker signature). Fix mktcap_symbol_changes.`
-That is **a test fixture, not a live data fault.** It is emitted from inside the
-self-test block, and the assertion it belongs to passes two lines later
-(`PASS merge: recycled-ticker rename SKIPPED (NVDA->MSTR, both live in feed)`).
-The live run on the same page reports `rename guard: 0 recycled-ticker renames
-skipped: []`, so nothing is wrong with `mktcap_symbol_changes`.
-
-The problem is that it is indistinguishable from a real alert to any grep, and it
-ends with an imperative instruction to go fix a table that is fine. It cost this
-sweep a detour and it will cost the next one the same. Suggest the self-test
-harness prefix fixture output (`[selftest-fixture]`) or suppress `push()`-shaped
-strings while running under `--self-test`.
+**Why it is worth a line:** anyone monitoring that column for staleness gets a permanent false
+positive, and -- the damaging direction -- a genuinely frozen standings table would look
+*identical* to the healthy state. That is a Silent failure register shape: exits 0, tells nobody,
+and the obvious freshness probe cannot distinguish the two. Suggest adding a row there, and using
+`max(played)` per league against fixture counts if a real probe is ever wanted.
 
 ---
-
-*Generated by the unattended daily ops sweep on the Mac mini. Read-only run: no
-jobs re-run, no healthchecks pinged, no Supabase writes, no data or code changed.
-Supabase was queried with SELECTs only. This report file is the only write.*
+*Read-only sweep. Notion could not be read or updated this run: the Notion MCP server requires
+an interactive OAuth authorisation that a headless session cannot perform. No queryable state
+was changed by this sweep, but findings 1, 2 and 4 are candidates for Backlog / Silent failure
+register rows if Ashwin wants them tracked.*
