@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-21T02:52:50.900349+00:00",
+  "generated_at": "2026-09-21T03:02:56.976881+00:00",
   "jobs": [
-    {
-      "id": "git-maintenance",
-      "label": "Git gc and stale-lock sweep (rankings clone)",
-      "schedule_text": "Daily at 03:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "03:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-21T03:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-20",
-        "status": "missed",
-        "slot": "2026-09-20T03:00:00+00:00"
-      }
-    },
     {
       "id": "deploy-watch",
       "label": "Vercel canceled-build auto-heal",
@@ -173,11 +155,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-21T03:00:00+00:00",
+      "next_run": "2026-09-21T03:10:00+00:00",
       "last_run": {
         "date": "2026-09-21",
         "status": "ok",
-        "slot": "2026-09-21T02:50:00+00:00"
+        "slot": "2026-09-21T03:00:00+00:00"
       }
     },
     {
@@ -512,6 +494,24 @@
         "date": "2026-09-21",
         "status": "ok",
         "slot": "2026-09-21T02:30:00+00:00"
+      }
+    },
+    {
+      "id": "git-maintenance",
+      "label": "Git gc and stale-lock sweep (rankings clone)",
+      "schedule_text": "Daily at 03:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "03:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-22T03:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-21",
+        "status": "ok",
+        "slot": "2026-09-21T03:00:00+00:00"
       }
     },
     {
