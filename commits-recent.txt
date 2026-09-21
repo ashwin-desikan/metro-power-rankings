@@ -1,3 +1,4 @@
+2026-09-21T12:18:21+01:00  88e7f2027  gitattributes: generated files merge by union; handoff entry and correction [vercel skip]
 2026-09-21T12:14:46+01:00  77c0d0aa6  forecast: Israel per-list seat simulation and calibration data, report only [vercel skip]
 2026-09-21T12:09:38+01:00  5fd255368  football: refresh live bundles [vercel skip]
 2026-09-21T11:52:53+01:00  e00b88927  Champions: CPL 2026, Antigua & Barbuda Falcons; cricket runner path fix; coalition research [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-19T19:49:02+01:00  43f298303  NBA season standings: vs Last follows the scrub, and the final seed waits for the final standings
 2026-09-19T19:05:46+01:00  43077db72  Forecast hubs: headline sentence, NFL division heat board, movers strip
 2026-09-19T19:07:53+01:00  b207095eb  HANDOFF: 2026-09-19 evening, forecast hubs on a local branch and Notion reconciled [vercel skip]
-2026-09-19T18:08:46+01:00  59bdcfded  football: refresh live bundles [vercel skip]
