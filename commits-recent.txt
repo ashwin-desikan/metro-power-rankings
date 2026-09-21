@@ -78,3 +78,4 @@
 2026-09-19T21:30:19+01:00  4db7dba60  NFL season hubs: the year's award winners and All-Pro picks, under era club names
 2026-09-19T20:27:46+01:00  341bb9f0f  NBA season hubs: weekly seeds, the date on the scrub, and the control between chart and table
 2026-09-19T19:49:02+01:00  43f298303  NBA season standings: vs Last follows the scrub, and the final seed waits for the final standings
+2026-09-19T19:05:46+01:00  43077db72  Forecast hubs: headline sentence, NFL division heat board, movers strip
