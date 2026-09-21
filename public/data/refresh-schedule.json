@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-09-21T02:22:29.550194+00:00",
+  "generated_at": "2026-09-21T02:32:39.678806+00:00",
   "jobs": [
-    {
-      "id": "activity-feed",
-      "label": "Site activity feed",
-      "schedule_text": "Daily at 02:30 UTC",
-      "cadence": "daily",
-      "times": [
-        "02:30"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-21T02:30:00+00:00",
-      "last_run": {
-        "date": "2026-09-20",
-        "status": "ok",
-        "slot": "2026-09-20T02:30:00+00:00"
-      }
-    },
     {
       "id": "deploy-watch",
       "label": "Vercel canceled-build auto-heal",
@@ -173,11 +155,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-21T02:30:00+00:00",
+      "next_run": "2026-09-21T02:40:00+00:00",
       "last_run": {
         "date": "2026-09-21",
         "status": "ok",
-        "slot": "2026-09-21T02:20:00+00:00"
+        "slot": "2026-09-21T02:30:00+00:00"
       }
     },
     {
@@ -512,6 +494,24 @@
         "date": "2026-09-21",
         "status": "ok",
         "slot": "2026-09-21T01:00:00+00:00"
+      }
+    },
+    {
+      "id": "activity-feed",
+      "label": "Site activity feed",
+      "schedule_text": "Daily at 02:30 UTC",
+      "cadence": "daily",
+      "times": [
+        "02:30"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-22T02:30:00+00:00",
+      "last_run": {
+        "date": "2026-09-21",
+        "status": "ok",
+        "slot": "2026-09-21T02:30:00+00:00"
       }
     },
     {
