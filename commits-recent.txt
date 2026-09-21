@@ -1,3 +1,4 @@
+2026-09-21T09:22:36+01:00  0f5803211  reconciler: generate HANDOFF-recent.md and commits-recent.txt for it to read [vercel skip]
 2026-09-21T09:13:22+01:00  83e85353d  data: refresh-schedule.json [vercel skip]
 2026-09-21T08:57:41+01:00  807e2cb2f  data: refresh-schedule.json [vercel skip]
 2026-09-21T08:47:35+01:00  5337097b3  data: refresh-schedule.json [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T23:23:57+01:00  7a06d8b29  data: refresh-schedule.json [vercel skip]
 2026-09-20T23:23:52+01:00  f0220eaf8  football: refresh live bundles [vercel skip]
 2026-09-20T23:23:24+01:00  e6c9853ad  HANDOFF: healthchecks all green, but deploy-watch and newsletter-retention ping tiles that do not exist [vercel skip]
-2026-09-20T23:20:24+01:00  f9b69b6b8  HANDOFF: ntfy re-check caught a false alert from git-maintenance's dry run [vercel skip]
