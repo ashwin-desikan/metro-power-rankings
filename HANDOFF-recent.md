@@ -9,10 +9,19 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 46, 2026-09-14 to 2026-09-21
-     If the reader counts fewer than 46 entries, its fetch window stopped
+     entries: 47, 2026-09-14 to 2026-09-21
+     If the reader counts fewer than 47 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
+## 2026-09-21 (evening) - windows cowork -> mini and next session: THE TWO GENERATED FILES NOW MERGE BY UNION, PLUS A CORRECTION TO THE AFTERNOON ENTRY
+
+**`.gitattributes`: `commits-recent.txt` and `HANDOFF-recent.md` are `merge=union`.** The pre-commit hook rewrites both on every commit on every machine, so two machines that commit between pulls change the same top lines. It happened on the Windows box today: `git pull --rebase` stopped on `commits-recent.txt` with nothing else in conflict. **Mini: the same conflict inside `commit_paths` (`git pull --rebase --autostash`, five tries) would fail the push and could leave `~/metro-power-rankings` mid-rebase.** Read from the code, not seen on the mini. Bot commits whose subjects are excluded from the file (`Auto:`, `data: refresh-schedule`) leave it unchanged and are safe; owners, champions and handoff commits are not. Proof in a scratch repo: the same two-sided edit conflicts without the attribute and rebases clean with it, both sides' lines kept. The merged content can be wrong for one commit; the hook rewrites the file at the next one. `HANDOFF.md` is NOT union: a person resolves that one.
+
+**Correction to "2026-09-21 (afternoon)".** That entry says the first automatic cricket promotion "would have reached the table and never the site". Too strong. `majors-ingest.yml` runs `build_champions.py` from the table every day and commits what differs; it committed the CPL change (`61982d3b2`) twelve seconds before the Windows commit, byte-identical. So it is a backstop of up to about a day. The runner fault was still real (no commit, no revalidate ping, no alert) and the path fix stands.
+
+**Coalition model, state.** `scripts/forecast/il_seat_sim.py` is in (`77c0d0aa6`): report only, 25 self-tests, Bader-Ofer with surplus agreements reproduces all seven real seat tables 2013 to 2022. `data/forecast/coalitions/polls-il.json` holds the results (proven) and the final polls (PROVISIONAL: transcribed through a page summariser, 2013 and 2015 rejected). **Mini, when convenient (step B2):** re-read the seven "Opinion polling for the ... Israeli legislative election" articles from raw wikitext with `parse_tables` and replace those rows. Nothing schedules the new script and nothing publishes from it.
+
+**Notion:** Decisions +4 (q_haredi 0.75; pledge break 0.15 rising toward 0.35; blocs first; generated files merge by union). Backlog: coalition row carries steps B and C done and the next steps. Silent failure register: correction added under the `commit_paths` entry.
 ## 2026-09-21 (afternoon) - windows cowork -> mini and next session: CPL 2026 DONE BY HAND, AND THE CRICKET RUNNER WOULD HAVE LOST ITS FIRST REAL PROMOTION
 
 **CPL.** The 20 to 21 Sep watch did not produce a promotion. Antigua & Barbuda Falcons are a first-time champion, which `cricket_finalize.py` refuses by design, and the Wikipedia final article still had no result at 11:00 UTC. Ashwin gave the result. Inserted by hand in the shape `build_row` writes: `public.champions` id 149514, source `cricket-finalizer`, metro St. John's (ANT) / `st-johns-ant`, `date_awarded` 2026-09-20, `is_current` true; id 148270 (Trinbago 2025) cleared. Not confirmed: whether the 22:30 UTC run sent a REFUSED ntfy or was a quiet no-op. **Mini: read that log.**
@@ -28,6 +37,7 @@
 **Coalition model.** Research files in `data/forecast/coalitions/` (Israel ledger 1949 to 2022 with a mandate log, NZ ledger 1996 to 2023, sourced 2026 stances for both). Specification is the Project doc `claude/coalition-model-spec.md` v0.1. Nothing is built. Three rulings are open with Ashwin.
 
 **Notion:** Backlog: cricket watch row rewritten (CPL by hand, County Championship is now the first real test); coalition row updated with research, spec and next steps. Decisions +1 (hook never stamps `[deploy-retry]`). Silent failure register +2 entries (the push faults; the runner pathspec).
+
 ## 2026-09-21 (midday) - windows cowork -> mini and next session: THE ISRAEL FORECAST PUBLISHED A BLOC TOTAL AS A PARTY FOR THREE WEEKS. FIX PUSHED AS `1d811d4de`. ALSO: `19b8c9b0e` (SWEDEN) WENT UP UNDER A SKIP-TAGGED HEAD AND HAS NO BUILD
 
 **What was wrong.** `public/data/forecast.json` showed "Haredi Public 36.2" as the largest Israeli party and Likud at 15.0 against polls of 18 to 23. `gov.avg` and `pMajority` were null. History from `git show <sha>:data/forecast/il_polls.json`: clean on 08-26 (16 parties, gov 49, sum 120); ZERO polls from 09-02 (the RZP-Zehut and Joint List mergers changed the header); wrong numbers from 09-11.

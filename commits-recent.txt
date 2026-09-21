@@ -1,3 +1,4 @@
+2026-09-21T12:14:46+01:00  77c0d0aa6  forecast: Israel per-list seat simulation and calibration data, report only [vercel skip]
 2026-09-21T12:09:38+01:00  5fd255368  football: refresh live bundles [vercel skip]
 2026-09-21T11:52:53+01:00  e00b88927  Champions: CPL 2026, Antigua & Barbuda Falcons; cricket runner path fix; coalition research [vercel skip]
 2026-09-21T11:21:07+01:00  7cb1f3d1f  deploy: build 19b8c9b0e, Sweden 2026 result [deploy-retry]
@@ -77,4 +78,3 @@
 2026-09-19T19:05:46+01:00  43077db72  Forecast hubs: headline sentence, NFL division heat board, movers strip
 2026-09-19T19:07:53+01:00  b207095eb  HANDOFF: 2026-09-19 evening, forecast hubs on a local branch and Notion reconciled [vercel skip]
 2026-09-19T18:08:46+01:00  59bdcfded  football: refresh live bundles [vercel skip]
-2026-09-19T14:19:59+01:00  915ce45f2  revalidate: allow the nba-elo tag, which nothing could flush [vercel skip]
