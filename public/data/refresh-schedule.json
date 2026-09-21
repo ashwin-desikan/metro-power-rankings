@@ -1,6 +1,31 @@
 {
-  "generated_at": "2026-09-21T07:47:33.988130+00:00",
+  "generated_at": "2026-09-21T07:57:39.722180+00:00",
   "jobs": [
+    {
+      "id": "nfl-elo",
+      "label": "NFL live Elo, seeds, odds (and the bracket in Jan/Feb)",
+      "schedule_text": "Daily at 08:00 UTC (Jan/Feb/Sep/Oct/Nov/Dec)",
+      "cadence": "daily",
+      "times": [
+        "08:00"
+      ],
+      "weekdays": [],
+      "months": [
+        1,
+        2,
+        9,
+        10,
+        11,
+        12
+      ],
+      "days_of_month": [],
+      "next_run": "2026-09-21T08:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-20",
+        "status": "ok",
+        "slot": "2026-09-20T08:00:00+00:00"
+      }
+    },
     {
       "id": "deploy-watch",
       "label": "Vercel canceled-build auto-heal",
@@ -155,36 +180,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-21T07:50:00+00:00",
+      "next_run": "2026-09-21T08:00:00+00:00",
       "last_run": {
         "date": "2026-09-21",
         "status": "ok",
-        "slot": "2026-09-21T07:40:00+00:00"
-      }
-    },
-    {
-      "id": "nfl-elo",
-      "label": "NFL live Elo, seeds, odds (and the bracket in Jan/Feb)",
-      "schedule_text": "Daily at 08:00 UTC (Jan/Feb/Sep/Oct/Nov/Dec)",
-      "cadence": "daily",
-      "times": [
-        "08:00"
-      ],
-      "weekdays": [],
-      "months": [
-        1,
-        2,
-        9,
-        10,
-        11,
-        12
-      ],
-      "days_of_month": [],
-      "next_run": "2026-09-21T08:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-20",
-        "status": "ok",
-        "slot": "2026-09-20T08:00:00+00:00"
+        "slot": "2026-09-21T07:50:00+00:00"
       }
     },
     {
