@@ -1,3 +1,4 @@
+2026-09-21T09:24:53+01:00  cd7718522  reconciler: exclude data: refresh-schedule from commits-recent.txt too [vercel skip]
 2026-09-21T09:22:36+01:00  0f5803211  reconciler: generate HANDOFF-recent.md and commits-recent.txt for it to read [vercel skip]
 2026-09-21T07:19:03+01:00  43ba455b0  chore(substack): refresh feed snapshot [vercel skip]
 2026-09-21T07:13:46+01:00  703137289  data: weekly election forecast refresh [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-19T13:29:06+01:00  1602a0292  Champions: the nine missing cricket competitions reach the Current board [vercel skip]
 2026-09-19T13:11:59+01:00  815f9ad34  Formula E: the 2026 podium, and the check is clear for the first time [vercel skip]
 2026-09-19T13:00:50+01:00  9f1d40a01  HANDOFF: 2026-09-19 section H, the NBA Cup final is the missing game [vercel skip]
-2026-09-19T12:40:33+01:00  3d61b45cd  HANDOFF: 2026-09-19 sections F and G, seven fixes and a verification habit [vercel skip]

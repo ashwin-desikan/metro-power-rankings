@@ -17150,3 +17150,24 @@ The reach matters as much as the content: the file is capped at 80 lines, so eve
 **Still true, and structural:** `commits-recent.txt` is generated in a PRE-commit hook, so it is written from HEAD and always lags by exactly the commit being made. A post-commit hook cannot fix that without amending. It is recorded on the Decisions row as the one remaining open question.
 
 **Notion:** Decisions: the reconciler-inputs row updated -- its Rule now names both excluded bot families, and its Open questions are down to the pre-commit lag, with the noise limit marked CLOSED and the before/after numbers recorded. Scheduled jobs: the "Notion reconciler (Citizen of Nowhere)" row's Notes updated with the widened filter and the same measurements, Last verified 2026-09-21. Backlog unchanged.
+
+
+## 2026-09-21 (later still) - mini -> windows and next session: RAN THE RECONCILER, IT STILL COULD NOT SEE TODAY, AND THE FIX WAS ORDERING NOT SIZE
+
+Ashwin: "run the reconciler now". Running it exposed that this morning's work was not finished, which is the point of running a thing rather than declaring it done.
+
+**First, what the 06:30 run had already told us.** It FAILED at its stop condition for the third day running: the raw fetch of HANDOFF.md returned only the head of the 1 MB file, the GitHub API returned 403 and the commits page is robots-blocked. It changed nothing and wrote a FAILED log line. That session is also the one that wrote the four-step brief Ashwin pasted here this morning, so the task and its author were the same loop.
+
+**The routine's prompt was never updated.** It still said "Fetch .../HANDOFF.md. It is over 1 MB" and to list commits from the GitHub API, with zero mentions of the two new files. The files existed; the reader still pointed at what it cannot read. Editing the prompt directly was not safe from here: `job_config` is 112 KB, mostly a 79 KB system prompt, and the update API replaces that object wholesale, so a partial write would have destroyed the environment, model and MCP config. Instead the INPUTS were written into the "Notion operating contract" page, which the prompt already orders it to read first. That worked, in its own words: "The contract page overrides my task prompt on inputs. It directs me to two generated files instead of the 1 MB HANDOFF.md."
+
+**🔴 Then it failed anyway, and the reason matters.** It fetched `HANDOFF-recent.md` and reported `HEADING NOT PRESENT: 2026-09-21`, `HEADING NOT PRESENT: 2026-09-20`, listing headings that began at 2026-09-14. **234 KB is still past its fetch window.** The file was chronological, so the window showed the OLDEST entries and stopped before reaching today's, which are the only ones it needs. The smaller file fixed the megabyte and reproduced the same failure one order of magnitude down.
+
+**The fix is ordering, not size.** `HANDOFF-recent.md` is now written NEWEST ENTRY FIRST. Whatever the window does show is now the part that matters, and truncation costs the oldest entries instead of today's. Today's entry sits at **line 12 of 2251**, immediately after the banner, so any window reaches it. A size cut would have been a guess at someone else's limit; ordering does not care what the limit is.
+
+Worth keeping as a general lesson: a file read over HTTP by something with an unknown window should lead with what matters. Chronological is right for HANDOFF.md, which humans read forwards; it is exactly wrong for a machine-read tail.
+
+**Verified:** 6 new assertions on ordering (newest first, oldest last, full reverse-chronological order, nothing dropped, banner still first, and idempotency surviving the reorder), then regenerated for real, confirming the 09-21 entry is at line 12.
+
+**Still open:** the routine's own prompt text remains wrong, and is only overridden by the contract page. It is worth editing at https://claude.ai/code/routines/trig_01MeTbjkpBua9UMypHz7KRFh when convenient, so the prompt and the contract agree rather than one quietly outranking the other. The triggered run was also rate-limited partway and had not finished at the time of writing; the next scheduled run is 06:30 UTC.
+
+**Notion:** the Notion operating contract page gains the newest-first rule under the reconciler inputs, with the 234 KB evidence, and its inputs section already overrides the task prompt. No database rows changed by this entry. Decisions and Scheduled jobs rows for the reconciler inputs were written earlier today and still hold.

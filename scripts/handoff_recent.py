@@ -30,7 +30,13 @@ MIN_ENTRIES = 4
 BANNER = """<!-- GENERATED FILE - DO NOT EDIT BY HAND.
      Written by scripts/handoff_recent.py from HANDOFF.md, which is the source
      of truth. Holds only the most recent entries, because the Notion
-     reconciler cannot fetch the full HANDOFF.md. Edits here are overwritten. -->
+     reconciler cannot fetch the full HANDOFF.md. Edits here are overwritten.
+
+     NEWEST ENTRY FIRST, which is the opposite of HANDOFF.md and is the whole
+     point: the reader fetches this over HTTP and its window can stop partway,
+     so whatever it does see must be the most recent. Chronological order put
+     2026-09-14 at the top and today's entry out of reach, which is exactly how
+     the 2026-09-21 run failed even after this file existed. -->
 """
 
 
@@ -96,7 +102,10 @@ def main(argv=None):
         return 1
 
     kept = select(entries, args.days)
-    body = BANNER + "\n" + "".join(e[2] for e in kept)
+    # Newest first: see the banner. select() works in file order because the
+    # oldest-first trimming is easier to reason about there; only the OUTPUT
+    # is reversed.
+    body = BANNER + "\n" + "".join(e[2] for e in reversed(kept))
     if not body.endswith("\n"):
         body += "\n"
 
