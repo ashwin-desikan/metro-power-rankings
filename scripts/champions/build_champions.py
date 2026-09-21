@@ -329,7 +329,11 @@ def build_extra(check=False):
                                  # footy-finalizer rows ride the BASE stream
                                  # (see fetch()); listing them here too would
                                  # double-count the premier on metro pages.
-                                 "source": f"not.in.(\"{SOURCE}\",\"footy-finalizer\",\"majors-ingest\")",
+                                 # cricket-finalizer joined the base stream on
+                                 # 2026-09-19 and was not added here, so its first
+                                 # row (CPL 2026, 2026-09-21) would have been listed
+                                 # in both files.
+                                 "source": f"not.in.(\"{SOURCE}\",\"footy-finalizer\",\"majors-ingest\",\"cricket-finalizer\")",
                                  # id.asc makes the order TOTAL. Without it the
                                  # sort has ties, and limit/offset paging over a
                                  # non-deterministic order can skip or repeat

@@ -1,0 +1,153 @@
+{
+  "built": "2026-09-21",
+  "roster": [
+    {
+      "code": "nat",
+      "name": "National",
+      "leader": "Christopher Luxon",
+      "in_outgoing_government": true,
+      "electorate_lifeline": "National holds numerous electorate seats outright and comfortably clears 5% regardless.",
+      "sources": ["https://en.wikipedia.org/wiki/2026_New_Zealand_general_election"]
+    },
+    {
+      "code": "lab",
+      "name": "Labour",
+      "leader": "Chris Hipkins",
+      "in_outgoing_government": false,
+      "electorate_lifeline": "Labour holds numerous electorate seats outright and comfortably clears 5% regardless.",
+      "sources": ["https://en.wikipedia.org/wiki/2026_New_Zealand_general_election"]
+    },
+    {
+      "code": "grn",
+      "name": "Green",
+      "leader": "Marama Davidson and Chloe Swarbrick (co-leaders)",
+      "in_outgoing_government": false,
+      "electorate_lifeline": "Co-leader Chloe Swarbrick holds the Auckland Central electorate, which would waive the threshold even if the party vote fell short.",
+      "sources": ["https://en.wikipedia.org/wiki/2026_New_Zealand_general_election"]
+    },
+    {
+      "code": "act",
+      "name": "ACT",
+      "leader": "David Seymour",
+      "in_outgoing_government": true,
+      "electorate_lifeline": "Leader David Seymour holds the Epsom electorate, which has waived ACT's threshold in past elections and is expected to again.",
+      "sources": ["https://en.wikipedia.org/wiki/2026_New_Zealand_general_election"]
+    },
+    {
+      "code": "nzf",
+      "name": "NZ First",
+      "leader": "Winston Peters",
+      "in_outgoing_government": true,
+      "electorate_lifeline": "NZ First holds no electorate seat (all its 2023 MPs, including Peters, entered on the list), so it depends on clearing 5% of the party vote.",
+      "sources": ["https://en.wikipedia.org/wiki/2026_New_Zealand_general_election"]
+    },
+    {
+      "code": "tpm",
+      "name": "Te Pati Maori",
+      "leader": "Debbie Ngarewa-Packer and Rawiri Waititi (co-leaders)",
+      "in_outgoing_government": false,
+      "electorate_lifeline": "Te Pati Maori holds several Maori electorate seats (including Waititi's and Ngarewa-Packer's own), which waives the threshold regardless of its party-vote share.",
+      "sources": ["https://en.wikipedia.org/wiki/2026_New_Zealand_general_election"]
+    },
+    {
+      "code": "top",
+      "name": "The Opportunities Party (TOP)",
+      "leader": "Qiulae Wong",
+      "in_outgoing_government": false,
+      "electorate_lifeline": "Wong is contesting Mount Albert as TOP's best electorate prospect, but the party holds no seat and is polling just under 5%, so an electorate win is a long shot it needs for representation.",
+      "sources": ["https://en.wikipedia.org/wiki/Qiulae_Wong", "https://newswire.co.nz/2026/05/qiulae-wong-pitches-opportunity-party-as-coalition-kingmaker-with-polling-just-short-of-the-five-per-cent-threshold/"]
+    }
+  ],
+  "stances": [
+    {
+      "from": "nzf",
+      "toward": "lab",
+      "stance": "excludes",
+      "strength": "categorical",
+      "condition": "",
+      "date": "2026-04-22",
+      "speaker": "Winston Peters",
+      "quote": "No, we won't do a deal with Labour or their Marxist and separatist mates.",
+      "paraphrase": "Peters categorically ruled out NZ First doing any post-election deal with Labour.",
+      "source_url": "https://www.nzherald.co.nz/nz/politics/election-2026-winston-peters-says-nz-first-wont-do-a-deal-with-labour-as-chris-hipkins-remains-non-committal-nicola-willis-unconvinced/RPUZCC2UWBBB3EELNI2SQGQTPY/",
+      "source_name": "NZ Herald",
+      "confidence": "high"
+    },
+    {
+      "from": "lab",
+      "toward": "nzf",
+      "stance": "excludes",
+      "strength": "categorical",
+      "condition": "",
+      "date": "2026-08-10",
+      "speaker": "Chris Hipkins",
+      "quote": "They won't have any role in a government that I lead.",
+      "paraphrase": "Hipkins definitively ruled out any role for NZ First in a Labour-led government, citing Peters' conduct as racist.",
+      "source_url": "https://www.interest.co.nz/public-policy/139750/labour-leader-chris-hipkins-officially-rules-out-working-winston-peters-and-nz",
+      "source_name": "interest.co.nz",
+      "confidence": "high"
+    },
+    {
+      "from": "lab",
+      "toward": "grn",
+      "stance": "pact",
+      "strength": "categorical",
+      "condition": "",
+      "date": "2026-02-06",
+      "speaker": "Labour and Green Party (joint statement)",
+      "quote": "the two parties would work together during the election and in a future government",
+      "paraphrase": "Labour and the Greens announced formal cooperation for the campaign and any resulting government at a Waitangi press conference.",
+      "source_url": "https://en.wikipedia.org/wiki/2026_New_Zealand_general_election",
+      "source_name": "Wikipedia (2026 New Zealand general election)",
+      "confidence": "medium"
+    },
+    {
+      "from": "nat",
+      "toward": "top",
+      "stance": "excludes",
+      "strength": "categorical",
+      "condition": "",
+      "date": "2026-07-31",
+      "speaker": "Christopher Luxon",
+      "quote": "would not work with them even in a confidence and supply agreement",
+      "paraphrase": "Luxon ruled out National working with TOP after the election, even on confidence and supply, largely over TOP's tax policy.",
+      "source_url": "https://en.wikipedia.org/wiki/2026_New_Zealand_general_election",
+      "source_name": "Wikipedia (2026 New Zealand general election)",
+      "confidence": "medium"
+    },
+    {
+      "from": "nat",
+      "toward": "tpm",
+      "stance": "excludes",
+      "strength": "soft",
+      "condition": "",
+      "date": "2023-05-10",
+      "speaker": "Christopher Luxon",
+      "quote": "The bridge between National and Te Pati Maori is too wide to close.",
+      "paraphrase": "Luxon has previously ruled out National working with Te Pati Maori; no 2026-dated retraction or restatement was found, so this reflects his last confirmed public position.",
+      "source_url": "https://www.national.org.nz/news/luxon-rules-out-te-pati-maori",
+      "source_name": "New Zealand National Party",
+      "confidence": "medium"
+    },
+    {
+      "from": "lab",
+      "toward": "tpm",
+      "stance": "conditional",
+      "strength": "soft",
+      "condition": "Senior government roles for Te Pati Maori are described by Hipkins as unlikely, though a working relationship after the election is not ruled out.",
+      "date": "2025-11-10",
+      "speaker": "Chris Hipkins",
+      "quote": "They're doing a pretty good job of that for themselves at the moment.",
+      "paraphrase": "Hipkins responded dismissively when asked about Te Pati Maori's troubles, signalling a cool but not fully excluded relationship.",
+      "source_url": "https://www.nzherald.co.nz/nz/politics/labour-expresses-no-concern-if-te-pati-maori-destroyed-at-2026-election-willie-jackson-says-party-will-try-to-take-them-out/FFV3YKJO6FFIJFN6TCKDNSIOA4/",
+      "source_name": "NZ Herald",
+      "confidence": "medium"
+    }
+  ],
+  "gaps": [
+    "No 2026-dated verbatim quote found (after two fetch attempts each) on: ACT's stance toward Te Pati Maori; National's or ACT's stance toward continuing with NZ First after 2026; NZ First's stance toward continuing with National/ACT.",
+    "Exact verbatim wording (with quotation marks confirmed on the primary news article, not just Wikipedia's paraphrase) for the Labour-Green cooperation announcement and for Luxon's TOP exclusion could not be fetched directly; both rows are sourced to the Wikipedia summary of the 2026 election instead, and the Waitangi date (6 Feb 2026, Waitangi Day) is inferred rather than stated exactly in the source.",
+    "Chris Hipkins' fuller August 2026 remarks on Te Pati Maori senior government roles (paraphrased as 'unlikely' across several outlets) could not be retrieved as a verbatim quote; RNZ and NZ Herald pages on this were blocked (robots.txt / 403) on repeated attempts.",
+    "TOP's own stance toward Labour or National (as opposed to National's and Labour's stance toward TOP) was not confirmed with a verbatim 2026 quote."
+  ]
+}

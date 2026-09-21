@@ -75,7 +75,7 @@ if commit_paths "Champions: $NEW_COUNT new cricket champion(s) [vercel skip]" \
   public/data/champions-history.json \
   public/data/champions-current.json \
   public/data/champions-metro-extra.json \
-  public/data/golf-months.json; then
+  public/data/majors/golf-months.json; then
   revalidate_ping "champions" "/sports/champions"
 fi
 

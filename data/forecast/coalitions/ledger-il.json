@@ -1,0 +1,2480 @@
+{
+ "built": "2026-09-21",
+ "governments": [
+  {
+   "id": "il-1",
+   "ordinal": 1,
+   "knesset": 1,
+   "election": "1949-01-25",
+   "formed": "1949-03-08",
+   "ended": "1950-10-30",
+   "pm": "David Ben-Gurion",
+   "pm_party": "Mapai",
+   "members": [
+    {
+     "party": "Mapai",
+     "seats": 46
+    },
+    {
+     "party": "United Religious Front",
+     "seats": 16
+    },
+    {
+     "party": "Progressive Party",
+     "seats": 7
+    },
+    {
+     "party": "Sephardim and Oriental Communities",
+     "seats": 4
+    },
+    {
+     "party": "Democratic List of Nazareth",
+     "seats": 2
+    }
+   ],
+   "outside_support": [],
+   "seats_total": 75,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Mapai",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 42,
+   "later_changes": "Ben-Gurion resigned 15 Oct 1950 over disputes with the United Religious Front on education policy in immigrant camps.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/First_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-2",
+   "ordinal": 2,
+   "knesset": 1,
+   "election": "1949-01-25",
+   "formed": "1950-11-01",
+   "ended": "1951-10-08",
+   "pm": "David Ben-Gurion",
+   "pm_party": "Mapai",
+   "members": [
+    {
+     "party": "Mapai",
+     "seats": null
+    },
+    {
+     "party": "United Religious Front",
+     "seats": null
+    },
+    {
+     "party": "Progressive Party",
+     "seats": null
+    },
+    {
+     "party": "Sephardim and Oriental Communities",
+     "seats": null
+    },
+    {
+     "party": "Democratic List of Nazareth",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Mapai",
+   "largest_party_in_gov": true,
+   "formed_mid_term": true,
+   "failed_mandates_before": null,
+   "days_election_to_formation": null,
+   "later_changes": "Reshuffle of the first government after a Knesset dispute over registration of schoolchildren; same coalition parties retained.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Second_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-3",
+   "ordinal": 3,
+   "knesset": 2,
+   "election": "1951-07-30",
+   "formed": "1951-10-08",
+   "ended": "1952-12-24",
+   "pm": "David Ben-Gurion",
+   "pm_party": "Mapai",
+   "members": [
+    {
+     "party": "Mapai",
+     "seats": null
+    },
+    {
+     "party": "Mizrachi",
+     "seats": null
+    },
+    {
+     "party": "Hapoel HaMizrachi",
+     "seats": null
+    },
+    {
+     "party": "Agudat Yisrael",
+     "seats": null
+    },
+    {
+     "party": "Poalei Agudat Yisrael",
+     "seats": null
+    },
+    {
+     "party": "Democratic List for Israeli Arabs",
+     "seats": null
+    },
+    {
+     "party": "Progress and Work",
+     "seats": null
+    },
+    {
+     "party": "Agriculture and Development",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Mapai",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 70,
+   "later_changes": "Agudat Yisrael and Poalei Agudat Yisrael left the coalition on 23 Sept 1952 over conscription, reducing it to 60/120 seats; government resigned 19 Dec 1952 over religious education dispute.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Third_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-4",
+   "ordinal": 4,
+   "knesset": 2,
+   "election": "1951-07-30",
+   "formed": "1952-12-24",
+   "ended": "1954-01-26",
+   "pm": "David Ben-Gurion",
+   "pm_party": "Mapai",
+   "members": [
+    {
+     "party": "Mapai",
+     "seats": null
+    },
+    {
+     "party": "General Zionists",
+     "seats": null
+    },
+    {
+     "party": "Progressive Party",
+     "seats": null
+    },
+    {
+     "party": "Hapoel HaMizrachi",
+     "seats": null
+    },
+    {
+     "party": "Mizrachi",
+     "seats": null
+    },
+    {
+     "party": "Democratic List for Israeli Arabs",
+     "seats": null
+    },
+    {
+     "party": "Progress and Work",
+     "seats": null
+    },
+    {
+     "party": "Agriculture and Development",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Mapai",
+   "largest_party_in_gov": true,
+   "formed_mid_term": true,
+   "failed_mandates_before": null,
+   "days_election_to_formation": null,
+   "later_changes": "Ben-Gurion dropped Agudat Yisrael and Poalei Agudat Yisrael, replacing them with the General Zionists and Progressive Party.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fourth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-5",
+   "ordinal": 5,
+   "knesset": 2,
+   "election": "1951-07-30",
+   "formed": "1954-01-26",
+   "ended": "1955-06-29",
+   "pm": "Moshe Sharett",
+   "pm_party": "Mapai",
+   "members": [
+    {
+     "party": "Mapai",
+     "seats": null
+    },
+    {
+     "party": "General Zionists",
+     "seats": null
+    },
+    {
+     "party": "Progressive Party",
+     "seats": null
+    },
+    {
+     "party": "Mizrachi",
+     "seats": null
+    },
+    {
+     "party": "Hapoel HaMizrachi",
+     "seats": null
+    },
+    {
+     "party": "Democratic List for Israeli Arabs",
+     "seats": null
+    },
+    {
+     "party": "Progress and Work",
+     "seats": null
+    },
+    {
+     "party": "Agriculture and Development",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Mapai",
+   "largest_party_in_gov": true,
+   "formed_mid_term": true,
+   "failed_mandates_before": null,
+   "days_election_to_formation": null,
+   "later_changes": "Sharett succeeded Ben-Gurion as PM with the same coalition; fell 29 Jun 1955 when the General Zionists refused to back the government in a no-confidence vote.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fifth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-6",
+   "ordinal": 6,
+   "knesset": 2,
+   "election": "1951-07-30",
+   "formed": "1955-06-29",
+   "ended": "1955-11-03",
+   "pm": "Moshe Sharett",
+   "pm_party": "Mapai",
+   "members": [
+    {
+     "party": "Mapai",
+     "seats": null
+    },
+    {
+     "party": "Mizrachi",
+     "seats": null
+    },
+    {
+     "party": "Hapoel HaMizrachi",
+     "seats": null
+    },
+    {
+     "party": "Democratic List for Israeli Arabs",
+     "seats": null
+    },
+    {
+     "party": "Progress and Work",
+     "seats": null
+    },
+    {
+     "party": "Agriculture and Development",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "minority",
+   "largest_party": "Mapai",
+   "largest_party_in_gov": true,
+   "formed_mid_term": true,
+   "failed_mandates_before": null,
+   "days_election_to_formation": null,
+   "later_changes": "Sharett dropped the General Zionists and Progressive Party from the coalition (one Progressive minister stayed on individually).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sixth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-7",
+   "ordinal": 7,
+   "knesset": 3,
+   "election": "1955-07-26",
+   "formed": "1955-11-03",
+   "ended": "1958-01-07",
+   "pm": "David Ben-Gurion",
+   "pm_party": "Mapai",
+   "members": [
+    {
+     "party": "Mapai",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Mapam",
+     "seats": null
+    },
+    {
+     "party": "Ahdut HaAvoda",
+     "seats": null
+    },
+    {
+     "party": "Progressive Party",
+     "seats": null
+    },
+    {
+     "party": "Democratic List for Israeli Arabs",
+     "seats": null
+    },
+    {
+     "party": "Progress and Work",
+     "seats": null
+    },
+    {
+     "party": "Agriculture and Development",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Mapai",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 100,
+   "later_changes": "Ben-Gurion resigned 31 Dec 1957 after demanding Ahdut HaAvoda ministers resign over an information leak; government stayed in place about a week until the 8th government formed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Seventh_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-8",
+   "ordinal": 8,
+   "knesset": 3,
+   "election": "1955-07-26",
+   "formed": "1958-01-07",
+   "ended": "1959-12-17",
+   "pm": "David Ben-Gurion",
+   "pm_party": "Mapai",
+   "members": [
+    {
+     "party": "Mapai",
+     "seats": null
+    },
+    {
+     "party": "Mapam",
+     "seats": null
+    },
+    {
+     "party": "Ahdut HaAvoda",
+     "seats": null
+    },
+    {
+     "party": "Progressive Party",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Democratic List for Israeli Arabs",
+     "seats": null
+    },
+    {
+     "party": "Progress and Work",
+     "seats": null
+    },
+    {
+     "party": "Agriculture and Development",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Mapai",
+   "largest_party_in_gov": true,
+   "formed_mid_term": true,
+   "failed_mandates_before": null,
+   "days_election_to_formation": null,
+   "later_changes": "NRP ministers left 1 Jul 1958; Ahdut HaAvoda and Mapam left 5 Jul 1959 over an arms deal with West Germany, precipitating Ben-Gurion's resignation.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Eighth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-9",
+   "ordinal": 9,
+   "knesset": 4,
+   "election": "1959-11-03",
+   "formed": "1959-12-17",
+   "ended": "1961-11-02",
+   "pm": "David Ben-Gurion",
+   "pm_party": "Mapai",
+   "members": [
+    {
+     "party": "Mapai",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Mapam",
+     "seats": null
+    },
+    {
+     "party": "Ahdut HaAvoda",
+     "seats": null
+    },
+    {
+     "party": "Progressive Party",
+     "seats": null
+    },
+    {
+     "party": "Agriculture and Development",
+     "seats": null
+    },
+    {
+     "party": "Progress and Development",
+     "seats": null
+    },
+    {
+     "party": "Cooperation and Brotherhood",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Mapai",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 44,
+   "later_changes": "Largely a continuation of the 8th government's coalition, adding the Arab satellite lists Progress and Development and Cooperation and Brotherhood; fell 31 Jan 1961 on a no-confidence motion.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ninth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-10",
+   "ordinal": 10,
+   "knesset": 5,
+   "election": "1961-08-15",
+   "formed": "1961-11-02",
+   "ended": "1963-06-26",
+   "pm": "David Ben-Gurion",
+   "pm_party": "Mapai",
+   "members": [
+    {
+     "party": "Mapai",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Ahdut HaAvoda",
+     "seats": null
+    },
+    {
+     "party": "Poalei Agudat Yisrael",
+     "seats": null
+    },
+    {
+     "party": "Cooperation and Brotherhood",
+     "seats": null
+    },
+    {
+     "party": "Progress and Development",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Mapai",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 79,
+   "later_changes": "Ben-Gurion resigned 16 Jun 1963 citing personal reasons; this was his final term as PM.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tenth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-11",
+   "ordinal": 11,
+   "knesset": 5,
+   "election": "1961-08-15",
+   "formed": "1963-06-26",
+   "ended": "1964-12-22",
+   "pm": "Levi Eshkol",
+   "pm_party": "Mapai",
+   "members": [
+    {
+     "party": "Mapai",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Ahdut HaAvoda",
+     "seats": null
+    },
+    {
+     "party": "Poalei Agudat Yisrael",
+     "seats": null
+    },
+    {
+     "party": "Cooperation and Brotherhood",
+     "seats": null
+    },
+    {
+     "party": "Progress and Development",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Mapai",
+   "largest_party_in_gov": true,
+   "formed_mid_term": true,
+   "failed_mandates_before": null,
+   "days_election_to_formation": null,
+   "later_changes": "Eshkol continued Ben-Gurion's coalition unchanged as a 'government of continuity'; resigned 14 Dec 1964 amid the Lavon Affair dispute.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Eleventh_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-12",
+   "ordinal": 12,
+   "knesset": 5,
+   "election": "1961-08-15",
+   "formed": "1964-12-22",
+   "ended": "1966-01-12",
+   "pm": "Levi Eshkol",
+   "pm_party": "Mapai",
+   "members": [
+    {
+     "party": "Mapai",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Ahdut HaAvoda",
+     "seats": null
+    },
+    {
+     "party": "Poalei Agudat Yisrael",
+     "seats": null
+    },
+    {
+     "party": "Cooperation and Brotherhood",
+     "seats": null
+    },
+    {
+     "party": "Progress and Development",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Mapai",
+   "largest_party_in_gov": true,
+   "formed_mid_term": true,
+   "failed_mandates_before": null,
+   "days_election_to_formation": null,
+   "later_changes": "Same coalition retained; Yosef Almogi and Shimon Peres resigned in May 1965 over the Mapai-Ahdut HaAvoda alliance.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twelfth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-13",
+   "ordinal": 13,
+   "knesset": 6,
+   "election": "1965-11-02",
+   "formed": "1966-01-12",
+   "ended": "1969-03-17",
+   "pm": "Levi Eshkol",
+   "pm_party": "Alignment",
+   "members": [
+    {
+     "party": "Alignment",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Mapam",
+     "seats": null
+    },
+    {
+     "party": "Independent Liberals",
+     "seats": null
+    },
+    {
+     "party": "Poalei Agudat Yisrael",
+     "seats": null
+    },
+    {
+     "party": "Progress and Development",
+     "seats": null
+    },
+    {
+     "party": "Cooperation and Brotherhood",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "unity",
+   "largest_party": "Alignment",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 71,
+   "later_changes": "Gahal and Rafi joined on the eve of the Six-Day War (5 Jun 1967), turning it into a broad national-unity government; Eshkol died in office 26 Feb 1969.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thirteenth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-14",
+   "ordinal": 14,
+   "knesset": 6,
+   "election": "1965-11-02",
+   "formed": "1969-03-17",
+   "ended": "1969-12-15",
+   "pm": "Golda Meir",
+   "pm_party": "Alignment",
+   "members": [
+    {
+     "party": "Alignment",
+     "seats": null
+    },
+    {
+     "party": "Gahal",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Independent Liberals",
+     "seats": null
+    },
+    {
+     "party": "Poalei Agudat Yisrael",
+     "seats": null
+    },
+    {
+     "party": "Progress and Development",
+     "seats": null
+    },
+    {
+     "party": "Cooperation and Brotherhood",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "unity",
+   "largest_party": "Alignment",
+   "largest_party_in_gov": true,
+   "formed_mid_term": true,
+   "failed_mandates_before": null,
+   "days_election_to_formation": null,
+   "later_changes": "Formed after Eshkol's death, retaining the national-unity coalition inherited from the 13th government.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fourteenth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-15",
+   "ordinal": 15,
+   "knesset": 7,
+   "election": "1969-10-28",
+   "formed": "1969-12-15",
+   "ended": "1974-03-10",
+   "pm": "Golda Meir",
+   "pm_party": "Alignment",
+   "members": [
+    {
+     "party": "Alignment",
+     "seats": null
+    },
+    {
+     "party": "Gahal",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Independent Liberals",
+     "seats": null
+    },
+    {
+     "party": "Progress and Development",
+     "seats": null
+    },
+    {
+     "party": "Cooperation and Brotherhood",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "unity",
+   "largest_party": "Alignment",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 48,
+   "later_changes": "First government to serve a full four-year term; Gahal left in Aug 1970 over acceptance of the Rogers Plan, ending the unity arrangement.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fifteenth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-16",
+   "ordinal": 16,
+   "knesset": 8,
+   "election": "1973-12-31",
+   "formed": "1974-03-10",
+   "ended": "1974-06-03",
+   "pm": "Golda Meir",
+   "pm_party": "Alignment",
+   "members": [
+    {
+     "party": "Alignment",
+     "seats": 68
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Independent Liberals",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Alignment",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 69,
+   "later_changes": "Shortest-lived Israeli government (85 days); Meir resigned 11 Apr 1974 after the Agranat Commission's interim Yom Kippur War report, remaining caretaker until Rabin formed the 17th government.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sixteenth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-17",
+   "ordinal": 17,
+   "knesset": 8,
+   "election": "1973-12-31",
+   "formed": "1974-06-03",
+   "ended": "1977-06-21",
+   "pm": "Yitzhak Rabin",
+   "pm_party": "Alignment",
+   "members": [
+    {
+     "party": "Alignment",
+     "seats": 54
+    },
+    {
+     "party": "Independent Liberals",
+     "seats": 4
+    },
+    {
+     "party": "Ratz",
+     "seats": 3
+    }
+   ],
+   "outside_support": [],
+   "seats_total": 61,
+   "chamber": 120,
+   "type": "minimal_winning",
+   "largest_party": "Alignment",
+   "largest_party_in_gov": true,
+   "formed_mid_term": true,
+   "failed_mandates_before": null,
+   "days_election_to_formation": null,
+   "later_changes": "National Religious Party joined 30 Oct 1974 (+10 seats); Ratz left 6 Nov 1974; NRP resigned 22 Dec 1976 leaving the government in caretaker status until the 1977 election.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Seventeenth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-18",
+   "ordinal": 18,
+   "knesset": 9,
+   "election": "1977-05-17",
+   "formed": "1977-06-21",
+   "ended": "1981-08-05",
+   "pm": "Menachem Begin",
+   "pm_party": "Likud",
+   "members": [
+    {
+     "party": "Likud",
+     "seats": 43
+    },
+    {
+     "party": "Shlomtzion",
+     "seats": 2
+    },
+    {
+     "party": "National Religious Party",
+     "seats": 12
+    },
+    {
+     "party": "Agudat Yisrael",
+     "seats": 4
+    }
+   ],
+   "outside_support": [],
+   "seats_total": 61,
+   "chamber": 120,
+   "type": "minimal_winning",
+   "largest_party": "Likud",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 35,
+   "later_changes": "Corrected: at the 20 Jun 1977 confidence vote the coalition already effectively included Shlomtzion (2 seats, Ariel Sharon became Minister of Agriculture), giving 61/120, a bare majority; Shlomtzion's formal merger into Likud followed on 5 Jul 1977. Moshe Dayan (elected on the Alignment list) joined as Foreign Minister as an independent MK, and Shmuel Flatto-Sharon (1 seat) gave informal support in connection with his parliamentary-immunity request; neither is confirmed as a formal coalition seat and both are left out of seats_total (see gaps). Dash joined the coalition in Oct 1977 with 15 seats, giving a working majority of about 76/120, before deteriorating internally and largely leaving by Sep 1978.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Eighteenth_government_of_Israel",
+    "https://en.wikipedia.org/wiki/1977_Israeli_legislative_election",
+    "https://en.wikipedia.org/wiki/Shlomtzion_(political_party)"
+   ]
+  },
+  {
+   "id": "il-19",
+   "ordinal": 19,
+   "knesset": 10,
+   "election": "1981-06-30",
+   "formed": "1981-08-05",
+   "ended": "1983-08-28",
+   "pm": "Menachem Begin",
+   "pm_party": "Likud",
+   "members": [
+    {
+     "party": "Likud",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Agudat Yisrael",
+     "seats": null
+    },
+    {
+     "party": "Tami",
+     "seats": null
+    },
+    {
+     "party": "Telem",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "minimal_winning",
+   "largest_party": "Likud",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 36,
+   "later_changes": "Coalition held 63 of 120 seats at formation; Tehiya joined 26 Aug 1981, raising ministerial posts from 17 to 18.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nineteenth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-20",
+   "ordinal": 20,
+   "knesset": 10,
+   "election": "1981-06-30",
+   "formed": "1983-10-10",
+   "ended": "1984-09-13",
+   "pm": "Yitzhak Shamir",
+   "pm_party": "Likud",
+   "members": [
+    {
+     "party": "Likud",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Agudat Yisrael",
+     "seats": null
+    },
+    {
+     "party": "Tami",
+     "seats": null
+    },
+    {
+     "party": "Movement for the Renewal of Social Zionism",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "minimal_winning",
+   "largest_party": "Likud",
+   "largest_party_in_gov": true,
+   "formed_mid_term": true,
+   "failed_mandates_before": null,
+   "days_election_to_formation": null,
+   "later_changes": "Coalition held 62 of 120 seats after Begin's resignation; Mordechai Ben-Porat (Renewal of Social Zionism) departed 31 Jan 1984.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twentieth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-21",
+   "ordinal": 21,
+   "knesset": 11,
+   "election": "1984-07-23",
+   "formed": "1984-09-13",
+   "ended": "1986-10-20",
+   "pm": "Shimon Peres",
+   "pm_party": "Alignment",
+   "members": [
+    {
+     "party": "Alignment",
+     "seats": null
+    },
+    {
+     "party": "Likud",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Agudat Yisrael",
+     "seats": null
+    },
+    {
+     "party": "Shas",
+     "seats": null
+    },
+    {
+     "party": "Morasha",
+     "seats": null
+    },
+    {
+     "party": "Shinui",
+     "seats": null
+    },
+    {
+     "party": "Ometz",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "unity",
+   "largest_party": "Alignment",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 52,
+   "later_changes": "Grand national-unity coalition (97/120 seats) with a Peres-Shamir PM rotation agreement; Shamir took over as PM on schedule 20 Oct 1986.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twenty-first_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-22",
+   "ordinal": 22,
+   "knesset": 11,
+   "election": "1984-07-23",
+   "formed": "1986-10-20",
+   "ended": "1988-12-22",
+   "pm": "Yitzhak Shamir",
+   "pm_party": "Likud",
+   "members": [
+    {
+     "party": "Likud",
+     "seats": null
+    },
+    {
+     "party": "Alignment",
+     "seats": null
+    },
+    {
+     "party": "Shinui",
+     "seats": null
+    },
+    {
+     "party": "Shas",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Ometz",
+     "seats": null
+    },
+    {
+     "party": "Agudat Yisrael",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "unity",
+   "largest_party": "Alignment",
+   "largest_party_in_gov": true,
+   "formed_mid_term": true,
+   "failed_mandates_before": null,
+   "days_election_to_formation": null,
+   "later_changes": "Continuation of the unity government under the rotation deal, with Shamir replacing Peres as PM; Shinui departed 26 May 1987.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twenty-second_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-23",
+   "ordinal": 23,
+   "knesset": 12,
+   "election": "1988-11-01",
+   "formed": "1988-12-22",
+   "ended": "1990-06-11",
+   "pm": "Yitzhak Shamir",
+   "pm_party": "Likud",
+   "members": [
+    {
+     "party": "Likud",
+     "seats": null
+    },
+    {
+     "party": "Alignment",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Shas",
+     "seats": null
+    },
+    {
+     "party": "Agudat Yisrael",
+     "seats": null
+    },
+    {
+     "party": "Degel HaTorah",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "unity",
+   "largest_party": "Likud",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 51,
+   "later_changes": "Alignment left 15 Mar 1990 after Shamir rejected the Baker peace initiative and a no-confidence motion (60-55) toppled the government, the only time this has happened in Israeli history.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twenty-third_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-24",
+   "ordinal": 24,
+   "knesset": 12,
+   "election": "1988-11-01",
+   "formed": "1990-06-11",
+   "ended": "1992-07-13",
+   "pm": "Yitzhak Shamir",
+   "pm_party": "Likud",
+   "members": [
+    {
+     "party": "Likud",
+     "seats": null
+    },
+    {
+     "party": "National Religious Party",
+     "seats": null
+    },
+    {
+     "party": "Shas",
+     "seats": null
+    },
+    {
+     "party": "Agudat Yisrael",
+     "seats": null
+    },
+    {
+     "party": "Degel HaTorah",
+     "seats": null
+    },
+    {
+     "party": "New Liberal Party",
+     "seats": null
+    },
+    {
+     "party": "Tehiya",
+     "seats": null
+    },
+    {
+     "party": "Tzomet",
+     "seats": null
+    },
+    {
+     "party": "Moledet",
+     "seats": null
+    },
+    {
+     "party": "Unity for Peace and Immigration",
+     "seats": null
+    },
+    {
+     "party": "Geulat Yisrael",
+     "seats": null
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "minimal_winning",
+   "largest_party": "Likud",
+   "largest_party_in_gov": true,
+   "formed_mid_term": true,
+   "failed_mandates_before": null,
+   "days_election_to_formation": null,
+   "later_changes": "Narrow right-religious coalition of 62/120 seats; Tzomet left 31 Dec 1991, Moledet and Tehiya left 21 Jan 1992, all in protest of Shamir's participation in the Madrid Conference.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twenty-fourth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-25",
+   "ordinal": 25,
+   "knesset": 13,
+   "election": "1992-06-23",
+   "formed": "1992-07-13",
+   "ended": "1995-11-22",
+   "pm": "Yitzhak Rabin",
+   "pm_party": "Labor",
+   "members": [
+    {
+     "party": "Labor",
+     "seats": 44
+    },
+    {
+     "party": "Meretz",
+     "seats": 12
+    },
+    {
+     "party": "Shas",
+     "seats": 6
+    }
+   ],
+   "outside_support": [
+    {
+     "party": "Hadash",
+     "seats": 3
+    },
+    {
+     "party": "Arab Democratic Party",
+     "seats": 2
+    }
+   ],
+   "seats_total": 62,
+   "chamber": 120,
+   "type": "minimal_winning",
+   "largest_party": "Labor",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 20,
+   "later_changes": "Shas left the coalition 14 Sep 1993 (remaining as outside support for some period); Rabin assassinated 4 Nov 1995, Peres took over as interim PM under the same government.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twenty-fifth_government_of_Israel",
+    "https://en.wikipedia.org/wiki/1992_Israeli_legislative_election"
+   ]
+  },
+  {
+   "id": "il-26",
+   "ordinal": 26,
+   "knesset": 13,
+   "election": "1992-06-23",
+   "formed": "1995-11-22",
+   "ended": "1996-06-18",
+   "pm": "Shimon Peres",
+   "pm_party": "Labor",
+   "members": [
+    {
+     "party": "Labor",
+     "seats": null
+    },
+    {
+     "party": "Meretz",
+     "seats": null
+    },
+    {
+     "party": "Yiud",
+     "seats": null
+    }
+   ],
+   "outside_support": [
+    {
+     "party": "Hadash",
+     "seats": 3
+    },
+    {
+     "party": "Arab Democratic Party",
+     "seats": 2
+    }
+   ],
+   "seats_total": 58,
+   "chamber": 120,
+   "type": "minority",
+   "largest_party": "Labor",
+   "largest_party_in_gov": true,
+   "formed_mid_term": true,
+   "failed_mandates_before": null,
+   "days_election_to_formation": null,
+   "later_changes": "Formed after Rabin's assassination with Peres continuing as PM; coalition (58/120 seats) relied on 5 outside-support seats from Hadash and the Arab Democratic Party.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twenty-sixth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-27",
+   "ordinal": 27,
+   "knesset": 14,
+   "election": "1996-05-29",
+   "formed": "1996-06-18",
+   "ended": "1999-07-06",
+   "pm": "Benjamin Netanyahu",
+   "pm_party": "Likud-Gesher-Tzomet",
+   "members": [
+    {
+     "party": "Likud-Gesher-Tzomet",
+     "seats": 32
+    },
+    {
+     "party": "Shas",
+     "seats": 10
+    },
+    {
+     "party": "National Religious Party",
+     "seats": 9
+    },
+    {
+     "party": "Yisrael BaAliyah",
+     "seats": 7
+    },
+    {
+     "party": "United Torah Judaism",
+     "seats": 4
+    },
+    {
+     "party": "Third Way",
+     "seats": 4
+    }
+   ],
+   "outside_support": [
+    {
+     "party": "Moledet",
+     "seats": 2
+    }
+   ],
+   "seats_total": 66,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Labor",
+   "largest_party_in_gov": false,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 20,
+   "later_changes": "Gesher left the Likud-Gesher-Tzomet bloc's coalition role on 6 Jan 1998. Labor was the single largest Knesset party (34 seats) but sat in opposition.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twenty-seventh_government_of_Israel",
+    "https://en.wikipedia.org/wiki/1996_Israeli_general_election"
+   ]
+  },
+  {
+   "id": "il-28",
+   "ordinal": 28,
+   "knesset": 15,
+   "election": "1999-05-17",
+   "formed": "1999-07-06",
+   "ended": "2001-03-07",
+   "pm": "Ehud Barak",
+   "pm_party": "One Israel",
+   "members": [
+    {
+     "party": "One Israel",
+     "seats": 26
+    },
+    {
+     "party": "Centre Party",
+     "seats": 6
+    },
+    {
+     "party": "Shas",
+     "seats": 17
+    },
+    {
+     "party": "Meretz",
+     "seats": 10
+    },
+    {
+     "party": "National Religious Party",
+     "seats": 5
+    },
+    {
+     "party": "Yisrael BaAliyah",
+     "seats": 6
+    },
+    {
+     "party": "United Torah Judaism",
+     "seats": 5
+    }
+   ],
+   "outside_support": [],
+   "seats_total": 75,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "One Israel",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 50,
+   "later_changes": "United Torah Judaism left in Sep 1999 over Shabbat transport of a power-station turbine; the government deteriorated further after the Second Intifada broke out, leading to a special PM election in Feb 2001.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twenty-eighth_government_of_Israel",
+    "https://en.wikipedia.org/wiki/1999_Israeli_general_election"
+   ]
+  },
+  {
+   "id": "il-29",
+   "ordinal": 29,
+   "knesset": 15,
+   "election": "2001-02-06",
+   "formed": "2001-03-07",
+   "ended": "2003-02-28",
+   "pm": "Ariel Sharon",
+   "pm_party": "Likud",
+   "members": [
+    {
+     "party": "Likud",
+     "seats": 19
+    },
+    {
+     "party": "Labor-Meimad",
+     "seats": 26
+    },
+    {
+     "party": "Shas",
+     "seats": 17
+    },
+    {
+     "party": "Yisrael BaAliyah",
+     "seats": 6
+    },
+    {
+     "party": "Yisrael Beiteinu",
+     "seats": 4
+    },
+    {
+     "party": "Centre Party",
+     "seats": 6
+    },
+    {
+     "party": "National Union",
+     "seats": 4
+    },
+    {
+     "party": "Gesher",
+     "seats": 2
+    },
+    {
+     "party": "New Way",
+     "seats": null
+    },
+    {
+     "party": "United Torah Judaism",
+     "seats": 5
+    }
+   ],
+   "outside_support": [],
+   "seats_total": null,
+   "chamber": 120,
+   "type": "unity",
+   "largest_party": "Labor-Meimad",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 29,
+   "later_changes": "Formed after a special PM-only election (no parallel Knesset vote), so Knesset seat shares carried over from 1999; Shas left 23 May 2002, returned 3 Jun 2002; Labor-Meimad exited 2 Nov 2002, ending the government.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Twenty-ninth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-30",
+   "ordinal": 30,
+   "knesset": 16,
+   "election": "2003-01-28",
+   "formed": "2003-02-28",
+   "ended": "2006-05-04",
+   "pm": "Ariel Sharon",
+   "pm_party": "Likud",
+   "members": [
+    {
+     "party": "Likud",
+     "seats": 38
+    },
+    {
+     "party": "Shinui",
+     "seats": 15
+    },
+    {
+     "party": "National Union",
+     "seats": 7
+    }
+   ],
+   "outside_support": [],
+   "seats_total": 60,
+   "chamber": 120,
+   "type": "minority",
+   "largest_party": "Likud",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": null,
+   "days_election_to_formation": 31,
+   "later_changes": "Formed with 60/120 seats, one short of a majority; National Religious Party joined 3 Mar 2003 (+6, reaching 66). National Union left Jun 2004, NRP left Nov 2004, Shinui left Dec 2004; Labor-Meimad joined Jan 2005 and left Nov 2005; Likud itself formally left in Jan 2006 as Sharon founded Kadima.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thirtieth_government_of_Israel",
+    "https://en.wikipedia.org/wiki/2003_Israeli_legislative_election"
+   ]
+  },
+  {
+   "id": "il-31",
+   "ordinal": 31,
+   "knesset": 17,
+   "election": "2006-03-28",
+   "formed": "2006-05-04",
+   "ended": "2009-03-31",
+   "pm": "Ehud Olmert",
+   "pm_party": "Kadima",
+   "members": [
+    {
+     "party": "Kadima",
+     "seats": 29
+    },
+    {
+     "party": "Labor",
+     "seats": 19
+    },
+    {
+     "party": "Shas",
+     "seats": 12
+    },
+    {
+     "party": "Gil",
+     "seats": 7
+    }
+   ],
+   "outside_support": [],
+   "seats_total": 67,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Kadima",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": 0,
+   "days_election_to_formation": 37,
+   "later_changes": "Yisrael Beiteinu joined Nov 2006 (11 seats) and left 16 Jan 2008 over Palestinian peace talks; Labor's Raleb Majadele became the first Muslim minister, 29 Jan 2007.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thirty-first_government_of_Israel",
+    "https://en.wikipedia.org/wiki/2006_Israeli_legislative_election"
+   ]
+  },
+  {
+   "id": "il-32",
+   "ordinal": 32,
+   "knesset": 18,
+   "election": "2009-02-10",
+   "formed": "2009-03-31",
+   "ended": "2013-03-18",
+   "pm": "Benjamin Netanyahu",
+   "pm_party": "Likud",
+   "members": [
+    {
+     "party": "Likud",
+     "seats": 27
+    },
+    {
+     "party": "Yisrael Beiteinu",
+     "seats": 15
+    },
+    {
+     "party": "Shas",
+     "seats": 11
+    },
+    {
+     "party": "Labor",
+     "seats": 13
+    },
+    {
+     "party": "The Jewish Home",
+     "seats": 3
+    }
+   ],
+   "outside_support": [],
+   "seats_total": 69,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Kadima",
+   "largest_party_in_gov": false,
+   "formed_mid_term": false,
+   "failed_mandates_before": 0,
+   "days_election_to_formation": 49,
+   "later_changes": "United Torah Judaism joined 1 Apr 2009 (+5, reaching 74 total). Labor left 17 Jan 2011 (Barak's 'Independence' breakaway kept supporting the government); Kadima joined 8 May 2012 and left 17 Jul 2012 over the Tal Law. Kadima was the single largest Knesset party (28 seats) but sat in opposition at formation.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thirty-second_government_of_Israel",
+    "https://en.wikipedia.org/wiki/2009_Israeli_legislative_election"
+   ]
+  },
+  {
+   "id": "il-33",
+   "ordinal": 33,
+   "knesset": 19,
+   "election": "2013-01-22",
+   "formed": "2013-03-18",
+   "ended": "2015-05-14",
+   "pm": "Benjamin Netanyahu",
+   "pm_party": "Likud Yisrael Beiteinu",
+   "members": [
+    {
+     "party": "Likud Yisrael Beiteinu",
+     "seats": 31
+    },
+    {
+     "party": "Yesh Atid",
+     "seats": 19
+    },
+    {
+     "party": "The Jewish Home",
+     "seats": 12
+    },
+    {
+     "party": "Hatnuah",
+     "seats": 6
+    }
+   ],
+   "outside_support": [],
+   "seats_total": 68,
+   "chamber": 120,
+   "type": "surplus",
+   "largest_party": "Likud Yisrael Beiteinu",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": 0,
+   "days_election_to_formation": 55,
+   "later_changes": "Coalition collapsed 2 Dec 2014 when Netanyahu dismissed Yair Lapid (Finance) and Tzipi Livni (Justice); remaining Yesh Atid ministers resigned soon after, triggering new elections.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thirty-third_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-34",
+   "ordinal": 34,
+   "knesset": 20,
+   "election": "2015-03-17",
+   "formed": "2015-05-14",
+   "ended": "2020-05-17",
+   "pm": "Benjamin Netanyahu",
+   "pm_party": "Likud",
+   "members": [
+    {
+     "party": "Likud",
+     "seats": 30
+    },
+    {
+     "party": "United Torah Judaism",
+     "seats": 6
+    },
+    {
+     "party": "Shas",
+     "seats": 7
+    },
+    {
+     "party": "Kulanu",
+     "seats": 10
+    },
+    {
+     "party": "The Jewish Home",
+     "seats": 8
+    }
+   ],
+   "outside_support": [],
+   "seats_total": 61,
+   "chamber": 120,
+   "type": "minimal_winning",
+   "largest_party": "Likud",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": 0,
+   "days_election_to_formation": 58,
+   "later_changes": "Yisrael Beiteinu and the New Right (after splitting from Jewish Home) joined 29 Dec 2018. This government continued in caretaker form through two elections (Apr 2019, Sep 2019) that produced no new government before finally being replaced in May 2020.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thirty-fourth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-35",
+   "ordinal": 35,
+   "knesset": 23,
+   "election": "2020-03-02",
+   "formed": "2020-05-17",
+   "ended": "2021-06-13",
+   "pm": "Benjamin Netanyahu",
+   "pm_party": "Likud",
+   "members": [
+    {
+     "party": "Likud",
+     "seats": 36
+    },
+    {
+     "party": "Blue and White",
+     "seats": 15
+    },
+    {
+     "party": "Shas",
+     "seats": 9
+    },
+    {
+     "party": "United Torah Judaism",
+     "seats": 7
+    },
+    {
+     "party": "Labor",
+     "seats": 2
+    },
+    {
+     "party": "Derekh Eretz",
+     "seats": 2
+    },
+    {
+     "party": "Gesher",
+     "seats": 1
+    },
+    {
+     "party": "The Jewish Home",
+     "seats": 1
+    }
+   ],
+   "outside_support": [],
+   "seats_total": 73,
+   "chamber": 120,
+   "type": "unity",
+   "largest_party": "Likud",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": 1,
+   "days_election_to_formation": 76,
+   "later_changes": "Corrected: Blue and White (Kahol Lavan) split on 26 Mar 2020 when Yesh Atid (13 seats) and Telem (5 seats, minus 2 MKs who broke off as Derekh Eretz) left; only Gantz's Israel Resilience faction (15 seats), still using the 'Blue and White' Knesset-faction name, joined this government. Only 2 of Labor's 3 MKs (Peretz, Shmuli) joined; Merav Michaeli stayed in opposition. The Jewish Home (1 seat, formerly part of the Yamina list) joined separately from the rest of Yamina. Emergency unity/rotation government formed under COVID-19 pressure; part of the Labor Party joined Jan 2021 (2 of its 3 MKs) and left again before the government's Jun 2021 collapse.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thirty-fifth_government_of_Israel",
+    "https://en.wikipedia.org/wiki/Blue_and_White_(political_alliance)",
+    "https://en.wikipedia.org/wiki/Derekh_Eretz_(political_faction)",
+    "https://en.wikipedia.org/wiki/2020_Israeli_legislative_election"
+   ]
+  },
+  {
+   "id": "il-36",
+   "ordinal": 36,
+   "knesset": 24,
+   "election": "2021-03-23",
+   "formed": "2021-06-13",
+   "ended": "2022-12-29",
+   "pm": "Naftali Bennett",
+   "pm_party": "Yamina",
+   "members": [
+    {
+     "party": "Yesh Atid",
+     "seats": 17
+    },
+    {
+     "party": "Blue and White",
+     "seats": 8
+    },
+    {
+     "party": "Yamina",
+     "seats": 7
+    },
+    {
+     "party": "Labor",
+     "seats": 7
+    },
+    {
+     "party": "Yisrael Beiteinu",
+     "seats": 7
+    },
+    {
+     "party": "New Hope",
+     "seats": 6
+    },
+    {
+     "party": "Meretz",
+     "seats": 6
+    },
+    {
+     "party": "United Arab List",
+     "seats": 4
+    }
+   ],
+   "outside_support": [],
+   "seats_total": 62,
+   "chamber": 120,
+   "type": "minimal_winning",
+   "largest_party": "Likud",
+   "largest_party_in_gov": false,
+   "formed_mid_term": false,
+   "failed_mandates_before": 1,
+   "days_election_to_formation": 82,
+   "later_changes": "Ideologically diverse 'change government' with a Bennett-Lapid PM rotation; Lapid became PM 1 Jul 2022. Collapsed Jun-Jun 2022 over West Bank settler-law legislation; no member parties changed before dissolution.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thirty-sixth_government_of_Israel"
+   ]
+  },
+  {
+   "id": "il-37",
+   "ordinal": 37,
+   "knesset": 25,
+   "election": "2022-11-01",
+   "formed": "2022-12-29",
+   "ended": null,
+   "pm": "Benjamin Netanyahu",
+   "pm_party": "Likud",
+   "members": [
+    {
+     "party": "Likud",
+     "seats": 32
+    },
+    {
+     "party": "Religious Zionist Party",
+     "seats": 14
+    },
+    {
+     "party": "Shas",
+     "seats": 11
+    },
+    {
+     "party": "United Torah Judaism",
+     "seats": 7
+    }
+   ],
+   "outside_support": [],
+   "seats_total": 64,
+   "chamber": 120,
+   "type": "minimal_winning",
+   "largest_party": "Likud",
+   "largest_party_in_gov": true,
+   "formed_mid_term": false,
+   "failed_mandates_before": 0,
+   "days_election_to_formation": 58,
+   "later_changes": "Coalition members have shifted repeatedly since formation: Noam joined 29 Dec 2022, left 28 Feb 2023, rejoined 25 May 2023, left 24 Mar 2025; National Unity joined 12 Oct 2023, left 9 Jun 2024; New Hope left 25 Mar 2024, rejoined 29 Sep 2024; Otzma Yehudit left 21 Jan 2025, rejoined 19 Mar 2025; United Torah Judaism left 15 Jul 2025; Shas left government (retaining coalition/Knesset support) 17 Jul 2025. As of Sep 2026 this remains the government of record pending the Oct 2026 election.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thirty-seventh_government_of_Israel"
+   ]
+  }
+ ],
+ "no_government_elections": [
+  {
+   "election": "2019-04-09",
+   "mandates": [
+    {
+     "to": "Benjamin Netanyahu",
+     "result": "failed"
+    }
+   ],
+   "outcome": "Netanyahu secured the mandate with 65 recommendations but failed to form a coalition over Haredi conscription-exemption disputes; Knesset voted 74-45 to dissolve itself (29 May 2019); new election called for 17 Sep 2019.",
+   "seats": {
+    "Likud": 35,
+    "Blue and White": 35,
+    "Shas": 8,
+    "United Torah Judaism": 8,
+    "Hadash-Ta'al": 6,
+    "Labor Party": 6,
+    "Yisrael Beiteinu": 5,
+    "Union of Right-Wing Parties": 5,
+    "Meretz": 4,
+    "Kulanu": 4,
+    "United Arab List-Balad": 4
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/April_2019_Israeli_legislative_election"
+   ]
+  },
+  {
+   "election": "2019-09-17",
+   "mandates": [
+    {
+     "to": "Benjamin Netanyahu",
+     "result": "failed"
+    },
+    {
+     "to": "Benny Gantz",
+     "result": "failed"
+    }
+   ],
+   "outcome": "Netanyahu got the first mandate (25 Sep 2019) and returned it unused 22 Oct; Gantz then failed after 28 days (returned 21 Nov); no MK formed a government by the 11 Dec deadline, so the Knesset dissolved itself again; new election called for 2 Mar 2020.",
+   "seats": {
+    "Blue and White": 33,
+    "Likud": 32,
+    "Joint List": 13,
+    "Shas": 9,
+    "Yisrael Beiteinu": 8,
+    "United Torah Judaism": 7,
+    "Yamina": 7,
+    "Labor-Gesher": 6,
+    "Democratic Union": 5
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/September_2019_Israeli_legislative_election"
+   ]
+  }
+ ],
+ "families": [
+  {
+   "party": "Mapai",
+   "family": "labour-left",
+   "note": ""
+  },
+  {
+   "party": "Labor",
+   "family": "labour-left",
+   "note": "Israeli Labor Party (post-1968 successor to Mapai/Ahdut HaAvoda lineage)."
+  },
+  {
+   "party": "Alignment",
+   "family": "labour-left",
+   "note": "Electoral alliance of Mapai/Labor with Ahdut HaAvoda and later Mapam."
+  },
+  {
+   "party": "One Israel",
+   "family": "labour-left",
+   "note": "1999 Labor-led electoral bloc with Gesher and Meimad."
+  },
+  {
+   "party": "Labor-Meimad",
+   "family": "labour-left",
+   "note": ""
+  },
+  {
+   "party": "Ahdut HaAvoda",
+   "family": "labour-left",
+   "note": ""
+  },
+  {
+   "party": "Mapam",
+   "family": "labour-left",
+   "note": ""
+  },
+  {
+   "party": "United Religious Front",
+   "family": "haredi-ashkenazi",
+   "note": "1949 alliance of Mizrachi, Hapoel HaMizrachi, Agudat Yisrael, Poalei Agudat Yisrael."
+  },
+  {
+   "party": "Progressive Party",
+   "family": "general-zionist-liberal",
+   "note": ""
+  },
+  {
+   "party": "Sephardim and Oriental Communities",
+   "family": "other",
+   "note": "Ethnic-list precursor to later Sephardi/Mizrahi parties, not the haredi Shas."
+  },
+  {
+   "party": "Democratic List of Nazareth",
+   "family": "arab",
+   "note": "Mapai-affiliated."
+  },
+  {
+   "party": "Mizrachi",
+   "family": "religious-zionist",
+   "note": ""
+  },
+  {
+   "party": "Hapoel HaMizrachi",
+   "family": "religious-zionist",
+   "note": ""
+  },
+  {
+   "party": "National Religious Party",
+   "family": "religious-zionist",
+   "note": "Merger of Mizrachi and Hapoel HaMizrachi (1956)."
+  },
+  {
+   "party": "Agudat Yisrael",
+   "family": "haredi-ashkenazi",
+   "note": ""
+  },
+  {
+   "party": "Poalei Agudat Yisrael",
+   "family": "haredi-ashkenazi",
+   "note": ""
+  },
+  {
+   "party": "Degel HaTorah",
+   "family": "haredi-ashkenazi",
+   "note": ""
+  },
+  {
+   "party": "United Torah Judaism",
+   "family": "haredi-ashkenazi",
+   "note": "Merger of Agudat Yisrael and Degel HaTorah (1992)."
+  },
+  {
+   "party": "Shas",
+   "family": "haredi-sephardi",
+   "note": ""
+  },
+  {
+   "party": "Democratic List for Israeli Arabs",
+   "family": "arab",
+   "note": "Mapai-affiliated."
+  },
+  {
+   "party": "Progress and Work",
+   "family": "arab",
+   "note": "Mapai-affiliated."
+  },
+  {
+   "party": "Agriculture and Development",
+   "family": "arab",
+   "note": "Mapai-affiliated."
+  },
+  {
+   "party": "Progress and Development",
+   "family": "arab",
+   "note": "Mapai-affiliated."
+  },
+  {
+   "party": "Cooperation and Brotherhood",
+   "family": "arab",
+   "note": "Mapai-affiliated."
+  },
+  {
+   "party": "General Zionists",
+   "family": "general-zionist-liberal",
+   "note": ""
+  },
+  {
+   "party": "Gahal",
+   "family": "likud-right",
+   "note": "Herut-Liberal Party bloc, forerunner of Likud."
+  },
+  {
+   "party": "Rafi",
+   "family": "labour-left",
+   "note": "Ben-Gurion breakaway from Mapai, later merged back toward Labor/Alignment lineage."
+  },
+  {
+   "party": "Independent Liberals",
+   "family": "general-zionist-liberal",
+   "note": ""
+  },
+  {
+   "party": "Ratz",
+   "family": "centre",
+   "note": "Movement for Civil Rights and Peace; became part of Meretz in 1992."
+  },
+  {
+   "party": "Likud",
+   "family": "likud-right",
+   "note": ""
+  },
+  {
+   "party": "Likud-Gesher-Tzomet",
+   "family": "likud-right",
+   "note": "1996 joint electoral list."
+  },
+  {
+   "party": "Likud Yisrael Beiteinu",
+   "family": "likud-right",
+   "note": "2013 joint electoral list of Likud and Yisrael Beiteinu."
+  },
+  {
+   "party": "Dash",
+   "family": "centre",
+   "note": "Democratic Movement for Change."
+  },
+  {
+   "party": "Shlomtzion",
+   "family": "likud-right",
+   "note": "Ariel Sharon's list, merged into Likud after 1977."
+  },
+  {
+   "party": "Tami",
+   "family": "haredi-sephardi",
+   "note": "Sephardi-traditionalist breakaway from the NRP, judgement call."
+  },
+  {
+   "party": "Telem",
+   "family": "likud-right",
+   "note": "Moshe Dayan's breakaway list, judgement call."
+  },
+  {
+   "party": "Tehiya",
+   "family": "far-right",
+   "note": ""
+  },
+  {
+   "party": "Movement for the Renewal of Social Zionism",
+   "family": "other",
+   "note": "Ometz, a small liberal-economic list; judgement call."
+  },
+  {
+   "party": "Ometz",
+   "family": "other",
+   "note": "Small liberal-economic list led by Yigael Hurvitz, same lineage as the Movement for the Renewal of Social Zionism; judgement call."
+  },
+  {
+   "party": "Morasha",
+   "family": "religious-zionist",
+   "note": ""
+  },
+  {
+   "party": "Shinui",
+   "family": "centre",
+   "note": ""
+  },
+  {
+   "party": "New Liberal Party",
+   "family": "general-zionist-liberal",
+   "note": "judgement call."
+  },
+  {
+   "party": "Tzomet",
+   "family": "far-right",
+   "note": "judgement call, secular hawkish-nationalist."
+  },
+  {
+   "party": "Moledet",
+   "family": "far-right",
+   "note": ""
+  },
+  {
+   "party": "Unity for Peace and Immigration",
+   "family": "other",
+   "note": "Small 1990s satellite list, insufficiently documented; judgement call."
+  },
+  {
+   "party": "Geulat Yisrael",
+   "family": "haredi-sephardi",
+   "note": "Small breakaway list; judgement call."
+  },
+  {
+   "party": "Meretz",
+   "family": "centre",
+   "note": "1992 merger of Ratz, Mapam and Shinui; often treated as labour-left, here placed centre-left per fixed list constraints."
+  },
+  {
+   "party": "Yiud",
+   "family": "labour-left",
+   "note": "Small breakaway faction that backed the Peres government; judgement call."
+  },
+  {
+   "party": "Yisrael BaAliyah",
+   "family": "russian-secular-right",
+   "note": ""
+  },
+  {
+   "party": "Yisrael Beiteinu",
+   "family": "russian-secular-right",
+   "note": ""
+  },
+  {
+   "party": "Third Way",
+   "family": "centre",
+   "note": "judgement call."
+  },
+  {
+   "party": "Centre Party",
+   "family": "centre",
+   "note": ""
+  },
+  {
+   "party": "Gesher",
+   "family": "likud-right",
+   "note": "David Levy's breakaway from Likud; judgement call."
+  },
+  {
+   "party": "National Union",
+   "family": "far-right",
+   "note": ""
+  },
+  {
+   "party": "New Way",
+   "family": "likud-right",
+   "note": "Small 2001 Likud-aligned faction; judgement call."
+  },
+  {
+   "party": "Kadima",
+   "family": "centre",
+   "note": ""
+  },
+  {
+   "party": "Gil",
+   "family": "other",
+   "note": "Pensioners' Party, single-issue; judgement call."
+  },
+  {
+   "party": "Hatnuah",
+   "family": "centre",
+   "note": ""
+  },
+  {
+   "party": "Kulanu",
+   "family": "centre",
+   "note": "judgement call, economically-focused centrist list."
+  },
+  {
+   "party": "The Jewish Home",
+   "family": "religious-zionist",
+   "note": ""
+  },
+  {
+   "party": "Derekh Eretz",
+   "family": "centre",
+   "note": "judgement call."
+  },
+  {
+   "party": "Blue and White",
+   "family": "centre",
+   "note": ""
+  },
+  {
+   "party": "Yesh Atid",
+   "family": "centre",
+   "note": ""
+  },
+  {
+   "party": "Yamina",
+   "family": "religious-zionist",
+   "note": ""
+  },
+  {
+   "party": "New Hope",
+   "family": "likud-right",
+   "note": "judgement call, Likud breakaway list."
+  },
+  {
+   "party": "United Arab List",
+   "family": "arab",
+   "note": "Ra'am."
+  },
+  {
+   "party": "Hadash",
+   "family": "arab",
+   "note": ""
+  },
+  {
+   "party": "Arab Democratic Party",
+   "family": "arab",
+   "note": ""
+  },
+  {
+   "party": "Joint List",
+   "family": "arab",
+   "note": ""
+  },
+  {
+   "party": "Hadash-Ta'al",
+   "family": "arab",
+   "note": ""
+  },
+  {
+   "party": "United Arab List-Balad",
+   "family": "arab",
+   "note": ""
+  },
+  {
+   "party": "Union of Right-Wing Parties",
+   "family": "religious-zionist",
+   "note": "judgement call, 2019 religious-Zionist/far-right joint list."
+  },
+  {
+   "party": "Labor-Gesher",
+   "family": "labour-left",
+   "note": ""
+  },
+  {
+   "party": "Democratic Union",
+   "family": "centre",
+   "note": "judgement call, Meretz-led 2019 list."
+  },
+  {
+   "party": "Religious Zionist Party",
+   "family": "religious-zionist",
+   "note": "2022 joint list including Otzma Yehudit and Noam."
+  },
+  {
+   "party": "Otzma Yehudit",
+   "family": "far-right",
+   "note": ""
+  },
+  {
+   "party": "Noam",
+   "family": "religious-zionist",
+   "note": "judgement call, small anti-LGBT religious-Zionist faction."
+  },
+  {
+   "party": "National Unity",
+   "family": "centre",
+   "note": "Gantz-led list."
+  }
+ ],
+ "gaps": [
+  "Gov 1: Progressive Party seat count (7) is a Wikipedia estimate based on ministry allocation, not a directly confirmed election tally.",
+  "Gov 2: per-party seat counts at formation not given by source (same nominal coalition as Gov 1).",
+  "Gov 3: no per-party seat breakdown found; only the post-defection total (60/120) is sourced.",
+  "Gov 4: no per-party seat counts sourced; election date for Knesset 2 term reused as context only.",
+  "Gov 5: no per-party seat counts sourced.",
+  "Gov 6: no per-party seat counts sourced; classified 'minority' on the basis of losing coalition partners without replacement, not a confirmed seat count.",
+  "Gov 7: no per-party seat counts sourced.",
+  "Gov 8: no per-party seat counts sourced.",
+  "Gov 9: no per-party seat counts sourced.",
+  "Gov 10: no per-party seat counts sourced.",
+  "Gov 11: no per-party seat counts sourced.",
+  "Gov 12: no per-party seat counts sourced.",
+  "Gov 13: no per-party seat counts sourced.",
+  "Gov 14: no per-party seat counts sourced.",
+  "Gov 15: no per-party seat counts sourced.",
+  "Gov 16: seats for National Religious Party and Independent Liberals within the 68-seat coalition total not individually sourced.",
+  "Gov 19: per-party seat breakdown of the 63-seat coalition not sourced.",
+  "Gov 20: per-party seat breakdown of the 62-seat coalition not sourced.",
+  "Gov 21: per-party seat breakdown within the sourced 97-seat total not available; Alignment and Likud each won 'over 40 seats' per the source but exact split not confirmed here.",
+  "Gov 22: per-party seat breakdown not sourced.",
+  "Gov 23: per-party seat breakdown not sourced.",
+  "Gov 24: per-party seat breakdown of the 62-seat coalition not sourced; 'Unity for Peace and Immigration' and 'Geulat Yisrael' are small satellite lists whose family classification is uncertain (see families notes).",
+  "Gov 25: Hadash and Arab Democratic Party outside-support seats (5 combined) not split by party in the source.",
+  "Gov 26: per-party seat counts not sourced (source gives only the 58-seat coalition total); largest party in the 13th Knesset (Labor, in government) not explicitly restated on this page, treated as unchanged from Gov 25.",
+  "Gov 28: coalition party seat figures assembled from the 1999 election results page rather than the government's own page, which did not give them; Gesher is treated as folded into the One Israel list per that election.",
+  "Gov 29: Gesher and New Way seat counts within the coalition not sourced; overall this was an unusual broad/unity-style coalition following the sui generis 2001 special PM election with no accompanying Knesset election, so seat figures are carried over from 1999 and may not exactly reflect 2001 factional alignments.",
+  "Gov 37: Religious Zionist Party's 14 seats at the 2022 election are for the combined Religious Zionism-Otzma Yehudit-Noam list; Otzma Yehudit and Noam are not broken out as separate seat holders since they ran on one joint list, consistent with how the coalition itself lists 'Religious Zionist Party' as the formation-time member. Post-formation departures of UTJ and Shas (Jul 2025) are noted in later_changes but members[] reflects composition AT FORMATION per the file's spec.",
+  "Gov 18: corrected per Eighteenth government of Israel / 1977 election / Shlomtzion party Wikipedia pages -- Shlomtzion's 2 seats counted at the 20 Jun 1977 confidence vote (Sharon became a minister then) even though formal merger into Likud was 5 Jul 1977; total is 61/120, a bare majority (minimal_winning), not the '59-seat minority' previously recorded. Moshe Dayan's independent-MK status and Shmuel Flatto-Sharon's informal support are not confirmed as formal coalition seats and are left out of members[]/seats_total.",
+  "Gov 26: total coalition size (58/120, Labor+Meretz+Yiud) is sourced, but the individual party split is not; Yiud is described only as '3 MKs who left Tzomet' without independent 1995 confirmation that Labor/Meretz seats were unchanged from Gov 25's 44/12, so members[] seats are left null. Hadash/Arab Democratic Party outside-support seats (3 and 2) are carried over from the 1992 election result (Gov 25) on the assumption of no defections by Nov 1995; not independently confirmed for this government specifically.",
+  "Gov 29: Gesher's 2 seats (from the 1999 election, One Israel list) are used as a reasonable estimate for its seats at the 2001 formation; not independently confirmed for that date. New Way's seat count could not be sourced in three fetches and is left null.",
+  "Mandate log: dates for the 2013, 2015 and 2022 mandate-granting events are drawn from a mix of the relevant government's Wikipedia page and secondary press coverage (Forward, Al Jazeera, CQ Press), since the government pages themselves often omit the mandate date; treat these as reasonably well-sourced but secondary to the primary per-government Wikipedia pages used elsewhere in this file."
+ ],
+ "mandate_log": [
+  {
+   "election": "2013-01-22",
+   "mandates": [
+    {
+     "to": "Benjamin Netanyahu",
+     "party": "Likud Yisrael Beiteinu",
+     "given": "2013-02-02",
+     "result": "formed",
+     "note": "Formed government il-33 on 2013-03-18."
+    }
+   ],
+   "outcome": "government il-33",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thirty-third_government_of_Israel",
+    "https://sk.sagepub.com/book/edvol/historic-documents-of-2013/chpt/pm-netanyahu-charged-with-forming-new-israeli-government"
+   ]
+  },
+  {
+   "election": "2015-03-17",
+   "mandates": [
+    {
+     "to": "Benjamin Netanyahu",
+     "party": "Likud",
+     "given": "2015-03-25",
+     "result": "formed",
+     "note": "Formed government il-34 on 2015-05-14."
+    }
+   ],
+   "outcome": "government il-34",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thirty-fourth_government_of_Israel",
+    "https://forward.com/fast-forward/217459/rivlin-chides-tasks-netanyahu-to-form-government/"
+   ]
+  },
+  {
+   "election": "2019-04-09",
+   "mandates": [
+    {
+     "to": "Benjamin Netanyahu",
+     "party": "Likud",
+     "given": "2019-04-17",
+     "result": "failed",
+     "note": "Failed to form a coalition amid Haredi conscription-exemption disputes; Knesset voted 74-45 to dissolve itself 29 May 2019 rather than let the mandate pass to another MK."
+    }
+   ],
+   "outcome": "new election 2019-09-17",
+   "sources": [
+    "https://en.wikipedia.org/wiki/April_2019_Israeli_legislative_election"
+   ]
+  },
+  {
+   "election": "2019-09-17",
+   "mandates": [
+    {
+     "to": "Benjamin Netanyahu",
+     "party": "Likud",
+     "given": "2019-09-25",
+     "result": "failed",
+     "note": "Returned the mandate unused on 2019-10-22."
+    },
+    {
+     "to": "Benny Gantz",
+     "party": "Blue and White",
+     "given": "2019-10-23",
+     "result": "failed",
+     "note": "Returned the mandate on 2019-11-21 after failing to secure a majority."
+    }
+   ],
+   "outcome": "new election 2020-03-02",
+   "sources": [
+    "https://en.wikipedia.org/wiki/September_2019_Israeli_legislative_election"
+   ]
+  },
+  {
+   "election": "2020-03-02",
+   "mandates": [
+    {
+     "to": "Benny Gantz",
+     "party": "Blue and White",
+     "given": "2020-03-16",
+     "result": "failed",
+     "note": "Reversed his pre-election stance and pursued a unity deal with Netanyahu under COVID-19 pressure instead of a minority government; his negotiating window lapsed 15-16 Apr 2020 without a signed coalition agreement."
+    },
+    {
+     "to": "Benjamin Netanyahu",
+     "party": "Likud",
+     "given": "2020-05-07",
+     "result": "formed",
+     "note": "Secured 72 MK endorsements under the Netanyahu-Gantz rotation deal signed 20 Apr 2020; formed government il-35 on 2020-05-17."
+    }
+   ],
+   "outcome": "government il-35",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thirty-fifth_government_of_Israel",
+    "https://en.wikipedia.org/wiki/2020_Israeli_legislative_election"
+   ]
+  },
+  {
+   "election": "2021-03-23",
+   "mandates": [
+    {
+     "to": "Benjamin Netanyahu",
+     "party": "Likud",
+     "given": "2021-04-06",
+     "result": "failed",
+     "note": "Failed to form a government by the 2021-05-04 deadline."
+    },
+    {
+     "to": "Yair Lapid",
+     "party": "Yesh Atid",
+     "given": "2021-05-05",
+     "result": "formed",
+     "note": "Assembled the 'change government' coalition (signed by Ra'am 2 Jun, by Yamina 11 Jun); formed government il-36 on 2021-06-13 with Naftali Bennett as PM under a Bennett-Lapid rotation."
+    }
+   ],
+   "outcome": "government il-36",
+   "sources": [
+    "https://en.wikipedia.org/wiki/2021_Israeli_legislative_election",
+    "https://en.wikipedia.org/wiki/Thirty-sixth_government_of_Israel"
+   ]
+  },
+  {
+   "election": "2022-11-01",
+   "mandates": [
+    {
+     "to": "Benjamin Netanyahu",
+     "party": "Likud",
+     "given": "2022-11-13",
+     "result": "formed",
+     "note": "Secured recommendations from 64 MKs; formed government il-37 on 2022-12-29."
+    }
+   ],
+   "outcome": "government il-37",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thirty-seventh_government_of_Israel"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,295 @@
+{
+  "built": "2026-09-21",
+  "governments": [
+    {
+      "id": "nz-1996",
+      "election": "1996-10-12",
+      "formed": "1996-12-10",
+      "ended": "1998-08-14",
+      "pm": "Jim Bolger",
+      "pm_party": "National",
+      "members": [
+        {"party": "National", "seats": 44},
+        {"party": "NZ First", "seats": 17}
+      ],
+      "support": [],
+      "seats_members": 61,
+      "seats_with_support": 61,
+      "chamber": 120,
+      "type": "majority_coalition",
+      "largest_party": "National",
+      "largest_party_in_gov": true,
+      "formed_mid_term": false,
+      "days_election_to_formation": 59,
+      "kingmaker": "NZ First",
+      "notes": "National, the largest party, formed New Zealand's first MMP coalition with Winston Peters' NZ First, which held the balance of power; Peters became Deputy PM and Treasurer. Jenny Shipley replaced Bolger as PM in December 1997 within the same coalition.",
+      "sources": ["https://en.wikipedia.org/wiki/Fourth_National_Government_of_New_Zealand", "https://en.wikipedia.org/wiki/1996_New_Zealand_general_election"]
+    },
+    {
+      "id": "nz-1998",
+      "election": "1996-10-12",
+      "formed": "1998-08-14",
+      "ended": "1999-12-10",
+      "pm": "Jenny Shipley",
+      "pm_party": "National",
+      "members": [
+        {"party": "National", "seats": 44}
+      ],
+      "support": [
+        {"party": "National", "seats": 5, "kind": "confidence_and_supply"}
+      ],
+      "seats_members": 44,
+      "seats_with_support": null,
+      "chamber": 120,
+      "type": "minority_coalition_with_support",
+      "largest_party": "National",
+      "largest_party_in_gov": true,
+      "formed_mid_term": true,
+      "days_election_to_formation": null,
+      "kingmaker": null,
+      "notes": "Shipley sacked Peters over the Wellington Airport privatisation dispute, ending the coalition; five ex-NZ First MPs (four of the so-called 'Tight Five' plus others) split off, some forming Mauri Pacific, to keep supporting National on confidence and supply. Exact combined seat total at any given moment is uncertain amid ongoing defections; recorded here as a support party rather than under the 'NZ First' label since the MPs had left that party.",
+      "sources": ["https://en.wikipedia.org/wiki/Fourth_National_Government_of_New_Zealand", "https://en.wikipedia.org/wiki/Tight_Five", "https://en.wikipedia.org/wiki/Mauri_Pacific"]
+    },
+    {
+      "id": "nz-1999",
+      "election": "1999-11-27",
+      "formed": "1999-12-10",
+      "ended": "2002-07-27",
+      "pm": "Helen Clark",
+      "pm_party": "Labour",
+      "members": [
+        {"party": "Labour", "seats": 49},
+        {"party": "Alliance", "seats": 10}
+      ],
+      "support": [
+        {"party": "Green", "seats": 7, "kind": "confidence_and_supply"}
+      ],
+      "seats_members": 59,
+      "seats_with_support": 66,
+      "chamber": 120,
+      "type": "minority_coalition_with_support",
+      "largest_party": "Labour",
+      "largest_party_in_gov": true,
+      "formed_mid_term": false,
+      "days_election_to_formation": 13,
+      "kingmaker": "Green",
+      "notes": "Labour and the Alliance formed a coalition two seats short of a majority, sworn in with Helen Clark as PM on 10 December 1999. The newly-elected Green Party provided confidence-and-supply support, ending nine years of National-led government.",
+      "sources": ["https://en.wikipedia.org/wiki/1999_New_Zealand_general_election", "https://en.wikipedia.org/wiki/Fifth_Labour_Government_of_New_Zealand"]
+    },
+    {
+      "id": "nz-2002",
+      "election": "2002-07-27",
+      "formed": "2002-08-15",
+      "ended": "2005-09-17",
+      "pm": "Helen Clark",
+      "pm_party": "Labour",
+      "members": [
+        {"party": "Labour", "seats": 52},
+        {"party": "Progressive", "seats": 2}
+      ],
+      "support": [
+        {"party": "United Future", "seats": 8, "kind": "confidence_and_supply"}
+      ],
+      "seats_members": 54,
+      "seats_with_support": 62,
+      "chamber": 120,
+      "type": "minority_coalition_with_support",
+      "largest_party": "Labour",
+      "largest_party_in_gov": true,
+      "formed_mid_term": false,
+      "days_election_to_formation": 19,
+      "kingmaker": "United Future",
+      "notes": "Labour formed a coalition with Jim Anderton's Progressive Party, choosing United Future's confidence-and-supply support over the Greens, partly over genetic-engineering policy disagreements. Labour had ruled out NZ First as a partner during the campaign.",
+      "sources": ["https://en.wikipedia.org/wiki/2002_New_Zealand_general_election"]
+    },
+    {
+      "id": "nz-2005",
+      "election": "2005-09-17",
+      "formed": "2005-10-17",
+      "ended": "2008-11-19",
+      "pm": "Helen Clark",
+      "pm_party": "Labour",
+      "members": [
+        {"party": "Labour", "seats": 50},
+        {"party": "Progressive", "seats": 1}
+      ],
+      "support": [
+        {"party": "NZ First", "seats": 7, "kind": "ministers_outside_cabinet"},
+        {"party": "United Future", "seats": 3, "kind": "ministers_outside_cabinet"},
+        {"party": "Green", "seats": 6, "kind": "confidence_and_supply"}
+      ],
+      "seats_members": 51,
+      "seats_with_support": 67,
+      "chamber": 121,
+      "type": "minority_coalition_with_support",
+      "largest_party": "Labour",
+      "largest_party_in_gov": true,
+      "formed_mid_term": false,
+      "days_election_to_formation": 30,
+      "kingmaker": "NZ First",
+      "notes": "In an unprecedented arrangement, Winston Peters (NZ First) and Peter Dunne (United Future) became ministers outside Cabinet (Peters as Foreign Minister) while their parties gave confidence and supply; the Greens gave separate confidence-and-supply support without ministerial posts.",
+      "sources": ["https://en.wikipedia.org/wiki/2005_New_Zealand_general_election"]
+    },
+    {
+      "id": "nz-2008",
+      "election": "2008-11-08",
+      "formed": "2008-11-19",
+      "ended": "2011-11-26",
+      "pm": "John Key",
+      "pm_party": "National",
+      "members": [
+        {"party": "National", "seats": 58}
+      ],
+      "support": [
+        {"party": "ACT", "seats": 5, "kind": "confidence_and_supply"},
+        {"party": "United Future", "seats": 1, "kind": "confidence_and_supply"},
+        {"party": "Te Pati Maori", "seats": 5, "kind": "confidence_and_supply"}
+      ],
+      "seats_members": 58,
+      "seats_with_support": 69,
+      "chamber": 122,
+      "type": "single_party_minority_with_support",
+      "largest_party": "National",
+      "largest_party_in_gov": true,
+      "formed_mid_term": false,
+      "days_election_to_formation": 11,
+      "kingmaker": null,
+      "notes": "John Key led a National minority government relying on separate confidence-and-supply agreements with ACT, United Future and the Maori Party rather than a formal coalition. The chamber had two overhang seats (122 total).",
+      "sources": ["https://en.wikipedia.org/wiki/2008_New_Zealand_general_election"]
+    },
+    {
+      "id": "nz-2011",
+      "election": "2011-11-26",
+      "formed": "2011-12-11",
+      "ended": "2014-09-20",
+      "pm": "John Key",
+      "pm_party": "National",
+      "members": [
+        {"party": "National", "seats": 59}
+      ],
+      "support": [
+        {"party": "ACT", "seats": 1, "kind": "confidence_and_supply"},
+        {"party": "United Future", "seats": 1, "kind": "confidence_and_supply"},
+        {"party": "Te Pati Maori", "seats": 3, "kind": "confidence_and_supply"}
+      ],
+      "seats_members": 59,
+      "seats_with_support": 64,
+      "chamber": 121,
+      "type": "single_party_minority_with_support",
+      "largest_party": "National",
+      "largest_party_in_gov": true,
+      "formed_mid_term": false,
+      "days_election_to_formation": 15,
+      "kingmaker": null,
+      "notes": "National again governed as a minority relying on confidence-and-supply deals: ACT and United Future agreements finalised 5 December 2011, the Maori Party's on 11 December 2011, giving a seven-seat working majority.",
+      "sources": ["https://en.wikipedia.org/wiki/2011_New_Zealand_general_election"]
+    },
+    {
+      "id": "nz-2014",
+      "election": "2014-09-20",
+      "formed": "2014-10-08",
+      "ended": "2017-10-26",
+      "pm": "John Key",
+      "pm_party": "National",
+      "members": [
+        {"party": "National", "seats": 60}
+      ],
+      "support": [
+        {"party": "ACT", "seats": 1, "kind": "confidence_and_supply"},
+        {"party": "United Future", "seats": 1, "kind": "confidence_and_supply"},
+        {"party": "Te Pati Maori", "seats": 2, "kind": "confidence_and_supply"}
+      ],
+      "seats_members": 60,
+      "seats_with_support": 64,
+      "chamber": 121,
+      "type": "single_party_minority_with_support",
+      "largest_party": "National",
+      "largest_party_in_gov": true,
+      "formed_mid_term": false,
+      "days_election_to_formation": 18,
+      "kingmaker": null,
+      "notes": "National's third-term government continued the pattern of separate confidence-and-supply agreements with ACT, United Future and the Maori Party, holding a seven-seat working majority.",
+      "sources": ["https://en.wikipedia.org/wiki/2014_New_Zealand_general_election"]
+    },
+    {
+      "id": "nz-2017",
+      "election": "2017-09-23",
+      "formed": "2017-10-19",
+      "ended": "2020-10-17",
+      "pm": "Jacinda Ardern",
+      "pm_party": "Labour",
+      "members": [
+        {"party": "Labour", "seats": 46},
+        {"party": "NZ First", "seats": 9}
+      ],
+      "support": [
+        {"party": "Green", "seats": 8, "kind": "ministers_outside_cabinet"}
+      ],
+      "seats_members": 55,
+      "seats_with_support": 63,
+      "chamber": 120,
+      "type": "minority_coalition_with_support",
+      "largest_party": "National",
+      "largest_party_in_gov": false,
+      "formed_mid_term": false,
+      "days_election_to_formation": 26,
+      "kingmaker": "NZ First",
+      "notes": "Although National won the most seats (56), Winston Peters chose to make NZ First kingmaker for Labour, forming a coalition with Jacinda Ardern as PM; the Greens supported via confidence and supply with ministers outside Cabinet.",
+      "sources": ["https://en.wikipedia.org/wiki/2017_New_Zealand_general_election"]
+    },
+    {
+      "id": "nz-2020",
+      "election": "2020-10-17",
+      "formed": "2020-11-06",
+      "ended": "2023-11-27",
+      "pm": "Jacinda Ardern",
+      "pm_party": "Labour",
+      "members": [
+        {"party": "Labour", "seats": 65}
+      ],
+      "support": [
+        {"party": "Green", "seats": 10, "kind": "ministers_outside_cabinet"}
+      ],
+      "seats_members": 65,
+      "seats_with_support": 75,
+      "chamber": 120,
+      "type": "single_party_majority",
+      "largest_party": "Labour",
+      "largest_party_in_gov": true,
+      "formed_mid_term": false,
+      "days_election_to_formation": 20,
+      "kingmaker": null,
+      "notes": "Labour became the first party to win an outright majority under MMP, governing alone, though it still reached a cooperation agreement giving the Green Party two ministerial positions outside Cabinet.",
+      "sources": ["https://en.wikipedia.org/wiki/2020_New_Zealand_general_election"]
+    },
+    {
+      "id": "nz-2023",
+      "election": "2023-10-14",
+      "formed": "2023-11-27",
+      "ended": "",
+      "pm": "Christopher Luxon",
+      "pm_party": "National",
+      "members": [
+        {"party": "National", "seats": 48},
+        {"party": "ACT", "seats": 11},
+        {"party": "NZ First", "seats": 8}
+      ],
+      "support": [],
+      "seats_members": 67,
+      "seats_with_support": 67,
+      "chamber": 123,
+      "type": "majority_coalition",
+      "largest_party": "National",
+      "largest_party_in_gov": true,
+      "formed_mid_term": false,
+      "days_election_to_formation": 44,
+      "kingmaker": null,
+      "notes": "National, ACT and NZ First formed a three-party majority coalition, with Christopher Luxon as PM and Winston Peters and David Seymour sharing the Deputy PM role across the term.",
+      "sources": ["https://en.wikipedia.org/wiki/2023_New_Zealand_general_election"]
+    }
+  ],
+  "gaps": [
+    "nz-1998: exact combined seat count of National plus the ex-NZ First defectors (Mauri Pacific and others) at any given point is not precisely documented across sources; seats_with_support left null.",
+    "nz-1998: precise formation date for the informal support arrangement (vs. the 14 Aug 1998 coalition collapse date) is not clearly distinguished in sources; used the collapse date as the arrangement's start."
+  ]
+}
