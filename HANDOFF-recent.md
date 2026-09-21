@@ -9,10 +9,102 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 48, 2026-09-14 to 2026-09-21
-     If the reader counts fewer than 48 entries, its fetch window stopped
+     entries: 49, 2026-09-14 to 2026-09-21
+     If the reader counts fewer than 49 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
+## 2026-09-21 (night) - mini -> windows and next session: STEP B2 DONE. THE POLLS WERE NEVER MISSING, THEY WERE DOUBLE-COUNTED, AND parse_tables COULD NOT SEE A YEAR BANNER
+
+Step B2 off the coalition Backlog row: re-read the seven historical Israeli
+opinion-polling articles from raw wikitext on the mini and replace the
+provisional rows in `data/forecast/coalitions/polls-il.json`. New script
+`scripts/forecast/fetch_il_history.py`, dry-run by default, `--self-test`
+gating every live run. **Nothing here touches `app/`, `lib/` or `public/`.**
+
+**Two real parser faults, both found by reading the articles rather than the code.**
+
+1. **A merged list is ONE `colspan=k` cell, and the summariser summed the k
+   columns it spans.** 2015's Zionist Union is one cell over the Labor and
+   Hatnuah headers: read as two parties it counts 24 twice, the row totals 144,
+   and the 120-seat rule then correctly threw it away. That is why 2013 and
+   2015 held ZERO usable polls, not any shortage of polls upstream. The tell
+   that the diagnosis is right: read span-aware, the 2015 result row reproduces
+   the real election exactly (Likud 30, Zionist Union 24, Joint List 13, Yesh
+   Atid 11, Kulanu 10, Jewish Home 8, Shas 7, Yisrael Beiteinu 6, UTJ 6,
+   Meretz 5 = 120). `parse_tables` gained `keep_spans=True`, which yields a data
+   cell once as `(text, colspan)` instead of repeating it; the default path is
+   byte-identical and every existing caller is untouched.
+
+2. **`parse_tables` read a full-width year banner as a header row.** The 2015
+   article breaks the campaign up with `!colspan=20|2015`, and because deeper
+   header rows override shallower ones, that banner renamed EVERY column after
+   it: 17 columns all reading "2015", 197 poll rows unreadable. A header row
+   that is one cell spanning more than one column is now dropped as a banner.
+
+**Blast radius measured, not assumed.** Across the seven articles: 170 of 171
+tables byte-identical, 1 changed, and that one is the broken 2015 table. Across
+the other five fetchers' live pages (UK, US House, US Senate, US Governors, NZ,
+Brazil, France): 130 tables, 2 with a banner row. Feeding the SAME source text
+to the old and new code, `fetch_uk()` and `fetch_nz()` produce byte-identical
+output. `fetch_data --self-test` 12/12 green throughout.
+
+**Result: 66 provisional rows -> 167 verified rows**, all seven elections
+populated for the first time.
+
+| election | was | now | window |
+|---|---|---|---|
+| 2013-01-22 | 0 | 24 | 08 Jan - 22 Jan |
+| 2015-03-17 | 0 | 24 | 03 Mar - 17 Mar |
+| 2019-04-09 | 10 | 28 | 26 Mar - 09 Apr |
+| 2019-09-17 | 14 | 19 | 04 Sep - 17 Sep |
+| 2020-03-02 | 16 | 23 | 17 Feb - 02 Mar |
+| 2021-03-23 | 13 | 20 | 09 Mar - 23 Mar |
+| 2022-11-01 | 13 | 29 | 18 Oct - 01 Nov |
+
+**Corroboration: on the 56 rows both sources hold, 55 agree and 1 disagrees**,
+and the disagreement resolves against the old transcription. 2019-09-12 Smith /
+Maariv: the summariser had Yisrael Beiteinu 9, the wikitext says 8, and the
+article helpfully carries inline column comments (`|8 <!-- Yisrael Beiteinu -->`).
+With 9 the row totals 121; with 8 it totals 120. The old row was wrong.
+
+**Also fixed on the way.** `il_seat_sim.py`'s test 6d hardcoded "Zehut" as a
+list appearing in only some 2019-04 polls. The re-read recovers Zehut in all 25
+of them (the summariser had dropped it, which is why one of its rows totalled
+114), so the test failed on better data. It now picks a partial list out of the
+data, so it tests the behaviour rather than a property of one transcription.
+25/25 green on BOTH the old and the new file. The file's `aliases` now map the
+join-labels ("Labor + Hatnuah" -> Zionist Union) and the three `gaps` entries
+describing the discarded summing method are gone.
+
+**Upstream typo, reported not repaired:** the 2013 article carries a poll dated
+"29 Feb", which does not exist in 2013. Dropped and logged.
+
+**UNRELATED FINDING, NOT FIXED HERE, worth its own look.** While measuring the
+blast radius I fetched the UK polling article twice about two seconds apart and
+got two different reads of the 2024 general election baseline row. The committed
+`data/forecast/uk_polls.json` holds `lab 23.7, con 14.3, ref 12.2, ld 6.8,
+grn 2.5, snp 0.7` - every value shifted one party left, with Plaid Cymru's 0.7
+read as the SNP. The article's raw wikitext says `33.7 / 23.7 / 14.3 / 12.2 /
+6.8 / 2.5 / 0.7` = Lab / Con / Ref / LD / Grn / SNP / PC, so **Labour's 2024
+baseline is recorded 10 points low**. On today's article text BOTH the old and
+the new code read it correctly, so this is not a live parser bug and not
+something this change introduced; it is stale committed data from some earlier
+revision of the article. I restored `uk_polls.json` and `nz_polls.json` from git
+rather than sweep a regenerated UK file into a coalition commit. Someone should
+re-run `fetch_uk` deliberately and check that row, and `check_forecast_health`
+should probably assert the baseline row against known results.
+
+**Still open on the coalition thread:** step D (`coalition.py`, New Zealand
+first); spec v0.3; the two reviewer-added surplus agreements still need
+sourcing; step A after the mini proves the colspan fix on the next forecast run
+(expected about 23 Sep).
+
+**Notion:** Backlog: coalition row updated (step B2 done, 167 rows from raw
+wikitext, next steps unchanged); +1 row for the UK 2024 baseline row. Decisions
++2 (a merged list is counted once and labelled by joining the headers it spans;
+a full-width single-cell header row is a banner, never a column header). Silent
+failure register +1 (a column-shifted baseline row reads as plausible data and
+no gate compares it against the known result).
 ## 2026-09-21 (late) - windows cowork -> mini and next session: THE THREE OPEN GITHUB ISSUES, AND WHY TWO OF THEM COULD NEVER CLOSE
 
 **#23 (data watch).** Every dataset was inside its budget. The one real alert was the Lanka Premier League: no current holder, last crowned 2024-07-21. Facts: the 2025 edition was postponed and never played; the 2026 final was 8 Aug 2026, Galle Gallants beat Jaffna Kings by 5 wickets at R. Premadasa (Wikipedia final article and the ESPNcricinfo scorecard title agree). Inserted by hand in the `build_row` shape: `public.champions` id 149515, source `cricket-finalizer`, metro Galle / `galle` (already resolved on the franchise's runner-up rows as Galle Gladiators and Galle Marvels), `date_awarded` 2026-08-08, `is_current` true. `lanka-premier-league` is now in the `cricket_finalize.py` REGISTRY (calendar style), self-test 26 of 26, so 2027 is automatic unless the winner is again a first-time champion. The JSON re-emit rides this commit; the issue closes itself at the next 6-hourly run if the board is then clean.
@@ -24,6 +116,7 @@
 **This commit is UNTAGGED on purpose:** it touches `lib/releases.ts` and the champions JSON, so it is the day's second production build (the first was `7cb1f3d1f`). It must be the LAST commit of its push.
 
 **Notion:** Decisions +1 (the drift watcher counts shipping commits only). Backlog: cricket watch row gains the LPL insert and the REGISTRY addition.
+
 ## 2026-09-21 (evening) - windows cowork -> mini and next session: THE TWO GENERATED FILES NOW MERGE BY UNION, PLUS A CORRECTION TO THE AFTERNOON ENTRY
 
 **`.gitattributes`: `commits-recent.txt` and `HANDOFF-recent.md` are `merge=union`.** The pre-commit hook rewrites both on every commit on every machine, so two machines that commit between pulls change the same top lines. It happened on the Windows box today: `git pull --rebase` stopped on `commits-recent.txt` with nothing else in conflict. **Mini: the same conflict inside `commit_paths` (`git pull --rebase --autostash`, five tries) would fail the push and could leave `~/metro-power-rankings` mid-rebase.** Read from the code, not seen on the mini. Bot commits whose subjects are excluded from the file (`Auto:`, `data: refresh-schedule`) leave it unchanged and are safe; owners, champions and handoff commits are not. Proof in a scratch repo: the same two-sided edit conflicts without the attribute and rebases clean with it, both sides' lines kept. The merged content can be wrong for one commit; the hook rewrites the file at the next one. `HANDOFF.md` is NOT union: a person resolves that one.

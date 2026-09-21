@@ -681,10 +681,16 @@ def self_test():
         zero_names = [k for k, v in no_below_poll["seats"].items() if v == 0 and k not in (no_below_poll.get("pct_below") or {})]
         ok6c = all(abs(imp2[k] - DEFAULTS["prior_below"]) < 1e-12 for k in zero_names)
     _check(ok6c, "poll without pct_below on 0-seat list uses prior_below", results)
-    # a list absent from one poll is averaged over the others only
-    only_in_some = "Zehut"  # appears only in some 2019-04 polls
-    present_polls = [p for p in pre6 if only_in_some in p["seats"]]
-    ok6d = 0 < len(present_polls) < len(pre6) and only_in_some in shares6
+    # a list absent from one poll is averaged over the others only.
+    # Pick the partial list from the data rather than naming one: which lists
+    # are partial is a property of the transcription, not of this code, and
+    # hardcoding "Zehut" made the test fail when the step-B2 wikitext re-read
+    # recovered Zehut in all 25 polls (the summariser had dropped it, which is
+    # why one of its rows totalled 114).
+    only_in_some = next((k for k in sorted({k for p in pre6 for k in p["seats"]})
+                         if 0 < sum(1 for p in pre6 if k in p["seats"]) < len(pre6)), None)
+    present_polls = [p for p in pre6 if only_in_some in p["seats"]] if only_in_some else []
+    ok6d = bool(only_in_some) and 0 < len(present_polls) < len(pre6) and only_in_some in shares6
     _check(ok6d, "list absent from a poll is skipped there, averaged over the rest", results)
 
     # 7. usable-poll filter

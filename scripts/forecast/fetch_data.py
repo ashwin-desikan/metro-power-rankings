@@ -89,10 +89,18 @@ def cell_parts(raw):
             if mc: cs = int(mc.group(1))
     return strip_markup(txt), rs, cs
 
-def parse_tables(wt):
+def parse_tables(wt, keep_spans=False):
     """Yield (columns, data_rows). Columns come from the (possibly two-row)
     header grid with rowspan/colspan resolved; deeper header rows override
-    group titles, so party names win over 'Vote share'."""
+    group titles, so party names win over 'Vote share'.
+
+    With keep_spans, a data cell arrives once as (text, colspan) instead of
+    being repeated across the columns it covers. Repetition is right for
+    reading a value under its own header, but it destroys the difference
+    between one merged list spanning two columns and two parties that happen
+    to share a number -- and summing the repeats then counts the merged list
+    twice. Callers that must total a row (Israel's 120-seat check) need the
+    span; callers that only look a value up by column do not."""
     for m in re.finditer(r"\{\|.*?\n\|\}", wt, flags=re.S):
         lines = m.group(0).split("\n")
         header_rows, data_rows, current, in_header = [], [], [], True
@@ -120,14 +128,22 @@ def parse_tables(wt):
                     # 2026-09-02 to 09-21: the Gov. bloc total was published as
                     # a 46-seat party). Wide spans are event and note rows and
                     # stay one cell, as before.
-                    current.extend([t] * (cs if 1 < cs <= 4 else 1))
+                    span = cs if 1 < cs <= 4 else 1
+                    if keep_spans:
+                        current.append((t, span))
+                    else:
+                        current.extend([t] * span)
             else:
                 # wikitext lets a cell continue on the next plain line
                 # (e.g. "! rowspan=3 |Polling\nperiod") — glue it on
                 t = strip_markup(ln).strip()
                 if t:
                     if current:
-                        current[-1] = (current[-1] + " " + t).strip()
+                        if keep_spans:
+                            pt, pcs = current[-1]
+                            current[-1] = ((pt + " " + t).strip(), pcs)
+                        else:
+                            current[-1] = (current[-1] + " " + t).strip()
                     elif hcells:
                         tt, rs, cs = hcells[-1]
                         hcells[-1] = ((tt + " " + t).strip(), rs, cs)
@@ -137,6 +153,16 @@ def parse_tables(wt):
             data_rows.append(current)
         if not header_rows:
             continue
+        # A header row that is ONE cell spanning more than one column is a
+        # section banner, never a column header. Long poll articles break the
+        # campaign up with a full-width year row (`!colspan=20|2015`), and
+        # because deeper header rows override shallower ones, that banner
+        # otherwise renames EVERY column after it: the 2015 Israeli polling
+        # article yielded 17 columns all reading "2015", which is why its 197
+        # poll rows were unreadable. Dropping banners costs nothing elsewhere,
+        # since a real header row describes columns rather than replacing them.
+        header_rows = [h for h in header_rows if not (len(h) == 1 and h[0][2] > 1)] \
+            or header_rows[:1]
         # resolve the header grid: occ[slot] = header-row index through which
         # the slot is occupied by an earlier rowspanning cell
         width = sum(cs for _, _, cs in header_rows[0])

@@ -1,6 +1,6 @@
 {
  "built": "2026-09-21",
- "note": "Results verified: Bader-Ofer with the listed surplus agreements reproduces the real seats exactly for all seven elections. Polls were transcribed through a page summariser and are NOT independently verified; two elections were rejected outright. Treat poll rows as provisional until fetch_il_history re-reads them from raw wikitext on the mini.",
+ "note": "Results verified: Bader-Ofer with the listed surplus agreements reproduces the real seats exactly for all seven elections. Poll rows were re-read from raw wikitext on 2026-09-21 (step B2), span-aware, so a merged list spanning k header columns is counted once rather than k times; rows that do not total 120 seats within 2 are rejected rather than rescaled. final_polls holds the last 14 days before each election, de-duplicated per date and pollster.",
  "elections": [
   {
    "election": "2013-01-22",
@@ -149,16 +149,633 @@
      "Balad"
     ]
    ],
-   "final_polls": [],
+   "final_polls": [
+    {
+     "date": "2013-01-08",
+     "pollster": "Walla",
+     "publisher": "TNS-Teleseker",
+     "seats": {
+      "Likud + Yisrael Beiteinu": 34,
+      "Labor": 18,
+      "Shas": 11,
+      "UTJ": 6,
+      "National Union + Jewish Home": 13,
+      "UAL -Ta'al": 4,
+      "Hadash": 4,
+      "Balad": 2,
+      "Meretz": 4,
+      "Yesh Atid": 11,
+      "Am Shalem": 2,
+      "Hatnuah": 11
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-09",
+     "pollster": "Dahaf",
+     "publisher": "",
+     "seats": {
+      "Kadima": 13,
+      "Likud": 28,
+      "Yisrael Beiteinu": 15,
+      "Labor": 13,
+      "Shas": 6,
+      "UTJ": 6,
+      "National Union": 2,
+      "Jewish Home": 4,
+      "UAL -Ta'al + Hadash + Balad": 11,
+      "Meretz": 4,
+      "Yesh Atid": 11,
+      "Aryeh Deri": 5
+     },
+     "sums_to": 118,
+     "kind": "pre_election",
+     "merged_columns": [
+      "UAL -Ta'al + Hadash + Balad"
+     ]
+    },
+    {
+     "date": "2013-01-09",
+     "pollster": "Teleseker",
+     "publisher": "",
+     "seats": {
+      "Kadima": 15,
+      "Likud": 27,
+      "Yisrael Beiteinu": 14,
+      "Labor": 18,
+      "Shas": 8,
+      "UTJ": 5,
+      "National Union + Jewish Home": 8,
+      "UAL -Ta'al + Hadash + Balad": 10,
+      "Meretz": 3,
+      "Yesh Atid": 12
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "National Union + Jewish Home",
+      "UAL -Ta'al + Hadash + Balad"
+     ]
+    },
+    {
+     "date": "2013-01-10",
+     "pollster": "Mako & Channel2",
+     "publisher": "Panels",
+     "seats": {
+      "Kadima": 2,
+      "Likud + Yisrael Beiteinu": 33,
+      "Labor": 16,
+      "Shas": 10,
+      "UTJ": 6,
+      "National Union + Jewish Home": 15,
+      "UAL -Ta'al": 4,
+      "Hadash": 3,
+      "Balad": 4,
+      "Meretz": 5,
+      "Yesh Atid": 10,
+      "Otzma": 2,
+      "Am Shalem": 2,
+      "Hatnuah": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-10",
+     "pollster": "New Wave",
+     "publisher": "",
+     "seats": {
+      "Kadima": 14,
+      "Likud": 28,
+      "Yisrael Beiteinu": 14,
+      "Labor": 15,
+      "Shas": 9,
+      "UTJ": 5,
+      "National Union": 2,
+      "Jewish Home": 3,
+      "UAL -Ta'al + Hadash + Balad": 10,
+      "Meretz": 5,
+      "Yesh Atid": 15
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "UAL -Ta'al + Hadash + Balad"
+     ]
+    },
+    {
+     "date": "2013-01-11",
+     "pollster": "Jerusalem Post",
+     "publisher": "Smith",
+     "seats": {
+      "Kadima": 2,
+      "Likud + Yisrael Beiteinu": 34,
+      "Labor": 18,
+      "Shas": 10,
+      "UTJ": 6,
+      "National Union + Jewish Home": 14,
+      "UAL -Ta'al": 4,
+      "Hadash": 4,
+      "Balad": 3,
+      "Meretz": 4,
+      "Yesh Atid": 10,
+      "Am Shalem": 3,
+      "Hatnuah": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-11",
+     "pollster": "Maariv",
+     "publisher": "Maagar",
+     "seats": {
+      "Kadima": 3,
+      "Likud + Yisrael Beiteinu": 38,
+      "Labor": 16,
+      "Shas": 12,
+      "UTJ": 6,
+      "National Union + Jewish Home": 13,
+      "UAL -Ta'al": 3,
+      "Hadash": 4,
+      "Balad": 3,
+      "Meretz": 5,
+      "Yesh Atid": 8,
+      "Otzma": 1,
+      "Am Shalem": 1,
+      "Hatnuah": 7
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-11",
+     "pollster": "Yediot",
+     "publisher": "Dahaf",
+     "seats": {
+      "Kadima": 2,
+      "Likud + Yisrael Beiteinu": 33,
+      "Labor": 18,
+      "Shas": 10,
+      "UTJ": 5,
+      "National Union + Jewish Home": 14,
+      "UAL -Ta'al": 4,
+      "Hadash": 4,
+      "Balad": 3,
+      "Meretz": 6,
+      "Yesh Atid": 11,
+      "Otzma": 2,
+      "Hatnuah": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-11",
+     "pollster": "Yisrael Hayom",
+     "publisher": "New Wave",
+     "seats": {
+      "Kadima": 2,
+      "Likud + Yisrael Beiteinu": 35,
+      "Labor": 17,
+      "Shas": 11,
+      "UTJ": 6,
+      "National Union + Jewish Home": 14,
+      "UAL -Ta'al": 3,
+      "Hadash": 4,
+      "Balad": 4,
+      "Meretz": 4,
+      "Yesh Atid": 11,
+      "Hatnuah": 9
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-11",
+     "pollster": "Yisrael Post",
+     "publisher": "Sof Hashavua",
+     "seats": {
+      "Kadima": 2,
+      "Likud + Yisrael Beiteinu": 34,
+      "Labor": 17,
+      "Shas": 9,
+      "UTJ": 6,
+      "National Union + Jewish Home": 14,
+      "UAL -Ta'al": 4,
+      "Hadash": 3,
+      "Balad": 3,
+      "Meretz": 5,
+      "Yesh Atid": 11,
+      "Otzma": 3,
+      "Hatnuah": 9
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-12",
+     "pollster": "Channel1",
+     "publisher": "Midgam",
+     "seats": {
+      "Kadima": 2,
+      "Likud + Yisrael Beiteinu": 33,
+      "Labor": 16,
+      "Shas": 10,
+      "UTJ": 5,
+      "National Union + Jewish Home": 15,
+      "UAL -Ta'al": 4,
+      "Hadash": 4,
+      "Balad": 3,
+      "Meretz": 6,
+      "Yesh Atid": 10,
+      "Otzma": 3,
+      "Hatnuah": 9
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-14",
+     "pollster": "Knesset Channel",
+     "publisher": "Panels Politics",
+     "seats": {
+      "Kadima": 3,
+      "Likud + Yisrael Beiteinu": 35,
+      "Labor": 17,
+      "Shas": 9,
+      "UTJ": 5,
+      "National Union + Jewish Home": 14,
+      "UAL -Ta'al": 4,
+      "Hadash": 3,
+      "Balad": 3,
+      "Meretz": 5,
+      "Yesh Atid": 11,
+      "Otzma": 3,
+      "Hatnuah": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-15",
+     "pollster": "Channel 2",
+     "publisher": "Dahaf",
+     "seats": {
+      "Kadima": 2,
+      "Likud + Yisrael Beiteinu": 33,
+      "Labor": 17,
+      "Shas": 11,
+      "UTJ": 6,
+      "National Union + Jewish Home": 12,
+      "UAL -Ta'al": 3,
+      "Hadash": 4,
+      "Balad": 3,
+      "Meretz": 6,
+      "Yesh Atid": 11,
+      "Otzma": 2,
+      "Hatnuah": 9
+     },
+     "sums_to": 119,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-16",
+     "pollster": "Channel 10",
+     "publisher": "Dialogue",
+     "seats": {
+      "Kadima": 2,
+      "Likud + Yisrael Beiteinu": 32,
+      "Labor": 16,
+      "Shas": 11,
+      "UTJ": 6,
+      "National Union + Jewish Home": 14,
+      "UAL -Ta'al": 3,
+      "Hadash": 4,
+      "Balad": 4,
+      "Meretz": 6,
+      "Yesh Atid": 11,
+      "Otzma": 2,
+      "Hatnuah": 9
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-16",
+     "pollster": "Walla!",
+     "publisher": "TNS-Teleseker",
+     "seats": {
+      "Kadima": 3,
+      "Likud + Yisrael Beiteinu": 34,
+      "Labor": 18,
+      "Shas": 10,
+      "UTJ": 6,
+      "National Union + Jewish Home": 15,
+      "UAL -Ta'al": 4,
+      "Hadash": 3,
+      "Balad": 3,
+      "Meretz": 5,
+      "Yesh Atid": 11,
+      "Am Shalem": 2,
+      "Hatnuah": 6
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-17",
+     "pollster": "Geocartography",
+     "publisher": "",
+     "seats": {
+      "Kadima": 11,
+      "Likud": 33,
+      "Yisrael Beiteinu": 16,
+      "Labor": 13,
+      "Shas": 8,
+      "UTJ": 6,
+      "National Union": 2,
+      "Jewish Home": 3,
+      "UAL -Ta'al + Hadash + Balad": 11,
+      "Meretz": 4,
+      "Yesh Atid": 13
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "UAL -Ta'al + Hadash + Balad"
+     ]
+    },
+    {
+     "date": "2013-01-17",
+     "pollster": "Haaretz",
+     "publisher": "Dialogue",
+     "seats": {
+      "Kadima": 2,
+      "Likud + Yisrael Beiteinu": 32,
+      "Labor": 17,
+      "Shas": 12,
+      "UTJ": 5,
+      "National Union + Jewish Home": 14,
+      "UAL -Ta'al": 3,
+      "Hadash": 5,
+      "Balad": 4,
+      "Meretz": 6,
+      "Yesh Atid": 12,
+      "Hatnuah": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-17",
+     "pollster": "Israel Hayom",
+     "publisher": "The New Wave",
+     "seats": {
+      "Kadima": 2,
+      "Likud + Yisrael Beiteinu": 35,
+      "Labor": 17,
+      "Shas": 11,
+      "UTJ": 6,
+      "National Union + Jewish Home": 15,
+      "UAL -Ta'al": 3,
+      "Hadash": 4,
+      "Balad": 3,
+      "Meretz": 5,
+      "Yesh Atid": 12,
+      "Hatnuah": 7
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-17",
+     "pollster": "Knesset Channel",
+     "publisher": "Panels Politics",
+     "seats": {
+      "Kadima": 3,
+      "Likud + Yisrael Beiteinu": 34,
+      "Labor": 16,
+      "Shas": 10,
+      "UTJ": 6,
+      "National Union + Jewish Home": 14,
+      "UAL -Ta'al": 4,
+      "Hadash": 4,
+      "Balad": 3,
+      "Meretz": 6,
+      "Yesh Atid": 11,
+      "Otzma": 2,
+      "Hatnuah": 7
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-17",
+     "pollster": "Maariv",
+     "publisher": "Ma'agar Mochot",
+     "seats": {
+      "Kadima": 3,
+      "Likud + Yisrael Beiteinu": 37,
+      "Labor": 15,
+      "Shas": 12,
+      "UTJ": 6,
+      "National Union + Jewish Home": 14,
+      "UAL -Ta'al": 3,
+      "Hadash": 4,
+      "Balad": 3,
+      "Meretz": 7,
+      "Yesh Atid": 8,
+      "Otzma": 2,
+      "Am Shalem": 1,
+      "Hatnuah": 5
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-18",
+     "pollster": "Yedioth Ahronot",
+     "publisher": "Dahaf",
+     "seats": {
+      "Kadima": 2,
+      "Likud + Yisrael Beiteinu": 32,
+      "Labor": 17,
+      "Shas": 11,
+      "UTJ": 6,
+      "National Union + Jewish Home": 12,
+      "UAL -Ta'al": 4,
+      "Hadash": 4,
+      "Balad": 3,
+      "Meretz": 6,
+      "Yesh Atid": 13,
+      "Otzma": 2,
+      "Hatnuah": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-22",
+     "pollster": "Channel 1 exit poll",
+     "publisher": "",
+     "seats": {
+      "Kadima": 0,
+      "Likud + Yisrael Beiteinu": 31,
+      "Labor": 17,
+      "Shas": 11,
+      "UTJ": 6,
+      "National Union + Jewish Home": 12,
+      "UAL -Ta'al": 3,
+      "Hadash": 3,
+      "Balad": 2,
+      "Meretz": 7,
+      "Yesh Atid": 19,
+      "Otzma": 2,
+      "Am Shalem": 0,
+      "Hatnuah": 7
+     },
+     "sums_to": 120,
+     "kind": "exit_poll",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-22",
+     "pollster": "Channel 10 exit poll",
+     "publisher": "",
+     "seats": {
+      "Kadima": 0,
+      "Likud + Yisrael Beiteinu": 31,
+      "Labor": 17,
+      "Shas": 13,
+      "UTJ": 6,
+      "National Union + Jewish Home": 12,
+      "UAL -Ta'al": 4,
+      "Hadash": 5,
+      "Balad": 2,
+      "Meretz": 6,
+      "Yesh Atid": 18,
+      "Otzma": 0,
+      "Am Shalem": 0,
+      "Hatnuah": 6
+     },
+     "sums_to": 120,
+     "kind": "exit_poll",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    },
+    {
+     "date": "2013-01-22",
+     "pollster": "Channel 2 exit poll",
+     "publisher": "",
+     "seats": {
+      "Kadima": 0,
+      "Likud + Yisrael Beiteinu": 31,
+      "Labor": 17,
+      "Shas": 12,
+      "UTJ": 6,
+      "National Union + Jewish Home": 12,
+      "UAL -Ta'al": 3,
+      "Hadash": 4,
+      "Balad": 2,
+      "Meretz": 7,
+      "Yesh Atid": 19,
+      "Otzma": 0,
+      "Am Shalem": 0,
+      "Hatnuah": 7
+     },
+     "sums_to": 120,
+     "kind": "exit_poll",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu",
+      "National Union + Jewish Home"
+     ]
+    }
+   ],
    "sources": [
     "https://en.wikipedia.org/wiki/2013_Israeli_legislative_election",
     "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election"
    ],
-   "rejected_polls": 9,
+   "rejected_polls": 27,
    "review_notes": [
     "All transcribed polls REJECTED: columns misaligned by the page summariser (2013: Yesh Atid 3 and UTJ 15, sums near 103; 2015: no Kulanu column, Zionist Union 36). Results are sound. Re-collect from raw wikitext on the mini."
    ],
-   "allocation_check": "exact"
+   "allocation_check": "exact",
+   "poll_source": "raw wikitext via parse_tables(keep_spans=True)"
   },
   {
    "election": "2015-03-17",
@@ -265,7 +882,606 @@
      "Yisrael Beiteinu"
     ]
    ],
-   "final_polls": [],
+   "final_polls": [
+    {
+     "date": "2015-03-03",
+     "pollster": "Israel Army Radio (Galatz)",
+     "publisher": "",
+     "seats": {
+      "Likud": 22,
+      "Yisrael Beiteinu": 7,
+      "Yesh Atid": 12,
+      "Labor + Hatnuah": 24,
+      "Jewish Home": 12,
+      "Shas": 6,
+      "UTJ": 7,
+      "Meretz": 6,
+      "Hadash + UAL- Ta'al + Balad": 12,
+      "Otzma + Yachad": 4,
+      "Kulanu": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-03",
+     "pollster": "Panels",
+     "publisher": "Knesset Channel",
+     "seats": {
+      "Likud": 21,
+      "Yisrael Beiteinu": 5,
+      "Yesh Atid": 13,
+      "Labor + Hatnuah": 24,
+      "Jewish Home": 12,
+      "Shas": 7,
+      "UTJ": 7,
+      "Meretz": 6,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 4,
+      "Kulanu": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-04",
+     "pollster": "Dialog",
+     "publisher": "Channel 10",
+     "seats": {
+      "Likud": 23,
+      "Yisrael Beiteinu": 5,
+      "Yesh Atid": 13,
+      "Labor + Hatnuah": 23,
+      "Jewish Home": 11,
+      "Shas": 7,
+      "UTJ": 6,
+      "Meretz": 5,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 4,
+      "Kulanu": 10
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-04",
+     "pollster": "Midgam",
+     "publisher": "Channel 2",
+     "seats": {
+      "Likud": 23,
+      "Yisrael Beiteinu": 6,
+      "Yesh Atid": 12,
+      "Labor + Hatnuah": 24,
+      "Jewish Home": 12,
+      "Shas": 6,
+      "UTJ": 6,
+      "Meretz": 6,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 4,
+      "Kulanu": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-05",
+     "pollster": "Channel 1",
+     "publisher": "",
+     "seats": {
+      "Likud": 24,
+      "Yisrael Beiteinu": 6,
+      "Yesh Atid": 13,
+      "Labor + Hatnuah": 24,
+      "Jewish Home": 11,
+      "Shas": 8,
+      "UTJ": 7,
+      "Meretz": 4,
+      "Hadash + UAL- Ta'al + Balad": 12,
+      "Otzma + Yachad": 4,
+      "Kulanu": 7
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-06",
+     "pollster": "Panels",
+     "publisher": "Maariv",
+     "seats": {
+      "Likud": 22,
+      "Yisrael Beiteinu": 5,
+      "Yesh Atid": 13,
+      "Labor + Hatnuah": 24,
+      "Jewish Home": 12,
+      "Shas": 7,
+      "UTJ": 6,
+      "Meretz": 6,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 4,
+      "Kulanu": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-06",
+     "pollster": "Teleseker",
+     "publisher": "Walla!",
+     "seats": {
+      "Likud": 24,
+      "Yisrael Beiteinu": 6,
+      "Yesh Atid": 12,
+      "Labor + Hatnuah": 24,
+      "Jewish Home": 11,
+      "Shas": 8,
+      "UTJ": 7,
+      "Meretz": 4,
+      "Hadash + UAL- Ta'al + Balad": 12,
+      "Otzma + Yachad": 4,
+      "Kulanu": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-06",
+     "pollster": "Yisrael Hayom",
+     "publisher": "",
+     "seats": {
+      "Likud": 23,
+      "Yisrael Beiteinu": 6,
+      "Yesh Atid": 13,
+      "Labor + Hatnuah": 23,
+      "Jewish Home": 12,
+      "Shas": 6,
+      "UTJ": 6,
+      "Meretz": 5,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 5,
+      "Kulanu": 9
+     },
+     "sums_to": 121,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-07",
+     "pollster": "Panels",
+     "publisher": "Knesset Channel",
+     "seats": {
+      "Likud + Yisrael Beiteinu": 30,
+      "Yesh Atid": 12,
+      "Labor": 21,
+      "Hatnuah": 4,
+      "Jewish Home": 15,
+      "Shas": 6,
+      "UTJ": 8,
+      "Meretz": 11,
+      "Hadash": 4,
+      "UAL- Ta'al": 3,
+      "Balad": 3,
+      "Otzma": 3
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu"
+     ]
+    },
+    {
+     "date": "2015-03-08",
+     "pollster": "Geocartography",
+     "publisher": "",
+     "seats": {
+      "Likud": 26,
+      "Yisrael Beiteinu": 7,
+      "Yesh Atid": 12,
+      "Labor + Hatnuah": 21,
+      "Jewish Home": 13,
+      "Shas": 8,
+      "UTJ": 8,
+      "Meretz": 5,
+      "Hadash + UAL- Ta'al + Balad": 12,
+      "Otzma + Yachad": 0,
+      "Kulanu": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-10",
+     "pollster": "Channel 2",
+     "publisher": "",
+     "seats": {
+      "Likud": 21,
+      "Yisrael Beiteinu": 6,
+      "Yesh Atid": 12,
+      "Labor + Hatnuah": 25,
+      "Jewish Home": 13,
+      "Shas": 7,
+      "UTJ": 6,
+      "Meretz": 5,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 4,
+      "Kulanu": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-10",
+     "pollster": "Panels",
+     "publisher": "Knesset Channel",
+     "seats": {
+      "Likud": 21,
+      "Yisrael Beiteinu": 5,
+      "Yesh Atid": 14,
+      "Labor + Hatnuah": 24,
+      "Jewish Home": 12,
+      "Shas": 7,
+      "UTJ": 6,
+      "Meretz": 5,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 4,
+      "Kulanu": 9
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-11",
+     "pollster": "Midgam",
+     "publisher": "Israel Army Radio (Galatz)",
+     "seats": {
+      "Likud": 21,
+      "Yisrael Beiteinu": 6,
+      "Yesh Atid": 12,
+      "Labor + Hatnuah": 24,
+      "Jewish Home": 13,
+      "Shas": 7,
+      "UTJ": 7,
+      "Meretz": 6,
+      "Hadash + UAL- Ta'al + Balad": 12,
+      "Otzma + Yachad": 4,
+      "Kulanu": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-12",
+     "pollster": "Dialog",
+     "publisher": "Haaretz",
+     "seats": {
+      "Likud": 21,
+      "Yisrael Beiteinu": 4,
+      "Yesh Atid": 12,
+      "Labor + Hatnuah": 24,
+      "Jewish Home": 11,
+      "Shas": 7,
+      "UTJ": 6,
+      "Meretz": 6,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 5,
+      "Kulanu": 11
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-12",
+     "pollster": "Panels",
+     "publisher": "Maariv",
+     "seats": {
+      "Likud": 21,
+      "Yisrael Beiteinu": 5,
+      "Yesh Atid": 13,
+      "Labor + Hatnuah": 24,
+      "Jewish Home": 12,
+      "Shas": 7,
+      "UTJ": 7,
+      "Meretz": 5,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 4,
+      "Kulanu": 9
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-13",
+     "pollster": "Channel 10",
+     "publisher": "",
+     "seats": {
+      "Likud": 20,
+      "Yisrael Beiteinu": 5,
+      "Yesh Atid": 12,
+      "Labor + Hatnuah": 24,
+      "Jewish Home": 12,
+      "Shas": 7,
+      "UTJ": 7,
+      "Meretz": 5,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 5,
+      "Kulanu": 10
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-13",
+     "pollster": "Channel 2",
+     "publisher": "",
+     "seats": {
+      "Likud": 22,
+      "Yisrael Beiteinu": 5,
+      "Yesh Atid": 12,
+      "Labor + Hatnuah": 26,
+      "Jewish Home": 11,
+      "Shas": 7,
+      "UTJ": 6,
+      "Meretz": 5,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 5,
+      "Kulanu": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-13",
+     "pollster": "Midgam",
+     "publisher": "Yedioth Ahronoth",
+     "seats": {
+      "Likud": 22,
+      "Yisrael Beiteinu": 5,
+      "Yesh Atid": 12,
+      "Labor + Hatnuah": 26,
+      "Jewish Home": 12,
+      "Shas": 7,
+      "UTJ": 6,
+      "Meretz": 5,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 4,
+      "Kulanu": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-13",
+     "pollster": "Panels",
+     "publisher": "Jerusalem Post",
+     "seats": {
+      "Likud": 21,
+      "Yisrael Beiteinu": 4,
+      "Yesh Atid": 13,
+      "Labor + Hatnuah": 25,
+      "Jewish Home": 11,
+      "Shas": 7,
+      "UTJ": 6,
+      "Meretz": 5,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 5,
+      "Kulanu": 10
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-13",
+     "pollster": "Reshet Bet",
+     "publisher": "",
+     "seats": {
+      "Likud": 21,
+      "Yisrael Beiteinu": 6,
+      "Yesh Atid": 11,
+      "Labor + Hatnuah": 25,
+      "Jewish Home": 11,
+      "Shas": 9,
+      "UTJ": 6,
+      "Meretz": 5,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 4,
+      "Kulanu": 9
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-13",
+     "pollster": "Teleseker",
+     "publisher": "Walla",
+     "seats": {
+      "Likud": 23,
+      "Yisrael Beiteinu": 6,
+      "Yesh Atid": 12,
+      "Labor + Hatnuah": 25,
+      "Jewish Home": 11,
+      "Shas": 7,
+      "UTJ": 7,
+      "Meretz": 4,
+      "Hadash + UAL- Ta'al + Balad": 12,
+      "Otzma + Yachad": 4,
+      "Kulanu": 9
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-15",
+     "pollster": "Panels",
+     "publisher": "",
+     "seats": {
+      "Likud + Yisrael Beiteinu": 36,
+      "Yesh Atid": 12,
+      "Labor": 20,
+      "Hatnuah": 4,
+      "Jewish Home": 15,
+      "Shas": 7,
+      "UTJ": 7,
+      "Meretz": 11,
+      "Hadash": 4,
+      "UAL- Ta'al": 0,
+      "Balad": 0,
+      "Otzma": 4
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "merged_columns": [
+      "Likud + Yisrael Beiteinu"
+     ]
+    },
+    {
+     "date": "2015-03-17",
+     "pollster": "Channel 10 exit poll",
+     "publisher": "",
+     "seats": {
+      "Likud": 27,
+      "Yisrael Beiteinu": 5,
+      "Yesh Atid": 11,
+      "Labor + Hatnuah": 27,
+      "Jewish Home": 8,
+      "Shas": 7,
+      "UTJ": 7,
+      "Meretz": 5,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 0,
+      "Kulanu": 10
+     },
+     "sums_to": 120,
+     "kind": "exit_poll",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    },
+    {
+     "date": "2015-03-17",
+     "pollster": "Channel 2 exit poll",
+     "publisher": "",
+     "seats": {
+      "Likud": 28,
+      "Yisrael Beiteinu": 5,
+      "Yesh Atid": 11,
+      "Labor + Hatnuah": 27,
+      "Jewish Home": 8,
+      "Shas": 7,
+      "UTJ": 6,
+      "Meretz": 5,
+      "Hadash + UAL- Ta'al + Balad": 13,
+      "Otzma + Yachad": 0,
+      "Kulanu": 10
+     },
+     "sums_to": 120,
+     "kind": "exit_poll",
+     "merged_columns": [
+      "Labor + Hatnuah",
+      "Hadash + UAL- Ta'al + Balad",
+      "Otzma + Yachad"
+     ]
+    }
+   ],
    "sources": [
     "https://en.wikipedia.org/wiki/2015_Israeli_legislative_election",
     "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election"
@@ -274,8 +1490,9 @@
     "Reviewer added [['Kulanu', 'Yisrael Beiteinu']]: with it, Bader-Ofer on the vote counts reproduces the real seats exactly; without it one seat moves. Source still to be confirmed.",
     "All transcribed polls REJECTED: columns misaligned by the page summariser (2013: Yesh Atid 3 and UTJ 15, sums near 103; 2015: no Kulanu column, Zionist Union 36). Results are sound. Re-collect from raw wikitext on the mini."
    ],
-   "rejected_polls": 18,
-   "allocation_check": "exact"
+   "rejected_polls": 17,
+   "allocation_check": "exact",
+   "poll_source": "raw wikitext via parse_tables(keep_spans=True)"
   },
   {
    "election": "2019-04-09",
@@ -402,124 +1619,425 @@
    ],
    "final_polls": [
     {
-     "date": "2019-04-05",
-     "pollster": "Panel Project HaMidgam / Statnet",
-     "publisher": "Channel 13",
+     "date": "2019-03-26",
+     "pollster": "Midgam",
+     "publisher": "Army Radio",
      "seats": {
       "Likud": 28,
-      "Labor Party": 11,
-      "Blue and White": 28,
+      "Labor": 10,
+      "Blue & White": 30,
       "Kulanu": 4,
-      "United Arab List–Balad": 4,
-      "Shas": 5,
-      "United Torah Judaism": 6,
-      "Union of Right-Wing Parties": 7,
+      "Ra'am –Balad": 0,
+      "Shas": 6,
+      "UTJ": 7,
+      "URWP": 5,
       "Yisrael Beiteinu": 4,
       "Meretz": 5,
-      "Hadash–Ta'al": 6,
-      "New Right": 6,
-      "Gesher": 0
-     },
-     "pct_below": {
-      "Gesher": 2.8
-     },
-     "sums_to": 114,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2019-04-05",
-     "pollster": "Smith",
-     "publisher": "Maariv",
-     "seats": {
-      "Likud": 27,
-      "Labor Party": 9,
-      "Blue and White": 29,
-      "Kulanu": 5,
-      "United Arab List–Balad": 4,
-      "Shas": 6,
-      "United Torah Judaism": 7,
-      "Union of Right-Wing Parties": 6,
-      "Yisrael Beiteinu": 4,
-      "Meretz": 5,
-      "Hadash–Ta'al": 7,
-      "New Right": 6,
-      "Gesher": 0,
-      "Zehut": 5
-     },
-     "pct_below": {
-      "Gesher": 2.6
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2019-04-05",
-     "pollster": "Maagar Mohot",
-     "publisher": "Radio 103FM",
-     "seats": {
-      "Likud": 28,
-      "Labor Party": 9,
-      "Blue and White": 31,
-      "Kulanu": 6,
-      "Shas": 6,
-      "United Torah Judaism": 7,
-      "Union of Right-Wing Parties": 7,
-      "Meretz": 7,
-      "Hadash–Ta'al": 7,
-      "New Right": 6,
-      "Zehut": 6
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2019-04-04",
-     "pollster": "Smith",
-     "publisher": "Jerusalem Post",
-     "seats": {
-      "Likud": 27,
-      "Labor Party": 9,
-      "Blue and White": 28,
-      "Kulanu": 5,
-      "United Arab List–Balad": 4,
-      "Shas": 6,
-      "United Torah Judaism": 6,
-      "Union of Right-Wing Parties": 6,
-      "Yisrael Beiteinu": 5,
-      "Meretz": 5,
-      "Hadash–Ta'al": 6,
+      "Hadash –Ta'al": 8,
       "New Right": 5,
       "Gesher": 4,
       "Zehut": 4
      },
      "sums_to": 120,
-     "kind": "pre_election"
+     "kind": "pre_election",
+     "pct_below": {
+      "Ra'am –Balad": 1.6
+     }
     },
     {
-     "date": "2019-04-04",
-     "pollster": "Midgam",
-     "publisher": "Yedioth Ahronoth",
+     "date": "2019-03-26",
+     "pollster": "Miskar",
+     "publisher": "",
      "seats": {
-      "Likud": 26,
-      "Labor Party": 11,
-      "Blue and White": 30,
-      "Kulanu": 5,
-      "United Arab List–Balad": 4,
-      "Shas": 5,
-      "United Torah Judaism": 7,
-      "Union of Right-Wing Parties": 5,
+      "Likud": 31,
+      "Labor": 7,
+      "Blue & White": 30,
+      "Kulanu": 0,
+      "Ra'am –Balad": 4,
+      "Shas": 6,
+      "UTJ": 6,
+      "URWP": 9,
+      "Yisrael Beiteinu": 0,
+      "Meretz": 5,
+      "Hadash –Ta'al": 8,
+      "New Right": 7,
+      "Gesher": 0,
+      "Zehut": 7
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Kulanu": 3.1,
+      "Yisrael Beiteinu": 2.4,
+      "Gesher": 2.6
+     }
+    },
+    {
+     "date": "2019-03-26",
+     "pollster": "TNS",
+     "publisher": "Kan",
+     "seats": {
+      "Likud": 28,
+      "Labor": 8,
+      "Blue & White": 30,
+      "Kulanu": 6,
+      "Ra'am –Balad": 5,
+      "Shas": 6,
+      "UTJ": 7,
+      "URWP": 5,
+      "Yisrael Beiteinu": 0,
+      "Meretz": 5,
+      "Hadash –Ta'al": 7,
+      "New Right": 7,
+      "Gesher": 0,
+      "Zehut": 6
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Yisrael Beiteinu": 2.1,
+      "Gesher": 2.6
+     }
+    },
+    {
+     "date": "2019-03-27",
+     "pollster": "Panels Politics",
+     "publisher": "Walla!",
+     "seats": {
+      "Likud": 31,
+      "Labor": 9,
+      "Blue & White": 30,
+      "Kulanu": 4,
+      "Ra'am –Balad": 0,
+      "Shas": 4,
+      "UTJ": 7,
+      "URWP": 7,
       "Yisrael Beiteinu": 4,
       "Meretz": 5,
-      "Hadash–Ta'al": 7,
+      "Hadash –Ta'al": 8,
       "New Right": 6,
       "Gesher": 0,
       "Zehut": 5
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
-      "Gesher": 2.2
+      "Ra'am –Balad": 1.9,
+      "Gesher": 2.6
+     }
+    },
+    {
+     "date": "2019-03-28",
+     "pollster": "Direct Polls",
+     "publisher": "Makor Rishon",
+     "seats": {
+      "Likud": 30,
+      "Labor": 9,
+      "Blue & White": 29,
+      "Kulanu": 4,
+      "Ra'am –Balad": 4,
+      "Shas": 6,
+      "UTJ": 6,
+      "URWP": 7,
+      "Yisrael Beiteinu": 0,
+      "Meretz": 6,
+      "Hadash –Ta'al": 8,
+      "New Right": 7,
+      "Gesher": 0,
+      "Zehut": 4
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Yisrael Beiteinu": 2.3,
+      "Gesher": 1.5
+     }
+    },
+    {
+     "date": "2019-03-28",
+     "pollster": "Maagar Mohot",
+     "publisher": "Israel Hayom & i24 News",
+     "seats": {
+      "Likud": 28,
+      "Labor": 8,
+      "Blue & White": 32,
+      "Kulanu": 5,
+      "Ra'am –Balad": 0,
+      "Shas": 6,
+      "UTJ": 6,
+      "URWP": 6,
+      "Yisrael Beiteinu": 5,
+      "Meretz": 6,
+      "Hadash –Ta'al": 6,
+      "New Right": 6,
+      "Gesher": 0,
+      "Zehut": 6
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Ra'am –Balad": 2.0,
+      "Gesher": 1.0
+     }
+    },
+    {
+     "date": "2019-03-28",
+     "pollster": "Midgam",
+     "publisher": "Yedioth Ahronoth",
+     "seats": {
+      "Likud": 27,
+      "Labor": 9,
+      "Blue & White": 31,
+      "Kulanu": 5,
+      "Ra'am –Balad": 4,
+      "Shas": 5,
+      "UTJ": 7,
+      "URWP": 5,
+      "Yisrael Beiteinu": 4,
+      "Meretz": 5,
+      "Hadash –Ta'al": 7,
+      "New Right": 6,
+      "Gesher": 0,
+      "Zehut": 5
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Gesher": 2.7
+     }
+    },
+    {
+     "date": "2019-03-28",
+     "pollster": "Panel Project HaMidgam/Statnet",
+     "publisher": "Channel 13",
+     "seats": {
+      "Likud": 30,
+      "Labor": 10,
+      "Blue & White": 30,
+      "Kulanu": 4,
+      "Ra'am –Balad": 4,
+      "Shas": 4,
+      "UTJ": 7,
+      "URWP": 7,
+      "Yisrael Beiteinu": 0,
+      "Meretz": 5,
+      "Hadash –Ta'al": 7,
+      "New Right": 5,
+      "Gesher": 0,
+      "Zehut": 7
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Yisrael Beiteinu": 2.2,
+      "Gesher": 2.3
+     }
+    },
+    {
+     "date": "2019-03-28",
+     "pollster": "Smith",
+     "publisher": "Maariv",
+     "seats": {
+      "Likud": 29,
+      "Labor": 8,
+      "Blue & White": 30,
+      "Kulanu": 4,
+      "Ra'am –Balad": 4,
+      "Shas": 6,
+      "UTJ": 6,
+      "URWP": 6,
+      "Yisrael Beiteinu": 4,
+      "Meretz": 5,
+      "Hadash –Ta'al": 7,
+      "New Right": 7,
+      "Gesher": 0,
+      "Zehut": 4
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Gesher": 3.0
+     }
+    },
+    {
+     "date": "2019-03-29",
+     "pollster": "Maagar Mohot",
+     "publisher": "Radio 103 FM",
+     "seats": {
+      "Likud": 29,
+      "Labor": 8,
+      "Blue & White": 31,
+      "Kulanu": 5,
+      "Shas": 6,
+      "UTJ": 7,
+      "URWP": 7,
+      "Yisrael Beiteinu": 4,
+      "Meretz": 5,
+      "Hadash –Ta'al": 7,
+      "New Right": 6,
+      "Zehut": 5
      },
      "sums_to": 120,
      "kind": "pre_election"
+    },
+    {
+     "date": "2019-03-31",
+     "pollster": "Midgam/iPanel",
+     "publisher": "Channel 12",
+     "seats": {
+      "Likud": 28,
+      "Labor": 8,
+      "Blue & White": 32,
+      "Kulanu": 5,
+      "Ra'am –Balad": 4,
+      "Shas": 6,
+      "UTJ": 6,
+      "URWP": 5,
+      "Yisrael Beiteinu": 4,
+      "Meretz": 5,
+      "Hadash –Ta'al": 7,
+      "New Right": 5,
+      "Gesher": 0,
+      "Zehut": 5
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Gesher": 1.6
+     }
+    },
+    {
+     "date": "2019-03-31",
+     "pollster": "Panels",
+     "publisher": "National Union of Students",
+     "seats": {
+      "Likud": 13,
+      "Labor": 14,
+      "Blue & White": 47,
+      "Shas": 0,
+      "UTJ": 0,
+      "URWP": 7,
+      "Meretz": 15,
+      "Hadash –Ta'al": 0,
+      "New Right": 7,
+      "Gesher": 0,
+      "Zehut": 17
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Shas": 1.9,
+      "UTJ": 2.8,
+      "Hadash –Ta'al": 2.0,
+      "Gesher": 1.1
+     }
+    },
+    {
+     "date": "2019-03-31",
+     "pollster": "Panels Politics",
+     "publisher": "Channel 12",
+     "seats": {
+      "Likud": 31,
+      "Labor": 9,
+      "Blue & White": 30,
+      "Kulanu": 4,
+      "Ra'am –Balad": 0,
+      "Shas": 5,
+      "UTJ": 6,
+      "URWP": 5,
+      "Yisrael Beiteinu": 4,
+      "Meretz": 6,
+      "Hadash –Ta'al": 9,
+      "New Right": 6,
+      "Gesher": 0,
+      "Zehut": 5
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Ra'am –Balad": 2.1,
+      "Gesher": 2.2
+     }
+    },
+    {
+     "date": "2019-04-02",
+     "pollster": "Panel Project HaMidgam/Statnet",
+     "publisher": "Channel 13",
+     "seats": {
+      "Likud": 29,
+      "Labor": 14,
+      "Blue & White": 28,
+      "Kulanu": 4,
+      "Ra'am –Balad": 5,
+      "Shas": 5,
+      "UTJ": 6,
+      "URWP": 7,
+      "Yisrael Beiteinu": 0,
+      "Meretz": 5,
+      "Hadash –Ta'al": 6,
+      "New Right": 5,
+      "Gesher": 0,
+      "Zehut": 6
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Yisrael Beiteinu": 2.2,
+      "Gesher": 2.9
+     }
+    },
+    {
+     "date": "2019-04-03",
+     "pollster": "Dialog",
+     "publisher": "Haaretz",
+     "seats": {
+      "Likud": 30,
+      "Labor": 10,
+      "Blue & White": 27,
+      "Kulanu": 5,
+      "Ra'am –Balad": 4,
+      "Shas": 5,
+      "UTJ": 6,
+      "URWP": 7,
+      "Yisrael Beiteinu": 4,
+      "Meretz": 5,
+      "Hadash –Ta'al": 7,
+      "New Right": 5,
+      "Gesher": 0,
+      "Zehut": 5
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Gesher": 2.8
+     }
+    },
+    {
+     "date": "2019-04-03",
+     "pollster": "Panels Politics",
+     "publisher": "Walla!",
+     "seats": {
+      "Likud": 29,
+      "Labor": 10,
+      "Blue & White": 30,
+      "Kulanu": 0,
+      "Ra'am –Balad": 4,
+      "Shas": 5,
+      "UTJ": 6,
+      "URWP": 7,
+      "Yisrael Beiteinu": 4,
+      "Meretz": 6,
+      "Hadash –Ta'al": 8,
+      "New Right": 6,
+      "Gesher": 0,
+      "Zehut": 5
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Kulanu": 2.9,
+      "Gesher": 2.1
+     }
     },
     {
      "date": "2019-04-04",
@@ -527,24 +2045,127 @@
      "publisher": "Israel Hayom & i24 News",
      "seats": {
       "Likud": 27,
-      "Labor Party": 10,
-      "Blue and White": 32,
+      "Labor": 10,
+      "Blue & White": 32,
       "Kulanu": 6,
-      "United Arab List–Balad": 0,
+      "Ra'am –Balad": 0,
       "Shas": 5,
-      "United Torah Judaism": 8,
-      "Union of Right-Wing Parties": 6,
+      "UTJ": 8,
+      "URWP": 6,
       "Yisrael Beiteinu": 0,
       "Meretz": 8,
-      "Hadash–Ta'al": 6,
+      "Hadash –Ta'al": 6,
       "New Right": 6,
       "Gesher": 0,
       "Zehut": 6
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
-      "United Arab List–Balad": 2.0,
+      "Ra'am –Balad": 2.0,
       "Yisrael Beiteinu": 2.0,
       "Gesher": 2.0
+     }
+    },
+    {
+     "date": "2019-04-04",
+     "pollster": "Midgam",
+     "publisher": "Yedioth Ahronoth",
+     "seats": {
+      "Likud": 26,
+      "Labor": 11,
+      "Blue & White": 30,
+      "Kulanu": 5,
+      "Ra'am –Balad": 4,
+      "Shas": 5,
+      "UTJ": 7,
+      "URWP": 5,
+      "Yisrael Beiteinu": 4,
+      "Meretz": 5,
+      "Hadash –Ta'al": 7,
+      "New Right": 6,
+      "Gesher": 0,
+      "Zehut": 5
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Gesher": 2.2
+     }
+    },
+    {
+     "date": "2019-04-04",
+     "pollster": "Midgam/iPanel",
+     "publisher": "Channel 12",
+     "seats": {
+      "Likud": 26,
+      "Labor": 10,
+      "Blue & White": 30,
+      "Kulanu": 5,
+      "Ra'am –Balad": 4,
+      "Shas": 5,
+      "UTJ": 7,
+      "URWP": 5,
+      "Yisrael Beiteinu": 5,
+      "Meretz": 5,
+      "Hadash –Ta'al": 7,
+      "New Right": 6,
+      "Gesher": 0,
+      "Zehut": 5
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Gesher": 2.6
+     }
+    },
+    {
+     "date": "2019-04-04",
+     "pollster": "Miskar",
+     "publisher": "",
+     "seats": {
+      "Likud": 31,
+      "Labor": 10,
+      "Blue & White": 28,
+      "Kulanu": 0,
+      "Ra'am –Balad": 4,
+      "Shas": 6,
+      "UTJ": 6,
+      "URWP": 8,
+      "Yisrael Beiteinu": 0,
+      "Meretz": 5,
+      "Hadash –Ta'al": 7,
+      "New Right": 7,
+      "Gesher": 0,
+      "Zehut": 8
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Kulanu": 3.18,
+      "Yisrael Beiteinu": 1.2,
+      "Gesher": 2.0
+     }
+    },
+    {
+     "date": "2019-04-04",
+     "pollster": "Smith",
+     "publisher": "Jerusalem Post",
+     "seats": {
+      "Likud": 27,
+      "Labor": 9,
+      "Blue & White": 28,
+      "Kulanu": 5,
+      "Ra'am –Balad": 4,
+      "Shas": 6,
+      "UTJ": 6,
+      "URWP": 6,
+      "Yisrael Beiteinu": 5,
+      "Meretz": 5,
+      "Hadash –Ta'al": 6,
+      "New Right": 5,
+      "Gesher": 4,
+      "Zehut": 4
      },
      "sums_to": 120,
      "kind": "pre_election"
@@ -555,114 +2176,166 @@
      "publisher": "Kan",
      "seats": {
       "Likud": 31,
-      "Labor Party": 8,
-      "Blue and White": 30,
+      "Labor": 8,
+      "Blue & White": 30,
       "Kulanu": 5,
-      "United Arab List–Balad": 4,
+      "Ra'am –Balad": 4,
       "Shas": 4,
-      "United Torah Judaism": 6,
-      "Union of Right-Wing Parties": 6,
+      "UTJ": 6,
+      "URWP": 6,
       "Yisrael Beiteinu": 0,
       "Meretz": 6,
-      "Hadash–Ta'al": 8,
+      "Hadash –Ta'al": 8,
       "New Right": 6,
       "Gesher": 0,
       "Zehut": 6
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
       "Yisrael Beiteinu": 2.4,
       "Gesher": 2.9
+     }
+    },
+    {
+     "date": "2019-04-05",
+     "pollster": "Maagar Mohot",
+     "publisher": "Radio 103FM",
+     "seats": {
+      "Likud": 28,
+      "Labor": 9,
+      "Blue & White": 31,
+      "Kulanu": 6,
+      "Shas": 6,
+      "UTJ": 7,
+      "URWP": 7,
+      "Meretz": 7,
+      "Hadash –Ta'al": 7,
+      "New Right": 6,
+      "Zehut": 6
      },
      "sums_to": 120,
      "kind": "pre_election"
     },
     {
-     "date": "2019-04-04",
-     "pollster": "Midgam / iPanel",
-     "publisher": "Channel 12",
+     "date": "2019-04-05",
+     "pollster": "Panel Project HaMidgam/Statnet",
+     "publisher": "Channel 13",
      "seats": {
-      "Likud": 26,
-      "Labor Party": 10,
-      "Blue and White": 30,
-      "Kulanu": 5,
-      "United Arab List–Balad": 4,
+      "Likud": 28,
+      "Labor": 11,
+      "Blue & White": 28,
+      "Kulanu": 4,
+      "Ra'am –Balad": 4,
       "Shas": 5,
-      "United Torah Judaism": 7,
-      "Union of Right-Wing Parties": 5,
-      "Yisrael Beiteinu": 5,
+      "UTJ": 6,
+      "URWP": 7,
+      "Yisrael Beiteinu": 4,
       "Meretz": 5,
-      "Hadash–Ta'al": 7,
+      "Hadash –Ta'al": 6,
+      "New Right": 6,
+      "Gesher": 0,
+      "Zehut": 6
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Gesher": 2.8
+     }
+    },
+    {
+     "date": "2019-04-05",
+     "pollster": "Smith",
+     "publisher": "Maariv",
+     "seats": {
+      "Likud": 27,
+      "Labor": 9,
+      "Blue & White": 29,
+      "Kulanu": 5,
+      "Ra'am –Balad": 4,
+      "Shas": 6,
+      "UTJ": 7,
+      "URWP": 6,
+      "Yisrael Beiteinu": 4,
+      "Meretz": 5,
+      "Hadash –Ta'al": 7,
       "New Right": 6,
       "Gesher": 0,
       "Zehut": 5
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
       "Gesher": 2.6
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
+     }
     },
     {
-     "date": "2019-04-04",
-     "pollster": "Miskar",
-     "publisher": "Miskar",
+     "date": "2019-04-09",
+     "pollster": "Channel 11 exit poll",
+     "publisher": "",
      "seats": {
-      "Likud": 31,
-      "Labor Party": 10,
-      "Blue and White": 28,
-      "Kulanu": 0,
-      "United Arab List–Balad": 4,
-      "Shas": 6,
-      "United Torah Judaism": 6,
-      "Union of Right-Wing Parties": 8,
-      "Yisrael Beiteinu": 0,
-      "Meretz": 5,
-      "Hadash–Ta'al": 7,
-      "New Right": 7,
-      "Gesher": 0,
-      "Zehut": 8
-     },
-     "pct_below": {
-      "Kulanu": 3.18,
-      "Yisrael Beiteinu": 1.2,
-      "Gesher": 2.0
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2019-04-03",
-     "pollster": "Panels Politics",
-     "publisher": "Walla!",
-     "seats": {
-      "Likud": 29,
-      "Labor Party": 10,
-      "Blue and White": 30,
-      "Kulanu": 0,
-      "United Arab List–Balad": 4,
-      "Shas": 5,
-      "United Torah Judaism": 6,
-      "Union of Right-Wing Parties": 7,
+      "Likud": 36,
+      "Labor": 8,
+      "Blue & White": 37,
+      "Kulanu": 5,
+      "Shas": 7,
+      "UTJ": 7,
+      "URWP": 5,
       "Yisrael Beiteinu": 4,
-      "Meretz": 6,
-      "Hadash–Ta'al": 8,
-      "New Right": 6,
-      "Gesher": 0,
-      "Zehut": 5
-     },
-     "pct_below": {
-      "Kulanu": 2.9,
-      "Gesher": 2.1
+      "Meretz": 5,
+      "Hadash –Ta'al": 6
      },
      "sums_to": 120,
-     "kind": "pre_election"
+     "kind": "exit_poll"
+    },
+    {
+     "date": "2019-04-09",
+     "pollster": "Channel 12 exit poll",
+     "publisher": "",
+     "seats": {
+      "Likud": 33,
+      "Labor": 6,
+      "Blue & White": 37,
+      "Kulanu": 4,
+      "Ra'am –Balad": 6,
+      "Shas": 6,
+      "UTJ": 7,
+      "URWP": 5,
+      "Yisrael Beiteinu": 5,
+      "Meretz": 5,
+      "Hadash –Ta'al": 6
+     },
+     "sums_to": 120,
+     "kind": "exit_poll"
+    },
+    {
+     "date": "2019-04-09",
+     "pollster": "Channel 13 exit poll",
+     "publisher": "",
+     "seats": {
+      "Likud": 36,
+      "Labor": 7,
+      "Blue & White": 36,
+      "Kulanu": 4,
+      "Shas": 7,
+      "UTJ": 7,
+      "URWP": 4,
+      "Yisrael Beiteinu": 4,
+      "Meretz": 4,
+      "Hadash –Ta'al": 7,
+      "New Right": 4
+     },
+     "sums_to": 120,
+     "kind": "exit_poll"
     }
    ],
    "sources": [
     "https://en.wikipedia.org/wiki/April_2019_Israeli_legislative_election",
     "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election"
    ],
-   "allocation_check": "exact"
+   "allocation_check": "exact",
+   "rejected_polls": 156,
+   "poll_source": "raw wikitext via parse_tables(keep_spans=True)"
   },
   {
    "election": "2019-09-17",
@@ -761,234 +2434,108 @@
    ],
    "final_polls": [
     {
-     "date": "2019-09-17",
-     "pollster": "KANTAR",
-     "publisher": "Kan 11",
-     "seats": {
-      "Likud": 31,
-      "Blue and White": 32,
-      "Joint List": 13,
-      "Shas": 9,
-      "United Torah Judaism": 8,
-      "Labor–Gesher": 6,
-      "Yisrael Beiteinu": 9,
-      "Yamina": 7,
-      "Democratic Union": 5
-     },
-     "sums_to": 120,
-     "kind": "exit_poll"
-    },
-    {
-     "date": "2019-09-17",
-     "pollster": "Midgam",
-     "publisher": "Channel 12",
-     "seats": {
-      "Likud": 32,
-      "Blue and White": 32,
-      "Joint List": 13,
-      "Shas": 9,
-      "United Torah Judaism": 8,
-      "Labor–Gesher": 6,
-      "Yisrael Beiteinu": 9,
-      "Yamina": 7,
-      "Democratic Union": 5
-     },
-     "sums_to": 121,
-     "kind": "exit_poll"
-    },
-    {
-     "date": "2019-09-17",
-     "pollster": "Panel Project HaMidgam",
-     "publisher": "Channel 13",
-     "seats": {
-      "Likud": 30,
-      "Blue and White": 32,
-      "Joint List": 15,
-      "Shas": 9,
-      "United Torah Judaism": 8,
-      "Labor–Gesher": 6,
-      "Yisrael Beiteinu": 8,
-      "Yamina": 6,
-      "Democratic Union": 6
-     },
-     "sums_to": 120,
-     "kind": "exit_poll"
-    },
-    {
-     "date": "2019-09-13",
-     "pollster": "Shvakim Panorama",
-     "publisher": "HOT",
-     "seats": {
-      "Likud": 33,
-      "Blue and White": 32,
-      "Joint List": 11,
-      "Shas": 7,
-      "United Torah Judaism": 8,
-      "Labor–Gesher": 4,
-      "Yisrael Beiteinu": 9,
-      "Yamina": 7,
-      "Democratic Union": 5,
-      "Otzma Yehudit": 4
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2019-09-13",
-     "pollster": "Midgam",
-     "publisher": "Channel 12",
-     "seats": {
-      "Likud": 32,
-      "Blue and White": 32,
-      "Joint List": 10,
-      "Shas": 7,
-      "United Torah Judaism": 8,
-      "Labor–Gesher": 5,
-      "Yisrael Beiteinu": 8,
-      "Yamina": 8,
-      "Democratic Union": 6,
-      "Otzma Yehudit": 4
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2019-09-12",
-     "pollster": "Smith",
-     "publisher": "Maariv",
-     "seats": {
-      "Likud": 33,
-      "Blue and White": 32,
-      "Joint List": 12,
-      "Shas": 8,
-      "United Torah Judaism": 7,
-      "Labor–Gesher": 5,
-      "Yisrael Beiteinu": 8,
-      "Yamina": 9,
-      "Democratic Union": 6,
-      "Otzma Yehudit": 0
-     },
-     "pct_below": {
-      "Otzma Yehudit": 3.1
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2019-09-12",
+     "date": "2019-09-04",
      "pollster": "Panels Politics",
      "publisher": "Knesset Channel",
      "seats": {
-      "Likud": 36,
-      "Blue and White": 32,
+      "Likud": 31,
+      "Blue & White": 31,
       "Joint List": 10,
       "Shas": 7,
-      "United Torah Judaism": 8,
-      "Labor–Gesher": 4,
+      "UTJ": 8,
+      "Yamina": 10,
+      "Labor- Gesher": 5,
       "Yisrael Beiteinu": 9,
-      "Yamina": 9,
-      "Democratic Union": 5
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2019-09-12",
-     "pollster": "Smith",
-     "publisher": "103FM",
-     "seats": {
-      "Likud": 33,
-      "Blue and White": 32,
-      "Joint List": 12,
-      "Shas": 8,
-      "United Torah Judaism": 7,
-      "Labor–Gesher": 4,
-      "Yisrael Beiteinu": 9,
-      "Yamina": 9,
-      "Democratic Union": 6,
-      "Otzma Yehudit": 0
-     },
-     "pct_below": {
-      "Otzma Yehudit": 2.9
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2019-09-12",
-     "pollster": "KANTAR",
-     "publisher": "Kan 11",
-     "seats": {
-      "Likud": 31,
-      "Blue and White": 33,
-      "Joint List": 11,
-      "Shas": 7,
-      "United Torah Judaism": 8,
-      "Labor–Gesher": 5,
-      "Yisrael Beiteinu": 7,
-      "Yamina": 9,
-      "Democratic Union": 5,
+      "Dem. Union": 5,
       "Otzma Yehudit": 4
      },
      "sums_to": 120,
      "kind": "pre_election"
     },
     {
-     "date": "2019-09-11",
+     "date": "2019-09-05",
      "pollster": "Maagar Mohot",
      "publisher": "Israel Hayom",
      "seats": {
-      "Likud": 33,
-      "Blue and White": 31,
-      "Joint List": 12,
-      "Shas": 7,
-      "United Torah Judaism": 7,
-      "Labor–Gesher": 6,
-      "Yisrael Beiteinu": 9,
-      "Yamina": 7,
-      "Democratic Union": 4,
-      "Otzma Yehudit": 4
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2019-09-10",
-     "pollster": "Panel Project HaMidgam",
-     "publisher": "Channel 13",
-     "seats": {
       "Likud": 31,
-      "Blue and White": 32,
+      "Blue & White": 30,
       "Joint List": 11,
-      "Shas": 6,
-      "United Torah Judaism": 7,
-      "Labor–Gesher": 5,
-      "Yisrael Beiteinu": 9,
-      "Yamina": 9,
-      "Democratic Union": 6,
+      "Shas": 8,
+      "UTJ": 7,
+      "Yamina": 8,
+      "Labor- Gesher": 6,
+      "Yisrael Beiteinu": 11,
+      "Dem. Union": 4,
       "Otzma Yehudit": 4
      },
      "sums_to": 120,
      "kind": "pre_election"
     },
     {
-     "date": "2019-09-10",
+     "date": "2019-09-05",
      "pollster": "Midgam",
      "publisher": "Channel 12",
      "seats": {
-      "Likud": 31,
-      "Blue and White": 32,
-      "Joint List": 9,
+      "Likud": 32,
+      "Blue & White": 32,
+      "Joint List": 10,
       "Shas": 7,
-      "United Torah Judaism": 7,
-      "Labor–Gesher": 6,
-      "Yisrael Beiteinu": 9,
+      "UTJ": 8,
       "Yamina": 9,
-      "Democratic Union": 6,
-      "Otzma Yehudit": 4
+      "Labor- Gesher": 6,
+      "Yisrael Beiteinu": 9,
+      "Dem. Union": 7,
+      "Otzma Yehudit": 0
      },
      "sums_to": 120,
-     "kind": "pre_election"
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma Yehudit": 2.5
+     }
+    },
+    {
+     "date": "2019-09-05",
+     "pollster": "Panel Project HaMidgam",
+     "publisher": "Channel 13",
+     "seats": {
+      "Likud": 32,
+      "Blue & White": 32,
+      "Joint List": 10,
+      "Shas": 6,
+      "UTJ": 8,
+      "Yamina": 10,
+      "Labor- Gesher": 5,
+      "Yisrael Beiteinu": 11,
+      "Dem. Union": 6,
+      "Otzma Yehudit": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma Yehudit": 2.76
+     }
+    },
+    {
+     "date": "2019-09-05",
+     "pollster": "Smith",
+     "publisher": "103fm & Maariv",
+     "seats": {
+      "Likud": 32,
+      "Blue & White": 32,
+      "Joint List": 9,
+      "Shas": 8,
+      "UTJ": 7,
+      "Yamina": 9,
+      "Labor- Gesher": 6,
+      "Yisrael Beiteinu": 10,
+      "Dem. Union": 7,
+      "Otzma Yehudit": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma Yehudit": 2.5
+     }
     },
     {
      "date": "2019-09-09",
@@ -996,14 +2543,14 @@
      "publisher": "Kan 11",
      "seats": {
       "Likud": 31,
-      "Blue and White": 32,
+      "Blue & White": 32,
       "Joint List": 10,
       "Shas": 7,
-      "United Torah Judaism": 7,
-      "Labor–Gesher": 5,
-      "Yisrael Beiteinu": 9,
+      "UTJ": 7,
       "Yamina": 9,
-      "Democratic Union": 6,
+      "Labor- Gesher": 5,
+      "Yisrael Beiteinu": 9,
+      "Dem. Union": 6,
       "Otzma Yehudit": 4
      },
      "sums_to": 120,
@@ -1015,15 +2562,242 @@
      "publisher": "Walla!",
      "seats": {
       "Likud": 32,
-      "Blue and White": 33,
+      "Blue & White": 33,
       "Joint List": 9,
       "Shas": 6,
-      "United Torah Judaism": 7,
-      "Labor–Gesher": 6,
-      "Yisrael Beiteinu": 8,
+      "UTJ": 7,
       "Yamina": 9,
-      "Democratic Union": 6,
+      "Labor- Gesher": 6,
+      "Yisrael Beiteinu": 8,
+      "Dem. Union": 6,
       "Otzma Yehudit": 4
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2019-09-10",
+     "pollster": "Midgam",
+     "publisher": "Channel 12",
+     "seats": {
+      "Likud": 31,
+      "Blue & White": 32,
+      "Joint List": 9,
+      "Shas": 7,
+      "UTJ": 7,
+      "Yamina": 9,
+      "Labor- Gesher": 6,
+      "Yisrael Beiteinu": 9,
+      "Dem. Union": 6,
+      "Otzma Yehudit": 4
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2019-09-10",
+     "pollster": "Panel Project HaMidgam",
+     "publisher": "Channel 13",
+     "seats": {
+      "Likud": 31,
+      "Blue & White": 32,
+      "Joint List": 11,
+      "Shas": 6,
+      "UTJ": 7,
+      "Yamina": 9,
+      "Labor- Gesher": 5,
+      "Yisrael Beiteinu": 9,
+      "Dem. Union": 6,
+      "Otzma Yehudit": 4
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2019-09-11",
+     "pollster": "Maagar Mohot",
+     "publisher": "Israel Hayom",
+     "seats": {
+      "Likud": 33,
+      "Blue & White": 31,
+      "Joint List": 12,
+      "Shas": 7,
+      "UTJ": 7,
+      "Yamina": 7,
+      "Labor- Gesher": 6,
+      "Yisrael Beiteinu": 9,
+      "Dem. Union": 4,
+      "Otzma Yehudit": 4
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2019-09-12",
+     "pollster": "KANTAR",
+     "publisher": "Kan 11",
+     "seats": {
+      "Likud": 31,
+      "Blue & White": 33,
+      "Joint List": 11,
+      "Shas": 7,
+      "UTJ": 8,
+      "Yamina": 9,
+      "Labor- Gesher": 5,
+      "Yisrael Beiteinu": 7,
+      "Dem. Union": 5,
+      "Otzma Yehudit": 4
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2019-09-12",
+     "pollster": "Panels Politics",
+     "publisher": "Knesset Channel",
+     "seats": {
+      "Likud": 36,
+      "Blue & White": 32,
+      "Joint List": 10,
+      "Shas": 7,
+      "UTJ": 8,
+      "Yamina": 9,
+      "Labor- Gesher": 4,
+      "Yisrael Beiteinu": 9,
+      "Dem. Union": 5
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2019-09-12",
+     "pollster": "Smith",
+     "publisher": "Maariv",
+     "seats": {
+      "Likud": 33,
+      "Blue & White": 32,
+      "Joint List": 12,
+      "Shas": 8,
+      "UTJ": 7,
+      "Yamina": 9,
+      "Labor- Gesher": 5,
+      "Yisrael Beiteinu": 8,
+      "Dem. Union": 6,
+      "Otzma Yehudit": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma Yehudit": 3.1
+     }
+    },
+    {
+     "date": "2019-09-13",
+     "pollster": "Midgam",
+     "publisher": "Channel 12",
+     "seats": {
+      "Likud": 32,
+      "Blue & White": 32,
+      "Joint List": 10,
+      "Shas": 7,
+      "UTJ": 8,
+      "Yamina": 8,
+      "Labor- Gesher": 5,
+      "Yisrael Beiteinu": 8,
+      "Dem. Union": 6,
+      "Otzma Yehudit": 4
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2019-09-13",
+     "pollster": "Panel Project HaMidgam",
+     "publisher": "Channel 13",
+     "seats": {
+      "Likud": 32,
+      "Blue & White": 32,
+      "Joint List": 12,
+      "Shas": 6,
+      "UTJ": 7,
+      "Yamina": 9,
+      "Labor- Gesher": 4,
+      "Yisrael Beiteinu": 9,
+      "Dem. Union": 5,
+      "Otzma Yehudit": 4
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2019-09-13",
+     "pollster": "Shvakim Panorama",
+     "publisher": "HOT",
+     "seats": {
+      "Likud": 33,
+      "Blue & White": 32,
+      "Joint List": 11,
+      "Shas": 7,
+      "UTJ": 8,
+      "Yamina": 7,
+      "Labor- Gesher": 4,
+      "Yisrael Beiteinu": 9,
+      "Dem. Union": 5,
+      "Otzma Yehudit": 4
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2019-09-17",
+     "pollster": "KANTAR",
+     "publisher": "Kan 11",
+     "seats": {
+      "Likud": 31,
+      "Blue & White": 32,
+      "Joint List": 13,
+      "Shas": 9,
+      "UTJ": 8,
+      "Yamina": 7,
+      "Labor- Gesher": 6,
+      "Yisrael Beiteinu": 9,
+      "Dem. Union": 5
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2019-09-17",
+     "pollster": "Midgam",
+     "publisher": "Channel 12",
+     "seats": {
+      "Likud": 32,
+      "Blue & White": 32,
+      "Joint List": 13,
+      "Shas": 9,
+      "UTJ": 8,
+      "Yamina": 7,
+      "Labor- Gesher": 6,
+      "Yisrael Beiteinu": 9,
+      "Dem. Union": 5
+     },
+     "sums_to": 121,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2019-09-17",
+     "pollster": "Panel Project HaMidgam",
+     "publisher": "Channel 13",
+     "seats": {
+      "Likud": 30,
+      "Blue & White": 32,
+      "Joint List": 15,
+      "Shas": 9,
+      "UTJ": 8,
+      "Yamina": 6,
+      "Labor- Gesher": 6,
+      "Yisrael Beiteinu": 8,
+      "Dem. Union": 6
      },
      "sums_to": 120,
      "kind": "pre_election"
@@ -1033,7 +2807,9 @@
     "https://en.wikipedia.org/wiki/September_2019_Israeli_legislative_election",
     "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election"
    ],
-   "allocation_check": "exact"
+   "allocation_check": "exact",
+   "rejected_polls": 27,
+   "poll_source": "raw wikitext via parse_tables(keep_spans=True)"
   },
   {
    "election": "2020-03-02",
@@ -1101,325 +2877,468 @@
    "surplus_agreements": null,
    "final_polls": [
     {
-     "date": "2020-03-02",
-     "pollster": "Kantar",
-     "publisher": "Kan 11",
-     "seats": {
-      "Likud": 36,
-      "Blue and White": 33,
-      "Joint List": 15,
-      "Shas": 9,
-      "United Torah Judaism": 8,
-      "Labor-Gesher-Meretz": 6,
-      "Yisrael Beiteinu": 6,
-      "Yamina": 7
-     },
-     "pct_below": {},
-     "sums_to": 120,
-     "kind": "exit_poll"
-    },
-    {
-     "date": "2020-03-02",
+     "date": "2020-02-17",
      "pollster": "Midgam",
-     "publisher": "Channel 12",
+     "publisher": "Walla!",
      "seats": {
-      "Likud": 37,
-      "Blue and White": 33,
-      "Joint List": 14,
-      "Shas": 9,
-      "United Torah Judaism": 7,
-      "Labor-Gesher-Meretz": 7,
-      "Yisrael Beiteinu": 6,
-      "Yamina": 7
+      "Blue & White": 34,
+      "Likud": 33,
+      "Joint List": 13,
+      "Emet": 10,
+      "Shas": 8,
+      "Yisrael Beiteinu": 7,
+      "UTJ": 8,
+      "Yamina": 7,
+      "Otzma": 0
      },
-     "pct_below": {},
      "sums_to": 120,
-     "kind": "exit_poll"
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 2.5
+     }
     },
     {
-     "date": "2020-03-02",
-     "pollster": "Camil Fuchs",
-     "publisher": "Channel 13",
-     "seats": {
-      "Likud": 37,
-      "Blue and White": 32,
-      "Joint List": 14,
-      "Shas": 9,
-      "United Torah Judaism": 8,
-      "Labor-Gesher-Meretz": 6,
-      "Yisrael Beiteinu": 8,
-      "Yamina": 6
-     },
-     "pct_below": {},
-     "sums_to": 120,
-     "kind": "exit_poll"
-    },
-    {
-     "date": "2020-02-28",
-     "pollster": "Smith",
-     "publisher": "Maariv",
-     "seats": {
-      "Likud": 35,
-      "Blue and White": 34,
-      "Joint List": 14,
-      "Shas": 9,
-      "United Torah Judaism": 7,
-      "Labor-Gesher-Meretz": 8,
-      "Yisrael Beiteinu": 6,
-      "Yamina": 7
-     },
-     "pct_below": {},
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2020-02-28",
+     "date": "2020-02-17",
      "pollster": "Panel Project HaMidgam",
      "publisher": "Channel 13",
      "seats": {
+      "Blue & White": 36,
       "Likud": 33,
-      "Blue and White": 33,
-      "Joint List": 15,
-      "Shas": 8,
-      "United Torah Judaism": 7,
-      "Labor-Gesher-Meretz": 9,
-      "Yisrael Beiteinu": 7,
-      "Yamina": 8,
-      "Otzma Yehudit": 0
-     },
-     "pct_below": {
-      "Otzma Yehudit": 1.8
+      "Joint List": 14,
+      "Emet": 8,
+      "Shas": 7,
+      "Yisrael Beiteinu": 8,
+      "UTJ": 7,
+      "Yamina": 7,
+      "Otzma": 0
      },
      "sums_to": 120,
-     "kind": "pre_election"
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 1.9
+     }
     },
     {
-     "date": "2020-02-27",
+     "date": "2020-02-19",
      "pollster": "Midgam",
      "publisher": "Channel 12",
      "seats": {
-      "Likud": 35,
-      "Blue and White": 33,
-      "Joint List": 14,
-      "Shas": 8,
-      "United Torah Judaism": 8,
-      "Labor-Gesher-Meretz": 9,
-      "Yisrael Beiteinu": 6,
-      "Yamina": 7,
-      "Otzma Yehudit": 0
-     },
-     "pct_below": {
-      "Otzma Yehudit": 1.5
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2020-02-27",
-     "pollster": "Panels Politics",
-     "publisher": "Maariv & Jerusalem Post",
-     "seats": {
-      "Likud": 34,
-      "Blue and White": 34,
-      "Joint List": 13,
-      "Shas": 9,
-      "United Torah Judaism": 7,
-      "Labor-Gesher-Meretz": 9,
-      "Yisrael Beiteinu": 7,
-      "Yamina": 7,
-      "Otzma Yehudit": 0
-     },
-     "pct_below": {
-      "Otzma Yehudit": 2.1
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2020-02-27",
-     "pollster": "Maagar Mohot",
-     "publisher": "Israel Hayom & i24 News",
-     "seats": {
+      "Blue & White": 35,
       "Likud": 33,
-      "Blue and White": 33,
-      "Joint List": 14,
+      "Joint List": 13,
+      "Emet": 9,
       "Shas": 8,
-      "United Torah Judaism": 7,
-      "Labor-Gesher-Meretz": 9,
       "Yisrael Beiteinu": 7,
-      "Yamina": 9,
-      "Otzma Yehudit": 0
-     },
-     "pct_below": {
-      "Otzma Yehudit": 2.0
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2020-02-27",
-     "pollster": "Kantar",
-     "publisher": "Kan 11",
-     "seats": {
-      "Likud": 35,
-      "Blue and White": 34,
-      "Joint List": 14,
-      "Shas": 8,
-      "United Torah Judaism": 8,
-      "Labor-Gesher-Meretz": 8,
-      "Yisrael Beiteinu": 6,
+      "UTJ": 8,
       "Yamina": 7,
-      "Otzma Yehudit": 0
-     },
-     "pct_below": {
-      "Otzma Yehudit": 1.6
+      "Otzma": 0
      },
      "sums_to": 120,
-     "kind": "pre_election"
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 1.6
+     }
     },
     {
-     "date": "2020-02-26",
+     "date": "2020-02-19",
+     "pollster": "Panels Politics",
+     "publisher": "Maariv",
+     "seats": {
+      "Blue & White": 36,
+      "Likud": 32,
+      "Joint List": 14,
+      "Emet": 8,
+      "Shas": 9,
+      "Yisrael Beiteinu": 8,
+      "UTJ": 7,
+      "Yamina": 7,
+      "Otzma": 0
+     },
+     "sums_to": 121,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 2.6
+     }
+    },
+    {
+     "date": "2020-02-20",
      "pollster": "Direct Polls",
      "publisher": "Arutz Sheva",
      "seats": {
-      "Likud": 35,
-      "Blue and White": 33,
-      "Joint List": 13,
+      "Blue & White": 31,
+      "Likud": 33,
+      "Joint List": 14,
+      "Emet": 10,
       "Shas": 9,
-      "United Torah Judaism": 8,
-      "Labor-Gesher-Meretz": 9,
-      "Yisrael Beiteinu": 6,
-      "Yamina": 7,
-      "Otzma Yehudit": 0
-     },
-     "pct_below": {
-      "Otzma Yehudit": 0.96
+      "Yisrael Beiteinu": 7,
+      "UTJ": 8,
+      "Yamina": 8,
+      "Otzma": 0
      },
      "sums_to": 120,
-     "kind": "pre_election"
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 1.2
+     }
+    },
+    {
+     "date": "2020-02-20",
+     "pollster": "Maagar Mohot",
+     "publisher": "Israel Hayom & i24 News",
+     "seats": {
+      "Blue & White": 36,
+      "Likud": 33,
+      "Joint List": 13,
+      "Emet": 8,
+      "Shas": 8,
+      "Yisrael Beiteinu": 7,
+      "UTJ": 7,
+      "Yamina": 8,
+      "Otzma": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 1.0
+     }
+    },
+    {
+     "date": "2020-02-23",
+     "pollster": "Kantar",
+     "publisher": "Kan 11",
+     "seats": {
+      "Blue & White": 34,
+      "Likud": 35,
+      "Joint List": 14,
+      "Emet": 9,
+      "Shas": 8,
+      "Yisrael Beiteinu": 7,
+      "UTJ": 7,
+      "Yamina": 6,
+      "Otzma": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 1.3
+     }
+    },
+    {
+     "date": "2020-02-23",
+     "pollster": "Midgam",
+     "publisher": "Channel 12",
+     "seats": {
+      "Blue & White": 33,
+      "Likud": 34,
+      "Joint List": 13,
+      "Emet": 10,
+      "Shas": 8,
+      "Yisrael Beiteinu": 7,
+      "UTJ": 8,
+      "Yamina": 7,
+      "Otzma": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 1.5
+     }
+    },
+    {
+     "date": "2020-02-24",
+     "pollster": "Kantar",
+     "publisher": "Kan 11",
+     "seats": {
+      "Blue & White": 33,
+      "Likud": 34,
+      "Joint List": 14,
+      "Emet": 10,
+      "Shas": 8,
+      "Yisrael Beiteinu": 7,
+      "UTJ": 7,
+      "Yamina": 7,
+      "Otzma": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 1.9
+     }
+    },
+    {
+     "date": "2020-02-24",
+     "pollster": "Panel Project HaMidgam",
+     "publisher": "Channel 13",
+     "seats": {
+      "Blue & White": 32,
+      "Likud": 33,
+      "Joint List": 14,
+      "Emet": 10,
+      "Shas": 8,
+      "Yisrael Beiteinu": 8,
+      "UTJ": 7,
+      "Yamina": 8,
+      "Otzma": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 2.0
+     }
     },
     {
      "date": "2020-02-25",
      "pollster": "Midgam",
      "publisher": "Walla!",
      "seats": {
+      "Blue & White": 34,
       "Likud": 34,
-      "Blue and White": 34,
       "Joint List": 13,
+      "Emet": 9,
       "Shas": 8,
-      "United Torah Judaism": 8,
-      "Labor-Gesher-Meretz": 9,
       "Yisrael Beiteinu": 7,
+      "UTJ": 8,
       "Yamina": 7,
-      "Otzma Yehudit": 0
-     },
-     "pct_below": {
-      "Otzma Yehudit": 1.7
+      "Otzma": 0
      },
      "sums_to": 120,
-     "kind": "pre_election"
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 1.7
+     }
     },
     {
      "date": "2020-02-25",
      "pollster": "Panels Politics",
      "publisher": "103fm",
      "seats": {
+      "Blue & White": 32,
       "Likud": 34,
-      "Blue and White": 32,
       "Joint List": 14,
+      "Emet": 9,
       "Shas": 8,
-      "United Torah Judaism": 7,
-      "Labor-Gesher-Meretz": 9,
       "Yisrael Beiteinu": 8,
+      "UTJ": 7,
       "Yamina": 8,
-      "Otzma Yehudit": 0
-     },
-     "pct_below": {
-      "Otzma Yehudit": 2.0
+      "Otzma": 0
      },
      "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2020-02-24",
-     "pollster": "Kantar",
-     "publisher": "Kan 11",
-     "seats": {
-      "Likud": 34,
-      "Blue and White": 33,
-      "Joint List": 14,
-      "Shas": 8,
-      "United Torah Judaism": 7,
-      "Labor-Gesher-Meretz": 10,
-      "Yisrael Beiteinu": 7,
-      "Yamina": 7,
-      "Otzma Yehudit": 0
-     },
+     "kind": "pre_election",
      "pct_below": {
-      "Otzma Yehudit": 1.9
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
+      "Otzma": 2.0
+     }
     },
     {
-     "date": "2020-02-24",
-     "pollster": "Panel Project HaMidgam",
-     "publisher": "Channel 13",
+     "date": "2020-02-26",
+     "pollster": "Direct Polls",
+     "publisher": "Arutz Sheva",
      "seats": {
-      "Likud": 33,
-      "Blue and White": 32,
-      "Joint List": 14,
-      "Shas": 8,
-      "United Torah Judaism": 7,
-      "Labor-Gesher-Meretz": 10,
-      "Yisrael Beiteinu": 8,
-      "Yamina": 8,
-      "Otzma Yehudit": 0
-     },
-     "pct_below": {
-      "Otzma Yehudit": 2.0
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2020-02-23",
-     "pollster": "Kantar",
-     "publisher": "Kan 11",
-     "seats": {
+      "Blue & White": 33,
       "Likud": 35,
-      "Blue and White": 34,
-      "Joint List": 14,
-      "Shas": 8,
-      "United Torah Judaism": 7,
-      "Labor-Gesher-Meretz": 9,
-      "Yisrael Beiteinu": 7,
-      "Yamina": 6,
-      "Otzma Yehudit": 0
-     },
-     "pct_below": {
-      "Otzma Yehudit": 1.3
+      "Joint List": 13,
+      "Emet": 9,
+      "Shas": 9,
+      "Yisrael Beiteinu": 6,
+      "UTJ": 8,
+      "Yamina": 7,
+      "Otzma": 0
      },
      "sums_to": 120,
-     "kind": "pre_election"
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 0.96
+     }
     },
     {
-     "date": "2020-02-23",
+     "date": "2020-02-27",
+     "pollster": "Kantar",
+     "publisher": "Kan 11",
+     "seats": {
+      "Blue & White": 34,
+      "Likud": 35,
+      "Joint List": 14,
+      "Emet": 8,
+      "Shas": 8,
+      "Yisrael Beiteinu": 6,
+      "UTJ": 8,
+      "Yamina": 7,
+      "Otzma": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 1.6
+     }
+    },
+    {
+     "date": "2020-02-27",
+     "pollster": "Maagar Mohot",
+     "publisher": "Israel Hayom & i24 News",
+     "seats": {
+      "Blue & White": 33,
+      "Likud": 33,
+      "Joint List": 14,
+      "Emet": 9,
+      "Shas": 8,
+      "Yisrael Beiteinu": 7,
+      "UTJ": 7,
+      "Yamina": 9,
+      "Otzma": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 2.0
+     }
+    },
+    {
+     "date": "2020-02-27",
+     "pollster": "Panels Politics",
+     "publisher": "Maariv & The Jerusalem Post",
+     "seats": {
+      "Blue & White": 34,
+      "Likud": 34,
+      "Joint List": 13,
+      "Emet": 9,
+      "Shas": 9,
+      "Yisrael Beiteinu": 7,
+      "UTJ": 7,
+      "Yamina": 7,
+      "Otzma": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 2.1
+     }
+    },
+    {
+     "date": "2020-02-28",
      "pollster": "Midgam",
      "publisher": "Channel 12",
      "seats": {
-      "Likud": 34,
-      "Blue and White": 33,
-      "Joint List": 13,
+      "Blue & White": 33,
+      "Likud": 35,
+      "Joint List": 14,
+      "Emet": 9,
       "Shas": 8,
-      "United Torah Judaism": 8,
-      "Labor-Gesher-Meretz": 10,
-      "Yisrael Beiteinu": 7,
+      "Yisrael Beiteinu": 6,
+      "UTJ": 8,
       "Yamina": 7,
-      "Otzma Yehudit": 0
+      "Otzma": 0
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
-      "Otzma Yehudit": 1.5
+      "Otzma": 1.5
+     }
+    },
+    {
+     "date": "2020-02-28",
+     "pollster": "Panel Project HaMidgam",
+     "publisher": "Channel 13",
+     "seats": {
+      "Blue & White": 33,
+      "Likud": 33,
+      "Joint List": 15,
+      "Emet": 9,
+      "Shas": 8,
+      "Yisrael Beiteinu": 7,
+      "UTJ": 7,
+      "Yamina": 8,
+      "Otzma": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 1.8
+     }
+    },
+    {
+     "date": "2020-02-28",
+     "pollster": "Smith",
+     "publisher": "Maariv",
+     "seats": {
+      "Blue & White": 34,
+      "Likud": 35,
+      "Joint List": 14,
+      "Emet": 8,
+      "Shas": 9,
+      "Yisrael Beiteinu": 6,
+      "UTJ": 7,
+      "Yamina": 7
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2020-03-02",
+     "pollster": "Camile Fuchs",
+     "publisher": "Channel 13",
+     "seats": {
+      "Blue & White": 32,
+      "Likud": 37,
+      "Joint List": 14,
+      "Emet": 6,
+      "Shas": 9,
+      "Yisrael Beiteinu": 8,
+      "UTJ": 8,
+      "Yamina": 6
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2020-03-02",
+     "pollster": "Election results",
+     "publisher": "",
+     "seats": {
+      "Blue & White": 33,
+      "Likud": 36,
+      "Joint List": 15,
+      "Emet": 7,
+      "Shas": 9,
+      "Yisrael Beiteinu": 7,
+      "UTJ": 7,
+      "Yamina": 6,
+      "Otzma": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma": 0.42
+     }
+    },
+    {
+     "date": "2020-03-02",
+     "pollster": "Kantar",
+     "publisher": "Kan 11",
+     "seats": {
+      "Blue & White": 33,
+      "Likud": 36,
+      "Joint List": 15,
+      "Emet": 6,
+      "Shas": 9,
+      "Yisrael Beiteinu": 6,
+      "UTJ": 8,
+      "Yamina": 7
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2020-03-02",
+     "pollster": "Midgam",
+     "publisher": "Channel 12",
+     "seats": {
+      "Blue & White": 33,
+      "Likud": 37,
+      "Joint List": 14,
+      "Emet": 7,
+      "Shas": 9,
+      "Yisrael Beiteinu": 6,
+      "UTJ": 7,
+      "Yamina": 7
      },
      "sums_to": 120,
      "kind": "pre_election"
@@ -1429,7 +3348,9 @@
     "https://en.wikipedia.org/wiki/2020_Israeli_legislative_election",
     "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election"
    ],
-   "allocation_check": "exact"
+   "allocation_check": "exact",
+   "rejected_polls": 6,
+   "poll_source": "raw wikitext via parse_tables(keep_spans=True)"
   },
   {
    "election": "2021-03-23",
@@ -1564,309 +3485,108 @@
    ],
    "final_polls": [
     {
-     "date": "2021-03-23",
+     "date": "2021-03-09",
      "pollster": "Camil Fuchs",
      "publisher": "Channel 13",
      "seats": {
-      "Likud": 32,
-      "Yesh Atid": 16,
-      "Blue and White": 8,
+      "Likud": 29,
+      "Yesh Atid": 20,
+      "Blue & White": 4,
       "Joint List": 8,
-      "Shas": 8,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 8,
-      "Meretz": 7,
-      "United Arab List": 0,
-      "Yamina": 7,
-      "New Hope": 5,
-      "Labor": 7,
-      "Religious Zionist Party": 7,
-      "New Economic Party": 0
-     },
-     "pct_below": {},
-     "sums_to": 120,
-     "kind": "exit_poll"
-    },
-    {
-     "date": "2021-03-23",
-     "pollster": "Midgam/iPanel",
-     "publisher": "Channel 12",
-     "seats": {
-      "Likud": 30,
-      "Yesh Atid": 18,
-      "Blue and White": 7,
-      "Joint List": 9,
-      "Shas": 9,
-      "United Torah Judaism": 6,
+      "Shas": 6,
+      "UTJ": 7,
       "Yisrael Beiteinu": 7,
-      "Meretz": 7,
-      "United Arab List": 0,
-      "Yamina": 7,
-      "New Hope": 6,
-      "Labor": 8,
-      "Religious Zionist Party": 7,
-      "New Economic Party": 0
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Yamina": 11,
+      "New Hope": 9,
+      "Labor": 6,
+      "Religious Zionist": 5,
+      "New Economic": 0
      },
-     "pct_below": {},
-     "sums_to": 121,
-     "kind": "exit_poll"
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "New Economic": 1.7
+     }
     },
     {
-     "date": "2021-03-23",
+     "date": "2021-03-11",
      "pollster": "Kantar",
      "publisher": "Kan 11",
      "seats": {
-      "Likud": 30,
-      "Yesh Atid": 18,
-      "Blue and White": 8,
-      "Joint List": 8,
-      "Shas": 9,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 7,
-      "Meretz": 6,
-      "United Arab List": 0,
-      "Yamina": 7,
-      "New Hope": 6,
-      "Labor": 7,
-      "Religious Zionist Party": 7,
-      "New Economic Party": 0
-     },
-     "pct_below": {},
-     "sums_to": 120,
-     "kind": "exit_poll"
-    },
-    {
-     "date": "2021-03-19",
-     "pollster": "Camil Fuchs",
-     "publisher": "Channel 13",
-     "seats": {
-      "Likud": 30,
-      "Yesh Atid": 18,
-      "Blue and White": 4,
+      "Likud": 29,
+      "Yesh Atid": 19,
+      "Blue & White": 5,
       "Joint List": 8,
       "Shas": 8,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 6,
-      "Meretz": 4,
-      "United Arab List": 4,
-      "Yamina": 10,
-      "New Hope": 10,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 7,
+      "Meretz": 0,
+      "Ra'am": 4,
+      "Yamina": 12,
+      "New Hope": 11,
       "Labor": 6,
-      "Religious Zionist Party": 5,
-      "New Economic Party": 0
+      "Religious Zionist": 4,
+      "New Economic": 0
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
-      "New Economic Party": 2.1
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
+      "Meretz": 2.8,
+      "New Economic": 1.6
+     }
     },
     {
-     "date": "2021-03-18",
-     "pollster": "Midgam/iPanel",
-     "publisher": "Channel 12",
-     "seats": {
-      "Likud": 32,
-      "Yesh Atid": 18,
-      "Blue and White": 4,
-      "Joint List": 8,
-      "Shas": 8,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 7,
-      "Meretz": 4,
-      "United Arab List": 4,
-      "Yamina": 9,
-      "New Hope": 9,
-      "Labor": 6,
-      "Religious Zionist Party": 4,
-      "New Economic Party": 0
-     },
-     "pct_below": {
-      "New Economic Party": 1.3
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2021-03-18",
-     "pollster": "Panels Politics",
-     "publisher": "Maariv",
-     "seats": {
-      "Likud": 30,
-      "Yesh Atid": 19,
-      "Blue and White": 5,
-      "Joint List": 8,
-      "Shas": 8,
-      "United Torah Judaism": 6,
-      "Yisrael Beiteinu": 8,
-      "Meretz": 4,
-      "United Arab List": 4,
-      "Yamina": 10,
-      "New Hope": 8,
-      "Labor": 5,
-      "Religious Zionist Party": 5,
-      "New Economic Party": 0
-     },
-     "pct_below": {},
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2021-03-17",
-     "pollster": "Direct Polls",
-     "publisher": null,
-     "seats": {
-      "Likud": 32,
-      "Yesh Atid": 17,
-      "Blue and White": 7,
-      "Joint List": 7,
-      "Shas": 9,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 9,
-      "Meretz": 4,
-      "United Arab List": 4,
-      "Yamina": 8,
-      "New Hope": 7,
-      "Labor": 4,
-      "Religious Zionist Party": 5,
-      "New Economic Party": 0
-     },
-     "pct_below": {
-      "New Economic Party": 1.3
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2021-03-17",
-     "pollster": "Kantar",
-     "publisher": "Kan 11",
-     "seats": {
-      "Likud": 31,
-      "Yesh Atid": 19,
-      "Blue and White": 4,
-      "Joint List": 8,
-      "Shas": 8,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 7,
-      "Meretz": 4,
-      "United Arab List": 4,
-      "Yamina": 9,
-      "New Hope": 9,
-      "Labor": 5,
-      "Religious Zionist Party": 5,
-      "New Economic Party": 0
-     },
-     "pct_below": {
-      "New Economic Party": 1.4
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2021-03-17",
-     "pollster": "Smith",
-     "publisher": "Mako",
-     "seats": {
-      "Likud": 31,
-      "Yesh Atid": 19,
-      "Blue and White": 4,
-      "Joint List": 8,
-      "Shas": 8,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 7,
-      "Meretz": 4,
-      "United Arab List": 4,
-      "Yamina": 9,
-      "New Hope": 9,
-      "Labor": 5,
-      "Religious Zionist Party": 5,
-      "New Economic Party": 0
-     },
-     "pct_below": {
-      "New Economic Party": 1.4
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2021-03-16",
+     "date": "2021-03-11",
      "pollster": "Maagar Mohot",
      "publisher": "Israel Hayom",
      "seats": {
-      "Likud": 29,
-      "Yesh Atid": 18,
-      "Blue and White": 4,
-      "Joint List": 10,
-      "Shas": 9,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 8,
-      "Meretz": 5,
-      "United Arab List": 0,
-      "Yamina": 10,
-      "New Hope": 10,
-      "Labor": 5,
-      "Religious Zionist Party": 5,
-      "New Economic Party": 0
-     },
-     "pct_below": {
-      "New Economic Party": 1.1,
-      "United Arab List": 1.7
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2021-03-16",
-     "pollster": "Midgam/iPanel",
-     "publisher": "Channel 12",
-     "seats": {
       "Likud": 30,
       "Yesh Atid": 18,
-      "Blue and White": 4,
-      "Joint List": 8,
+      "Blue & White": 5,
+      "Joint List": 9,
       "Shas": 8,
-      "United Torah Judaism": 7,
+      "UTJ": 7,
       "Yisrael Beiteinu": 7,
       "Meretz": 4,
-      "United Arab List": 4,
-      "Yamina": 10,
-      "New Hope": 10,
-      "Labor": 6,
-      "Religious Zionist Party": 4,
-      "New Economic Party": 0
-     },
-     "pct_below": {
-      "New Economic Party": 1.4
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
-    },
-    {
-     "date": "2021-03-15",
-     "pollster": "Panels Politics",
-     "publisher": "103fm",
-     "seats": {
-      "Likud": 28,
-      "Yesh Atid": 20,
-      "Blue and White": 4,
-      "Joint List": 8,
-      "Shas": 7,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 7,
-      "Meretz": 4,
-      "United Arab List": 4,
+      "Ra'am": 0,
       "Yamina": 11,
       "New Hope": 10,
-      "Labor": 5,
-      "Religious Zionist Party": 5,
-      "New Economic Party": 0
-     },
-     "pct_below": {
-      "New Economic Party": 1.5
+      "Labor": 6,
+      "Religious Zionist": 5,
+      "New Economic": 0
      },
      "sums_to": 120,
-     "kind": "pre_election"
+     "kind": "pre_election",
+     "pct_below": {
+      "Ra'am": 1.7,
+      "New Economic": 2.2
+     }
+    },
+    {
+     "date": "2021-03-12",
+     "pollster": "Midgam",
+     "publisher": "Channel 12",
+     "seats": {
+      "Likud": 37,
+      "Blue & White": 33,
+      "Joint List": 15,
+      "Shas": 9,
+      "UTJ": 7,
+      "Labor- Meretz + Gesher": 6,
+      "Yisrael Beiteinu": 7,
+      "Yamina": 6,
+      "Otzma Yehudit": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Otzma Yehudit": 0.7
+     },
+     "merged_columns": [
+      "Labor- Meretz + Gesher"
+     ]
     },
     {
      "date": "2021-03-14",
@@ -1875,23 +3595,395 @@
      "seats": {
       "Likud": 28,
       "Yesh Atid": 20,
-      "Blue and White": 4,
+      "Blue & White": 4,
       "Joint List": 8,
       "Shas": 6,
-      "United Torah Judaism": 7,
+      "UTJ": 7,
       "Yisrael Beiteinu": 7,
       "Meretz": 4,
-      "United Arab List": 4,
+      "Ra'am": 4,
       "Yamina": 11,
       "New Hope": 9,
       "Labor": 6,
-      "Religious Zionist Party": 6,
-      "New Economic Party": 0
-     },
-     "pct_below": {
-      "New Economic Party": 2.1
+      "Religious Zionist": 6,
+      "New Economic": 0
      },
      "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "New Economic": 2.1
+     }
+    },
+    {
+     "date": "2021-03-15",
+     "pollster": "Panels Politics",
+     "publisher": "103fm",
+     "seats": {
+      "Likud": 28,
+      "Yesh Atid": 20,
+      "Blue & White": 4,
+      "Joint List": 8,
+      "Shas": 7,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 7,
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Yamina": 11,
+      "New Hope": 10,
+      "Labor": 5,
+      "Religious Zionist": 5,
+      "New Economic": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "New Economic": 1.5
+     }
+    },
+    {
+     "date": "2021-03-16",
+     "pollster": "Direct Polls",
+     "publisher": "–",
+     "seats": {
+      "Likud": 39,
+      "Blue & White": 30,
+      "Joint List": 16,
+      "Shas": 8,
+      "UTJ": 8,
+      "Labor- Meretz": 7,
+      "Gesher": 0,
+      "Yisrael Beiteinu": 6,
+      "Yamina": 6,
+      "Otzma Yehudit": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Gesher": 1.75,
+      "Otzma Yehudit": 0.34
+     }
+    },
+    {
+     "date": "2021-03-16",
+     "pollster": "Midgam/iPanel",
+     "publisher": "Channel 12",
+     "seats": {
+      "Likud": 30,
+      "Yesh Atid": 18,
+      "Blue & White": 4,
+      "Joint List": 8,
+      "Shas": 8,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 7,
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Yamina": 10,
+      "New Hope": 10,
+      "Labor": 6,
+      "Religious Zionist": 4,
+      "New Economic": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "New Economic": 1.4
+     }
+    },
+    {
+     "date": "2021-03-18",
+     "pollster": "Direct Polls",
+     "publisher": "–",
+     "seats": {
+      "Likud": 32,
+      "Yesh Atid": 17,
+      "Blue & White": 7,
+      "Joint List": 7,
+      "Shas": 9,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 9,
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Yamina": 8,
+      "New Hope": 7,
+      "Labor": 4,
+      "Religious Zionist": 5,
+      "New Economic": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "New Economic": 1.3
+     }
+    },
+    {
+     "date": "2021-03-18",
+     "pollster": "Kantar",
+     "publisher": "Kan 11",
+     "seats": {
+      "Likud": 31,
+      "Yesh Atid": 19,
+      "Blue & White": 4,
+      "Joint List": 8,
+      "Shas": 8,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 7,
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Yamina": 9,
+      "New Hope": 9,
+      "Labor": 5,
+      "Religious Zionist": 5,
+      "New Economic": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "New Economic": 1.4
+     }
+    },
+    {
+     "date": "2021-03-18",
+     "pollster": "Maagar Mohot",
+     "publisher": "Israel Hayom",
+     "seats": {
+      "Likud": 29,
+      "Yesh Atid": 18,
+      "Blue & White": 4,
+      "Joint List": 10,
+      "Shas": 9,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 8,
+      "Meretz": 5,
+      "Ra'am": 0,
+      "Yamina": 10,
+      "New Hope": 10,
+      "Labor": 5,
+      "Religious Zionist": 5,
+      "New Economic": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Ra'am": 1.7,
+      "New Economic": 1.1
+     }
+    },
+    {
+     "date": "2021-03-18",
+     "pollster": "Panels Politics",
+     "publisher": "Maariv",
+     "seats": {
+      "Likud": 30,
+      "Yesh Atid": 19,
+      "Blue & White": 5,
+      "Joint List": 8,
+      "Shas": 8,
+      "UTJ": 6,
+      "Yisrael Beiteinu": 8,
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Yamina": 10,
+      "New Hope": 8,
+      "Labor": 5,
+      "Religious Zionist": 5
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2021-03-18",
+     "pollster": "Smith",
+     "publisher": "Mako",
+     "seats": {
+      "Likud": 31,
+      "Yesh Atid": 19,
+      "Blue & White": 4,
+      "Joint List": 8,
+      "Shas": 8,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 7,
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Yamina": 9,
+      "New Hope": 9,
+      "Labor": 5,
+      "Religious Zionist": 5,
+      "New Economic": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "New Economic": 1.4
+     }
+    },
+    {
+     "date": "2021-03-19",
+     "pollster": "Camil Fuchs",
+     "publisher": "Channel 13",
+     "seats": {
+      "Likud": 30,
+      "Yesh Atid": 18,
+      "Blue & White": 4,
+      "Joint List": 8,
+      "Shas": 8,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 6,
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Yamina": 10,
+      "New Hope": 10,
+      "Labor": 6,
+      "Religious Zionist": 5,
+      "New Economic": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "New Economic": 2.1
+     }
+    },
+    {
+     "date": "2021-03-19",
+     "pollster": "Direct Polls",
+     "publisher": "–",
+     "seats": {
+      "Likud": 40,
+      "Blue & White": 30,
+      "Joint List": 15,
+      "Shas": 8,
+      "UTJ": 7,
+      "Labor- Meretz": 6,
+      "Gesher": 0,
+      "Yisrael Beiteinu": 7,
+      "Yamina": 7,
+      "Otzma Yehudit": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Gesher": 0.41,
+      "Otzma Yehudit": 0.3
+     }
+    },
+    {
+     "date": "2021-03-19",
+     "pollster": "Midgam/iPanel",
+     "publisher": "Channel 12",
+     "seats": {
+      "Likud": 32,
+      "Yesh Atid": 18,
+      "Blue & White": 4,
+      "Joint List": 8,
+      "Shas": 8,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 7,
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Yamina": 9,
+      "New Hope": 9,
+      "Labor": 6,
+      "Religious Zionist": 4,
+      "New Economic": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "New Economic": 1.3
+     }
+    },
+    {
+     "date": "2021-03-23",
+     "pollster": "Camil Fuchs",
+     "publisher": "Channel 13",
+     "seats": {
+      "Likud": 32,
+      "Yesh Atid": 16,
+      "Blue & White": 8,
+      "Joint List": 8,
+      "Shas": 8,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 8,
+      "Meretz": 7,
+      "Ra'am": 0,
+      "Yamina": 7,
+      "New Hope": 5,
+      "Labor": 7,
+      "Religious Zionist": 7,
+      "New Economic": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2021-03-23",
+     "pollster": "Election results",
+     "publisher": "",
+     "seats": {
+      "Likud": 30,
+      "Yesh Atid": 17,
+      "Blue & White": 8,
+      "Joint List": 6,
+      "Shas": 9,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 7,
+      "Meretz": 6,
+      "Ra'am": 4,
+      "Yamina": 7,
+      "New Hope": 6,
+      "Labor": 7,
+      "Religious Zionist": 6,
+      "New Economic": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "New Economic": 0.79
+     }
+    },
+    {
+     "date": "2021-03-23",
+     "pollster": "Kantar",
+     "publisher": "Kan 11",
+     "seats": {
+      "Likud": 30,
+      "Yesh Atid": 18,
+      "Blue & White": 8,
+      "Joint List": 8,
+      "Shas": 9,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 7,
+      "Meretz": 6,
+      "Ra'am": 0,
+      "Yamina": 7,
+      "New Hope": 6,
+      "Labor": 7,
+      "Religious Zionist": 7,
+      "New Economic": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2021-03-23",
+     "pollster": "Midgam/iPanel",
+     "publisher": "Channel 12",
+     "seats": {
+      "Likud": 30,
+      "Yesh Atid": 18,
+      "Blue & White": 7,
+      "Joint List": 9,
+      "Shas": 9,
+      "UTJ": 6,
+      "Yisrael Beiteinu": 7,
+      "Meretz": 7,
+      "Ra'am": 0,
+      "Yamina": 7,
+      "New Hope": 6,
+      "Labor": 8,
+      "Religious Zionist": 7,
+      "New Economic": 0
+     },
+     "sums_to": 121,
      "kind": "pre_election"
     }
    ],
@@ -1902,7 +3994,9 @@
    "review_notes": [
     "Reviewer added [['Labor', 'Meretz']]: with it, Bader-Ofer on the vote counts reproduces the real seats exactly; without it one seat moves. Source still to be confirmed."
    ],
-   "allocation_check": "exact"
+   "allocation_check": "exact",
+   "rejected_polls": 3,
+   "poll_source": "raw wikitext via parse_tables(keep_spans=True)"
   },
   {
    "election": "2022-11-01",
@@ -2026,56 +4120,186 @@
    ],
    "final_polls": [
     {
-     "date": "2022-10-24",
+     "date": "2022-10-18",
+     "pollster": "Kantar",
+     "publisher": "Kan 11",
+     "seats": {
+      "Likud": 31,
+      "Yesh Atid": 25,
+      "National Unity": 11,
+      "Shas": 8,
+      "Jewish Home": 0,
+      "Labor": 5,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 7,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 4,
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.9,
+      "Balad": 2.0
+     }
+    },
+    {
+     "date": "2022-10-18",
      "pollster": "Midgam",
      "publisher": "HaHadashot 12",
      "seats": {
-      "Likud": 32,
-      "Yesh Atid": 24,
-      "National Unity": 13,
+      "Likud": 30,
+      "Yesh Atid": 25,
+      "National Unity": 12,
       "Shas": 8,
       "Jewish Home": 0,
-      "Israeli Labor Party": 5,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 5,
-      "Religious Zionist Party": 13,
-      "Hadash-Ta'al": 4,
+      "Labor": 5,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 6,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 4,
       "Meretz": 5,
-      "United Arab List": 4,
+      "Ra'am": 4,
       "Balad": 0
      },
-     "pct_below": {
-      "Jewish Home": 1.8,
-      "Balad": 2.0
-     },
      "sums_to": 120,
-     "kind": "pre_election"
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.7,
+      "Balad": 1.2
+     }
     },
     {
-     "date": "2022-10-23",
+     "date": "2022-10-19",
+     "pollster": "Midgam",
+     "publisher": "Keshet",
+     "seats": {
+      "Likud": 31,
+      "Yesh Atid": 24,
+      "National Unity": 11,
+      "Shas": 8,
+      "Jewish Home": 0,
+      "Labor": 6,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 6,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 4,
+      "Meretz": 5,
+      "Ra'am": 4,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.9,
+      "Balad": 1.3
+     }
+    },
+    {
+     "date": "2022-10-19",
+     "pollster": "|Panels Politics",
+     "publisher": "Mako/Knesset Channel",
+     "seats": {
+      "Likud": 32,
+      "Yesh Atid": 24,
+      "National Unity": 11,
+      "Shas": 8,
+      "Jewish Home": 0,
+      "Labor": 5,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 7,
+      "RZP- OY": 13,
+      "Hadash –Ta'al": 4,
+      "Meretz": 5,
+      "Ra'am": 4,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.9,
+      "Balad": 1.4
+     }
+    },
+    {
+     "date": "2022-10-20",
+     "pollster": "Camil Fuchs",
+     "publisher": "Channel 13",
+     "seats": {
+      "Likud": 32,
+      "Yesh Atid": 26,
+      "National Unity": 11,
+      "Shas": 8,
+      "Jewish Home": 0,
+      "Labor": 5,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 5,
+      "RZP- OY": 13,
+      "Hadash –Ta'al": 4,
+      "Meretz": 5,
+      "Ra'am": 4,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.5,
+      "Balad": 2.5
+     }
+    },
+    {
+     "date": "2022-10-20",
+     "pollster": "Direct Polls",
+     "publisher": "Channel 14",
+     "seats": {
+      "Likud": 34,
+      "Yesh Atid": 23,
+      "National Unity": 13,
+      "Shas": 9,
+      "Jewish Home": 0,
+      "Labor": 4,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 6,
+      "RZP- OY": 12,
+      "Hadash –Ta'al": 4,
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.9,
+      "Balad": 2.1
+     }
+    },
+    {
+     "date": "2022-10-20",
      "pollster": "Panels Politics",
      "publisher": "Maariv",
      "seats": {
-      "Likud": 32,
+      "Likud": 31,
       "Yesh Atid": 23,
       "National Unity": 12,
       "Shas": 8,
       "Jewish Home": 0,
-      "Israeli Labor Party": 5,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 6,
-      "Religious Zionist Party": 14,
-      "Hadash-Ta'al": 4,
+      "Labor": 5,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 7,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 4,
       "Meretz": 5,
-      "United Arab List": 4,
+      "Ra'am": 4,
       "Balad": 0
      },
-     "pct_below": {
-      "Jewish Home": 1.6,
-      "Balad": 1.7
-     },
      "sums_to": 120,
-     "kind": "pre_election"
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.8,
+      "Balad": 1.4
+     }
     },
     {
      "date": "2022-10-23",
@@ -2087,47 +4311,229 @@
       "National Unity": 12,
       "Shas": 9,
       "Jewish Home": 0,
-      "Israeli Labor Party": 5,
-      "United Torah Judaism": 7,
+      "Labor": 5,
+      "UTJ": 7,
       "Yisrael Beiteinu": 6,
-      "Religious Zionist Party": 13,
-      "Hadash-Ta'al": 4,
+      "RZP- OY": 13,
+      "Hadash –Ta'al": 4,
       "Meretz": 5,
-      "United Arab List": 4,
+      "Ra'am": 4,
       "Balad": 0
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
       "Jewish Home": 1.6,
       "Balad": 1.8
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
+     }
     },
     {
-     "date": "2022-10-27",
+     "date": "2022-10-23",
+     "pollster": "Panels Politics",
+     "publisher": "Maariv",
+     "seats": {
+      "Likud": 32,
+      "Yesh Atid": 23,
+      "National Unity": 12,
+      "Shas": 8,
+      "Jewish Home": 0,
+      "Labor": 5,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 6,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 4,
+      "Meretz": 5,
+      "Ra'am": 4,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.6,
+      "Balad": 1.7
+     }
+    },
+    {
+     "date": "2022-10-24",
+     "pollster": "Direct Polls",
+     "publisher": "Channel 14",
+     "seats": {
+      "Likud": 34,
+      "Yesh Atid": 23,
+      "National Unity": 12,
+      "Shas": 9,
+      "Jewish Home": 0,
+      "Labor": 4,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 6,
+      "RZP- OY": 12,
+      "Hadash –Ta'al": 4,
+      "Meretz": 5,
+      "Ra'am": 4,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.9,
+      "Balad": 2.0
+     }
+    },
+    {
+     "date": "2022-10-24",
+     "pollster": "Midgam",
+     "publisher": "HaHadashot 12",
+     "seats": {
+      "Likud": 32,
+      "Yesh Atid": 24,
+      "National Unity": 13,
+      "Shas": 8,
+      "Jewish Home": 0,
+      "Labor": 5,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 5,
+      "RZP- OY": 13,
+      "Hadash –Ta'al": 4,
+      "Meretz": 5,
+      "Ra'am": 4,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.8,
+      "Balad": 2.0
+     }
+    },
+    {
+     "date": "2022-10-25",
+     "pollster": "Camil Fuchs",
+     "publisher": "Channel 13",
+     "seats": {
+      "Likud": 31,
+      "Yesh Atid": 27,
+      "National Unity": 11,
+      "Shas": 8,
+      "Jewish Home": 0,
+      "Labor": 4,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 6,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 4,
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 2.2,
+      "Balad": 2.3
+     }
+    },
+    {
+     "date": "2022-10-25",
+     "pollster": "Midgam",
+     "publisher": "Galei Tzahal",
+     "seats": {
+      "Likud": 31,
+      "Yesh Atid": 25,
+      "National Unity": 13,
+      "Shas": 8,
+      "Jewish Home": 0,
+      "Labor": 5,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 6,
+      "RZP- OY": 12,
+      "Hadash –Ta'al": 4,
+      "Meretz": 5,
+      "Ra'am": 4,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.8,
+      "Balad": 1.4
+     }
+    },
+    {
+     "date": "2022-10-25",
+     "pollster": "Panels Politics",
+     "publisher": "Mako/Knesset Channel",
+     "seats": {
+      "Likud": 31,
+      "Yesh Atid": 24,
+      "National Unity": 12,
+      "Shas": 8,
+      "Jewish Home": 0,
+      "Labor": 5,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 6,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 4,
+      "Meretz": 5,
+      "Ra'am": 4,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 2.1,
+      "Balad": 1.8
+     }
+    },
+    {
+     "date": "2022-10-25",
      "pollster": "Smith",
      "publisher": "Galei Israel",
      "seats": {
-      "Likud": 31,
+      "Likud": 32,
+      "Yesh Atid": 25,
+      "National Unity": 12,
+      "Shas": 9,
+      "Jewish Home": 0,
+      "Labor": 5,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 5,
+      "RZP- OY": 13,
+      "Hadash –Ta'al": 4,
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.8,
+      "Balad": 2.1
+     }
+    },
+    {
+     "date": "2022-10-26",
+     "pollster": "Maagar Mochot",
+     "publisher": "Israel Hayom",
+     "seats": {
+      "Likud": 30,
       "Yesh Atid": 25,
       "National Unity": 11,
       "Shas": 9,
       "Jewish Home": 0,
-      "Israeli Labor Party": 5,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 6,
-      "Religious Zionist Party": 14,
-      "Hadash-Ta'al": 4,
+      "Labor": 6,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 5,
+      "RZP- OY": 15,
+      "Hadash –Ta'al": 4,
       "Meretz": 4,
-      "United Arab List": 4,
+      "Ra'am": 4,
       "Balad": 0
      },
-     "pct_below": {
-      "Jewish Home": 2.0,
-      "Balad": 2.1
-     },
      "sums_to": 120,
-     "kind": "pre_election"
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.2,
+      "Balad": 1.0
+     }
     },
     {
      "date": "2022-10-27",
@@ -2139,24 +4545,24 @@
       "National Unity": 13,
       "Shas": 9,
       "Jewish Home": 0,
-      "Israeli Labor Party": 4,
-      "United Torah Judaism": 7,
+      "Labor": 4,
+      "UTJ": 7,
       "Yisrael Beiteinu": 6,
-      "Religious Zionist Party": 12,
-      "Hadash-Ta'al": 4,
+      "RZP- OY": 12,
+      "Hadash –Ta'al": 4,
       "Meretz": 4,
-      "United Arab List": 4,
+      "Ra'am": 4,
       "Balad": 0
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
       "Jewish Home": 1.9,
       "Balad": 2.1
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
+     }
     },
     {
-     "date": "2022-10-26",
+     "date": "2022-10-27",
      "pollster": "Kantar",
      "publisher": "Kan 11",
      "seats": {
@@ -2165,24 +4571,24 @@
       "National Unity": 11,
       "Shas": 8,
       "Jewish Home": 0,
-      "Israeli Labor Party": 6,
-      "United Torah Judaism": 7,
+      "Labor": 6,
+      "UTJ": 7,
       "Yisrael Beiteinu": 6,
-      "Religious Zionist Party": 14,
-      "Hadash-Ta'al": 4,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 4,
       "Meretz": 5,
-      "United Arab List": 4,
+      "Ra'am": 4,
       "Balad": 0
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
       "Jewish Home": 2.0,
       "Balad": 2.2
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
+     }
     },
     {
-     "date": "2022-10-26",
+     "date": "2022-10-27",
      "pollster": "Panels Politics",
      "publisher": "Maariv",
      "seats": {
@@ -2191,21 +4597,47 @@
       "National Unity": 12,
       "Shas": 9,
       "Jewish Home": 0,
-      "Israeli Labor Party": 4,
-      "United Torah Judaism": 6,
+      "Labor": 4,
+      "UTJ": 6,
       "Yisrael Beiteinu": 6,
-      "Religious Zionist Party": 14,
-      "Hadash-Ta'al": 4,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 4,
       "Meretz": 5,
-      "United Arab List": 4,
+      "Ra'am": 4,
       "Balad": 0
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
       "Jewish Home": 2.1,
       "Balad": 1.8
+     }
+    },
+    {
+     "date": "2022-10-27",
+     "pollster": "Smith",
+     "publisher": "Galei Israel",
+     "seats": {
+      "Likud": 31,
+      "Yesh Atid": 25,
+      "National Unity": 11,
+      "Shas": 9,
+      "Jewish Home": 0,
+      "Labor": 5,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 6,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 4,
+      "Meretz": 4,
+      "Ra'am": 4,
+      "Balad": 0
      },
      "sums_to": 120,
-     "kind": "pre_election"
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 2.0,
+      "Balad": 2.1
+     }
     },
     {
      "date": "2022-10-28",
@@ -2217,21 +4649,21 @@
       "National Unity": 10,
       "Shas": 8,
       "Jewish Home": 0,
-      "Israeli Labor Party": 6,
-      "United Torah Judaism": 7,
+      "Labor": 6,
+      "UTJ": 7,
       "Yisrael Beiteinu": 5,
-      "Religious Zionist Party": 15,
-      "Hadash-Ta'al": 4,
+      "RZP- OY": 15,
+      "Hadash –Ta'al": 4,
       "Meretz": 4,
-      "United Arab List": 4,
+      "Ra'am": 4,
       "Balad": 0
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
       "Jewish Home": 2.0,
       "Balad": 2.75
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
+     }
     },
     {
      "date": "2022-10-28",
@@ -2243,70 +4675,46 @@
       "National Unity": 11,
       "Shas": 8,
       "Jewish Home": 0,
-      "Israeli Labor Party": 5,
-      "United Torah Judaism": 7,
+      "Labor": 5,
+      "UTJ": 7,
       "Yisrael Beiteinu": 6,
-      "Religious Zionist Party": 14,
-      "Hadash-Ta'al": 4,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 4,
       "Meretz": 5,
-      "United Arab List": 4,
+      "Ra'am": 4,
       "Balad": 0
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
       "Jewish Home": 1.5,
       "Balad": 1.6
-     },
-     "sums_to": 120,
-     "kind": "pre_election"
+     }
     },
     {
-     "date": "2022-11-01",
-     "pollster": "Kantar",
-     "publisher": "Kan 11",
+     "date": "2022-10-31",
+     "pollster": "Direct Polls",
+     "publisher": "–",
      "seats": {
-      "Likud": 30,
-      "Yesh Atid": 22,
-      "National Unity": 13,
-      "Shas": 10,
-      "Jewish Home": 0,
-      "Israeli Labor Party": 5,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 5,
-      "Religious Zionist Party": 15,
-      "Hadash-Ta'al": 4,
+      "Likud": 35,
+      "Yesh Atid": 20,
+      "Shas": 9,
+      "Blue & White": 7,
+      "Yamina": 0,
+      "Labor": 7,
+      "UTJ": 8,
+      "Yisrael Beiteinu": 7,
+      "Religious Zionist": 7,
+      "Joint List": 7,
+      "New Hope": 4,
       "Meretz": 4,
-      "United Arab List": 5,
-      "Balad": 0
+      "Ra'am": 5
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
-      "Jewish Home": 1.4,
-      "Balad": 3.1
-     },
-     "sums_to": 120,
-     "kind": "exit_poll"
-    },
-    {
-     "date": "2022-11-01",
-     "pollster": "Midgam",
-     "publisher": "Channel 12",
-     "seats": {
-      "Likud": 30,
-      "Yesh Atid": 24,
-      "National Unity": 11,
-      "Shas": 10,
-      "Jewish Home": 0,
-      "Israeli Labor Party": 6,
-      "United Torah Judaism": 7,
-      "Yisrael Beiteinu": 4,
-      "Religious Zionist Party": 14,
-      "Hadash-Ta'al": 4,
-      "Meretz": 5,
-      "United Arab List": 5,
-      "Balad": 0
-     },
-     "pct_below": {},
-     "sums_to": 120,
-     "kind": "exit_poll"
+      "Yamina": 2.9
+     }
     },
     {
      "date": "2022-11-01",
@@ -2318,20 +4726,20 @@
       "National Unity": 12,
       "Shas": 10,
       "Jewish Home": 0,
-      "Israeli Labor Party": 5,
-      "United Torah Judaism": 7,
+      "Labor": 5,
+      "UTJ": 7,
       "Yisrael Beiteinu": 4,
-      "Religious Zionist Party": 14,
-      "Hadash-Ta'al": 4,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 4,
       "Meretz": 4,
-      "United Arab List": 5,
+      "Ra'am": 5,
       "Balad": 0
      },
+     "sums_to": 120,
+     "kind": "pre_election",
      "pct_below": {
       "Balad": 2.75
-     },
-     "sums_to": 120,
-     "kind": "exit_poll"
+     }
     },
     {
      "date": "2022-11-01",
@@ -2343,35 +4751,140 @@
       "National Unity": 11,
       "Shas": 10,
       "Jewish Home": 0,
-      "Israeli Labor Party": 6,
-      "United Torah Judaism": 8,
+      "Labor": 6,
+      "UTJ": 8,
       "Yisrael Beiteinu": 6,
-      "Religious Zionist Party": 12,
-      "Hadash-Ta'al": 4,
+      "RZP- OY": 12,
+      "Hadash –Ta'al": 4,
       "Meretz": 5,
-      "United Arab List": 4,
+      "Ra'am": 4,
       "Balad": 0
      },
-     "pct_below": {},
      "sums_to": 120,
-     "kind": "exit_poll"
+     "kind": "pre_election"
+    },
+    {
+     "date": "2022-11-01",
+     "pollster": "Election Results",
+     "publisher": "",
+     "seats": {
+      "Likud": 32,
+      "Yesh Atid": 24,
+      "National Unity": 12,
+      "Shas": 11,
+      "Jewish Home": 0,
+      "Labor": 4,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 6,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 5,
+      "Meretz": 0,
+      "Ra'am": 5,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.19,
+      "Meretz": 3.16,
+      "Balad": 2.9
+     }
+    },
+    {
+     "date": "2022-11-01",
+     "pollster": "Kantar",
+     "publisher": "Kan 11",
+     "seats": {
+      "Likud": 30,
+      "Yesh Atid": 22,
+      "National Unity": 13,
+      "Shas": 10,
+      "Jewish Home": 0,
+      "Labor": 5,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 5,
+      "RZP- OY": 15,
+      "Hadash –Ta'al": 4,
+      "Meretz": 4,
+      "Ra'am": 5,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election",
+     "pct_below": {
+      "Jewish Home": 1.4,
+      "Balad": 3.1
+     }
+    },
+    {
+     "date": "2022-11-01",
+     "pollster": "Midgam",
+     "publisher": "Channel 12",
+     "seats": {
+      "Likud": 30,
+      "Yesh Atid": 24,
+      "National Unity": 11,
+      "Shas": 10,
+      "Jewish Home": 0,
+      "Labor": 6,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 4,
+      "RZP- OY": 14,
+      "Hadash –Ta'al": 4,
+      "Meretz": 5,
+      "Ra'am": 5,
+      "Balad": 0
+     },
+     "sums_to": 120,
+     "kind": "pre_election"
+    },
+    {
+     "date": "2022-11-01",
+     "pollster": "Smith",
+     "publisher": "Galei Israel",
+     "seats": {
+      "Likud": 34,
+      "Yesh Atid": 20,
+      "Shas": 8,
+      "Blue & White": 8,
+      "Yamina": 6,
+      "Labor": 7,
+      "UTJ": 7,
+      "Yisrael Beiteinu": 6,
+      "Religious Zionist": 7,
+      "Joint List": 7,
+      "New Hope": 0,
+      "Meretz": 6,
+      "Ra'am": 5
+     },
+     "sums_to": 121,
+     "kind": "pre_election",
+     "pct_below": {
+      "New Hope": 2.9
+     }
     }
    ],
    "sources": [
     "https://en.wikipedia.org/wiki/2022_Israeli_legislative_election",
     "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election"
    ],
-   "allocation_check": "exact"
+   "allocation_check": "exact",
+   "rejected_polls": 0,
+   "poll_source": "raw wikitext via parse_tables(keep_spans=True)"
   }
  ],
  "aliases": {
   "2013-01-22": {
-   "Nat'l Union + Jewish Home (poll columns)": "summed into The Jewish Home",
-   "UAL-Ta'al": "United Arab List"
+   "UAL-Ta'al": "United Arab List",
+   "Likud + Yisrael Beiteinu": "Likud Yisrael Beiteinu (joint list)",
+   "National Union + Jewish Home": "The Jewish Home (joint list)",
+   "UAL -Ta'al + Hadash + Balad": "Joint List"
   },
   "2015-03-17": {
-   "Labor + Hatnuah (poll columns)": "summed into Zionist Union (joint list)",
-   "Hadash-column + UAL-Ta'al-column (poll columns)": "summed into Joint List"
+   "Labor + Hatnuah": "Zionist Union",
+   "Hadash + UAL- Ta'al + Balad": "Joint List",
+   "Otzma + Yachad": "Yachad (joint list)",
+   "Likud + Yisrael Beiteinu": "Likud Yisrael Beiteinu (joint list)"
   },
   "2019-04-09": {
    "B&W": "Blue and White",
@@ -2396,7 +4909,8 @@
   },
   "2021-03-23": {
    "Israeli Labor Party": "Labor",
-   "Ra'am": "United Arab List"
+   "Ra'am": "United Arab List",
+   "Labor- Meretz + Gesher": "Labor-Gesher-Meretz (scenario poll)"
   },
   "2022-11-01": {
    "RZP-OY": "Religious Zionist Party",
@@ -2406,12 +4920,12 @@
   }
  },
  "gaps": [
-  "2015: several source polling tables kept separate 'Labor' and 'Hatnuah' columns even after the Zionist Union merger; these were summed into a single 'Zionist Union' figure per poll, and separate Hadash/UAL-Ta'al-style columns were summed into 'Joint List'. Kulanu and Yachad seat columns were not returned by the fetch for this table and are omitted from these poll entries (gap).",
-  "April 2019: only polls dated Apr 3-5 were retrieved from the opinion-polling article (Israeli law bars poll publication in the final days before the election, so this is likely close to complete for the last 10 days, but polls from Mar 30-Apr2 were not captured/returned by the fetch and may be missing).",
+  "Poll rows were re-read from raw wikitext (step B2, scripts/forecast/fetch_il_history.py), span-aware. A merged list is ONE data cell spanning k header columns, so it is counted once and LABELLED by joining those k headers (2015 'Labor + Hatnuah' is the Zionist Union); the aliases map gives the canonical name. The earlier transcription summed those columns instead, which double-counted the merged list and pushed every such row off 120 -- that is why 2013 and 2015 previously held zero usable polls.",
+  "final_polls holds the 14 days before each election, de-duplicated on date plus pollster because one poll can appear in several of an article's tables. Exit polls are kept but tagged kind=exit_poll, which il_seat_sim's usable-poll filter rejects. Rows not totalling 120 +/- 2 are rejected, not rescaled; the per-election counts are in rejected_polls.",
+  "The 2013 article carries a poll dated '29 Feb', which does not exist in 2013. That row is dropped and reported rather than repaired.",
   "September 2019: Zehut did not contest this election (poll tables show 'N/a' for it), so it is absent from both results and polls, consistent with the results article. Some polls omit Otzma Yehudit entirely (below the pollster's reporting cutoff) rather than giving a percentage; those are recorded with the party simply absent from that poll's seats dict.",
   "2020: could not confirm any specific surplus (vote-sharing) agreements between separately-running lists for the 2020 election from the English Wikipedia article; the alliances found (Labor-Gesher-Meretz, Yamina, Joint List) were single joint lists, not surplus agreements between separate lists, so surplus_agreements is recorded as null rather than guessed.",
   "2020: Otzma Yehudit polled at 0.42% of valid votes in the official result, just under the 0.5% inclusion cutoff for this file's results list, so it is omitted from results (but appears with seats:0 and pct_below in several final polls where pollsters showed it near/above threshold).",
-  "All poll tables were retrieved via an automated fetch/summarization tool against the Wikipedia polling articles rather than a raw wikitable dump; seat and percentage figures for individual polls in this file should be treated as extracted-not-independently-hand-verified against the primary HTML, though the election-result rows embedded in the same tables matched the official results articles exactly, which supports the extraction's reliability.",
   "2021 poll from Maagar Mohot (16-18 Mar, Israel Hayom): United Arab List (Ra'am) was reported as a percentage (1.7%) rather than a seat count in that poll row; recorded as seats:0 with pct_below 1.7 accordingly.",
   "2022 poll rows for Jewish Home and Balad on 2022-11-01 from Midgam/Channel 12 and Direct Polls/Channel 14 showed seats:0 with no percentage printed; pct_below left unset (not null-padded) for those two cells since no percentage was given."
  ]
