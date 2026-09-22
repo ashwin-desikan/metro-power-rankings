@@ -9,10 +9,80 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 51, 2026-09-15 to 2026-09-22
-     If the reader counts fewer than 51 entries, its fetch window stopped
+     entries: 52, 2026-09-15 to 2026-09-22
+     If the reader counts fewer than 52 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
+## 2026-09-22 (night, later) - mini -> windows and next session: THE EIGHT CONTRADICTORY DATES ARE CORRECTED, AND THE ROOT CAUSE IS A CITATION DATE LEAKING INTO AN INFOBOX FIELD
+
+Closes the Backlog row opened an hour earlier. All eight corrected from each
+article's OWN infobox `election_date`, fetched fresh; none guessed.
+
+| hub | label | was | now | source |
+|---|---|---|---|---|
+| gr | 1874 | `August 29, 2026` | `June 1874` | `election_date = June 1874` (month only upstream) |
+| gr | August 1910 | `21 November 2017` | `21 August 1910` | `{{OldStyleDate\|21 August\|1910\|8 August}}` |
+| gr | November 1910 | `August 29, 2026` | `11 December 1910` | `{{Gregorian to Julian\|11 December 1910}}` |
+| gr | 1912 | `August 29, 2026` | `24 March 1912` | `{{OldStyleDate\|24 March\|1912\|11 March}}` |
+| gr | May 1915 | `August 29, 2026` | `13 June 1915` | `{{Gregorian to Julian\|13 June 1915}}` |
+| gr | December 1915 | `August 29, 2026` | `19 December 1915` | `{{Gregorian to Julian\|19 December 1915}}` |
+| in | 1957 | `1951–52` | `24 February – 14 March 1957` | `election_date` |
+| uk | 1832 | `22 November 1830` | `8 December 1832 – 8 January 1833` | `{{start and end dates\|1832\|12\|8\|1833\|1\|8\|df=yes}}` |
+
+**ROOT CAUSE, and it is worth knowing.** Every one of these articles wraps its
+infobox date in a template the scraper cannot read: `{{OldStyleDate}}`,
+`{{Gregorian to Julian}}`, `{{start and end dates}}`. `parse_wikidump.py` then
+falls through to its `dateLoose` last-resort scan, which skips lines containing
+"last edited", "retrieved", "archived" or "accessed" but NOT a bare citation
+date - so it picked up a reference's own date. "August 29, 2026" and
+"21 November 2017" were never election dates at all; they are footnote dates.
+
+**Greek dates are recorded NEW STYLE (Gregorian)**, which is this file's own
+existing convention: its 1920 row reads `14 November 1920`, the Gregorian date,
+not the Julian 1 November. That is why "November 1910" now carries a December
+date - the LABEL keeps the Old Style naming historians use, the DATE is
+Gregorian. Not a mistake; leave it.
+
+**The root cause is NOT fixed, deliberately.** `parse_wikidump.py` reads
+RENDERED dumps from `/tmp/hubs/wave*-drafts.json`, and those are gone - `/tmp`
+is transient and the "re-diff Waves 1-4" Backlog row already records that they
+are not on disk. I will not ship a change to a scraper whose input I cannot
+reproduce and whose output I cannot diff across 67 countries. What I did
+instead is make recurrence impossible to miss.
+
+**`check:election-dates` gained a second pass**, over every
+`public/data/<code>-elections.json`: a record whose date string ends in a year
+that is neither its own `year` nor `year + 1` is an ERROR. 1,271 dated result
+records now checked on every `npm run verify`. year+1 is allowed because
+elections do open in one year and close in the next - India 1951-52, the first
+US presidential election, and the UK's own 1832 poll running into January 1833.
+**Proved by reintroducing the 1874 fault and watching it fail**, then restored;
+a guard nobody has seen fail is not a guard. Its failure message names the
+right file to fix and says explicitly not to silence it by deleting the year it
+disagrees with.
+
+**`elections-recent.json` did NOT change**, which is the right answer: all
+eight are historical rows far outside the three-year window, so the "Just
+voted" board never showed them. The year cross-check inside
+`build-elections-recent.py` is what found them in the first place, and it now
+reports zero refusals.
+
+**NOT LIVE YET, on purpose.** The hub pages read these files with
+`readFileSync` at build time and have no ISR fallback and no `revalidate`, so
+the corrected dates need a production build. Today (UTC) is already at 2 of 2
+paid builds - the Labour chart and the Just voted board, both READY - so this
+commit is `[vercel skip]` and the corrections reach the site on the next build.
+19th-century Greek dates that have been wrong for months can wait a few hours;
+spending a third build on them cannot be justified.
+
+**Proof.** `npm run verify` exit 0, including the new pass. 8 corrected, 0
+remaining, 1,271 records checked.
+
+**Notion:** Backlog: the eight-contradictory-dates row -> Done, with the root
+cause and the correct values recorded. Decisions +1 (a result record's date is
+checked against its own year, in verify). Silent failure register +1 (a
+citation date landing in an infobox field: it is well-formed, plausible, and
+the only thing that contradicts it is a second field nobody was comparing).
 ## 2026-09-22 (night) - mini -> windows and next session: "JUST VOTED" ON /elections, AND THE YEAR CROSS-CHECK THAT STOPPED SIX GREEK ELECTIONS PUBLISHING AS 2026 RESULTS
 
 Ashwin asked for a section tracking completed elections over the last six
@@ -102,6 +172,7 @@ named). No Decisions row: the 183-day window and the summary-file shape are
 implementation, not rulings. Silent failure register: not added to - the
 currency manifest entry already covers the "board quietly stops growing" mode,
 which is where that fault would show.
+
 ## 2026-09-22 (late) - mini -> windows and next session: THE HEADER SPLIT TAKES THE SAME RULE, AND IT IS A NO-OP TODAY
 
 Closes the P2 opened an hour earlier. `parse_tables` still split HEADER cells

@@ -19,10 +19,24 @@
  *   unscheduled with a date          -> error (contradiction)
  *   no confidence at all             -> warning (defaults to "expected")
  *
+ * SECOND PASS, added 2026-09-22: every RESULT record in
+ * public/data/<code>-elections.json states its date twice, in prose and in a
+ * `year` field, and that second statement is the only outside check on the
+ * first. Eight records disagreed: six Greek rows read "August 29, 2026" or
+ * "21 November 2017", India 1957 read "1951-52", UK 1832 read "22 November
+ * 1830". Those are citation dates that leaked in where the infobox date is
+ * wrapped in {{OldStyleDate}} or {{Gregorian to Julian}} and the scraper's
+ * loose fallback could not read it. Left alone, five Greek elections from the
+ * 1870s to 1915 would have published on /elections as THIS YEAR'S results.
+ *
+ * A date ending the year AFTER `year` is not a fault: elections do open in one
+ * year and close in the next (India 1951-52, the first US presidential
+ * election, the UK's own 1832 poll, which ran into January 1833).
+ *
  * Run as `npm run check:election-dates` or `npm run verify`.
  */
 
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -94,17 +108,69 @@ for (const r of rows) {
   else warnings.push(`${msg} (grace period: ${GRACE_DAYS - past} day(s) left)`);
 }
 
+// ---- pass 2: result records whose date contradicts their own year ----
+const MONTHS = ["january","february","march","april","may","june","july",
+                "august","september","october","november","december"];
+const MON = MONTHS.join("|");
+const GAP = "\\s*(?:\\([^)]*\\)\\s*)?";
+const DMY = new RegExp(`(\\d{1,2})${GAP}(${MON})${GAP}(\\d{4})`, "gi");
+const MDY = new RegExp(`(${MON})${GAP}(\\d{1,2}),?${GAP}(\\d{4})`, "gi");
+
+/** The year of the LAST full date in the string: when the election concluded. */
+function lastDateYear(text) {
+  if (!text) return null;
+  let best = null;
+  for (const re of [DMY, MDY]) {
+    re.lastIndex = 0;
+    let m;
+    while ((m = re.exec(String(text)))) {
+      const y = Number(re === DMY ? m[3] : m[3]);
+      if (best === null || y > best) best = y;
+    }
+  }
+  return best;
+}
+
+const DATA = join(ROOT, "public", "data");
+let recordsChecked = 0;
+for (const f of readdirSync(DATA).filter((f) => f.endsWith("-elections.json")).sort()) {
+  const code = f.split("-")[0];
+  let doc;
+  try {
+    doc = JSON.parse(readFileSync(join(DATA, f), "utf-8"));
+  } catch {
+    errors.push(`${f}: unreadable`);
+    continue;
+  }
+  for (const e of doc.elections || []) {
+    if (typeof e.year !== "number") continue;
+    const y = lastDateYear(e.date);
+    if (y === null) continue; // month- or year-only text: nothing to contradict
+    recordsChecked++;
+    if (y !== e.year && y !== e.year + 1) {
+      errors.push(
+        `${code} ${e.label ?? e.id}: year ${e.year} but date "${e.date}" ends in ${y} — ` +
+          `the date string is not trustworthy (a citation date usually leaked in); ` +
+          `read the article's infobox election_date and correct it`,
+      );
+    }
+  }
+}
+
 for (const w of warnings) console.warn(`  warn  ${w}`);
 for (const e of errors) console.error(`  ERROR ${e}`);
 
 if (errors.length) {
   console.error(
-    `check:election-dates — ${errors.length} error(s) across ${rows.length} hubs. ` +
-      `Fix lib/electionHubsMeta.ts; do not extend the grace period to make this pass.`,
+    `check:election-dates — ${errors.length} error(s) across ${rows.length} hubs and ` +
+      `${recordsChecked} dated result records. Hub-date errors are fixed in ` +
+      `lib/electionHubsMeta.ts; record-date errors in the named ` +
+      `public/data/<code>-elections.json. Do not extend the grace period, and do ` +
+      `not silence a record-date error by deleting the year it disagrees with.`,
   );
   process.exit(1);
 }
 console.log(
   `check:election-dates — OK (${rows.length} hubs, ${confirmed} with confirmed dates, ` +
-    `${warnings.length} warning(s))`,
+    `${recordsChecked} dated result records, ${warnings.length} warning(s))`,
 );
