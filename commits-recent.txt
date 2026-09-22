@@ -1,3 +1,4 @@
+2026-09-22T13:33:53+01:00  83726efca  mktcap: a free geography consistency check, and the full Jev audit [vercel skip]
 2026-09-22T12:46:26+01:00  a50d1c94f  handoff: jobs reconcile and The Hundred honours fix [vercel skip]
 2026-09-22T12:27:49+01:00  1ffdf2809  jev: audit mode, hash-order sampling, first full eval sweep [vercel skip]
 2026-09-22T12:24:44+01:00  8f7d422f5  tsconfig: exclude .next/dev so verify stops reading files Turbopack rewrites [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T22:45:23+01:00  26e6cd53b  mini: rotate dispatcher.log at 5 MB, keeping 5 generations [vercel skip]
 2026-09-20T22:38:54+01:00  a868a4444  HANDOFF: deploy-watch under the dispatcher, every_minutes added, last shared-lock gap closed [vercel skip]
 2026-09-20T22:37:37+01:00  baeb6d021  mini: bring deploy-watch under the dispatcher - new every_minutes scheduling, launchd agent unloaded [vercel skip]
-2026-09-20T22:30:27+01:00  b7934d9b2  HANDOFF: gc taken off git's hands - gc.auto=0, maintenance.auto=false, one 03:00 slot that also sweeps stale locks [vercel skip]
