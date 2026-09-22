@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-09-22T05:41:23.523384+00:00",
+  "generated_at": "2026-09-22T05:57:29.740733+00:00",
   "jobs": [
     {
-      "id": "business-daily",
-      "label": "Business markets + FX",
-      "schedule_text": "Daily at 05:50 UTC",
+      "id": "substack-daily",
+      "label": "Substack feed sync",
+      "schedule_text": "Daily at 06:00 UTC",
       "cadence": "daily",
       "times": [
-        "05:50"
+        "06:00"
       ],
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-22T05:50:00+00:00",
+      "next_run": "2026-09-22T06:00:00+00:00",
       "last_run": {
         "date": "2026-09-21",
         "status": "ok",
-        "slot": "2026-09-21T05:50:00+00:00"
+        "slot": "2026-09-21T06:00:00+00:00"
       }
     },
     {
@@ -173,29 +173,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-22T05:50:00+00:00",
+      "next_run": "2026-09-22T06:00:00+00:00",
       "last_run": {
         "date": "2026-09-22",
         "status": "ok",
-        "slot": "2026-09-22T05:40:00+00:00"
-      }
-    },
-    {
-      "id": "substack-daily",
-      "label": "Substack feed sync",
-      "schedule_text": "Daily at 06:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "06:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-22T06:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-21",
-        "status": "ok",
-        "slot": "2026-09-21T06:00:00+00:00"
+        "slot": "2026-09-22T05:50:00+00:00"
       }
     },
     {
@@ -530,6 +512,24 @@
         "date": "2026-09-22",
         "status": "ok",
         "slot": "2026-09-22T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "business-daily",
+      "label": "Business markets + FX",
+      "schedule_text": "Daily at 05:50 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:50"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-23T05:50:00+00:00",
+      "last_run": {
+        "date": "2026-09-22",
+        "status": "ok",
+        "slot": "2026-09-22T05:50:00+00:00"
       }
     },
     {
