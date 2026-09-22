@@ -9,10 +9,27 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 59, 2026-09-15 to 2026-09-22
-     If the reader counts fewer than 59 entries, its fetch window stopped
+     entries: 60, 2026-09-15 to 2026-09-22
+     If the reader counts fewer than 60 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
+## 2026-09-22 (late) - windows -> mini and next session: 37 mktcap_geo STATE VALUES CORRECTED, AND THE COLUMN IS NOW TRUSTWORTHY
+
+**Written to Supabase, at Ashwin's instruction. 37 rows, 0 failed, verified against a fresh read.** `scripts/mktcap/fix_geo_state.py` is new: dry-run by default, `--write` to apply, 14 self-tests, and it needs the service_role key (anon lost write access on `mktcap_geo` 2026-08-02).
+
+**The 36 `state='DC'` rows now carry their real state:** 16 Virginia (Boeing, AES, AvalonBay and Raytheon in Arlington; Booz Allen, Capital One, ID.me and Somatus in McLean; General Dynamics, NVR and VeriSign in Reston; Freddie Mac and Hilton in Tysons Corner; Northrop in West Falls Church; Expel in Herndon; Seekr in Vienna), 11 Maryland (Lockheed, Marriott, Host Hotels, Martin Marietta and Aledade in Bethesda; T. Rowe Price and Constellation in Baltimore; McCormick in Hunt Valley; United Therapeutics in Silver Spring; Huntress in Ellicott City; Dragos in Hanover), 9 District of Columbia. **Chevron no longer carries `state='California'` on a Houston row**, stale since the move from San Ramon.
+
+**`state` is now trustworthy across the whole table**, which matters more than the 37 rows: it is 99.8% populated on US rows and it is the field that separates Birmingham AL from Birmingham MI in `check_geo_consistency.py`'s contradiction key. A silently wrong value in one metro was worse than a null.
+
+**Measured effect on the checker:** non-canonical US state values 9 distinct / 44 rows -> **8 / 8**; state outliers 12 -> **8**; shared city names across states 40 -> 30. Three rows resolved themselves without being touched (FTI Consulting, Hogan Lovells, Jones Day), because they spelled it 'District of Columbia' correctly and were outliers only against the wrong majority.
+
+**How the script refuses to guess, which is the part to keep.** Cities map from an EXPLICIT hand-checked table; a city not in it is skipped loudly rather than inferred from the metro, the country or the company name, because that inference is the exact mistake being corrected. The single-symbol fixes are guarded on the value expected to be there, so a re-run cannot clobber a corrected row and a row that has moved on reports "guard failed" instead of being forced. Self-tests cover both, plus idempotence, plus an assertion that every state in the table is a canonical full name.
+
+**Deliberately NOT done.** `city` still spells the District three ways on those rows ('Washington' x5, 'Washington DC' x2, 'DC' x2); normalising it is a separate decision and the script says so rather than quietly doing it. Seven one-off state abbreviations remain ('CA' on BlossomHill, 'NC' on Vogenx, plus AL, WI, MN, VA, AR), as does BEPC carrying `state='Ontario'` under `country='United States'`, which is the domicile problem and not a state typo. Left out because the ask was scoped to the DC class and Chevron.
+
+**Unchanged and still open:** the 20 metro assignments from the Jev audit and the consistency check are questions for Ashwin, not column hygiene, and nothing has been written for any of them. The 160 auto-stub rows still have no HQ city.
+
+**Notion:** Decisions: the `state='DC'` row rewritten as resolved with what was applied and what was deliberately left. Backlog: the findings row retitled, mechanical part marked done, the 20 metro rulings and the 8 residual rows still open. Data sources: CompaniesMarketCap row updated so the DC warning reads as fixed rather than live, and `fix_geo_state.py` added to its owner scripts.
 ## 2026-09-22 (evening) - windows -> mini and next session: THE FULL JEV AUDIT, AND THE FREE CHECK THAT FINDS MOST OF THE SAME THING
 
 **The audit swept all 5,531 labelled `mktcap_geo` rows.** Zero API errors, nothing skipped by the 254 cap, $0.4308. At threshold 0.90: agree 4,891 (88.4%), disagree 15 (0.27%), unsure 553 (10.0%), abstain_none 72 (1.3%). So 15 of 4,906 confident answers contradict the stored metro, 0.31%; the curation is about 99.7% right. CSV is `out/jev_audit_2026-09-22.csv`, gitignored. Nothing was written to Supabase and there is still no `--write`.
@@ -34,6 +51,7 @@
 **For the mini / next session:** `python check_geo_consistency.py --self-test` then `--report` needs no key and takes seconds; `--strict` exits 1 on any contradiction if you ever want it gated. Nothing schedules it yet and nothing writes. The 14 contradictions and 12 state outliers are questions for Ashwin, not a patch. Unchanged and still the actual blocker on the curation queue: all 160 auto-stub rows have no HQ city, so `--queue` has nothing to map.
 
 **Notion:** Backlog: full-audit row -> Done with all 15 classified; +1 row (apply the geo findings, Open, needs Ashwin's rulings). Decisions +1 (run the free consistency check first, spend on Jev only for singleton cities). Data sources: CompaniesMarketCap row gains the `state='DC'` column-misuse warning and the adjacency tuning note.
+
 ## 2026-09-22 (afternoon) - mini -> windows and next session: THE JOBS RECONCILE FOUND TWO ROWS PROMISING MONITORING THAT DOES NOT EXIST, AND THE HUNDRED FIX WAS NOT THE BUG THE ROW DESCRIBED
 
 Two Backlog rows, both closed, neither quite what it said on the tin.
