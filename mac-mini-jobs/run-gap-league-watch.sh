@@ -34,6 +34,13 @@ git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diver
 log "running daily gap-league watch (--write)"
 "$PY" scripts/apifootball/watch_gap_leagues.py --write 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "watch --write failed"
 
+# A promotion CHANGES THE SITE'S LEAGUE SET, decided and shipped with no human
+# in the loop. Until 2026-09-22 push() was reachable only from fail(), so a
+# promotion -- correct or not -- went live in silence and the only trace was a
+# log nobody opens. The watcher prints one summary line naming everything it
+# promoted (watch_gap_leagues.py "=== AUTO-PROMOTED: ... ==="); lift it here.
+PROMOTED="$(sed -n 's/.*=== AUTO-PROMOTED: \(.*\) ===.*/\1/p' "$LOG" | tail -1)"
+
 # If a ready league auto-promoted, the script edited leagues.json / leagues_pending.json.
 # Commit + push them (script config -> [vercel skip], no build). Resilient to the concurrent
 # football-standings push at the same 05:00 UTC slot: rebase-and-retry on a non-fast-forward.
@@ -51,5 +58,21 @@ if ! git diff --quiet -- $PROMO; then
     git rebase --abort 2>/dev/null || true; sleep 5
   done
   [ "$pushed" = 1 ] || fail "promote push failed after 3 retries"
+  # Files moved but the watcher printed no summary line: still a promotion,
+  # still worth saying, just without names.
+  [ -n "$PROMOTED" ] || PROMOTED="(leagues.json changed; see $LOG)"
+fi
+
+# Announced only AFTER the push, so the message describes what actually
+# shipped rather than what was about to be attempted; a failed push has
+# already alerted through fail(). Not urgent -- nothing is broken -- but it is
+# an unreviewed change to live data, so it names the leagues and says what to
+# check.
+if [ -n "$PROMOTED" ]; then
+  push "[gap-watch] auto-promoted: $PROMOTED" default soccer \
+    "$DATE: promoted into leagues.json and pushed, with no human in the loop.
+Check the standings page for each league looks right, and that no club came
+through UNMATCHED. Log: $LOG"
+  log "ntfy sent for promotion: $PROMOTED"
 fi
 log "=== gap-league-watch done ==="

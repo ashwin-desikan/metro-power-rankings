@@ -17835,3 +17835,66 @@ Windows box on its next pull, since `core.hooksPath` points into the repo.
 **Notion:** Backlog: the hook-message row -> Done. Decisions +1 (a public/data
 commit is only called live when every file is on the ISR-backed list, and the
 list errs toward saying "not live").
+
+## 2026-09-22 (morning) - mini -> windows and next session: TWO P0 WATCHES ANSWERED FROM EVIDENCE, AND gap-league-watch STOPS PROMOTING IN SILENCE
+
+Three Backlog rows, all mini-only, none needing a build.
+
+### 1. NHL preseason seasonType: YES, and the window had already opened
+The watch asked, 20 to 28 Sep, whether ESPN flips `seasonType` to 1 for the
+NHL preseason at all. Measured today off the scoreboard endpoint:
+`leagues[0].season` = year 2027, displayName "2026-27", window **2026-09-15**
+to 2027-07-01, `type.id` "1", `type.name` "Preseason" (abbr `pre`); top-level
+`season` `{type: 1, year: 2027}`; 8 events on the day, each carrying
+`seasonType=1`. **The preseason window opened on 15 Sep, five days before this
+watch's own start date**, so anything keying on seasonType had been seeing 1
+for a week already. Closed on positive evidence rather than on nothing having
+complained, which is what the row asked for.
+
+### 2. The cricket row was carrying a debt that no longer exists
+It said "STILL NEEDED: a hand run of `scripts/champions/build_champions.py`
+plus a `[vercel skip]` commit, because the runner only re-emits when it
+promotes something itself". Not owed: `majors-ingest.yml` rebuilds from the
+table daily and had already committed it. `public/data/champions-current.json`
+carries the CPL and the Lanka Premier League rows today (Galle, Antigua,
+Falcons all present). That is the 09-21 evening correction playing out exactly
+as written - the workflow is a backstop of up to about a day.
+
+Also answered while I was there, from `dispatcher.log` (it captures runner
+stdout inline, which is why no `cricket-champions-*.log` file exists): the
+09-20 22:30Z run was a **quiet no-op**, not a REFUSED ntfy. It read
+"self-test OK (26 checks) / 0 new champion(s); 0 needing attention / no new
+cricket champions; nothing to emit", DONE ok 13s. Worth keeping in view: the
+job looked at a DECIDED competition and reported "0 needing attention". The
+real watch - County Championship, ending about 27 Sep - stays open.
+
+### 3. gap-league-watch no longer promotes in silence
+`push()` was reachable only from `fail()`, so an auto-promotion - right or
+wrong - went live with the only trace a log nobody opens. It now sends an ntfy
+on every promotion, and **names the leagues**, by lifting the watcher's own
+summary line (`watch_gap_leagues.py` prints `=== AUTO-PROMOTED: <names> ===`)
+out of the log rather than inventing a second source of truth.
+
+Sent AFTER the push succeeds, so the message describes what actually shipped;
+a failed push already alerts through `fail()`. Priority `default`, not urgent -
+nothing is broken - but the body says it went live with no human in the loop
+and asks for the two checks worth making: each league's standings page looks
+right, and no club came through UNMATCHED. Files moved with no summary line
+still notifies, without names.
+
+**Tested against the real output shapes**, because the extraction is a `sed`
+over a log and that is easy to get subtly wrong: a promotion day yields both
+names; a quiet day yields empty, so no ntfy; the DRY-RUN wording "would
+AUTO-PROMOTE" correctly does NOT match, so a dry run cannot claim a promotion;
+and the per-league lines do not match either, so no duplicates. `bash -n`
+clean.
+
+The job runs straight from the repo checkout (`jobs.toml`: `command =
+"$HOME/Projects/Metro Area Project/mac-mini-jobs/run-gap-league-watch.sh"`),
+not from a copy under `~/metro-mini-jobs/`, so this is live on the mini now and
+keeps itself current through the runner's own `git merge --ff-only`.
+
+**Notion:** Backlog: NHL seasonType row -> Done with the measurement; cricket
+row rewritten (the owed re-emit is not owed; the 09-20 run was a quiet no-op;
+County Championship stays the open test); gap-league-watch ntfy row -> Done.
+No Decisions row: none of this is a ruling.
