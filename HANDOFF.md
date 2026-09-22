@@ -17347,3 +17347,78 @@ wikitext, next steps unchanged); +1 row for the UK 2024 baseline row. Decisions
 a full-width single-cell header row is a banner, never a column header). Silent
 failure register +1 (a column-shifted baseline row reads as plausible data and
 no gate compares it against the known result).
+
+## 2026-09-22 - mini -> windows and next session: THE UK 2024 BASELINE IS RIGHT, AND A KNOWN RESULT IS NOW CHECKED AGAINST THE WORLD
+
+Fixes the row flagged in last night's entry. `data/forecast/uk_polls.json` held
+the 2024 general election anchor as `lab 23.7, con 14.3, ref 12.2, ld 6.8,
+grn 2.5, snp 0.7`: every value one party to the left, with Plaid Cymru's 0.7
+filed as the SNP and **Labour's baseline 10 points low**. The article's raw
+wikitext, which carries inline column comments, says `33.7 / 23.7 / 14.3 /
+12.2 / 6.8 / 2.5 / 0.7` = Lab / Con / Ref / LD / Grn / SNP / PC.
+
+**What it was corrupting.** Not the forecast: `uk_average` has a 45-day window,
+so a 2024 row never reached the average, the seat sim, pLargest or pMajority.
+`uk_trend` uses EVERY poll, so it reached the tracker chart, where trend[0] is
+the July 2024 bucket (n=2) and Labour was drawn 5 points low at the election
+anchor, the most recognisable point on the chart. Now 31.4 -> 36.4.
+
+**Re-run rather than hand-patched, and the diff is the proof.** `fetch_uk()`
+against today's article: 472 rows before and after, **zero added, zero removed,
+exactly one changed** and it is the baseline row. `build_forecast.py` then moved
+11 leaves in forecast.json: the six party values at `uk/trend[0]`, plus five
+BR/FR runoff `pA` values that are Monte Carlo jitter from re-running unseeded
+sims (worth knowing: any rebuild churns those five).
+
+**The guard, at the point that owns the problem.** A polling article carries the
+election result as a row, and that row is a known fact. `verify_known_results()`
+in `fetch_data.py` compares any row whose pollster names an election against
+`UK_KNOWN_RESULTS` and DROPS it on mismatch, loudly: publishing a wrong anchor
+is worse than publishing none, because the chart draws it either way and only
+one of the two is checkable against the world. A known date with no row at all
+is reported too, since silence was the original failure. Five new self-test
+cases carry the real shifted row as the fixture; `fetch_data --self-test` is now
+17 cases. A live `fetch_uk` run is silent, so no false alarm.
+
+**Why no gate caught it for weeks.** Every existing check is internal: does it
+parse, is it a number, is it in range, does the row total about right. A
+one-column shift preserves all of those. This is the Silent failure register
+entry added last night, now with a remedy for the UK anchor specifically.
+
+**Also, at Ashwin's instruction: Labour leads the UK polling chart.**
+`app/elections/forecast/page.tsx` had a hardcoded series order starting with
+Reform. It is now `lab, ref, con, grn, ld, snp`. The order drives the legend and
+the readout only; colour is keyed by party, so nothing changes shade, and the
+DESIGN-STANDARDS categorical rule is untouched (these are brand hexes, not a
+sequential palette). Left as a FIXED reading order rather than sorted by share,
+so the legend does not reshuffle whenever two averages cross. The hub chart on
+`/elections` already sorts by seat median and needed nothing.
+
+**Proof.** `npm run verify` exit 0 on the committed tree (339 vitest, pytest
+green, next build, function-size OK, release-notes OK). Rendered series order
+read back off the dev server: Labour, Reform UK, Conservative, Green, Liberal
+Democrat, SNP.
+
+**Note for whoever next runs verify on the mini:** `test:python` fails here for
+a missing pytest, and this Homebrew python is PEP 668 managed, so
+`pip install -r scripts/requirements-dev.txt` is refused. I used a throwaway
+venv and `PYTHON_BIN`, which `scripts/run-pytest.mjs` supports by design. A
+permanent project venv would save the next session the detour; I did not create
+one, because where it should live is Ashwin's call.
+
+**Build budget.** Ashwin chose to spend a build on the chart change while
+2026-09-21 stood at 3 paid builds against a cap of 2. By the time it was ready
+the UTC day had rolled: at 07:13Z on 09-22 the count was ZERO, so this is build
+1 of 2 on a clean day, not a fourth overage. The cap itself is still INACTIVE
+(`VERCEL_BUILD_CAP_TOKEN` absent), which is why nothing stopped the third build
+yesterday. That P0 row is still Ashwin's.
+
+**Push shape:** two commits, the data and guard tagged `[vercel skip]`, the
+`app/` + `lib/releases.ts` commit LAST and untagged, per the rule that GitHub
+creates one deployment per push and judges only the HEAD.
+
+**Notion:** Backlog: the UK 2024 baseline row (opened last night) -> Done with
+the fix and the guard. Decisions +1 (an election-result row inside a polling
+table is checked against the known result and dropped on mismatch). Silent
+failure register: the column-shift entry updated -- the UK anchor is now
+covered, the general case is not.

@@ -45,7 +45,7 @@
     "b": "Philippe HOR",
     "avgA": 52.5,
     "avgB": 47.5,
-    "pA": 79.1,
+    "pA": 79.0,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -63,7 +63,7 @@
     "b": "Philippe HOR",
     "avgA": 52.9,
     "avgB": 47.1,
-    "pA": 82.9,
+    "pA": 82.1,
     "polls": 4,
     "latest": "2026-05-27"
    },
@@ -72,7 +72,7 @@
     "b": "Attal RE",
     "avgA": 57.0,
     "avgB": 43.0,
-    "pA": 98.7,
+    "pA": 99.0,
     "polls": 1,
     "latest": "2026-05-27"
    },
@@ -99,7 +99,7 @@
     "b": "Retailleau LR",
     "avgA": 58.0,
     "avgB": 42.0,
-    "pA": 99.5,
+    "pA": 99.4,
     "polls": 1,
     "latest": "2026-03-27"
    }

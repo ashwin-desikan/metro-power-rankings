@@ -9,10 +9,84 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 49, 2026-09-14 to 2026-09-21
-     If the reader counts fewer than 49 entries, its fetch window stopped
+     entries: 47, 2026-09-15 to 2026-09-22
+     If the reader counts fewer than 47 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
+## 2026-09-22 - mini -> windows and next session: THE UK 2024 BASELINE IS RIGHT, AND A KNOWN RESULT IS NOW CHECKED AGAINST THE WORLD
+
+Fixes the row flagged in last night's entry. `data/forecast/uk_polls.json` held
+the 2024 general election anchor as `lab 23.7, con 14.3, ref 12.2, ld 6.8,
+grn 2.5, snp 0.7`: every value one party to the left, with Plaid Cymru's 0.7
+filed as the SNP and **Labour's baseline 10 points low**. The article's raw
+wikitext, which carries inline column comments, says `33.7 / 23.7 / 14.3 /
+12.2 / 6.8 / 2.5 / 0.7` = Lab / Con / Ref / LD / Grn / SNP / PC.
+
+**What it was corrupting.** Not the forecast: `uk_average` has a 45-day window,
+so a 2024 row never reached the average, the seat sim, pLargest or pMajority.
+`uk_trend` uses EVERY poll, so it reached the tracker chart, where trend[0] is
+the July 2024 bucket (n=2) and Labour was drawn 5 points low at the election
+anchor, the most recognisable point on the chart. Now 31.4 -> 36.4.
+
+**Re-run rather than hand-patched, and the diff is the proof.** `fetch_uk()`
+against today's article: 472 rows before and after, **zero added, zero removed,
+exactly one changed** and it is the baseline row. `build_forecast.py` then moved
+11 leaves in forecast.json: the six party values at `uk/trend[0]`, plus five
+BR/FR runoff `pA` values that are Monte Carlo jitter from re-running unseeded
+sims (worth knowing: any rebuild churns those five).
+
+**The guard, at the point that owns the problem.** A polling article carries the
+election result as a row, and that row is a known fact. `verify_known_results()`
+in `fetch_data.py` compares any row whose pollster names an election against
+`UK_KNOWN_RESULTS` and DROPS it on mismatch, loudly: publishing a wrong anchor
+is worse than publishing none, because the chart draws it either way and only
+one of the two is checkable against the world. A known date with no row at all
+is reported too, since silence was the original failure. Five new self-test
+cases carry the real shifted row as the fixture; `fetch_data --self-test` is now
+17 cases. A live `fetch_uk` run is silent, so no false alarm.
+
+**Why no gate caught it for weeks.** Every existing check is internal: does it
+parse, is it a number, is it in range, does the row total about right. A
+one-column shift preserves all of those. This is the Silent failure register
+entry added last night, now with a remedy for the UK anchor specifically.
+
+**Also, at Ashwin's instruction: Labour leads the UK polling chart.**
+`app/elections/forecast/page.tsx` had a hardcoded series order starting with
+Reform. It is now `lab, ref, con, grn, ld, snp`. The order drives the legend and
+the readout only; colour is keyed by party, so nothing changes shade, and the
+DESIGN-STANDARDS categorical rule is untouched (these are brand hexes, not a
+sequential palette). Left as a FIXED reading order rather than sorted by share,
+so the legend does not reshuffle whenever two averages cross. The hub chart on
+`/elections` already sorts by seat median and needed nothing.
+
+**Proof.** `npm run verify` exit 0 on the committed tree (339 vitest, pytest
+green, next build, function-size OK, release-notes OK). Rendered series order
+read back off the dev server: Labour, Reform UK, Conservative, Green, Liberal
+Democrat, SNP.
+
+**Note for whoever next runs verify on the mini:** `test:python` fails here for
+a missing pytest, and this Homebrew python is PEP 668 managed, so
+`pip install -r scripts/requirements-dev.txt` is refused. I used a throwaway
+venv and `PYTHON_BIN`, which `scripts/run-pytest.mjs` supports by design. A
+permanent project venv would save the next session the detour; I did not create
+one, because where it should live is Ashwin's call.
+
+**Build budget.** Ashwin chose to spend a build on the chart change while
+2026-09-21 stood at 3 paid builds against a cap of 2. By the time it was ready
+the UTC day had rolled: at 07:13Z on 09-22 the count was ZERO, so this is build
+1 of 2 on a clean day, not a fourth overage. The cap itself is still INACTIVE
+(`VERCEL_BUILD_CAP_TOKEN` absent), which is why nothing stopped the third build
+yesterday. That P0 row is still Ashwin's.
+
+**Push shape:** two commits, the data and guard tagged `[vercel skip]`, the
+`app/` + `lib/releases.ts` commit LAST and untagged, per the rule that GitHub
+creates one deployment per push and judges only the HEAD.
+
+**Notion:** Backlog: the UK 2024 baseline row (opened last night) -> Done with
+the fix and the guard. Decisions +1 (an election-result row inside a polling
+table is checked against the known result and dropped on mismatch). Silent
+failure register: the column-shift entry updated -- the UK anchor is now
+covered, the general case is not.
 ## 2026-09-21 (night) - mini -> windows and next session: STEP B2 DONE. THE POLLS WERE NEVER MISSING, THEY WERE DOUBLE-COUNTED, AND parse_tables COULD NOT SEE A YEAR BANNER
 
 Step B2 off the coalition Backlog row: re-read the seven historical Israeli
@@ -105,6 +179,7 @@ wikitext, next steps unchanged); +1 row for the UK 2024 baseline row. Decisions
 a full-width single-cell header row is a banner, never a column header). Silent
 failure register +1 (a column-shifted baseline row reads as plausible data and
 no gate compares it against the known result).
+
 ## 2026-09-21 (late) - windows cowork -> mini and next session: THE THREE OPEN GITHUB ISSUES, AND WHY TWO OF THEM COULD NEVER CLOSE
 
 **#23 (data watch).** Every dataset was inside its budget. The one real alert was the Lanka Premier League: no current holder, last crowned 2024-07-21. Facts: the 2025 edition was postponed and never played; the 2026 final was 8 Aug 2026, Galle Gallants beat Jaffna Kings by 5 wickets at R. Premadasa (Wikipedia final article and the ESPNcricinfo scorecard title agree). Inserted by hand in the `build_row` shape: `public.champions` id 149515, source `cricket-finalizer`, metro Galle / `galle` (already resolved on the franchise's runner-up rows as Galle Gladiators and Galle Marvels), `date_awarded` 2026-08-08, `is_current` true. `lanka-premier-league` is now in the `cricket_finalize.py` REGISTRY (calendar style), self-test 26 of 26, so 2027 is automatic unless the winner is again a first-time champion. The JSON re-emit rides this commit; the issue closes itself at the next 6-hourly run if the board is then clean.
@@ -2208,245 +2283,4 @@ Afghanistan v India rows". `git pull`: nothing new on either repo.
 
 Football UNMATCHED at 00:02 and 06:09 (expected until Friday's Lookup sync); Daily Ops Sweep 02:06: 37 ok, 1 failed
 (the 09-14 gap-league-watch, already fixed). It still reports the build-cap token unset, now irrelevant to owners-weekly.
-
-## 2026-09-14 — mini → laptop and next session: gap-league-watch FIXED (schema), WWC final RECORDED, laptop's checks confirmed
-
-Ashwin asked why the day's ntfys piled up, then "apply both fixes". This answers both laptop entries above.
-
-### A. gap-league-watch: the cause was a NOT NULL column, not the script (migration only, no code change)
-
-- **Failure:** `football_league_watch.target_season` was `NOT NULL`. `26987d2ee` added World 16 (CONCACAF Champions League),
-  27 (OFC Champions League) and 536 (CONCACAF Nations League) with `target_season: null`, correctly: `ready_on: window`
-  ignores it. The whole upsert was rejected (HTTP 400, Postgres `23502`, failing row `World, 16, CONCACAF Champions
-  League, null, ...`), so ALL four leagues went unwritten at 05:00Z and on every autofix rerun (06:27, 08:21, 10:16Z;
-  six ntfys, then the 3/day cap). The laptop's `--self-test` passed because it never touches Supabase.
-- **Fix (Ashwin approved):** migration `football_league_watch_target_season_nullable` drops `NOT NULL` and comments the
-  column (null = window-gated).
-- **Verified:** `run-gap-league-watch.sh` re-run 17:40Z: self-test OK, "wrote watch state for 4 leagues", no
-  transitions. India L1 awaiting 2026; the three World comps have no live season (latest ended 2026-05-31, 08-22,
-  2025-03-24); their rows store `target_season` null. `dispatcher.py --mark-ok gap-league-watch`; `detect_issues.py`
-  0 findings. Notion Backlog row closed with the cause.
-
-### B. Women's Basketball World Cup: parser fixed a second time, result recorded (`f1b438170`, `8f43c6971`, no build)
-
-- The 09-14 scheduled run (started 12:16Z) found the final PLAYED and failed "Final box has a score (97-79) but no
-  teams". Once a game is over Wikipedia bolds the winner's cell (`'''{{bkw-rt|USA}}'''`); `clean_team` stripped the
-  template first, leaving a non-empty `''''''`, so the flag code was never read. Quotes are now stripped first;
-  self-test adds a bold cell and a played bold box. Autofix had re-run it three times (13:18, 15:18, 17:16 BST).
-- Dispatch 34876273431 on `f1b438170`: success, committed `8f43c6971` "Auto: 2026 Women's Basketball World Cup result
-  [vercel skip]". **United States 97-79 France; third Spain 81-58 Germany.** `nations.json`: United States 12 titles
-  (2026 added), France runner-up 2026, Spain and Germany one more final four each. Read at runtime, no build.
-- The tracker's schedule runs to 30 Sept; from now on it prints "2026 already in ..." and exits 0.
-
-### C. The laptop's three checks
-
-1. **gap-league-watch:** diagnosed and fixed, section A.
-2. **owners-weekly (`0cd37969a`):** `dispatcher.py --check-sync` reports in sync. The live `jobs.toml` HAD drifted (only
-   the owners-weekly comments and label); synced by hand at ~17:45Z after diffing it, which also kept the
-   `claude-auth-canary` 19:30 slot from 09-13. `REVALIDATE_SECRET` is set (non-empty) in `config.env`. `VERCEL_TOKEN`
-   left out, as asked. This morning's `~/metro-mini-jobs/pending/owners-2026-09-14.patch` (3 moved: Lakers,
-   Timberwolves, one more) was saved under the OLD build-time rules (it may touch `lib/releases.ts`); re-run the job or
-   re-derive it rather than applying it as is.
-3. **API-name fallback (`68eeb6360`):** `scripts/apifootball/_scratch/api_team_names.json` exists (2,158 entries,
-   written 18:07), gitignored. Log: "api team names cached for export: 2157" (12:06 run) and "2158" (18:06 run).
-   `public/data/football/live-competitions-2026.json` has no `name: null` anywhere. The UNMATCHED alert is still
-   firing, as intended, until Ashwin maps the 45 clubs.
-
-### D. Evening news refresh: first morning move verified (09-13 section K)
-
-The 09-14 08:00 push carried 57 morning items (the new every-linked-story size). All 12 of 09-13's evening stories
-moved to 09-14 ("moves from 2026-09-13 evening to today" x12); 09-13 now holds 34, 09-14 holds 57, both
-`digest_run.item_count`s match, positions have no gaps, and no url is on both days. Topics patched 24 of 57 rows.
-
-### E. Remote Control
-
-The laptop asked which reachable session is the mini: this interactive one is titled **"Latest commits review"**.
-"Ops sweep" is not it (likely the headless daily-ops-sweep, which is report-only and cannot act on a message).
-
-### F. owners-weekly re-run under the new runtime-read job: 4 moved, APPLIED (`d926034f1`, no build)
-
-Ashwin: "re-run owners-weekly under the new job". Hand-launched `~/metro-mini-jobs/run-owners-weekly.sh` at 18:55
-BST on a clean tree (after the jobs.toml sync in C). This morning's log, summary and patch were first copied to
-`*.morning-oldrules`; the job then retired both patch files to `.applied-d926034f1`, so `pending/` holds
-`owners-2026-09-14.patch.applied-d926034f1` and `owners-2026-09-14.patch.morning-oldrules.applied-d926034f1`.
-
-**Applied, `d926034f1` "Owners: Lakers not on the Sep BoG docket, Wolves/Lynx and Palace moved [vercel skip]"**, on
-`origin/main`; stages only `scripts/data/team-owners-seed.json` and `public/data/owners/team-owners.json`. 0 resolved,
-4 moved, 0 new; control unchanged on every row (no league approval or closing reported).
-- **Lakers:** Kushner/Iger purchase not expected at the 14-15 Sep NBA Board of Governors (SBJ; L.A. Times via SI).
-  Adds the Buss family's 17.8% also going to the buyers (ESPN, 17 Aug), Jeanie Buss's petition (hearing 9 Dec) and the
-  federal probe of related-party accounting at two insurers Mark Walter controls, which TWG Global denies is fraud
-  (CNBC, ESPN, 26 Aug). Drops the claim the buyers would keep her as Governor. Review 2026-09-18 -> 2026-10-15.
-- **Timberwolves and Lynx:** BoG dates corrected to 14-15 Sep; 11 Sep agenda previews did not list the Stad sale
-  (Hoops Rumors, TSN). Review stays 2026-09-18.
-- **Crystal Palace:** FT (16 Jun, via Irish Times) reported all three American holders, Woody Johnson included,
-  exploring a sale via Raine Group and open to a full sale, wider than the 30% the board carried.
-- Re-checked, no change: West Ham, Angels, Sevilla, Vancouver Whitecaps, Seattle Sounders, San Jose Earthquakes,
-  Tampa Bay Lightning. The sweep found nothing the board lacks.
-- Gates: `--self-test` PASS, build 220 franchises / 11 contested, `check-owners-watchlist` OK; tree clean, HEAD ==
-  origin/main. ntfy "Owners weekly -- 2026-09-14" at 19:02.
-
-**Revalidate:** the wrapper waited out the 300s raw CDN TTL, then "Revalidated on attempt 1" at 19:07:41 BST;
-warm `/sports/owners` 200 and `/sports/valuations` 200; "Owners weekly done" 19:07:52, exit 0. At 19:08 the live
-`/sports/owners` shows the new Crystal Palace text ("Raine Group; a full club sale is among the options").
-
-**Next:** the scheduled run is Monday 2026-09-21 08:30Z. Timberwolves/Lynx review falls due 18 Sept, so that run should
-re-check them first.
-
-### G. The 45 unmatched AFC/CAF clubs, triaged for Ashwin's Lookup edit (no code change)
-
-Ashwin asked for the list with each club's competition so he can add them to the Lookup and sync. Delivered as
-`~/metro-mini-jobs/pending/unmatched-afc-caf-clubs-2026-09-14.xlsx` (plus `.csv`); not in git.
-
-- **Source:** the 18:06 football-standings log ("unmatched=45"), competitions from `football_fixtures` joined to
-  `football_league`, country/city/venue from api-football `/teams?id=` (45 calls).
-- **By competition:** AFC Champions League Elite (17): 4 clubs. CAF Champions League (12): 41. Intercontinental Cup: 0.
-- **15 are already in the Lookup and only lack `API Name`** (the resolver's first key; Lookup last synced 2026-08-30):
-  Al Hussein -> Hussein Irbid, Johor Darul Takzim FC -> Johor Darul Ta'zim, Neftchi -> FK Neftchi Farg'ona,
-  Công An Nhân Dân -> Cong An Hanoi FC, Colombe, Fomboni, TP Mazembe, Mangasport, Horoya, Stade Malien, Nouadhibou,
-  APR, Simba, Vipers, and ASC Kara -> ASKO Kara (**unconfirmed**, may be a different Kara club). Sheet 1 carries each
-  Lookup row id.
-- **TP Mazembe is the instructive one:** its name IS in the Lookup, but the separate "TP Englebert" row (id 139470) also
-  has Cur. Name "TP Mazembe", so `build_resolver` marks the name AMBIG and returns nothing. An `API Name` on row 139465
-  fixes it, because `by_api` is consulted before `by_name`. Any club listed under a former name on another row has
-  the same trap.
-- **30 are new rows** (sheet 2, Lookup column order Cur. Name..Long, country spelled the Lookup's way: Côte d'Ivoire,
-  Congo DR, Sierra Leone). Fuzzy near-misses rejected by hand as different clubs: Port (not AS Port Louis 2000),
-  Medina United (not Brikama United), NIGELEC (not the "Niger" row), 15 de Agosto (not Primeiro de Agosto).
-- **Data to confirm:** 15 de Agosto (api says Paraguay, impossible for CAF; country left blank); African Stars (api
-  venue in Gaborone, club is Namibian).
-- **Next:** Ashwin edits the workbook and runs `cl-lookup-sync`; the following football-standings run should log
-  `unmatched=0` (or fewer) and the twice-daily UNMATCHED ntfy stops.
-- **Scheduled: Friday 2026-09-18, 10:00-10:45 BST, on the Windows box** (Ashwin is travelling with the MacBook and
-  the Lookup workbook lives on Windows). Google Calendar event "Map the 45 unmatched AFC/CAF clubs into the Lookup
-  (Windows)" on ashwind@gmail.com, marked free, popup 30 min and email 60 min before, no invitees; the description
-  carries the steps and the three checks. The workbook is not reachable from Windows at its mini path: Ashwin was
-  asked to save the copy sent in chat somewhere Windows can open (e.g. OneDrive). Until the sync, the UNMATCHED ntfy
-  keeps firing twice a day; that is expected, not a new fault.
-
-### H. Tonight's evening run, a headline rule, the worktree cleanup, and the site feed's new shape rules (newsletter-podcast `a0e4de4`, `c62c56c`; no build)
-
-**Evening run, 2026-09-14 20:00.** Exit 0 (launchd runs = 2). Claude picked 11 new stories; only 3 went on (positions
-58-60), because the morning feed had already filled the day to 57 of `MAX_ITEMS` 60 and 8 were skipped "today already
-holds 60". It again flagged that Business Insider's newsletter did not show a title, so it wrote the Anthropic-Nasdaq
-headline itself.
-
-**Headline rule (`a0e4de4`, `run-evening.sh`).** "REAL HEADLINES ONLY": the headline must be the article's own title
-word for word; open the article to copy it when the newsletter does not print it; otherwise leave the story out.
-Applies from the 09-15 evening run. The morning recipe already had the rule and has not shown the problem.
-
-**Scratch worktree removed.** The ticker/standings build worktree (`bed0ae366`, already on `origin/main`, 5.7 GB of
-build output, `node_modules` only a symlink) was removed with `git worktree remove --force` and pruned; the main repo's
-`node_modules` is intact. Its scratch folder (logs, screenshots, draft commit message) was deleted with it.
-
-**Why 57 was too many (Ashwin: "I saw a lot of Washington Post headlines").** Three causes stacked:
-1. The first every-linked-story morning (section K, `a476ad1`): `feed.json` copied all 59 links in the day's
-   `socials/substack.md`. Archive days built the same way run 20-38.
-2. Sunday list newsletters: WaPo's weekly *Week in Ideas* and Business Insider's Sunday edition. The day had 22 WaPo
-   stories (the archive's highest ever; 1-12 is normal, and 09-11 and 09-12 had none) and 14 Business Insider. One post
-   section, "AI Hits the Ballot", was 9 WaPo links of 9.
-3. 13 of the 60 were articles published 4-7 days earlier; the 2-day age rule then applied only to the evening edition.
-
-**Fix, Ashwin's choice "A plus B, 6 per publication, re-push today" (`c62c56c`, `push_feed.py`).**
-- `morning_filter()`: after validation, drop a url dated more than `FEED_MAX_AGE_DAYS` (2) before the digest date
-  (undated urls pass), keep at most `MAX_PER_SOURCE` (6) per publication in post order (source names case- and
-  whitespace-folded), then `MAX_ITEMS`. `validate()` gained a `limit` so the filter sees every valid story before the cap.
-- `plan_evening()` applies the same per-publication cap, counting what the day already holds.
-- `--all-stories` bypasses both, for archive re-pushes (`archive/qa.py` reads only the "valid, dropped" line, which
-  still prints before the filter, so its checks are unaffected). The podcast, script and socials are untouched.
-- Self-test covers age, cap order, source folding, the day cap and the evening count.
-
-**Re-push of 2026-09-14.** 31 of 57 morning stories kept (13 too old, 13 over the cap), plus the 3 evening stories: 34,
-`digest_run.item_count` 34, positions contiguous, `/digest/2026-09-14` shows "Show all 34 stories". Topics re-tagged
-(a re-push rewrites morning rows and clears their topics): 19 of 34 tagged. WaPo and Business Insider show 7 each, not
-6: six morning plus one evening story appended at 20:02, before the rule; from 09-15 the evening counts the day.
-Side effect, intended: some 09-13 evening stories that had moved to 09-14 this morning (e.g. "Bye, America", "Will the
-real Elizabeth Holmes please stand up?") fell over the cap and are no longer on the site.
-
-**Consequence for the cap question.** With mornings around 30, the evening has room under 60 again, so `MAX_ITEMS` was
-NOT raised. Notion Decision "The live daily news feed carries every linked story" amended with both rules.
-
-**Watch 2026-09-15:** the morning log's "N of M kept after the age and per-publication rules" line, and that the evening
-run's headlines are all real titles.
-
-## 2026-09-14 (later) — laptop → mini and next session: OWNERS DATA IS READ AT RUNTIME; owners-weekly NEEDS NO VERCEL TOKEN AND SPENDS NO BUILD
-
-Ashwin asked why an owners change cost a build when "isn't it just stored in a table".
-It was not: `lib/teamOwners.ts` read `public/data/owners/team-owners.json` with a
-build-time `readFileSync`, so every owners push needed a paid production build, and
-`run-owners-weekly.sh` counted the 2/day budget with a Vercel token and blocked its own
-push without one (`60d7f885d`). This commit removes that dependency.
-
-- **`lib/teamOwners.ts`** fetches the owners JSON from GitHub raw, `revalidate: 3600`,
-  tag **`owners`**, bundled file as fallback, local file first in development. The
-  module memo is keyed on the file's `generated` stamp, not kept forever, so a warm
-  instance picks up the next week's file. All six exports are now async;
-  `/sports/owners` and `/sports/valuations` await them. No other callers exist.
-- **`lib/valuations.ts` is deliberately still build-time** (valuations change only on a
-  real ETL, and `ValuationChip` renders on every team page). Owners rows attach to the
-  build-time valuations exactly as before.
-- **`/api/revalidate`** allows tag `owners`; **`check-live-data.mjs`** declares
-  `owners/team-owners.json`, so a regression to build-time reads fails verify.
-- **`run-owners-weekly.sh`**: the budget count, the no-token git push block and the
-  `lib/releases.ts` step are gone. Commits carry `[vercel skip]` and stage only the seed
-  and the built JSON. When the published owners file changed during the run, the wrapper
-  sources `runners/_common.sh` and calls `revalidate_ping owners /sports/owners
-  /sports/valuations` (300s CDN wait, fail-open). ntfy tag is now `clipboard`, not
-  `rotating_light`. **`VERCEL_TOKEN` is no longer needed in `config.env` for this job.**
-- **Trade-off, accepted:** owners changes no longer write a release note, because
-  `lib/releases.ts` needs a build. Fold notable ownership news into the next real
-  shipping day's entry by hand.
-
-**Mini, next Monday's run (09-21 08:30Z):** confirm the log shows a push with
-`[vercel skip]` (or "no changes"), and, if the file changed, `Revalidated on attempt 1`
-and both warm paths 200. If `REVALIDATE_SECRET` is unset, the hourly ISR window covers it.
-
-Verification on the laptop: `check:live-data`, `check:data-reads`, `check:release-notes`,
-`check:client-imports`, `dispatcher.py --self-test` and `bash -n` all pass; typecheck
-reports no errors in any touched file (the laptop's `node_modules` is stale, so the
-full `npm run verify` and `next build` status is recorded in the commit message).
-
-## 2026-09-14 — laptop (Ashwin's MacBook Air, not the mini) → mini and next session: DISPLAY-ONLY CONTINENTAL COMPS FALL BACK TO API NAMES; gap-league-watch FAILED 05:00Z, CAUSE UNREAD
-
-Interactive session investigating the morning's ntfy alerts from the laptop. The mini
-could not be reached (the venue Wi-Fi's WebTitan filter intercepts TLS to tailscale.com),
-so everything below comes from the repo, `public/data/refresh-schedule.json` and `gh`.
-
-### A. `gap-league-watch` failed its 05:00Z slot — NOT diagnosed
-
-Only non-ok job today; still `failed` after the 06:15Z ops-autofix slot, so the autofix
-rerun presumably failed too. First run since `26987d2ee` (09-13 15:23Z), which rewrote
-`watch_gap_leagues.py` and added the three World entries (16, 27, 536) with
-`target_season: null` and `ready_on: window`. `--self-test` passes on current `main` from
-the laptop, so the fault is in the live `--write` path (api-football, the
-`football_league_watch` upsert, or the git ff/commit step). **Mini: read
-`~/metro-mini-jobs/logs/gap-league-watch-2026-09-14.log` and fix.** Low stakes: the job
-writes nothing to the site and any missed transition is re-observed next run.
-
-### B. Unmatched CAF/AFC clubs now display under api-football's name (this commit)
-
-The 45 UNMATCHED clubs from 26987d2ee (daily sweep 09-14, item 1) were not only an alert:
-`football_fixtures` stores team ids only, and `export_bundles.py` took names solely from
-`football_team`, so every unmatched side shipped `name: null` and rendered "TBD" (live
-bundle: CAF 49 of 74 fixtures, AFC 26 sides). The domestic cups never had this because
-`refresh_domestic_cups.py` already falls back to the api name.
-
-- `refresh.py` caches api team names (id → name, merged across runs) to
-  `scripts/apifootball/_scratch/api_team_names.json` right after fetching. Gitignored, so
-  it cannot dirty the tree and stand ops-autofix down.
-- `leagues.json`: `"display_only": true` on 17 (AFC CL Elite), 12 (CAF CL) and 1168
-  (Intercontinental Cup). Ashwin's ruling: these are scores and fixtures only, linked into
-  nothing else. UEFA comps and Libertadores deliberately NOT flagged (badges, club pages,
-  rankings).
-- `export_bundles.py` uses the cached name only for display_only comps and only when
-  `canonical_name` is missing; `lookup` stays null, so it never reads as a resolved club.
-- **The UNMATCHED alert is unchanged, on Ashwin's instruction**: it is his reminder to add
-  the clubs to Lookup, which he plans to do by hand later today (via `cl-lookup-sync`, not
-  `sync_lookup.py` directly).
-
-Verified offline only (the laptop has no Supabase key): both self-tests, compile, and unit
-checks of the cache and fallback. **Mini, first football-standings run after this lands:**
-confirm the log line `api team names cached for export: N` and that
-`live-competitions-2026.json` has no `name: null` in leagues 12/17 (a club whose api name
-was never fetched would still be null).
 

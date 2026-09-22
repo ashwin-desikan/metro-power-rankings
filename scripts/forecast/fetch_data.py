@@ -13,7 +13,7 @@ results (Open Parliament Licence). Wikipedia's polling tables use two-row
 sticky headers with rowspan/colspan, so column titles are reconstructed from
 the header grid before rows are read.
 """
-import json, os, re, sys, urllib.request, urllib.parse
+import contextlib, io, json, os, re, sys, urllib.request, urllib.parse
 
 sys.stdout.reconfigure(encoding="utf-8")
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data", "forecast")
@@ -361,6 +361,48 @@ def dated_subsections(sec):
 
 # ---------------- UK ----------------
 
+# A polling article carries the election result itself as a row, and that row
+# is a KNOWN FACT, not an estimate. It is also the one row worth checking,
+# because a parse that shifts a row by one column yields numbers that are all
+# individually plausible, in range, and summing about right -- nothing else
+# notices. The committed 2024 anchor read `lab 23.7` (the Conservative share)
+# with Plaid Cymru's 0.7 filed as the SNP, so Labour's baseline sat 10 points
+# low, and it was the most recognisable point on the tracker chart.
+UK_KNOWN_RESULTS = {
+    # 2024 United Kingdom general election, UK-wide vote share.
+    "2024-07-04": {"lab": 33.7, "con": 23.7, "ref": 14.3,
+                   "ld": 12.2, "grn": 6.8, "snp": 2.5},
+}
+
+
+def verify_known_results(polls, known, label, tol=0.15):
+    """Drop any election-result row that contradicts the real result.
+
+    Publishing a wrong anchor is worse than publishing none: the chart draws
+    it either way, and only one of the two is checkable against the world."""
+    out, seen = [], set()
+    for p in polls:
+        want = known.get(p["date"])
+        if not want or "election" not in p.get("pollster", "").lower():
+            out.append(p)
+            continue
+        seen.add(p["date"])
+        bad = {k: (v, p.get(k)) for k, v in want.items()
+               if p.get(k) is None or abs(p[k] - v) > tol}
+        if bad:
+            print("  %s BASELINE MISMATCH on %s (%s): %s -- row DROPPED, the "
+                  "parse is wrong, do not publish a shifted anchor"
+                  % (label, p["date"], p.get("pollster", "?"),
+                     ", ".join("%s expected %.1f got %s" % (k, w, g)
+                               for k, (w, g) in sorted(bad.items()))))
+            continue
+        out.append(p)
+    for d in sorted(set(known) - seen):
+        print("  %s BASELINE MISSING: no election-result row parsed for %s"
+              % (label, d))
+    return out
+
+
 def fetch_uk():
     wt = wikitext("Opinion polling for the next United Kingdom general election")
     national = section_slice(wt, r"==\s*National poll results\s*==", [r"==\s*Seat projections", r"==\s*Sub-national"])
@@ -380,6 +422,7 @@ def fetch_uk():
         if key in seen:
             continue
         seen.add(key); polls.append(p)
+    polls = verify_known_results(polls, UK_KNOWN_RESULTS, "UK")
     json.dump({"source": "Wikipedia: Opinion polling for the next United Kingdom general election (CC BY-SA 4.0)",
                "parties": ["con", "lab", "ld", "ref", "grn", "snp"],
                "polls": polls}, open(os.path.join(OUT, "uk_polls.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
@@ -937,12 +980,39 @@ def _self_test():
     # shift and the row sums to 148). It must be rejected, not averaged.
     check("IL misread row is rejected", "Short" in [p["pollster"] for p in il_polls], False)
 
+    # An election-result row inside a polling table is a known fact. The real
+    # failure: the committed 2024 UK anchor was shifted one column left, so
+    # every value was the NEXT party's share and Labour sat 10 points low. It
+    # summed about right and no gate noticed for weeks.
+    right = {"date": "2024-07-04", "pollster": "2024 general election",
+             "lab": 33.7, "con": 23.7, "ref": 14.3, "ld": 12.2, "grn": 6.8, "snp": 2.5}
+    shifted = {"date": "2024-07-04", "pollster": "2024 general election",
+               "lab": 23.7, "con": 14.3, "ref": 12.2, "ld": 6.8, "grn": 2.5, "snp": 0.7}
+    ordinary = {"date": "2024-07-04", "pollster": "YouGov", "lab": 23.7, "con": 14.3}
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        kept_ok = verify_known_results([right], UK_KNOWN_RESULTS, "UK")
+        kept_bad = verify_known_results([shifted], UK_KNOWN_RESULTS, "UK")
+        kept_poll = verify_known_results([right, ordinary], UK_KNOWN_RESULTS, "UK")
+    check("UK baseline: correct anchor is kept", kept_ok, [right])
+    check("UK baseline: shifted anchor is dropped", kept_bad, [])
+    check("UK baseline: an ordinary poll on the same date is untouched",
+          ordinary in kept_poll, True)
+    # Silence is the failure mode this guard exists to end, so it must speak.
+    missing = io.StringIO()
+    with contextlib.redirect_stdout(missing):
+        verify_known_results([], UK_KNOWN_RESULTS, "UK")
+    check("UK baseline: a missing anchor is reported",
+          "BASELINE MISSING" in missing.getvalue(), True)
+    check("UK baseline: a dropped anchor says so loudly",
+          "BASELINE MISMATCH" in buf.getvalue(), True)
+
     if fails:
         print("SELF-TEST FAILED")
         for f in fails:
             print("  -", f)
         return 1
-    print("fetch_data self-test OK (%d cases)" % 12)
+    print("fetch_data self-test OK (%d cases)" % 17)
     return 0
 
 if __name__ == "__main__":
