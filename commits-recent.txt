@@ -1,3 +1,4 @@
+2026-09-22T12:04:13+01:00  504c90186  football: refresh live bundles [vercel skip]
 2026-09-22T10:01:04+01:00  d7d4a4382  data: cricket weekly refresh [vercel skip]
 2026-09-22T09:56:33+01:00  c2761b021  hooks: stop calling every public/ data commit "the documented ISR exception" [vercel skip]
 2026-09-22T09:14:24+01:00  224fc050b  handoff: the date corrections are live on a third build [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T22:22:09+01:00  d76d3795f  HANDOFF: metro-rankings installed and Active (shadow); the gc crash recurred mid-install [vercel skip]
 2026-09-20T22:15:14+01:00  0880b185a  mini: let business-daily own its QID cache, and keep egress-refresh's step errors [vercel skip]
 2026-09-20T22:09:46+01:00  7a29fe490  HANDOFF: 2026-09-20 ntfy triage - one stranded commit behind 14 alerts, crashed gc left three locks [vercel skip]
-2026-09-20T21:56:49+01:00  72eb17b0c  football: refresh live bundles [vercel skip]
