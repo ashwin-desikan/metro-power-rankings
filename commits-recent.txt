@@ -1,3 +1,4 @@
+2026-09-22T12:46:26+01:00  a50d1c94f  handoff: jobs reconcile and The Hundred honours fix [vercel skip]
 2026-09-22T12:27:49+01:00  1ffdf2809  jev: audit mode, hash-order sampling, first full eval sweep [vercel skip]
 2026-09-22T12:24:44+01:00  8f7d422f5  tsconfig: exclude .next/dev so verify stops reading files Turbopack rewrites [vercel skip]
 2026-09-22T12:14:47+01:00  52f467a77  gap-watch: announce every auto-promotion, not just failures [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T22:38:54+01:00  a868a4444  HANDOFF: deploy-watch under the dispatcher, every_minutes added, last shared-lock gap closed [vercel skip]
 2026-09-20T22:37:37+01:00  baeb6d021  mini: bring deploy-watch under the dispatcher - new every_minutes scheduling, launchd agent unloaded [vercel skip]
 2026-09-20T22:30:27+01:00  b7934d9b2  HANDOFF: gc taken off git's hands - gc.auto=0, maintenance.auto=false, one 03:00 slot that also sweeps stale locks [vercel skip]
-2026-09-20T22:28:29+01:00  0689e3906  mini: take gc off git's hands - gc.auto=0 on the clone, one controlled 03:00 maintenance slot [vercel skip]
