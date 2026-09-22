@@ -9,9 +9,102 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 56, 2026-09-15 to 2026-09-22
-     If the reader counts fewer than 56 entries, its fetch window stopped
+     entries: 58, 2026-09-15 to 2026-09-22
+     If the reader counts fewer than 58 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
+
+## 2026-09-22 (afternoon) - mini -> windows and next session: THE JOBS RECONCILE FOUND TWO ROWS PROMISING MONITORING THAT DOES NOT EXIST, AND THE HUNDRED FIX WAS NOT THE BUG THE ROW DESCRIBED
+
+Two Backlog rows, both closed, neither quite what it said on the tin.
+
+### 1. Scheduled jobs reconcile: 35/35 schedules right, 2 rows lying about alerts
+Reconciled against THREE sources, not two: the live
+`~/metro-mini-jobs/jobs.toml`, the 35 dispatcher rows in Notion, and the
+healthchecks API itself.
+
+- `dispatcher.py --check-sync` says "in sync with the repo checkout", so the
+  row's founding worry (rows seeded from the repo copy, live file might
+  differ) is resolved at file level. Repo and live are identical.
+- **All 35 schedules match exactly.** My first pass nearly reported false
+  mismatches because it only read `time`/`times` - the real comparison needs
+  `weekdays` (cfb-fri/sun/wed, forecast Mon/Wed/Fri, screen-number-ones
+  Mon-Wed), `days` (conflicts-monthly, cricket-monthly), `months` (mlb-sim
+  Mar-Nov, nfl-elo Sep-Feb) and `every_minutes` (deploy-watch). Re-extracted
+  every key before claiming anything.
+- **All 15 live hc_slugs exist as real tiles. Zero dangling slugs**, which
+  independently confirms the 2026-09-20 clean-up held.
+- 🔴 **Two rows promised healthchecks cover that does not exist.**
+  `activity-feed` said "healthchecks.io slug activity-feed";
+  `screen-number-ones` said "slug implied screen-number-ones" - that "implied"
+  was doing a lot of work. Neither job carries an `hc_slug`, and neither tile
+  exists (API: 20 tiles, project capped and FULL). Anyone reading those rows
+  would have believed a red tile would report the job stopping. It would not.
+  Both corrected with what actually alerts, and the difference matters:
+  screen-number-ones raises its own URGENT ntfy from `fail()`, while
+  **activity-feed raises nothing of its own** - it echoes and exits 1 - so it
+  leans entirely on dispatcher `notify()` and the missed-slot ntfy.
+- `economy-prices` hedged with "no hc_slug seen"; confirmed, hedge removed.
+- The five non-dispatcher tiles (f1-weekly, mac-mini, newsletter-daily,
+  -watchdog, -weekly) all have rows, so nothing is running unrecorded.
+
+### 2. The Hundred: the row's diagnosis was wrong twice, and the site was fine
+Fixed in Supabase (ids 17771/2023, 17769/2024, 17767/2025 -> `team_name`
+'Oval Invincibles', `canonical_name` left 'MI London'). But:
+
+**The hypothesis "likely the women's result filed as the men's" is wrong.**
+Verified from the season articles: the men's champion was Oval Invincibles in
+2023 (1st title), 2024 (2nd) and 2025 (3rd). The women's winners those years
+were Southern Brave, London Spirit and Northern Superchargers - none of which
+appear in these rows. The real fault is a **post-2025 rebrand name applied
+retroactively**: en.wikipedia now redirects Oval Invincibles -> MI London, and
+the honours strand had adopted the new name for titles won under the old one.
+`champions-history.json` had it right all along, using the house convention of
+`team_name` = the name at the time, `canonical_name` = the current franchise.
+
+**And the site was never wrong.** These honours rows never reach
+`public/data`: `build_champions.py`'s extras stream de-duplicates against
+champions-history ("492 already in champions-history"), so there are ZERO
+Hundred rows in `champions-metro-extra.json`, and "MI London" appears in
+`champions-history.json` only as `canonical`, never as `champion`, on all
+three seasons. A rebuild after the fix left **all four outputs
+byte-identical**. So this was drift between two strands inside the table, not
+published bad data - worth fixing, but not the reader-facing error the row
+implied.
+
+**Split out rather than guessed at:** the runner-up rows in the same strand
+look like the same artefact (2022 and 2023 runner-up recorded as "Manchester
+Super Giants", itself a 2025 rebrand of Manchester Originals). I did NOT touch
+them, because the season infoboxes carry a `champions` field but NO runners-up
+field, so verifying needs the men's final scorecards. Guessing would repeat
+precisely the error being fixed. New P3 row carries the ids and the evidence.
+
+**No repo change from either task** beyond this entry: the jobs work was Notion
+only, and the champions rebuild was byte-identical. Nothing to deploy.
+
+**Notion:** Backlog: jobs-reconcile row -> Done with the three-source method
+and the two corrections; Hundred row -> Done, rewritten to correct its own
+premise twice; +1 new P3 (the runner-up rows). Scheduled jobs: activity-feed,
+screen-number-ones and economy-prices rows corrected, each with Last verified
+2026-09-22. No Decisions row: none of this is a ruling.
+## 2026-09-22 (afternoon) - windows -> mini and next session: THE JEV PILOT RAN, IT PASSES, AND IT CAUGHT BAD METRO LABELS INSTEAD
+
+**It ran.** 1,544 calls, ZERO API errors, p50 585ms, p95 694ms, $0.1146 at $0.042/M input (output free, confirmed at docs.typesafe.ai/models, so `COST_PER_MTOK`'s "unverified third-party figure" comment is gone). The 2026-09-21 note that the shells cannot reach `api.typesafe.ai` was about Cowork: this Windows session reached both it and Supabase fine. **Trap for whoever sets the key next: PowerShell `echo KEY > typesafe_key.txt` writes UTF-16LE with a BOM, `get_typesafe_key()` opens `utf-8-sig`, and the read dies.** Rewrite as UTF-8.
+
+**Results.** CONTROL 98.7% (n=702), HARD 83.9% (n=702), NEGATIVE 72.1% correctly answered none (n=140). Calibration is the real finding: **ECE 0.0161**, top bin n=1,150 reading mean confidence 0.985 against accuracy 0.991. Middle bins are mildly overconfident (bin 6: 0.647 stated, 0.525 actual), so trust the number at the top of its range and not in the middle. Against the pass rule proposed on the Notion Backlog row: precision >= 98% MET at 0.90 (99.1%) and 0.95 (99.5%); coverage >= 50% of HARD MET at both (65.2% / 57.4%); **wrong proposals on NEGATIVE < 2% MET ONLY AT 0.95** (1.4% against 2.1% at 0.90). The 0.90 miss is 3 rows of 140 where the bar needs 2, which is inside noise at that n, so the rule may want a tolerance rather than a higher gate. **Ashwin's ruling, not mine** -- Decisions row filed with it open.
+
+**Two methodology bugs, both mine to have caught earlier.** `cmd_eval` iterated the eval sets in SYMBOL order, so `--limit 25` was not a sample, it was the alphabetical prefix, which on ticker symbols is all numeric Asian exchange codes (`002001.SZ`, `0097.KL`, `1109.HK`). That smoke pass read 72% accuracy where the full set reads 84%, and undercounted cost 2.2x because those countries carry 7 to 27 metro shortlists against 164 for the US. Fixed: `sample_order()` iterates by `det_hash` so any prefix is representative and resume still works, six self-tests including one that asserts the old symbol sort really does bunch the numerics.
+
+**`mktcap_geo.country` is the LEGAL DOMICILE, not the HQ country.** `city` is the operating HQ. For multinationals they disagree: Seagate Cupertino/Ireland, Lazard and Genpact New York/Bermuda, Universal Music Los Angeles/Netherlands, Valaris Houston/United Kingdom, Bolt San Francisco/Estonia. 33 of the 53 affected rows carry no exchange suffix, so this is not a listing-venue artifact. It matters because `shortlist_for_country()` derives the candidate list from `country`, so the HQ city is then in no candidate at all and Jev correctly answers none. Detection without a gazetteer: a metro belongs to one country, so a metro appearing under several marks its minority rows suspect. 53 rows, 0.96% of 5,531; removing them moves HARD 83.9% to 84.4%, so it is real but not the story. Data sources row updated.
+
+**The story is the other direction: Jev is better as an AUDITOR than as a mapper.** At t>=0.90 there were 4 confident disagreements in 446 proposals, and 3 read as bad STORED labels: HPE (Spring TX, filed under Dallas, Spring is Houston), TD Synnex (Clearwater FL under Minneapolis, Clearwater is Tampa), Chroma ATE (Taoyuan under Kaohsiung, Taoyuan is greater Taipei). The fourth, ICU Medical in San Clemente, is a genuine MSA-border case where Jev is probably wrong. So `jev_metro_pilot.py` gained **`--audit` / `--audit-report`**: re-ask about rows that already have a curated metro, with the stored metro present in the shortlist, and report confident disagreements. Read-only, no `--write`, and `audit_verdict()` is documented and self-tested as producing a question for a human, never a correction to apply. Ten self-tests off the real cases above.
+
+**First audit catch, from the validation sample:** RGA (Reinsurance Group of America), Chesterfield, stored **Detroit**, Jev says **St. Louis at 0.99** with probability 1.0. RGA is in Chesterfield, MISSOURI, a St. Louis suburb; there is also a Chesterfield, Michigan in the Detroit metro. A city-name collision resolved the wrong way, and nothing else in the pipeline would ever have found it.
+
+**What is NOT fixed, and is the actual blocker.** All 160 `auto-stub` rows still have an empty city, so `--queue` has zero eligible rows. Model quality was never what was stopping the curation queue; a missing HQ city source is. SEC EDGAR covers the 121 US filers. Backlog row filed.
+
+**For the mini / next session:** nothing here is scheduled and nothing writes. To finish it, run `python jev_metro_pilot.py --audit --limit 6000` then `--audit-report` (about $0.41 and 55 minutes sequential at the measured 1,767 tokens and 585ms per call), and bring the disagreement list to Ashwin. Also worth doing before any production wiring: a free city-name string match gets 702/702 on CONTROL but answers only 6 of 702 on HARD and gets none of them right, so the efficient shape is string-match first and call Jev only on the miss, which skips about half the population.
+
+**Notion:** Backlog: Jev pilot row Blocked -> Done with the full results and the stale "uncommitted" note corrected (the script landed in `1d811d4de`); +2 rows (full audit sweep, In progress; HQ city source for the 160 stubs, Open). Decisions +1 (Jev validated behind a confidence gate, 0.90 vs 0.95 left open for Ashwin). Data sources: CompaniesMarketCap row gains the domicile-vs-HQ quirk and the multi-country-metro detection recipe.
 
 ## 2026-09-22 (midday) - mini -> windows and next session: THE tsconfig "ONE-LINE INCLUDE CHANGE" WAS THE WRONG LINE, AND THE TEST IS WHAT SAID SO
 
@@ -722,29 +815,6 @@ a full-width single-cell header row is a banner, never a column header). Silent
 failure register +1 (a column-shifted baseline row reads as plausible data and
 no gate compares it against the known result).
 
-     entries: 46, 2026-09-15 to 2026-09-22
-     If the reader counts fewer than 46 entries, its fetch window stopped
-     short and the entries it did not see are the OLDEST ones. -->
-
-## 2026-09-22 - windows -> mini and next session: THE JEV PILOT RAN, IT PASSES, AND IT CAUGHT BAD METRO LABELS INSTEAD
-
-**It ran.** 1,544 calls, ZERO API errors, p50 585ms, p95 694ms, $0.1146 at $0.042/M input (output free, confirmed at docs.typesafe.ai/models, so `COST_PER_MTOK`'s "unverified third-party figure" comment is gone). The 2026-09-21 note that the shells cannot reach `api.typesafe.ai` was about Cowork: this Windows session reached both it and Supabase fine. **Trap for whoever sets the key next: PowerShell `echo KEY > typesafe_key.txt` writes UTF-16LE with a BOM, `get_typesafe_key()` opens `utf-8-sig`, and the read dies.** Rewrite as UTF-8.
-
-**Results.** CONTROL 98.7% (n=702), HARD 83.9% (n=702), NEGATIVE 72.1% correctly answered none (n=140). Calibration is the real finding: **ECE 0.0161**, top bin n=1,150 reading mean confidence 0.985 against accuracy 0.991. Middle bins are mildly overconfident (bin 6: 0.647 stated, 0.525 actual), so trust the number at the top of its range and not in the middle. Against the pass rule proposed on the Notion Backlog row: precision >= 98% MET at 0.90 (99.1%) and 0.95 (99.5%); coverage >= 50% of HARD MET at both (65.2% / 57.4%); **wrong proposals on NEGATIVE < 2% MET ONLY AT 0.95** (1.4% against 2.1% at 0.90). The 0.90 miss is 3 rows of 140 where the bar needs 2, which is inside noise at that n, so the rule may want a tolerance rather than a higher gate. **Ashwin's ruling, not mine** -- Decisions row filed with it open.
-
-**Two methodology bugs, both mine to have caught earlier.** `cmd_eval` iterated the eval sets in SYMBOL order, so `--limit 25` was not a sample, it was the alphabetical prefix, which on ticker symbols is all numeric Asian exchange codes (`002001.SZ`, `0097.KL`, `1109.HK`). That smoke pass read 72% accuracy where the full set reads 84%, and undercounted cost 2.2x because those countries carry 7 to 27 metro shortlists against 164 for the US. Fixed: `sample_order()` iterates by `det_hash` so any prefix is representative and resume still works, six self-tests including one that asserts the old symbol sort really does bunch the numerics.
-
-**`mktcap_geo.country` is the LEGAL DOMICILE, not the HQ country.** `city` is the operating HQ. For multinationals they disagree: Seagate Cupertino/Ireland, Lazard and Genpact New York/Bermuda, Universal Music Los Angeles/Netherlands, Valaris Houston/United Kingdom, Bolt San Francisco/Estonia. 33 of the 53 affected rows carry no exchange suffix, so this is not a listing-venue artifact. It matters because `shortlist_for_country()` derives the candidate list from `country`, so the HQ city is then in no candidate at all and Jev correctly answers none. Detection without a gazetteer: a metro belongs to one country, so a metro appearing under several marks its minority rows suspect. 53 rows, 0.96% of 5,531; removing them moves HARD 83.9% to 84.4%, so it is real but not the story. Data sources row updated.
-
-**The story is the other direction: Jev is better as an AUDITOR than as a mapper.** At t>=0.90 there were 4 confident disagreements in 446 proposals, and 3 read as bad STORED labels: HPE (Spring TX, filed under Dallas, Spring is Houston), TD Synnex (Clearwater FL under Minneapolis, Clearwater is Tampa), Chroma ATE (Taoyuan under Kaohsiung, Taoyuan is greater Taipei). The fourth, ICU Medical in San Clemente, is a genuine MSA-border case where Jev is probably wrong. So `jev_metro_pilot.py` gained **`--audit` / `--audit-report`**: re-ask about rows that already have a curated metro, with the stored metro present in the shortlist, and report confident disagreements. Read-only, no `--write`, and `audit_verdict()` is documented and self-tested as producing a question for a human, never a correction to apply. Ten self-tests off the real cases above.
-
-**First audit catch, from the validation sample:** RGA (Reinsurance Group of America), Chesterfield, stored **Detroit**, Jev says **St. Louis at 0.99** with probability 1.0. RGA is in Chesterfield, MISSOURI, a St. Louis suburb; there is also a Chesterfield, Michigan in the Detroit metro. A city-name collision resolved the wrong way, and nothing else in the pipeline would ever have found it.
-
-**What is NOT fixed, and is the actual blocker.** All 160 `auto-stub` rows still have an empty city, so `--queue` has zero eligible rows. Model quality was never what was stopping the curation queue; a missing HQ city source is. SEC EDGAR covers the 121 US filers. Backlog row filed.
-
-**For the mini / next session:** nothing here is scheduled and nothing writes. To finish it, run `python jev_metro_pilot.py --audit --limit 6000` then `--audit-report` (about $0.41 and 55 minutes sequential at the measured 1,767 tokens and 585ms per call), and bring the disagreement list to Ashwin. Also worth doing before any production wiring: a free city-name string match gets 702/702 on CONTROL but answers only 6 of 702 on HARD and gets none of them right, so the efficient shape is string-match first and call Jev only on the miss, which skips about half the population.
-
-**Notion:** Backlog: Jev pilot row Blocked -> Done with the full results and the stale "uncommitted" note corrected (the script landed in `1d811d4de`); +2 rows (full audit sweep, In progress; HQ city source for the 160 stubs, Open). Decisions +1 (Jev validated behind a confidence gate, 0.90 vs 0.95 left open for Ashwin). Data sources: CompaniesMarketCap row gains the domicile-vs-HQ quirk and the multi-country-metro detection recipe.
 ## 2026-09-21 (late) - windows cowork -> mini and next session: THE THREE OPEN GITHUB ISSUES, AND WHY TWO OF THEM COULD NEVER CLOSE
 
 **#23 (data watch).** Every dataset was inside its budget. The one real alert was the Lanka Premier League: no current holder, last crowned 2024-07-21. Facts: the 2025 edition was postponed and never played; the 2026 final was 8 Aug 2026, Galle Gallants beat Jaffna Kings by 5 wickets at R. Premadasa (Wikipedia final article and the ESPNcricinfo scorecard title agree). Inserted by hand in the `build_row` shape: `public.champions` id 149515, source `cricket-finalizer`, metro Galle / `galle` (already resolved on the franchise's runner-up rows as Galle Gladiators and Galle Marvels), `date_awarded` 2026-08-08, `is_current` true. `lanka-premier-league` is now in the `cricket_finalize.py` REGISTRY (calendar style), self-test 26 of 26, so 2027 is automatic unless the winner is again a first-time champion. The JSON re-emit rides this commit; the issue closes itself at the next 6-hourly run if the board is then clean.

@@ -17983,3 +17983,77 @@ output is excluded, not un-included, because Next owns the include block).
 **For the mini / next session:** nothing here is scheduled and nothing writes. To finish it, run `python jev_metro_pilot.py --audit --limit 6000` then `--audit-report` (about $0.41 and 55 minutes sequential at the measured 1,767 tokens and 585ms per call), and bring the disagreement list to Ashwin. Also worth doing before any production wiring: a free city-name string match gets 702/702 on CONTROL but answers only 6 of 702 on HARD and gets none of them right, so the efficient shape is string-match first and call Jev only on the miss, which skips about half the population.
 
 **Notion:** Backlog: Jev pilot row Blocked -> Done with the full results and the stale "uncommitted" note corrected (the script landed in `1d811d4de`); +2 rows (full audit sweep, In progress; HQ city source for the 160 stubs, Open). Decisions +1 (Jev validated behind a confidence gate, 0.90 vs 0.95 left open for Ashwin). Data sources: CompaniesMarketCap row gains the domicile-vs-HQ quirk and the multi-country-metro detection recipe.
+
+## 2026-09-22 (afternoon) - mini -> windows and next session: THE JOBS RECONCILE FOUND TWO ROWS PROMISING MONITORING THAT DOES NOT EXIST, AND THE HUNDRED FIX WAS NOT THE BUG THE ROW DESCRIBED
+
+Two Backlog rows, both closed, neither quite what it said on the tin.
+
+### 1. Scheduled jobs reconcile: 35/35 schedules right, 2 rows lying about alerts
+Reconciled against THREE sources, not two: the live
+`~/metro-mini-jobs/jobs.toml`, the 35 dispatcher rows in Notion, and the
+healthchecks API itself.
+
+- `dispatcher.py --check-sync` says "in sync with the repo checkout", so the
+  row's founding worry (rows seeded from the repo copy, live file might
+  differ) is resolved at file level. Repo and live are identical.
+- **All 35 schedules match exactly.** My first pass nearly reported false
+  mismatches because it only read `time`/`times` - the real comparison needs
+  `weekdays` (cfb-fri/sun/wed, forecast Mon/Wed/Fri, screen-number-ones
+  Mon-Wed), `days` (conflicts-monthly, cricket-monthly), `months` (mlb-sim
+  Mar-Nov, nfl-elo Sep-Feb) and `every_minutes` (deploy-watch). Re-extracted
+  every key before claiming anything.
+- **All 15 live hc_slugs exist as real tiles. Zero dangling slugs**, which
+  independently confirms the 2026-09-20 clean-up held.
+- 🔴 **Two rows promised healthchecks cover that does not exist.**
+  `activity-feed` said "healthchecks.io slug activity-feed";
+  `screen-number-ones` said "slug implied screen-number-ones" - that "implied"
+  was doing a lot of work. Neither job carries an `hc_slug`, and neither tile
+  exists (API: 20 tiles, project capped and FULL). Anyone reading those rows
+  would have believed a red tile would report the job stopping. It would not.
+  Both corrected with what actually alerts, and the difference matters:
+  screen-number-ones raises its own URGENT ntfy from `fail()`, while
+  **activity-feed raises nothing of its own** - it echoes and exits 1 - so it
+  leans entirely on dispatcher `notify()` and the missed-slot ntfy.
+- `economy-prices` hedged with "no hc_slug seen"; confirmed, hedge removed.
+- The five non-dispatcher tiles (f1-weekly, mac-mini, newsletter-daily,
+  -watchdog, -weekly) all have rows, so nothing is running unrecorded.
+
+### 2. The Hundred: the row's diagnosis was wrong twice, and the site was fine
+Fixed in Supabase (ids 17771/2023, 17769/2024, 17767/2025 -> `team_name`
+'Oval Invincibles', `canonical_name` left 'MI London'). But:
+
+**The hypothesis "likely the women's result filed as the men's" is wrong.**
+Verified from the season articles: the men's champion was Oval Invincibles in
+2023 (1st title), 2024 (2nd) and 2025 (3rd). The women's winners those years
+were Southern Brave, London Spirit and Northern Superchargers - none of which
+appear in these rows. The real fault is a **post-2025 rebrand name applied
+retroactively**: en.wikipedia now redirects Oval Invincibles -> MI London, and
+the honours strand had adopted the new name for titles won under the old one.
+`champions-history.json` had it right all along, using the house convention of
+`team_name` = the name at the time, `canonical_name` = the current franchise.
+
+**And the site was never wrong.** These honours rows never reach
+`public/data`: `build_champions.py`'s extras stream de-duplicates against
+champions-history ("492 already in champions-history"), so there are ZERO
+Hundred rows in `champions-metro-extra.json`, and "MI London" appears in
+`champions-history.json` only as `canonical`, never as `champion`, on all
+three seasons. A rebuild after the fix left **all four outputs
+byte-identical**. So this was drift between two strands inside the table, not
+published bad data - worth fixing, but not the reader-facing error the row
+implied.
+
+**Split out rather than guessed at:** the runner-up rows in the same strand
+look like the same artefact (2022 and 2023 runner-up recorded as "Manchester
+Super Giants", itself a 2025 rebrand of Manchester Originals). I did NOT touch
+them, because the season infoboxes carry a `champions` field but NO runners-up
+field, so verifying needs the men's final scorecards. Guessing would repeat
+precisely the error being fixed. New P3 row carries the ids and the evidence.
+
+**No repo change from either task** beyond this entry: the jobs work was Notion
+only, and the champions rebuild was byte-identical. Nothing to deploy.
+
+**Notion:** Backlog: jobs-reconcile row -> Done with the three-source method
+and the two corrections; Hundred row -> Done, rewritten to correct its own
+premise twice; +1 new P3 (the runner-up rows). Scheduled jobs: activity-feed,
+screen-number-ones and economy-prices rows corrected, each with Last verified
+2026-09-22. No Decisions row: none of this is a ruling.
