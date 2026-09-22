@@ -1,0 +1,69 @@
+Lookup rows: 9956
+
+T1      3945   39.6%
+T2a     2132   21.4%
+T2b       70    0.7%
+T1-alias     20    0.2%
+T2a-alias     10    0.1%
+T2b-alias      1    0.0%
+T3        27    0.3%
+AMB      521    5.2%
+NONE    3230   32.4%
+
+matched (all T tiers): 6205 (62.3%)
+
+Level 1: 1106/1444 matched (76.6%), 122 ambiguous
+Level 2: 368/486 matched (75.7%), 39 ambiguous
+Level 3: 216/267 matched (80.9%), 19 ambiguous
+
+provider keys present among matched rows:
+  key_wikidata                   6201
+  key_transfermarkt              2779
+  key_fbref                      1307
+  key_soccerway                  1986
+  key_opta                         36
+  key_kicker                       10
+  key_flashscore                  126
+  key_sofascore                     2
+  key_soccerbase                  385
+  key_uefa                        885
+  key_footballdatabase_eu        1562
+  key_worldfootball              1160
+  key_espn                         16
+  key_playmakerstats             1302
+  key_clubelo                      21
+  key_sportmonks                  687
+  key_api_football                 10
+  key_sofifa                       22
+  key_fotmob                      100
+  key_thesportsdb                1341
+  key_understat                    78
+  key_opta_numeric                148
+  key_capology                    830
+
+coverage by country (matched/total), worst 25 among countries with >=20 rows:
+  Gibraltar                        2/20     10.0%
+  Iceland                         12/37     32.4%
+  Sudan                            9/26     34.6%
+  Greece                          55/147    37.4%
+  Brazil                         300/794    37.8%
+  Finland                         34/88     38.6%
+  Australia                       10/24     41.7%
+  Morocco                         11/25     44.0%
+  Vietnam                         12/27     44.4%
+  China                           48/107    44.9%
+  Ecuador                         15/31     48.4%
+  Belgium                         90/184    48.9%
+  Argentina                      102/200    51.0%
+  Ethiopia                        11/21     52.4%
+  Denmark                         45/84     53.6%
+  Russia                         116/212    54.7%
+  Germany                        283/515    55.0%
+  Malta                           35/63     55.6%
+  Venezuela                       24/43     55.8%
+  France                         222/396    56.1%
+  Poland                         134/238    56.3%
+  Ukraine                         85/150    56.7%
+  Italy                          241/414    58.2%
+  Turkey                          90/154    58.4%
+  Estonia                         26/44     59.1%

@@ -1,0 +1,155 @@
+sheet_row,team,city,metro_area,country,level,tier,n_candidates,suggested_if_only_one_has_keys,candidates
+586,Shenzhen FC,Shenzen,Guangzhou,China,,T2a,2,,rt2ed7653e2dd15c:Shenzhen:China:rt2ed7653e2dd15c | rtee656da2144736:Shenzhen 2028:China:rtee656da2144736
+673,Bengaluru FC,Bangalore,Bangalore,India,1,T2a,2,,rt14c509a6e98e23:Bengaluru:India:rt14c509a6e98e23 | rt4e93856374fff2:SC Bengaluru:India:rt4e93856374fff2
+674,Odisha FC,Bhubaneswar,Bhubaneswar,India,1,T2a,2,,rtadfc739b9aa4b0:Odisha:India:rtadfc739b9aa4b0 | rtc56960df53b1ca:Odisha:India:rtc56960df53b1ca
+677,Punjab FC,Mohali,Chandigarh,India,1,T2a,2,,rt2fec76ed49b82f:Punjab:India:rt2fec76ed49b82f | rt4f0df083b525af:Punjab:India:rt4f0df083b525af
+678,SC Delhi,Delhi,Delhi,India,1,T2a,2,,rt43e97b4b540a18:Delhi FC:India:rt43e97b4b540a18 | rtaef71f50a1525f:Delhi:India:rtaef71f50a1525f
+803,Omiya Ardija,Tokyo,Tokyo,Japan,2,T1,2,,rt174a23ecb30dcd:RB Omiya Ardija:Japan:rt174a23ecb30dcd | rt7e217ddf0732e3:Omiya Ardija:Japan:rt7e217ddf0732e3
+807,Yokohama FC,Yokohama,Tokyo,Japan,2,T2a,2,,rt28cbebf2baf0d3:Yokohama:Japan:rt28cbebf2baf0d3 | rta1a6239eba51bb:Yokohama:Japan:rta1a6239eba51bb
+821,Fukushima United,Fukushima,Fukushima,Japan,3,T1,2,,rt1383d224225a46:Fukushima United:Japan:rt1383d224225a46 | rt19881d17e6ba99:Fukushima Utd.:Japan:rt19881d17e6ba99
+884,Yadanarbon,Mandalay,Mandalay,Myanmar,1,T1,2,,rt03826f81c20346:Yangon United:Myanmar:rt03826f81c20346 | rt0b6c7ec6a5e2fd:Yadanarbon:Myanmar:rt0b6c7ec6a5e2fd
+1062,Hanoi FC,Hanoi,Hanoi,Vietnam,1,T2a,3,,rt13964a28d7962f:Hà Nội:Vietnam:rt13964a28d7962f | rt16dc6526fa9f89:Hà Nội:Vietnam:rt16dc6526fa9f89 | rt9cf546396bb4ab:Hà Nội:Vietnam:rt9cf546396bb4ab
+1067,Ninh Binh FC,Ninh Binh,Ninh Binh,Vietnam,1,T2a,2,,rt32dc3979f37177:Ninh Binh:Vietnam:rt32dc3979f37177 | rt79b181af20cd0b:Ninh Bình:Vietnam:rt79b181af20cd0b
+1250,Wiener AC,Vienna,Vienna,Austria,,T2a,2,,rt7a17ab38a1af21:Wiener SK:Austria:rt7a17ab38a1af21 | rtf4dce4518d422d:Wiener Sport-Club:Austria:rtf4dce4518d422d
+1268,Kremser SC,Krems,Krems,Austria,,T1-alias,2,,rt50f7d42de2df3c:Krems:Austria:rt50f7d42de2df3c | rt85effce47ff3ac:Krems / Rehberg:Austria:rt85effce47ff3ac
+1492,Eendracht Aalst,Aalst,Aalst,Belgium,,T1,2,,rt46d9f2afc40dd2:Eendracht Aalst:Belgium:rt46d9f2afc40dd2 | rtcbdc3ebe7050e6:Eendracht Aalst:Belgium:rtcbdc3ebe7050e6
+1544,KSK Heist,Antwerp,Antwerp,Belgium,,T1,2,,rt1e29f28f520288:Heist:Belgium:rt1e29f28f520288 | rt5c2adb1689571e:KSK Heist:Belgium:rt5c2adb1689571e
+1586,KRC Harelbeke,Kortrijk,Kortrijk,Belgium,,T1-alias,2,,rt1843f4e9964ce8:Harelbeke:Belgium:rt1843f4e9964ce8 | rta113fca12daa33:Zuid-West-Vlaanderen:Belgium:rta113fca12daa33
+1706,Dunav Rousse,Ruse,Ruse,Bulgaria,1,T1,2,,rt5fb1b707a46d81:Dunav Ruse:Bulgaria:rt5fb1b707a46d81 | rtb770b2d4f1246f:Dunav Ruse:Bulgaria:rtb770b2d4f1246f
+1715,PFC Minyor Pernik,Pernik,Pernik,Bulgaria,,T1,2,,rt723b7a5f3d6087:Minyor Pernik:Bulgaria:rt723b7a5f3d6087 | rtb89b207e0185ec:Minyor Pernik:Bulgaria:rtb89b207e0185ec
+1721,PFK Dobrudzha,Dobrich,Dobrich,Bulgaria,,T2a,2,,rt59dcd8e291a162:Dobrudzha:Bulgaria:rt59dcd8e291a162 | rte8b13035ef4631:Dobrudzha 1919:Bulgaria:rte8b13035ef4631
+1728,PFC Haskovo,Haskovo,Haskovo,Bulgaria,,T2a,2,,rt3d47b12f2a493c:OFK Haskovo:Bulgaria:rt3d47b12f2a493c | rte5a4064acbddf5:FK Haskovo:Bulgaria:rte5a4064acbddf5
+1740,PFC Vidima-Rakovski,Sevlievo,Sevlievo,Bulgaria,,T1,2,,rt517467dfe098bf:Vidima-Rakovski:Bulgaria:rt517467dfe098bf | rt6b0d198746bb82:Vidima-Rakovski:Bulgaria:rt6b0d198746bb82
+1767,PFC Lokomotiv Mezdra,Mezdra,Mezdra,Bulgaria,,T2a,3,,rt3720a76d4ead94:Lokomotiv Mezdra:Bulgaria:rt3720a76d4ead94 | rtce6a23ec7f4c0b:Lokomotiv Mezdra:Bulgaria:rtce6a23ec7f4c0b | rte9772f9dc510ef:Lokomotiv Mezdra:Bulgaria:rte9772f9dc510ef
+1789,PFC Svetkavitsa,Targovishte,Targovishte,Bulgaria,,T2a,2,,rt6f1dae4f0731fa:Svetkavitsa 1922:Bulgaria:rt6f1dae4f0731fa | rtb3b010dc5a41fd:Svetkavitsa 2014:Bulgaria:rtb3b010dc5a41fd
+1822,NK Istra,Pula,Pula,Croatia,,T2a,2,,rtca018bb83c713b:Istra:Croatia:rtca018bb83c713b | rtcc9547bea1a671:Istra 1961:Croatia:rtcc9547bea1a671
+1829,NK Karlovac,Karlovac,Karlovac,Croatia,,T2a,2,,rta4f58bcf2e07b7:Karlovac:Croatia:rta4f58bcf2e07b7 | rtec632652b0703b:Karlovac 1919:Croatia:rtec632652b0703b
+1835,NK Primorac,,,Croatia,,T2a-alias,2,,rt4eb64a463976fb:Primorac Stobreč:Croatia:rt4eb64a463976fb | rtc3e48afc79b210:Primorac Biograd:Croatia:rtc3e48afc79b210
+1848,Anorthosis Famagusta,Larnaca,Larnaca,Cyprus,1,T2a,2,,rt2b9637dd7a2706:Anorthosis:Cyprus:rt2b9637dd7a2706 | rt95eae54852a180:Anorthosis:Cyprus:rt95eae54852a180
+1850,AC Omonia,Nicosia,Nicosia,Cyprus,1,T1,2,,rt63fb1d3724ceff:Omonia Nicosia:Cyprus:rt63fb1d3724ceff | rt66cd408e3ef924:Omonia Nicosia:Cyprus:rt66cd408e3ef924
+1908,FK Pardubice,Pardubice,Pardubice,Czech Republic,1,T2a,2,,rt2720730ccb5e59:Pardubice:Czech Republic:rt2720730ccb5e59 | rt98577bdb62f6e1:AS Pardubice:Czech Republic:rt98577bdb62f6e1
+2014,Boldklubben 1903,Copenhagen,Copenhagen,Denmark,,T2a-alias,3,,rt0a4ec284cf95fa:B 1913:Denmark:rt0a4ec284cf95fa | rt74239ec803e26c:B 1908:Denmark:rt74239ec803e26c | rtac79bc609f45ab:B 1909:Denmark:rtac79bc609f45ab
+2116,Sheffield Wednesday,Sheffield,Sheffield,England,3,T1,2,,rta2ec360bd8ed7a:Sheffield Wednesday:England:rta2ec360bd8ed7a | rtd35b528b971050:Sheffield Wednesday:England:rtd35b528b971050
+2169,Hornchurch,London,London,England,5,T1,2,,rt9f5ae1b6d3cce9:Hornchurch FC:England:rt9f5ae1b6d3cce9 | rtf2ace271a00cd4:Hornchurch:England:rtf2ace271a00cd4
+2186,FC Halifax Town,Halifax (UK),Leeds-Bradford,England,5,T2a,2,,rt8e1af5f5dba478:Halifax Town:England:rt8e1af5f5dba478 | rtae7bf96db5c7fe:Halifax Town AFC:England:rtae7bf96db5c7fe
+2203,Hampton & Richmond Borough,London,London,England,6,T1,2,,rt2691f838aa42b7:Hampton & Richmond Borough:England:rt2691f838aa42b7 | rtc04f740faf646e:Hampton & Richmond:England:rtc04f740faf646e
+2366,Darlington 1883,Darlington,Darlington,England,,T2a,2,,rt93ecb1fdff35f3:Darlington:England:rt93ecb1fdff35f3 | rte40db967668f5c:Darlington FC:England:rte40db967668f5c
+2376,Ilkeston,Nottingham,Nottingham,England,,T1,2,,rt52e498a1ed138e:Ilkeston:England:rt52e498a1ed138e | rtfb911d0d802859:Ilkeston Town:England:rtfb911d0d802859
+2414,AFC Hornchurch,London,London,England,,T2a,2,,rt9f5ae1b6d3cce9:Hornchurch FC:England:rt9f5ae1b6d3cce9 | rtf2ace271a00cd4:Hornchurch:England:rtf2ace271a00cd4
+2460,Leyton FC,London,London,England,,T2a,2,,rt3a9f1e0c948ac5:Leyton Athletic:England:rt3a9f1e0c948ac5 | rte314ff2edbae72:Leyton:England:rte314ff2edbae72
+2536,Fleetwood (old),Blackpool,Blackpool,England,,T2a-alias,2,,rt19b15537203a0d:Fleetwood Town CC:England:rt19b15537203a0d | rtea2886832cc4f1:Fleetwood Town:England:rtea2886832cc4f1
+2544,Loughborough,Loughborough,Leicester,England,,T1-alias,2,,rt58569dbe1bc543:Loughborough Students:England:rt58569dbe1bc543 | rtb1b2ca74273a57:Loughborough Dynamo:England:rtb1b2ca74273a57
+2563,Rushden & Diamonds,Irthlingborough,Wellingborough,England,,T1,2,,rte9c61f6b27f847:Rushden & Diamonds:England:rte9c61f6b27f847 | rtfcff7a9323f91d:AFC Rushden & Diamonds:England:rtfcff7a9323f91d
+2609,Ashford Town,London,London,England,,T2a,2,,rtad5801b492358f:Ashford Town (Kent):England:rtad5801b492358f | rtfe58ce26978314:Ashford Town (Middlesex):England:rtfe58ce26978314
+2824,FC Jokerit,Helsinki,Helsinki,Finland,,T2a,2,,rt4d8ffacd8916b4:Jokerit:Finland:rt4d8ffacd8916b4 | rtd5111927655b76:Jokerit:Finland:rtd5111927655b76
+2902,SC Bastia,Bastia,Bastia,France,3,T2a,2,,rt30a63f7ec7c8f9:CA Bastia:France:rt30a63f7ec7c8f9 | rtd388903ba7a357:Bastia:France:rtd388903ba7a357
+3105,Marignane Gignac,Marseille,Marseille,France,,T1,2,,rt3ae552ddd038e9:Marignane Gignac:France:rt3ae552ddd038e9 | rte2380a596e0b0a:Marignane:France:rte2380a596e0b0a
+3279,FC Merani Tbilisi,Tbilisi,Tbilisi,Georgia,,T1,2,,rt0611ce70c2cac9:Merani Tbilisi:Georgia:rt0611ce70c2cac9 | rt2ea57ab12c24ad:FC Merani Tbilisi:Georgia:rt2ea57ab12c24ad
+3862,Aris Thessaloniki,Thessaloniki,Thessaloniki,Greece,1,T2a-alias,2,,rt5d0eb364c32260:Aris:Greece:rt5d0eb364c32260 | rt8e31f9bb3d43f4:Aris:Greece:rt8e31f9bb3d43f4
+3873,AEL 1964,Larisa,Larisa,Greece,2,T2a-alt,2,,rt3bd2ef0109180f:Larissa:Greece:rt3bd2ef0109180f | rtf5b903d9bf2d90:Larissa:Greece:rtf5b903d9bf2d90
+4087,Budafoki MTE,Budapest,Budapest,Hungary,,T1,2,,rt95c3065486e915:Budafoki LC:Hungary:rt95c3065486e915 | rt991e84376f2af2:Budafoki MTE:Hungary:rt991e84376f2af2
+4143,Bohemians FC,Dublin,Dublin,Ireland,1,T2a,2,,rt85cb763d11a6e6:Bohemians:Ireland:rt85cb763d11a6e6 | rtd46b159ac68f8f:Bohemians:Ireland:rtd46b159ac68f8f
+4281,AS Roma,Rome,Rome,Italy,1,T2a,2,,rt31e54dda6aaf86:Roma:Italy:rt31e54dda6aaf86 | rta80f9bdc769f14:Atlético Roma:Italy:rta80f9bdc769f14
+4306,Padova,Padua,Padua-Venice,Italy,2,T1,2,,rt925742e4f26828:Padova:Italy:rt925742e4f26828 | rta9842637bd1c92:Padova:Italy:rta9842637bd1c92
+4341,Potenza SC,Potenza,Potenza,Italy,3,T2a,2,,rt084348af091a82:Potenza:Italy:rt084348af091a82 | rt092da66f91bc32:Potenza:Italy:rt092da66f91bc32
+4370,Juventus U23,Turin,Turin,Italy,3,T2r,3,,rt315d1d588c6b93:Juventus U21:Italy:rt315d1d588c6b93 | rtcc71056e4ad49f:Juventus Next Gen:Italy:rtcc71056e4ad49f | rtf80dc280619654:Juventus U20:Italy:rtf80dc280619654
+4717,FC Almaty,Almaty,Almaty,Kazakhstan,,T2a,2,,rt0f99eba46fd021:FC Alma Ata:Kazakhstan:rt0f99eba46fd021 | rtd1fbc2059ab937:CSKA Almaty:Kazakhstan:rtd1fbc2059ab937
+4748,KF Llapi,Podujevë,Podujevë,Kosovo,1,T1,2,,rt53e96432170573:Llapi:Kosovo:rt53e96432170573 | rt9ace0ea1c07f25:Llapi:Kosovo:rt9ace0ea1c07f25
+4751,KF Dukagjini,Klina,Klina,Kosovo,1,T1,2,,rt2a39d5de70c8ff:Dukagjini:Kosovo:rt2a39d5de70c8ff | rt70d4a25bbb2b02:Dukagjini:Kosovo:rt70d4a25bbb2b02
+4774,Riga FC,Riga,Riga,Latvia,1,T2a,2,,rt0ef130ed12a7bb:Riga:Latvia:rt0ef130ed12a7bb | rt8c42f7c6c0afec:Rīga:Latvia:rt8c42f7c6c0afec
+4784,FK Metta,Riga,Riga,Latvia,,T2a,2,,rt5e8ddf83ee6b83:Metta:Latvia:rt5e8ddf83ee6b83 | rte44d9be1111b46:Metta:Latvia:rte44d9be1111b46
+4790,FK Riga,Riga,Riga,Latvia,,T2a,2,,rt0ef130ed12a7bb:Riga:Latvia:rt0ef130ed12a7bb | rt8c42f7c6c0afec:Rīga:Latvia:rt8c42f7c6c0afec
+4822,FC Universitate Riga,Riga,Riga,Latvia,,T2a-alt,2,,rt0ef130ed12a7bb:Riga:Latvia:rt0ef130ed12a7bb | rt8c42f7c6c0afec:Rīga:Latvia:rt8c42f7c6c0afec
+5125,FC Groningen,Groningen,Groningen,Netherlands,1,T2a,2,,rt8f5e19cf2fd442:VV Groningen:Netherlands:rt8f5e19cf2fd442 | rtdedec9f7717870:Groningen:Netherlands:rtdedec9f7717870
+5148,FC Emmen,Emmen,Emmen,Netherlands,2,T2a,2,,rt205a01a24e102d:VV Emmen:Netherlands:rt205a01a24e102d | rta1567754c924ce:Emmen:Netherlands:rta1567754c924ce
+5190,XerxesDZB,Rotterdam-The Hague,Rotterdam-The Hague,Netherlands,,T2a,2,,rt7842dd36a40323:XerxesDZB (Zon):Netherlands:rt7842dd36a40323 | rt89a569951f9b3e:XerxesDZB (Zat):Netherlands:rt89a569951f9b3e
+5197,Jong SC Heerenveen,Heerenveen,Heerenveen,Netherlands,,T2r,2,,rt80a271dcf05b8a:Heerenveen U23:Netherlands:rt80a271dcf05b8a | rtd6b3bd99e56a31:Heerenveen Res.:Netherlands:rtd6b3bd99e56a31
+5290,Jong Feyenoord,Rotterdam-The Hague,Rotterdam-The Hague,Netherlands,,T2r,2,,rt4cf72ce38c6522:Feyenoord U21:Netherlands:rt4cf72ce38c6522 | rta888570a737d79:Feyenoord Res.:Netherlands:rta888570a737d79
+5416,FK Bashkimi,Kumanovo,Kumanovo,North Macedonia,1,T1,2,,rt2a9109f102ea89:Bashkimi Kumanovo:North Macedonia:rt2a9109f102ea89 | rt33863f83006313:FK Bashkimi:North Macedonia:rt33863f83006313
+5463,Portadown FC,Portadown,Portadown,Northern Ireland,1,T2a,2,,rt354301730ce6a1:Portadown:Northern Ireland:rt354301730ce6a1 | rta671d883c46220:Portadown:Northern Ireland:rta671d883c46220
+5467,Larne FC,Larne,Larne,Northern Ireland,1,T2a,2,,rta2008fc967faa4:Larne:Northern Ireland:rta2008fc967faa4 | rtda98f22a043785:Larne:Northern Ireland:rtda98f22a043785
+5474,Newry City FC,Newry,Newry,Northern Ireland,,T1,2,,rt8ebd7b9e77400d:Newry City:Northern Ireland:rt8ebd7b9e77400d | rte4a3ec273add30:Newry City FC:Northern Ireland:rte4a3ec273add30
+5533,Kongsvinger IL,Kongsvinger,Kongsvinger,Norway,,T1,2,,rt6e34dc3a71690a:Kongsvinger:Norway:rt6e34dc3a71690a | rtb5e3a8e2c0ac79:Kongsvinger:Norway:rtb5e3a8e2c0ac79
+5534,Sogndal IL,Sogndal,Sogndal,Norway,,T1,2,,rt097fbf6cbf022e:Sogndal:Norway:rt097fbf6cbf022e | rtaeea5903862c3d:Sogndal:Norway:rtaeea5903862c3d
+5536,Frigg Oslo,Oslo,Oslo,Norway,,T2a-alias,2,,rt1ecc9248152c94:Frigg:Norway:rt1ecc9248152c94 | rte0376eaf7b1b49:Frigg:Norway:rte0376eaf7b1b49
+5860,FC Felgueiras,Felgueiras,Porto,Portugal,2,T2a,2,,rt229a03098e4790:Felgueiras 1932:Portugal:rt229a03098e4790 | rt96fe723218702c:Felgueiras:Portugal:rt96fe723218702c
+5873,UD Oliveirense,Aveiro,Aveiro,Portugal,3,T2a,2,,rt140680a0ccde1a:AD Oliveirense:Portugal:rt140680a0ccde1a | rt95d432ac500ff2:Oliveirense:Portugal:rt95d432ac500ff2
+5895,Oriental,Lisbon,Lisbon,Portugal,,T1-alias,2,,rt0e31d090264d98:Oriental Lisbos:Portugal:rt0e31d090264d98 | rt93a7c133b8c982:Oriental Lisboa:Portugal:rt93a7c133b8c982
+5906,Belenenses SAD,Lisbon,Lisbon,Portugal,,T2a,2,,rtb0da652c063bef:CF Os Belenenses:Portugal:rtb0da652c063bef | rtf4038c3c175485:Belenenses:Portugal:rtf4038c3c175485
+5991,Clube Futebol Benfica,Lisbon,Lisbon,Portugal,,T2a,2,,rt4e408d8dd4b374:Benfica:Portugal:rt4e408d8dd4b374 | rt5fc73e9db94a40:CF Benfica:Portugal:rt5fc73e9db94a40
+6099,Universitatea Cluj,Cluj-Napoca,Cluj-Napoca,Romania,1,T1,2,,rt49dd1cfdeda0f2:Universitatea Cluj:Romania:rt49dd1cfdeda0f2 | rte78cf1c72f6857:Universitatea Cluj:Romania:rte78cf1c72f6857
+6102,FC Arges,Pitești,Pitești,Romania,1,T2a,2,,rtea5a1cc0b6b87c:Argeș:Romania:rtea5a1cc0b6b87c | rtf68fd1b97ed247:FC Argeş Piteşti:Romania:rtf68fd1b97ed247
+6117,Olimpia Satu Mare,Satu Mare,Satu Mare,Romania,2,T1,2,,rte6b4dea43766f5:Olimpia Satu Mare:Romania:rte6b4dea43766f5 | rtf7c6bd7ec18bd4:CSM Olimpia Satu Mare:Romania:rtf7c6bd7ec18bd4
+6139,FC Progresul Bucureşti,Bucharest,Bucharest,Romania,,T2a,2,,rt9aa8d235d379f3:Progresul Bucureşti:Romania:rt9aa8d235d379f3 | rteef56a275ea201:Progresul FV:Romania:rteef56a275ea201
+6140,FC Politehnica Iași,Iaşi,Iaşi,Romania,,T1,3,,rt528c749891c1f0:Politehnica Iași:Romania:rt528c749891c1f0 | rta80b1e554691fd:FC Politehnica Iaşi:Romania:rta80b1e554691fd | rtfe4e2727f962d7:Politehnica Iași:Romania:rtfe4e2727f962d7
+6141,CA Oradea,Oradea,Oradea,Romania,,T2a,2,,rt380220663bf9e5:1910 Oradea:Romania:rt380220663bf9e5 | rte7f234f91b929d:CA Oradea 1910:Romania:rte7f234f91b929d
+6158,FC Vaslui,Vaslui,Vaslui,Romania,,T2a,2,,rt7aa6fdbe2d7713:Atletico Vaslui:Romania:rt7aa6fdbe2d7713 | rtab693c61fe0b45:Vaslui:Romania:rtab693c61fe0b45
+6164,FC Baia Mare,Baia Mare,Baia Mare,Romania,,T1,2,,rtbac5d88ea33669:FC Baia Mare:Romania:rtbac5d88ea33669 | rtd20ef53ef43bf2:Minaur Baia Mare:Romania:rtd20ef53ef43bf2
+6340,FC Krasnodar,Krasnodar,Krasnodar,Russia,1,T2a,2,,rt16d45522a455cc:Krasnodar:Russia:rt16d45522a455cc | rtf8487552470b1e:Krasnodar 2000:Russia:rtf8487552470b1e
+6353,PFC Sochi,Sochi,Sochi,Russia,2,T2a,2,,rt4c3ce2a6ea20be:Sochi:Russia:rt4c3ce2a6ea20be | rt98e69c4292f230:FK Sochi:Russia:rt98e69c4292f230
+6369,FC Kuban Krasnodar,Krasnodar,Krasnodar,Russia,,T1,2,,rt0131129dd59df0:Kuban Krasnodar:Russia:rt0131129dd59df0 | rt94121b0ee40e26:Kuban Krasnodar:Russia:rt94121b0ee40e26
+6378,FC Moscow,Moscow,Moscow,Russia,,T2a-alias,2,,rte4a19d4c508edf:Moskva:Russia:rte4a19d4c508edf | rtfbb3bc0879ac15:CSKA Moskva:Russia:rtfbb3bc0879ac15
+6444,PFC Kuban Krasnodar,Krasnodar,Krasnodar,Russia,,T2a,2,,rt0131129dd59df0:Kuban Krasnodar:Russia:rt0131129dd59df0 | rt94121b0ee40e26:Kuban Krasnodar:Russia:rt94121b0ee40e26
+6479,FC Spartak Vladikavkaz,Vladikavkaz,Vladikavkaz,Russia,,T2a,2,,rt0a58b642ee1093:Spartak Vladikavkaz:Russia:rt0a58b642ee1093 | rtcdf5190502027f:FK Spartak Vladikavkaz:Russia:rtcdf5190502027f
+6716,FK Smederevo,Smederevo,Smederevo,Serbia,,T2a,2,,rt42cf2d98fc351d:Smederevo 1924:Serbia:rt42cf2d98fc351d | rte7212a57f70e7a:Smederevo:Serbia:rte7212a57f70e7a
+6784,MFK Košice,Kocise,Kocise,Slovakia,,T2a-alt,3,,rt3eea31a27521d0:Košice:Slovakia:rt3eea31a27521d0 | rt91dbe09d413e1d:FC Košice:Slovakia:rt91dbe09d413e1d | rtbbceda38001b4f:Košice:Slovakia:rtbbceda38001b4f
+6830,NK Radomlje,Ljubljana,Ljubljana,Slovenia,1,T1,2,,rt658c5bd2576205:Radomlje:Slovenia:rt658c5bd2576205 | rt87dd5e31c85f6d:Radomlje:Slovenia:rt87dd5e31c85f6d
+6835,NK Rudar Velenje,Velenje,Velenje,Slovenia,,T1,2,,rt1077e8da217a50:Rudar Velenje:Slovenia:rt1077e8da217a50 | rt6013bf2f88f1f4:NK Rudar Velenje:Slovenia:rt6013bf2f88f1f4
+6836,NK Primorje,Ajdovščina,Ajdovščina,Slovenia,,T1,2,,rt42ed25da2fa45c:Primorje:Slovenia:rt42ed25da2fa45c | rt71ac6b89f303d6:Primorje:Slovenia:rt71ac6b89f303d6
+6882,Sevilla FC,Seville,Seville,Spain,1,T2a,2,,rt54e7121959ab4c:Sevilla:Spain:rt54e7121959ab4c | rtb642539dd022b2:Sevilla Atlético:Spain:rtb642539dd022b2
+6955,CD Águilas,Águilas,Lorca,Spain,3,T2a,2,,rt564354efbdef08:Águilas CF:Spain:rt564354efbdef08 | rta0c10a96f04a36:Águilas:Spain:rta0c10a96f04a36
+6967,Xerez CD,Jerez,Jerez,Spain,,T2a,2,,rt0d2ee73d4c4047:Xerez:Spain:rt0d2ee73d4c4047 | rtc4675c166215c3:Xerez Deportivo:Spain:rtc4675c166215c3
+6979,CD El Ejido 2012,El Ejido,El Ejido,Spain,,T2a,2,,rt72fe4397d7c533:CP Ejido:Spain:rt72fe4397d7c533 | rtd1408a489086dc:El Ejido:Spain:rtd1408a489086dc
+6981,CD Linares,Linares,Linares,Spain,,T2a,2,,rt2af1bd0729ff2b:Linares Deportivo:Spain:rt2af1bd0729ff2b | rt2ff859f881dd78:Linares:Spain:rt2ff859f881dd78
+6992,Linares CF,Linares,Linares,Spain,,T2a,2,,rt2af1bd0729ff2b:Linares Deportivo:Spain:rt2af1bd0729ff2b | rt2ff859f881dd78:Linares:Spain:rt2ff859f881dd78
+7009,Xerez FC,Jerez,Jerez,Spain,,T2a,2,,rt0d2ee73d4c4047:Xerez:Spain:rt0d2ee73d4c4047 | rtc4675c166215c3:Xerez Deportivo:Spain:rtc4675c166215c3
+7017,SD Tarazona,Tarazona,Zaragoza,Spain,,T2a,2,,rt5fc26c1df044f9:Tarazona:Spain:rt5fc26c1df044f9 | rtc2c594c2589c08:Atlético Tarazona:Spain:rtc2c594c2589c08
+7060,Club Deportivo Victoria,Tazacorte,Tazacorte,Spain,,T2a,2,,rt16d7d46ec32f7b:Vitoria:Spain:rt16d7d46ec32f7b | rt55d21a13ef9068:Victoria CF:Spain:rt55d21a13ef9068
+7089,La Roda CF,La Roda,La Roda,Spain,,T2a,2,,rtcf4a4627eae8c8:Roda:Spain:rtcf4a4627eae8c8 | rtd23ddaa2f2cfae:La Roda:Spain:rtd23ddaa2f2cfae
+7122,SD Ceuta,Ceuta,Ceuta,Spain,,T2a,2,,rt3eaef72fccaa2b:Ceuta:Spain:rt3eaef72fccaa2b | rte2f42840f8beeb:AD Ceuta:Spain:rte2f42840f8beeb
+7136,CD Ourense,Ourense,Ourense,Spain,,T2a,3,,rt3c84e8919fdf19:UD Ourense:Spain:rt3c84e8919fdf19 | rtb67501f83eba2a:Ourense:Spain:rtb67501f83eba2a | rtf038ceab385590:Ourense CF:Spain:rtf038ceab385590
+7178,Lorca Atlético,Lorca,Lorca,Spain,,T2a,3,,rt683d32ed612154:Lorca Deportiva:Spain:rt683d32ed612154 | rt9750f9369fdd70:Lorca Deportiva CF:Spain:rt9750f9369fdd70 | rtefc65b078a21aa:Lorca:Spain:rtefc65b078a21aa
+7179,Lorca CF,Lorca,Lorca,Spain,,T2a,3,,rt683d32ed612154:Lorca Deportiva:Spain:rt683d32ed612154 | rt9750f9369fdd70:Lorca Deportiva CF:Spain:rt9750f9369fdd70 | rtefc65b078a21aa:Lorca:Spain:rtefc65b078a21aa
+7181,Lorca FC,Lorca,Lorca,Spain,,T2a,3,,rt683d32ed612154:Lorca Deportiva:Spain:rt683d32ed612154 | rt9750f9369fdd70:Lorca Deportiva CF:Spain:rt9750f9369fdd70 | rtefc65b078a21aa:Lorca:Spain:rtefc65b078a21aa
+7187,CD Peña Sport,Tafalla,Tafalla,Spain,,T2a,2,,rt587a38616aa18e:Peña Deportiva:Spain:rt587a38616aa18e | rt99a3cce315ca38:Peña Sport:Spain:rt99a3cce315ca38
+7189,Peña Sport FC,Tafalla,Tafalla,Spain,,T2a,2,,rt587a38616aa18e:Peña Deportiva:Spain:rt587a38616aa18e | rt99a3cce315ca38:Peña Sport:Spain:rt99a3cce315ca38
+7262,CD Manchego,,,Spain,,T2a,2,,rt1d4061cfdca3cf:Manchego:Spain:rt1d4061cfdca3cf | rtd2ea964e1bd65e:Manchego CF:Spain:rtd2ea964e1bd65e
+7265,CD Móstoles,,,Spain,,T2a,2,,rt5889a85a6e7723:Móstoles CF:Spain:rt5889a85a6e7723 | rte1cf5b85e8213f:Móstoles:Spain:rte1cf5b85e8213f
+7289,CF Lorca Deportiva,,,Spain,,T2a,3,,rt683d32ed612154:Lorca Deportiva:Spain:rt683d32ed612154 | rt9750f9369fdd70:Lorca Deportiva CF:Spain:rt9750f9369fdd70 | rtefc65b078a21aa:Lorca:Spain:rtefc65b078a21aa
+7303,Dos Hermanas CF,,,Spain,,T2a,2,,rtaac95ec607e059:Dos Hermanas 1971:Spain:rtaac95ec607e059 | rtfaf09614730cb2:Dos Hermanas:Spain:rtfaf09614730cb2
+7530,FC Schaffhausen,Schaffhausen,Schaffhausen,Switzerland,,T2a,2,,rt32d7d1d2dc6140:Schaffhausen:Switzerland:rt32d7d1d2dc6140 | rte3b5a52f7aa70e:SV Schaffhausen:Switzerland:rte3b5a52f7aa70e
+7592,FC Kreuzlingen,,,Switzerland,,T2a,2,,rta44d178e5dbc3a:Calcio Kreuzlingen:Switzerland:rta44d178e5dbc3a | rtd368f27445e231:Kreuzlingen:Switzerland:rtd368f27445e231
+7637,Erzurumspor,Erzurum,Erzurum,Turkey,1,T1,2,,rt6f2301174258ca:Erzurumspor FK:Turkey:rt6f2301174258ca | rtd053b936dbf1e6:Erzurumspor:Turkey:rtd053b936dbf1e6
+7678,Hacettepe SK,Ankara,Ankara,Turkey,,T2a,2,,rt96abf90fcd2f85:Hacettepe:Turkey:rt96abf90fcd2f85 | rta5b8c4dbb4338c:Hacettepe 1945:Turkey:rta5b8c4dbb4338c
+7698,Yozgatspor,Yozgat,Yozgat,Turkey,,T2a,2,,rt1bf29445b42b07:Yozgatspor AŞ:Turkey:rt1bf29445b42b07 | rtc744ddbaf116fd:Yozgatspor 1959:Turkey:rtc744ddbaf116fd
+7737,1461 Trabzon,Trabzon,Trabzon,Turkey,,T2a,2,,rt3cd5d5ce0cd57b:1461 Trabzon FK:Turkey:rt3cd5d5ce0cd57b | rta9a879a64baa04:1461 Trabzon SK:Turkey:rta9a879a64baa04
+7793,Nyva Ternopil,Ternopil,Ternopil,Ukraine,2,T1,2,,rt655cfe249fe4c2:Nyva Ternopil:Ukraine:rt655cfe249fe4c2 | rt6eaed3af30c97f:Nyva Ternopil:Ukraine:rt6eaed3af30c97f
+7795,SC Poltava,Poltava,Poltava,Ukraine,2,T2a,2,,rt01fb8cfc831a3e:SK Poltava:Ukraine:rt01fb8cfc831a3e | rt894cbb613d0cb0:Poltava:Ukraine:rt894cbb613d0cb0
+7811,FC Metalurh Zaporizhzhya,Zaporizhia,Zaporizhia,Ukraine,,T1-alt,2,,rt878d852949803e:Metalurh Zaporizhya:Ukraine:rt878d852949803e | rtd13e50d351c9df:Metalurh Zaporizhya:Ukraine:rtd13e50d351c9df
+7825,SK Dnipro-1,Dnipro,Dnipro,Ukraine,,T2a,2,,rtb8140efe9a5b07:Dnipro:Ukraine:rtb8140efe9a5b07 | rtfbb3dba9944f1b:Dnipro-1:Ukraine:rtfbb3dba9944f1b
+7839,Dnipro Cherkasy,Cherkasy,Cherkasy,Ukraine,,T1,2,,rt08c3c621544766:Dnipro Cherkasy:Ukraine:rt08c3c621544766 | rt453906e7c91eca:Cherkaskyi Dnipro:Ukraine:rt453906e7c91eca
+7894,FK Poltava,Poltava,Poltava,Ukraine,,T2a,2,,rt01fb8cfc831a3e:SK Poltava:Ukraine:rt01fb8cfc831a3e | rt894cbb613d0cb0:Poltava:Ukraine:rt894cbb613d0cb0
+7945,Rhyl FC,Rhyl,Rhyl,Wales,,T2a,2,,rt0d4c18a5ea1230:Y Rhyl 1879:Wales:rt0d4c18a5ea1230 | rt2cd35a53a047d5:Rhyl:Wales:rt2cd35a53a047d5
+8236,CF Montréal,Montreal,Montreal,Canada,1,T2a,2,,rt47441df711abc7:FC Montréal:Canada:rt47441df711abc7 | rtc5ccaa1d4686f6:Montréal:Canada:rtc5ccaa1d4686f6
+8348,FC Tampa Bay,Tampa,Tampa,United States,,T2a-alias,3,,rt9535d6f0b95186:Tampa Bay Mutiny:United States:rt9535d6f0b95186 | rtc6b7baeeec3096:VSI Tampa Bay:United States:rtc6b7baeeec3096 | rtddafae2fd3cf32:Tampa Bay Rowdies:United States:rtddafae2fd3cf32
+8371,Cosmos,New York,New York,United States,,T1-alias,2,,rt4a42ad699ae23b:NY Cosmos:United States:rt4a42ad699ae23b | rt732f9ac614f936:New York Cosmos:United States:rt732f9ac614f936
+8456,Central Córdoba,Santiago del Estero,Santiago del Estero,Argentina,1,T1,2,,rtb025b22d40274e:Central Córdoba SdE:Argentina:rtb025b22d40274e | rtcf1c4d61fc199d:Central Córdoba:Argentina:rtcf1c4d61fc199d
+8497,Belgrano AC,Buenos Aires,Buenos Aires,Argentina,,T2a,2,,rt43a552a6f09ef8:Belgrano:Argentina:rt43a552a6f09ef8 | rt9b4a8923e4f722:Sportivo Belgrano:Argentina:rt9b4a8923e4f722
+8510,Talleres (RE),Remedios de Escalada,Buenos Aires,Argentina,,T2a-alias,2,,rt432af1e00c502c:Talleres de Córdoba:Argentina:rt432af1e00c502c | rt831eb538bbf962:Talleres Remedios:Argentina:rt831eb538bbf962
+8517,Club de Gimnasia y Esgrima,La Plata,La Plata,Argentina,,T2a-alias,2,,rtb9fb0f1628e2d4:Gimnasia Jujuy:Argentina:rtb9fb0f1628e2d4 | rtbb1de26d063900:Gimnasia Chivilcoy:Argentina:rtbb1de26d063900
+8539,CA Comercio,,,Argentina,,T2a-alias,2,,rtcb783b42a41300:Comercio Central Unidos:Argentina:rtcb783b42a41300 | rtf09d836332c860:Comercio Santa Sylvina:Argentina:rtf09d836332c860
+8547,San Martín AC,,,Argentina,,T2a-alias,2,,rt59a746a3b55086:San Martín Mendoza:Argentina:rt59a746a3b55086 | rt883c21891219fb:San Martín Rodeo:Argentina:rt883c21891219fb
+8584,Belgrano AC B,,,Argentina,,T2r,2,,rt2c1edc3ca5d987:Belgrano Res.:Argentina:rt2c1edc3ca5d987 | rtca7f435d9b3ca2:Belgrano U20:Argentina:rtca7f435d9b3ca2
+8626,Juventud Unida,Gualeguaychú,Gualeguaychú,Argentina,,T1,2,,rt12e074a7897bff:Juventud Unida G.:Argentina:rt12e074a7897bff | rt284b037405ebaa:Juventud Unida:Argentina:rt284b037405ebaa
+8893,Clube Atlético Juventus,Sao Paulo,Sao Paulo,Brazil,,T2a,3,,rt1d1be9c4d80d45:Juventus:Brazil:rt1d1be9c4d80d45 | rt50f6974fadaefc:Juventus AC:Brazil:rt50f6974fadaefc | rt6145000851b3b9:Juventus SC:Brazil:rt6145000851b3b9
+8899,AC Juventus,Rio Branco,Rio Branco,Brazil,,T2a,3,,rt1d1be9c4d80d45:Juventus:Brazil:rt1d1be9c4d80d45 | rt50f6974fadaefc:Juventus AC:Brazil:rt50f6974fadaefc | rt6145000851b3b9:Juventus SC:Brazil:rt6145000851b3b9
+8911,Ypiranga Sport Club,,,Brazil,,T2a-alias,2,,rt2e0fc6a49ee964:Ypiranga RS:Brazil:rt2e0fc6a49ee964 | rt7dc5f21beddc11:Ypiranga AP:Brazil:rt7dc5f21beddc11
+8932,Guarany AC,,,Brazil,,T2a-alias,2,,rt64245ec2126306:Guarany de Bagé:Brazil:rt64245ec2126306 | rt776ae4feafde8b:Guarany de Sobral:Brazil:rt776ae4feafde8b
+8952,São Raimundo,Sorocaba,Sorocaba,Brazil,,T1,2,,rt058e7cc81a4b27:São Raimundo:Brazil:rt058e7cc81a4b27 | rt8db290066fa26b:São Raimundo AM:Brazil:rt8db290066fa26b
+8955,AD Guarany,,,Brazil,,T2a-alias,2,,rt64245ec2126306:Guarany de Bagé:Brazil:rt64245ec2126306 | rt776ae4feafde8b:Guarany de Sobral:Brazil:rt776ae4feafde8b
+8992,Guarani EC,Juazeiro do Norte,Juazeiro do Norte,Brazil,,T2a-alias,2,,rtc53e640302f5e5:Guarani MG:Brazil:rtc53e640302f5e5 | rtfb9fbdf0f8fb67:Guarani de Juazeiro:Brazil:rtfb9fbdf0f8fb67
+9150,União Esportiva,,,Brazil,,T2a-alias,2,,rt3535b96c8b17dd:União PR:Brazil:rt3535b96c8b17dd | rt5abc12b3263cee:União Rondonópolis:Brazil:rt5abc12b3263cee
+9307,Esporte Clube São José,Porto Alegre,Porto Alegre,Brazil,,T2a-alias,2,,rt83a063f4c06a4d:São José EC:Brazil:rt83a063f4c06a4d | rte981adf3ec1eb4:São José AP:Brazil:rte981adf3ec1eb4
+9347,AE Real,,,Brazil,,T2a,2,,rt3ff12f4b4a90b2:Real SC:Brazil:rt3ff12f4b4a90b2 | rtdd00b28d9607ef:Real:Brazil:rtdd00b28d9607ef
+9417,SC Internacional (SP),,,Brazil,,T2a,2,,rt3cf504204a1948:Internacional SC:Brazil:rt3cf504204a1948 | rteab6418ace7f56:Internacional:Brazil:rteab6418ace7f56
+9662,Anzoátegui FC,Puerto La Cruz,Puerto La Cruz,Venezuela,1,T2a,2,,rt192ef9d0b0312a:Anzoátegui:Venezuela:rt192ef9d0b0312a | rtbeb0b422bb8540:Deportivo Anzoátegui:Venezuela:rtbeb0b422bb8540

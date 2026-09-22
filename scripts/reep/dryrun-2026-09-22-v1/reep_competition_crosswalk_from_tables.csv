@@ -1,0 +1,186 @@
+country,league,reep_competition_id,reep_competition_label,seasons_agreeing,seasons_total
+Albania,Albanian Superliga,rl53f2e82c7f925c,Superliga,20,20
+Andorra,Andorra Primera Divisió,rl807560b4595b9a,1a Divisió,20,20
+Argentina,Argentina Apertura,rl372b9cd73bb98b,Liga Profesional Argentina,12,12
+Argentina,Argentina Clausura,rl372b9cd73bb98b,Liga Profesional Argentina,13,13
+Argentina,Argentina Torneo Final,rl372b9cd73bb98b,Liga Profesional Argentina,2,2
+Argentina,Argentina Torneo Inicial,rl372b9cd73bb98b,Liga Profesional Argentina,2,2
+Argentina,Argentina Torneo de Transición,rl372b9cd73bb98b,Liga Profesional Argentina,1,1
+Argentina,Argentine Apertura,rl372b9cd73bb98b,Liga Profesional Argentina,2,2
+Argentina,Argentine Clausura,rl372b9cd73bb98b,Liga Profesional Argentina,2,2
+Argentina,Argentine Primera División,rl372b9cd73bb98b,Liga Profesional Argentina,9,10
+Argentina,Primera B Nacional,rl7f606f84534961,Primera Nacional,7,7
+Argentina,Primera B Nacional Argentina,rl7f606f84534961,Primera Nacional,13,13
+Argentina,Primera B Nacional Primera Fase,rl7f606f84534961,Primera Nacional,1,1
+Argentina,Primera B Nacional Segunda Fase,rl7f606f84534961,Primera Nacional,1,1
+Armenia,Armenian Premier,rl9477e10fe3647b,Premier League,17,20
+Australia,A-League,rldf2c996c718abe,A-League Men,21,21
+Austria,Austrian Bundesliga,rl1177b34f061ea4,Bundesliga,33,33
+Austria,Austrian First League,rle31fcec1075bb3,2. Liga,20,20
+Azerbaijan,Azerbaijan Premier,rl279929db175991,Premyer Liqa,19,19
+Azerbaijan,Azerbaijan Top League,rl279929db175991,Premyer Liqa,1,1
+Belarus,Belarusian Premier,rla4d5b0db7c673a,Premier League,30,30
+Belgium,Belgian Division I,rlaa9622ae7c45dd,First Division A,33,33
+Belgium,Belgian First Division B,rl62f18452761d3d,Challenger Pro League,7,7
+Belgium,Belgian First Division B Closing,rl62f18452761d3d,Challenger Pro League,3,3
+Belgium,Belgian First Division B Opening,rlf3c1bfc5a610ca,Cup,3,3
+Belgium,Belgian Pro League,rlaa9622ae7c45dd,First Division A,33,33
+Belgium,Belgian Second Division,rl62f18452761d3d,Challenger Pro League,16,17
+Bosnia-Herzegovina,Premier League of B&H,rl83543a852b2f19,Premijer Liga,24,24
+Brazil,Brasileiro Série A,rl879248aa69a02f,Serie A,28,28
+Brazil,Brasileiro Série B,rl010ddc1c0cca91,Serie B,21,21
+Brazil,Brasileiro Série C,rlf864baa90d5808,Copa do Brasil,9,14
+Brazil,Brasileiro Série D,rlf864baa90d5808,Copa do Brasil,5,6
+Bulgaria,Bulgarian A PFG,rl5975ff935007a3,First League,27,27
+China,Chinese Super League,rl8cf7eb31059d86,Chinese Super League,21,21
+Croatia,Prva HNL,rla6c65b44ed5109,HNL,22,22
+Cyprus,Cypriot First Division,rle63c2e8ecdc29b,1. Division,26,26
+Czech Republic,Czech 2. Liga,rl740fc61a1448bf,FNL,20,20
+Czech Republic,Czech First League,rl8a0f700dae35f3,Czech Liga,33,33
+Denmark,Danish First Division,rlc36b4bc6340b4d,1. Division,20,20
+Denmark,Danish Superliga,rlc5dbec216a79cf,Superliga,33,33
+Egypt,Egyptian Premier League,rl95aed12bc56ed2,Premier League,20,20
+England,Championship,rl7fb1e4fdde0a52,Championship,22,22
+England,Conference National,rlef179778c4239a,National League,5,11
+England,First Division,rlfb6b23cbacdaa1,First Division (1888–1992),89,100
+England,Fourth Division,rl1b7a779f152c7f,Fourth Division (1958–1992),1,1
+England,League One,rleeb2a0d9545661,League One,16,22
+England,League Two,rlc8c4c634aaf487,League Two,16,22
+England,National League,rlef179778c4239a,National League,11,11
+England,Premier League,rlceee8c6f01551d,Premier League,34,34
+England,Second Division,rlc5ac0e4a732bf1,Second Division (1992–2004),9,11
+England,Third Division,rlb610a0c21b7738,Third Division (1992–2004),11,13
+Estonia,Meistriliiga,rla82f7af11a457a,Premium liiga,23,23
+Faroe Islands,Faroe Islands Premier League,rl6cee675c33339c,Meistaradeildin,21,21
+Finland,Veikkausliiga,rl58fd6839b3c0dc,Veikkausliiga,32,33
+France,Championnat National,rl957cc31ed481f7,National 1,25,26
+France,Division 1,rld42008a5833064,Ligue 1,8,8
+France,Division 2,rl2b54955f540449,Ligue 2,9,9
+France,Ligue 1,rld42008a5833064,Ligue 1,24,24
+France,Ligue 2,rl2b54955f540449,Ligue 2,24,24
+Georgia,Umaghlesi Liga,rlbae70feb33dbf3,Erovnuli Liga,33,33
+Germany,2.Bundesliga,rlbdf24bc47e7cfc,2. Bundesliga,33,33
+Germany,3. Liga,rlabdd710849714b,3. Liga,9,12
+Germany,Bundesliga,rl38800203b4a843,Bundesliga,46,46
+Gibraltar,Gibraltar Premier Division,rl4942c6412aca4e,League Cup,1,3
+Greece,Alpha Ethniki,rl475e76d3e1df7a,Super League 1,12,12
+Greece,Beta Ethniki,rl4e04268f83d92e,Cup,5,5
+Greece,Greek Football League,rl4e04268f83d92e,Cup,8,8
+Greece,Greek Super League,rl475e76d3e1df7a,Super League 1,20,20
+Greece,Greek Super League 2,rl229de8fa5ca2a9,Super League 2,7,7
+Hungary,NB I,rl6d53a530456ad1,NB I,30,30
+Iceland,Úrvalsdeild,rlb3da4992400bdb,Besta deild,33,33
+India,Indian Super League,rl6d7a16bf039b31,Indian Super League,12,12
+Iran,Persian Gulf Cup,rl6908c6dbba965c,Persian Gulf Pro League,7,7
+Iran,Persian Gulf Pro League,rl6908c6dbba965c,Persian Gulf Pro League,13,13
+Ireland,League of Ireland,rle9ee47564e30cf,Premier Division,30,30
+Israel,Israeli Premier,rle40783a926b507,Ligat Ha'al,27,27
+Israel,Liga Leumit,rlaeb7621c8a45db,Liga Leumit,20,24
+Italy,Lega Pro Group A,rl4e4c62af65c036,Serie C,2,3
+Italy,Lega Pro Group B,rld7cc363ec532da,Coppa Italia Serie C,3,3
+Italy,Lega Pro Group C,rld7cc363ec532da,Coppa Italia Serie C,2,3
+Italy,Lega Pro Prima Divisione A,rl4e4c62af65c036,Serie C,6,6
+Italy,Lega Pro Prima Divisione B,rl4e4c62af65c036,Serie C,6,6
+Italy,Serie A,rl0bdfb18f78bfef,Serie A,34,34
+Italy,Serie B,rl1a4493c7c271de,Serie B,29,29
+Italy,Serie C Group A,rl4e4c62af65c036,Serie C,8,9
+Italy,Serie C Group B,rl4e4c62af65c036,Serie C,8,9
+Italy,Serie C Group C,rl4e4c62af65c036,Serie C,8,9
+Italy,Serie C1 Girone A,rl4e4c62af65c036,Serie C,9,9
+Italy,Serie C1 Girone B,rl4e4c62af65c036,Serie C,9,9
+Japan,100 Year Vision League,rl2594876503b930,J1 100 Year Vision League,1,1
+Japan,J. League,rl3c80146371e388,J1 League,13,20
+Kazakhstan,Kazakhstan Premier League,rl8d58af0b9ae906,Premier League,19,19
+Kazakhstan,Kazakhstan Super League,rl8d58af0b9ae906,Premier League,6,6
+Kosovo,Kosovo Superliga,rla87e67502b8e94,Cup,1,2
+Latvia,Virsliga,rl40bcf4e35f4a03,Virsliga,22,23
+Lithuania,A Lyga,rlb49db1dd13b7fd,Toplyga,22,22
+Luxembourg,Division Nationale,rl89beb36c82cc53,National Division,23,23
+Malta,Maltese Premier,rlf151108e3e5d58,Premier League,19,19
+Mexico,Liga de Ascenso Apertura,rl55a2921b5f7b83,Liga de Expansión MX,11,11
+Mexico,Liga de Ascenso Clausura,rl55a2921b5f7b83,Liga de Expansión MX,10,10
+Mexico,Liga de Expansión MX Apertuera,rl55a2921b5f7b83,Liga de Expansión MX,4,4
+Mexico,Liga de Expansión MX Apertura,rl55a2921b5f7b83,Liga de Expansión MX,3,3
+Mexico,Liga de Expansión MX Clausura,rl55a2921b5f7b83,Liga de Expansión MX,6,6
+Mexico,Mexican Apertura,rl3b561144cb088c,Liga MX,23,23
+Mexico,Mexican Clausura,rl3b561144cb088c,Liga MX,22,22
+Mexico,Primera División A Apertura,rl55a2921b5f7b83,Liga de Expansión MX,4,4
+Mexico,Primera División A Clausura,rl55a2921b5f7b83,Liga de Expansión MX,6,6
+Mexico,Torneo Bicentenario,rl3b561144cb088c,Liga MX,1,1
+Mexico,Torneo de Bicentenario,rl55a2921b5f7b83,Liga de Expansión MX,1,1
+Moldova,Divizia Nationala,rlb20e683feb2c75,Super Liga,15,15
+Moldova,Moldovan Super Liga,rlb20e683feb2c75,Super Liga,4,4
+Montenegro,Montenegrin First League,rl18541ef8a5209a,First League,20,20
+Netherlands,Eerste Divisie,rl439c7b5412dfce,Eerste Divisie,63,63
+Netherlands,Eredivisie,rl53a4e154c377bd,Eredivisie,33,33
+Netherlands,Tweede Divisie,rl95977d290fd60e,Tweede Divisie,10,10
+North Macedonia,Macedonian First League,rl775c42932fbcd4,First League,7,7
+Northern Ireland,Irish Football League,rl0ef72e4c271a60,Premiership,4,4
+Northern Ireland,Irish Premier League,rl0ef72e4c271a60,Premiership,2,2
+Northern Ireland,Irish Premiership,rl0ef72e4c271a60,Premiership,5,5
+Northern Ireland,NIFL Premiership,rl0ef72e4c271a60,Premiership,13,13
+Norway,Tippeligaen,rl8d9ef8db097b5b,Eliteserien,33,33
+Poland,Ekstraklasa,rl334af271b3ef68,Ekstraklasa,32,32
+Poland,Polish I liga,rl2d6bd5343bc7cb,I Liga,18,18
+Poland,Polish II liga,rl2d6bd5343bc7cb,I Liga,5,5
+Portugal,Liga 3 Serie A,rl14a3a84a1f7719,Liga 3,5,5
+Portugal,Liga 3 Serie B,rl14a3a84a1f7719,Liga 3,5,5
+Portugal,Liga Portugal 2,rlc9d73424d08683,Segunda Liga,5,5
+Portugal,Portuguese Liga,rl2e872341dc256b,Primeira Liga,26,26
+Portugal,Primeira Divisão,rl2e872341dc256b,Primeira Liga,6,6
+Portugal,Segunda Liga,rlc9d73424d08683,Segunda Liga,19,19
+Qatar,Qatar Stars League,rl1679852b5a0f71,Stars League,20,20
+Romania,Divizia A,rlbc713d707ad8b7,Liga I,4,4
+Romania,Romania Liga I,rlbc713d707ad8b7,Liga I,20,20
+Romania,Romania Liga II,rl02fb3e067265a4,Cupa României,5,10
+Romania,Romania Liga II Serie A,rl02fb3e067265a4,Cupa României,6,6
+Romania,Romania Liga II Serie B,rl02fb3e067265a4,Cupa României,6,6
+Russia,Russian First Division,rle116a3523caca1,First League,7,7
+Russia,Russian Football Championship,rle116a3523caca1,First League,13,15
+Russia,Russian Premier,rl2ad50bc43a87b8,Premier League,23,24
+Russia,Russian Top Division,rl2ad50bc43a87b8,Premier League,4,4
+Russia,Russian Top League,rl2ad50bc43a87b8,Premier League,6,6
+San Marino,Campionato Sammarinese,rla97dff1b3431d6,Campionato,17,18
+Saudi Arabia,Saudi Professional League,rl32c17ae2bb296c,Saudi League,18,19
+Scotland,Premier Division,rle0418625bca61d,Premiership,4,4
+Scotland,Scottish Championship,rlfafaf2dac55996,Championship,13,13
+Scotland,Scottish First Division,rlfafaf2dac55996,Championship,15,15
+Scotland,Scottish League One,rl3d75a0568f4efa,League One,9,13
+Scotland,Scottish League Two,rle244022cad228f,League Two,9,13
+Scotland,Scottish Premier,rle0418625bca61d,Premiership,28,28
+Scotland,Scottish Second Division,rl0e60f379d36146,Scottish Cup,9,9
+Scotland,Scottish Third Division,rl0e60f379d36146,Scottish Cup,9,9
+Serbia,Serbian Superliga,rl950b618a62a473,Super Liga,20,20
+Slovakia,Slovak Superliga,rlbf78e2f10ffda6,1. liga,23,23
+Slovenia,Slovenske Lige,rlaaad6a5590f8ac,1. SNL,27,27
+South Africa,Premier Soccer League,rl0359fd1c46c20c,PSL,19,19
+South Korea,K League,rl8166d37ceba684,K League 1,7,7
+South Korea,K League 1,rl8166d37ceba684,K League 1,9,9
+South Korea,K League Classic,rl8166d37ceba684,K League 1,5,5
+Spain,La Liga,rl1771b83674027e,Primera División,33,33
+Spain,Primera División RFEF Group 1,rle749ed2209b5f7,Primera Federación,5,5
+Spain,Primera División RFEF Group 2,rle749ed2209b5f7,Primera Federación,5,5
+Spain,Segunda Division,rla1f2da45d02b3d,Segunda División,30,30
+Spain,Segunda División B Group 1,rlde5ef789c4c6b6,Copa del Rey,7,7
+Spain,Segunda División B Group 2,rlde5ef789c4c6b6,Copa del Rey,7,7
+Spain,Segunda División B Group 3,rlde5ef789c4c6b6,Copa del Rey,7,7
+Spain,Segunda División B Group 4,rlde5ef789c4c6b6,Copa del Rey,5,5
+Spain,Segunda División B Group 5,rlde5ef789c4c6b6,Copa del Rey,1,1
+Sweden,Allsvenskan,rlf33d7b3efb35b8,Allsvenskan,29,29
+Switzerland,Nationalliga A,rla98fd59f96a321,Super League,9,9
+Switzerland,Nationalliga B,rlc516d3710abf92,Challenge League,4,4
+Switzerland,Swiss Challenge League,rlc516d3710abf92,Challenge League,23,23
+Switzerland,Swiss Super League,rla98fd59f96a321,Super League,23,23
+Turkey,TFF First League,rl78599261990e3a,1. Lig,20,20
+Turkey,Turkey Super League,rlf36e6592e1bddb,Süper Lig,21,21
+Turkey,Turkish First Football League,rlf36e6592e1bddb,Süper Lig,44,46
+Ukraine,Ukrainian First League,rl0de989036fb088,Persha Liga,18,19
+Ukraine,Ukrainian First League Group A,rl0de989036fb088,Persha Liga,3,3
+Ukraine,Ukrainian First League Group B,rl0de989036fb088,Persha Liga,3,3
+Ukraine,Ukrainian Premier,rl203904b8adfe72,Premier League,18,18
+Ukraine,Ukrainian Supreme League,rl203904b8adfe72,Premier League,5,5
+United Arab Emirates,UAE Pro League,rlb7b6fcfe0f7750,Pro League,19,19
+United States,Major League Soccer,rl53486debcb7455,MLS,31,31
+Uruguay,Uruguayan Primera División,rlb5a183f20bf33f,Liga AUF,20,20
+Wales,League of Wales,rld885f21ca9980f,Premier League,4,4
+Wales,Welsh Premier League,rld885f21ca9980f,Premier League,24,24

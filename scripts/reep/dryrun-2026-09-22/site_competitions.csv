@@ -1,0 +1,116 @@
+source,key,name,country,type
+football_competitions,england|fa-cup,FA Cup,England,cup_major
+football_competitions,scotland|scottish-cup,Scottish Cup,Scotland,cup_major
+football_competitions,england|football-league,Football League,England,league
+football_competitions,england|first-division,First Division,England,league
+football_competitions,netherlands|knvb-beker,KNVB Beker,Netherlands,cup_major
+football_competitions,spain|copa-del-rey,Copa del Rey,Spain,cup_major
+football_competitions,england|fa-charity-shield,FA Charity Shield,England,super
+football_competitions,france|coupe-de-france,Coupe de France,France,cup_major
+football_competitions,portugal|campeonato-de-portugal,Campeonato de Portugal,Portugal,cup_major
+football_competitions,italy|coppa-italia,Coppa Italia,Italy,cup_major
+football_competitions,eur|mitropa-cup,Mitropa Cup,,european
+football_competitions,germany|tschammer-pokal,Tschammer-Pokal,Germany,cup_major
+football_competitions,soviet-union|soviet-cup,Soviet Cup,Soviet Union,cup_major
+football_competitions,portugal|taca-de-portugal,Taça de Portugal,Portugal,cup_major
+football_competitions,eur|latin-cup,Latin Cup,,european
+football_competitions,germany|dfb-pokal,DFB-Pokal,Germany,cup_major
+football_competitions,eur|inter-cities-fairs-cup,Inter-Cities Fairs Cup,,european
+football_competitions,eur|european-cup,European Cup,,european
+football_competitions,eur|copa-libertadores,Copa Libertadores,,european
+football_competitions,eur|intercontinental-cup,Intercontinental Cup,,european
+football_competitions,eur|cup-winners-cup,Cup Winners Cup,,european
+football_competitions,england|league-cup,League Cup,England,cup_minor
+football_competitions,eur|concacaf-champions-cup,CONCACAF Champions Cup,,european
+football_competitions,eur|uefa-cup,UEFA Cup,,european
+football_competitions,eur|uefa-super-cup,UEFA Super Cup,,european
+football_competitions,eur|asian-club-championship,Asian Club Championship,,european
+football_competitions,eur|recopa-sudamericana,Recopa Sudamericana,,european
+football_competitions,scotland|premier-division,Premier Division,Scotland,league
+football_competitions,france|division-1,Division 1,France,league
+football_competitions,germany|bundesliga,Bundesliga,Germany,league
+football_competitions,england|premier-league,Premier League,England,league
+football_competitions,netherlands|eredivisie,Eredivisie,Netherlands,league
+football_competitions,eur|champions-league,Champions League,,european
+football_competitions,scotland|scottish-league-cup,Scottish League Cup,Scotland,cup_minor
+football_competitions,portugal|primeira-divisao,Primeira Divisão,Portugal,league
+football_competitions,italy|supercoppa-italiana,SuperCoppa Italiana,Italy,super
+football_competitions,spain|la-liga,La Liga,Spain,league
+football_competitions,italy|serie-a,Serie A,Italy,league
+football_competitions,russia|russian-cup,Russian Cup,Russia,cup_major
+football_competitions,spain|supercopa-de-espana,Supercopa de España,Spain,super
+football_competitions,germany|dfb-supercup,DFB-Supercup,Germany,super
+football_competitions,france|coupe-de-la-ligue,Coupe de la Ligue,France,cup_minor
+football_competitions,france|trophee-des-champions,Trophée Des Champions,France,super
+football_competitions,netherlands|johan-cruijff-schaal,Johan Cruijff-schaal,Netherlands,super
+football_competitions,eur|caf-champions-league,CAF Champions League,,european
+football_competitions,eur|copa-sudamericana,Copa Sudamericana,,european
+football_competitions,eur|afc-champions-league,AFC Champions League,,european
+football_competitions,england|championship,Championship,England,league
+football_competitions,england|league-one,League One,England,league
+football_competitions,england|league-two,League Two,England,league
+football_competitions,sweden|svenska-cupen,Svenska Cupen,Sweden,cup_major
+football_competitions,norway|norwegian-cup,Norwegian Cup,Norway,cup_major
+football_competitions,ireland|fai-cup,FAI Cup,Ireland,cup_major
+football_competitions,eur|ofc-champions-league,OFC Champions League,,european
+football_competitions,austria|austrian-cup,Austrian Cup,Austria,cup_major
+football_competitions,poland|polish-cup,Polish Cup,Poland,cup_major
+football_competitions,greece|greek-cup,Greek Cup,Greece,cup_major
+football_competitions,turkey|turkish-cup,Turkish Cup,Turkey,cup_major
+football_competitions,belgium|beker-van-belgie,Beker van België,Belgium,cup_major
+football_competitions,switzerland|swiss-cup,Swiss Cup,Switzerland,cup_major
+football_competitions,eur|europa-league,Europa League,,european
+football_competitions,eur|europa-conference-league,Europa Conference League,,european
+football_competitions,england|national-league,National League,England,league
+football_competitions,portugal|taca-da-liga,Taça da Liga,Portugal,cup_minor
+football_competitions,eur|fifa-club-world-cup,FIFA Club World Cup,,european
+champion_competitions,premier-league,Premier League,,Domestic
+champion_competitions,primeira-liga,Primeira Liga,,Domestic
+champion_competitions,champions-league,Champions League,,Continental
+champion_competitions,la-liga,La Liga,,Domestic
+champion_competitions,bundesliga,Bundesliga,,Domestic
+champion_competitions,serie-a,Serie A,,Domestic
+champion_competitions,ligue-1,Ligue 1,,Domestic
+champion_competitions,eredivisie,Eredivisie,,Domestic
+champion_competitions,scottish-premiership,Scottish Premiership,,Domestic
+champion_competitions,brasileiro-serie-a,Brasileiro Série A,,Domestic
+champion_competitions,argentina-primera-division,Argentina Primera División,,Domestic
+champion_competitions,major-league-soccer,Major League Soccer,,Domestic
+champion_competitions,liga-mx,Liga MX,,Domestic
+champion_competitions,football-allsvenskan-sweden,Allsvenskan,,Domestic
+champion_competitions,football-ekstraklasa-poland,Ekstraklasa,,Domestic
+champion_competitions,football-belgian-pro-league-belgium,Belgian Pro League,,Domestic
+champion_competitions,football-greek-super-league-greece,Greek Super League,,Domestic
+champion_competitions,football-danish-superliga-denmark,Danish Superliga,,Domestic
+champion_competitions,football-austrian-bundesliga-austria,Austrian Bundesliga,,Domestic
+champion_competitions,football-swiss-super-league-switzerland,Swiss Super League,,Domestic
+champion_competitions,football-turkey-super-league-turkey,Turkey Super League,,Domestic
+champion_competitions,football-russian-premier-russia,Russian Premier,,Domestic
+champion_competitions,football-ukrainian-premier-ukraine,Ukrainian Premier,,Domestic
+champion_competitions,football-czech-first-league-czech-republic,Czech First League,,Domestic
+champion_competitions,football-100-year-vision-league-japan,100 Year Vision League,,Domestic
+champion_competitions,football-k-league-1-south-korea,K League 1,,Domestic
+champion_competitions,football-chinese-super-league-china,Chinese Super League,,Domestic
+champion_competitions,football-saudi-professional-league-saudi-arabia,Saudi Professional League,,Domestic
+champion_competitions,football-a-league-australia,A-League,,Domestic
+champion_competitions,football-egyptian-premier-league-egypt,Egyptian Premier League,,Domestic
+champion_competitions,fifa-world-cup,FIFA World Cup,,International
+champion_competitions,uefa-european-championship,UEFA European Championship,,International
+champion_competitions,copa-america,Copa América,,International
+champion_competitions,africa-cup-of-nations,Africa Cup of Nations,,International
+champion_competitions,afc-asian-cup,AFC Asian Cup,,International
+champion_competitions,copa-libertadores,Copa Libertadores,,Continental
+champion_competitions,europa-league,Europa League,,International
+champion_competitions,europa-conference-league,Europa Conference League,,International
+champion_competitions,club-world-cup,Club World Cup,,Continental
+champion_competitions,fa-cup,FA Cup,,Domestic
+champion_competitions,wsl,WSL,,Domestic
+champion_competitions,nwsl,NWSL,,Domestic
+champion_competitions,liga-f,Liga F,,Domestic
+champion_competitions,uefa-womens-champions-league,UEFA Women's Champions League,,Continental
+champion_competitions,fifa-womens-world-cup,FIFA Women's World Cup,,International
+champion_competitions,football-nb-i-hungary,NB I,,Domestic
+champion_competitions,football-tippeligaen-norway,Tippeligaen,,Domestic
+champion_competitions,football-veikkausliiga-finland,Veikkausliiga,,Domestic
+champion_competitions,football-prva-hnl-croatia,Prva HNL,,Domestic
+champion_competitions,football-serbian-superliga-serbia,Serbian Superliga,,Domestic

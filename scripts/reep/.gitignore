@@ -1,0 +1,4 @@
+# Reep v1 derived files (filtered from the 456 MB bridges.csv and relationships.csv; rebuild with reshape_v1.py) and the regenerable bridge JSON (build_bridge_json.py)
+_v1derived/
+dryrun-*/football_team_reep.json
+

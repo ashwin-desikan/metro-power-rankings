@@ -1,0 +1,522 @@
+sheet_row,team,city,metro_area,country,level,tier,n_candidates,suggested_if_only_one_has_keys,candidates
+52,Canon Yaoundé,Yaoundé,Yaoundé,Cameroon,1,T1,2,reep_t6d11cd4e,reep_t659f1ad6:Canon Yaoundé:Cameroon:Q119292837 | reep_t6d11cd4e:Canon Yaoundé:Cameroon:Q527947
+326,Barau FC,Kano,Kano,Nigeria,1,T1,2,,reep_t65eaae8b:Barau FC:Nigeria:Q135735622 | reep_t954d8b93:Barau F.C.:Nigeria:Q135436668
+356,AS Excelsior,Saint-Joseph,Saint-Joseph,Réunion,,T1,2,,reep_t703a897a:AS Excelsior:France:Q2819504 | reep_tb5ab3c8b:A.S. Excelsior:France:Q60785879
+360,Rayon Sports,Kigali,Kigali,Rwanda,,T2a,2,reep_tf4788f54,reep_tf34adade:Rayon Sports Football Club (féminines):Rwanda:Q125149128 | reep_tf4788f54:Rayon Sports F.C.:Rwanda:Q2635703
+368,Casa Sport,Ziguinchor,Ziguinchor,Senegal,,T2a,2,,reep_t457b1c20:Casa Sports:Senegal:Q2940765 | reep_td6b9d909:Casa Sports (féminines):Senegal:Q133849505
+392,Durban City FC,Durban,Durban,South Africa,1,T1,2,,reep_t4766ce86:Durban City F.C.:South Africa:Q5316279 | reep_t4e35dea9:Durban City F.C.:South Africa:Q5316280
+396,Maritzburg United,Pietermaritzburg,Pietermaritzburg,South Africa,,T2a,3,reep_tc94b08e7,reep_t4766ce86:Durban City F.C.:South Africa:Q5316279 | reep_t4e35dea9:Durban City F.C.:South Africa:Q5316280 | reep_tc94b08e7:Maritzburg United F.C.:South Africa:Q1899447
+398,Cape Town City,Cape Town,Cape Town,South Africa,,T2a,2,reep_tab0c44ef,reep_t3e425b4d:Cape Town City F.C.:South Africa:Q5035093 | reep_tab0c44ef:Cape Town City F.C.:South Africa:Q25238665
+406,Highlands Park FC,Johannesburg,Johannesburg,South Africa,,T1,2,reep_t5ce51459,reep_t315efbb2:Highlands Park F.C.:South Africa:Q105409592 | reep_t5ce51459:Highlands Park F.C.:South Africa:Q2605637
+435,Al-Merreikh,Omdurman,Khartoum,Sudan,1,T2a,2,,reep_t0362d73a:Al-Merreikh SC (Al-Fasher):Sudan:Q15933830 | reep_t4faf3a66:Al-Merreikh (Obayed):Sudan:Q132141519
+528,Sydney FC,Sydney,Sydney,Australia,1,T1,2,,reep_t3d2e2ccd:Sydney FC:Australia:Q330143 | reep_ted77945c:Sydney FC:Australia:Q15649515
+529,Adelaide United,Adelaide,Adelaide,Australia,1,T2a,2,,reep_t5d9ce8b1:Adelaide United Football Club:Australia:Q354059 | reep_ta48a791a:Adelaide United FC:Australia:Q15632679
+531,Perth Glory,Perth,Perth,Australia,1,T2a,2,reep_t8da6302b,reep_t359e30fb:Perth Glory FC:Australia:Q108770820 | reep_t8da6302b:Perth Glory FC:Australia:Q852033
+533,Brisbane Roar,Brisbane,Brisbane,Australia,1,T2a,2,,reep_t36174aef:Brisbane Roar FC:Australia:Q839997 | reep_td1b91d64:Brisbane Roar FC:Australia:Q15635028
+535,Melbourne City,Melbourne,Melbourne,Australia,1,T2a,2,,reep_t09444c82:Melbourne City FC:Australia:Q748725 | reep_tf840d011:Melbourne City FC:Australia:Q20127927
+679,Inter Kashi FC,Varanasi,Varanasi,India,1,T1,2,,reep_t6a68f513:Dempo S.C.:India:Q1148720 | reep_te7a2a35f:Inter Kashi:India:Q120664287
+680,Diamond Harbour FC,Diamond Harbour,Calcutta,India,1,T1,2,,reep_t6a68f513:Dempo S.C.:India:Q1148720 | reep_te32c669e:Diamond Harbour FC:India:Q112841656
+700,Persebaya FC,Surabaya,Surabaya,Indonesia,1,T1,2,reep_tcd419ed8,reep_t685bde0f:Persebaya Surabaya:Indonesia:Q2741184 | reep_tcd419ed8:Persebaya Surabaya:Indonesia:Q3375671
+708,Semen Padang,Padang,Padang,Indonesia,,T2a,2,,reep_tabc0af7f:Sriwijaya F.C.:Indonesia:Q1152000 | reep_ted8f4a45:Semen Padang F.C.:Indonesia:Q767073
+732,Shams Azar,Qazvin,Qazvin,Iran,1,T2a,2,reep_tc23f7c8b,reep_t724058da:Machine Sazi F.C.:Iran:Q555262 | reep_tc23f7c8b:Shams Azar F.C.:Iran:Q5947679
+733,Kheybar Khorramabad,Khorramabad,Khorramabad,Iran,1,T2a,2,reep_ta8ee94ba,reep_ta8ee94ba:Kheybar Khorramabad F.C.:Iran:Q15989127 | reep_tef0d53f4:Naft Tehran F.C.:Iran:Q2687794
+771,Al Rasheed,Baghdad,Baghdad,Iraq,,T2a,2,reep_t5ad8b417,reep_t5ad8b417:Al-Karkh SC:Iraq:Q584719 | reep_tcc169974:Al-Rasheed SC:Iraq:Q28220958
+883,Thitsar Arman,Yangon,Yangon,Myanmar,1,T1,2,reep_tc4890365,reep_t729ca338:Thitsar Arman F.C.:Myanmar:Q136658910 | reep_tc4890365:Thitsar Arman FC:Myanmar:Q131144034
+884,Yadanarbon,Mandalay,Mandalay,Myanmar,1,T2a,2,,reep_tc9c17059:Yangon United F.C.:Myanmar:Q3267086 | reep_tfe379e6c:Yadanarbon F.C.:Myanmar:Q169340
+924,Al Riyadh SC,Riyadh,Riyadh,Saudi Arabia,1,T1,2,reep_t84f3957e,reep_t84f3957e:Al-Riyadh SC:Saudi Arabia:Q2655899 | reep_tf8559ed4:Al-Riyadh SC:Saudi Arabia:Q123521588
+949,Lion City Sailors,Singapore,Singapore,Singapore,1,T2a,2,reep_td37c6b06,reep_t132da169:Lion City Sailors FC:Singapore:Q128483927 | reep_td37c6b06:Lion City Sailors F.C.:Singapore:Q1140598
+1027,Dubai United,Dubai,Dubai-Sharjah,United Arab Emirates,1,T2a,2,,reep_t27a927c1:United Football Club:United Arab Emirates:Q125216774 | reep_t494ab337:United Sport FC:United Arab Emirates:Q97958895
+1049,Kokand 1912,Kokand,Kokand,Uzbekistan,1,T1,2,,reep_t5eaa0868:Kokand 1912:Uzbekistan:Q16256009 | reep_tc9f3f173:Lokomotiv Tashkent:Uzbekistan:Q609912
+1062,Hanoi FC,Hanoi,Hanoi,Vietnam,1,T1,2,reep_te74736ac,reep_t86133827:Hanoi F.C.:Vietnam:Q560102 | reep_te74736ac:Hanoi FC:Vietnam:Q560392
+1107,KF Përparimi Kukës,Kukës,Kukës,Albania,,T1,2,reep_td4d75d14,reep_t16ebee60:FK Kukësi:Albania:Q22080390 | reep_td4d75d14:FK Kukësi:Albania:Q73708
+1219,FK Austria Wien,Vienna,Vienna,Austria,1,T1,2,,reep_t24af81c9:FK Austria Wien:Austria:Q107736739 | reep_t8355deb7:FK Austria Wien:Austria:Q131209
+1220,SK Rapid Wien,Vienna,Vienna,Austria,1,T1,2,reep_ta4716007,reep_t444422eb:SK Rapid Wien:Austria:Q125417704 | reep_ta4716007:SK Rapid Wien:Austria:Q131215
+1233,FAC Team für Wien,Vienna,Vienna,Austria,2,T1,2,reep_t644b007a,reep_t644b007a:Floridsdorfer AC:Austria:Q696474 | reep_t697d37d5:FAC Team für Wien:Austria:Q18070569
+1237,FC Wacker Innsbruck 2002,Innsbruck,Innsbruck,Austria,2,T2a,3,reep_t9d44fa42,reep_t80d23ff3:FC Wacker Innsbruck:Austria:Q37475291 | reep_t9d44fa42:FC Wacker Innsbruck:Austria:Q261813 | reep_tec5a6a00:FC Wacker Innsbruck:Austria:Q2291116
+1250,Wiener AC,Vienna,Vienna,Austria,,T2a,2,,reep_t53594ebd:Wiener FC 1898:Austria:Q686921 | reep_te572d5fe:Wiener Sport-Club:Austria:Q266962
+1253,FC Wacker Innsbruck,Innsbruck,Innsbruck,Austria,,T1,3,reep_t9d44fa42,reep_t80d23ff3:FC Wacker Innsbruck:Austria:Q37475291 | reep_t9d44fa42:FC Wacker Innsbruck:Austria:Q261813 | reep_tec5a6a00:FC Wacker Innsbruck:Austria:Q2291116
+1323,Schwadorf,,,Austria,,T2a,2,,reep_t5c862a39:SK Schwadorf:Austria:Q61386758 | reep_tb88533fa:SK Schwadorf:Austria:Q297822
+1402,FC Minsk,Minsk,Minsk,Belarus,1,T1,2,,reep_t20ad7bbf:FC Minsk:Belarus:Q19692563 | reep_tc2fa0fc7:FC Minsk:Belarus:Q594092
+1461,RAA Louviéroise,La Louvière,La Louvière,Belgium,1,T1,2,,reep_t2f36dc56:R.A.A. Louviéroise:Belgium:Q1753193 | reep_t59153117:RAAL La Louvière:Belgium:Q536651
+1469,RFC Seraing,Liege,Liege,Belgium,2,T1,2,,reep_t2c50ec25:R.F.C. Seraing:Belgium:Q967104 | reep_t3b244b62:RFC Seraing:Belgium:Q925973
+1492,Eendracht Aalst,Aalst,Aalst,Belgium,,T2a,2,reep_t9c7318bb,reep_t9c7318bb:SC Eendracht Aalst:Belgium:Q1293144 | reep_te83f6d0c:SC Eendracht Aalst:Belgium:Q3552904
+1502,RAEC Mons,Mons,Mons,Belgium,,T1,2,reep_taee4564f,reep_ta737c1bf:R.A.E.C. Mons:Belgium:Q2674322 | reep_taee4564f:R.A.E.C. Mons:Belgium:Q490586
+1624,Wezel Sport,,,Belgium,,T2a,2,reep_t48039d7a,reep_t48039d7a:FC Wezel Sport:Belgium:Q2407686 | reep_tba35c39a:Wezel Sport FC:Belgium:Q1862769
+1701,CSKA Sofia,Sofia,Sofia,Bulgaria,1,T2a,3,,reep_t4ee52bd5:FC CSKA 1948 Sofia:Bulgaria:Q26223027 | reep_ta00b5016:PFC CSKA Sofia:Bulgaria:Q136433 | reep_te367ff37:Sportclub Sofia:Bulgaria:Q678042
+1717,Pirin Blagoevgrad,Blagoevgrad,Blagoevgrad,Bulgaria,,T2a,2,reep_t1e26a19e,reep_t1e26a19e:FC Pirin Blagoevgrad:Bulgaria:Q2096853 | reep_t8521664a:PFC Pirin Blagoevgrad:Bulgaria:Q1515410
+1725,PFC Shumen,Shumen,Shumen,Bulgaria,,T2a,2,,reep_t0eef21e7:FC Shumen 1929:Bulgaria:Q21181120 | reep_t551493d4:PFC Shumen 2010:Bulgaria:Q2684577
+1806,NK Varaždin,Varazdin,Varazdin,Croatia,1,T1-alias,2,,reep_t1597896b:NK Varaždin ŠN:Croatia:Q16958147 | reep_t34614520:NK Varteks:Croatia:Q130673
+1808,Istra 1961 Pula,Pula,Pula,Croatia,1,T2a,2,reep_t01603637,reep_t01603637:NK Istra 1961:Croatia:Q725916 | reep_t51e590d3:NK Istra:Croatia:Q1807380
+1844,NK Varteks,Varazdin,Varazdin,Croatia,,T1,2,reep_t34614520,reep_t34614520:NK Varteks:Croatia:Q130673 | reep_t4a1d004c:NK Varteks:Croatia:Q6954603
+1853,Aris Limassol FC,Limassol,Limassol,Cyprus,1,T1,2,reep_t8c891894,reep_t8c891894:Aris Limassol F.C.:Cyprus:Q367788 | reep_t9e5ce150:Aris Limassol F.C.:Cyprus:Q111450361
+1864,Ethnikos Achna,Achna,Achna,Cyprus,,T2a,2,reep_tbdb21dc6,reep_t82b4d450:Ethnikos Achna FC:Cyprus:Q111669590 | reep_tbdb21dc6:Ethnikos Achna FC:Cyprus:Q862791
+1890,AEK Kouklion,Kouklia,Kouklia,Cyprus,,T2a,2,,reep_tbc11d433:AEK Kouklia FC:Cyprus:Q63349123 | reep_te0a50eb0:AEK Kouklia F.C.:Cyprus:Q4651316
+1953,SC Znojmo,Znojmo,Znojmo,Czech Republic,,T2a,2,reep_t232ae9c9,reep_t232ae9c9:1. SC Znojmo:Czech Republic:Q163430 | reep_tac4af890:FC Znojmo:Czech Republic:Q76557141
+1987,Sparta Krc,,,Czech Republic,,T2a,2,,reep_t886cc969:SK Sparta Krč:Czech Republic:Q1298453 | reep_tb4a9af19:Sparta Krč 1910:Czech Republic:Q113144877
+1996,FC Midtjylland,Herning,Herning,Denmark,1,T1,2,reep_t3b94e32f,reep_t3b94e32f:FC Midtjylland:Denmark:Q618520 | reep_tac8e70ed:FC Midtjylland:Denmark:Q135960885
+2008,HB Køge,Copenhagen,Copenhagen,Denmark,2,T1,2,,reep_t1026b526:HB Køge:Denmark:Q541289 | reep_t4773a516:HB Køge:Denmark:Q96694506
+2018,Boldklubben 1909,Odense,Odense,Denmark,,T1,2,,reep_t1b3c9583:Boldklubben 1909:Denmark:Q123467689 | reep_tf7cd8699:Boldklubben 1909:Denmark:Q654223
+2063,Nykøbing FC,Falster,Falster,Denmark,,T1,2,reep_t34dcc86c,reep_t34dcc86c:Nykøbing FC:Denmark:Q635811 | reep_tbd2568e7:Nykøbing FC:Denmark:Q112246148
+2087,Crystal Palace,London,London,England,1,T1,2,,reep_t099d93b1:Crystal Palace F.C.:United Kingdom:Q2494372 | reep_tdae4e79f:Crystal Palace F.C.:United Kingdom:Q19467
+2151,Rochdale,Rochdale,Manchester,England,4,T1,2,reep_tc8d03c47,reep_t92086910:Rochdale A.F.C.:United Kingdom:Q7353784 | reep_tc8d03c47:Rochdale A.F.C.:United Kingdom:Q48949
+2154,Accrington Stanley FC,Accrington,Blackburn-Burnley,England,4,T1,2,reep_tae54d163,reep_tae54d163:Accrington Stanley F.C.:United Kingdom:Q48843 | reep_tbba5bac2:Accrington Stanley F.C.:United Kingdom:Q3290087
+2174,Eastleigh,Eastleigh,Southampton,England,5,T2a,2,reep_t5e1a4731,reep_t474d413f:Eastleigh Athletic F.C.:United Kingdom:Q5330747 | reep_t5e1a4731:Eastleigh F.C.:United Kingdom:Q2303493
+2183,Gateshead,Gateshead,Newcastle,England,5,T2a,3,reep_t5bc22925,reep_t5bc22925:Gateshead F.C.:United Kingdom:Q18513 | reep_tc27288e5:Gateshead Association F.C.:United Kingdom:Q113268734 | reep_tddee4abb:Gateshead A.F.C.:United Kingdom:Q22098386
+2195,Darlington,Darlington,Darlington,England,6,T2a,2,reep_tc71b5e16,reep_t38b1c2c2:Darlington 1883:United Kingdom:Q5223972 | reep_tc71b5e16:Darlington F.C.:United Kingdom:Q909189
+2209,Dover Athletic,Dover,Dover,England,6,T2a,2,reep_tb60f8e64,reep_t54de02a5:Dover F.C.:United Kingdom:Q5302484 | reep_tb60f8e64:Dover Athletic F.C.:United Kingdom:Q2658370
+2212,Maidstone United,Maidstone,London,England,6,T2a,2,reep_t501cab98,reep_t501cab98:Maidstone United F.C.:United Kingdom:Q1764590 | reep_tb60f3d5e:Maidstone United F.C. (1987):United Kingdom:Q16844365
+2220,King's Lynn,King's Lynn,King's Lynn,England,6,T2a,2,reep_tf3895fd9,reep_t3d0c3ef5:King's Lynn F.C.:United Kingdom:Q2494190 | reep_tf3895fd9:King's Lynn Town F.C.:United Kingdom:Q18477
+2221,Scarborough Athletic,Scarborough,Scarborough,England,6,T2a,2,,reep_t7873a8cd:Scarborough Athletic F.C.:United Kingdom:Q7430259 | reep_tb65aefa0:Scarborough F.C.:United Kingdom:Q1237961
+2232,South Shields,South Shields,Newcastle,England,6,T2a,3,,reep_t2ef219bc:South Shields F.C.:United Kingdom:Q17021739 | reep_t2fc153dd:South Shields F.C.:United Kingdom:Q5213765 | reep_taad04d3f:South Shields F.C.:United Kingdom:Q17021723
+2235,Salisbury City,Salisbury,Salisbury,England,6,T2a,3,,reep_t04337ae1:Salisbury City F.C.:United Kingdom:Q2118564 | reep_t7b67190d:Salisbury F.C.:United Kingdom:Q20712693 | reep_td5e5fedd:Salisbury City F.C.:United Kingdom:Q22098249
+2246,Ilkeston Town,Ilkeston,Nottingham,England,7,T2a,3,,reep_t2a4234ef:Ilkeston Town F.C.:United Kingdom:Q22098039 | reep_ta1a9bad3:Ilkeston Town F.C.:United Kingdom:Q27791565 | reep_tc1a99bd5:Ilkeston Town F.C.:United Kingdom:Q21061470
+2274,Basingstoke Town,London,London,England,7,T2a,2,reep_tc9d5d53f,reep_t78b7c130:A.F.C. Basingstoke:United Kingdom:Q4647134 | reep_tc9d5d53f:Basingstoke Town F.C.:United Kingdom:Q2551669
+2290,Cleethorpes Town,Cleethorpes,Grimsby,England,7,T2a,2,reep_t9d659a32,reep_t9d659a32:Cleethorpes Town F.C.:United Kingdom:Q5131057 | reep_tf653d761:Cleethorpes Town F.C.:United Kingdom:Q113504801
+2293,Redcar Athletic,Redcar,Middlesbrough,England,7,T2a,2,reep_t2b6bfa17,reep_t2301be75:Redcar F.C.:United Kingdom:Q116797979 | reep_t2b6bfa17:Redcar Athletic F.C.:United Kingdom:Q55631342
+2306,Whyteleafe,Whyteleafe,London,England,7,T2a,2,,reep_t17876a91:AFC Whyteleafe:United Kingdom:Q112189915 | reep_t6fe98ca3:Whyteleafe F.C.:United Kingdom:Q5213451
+2313,Chichester City,Chichester,Bognor Regis,England,7,T2a,2,,reep_t15944d5d:Chichester City F.C.:United Kingdom:Q28452992 | reep_ta8206d99:Chichester City F.C.:United Kingdom:Q5095988
+2326,Darwen,Darwen,Blackburn-Burnley,England,,T2a,2,reep_t61281bbe,reep_t61281bbe:Darwen F.C.:United Kingdom:Q1387030 | reep_tea516427:Darwen F.C.:United Kingdom:Q14624027
+2351,Northwich Victoria,Northwich,Liverpool,England,,T2a,2,,reep_t33e1ddc2:Northwich Victoria F.C.:United Kingdom:Q18486 | reep_tf062a4ed:1874 Northwich F.C.:United Kingdom:Q15846575
+2376,Ilkeston,Nottingham,Nottingham,England,,T2a,4,reep_t103cf431,reep_t103cf431:Ilkeston F.C.:United Kingdom:Q18295 | reep_t2a4234ef:Ilkeston Town F.C.:United Kingdom:Q22098039 | reep_ta1a9bad3:Ilkeston Town F.C.:United Kingdom:Q27791565 | reep_tc1a99bd5:Ilkeston Town F.C.:United Kingdom:Q21061470
+2391,North Ferriby United,North Ferriby,Hull,England,,T2a,2,,reep_t4a3a8a1c:North Ferriby F.C.:United Kingdom:Q65067673 | reep_t621e8d58:North Ferriby United A.F.C.:United Kingdom:Q18302
+2392,Hastings United,Hastings,Hastings,England,,T2a,2,,reep_t0d042e0f:Hastings United F.C.:United Kingdom:Q5680457 | reep_te117e295:Hastings United F.C.:United Kingdom:Q5212948
+2423,Civil Service,London,London,England,,T2a,2,reep_t0535b286,reep_t0535b286:Civil Service Strollers F.C.:United Kingdom:Q5124573 | reep_t1f5ca558:Civil Service F.C.:United Kingdom:Q2974876
+2429,Croydon,London,London,England,,T2a,3,,reep_t21a8b599:Croydon Athletic F.C.:United Kingdom:Q4993260 | reep_t6861880e:AFC Croydon Athletic:United Kingdom:Q4651444 | reep_t9ba3b5aa:Croydon F.C.:United Kingdom:Q5189667
+2430,Croydon Athletic,London,London,England,,T2a,3,,reep_t21a8b599:Croydon Athletic F.C.:United Kingdom:Q4993260 | reep_t6861880e:AFC Croydon Athletic:United Kingdom:Q4651444 | reep_t9ba3b5aa:Croydon F.C.:United Kingdom:Q5189667
+2432,Crystal Palace (Old),London,London,England,,T2a,2,,reep_t099d93b1:Crystal Palace F.C.:United Kingdom:Q2494372 | reep_tdae4e79f:Crystal Palace F.C.:United Kingdom:Q19467
+2436,Enfield,London,London,England,,T2a,2,reep_t1dc17200,reep_t1dc17200:Enfield F.C.:United Kingdom:Q19654407 | reep_t25bc5c83:Enfield 1893 F.C.:United Kingdom:Q4118587
+2444,Fisher Athletic,London,London,England,,T2a,2,,reep_t07fb9c09:Fisher F.C.:United Kingdom:Q5291176 | reep_t40650cb0:Fisher Athletic F.C.:United Kingdom:Q376118
+2455,Hendon,London,London,England,,T1,2,reep_tca5fe689,reep_t3482fdc8:Hendon F.C.:United Kingdom:Q16840557 | reep_tca5fe689:Hendon F.C.:United Kingdom:Q4497224
+2468,Pilgrims,London,London,England,,T2a,2,,reep_t132dda7a:The Pilgrims F.C.:United Kingdom:Q107039881 | reep_t985089f4:Pilgrims F.C.:United Kingdom:Q22097770
+2481,Wimbledon,London,London,England,,T2a,2,,reep_t291a8f61:AFC Wimbledon:United Kingdom:Q48851 | reep_ta106a9b2:Wimbledon F.C.:United Kingdom:Q19482
+2516,Dover,Dover,Dover,England,,T2a,2,reep_tb60f8e64,reep_t54de02a5:Dover F.C.:United Kingdom:Q5302484 | reep_tb60f8e64:Dover Athletic F.C.:United Kingdom:Q2658370
+2527,Accrington Stanley,Accrington,Blackburn-Burnley,England,,T2a,2,reep_tae54d163,reep_tae54d163:Accrington Stanley F.C.:United Kingdom:Q48843 | reep_tbba5bac2:Accrington Stanley F.C.:United Kingdom:Q3290087
+2533,Clitheroe,Clitheroe,Clitheroe,England,,T1,2,reep_t92fbeaeb,reep_t92fbeaeb:Clitheroe F.C.:United Kingdom:Q18312 | reep_tcf646f2a:Clitheroe F.C.:United Kingdom:Q113450332
+2547,Boston,Boston (Linc),Boston (Linc),England,,T2a,3,,reep_t1f151dca:Boston F.C.:United Kingdom:Q112939226 | reep_t39555eea:Boston Town F.C.:United Kingdom:Q4948147 | reep_tf28c578c:Boston Town F.C.:United Kingdom:Q22098286
+2552,Bootle,Bootle,Liverpool,England,,T1,2,reep_t41698bc3,reep_t41698bc3:Bootle F.C.:United Kingdom:Q1917556 | reep_ta2b919bb:Bootle F.C.:United Kingdom:Q4943972
+2553,New Brighton,Wallasey,Liverpool,England,,T2a,2,,reep_t0fb03b04:New Brighton A.F.C.:United Kingdom:Q291833 | reep_t5d2eebde:New Brighton A.F.C.:United Kingdom:Q19655109
+2556,South Liverpool,Liverpool,Liverpool,England,,T2a,2,,reep_t0aeaa3d7:South Liverpool F.C.:United Kingdom:Q19654401 | reep_t8adbf60c:South Liverpool F.C.:United Kingdom:Q7567831
+2560,Scarborough,Scarborough,Scarborough,England,,T2a,2,,reep_t7873a8cd:Scarborough Athletic F.C.:United Kingdom:Q7430259 | reep_tb65aefa0:Scarborough F.C.:United Kingdom:Q1237961
+2585,Telford United,Telford,Telford,England,,T2a,2,reep_t9c2159fc,reep_t51128f56:Telford United F.C.:United Kingdom:Q3283867 | reep_t9c2159fc:AFC Telford United:United Kingdom:Q18505
+2618,Gateshead Association,Newcastle,Newcastle,England,,T2a,3,reep_t5bc22925,reep_t5bc22925:Gateshead F.C.:United Kingdom:Q18513 | reep_tc27288e5:Gateshead Association F.C.:United Kingdom:Q113268734 | reep_tddee4abb:Gateshead A.F.C.:United Kingdom:Q22098386
+2636,Rugby Town,Rugby,Rugby,England,,T2a,2,,reep_t46190685:Rugby Town F.C.:United Kingdom:Q7378249 | reep_t7d770e42:Rugby Town F.C.:United Kingdom:Q85798130
+2657,Halifax Town,Halifax,Leeds-Bradford,England,,T2a,2,,reep_t4bd4b0f2:Halifax Town A.F.C.:United Kingdom:Q1571078 | reep_t9436a209:FC Halifax Town:United Kingdom:Q5214935
+2666,Ashford United,,,England,,T2a,2,reep_te8d98546,reep_t0dfb1a01:Ashford United F.C.:United Kingdom:Q4805010 | reep_te8d98546:Ashford United F.C.:United Kingdom:Q4805012
+2712,Westfield,,,England,,T1,2,reep_t82593093,reep_t59cc62ca:Westfield F.C.:United Kingdom:Q5330295 | reep_t82593093:Westfield F.C.:United Kingdom:Q5330268
+2722,Vaprus Parnu,Parnu,Parnu,Estonia,1,T1,2,reep_t1f4f83d9,reep_t0c80f053:Pärnu JK Vaprus:Estonia:Q110799958 | reep_t1f4f83d9:Pärnu JK Vaprus:Estonia:Q28340330
+2800,FC Kuusysi,Lahti,Lahti,Finland,,T1,2,reep_t0331c7c0,reep_t0331c7c0:FC Kuusysi:Finland:Q960944 | reep_t5dfdef14:FC Kuusysi:Finland:Q11859293
+2874,Toulouse FC,Toulouse,Toulouse,France,1,T1,3,,reep_t104e839c:Toulouse FC:France:Q7828889 | reep_t644e4e69:Toulouse FC:France:Q2422417 | reep_tb3aaf6d9:Toulouse FC:France:Q19518
+2878,Le Havre AC,Le Havre,Le Havre,France,1,T1,2,,reep_tacb61040:Le Havre AC:France:Q328658 | reep_tf60407e3:Le Havre AC:France:Q90842662
+2879,Stade Brestois,Brest,Brest,France,1,T1,2,,reep_t4c2d3d86:Stade Brestois 29:France:Q218372 | reep_t6618a901:Stade brestois 29:France:Q95919712
+2880,FC Lorient,Lorient,Lorient,France,1,T1,2,,reep_t1d399985:F.C. Lorient:France:Q48911 | reep_td7c578f2:FC Lorient:France:Q104531607
+2883,Paris FC,Paris,Paris,France,1,T1,2,reep_t213374b4,reep_t213374b4:Paris FC:France:Q1051013 | reep_t9a9a2293:Paris FC:France:Q48834322
+2884,AS Saint-Étienne,Saint Étienne,Saint Étienne,France,2,T1,2,reep_t89dfffbb,reep_t89dfffbb:AS Saint-Étienne:France:Q19521 | reep_tbc7a0137:AS Saint-Étienne:France:Q1153841
+2886,FC Metz,Metz,Metz,France,2,T1,2,,reep_td1ec970d:FC Metz:France:Q3076576 | reep_te96fb31c:FC Metz:France:Q221525
+2888,Montpellier HSC,Montpellier,Montpellier,France,2,T1-alias,2,reep_t10af6ee5,reep_t10af6ee5:Montpellier Hérault Sport Club:France:Q19513 | reep_t87aa1070:ASH Montpellier:France:Q119519685
+2889,Stade Reims,Reims,Reims,France,2,T1,2,reep_t6cd95a9a,reep_t129f3d6a:Stade de Reims:France:Q3423823 | reep_t6cd95a9a:Stade de Reims:France:Q208228
+2890,AS Nancy,Nancy,Nancy,France,2,T1,2,reep_t11dab3b5,reep_t11dab3b5:A.S. Nancy-Lorraine:France:Q19523 | reep_t58a8c9f0:A.S. Nancy-Lorraine:France:Q2868058
+2894,Dijon FCO,Dijon,Dijon,France,2,T1,2,reep_te38e254a,reep_taf48a90a:Dijon FCO:France:Q3027897 | reep_te38e254a:Dijon FCO:France:Q503317
+2901,Rodez AF,Rodez,Rodez,France,2,T1,2,reep_t67d39a0e,reep_t67d39a0e:Rodez AF:France:Q292231 | reep_td55a4152:Rodez AF:France:Q3438173
+2905,FC Rouen,Rouen,Rouen,France,3,T1,2,reep_te87c513f,reep_tc8c18470:FC Rouen:France:Q5425130 | reep_te87c513f:FC Rouen:France:Q867320
+2907,Amiens SC,Amiens,Amiens,France,3,T1,2,reep_t63010d40,reep_t63010d40:Amiens SC:France:Q866884 | reep_t70a9e362:Amiens SC:France:Q76391447
+2912,US Orléans,Orléans,Orléans,France,3,T1,2,reep_tb0ec59bb,reep_t9ef1b061:US Orléans:France:Q3550498 | reep_tb0ec59bb:US Orléans:France:Q369349
+2914,FC Fleury 91,Paris,Paris,France,3,T1,2,reep_t6c8b9440,reep_t6c8b9440:FC Fleury 91:France:Q18214766 | reep_td3b12151:FC Fleury 91:France:Q39075067
+2922,RC Paris,Paris,Paris,France,,T2a,2,reep_t213374b4,reep_t213374b4:Paris FC:France:Q1051013 | reep_t9a9a2293:Paris FC:France:Q48834322
+2938,Tours FC,Tours,Tours,France,,T1,2,reep_tf72c0214,reep_t15bccfda:Tours F.C.:France:Q3535517 | reep_tf72c0214:Tours FC.:France:Q822021
+2942,CA Paris,Paris,Paris,France,,T2a,2,reep_t213374b4,reep_t213374b4:Paris FC:France:Q1051013 | reep_t9a9a2293:Paris FC:France:Q48834322
+2948,Club Français,Paris,Paris,France,,T1,2,reep_t1a7914b4,reep_t1a7914b4:Club Franciscain:France:Q1773558 | reep_taed63249:Club Français:France:Q959103
+2950,Béziers,Béziers,Béziers,France,,T2a,2,,reep_t3c02a2de:AS Béziers:France:Q3000537 | reep_tb905c6aa:AS Béziers:France:Q2619514
+2968,FC Lyon,Lyon,Lyon,France,,T1,2,,reep_t2c316293:FC Lyon:France:Q39074320 | reep_tffd91797:FC Lyon:France:Q16636629
+2982,CF Dijon,Dijon,Dijon,France,,T2a,2,reep_t7af4dcd4,reep_t7af4dcd4:Dijon F.C.:France:Q109420810 | reep_tb9244b37:F.C. Dijon:France:Q118120167
+2990,Quimper Kerfeunteun,Quimper,Quimper,France,,T2a,2,,reep_t9a5e56e1:Quimper Kerfeunteun F.C.:France:Q3414511 | reep_ta9a1a0a1:Quimper Kerfeunteun F.C.:France:Q1431996
+2997,FC Bourges,Bourges,Bourges,France,,T2a,2,,reep_t150c4529:Bourges AC:France:Q119519583 | reep_tdb170f2f:F.C. de Bourges:France:Q42806914
+3023,AC Amiens,Amiens,Amiens,France,,T1,3,,reep_t63010d40:Amiens SC:France:Q866884 | reep_t70a9e362:Amiens SC:France:Q76391447 | reep_tfb9cb5a9:Amiens AC:France:Q1933334
+3036,RC Roubaix,Lille,Lille,France,,T1,2,,reep_ted34bfcd:RC Roubaix:France:Q1271664 | reep_tf0f009e0:RC Roubaix:France:Q119519725
+3078,AS Béziers,Béziers,Béziers,France,,T1,2,,reep_t3c02a2de:AS Béziers:France:Q3000537 | reep_tb905c6aa:AS Béziers:France:Q2619514
+3098,US Le Mans,Le Mans,Le Mans,France,,T2a,2,reep_t306ce8b6,reep_t306ce8b6:Le Mans F.C.:France:Q210864 | reep_t55dfa80d:Le Mans Football Club:France:Q3224242
+3122,AS Muret,,,France,,T1,2,reep_t925dbf18,reep_t925dbf18:AS Muret:France:Q2843254 | reep_t97b768b4:AS Muret:France:Q100987889
+3160,FC Levallois,,,France,,T2a,2,,reep_t3ad7b383:F.C. de Levallois:France:Q23936652 | reep_ta584b4f1:Levallois SC:France:Q1129531
+3164,FC Roubaix,,,France,,T2a,4,,reep_t33f0d707:S.C. Roubaix:France:Q118143098 | reep_td39c827e:U.S. Roubaix:France:Q118122430 | reep_ted34bfcd:RC Roubaix:France:Q1271664 | reep_tf0f009e0:RC Roubaix:France:Q119519725
+3257,US Tours,,,France,,T2a,2,reep_tf72c0214,reep_t15bccfda:Tours F.C.:France:Q3535517 | reep_tf72c0214:Tours FC.:France:Q822021
+3326,Werder Bremen,Bremen,Bremen,Germany,1,T1,2,,reep_t32c9496c:SV Werder Bremen:Germany:Q2560150 | reep_te5e7897a:SV Werder Bremen:Germany:Q51976
+3329,Borussia Mönchengladbach,Mönchengladbach,Rhine-Ruhr,Germany,1,T1,2,,reep_t3cb8c10b:Borussia Mönchengladbach:Germany:Q101959 | reep_t80b21d96:Borussia Mönchengladbach:Germany:Q19962426
+3335,SC Freiburg,Freiburg,Freiburg,Germany,1,T1,2,reep_t70979bf6,reep_t70979bf6:SC Freiburg:Germany:Q106394 | reep_te6f40ca2:SC Freiburg:Germany:Q820739
+3338,TSG Hoffenheim,Sinsheim,Rhine-Neckar,Germany,1,T1,2,,reep_t1fc5f1d7:TSG 1899 Hoffenheim:Germany:Q22707 | reep_tbd7efb75:TSG 1899 Hoffenheim:Germany:Q15849946
+3350,VfL Wolfsburg,Wolfsburg,Hannover-Brunswick,Germany,2,T1,2,reep_te786da6b,reep_t4a96f18a:VfL Wolfsburg:Germany:Q285131 | reep_te786da6b:VfL Wolfsburg:Germany:Q101859
+3405,SG Wattenscheid,Wattenscheid,Rhine-Ruhr,Germany,,T1,2,,reep_t2e1ca881:SG Wattenscheid 09:Germany:Q15488223 | reep_t4ac8d949:SG Wattenscheid 09:Germany:Q524378
+3425,Tasmania 1900 Berlin,Berlin,Berlin,Germany,,T2a,2,reep_tbaa0710c,reep_t8dcc2fc0:SC Tasmania 1900 Berlin:Germany:Q819332 | reep_tbaa0710c:SV Tasmania Berlin:Germany:Q1565781
+3428,VfB Leipzig,Leipzig,Saxon Triangle,Germany,,T2a,3,,reep_t4af53e5c:SC Leipzig:Germany:Q471308 | reep_t71c35535:SV Leipzig 1910:Germany:Q2422259 | reep_t7b466f8b:SpVgg 1899 Leipzig:Germany:Q327846
+3438,FC 1896 Pforzheim,Stuttgart,Stuttgart,Germany,,T2a,2,,reep_t9bb81ae2:1. FC Pforzheim:Germany:Q162364 | reep_ta6f6ba65:VfB Pforzheim:Germany:Q2832508
+3441,FC Pforzheim,Stuttgart,Stuttgart,Germany,,T2a,2,,reep_t9bb81ae2:1. FC Pforzheim:Germany:Q162364 | reep_ta6f6ba65:VfB Pforzheim:Germany:Q2832508
+3530,FSV Frankfurt,Frankfurt,Frankfurt,Germany,,T1,2,reep_tb1f916be,reep_t35305f4a:FSV Frankfurt:Germany:Q157352 | reep_tb1f916be:FSV Frankfurt:Germany:Q125903747
+3538,BV Cloppenburg,Cloppenburg,Cloppenburg,Germany,,T1,2,,reep_tae498f6f:BV Cloppenburg:Germany:Q537325 | reep_tf06b43a9:BV Cloppenburg:Germany:Q797165
+3570,FC Mönchengladbach,Rhine-Ruhr,Rhine-Ruhr,Germany,,T2a,2,,reep_t1242ee13:SV Mönchengladbach:Germany:Q19308314 | reep_t3e03694f:1. FC Mönchengladbach:Germany:Q162323
+3586,Sportfreunde Siegen,Siegen,Siegen,Germany,,T1,2,reep_tf20e04d7,reep_t35512f2d:Sportfreunde Siegen:Germany:Q27862159 | reep_tf20e04d7:Sportfreunde Siegen:Germany:Q609926
+3646,Berliner SV 1892,,,Germany,,T2a,2,,reep_t5f5300a8:Berliner Sport-Club:Germany:Q163645 | reep_t8cfee976:Berliner FV:Germany:Q4892512
+3657,Duisburger SV,,,Germany,,T2a,2,,reep_t988882ac:Duisburger TSV 1899:Germany:Q13574573 | reep_tee63fa7e:Duisburger SV 1900:Germany:Q1905866
+3682,Heider SV 1925,,,Germany,,T2a,2,,reep_t25c5e8a9:Heider SV:Germany:Q566161 | reep_tb8511fe0:Heider FC:Germany:Q5698784
+3703,Lüneburger SK,,,Germany,,T1,2,,reep_t80279232:Lüneburger SK Hansa:Germany:Q325291 | reep_tc5ad71a6:Lüneburger SK:Germany:Q317934
+3757,SpVgg Leipzig,,,Germany,,T2a,3,,reep_t4af53e5c:SC Leipzig:Germany:Q471308 | reep_t71c35535:SV Leipzig 1910:Germany:Q2422259 | reep_t7b466f8b:SpVgg 1899 Leipzig:Germany:Q327846
+3867,Asteras Tripolis,Tripoli (GRE),Tripoli (GRE),Greece,1,T2a,2,,reep_t5b9301a1:Asteras Tripoli F.C.:Greece:Q757320 | reep_t86260da3:Asteras Tripolis F.C.:Greece:Q127798611
+3905,Kerkyra FC,Corfu,Corfu,Greece,,T1,2,reep_t41ec50f4,reep_t001bdb04:A.O.K. Kerkyra:Greece:Q296046 | reep_t41ec50f4:A.O. Kerkyra:Greece:Q21200167
+4004,Ferencvárosi TC,Budapest,Budapest,Hungary,1,T1,2,reep_t66a76029,reep_t66a76029:Ferencvárosi TC:Hungary:Q208396 | reep_taa022e11:Ferencvárosi TC:Hungary:Q1000478
+4017,Diosgyori VTK,Miskolc,Miskolc,Hungary,,T1,2,reep_tb018eff7,reep_t66743469:Diósgyőri VTK:Hungary:Q97342786 | reep_tb018eff7:Diósgyőri VTK:Hungary:Q767400
+4030,Dunaújváros FC,Dunaujvaros,Dunaujvaros,Hungary,,T1,2,reep_t8610a6a3,reep_t8610a6a3:Dunaújváros FC:Hungary:Q911524 | reep_t8edbd8c3:Dunaújváros FC:Hungary:Q1242109
+4045,Soroksár FC,Budapest,Budapest,Hungary,,T1,2,,reep_t6d7dd6af:Soroksár FC:Hungary:Q16472876 | reep_tf2b0d58c:Soroksár FC:Hungary:Q20824128
+4078,	Újpesti Törekvés SE,Budapest,Budapest,Hungary,,T1,2,reep_td2c082a2,reep_t38814ae8:Újpesti Törekvés SE:Hungary:Q20740273 | reep_td2c082a2:Újpest FC:Hungary:Q244595
+4101,Tiszakécske FC,,,Hungary,,T1,2,,reep_t1880b6e6:Tiszakécske FC:Hungary:Q281076 | reep_tca3392ff:Tiszakécske FC:Hungary:Q108179657
+4144,Shamrock Rovers,Dublin,Dublin,Ireland,1,T1,2,reep_t92f505bf,reep_t22db6dcb:Shamrock Rovers F.C.:Ireland:Q28453494 | reep_t92f505bf:Shamrock Rovers F.C.:Ireland:Q203976
+4149,Sligo Rovers,Sligo,Sligo,Ireland,1,T2a,2,reep_tbf322bb1,reep_tbf322bb1:Sligo Rovers F.C.:Ireland:Q244874 | reep_tecbec0e2:Sligo Rovers F.C.:Ireland:Q110823661
+4153,Limerick FC,Limerick City,Limerick City,Ireland,,T1,2,reep_td0920232,reep_t4a812618:Limerick F.C.:Ireland:Q1825475 | reep_td0920232:Limerick F.C.:Ireland:Q1552212
+4155,Cork City FC,Cork,Cork,Ireland,,T1,2,reep_te7f2c02a,reep_t11a66a5b:Cork City F.C.:Ireland:Q23020076 | reep_te7f2c02a:Cork City F.C.:Ireland:Q932284
+4171,Cork Athletic,Cork,Cork,Ireland,,T2a,2,,reep_t64c36c0e:Cork Athletic F.C.:Ireland:Q4896658 | reep_tc9d79b15:Cork F.C.:Ireland:Q5170779
+4186,Cork City,Cork,Cork,Ireland,,T2a,2,reep_te7f2c02a,reep_t11a66a5b:Cork City F.C.:Ireland:Q23020076 | reep_te7f2c02a:Cork City F.C.:Ireland:Q932284
+4211,Hapoel Ironi Kiryat Shmona,Kiryat Shmona,Kiryat Shmona,Israel,1,T2a,2,reep_t77234cd5,reep_t4c17f511:Hapoel Kiryat Shmona F.C.:Israel:Q5652175 | reep_t77234cd5:Ironi Kiryat Shmona F.C.:Israel:Q907321
+4219,Hapoel Ra'anana,Tel-Aviv,Tel-Aviv,Israel,2,T2a,2,reep_t6244a8cb,reep_t43fa2b6f:Hapoel Ra'anana A.F.C.:Israel:Q30115917 | reep_t6244a8cb:Hapoel Ra'anana A.F.C.:Israel:Q2347701
+4229,Beitar Tel Aviv,Tel-Aviv,Tel-Aviv,Israel,,T2a,2,reep_t22a2d735,reep_t22a2d735:Beitar Tel Aviv F.C.:Israel:Q2616129 | reep_t480dab9b:Beitar Tel Aviv F.C.:Israel:Q2502185
+4230,Maccabi Jaffa,Tel-Aviv,Tel-Aviv,Israel,,T2a,2,reep_t69b5cc6d,reep_t69b5cc6d:Maccabi Jaffa F.C.:Israel:Q773362 | reep_t914ffe70:Maccabi Jaffa F.C.:Israel:Q115821135
+4272,Hapoel Ashdod,Ashdod,Ashdod,Israel,,T2a,2,reep_ta31d04c0,reep_t260edc81:Hapoel Ashdod F.C.:Israel:Q2907598 | reep_ta31d04c0:F.C. Ashdod:Israel:Q1138191
+4283,AC Milan,Milan,Milan,Italy,1,T1,3,,reep_t60d0cf02:A.C. Milan:Italy:Q3857792 | reep_t92aa6359:AC Milan:Italy:Q1543 | reep_tcd75a302:A.C. Milan:Italy:Q55602896
+4295,Como,Como,Milan,Italy,1,T1,3,reep_t54d007b0,reep_t492987a8:Como 1907:Italy:Q135746671 | reep_t54d007b0:Como 1907:Italy:Q1120838 | reep_t9fe2b471:Como 1907:Italy:Q135334608
+4303,Palermo,Palermo,Palermo,Italy,2,T2a,3,,reep_t19d933c6:Palermo Football Club:Italy:Q132128204 | reep_t1d9f87e7:ASD Athletic Club Palermo:Italy:Q130549905 | reep_tbaa1e053:Palermo F.C.:Italy:Q2674
+4330,Reggiana,Reggio Emilia,Reggio Emilia,Italy,3,T2a,2,reep_t8fb4c574,reep_t0994173d:ASD Reggiana CF:Italy:Q3626905 | reep_t8fb4c574:A.C. Reggiana 1919:Italy:Q289707
+4342,Cosenza,Cosenza,Cosenza,Italy,3,T2a,3,reep_tb14d2934,reep_t304a9392:Cosenza Calcio 1914:Italy:Q5775768 | reep_tb14d2934:Cosenza Calcio:Italy:Q1136016 | reep_tbe5e83c6:A.S. Cosenza Calcio:Italy:Q28195192
+4379,Scafatese,Scafati,Salerno,Italy,3,T2a,2,,reep_tcd9061da:A.S.D. U.S. Scafatese Calcio:Italy:Q18128910 | reep_te64afc64:S.S. Scafatese Calcio 1922:Italy:Q1132621
+4386,Siena,Siena,Siena,Italy,,T2a,2,reep_t7fe48d0f,reep_t7fe48d0f:Siena FC:Italy:Q2756 | reep_t812852a1:Siena CF:Italy:Q121842604
+4396,Ancona,Ancona,Ancona,Italy,,T2a,2,reep_t3eba4554,reep_t378d2f16:A.C. Ancona:Italy:Q20706646 | reep_t3eba4554:SSC Ancona:Italy:Q289029
+4423,Nocerina,Salerno,Salerno,Italy,,T2a,2,reep_t85f31cca,reep_t7b325bb2:Nocerina 1910:Italy:Q297680 | reep_t85f31cca:A.S.D. Nocerina 1910:Italy:Q56387165
+4464,Lumezzane,Brescia,Brescia,Italy,,T2a,2,reep_t6bf4ea04,reep_t6bf4ea04:Football Club Lumezzane:Italy:Q63994855 | reep_ta62b68ad:A.C. Lumezzane:Italy:Q289339
+4466,Milan FC,Milan,Milan,Italy,,T2a,3,,reep_t60d0cf02:A.C. Milan:Italy:Q3857792 | reep_t92aa6359:AC Milan:Italy:Q1543 | reep_tcd75a302:A.C. Milan:Italy:Q55602896
+4468,Palazzolo,Palazzolo sull'Oglio,Brescia,Italy,,T2a,3,,reep_t61cab1f3:A.C. Palazzolo 1913:Italy:Q3305152 | reep_t9be29c65:A.S.D. Sport Club Palazzolo:Italy:Q89695067 | reep_tf35884ce:A.C. Palazzolo A.S.D.:Italy:Q59769689
+4509,Siracusa,Syracuse,Syracuse,Italy,,T2a,2,,reep_t44909bb7:U.S. Siracusa:Italy:Q28195113 | reep_t786f675c:Siracusa Calcio 1924:Italy:Q4647072
+4561,Atletico Roma,,,Italy,,T2a,3,,reep_t2a2a71e0:AS Roma:Italy:Q2739 | reep_tc7e7020d:Atletico Roma F.C.:Italy:Q433529 | reep_tf947fd85:Roma CF:Italy:Q3601247
+4562,Audace,,,Italy,,T2a,2,,reep_t35af9d5d:Audace Football Club:Italy:Q3629464 | reep_ta35b249b:Audace 1919:Italy:Q111914165
+4603,Francavilla,,,Italy,,T2a,3,reep_te5f85dd3,reep_t27efc75a:A.S.D. Francavilla Calcio:Italy:Q4647319 | reep_t50f51926:A.S.D. Francavilla:Italy:Q3626872 | reep_te5f85dd3:F.C. Francavilla:Italy:Q5423691
+4703,FC Zhenis,Astana,Astana,Kazakhstan,1,T1,2,,reep_t23ac9285:FC Astana:Kazakhstan:Q779698 | reep_td4392489:FC Zhenis:Kazakhstan:Q753004
+4708,FC Ulytau,Jezkazgan,Jezkazgan,Kazakhstan,1,T1,2,,reep_t79fb989e:Ulytau:Kazakhstan:Q117244714 | reep_te6d4821b:FC Ulytau:Kazakhstan:Q1046326
+4717,FC Almaty,Almaty,Almaty,Kazakhstan,,T2a,2,,reep_t9079f248:FC CSKA Almaty:Kazakhstan:Q4502972 | reep_tdc151921:FC Alma-Ata:Kazakhstan:Q24360
+4737,FC Astana-1964,Astana,Astana,Kazakhstan,,T1,2,,reep_t23ac9285:FC Astana:Kazakhstan:Q779698 | reep_td4392489:FC Zhenis:Kazakhstan:Q753004
+4770,FK Jelgava,Jelgava,Jelgava,Latvia,1,T1,2,reep_t82ae27ec,reep_t82ae27ec:FK Jelgava:Latvia:Q284214 | reep_t8428b2c0:FS Jelgava:Latvia:Q108457654
+4774,Riga FC,Riga,Riga,Latvia,1,T1,2,reep_t2c7469ff,reep_t2c7469ff:Riga FC:Latvia:Q19963391 | reep_t7b33a96f:Riga FC:Latvia:Q136806482
+4789,FC Daugava,Daugavpils,Daugavpils,Latvia,,T1,2,reep_t2c4ed537,reep_t2c4ed537:FC Daugava:Latvia:Q337049 | reep_t4e56641e:FC Daugava:Latvia:Q31199966
+4822,FC Universitate Riga,Riga,Riga,Latvia,,T1,2,reep_t2c7469ff,reep_t2c7469ff:Riga FC:Latvia:Q19963391 | reep_t7b33a96f:Riga FC:Latvia:Q136806482
+4846,FBK Kaunas,Kaunas,Kaunas,Lithuania,,T1,2,reep_t0bd401d7,reep_t0bd401d7:FBK Kaunas:Lithuania:Q331650 | reep_t3c2de670:FBK Kaunas:Lithuania:Q27557140
+4872,FK Klaipeda,Klaipėda,Klaipėda,Lithuania,,T2a,2,reep_tadd710e3,reep_t439cde53:VfB Klaipėda:Lithuania:Q12676996 | reep_tadd710e3:FC Klaipėda:Lithuania:Q1388927
+4898,Progres Niedercorn,Luxembourg City,Luxembourg City,Luxembourg,1,T2a,2,reep_ta6efcec4,reep_t57f43381:FC Progrès Niedercorn:Luxembourg:Q3063137 | reep_ta6efcec4:FC Progrès Niederkorn:Luxembourg:Q933046
+4900,F91 Dudelange,Luxembourg City,Luxembourg City,Luxembourg,1,T1,2,reep_tbcc798ec,reep_tbcc798ec:F91 Dudelange:Luxembourg:Q221752 | reep_td6109798:F91 Dudelange:Luxembourg:Q3062995
+4921,CS Pétange,Luxembourg City,Luxembourg City,Luxembourg,,T1,2,,reep_t31237dd4:Union Titus Pétange:Luxembourg:Q20054860 | reep_t4149e545:CS Pétange:Luxembourg:Q1024476
+4972,Birkirkara FC,Valletta-Malta Island,Valletta-Malta Island,Malta,1,T1,2,reep_tce540abb,reep_tce540abb:Birkirkara F.C.:Malta:Q803976 | reep_tfb4866dd:Birkirkara F.C.:Malta:Q16532700
+5123,Sparta Rotterdam,Rotterdam,Rotterdam-The Hague,Netherlands,1,T1,2,reep_t04203262,reep_t04203262:Sparta Rotterdam:Netherlands:Q209895 | reep_tdfcef35d:Sparta Rotterdam:Netherlands:Q78584106
+5124,FC Twente,Enschede,Enschede,Netherlands,1,T1,2,,reep_t58ae548b:FC Twente:Netherlands:Q19603 | reep_taf6a5572:FC Twente:Netherlands:Q1387774
+5127,Willem II Tilburg,Tilburg,Tilburg,Netherlands,1,T1,2,reep_t62311e4c,reep_t62311e4c:Willem II:Netherlands:Q332664 | reep_tb47ff7a5:Willem II Tilburg:Netherlands:Q6167529
+5137,NAC Breda,Breda,Breda,Netherlands,2,T1,2,reep_t9a740468,reep_t9a740468:NAC Breda:Netherlands:Q332642 | reep_tf8e6c3eb:NAC Breda:Netherlands:Q125535825
+5160,AFC Amsterdam,Amsterdam,Amsterdam,Netherlands,3,T2a,3,,reep_t8c0c749a:FC Amsterdam:Netherlands:Q386241 | reep_t8cb2c85d:FC Amsterdam:Netherlands:Q13632317 | reep_tcd59296b:AC Amsterdam:Netherlands:Q27349570
+5178,FC Amsterdam,Amsterdam,Amsterdam,Netherlands,,T1,2,,reep_t8c0c749a:FC Amsterdam:Netherlands:Q386241 | reep_t8cb2c85d:FC Amsterdam:Netherlands:Q13632317
+5199,Achilles '29,Arnhem-Nijmegen,Arnhem-Nijmegen,Netherlands,,T1,2,,reep_tacc1f0a4:Achilles '29:Netherlands:Q24682589 | reep_tc154b13a:Achilles'29:Netherlands:Q2426022
+5215,BV Veendam,Veendam,Veendam,Netherlands,,T2a,2,reep_tf22d87c1,reep_t783b6ee9:VV Veendam 1894:Netherlands:Q2290336 | reep_tf22d87c1:SC Veendam:Netherlands:Q648382
+5218,Veendam,Veendam,Veendam,Netherlands,,T2a,2,reep_tf22d87c1,reep_t783b6ee9:VV Veendam 1894:Netherlands:Q2290336 | reep_tf22d87c1:SC Veendam:Netherlands:Q648382
+5277,Capelle,Rotterdam-The Hague,Rotterdam-The Hague,Netherlands,,T2a,2,,reep_t0f7c9c90:VV Capelle:Netherlands:Q1769491 | reep_t9343ba87:SV Capelle:Netherlands:Q1967444
+5416,FK Bashkimi,Kumanovo,Kumanovo,North Macedonia,1,T1,2,,reep_t8dcb0059:FK Bashkimi:North Macedonia:Q809982 | reep_tb7e7eb41:FK Bashkimi:North Macedonia:Q16826776
+5434,FK Osogovo,Kočani,Kočani,North Macedonia,,T1,2,,reep_tbd403c5c:FK Osogovo:North Macedonia:Q3400306 | reep_te553aa3c:FK Osogovo:North Macedonia:Q12911250
+5441,FK Gostivar,Gostivar,Gostivar,North Macedonia,,T1,2,reep_tbe2777fd,reep_t628ec1a4:FK Gostivar:North Macedonia:Q14405811 | reep_tbe2777fd:FK Gostivar:North Macedonia:Q5426146
+5446,FK Bregalnica Delčevo,Delčevo,Delčevo,North Macedonia,,T1,2,,reep_t91db6482:FK Bregalnica Delčevo:North Macedonia:Q3400356 | reep_tf489c9d8:FK Bregalnica Delčevo:North Macedonia:Q85760248
+5465,Crusaders FC,Belfast,Belfast,Northern Ireland,1,T1,2,reep_t0101cec0,reep_t0101cec0:Crusaders F.C.:United Kingdom:Q840567 | reep_t159dd063:Crusaders F.C.:United Kingdom:Q2493963
+5474,Newry City FC,Newry,Newry,Northern Ireland,,T1,2,reep_tb8a46b14,reep_t61eb95bb:Newry City F.C.:United Kingdom:Q589344 | reep_tb8a46b14:Newry City A.F.C.:United Kingdom:Q9213755
+5478,Queen's Island FC,Belfast,Belfast,Northern Ireland,,T1,2,,reep_t1c420777:Queen's Island F.C.:United Kingdom:Q16931285 | reep_t52f524aa:Queen's Island F.C.:United Kingdom:Q2110442
+5490,Clarence FC,,,Northern Ireland,,T1,2,,reep_t44c3a478:Clarence F.C.:United Kingdom:Q112030086 | reep_t73338f18:Clarence F.C.:United Kingdom:Q16827015
+5502,Queen's Island (1881),Belfast,Belfast,Northern Ireland,,T2a,2,,reep_t1c420777:Queen's Island F.C.:United Kingdom:Q16931285 | reep_t52f524aa:Queen's Island F.C.:United Kingdom:Q2110442
+5554,Hønefoss BK,Hønefoss,Hønefoss,Norway,,T1,2,reep_t4e237fb3,reep_t4e237fb3:Hønefoss BK:Norway:Q304060 | reep_t70f0093f:Hønefoss BK:Norway:Q133620802
+5568,FK Donn,,,Norway,,T1,2,,reep_t2fae7772:FK Donn:Norway:Q2758296 | reep_t4612be87:FK Donn:Norway:Q120483322
+5599,Śląsk Wrocław,Wrocław,Wrocław,Poland,1,T1,2,reep_tfbbdd2b6,reep_t092e19d9:Śląsk Wrocław:Poland:Q28676808 | reep_tfbbdd2b6:Śląsk Wrocław:Poland:Q328655
+5616,Stal Mielec,Mielec,Mielec,Poland,2,T1,2,reep_tf969208f,reep_t97cee709:Stal Mielec:Poland:Q48844951 | reep_tf969208f:Stal Mielec:Poland:Q1388790
+5641,Olimpia Poznań,Poznan,Poznan,Poland,,T1,2,,reep_ta566f2be:Olimpia Poznań:Poland:Q2019858 | reep_tfe7862e2:Olimpia Poznań:Poland:Q16584067
+5642,Górnik Łęczna,Łęczna,Łęczna,Poland,,T1,2,reep_t06153053,reep_t06153053:Górnik Łęczna:Poland:Q1198779 | reep_t42798474:Górnik Łęczna:Poland:Q11703110
+5685,Czuwaj Przemyśl,,,Poland,,T1,2,,reep_t4ce32910:Czuwaj Przemyśl:Poland:Q65170047 | reep_tef082edd:Czuwaj Przemyśl:Poland:Q11692356
+5755,Chemik Bydgoszcz,,,Poland,,T1,2,,reep_t925d996b:Chemik Bydgoszcz:Poland:Q30910165 | reep_td8303fbc:Chemik Bydgoszcz:Poland:Q1069272
+5837,Rio Ave FC,Porto,Porto,Portugal,1,T1,2,reep_te1a9d095,reep_t6794113c:Rio Ave F.C.:Portugal:Q28225982 | reep_te1a9d095:Rio Ave F.C.:Portugal:Q622432
+5840,CF Estrela Amadora,Amadora,Lisbon,Portugal,1,T2a,3,,reep_t26e48e6c:Clube de Futebol Estrela da Amadora:Portugal:Q108457563 | reep_t5d3229dd:C.F. Estrela da Amadora:Portugal:Q838134 | reep_t75e1d0ee:C.D. Estrela:Portugal:Q48868163
+5851,Portimonense SC,Portimão,Faro,Portugal,2,T1,2,reep_t6640e2d9,reep_t6640e2d9:Portimonense S.C.:Portugal:Q621120 | reep_tb5aecd40:Portimonense S.C.:Portugal:Q85794073
+5950,Länk FC Vilaverdense,Minho,Minho,Portugal,,T2a,2,reep_t666e112f,reep_t666e112f:Vilaverdense FC:Portugal:Q7930110 | reep_t933bb53c:Vilaverdense FC:Portugal:Q28225985
+5976,SR Almancilense,Faro,Faro,Portugal,,T1,2,,reep_t01aabbe7:S.R. Almancilense:Portugal:Q10372793 | reep_t28c13f0f:S.R. Almancilense:Portugal:Q48843669
+6003,UD Vilafranquense,Lisbon,Lisbon,Portugal,,T1,2,,reep_td04427d8:UD Vilafranquense:Portugal:Q3551877 | reep_tf0cc8370:AVS Futebol SAD:Portugal:Q120775987
+6005,AD Machico,Funchal,Funchal,Portugal,,T1,2,,reep_t68422755:A.D. Machico:Portugal:Q2868243 | reep_t9fadd90b:A.D. Machico:Portugal:Q4647108
+6011,Eléctrico FC,Ponte de Sor,Ponte de Sor,Portugal,,T1,2,,reep_t587e5e70:Eléctrico F.C.:Portugal:Q56281148 | reep_te1726343:Eléctrico F.C.:Portugal:Q5368649
+6052,GD Sesimbra,Lisbon,Lisbon,Portugal,,T1,2,reep_tfaa19639,reep_tecdc47d4:G.D. Sesimbra:Portugal:Q2474559 | reep_tfaa19639:G.D. Sesimbra:Portugal:Q137604485
+6063,SC Penalva do Castelo,Penalva do Castelo,Penalva do Castelo,Portugal,,T1,2,,reep_t0507f025:S.C. Penalva do Castelo:Portugal:Q108541735 | reep_t25fd0dc2:SC Penalva do Castelo:Portugal:Q10373876
+6104,UT Arad,Arad,Arad,Romania,1,T2a,2,reep_t66ebf2ed,reep_t3fef048b:FC UTA Arad:Romania:Q18540128 | reep_t66ebf2ed:FC UTA Arad:Romania:Q680770
+6111,AS Miercurea Ciuc,Miercurea Ciuc,Miercurea Ciuc,Romania,1,T1,2,,reep_t9a170a4a:FK Csíkszereda:Romania:Q125804228 | reep_tf6a5015f:FK Csíkszereda:Romania:Q23051672
+6113,Gloria Bistriţa,Bistriţa,Bistriţa,Romania,2,T1,2,,reep_t7da22366:Gloria Bistrița:Romania:Q56677281 | reep_tc51a5e81:Gloria Bistrița:Romania:Q377621
+6114,FC Bihor Oradea,Oradea,Oradea,Romania,2,T1,2,reep_t868bc5f3,reep_t868bc5f3:FC Bihor Oradea:Romania:Q1386940 | reep_ta46c1f4c:FC Bihor Oradea:Romania:Q113541238
+6118,CS Concordia Chiajna,Bucharest,Bucharest,Romania,2,T1,2,,reep_t7416b937:Concordia Chiajna:Romania:Q3686307 | reep_te4a398fa:CS Concordia Chiajna:Romania:Q1024463
+6157,Ripensia Timişoara,Timişoara,Timişoara,Romania,,T2a,2,,reep_t1fc7a254:FC Ripensia Timișoara:Romania:Q5425128 | reep_te2533ced:FC Ripensia Timișoara:Romania:Q186448
+6164,FC Baia Mare,Baia Mare,Baia Mare,Romania,,T1,2,reep_t9b768cc4,reep_t76aefd1b:FC Baia Mare:Romania:Q994685 | reep_t9b768cc4:Minaur Baia Mare:Romania:Q135627364
+6305,FC Ripensia Timișoara,Timişoara,Timişoara,Romania,,T1,2,,reep_t1fc7a254:FC Ripensia Timișoara:Romania:Q5425128 | reep_te2533ced:FC Ripensia Timișoara:Romania:Q186448
+6308,Săgeata Stejaru,Stejaru,Stejaru,Romania,,T2a,2,reep_t02ad3b8f,reep_t02ad3b8f:AFC Săgeata Năvodari:Romania:Q291918 | reep_tdb088892:AS Săgeata Stejaru:Romania:Q4654487
+6317,FC Olt Slatina,Slatina,Slatina,Romania,,T1,2,,reep_t60ceee38:FC Olt Slatina:Romania:Q8254135 | reep_td8d81cde:FC Olt Slatina:Romania:Q5425085
+6330,Stiinta Bacau,,,Romania,,T2a,2,,reep_t2812a61f:CS Știința Bacău:Romania:Q65049627 | reep_tf10b7cd5:FC Știința Bacău:Romania:Q2994638
+6332,FC Spartak Moscow,Moscow,Moscow,Russia,1,T1,2,,reep_t094158b1:Spartak Moscow:Russia:Q4430711 | reep_tafa07b0e:Spartak Moscow:Russia:Q29112
+6335,Lokomotiv Moscow,Moscow,Moscow,Russia,1,T2a,2,,reep_t7eb13e6a:FC Lokomotiv Moscow:Russia:Q4265827 | reep_tddd08ff9:FC Lokomotiv Moscow:Russia:Q29115
+6338,FC Rubin Kazan,Kazan,Kazan,Russia,1,T1,2,,reep_t02eb9c10:Rubin Kazan:Russia:Q105810506 | reep_tc4771634:Rubin Kazan:Russia:Q170040
+6347,FC Torpedo Moscow,Moscow,Moscow,Russia,2,T1,2,,reep_t7bd1d9c7:Torpedo Moscow:Russia:Q21644694 | reep_t8752903c:FC Torpedo Moscow:Russia:Q324338
+6355,FC Pari Nizhny Novgorod,Nizhny Novgorod,Nizhny Novgorod,Russia,2,T2a,2,,reep_t119bf6b9:FC Nizhny Novgorod:Russia:Q1389008 | reep_tfb5f315a:FC Nizhny Novgorod:Russia:Q20740338
+6391,FC Torpedo-ZIL Moscow,Moscow,Moscow,Russia,,T1,2,,reep_t63133a22:FC Torpedo-ZIL Moscow:Russia:Q5425199 | reep_td8eeb018:FC Torpedo-ZIL Moscow:Russia:Q391090
+6402,Sibir Novosibirsk,Novosibirsk,Novosibirsk,Russia,,T2a,2,,reep_t2b256f3d:FC Sibir Novosibirsk:Russia:Q725506 | reep_tff73f2da:FC Sibir:Russia:Q64581926
+6470,FC Nizhny Novgorod,Nizhny Novgorod,Nizhny Novgorod,Russia,,T1,2,,reep_t119bf6b9:FC Nizhny Novgorod:Russia:Q1389008 | reep_tfb5f315a:FC Nizhny Novgorod:Russia:Q20740338
+6479,FC Spartak Vladikavkaz,Vladikavkaz,Vladikavkaz,Russia,,T1,2,reep_t5e0176fa,reep_t5e0176fa:FC Spartak Vladikavkaz:Russia:Q65973164 | reep_tb18225d2:FC Spartak Vladikavkaz:Russia:Q4112976
+6564,Rangers,Glasgow,Glasgow,Scotland,1,T1,2,reep_t20b75238,reep_t20b75238:Rangers F.C.:United Kingdom:Q19597 | reep_t9c1883df:Rangers F.C.:United Kingdom:Q112221121
+6567,Aberdeen,Aberdeen,Aberdeen,Scotland,1,T1,2,reep_t8e1eee5b,reep_t3033d57a:Aberdeen F.C.:United Kingdom:Q4666922 | reep_t8e1eee5b:Aberdeen F.C.:United Kingdom:Q187326
+6575,Partick Thistle,Glasgow,Glasgow,Scotland,2,T2a,2,reep_t2be3b318,reep_t074ac9be:Partick F.C.:United Kingdom:Q68376698 | reep_t2be3b318:Partick Thistle F.C.:United Kingdom:Q822722
+6593,Airdrieonians FC,Airdrie,Glasgow,Scotland,3,T1,2,reep_t40cedc23,reep_t40cedc23:Airdrieonians F.C.:United Kingdom:Q408554 | reep_tc58a74b8:Airdrieonians F.C.:United Kingdom:Q1345161
+6601,Edinburgh City,Edinburgh,Edinburgh,Scotland,4,T2a,2,reep_td5022bcb,reep_t610abe8a:Edinburgh City F.C.:United Kingdom:Q25172009 | reep_td5022bcb:Edinburgh City F.C.:United Kingdom:Q2283783
+6605,Airdrieonians,Glasgow,Glasgow,Scotland,,T2a,2,reep_t40cedc23,reep_t40cedc23:Airdrieonians F.C.:United Kingdom:Q408554 | reep_tc58a74b8:Airdrieonians F.C.:United Kingdom:Q1345161
+6608,Clydebank,Glasgow,Glasgow,Scotland,,T2a,4,reep_t4408b820,reep_t4408b820:Clydebank F.C.:United Kingdom:Q955789 | reep_t5b38204e:Clydebank Athletic F.C.:United Kingdom:Q118497243 | reep_t606b7858:Clydebank F.C.:United Kingdom:Q28434525 | reep_tb93eb403:Clydebank F.C.:United Kingdom:Q108196078
+6609,Albion Rovers,Glasgow,Glasgow,Scotland,,T2a,2,reep_t79dde9cf,reep_t79dde9cf:Albion Rovers F.C.:United Kingdom:Q656134 | reep_te5e1de05:Albion Rovers F.C.:United Kingdom:Q4712551
+6610,Port Glasgow Athletic,Greenock,Greenock,Scotland,,T2a,2,,reep_tcca5ec4a:Port Glasgow F.C.:United Kingdom:Q7230647 | reep_tf3588275:Port Glasgow Athletic F.C.:United Kingdom:Q2778613
+6618,Bo'ness,Falkirk,Falkirk,Scotland,,T2a,2,reep_t5101c515,reep_t5101c515:Bo'ness United F.C.:United Kingdom:Q4119230 | reep_tbb96cf27:Bo'ness F.C.:United Kingdom:Q2907478
+6632,Nithsdale Wanderers,Sanquhar,Sanquhar,Scotland,,T2a,2,,reep_tc3201a7c:Nithsdale Wanderers F.C.:United Kingdom:Q98455975 | reep_tceb6c20f:Nithsdale Wanderers F.C.:United Kingdom:Q2726770
+6678,Johnstone,Glasgow,Glasgow,Scotland,,T2a,2,,reep_t90eeb915:Johnstone F.C.:United Kingdom:Q2105919 | reep_t9136a3bb:Johnstone Athletic F.C.:United Kingdom:Q118497151
+6686,Royal Albert,Larkhall,Larkhall,Scotland,,T2a,2,reep_t0b073c45,reep_t0b073c45:Hawick Royal Albert F.C.:United Kingdom:Q938663 | reep_tbee173df:Royal Albert F.C.:United Kingdom:Q7373644
+6706,Radnik Surdulica,Surdulica,Surdulica,Serbia,1,T2a,2,,reep_t1eb1df6d:FK Radnički Niš:Serbia:Q1137993 | reep_t2aa9bdfd:FK Radnik Surdulica:Serbia:Q5426356
+6734,FK Bačka Bačka Palanka,Bačka Palanka,Bačka Palanka,Serbia,,T2a,2,,reep_t58708f97:OFK Bačka:Serbia:Q284077 | reep_t70dcedaa:FK Bačka 1901:Serbia:Q1257327
+6797,Partizán Bardejov,,,Slovakia,,T1,2,reep_t3590cb7a,reep_t3590cb7a:Partizán Bardejov:Slovakia:Q2877479 | reep_tb17472b2:Partizán Bardejov:Slovakia:Q96398458
+6823,NK Olimpija,Ljubljana,Ljubljana,Slovenia,1,T1,2,,reep_t1d38b8c5:NK Olimpija Ljubljana:Slovenia:Q31932 | reep_t79e14316:NK Olimpija Ljubljana:Slovenia:Q13363064
+6849,NK Dravograd,Dravograd,Dravograd,Slovenia,,T1,2,reep_tca98c69f,reep_tca98c69f:NK Dravograd:Slovenia:Q731550 | reep_te1f42ed9:NK Drava Ptuj:Slovenia:Q691752
+6895,Levante UD,Valencia,Valencia,Spain,1,T1,2,,reep_t58ad01ef:Levante UD:Spain:Q61001608 | reep_t88b915a8:Levante UD:Spain:Q8823
+6906,Córdoba CF,Cordova,Cordova,Spain,2,T1,2,,reep_t64d0b0e0:Córdoba CF:Spain:Q108906281 | reep_te78aac7a:Córdoba CF:Spain:Q10499
+6907,UD Almería,Almería,Almería,Spain,2,T2a,3,reep_teb1fce77,reep_t43948d57:CA Almería:Spain:Q5008932 | reep_teb1fce77:AD Almería:Spain:Q290781 | reep_teb628d42:CP Almería:Spain:Q4891402
+6910,Burgos CF,Burgos,Burgos,Spain,2,T1,2,,reep_t1cd1ff2e:Burgos CF:Spain:Q852079 | reep_t2a3d211b:Burgos CF:Spain:Q4998669
+6915,AD Ceuta FC,Ceuta,Ceuta,Spain,2,T1,2,reep_t323a3026,reep_t323a3026:AD Ceuta FC:Spain:Q5773365 | reep_tb00702b1:AD Ceuta:Spain:Q290841
+6927,SD Huesca,Huesca,Huesca,Spain,3,T2a,2,reep_ta100553f,reep_ta100553f:UD Huesca:Spain:Q6156976 | reep_tea970fc1:Club Deportivo Huesca:Spain:Q54822469
+6945,Cacereño,Cáceres,Cáceres,Spain,3,T1,2,reep_tffbd5aff,reep_tee11dad9:CP Cacereño:Spain:Q112630822 | reep_tffbd5aff:CP Cacereño:Spain:Q856415
+6955,CD Águilas,Águilas,Lorca,Spain,3,T2a,2,,reep_t77cdf3f8:Águilas FC:Spain:Q9098124 | reep_t9c46f8aa:Águilas CF:Spain:Q290881
+6968,Condal,Barcelona,Barcelona,Spain,,T2a,2,reep_t970ab16e,reep_t7fe2c859:Condal Club:Spain:Q650869 | reep_t970ab16e:CD Condal:Spain:Q856083
+6969,Atlético Almería,Almería,Almería,Spain,,T2a,3,reep_teb1fce77,reep_t43948d57:CA Almería:Spain:Q5008932 | reep_teb1fce77:AD Almería:Spain:Q290781 | reep_teb628d42:CP Almería:Spain:Q4891402
+6972,Atlético Marbella,Marbella,Marbella,Spain,,T2a,2,reep_tbd945804,reep_t4536b5fb:CA Marbella:Spain:Q613222 | reep_tbd945804:UD Marbella:Spain:Q2298585
+6993,Linares Deportivo,Linares,Linares,Spain,,T1,2,reep_td708ecda,reep_t1128bcb4:Linares Deportivo:Spain:Q28872508 | reep_td708ecda:Linares Deportivo:Spain:Q5976634
+6997,Marbella FC,Marbella,Marbella,Spain,,T2a,2,reep_tbd945804,reep_t4536b5fb:CA Marbella:Spain:Q613222 | reep_tbd945804:UD Marbella:Spain:Q2298585
+7060,Club Deportivo Victoria,Tazacorte,Tazacorte,Spain,,T2a,4,,reep_t18a27d34:Club Atlético Victoria:Spain:Q5773347 | reep_t481d2149:Victoria CF:Spain:Q109576829 | reep_t8241248c:CD Vitoria:Spain:Q3681525 | reep_t8b2d85a4:CD Victoria:Spain:Q5010153
+7091,Tomelloso CF,Tomelloso,Tomelloso,Spain,,T1,2,,reep_t020d733c:Tomelloso CF:Spain:Q9088182 | reep_td0acde7d:Tomelloso CF:Spain:Q134722426
+7098,CE Espanyol,Barcelona,Barcelona,Spain,,T2a-alias,2,reep_tea9b4fb5,reep_t6b0e491a:RCD Espanyol B:Spain:Q32537 | reep_tea9b4fb5:RCD Espanyol de Barcelona:Spain:Q8780
+7101,CF Barcelona,Barcelona,Barcelona,Spain,,T2a,2,reep_t69090873,reep_t69090873:FC Barcelona (beach soccer):Spain:Q5424838 | reep_tc7e2759e:FC Barcelona:Spain:
+7125,CD Badajoz,Badajoz,Badajoz,Spain,,T2a,2,reep_t88cae991,reep_t2dd0a403:Club Deportivo Badajoz:Spain:Q10862461 | reep_t88cae991:Club Deportivo Badajoz:Spain:Q853043
+7130,CP Cacereño,Cáceres,Cáceres,Spain,,T1,2,reep_tffbd5aff,reep_tee11dad9:CP Cacereño:Spain:Q112630822 | reep_tffbd5aff:CP Cacereño:Spain:Q856415
+7178,Lorca Atlético,Lorca,Lorca,Spain,,T2a,7,,reep_t3fac5c4f:Lorca CF:Spain:Q754372 | reep_t65e9c7bc:Lorca Fútbol Club:Spain:Q6463150 | reep_t6d9dfa7f:CD Lorca:Spain:Q5773895 | reep_t8b47e1a8:CF Lorca Deportiva:Spain:Q18126658 | reep_t8dc0c8de:CF Lorca Deportiva:Spain:Q661383 | reep_t9a9f6c27:Lorca Deportiva CF:Spain:Q239049 | reep_tf3cdccca:Lorca Atlético CF:Spain:Q1038858
+7180,Lorca Deportiva,Lorca,Lorca,Spain,,T2a,7,,reep_t3fac5c4f:Lorca CF:Spain:Q754372 | reep_t65e9c7bc:Lorca Fútbol Club:Spain:Q6463150 | reep_t6d9dfa7f:CD Lorca:Spain:Q5773895 | reep_t8b47e1a8:CF Lorca Deportiva:Spain:Q18126658 | reep_t8dc0c8de:CF Lorca Deportiva:Spain:Q661383 | reep_t9a9f6c27:Lorca Deportiva CF:Spain:Q239049 | reep_tf3cdccca:Lorca Atlético CF:Spain:Q1038858
+7181,Lorca FC,Lorca,Lorca,Spain,,T2a,7,,reep_t3fac5c4f:Lorca CF:Spain:Q754372 | reep_t65e9c7bc:Lorca Fútbol Club:Spain:Q6463150 | reep_t6d9dfa7f:CD Lorca:Spain:Q5773895 | reep_t8b47e1a8:CF Lorca Deportiva:Spain:Q18126658 | reep_t8dc0c8de:CF Lorca Deportiva:Spain:Q661383 | reep_t9a9f6c27:Lorca Deportiva CF:Spain:Q239049 | reep_tf3cdccca:Lorca Atlético CF:Spain:Q1038858
+7202,Huracán CF,Manises,Manises,Spain,,T2a,2,reep_tadfd6303,reep_tadfd6303:Huracán Valencia CF:Spain:Q1124892 | reep_tafa1a6e9:AD Huracán:Spain:Q4651225
+7253,CD Isla Cristina,,,Spain,,T2a,2,,reep_t00a0fd28:Isla Cristina Football Club:Spain:Q105397409 | reep_t8d1a563a:Club Deportivo Isla Cristina:Spain:Q105516672
+7254,CD Juvenil,,,Spain,,T2a,2,,reep_t0ec22d60:SD Juvenil:Spain:Q7389517 | reep_t786d642f:Club Deportivo Juvenil:Spain:Q5773848
+7265,CD Móstoles,,,Spain,,T2a,2,,reep_t3120aed1:Club Deportivo Móstoles:Spain:Q731425 | reep_td5657de8:Móstoles CF:Spain:Q105081834
+7289,CF Lorca Deportiva,,,Spain,,T1,2,,reep_t8b47e1a8:CF Lorca Deportiva:Spain:Q18126658 | reep_t8dc0c8de:CF Lorca Deportiva:Spain:Q661383
+7311,Galáctico Pegaso,,,Spain,,T1,2,,reep_tb620e91e:Galáctico Pegaso:Spain:Q10895729 | reep_td807bc2d:Galáctico Pegaso:Spain:Q5519517
+7346,Orihuela Deportiva,,,Spain,,T2a,2,reep_t72ebcea0,reep_t2b97163f:Orihuela Deportiva CF:Spain:Q650797 | reep_t72ebcea0:Orihuela CF:Spain:Q637427
+7348,Palencia CF,,,Spain,,T1,2,,reep_t316f6bfa:Palencia CF:Spain:Q1228331 | reep_t927e85f1:Palencia CF:Spain:Q110646353
+7432,IK Brage,Borlange,Borlange,Sweden,,T1,2,reep_tebd75c1b,reep_tebd75c1b:IK Brage:Sweden:Q1140076 | reep_tf1653347:IK Brage:Sweden:Q120498660
+7442,Falkenbergs FF,Falkenberg,Falkenberg,Sweden,,T1,2,reep_t3d25ca35,reep_t016c3c1c:Falkenbergs FF:Sweden:Q120499107 | reep_t3d25ca35:Falkenbergs FF:Sweden:Q1394197
+7446,IK Sirius,,,Sweden,,T2a,2,reep_t94521371,reep_t28529ae0:IK Sirius FK:Sweden:Q120411652 | reep_t94521371:IK Sirius FK:Sweden:Q1471336
+7537,Sportclub Veltheim,,,Switzerland,,T2a,2,,reep_t325ceb83:SC Veltheim:Switzerland:Q2205582 | reep_t6988434a:FC Veltheim:Switzerland:Q110658924
+7626,Trabzonspor,Trabzon,Trabzon,Turkey,1,T1,2,reep_t1b1ff442,reep_t1b1ff442:Trabzonspor:Turkey:Q192641 | reep_tecd9d883:Trabzonspor:Turkey:Q3536136
+7637,Erzurumspor,Erzurum,Erzurum,Turkey,1,T1,2,,reep_t0170f403:Erzurumspor:Turkey:Q1366316 | reep_tefea9d10:Erzurumspor F.K.:Turkey:Q2426819
+7780,Karpaty Lviv,Lviv,Lviv,Ukraine,1,T2a,2,,reep_t2873dc93:FC Karpaty Lviv:Ukraine:Q223360 | reep_tcf119de7:FC Karpaty Lviv:Ukraine:Q108197622
+7788,FC Polissya Zhytomyr,Zhytomyr,Zhytomyr,Ukraine,1,T1,2,reep_tc9d96c00,reep_tc9d96c00:FC Polissya Zhytomyr:Ukraine:Q2036903 | reep_tf9f2705c:FC Polissya Zhytomyr:Ukraine:Q4180720
+7797,FC Probiy Horodenka,Horodenka,Kolomyia,Ukraine,2,T1,2,,reep_t596b3fcb:FSC Mariupol:Ukraine:Q56246621 | reep_td0930c81:FC Probiy Horodenka:Ukraine:Q11827243
+7817,Hoverla Uzhhorod,Uzhhorod,Uzhhorod,Ukraine,,T2a,2,,reep_t51046aa4:FC Uzhhorod:Ukraine:Q30962897 | reep_tbe771566:FC Hoverla Uzhhorod:Ukraine:Q735624
+7822,FC Lviv,Lviv,Lviv,Ukraine,,T1,2,,reep_t4d67db8d:FC Lviv:Ukraine:Q4271000 | reep_tb8750a75:FC Lviv:Ukraine:Q1388961
+7883,Karpaty-2 Lviv,Lviv,Lviv,Ukraine,,T2a,2,reep_tdf5f7ba1,reep_t810951d1:FC Karpaty-2 Lviv:Ukraine:Q2034476 | reep_tdf5f7ba1:FC Karpaty-2 Lviv (2022):Ukraine:Q121367189
+7894,FK Poltava,Poltava,Poltava,Ukraine,,T2a,2,,reep_t88b33956:FC Poltava:Ukraine:Q2027156 | reep_tce032f11:SC Poltava:Ukraine:Q107653964
+7896,FC Sumy,Sumy,Sumy,Ukraine,,T1,2,reep_t2d308610,reep_t2d308610:FC Sumy:Ukraine:Q65195995 | reep_t7965c7eb:FC Sumy:Ukraine:Q2034775
+7965,Oswestry Town,Oswestry,Oswestry,Wales,,T2a,2,,reep_t6f38600d:Oswestry Town F.C.:United Kingdom:Q1751307 | reep_t703914bc:F.C. Oswestry Town:United Kingdom:Q24185289
+8011,Sporting San José,San José,San José,Costa Rica,1,T2a,2,reep_t16d47065,reep_t16d47065:Sporting Football Club:Costa Rica:Q24828730 | reep_tfd365c0a:Sporting Football Club:Costa Rica:Q115642020
+8019,Guadalupe FC,Guadalupe,San José,Costa Rica,,T2a,2,reep_t25b2213d,reep_t25b2213d:Guadalupe Fútbol Club:Costa Rica:Q29588491 | reep_tbe9a4182:Club Sport Guadalupe:Costa Rica:Q5774790
+8092,CF América,Mexico City,Mexico City,Mexico,1,T1,2,reep_t09cfec57,reep_t09cfec57:Club América:Mexico:Q459090 | reep_t31961ddd:Club América:Mexico:Q30115940
+8094,CD Toluca,Toluca,Mexico City,Mexico,1,T2a,2,reep_tb900dd23,reep_t6496c6f4:Deportivo Toluca F.C.:Mexico:Q30115942 | reep_tb900dd23:Deportivo Toluca F.C.:Mexico:Q670186
+8097,Puebla,Puebla,Puebla,Mexico,1,T2a,2,reep_t66310807,reep_t1903cf22:Puebla A.C.:Mexico:Q1699065 | reep_t66310807:Puebla F.C.:Mexico:Q646596
+8102,Tigres UANL,Monterrey,Monterrey,Mexico,1,T1,2,reep_tbecd0f2b,reep_t330d0ae9:Tigres UANL:Mexico:Q30115947 | reep_tbecd0f2b:Tigres UANL:Mexico:Q849823
+8104,Pachuca CF,Pachuca,Pachuca,Mexico,1,T1,2,reep_tdb48a448,reep_t6a9d9f66:C.F. Pachuca:Mexico:Q30115941 | reep_tdb48a448:CF Pachuca:Mexico:Q736937
+8105,Querétaro FC,Querétaro,Querétaro,Mexico,1,T1,3,reep_t18d92e2d,reep_t18d92e2d:Querétaro F.C.:Mexico:Q606210 | reep_t2f493228:Club Querétaro:Mexico:Q97169392 | reep_t4606b771:Querétaro F.C.:Mexico:Q61862315
+8106,Club Tijuana,Tijuana,Tijuana,Mexico,1,T1,2,reep_td4e8934c,reep_t41985e0e:Club Tijuana:Mexico:Q60829969 | reep_td4e8934c:Club Tijuana:Mexico:Q1103168
+8108,Atlético San Luis,San Luis Potosí,San Luis Potosí,Mexico,1,T2a,2,,reep_tb80067fd:San Luis F.C.:Mexico:Q1103153 | reep_tc3025a4b:Atletico de San Luis:Mexico:Q13408349
+8125,Veracruz,Veracruz,Veracruz,Mexico,,T2a,2,,reep_t03fc278c:Atlético de Veracruz:Mexico:Q757479 | reep_td8329374:Atlético Veracruz:Mexico:Q16301550
+8134,Colibríes de Morelos,Cuernavaca,Cuernavaca,Mexico,,T1,2,,reep_t8a324a83:Pumas Morelos:Mexico:Q1134577 | reep_ta515ac2f:Colibríes de Morelos:Mexico:Q1023537
+8135,Mazatlán FC,Mazatlán,Mazatlán,Mexico,,T2a,2,reep_ta8ec16cf,reep_ta8ec16cf:Mazatlán Fútbol Club:Mexico:Q96045907 | reep_tfc08cb00:México FC:Mexico:Q678862
+8136,CD Marte,Cuernavaca,Cuernavaca,Mexico,,T2a,2,reep_t00517c5c,reep_t00517c5c:Club Deportivo Marte:Mexico:Q1103050 | reep_t3b90dd18:Club Marte:Mexico:Q5774386
+8140,Potros Neza,Mexico City,Mexico City,Mexico,,T1,2,reep_tcc17c655,reep_t834b6fb8:Potros Neza:Mexico:Q1136057 | reep_tcc17c655:Toros Neza:Mexico:Q2005514
+8158,Celaya FC,Celaya,Celaya,Mexico,,T2a,2,,reep_t175c0fac:Atlético Celaya:Mexico:Q757425 | reep_tdec40cf0:Club Celaya:Mexico:Q1052781
+8227,San Jose Earthquakes,San Jose,San Francisco-San Jose,United States,1,T1,2,reep_tc5f0758b,reep_tc5f0758b:San Jose Earthquakes:United States:Q575370 | reep_tcc96e7d7:San Jose Earthquakes:United States:Q1095113
+8232,Seattle Sounders FC,Seattle,Seattle,United States,1,T1,3,,reep_t104a27c5:Seattle Sounders:United States:Q2091731 | reep_t816bb886:Seattle Sounders FC:United States:Q632511 | reep_tda58dadb:Seattle Sounders:United States:Q956200
+8234,Vancouver Whitecaps FC,Vancouver,Vancouver,Canada,1,T1,4,,reep_t03645f25:Vancouver Whitecaps:Canada:Q1090574 | reep_t09372233:Vancouver Whitecaps FC:Canada:Q196107 | reep_t61d9eabc:Vancouver Whitecaps:Canada:Q3567798 | reep_tfade59bd:Vancouver Whitecaps:Canada:Q2008499
+8235,Portland Timbers,Portland,Portland,United States,1,T1,4,,reep_t1e49bed6:Portland Timbers:United States:Q1138386 | reep_t70a84844:Portland Timbers:United States:Q1837357 | reep_t732aa5b5:Portland Timbers:United States:Q16025275 | reep_td71e95ad:Portland Timbers:United States:Q1031200
+8237,Orlando City,Orlando,Orlando,United States,1,T1,2,,reep_t8b1ef865:Orlando City SC:United States:Q15214308 | reep_tfd57ea9b:Orlando City SC:United States:Q1393746
+8240,Minnesota United,St. Paul,Minneapolis,United States,1,T1,2,,reep_t737f7025:Minnesota United FC:United States:Q19828435 | reep_tfbd28de8:Minnesota United FC:United States:Q953046
+8244,Nashville SC,Nashville,Nashville,United States,1,T1,2,,reep_t395b612e:Nashville SC:United States:Q24185298 | reep_te74de6f7:Nashville SC:United States:Q47518754
+8249,Tampa Bay Rowdies,St. Petersburg (FL),Tampa,United States,2,T1,2,reep_t378abf65,reep_t378abf65:Tampa Bay Rowdies:United States:Q1046445 | reep_tf2efc3a8:Tampa Bay Rowdies:United States:Q1972199
+8258,Miami FC,University Park (FL),Miami,United States,2,T1,2,reep_t5d4efdee,reep_t5d4efdee:Miami FC:United States:Q19984972 | reep_td88b7d12:Miami FC:United States:Q25409246
+8266,Brooklyn FC,New York,New York,United States,2,T1,3,,reep_t0f4bd5a1:Brooklyn FC:United States:Q124053929 | reep_t460eaec1:Brooklyn F.C.:United States:Q4974824 | reep_t990ea3ba:Brooklyn FC:United States:Q138240237
+8267,FC Tulsa,Tulsa,Tulsa,United States,2,T1,2,reep_t9671badb,reep_t844d3882:FC Tulsa:United States:Q5425206 | reep_t9671badb:FC Tulsa:United States:Q16858470
+8281,New York Cosmos 2026,Paterson,New York,United States,3,T2a,3,reep_td95e77bc,reep_t7b6de092:New York Cosmos:United States:Q646135 | reep_td95e77bc:New York Cosmos:United States:Q13405481 | reep_te923b234:New York Cosmos:United States:Q133270567
+8293,New York Cosmos,New York,New York,United States,,T1,3,reep_td95e77bc,reep_t7b6de092:New York Cosmos:United States:Q646135 | reep_td95e77bc:New York Cosmos:United States:Q13405481 | reep_te923b234:New York Cosmos:United States:Q133270567
+8294,Toronto Blizzard,Toronto,Toronto,Canada,,T1,2,,reep_t0b81c9d9:Toronto Blizzard:Canada:Q1575615 | reep_t32510aa7:Toronto Blizzard:Canada:Q13404889
+8296,Vancouver Whitecaps,Vancouver,Vancouver,Canada,,T1,3,,reep_t03645f25:Vancouver Whitecaps:Canada:Q1090574 | reep_t61d9eabc:Vancouver Whitecaps:Canada:Q3567798 | reep_tfade59bd:Vancouver Whitecaps:Canada:Q2008499
+8298,San Diego Sockers,San Diego,San Diego,United States,,T1,2,,reep_t56a8cd48:San Diego Sockers:United States:Q2017456 | reep_t8645be1f:San Diego Sockers:United States:Q7413720
+8299,Rochester Lancers,Rochester,Rochester,United States,,T1,3,,reep_tc16d466d:Rochester Lancers:United States:Q7353996 | reep_tdb89dc7b:Rochester Lancers:United States:Q2627193 | reep_tfd01867e:Rochester Lancers:United States:Q22025381
+8301,Tampa Bay Rowdies,Tampa,Tampa,United States,,T1,2,reep_t378abf65,reep_t378abf65:Tampa Bay Rowdies:United States:Q1046445 | reep_tf2efc3a8:Tampa Bay Rowdies:United States:Q1972199
+8303,Tulsa Roughnecks,Tulsa,Tulsa,United States,,T1,2,,reep_tdcd3b230:Tulsa Roughnecks:United States:Q2273722 | reep_tef1d323e:Tulsa Roughnecks:United States:Q16858465
+8304,Seattle Sounders,Seattle,Seattle,United States,,T1,2,reep_t104a27c5,reep_t104a27c5:Seattle Sounders:United States:Q2091731 | reep_tda58dadb:Seattle Sounders:United States:Q956200
+8305,Edmonton Drillers,Edmonton,Edmonton,Canada,,T1,3,,reep_t378d6d21:Edmonton Drillers:Canada:Q16765359 | reep_t8e930138:Edmonton Drillers:Canada:Q5339038 | reep_tbdd0cdd8:Edmonton Drillers:Canada:Q5339040
+8309,Washington Diplomats,Washington-Baltimore,Washington-Baltimore,United States,,T1,2,,reep_t33ca383e:Washington Diplomats:United States:Q17018270 | reep_t482a9b1e:Washington Diplomats:United States:Q1190526
+8315,Washington Diplomats 1981,Washington-Baltimore,Washington-Baltimore,United States,,T2a,2,,reep_t33ca383e:Washington Diplomats:United States:Q17018270 | reep_t482a9b1e:Washington Diplomats:United States:Q1190526
+8323,Baltimore Bays,Washington-Baltimore,Washington-Baltimore,United States,,T1,3,,reep_t66c38299:Baltimore Bays:United States:Q2019465 | reep_t6fb8c53a:Baltimore Bays:United States:Q16836534 | reep_t87fd9b19:Baltimore Bays:United States:Q4852776
+8330,Chicago Mustangs,Chicago,Chicago,United States,,T1,2,,reep_te1ccd014:Chicago Mustangs:United States:Q5095715 | reep_tf431d0cc:Chicago Mustangs:United States:Q1133759
+8335,Toronto Falcons,Toronto,Toronto,Canada,,T1,2,,reep_te45e8ea5:Toronto Falcons:Canada:Q20710313 | reep_te4acdd01:Toronto Falcons:Canada:Q1133584
+8336,Houston Stars,Houston,Houston,United States,,T1,2,,reep_t5f362ab8:Houston Stars:United States:Q950526 | reep_t863fa518:Houston Stars:United States:Q5916726
+8349,Fort Lauderdale Strikers,Miami,Miami,United States,,T1,3,reep_t245505f6,reep_t245505f6:Fort Lauderdale Strikers:United States:Q972741 | reep_t3f651ef9:Fort Lauderdale Strikers:United States:Q2313851 | reep_t9897c08c:Fort Lauderdale Strikers:United States:Q6502565
+8351,Miami FC,Miami,Miami,United States,,T1,2,reep_t5d4efdee,reep_t5d4efdee:Miami FC:United States:Q19984972 | reep_td88b7d12:Miami FC:United States:Q25409246
+8362,Detroit Express,Detroit,Detroit,United States,,T1,2,,reep_tb0c221c5:Detroit Express:United States:Q1133753 | reep_tf0dc309d:Detroit Express:United States:Q16838299
+8379,Philadelphia Fury,Philadelphia,Philadelphia,United States,,T1,2,,reep_t26cf6044:Philadelphia Fury:United States:Q961300 | reep_tf27292ab:Philadelphia Fury:United States:Q19577553
+8437,Huracán,Buenos Aires,Buenos Aires,Argentina,1,T2a,3,reep_ta578fa72,reep_t2624f258:Huracán Fútbol Club (Goya):Argentina:Q9005496 | reep_t5e867fd5:Club Atlético Huracán (Posadas):Argentina:Q127687245 | reep_ta578fa72:Club Atlético Huracán:Argentina:Q327172
+8446,Talleres,Cordoba,Cordoba,Argentina,1,T2a,2,,reep_t10c42afd:Club Deportivo Talleres:Argentina:Q131395842 | reep_t4ea25fae:Club Atlético Talleres (Frías):Argentina:Q131399221
+8461,Quilmes,Quilmes,Buenos Aires,Argentina,2,T2a,2,reep_t96bc7f59,reep_t2d41372b:Club Quilmes (Tres Arroyos):Argentina:Q5774544 | reep_t96bc7f59:Quilmes Atlético Club:Argentina:Q775966
+8464,Estudiantes de Buenos Aires,Buenos Aires,Buenos Aires,Argentina,2,T2a,3,,reep_t7a6df576:Club Atlético Estudiantes (Resistencia):Argentina:Q118951641 | reep_t9cec6253:Club Sportivo Estudiantes:Argentina:Q2877409 | reep_tcbce8da0:Club Sportivo Estudiantes:Argentina:Q5848004
+8477,CA Colegiales,Munro,Buenos Aires,Argentina,2,T2a,2,reep_ta2b80ec4,reep_t3a068229:Club Atlético Colegiales (Concordia):Argentina:Q5773072 | reep_ta2b80ec4:Club Atlético Colegiales:Argentina:Q2057734
+8497,Belgrano AC,Buenos Aires,Buenos Aires,Argentina,,T2a,3,reep_t0a2e55b4,reep_t0a2e55b4:Club Atlético Belgrano:Argentina:Q54810178 | reep_t7e50bf2c:Club Atlético Belgrano (Paraná):Argentina:Q5773033 | reep_te6561923:Club Sportivo Belgrano:Argentina:Q7579610
+8506,Alumni AC,Buenos Aires,Buenos Aires,Argentina,,T2a,2,,reep_t63768534:Alumni Athletic Club:Argentina:Q2549594 | reep_t9ebfb003:Club Atlético Alumni:Argentina:Q118592611
+8508,Sportivo Palermo,Buenos Aires,Buenos Aires,Argentina,,T2a,2,,reep_t18b4dea5:Club Atlético Palermo (Paraná):Argentina:Q108708954 | reep_taee26918:Club Sportivo Palermo:Argentina:Q3681576
+8510,Talleres (RE),Remedios de Escalada,Buenos Aires,Argentina,,T2a,2,,reep_t10c42afd:Club Deportivo Talleres:Argentina:Q131395842 | reep_t4ea25fae:Club Atlético Talleres (Frías):Argentina:Q131399221
+8515,Argentino del Sud,Buenos Aires,Buenos Aires,Argentina,,T2a,2,,reep_t7afc640b:Club Atlético Argentino del Sud:Argentina:Q115110580 | reep_tc416ee33:Club Atlético Argentino del Sud:Argentina:Q3681264
+8516,CA Palermo,Buenos Aires,Buenos Aires,Argentina,,T2a,2,,reep_t18b4dea5:Club Atlético Palermo (Paraná):Argentina:Q108708954 | reep_taee26918:Club Sportivo Palermo:Argentina:Q3681576
+8519,Deportivo Mandiyú,Corrientes,Corrientes,Argentina,,T1,2,,reep_t57f5f97e:Deportivo Mandiyú:Argentina:Q8347076 | reep_td5abc6dd:Deportivo Mandiyú:Argentina:Q2562601
+8520,CA Del Plata,Mar del Plata,Mar del Plata,Argentina,,T2a,2,,reep_t9b395f0d:La Plata Fútbol Club:Argentina:Q6464477 | reep_ta9334ec6:Club Atlético Del Plata:Argentina:Q5136129
+8560,General San Martín,,,Argentina,,T2a,2,,reep_t30fcafcf:Club Atlético General San Martín:Argentina:Q114055634 | reep_tddbf0dd6:CA General San Martín:Argentina:Q9266795
+8563,Jorge Newbery,,,Argentina,,T2a,2,,reep_t08642c63:Club Atlético Jorge Newbery (Comodoro Rivadavia):Argentina:Q5773162 | reep_t9831556d:Club Atlético Jorge Newbery:Argentina:Q118592613
+8567,Palermo AC,,,Argentina,,T2a,2,,reep_t18b4dea5:Club Atlético Palermo (Paraná):Argentina:Q108708954 | reep_taee26918:Club Sportivo Palermo:Argentina:Q3681576
+8622,Sportivo Belgrano,San Francisco,San Francisco,Argentina,,T2a,3,reep_t0a2e55b4,reep_t0a2e55b4:Club Atlético Belgrano:Argentina:Q54810178 | reep_t7e50bf2c:Club Atlético Belgrano (Paraná):Argentina:Q5773033 | reep_te6561923:Club Sportivo Belgrano:Argentina:Q7579610
+8627,Club Sportivo Estudiantes,San Luis,San Luis,Argentina,,T1,2,,reep_t9cec6253:Club Sportivo Estudiantes:Argentina:Q2877409 | reep_tcbce8da0:Club Sportivo Estudiantes:Argentina:Q5848004
+8629,Always Ready,La Paz,La Paz,Bolivia,1,T2a,2,reep_tc75bf6be,reep_t1856c3ba:Club Always Ready:Bolivia:Q131561081 | reep_tc75bf6be:Club Always Ready:Bolivia:Q1102942
+8651,Litoral,Cochabamba,Cochabamba,Bolivia,,T2a,2,reep_t64410627,reep_t05726b48:Club Deportivo Litoral:Bolivia:Q11680770 | reep_t64410627:Club Litoral:Bolivia:Q2737436
+8660,Santos FC,Santos,Santos,Brazil,1,T1,3,reep_t91c90b60,reep_t25c3cf6d:Santos FC:Brazil:Q7420610 | reep_t91c90b60:Santos F.C.:Brazil:Q80955 | reep_t9dae32a4:Santos FC:Brazil:Q1321034
+8661,Atlético Mineiro,Belo Horizonte,Belo Horizonte,Brazil,1,T2a,2,reep_tc42abc73,reep_t24f77f5b:Clube Atlético Mineiro:Brazil:Q108543200 | reep_tc42abc73:Clube Atlético Mineiro:Brazil:Q270995
+8662,Cruzeiro,Belo Horizonte,Belo Horizonte,Brazil,1,T2a,12,,reep_t190d8695:Cruzeiro Esporte Clube:Brazil:Q10261906 | reep_t20256da1:Esporte Clube Cruzeiro (Arapiraca):Brazil:Q107565474 | reep_t2faa65c5:Cruzeiro Futebol Clube:Brazil:Q5190344 | reep_t3f451f7c:Cruzeiro Esporte Clube (female):Brazil:Q105973517 | reep_t43ccb084:Esporte Clube Cruzeiro:Brazil:Q9196887 | reep_t52b289ee:Cruzeiro Esporte Clube:Brazil:Q5190343 | reep_t96cdb0b9:Esporte Clube Cruzeiro:Brazil:Q10275159 | reep_ta463276f:Cruzeiro Esporte Clube:Brazil:Q10261905 | reep_ta902896a:Cruzeiro Futebol Clube:Brazil:Q10261909 | reep_tabadb353:Esporte Clube Cruzeiro:Brazil:Q3543861 | reep_te3daa059:Cruzeiro Esporte Clube:Brazil:Q10261904 | reep_tfa275b1c:Cruzeiro Futebol Clube:Brazil:Q10261913
+8663,Palmeiras,Sao Paulo,Sao Paulo,Brazil,1,T2a,5,,reep_t171fb8b8:Palmeiras Futebol Clube:Brazil:Q10343874 | reep_t5d1223f2:Palmeiras Sport Club:Brazil:Q10343878 | reep_t743b2c0a:Palmeiras Futebol Clube:Brazil:Q10343875 | reep_ta99e3cad:Palmeiras Futebol Clube:Brazil:Q10343876 | reep_teb5453c9:Palmeiras Atlético Clube:Brazil:Q10343870
+8664,Botafogo,Rio de Janeiro,Rio de Janeiro,Brazil,1,T2a,8,,reep_t5fc271c1:Botafogo Futebol Clube:Brazil:Q16502268 | reep_t61df86f5:Associação Botafogo Futebol Clube:Brazil:Q4095130 | reep_t6e59e636:Botafogo Sport Club:Brazil:Q2911638 | reep_ta52f14a0:Botafogo Futebol Clube:Brazil:Q86729821 | reep_tb69d81ba:Botafogo Futebol Clube (RO):Brazil:Q9662219 | reep_tc11e4c85:Botafogo Futebol Clube:Brazil:Q2911646 | reep_tcd79096c:Botafogo Futebol Clube:Brazil:Q2332493 | reep_tf93daa42:Botafogo Esporte Clube:Brazil:Q4948401
+8665,Flamengo,Rio de Janeiro,Rio de Janeiro,Brazil,1,T2a,7,reep_tca8797b6,reep_t22b3eeb4:Flamengo Esporte Clube:Brazil:Q5457198 | reep_t2b8f6d2f:Flamengo Atlético Clube:Brazil:Q106325426 | reep_t8baa22a5:Associação Esportiva Flamengo:Brazil:Q97178832 | reep_tae7ef8ec:Flamengo Futebol Clube:Brazil:Q10282713 | reep_tca8797b6:Esporte Clube Flamengo:Brazil:Q2668486 | reep_td1a08d2f:Sport Club Flamengo:Brazil:Q7579320 | reep_tdcce20c7:Flamengo Futebol Clube:Brazil:Q10282716
+8666,Fluminense,Rio de Janeiro,Rio de Janeiro,Brazil,1,T2a,5,,reep_t25b58b45:Fluminense F.C.:Brazil:Q80987 | reep_t2bd2c3eb:Fluminense Esporte Clube:Brazil:Q10282979 | reep_t35fb0aa9:Fluminense Futebol Clube:Brazil:Q5462773 | reep_t833a08ff:Fluminense Futebol Clube:Brazil:Q10282981 | reep_tf6de7a4a:Fluminense Atlético Clube:Brazil:Q10282978
+8667,Internacional,Porto Alegre,Porto Alegre,Brazil,1,T2a,9,,reep_t0b3e94f1:Associação Esportiva Internacional:Brazil:Q9634333 | reep_t14692c9a:Esporte Clube Internacional:Brazil:Q4381286 | reep_t57dea387:Sport Club Internacional:Brazil:Q1991252 | reep_t711996a2:Internacional Esporte Clube:Brazil:Q65164705 | reep_t7dfa8fc1:Internacional Futebol Clube:Brazil:Q6047636 | reep_ta1d21ca1:Internacional Futebol Clube:Brazil:Q10303159 | reep_ta44223eb:Internacional Sport Club:Brazil:Q10303169 | reep_tcfe700da:S.C. Internacional:Brazil:Q80845 | reep_td75c1254:Sport Club Internacional:Brazil:Q10373833
+8668,São Paulo,Sao Paulo,Sao Paulo,Brazil,1,T2a,12,,reep_t2d5b5a21:São Paulo Athletic Club:Brazil:Q942653 | reep_t2f709aff:São Paulo Futebol Clube:Brazil:Q10375938 | reep_t30b17592:São Paulo Futebol Clube:Brazil:Q10375941 | reep_t5cd4601f:São Paulo FC:Brazil:Q38568 | reep_t6bae7e60:São Paulo Futebol Clube:Brazil:Q10375940 | reep_t73cf87c4:São Paulo Futebol Clube:Brazil:Q3509861 | reep_t8db17734:São Paulo FC:Brazil:Q118966935 | reep_t9b2bc1e5:São Paulo Futebol Clube:Brazil:Q10375935 | reep_ta4bfbf56:São Paulo Futebol Clube:Brazil:Q10375937 | reep_tb41a6690:Clube Atlético São Paulo:Brazil:Q3979254 | reep_tda517e7b:Sport Club São Paulo:Brazil:Q4381278 | reep_tef0940e4:São Paulo Futebol Clube:Brazil:Q10375939
+8669,Vasco da Gama,Rio de Janeiro,Rio de Janeiro,Brazil,1,T2a,3,,reep_t350726b4:Club Vasco da Gama:Brazil:Q9778085 | reep_t46337321:Vasco da Gama Futebol Clube:Brazil:Q3554893 | reep_t53739efb:Vasco da Gama Futebol Clube:Brazil:Q10389355
+8671,EC Bahia,Salvador,Salvador,Brazil,1,T2a,3,reep_t89833c0f,reep_t3f373aa6:Esporte Clube Bahia:Brazil:Q131238202 | reep_t89833c0f:Esporte Clube Bahia:Brazil:Q198032 | reep_tf1a7780f:Esporte Clube Bahia:Brazil:Q10275139
+8680,Sport Recife,Recife,Recife,Brazil,2,T2a,2,reep_tb36e70ae,reep_tb36e70ae:Sport Club do Recife:Brazil:Q219098 | reep_tf4d2d1ec:Sport Club do Recife:Brazil:Q133521876
+8685,Juventude,Caxias do Sul,Caxias do Sul,Brazil,2,T2a,2,reep_tc513355f,reep_tc513355f:Esporte Clube Juventude:Brazil:Q910453 | reep_te8ef98ec:Juventude Atlético Clube:Brazil:Q106325513
+8691,Vila Nova,Goiania,Goiania,Brazil,2,T2a,4,,reep_t2a7f0631:Vila Nova Futebol Clube:Brazil:Q1513287 | reep_t3d1a5a17:Vila Nova Futebol Clube:Brazil:Q10391045 | reep_t6500e095:Vila Nova Esporte Clube:Brazil:Q48868335 | reep_tdb6d247b:Vila Nova Futebol Clube:Brazil:Q10391046
+8698,São Bernardo FC,Sao Paulo,Sao Paulo,Brazil,2,T2a,2,reep_t7e0de4af,reep_t3b07d808:Esporte Clube São Bernardo:Brazil:Q10275219 | reep_t7e0de4af:São Bernardo Futebol Clube:Brazil:Q557103
+8699,Guaraní,Campinas,Campinas,Brazil,3,T2a,9,reep_t6345e50e,reep_t2f798283:Guarani Esporte Clube:Brazil:Q2726012 | reep_t434615be:Guarani Futebol Club:Brazil:Q25449158 | reep_t6345e50e:Guarani Futebol Clube:Brazil:Q1133475 | reep_t75f04bb6:Esporte Clube Guarani:Brazil:Q5399105 | reep_t770303a3:Guarani Esporte Clube:Brazil:Q3118770 | reep_t773ca09e:Guarani Esporte Clube:Brazil:Q10292421 | reep_t7a343e12:Guarani Sport Club:Brazil:Q10292431 | reep_t9ec225dd:Guarani Futebol Clube:Brazil:Q10292423 | reep_ta49b4cc0:Guarani Futebol Clube:Brazil:Q18481638
+8700,Paysandu SC,Belem,Belem,Brazil,3,T2a,2,reep_t865dac1d,reep_t0400da3c:Clube Esportivo Paysandu:Brazil:Q5136500 | reep_t865dac1d:Paysandu Sport Club:Brazil:Q1508285
+8701,Santa Cruz FC Recife,Recife,Recife,Brazil,3,T2a,10,reep_teaec4ee8,reep_t0a14d892:Santa Cruz Futebol Clube:Brazil:Q28680978 | reep_t79e2d282:Santa Cruz Esporte Clube:Brazil:Q3472600 | reep_t97cbabfd:Santa Cruz Futebol Clube:Brazil:Q10367797 | reep_t9c9c4f4c:Sport Clube Santa Cruz (Sergipe):Brazil:Q10373882 | reep_ta19a6d27:Sport Club Santa Cruz:Brazil:Q4407859 | reep_tb9ac787d:Santa Cruz Futebol Clube:Brazil:Q7419416 | reep_tc9a3c853:Santa Cruz Futebol Clube:Brazil:Q508440 | reep_td9f14f64:Santa Cruz Futebol Clube:Brazil:Q3472601 | reep_te7cd97b7:Santa Cruz Futebol Clube:Brazil:Q10367798 | reep_teaec4ee8:Futebol Clube Santa Cruz:Brazil:Q5510505
+8702,Figueirense,Florianopolis,Florianopolis,Brazil,3,T2a,2,reep_t0ef2d7b0,reep_t0ef2d7b0:Figueirense Futebol Clube:Brazil:Q218334 | reep_t1b191342:Figueirense Esporte Clube:Brazil:Q10282157
+8706,Caxias,Caxias do Sul,Caxias do Sul,Brazil,3,T2a,2,,reep_t1495f396:Caxias Futebol Clube:Brazil:Q9169070 | reep_te52b9030:Caxias Esporte Clube:Brazil:Q2943380
+8711,Floresta EC,Fortaleza,Fortaleza,Brazil,3,T2a,3,reep_t6540d6ed,reep_t6540d6ed:Floresta Esporte Clube:Brazil:Q10282853 | reep_te5c2495b:Floresta Atlético Clube:Brazil:Q10282851 | reep_tfa1a5b65:Floresta Futebol Clube:Brazil:Q10282856
+8721,America FC,Rio de Janeiro,Rio de Janeiro,Brazil,4,T2a,16,,reep_t10e99f30:América Futebol Clube:Brazil:Q482251 | reep_t186bdb7c:América Futebol Clube:Brazil:Q2621772 | reep_t2a25a1b4:América Futebol Clube:Brazil:Q4749629 | reep_t30f12de7:América Futebol Clube:Brazil:Q2844821 | reep_t5aa92c68:América Futebol Clube:Brazil:Q4749632 | reep_t5c5ea601:América Futebol Clube:Brazil:Q4749631 | reep_t80f40072:América Futebol Clube:Brazil:Q4749633 | reep_t93018429:América Futebol Clube:Brazil:Q2844832 | reep_t950328d4:América Futebol Clube:Brazil:Q2844820 | reep_t999f9ea3:América Futebol Clube:Brazil:Q338285 | reep_tae190f55:América Futebol Clube:Brazil:Q4749635 | reep_tc713bd30:América Futebol Clube:Brazil:Q482262 | reep_tcc2718cd:América Futebol Clube:Brazil:Q2844826 | reep_td89d40a9:America Football Club:Brazil:Q463147 | reep_tedd9b556:América Football Club:Brazil:Q2844823 | reep_tf10d90c9:América Futebol Clube:Brazil:Q1777174
+8722,Nacional FC,Manaus,Manaus,Brazil,4,T2a,12,,reep_t04ef1241:Nacional Atlético Clube:Brazil:Q6957264 | reep_t05d0d265:Nacional Esporte Clube:Brazil:Q1392845 | reep_t114bfe54:Nacional Esporte Clube:Brazil:Q10335295 | reep_t186ea28c:Nacional Atlético Clube:Brazil:Q10335294 | reep_t362cd76d:Esporte Clube Nacional:Brazil:Q5399108 | reep_t6faab3ae:Nacional Atlético Clube:Brazil:Q6957257 | reep_t8b84b8e5:Nacional Atlético Clube:Brazil:Q6957259 | reep_tc73c3be8:Sport Club Nacional:Brazil:Q10373844 | reep_td38c1725:Nacional FootBall Club:Brazil:Q10335298 | reep_td4a40ed8:Nacional Atlético Clube:Brazil:Q6957258 | reep_te6fb8a75:Nacional Futebol Clube:Brazil:Q513549 | reep_tefeaa32f:Nacional Futebol Clube:Brazil:Q6957266
+8725,Sampaio Corrêa,São Luís,São Luís,Brazil,4,T2a,2,reep_t085ea297,reep_t085ea297:Sampaio Corrêa F.C.:Brazil:Q2453706 | reep_t3a087188:Sampaio Corrêa Futebol e Esporte:Brazil:Q7410079
+8728,Moto Club,São Luís,São Luís,Brazil,4,T2a,2,reep_ta8e9e8be,reep_ta8e9e8be:Moto Esporte Clube:Brazil:Q6917962 | reep_tb9941e72:Moto Esporte Clube:Brazil:Q65162696
+8730,Rio Branco AC,Vitória,Vitória,Brazil,4,T2a,9,,reep_t077740a8:Rio Branco Futebol Clube:Brazil:Q10361605 | reep_t2e18d452:Rio Branco Football Club:Brazil:Q2587703 | reep_t3e735b66:Rio Branco Atlético Clube:Brazil:Q2508289 | reep_t4569a947:Rio Branco Sport Club:Brazil:Q3097832 | reep_t468f381e:Rio Branco Esporte Clube:Brazil:Q10361606 | reep_t4b6f819e:Esporte Clube Rio Branco:Brazil:Q10275211 | reep_t78a487a3:Rio Branco Esporte Clube (Roraima):Brazil:Q25445250 | reep_tba5a45fe:Clube Esportivo Rio Branco:Brazil:Q2980340 | reep_tc916f2c6:Rio Branco Esporte Clube:Brazil:Q1969520
+8734,Ferroviário Fortaleza,Fortaleza,Fortaleza,Brazil,4,T2a,7,,reep_t0c406129:Ferroviário Esporte Clube:Brazil:Q5445453 | reep_t24bdbb7f:Ferroviário Atlético Clube:Brazil:Q3069743 | reep_t4e5bb11f:Ferroviário Esporte Clube:Brazil:Q3069745 | reep_t5873f042:Ferroviário Atlético Clube:Brazil:Q10281708 | reep_t66345805:Ferroviário Atlético Clube:Brazil:Q5445452 | reep_td98b538d:Ferroviário Atlético Clube:Brazil:Q2667793 | reep_tf7ccf026:Clube Atlético Ferroviário:Brazil:Q5136473
+8741,São José EC,São José dos Campos,São José dos Campos,Brazil,4,T2a,8,,reep_t1d6dac1f:Sport Clube São José:Brazil:Q10373883 | reep_t254972d2:Clube Atlético São José:Brazil:Q18471178 | reep_t27784716:São José Esporte Clube:Brazil:Q7665506 | reep_t6601ebce:Esporte Clube São José:Brazil:Q2508225 | reep_t6b0eed8e:São José Esporte Clube:Brazil:Q749603 | reep_ta42142f3:Esporte Clube São José:Brazil:Q10275220 | reep_tb09e8f47:Clube de Futebol São José:Brazil:Q18471507 | reep_tdf28ea1c:Esporte Clube São José:Brazil:Q10275221
+8748,Humaitá,Porto Acre,Porto Acre,Brazil,4,T2a,2,reep_tff65a1f2,reep_ted2c342f:Humaitá Sport Club:Brazil:Q10298833 | reep_tff65a1f2:Sport Clube Humaitá:Brazil:Q25426917
+8749,Independência FC,Rio Branco,Rio Branco,Brazil,4,T2a,2,reep_te0931bfa,reep_t76881a54:Independência Esporte Clube:Brazil:Q10301947 | reep_te0931bfa:Independência Futebol Clube:Brazil:Q3150038
+8774,Primavera AC,Primavera do Leste,Primavera do Leste,Brazil,4,T2a,3,reep_td02f5833,reep_t80a204d1:Primavera Atlético Clube:Brazil:Q113519315 | reep_ta30c3050:Primavera Esporte Clube:Brazil:Q7243207 | reep_td02f5833:Esporte Clube Primavera:Brazil:Q5399130
+8776,Ivinhema,Ivinhema,Ivinhema,Brazil,4,T2a,3,reep_t92d251a2,reep_t3dc7d28c:Ivinhema Atlético Clube:Brazil:Q10304444 | reep_t40745747:Ivinhema Esporte Clube:Brazil:Q10304446 | reep_t92d251a2:Ivinhema Futebol Clube:Brazil:Q6099009
+8785,Cascavel,Cascavel,Cascavel,Brazil,4,T2a,2,,reep_t2e7a296a:Cascavel Esporte Clube:Brazil:Q5048252 | reep_t8d4101db:Futebol Clube Cascavel:Brazil:Q5510503
+8793,Parnahyba SC,Parnaíba,Parnaíba,Brazil,4,T2a,2,reep_t986ec32c,reep_t986ec32c:Parnahyba Sport Club:Brazil:Q7139241 | reep_tdaadecc6:Parnahyba Football Club:Brazil:Q65167640
+8804,Grêmio Atlético Sampaio,Caracaraí,Caracaraí,Brazil,4,T1,2,reep_t860528d8,reep_t6e859393:Grêmio Atlético Sampaio:Brazil:Q3116409 | reep_t860528d8:Grêmio Atlético Sampaio:Brazil:Q5612793
+8806,São Raimundo-RR,Boa Vista,Boa Vista,Brazil,4,T2a,3,,reep_t091cee79:São Raimundo Esporte Clube:Brazil:Q2622502 | reep_t978ea6d6:São Raimundo Esporte Clube:Brazil:Q3509866 | reep_tedada979:São Raimundo Esporte Clube:Brazil:Q3509867
+8812,Lagarto EC,Lagarto,Lagarto,Brazil,4,T2a,2,,reep_t6a2e5ec1:Lagarto Esporte Clube:Brazil:Q10315575 | reep_tdbc615cb:Lagarto Futebol Clube:Brazil:Q6471925
+8818,Bangú,Rio de Janeiro,Rio de Janeiro,Brazil,,T2a,3,,reep_t9167010e:Bangu Athletic Club:Brazil:Q9647937 | reep_td479a571:Bangu Atlético Clube:Brazil:Q106325461 | reep_tfe60ddc6:Bangu Atlético Clube:Brazil:Q788363
+8821,Rio Negro,Manaus,Manaus,Brazil,,T2a,2,,reep_t18a8b15f:Atlético Rio Negro Clube:Brazil:Q2869516 | reep_tb7dd4717:Atlético Rio Negro Clube:Brazil:Q4817003
+8822,Brasília FC,Brasilia,Brasilia,Brazil,,T2a,3,,reep_t16073a68:Clube Atlético de Brasília:Brazil:Q106325514 | reep_t705177af:Brasília Atlético Clube:Brazil:Q9666100 | reep_t83c9eaaf:Brasília Futebol Clube:Brazil:Q2621788
+8826,Americano,Campos dos Goytacazes,Campos dos Goytacazes,Brazil,,T2a,9,,reep_t0256d768:Sport Club Americano:Brazil:Q3493818 | reep_t04d526a2:Americano Football Club:Brazil:Q8197311 | reep_t1fda1cc0:Americano Futebol Clube:Brazil:Q2843090 | reep_t51c1a5b3:Sport Club Americano:Brazil:Q10373811 | reep_t6ea18865:Sport Club Americano (Porto Alegre):Brazil:Q9161139 | reep_t7e3c29b8:Sport Club Americano:Brazil:Q3967033 | reep_ta4c3afd1:Americano Futebol Clube:Brazil:Q2387441 | reep_tdb447231:Americano Futebol Clube:Brazil:Q2843091 | reep_te4ccebda:Esporte Clube Americano:Brazil:Q10275138
+8832,Rio Branco,Rio Branco,Rio Branco,Brazil,,T2a,9,,reep_t077740a8:Rio Branco Futebol Clube:Brazil:Q10361605 | reep_t2e18d452:Rio Branco Football Club:Brazil:Q2587703 | reep_t3e735b66:Rio Branco Atlético Clube:Brazil:Q2508289 | reep_t4569a947:Rio Branco Sport Club:Brazil:Q3097832 | reep_t468f381e:Rio Branco Esporte Clube:Brazil:Q10361606 | reep_t4b6f819e:Esporte Clube Rio Branco:Brazil:Q10275211 | reep_t78a487a3:Rio Branco Esporte Clube (Roraima):Brazil:Q25445250 | reep_tba5a45fe:Clube Esportivo Rio Branco:Brazil:Q2980340 | reep_tc916f2c6:Rio Branco Esporte Clube:Brazil:Q1969520
+8845,CA Ferroviário,,,Brazil,,T2a,7,,reep_t0c406129:Ferroviário Esporte Clube:Brazil:Q5445453 | reep_t24bdbb7f:Ferroviário Atlético Clube:Brazil:Q3069743 | reep_t4e5bb11f:Ferroviário Esporte Clube:Brazil:Q3069745 | reep_t5873f042:Ferroviário Atlético Clube:Brazil:Q10281708 | reep_t66345805:Ferroviário Atlético Clube:Brazil:Q5445452 | reep_td98b538d:Ferroviário Atlético Clube:Brazil:Q2667793 | reep_tf7ccf026:Clube Atlético Ferroviário:Brazil:Q5136473
+8865,Cruzeiro do Sul,Brasilia,Brasilia,Brazil,,T2a,2,,reep_t73f5a26a:Associação Esportiva Cruzeiro do Sul:Brazil:Q2868247 | reep_t761791d4:Cruzeiro do Sul Futebol Clube:Brazil:Q10261945
+8876,Auto Esporte Clube,,,Brazil,,T1,3,,reep_t0685b3a5:Auto Esporte Clube:Brazil:Q4826106 | reep_t108361b1:Auto Esporte Clube:Brazil:Q2872492 | reep_t8949b037:Auto Esporte Clube:Brazil:Q4381490
+8899,AC Juventus,Rio Branco,Rio Branco,Brazil,,T2a,5,,reep_t2c558011:Juventus Esporte Clube:Brazil:Q3190604 | reep_t4785cb4d:Atlético Clube Juventus:Brazil:Q2622531 | reep_t4f1d56b3:Juventus Futebol Clube:Brazil:Q6319051 | reep_t9bb05f18:Juventus Atlético Clube:Brazil:Q6319043 | reep_tfb306be8:Clube Atlético Juventus:Brazil:Q660764
+8909,São Francisco FC,,Rio Branco,Brazil,,T2a,3,,reep_t093f57ed:São Francisco Futebol Clube:Brazil:Q10375664 | reep_t959fb323:São Francisco Futebol Clube:Brazil:Q3509820 | reep_ta8239f36:São Francisco Futebol Clube:Brazil:Q10375662
+8911,Ypiranga Sport Club,,,Brazil,,T2a,9,,reep_t12fe412d:CA Ypiranga:Brazil:Q111634 | reep_t25c41480:Ypiranga Football Club:Brazil:Q10394734 | reep_t4ef89d4e:Ypiranga Futebol Clube:Brazil:Q10394736 | reep_t5b252945:Ypiranga Futebol Clube (São Francisco do Sul):Brazil:Q10394739 | reep_t6bc194b2:Ypiranga Esporte Clube:Brazil:Q10394732 | reep_t7f29057a:Esporte Clube Ypiranga:Brazil:Q3058521 | reep_t9b60c131:Ypiranga Futebol Clube:Brazil:Q10394737 | reep_tb063b659:Ypiranga Futebol Clube:Brazil:Q674632 | reep_tbf5bfa89:Ypiranga Clube:Brazil:Q3573023
+8914,AS São Domingos,,,Brazil,,T2a,3,reep_t8e97dac8,reep_t8e97dac8:Associação Sportiva São Domingos:Brazil:Q4810275 | reep_tbbcaec43:São Domingos Esporte Clube:Brazil:Q10375643 | reep_tdc92e4ae:São Domingos Futebol Clube:Brazil:Q7665431
+8926,Sete de Setembro (AL),,,Brazil,,T2a,2,,reep_t3249951b:Sete de Setembro Futebol Clube:Brazil:Q10370719 | reep_t35b684b6:Sete de Setembro Esporte Clube:Brazil:Q7456387
+8928,CA Aliança,,,Brazil,,T2a,2,,reep_t825e609d:Clube Atlético Aliança:Brazil:Q2980315 | reep_te99d5955:Aliança Futebol Clube:Brazil:Q16276740
+8932,Guarany AC,,,Brazil,,T2a,7,reep_t173e3cea,reep_t173e3cea:Guarany Futebol Clube:Brazil:Q1976519 | reep_t2eab4867:Guarany Football Club:Brazil:Q10292437 | reep_t4e33e9a8:Guarany Futebol Clube:Brazil:Q5613938 | reep_t6f94646f:Guarany Futebol Clube:Brazil:Q65163590 | reep_t8660a107:Sport Club Guarany:Brazil:Q7579330 | reep_t89307d4f:Guarany Atlético Clube:Brazil:Q3118768 | reep_tfc1b41cb:Sport Club Guarany:Brazil:Q10373831
+8952,São Raimundo,Sorocaba,Sorocaba,Brazil,,T2a,3,,reep_t091cee79:São Raimundo Esporte Clube:Brazil:Q2622502 | reep_t978ea6d6:São Raimundo Esporte Clube:Brazil:Q3509866 | reep_tedada979:São Raimundo Esporte Clube:Brazil:Q3509867
+8955,AD Guarany,,,Brazil,,T2a,7,reep_t173e3cea,reep_t173e3cea:Guarany Futebol Clube:Brazil:Q1976519 | reep_t2eab4867:Guarany Football Club:Brazil:Q10292437 | reep_t4e33e9a8:Guarany Futebol Clube:Brazil:Q5613938 | reep_t6f94646f:Guarany Futebol Clube:Brazil:Q65163590 | reep_t8660a107:Sport Club Guarany:Brazil:Q7579330 | reep_t89307d4f:Guarany Atlético Clube:Brazil:Q3118768 | reep_tfc1b41cb:Sport Club Guarany:Brazil:Q10373831
+8977,SC Bahia,,,Brazil,,T2a,3,reep_t89833c0f,reep_t3f373aa6:Esporte Clube Bahia:Brazil:Q131238202 | reep_t89833c0f:Esporte Clube Bahia:Brazil:Q198032 | reep_tf1a7780f:Esporte Clube Bahia:Brazil:Q10275139
+8979,Serrano SC,,,Brazil,,T2a,3,,reep_t2ec1ebee:Serrano Sport Club:Brazil:Q7455285 | reep_t8881ee67:Serrano Football Club:Brazil:Q4817902 | reep_td9157676:Serrano Futebol Clube:Brazil:Q9202488
+8984,AE Tiradentes,,,Brazil,,T2a,2,reep_t9067f41f,reep_t9067f41f:Associação Esportiva Tiradentes:Brazil:Q2868251 | reep_ta86c9eb9:Tiradentes Esporte Clube:Brazil:Q10382664
+8994,Guarany SC,Sobral,Sobral,Brazil,,T2a,7,reep_t173e3cea,reep_t173e3cea:Guarany Futebol Clube:Brazil:Q1976519 | reep_t2eab4867:Guarany Football Club:Brazil:Q10292437 | reep_t4e33e9a8:Guarany Futebol Clube:Brazil:Q5613938 | reep_t6f94646f:Guarany Futebol Clube:Brazil:Q65163590 | reep_t8660a107:Sport Club Guarany:Brazil:Q7579330 | reep_t89307d4f:Guarany Atlético Clube:Brazil:Q3118768 | reep_tfc1b41cb:Sport Club Guarany:Brazil:Q10373831
+8999,Maranguape,Maranguape,Maranguape,Brazil,,T2a,2,,reep_t11665259:Maranguape Sport Club:Brazil:Q10324919 | reep_tc8d7e761:Maranguape Futebol Clube:Brazil:Q3287445
+9007,Bandeirante,,,Brazil,,T2a,3,reep_tb37e3d72,reep_t757815db:Bandeirante Esporte Clube:Brazil:Q4854502 | reep_tb37e3d72:Clube Atlético Bandeirante:Brazil:Q5136469 | reep_tcc72d1f3:Bandeirante Futebol Clube:Brazil:Q4854503
+9022,Real Brasília FC,Brasilia,Brasilia,Brazil,,T2a,4,reep_t40b5f7b1,reep_t0b144175:Real Sport Club:Brazil:Q48867219 | reep_t40b5f7b1:Associação Esportiva Real:Brazil:Q4810249 | reep_tb4c4f17a:Real Brasília Futebol Clube:Brazil:Q3058502 | reep_tf1e465ae:Real Esporte Clube:Brazil:Q10357817
+9034,Estrela do Norte,Cachoeiro de Itapemirim,Cachoeiro de Itapemirim,Brazil,,T2a,2,reep_ta221066b,reep_t715e3c68:Estrela do Norte Esporte Clube:Brazil:Q10276625 | reep_ta221066b:Estrela do Norte Futebol Clube:Brazil:Q3059052
+9044,Rio Pardo FC,,,Brazil,,T2a,3,,reep_t48ba4448:Futebol Clube Rio Pardo:Brazil:Q10286705 | reep_t5872ee21:Rio Pardo Futebol Clube:Brazil:Q10362368 | reep_tbc3850f8:Esporte Clube Rio Pardo:Brazil:Q10275212
+9080,Vasco da Gama (MA),,,Brazil,,T2a,3,,reep_t350726b4:Club Vasco da Gama:Brazil:Q9778085 | reep_t46337321:Vasco da Gama Futebol Clube:Brazil:Q3554893 | reep_t53739efb:Vasco da Gama Futebol Clube:Brazil:Q10389355
+9095,Sinop FC,,,Brazil,,T2a,2,reep_tfff96a01,reep_tcb6231b5:Clube Sport Sinop:Brazil:Q107349549 | reep_tfff96a01:Sinop Futebol Clube:Brazil:Q663263
+9098,CD Sete de Setembro,,,Brazil,,T2a,2,,reep_t3249951b:Sete de Setembro Futebol Clube:Brazil:Q10370719 | reep_t35b684b6:Sete de Setembro Esporte Clube:Brazil:Q7456387
+9146,São Francisco (PA),,,Brazil,,T2a,3,,reep_t093f57ed:São Francisco Futebol Clube:Brazil:Q10375664 | reep_t959fb323:São Francisco Futebol Clube:Brazil:Q3509820 | reep_ta8239f36:São Francisco Futebol Clube:Brazil:Q10375662
+9147,São Raimundo (PA),Santarém,Santarém,Brazil,,T2a,3,,reep_t091cee79:São Raimundo Esporte Clube:Brazil:Q2622502 | reep_t978ea6d6:São Raimundo Esporte Clube:Brazil:Q3509866 | reep_tedada979:São Raimundo Esporte Clube:Brazil:Q3509867
+9192,Prudentópolis FC,,,Brazil,,T2a,2,,reep_t329f5353:Prudentópolis Esporte Clube:Brazil:Q7252994 | reep_t80414606:Prudentópolis Futebol Clube:Brazil:Q7455279
+9195,Rio Branco SC,Paranaguá,Paranaguá,Brazil,,T2a,9,,reep_t077740a8:Rio Branco Futebol Clube:Brazil:Q10361605 | reep_t2e18d452:Rio Branco Football Club:Brazil:Q2587703 | reep_t3e735b66:Rio Branco Atlético Clube:Brazil:Q2508289 | reep_t4569a947:Rio Branco Sport Club:Brazil:Q3097832 | reep_t468f381e:Rio Branco Esporte Clube:Brazil:Q10361606 | reep_t4b6f819e:Esporte Clube Rio Branco:Brazil:Q10275211 | reep_t78a487a3:Rio Branco Esporte Clube (Roraima):Brazil:Q25445250 | reep_tba5a45fe:Clube Esportivo Rio Branco:Brazil:Q2980340 | reep_tc916f2c6:Rio Branco Esporte Clube:Brazil:Q1969520
+9227,Vera Cruz FC,,,Brazil,,T2a,3,,reep_t653ff6bb:Vera Cruz Futebol Clube:Brazil:Q97378662 | reep_t795f02f9:Vera Cruz Futebol Clube:Brazil:Q7920761 | reep_tbd926025:Vera Cruz Futebol Clube:Brazil:Q10389765
+9235,Comercial AC,,,Brazil,,T2a,9,,reep_t26978cd0:Comercial Futebol Clube:Brazil:Q18476938 | reep_t4ccbb0bc:Comercial Esporte Clube:Brazil:Q9826535 | reep_t4dbdf27a:Esporte Clube Comercial:Brazil:Q3058503 | reep_t86ccdc4a:Esporte Clube Comercial:Brazil:Q5399083 | reep_tb159ffa1:Clube Atlético Comercial:Brazil:Q9778763 | reep_tb1b19787:Comercial Futebol Clube:Brazil:Q3813348 | reep_tb5fd1165:Comercial Atlético Clube:Brazil:Q2501397 | reep_te58e1c37:Comercial Futebol Clube:Brazil:Q9826646 | reep_tf565d64f:Comercial Futebol Clube:Brazil:Q5151528
+9272,Parnahyba FC,,,Brazil,,T2a,2,reep_t986ec32c,reep_t986ec32c:Parnahyba Sport Club:Brazil:Q7139241 | reep_tdaadecc6:Parnahyba Football Club:Brazil:Q65167640
+9276,Resende FC,Resende,Resende,Brazil,,T2a,2,reep_t9d043915,reep_t9d043915:Resende Futebol Clube:Brazil:Q3933354 | reep_ta3ebb0f3:Esporte Clube Resende:Brazil:Q10275208
+9279,SC Aliança,,,Brazil,,T2a,2,,reep_t825e609d:Clube Atlético Aliança:Brazil:Q2980315 | reep_te99d5955:Aliança Futebol Clube:Brazil:Q16276740
+9281,Serrano FC,,,Brazil,,T2a,3,,reep_t2ec1ebee:Serrano Sport Club:Brazil:Q7455285 | reep_t8881ee67:Serrano Football Club:Brazil:Q4817902 | reep_td9157676:Serrano Futebol Clube:Brazil:Q9202488
+9284,AC Corintians,,,Brazil,,T2a,3,,reep_t0ca30d0f:Atlético Clube Coríntians:Brazil:Q2077647 | reep_ta784869b:Esporte Clube Corintians:Brazil:Q10275155 | reep_tb5abc9e9:Esporte Clube Corintians:Brazil:Q10275153
+9307,Esporte Clube São José,Porto Alegre,Porto Alegre,Brazil,,T1,3,reep_t6601ebce,reep_t6601ebce:Esporte Clube São José:Brazil:Q2508225 | reep_ta42142f3:Esporte Clube São José:Brazil:Q10275220 | reep_tdf28ea1c:Esporte Clube São José:Brazil:Q10275221
+9310,FC Santa Cruz,Santa Cruz do Sul,Santa Cruz do Sul,Brazil,,T2a,10,reep_teaec4ee8,reep_t0a14d892:Santa Cruz Futebol Clube:Brazil:Q28680978 | reep_t79e2d282:Santa Cruz Esporte Clube:Brazil:Q3472600 | reep_t97cbabfd:Santa Cruz Futebol Clube:Brazil:Q10367797 | reep_t9c9c4f4c:Sport Clube Santa Cruz (Sergipe):Brazil:Q10373882 | reep_ta19a6d27:Sport Club Santa Cruz:Brazil:Q4407859 | reep_tb9ac787d:Santa Cruz Futebol Clube:Brazil:Q7419416 | reep_tc9a3c853:Santa Cruz Futebol Clube:Brazil:Q508440 | reep_td9f14f64:Santa Cruz Futebol Clube:Brazil:Q3472601 | reep_te7cd97b7:Santa Cruz Futebol Clube:Brazil:Q10367798 | reep_teaec4ee8:Futebol Clube Santa Cruz:Brazil:Q5510505
+9318,Porto Alegre FC,Porto Alegre,Porto Alegre,Brazil,,T2a,2,,reep_t3af2df75:Porto Alegre Futebol Clube:Brazil:Q5943753 | reep_t6a536b80:Fussball Club Porto Alegre:Brazil:Q10286679
+9333,Ferroviário Atlético Clube,,,Brazil,,T1,4,,reep_t24bdbb7f:Ferroviário Atlético Clube:Brazil:Q3069743 | reep_t5873f042:Ferroviário Atlético Clube:Brazil:Q10281708 | reep_t66345805:Ferroviário Atlético Clube:Brazil:Q5445452 | reep_td98b538d:Ferroviário Atlético Clube:Brazil:Q2667793
+9336,Moto Esporte Clube,,,Brazil,,T1,2,reep_ta8e9e8be,reep_ta8e9e8be:Moto Esporte Clube:Brazil:Q6917962 | reep_tb9941e72:Moto Esporte Clube:Brazil:Q65162696
+9347,AE Real,,,Brazil,,T2a,3,reep_t40b5f7b1,reep_t0b144175:Real Sport Club:Brazil:Q48867219 | reep_t40b5f7b1:Associação Esportiva Real:Brazil:Q4810249 | reep_tf1e465ae:Real Esporte Clube:Brazil:Q10357817
+9361,Atlético Tubarão,Tubarão,Tubarão,Brazil,,T2a,3,,reep_t1c66abbc:Clube Atlético Tubarão:Brazil:Q2980323 | reep_t8012699c:Tubarão Futebol Clube:Brazil:Q7850723 | reep_ta5d4619d:Tubarão Esporte Clube:Brazil:Q10385298
+9363,CA Metropolitano,Blumenau,Blumenau,Brazil,,T2a,2,reep_t97952d37,reep_t8a0fb69a:Metropolitano Athletico Club:Brazil:Q10329243 | reep_t97952d37:Clube Atlético Metropolitano:Brazil:Q2565662
+9371,Concórdia AC,,,Brazil,,T2a,2,reep_t762d6023,reep_t762d6023:Concórdia Atlético Clube:Brazil:Q2992229 | reep_t9858c9e6:Concórdia Futebol Clube:Brazil:Q5159126
+9375,Ferroviário-SC,,,Brazil,,T2a,7,,reep_t0c406129:Ferroviário Esporte Clube:Brazil:Q5445453 | reep_t24bdbb7f:Ferroviário Atlético Clube:Brazil:Q3069743 | reep_t4e5bb11f:Ferroviário Esporte Clube:Brazil:Q3069745 | reep_t5873f042:Ferroviário Atlético Clube:Brazil:Q10281708 | reep_t66345805:Ferroviário Atlético Clube:Brazil:Q5445452 | reep_td98b538d:Ferroviário Atlético Clube:Brazil:Q2667793 | reep_tf7ccf026:Clube Atlético Ferroviário:Brazil:Q5136473
+9379,Juventus-SC,Jaraguá do Sul,Jaraguá do Sul,Brazil,,T2a,5,,reep_t2c558011:Juventus Esporte Clube:Brazil:Q3190604 | reep_t4785cb4d:Atlético Clube Juventus:Brazil:Q2622531 | reep_t4f1d56b3:Juventus Futebol Clube:Brazil:Q6319051 | reep_t9bb05f18:Juventus Atlético Clube:Brazil:Q6319043 | reep_tfb306be8:Clube Atlético Juventus:Brazil:Q660764
+9381,Metropolitano,Blumenau,Blumenau,Brazil,,T2a,2,reep_t97952d37,reep_t8a0fb69a:Metropolitano Athletico Club:Brazil:Q10329243 | reep_t97952d37:Clube Atlético Metropolitano:Brazil:Q2565662
+9383,Tubarão FC,,,Brazil,,T2a,3,,reep_t1c66abbc:Clube Atlético Tubarão:Brazil:Q2980323 | reep_t8012699c:Tubarão Futebol Clube:Brazil:Q7850723 | reep_ta5d4619d:Tubarão Esporte Clube:Brazil:Q10385298
+9386,AE Araçatuba,,,Brazil,,T2a,2,reep_tc9b77a49,reep_t93366e42:Atlético Esportivo Araçatuba:Brazil:Q9636798 | reep_tc9b77a49:Associação Esportiva Araçatuba:Brazil:Q4810247
+9395,Esporte Clube Pinheiros,,,Brazil,,T1,2,,reep_t8399e8ed:Esporte Clube Pinheiros:Brazil:Q3733205 | reep_tec98c2ce:Esporte Clube Pinheiros:Brazil:Q1274277
+9398,Marília,Marília,Marília,Brazil,,T2a,2,,reep_tea467aaf:Marília Futebol Clube:Brazil:Q6782188 | reep_tf0918471:Marília Atlético Clube:Brazil:Q1906646
+9403,Nacional Atlético Clube,São Paulo,São Paulo,Brazil,,T1,5,,reep_t04ef1241:Nacional Atlético Clube:Brazil:Q6957264 | reep_t186ea28c:Nacional Atlético Clube:Brazil:Q10335294 | reep_t6faab3ae:Nacional Atlético Clube:Brazil:Q6957257 | reep_t8b84b8e5:Nacional Atlético Clube:Brazil:Q6957259 | reep_td4a40ed8:Nacional Atlético Clube:Brazil:Q6957258
+9404,Oeste,Itápolis,Itápolis,Brazil,,T2a,2,reep_tc0874954,reep_t54482743:Oeste Futebol Clube:Brazil:Q10340329 | reep_tc0874954:Oeste Futebol Clube:Brazil:Q966183
+9407,Paulista FC,Sao Paulo,Sao Paulo,Brazil,,T2a,5,reep_tcb47a23c,reep_t30533388:Clube Atlético Paulista:Brazil:Q5136485 | reep_ta0a76be2:Paulista Futebol Clube:Brazil:Q10346411 | reep_tbee63603:Paulista Futebol Clube:Brazil:Q10346412 | reep_tcb47a23c:Paulista Futebol Clube:Brazil:Q1422177 | reep_tf79086fd:Paulista Esporte Clube:Brazil:Q10346408
+9408,Paulistano,,,Brazil,,T2a,2,,reep_t0b6cc903:Paulistano Futebol Clube:Brazil:Q9193794 | reep_tb8bdf6f4:Clube Atlético Paulistano:Brazil:Q9779262
+9415,São Paulo AC,,,Brazil,,T2a,12,,reep_t2d5b5a21:São Paulo Athletic Club:Brazil:Q942653 | reep_t2f709aff:São Paulo Futebol Clube:Brazil:Q10375938 | reep_t30b17592:São Paulo Futebol Clube:Brazil:Q10375941 | reep_t5cd4601f:São Paulo FC:Brazil:Q38568 | reep_t6bae7e60:São Paulo Futebol Clube:Brazil:Q10375940 | reep_t73cf87c4:São Paulo Futebol Clube:Brazil:Q3509861 | reep_t8db17734:São Paulo FC:Brazil:Q118966935 | reep_t9b2bc1e5:São Paulo Futebol Clube:Brazil:Q10375935 | reep_ta4bfbf56:São Paulo Futebol Clube:Brazil:Q10375937 | reep_tb41a6690:Clube Atlético São Paulo:Brazil:Q3979254 | reep_tda517e7b:Sport Club São Paulo:Brazil:Q4381278 | reep_tef0940e4:São Paulo Futebol Clube:Brazil:Q10375939
+9417,SC Internacional (SP),,,Brazil,,T2a,9,,reep_t0b3e94f1:Associação Esportiva Internacional:Brazil:Q9634333 | reep_t14692c9a:Esporte Clube Internacional:Brazil:Q4381286 | reep_t57dea387:Sport Club Internacional:Brazil:Q1991252 | reep_t711996a2:Internacional Esporte Clube:Brazil:Q65164705 | reep_t7dfa8fc1:Internacional Futebol Clube:Brazil:Q6047636 | reep_ta1d21ca1:Internacional Futebol Clube:Brazil:Q10303159 | reep_ta44223eb:Internacional Sport Club:Brazil:Q10303169 | reep_tcfe700da:S.C. Internacional:Brazil:Q80845 | reep_td75c1254:Sport Club Internacional:Brazil:Q10373833
+9420,Sport Club Americano,,,Brazil,,T1,3,,reep_t0256d768:Sport Club Americano:Brazil:Q3493818 | reep_t51c1a5b3:Sport Club Americano:Brazil:Q10373811 | reep_t7e3c29b8:Sport Club Americano:Brazil:Q3967033
+9434,Riachuelo FC,,,Brazil,,T2a,4,,reep_t3603ef0b:Riachuelo Futebol Clube:Brazil:Q10360596 | reep_t40ded8fc:Riachuelo Atlético Clube:Brazil:Q10360592 | reep_t48428272:Riachuelo Futebol Clube:Brazil:Q7322105 | reep_t78b8acd8:Riachuelo Atlético Clube:Brazil:Q10360594
+9447,Tocantins FC,,,Brazil,,T2a,3,,reep_t7ffadba8:Tocantins Futebol Clube:Brazil:Q4459454 | reep_ta9b1bf8e:Tocantins Esporte Clube:Brazil:Q7811948 | reep_tf91cff19:Tocantins Esporte Clube:Brazil:Q7811950
+9448,União AC,Araguaína,Araguaína,Brazil,,T2a,9,reep_t9667bc65,reep_t0c93e780:União Esporte Clube:Brazil:Q10388014 | reep_t116b0a59:União Esporte Clube:Brazil:Q10388016 | reep_t5dcb258a:União Esportiva:Brazil:Q3551884 | reep_t787f65a3:União Futebol Clube:Brazil:Q7896870 | reep_t9667bc65:União Esporte Clube:Brazil:Q3551886 | reep_t982423ba:União Futebol Clube:Brazil:Q10388034 | reep_ta23facf8:União Esporte Clube:Brazil:Q10388015 | reep_taf00d505:União Atlético Clube:Brazil:Q109704259 | reep_tc060b251:União Futebol Club:Brazil:Q10388031
+9449,União Araguainense,Araguaína,Araguaína,Brazil,,T2a,9,reep_t9667bc65,reep_t0c93e780:União Esporte Clube:Brazil:Q10388014 | reep_t116b0a59:União Esporte Clube:Brazil:Q10388016 | reep_t5dcb258a:União Esportiva:Brazil:Q3551884 | reep_t787f65a3:União Futebol Clube:Brazil:Q7896870 | reep_t9667bc65:União Esporte Clube:Brazil:Q3551886 | reep_t982423ba:União Futebol Clube:Brazil:Q10388034 | reep_ta23facf8:União Esporte Clube:Brazil:Q10388015 | reep_taf00d505:União Atlético Clube:Brazil:Q109704259 | reep_tc060b251:União Futebol Club:Brazil:Q10388031
+9453,CD Everton,Viña del Mar,Valparaíso,Chile,1,T2b,2,reep_t01ee40c2,reep_t01ee40c2:Everton de Viña del Mar:Chile:Q1103684 | reep_tb24594db:Everton de Viña del Mar:Chile:Q2997665
+9456,Coquimbo Unido,Coquimbo,Coquimbo,Chile,1,T1,2,reep_t7005466a,reep_t7005466a:Coquimbo Unido:Chile:Q2407595 | reep_tdac84d4c:Coquimbo Unido:Chile:Q116855528
+9491,Deportivo Pereira,Pereira,Pereira,Colombia,1,T1,2,reep_t0ad81cce,reep_t0ad81cce:Deportivo Pereira:Colombia:Q515178 | reep_t0c8adf4c:Deportivo Pereira:Colombia:Q110101884
+9517,Emelec,Guayaquil,Guayaquil,Ecuador,1,T2a,2,reep_tf6f5b70d,reep_t11134d92:Club Sport Emelec:Ecuador:Q118951647 | reep_tf6f5b70d:Club Sport Emelec:Ecuador:Q249612
+9522,Libertad FC,Loja,Loja,Ecuador,1,T2a,2,reep_tcf020301,reep_t9947ac38:Club Atlético Libertad:Ecuador:Q5773185 | reep_tcf020301:Libertad Fútbol Club:Ecuador:Q105484053
+9524,Manta FC,Manta,Manta,Ecuador,1,T2a,2,,reep_t598f94ea:Manta Sport Club:Ecuador:Q6751968 | reep_te91afb46:Manta Fútbol Club:Ecuador:Q2501106
+9547,Club Nacional,Asuncion,Asuncion,Paraguay,1,T1,2,reep_t69e52467,reep_t07cc37e5:Club Nacional:Paraguay:Q130300229 | reep_t69e52467:Club Nacional:Paraguay:Q603101
+9551,Olimpia,Asuncion,Asuncion,Paraguay,1,T2a,4,reep_tae19fb48,reep_t47054e82:Club Olimpia:Paraguay:Q130101125 | reep_t4878d1fb:Club Olimpia (Itá):Paraguay:Q5774506 | reep_t58fd8c98:Club Olimpia:Paraguay:Q114904668 | reep_tae19fb48:Club Olimpia:Paraguay:Q604589
+9557,3 de Febrero,Ciudad del Este,Ciudad del Este,Paraguay,,T2a,2,,reep_t685ee602:Club Atlético 3 de Febrero:Paraguay:Q2134801 | reep_tc7ab8d7f:Club 3 de Febrero:Paraguay:Q5136094
+9577,Alianza Lima,Lima,Lima,Peru,1,T2a,2,reep_tee40d887,reep_tee40d887:Club Alianza Lima:Peru:Q572957 | reep_tff5f8066:Club Alianza Lima:Peru:Q108938713
+9615,Juan Aurich,Lima,Lima,Peru,,T1,2,,reep_t101b4156:Juan Aurich:Peru:Q16842352 | reep_t49f82f0d:Juan Aurich:Peru:Q25238325
+9627,Nacional,Montevideo,Montevideo,Uruguay,1,T2a,4,reep_t2cfa14ff,reep_t1aa95c57:Club Nacional de Football:Uruguay:Q12156652 | reep_t2cfa14ff:Club Nacional de Football:Uruguay:Q499616 | reep_t8ae4751b:Club Nacional de Football (futsal):Uruguay:Q65167574 | reep_td75223f6:Club Nacional de Fútbol (Sarandí del Yi):Uruguay:Q6413055
+9628,Montevideo Wanderers,Montevideo,Montevideo,Uruguay,1,T2a,2,reep_t108dba5c,reep_t108dba5c:Montevideo Wanderers Fútbol Club:Uruguay:Q872702 | reep_t32c695a5:Wanderers Fútbol Club (Artigas):Uruguay:Q9095535
+9642,CA River Plate,Montevideo,Montevideo,Uruguay,,T2a,2,,reep_tb72fe92c:Club Atlético River Plate:Uruguay:Q980573 | reep_tcd20eaae:River Plate Football Club:Uruguay:Q391014
+9661,Academia Puerto Cabello,Puerto Cabello,Puerto Cabello,Venezuela,1,T1,2,reep_t37f81a3c,reep_t37f81a3c:Academia Puerto Cabello:Venezuela:Q17619991 | reep_t887373bb:Academia Puerto Cabello:Venezuela:Q29577662
+9662,Anzoátegui FC,Puerto La Cruz,Puerto La Cruz,Venezuela,1,T2a,2,,reep_t26b9f9c7:Deportivo Anzoátegui:Venezuela:Q1191655 | reep_tda06c4a1:Deportivo Anzoátegui:Venezuela:Q22084909
+9665,Deportivo La Guaira,La Guaira,La Guaira,Venezuela,1,T2a,2,reep_t08071d76,reep_t08071d76:Deportivo La Guaira F.C.:Venezuela:Q628860 | reep_t2a363948:Deportivo La Guaira Fútbol Club:Venezuela:Q25413227
+9670,Monagas SC,Maturin,Maturin,Venezuela,1,T2a,3,reep_t3464dfb5,reep_t18d015cf:Monagas Sport Club:Venezuela:Q50378644 | reep_t3464dfb5:Monagas Sport Club:Venezuela:Q1636856 | reep_t772caa55:Atlético Monagas Fútbol Club:Venezuela:Q5710990
+9679,Atlético Venezuela,Caracas,Caracas,Venezuela,,T2a,3,,reep_t405c84f9:Atlético Venezuela Club de Fútbol:Venezuela:Q29657198 | reep_t7149113d:Deportivo Venezuela:Venezuela:Q5260765 | reep_tf03cf1b3:Atlético Venezuela Club de Fútbol:Venezuela:Q757472
+9682,Deportivo Anzoátegui,Puerto La Cruz,Puerto La Cruz,Venezuela,,T1,2,,reep_t26b9f9c7:Deportivo Anzoátegui:Venezuela:Q1191655 | reep_tda06c4a1:Deportivo Anzoátegui:Venezuela:Q22084909
+9686,Deportivo Petare,Caracas,Caracas,Venezuela,,T2a,2,reep_t31e3ab05,reep_t31e3ab05:Deportivo Petare F.C.:Venezuela:Q1191699 | reep_t34cf5542:Petare Fútbol Club:Venezuela:Q25413232
+9690,Lara FC,Caracas,Caracas,Venezuela,,T2a,3,,reep_t8e3fffd5:Deportivo Lara Fútbol Club:Venezuela:Q20983494 | reep_td71d81f1:Deportivo Lara:Venezuela:Q20203748 | reep_tda197b78:Lara Fútbol Club:Venezuela:Q3217815
+9946,Venezuela,,,Venezuela,0,T2a,3,,reep_t405c84f9:Atlético Venezuela Club de Fútbol:Venezuela:Q29657198 | reep_t7149113d:Deportivo Venezuela:Venezuela:Q5260765 | reep_tf03cf1b3:Atlético Venezuela Club de Fútbol:Venezuela:Q757472

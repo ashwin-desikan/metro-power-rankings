@@ -1,0 +1,170 @@
+sheet_row,team,country,column,value,team_matches,column_matches,note
+396,Maritzburg United,South Africa,curname,Durban City,Maritzburg United,Durban City,curname column points at a different entity than Team; check the workbook cell
+482,ASKO Kara,Togo,alt,ASC Kara,ASKO de Kara,Kara,alt column points at a different entity than Team; check the workbook cell
+673,Bengaluru FC,India,alt,Bengaluru,Bengaluru | SC Bengaluru,Bengaluru,alt column points at a different entity than Team; check the workbook cell
+679,Inter Kashi FC,India,curname,Dempo SC,Inter Kashi,Dempo,curname column points at a different entity than Team; check the workbook cell
+680,Diamond Harbour FC,India,curname,Dempo SC,Diamond Harbour,Dempo,curname column points at a different entity than Team; check the workbook cell
+681,Hyderabad FC,India,curname,SC Delhi,Hyderabad,Delhi FC | Delhi,curname column points at a different entity than Team; check the workbook cell
+691,Malut United FC,Indonesia,curname,Sriwijaya,Malut United,Sriwijaya,curname column points at a different entity than Team; check the workbook cell
+700,Persebaya FC,Indonesia,curname,Persebaya,Persebaya Surabaya,Persebaya 1927,curname column points at a different entity than Team; check the workbook cell
+705,PSIM Yogyakarta,Indonesia,curname,Sriwijaya,PSIM Yogyakarta,Sriwijaya,curname column points at a different entity than Team; check the workbook cell
+707,PSBS Biak Numfor,Indonesia,curname,Sriwijaya,PSBS Biak Numfor,Sriwijaya,curname column points at a different entity than Team; check the workbook cell
+708,Semen Padang,Indonesia,curname,Sriwijaya,Semen Padang,Sriwijaya,curname column points at a different entity than Team; check the workbook cell
+732,Shams Azar,Iran,curname,Machine Sazi,Shams Azar Qazvin,Machine Sazi,curname column points at a different entity than Team; check the workbook cell
+733,Kheybar Khorramabad,Iran,curname,Naft Tehran,Kheybar Khorramabad,Naft Tehran,curname column points at a different entity than Team; check the workbook cell
+734,Chadormalou Ardakan,Iran,curname,Naft Tehran,Chadormalu SC,Naft Tehran,curname column points at a different entity than Team; check the workbook cell
+735,Mes Shahr-e Babak,Iran,curname,Steel Azin FC,Mes Shahr-e Babak,Steel Azin,curname column points at a different entity than Team; check the workbook cell
+755,Mes Sarcheshme,Iran,curname,Shahr Khodro,Mes Sarcheshme,Shahr Khodro,curname column points at a different entity than Team; check the workbook cell
+803,Omiya Ardija,Japan,alt,Omiya Ardija,RB Omiya Ardija | Omiya Ardija,Omiya Ardija,alt column points at a different entity than Team; check the workbook cell
+884,Yadanarbon,Myanmar,curname,Yadanarbon,Yangon United | Yadanarbon,Yadanarbon,curname column points at a different entity than Team; check the workbook cell
+958,Ulsan Hyundai Horang-i,South Korea,alt,Ulsan Hyundai FC,Ulsan Hyundai Horang-i,Ulsan HD,alt column points at a different entity than Team; check the workbook cell
+1049,Kokand 1912,Uzbekistan,curname,Lokomotiv Tashkent,Kokand-1912,Lokomotiv,curname column points at a different entity than Team; check the workbook cell
+1231,FC Admira Wacker Mödling,Austria,alt,Admira Wacker / Admira Wien / Admira Wacker,Admira Wacker Mödling,Admira Wacker,alt column points at a different entity than Team; check the workbook cell
+1235,SC Bregenz,Austria,alt,Schwarz-Weiß Bregenz,SW Bregenz,Schwarz-Weiß Bregenz,alt column points at a different entity than Team; check the workbook cell
+1266,SK Austria Kärnten,Austria,alt,SV Pasching,Austria Kärnten,ASKÖ Pasching,alt column points at a different entity than Team; check the workbook cell
+1268,Kremser SC,Austria,alt,SC Krems,Krems | Krems / Rehberg,Krems,alt column points at a different entity than Team; check the workbook cell
+1346,FK Simurq Zaqatala,Azerbaijan,alt,Zaqatala,Simurq,Zaqatala,alt column points at a different entity than Team; check the workbook cell
+1431,Dnyapro Mogilev,Belarus,alt,Dnepr Mogilev / FC Dnepr Mogilev,Dnyapro,Dnepr Mogilev,alt column points at a different entity than Team; check the workbook cell
+1456,KSK Beveren,Belgium,alt,SK Beveren,KSK Beveren,Beveren,alt column points at a different entity than Team; check the workbook cell
+1461,RAA Louviéroise,Belgium,alt,RAAL La Louvière,La Louvière,RAAL La Louvière,alt column points at a different entity than Team; check the workbook cell
+1462,Lommel SK,Belgium,alt,La Louvière / Lommel United,Lommel,La Louvière,alt column points at a different entity than Team; check the workbook cell
+1463,Lierse SK,Belgium,alt,K. Lierse S.K. / Lierse,Lierse SK,Lierse,alt column points at a different entity than Team; check the workbook cell
+1465,KSC Lokeren,Belgium,alt,KSC Lokeren / Lokeren-Temse / Lokeren,Lokeren Oost-Vlaanderen,Lokeren,alt column points at a different entity than Team; check the workbook cell
+1466,KAS Eupen,Belgium,alt,AS Eupen,Eupen,FC Eupen | Eupen,alt column points at a different entity than Team; check the workbook cell
+1502,RAEC Mons,Belgium,alt,Mons,RAEC Mons,Mons,alt column points at a different entity than Team; check the workbook cell
+1509,Roeselare,Belgium,alt,KSV Roeselare / Roeselare,Roeselare,Roeselare | KSV Roeselare,alt column points at a different entity than Team; check the workbook cell
+1545,Lierse Kempenzonen,Belgium,alt,Lierse,Lierse SK,Lierse,alt column points at a different entity than Team; check the workbook cell
+1716,Marek Dupnitsa,Bulgaria,alt,Marek Stanke Dimitrov / Marek,Marek Dupnitsa,Marek,alt column points at a different entity than Team; check the workbook cell
+1721,PFK Dobrudzha,Bulgaria,alt,Dobrudzha,Dobrudzha | Dobrudzha 1919,Dobrudzha,alt column points at a different entity than Team; check the workbook cell
+1738,Hebar Pazardzhik,Bulgaria,alt,Hebar 1918,Hebar,Hebar 1918,alt column points at a different entity than Team; check the workbook cell
+1806,NK Varaždin,Croatia,alt,NK Varazdin / Varteks Varazdin / NK Varazdin,Varaždin,Varteks Varaždin,alt column points at a different entity than Team; check the workbook cell
+1897,Bohemians 1905,Czech Republic,alt,Bohemians Praha / Bohemians 1905,Bohemians 1905,Bohemians 1905 | Bohemians Praha,alt column points at a different entity than Team; check the workbook cell
+1908,FK Pardubice,Czech Republic,alt,Pardubice,Pardubice | AS Pardubice,Pardubice,alt column points at a different entity than Team; check the workbook cell
+1993,Randers FC,Denmark,alt,Randers FC / Randers Freja / Randers FC,Randers,Randers Freja,alt column points at a different entity than Team; check the workbook cell
+2003,Esbjerg fB,Denmark,alt,Esbjerg fB / Esbjerg,Esbjerg,Esbjerg | Esbjerg,alt column points at a different entity than Team; check the workbook cell
+2123,Bradford City,England,alt,Bradford City AFC / Bradford,Bradford City,Bradford City | Bradford (Park Avenue),alt column points at a different entity than Team; check the workbook cell
+2131,Peterborough United,England,alt,Peterborough United FC / Peterborough,Peterborough United,Peterborough Sports | Peterborough United,alt column points at a different entity than Team; check the workbook cell
+2157,York City,England,alt,York,York City,York City CC,alt column points at a different entity than Team; check the workbook cell
+2169,Hornchurch,England,curname,Hornchurch,Hornchurch FC | Hornchurch,Hornchurch,curname column points at a different entity than Team; check the workbook cell
+2203,Hampton & Richmond Borough,England,alt,Hampton & Richmond,Hampton & Richmond Borough | Hampton & Richmond,Hampton & Richmond,alt column points at a different entity than Team; check the workbook cell
+2212,Maidstone United,England,alt,Maidstone Utd,Maidstone United,Maidstone United CC,alt column points at a different entity than Team; check the workbook cell
+2235,Salisbury City,England,alt,Salisbury,Salisbury City,Salisbury,alt column points at a different entity than Team; check the workbook cell
+2391,North Ferriby United,England,alt,North Ferriby / North Ferriby United,North Ferriby United,North Ferriby | North Ferriby United,alt column points at a different entity than Team; check the workbook cell
+2414,AFC Hornchurch,England,curname,Hornchurch,Hornchurch FC | Hornchurch,Hornchurch,curname column points at a different entity than Team; check the workbook cell
+2436,Enfield,England,alt,Enfield 1893,Enfield,Enfield | Enfield FC,alt column points at a different entity than Team; check the workbook cell
+2444,Fisher Athletic,England,alt,Fisher,Fisher Athletic,Fisher,alt column points at a different entity than Team; check the workbook cell
+2446,Fulham U21,England,alt,Fulham FC,Fulham U21,Fulham U18 | Fulham U21 | Fulham U17,alt column points at a different entity than Team; check the workbook cell
+2459,Leyton,England,alt,Leyton Athletic,Leyton,Leyton Athletic,alt column points at a different entity than Team; check the workbook cell
+2609,Ashford Town,England,alt,Ashford Town (Middlesex),Ashford Town (Kent) | Ashford Town (Middlesex),Ashford Town (Middlesex),alt column points at a different entity than Team; check the workbook cell
+2621,Newcastle United U21,England,alt,Newcastle United FC,Newcastle United U21,Newcastle United U18 | Newcastle United U21,alt column points at a different entity than Team; check the workbook cell
+2655,Farsley Celtic,England,alt,Farsley Celtic FC,Farsley Celtic,Farsley Celtic | Farsley Celtic AFC,alt column points at a different entity than Team; check the workbook cell
+2737,Pärnu Linnameeskond,Estonia,alt,Pärnu,Pärnu Linnameeskond,Pärnu,alt column points at a different entity than Team; check the workbook cell
+2812,KooTeePee Kotka,Finland,alt,Kooteepee,KTP,KooTeePee,alt column points at a different entity than Team; check the workbook cell
+2824,FC Jokerit,Finland,alt,Jokerit Helsinki,Jokerit | Jokerit,Jokerit,alt column points at a different entity than Team; check the workbook cell
+2902,SC Bastia,France,alt,Bastia,CA Bastia | Bastia,Bastia,alt column points at a different entity than Team; check the workbook cell
+2907,Amiens SC,France,alt,Amiens SC Football / Amiens,Amiens SC,Amiens SC | Amiens AC,alt column points at a different entity than Team; check the workbook cell
+2937,Évian Thonon Gaillard FC,France,alt,Thonon Évian,Evian TG,Thonon Évian,alt column points at a different entity than Team; check the workbook cell
+3023,AC Amiens,France,alt,Amiens AC,Amiens SC,Amiens AC,alt column points at a different entity than Team; check the workbook cell
+3105,Marignane Gignac,France,alt,Marignane Gignac,Marignane Gignac | Marignane,Marignane Gignac,alt column points at a different entity than Team; check the workbook cell
+3105,Marignane Gignac,France,curname,Marignane Gignac Côte Bleue FC,Marignane Gignac | Marignane,Marignane GCB,curname column points at a different entity than Team; check the workbook cell
+3106,Marignane Gignac Côte Bleue,France,alt,Côte Bleue,Marignane GCB,Côte Bleue,alt column points at a different entity than Team; check the workbook cell
+3279,FC Merani Tbilisi,Georgia,alt,Merani Tbilisi,Merani Tbilisi | FC Merani Tbilisi,Merani Tbilisi,alt column points at a different entity than Team; check the workbook cell
+3307,FC Kakheti Telavi,Georgia,alt,Telavi,Kakheti Telavi,Telavi,alt column points at a different entity than Team; check the workbook cell
+3309,FC Mglebi Zugdidi,Georgia,alt,Zugdidi,Mglebi,Dinamo Zugdidi,alt column points at a different entity than Team; check the workbook cell
+3391,FC Sachsen Leipzig,Germany,alt,Chemie Leipzig,Sachsen Leipzig,Chemie Leipzig,alt column points at a different entity than Team; check the workbook cell
+3703,Lüneburger SK,Germany,alt,Luneburger SK Hansa,Lüneburg,LSK Hansa,alt column points at a different entity than Team; check the workbook cell
+3862,Aris Thessaloniki,Greece,alt,Aris Thessaloniki / Aris Thessalonikis,Aris | Aris,Aris,alt column points at a different entity than Team; check the workbook cell
+3863,Iraklis,Greece,alt,Iraklis Thessaloniki / Iraklis 1908,Iraklis 1908,Iraklis Thessaloniki | Iraklis 1908,alt column points at a different entity than Team; check the workbook cell
+3888,Apollon Smyrni,Greece,alt,Apollon Athens / Apollon Smirnis,Apollon Smirnis,Apollon Smirnis | Apollon Athens,alt column points at a different entity than Team; check the workbook cell
+3923,Makedonikos,Greece,alt,Makedonikos Neapolis,Makedonikos Efkarpia,Makedonikos Neapolis,alt column points at a different entity than Team; check the workbook cell
+4030,Dunaújváros FC,Hungary,alt,Dunaferr Dunaujvaros / Dunaújváros-Pálhalma,Dunaújváros,Dunaújváros SE,alt column points at a different entity than Team; check the workbook cell
+4087,Budafoki MTE,Hungary,alt,Budafoki LC,Budafoki LC | Budafoki MTE,Budafoki LC,alt column points at a different entity than Team; check the workbook cell
+4348,Athletic Carpi,Italy,alt,Athletic Carpi,AC Carpi,AC Carpi | Carpi,alt column points at a different entity than Team; check the workbook cell
+4351,Guidonia Montecelio,Italy,alt,Guidonia Montecelio 1937,Guidonia Montecelio,Guidonia Montecelio 1937,alt column points at a different entity than Team; check the workbook cell
+4398,Carpi FC,Italy,alt,Carpi,AC Carpi,Carpi,alt column points at a different entity than Team; check the workbook cell
+4538,Union Clodiense Chioggia,Italy,alt,Clodiense,Union Clodiense Chioggia,Union Clodiense Chioggia | Union Clodiense,alt column points at a different entity than Team; check the workbook cell
+4703,FC Zhenis,Kazakhstan,alt,FK Astana / Astana 64 / FC Astana / Zhenys,Jenis,Astana-64,alt column points at a different entity than Team; check the workbook cell
+4717,FC Almaty,Kazakhstan,alt,FK Almaty,FC Alma Ata | CSKA Almaty,CSKA Almaty,alt column points at a different entity than Team; check the workbook cell
+4737,FC Astana-1964,Kazakhstan,curname,FC Zhenis,Astana,Jenis,curname column points at a different entity than Team; check the workbook cell
+4770,FK Jelgava,Latvia,alt,FK Jelgava / Universitate Riga / FS Jelgava / Jelgava,FK Jelgava,Jelgava | FK Jelgava,alt column points at a different entity than Team; check the workbook cell
+4836,FK Šiauliai,Lithuania,alt,FA Siauliai / Šiauliai,FA Šiauliai,FA Šiauliai | Šiauliai,alt column points at a different entity than Team; check the workbook cell
+4898,Progres Niedercorn,Luxembourg,alt,Progrès Niederkorn / Progres Niederkorn,Progrès Niederkorn,Progrès Niederkorn | Progrès Niederkorn,alt column points at a different entity than Team; check the workbook cell
+4990,Melita FC,Malta,alt,Melita / Mellieha,Melita,Melita | Mellieha,alt column points at a different entity than Team; check the workbook cell
+5030,FC Bălți,Moldova,alt,Olimpia Balti / CSF Bălți,Atletico Bălți,CSF Bălți,alt column points at a different entity than Team; check the workbook cell
+5125,FC Groningen,Netherlands,alt,FC Groningen / FC Groningen / Groningen,VV Groningen | Groningen,Groningen,alt column points at a different entity than Team; check the workbook cell
+5148,FC Emmen,Netherlands,alt,FC Emmen / Emmen,VV Emmen | Emmen,Emmen,alt column points at a different entity than Team; check the workbook cell
+5190,XerxesDZB,Netherlands,alt,XerxesDZB (Zat),XerxesDZB (Zon) | XerxesDZB (Zat),XerxesDZB (Zat),alt column points at a different entity than Team; check the workbook cell
+5416,FK Bashkimi,North Macedonia,alt,Baskimi Kumanovo / Bashkimi Kumanovo,Bashkimi Kumanovo | FK Bashkimi,Bashkimi Kumanovo,alt column points at a different entity than Team; check the workbook cell
+5423,FK Pobeda,North Macedonia,alt,Pobeda,Pobeda Prilep,Pobeda,alt column points at a different entity than Team; check the workbook cell
+5840,CF Estrela Amadora,Portugal,alt,Estrela Amadora / Estrela,Estrela Amadora,Estrela | Estrela Amadora,alt column points at a different entity than Team; check the workbook cell
+5860,FC Felgueiras,Portugal,alt,Felgueiras 1932,Felgueiras 1932 | Felgueiras,Felgueiras 1932,alt column points at a different entity than Team; check the workbook cell
+5866,CF Belenenses,Portugal,alt,CF Os Belenenses / CF Os Belenenses / CF Os Belenenses / Belenenses,Belenenses,CF Os Belenenses | Belenenses,alt column points at a different entity than Team; check the workbook cell
+5873,UD Oliveirense,Portugal,alt,Oliveirense,AD Oliveirense | Oliveirense,Oliveirense,alt column points at a different entity than Team; check the workbook cell
+5895,Oriental,Portugal,alt,Oriental Lisboa,Oriental Lisbos | Oriental Lisboa,Oriental Lisboa,alt column points at a different entity than Team; check the workbook cell
+5906,Belenenses SAD,Portugal,alt,Belenenses,CF Os Belenenses | Belenenses,Belenenses,alt column points at a different entity than Team; check the workbook cell
+5963,Oliveira do Hospital,Portugal,alt,Oliveira Hospital,FC Oliveira do Hospital,Oliveira Hospital,alt column points at a different entity than Team; check the workbook cell
+6003,UD Vilafranquense,Portugal,curname,AVS Futebol SAD,Vilafranquense,AVS,curname column points at a different entity than Team; check the workbook cell
+6098,Rapid Bucureşti,Romania,alt,Rapid Bucuresti / Rapid,Rapid Bucureşti,Rapid | Rapid Bucureşti,alt column points at a different entity than Team; check the workbook cell
+6102,FC Arges,Romania,alt,Arges Pitesti,Argeș | FC Argeş Piteşti,FC Argeş Piteşti,alt column points at a different entity than Team; check the workbook cell
+6136,FCM Bacău,Romania,alt,FC Bacau / Dinamo Bacau,FCM Bacău,Dinamo Bacău | FC Bacău,alt column points at a different entity than Team; check the workbook cell
+6140,FC Politehnica Iași,Romania,alt,CSMS Iasi / Politehnica Iasi,Politehnica Iași | FC Politehnica Iaşi | Politehnica Iași,Politehnica Iași | Politehnica Iași,alt column points at a different entity than Team; check the workbook cell
+6164,FC Baia Mare,Romania,alt,Minaur Baia Mare,FC Baia Mare | Minaur Baia Mare,Minaur Baia Mare,alt column points at a different entity than Team; check the workbook cell
+6190,Academica Clinceni,Romania,alt,FC Clinceni,Academica Clinceni,LPS HD Clinceni,alt column points at a different entity than Team; check the workbook cell
+6261,Progresul Spartac București,Romania,alt,Progresul Spartac,Progresul Bucureşti,Progresul Spartac,alt column points at a different entity than Team; check the workbook cell
+6333,CSKA Moscow,Russia,alt,CSKA Moscow / PFK CSKA Moskva / CSKA Moscow,CSKA Moskva,Moskva | CSKA Moskva,alt column points at a different entity than Team; check the workbook cell
+6402,Sibir Novosibirsk,Russia,alt,Sibir Novosibirsk / Sibir,FK Sibir,Sibir,alt column points at a different entity than Team; check the workbook cell
+6618,Bo'ness,Scotland,alt,Bo'ness United,Bo'ness Athletic,Bo'ness United,alt column points at a different entity than Team; check the workbook cell
+6669,Irvine Meadow XI,Scotland,alt,Irvine Meadow,Irvine Meadow XI FC,Irvine Meadow,alt column points at a different entity than Team; check the workbook cell
+6703,FK Radnički 1923,Serbia,alt,Radnicki 1923 / Radnicki 1923,Radnički Kragujevac,Radnički Kragujevac | Radnički Svilajnac,alt column points at a different entity than Team; check the workbook cell
+6706,Radnik Surdulica,Serbia,alt,Radnicki Nis / Radnik Surdulica,Radnik Surdulica,Radnički Niš | Radnik Surdulica,alt column points at a different entity than Team; check the workbook cell
+6716,FK Smederevo,Serbia,alt,Sartid Smederevo,Smederevo 1924 | Smederevo,Sartid,alt column points at a different entity than Team; check the workbook cell
+6801,ŠKF Sereď,Slovakia,alt,Sereď,SKF Sered,Sereď,alt column points at a different entity than Team; check the workbook cell
+6835,NK Rudar Velenje,Slovenia,alt,Rudar Velenje / Rudar Velenje,Rudar Velenje | NK Rudar Velenje,Rudar Velenje,alt column points at a different entity than Team; check the workbook cell
+6842,NK Drava Ptuj,Slovenia,curname,NK Drava Ptuj,Drava,NŠ Drava | Drava,curname column points at a different entity than Team; check the workbook cell
+6849,NK Dravograd,Slovenia,curname,NK Drava Ptuj,Dravograd,NŠ Drava | Drava,curname column points at a different entity than Team; check the workbook cell
+6882,Sevilla FC,Spain,alt,Sevilla / Sevilla FC / Sevilla,Sevilla | Sevilla Atlético,Sevilla,alt column points at a different entity than Team; check the workbook cell
+6915,AD Ceuta FC,Spain,alt,AD Ceuta FC,AD Ceuta,Ceuta | AD Ceuta,alt column points at a different entity than Team; check the workbook cell
+6928,Extremadura,Spain,alt,Extremadura 1924 / Extremadura,Extremadura UD,Extremadura 1924,alt column points at a different entity than Team; check the workbook cell
+6929,Merida,Spain,alt,Mérida AD,Mérida,Mérida | Mérida UD,alt column points at a different entity than Team; check the workbook cell
+6967,Xerez CD,Spain,alt,Xerez,Xerez | Xerez Deportivo,Xerez,alt column points at a different entity than Team; check the workbook cell
+6979,CD El Ejido 2012,Spain,alt,El Ejido,CP Ejido | El Ejido,El Ejido,alt column points at a different entity than Team; check the workbook cell
+6992,Linares CF,Spain,alt,Linares,Linares Deportivo | Linares,Linares,alt column points at a different entity than Team; check the workbook cell
+7083,Salamanca CF,Spain,alt,Salamanca UDS,UD Salamanca,Salamanca UDS,alt column points at a different entity than Team; check the workbook cell
+7104,CF Reus Deportiu,Spain,alt,Reus,Reus Deportiu,Reddis | Reus Deportiu,alt column points at a different entity than Team; check the workbook cell
+7136,CD Ourense,Spain,alt,Ourense CF,UD Ourense | Ourense | Ourense CF,Ourense CF,alt column points at a different entity than Team; check the workbook cell
+7142,Ourense CF,Spain,alt,Ourense,Ourense CF,Ourense,alt column points at a different entity than Team; check the workbook cell
+7168,UD San Sebastián de los Reyes,Spain,alt,SS Reyes,UD San Sebastián de los Reyes,SS Reyes,alt column points at a different entity than Team; check the workbook cell
+7181,Lorca FC,Spain,alt,Lorca,Lorca Deportiva | Lorca Deportiva CF | Lorca,Lorca,alt column points at a different entity than Team; check the workbook cell
+7262,CD Manchego,Spain,alt,Manchego,Manchego | Manchego CF,Manchego,alt column points at a different entity than Team; check the workbook cell
+7265,CD Móstoles,Spain,alt,Móstoles,Móstoles CF | Móstoles,Móstoles,alt column points at a different entity than Team; check the workbook cell
+7637,Erzurumspor,Turkey,alt,Erzurumspor FK,Erzurumspor FK | Erzurumspor,Erzurumspor FK,alt column points at a different entity than Team; check the workbook cell
+7649,Vanspor,Turkey,alt,Vanspor FK,Vanspor,Vanspor SK | Vanspor,alt column points at a different entity than Team; check the workbook cell
+7724,Güngören Belediyespor,Turkey,alt,Menemen Belediyespor,İstanbul Güngörenspor,Menemen,alt column points at a different entity than Team; check the workbook cell
+7781,Kryvbas,Ukraine,alt,Kryvbas Kryviy Rih / Kryvbas KR,Kryvbas,Kryvbas KR,alt column points at a different entity than Team; check the workbook cell
+7782,FC Kharkiv,Ukraine,alt,Metalist 1925 Kharkiv,Kharkiv,Metalist 1925 Kharkiv,alt column points at a different entity than Team; check the workbook cell
+7795,SC Poltava,Ukraine,alt,SK Poltava,SK Poltava | Poltava,SK Poltava,alt column points at a different entity than Team; check the workbook cell
+7797,FC Probiy Horodenka,Ukraine,curname,FSC Mariupol,Probiy Horodenka,FSC Mariupol,curname column points at a different entity than Team; check the workbook cell
+7800,Metalist 1925 Kharkiv,Ukraine,curname,FC Kharkiv,Metalist 1925 Kharkiv,Kharkiv,curname column points at a different entity than Team; check the workbook cell
+7809,Metalist,Ukraine,alt,Metalist Kharkiv / Metalist Kharkov,Metalist,FK Metalist Kharkiv,alt column points at a different entity than Team; check the workbook cell
+7817,Hoverla Uzhhorod,Ukraine,alt,Uzhhorod / Hoverla,Hoverla,Hoverla | Uzhhorod,alt column points at a different entity than Team; check the workbook cell
+7825,SK Dnipro-1,Ukraine,alt,SC Dnipro-1 / SK Dnipro-1 / Dnipro-1,Dnipro | Dnipro-1,Dnipro-1,alt column points at a different entity than Team; check the workbook cell
+7925,The New Saints FC,Wales,alt,The New Saints / Llansantffraid / The New Saints,The New Saints,Llansantffraid | The New Saints,alt column points at a different entity than Team; check the workbook cell
+7945,Rhyl FC,Wales,alt,Rhyl,Y Rhyl 1879 | Rhyl,Rhyl,alt column points at a different entity than Team; check the workbook cell
+7946,Llanelli Town,Wales,alt,Llanelli FC,Llanelli Town,Llanelli,alt column points at a different entity than Team; check the workbook cell
+8123,Venados Yucatán,Mexico,alt,Venados FC,Venados,Deportiva Venados | Venados,alt column points at a different entity than Team; check the workbook cell
+8169,Monarcas Morelia,Mexico,curname,Atlético Morelia,Monarcas Morelia Premier,Atlético Morelia,curname column points at a different entity than Team; check the workbook cell
+8176,Tampico Madero,Mexico,curname,Club Jaiba Brava,Tampico Madero,Jaiba Brava,curname column points at a different entity than Team; check the workbook cell
+8456,Central Córdoba,Argentina,alt,Central Cordoba de Santiago,Central Córdoba SdE | Central Córdoba,Central Córdoba SdE,alt column points at a different entity than Team; check the workbook cell
+8510,Talleres (RE),Argentina,alt,Talleres Remedios,Talleres de Córdoba | Talleres Remedios,Talleres Remedios,alt column points at a different entity than Team; check the workbook cell
+8627,Club Sportivo Estudiantes,Argentina,alt,Estudiantes S.l.,Estudiantes,Estudiantes de San Luis,alt column points at a different entity than Team; check the workbook cell
+8661,Atlético Mineiro,Brazil,alt,Atletico-MG,Atlético Mineiro,Athletic Club MG,alt column points at a different entity than Team; check the workbook cell
+8729,Operário-MS,Brazil,alt,Operario Ferroviario,Operário FC MS,Operário PR,alt column points at a different entity than Team; check the workbook cell
+8730,Rio Branco AC,Brazil,alt,Rio Branco ES,Rio Branco,Rio Branco ES,alt column points at a different entity than Team; check the workbook cell
+8741,São José EC,Brazil,alt,Sao Jose,São José EC,São José EC | São José AP,alt column points at a different entity than Team; check the workbook cell
+8806,São Raimundo-RR,Brazil,alt,Sao Raimundo,São Raimundo RR,São Raimundo,alt column points at a different entity than Team; check the workbook cell
+8952,São Raimundo,Brazil,alt,São Raimundo AM,São Raimundo | São Raimundo AM,São Raimundo AM,alt column points at a different entity than Team; check the workbook cell
+9022,Real Brasília FC,Brazil,alt,Real FC,Real Brasília,Real SC | Real,alt column points at a different entity than Team; check the workbook cell
+9305,EC São José,Brazil,alt,São José EC,São José RS,São José EC,alt column points at a different entity than Team; check the workbook cell
+9446,Tocantins de Palmas,Brazil,alt,Palmas,Tocantins,Palmas,alt column points at a different entity than Team; check the workbook cell
+9448,União AC,Brazil,curname,União AC,União TO,União PR | União Rondonópolis,curname column points at a different entity than Team; check the workbook cell
+9449,União Araguainense,Brazil,curname,União AC,União TO,União PR | União Rondonópolis,curname column points at a different entity than Team; check the workbook cell

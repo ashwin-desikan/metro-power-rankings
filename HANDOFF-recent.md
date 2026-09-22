@@ -9,9 +9,130 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 63, 2026-09-15 to 2026-09-22
-     If the reader counts fewer than 63 entries, its fetch window stopped
+     entries: 74, 2026-09-15 to 2026-09-22
+     If the reader counts fewer than 74 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
+
+## 2026-09-22 (night, cowork cloud) — APPLIED: Reep ids on Lookup, football_team_reep bridge, identity resolver
+
+The dry run is over. Three things are now live:
+
+1. **Workbook.** `Champions League-201516.xlsx` `Lookup` has four new columns AF:AI = Reep ID, Wikidata QID, ESPN ID, UEFA ID (15,633 cells on 8,159 rows; 6,685 Reep v1 ids, 6,132 QIDs). Written by `scripts/reep/write_lookup_ids.py` as inline strings (sharedStrings untouched), only `sheet15.xml` changed, verified by testzip + entry diff + read-back. Backup beside the master: `Champions League-201516.xlsx.bak-20260922-reepids`. The file shrank 61 MB -> 50.9 MB: compression level, not data (same effect as the 2026-08-09 edit). The ETL's staged copy in `workbooks/` lags until the next `stage-leagues.py`. cl-lookup-sync does not know the new columns yet; the bridge table below carries them in Supabase, so mirroring them is not needed.
+2. **Supabase.** `public.football_team_reep` (9,956 rows, one per Lookup row, PK sheet_row, `lookup_id` linked to football_lookup for 9,929 unique (country, team) pairs) with every id, the match tier/source, `reep_v1_predecessors`, `provider_keys` jsonb (Reep bridges with rungs) and `names` jsonb. `public.football_identity_alias` (73,892 rows: 27,314 names + provider ids) rebuilt by `refresh_football_identity_alias()`; `public.football_name_norm(text)` mirrors the Python strict_norm; `public.resolve_football_team(provider, key, country)` is the RPC. Loader: `scripts/reep/load_bridge.py <json> --write` (upsert on sheet_row, reads the key from `.env.local` like sync_lookup.py). NB `public.football_team_alias` already existed (api-football duplicate teams) and is untouched.
+3. **Resolver.** `lib/teamIdentity.ts` (`resolveTeam`, `loadIdentityIndex`, `normaliseTeamName`; tsc clean) and `scripts/reep/identity.py` (`IdentityIndex`, `resolve_team`, `normalise`). Exact after normalisation, never fuzzy; workbook columns outrank Reep labels outrank Reep aliases; the workbook's api-football ids outrank Reep's. Smoke-tested: `espn 111` -> Juventus; `name "OB Odense"` -> Odense BK via the UEFA Name column; `name "Juventus"` resolves to Italy (workbook rung beats the Swiss club's Reep alias), with country it is exact; unknown names return `unknown`, never a guess.
+
+Also tonight: Cur. Name treated as the workbook's lineage key in `build_rulings.py` (old-name rows carry the franchise's current entity, own era in predecessors; 6 rows; 3 conflicts where both entities still play -> `reep_curname_conflicts.csv`: Inter Kashi/Dempo, Kokand 1912/Lokomotiv Tashkent, Astana-1964/Zhenis). Final counts: 8,159 / 9,956 rows with an id (81.9%), Level 1 1,380 / 1,444, RULINGS_NEEDED_v2.csv 212 rows, none at Level 1.
+
+Next: point the ESPN standings fallback and the UEFA coefficient feed at the resolver (they are the two live pipelines that break on names); extend cl-lookup-sync's 18-column contract to 22 if the workbook columns should mirror; competition crosswalk (185 rows from tables) as the second session.
+
+**Notion:** done in-session. Backlog: rulings-then-apply -> Done; competitions crosswalk -> Open P1 (unblocked); match corpus -> Blocked on the crosswalk; new rows: scrapers to the resolver (P1), git commit (P1), workbook defects for Ashwin (P1), cl-lookup-sync 22 columns (P2), club lineage on site (P3), remaining rulings + Celta B (P3), ESPN-id season ingest (P3). Data sources: Reep Register -> OK. Decisions: current tables are the key; elimination needs name evidence; Cur. Name is the lineage key.
+## 2026-09-22 (later, cowork cloud) — lineage conflicts resolved by "which entity plays now"
+
+Type 5 rows (elimination evidence on two Reep entities for one workbook row) are now decided in `build_rulings.py`: cup-season token evidence is discarded; among the rest, if exactly one entity is still playing (judged per country, since Brazil/Scandinavia calendar seasons lag Reep's 2025/26 by a year) it is the club today, tier `ELIM-lineage`, and the others go into a new combined-file column `reep_v1_predecessors` for joins against historical tables. 12 rows resolved this way (Jelgava, Farul, Kryvbas KR, Lokomotiv Sofia 1929, RAAL La Louvière, Lokeren, Seraing, SW Bregenz, Os Belenenses, CSM Olimpia Satu Mare, SSU Poli Timişoara, Hapoel Jerusalem); Brasiliense / Gama / Águia de Marabá kept their own entity once the Copa do Brasil noise was dropped. Per-country staleness also cut stale rejections from 89 to 51. GAS ruling recorded (row 8804). Coverage 8,157 / 9,956 (81.9%), Level 1 1,380 / 1,444, RULINGS_NEEDED 212 rows, 1 at Level 1 (Al Hazm), 8 type 5 left (Admira Wacker, Extremadura and six unlevelled). Excel held RULINGS_NEEDED.csv, so the current file is `dryrun-2026-09-22-v1/RULINGS_NEEDED_v2.csv`; delete the old one after closing Excel.
+
+**Notion:** unchanged from the entry above.
+
+## 2026-09-22 (night, cowork cloud) — elimination pairs need name evidence; reserve sides match on parent
+
+Ashwin rejected four RULINGS_NEEDED suggestions (Odense BK -> KFUM Odense, Olympiakos CFP B -> Larissa, Celta de Vigo B -> Málaga II, Juventus U23 -> Atalanta II). Root cause: `ELIM-1` paired "the one club left on each side of a table" with no name check, and a cup table (Copa del Rey 2008/09) counted as a season. Fixes, all in `scripts/reep/`:
+
+- `reep_elimination_match.py`: an ELIM-1 pair now needs name evidence (shared distinctive token, or one name is the short form of the other: `OB` in `OB Odense`, `KÍ` in `KÍ Klaksvík`) across the row's workbook name columns and the entity's aliases; the row's own City never counts as evidence (Odense BK vs KFUM Odense). A pair with no name evidence is tier `ELIM-1-blind`: never applied, offered only after 3 league seasons as ruling type 4b. Cup seasons never make blind pairs. A reserve/youth row is never paired with a second team of a different parent club. New leftover tier `ELIM-short`.
+- `reep_join_clubs.py`: tier `T2r` matches a reserve/youth row to the non-senior entities of the same parent (`Juventus U23` -> Juventus U21 / II / Next Gen; the current-season table then picks). A base that is itself a Lookup Team of the same country makes `X B` a reserve (`Olympiakos CFP B`), `next gen` is a marker, and ł/ø/đ/ß/æ/ð are transliterated (Zagłębie now meets Zaglebie).
+- `build_rulings.py`: ruled rows never reappear in RULINGS_NEEDED; blind pairs are type 4b with no suggestion.
+
+Result: Odense BK = OB (31 seasons, verified 2025/26 Superliga); Olympiakos CFP B = Olympiakos Piraeus II (API Name, verified Super League 2); Juventus U23 = Juventus Next Gen (8 seasons, verified Serie C); Celta de Vigo B = none (Reep's entity is `RC Celta Fortuna`, no seasons, no name path; needs a ruling). Coverage 8,140 / 9,956 (81.8%); Level 1 1,379 / 1,444 (95.5%), 6 Level 1 rulings left (Al Hazm blind pair, five two-era lineages). 15 rulings recorded from Ashwin's list (Auckland, Feronikeli, Skopje, Guidonia, 11 Brazilian Serie D rows); Odense and RAA Louviéroise from that list were NOT recorded (Odense resolved by the fix; La Louvière is a two-era question). RULINGS_NEEDED.csv 232 rows. Re-run order: join_clubs (v0, v1) -> build_rulings -> 3x (elimination_match -> disambiguate -> build_rulings). No git commit made.
+
+**Notion:** Backlog row "Reep rulings-then-apply" Notes need the new counts; Decisions row "elimination pairs need name evidence; current tables are the key" still to add.
+
+## 2026-09-22 (very late, cowork cloud) - the Netherlands/Holland Sport row traced; current tables are now the key for levelled rows
+
+The row Ashwin kept seeing was Lookup 9848, the NETHERLANDS NATIONAL TEAM, which the v0 (Wikidata) register had matched to Holland Sport: v0 holds no national teams at all, and a national row was allowed to fall through to club-name tiers. Fixed: a national row matches by country (NAT tier) or not at all.
+
+Ashwin's rule, applied: a row with a Level is in this season's tables, so the tables are the key. Three mechanisms. (1) `reep_current_table_verified.csv`: for every 2026-ending site table aligned to a Reep season, each matched club whose v1 entity sits in that season is recorded as verified (1,551 of 2,327 levelled rows; Reep's release carries 2025/26 as its last populated season). (2) A v1 entity whose last season is before 2025 is REJECTED on any levelled row whatever the name said (103 rejections; Sriwijaya, last 2018, had been carrying Persijap and Malut United). (3) A v0/v1 name difference is not a ruling when v1 is verified, current on a levelled row, NAT, ruled, or an elimination match with 3+ seasons: v1 is the key and the v0 item is dropped.
+
+Season alignment now prefers the league over the cup on a near-tie (the Belgian Cup with 901 entrants had been outscoring First Division A).
+
+Workbook defects surfaced: the Team name now outranks UEFA/EFS/API spellings and `Cur. Name`; a column that points at a different entity is written to `reep_workbook_defects.csv` (170 rows; the real errors are the Cur. Name pastes: Persijap Jepara, Malut United, PSIM, PSBS and Semen Padang all say "Sriwijaya"; five Iranian rows carry Naft Tehran or Steel Azin; Hyderabad says SC Delhi).
+
+Totals: 8,119 of 9,956 with a Reep id or QID (81.5%; down slightly because stale entities were rejected rather than kept), Level 1 1,377 of 1,444 (95.4%). `RULINGS_NEEDED.csv` 251 rows, 10 at Level 1: type 1 25, type 3 68, type 4 135, type 5 23.
+
+**Notion:** none (rules only; Decisions row for "current tables are the key" to add next session with the api-id one already filed).
+
+## 2026-09-22 (final, cowork cloud) - workbook api-football ids rule; reserve detection by contained entity; BOM on review files
+
+Ashwin's ruling: the workbook `API Teams` ids take precedence over any disambiguation. Applied three ways. (1) Type 2 (api-football conflicts, 104 rows) is gone from `RULINGS_NEEDED.csv`; the combined file carries `api_football_id` = workbook id wherever the sheet has one (3,909 rows), and `api_football_id_reep` notes Reep's id as "overridden by workbook" on the 104. (2) In `reep_disambiguate.py` the workbook api-id rule now runs second, straight after exact label, ahead of every other rule. (3) Recorded below for Notion.
+
+`side_flag()` now reads a trailing II/B as a reserve marker when an existing entity name is CONTAINED in the base ("HB Tórshavn II" holds "HB"), which cleared HB Tórshavn to its senior side and removed the II candidates from the disambiguator too (R0 side filter).
+
+"HB TÃ³rshavn" on Ashwin's screen was Excel reading a UTF-8 CSV as Windows-1252. The review files are now written with a BOM (`utf-8-sig`) and every script reads with `utf-8-sig`, which accepts both.
+
+Totals: 8,138 of 9,956 with a Reep id or QID (81.7%), Level 1 1,385 of 1,444 (95.9%). Rulings file 298 rows, 48 at Level 1: type 1 27, type 3 127, type 4 126, type 5 18.
+
+**Notion:** Decisions +1 to add (workbook API Teams ids take precedence over Reep api_football bridges and over disambiguation); done in the same session if the Notion server is reachable, otherwise first thing next session.
+
+## 2026-09-22 (late night, cowork cloud) - two matcher defects fixed after Ashwin's review; evidence-based disambiguator replaces the suggestion column
+
+Ashwin rejected the rulings file: identical option labels, Holland Sport offered against the Netherlands, AC Verona offered U19 against U17. Root causes, both in `reep_join_clubs.py`, both fixed and now audited every run: (1) club rows could land on national-team entities through loose stripping and Wikidata aliases ("Holland"); a country-labelled entity with a `national_football_teams` bridge and no ClubElo is never a club candidate. (2) the blanket II/B/U-number exclusion was wrong both ways: Lookup carries reserve and U21 rows itself, so `side_flag()` now classifies both sides and a match needs the flags to agree; a trailing II counts as reserve only when the base name is an entity (Willem II stays senior). Women's entities dropped in every language. Audit on the matched set: 0 clubs on national entities, 0 senior-on-reserve, 0 women's.
+
+New `scripts/reep/reep_disambiguate.py`: eight ordered rules, each decides only when one candidate is left, every decision carries its evidence; later rules choose only among candidates whose label carries the Lookup name with abbreviations expanded (CA = Club Atlético), so a date or a season can never pick a differently named club. Rules: exact; current season for levelled rows; token subset with club-type suffixes and the club's own city neutral and foreign parentheticals disqualifying; city in label or alias; workbook api-football id; parenthetical or bare-year qualifier (and a failed qualifier switches the duplicate rules off); v0 founding year against the club's own table years; identical-label duplicates by provider keys. v1: 118 of 179 decided; v0: 408 of 521. Type 1 rulings down to 28, each with its rule trace in `how_to_rule`.
+
+Also: the `RULINGS_NEEDED.csv` Ashwin reviewed was the FIRST draft (551 rows); Excel held the file open and every later write was refused. The defects were real regardless.
+
+Totals: 8,131 of 9,956 with a Reep id or QID (81.7%), Level 1 95.8%. Rulings 397 rows (type 1: 28, type 2: 104, type 3: 127, type 4: 126, type 5: 18), 50 at Level 1. Ashwin's five rulings live in `scripts/reep/rulings/club_rulings.csv` and override every rule.
+
+**Notion:** none beyond the earlier rows (Backlog row Notes are one step stale; the README carries the current numbers).
+
+## 2026-09-22 (latest, cowork cloud) - ambiguity resolved by history and by the current season; candidates now described
+
+Ashwin: a Lookup row with a Level is a club playing now, so pick the candidate in the current tables; and identical option labels are unreadable. Two additions. (1) `reep_elimination_match.py` records, for every ambiguous row, which candidate sat in the aligned Reep seasons of the tables that club sat in (`reep_ambiguous_resolved_by_history.csv`): 106 of 180 resolved, 11 still conflict. Where two candidates are one lineage split across eras, the one still playing in a current season is the club today and the other is written as its predecessor (`AMB-current`). (2) `build_rulings.py` applies the current-season rule to levelled rows whose candidates never appeared in a table (`AMB-current-level`), and every option in `RULINGS_NEEDED.csv` now reads "label [men or gender blank; last season YYYY; N providers: ...]" from `reep_team_descriptors.csv`. Women's entities were never candidates (dropped in `reshape_v1.py`); blank gender is kept because Reep leaves it blank on many senior clubs.
+
+Totals: 8,094 of 9,956 rows with a Reep id or QID (81.3%), 6,712 v1 ids, Level 1 1,381 of 1,444 (95.6%). Rulings 483 rows, 56 at Level 1; type 1 is down to 94 and what is left there is mostly Reep carrying two current entities for one club (Iraklis Thessaloniki and Iraklis 1908 both "last season 2026") or a wrong alias on their side (Dempo carrying "Diamond Harbour"), which are correction issues for the Reep repo as much as rulings.
+
+**Notion:** none beyond the earlier rows (counts in the Backlog row are one step stale).
+
+## 2026-09-22 (late, cowork cloud) - national teams by country, and elimination matching through league history
+
+**National teams.** Reep v1 age-group sides carry the bare country as an alias ("China" on China PR U22) while the senior side is labelled "China PR", so name matching put 6 countries on youth teams and 195 on federations. New `NAT` tier: the 255 Lookup rows whose `Club` column starts with "Country" match by COUNTRY to the entity with a `national_football_teams` bridge and no age or women's marker; territories never fall back to the parent state; renames in `NAT_RENAMES`. 248 of 255; the 7 left have no Reep entity.
+
+**Elimination (Ashwin's method).** `scripts/reep/reep_elimination_match.py`. Site league tables (workbook sheets Leagues History, Stand2nd, StandOth, World = `cl_league_history`, 117,603 club-seasons, 7,346 tables) against Reep `relationships.csv` participation. Align each table to the Reep season whose participants best overlap the already-matched clubs, strike the known from both sides, match the leftovers one-to-one, by exact name, or by a distinctive shared token unique both ways; pool evidence across seasons; 3+ seasons applies, 1-2 goes to rulings, two-id evidence goes to rulings. Cumulative passes converge in three. Result: 2,907 tables aligned; 501 new club matches (319 on Lookup rows, 183 applied; 188 are table spellings absent from Lookup, i.e. aliases); 37 lineages where Reep holds two ids across eras (Lierse / Lierse SK); 618 leftover sets still open (320 clubs, 185 sets tiny). By-product: a 184-row site league -> Reep competition crosswalk, 134 strong.
+
+🔴 **The ceiling is Reep's history, not the matcher.** Share of site tables with a Reep season: 88% 2020s, 94% 2010s, 75% 2000s, 27% 1990s, 5% before 1990. The workbook stays the historical source of truth; Reep ids attach to lineages.
+
+**Totals.** 8,070 of 9,956 Lookup rows have a v1 id or QID (81.1%); Level 1 1,372 of 1,444 (95.0%). `RULINGS_NEEDED.csv` 513 rows in five types, 69 at Level 1. `relationships.csv` has CRLF line endings: strip `\r` before awk on `$3`.
+
+**Notion:** Decisions +1 (elimination method and NAT rule); Backlog "Reep join" row Needs and Notes refreshed with these counts.
+
+## 2026-09-22 (later, cowork cloud) - 195 false ambiguities were federations, not teams
+
+Ashwin asked why every national team had two Reep candidates. Reep v1 files a country's football ASSOCIATION as an `rt` entity with the same label as the men's national team; the federation's only bridge is `fifa` in the `association` namespace (Afghanistan = AFG). `reshape_v1.py` now drops any entity whose bridges are all association-namespace (222 entities). Ambiguous fell from 391 to 187 rows (141 after the v0 union), matched rose to 6,428 (64.6%), an id now exists for 7,945 rows (79.8%). `build_rulings.py` regenerates `reep_club_combined_v0_v1.csv` and `RULINGS_NEEDED.csv` (now 361 rows: 141 ambiguous, 104 api-football conflicts, 116 v0/v1 name conflicts; 54 at Level 1). Six national-team rows remain ambiguous because only age-group entities carry the short label (China PR U22 / U16).
+
+**Notion:** none beyond the earlier row (counts in the Backlog row Notes are now stale by this amount; corrected at the next touch).
+
+## 2026-09-22 (night, cowork cloud) - Reep v1 full bundle: Level 1 93.6% identified, and the api-football trap
+
+All seven v1 files are in `Excel Files/reep-v1/`. `bridges.csv` is 456 MB, over the 400 MB staging cap, so it is filtered on the device with awk into `derived/` (team rows 123k, comp/season rows 27k, aliases 57k); OneDrive then reports the derived files as hard-linked and refuses to stage them, so copy to `scripts/reep/_v1derived/` first (7 MB, gitignore it). `scripts/reep/reshape_v1.py` builds the matcher inputs with one `key_<provider>` column per bridge provider and an alias file keyed by v1 id.
+
+**Measured.** v1 with aliases and bridges: 6,226 matched (62.5%), 391 ambiguous. Level 1 87.5%, Level 2 95.5%, Level 3 95.9%. Aliases added 797 matches. v0+v1 combined (`dryrun-2026-09-22-v1/reep_club_combined_v0_v1.csv`): an id for 7,756 rows (77.9%), Level 1 1,352 of 1,444 (93.6%). Level 1 misses are almost all African (DR Congo 25, Ethiopia 16, Sudan 16, Tanzania 11, Cameroon 8) plus Hong Kong 8. Keys attached: Opta 6,193, Wyscout 5,795, FotMob 3,931, api-football 3,581, ESPN 1,846, UEFA 850, ClubElo 624. No Wikidata and no FBref bridges for teams in v1; those stay with v0.
+
+🔴 **Trust the rung.** Every v1 bridge carries an evidence tier. ESPN is `corroborated-mint`, UEFA `first-party`. **api_football, clubelo, capology, fm, sportmonks are all `name-nationality`, a name match.** Checked against the workbook's `API Teams` sheet: 336 rows hold an api-football id on both sides, 232 agree, 104 do not (Wigan 61 vs 22652, AC Ajaccio 3248 vs 98). Reep must never validate or overwrite `api_name`; the workbook is the stronger source. New Decisions row.
+
+**Competitions: 69 of 115** with aliases. The 46 left are short site labels, defunct competitions v1 lacks (Mitropa, Latin Cup, Fairs Cup, Soviet Cup), and countryless `champion_competitions` rows. Hand crosswalk, as before.
+
+`relationships.csv` carries the chain match -> in_stage -> stage -> stage_of -> season -> season_of -> competition (1,417,576 in_stage rows), so the 1.4M-match corpus is joinable. Not joined this session.
+
+**Notion:** Backlog "Reep join" row retitled to the rulings-then-apply step with the three ruling lists named; Decisions +1 (bridge keys trusted by rung).
+
+## 2026-09-22 (late evening, cowork cloud) - Reep v1 partial bundle arrived; club join rerun, Level 1 now 90.8% across v0+v1
+
+Ashwin downloaded four v1 files to `Excel Files/reep-v1/` (teams 27,727; competitions 1,430; seasons 8,013; matches 1,417,588). Not yet: `bridges` (provider keys), `aliases`, `relationships`. `scripts/reep/reshape_v1.py` converts the v1 layout for the matchers; COUNTRY_MAP now tries the Lookup label first because v1 says England/Scotland where v0 said United Kingdom (v0 rerun unchanged at 6,206 after the patch).
+
+**Measured.** v1 alone: 5,429 matched (54.5%), 364 ambiguous. By level far better than v0: Level 1 79.8%, Level 2 91.2%, Level 3 91.0%. v1 is a competitive-club register and loses only on the 7,214 unlevelled tail. Every v0 headline miss (Manchester United, Rangers, Grêmio, Olympiakos, PAOK, Parma, Sydney FC, Cork City, Rochdale) resolves at T1 in v1. Combined (`dryrun-2026-09-22-v1/reep_club_combined_v0_v1.csv`): a v1 id or QID for 7,417 rows (74.5%), Level 1 1,311 of 1,444 (90.8%); 3,680 agree, 538 both matched to differently named records (mostly label variants, but Randers FC vs Randers Freja is a real conflict), 1,211 v1 only, 1,988 v0 only, 355 ambiguous, 2,184 none. v1 misses cluster in Africa.
+
+**Competitions on v1: 38 of 115.** Site labels are short forms, v1 carries "UEFA Champions League" and period entities like "First Division (1888–1992)", and `champion_competitions` has no country so "Premier League" hits 33 leagues. Route: a 60-row hand crosswalk site slug -> v1 id, a ruling table not a matcher.
+
+🔴 `matches.csv` alone carries only two team ids and a date; competition and season live in `relationships.csv.gz`. Do not build a corpus on it before that file is down.
+
+**Notion:** Backlog "Reep join: download v1 bundles and rerun" moved to In progress with the three missing files named and the new numbers.
 
 ## 2026-09-22 (late, Windows session) - Jev club resolver pilot for the api-football UNMATCHED backlog, measurement only, nothing written
 
@@ -36,6 +157,7 @@ Ashwin invoked the TypeSafe skill with no task. The repo already had one validat
 **Open for Ashwin.** The threshold (0.90 vs 0.95, the same question the metro pilot left open) and whether `--queue` output joins the Lookup curation ritual as a reviewed queue. Neither number is safe to auto-apply, so the only real question is how much a human reviews. Note also that the eval's HARD set is drawn from clubs that ARE in Lookup while the live backlog is mostly clubs we have never curated, so the true live mix is unmeasured, and `_scratch/unmatched_teams.json` is 57 days old (the script warns); a fresh `audit_unmatched.py` should precede any real triage.
 
 **Notion:** Backlog +2 (pilot built and measured, Done; threshold + ritual ruling, Open, owner Ashwin). Decisions +2 (Jev club resolution is a curation accelerator never an auto-writer, carrying the Grimsby evidence; the reserve gate fires only when the picked club is a senior side).
+
 ## 2026-09-22 (evening, cowork cloud) - Nutmeg scoped, Reep Register club join DRY RUN, nothing written to workbook or Supabase
 
 Ashwin installed the Nutmeg plugin (withqwerty) in Claude Code and asked what to take from it. Verdict: the plugin itself is a player-event analytics toolkit (StatsBomb, Wyscout, Opta, xG, PPDA, Campos charts) and is not a data source for this site. The assets are the author's sibling projects: the **Reep Register** (CC0 club, competition and season identity crosswalk anchored to Wikidata) and the **open-football** index of free corpora.

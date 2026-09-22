@@ -1,0 +1,67 @@
+Lookup rows: 9956
+
+NAT      247    2.5%
+T1      4196   42.1%
+T2a     1174   11.8%
+T2b       49    0.5%
+T1-alias    542    5.4%
+T2a-alias    234    2.4%
+T2b-alias     25    0.3%
+T3         0    0.0%
+AMB      180    1.8%
+NONE    3309   33.2%
+
+matched (all T tiers): 6467 (65.0%)
+
+Level 1: 1276/1444 matched (88.4%), 41 ambiguous
+Level 2: 464/486 matched (95.5%), 12 ambiguous
+Level 3: 256/267 matched (95.9%), 7 ambiguous
+
+provider keys present among matched rows:
+  key_wikidata                   6467
+  key_gender                     6245
+  key_api_football               3589
+  key_capology                   1308
+  key_clubelo                     624
+  key_eafc                       2153
+  key_espn                       1953
+  key_fifa                       3613
+  key_fm                         1426
+  key_fotmob                     4152
+  key_jleague                      57
+  key_national_football_teams     250
+  key_opta                       6433
+  key_second_spectrum              97
+  key_skillcorner                2219
+  key_sportmonks                 3695
+  key_uefa                        850
+  key_understat                   184
+  key_wyscout                    6030
+  key_namespaces                 6467
+
+coverage by country (matched/total), worst 25 among countries with >=20 rows:
+  Ethiopia                         3/21     14.3%
+  Azerbaijan                      25/67     37.3%
+  Finland                         33/88     37.5%
+  Sudan                           10/26     38.5%
+  Ireland                         23/57     40.4%
+  Cameroon                         9/21     42.9%
+  Hungary                         46/104    44.2%
+  Northern Ireland                23/49     46.9%
+  Russia                         101/212    47.6%
+  Germany                        258/515    50.1%
+  Poland                         122/238    51.3%
+  Latvia                          31/60     51.7%
+  Scotland                        71/134    53.0%
+  Moldova                         34/64     53.1%
+  Belgium                        100/184    54.3%
+  Lithuania                       35/64     54.7%
+  Armenia                         28/51     54.9%
+  Congo DR                        16/29     55.2%
+  Romania                        131/236    55.5%
+  Brazil                         443/794    55.8%
+  Canada                          14/25     56.0%
+  Bosnia-Herzegovina              40/71     56.3%
+  Bulgaria                        59/104    56.7%
+  Kazakhstan                      30/52     57.7%
+  United States                   93/158    58.9%
