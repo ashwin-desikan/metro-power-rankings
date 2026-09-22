@@ -78,3 +78,4 @@
 2026-09-20T22:52:41+01:00  2fb21ff4d  HANDOFF: mini_sync rebases instead of failing; the pull path self-heals [vercel skip]
 2026-09-20T22:51:33+01:00  f091a06ec  mini: mini_sync rebases a diverged branch instead of failing the whole fleet [vercel skip]
 2026-09-20T22:46:20+01:00  b9b4d3d1d  HANDOFF: dispatcher.log rotation at 5 MB, five generations [vercel skip]
+2026-09-20T22:45:23+01:00  26e6cd53b  mini: rotate dispatcher.log at 5 MB, keeping 5 generations [vercel skip]

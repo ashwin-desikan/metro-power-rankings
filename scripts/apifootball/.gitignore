@@ -1,0 +1,6 @@
+# Secrets. jev_club_pilot.py reads typesafe_key.txt from this directory when
+# TYPESAFE_API_KEY is unset; refresh.py reads _scratch/apikey.txt.
+typesafe_key.txt
+
+# Pilot output: eval CSVs carry no secrets but are run artefacts, not source.
+out/
