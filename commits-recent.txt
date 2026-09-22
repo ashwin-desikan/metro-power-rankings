@@ -1,3 +1,4 @@
+2026-09-22T08:19:06+01:00  3f1c3dd27  elections: Labour leads the UK polling chart
 2026-09-22T08:18:54+01:00  6e86b214e  forecast(uk): correct the 2024 baseline row and check it against the real result [vercel skip]
 2026-09-22T07:07:36+01:00  4f0817680  chore(substack): refresh feed snapshot [vercel skip]
 2026-09-22T06:11:00+01:00  7db1ed8b4  screen: weekly US number-ones refresh [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T07:09:33+01:00  c5de90469  chore(substack): refresh feed snapshot [vercel skip]
 2026-09-20T06:03:14+01:00  4692fb13a  football: refresh live bundles [vercel skip]
 2026-09-20T03:30:54+01:00  a169c90c6  chore(activity): refresh site activity feed [vercel skip]
-2026-09-20T02:10:11+01:00  4deec0fad  ops: daily sweep 2026-09-20 [vercel skip]
