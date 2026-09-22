@@ -1,3 +1,4 @@
+2026-09-22T08:43:32+01:00  95b49a60f  forecast: header cells take the top-level split rule too [vercel skip]
 2026-09-22T08:35:58+01:00  a1ca4b388  forecast: split wikitext cells at top level only, and anchor France [vercel skip]
 2026-09-22T08:26:59+01:00  7d371d8f1  forecast: extend the known-results guard to every country [vercel skip]
 2026-09-22T08:19:06+01:00  3f1c3dd27  elections: Labour leads the UK polling chart
@@ -77,4 +78,3 @@
 2026-09-20T19:33:33+01:00  7ae9c1aed  metro_sync: MetroAreas.xlsx mirrors to Supabase and extract.py can run from the mirror [vercel skip]
 2026-09-20T12:07:54+01:00  acc777d06  football: refresh live bundles [vercel skip]
 2026-09-20T10:25:42+01:00  6d6a29447  data: mini refresh - build-time-read data changed, rebuild required
-2026-09-20T07:09:33+01:00  c5de90469  chore(substack): refresh feed snapshot [vercel skip]
