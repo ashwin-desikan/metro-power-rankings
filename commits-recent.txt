@@ -1,5 +1,6 @@
+2026-09-22T21:18:20+01:00  d65f05a58  reep: club identity crosswalk applied; Lookup AF:AI, football_team_reep bridge, identity resolver [vercel skip]
+2026-09-22T17:17:33+01:00  fcf4a36d9  apifootball: Jev club resolver pilot, measurement only [vercel skip]
 2026-09-22T18:07:47+01:00  ea82840c6  football: refresh live bundles [vercel skip]
-2026-09-22T17:17:33+01:00  95e5407f9  apifootball: Jev club resolver pilot, measurement only [vercel skip]
 2026-09-22T14:42:42+01:00  91d0004c5  mktcap: apply the 20 metro rulings; contradictions 14 -> 0 [vercel skip]
 2026-09-22T13:49:23+01:00  f67d43333  mktcap: correct 37 provably wrong state values in mktcap_geo [vercel skip]
 2026-09-22T13:33:53+01:00  83726efca  mktcap: a free geography consistency check, and the full Jev audit [vercel skip]
@@ -77,5 +78,3 @@
 2026-09-20T22:58:08+01:00  c1fc9f921  HANDOFF: mini_sync flushes tagged commits, alerts on untagged [vercel skip]
 2026-09-20T22:57:19+01:00  755ee51d9  mini: mini_sync pushes stranded [vercel skip] commits, alerts once on untagged ones [vercel skip]
 2026-09-20T22:52:41+01:00  2fb21ff4d  HANDOFF: mini_sync rebases instead of failing; the pull path self-heals [vercel skip]
-2026-09-20T22:51:33+01:00  f091a06ec  mini: mini_sync rebases a diverged branch instead of failing the whole fleet [vercel skip]
-2026-09-20T22:46:20+01:00  b9b4d3d1d  HANDOFF: dispatcher.log rotation at 5 MB, five generations [vercel skip]
