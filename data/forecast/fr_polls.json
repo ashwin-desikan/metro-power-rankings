@@ -2,6 +2,20 @@
  "source": "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)",
  "firstRound": [
   {
+   "date": "2022-04-10",
+   "shares": {
+    "Nathalie Arthaud Lutte Ouvrière (LO)": 0.56,
+    "Philippe Poutou New Anticapitalist Party (NPA)": 0.76,
+    "Fabien Roussel French Communist Party (PCF)": 2.28,
+    "Jean-Luc Mélenchon La France Insoumise (LFI)": 21.95,
+    "Yannick Jadot The Ecologists (LE)": 4.63,
+    "Jean LassalleRésistons (RES)": 3.13,
+    "Nicolas Dupont-Aignan Debout la France (DLF)": 2.06,
+    "Marine Le Pen National Rally (RN)": 23.15,
+    "Éric Zemmour Reconquête (R!)": 7.07
+   }
+  },
+  {
    "date": "2023-03-31",
    "shares": {
     "Nathalie Arthaud Lutte Ouvrière (LO)": 1.0,
@@ -271,6 +285,20 @@
    }
   },
   {
+   "date": "2025-05-19",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Fabien Roussel": 3.0,
+    "Jean-Luc Mélenchon": 14.0,
+    "Raphaël Glucksmann": 10.0,
+    "Marine Tondelier": 3.0,
+    "Édouard Philippe": 21.0,
+    "Bruno Retailleau": 12.0,
+    "Marine Le Pen": 31.0,
+    "Éric Zemmour": 5.0
+   }
+  },
+  {
    "date": "2025-05-20",
    "shares": {
     "Nathalie Arthaud": 1.0,
@@ -312,6 +340,21 @@
     "Nicolas Dupont-Aignan": 3.5,
     "Marine Le Pen": 30.5,
     "Éric Zemmour": 5.5
+   }
+  },
+  {
+   "date": "2025-10-07",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Fabien Roussel": 3.0,
+    "Jean-Luc Mélenchon": 14.0,
+    "Raphaël Glucksmann": 12.0,
+    "Marine Tondelier": 3.0,
+    "Édouard Philippe": 16.0,
+    "Bruno Retailleau": 10.0,
+    "Nicolas Dupont-Aignan": 1.0,
+    "Marine Le Pen": 34.0,
+    "Éric Zemmour": 6.0
    }
   },
   {
@@ -360,6 +403,21 @@
     "Nicolas Dupont-Aignan": 2.5,
     "Marine Le Pen": 34.0,
     "Sarah Knafo": 4.0
+   }
+  },
+  {
+   "date": "2026-04-22",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Fabien Roussel": 4.0,
+    "Jean-Luc Mélenchon": 12.0,
+    "Raphaël Glucksmann": 12.0,
+    "Marine Tondelier": 4.0,
+    "Gabriel Attal": 14.0,
+    "Bruno Retailleau": 13.0,
+    "Nicolas Dupont-Aignan": 2.0,
+    "Marine Le Pen": 33.0,
+    "Sarah Knafo": 5.0
    }
   },
   {

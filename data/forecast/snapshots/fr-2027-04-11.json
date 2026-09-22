@@ -2,8 +2,8 @@
  "code": "fr",
  "election": "2027-04-11",
  "confidence": "assumed",
- "built": "2026-09-21",
- "daysBefore": 202,
+ "built": "2026-09-22",
+ "daysBefore": 201,
  "block": {
   "electionAssumed": "2027-04-11",
   "electionDate": "2027-04-11",

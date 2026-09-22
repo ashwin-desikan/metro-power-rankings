@@ -76,6 +76,17 @@
    "snp": 3.0
   },
   {
+   "date": "2024-08-29",
+   "pollster": "BMG Research",
+   "sample": 1560,
+   "lab": 30.0,
+   "con": 26.0,
+   "ref": 19.0,
+   "ld": 12.0,
+   "grn": 8.0,
+   "snp": 3.0
+  },
+  {
    "date": "2024-09-12",
    "pollster": "More in Common",
    "sample": 1542,
@@ -385,6 +396,17 @@
   },
   {
    "date": "2024-11-27",
+   "pollster": "Find Out Now",
+   "sample": 2316,
+   "lab": 25.0,
+   "con": 27.0,
+   "ref": 22.0,
+   "ld": 12.0,
+   "grn": 9.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2024-11-27",
    "pollster": "BMG Research",
    "sample": 1531,
    "lab": 29.0,
@@ -439,6 +461,17 @@
    "snp": 3.0
   },
   {
+   "date": "2024-12-04",
+   "pollster": "Find Out Now",
+   "sample": 2607,
+   "lab": 23.0,
+   "con": 26.0,
+   "ref": 24.0,
+   "ld": 11.0,
+   "grn": 9.0,
+   "snp": 3.0
+  },
+  {
    "date": "2024-12-06",
    "pollster": "Techne",
    "sample": 1644,
@@ -469,6 +502,17 @@
    "ref": 19.0,
    "ld": 13.0,
    "grn": 8.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2024-12-11",
+   "pollster": "Find Out Now",
+   "sample": 2659,
+   "lab": 26.0,
+   "con": 23.0,
+   "ref": 25.0,
+   "ld": 11.0,
+   "grn": 9.0,
    "snp": 3.0
   },
   {
@@ -572,6 +616,17 @@
   },
   {
    "date": "2025-01-08",
+   "pollster": "Find Out Now",
+   "sample": 2076,
+   "lab": 25.0,
+   "con": 20.0,
+   "ref": 25.0,
+   "ld": 11.0,
+   "grn": 11.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-01-08",
    "pollster": "More in Common",
    "sample": 2011,
    "lab": 26.0,
@@ -624,6 +679,17 @@
    "ld": 13.0,
    "grn": 9.0,
    "snp": 2.0
+  },
+  {
+   "date": "2025-01-15",
+   "pollster": "Find Out Now",
+   "sample": 2386,
+   "lab": 24.0,
+   "con": 25.0,
+   "ref": 25.0,
+   "ld": 12.0,
+   "grn": 10.0,
+   "snp": 3.0
   },
   {
    "date": "2025-01-16",
@@ -703,6 +769,17 @@
    "snp": 3.0
   },
   {
+   "date": "2025-01-22",
+   "pollster": "Find Out Now",
+   "sample": 2380,
+   "lab": 22.0,
+   "con": 23.0,
+   "ref": 26.0,
+   "ld": 12.0,
+   "grn": 10.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-01-23",
    "pollster": "Whitestone Insight",
    "sample": 2012,
@@ -767,6 +844,17 @@
    "ld": 13.0,
    "grn": 7.0,
    "snp": 2.0
+  },
+  {
+   "date": "2025-01-29",
+   "pollster": "Find Out Now",
+   "sample": 2487,
+   "lab": 23.0,
+   "con": 21.0,
+   "ref": 27.0,
+   "ld": 11.0,
+   "grn": 10.0,
+   "snp": 3.0
   },
   {
    "date": "2025-01-29",
@@ -857,6 +945,17 @@
    "snp": 3.0
   },
   {
+   "date": "2025-02-05",
+   "pollster": "Find Out Now",
+   "sample": 2487,
+   "lab": 25.0,
+   "con": 18.0,
+   "ref": 29.0,
+   "ld": 13.0,
+   "grn": 10.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-02-06",
    "pollster": "Techne",
    "sample": 1645,
@@ -899,6 +998,17 @@
    "ld": 12.0,
    "grn": 8.0,
    "snp": 2.0
+  },
+  {
+   "date": "2025-02-12",
+   "pollster": "Find Out Now",
+   "sample": 3421,
+   "lab": 23.0,
+   "con": 21.0,
+   "ref": 29.0,
+   "ld": 12.0,
+   "grn": 9.0,
+   "snp": 3.0
   },
   {
    "date": "2025-02-13",
@@ -945,6 +1055,17 @@
    "snp": 2.0
   },
   {
+   "date": "2025-02-19",
+   "pollster": "Find Out Now",
+   "sample": 2393,
+   "lab": 24.0,
+   "con": 20.0,
+   "ref": 28.0,
+   "ld": 12.0,
+   "grn": 10.0,
+   "snp": 2.0
+  },
+  {
    "date": "2025-02-20",
    "pollster": "Techne",
    "sample": 1639,
@@ -987,6 +1108,17 @@
    "ld": 16.0,
    "grn": 8.0,
    "snp": 2.0
+  },
+  {
+   "date": "2025-02-26",
+   "pollster": "Find Out Now",
+   "sample": 3363,
+   "lab": 23.0,
+   "con": 21.0,
+   "ref": 28.0,
+   "ld": 13.0,
+   "grn": 10.0,
+   "snp": 3.0
   },
   {
    "date": "2025-02-26",
@@ -1055,6 +1187,17 @@
    "snp": 3.0
   },
   {
+   "date": "2025-03-05",
+   "pollster": "Find Out Now",
+   "sample": 2670,
+   "lab": 25.0,
+   "con": 21.0,
+   "ref": 26.0,
+   "ld": 12.0,
+   "grn": 10.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-03-06",
    "pollster": "Techne",
    "sample": 1632,
@@ -1108,6 +1251,17 @@
    "ld": 25.0,
    "grn": 14.0,
    "snp": 8.0
+  },
+  {
+   "date": "2025-03-12",
+   "pollster": "Find Out Now {{cite web |title=Voting intention:",
+   "sample": null,
+   "lab": 2.0,
+   "con": 24.0,
+   "ref": 21.0,
+   "ld": 27.0,
+   "grn": 11.0,
+   "snp": 10.0
   },
   {
    "date": "2025-03-13",
@@ -1165,6 +1319,17 @@
    "snp": 2.0
   },
   {
+   "date": "2025-03-19",
+   "pollster": "Find Out Now {{cite web |title=Voting intention:",
+   "sample": null,
+   "lab": 2.0,
+   "con": 22.0,
+   "ref": 21.0,
+   "ld": 27.0,
+   "grn": 14.0,
+   "snp": 11.0
+  },
+  {
    "date": "2025-03-20",
    "pollster": "Techne",
    "sample": 1644,
@@ -1206,6 +1371,17 @@
    "ref": 24.0,
    "ld": 12.0,
    "grn": 10.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-03-26",
+   "pollster": "Find Out Now",
+   "sample": 2745,
+   "lab": 23.0,
+   "con": 22.0,
+   "ref": 26.0,
+   "ld": 12.0,
+   "grn": 11.0,
    "snp": 3.0
   },
   {
@@ -1286,6 +1462,17 @@
    "snp": 2.0
   },
   {
+   "date": "2025-04-02",
+   "pollster": "Find Out Now",
+   "sample": 2768,
+   "lab": 22.0,
+   "con": 20.0,
+   "ref": 28.0,
+   "ld": 13.0,
+   "grn": 11.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-04-03",
    "pollster": "Techne",
    "sample": 1631,
@@ -1328,6 +1515,17 @@
    "ld": 24.0,
    "grn": 17.0,
    "snp": 7.0
+  },
+  {
+   "date": "2025-04-09",
+   "pollster": "Find Out Now",
+   "sample": 2546,
+   "lab": 22.0,
+   "con": 21.0,
+   "ref": 26.0,
+   "ld": 14.0,
+   "grn": 11.0,
+   "snp": 3.0
   },
   {
    "date": "2025-04-10",
@@ -1407,6 +1605,17 @@
    "snp": 3.0
   },
   {
+   "date": "2025-04-16",
+   "pollster": "Find Out Now",
+   "sample": 2288,
+   "lab": 22.0,
+   "con": 20.0,
+   "ref": 28.0,
+   "ld": 14.0,
+   "grn": 10.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-04-21",
    "pollster": "More in Common",
    "sample": 2004,
@@ -1426,6 +1635,17 @@
    "ref": 25.0,
    "ld": 16.0,
    "grn": 10.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-04-23",
+   "pollster": "Find Out Now",
+   "sample": 2139,
+   "lab": 20.0,
+   "con": 20.0,
+   "ref": 28.0,
+   "ld": 14.0,
+   "grn": 13.0,
    "snp": 3.0
   },
   {
@@ -1470,6 +1690,17 @@
    "ref": 26.0,
    "ld": 15.0,
    "grn": 9.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-04-30",
+   "pollster": "Find Out Now",
+   "sample": 1990,
+   "lab": 21.0,
+   "con": 19.0,
+   "ref": 29.0,
+   "ld": 13.0,
+   "grn": 11.0,
    "snp": 3.0
   },
   {
@@ -1528,6 +1759,17 @@
    "snp": 3.0
   },
   {
+   "date": "2025-05-07",
+   "pollster": "Find Out Now",
+   "sample": 2210,
+   "lab": 20.0,
+   "con": 16.0,
+   "ref": 33.0,
+   "ld": 15.0,
+   "grn": 11.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-05-08",
    "pollster": "Techne",
    "sample": 1635,
@@ -1583,6 +1825,17 @@
    "snp": 2.0
   },
   {
+   "date": "2025-05-14",
+   "pollster": "Find Out Now",
+   "sample": 2557,
+   "lab": 21.0,
+   "con": 16.0,
+   "ref": 33.0,
+   "ld": 14.0,
+   "grn": 11.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-05-15",
    "pollster": "Techne",
    "sample": 1645,
@@ -1627,6 +1880,17 @@
    "snp": 2.0
   },
   {
+   "date": "2025-05-21",
+   "pollster": "Find Out Now",
+   "sample": 2501,
+   "lab": 21.0,
+   "con": 16.0,
+   "ref": 32.0,
+   "ld": 14.0,
+   "grn": 11.0,
+   "snp": 2.0
+  },
+  {
    "date": "2025-05-22",
    "pollster": "Techne",
    "sample": 1641,
@@ -1658,6 +1922,17 @@
    "ld": 15.0,
    "grn": 11.0,
    "snp": 2.0
+  },
+  {
+   "date": "2025-05-28",
+   "pollster": "Find Out Now",
+   "sample": 2447,
+   "lab": 22.0,
+   "con": 16.0,
+   "ref": 32.0,
+   "ld": 13.0,
+   "grn": 11.0,
+   "snp": 3.0
   },
   {
    "date": "2025-05-29",
@@ -1738,6 +2013,17 @@
   },
   {
    "date": "2025-06-04",
+   "pollster": "Find Out Now",
+   "sample": 1962,
+   "lab": 22.0,
+   "con": 16.0,
+   "ref": 31.0,
+   "ld": 15.0,
+   "grn": 11.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-06-04",
    "pollster": "Ipsos",
    "sample": 1180,
    "lab": 25.0,
@@ -1789,6 +2075,17 @@
    "ref": 28.0,
    "ld": 14.0,
    "grn": 7.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-06-11",
+   "pollster": "Find Out Now",
+   "sample": 2651,
+   "lab": 24.0,
+   "con": 16.0,
+   "ref": 30.0,
+   "ld": 13.0,
+   "grn": 11.0,
    "snp": 3.0
   },
   {
@@ -1848,6 +2145,17 @@
   },
   {
    "date": "2025-06-18",
+   "pollster": "Find Out Now",
+   "sample": 2628,
+   "lab": 23.0,
+   "con": 16.0,
+   "ref": 31.0,
+   "ld": 12.0,
+   "grn": 11.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-06-18",
    "pollster": "YouGov",
    "sample": 17227,
    "lab": 23.0,
@@ -1877,6 +2185,17 @@
    "ref": 27.0,
    "ld": 14.0,
    "grn": 9.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-06-25",
+   "pollster": "Find Out Now",
+   "sample": 2605,
+   "lab": 22.0,
+   "con": 18.0,
+   "ref": 30.0,
+   "ld": 13.0,
+   "grn": 11.0,
    "snp": 3.0
   },
   {
@@ -1957,6 +2276,17 @@
    "snp": 3.0
   },
   {
+   "date": "2025-07-02",
+   "pollster": "Find Out Now",
+   "sample": 2604,
+   "lab": 22.0,
+   "con": 16.0,
+   "ref": 30.0,
+   "ld": 15.0,
+   "grn": 11.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-07-06",
    "pollster": "Freshwater Strategy",
    "sample": 1259,
@@ -1988,6 +2318,17 @@
    "ld": 14.0,
    "grn": 7.0,
    "snp": 3.0
+  },
+  {
+   "date": "2025-07-09",
+   "pollster": "Find Out Now",
+   "sample": 2651,
+   "lab": 22.0,
+   "con": 19.0,
+   "ref": 31.0,
+   "ld": 13.0,
+   "grn": 9.0,
+   "snp": 2.0
   },
   {
    "date": "2025-07-10",
@@ -2045,6 +2386,17 @@
    "snp": 3.0
   },
   {
+   "date": "2025-07-16",
+   "pollster": "Find Out Now",
+   "sample": 2603,
+   "lab": 20.0,
+   "con": 17.0,
+   "ref": 30.0,
+   "ld": 13.0,
+   "grn": 12.0,
+   "snp": 2.0
+  },
+  {
    "date": "2025-07-18",
    "pollster": "JL Partners",
    "sample": 2035,
@@ -2089,6 +2441,17 @@
    "snp": 3.0
   },
   {
+   "date": "2025-07-23",
+   "pollster": "Find Out Now",
+   "sample": 2651,
+   "lab": 20.0,
+   "con": 16.0,
+   "ref": 34.0,
+   "ld": 14.0,
+   "grn": 10.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-07-25",
    "pollster": "Opinium",
    "sample": 2050,
@@ -2120,6 +2483,17 @@
    "ld": 13.0,
    "grn": 7.0,
    "snp": 3.0
+  },
+  {
+   "date": "2025-07-30",
+   "pollster": "Find Out Now",
+   "sample": 2654,
+   "lab": 20.0,
+   "con": 17.0,
+   "ref": 30.0,
+   "ld": 13.0,
+   "grn": 9.0,
+   "snp": 2.0
   },
   {
    "date": "2025-07-31",
@@ -2175,6 +2549,17 @@
    "ld": 15.0,
    "grn": 11.0,
    "snp": 3.0
+  },
+  {
+   "date": "2025-08-06",
+   "pollster": "Find Out Now",
+   "sample": 2627,
+   "lab": 20.0,
+   "con": 16.0,
+   "ref": 32.0,
+   "ld": 12.0,
+   "grn": 9.0,
+   "snp": 2.0
   },
   {
    "date": "2025-08-08",
@@ -2265,6 +2650,17 @@
    "snp": 2.0
   },
   {
+   "date": "2025-08-20",
+   "pollster": "Find Out Now",
+   "sample": 2615,
+   "lab": 18.0,
+   "con": 17.0,
+   "ref": 33.0,
+   "ld": 12.0,
+   "grn": 10.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-08-22",
    "pollster": "Opinium",
    "sample": 2050,
@@ -2296,6 +2692,17 @@
    "ld": 14.0,
    "grn": 7.0,
    "snp": 3.0
+  },
+  {
+   "date": "2025-08-27",
+   "pollster": "Find Out Now",
+   "sample": 2538,
+   "lab": 18.0,
+   "con": 15.0,
+   "ref": 34.0,
+   "ld": 13.0,
+   "grn": 10.0,
+   "snp": 2.0
   },
   {
    "date": "2025-08-28",
@@ -2375,6 +2782,17 @@
    "snp": 3.0
   },
   {
+   "date": "2025-09-03",
+   "pollster": "Find Out Now",
+   "sample": 2576,
+   "lab": 19.0,
+   "con": 17.0,
+   "ref": 32.0,
+   "ld": 13.0,
+   "grn": 11.0,
+   "snp": 2.0
+  },
+  {
    "date": "2025-09-04",
    "pollster": "Techne",
    "sample": 1644,
@@ -2417,6 +2835,17 @@
    "ld": 13.0,
    "grn": 8.0,
    "snp": 3.0
+  },
+  {
+   "date": "2025-09-10",
+   "pollster": "Find Out Now",
+   "sample": 2717,
+   "lab": 19.0,
+   "con": 15.0,
+   "ref": 34.0,
+   "ld": 12.0,
+   "grn": 12.0,
+   "snp": 2.0
   },
   {
    "date": "2025-09-11",
@@ -2529,6 +2958,17 @@
   },
   {
    "date": "2025-09-24",
+   "pollster": "Find Out Now",
+   "sample": 2665,
+   "lab": 17.0,
+   "con": 14.0,
+   "ref": 33.0,
+   "ld": 16.0,
+   "grn": 12.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-09-24",
    "pollster": "YouGov",
    "sample": 13000,
    "lab": 21.0,
@@ -2580,6 +3020,17 @@
    "ref": 30.0,
    "ld": 14.0,
    "grn": 8.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-10-01",
+   "pollster": "Find Out Now",
+   "sample": 2611,
+   "lab": 19.0,
+   "con": 14.0,
+   "ref": 35.0,
+   "ld": 12.0,
+   "grn": 11.0,
    "snp": 3.0
   },
   {
@@ -2649,6 +3100,17 @@
    "snp": 3.0
   },
   {
+   "date": "2025-10-08",
+   "pollster": "Find Out Now",
+   "sample": 2668,
+   "lab": 17.0,
+   "con": 17.0,
+   "ref": 32.0,
+   "ld": 12.0,
+   "grn": 15.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-10-10",
    "pollster": "Opinium {{Cite web |title=Opinium Voting Intenti",
    "sample": null,
@@ -2679,6 +3141,17 @@
    "ref": 30.0,
    "ld": 15.0,
    "grn": 9.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-10-15",
+   "pollster": "Find Out Now",
+   "sample": 2705,
+   "lab": 15.0,
+   "con": 17.0,
+   "ref": 32.0,
+   "ld": 12.0,
+   "grn": 15.0,
    "snp": 3.0
   },
   {
@@ -2726,6 +3199,17 @@
    "snp": 2.0
   },
   {
+   "date": "2025-10-22",
+   "pollster": "Find Out Now",
+   "sample": 2635,
+   "lab": 16.0,
+   "con": 17.0,
+   "ref": 32.0,
+   "ld": 12.0,
+   "grn": 15.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-10-23",
    "pollster": "Techne",
    "sample": 1647,
@@ -2767,6 +3251,17 @@
    "ref": 33.0,
    "ld": 12.0,
    "grn": 11.0,
+   "snp": 2.0
+  },
+  {
+   "date": "2025-10-29",
+   "pollster": "Find Out Now",
+   "sample": 3065,
+   "lab": 16.0,
+   "con": 16.0,
+   "ref": 32.0,
+   "ld": 12.0,
+   "grn": 17.0,
    "snp": 2.0
   },
   {
@@ -2869,6 +3364,17 @@
    "snp": 2.0
   },
   {
+   "date": "2025-11-12",
+   "pollster": "Find Out Now",
+   "sample": 2011,
+   "lab": 15.0,
+   "con": 16.0,
+   "ref": 33.0,
+   "ld": 11.0,
+   "grn": 17.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-11-17",
    "pollster": "YouGov",
    "sample": 2355,
@@ -2897,6 +3403,17 @@
    "lab": 18.0,
    "con": 20.0,
    "ref": 27.0,
+   "ld": 11.0,
+   "grn": 18.0,
+   "snp": 2.0
+  },
+  {
+   "date": "2025-11-19",
+   "pollster": "Find Out Now",
+   "sample": 2566,
+   "lab": 16.0,
+   "con": 17.0,
+   "ref": 32.0,
    "ld": 11.0,
    "grn": 18.0,
    "snp": 2.0
@@ -2954,6 +3471,17 @@
    "ref": 30.0,
    "ld": 14.0,
    "grn": 10.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-11-26",
+   "pollster": "Find Out Now",
+   "sample": 2555,
+   "lab": 15.0,
+   "con": 18.0,
+   "ref": 31.0,
+   "ld": 12.0,
+   "grn": 17.0,
    "snp": 3.0
   },
   {
@@ -3034,6 +3562,17 @@
    "snp": 2.0
   },
   {
+   "date": "2025-12-03",
+   "pollster": "Find Out Now",
+   "sample": 2591,
+   "lab": 14.0,
+   "con": 20.0,
+   "ref": 31.0,
+   "ld": 11.0,
+   "grn": 18.0,
+   "snp": 3.0
+  },
+  {
    "date": "2025-12-08",
    "pollster": "YouGov",
    "sample": 2303,
@@ -3064,6 +3603,17 @@
    "ref": 31.0,
    "ld": 11.0,
    "grn": 12.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-12-10",
+   "pollster": "Find Out Now {{cite web | url=https://cms.findou",
+   "sample": 2363,
+   "lab": 14.0,
+   "con": 18.0,
+   "ref": 30.0,
+   "ld": 12.0,
+   "grn": 18.0,
    "snp": 3.0
   },
   {
@@ -3122,6 +3672,17 @@
    "snp": 3.0
   },
   {
+   "date": "2025-12-17",
+   "pollster": "Find Out Now {{cite web | url=https://cms.findou",
+   "sample": 1909,
+   "lab": 14.0,
+   "con": 18.0,
+   "ref": 33.0,
+   "ld": 11.0,
+   "grn": 17.0,
+   "snp": 2.0
+  },
+  {
    "date": "2025-12-18",
    "pollster": "Deltapoll",
    "sample": 1997,
@@ -3152,6 +3713,28 @@
    "ref": 28.0,
    "ld": 13.0,
    "grn": 9.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-12-24",
+   "pollster": "Find Out Now {{cite web | url=https://cms.findou",
+   "sample": 2879,
+   "lab": 14.0,
+   "con": 18.0,
+   "ref": 30.0,
+   "ld": 12.0,
+   "grn": 17.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2025-12-31",
+   "pollster": "Find Out Now {{cite web | url=https://cms.findou",
+   "sample": 2930,
+   "lab": 15.0,
+   "con": 17.0,
+   "ref": 31.0,
+   "ld": 12.0,
+   "grn": 17.0,
    "snp": 3.0
   },
   {
@@ -3222,6 +3805,17 @@
   },
   {
    "date": "2026-01-14",
+   "pollster": "Find Out Now",
+   "sample": 1592,
+   "lab": 15.0,
+   "con": 19.0,
+   "ref": 28.0,
+   "ld": 12.0,
+   "grn": 18.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-01-14",
    "pollster": "Survation",
    "sample": 1616,
    "lab": 21.0,
@@ -3265,6 +3859,17 @@
    "snp": 3.0
   },
   {
+   "date": "2026-01-21",
+   "pollster": "Find Out Now",
+   "sample": 1385,
+   "lab": 14.0,
+   "con": 18.0,
+   "ref": 32.0,
+   "ld": 11.0,
+   "grn": 17.0,
+   "snp": 3.0
+  },
+  {
    "date": "2026-01-23",
    "pollster": "Opinium",
    "sample": 2050,
@@ -3296,6 +3901,17 @@
    "ld": 12.0,
    "grn": 12.0,
    "snp": 2.0
+  },
+  {
+   "date": "2026-01-28",
+   "pollster": "Find Out Now",
+   "sample": 1799,
+   "lab": 17.0,
+   "con": 17.0,
+   "ref": 29.0,
+   "ld": 11.0,
+   "grn": 19.0,
+   "snp": 3.0
   },
   {
    "date": "2026-01-29",
@@ -3342,6 +3958,17 @@
    "snp": 3.0
   },
   {
+   "date": "2026-02-04",
+   "pollster": "Find Out Now",
+   "sample": 2264,
+   "lab": 16.0,
+   "con": 18.0,
+   "ref": 31.0,
+   "ld": 11.0,
+   "grn": 18.0,
+   "snp": 2.0
+  },
+  {
    "date": "2026-02-06",
    "pollster": "Opinium",
    "sample": 2054,
@@ -3373,6 +4000,17 @@
    "ld": 12.0,
    "grn": 10.0,
    "snp": 2.0
+  },
+  {
+   "date": "2026-02-11",
+   "pollster": "Find Out Now",
+   "sample": 1394,
+   "lab": 16.0,
+   "con": 19.0,
+   "ref": 29.0,
+   "ld": 11.0,
+   "grn": 18.0,
+   "snp": 3.0
   },
   {
    "date": "2026-02-12",
@@ -3441,6 +4079,17 @@
    "snp": 3.0
   },
   {
+   "date": "2026-02-18",
+   "pollster": "Find Out Now",
+   "sample": 2178,
+   "lab": 16.0,
+   "con": 16.0,
+   "ref": 28.0,
+   "ld": 10.0,
+   "grn": 18.0,
+   "snp": 3.0
+  },
+  {
    "date": "2026-02-23",
    "pollster": "YouGov",
    "sample": 2325,
@@ -3471,6 +4120,17 @@
    "ref": 22.0,
    "ld": 11.0,
    "grn": 19.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-02-25",
+   "pollster": "Find Out Now",
+   "sample": 2442,
+   "lab": 15.0,
+   "con": 18.0,
+   "ref": 26.0,
+   "ld": 12.0,
+   "grn": 18.0,
    "snp": 3.0
   },
   {
@@ -3527,6 +4187,17 @@
    "ld": 14.0,
    "grn": 14.0,
    "snp": 3.0
+  },
+  {
+   "date": "2026-03-05",
+   "pollster": "Survation",
+   "sample": 1045,
+   "lab": 21.0,
+   "con": 18.0,
+   "ref": 29.0,
+   "ld": 10.0,
+   "grn": 12.0,
+   "snp": 2.0
   },
   {
    "date": "2026-03-05",
@@ -3607,6 +4278,17 @@
   },
   {
    "date": "2026-03-11",
+   "pollster": "Find Out Now",
+   "sample": 2793,
+   "lab": 15.0,
+   "con": 17.0,
+   "ref": 26.0,
+   "ld": 11.0,
+   "grn": 21.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-03-11",
    "pollster": "Ipsos",
    "sample": 1062,
    "lab": 21.0,
@@ -3661,6 +4343,17 @@
    "snp": 2.0
   },
   {
+   "date": "2026-03-18",
+   "pollster": "Find Out Now",
+   "sample": 2549,
+   "lab": 16.0,
+   "con": 17.0,
+   "ref": 25.0,
+   "ld": 11.0,
+   "grn": 19.0,
+   "snp": 3.0
+  },
+  {
    "date": "2026-03-20",
    "pollster": "Opinium",
    "sample": 2050,
@@ -3703,6 +4396,17 @@
    "ld": 14.0,
    "grn": 20.0,
    "snp": 2.0
+  },
+  {
+   "date": "2026-03-25",
+   "pollster": "Find Out Now",
+   "sample": 2948,
+   "lab": 16.0,
+   "con": 16.0,
+   "ref": 25.0,
+   "ld": 10.0,
+   "grn": 19.0,
+   "snp": 3.0
   },
   {
    "date": "2026-03-26",
@@ -3815,6 +4519,17 @@
    "snp": 3.0
   },
   {
+   "date": "2026-04-08",
+   "pollster": "Find Out Now",
+   "sample": 2869,
+   "lab": 16.0,
+   "con": 17.0,
+   "ref": 25.0,
+   "ld": 11.0,
+   "grn": 20.0,
+   "snp": 3.0
+  },
+  {
    "date": "2026-04-09",
    "pollster": "JL Partners",
    "sample": 3506,
@@ -3857,6 +4572,17 @@
    "ld": 12.0,
    "grn": 13.0,
    "snp": 2.0
+  },
+  {
+   "date": "2026-04-15",
+   "pollster": "Find Out Now",
+   "sample": 2032,
+   "lab": 16.0,
+   "con": 17.0,
+   "ref": 26.0,
+   "ld": 11.0,
+   "grn": 20.0,
+   "snp": 3.0
   },
   {
    "date": "2026-04-15",
@@ -3991,6 +4717,17 @@
    "snp": 3.0
   },
   {
+   "date": "2026-04-29",
+   "pollster": "Find Out Now",
+   "sample": 3005,
+   "lab": 17.0,
+   "con": 18.0,
+   "ref": 24.0,
+   "ld": 11.0,
+   "grn": 20.0,
+   "snp": 3.0
+  },
+  {
    "date": "2026-04-30",
    "pollster": "BMG Research",
    "sample": 1521,
@@ -4046,6 +4783,17 @@
    "snp": 3.0
   },
   {
+   "date": "2026-05-06",
+   "pollster": "Find Out Now",
+   "sample": 2035,
+   "lab": 16.0,
+   "con": 20.0,
+   "ref": 25.0,
+   "ld": 11.0,
+   "grn": 20.0,
+   "snp": 3.0
+  },
+  {
    "date": "2026-05-08",
    "pollster": "Opinium",
    "sample": 2050,
@@ -4088,6 +4836,17 @@
    "ld": 14.0,
    "grn": 11.0,
    "snp": 3.0
+  },
+  {
+   "date": "2026-05-13",
+   "pollster": "Find Out Now",
+   "sample": 2922,
+   "lab": 15.0,
+   "con": 19.0,
+   "ref": 25.0,
+   "ld": 13.0,
+   "grn": 18.0,
+   "snp": 4.0
   },
   {
    "date": "2026-05-14",
@@ -4219,6 +4978,17 @@
    "ref": 21.0,
    "ld": 11.0,
    "grn": 18.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-05-27",
+   "pollster": "Find Out Now",
+   "sample": 2111,
+   "lab": 16.0,
+   "con": 18.0,
+   "ref": 25.0,
+   "ld": 12.0,
+   "grn": 19.0,
    "snp": 3.0
   },
   {
@@ -4453,6 +5223,17 @@
   },
   {
    "date": "2026-06-26",
+   "pollster": "Find Out Now",
+   "sample": 2240,
+   "lab": 19.0,
+   "con": 17.0,
+   "ref": 26.0,
+   "ld": 13.0,
+   "grn": 14.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-06-26",
    "pollster": "Opinium",
    "sample": 2050,
    "lab": 21.0,
@@ -4639,6 +5420,17 @@
    "snp": 3.0
   },
   {
+   "date": "2026-07-15",
+   "pollster": "Find Out Now",
+   "sample": 2398,
+   "lab": 19.0,
+   "con": 20.0,
+   "ref": 24.0,
+   "ld": 11.0,
+   "grn": 15.0,
+   "snp": 3.0
+  },
+  {
    "date": "2026-07-16",
    "pollster": "Trajectory Partnership",
    "sample": 1458,
@@ -4680,6 +5472,17 @@
    "ref": 28.0,
    "ld": 10.0,
    "grn": 10.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-07-22",
+   "pollster": "Find Out Now",
+   "sample": 2385,
+   "lab": 22.0,
+   "con": 19.0,
+   "ref": 24.0,
+   "ld": 10.0,
+   "grn": 14.0,
    "snp": 3.0
   },
   {
@@ -4757,6 +5560,17 @@
    "ref": 27.0,
    "ld": 8.0,
    "grn": 10.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-07-29",
+   "pollster": "Find Out Now",
+   "sample": 2225,
+   "lab": 23.0,
+   "con": 19.0,
+   "ref": 23.0,
+   "ld": 11.0,
+   "grn": 14.0,
    "snp": 3.0
   },
   {
@@ -4848,6 +5662,17 @@
    "snp": 3.0
   },
   {
+   "date": "2026-08-05",
+   "pollster": "Find Out Now",
+   "sample": 2225,
+   "lab": 24.0,
+   "con": 18.0,
+   "ref": 24.0,
+   "ld": 11.0,
+   "grn": 14.0,
+   "snp": 3.0
+  },
+  {
    "date": "2026-08-07",
    "pollster": "Opinium",
    "sample": 2050,
@@ -4900,6 +5725,17 @@
    "ref": 25.0,
    "ld": 10.0,
    "grn": 9.0
+  },
+  {
+   "date": "2026-08-12",
+   "pollster": "Find Out Now",
+   "sample": 2417,
+   "lab": 22.0,
+   "con": 20.0,
+   "ref": 24.0,
+   "ld": 11.0,
+   "grn": 14.0,
+   "snp": 3.0
   },
   {
    "date": "2026-08-12",
@@ -4968,6 +5804,28 @@
    "snp": 3.0
   },
   {
+   "date": "2026-08-18",
+   "pollster": "Survation",
+   "sample": 2013,
+   "lab": 26.0,
+   "con": 18.0,
+   "ref": 26.0,
+   "ld": 10.0,
+   "grn": 10.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-08-19",
+   "pollster": "Find Out Now",
+   "sample": 2287,
+   "lab": 23.0,
+   "con": 18.0,
+   "ref": 23.0,
+   "ld": 11.0,
+   "grn": 14.0,
+   "snp": 3.0
+  },
+  {
    "date": "2026-08-23",
    "pollster": "More in Common",
    "sample": 3140,
@@ -4998,6 +5856,17 @@
    "ref": 27.0,
    "ld": 8.0,
    "grn": 8.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-08-26",
+   "pollster": "Find Out Now",
+   "sample": 2295,
+   "lab": 22.0,
+   "con": 20.0,
+   "ref": 25.0,
+   "ld": 11.0,
+   "grn": 13.0,
    "snp": 3.0
   },
   {
@@ -5067,6 +5936,17 @@
    "snp": 3.0
   },
   {
+   "date": "2026-09-02",
+   "pollster": "Find Out Now",
+   "sample": 2280,
+   "lab": 26.0,
+   "con": 20.0,
+   "ref": 21.0,
+   "ld": 10.0,
+   "grn": 14.0,
+   "snp": 3.0
+  },
+  {
    "date": "2026-09-04",
    "pollster": "Opinium",
    "sample": 2003,
@@ -5107,6 +5987,17 @@
    "con": 20.0,
    "ref": 23.0,
    "ld": 11.0,
+   "grn": 12.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-09-09",
+   "pollster": "Find Out Now",
+   "sample": 2565,
+   "lab": 26.0,
+   "con": 18.0,
+   "ref": 23.0,
+   "ld": 12.0,
    "grn": 12.0,
    "snp": 3.0
   },
@@ -5175,6 +6066,17 @@
    "ld": 8.0,
    "grn": 13.0,
    "snp": 4.0
+  },
+  {
+   "date": "2026-09-16",
+   "pollster": "Find Out Now",
+   "sample": 2621,
+   "lab": 25.0,
+   "con": 18.0,
+   "ref": 23.0,
+   "ld": 11.0,
+   "grn": 12.0,
+   "snp": 3.0
   },
   {
    "date": "2026-09-16",

@@ -72,6 +72,35 @@ def top_level_pipe(raw):
         i += 1
     return -1
 
+def split_top_level(raw, sep):
+    """Split on `sep` only where it sits outside {{ }} and [[ ]].
+
+    Wikitext separates cells with `||`, but a template whose first argument is
+    empty contains one too: `{{Opdrts||10|Apr|2022|year}}` is ONE date cell and
+    a naive split cuts it in half. That hands the row an extra cell, so every
+    value after it lands one column right of its header -- the French 2022
+    result row read Arthaud's 0.56 under Poutou. It only ever surfaced as a
+    dropped row because the orphaned `{{Opdrts` half failed to parse as a
+    date; had it parsed, the shares would have published against the wrong
+    candidates."""
+    out, depth_t, depth_l, start, i = [], 0, 0, 0, 0
+    n = len(raw)
+    while i < n:
+        two = raw[i:i + 2]
+        if two == "{{":
+            depth_t += 1; i += 2; continue
+        if two == "}}":
+            depth_t = max(0, depth_t - 1); i += 2; continue
+        if two == "[[":
+            depth_l += 1; i += 2; continue
+        if two == "]]":
+            depth_l = max(0, depth_l - 1); i += 2; continue
+        if depth_t == 0 and depth_l == 0 and raw.startswith(sep, i):
+            out.append(raw[start:i]); i += len(sep); start = i; continue
+        i += 1
+    out.append(raw[start:])
+    return out
+
 def cell_parts(raw):
     """(text, rowspan, colspan) for one header/data cell. The attribute
     prefix ends at the first top-level '|' (pipes inside templates and links
@@ -119,7 +148,7 @@ def parse_tables(wt, keep_spans=False):
                 break
             elif ln.startswith("|"):
                 in_header = False
-                for c in re.split(r"\|\|", ln[1:]):
+                for c in split_top_level(ln[1:], "||"):
                     t, rs, cs = cell_parts(c)
                     # A DATA cell can span columns too. When two lists merge,
                     # Wikipedia keeps both header columns and writes one data
@@ -392,6 +421,16 @@ NZ_KNOWN_RESULTS = {
 # BASELINE MISSING on every clean run and trains everyone to ignore the alert.
 # Checked by the self-test, so adding a country forces the decision rather than
 # letting it default to unguarded silence.
+# 2022 French presidential election, first round. Keys are surnames matched
+# as substrings of the article's long candidate labels; see _anchor_value.
+# This row exists in the article but did NOT parse until the `||` split was
+# taught about templates: its date cell is {{Opdrts||10|Apr|2022|year}}, whose
+# empty first argument contains the very separator the splitter cut on.
+FR_KNOWN_RESULTS = {
+    "2022-04-10": {"Arthaud": 0.56, "Poutou": 0.76, "Roussel": 2.28,
+                   "Mélenchon": 21.95, "Jadot": 4.63, "Lassalle": 3.13},
+}
+
 NO_ANCHOR = {
     "il": "The 2026 article carries no result row: its '2022 election' lines "
           "are the 'Period of use' column of a pollster metadata table, not "
@@ -400,14 +439,26 @@ NO_ANCHOR = {
           "colspan bug. See il_polls_from_wikitext.",
     "br": "The 2026 article carries no previous-election result row at all, in "
           "any table. Nothing to anchor against until the election resolves.",
-    "fr": "The 2027 article DOES carry a 2022 first-round row, but it never "
-          "reaches fr_polls.json (no row dated before 2023 survives the "
-          "First round parse), so there is nothing to check. If a future "
-          "parse starts emitting it, add its real R1 shares here: Arthaud "
-          "0.56, Poutou 0.76, Roussel 2.28, Melenchon 21.95.",
     "us": "The generic-ballot article carries aggregator averages, not a "
           "result row with per-party shares.",
 }
+
+
+def _anchor_value(row, key):
+    """The row's value for an anchor key, or None.
+
+    Two row shapes. A party row is flat (`row["lab"]`) and its key is exact. A
+    candidate-scenario row nests `shares` under long column labels that carry
+    the party too ("Jean-Luc Melenchon La France Insoumise (LFI)"), so its key
+    is a surname matched as a substring: the labels get edited whenever a party
+    renames, and an anchor that breaks on a rename is an anchor nobody keeps."""
+    shares = row.get("shares")
+    if shares is None:
+        return row.get(key)
+    hits = [v for name, v in shares.items() if key.lower() in name.lower()]
+    if len(hits) != 1:
+        return None          # absent, or ambiguous: either way, not a match
+    return hits[0]
 
 
 def verify_known_results(polls, known, label, tol=0.15):
@@ -418,12 +469,19 @@ def verify_known_results(polls, known, label, tol=0.15):
     out, seen = [], set()
     for p in polls:
         want = known.get(p["date"])
-        if not want or "election" not in p.get("pollster", "").lower():
+        # A flat party row must also NAME an election, because ordinary polls
+        # share its date space. A scenario row carries no pollster at all, so
+        # its date alone identifies it.
+        named = "election" in (p.get("pollster") or "").lower()
+        if not want or not (named or "shares" in p):
             out.append(p)
             continue
         seen.add(p["date"])
-        bad = {k: (v, p.get(k)) for k, v in want.items()
-               if p.get(k) is None or abs(p[k] - v) > tol}
+        bad = {}
+        for k, v in want.items():
+            got = _anchor_value(p, k)
+            if got is None or abs(got - v) > tol:
+                bad[k] = (v, got)
         if bad:
             print("  %s BASELINE MISMATCH on %s (%s): %s -- row DROPPED, the "
                   "parse is wrong, do not publish a shifted anchor"
@@ -922,6 +980,7 @@ def fetch_fr():
             rows_all.extend(rows)
         if rows_all:
             matchups.append({"title": title, "polls": sorted(rows_all, key=lambda p: p["date"])})
+    first = verify_known_results(first, FR_KNOWN_RESULTS, "FR")
     json.dump({"source": "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)",
                "firstRound": sorted(first, key=lambda p: p["date"]), "matchups": matchups},
               open(os.path.join(OUT, "fr_polls.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
@@ -1058,9 +1117,52 @@ def _self_test():
     check("NZ baseline: correct anchor is kept", nz_ok, [nz_right])
     check("NZ baseline: shifted anchor is dropped", nz_bad, [])
 
+    # A template whose first argument is empty carries the cell separator
+    # inside itself. Splitting on it hands the row an extra cell and shifts
+    # every later value one column right of its header. Live in the real
+    # articles: 116 such lines in the UK one, 18 in the French.
+    check("split respects a template's own ||",
+          split_top_level("a || {{Opdrts||10|Apr|2022|year}} || 5%", "||"),
+          ["a ", " {{Opdrts||10|Apr|2022|year}} ", " 5%"])
+    check("split respects a wikilink's pipes",
+          split_top_level("x || [[A|B]] || y", "||"), ["x ", " [[A|B]] ", " y"])
+    check("split still cuts ordinary cells",
+          split_top_level("1||2||3", "||"), ["1", "2", "3"])
+    check("split leaves a cell-free line whole",
+          split_top_level("only one cell", "||"), ["only one cell"])
+
+    # France: the 2022 first-round row, whose date cell is the template above.
+    # Shape differs from the UK and NZ rows -- shares are nested under long
+    # labels and there is no pollster field -- so the anchor matches surnames
+    # as substrings and identifies the row by date alone.
+    fr_right = {"date": "2022-04-10", "shares": {
+        "Nathalie Arthaud Lutte Ouvrière (LO)": 0.56,
+        "Philippe Poutou New Anticapitalist Party (NPA)": 0.76,
+        "Fabien Roussel French Communist Party (PCF)": 2.28,
+        "Jean-Luc Mélenchon La France Insoumise (LFI)": 21.95,
+        "Yannick Jadot The Ecologists (LE)": 4.63,
+        "Jean LassalleRésistons (RES)": 3.13}}
+    fr_shifted = {"date": "2022-04-10", "shares": {
+        "Nathalie Arthaud Lutte Ouvrière (LO)": 0.76,
+        "Philippe Poutou New Anticapitalist Party (NPA)": 2.28,
+        "Fabien Roussel French Communist Party (PCF)": 21.95,
+        "Jean-Luc Mélenchon La France Insoumise (LFI)": 4.63,
+        "Yannick Jadot The Ecologists (LE)": 3.13,
+        "Jean LassalleRésistons (RES)": 2.06}}
+    frbuf = io.StringIO()
+    with contextlib.redirect_stdout(frbuf):
+        fr_ok = verify_known_results([fr_right], FR_KNOWN_RESULTS, "FR")
+        fr_bad = verify_known_results([fr_shifted], FR_KNOWN_RESULTS, "FR")
+    check("FR baseline: correct anchor is kept", fr_ok, [fr_right])
+    check("FR baseline: shifted anchor is dropped", fr_bad, [])
+    check("FR anchor matches a surname inside a long party label",
+          _anchor_value(fr_right, "Mélenchon"), 21.95)
+    check("FR anchor refuses an ambiguous surname match",
+          _anchor_value({"shares": {"A Party": 1.0, "A Other": 2.0}}, "A"), None)
+
     # A country must be either anchored or explicitly excused. Silence is how
     # the UK row went wrong for weeks, so a new country cannot default into it.
-    anchored = {"uk", "nz"}
+    anchored = {"uk", "nz", "fr"}
     fetched = {"uk", "us", "nz", "il", "br", "fr"}
     check("every fetched country is anchored or has a recorded reason",
           sorted(fetched - anchored - set(NO_ANCHOR)), [])
@@ -1072,7 +1174,7 @@ def _self_test():
         for f in fails:
             print("  -", f)
         return 1
-    print("fetch_data self-test OK (%d cases)" % 21)
+    print("fetch_data self-test OK (%d cases)" % 29)
     return 0
 
 if __name__ == "__main__":

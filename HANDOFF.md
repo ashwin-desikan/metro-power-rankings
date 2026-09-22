@@ -17477,3 +17477,80 @@ now total, with four countries covered by a recorded reason rather than a table.
 Silent failure register: the column-shift entry updated -- NZ joins the UK as
 anchored, Israel noted as structurally covered by the 120 rule, Brazil and
 France as genuinely unanchorable today with the France path written down.
+
+## 2026-09-22 (evening) - mini -> windows and next session: THE FRANCE ANCHOR PARSES NOW, AND THE REASON IT DID NOT WAS DROPPING 82 UK POLLS
+
+Asked to make the French 2022 row parse so it could be anchored. It parses,
+and the cause turned out to be a third column-shift bug in `parse_tables`,
+live in the UK data.
+
+**The bug.** `parse_tables` split data cells with `re.split(r"\|\|", ...)`.
+A template whose FIRST argument is empty contains that separator inside
+itself: the French date cell is `{{Opdrts||10|Apr|2022|year}}`, one cell, and
+the naive split cut it in half. The row then had 34 cells against 33 columns
+and every share landed one column RIGHT of its header, Arthaud's 0.56 reading
+under Poutou. It only ever surfaced as a DROPPED row because the orphaned
+`{{Opdrts` half failed `parse_date`. **Had the date parsed, the whole row
+would have published against the wrong candidates.** Same family as the UK
+anchor and the Israeli `Gov.` bloc total; third instance this week.
+
+Fixed with `split_top_level(raw, sep)`, which splits only outside `{{ }}` and
+`[[ ]]`, reusing the depth-walk idea already in `top_level_pipe`.
+
+**Blast radius measured on identical source text, old code vs new.** 134
+affected data lines across the articles the fetchers read: **116 in the UK
+one, 18 in the French, zero everywhere else** (US x3, NZ, Brazil, and all
+seven historical Israeli articles). Of 301 tables parsed, 276 byte-identical,
+25 changed, all in those two articles.
+
+**The UK consequence is the real news: 82 polls were being silently dropped.**
+`uk_polls.json` 472 -> 554 rows, **82 added, zero removed, zero changed in
+place**. Seven of them fall inside `uk_average`'s 45-day window, so the live
+forecast has been computed without them, and Find Out Now was missing often
+enough to change the pollster count.
+
+| | before | after |
+|---|---|---|
+| pollsters in the average | 11 | 12 |
+| lab | 27.0 | 26.7 |
+| con | 20.2 | 19.9 |
+| grn | 10.4 | 10.6 |
+| ld | 9.9 | 10.0 |
+| ref | 23.2 | 23.2 |
+| pLargest ref | 33.4 | **34.3** |
+| pLargest lab | 45.2 | 44.9 |
+| pLargest con | 21.3 | 20.7 |
+| pHung | 52.8 | 53.0 |
+
+Stated plainly because it cuts against the house: recovering the lost polls
+moves Reform UP 0.9 on pLargest. Trend points 56 -> 58. Brazil first-round
+rows 104 -> 107, France 42 -> 46.
+
+**France is now anchored.** `FR_KNOWN_RESULTS` carries the 2022 first round
+(Arthaud 0.56, Poutou 0.76, Roussel 2.28, Melenchon 21.95, Jadot 4.63,
+Lassalle 3.13), so `NO_ANCHOR` is down to Israel, Brazil and the US. The FR
+row shape differs from UK and NZ - shares nested under long labels, and NO
+pollster field - so `verify_known_results` now handles both: a flat row must
+still NAME an election, a scenario row is identified by date alone, and
+`_anchor_value` matches a SURNAME as a substring of the long label. Matching
+the full label would break the anchor the next time a party renames, and an
+anchor that breaks on a rename is an anchor nobody keeps. An ambiguous
+surname match returns None rather than guessing.
+
+**Proof.** `fetch_data --self-test` 29 cases (was 21), including the real
+`{{Opdrts||...}}` cell, a wikilink's pipes, the FR anchor correct and
+shifted, and the ambiguous-surname case. `npm run verify` exit 0. All four
+forecast self-tests green. `check_forecast_health` OK, 0 warnings. Every
+guard silent on the live run.
+
+**No release note.** The commit is `[vercel skip]` (forecast.json rides ISR),
+so the gate does not ask for one, and a reader would not notice a 0.3-point
+move. The 82 recovered polls are worth a line if someone writes about the
+forecast, but not worth a production build on their own.
+
+**Notion:** Backlog +1 (P2, the `!!` header split has the same latent flaw and
+is unfixed). Decisions: the known-results row extended for France and the
+two row shapes; +1 new row for splitting wikitext cells only at top level.
+Silent failure register +1 (a template-borne separator shifts a row and shows
+up as a MISSING row, not a wrong one, so it reads as "no data" rather than
+"bad data").
