@@ -18,6 +18,13 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-22",
+    headline: "The UK polling chart reads true",
+    items: [
+      "The UK polling chart's 2024 election point was showing Labour 10 points low; it now matches the real result, and Labour leads the party list.",
+    ],
+  },
+  {
     date: "2026-09-21",
     headline: "Sweden's 2026 general election is in",
     items: [

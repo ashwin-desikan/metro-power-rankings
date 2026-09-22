@@ -158,7 +158,11 @@ export default async function ForecastPage() {
     const [y, m, day] = d.split("-").map(Number);
     return y + (m - 1) / 12 + day / 365;
   };
-  const ukSeries: ChartSeries[] = (["ref", "lab", "con", "grn", "ld", "snp"] as const).map((k) => ({
+  // Labour first. This is a fixed reading order, not a ranking: the series
+  // order drives the legend and the readout, so it should not flip about as
+  // the averages cross. Colour is keyed by party, so the order never changes
+  // which party is which shade.
+  const ukSeries: ChartSeries[] = (["lab", "ref", "con", "grn", "ld", "snp"] as const).map((k) => ({
     name: FORECAST_NAMES[k],
     color: pcol(k),
     points: uk.trend
