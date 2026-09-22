@@ -17898,3 +17898,69 @@ keeps itself current through the runner's own `git merge --ff-only`.
 row rewritten (the owed re-emit is not owed; the 09-20 run was a quiet no-op;
 County Championship stays the open test); gap-league-watch ntfy row -> Done.
 No Decisions row: none of this is a ruling.
+
+## 2026-09-22 (midday) - mini -> windows and next session: THE tsconfig "ONE-LINE INCLUDE CHANGE" WAS THE WRONG LINE, AND THE TEST IS WHAT SAID SO
+
+The Backlog row promised "a one-line include change, plus a check that next dev
+still typechecks its routes". The include change does NOTHING, and the check is
+the only reason that was found out.
+
+**What the row assumed.** `tsconfig.json` listed three dev-server type globs in
+`include`: `.next/types/**`, `.next/dev/types/**` and `.next/dev/dev/types/**`.
+Drop the dev ones and `npm run verify` stops reading files Turbopack rewrites.
+
+**Why that is wrong, twice over.**
+1. `include` already has `"**/*.ts"`, and `exclude` had only `node_modules`, so
+   every file under `.next/dev/` was matched ANYWAY. Removing the explicit glob
+   changes nothing.
+2. **Next rewrites the include block itself.** I removed
+   `.next/dev/types/**/*.ts`, started the dev server, and Next had put it
+   straight back. Anything done to `include` is undone on the next `next dev`.
+
+**The bug, reproduced live rather than argued about.** With the dev server
+running and compiling routes, `tsc` read **109** files under `.next/dev/` and
+typecheck FAILED on a half-written file:
+```
+.next/dev/types/routes.d.ts(291,2585): error TS1005: ';' expected.
+.next/dev/types/routes.d.ts(291,2586): error TS1002: Unterminated string literal.
+```
+That is the row's complaint, caught in the act: verify reading a file
+mid-rewrite and reporting a syntax error that is not in anyone's source.
+
+**The fix is an EXCLUDE**, which survives Next's rewriting because Next only
+manages `include`: `.next/dev` added to `exclude`. Result with the dev server
+running and actively regenerating types: **109 dev files read -> 1**, and
+typecheck passes where it had failed. Also removed
+`.next/dev/dev/types/**/*.ts`, a doubled path that has never existed.
+
+**Residual exposure, stated rather than hidden. One file cannot be excluded.**
+`next-env.d.ts` carries `import "./.next/dev/types/routes.d.ts";` - a direct
+import, which TypeScript follows regardless of `exclude`, and that file is
+Next-generated and marked "should not be edited". So `routes.d.ts` is still
+read, and it is the very file that was corrupt above. The window is now one
+file instead of 109, but it is not zero. Stress-tested it: four typecheck runs
+while hammering three routes to force regeneration, 0 errors each time. If
+verify ever fails again with a TS1005/TS1002 inside `.next/dev/types`, that is
+this, not your code - re-run with the dev server stopped.
+
+**On the route-typechecking check the row asked for:** it is moot here.
+`typedRoutes` is not enabled in `next.config.ts`, so `routes.d.ts` is generated
+but its `Routes` type is not enforced on `Link href` - I confirmed by adding
+`<Link href="/definitely-not-a-real-route">`, which typechecks CLEAN both
+before and after. Nothing was lost by excluding the dev copies, and the 473
+build-generated `.next/types/**` route validators are still read, unchanged.
+
+**Proof.** `npm run verify` exit 0, and `next build` did not undo the exclude.
+
+**Tagged `[vercel skip]` deliberately.** `tsconfig.json` is in
+`vercel-build-paths.txt`, so the post-commit hook will warn MISMATCH - that
+warning is correct by its own rules and expected here. This change alters only
+which files `tsc` READS; `**/*.ts` still covers every source file, and
+`.next/dev` is build output, never source, so the emitted site is
+byte-identical and no deploy is needed. Today (UTC) already stands at 3 paid
+builds against a cap of 2, and spending a fourth on a change that cannot alter
+the artifact is not defensible. The next real build picks it up.
+
+**Notion:** Backlog: the tsconfig row -> Done, rewritten to record that the
+include change was the wrong lever and why. Decisions +1 (dev-server build
+output is excluded, not un-included, because Next owns the include block).
