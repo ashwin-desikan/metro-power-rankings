@@ -1,27 +1,6 @@
 {
-  "generated_at": "2026-09-22T22:57:31.605532+00:00",
+  "generated_at": "2026-09-22T23:09:35.717713+00:00",
   "jobs": [
-    {
-      "id": "football-standings",
-      "label": "Football live standings",
-      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:00",
-        "11:00",
-        "17:00",
-        "23:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-22T23:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-22",
-        "status": "ok",
-        "slot": "2026-09-22T17:00:00+00:00"
-      }
-    },
     {
       "id": "deploy-watch",
       "label": "Vercel canceled-build auto-heal",
@@ -176,11 +155,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-22T23:00:00+00:00",
+      "next_run": "2026-09-22T23:10:00+00:00",
       "last_run": {
         "date": "2026-09-22",
         "status": "ok",
-        "slot": "2026-09-22T22:50:00+00:00"
+        "slot": "2026-09-22T23:00:00+00:00"
       }
     },
     {
@@ -320,6 +299,27 @@
         "date": "2026-09-22",
         "status": "ok",
         "slot": "2026-09-22T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "football-standings",
+      "label": "Football live standings",
+      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00",
+        "11:00",
+        "17:00",
+        "23:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-23T05:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-22",
+        "status": "ok",
+        "slot": "2026-09-22T23:00:00+00:00"
       }
     },
     {
