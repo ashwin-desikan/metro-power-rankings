@@ -63,6 +63,21 @@ elif [ "$TOUCHES_BUILD" = 1 ] && [ "$HAS_TAG" = 1 ]; then
   # commit (any other author) still gets the full warning below -- that is
   # where the two real bugs (2026-08-06, 2026-08-11) were actually caught,
   # and neither was bot-authored.
+  #
+  # ⚠️ UPDATED 2026-09-22. Suppressing the alarm was right; calling every one
+  # of these "the documented ISR exception" was NOT. Most of public/data is
+  # read with readFileSync at build time (CLAUDE.md: 313 sites; the ISR-backed
+  # files are the minority). A commit correcting eight election dates printed
+  # "the documented ISR exception" while those dates were nowhere near the
+  # live site, because *-elections.json has no raw fallback and no revalidate.
+  # A session trusting that line would believe the site had been updated.
+  #
+  # The old comment here said the two could not be told apart "without a real
+  # per-file audit nobody has done". They can: an ISR-backed file is exactly
+  # one fetched from raw.githubusercontent.com at request time, and that list
+  # now lives in scripts/isr-backed-paths.txt with the greps that re-derive
+  # it. So both arms below still say OK -- neither is a mistake -- but they
+  # now say something TRUE about whether the change is on the site yet.
   AUTHOR_EMAIL=$(git log -1 --pretty=%ae)
   KNOWN_BOT=0
   case "$AUTHOR_EMAIL" in
@@ -73,9 +88,49 @@ elif [ "$TOUCHES_BUILD" = 1 ] && [ "$HAS_TAG" = 1 ]; then
   git diff --quiet HEAD~1 HEAD -- $NON_PUBLIC_PATHS 2>/dev/null || PUBLIC_ONLY=0
 
   if [ "$KNOWN_BOT" = 1 ] && [ "$PUBLIC_ONLY" = 1 ]; then
-    echo "post-commit CHECK: OK (touches_build=1 tagged=1, known automated" \
-         "data commit scoped to public/ -- the documented ISR exception," \
-         "not a real mismatch)"
+    # Is every public/data file in this commit one the site can refresh
+    # without a build? Anything outside the list -- including any public/
+    # file that is not under public/data at all -- means no.
+    ISR_FILE="$REPO_ROOT/scripts/isr-backed-paths.txt"
+    NEEDS_BUILD=""
+    if [ -f "$ISR_FILE" ]; then
+      for f in $(git diff --name-only HEAD~1 HEAD -- public); do
+        case "$f" in
+          public/data/*) rel=${f#public/data/} ;;
+          *) NEEDS_BUILD="$NEEDS_BUILD $f"; continue ;;
+        esac
+        covered=0
+        while IFS= read -r p; do
+          case "$p" in ''|\#*) continue ;; esac
+          case "$rel" in "$p"|"$p"/*) covered=1; break ;; esac
+        done < "$ISR_FILE"
+        [ "$covered" = 1 ] || NEEDS_BUILD="$NEEDS_BUILD $f"
+      done
+    else
+      NEEDS_BUILD=" (scripts/isr-backed-paths.txt missing)"
+    fi
+
+    if [ -z "$NEEDS_BUILD" ]; then
+      echo "post-commit CHECK: OK (touches_build=1 tagged=1, automated data" \
+           "commit, every file ISR-backed -- live within its revalidate" \
+           "window, no build needed)"
+    else
+      # Not a mismatch: the skip is still what was wanted. But the change is
+      # in the repo and NOT on the site, and saying so is the whole point.
+      # Deliberately "not on the list" rather than "not ISR-backed": the list
+      # is conservative and knowingly incomplete, and claiming more than it
+      # knows is how the message it replaces went wrong in the first place.
+      echo "post-commit CHECK: OK, BUT PROBABLY NOT LIVE (touches_build=1" \
+           "tagged=1, automated data commit). These files are not on the" \
+           "ISR-backed list, so unless they are, the change is in the repo" \
+           "and reaches the site only when something next builds:"
+      for f in $NEEDS_BUILD; do echo "    $f"; done
+      echo "  Fine if a build is coming. If they are needed live now, push an" \
+           "empty commit whose SUBJECT carries [deploy-now]. If they ARE" \
+           "served from GitHub raw at request time, add them to" \
+           "scripts/isr-backed-paths.txt (read its warning about which way to" \
+           "err) and this note will stop."
+    fi
   else
     echo "post-commit CHECK: MISMATCH -- this commit touches a build-relevant" >&2
     echo "  path AND is tagged [vercel skip]. That means Vercel will SKIP a" >&2

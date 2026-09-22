@@ -1,0 +1,105 @@
+# public/data paths the SITE CAN REFRESH WITHOUT A BUILD.
+#
+# Read by .githooks/post-commit, to tell the two very different meanings of a
+# [vercel skip] commit that touches public/ apart:
+#
+#   entirely within this list -> the documented ISR exception. The commit is
+#       live within the route's revalidate window; skipping the build is both
+#       correct and complete.
+#   anything outside it       -> the change is in the repo and NOT on the site.
+#       It reaches production only when something next builds.
+#
+# WHY THIS FILE EXISTS. The hook used to call EVERY public/-scoped bot data
+# commit "the documented ISR exception", which is false for most of
+# public/data: CLAUDE.md is explicit that lib/ and app/ hold 313 readFileSync
+# sites baking public/data in at build time, and that the ISR-backed files are
+# the MINORITY. On 2026-09-22 a commit correcting eight election dates printed
+# "the documented ISR exception" while those dates were nowhere near the live
+# site -- the *-elections.json files are read with readFileSync, with no raw
+# fallback and no revalidate. The outcome was right (a skip was wanted) but
+# the stated reason was wrong, and a session trusting it would believe the
+# site had been updated when it had not.
+#
+# The hook's old comment said this list could not be built "without a real
+# per-file audit nobody has done". It can, mechanically, because an ISR-backed
+# file is exactly one fetched from raw.githubusercontent.com at request time.
+# TO RE-DERIVE after adding a live feed, from the repo root:
+#
+#   grep -rh -A2 "raw.githubusercontent.com" lib app --include="*.ts" \
+#        --include="*.tsx" | grep -oE "public/data/[^\"'\`\$ ]*"
+#   grep -rhoE 'loadLiveJson(<[^>]*>)?\(\s*"[^"]+"' lib app --include="*.ts" \
+#        --include="*.tsx" | grep -oE '"[^"]+"'
+#
+# The second one matters because lib/liveData.ts holds a shared GH_RAW_BASE and
+# every loadLiveJson() call site inherits it without naming the host itself.
+#
+# One prefix per line, relative to public/data/. A line naming a directory
+# covers everything beneath it. Blank lines and # comments ignored.
+# Derived 2026-09-22.
+#
+# ⚠️ THIS LIST IS CONSERVATIVE AND KNOWINGLY INCOMPLETE, because the two kinds
+# of error are not symmetric:
+#
+#   wrongly EXCLUDED -> the hook says "not live, needs a build" about a file
+#       that was already live. Mildly noisy, harmless, self-correcting: add
+#       the path here.
+#   wrongly INCLUDED -> the hook says "live, no build needed" about a file
+#       that is NOT on the site. That is precisely the bug this file exists
+#       to kill, and it is silent.
+#
+# So a path goes in ONLY once its reads are shown to go through a
+# GitHub-raw-first loader. When in doubt, leave it out. The hook's wording is
+# written to match: it says a file is "not on the ISR-backed list", never that
+# it is definitely not ISR-backed, and invites the reader to add it.
+#
+# Proof required before adding a directory prefix: every read of anything
+# beneath it goes through the raw fetch, AND no other module reads it at build
+# time. nfl/elo, nfl/odds and nfl/seeds were added this way -- each of their
+# five load() call sites pairs a `${GH_BASE}/${file}` fetch (revalidate
+# 86400) with the matching readFileSync, and lib/nflElo.ts is the only module
+# that touches them.
+
+# --- explicit GH_RAW constants -------------------------------------------
+activity-feed.json
+billionaires.json
+business
+champions-current.json
+conflicts.json
+espn-snapshots
+f1/data.json
+football
+forecast-scoreboard.json
+forecast.json
+governors.json
+international
+leaders/_changes.json
+leaders/_current.json
+majors/golf.json
+majors/tennis.json
+mayors.json
+nfl-meta-market.json
+nfl/expectation
+# nfl/elo, nfl/odds, nfl/seeds: lib/nflElo.ts load(), GitHub-raw-first with
+# revalidate 86400. Its own comment: "Production keeps GitHub-raw-first, which
+# is what makes a data refresh free of a build." Verified 2026-09-22 that all
+# five call sites go through it and no other module reads these.
+nfl/elo
+nfl/odds
+nfl/seeds
+power-ranking.json
+screen/screen_number_ones.json
+us-congress.json
+zone-zero-cup.json
+
+# --- via lib/liveData.ts loadLiveJson(), literal and per-slug ------------
+basketball
+cricket
+refresh-schedule.json
+rugby-union
+wbasketball
+
+# NOT here, on purpose, and each one has bitten or could:
+#   *-elections.json   readFileSync in lib/<cc>Elections.ts, no fallback.
+#                      This is the file that exposed the bug.
+#   metros.json and the per-metro details, states, the quiz, season hubs:
+#                      all build-time reads. See CLAUDE.md on the 313 sites.

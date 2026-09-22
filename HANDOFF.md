@@ -17767,3 +17767,71 @@ running that it would have mattered.
 
 **Notion:** no new rows. The eight-dates row was closed in the previous entry;
 this only changes whether that fix is deployed, which is not queryable state.
+
+## 2026-09-22 (night, last +1) - mini -> windows and next session: THE POST-COMMIT HOOK NO LONGER CLAIMS EVERY DATA COMMIT IS ALREADY LIVE
+
+Closes the P2 opened two entries ago. The hook used to print, for any
+bot-authored `[vercel skip]` commit scoped to `public/`:
+
+```
+OK (... known automated data commit scoped to public/ -- the documented ISR
+exception, not a real mismatch)
+```
+
+The suppression was right; the REASON was wrong. Most of `public/data` is read
+with `readFileSync` at build time - CLAUDE.md puts it at 313 sites and says the
+ISR-backed files are the MINORITY. `d28db196a`, correcting eight election
+dates, printed "the documented ISR exception" while those dates were nowhere
+near the live site, because `*-elections.json` has no raw fallback and no
+`revalidate`. A session trusting that line would believe the site had been
+updated. It took a `[deploy-now]` build to actually ship them.
+
+**The hook's own comment said this could not be fixed "without a real per-file
+audit nobody has done". It can, mechanically**: an ISR-backed file is exactly
+one fetched from `raw.githubusercontent.com` at request time. New
+`scripts/isr-backed-paths.txt` holds the list, the two greps that re-derive it,
+and the reason the second grep is needed (`lib/liveData.ts` has a shared
+`GH_RAW_BASE`, so every `loadLiveJson()` call site inherits it without naming
+the host). Both arms still say OK - neither is a mistake - but they now say
+something TRUE about whether the change is on the site.
+
+**The list is deliberately conservative, because the two errors are not
+symmetric.** Wrongly excluded is a mildly noisy "probably not live" about
+something that was already live: harmless, self-correcting, add the path.
+Wrongly included is a silent "live, no build needed" about something that is
+NOT on the site, which is the exact bug being fixed. So a path goes in only
+once its reads are SHOWN to go through a raw-first loader, and the hook's
+wording matches: it says a file is "not on the ISR-backed list", never that it
+is definitely not ISR-backed, and tells the reader how to add it.
+
+**My first list was wrong in the safe direction, and the test caught it.**
+Replaying the hook over `836fed141` (an NFL refresh) flagged
+`nfl/elo`, `nfl/odds` and `nfl/seeds` as not-live. They ARE ISR-backed:
+`lib/nflElo.ts` builds `${GH_BASE}/${file}` with `revalidate: 86400`, and its
+own comment says "Production keeps GitHub-raw-first, which is what makes a data
+refresh free of a build". My extraction had missed them because the path is
+assembled from a variable rather than written as a literal. Verified all five
+`load()` call sites go through it and no other module reads those directories,
+then added them. This is exactly the failure direction the file is designed to
+have.
+
+**Replayed against three real commits, all now correct:**
+| commit | now says |
+|---|---|
+| `d28db196a` elections (build-time reads) | OK, BUT PROBABLY NOT LIVE, naming the three files |
+| `64de138bd` refresh-schedule | OK, every file ISR-backed |
+| `836fed141` NFL elo/odds/seeds | OK, every file ISR-backed |
+
+**And the guard that actually matters is untouched.** Synthetic tests, all
+three still MISMATCH as before: a human commit touching `app/` with
+`[vercel skip]`; a BOT commit touching `app/` with `[vercel skip]` (the
+exception requires public-only, so a bot cannot buy its way past it); and a
+commit touching nothing build-relevant with no tag, the 2026-08-06 shape. Those
+are where the two real bugs were caught and none of that logic changed.
+
+`.githooks/` is per-clone config: this is live on the mini now and reaches the
+Windows box on its next pull, since `core.hooksPath` points into the repo.
+
+**Notion:** Backlog: the hook-message row -> Done. Decisions +1 (a public/data
+commit is only called live when every file is on the ISR-backed list, and the
+list errs toward saying "not live").
