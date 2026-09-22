@@ -31,6 +31,10 @@ import { getPsElections } from "@/lib/psElections";
 import { getVaElections } from "@/lib/vaElections";
 import { ELECTION_HUBS, HUB_REGION, GOVERNMENT_TYPE_LABELS, nextElections, nextKind } from "@/lib/electionHubsMeta";
 import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
+import { getRecentElections } from "@/lib/electionsRecent";
+
+/** Six months, the window the "Just voted" board looks back over. */
+const RECENT_WINDOW_DAYS = 183;
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import HubDirectory, { type DirRow } from "./HubDirectory";
 import { getUsElections } from "@/lib/usElections";
@@ -283,6 +287,14 @@ export default async function ElectionsPage() {
   const allNext = nextElections().filter((r) => r.confidence !== "dissolved");
   const countdown = allNext.slice(0, 12);
   const confirmedCount = allNext.filter((r) => r.confidence === "confirmed").length;
+
+  // The mirror of the countdown: what has just been voted on. The window is
+  // applied at render, not baked into the file, so it slides with the clock.
+  // A result only appears here once it has actually been filed into its hub,
+  // which is why an election can sit in "Next to vote" marked "result due"
+  // and be absent from this board on the same day. That is the honest state:
+  // the vote happened, the numbers are not in the atlas yet.
+  const recent = getRecentElections(RECENT_WINDOW_DAYS).slice(0, 12);
 
   // Every hub, compact or featured: the tier decides whether a hub gets a
   // card on this page, not whether its ballots count. Until 2026-09-07 the
@@ -674,6 +686,89 @@ export default async function ElectionsPage() {
           })}
         </div>
       </section>
+      {/* ---------- just voted ----------
+          The mirror of the countdown above, over the trailing six months.
+          Built from the filed results themselves, so a country appears here
+          only once its numbers are in the atlas -- see lib/electionsRecent.ts.
+          Empty renders nothing rather than an empty shell: six quiet months
+          is a real state, not a fault. */}
+      {recent.length ? (
+        <section className="mb-10">
+          <SectionHead
+            title="Just voted"
+            sub="Results filed in the last six months, newest first, with who finished largest."
+            more={`The mirror of the countdown above. A contest appears here only once its result has been filed into its hub, so a country can sit in "Next to vote" marked "result due" and be absent from this board on the same day: the vote happened, the numbers are not in the atlas yet. "Majority" means the largest party cleared its own chamber's majority line on its own, which most of these did not. "Caveat" means the result carries a recorded qualification, such as parts of the country not voting; the hub spells it out. Dates are printed as the source records them, so a multi-day or two-round election shows its full span.`}
+          />
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {recent.map((r) => (
+              <Link
+                key={`${r.code}-${r.date}`}
+                href={r.href}
+                className="tap-row flex min-h-11 min-w-0 items-center gap-3 rounded-xl border p-3 transition-colors hover:border-[var(--accent)]"
+                style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={flagUrlByCode(r.flag)} srcSet={flagSrcSetByCode(r.flag)} alt="" width={26} height={19} className="rounded-[2px] shrink-0" />
+                <span className="min-w-0 flex-1">
+                  <span className="flex items-center gap-1.5 min-w-0">
+                    <span className="font-semibold text-[var(--text)] truncate">{r.name}</span>
+                    {r.majority ? (
+                      <span
+                        className="shrink-0 rounded px-1 py-0.5 text-[9px] font-semibold uppercase tracking-widest"
+                        style={{ ...MONO, color: "#4ECDC4", backgroundColor: "var(--bg-card-hover)" }}
+                      >
+                        Majority
+                      </span>
+                    ) : null}
+                    {r.note ? (
+                      <span
+                        className="shrink-0 rounded px-1 py-0.5 text-[9px] font-semibold uppercase tracking-widest"
+                        style={{ ...MONO, color: "#D97706", backgroundColor: "var(--bg-card-hover)" }}
+                      >
+                        Managed
+                      </span>
+                    ) : null}
+                    {/* Ethiopia 2026 did not vote in Tigray or parts of Amhara
+                        and Oromia. A result with a qualification recorded
+                        against it should say so on the board, not only on the
+                        hub the row opens. */}
+                    {r.caveat ? (
+                      <span
+                        className="shrink-0 rounded px-1 py-0.5 text-[9px] font-semibold uppercase tracking-widest"
+                        style={{ ...MONO, color: "var(--text-dim)", backgroundColor: "var(--bg-card-hover)" }}
+                        title={r.caveat}
+                      >
+                        Caveat
+                      </span>
+                    ) : null}
+                  </span>
+                  {/* Wraps to two lines on a phone, one truncated line from sm
+                      up. Measured at 390px: Sweden's row lost 46px to the
+                      ellipsis, and what went was "99/349" -- the seat count,
+                      which is the substantive number on the card. Contracting
+                      on a phone is the house rule; dropping the figure is not
+                      contracting it. */}
+                  <span className="block text-xs text-[var(--text-dim)] line-clamp-2 sm:line-clamp-none sm:truncate">
+                    {r.seatLeader ? `${r.seatLeader} largest` : (r.kind ?? "result filed")}
+                    {r.seatLeaderSeats != null && r.totalSeats != null
+                      ? ` · ${r.seatLeaderSeats}/${r.totalSeats}`
+                      : ""}
+                  </span>
+                </span>
+                <span className="shrink-0 text-right">
+                  <span className="block text-xs tabular-nums text-[var(--text-muted)]">{r.dateText}</span>
+                  {r.turnout != null ? (
+                    <span className="block text-[10px] text-[var(--text-dim)] tabular-nums">
+                      {r.turnout.toFixed(1)}% turnout
+                    </span>
+                  ) : null}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       {/* ---------- world map ---------- */}
       <section className="mb-10">
         <SectionHead

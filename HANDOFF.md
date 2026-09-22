@@ -17580,3 +17580,93 @@ consistent, just attributed wrongly.
 **Notion:** Backlog: the `!!` header-split row -> Done (no-op today, 348 tables
 unchanged, closing the hole not fixing a fault). Decisions: the top-level-split
 row extended to say it covers headers as well as data cells.
+
+## 2026-09-22 (night) - mini -> windows and next session: "JUST VOTED" ON /elections, AND THE YEAR CROSS-CHECK THAT STOPPED SIX GREEK ELECTIONS PUBLISHING AS 2026 RESULTS
+
+Ashwin asked for a section tracking completed elections over the last six
+months, mirroring the countdown. Shipped as **"Just voted"** directly under
+"Next to vote".
+
+**Why it is a summary file and not 67 imports.** The results already exist, in
+`public/data/<code>-elections.json`, 67 files and 5.1 MB, each with its own lib
+module carrying a FULLY literal path - which is the rule that keeps Next's
+tracer from sweeping public/data into a route. Importing 67 of them into one
+page would bundle all 5.1 MB. New `scripts/build-elections-recent.py` emits ONE
+18 KB file, `public/data/elections-recent.json`, and the page reads that.
+**Measured: /elections traces 27.0 MB, nowhere near the 220 MB warn line.**
+
+**The window is applied at RENDER, not baked into the file.** The file holds
+three years; `lib/electionsRecent.ts` filters to 183 days when the page
+renders. So the board slides with the clock and only needs a rebuild when a
+RESULT is filed, never to stay honest about its own window.
+
+**Dates were the hard part: 42 distinct shapes across 1,383 elections**, from
+"13 September 2026" through "26-29 April 1994", "25 October and 22 November
+2015", "convened 21 September 1949" and NZ's split rolls, "16 (Maori) & 17
+December (general) 1919". The rule that survives all of them: take the LAST
+complete day-month-year in the string, because that is the day the election
+CONCLUDED - taking the first files a two-round election under its opening
+round. Where no day is given the precision is recorded and the page prints the
+source's own wording rather than a day the script invented. 0 of 1,383 rows
+failed to yield a date.
+
+**The find: eight records carry a date contradicting their own `year`.** Each
+record states its date twice, in prose and in a `year` field, and that is the
+only outside check available. Six Greek rows (1874, Nov 1910, 1912, Dec 1915,
+May 1915 all reading `August 29, 2026`; Aug 1910 reading `21 November 2017`),
+India 1957 reading `1951-52`, and UK 1832 reading `22 November 1830`. **Without
+the check, five Greek elections from the 1870s to 1915 would have published as
+this year's results**, top of the board, above Sweden. They are refused and
+named. A Backlog row now tracks fixing them at source; the guard stays either
+way. Note the rule allows year+1, because plenty of elections open in one year
+and close in the next (India 1951-52, Norway's 1817 Storting, the first US
+presidential election) - without that exemption it refused 21 rows and the
+report was noise.
+
+**The board, currently four rows:** Sweden 13 Sep (S largest, 99/349, 84.9%),
+Ethiopia 1 Jun (Prosperity 438/547, Majority + Caveat), Hungary 12 Apr (Tisza
+141/199, Majority), Denmark 24 Mar (S 38/179). Badges: **Majority** when the
+largest party cleared its own chamber's line, **Managed** from the hub's own
+note, **Caveat** when the record carries a qualification - Ethiopia did not
+vote in Tigray or parts of Amhara and Oromia, which belongs on the board and
+not only on the hub. NB `unfree` is unset on every record checked, so it is
+NOT the managed-system signal; the hub note is.
+
+**Russia is deliberately absent.** Its Duma election was 20 Sep and
+`check:election-dates` is already warning that the result is due. A contest
+sits in "Next to vote" marked "result due" and is absent here until its numbers
+are actually filed. That is the honest state, and the two boards disagreeing is
+the signal, not a bug.
+
+**Design sweep, measured at both widths** (DESIGN-STANDARDS 0.1):
+- 390px: page scrollWidth 390 = viewport, no page-level scroll. 8.4 phone
+  screens, up from 7.8 without the section. `taps<40` stayed at **6**, ie the
+  section added none: its row is a `min-h-11` Link, 66px tall.
+- 1280px: scrollWidth 1280 = viewport, grid resolves to 3 columns, rows 66px.
+- **One real fix came out of measuring.** Sweden's subtitle lost 46px to the
+  ellipsis at 390px, and what went was "99/349" - the seat count, the
+  substantive number on the card. Contracting on a phone is the house rule;
+  dropping the figure is not contracting it. The subtitle is now
+  `line-clamp-2 sm:line-clamp-none sm:truncate`: wraps to two lines on a phone
+  (Sweden's card 82px, the rest 66px), one truncated line from sm up. Re-
+  measured: **zero clipping on every row at both widths.**
+
+**Added to the currency manifest** (`scripts/data/data-currency.json`,
+snapshots, 120 days) because NOTHING SCHEDULES THE BUILDER. The failure mode is
+quiet by construction: the window still slides, so the board never looks stale,
+it just stops gaining rows. `_meta.asOf` is emitted in the shape
+`check-data-currency.mjs` reads. check:data-currency 30 current, 0 overdue.
+
+**Proof.** `npm run verify` exit 0. Builder self-test 24 cases over the real
+messy date shapes. probe:mobile clean. check:mobile, check:table-scroll,
+check:sortable, check:data-reads, check:client-imports all OK.
+
+**Build:** this commit touches `app/`, `lib/` and `public/`, so it is untagged
+and LAST in its push. Today (UTC) had 1 paid build before it, so it is build 2
+of 2 - within budget, not over.
+
+**Notion:** Backlog +1 (P2, the eight contradictory date records, with each one
+named). No Decisions row: the 183-day window and the summary-file shape are
+implementation, not rulings. Silent failure register: not added to - the
+currency manifest entry already covers the "board quietly stops growing" mode,
+which is where that fault would show.

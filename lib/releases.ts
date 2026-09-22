@@ -19,9 +19,11 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-09-22",
-    headline: "The UK polling chart reads true",
+    headline: "What just voted, beside what votes next",
     items: [
       "The UK polling chart's 2024 election point was showing Labour 10 points low; it now matches the real result, and Labour leads the party list.",
+      "The elections page gains a Just voted board: every result filed in the last six months, newest first, with who finished largest and the turnout.",
+      "The UK polling average was missing 82 polls whose dates the reader never saw; they are back, and twelve pollsters now feed the average rather than eleven.",
     ],
   },
   {
