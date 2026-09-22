@@ -1,3 +1,4 @@
+2026-09-22T09:13:54+01:00  e43dc4a22  Release notes: the eight corrected election dates [deploy-now]
 2026-09-22T09:08:40+01:00  d28db196a  elections: correct eight records whose date contradicted their own year [vercel skip]
 2026-09-22T08:59:22+01:00  546debfc2  elections: a "Just voted" board for the last six months
 2026-09-22T08:43:32+01:00  95b49a60f  forecast: header cells take the top-level split rule too [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T14:17:44+01:00  3fd6a6061  business: commit leader QID resolved by the 05:53 run (Bank of China) [vercel skip]
 2026-09-20T21:08:28+01:00  f575adaf4  metro_sync: the Windows watcher, and the phase 1 temp-file fix that never reached git [vercel skip]
 2026-09-20T19:56:00+01:00  a05278361  metro-rankings: the weekly job that recalculates the rankings from Supabase, in shadow mode [vercel skip]
-2026-09-20T19:33:33+01:00  7ae9c1aed  metro_sync: MetroAreas.xlsx mirrors to Supabase and extract.py can run from the mirror [vercel skip]

@@ -17741,3 +17741,29 @@ cause and the correct values recorded. Decisions +1 (a result record's date is
 checked against its own year, in verify). Silent failure register +1 (a
 citation date landing in an infobox field: it is well-formed, plausible, and
 the only thing that contradicts it is a second field nobody was comparing).
+
+## 2026-09-22 (night, last) - mini -> windows and next session: THE DATE CORRECTIONS ARE LIVE, ON A THIRD BUILD TAKEN KNOWINGLY
+
+`d28db196a` corrected eight election dates but was `[vercel skip]`, so it had
+no build, and the hub pages read those files with `readFileSync` at build time
+with no ISR fallback. The corrections were in the repo and not on the site.
+Ashwin asked for them up tonight after the cost was put to him, so `e43dc4a22`
+carries `[deploy-now]` and ships them, together with the day's fourth release
+bullet.
+
+**This is the third paid production build of 2026-09-22 UTC, against a cap of
+2, and it is a deliberate overage rather than a guard failing open.** The first
+two were `3f1c3dd27` (Labour-first chart) and `546debfc2` (the Just voted
+board), both READY. `[deploy-now]` is the only marker that beats the same-day
+cap and it records the intent in the history, which is exactly where the next
+person counting builds will look. Anyone auditing the day should read it as one
+over by decision, not by accident.
+
+Worth restating for whoever reconciles the month: the cap is still INACTIVE in
+production because `VERCEL_BUILD_CAP_TOKEN` was never placed, so nothing would
+have stopped this build either way. The marker is doing documentary work here,
+not mechanical work. That P0 row is still Ashwin's, and today is the second day
+running that it would have mattered.
+
+**Notion:** no new rows. The eight-dates row was closed in the previous entry;
+this only changes whether that fix is deployed, which is not queryable state.
