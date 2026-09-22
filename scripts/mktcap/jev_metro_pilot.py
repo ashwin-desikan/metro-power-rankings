@@ -6,7 +6,14 @@ none is coming -- this is measurement only).
 
 Modes: --self-test  --eval [--limit N] [--set hard|control|negative|all]
        --report [file]  --queue
+       --audit [--limit N]  --audit-report [file]
 No flags: prints help.
+
+--eval scores Jev against the stored metro. --audit inverts that: it re-asks
+about rows that already have a curated metro and reports where Jev CONFIDENTLY
+disagrees, which the 2026-09-22 sweep showed is usually a bad stored label
+rather than a bad answer. Audit output is a question for a human; it is never
+applied automatically.
 
 Key: env TYPESAFE_API_KEY, else file typesafe_key.txt next to this script.
 Supabase access is via common.py (its own key file/env, unrelated to TypeSafe).
@@ -29,7 +36,7 @@ INSTRUCTIONS = ("Ask which of the listed metropolitan areas contains the company
     "city. A suburb or satellite town belongs to its parent metro area -- pick that metro, not "
     "'none'. Choose 'none' only if no listed metro area contains this city or it cannot be "
     "determined.")
-COST_PER_MTOK = 0.042  # unverified third-party figure
+COST_PER_MTOK = 0.042  # docs.typesafe.ai/models, verified 2026-09-22: $0.042/M input, output free
 
 def norm(s):
     if s is None:
@@ -42,6 +49,19 @@ def norm_key(city, state, country):
 def det_hash(symbol, seed):
     h = hashlib.sha256(f"{seed}:{symbol}".encode("utf-8")).hexdigest()
     return int(h[:16], 16)
+
+def sample_order(rows, seed):
+    """Deterministic pseudo-random iteration order for a LIMITED run.
+
+    The eval sets are returned symbol-sorted, which is right for reproducibility
+    but wrong for --limit: ticker symbols sort numerics first, so `--limit 25`
+    drew 25 Asian exchange codes (002001.SZ, 0097.KL, 1109.HK ...) and reported
+    72% accuracy where the full 702-row set reads 84%. Same bias undercounted
+    cost 2.2x, because those countries carry 7-27 metro shortlists against 164
+    for the US. Measured 2026-09-22. Ordering by det_hash keeps the run fully
+    reproducible (same seed -> same order, so resume still works) while making
+    any prefix a representative sample."""
+    return sorted(rows, key=lambda r: det_hash(r["symbol"], seed))
 
 def build_id_map(metros):
     """metros: iterable of distinct metro names. Returns (metro_to_id, id_to_metro).
@@ -105,6 +125,27 @@ def resolve_pick(answer, id_map):
     if isinstance(choice, str) and choice in id_map:
         return id_map[choice]
     return "ERROR"
+
+def audit_verdict(pick, conf, stored, threshold):
+    """Audit asks the OPPOSITE question to eval. Eval holds the stored metro as
+    truth and scores Jev. Audit holds Jev's confident answer as a challenge to
+    the stored metro, because the 2026-09-22 sweep found 4 confident
+    disagreements in 446 proposals and 3 of them were bad stored labels
+    (HPE Spring TX filed under Dallas, TD Synnex Clearwater FL under
+    Minneapolis, Chroma ATE Taoyuan under Kaohsiung).
+
+    Returns one of: agree | disagree | unsure | abstain_none | error.
+    Only 'disagree' is worth a human's time. NOTHING here writes: a disagreement
+    is a question for Ashwin, not a correction to apply."""
+    if pick == "ERROR" or pick is None:
+        return "error"
+    if pick == "none":
+        return "abstain_none"
+    if not isinstance(conf, (int, float)) or isinstance(conf, bool):
+        return "unsure"
+    if conf < threshold:
+        return "unsure"
+    return "agree" if pick == stored else "disagree"
 
 def build_eval_sets(labelled_rows, seed):
     """Pure, deterministic (hash of symbol salted by seed; no random module).
@@ -270,11 +311,11 @@ def fetch_labelled_and_stub(key=None):
 CSV_COLS = ["set", "symbol", "name", "city", "state", "country", "truth", "pick",
             "confidence", "top3", "decision", "correct", "base_cityname", "latency_ms", "input_tokens", "model"]
 
-def today_csv_path():
+def today_csv_path(kind="eval"):
     import datetime
     d = datetime.date.today().isoformat()
     here = os.path.dirname(os.path.abspath(__file__))
-    return os.path.join(here, "out", f"jev_eval_{d}.csv")
+    return os.path.join(here, "out", f"jev_{kind}_{d}.csv")
 
 def load_resume(path):
     done = set()
@@ -333,7 +374,7 @@ def cmd_eval(args):
     done = load_resume(path)
     count = errors = 0
     for set_name in order:
-        for row in sets[set_name]:
+        for row in sample_order(sets[set_name], args.seed):
             if (set_name, row["symbol"]) in done:
                 continue
             if count >= args.limit:
@@ -383,6 +424,77 @@ def cmd_queue(args):
         conf = answer.get("confidence") if isinstance(answer, dict) else None
         print(f"  {r['symbol']}  {r.get('name','')} -> {decision} "
               f"({pick if decision=='propose' else reason}, conf={conf})")
+
+def cmd_audit(args):
+    """Re-ask Jev about rows that ALREADY have a curated metro, with the stored
+    metro present in the shortlist, and record where it confidently disagrees.
+    Read-only by construction: there is no --write and none is coming."""
+    key = get_typesafe_key()
+    if not key:
+        print("No TYPESAFE_API_KEY set and no typesafe_key.txt next to this script. Nothing to do.")
+        return
+    labelled, _ = fetch_labelled_and_stub()
+    metro_to_id, _ = build_id_map(r["metro"] for r in labelled)
+    path = today_csv_path("audit")
+    done = load_resume(path)
+    count = errors = 0
+    for row in sample_order(labelled, args.seed):
+        if ("audit", row["symbol"]) in done:
+            continue
+        if count >= args.limit:
+            print(f"Reached --limit {args.limit}. Re-run to resume (already-written rows are skipped).")
+            break
+        shortlist = shortlist_for_country(labelled, row["country"], metro_to_id)
+        if row["metro"] not in shortlist:
+            # The stored metro was pushed out by the 254 cap. Jev cannot agree
+            # with an option it was never shown, so this row is unauditable.
+            common.log(f"audit {row['symbol']}: stored metro not in shortlist (cap), skipped")
+            continue
+        err, out = run_one(key, row, "audit", row["metro"], shortlist, metro_to_id, args.threshold)
+        count += 1
+        if err is not None:
+            errors += 1
+            common.log(f"audit {row['symbol']}: API error {err}, not recorded, will retry on resume")
+            continue
+        append_csv_row(path, out)
+        v = audit_verdict(out["pick"], out["confidence"] if out["confidence"] != "" else None,
+                          row["metro"], args.threshold)
+        if v == "disagree":
+            common.log(f"audit {row['symbol']}: DISAGREE stored={row['metro']} "
+                       f"jev={out['pick']} @ {out['confidence']}")
+    print(f"Done. {count - errors} rows appended to {path}, {errors} API errors not recorded")
+
+def cmd_audit_report(args):
+    path = args.file or today_csv_path("audit")
+    if not os.path.exists(path):
+        print(f"No audit file at {path}. Run --audit first.")
+        return
+    rows = read_eval_csv(path)
+    counts = {}
+    disagreements = []
+    for r in rows:
+        v = audit_verdict(r["pick"], r["confidence"], r["truth"], args.threshold)
+        counts[v] = counts.get(v, 0) + 1
+        if v == "disagree":
+            disagreements.append(r)
+    print(f"Audit report for {path} -- {len(rows)} rows, threshold {args.threshold}\n")
+    for v in ("agree", "disagree", "unsure", "abstain_none", "error"):
+        n = counts.get(v, 0)
+        print(f"  {v:13} {n:5}  ({n/len(rows):.2%})" if rows else f"  {v}: 0")
+    agree = counts.get("agree", 0)
+    dis = counts.get("disagree", 0)
+    if agree + dis:
+        print(f"\nOf {agree + dis} confident answers, {dis} contradict the stored metro "
+              f"({dis/(agree+dis):.2%}).")
+    print("\nDISAGREEMENTS, most confident first. Each is a QUESTION, not a correction:")
+    for r in sorted(disagreements, key=lambda r: -(r["confidence"] or 0)):
+        print(f"  {r['symbol']:14} {r['name'][:30]:30} {r['city']}, {r['country']}")
+        print(f"     stored={r['truth']}   jev={r['pick']} @ {r['confidence']}")
+        print(f"     top3={r['top3']}")
+    if not disagreements:
+        print("  (none)")
+    tot_in = sum(r["input_tokens"] for r in rows)
+    print(f"\ntotal input_tokens={tot_in}  est. cost=${tot_in * COST_PER_MTOK / 1_000_000:.4f}")
 
 THRESHOLDS = [0.5, 0.7, 0.8, 0.9, 0.95]
 
@@ -527,6 +639,26 @@ def cmd_self_test():
     check("negative: ~20% of HARD", len(a["negative"]) == (len(a["hard"]) * 20) // 100)
     check("control: capped at len(HARD)", len(a["control"]) <= len(a["hard"]))
 
+    # sample_order: a --limit prefix must not be an alphabetical slice (the real
+    # 2026-09-22 bug: 25 symbol-sorted rows were all Asian numeric tickers)
+    tickers = [{"symbol": s} for s in
+               ["002001.SZ", "0097.KL", "1109.HK", "2360.TW", "AAPL", "HPE", "MSFT", "ZTS"]]
+    so = sample_order(tickers, "0")
+    check("sample_order: preserves every row", sorted(r["symbol"] for r in so) ==
+          sorted(r["symbol"] for r in tickers))
+    check("sample_order: reorders away from symbol sort",
+          [r["symbol"] for r in so] != sorted(r["symbol"] for r in tickers))
+    check("sample_order: same seed -> identical order",
+          [r["symbol"] for r in sample_order(tickers, "0")] == [r["symbol"] for r in so])
+    check("sample_order: different seed -> different order",
+          [r["symbol"] for r in sample_order(tickers, "9")] != [r["symbol"] for r in so])
+    # the prefix of a symbol-sorted list is all-numeric; the hash-ordered one must not be
+    alpha_prefix = sorted(r["symbol"] for r in tickers)[:4]
+    check("sample_order: symbol sort really does bunch the numeric tickers (the bug)",
+          all(s[0].isdigit() for s in alpha_prefix))
+    check("sample_order: hash prefix mixes numeric and alphabetic",
+          not all(r["symbol"][0].isdigit() for r in so[:4]))
+
     # resume skip logic
     resume_rows = [{"set": "hard", "symbol": "AAA"}, {"set": "control", "symbol": "BBB"}]
     done = {(r["set"], r["symbol"]) for r in resume_rows}
@@ -551,6 +683,28 @@ def cmd_self_test():
           == ("abstain", "malformed_answer"))
     check("decide: missing choice key", decide({"confidence": 0.9}, idmap, 0.9)
           == ("abstain", "malformed_answer"))
+
+    # audit_verdict -- cases taken from the real 2026-09-22 sweep
+    check("audit: HPE Spring TX, stored Dallas, jev Houston 0.99 -> disagree",
+          audit_verdict("Houston", 0.99, "Dallas", 0.90) == "disagree")
+    check("audit: Chroma ATE, stored Kaohsiung, jev Taipei 0.93 -> disagree",
+          audit_verdict("Taipei", 0.93, "Kaohsiung", 0.90) == "disagree")
+    check("audit: agreement at high confidence",
+          audit_verdict("Seattle", 0.98, "Seattle", 0.90) == "agree")
+    check("audit: a DISAGREEMENT below threshold is unsure, not a finding",
+          audit_verdict("Houston", 0.62, "Dallas", 0.90) == "unsure")
+    check("audit: agreement below threshold is also unsure",
+          audit_verdict("Seattle", 0.62, "Seattle", 0.90) == "unsure")
+    check("audit: 'none' pick is its own bucket, never a disagreement",
+          audit_verdict("none", 0.99, "Milan", 0.90) == "abstain_none")
+    check("audit: ERROR never becomes a finding",
+          audit_verdict("ERROR", 0.99, "Milan", 0.90) == "error")
+    check("audit: missing confidence -> unsure",
+          audit_verdict("Houston", None, "Dallas", 0.90) == "unsure")
+    check("audit: bool confidence is not a number -> unsure",
+          audit_verdict("Houston", True, "Dallas", 0.90) == "unsure")
+    check("audit: exactly at threshold counts",
+          audit_verdict("Houston", 0.90, "Dallas", 0.90) == "disagree")
 
     # top3 formatting
     t3 = format_top3({"m001": 0.7, "m002": 0.2, "none": 0.1}, idmap)
@@ -607,6 +761,9 @@ def main():
     ap.add_argument("--eval", action="store_true")
     ap.add_argument("--report", nargs="?", const="", default=None, metavar="FILE")
     ap.add_argument("--queue", action="store_true")
+    ap.add_argument("--audit", action="store_true",
+                    help="re-ask Jev about already-labelled rows; flag confident disagreements")
+    ap.add_argument("--audit-report", nargs="?", const="", default=None, metavar="FILE")
     ap.add_argument("--limit", type=int, default=25)
     ap.add_argument("--set", choices=["hard", "control", "negative", "all"], default="all")
     ap.add_argument("--threshold", type=float, default=0.90)
@@ -622,6 +779,11 @@ def main():
         cmd_report(args); return
     if args.queue:
         cmd_queue(args); return
+    if args.audit:
+        cmd_audit(args); return
+    if args.audit_report is not None:
+        args.file = args.audit_report or None
+        cmd_audit_report(args); return
     ap.print_help()
 
 if __name__ == "__main__":
