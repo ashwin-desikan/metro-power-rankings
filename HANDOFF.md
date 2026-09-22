@@ -17422,3 +17422,58 @@ the fix and the guard. Decisions +1 (an election-result row inside a polling
 table is checked against the known result and dropped on mismatch). Silent
 failure register: the column-shift entry updated -- the UK anchor is now
 covered, the general case is not.
+
+## 2026-09-22 (later) - mini -> windows and next session: THE KNOWN-RESULTS GUARD NOW COVERS EVERY COUNTRY, AND THREE OF THEM BY SAYING WHY NOT
+
+Extends yesterday's UK anchor check to the rest of the forecast. The short
+version: only New Zealand could actually take one, and the value of the change
+is as much in the four recorded reasons as in the one new table.
+
+**New Zealand: anchored.** `NZ_KNOWN_RESULTS` carries the 2023 general election
+party vote (NAT 38.08, LAB 26.92, GRN 11.61, ACT 8.64, NZF 6.09, TPM 3.08),
+wired into `fetch_nz`. Verified from the article's RAW wikitext, not from the
+parsed row, which would be circular if the parse were shifted: the header block
+at the FOOT of the NZ table fixes the column order, and the row's own Lead cell
+(11.16) equals 38.08 - 26.92. TOP's 2.22 is in the article but never survives
+into `nz_polls.json`, so it is deliberately NOT asserted -- a key the parse does
+not emit would fail every good row. A live `fetch_nz` run is byte-identical to
+before, 121 rows, so the guard is a no-op on good data.
+
+**The other four get a recorded reason, in code, in a new `NO_ANCHOR` dict.**
+An anchor for a row the parse never produces is WORSE than no anchor: it cries
+BASELINE MISSING on every clean run and trains everyone to ignore the alert,
+which is the same disease as a noisy stale-poll warning.
+- **Israel**: the article's "2022 election" lines are the *Period of use* column
+  of a pollster metadata table, not seats. Israel is already covered better,
+  structurally: every row must total 120 within 2, which is what caught the
+  merged-colspan bug in the first place.
+- **Brazil**: no previous-election result row anywhere in the article.
+- **France**: the article DOES carry a 2022 first-round row, but it never
+  reaches `fr_polls.json` -- zero rows dated before 2023 survive the First
+  round parse. The real R1 shares are recorded in the reason string (Arthaud
+  0.56, Poutou 0.76, Roussel 2.28, Melenchon 21.95) so whoever makes that row
+  parse can promote it to an anchor in one line.
+- **US**: the generic-ballot article carries aggregator averages, not per-party
+  result rows.
+
+**The coverage itself is tested.** Two self-test cases assert that every fetched
+country is either anchored or in `NO_ANCHOR`, and that none is in both. Adding a
+country now forces that decision instead of letting it default to unguarded
+silence, which is how the UK row went wrong for weeks. `fetch_data --self-test`
+is 21 cases (was 17): NZ correct-anchor-kept, NZ shifted-anchor-dropped, and
+the two coverage assertions.
+
+**Proof.** All four forecast self-tests green: fetch_data 21, fetch_il_history
+13, il_seat_sim 25/25, check_forecast_health 8. Live `fetch_nz` silent and
+byte-identical. Scripts-only change, no `app/`, `lib/` or `public/`, so no
+build and no release note.
+
+**Yesterday's chart commit is live:** deployment for `3f1c3dd27` reached
+`success`, so Labour now leads the UK polling chart in production and the
+corrected 2024 anchor is being served.
+
+**Notion:** Decisions: the known-results row extended to record that coverage is
+now total, with four countries covered by a recorded reason rather than a table.
+Silent failure register: the column-shift entry updated -- NZ joins the UK as
+anchored, Israel noted as structurally covered by the 120 rule, Brazil and
+France as genuinely unanchorable today with the France path written down.

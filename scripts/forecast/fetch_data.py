@@ -374,6 +374,41 @@ UK_KNOWN_RESULTS = {
                    "ld": 12.2, "grn": 6.8, "snp": 2.5},
 }
 
+# 2023 New Zealand general election, party vote. Verified from the article's
+# own raw wikitext rather than the parsed row, which would be circular if the
+# parse were shifted: the header block at the FOOT of the table fixes the
+# column order (NAT, LAB, GRN, ACT, NZF, TPM, OPP, Others, Lead), and the row's
+# own Lead cell, 11.16, equals 38.08 - 26.92. TOP's 2.22 is in the article but
+# does not survive into nz_polls.json, so it is deliberately not asserted here:
+# a key the parse never emits would fail every good row.
+NZ_KNOWN_RESULTS = {
+    "2023-10-14": {"nat": 38.08, "lab": 26.92, "grn": 11.61,
+                   "act": 8.64, "nzf": 6.09, "tpm": 3.08},
+}
+
+# Every country the forecast fetches is accounted for here: it either has an
+# anchor table above, or a recorded reason why it cannot have one. An anchor
+# for a row the parse never produces is worse than no anchor, because it cries
+# BASELINE MISSING on every clean run and trains everyone to ignore the alert.
+# Checked by the self-test, so adding a country forces the decision rather than
+# letting it default to unguarded silence.
+NO_ANCHOR = {
+    "il": "The 2026 article carries no result row: its '2022 election' lines "
+          "are the 'Period of use' column of a pollster metadata table, not "
+          "seats. Israel is covered structurally instead, and better -- every "
+          "row must total 120 seats within 2, which is what caught the merged "
+          "colspan bug. See il_polls_from_wikitext.",
+    "br": "The 2026 article carries no previous-election result row at all, in "
+          "any table. Nothing to anchor against until the election resolves.",
+    "fr": "The 2027 article DOES carry a 2022 first-round row, but it never "
+          "reaches fr_polls.json (no row dated before 2023 survives the "
+          "First round parse), so there is nothing to check. If a future "
+          "parse starts emitting it, add its real R1 shares here: Arthaud "
+          "0.56, Poutou 0.76, Roussel 2.28, Melenchon 21.95.",
+    "us": "The generic-ballot article carries aggregator averages, not a "
+          "result row with per-party shares.",
+}
+
 
 def verify_known_results(polls, known, label, tol=0.15):
     """Drop any election-result row that contradicts the real result.
@@ -666,6 +701,7 @@ def fetch_nz():
     # It is the right trade while the article carries one undivided table.
     sec = find_section(wt, r"^Table of polls$")
     polls = extract_polls(sec or wt, ["nat", "lab", "grn", "act", "nzf", "tpm", "top"], 2026)
+    polls = verify_known_results(polls, NZ_KNOWN_RESULTS, "NZ")
     json.dump({"source": "Wikipedia: Opinion polling for the 2026 New Zealand general election (CC BY-SA 4.0)",
                "parties": ["nat", "lab", "grn", "act", "nzf", "tpm", "top"],
                "polls": polls}, open(os.path.join(OUT, "nz_polls.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
@@ -1007,12 +1043,36 @@ def _self_test():
     check("UK baseline: a dropped anchor says so loudly",
           "BASELINE MISMATCH" in buf.getvalue(), True)
 
+    # New Zealand, same guard, different shape of party keys. The real 2023
+    # anchor, and the same row shifted one party left the way the UK one was.
+    nz_right = {"date": "2023-10-14", "pollster": "2023 election result",
+                "nat": 38.08, "lab": 26.92, "grn": 11.61,
+                "act": 8.64, "nzf": 6.09, "tpm": 3.08}
+    nz_shifted = {"date": "2023-10-14", "pollster": "2023 election result",
+                  "nat": 26.92, "lab": 11.61, "grn": 8.64,
+                  "act": 6.09, "nzf": 3.08, "tpm": 2.22}
+    nzbuf = io.StringIO()
+    with contextlib.redirect_stdout(nzbuf):
+        nz_ok = verify_known_results([nz_right], NZ_KNOWN_RESULTS, "NZ")
+        nz_bad = verify_known_results([nz_shifted], NZ_KNOWN_RESULTS, "NZ")
+    check("NZ baseline: correct anchor is kept", nz_ok, [nz_right])
+    check("NZ baseline: shifted anchor is dropped", nz_bad, [])
+
+    # A country must be either anchored or explicitly excused. Silence is how
+    # the UK row went wrong for weeks, so a new country cannot default into it.
+    anchored = {"uk", "nz"}
+    fetched = {"uk", "us", "nz", "il", "br", "fr"}
+    check("every fetched country is anchored or has a recorded reason",
+          sorted(fetched - anchored - set(NO_ANCHOR)), [])
+    check("no country is both anchored and excused",
+          sorted(anchored & set(NO_ANCHOR)), [])
+
     if fails:
         print("SELF-TEST FAILED")
         for f in fails:
             print("  -", f)
         return 1
-    print("fetch_data self-test OK (%d cases)" % 17)
+    print("fetch_data self-test OK (%d cases)" % 21)
     return 0
 
 if __name__ == "__main__":
