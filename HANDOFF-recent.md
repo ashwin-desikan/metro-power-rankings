@@ -9,9 +9,30 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 75, 2026-09-15 to 2026-09-22
-     If the reader counts fewer than 75 entries, its fetch window stopped
+     entries: 77, 2026-09-15 to 2026-09-22
+     If the reader counts fewer than 77 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
+
+## 2026-09-22 (close, cowork cloud) — CUTOVER: metro-rankings publishes from this Saturday; update_top_companies step removed
+
+Ashwin's ruling tonight, after the Thailand and Peru census populations reached Supabase (watcher run 20:41Z, Counties 3 chunks): cut over on one clean shadow Saturday (2026-09-20) instead of two. Done as one change: `mac-mini-jobs/runners/metro-rankings.sh` default `MODE` is now `publish` (`METRO_RANKINGS_MODE=shadow` still gives a rehearsal); the `update_top_companies.py --write` and its untagged "weekly Top Companies refresh" commit are removed from the tail of `mac-mini-jobs/run-mktcap-refresh.sh` (the script stays in `scripts/mktcap` for a manual patch; `details/*.json` and `meta.json` now come from extract.py in the metro-rankings publish, marketCap included, from the same CSV); `jobs.toml`'s comment rewritten. Both scripts pass `bash -n`. The mini runs the repo files through symlinks, so this lands when its checkout next pulls (deploy-watch, every 10 minutes); confirm on the mini before Saturday 10:30 UTC that `runners/metro-rankings.sh` shows the publish default.
+
+What Saturday now does: mktcap-refresh at 09:00 (business snapshot, [vercel skip]); metro-rankings at 10:30 runs the ETL from the Supabase mirror, the publish guard (holds on metro count fall, vanished slug, top-100 move over 10 places, score move over 3.0, market cap swing over 15 percent), then ONE untagged commit of metros/regions/states/meta/details/state-metro-scores/states-directory plus the report. Expect the guard to flag the population change if Bangkok or Lima move far; a hold restores public/data and commits only the report, and the reason is in `mac-mini-jobs/reports/metro-rankings-<date>.md`.
+
+Still open from the cutover rule: `check:release-notes` wants a `lib/releases.ts` entry on a day with an untagged `public/` commit; the Top Companies commit had the same gap. Add a standing weekly-rankings entry or exempt bot commits in the check before Saturday, else the day's release check will complain.
+
+Also uncommitted until this push: `scripts/citypop/` (apply_counties_pop.py and the inbox).
+
+**Notion:** Backlog phase 2 row ("install and cutover") -> Done with the cutover date; Scheduled jobs metro-rankings row -> publish mode; Decisions +1 (cutover on one shadow Saturday; metro-rankings owns the weekly build, update_top_companies retired from the mktcap runner).
+## 2026-09-22 (close, cowork cloud) — first citypopulation.de refresh applied by the new pipeline shape: Thailand and Peru provinces on Counties
+
+Ashwin pasted the citypopulation.de tables for Thailand (77 provinces, census 2025-04-01) and Peru (196 provinces, census 2025-08-04) and asked for a name check against `MetroAreas.xlsx` Counties before replacing. Diff (pure code, exact normalised name within country, parent checked): Thailand 77 of 77 matched, parents agree, no structural change (Bueng Kan already present). Peru 193 of 196 exact plus 3 spelling-only variants where the workbook's spelling was kept (Antonio Raimondi / Raymondi, Vilcashuamán / Vilcas Huamán, Nazca / Nasca); no merges or splits; Lima province and Callao matched. No model was needed: rung 1 of the ladder settled everything.
+
+Applied with `scripts/citypop/apply_counties_pop.py` (new; surgical zip edit of `sheet4.xml`, refuses on formula cells or unexpected current values, writes Census Year = 2025 into column K, backup `MetroAreas.xlsx.bak-20260922-thailand-peru` beside the master). 270 Pop cells rewritten, all read back. Inputs kept in `scripts/citypop/inbox/` (raw paste and plan JSON). Note the semantics: the workbook held register or estimate figures (Thailand summed 67.99M, Peru 32.5M) and now holds census counts (70.28M and 34.03M); largest moves Lamphun 405k -> 622k, Chonburi 1.71M -> 2.29M, Caylloma 97k -> 162k. Bangkok metro and Lima metro rollups will move on the next recalculation. The workbook shrank 37.1 MB -> 32.9 MB (zip compression level, same as every surgical edit). The Windows watcher carries it to Supabase; it goes live with the Saturday run per the 2026-09-20 ruling.
+
+Lesson for the pipeline row: on a 33 MB workbook over the Cowork mount, do the zip diff and the openpyxl read-back in separate calls and read only the planned row span; the first attempt hit the 180 s limit during verification (the master was untouched; the temp file was verified and swapped in by hand).
+
+**Notion:** Backlog citypopulation pipeline row: Notes gain "Thailand and Peru done 2026-09-22 as the first manual run of stage 2 and 4".
 
 ## 2026-09-22 (close, cowork cloud) — pushed to main; the local-models protocol is now standing policy
 
@@ -20,6 +41,7 @@ Pushed: `d65f05a58` (Reep identity crosswalk, 41 files) on top of the mini's dat
 Ashwin's ruling: use Jev and Ollama as much as possible in every session, without reminders. Written up as `docs/LOCAL-MODELS.md` (inventory, the ladder code -> retrieval -> Jev -> Ollama -> Claude, the Jev pilot protocol, the Ollama protocol, why, standing measurements) and mirrored where sessions actually load it: `~/.claude/CLAUDE.md` (user-level, every Claude Code and Cowork session on this machine; replaced the old Ollama-only paragraph), repo `CLAUDE.md` (new section before 'Where things live'), the Claude Project doc `claude/local-models-protocol.md`, and project memory. Facts checked on the machine: Jev is TypeSafe's API model (`jev-latest`, `api.typesafe.ai/v1/systemone`, $0.042/M input, output free; skill `typesafe-ai` 0.5.7 in the plugin cache), not a local model; Ollama has `llama3.1:8b` and `nomic-embed-text` installed, the embedding model was undocumented until now.
 
 **Notion:** Decisions +1 (the standing ladder). Data sources +2 (TypeSafe Jev; Ollama), both Health OK.
+
 ## 2026-09-22 (night, cowork cloud) — APPLIED: Reep ids on Lookup, football_team_reep bridge, identity resolver
 
 The dry run is over. Three things are now live:

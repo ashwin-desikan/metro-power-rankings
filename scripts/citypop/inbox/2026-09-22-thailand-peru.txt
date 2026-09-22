@@ -1,0 +1,333 @@
+Planning Regions and Provinces
+The population of Thai planning regions and provinces (changwats, จังหวัด) by census years.
+
+Thailand is divided into different sets of non-administrative regions.
+
+The Details icon links to further information about a selected division including its population structure (gender, urbanization).
+
+Name	Status	Native	Population
+Census
+2000-04-01	Population
+Census
+2010-09-01	Population
+Census
+2025-04-01
+Bangkok Metropolitan [Krung Thep Mahanakhon Lae Parimonthon]	Planning Region	กรุงเทพมหานครและปริมณฑล	10,159,211	14,626,225	15,228,457
+Krung Thep Mahanakhon [Bangkok]	Province-level City	กรุงเทพมหานคร	6,355,144	8,305,218	8,890,112
+Nakhon Pathom	Province	จังหวัดนครปฐม	815,122	943,892	1,027,959
+Nonthaburi	Province	จังหวัดนนทบุรี	816,614	1,334,083	1,290,580
+Pathum Thani	Province	จังหวัดปทุมธานี	677,649	1,327,147	1,387,738
+Samut Prakan	Province	จังหวัดสมุทรปราการ	1,028,401	1,828,694	1,772,319
+Samut Sakhon	Province	จังหวัดสมุทรสาคร	466,281	887,191	859,749
+Central	Planning Region	ภาคกลาง	2,909,850	3,117,511	3,084,638
+Ang Thong	Province	จังหวัดอ่างทอง	269,419	254,292	265,082
+Chainat	Province	จังหวัดชัยนาท	359,829	305,587	308,819
+Lopburi	Province	จังหวัดลพบุรี	745,506	769,925	747,347
+Phra Nakhon Si Ayutthaya	Province	จังหวัดพระนครศรีอยุธยา	727,277	870,671	843,538
+Saraburi	Province	จังหวัดสระบุรี	575,053	717,054	723,881
+Singburi	Province	จังหวัดสิงห์บุรี	232,766	199,982	195,971
+Eastern	Planning Region	ภาคตะวันออก	4,031,005	5,175,345	6,163,135
+Chachoengsao	Province	จังหวัดฉะเชิงเทรา	635,153	715,603	811,255
+Chanthaburi	Province	จังหวัดจันทบุรี	480,064	485,611	558,416
+Chonburi	Province	จังหวัดชลบุรี	1,040,865	1,555,358	2,288,684
+Nakhon Nayok	Province	จังหวัดนครนายก	241,081	246,868	247,841
+Prachinburi	Province	จังหวัดปราจีนบุรี	406,732	546,996	550,305
+Rayong	Province	จังหวัดระยอง	522,133	821,072	891,297
+Sa Kaeo	Province	จังหวัดสระแก้ว	485,632	555,961	559,494
+Trat	Province	จังหวัดตราด	219,345	247,876	255,843
+Northeastern	Planning Region	ภาคตะวันออกเฉียงเหนือ	20,825,262	18,966,092	20,034,935
+Amnat Charoen	Province	จังหวัดอำนาจเจริญ	359,360	283,732	329,650
+Bueng Kan [← Nong Khai]	Province	จังหวัดบึงกาฬ	385,053	362,755	357,857
+Buri Ram	Province	จังหวัดบุรีรัมย์	1,493,359	1,274,921	1,241,643
+Chaiyaphum	Province	จังหวัดชัยภูมิ	1,095,360	963,907	989,631
+Kalasin	Province	จังหวัดกาฬสินธุ์	921,366	824,538	868,646
+Khon Kaen	Province	จังหวัดขอนแก่น	1,733,434	1,741,980	1,844,837
+Loei	Province	จังหวัดเลย	607,083	546,028	650,947
+Maha Sarakham	Province	จังหวัดมหาสารคาม	947,313	827,639	805,677
+Mukdahan	Province	จังหวัดมุกดาหาร	310,718	357,339	349,010
+Nakhon Phanom	Province	จังหวัดนครพนม	684,444	583,726	631,164
+Nakhon Ratchasima	Province	จังหวัดนครราชสีมา	2,556,260	2,525,975	2,572,371
+Nong Bua Lamphu	Province	จังหวัดหนองบัวลำภู	482,207	485,974	473,079
+Nong Khai	Province	จังหวัดหนองคาย	498,651	458,772	480,991
+Roi Et	Province	จังหวัดร้อยเอ็ด	1,256,458	1,084,985	1,077,030
+Sakon Nakhon	Province	จังหวัดสกลนคร	1,040,766	941,810	1,012,971
+Si Saket	Province	จังหวัดศรีสะเกษ	1,405,500	1,055,980	1,383,068
+Surin	Province	จังหวัดสุรินทร์	1,327,901	1,122,900	1,313,147
+Ubon Ratchathani	Province	จังหวัดอุบลราชธานี	1,691,441	1,746,790	1,701,269
+Udon Thani	Province	จังหวัดอุดรธานี	1,467,158	1,288,365	1,476,623
+Yasothon	Province	จังหวัดยโสธร	561,430	487,976	475,324
+Northern	Planning Region	ภาคเหนือ	11,433,061	11,656,043	12,271,812
+Chiang Mai	Province	จังหวัดเชียงใหม่	1,500,127	1,737,041	1,793,046
+Chiang Rai	Province	จังหวัดเชียงราย	1,129,701	1,172,928	1,257,241
+Kamphaeng Phet	Province	จังหวัดกำแพงเพชร	674,027	797,391	781,636
+Lampang	Province	จังหวัดลำปาง	782,152	743,143	856,497
+Lamphun	Province	จังหวัดลำพูน	413,299	412,741	621,868
+Mae Hong Son	Province	จังหวัดแม่ฮ่องสอน	210,537	209,153	284,649
+Nakhon Sawan	Province	จังหวัดนครสวรรค์	1,090,379	992,749	973,186
+Nan	Province	จังหวัดน่าน	458,041	452,814	474,074
+Phayao	Province	จังหวัดพะเยา	502,780	417,380	490,735
+Phetchabun	Province	จังหวัดเพชรบูรณ	965,784	940,076	925,931
+Phichit	Province	จังหวัดพิจิตร	572,989	548,242	535,188
+Phitsanulok	Province	จังหวัดพิษณุโลก	792,678	912,827	894,456
+Phrae	Province	จังหวัดแพร่	492,561	427,398	463,121
+Sukhothai	Province	จังหวัดสุโขทัย	593,264	629,707	613,251
+Tak	Province	จังหวัดตาก	486,146	526,382	568,273
+Uthai Thani	Province	จังหวัดอุทัยธานี	304,122	297,493	311,449
+Uttaradit	Province	จังหวัดอุตรดิตถ	464,474	438,578	427,211
+Southern	Planning Region	ภาคใต้	8,087,471	8,871,003	9,681,808
+Chumphon	Province	จังหวัดชุมพร	446,206	467,801	507,479
+Krabi	Province	จังหวัดกระบี่	336,210	362,203	466,964
+Nakhon Si Thammarat	Province	จังหวัดนครศรีธรรมราช	1,519,811	1,450,466	1,523,943
+Narathiwat	Province	จังหวัดนราธิวาส	662,350	670,002	760,807
+Pattani	Province	จังหวัดปัตตานี	595,985	609,015	668,941
+Phang Nga	Province	จังหวัดพังงา	234,188	258,535	275,187
+Phatthalung	Province	จังหวัดพัทลุง	498,471	480,976	493,659
+Phuket	Province	จังหวัดภูเก็ต	249,446	525,709	505,644
+Ranong	Province	จังหวัดระนอง	161,210	249,017	274,021
+Satun	Province	จังหวัดสตูล	247,875	274,863	317,869
+Songkhla	Province	จังหวัดสงขลา	1,255,662	1,481,021	1,488,476
+Surat Thani	Province	จังหวัดสุราษฎร์ธานี	869,410	1,009,351	1,163,833
+Trang	Province	จังหวัดตรัง	595,110	598,877	668,746
+Yala	Province	จังหวัดยะลา	415,537	433,167	566,239
+Western	Planning Region	ภาคตะวันตก	3,470,581	3,569,447	3,810,966
+Kanchanaburi	Province	จังหวัดกาญจนบุรี	734,394	801,519	809,237
+Phetchaburi	Province	จังหวัดเพชรบุรี	435,377	472,589	485,022
+Prachuap Khiri Khan	Province	จังหวัดประจวบคีรีขันธ์	449,467	467,466	542,636
+Ratchaburi	Province	จังหวัดราชบุรี	791,217	796,748	941,358
+Samut Songkhram	Province	จังหวัดสมุทรสงคราม	204,177	185,564	195,444
+Suphanburi	Province	จังหวัดสุพรรณบุรี	855,949	845,561	837,269
+Prathet Thai [Thailand]	Kingdom	ประเทศไทย	60,916,441	65,981,659	70,275,751
+
+
+Name	Status	Population
+Census
+1993-07-11	Population
+Census
+2007-10-21	Population
+Census
+2017-10-22	Population
+Census
+2025-08-04
+Amazonas	Region	336,665	375,993	417,365	467,688
+Bagua	Province	69,482	71,757	82,193	95,858
+Bongará	Province	20,459	27,465	27,085	26,784
+Chachapoyas	Province	45,058	49,700	60,419	65,527
+Condorcanqui	Province	30,520	43,311	49,800	82,415
+Luya	Province	46,837	48,328	48,140	48,323
+Rodríguez de Mendoza	Province	21,389	26,389	32,130	33,853
+Utcubamba	Province	102,920	109,043	117,598	114,928
+Áncash	Region	955,023	1,063,459	1,139,115	1,205,923
+Aija	Province	8,657	7,995	6,639	5,855
+Antonio Raymondi	Province	18,912	17,059	14,360	12,541
+Asunción	Province	9,846	9,054	7,873	6,459
+Bolognesi	Province	28,029	30,725	24,940	22,610
+Carhuaz	Province	39,721	43,902	48,072	50,100
+Carlos Fermín Fitzcarrald	Province	21,026	21,322	18,816	15,392
+Casma	Province	35,380	42,368	53,115	61,015
+Corongo	Province	8,917	8,329	7,974	7,458
+Huaraz	Province	121,028	147,463	174,534	184,354
+Huari	Province	63,883	62,598	62,278	64,926
+Huarmey	Province	23,858	27,820	31,489	38,155
+Huaylas	Province	50,575	53,729	55,249	57,882
+Mariscal Luzuriaga	Province	23,151	23,292	21,817	20,224
+Ocros	Province	7,039	9,196	7,491	6,779
+Pallasca	Province	28,389	29,454	25,027	24,227
+Pomabamba	Province	26,276	27,954	26,605	24,769
+Recuay	Province	19,234	19,102	18,066	16,853
+Santa	Province	338,951	396,434	451,184	500,517
+Sihuas	Province	31,963	30,700	28,686	26,635
+Yungay	Province	50,188	54,963	54,900	59,172
+Apurímac	Region	381,997	404,190	424,259	467,513
+Abancay	Province	95,092	96,064	114,722	123,483
+Andahuaylas	Province	128,390	143,846	149,267	160,165
+Antabamba	Province	12,462	12,267	11,861	14,364
+Aymaraes	Province	28,886	29,569	25,514	30,038
+Chincheros	Province	48,481	51,583	47,522	56,458
+Cotabambas	Province	42,008	45,771	52,978	58,750
+Grau	Province	26,678	25,090	22,395	24,255
+Arequipa	Region	916,806	1,152,303	1,460,433	1,814,554
+Arequipa	Province	676,790	864,250	1,137,087	1,382,326
+Camaná	Province	42,403	53,065	61,616	77,222
+Caravelí	Province	27,484	35,928	43,243	59,568
+Castilla	Province	36,864	38,425	36,561	35,259
+Caylloma	Province	45,236	73,718	94,776	161,663
+Condesuyos	Province	20,695	18,991	17,450	20,917
+Islay	Province	50,039	52,264	55,953	63,150
+La Unión	Province	17,295	15,662	13,747	14,449
+Ayacucho	Region	492,507	612,489	650,940	709,026
+Cangallo	Province	33,833	34,902	32,812	41,199
+Huamanga	Province	163,197	221,390	294,960	318,112
+Huanca Sancos	Province	10,213	10,620	8,728	8,489
+Huanta	Province	64,503	93,360	95,904	110,068
+La Mar	Province	70,018	84,177	76,453	82,285
+Lucanas	Province	55,830	65,414	54,087	51,121
+Parinacochas	Province	22,769	30,007	29,119	31,103
+Páucar del Sara Sara	Province	10,140	11,012	10,059	11,408
+Sucre	Province	12,623	12,595	9,844	10,632
+Víctor Fajardo	Province	27,079	25,412	20,805	22,607
+Vilcas Huamán	Province	22,302	23,600	18,169	22,002
+Cajamarca	Region	1,259,808	1,387,809	1,427,527	1,490,732
+Cajabamba	Province	69,236	74,287	80,630	89,617
+Cajamarca	Province	230,049	316,152	369,594	398,064
+Celendín	Province	82,436	88,508	84,223	88,439
+Chota	Province	164,144	160,447	152,383	152,852
+Contumazá	Province	32,698	31,369	29,532	29,655
+Cutervo	Province	143,795	138,213	125,833	126,940
+Hualgayoc	Province	75,806	89,813	84,479	84,419
+Jaén	Province	170,261	183,634	197,834	211,413
+San Ignacio	Province	112,526	131,239	141,474	150,670
+San Marcos	Province	48,632	51,031	51,152	54,540
+San Miguel	Province	61,160	56,146	48,499	47,011
+San Pablo	Province	24,494	23,114	22,572	21,511
+Santa Cruz	Province	44,571	43,856	39,322	35,601
+Callao (Provincia Constitutional del Callao)	Province	639,729	876,877	1,046,953	1,093,495
+Callao	Province	639,729	876,877	1,046,953	1,093,495
+Cusco (Cuzco)	Region	1,028,763	1,171,403	1,315,220	1,379,167
+Acomayo	Province	28,906	27,357	24,678	23,081
+Anta	Province	56,424	54,828	61,353	62,019
+Calca	Province	56,007	65,407	70,302	70,620
+Canas	Province	39,476	38,293	35,486	33,748
+Canchis	Province	94,962	96,937	104,527	98,756
+Chumbivilcas	Province	69,669	75,585	71,265	79,122
+Cusco (Cuzco)	Province	270,324	367,791	478,494	495,077
+Espinar	Province	56,591	62,698	62,196	67,186
+La Convención	Province	157,240	166,833	167,701	204,044
+Paruro	Province	34,361	30,939	27,496	27,210
+Paucartambo	Province	40,696	45,877	47,240	47,692
+Quispicanchi	Province	75,853	82,173	97,407	99,354
+Urubamba	Province	48,254	56,685	67,075	71,258
+Huancavelica	Region	385,162	454,797	367,252	372,158
+Acobamba	Province	42,096	63,792	40,324	42,902
+Angaraes	Province	43,060	55,704	52,227	57,736
+Castrovirreyna	Province	19,738	19,500	14,891	14,077
+Churcampa	Province	44,488	44,903	34,549	34,756
+Huancavelica	Province	114,822	142,723	120,699	120,160
+Huaytará	Province	23,319	23,274	18,390	17,533
+Tayacaja	Province	97,639	104,901	86,172	84,994
+Huánuco	Region	654,489	762,223	759,962	807,393
+Ambo	Province	55,942	55,483	53,871	58,368
+Dos de Mayo	Province	39,806	47,008	35,149	34,200
+Huacaybamba	Province	17,719	20,408	17,188	15,393
+Huamalíes	Province	56,119	66,450	54,968	52,229
+Huánuco	Province	223,339	270,233	306,619	339,220
+Lauricocha	Province	31,988	35,323	19,956	19,443
+Leoncio Prado	Province	97,931	116,965	134,002	136,262
+Marañón	Province	20,106	26,620	28,692	30,393
+Pachitea	Province	46,162	60,321	52,641	57,267
+Puerto Inca	Province	32,405	31,032	35,833	42,690
+Yarowilca	Province	32,972	32,380	21,043	21,928
+Ica	Region	565,686	711,932	893,292	1,033,084
+Chincha	Province	150,264	194,315	240,884	271,203
+Ica	Province	244,741	321,332	407,286	475,737
+Nasca (Nazca)	Province	52,742	57,531	71,930	94,114
+Palpa	Province	13,427	12,875	14,081	16,023
+Pisco	Province	104,512	125,879	159,111	176,007
+Junín	Region	1,035,841	1,225,474	1,316,894	1,422,780
+Chanchamayo	Province	114,045	168,949	166,080	180,266
+Chupaca	Province	47,843	51,878	55,863	66,466
+Concepción	Province	64,785	60,121	58,833	62,357
+Huancayo	Province	389,548	466,346	561,746	626,279
+Jauja	Province	104,828	92,053	88,388	86,885
+Junín	Province	39,627	30,187	23,959	25,655
+Satipo	Province	94,250	193,872	225,618	245,761
+Tarma	Province	115,686	112,230	94,953	96,575
+Yauli	Province	65,229	49,838	41,454	32,536
+La Libertad	Region	1,270,261	1,617,050	1,888,972	2,056,445
+Ascope	Province	108,976	116,229	119,672	127,621
+Bolívar	Province	16,814	16,650	15,811	16,128
+Chepén	Province	59,167	75,980	82,571	96,337
+Gran Chimú	Province	29,187	30,399	28,162	30,354
+Julcán	Province	36,797	32,985	30,798	29,980
+Otuzco	Province	83,687	88,817	84,252	92,560
+Pacasmayo	Province	78,927	94,377	106,819	123,507
+Pataz	Province	63,426	78,383	82,036	84,290
+Sánchez Carrión	Province	108,300	136,221	158,372	173,503
+Santiago de Chuco	Province	52,991	58,320	55,307	58,137
+Trujillo	Province	597,315	811,979	1,028,481	1,090,007
+Virú	Province	34,674	76,710	96,691	134,021
+Lambayeque	Region	920,795	1,112,868	1,244,821	1,404,643
+Chiclayo	Province	617,881	757,452	825,246	893,697
+Ferreñafe	Province	92,377	96,142	103,009	115,880
+Lambayeque	Province	210,537	259,274	316,566	395,066
+Lima (incl. Provincia de Lima)	Region	6,386,308	8,445,211	10,135,009	11,157,400
+Barranca	Province	114,051	133,904	155,387	153,257
+Cajatambo	Province	9,475	8,358	7,069	6,398
+Cañete	Province	152,378	200,662	252,253	270,011
+Canta	Province	10,996	13,513	12,608	14,579
+Huaral	Province	126,025	164,660	197,963	213,503
+Huarochirí	Province	59,057	72,845	62,854	61,713
+Huaura	Province	163,174	197,384	243,597	261,942
+Lima	Region-level Province	5,706,127	7,605,742	9,162,322	10,142,492
+Oyón	Province	17,279	20,642	18,756	15,188
+Yauyos	Province	27,746	27,501	22,200	18,317
+Loreto	Region	687,282	891,732	981,897	1,032,771
+Alto Amazonas	Province	82,946	104,667	137,115	159,656
+Datem del Marañón	Province	30,958	49,571	56,698	87,433
+Loreto	Province	49,362	62,165	68,681	79,927
+Mariscal Ramón Castilla	Province	32,900	54,829	57,366	63,962
+Maynas	Province	385,415	483,458	527,866	500,477
+Putumayo (← Maynas)	Province	6,463	9,534	9,093	8,590
+Requena	Province	53,676	65,692	63,714	65,140
+Ucayali	Province	45,562	61,816	61,364	67,586
+Madre de Dios	Region	67,008	109,555	161,204	208,667
+Manu	Province	13,827	20,290	21,383	25,196
+Tahuamanu	Province	6,443	10,742	12,310	12,708
+Tambopata	Province	46,738	78,523	127,511	170,763
+Moquegua	Region	128,747	161,533	182,017	194,828
+General Sánchez Cerro	Province	19,327	24,904	16,012	15,776
+Ilo	Province	51,481	63,780	77,158	80,325
+Mariscal Nieto	Province	57,939	72,849	88,847	98,727
+Pasco	Region	226,295	280,449	272,136	253,549
+Daniel Alcides Carrión	Province	36,098	47,803	46,287	37,243
+Oxapampa	Province	60,298	81,929	96,169	96,626
+Pasco	Province	129,899	150,717	129,680	119,680
+Piura	Region	1,388,264	1,676,315	1,929,970	2,115,215
+Ayabaca	Province	131,310	138,403	127,735	128,042
+Huancabamba	Province	117,459	124,298	117,747	124,000
+Morropón	Province	163,052	159,693	167,461	180,392
+Paita	Province	76,070	108,535	136,708	153,654
+Piura	Province	502,339	665,991	828,343	934,249
+Sechura	Province	42,568	62,319	81,612	93,896
+Sullana	Province	234,562	287,680	324,116	350,949
+Talara	Province	120,904	129,396	146,248	150,033
+Puno	Region	1,079,849	1,268,441	1,226,936	1,232,993
+Azángaro	Province	138,998	136,829	115,672	120,982
+Carabaya	Province	46,777	73,946	77,055	76,742
+Chucuito	Province	93,001	126,259	94,023	99,814
+El Collao	Province	75,456	81,059	68,402	73,980
+Huancané	Province	80,317	69,522	60,379	61,981
+Lampa	Province	43,461	48,223	43,207	47,938
+Melgar	Province	72,005	74,735	69,984	72,911
+Moho	Province	33,320	27,819	20,510	21,402
+Puno	Province	201,205	229,236	227,665	219,267
+San Antonio de Putina	Province	28,475	50,490	37,163	33,333
+Sandia	Province	50,042	62,147	56,720	52,499
+San Román	Province	168,534	240,776	317,510	314,679
+Yunguyo	Province	48,258	47,400	38,646	37,465
+San Martín	Region	552,387	728,808	862,459	967,923
+Bellavista	Province	34,414	49,293	58,370	70,990
+El Dorado	Province	23,409	33,638	40,917	43,014
+Huallaga	Province	22,236	24,448	28,871	31,313
+Lamas	Province	67,253	79,075	86,748	97,450
+Mariscal Cáceres	Province	49,798	50,884	67,993	76,773
+Moyobamba	Province	69,943	115,389	129,909	138,325
+Picota	Province	26,955	37,721	42,712	44,448
+Rioja	Province	69,787	104,882	125,913	146,055
+San Martín	Province	118,069	161,132	205,362	231,719
+Tocache	Province	70,523	72,346	75,664	87,836
+Tacna	Region	218,353	288,781	349,056	389,226
+Candarave	Province	9,238	8,373	6,450	5,798
+Jorge Basadre	Province	12,175	9,872	11,808	10,262
+Tacna	Province	188,759	262,731	324,419	367,436
+Tarata	Province	8,181	7,805	6,379	5,730
+Tumbes	Region	155,521	200,306	234,698	256,691
+Contralmirante Villar	Province	13,361	16,914	21,906	24,340
+Tumbes	Province	115,406	142,338	161,369	175,134
+Zarumilla	Province	26,754	41,054	51,423	57,217
+Ucayali	Region	314,810	432,159	548,998	623,868
+Atalaya	Province	28,290	43,933	57,591	64,077
+Coronel Portillo	Province	248,449	333,890	418,055	470,211
+Padre Abad	Province	35,539	50,590	70,006	86,687
+Purús	Province	2,532	3,746	3,346	2,893
+Peru	Republic	22,639,443	27,219,264	31,237,385	34,157,732
+

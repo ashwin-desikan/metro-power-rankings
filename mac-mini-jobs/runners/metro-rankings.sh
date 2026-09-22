@@ -19,22 +19,26 @@
 #      public/data, commits only the report ([vercel skip]) and fails loudly.
 #      A no_change restores public/data and exits clean, no commit.
 #   7. otherwise, MODE decides what happens to a clean, passing run:
-#        shadow  (default): never touches public/data's real content, only
-#                the report is committed, [vercel skip].
-#        publish: commits the real files extract.py wrote, UNTAGGED on
-#                purpose (see below), plus the report, one commit.
+#        shadow: never touches public/data's real content, only the report
+#                is committed, [vercel skip]. Rehearsal mode.
+#        publish (default since the 2026-09-22 cutover): commits the real
+#                files extract.py wrote, UNTAGGED on purpose (see below),
+#                plus the report, one commit.
 #
-# CUTOVER RULE: publish mode REPLACES the update_top_companies.py step at the
-# tail of run-mktcap-refresh.sh, in the SAME change that flips
-# METRO_RANKINGS_MODE to publish. Never run both: two untagged Saturday
-# commits would spend the whole day's 2-build budget between them. Until that
-# cutover this runner stays in shadow mode, proving itself for two clean
-# Saturdays first (see jobs.toml's comment on this job).
+# CUTOVER (Ashwin, 2026-09-22): publish is now the DEFAULT mode. The same
+# change removed the update_top_companies.py step from the tail of
+# run-mktcap-refresh.sh, so this runner's untagged Saturday commit is the one
+# weekly production build (details/*.json and meta.json come from extract.py
+# here, marketCap included, from the same mktcap CSV). Never restore that step
+# while this runs in publish mode: two untagged Saturday commits would spend
+# the whole day's 2-build budget. One clean shadow Saturday (2026-09-20) was
+# accepted as the evidence; METRO_RANKINGS_MODE=shadow still works for a
+# rehearsal.
 . "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/_common.sh"
 
 DATE="$(date -u +%F)"
 REPORT="mac-mini-jobs/reports/metro-rankings-$DATE.md"
-MODE="${METRO_RANKINGS_MODE:-shadow}"
+MODE="${METRO_RANKINGS_MODE:-publish}"
 case "$MODE" in
   shadow|publish) ;;
   *) fail "unknown METRO_RANKINGS_MODE: $MODE (expected shadow or publish)" ;;

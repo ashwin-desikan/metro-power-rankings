@@ -210,33 +210,14 @@ else
   revalidate_business
 fi
 
-# 2026-08-29 (evening): the metro pages' Top Companies section now refreshes
-# from this run too. update_top_companies.py patches ONLY the marketCap block
-# of public/data/details/*.json (plus meta.json companiesAsOf) straight from
-# the CSV this run just exported — no Excel, mirrors extract.py's logic
-# byte-for-byte. The commit below is deliberately UNTAGGED (no [vercel skip]):
-# detail JSONs are read at build time (readFileSync), so this commit IS the
-# weekly production build that surfaces the new numbers. One untagged push per
-# Saturday, well inside the 2/day budget. Runs after the /business publish so
-# a failure here never blocks that; fail() still alerts via ntfy.
-cd "$MKTCAP" || fail "scripts/mktcap not found"
-log "self-test: update_top_companies"
-"$PY" update_top_companies.py --self-test 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "update_top_companies.py --self-test failed"
-
-log "update_top_companies --write (CSV -> details marketCap + meta companiesAsOf)"
-"$PY" update_top_companies.py --write 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "update_top_companies.py --write failed"
-
-cd "$REPO" || fail "repo not found: $REPO"
-TOPCO_PATHS="public/data/details public/data/meta.json"
-if git diff --quiet -- $TOPCO_PATHS; then
-  log "no Top Companies change this run; nothing to commit (no build triggered)"
-else
-  git config user.name  "metro-mini[bot]"
-  git config user.email "metro-mini-bot@users.noreply.github.com"
-  git add $TOPCO_PATHS
-  git commit -m "mktcap: weekly Top Companies refresh $DATE" --quiet || fail "git commit (Top Companies) failed"
-  git push origin HEAD:main --quiet || fail "git push (Top Companies) failed"
-  log "committed + pushed Top Companies refresh (untagged on purpose — this is the weekly build)"
-fi
+# 2026-09-22 CUTOVER: the update_top_companies.py step that used to sit here
+# (2026-08-29 to 2026-09-22; patched marketCap into public/data/details/*.json
+# and meta.json and made the untagged weekly build) is GONE. The Saturday
+# metro-rankings job (runners/metro-rankings.sh, 10:30, publish mode) now
+# regenerates details/*.json and meta.json from the Supabase mirror plus the
+# CSV this run just exported, and makes the one untagged weekly commit. Do not
+# bring the step back while metro-rankings publishes: two untagged Saturday
+# commits would spend the whole 2-build daily budget on the same data.
+# update_top_companies.py itself stays in scripts/mktcap for a manual patch.
 
 log "=== mktcap-refresh done ==="

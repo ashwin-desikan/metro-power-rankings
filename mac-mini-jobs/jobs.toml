@@ -686,18 +686,13 @@ timeout_minutes = 20
 # at 10:30, after mktcap-refresh's 09:00 (timeout 20) so the two Saturday jobs
 # never overlap.
 #
-# SHADOW MODE (the runner's default, METRO_RANKINGS_MODE unset) until two
-# consecutive clean Saturday runs are hand-verified: it runs the full ETL and
-# the publish guard against real Supabase data every week, but restores
-# public/data afterward and commits only its report, tagged [vercel skip], so
-# nothing it does can affect the live site yet.
-#
-# CUTOVER: flipping this job to publish mode (METRO_RANKINGS_MODE=publish)
-# MUST happen in the SAME change that removes the update_top_companies.py /
-# details+meta.json step from the tail of run-mktcap-refresh.sh. Never run
-# both live at once -- each is an untagged Saturday commit that triggers a
-# paid production build, and two of those in one day spends the whole 2-build
-# daily budget on data that came from the same underlying workbook sync.
+# PUBLISH MODE since the 2026-09-22 cutover (Ashwin's ruling after one clean
+# shadow Saturday, 2026-09-20): the runner's default is now publish, and the
+# update_top_companies.py step was removed from run-mktcap-refresh.sh in the
+# same change. This job's untagged Saturday commit is the one weekly
+# production build. The publish guard still runs in front of it and a hold
+# restores public/data and commits only the report. METRO_RANKINGS_MODE=shadow
+# in the environment turns a run back into a rehearsal.
 [[job]]
 id = "metro-rankings"
 label = "Metro rankings recalculation"
