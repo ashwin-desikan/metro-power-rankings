@@ -18097,3 +18097,25 @@ screen-number-ones and economy-prices rows corrected, each with Last verified
 **Unchanged and still open:** the 20 metro assignments from the Jev audit and the consistency check are questions for Ashwin, not column hygiene, and nothing has been written for any of them. The 160 auto-stub rows still have no HQ city.
 
 **Notion:** Decisions: the `state='DC'` row rewritten as resolved with what was applied and what was deliberately left. Backlog: the findings row retitled, mechanical part marked done, the 20 metro rulings and the 8 residual rows still open. Data sources: CompaniesMarketCap row updated so the DC warning reads as fixed rather than live, and `fix_geo_state.py` added to its owner scripts.
+
+## 2026-09-22 (night) - windows -> mini and next session: THE 20 METRO RULINGS ARE APPLIED, AND CONTRADICTIONS ARE NOW ZERO
+
+**21 more rows written, 0 failed, verified.** `scripts/mktcap/fix_geo_metro.py` is new, same shape as `fix_geo_state.py`: dry-run by default, guarded on the values it expects to find, idempotent, 20 self-tests. With this afternoon's 37, **58 `mktcap_geo` rows were corrected today**.
+
+**The headline number: `check_geo_consistency.py` contradictions 14 -> 0.** State outliers 12 -> 5. Non-canonical US state values 9 distinct / 44 rows -> 8 / 8. Both fixers now report 0 changes on a re-run.
+
+**Tier 1, corroborated by another row in the table saying the opposite (14).** Italgas Foggia->Turin; RGA Detroit->St. Louis; Ionis 'Carlsbad (NM)'->San Diego; QXO Albany->New York; Somnigroup Atlanta->Lexington; Unimicron, Nanya and Chroma ATE Kaohsiung->Taipei; TD Synnex Minneapolis->Tampa; HPE Dallas->Houston; Clark Associates Lancaster->'Lancaster (PA)'; WSFS Wilmington->Philadelphia; Jiangsu Eastern Shenghong and Abogen Shanghai->Suzhou.
+
+**Tier 2, geography rather than our own data (4).** Yangzijiang (Jiangyin), Yadea and ChinaC.com (Wuxi) Shanghai->Suzhou; ShopMy Boston->Worcester.
+
+**Tier 3, a judgment call (2).** Tower Semiconductor and NextVision Nazareth->Haifa, consolidating all three Migdal HaEmek rows where Camtek already sat. Nazareth is nearer (~10km vs ~30km) so moving Camtek the other way was defensible; the script carries `--skip-tier3` if that is ever revisited.
+
+**One city fix, no metro change.** COSCO Shipping Energy: city 'Hong Kong' -> 'Shanghai'. The METRO was right all along and the city carried the HK listing venue. Changing the metro there would have made the data worse, which is the reason the two columns get separate tables.
+
+**Deliberately left alone.** ICU Medical stays Los Angeles: San Clemente is Orange County, so the stored value was right and Jev's San Diego was wrong. Both ENN rows stay Tianjin: Langfang is ~60km from Beijing and ~70km from Tianjin, the two rows already agree, and changing curated data on a coin flip is what rule 5 exists to prevent.
+
+🔴 **CORRECTION to the 'evening' entry, and a trap worth carrying.** That entry said five metros held nothing but the disputed rows. FOUR did -- Foggia, 'Carlsbad (NM)', bare 'Lancaster' and Nazareth, all now empty. **Kaohsiung did not.** It holds 7 rows in the full table: the 3 Taoyuan ones plus 4 with no city (1301.TW, 1303.TW, 2002A.TW and one more). The Taoyuan ruling never depended on it -- it rests on three OTHER Taoyuan rows being filed under Taipei -- but the claim as written was wrong. **The general trap: `check_geo_consistency.py` sees 5,531 LABELLED rows while `mktcap_geo` has 14,291.** Any statement of the form "this metro holds only X" is about the labelled subset unless you read the full table. `emptied_metros()` in the new script does read the full table, which is how the error surfaced.
+
+**Small and still open.** Four metros are now empty and 'Wilmington' is down to a single row (Vantaca, Wilmington NC), so it probably wants renaming to 'Wilmington (NC)'; retiring or renaming metros is a separate decision nobody has made. 7 one-off state abbreviations remain, plus BEPC carrying `state='Ontario'` under `country='United States'`, which is the domicile problem. The 3 Japanese prefecture outliers (Kanagawa and Chiba under Tokyo) are legitimate and should stay.
+
+**Notion:** Backlog: the findings row retitled "DONE, 58 rows corrected" and closed, carrying every ruling, the measured before/after, what was deliberately left, and the Kaohsiung correction.
