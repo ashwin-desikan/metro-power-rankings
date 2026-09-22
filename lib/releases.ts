@@ -24,6 +24,7 @@ export const RELEASES: Release[] = [
       "The UK polling chart's 2024 election point was showing Labour 10 points low; it now matches the real result, and Labour leads the party list.",
       "The elections page gains a Just voted board: every result filed in the last six months, newest first, with who finished largest and the turnout.",
       "The UK polling average was missing 82 polls whose dates the reader never saw; they are back, and twelve pollsters now feed the average rather than eleven.",
+      "Eight election records carried a wrong date, five of them Greek contests from the 1870s to 1915 stamped with this year. All are corrected from the original sources.",
     ],
   },
   {
