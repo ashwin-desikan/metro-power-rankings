@@ -1,13 +1,41 @@
 {
-  "generatedAt": "2026-09-21",
+  "generatedAt": "2026-09-22",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-22",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "eb64f6dfe"
+    },
     {
       "date": "2026-09-21",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL, College football.",
-      "commit": "60db18216"
+      "text": "Data refreshed — Football, Basketball, Elections, Screen of the Metros, and 4 more.",
+      "commit": "4a4906670"
+    },
+    {
+      "date": "2026-09-21",
+      "category": "hub",
+      "hub": null,
+      "text": "Release notes: trim 21 Sep entry.",
+      "commit": "5d10d273f"
+    },
+    {
+      "date": "2026-09-21",
+      "category": "hub",
+      "hub": null,
+      "text": "Champions: LPL 2026 Galle Gallants; release notes for the Israel correction; drift watcher counts shipping commits only.",
+      "commit": "766c23726"
+    },
+    {
+      "date": "2026-09-21",
+      "category": "hub",
+      "hub": "Elections",
+      "text": "File the 2026 general election result.",
+      "commit": "19b8c9b0e"
     },
     {
       "date": "2026-09-20",
@@ -4173,34 +4201,6 @@
       "hub": null,
       "text": "Refresh football data: PSG named 2026 UCL champion.",
       "commit": "4866b0ff7"
-    },
-    {
-      "date": "2026-05-30",
-      "category": "hub",
-      "hub": null,
-      "text": "Trim 2026-05-30 release notes bullet under 220 chars.",
-      "commit": "7eea10da1"
-    },
-    {
-      "date": "2026-05-30",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Add Other Tournaments hub, name intercontinental editions, refresh NHL.",
-      "commit": "13f022b14"
-    },
-    {
-      "date": "2026-05-28",
-      "category": "fix",
-      "hub": null,
-      "text": "Fix NHL CF-loser playoff state and refresh football data.",
-      "commit": "dbfa92400"
-    },
-    {
-      "date": "2026-05-27",
-      "category": "hub",
-      "hub": "Sports",
-      "text": "Club tournament hubs, international comparable programs + quiz.",
-      "commit": "8badafbcd"
     }
   ]
 }
