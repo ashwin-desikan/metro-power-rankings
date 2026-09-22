@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T00:57:10.875546+00:00",
+  "generated_at": "2026-09-22T01:16:11.796975+00:00",
   "jobs": [
     {
       "id": "deploy-watch",
@@ -155,29 +155,11 @@
       "weekdays": [],
       "months": [],
       "days_of_month": [],
-      "next_run": "2026-09-22T01:00:00+00:00",
+      "next_run": "2026-09-22T01:20:00+00:00",
       "last_run": {
         "date": "2026-09-22",
         "status": "ok",
-        "slot": "2026-09-22T00:50:00+00:00"
-      }
-    },
-    {
-      "id": "daily-ops-sweep",
-      "label": "Daily ops sweep (report-only)",
-      "schedule_text": "Daily at 01:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "01:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-09-22T01:00:00+00:00",
-      "last_run": {
-        "date": "2026-09-21",
-        "status": "ok",
-        "slot": "2026-09-21T01:00:00+00:00"
+        "slot": "2026-09-22T01:00:00+00:00"
       }
     },
     {
@@ -530,6 +512,24 @@
         "date": "2026-09-21",
         "status": "ok",
         "slot": "2026-09-21T22:30:00+00:00"
+      }
+    },
+    {
+      "id": "daily-ops-sweep",
+      "label": "Daily ops sweep (report-only)",
+      "schedule_text": "Daily at 01:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "01:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-09-23T01:00:00+00:00",
+      "last_run": {
+        "date": "2026-09-22",
+        "status": "ok",
+        "slot": "2026-09-22T01:00:00+00:00"
       }
     },
     {
