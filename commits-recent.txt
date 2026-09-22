@@ -1,3 +1,4 @@
+2026-09-22T06:11:00+01:00  7db1ed8b4  screen: weekly US number-ones refresh [vercel skip]
 2026-09-22T06:10:39+01:00  4d20c7a29  football: refresh live bundles [vercel skip]
 2026-09-22T03:37:00+01:00  c65253c36  chore(activity): refresh site activity feed [vercel skip]
 2026-09-22T02:15:38+01:00  16dac8460  ops: daily sweep 2026-09-22 [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T02:10:11+01:00  4deec0fad  ops: daily sweep 2026-09-20 [vercel skip]
 2026-09-20T00:11:26+01:00  c2bc22cab  football: refresh live bundles [vercel skip]
 2026-09-19T21:49:51+01:00  e80f81e74  HANDOFF: 2026-09-19 late, the release is live at 778734ced [vercel skip]
-2026-09-19T21:30:22+01:00  778734ced  Release 2026-09-20: forecasts that lead with the answer
