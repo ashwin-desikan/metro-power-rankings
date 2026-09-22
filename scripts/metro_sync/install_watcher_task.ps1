@@ -53,7 +53,11 @@ $repeatTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(2) `
 
 $logonTrigger = New-ScheduledTaskTrigger -AtLogOn -User $currentUser
 
-$principal = New-ScheduledTaskPrincipal -UserId $currentUser -LogonType Interactive -RunLevel Limited
+# S4U (run whether the user is logged on or not, no stored password) runs the task in a
+# non-interactive session, so no console window flashes on the desktop every tick.
+# Interactive + -WindowStyle Hidden still flashed one (Ashwin, 2026-09-22). The watcher
+# needs only the OneDrive file, LOCALAPPDATA and HTTPS, all of which S4U has.
+$principal = New-ScheduledTaskPrincipal -UserId $currentUser -LogonType S4U -RunLevel Limited
 
 $settings = New-ScheduledTaskSettingsSet `
     -StartWhenAvailable `

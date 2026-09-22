@@ -1,3 +1,4 @@
+2026-09-22T21:56:27+01:00  c803564bb  mini: metro-rankings cutover to publish mode; update_top_companies step retired; citypop apply script [vercel skip]
 2026-09-22T21:25:06+01:00  ed41c3a24  docs: local and small models protocol (Jev, Ollama) as standing policy [vercel skip]
 2026-09-22T21:18:20+01:00  d65f05a58  reep: club identity crosswalk applied; Lookup AF:AI, football_team_reep bridge, identity resolver [vercel skip]
 2026-09-22T17:17:33+01:00  fcf4a36d9  apifootball: Jev club resolver pilot, measurement only [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T23:02:27+01:00  55538c97e  HANDOFF: verify_wins tolerates a settling game; tonight's backlog is closed [vercel skip]
 2026-09-20T23:01:18+01:00  4a3ea669d  mlb-sim: verify_wins tolerates a bounded in-progress skew instead of hard-failing [vercel skip]
 2026-09-20T22:58:08+01:00  c1fc9f921  HANDOFF: mini_sync flushes tagged commits, alerts on untagged [vercel skip]
-2026-09-20T22:57:19+01:00  755ee51d9  mini: mini_sync pushes stranded [vercel skip] commits, alerts once on untagged ones [vercel skip]
