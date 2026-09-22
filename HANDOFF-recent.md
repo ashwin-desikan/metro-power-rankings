@@ -9,10 +9,17 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 74, 2026-09-15 to 2026-09-22
-     If the reader counts fewer than 74 entries, its fetch window stopped
+     entries: 75, 2026-09-15 to 2026-09-22
+     If the reader counts fewer than 75 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
+## 2026-09-22 (close, cowork cloud) — pushed to main; the local-models protocol is now standing policy
+
+Pushed: `d65f05a58` (Reep identity crosswalk, 41 files) on top of the mini's data commits; the earlier `fcf4a36d9` Jev club pilot went with it. main is 0 ahead. `scripts/reep/.gitignore` keeps `_v1derived/` and the regenerable bridge JSON out of git. The post-commit check flagged `[vercel skip]` on a build-relevant path (`lib/teamIdentity.ts`); correct, nothing imports it yet, no deploy needed.
+
+Ashwin's ruling: use Jev and Ollama as much as possible in every session, without reminders. Written up as `docs/LOCAL-MODELS.md` (inventory, the ladder code -> retrieval -> Jev -> Ollama -> Claude, the Jev pilot protocol, the Ollama protocol, why, standing measurements) and mirrored where sessions actually load it: `~/.claude/CLAUDE.md` (user-level, every Claude Code and Cowork session on this machine; replaced the old Ollama-only paragraph), repo `CLAUDE.md` (new section before 'Where things live'), the Claude Project doc `claude/local-models-protocol.md`, and project memory. Facts checked on the machine: Jev is TypeSafe's API model (`jev-latest`, `api.typesafe.ai/v1/systemone`, $0.042/M input, output free; skill `typesafe-ai` 0.5.7 in the plugin cache), not a local model; Ollama has `llama3.1:8b` and `nomic-embed-text` installed, the embedding model was undocumented until now.
+
+**Notion:** Decisions +1 (the standing ladder). Data sources +2 (TypeSafe Jev; Ollama), both Health OK.
 ## 2026-09-22 (night, cowork cloud) — APPLIED: Reep ids on Lookup, football_team_reep bridge, identity resolver
 
 The dry run is over. Three things are now live:
@@ -26,6 +33,7 @@ Also tonight: Cur. Name treated as the workbook's lineage key in `build_rulings.
 Next: point the ESPN standings fallback and the UEFA coefficient feed at the resolver (they are the two live pipelines that break on names); extend cl-lookup-sync's 18-column contract to 22 if the workbook columns should mirror; competition crosswalk (185 rows from tables) as the second session.
 
 **Notion:** done in-session. Backlog: rulings-then-apply -> Done; competitions crosswalk -> Open P1 (unblocked); match corpus -> Blocked on the crosswalk; new rows: scrapers to the resolver (P1), git commit (P1), workbook defects for Ashwin (P1), cl-lookup-sync 22 columns (P2), club lineage on site (P3), remaining rulings + Celta B (P3), ESPN-id season ingest (P3). Data sources: Reep Register -> OK. Decisions: current tables are the key; elimination needs name evidence; Cur. Name is the lineage key.
+
 ## 2026-09-22 (later, cowork cloud) — lineage conflicts resolved by "which entity plays now"
 
 Type 5 rows (elimination evidence on two Reep entities for one workbook row) are now decided in `build_rulings.py`: cup-season token evidence is discarded; among the rest, if exactly one entity is still playing (judged per country, since Brazil/Scandinavia calendar seasons lag Reep's 2025/26 by a year) it is the club today, tier `ELIM-lineage`, and the others go into a new combined-file column `reep_v1_predecessors` for joins against historical tables. 12 rows resolved this way (Jelgava, Farul, Kryvbas KR, Lokomotiv Sofia 1929, RAAL La Louvière, Lokeren, Seraing, SW Bregenz, Os Belenenses, CSM Olimpia Satu Mare, SSU Poli Timişoara, Hapoel Jerusalem); Brasiliense / Gama / Águia de Marabá kept their own entity once the Copa do Brasil noise was dropped. Per-country staleness also cut stale rejections from 89 to 51. GAS ruling recorded (row 8804). Coverage 8,157 / 9,956 (81.9%), Level 1 1,380 / 1,444, RULINGS_NEEDED 212 rows, 1 at Level 1 (Al Hazm), 8 type 5 left (Admira Wacker, Extremadura and six unlevelled). Excel held RULINGS_NEEDED.csv, so the current file is `dryrun-2026-09-22-v1/RULINGS_NEEDED_v2.csv`; delete the old one after closing Excel.

@@ -310,6 +310,15 @@ explicit — apply it before touching any refresh script:
 > `lib/releases.ts` is build-relevant, so a separate release-notes commit
 > spends a second production build out of the 2/day budget.
 
+## Local and small models first (Ashwin's standing rule, 2026-09-22)
+
+Read `docs/LOCAL-MODELS.md` before any task that touches many rows, names or documents. The ladder is
+pure code -> retrieval -> **Jev** (TypeSafe typed judgments with a confidence gate, never a writer) ->
+**Ollama llama3.1:8b** (mechanical text, delegate without asking) -> Claude. Copy the shape of
+`scripts/mktcap/jev_metro_pilot.py` / `scripts/apifootball/jev_club_pilot.py` for any Jev work:
+`--self-test`, `--recall` first, `--eval` with held-out truth, `--audit`/`--queue` dry runs, no `--write`.
+Log rows, dollars and latency in HANDOFF; state in Notion. Ashwin should never have to remind a session.
+
 ## Where things live
 
 - `scripts/civic/` — officeholder refresh pipelines (mayors, governors,
