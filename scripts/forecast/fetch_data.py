@@ -137,7 +137,16 @@ def parse_tables(wt, keep_spans=False):
         for ln in lines:
             ln = ln.rstrip()
             if ln.startswith("!"):
-                for c in re.split(r"!!", ln[1:]):
+                # Same rule as the data row below: a separator inside a
+                # template or a link is not a separator. No article the
+                # fetchers read carries `!!` inside one today (measured
+                # 2026-09-22, 15 articles, zero hits), so this is closing the
+                # hole rather than fixing a live fault -- but the data-cell
+                # version of exactly this cost 82 dropped UK polls, and the
+                # header version would be worse: a split header shifts the
+                # COLUMN NAMES, so every row in the table reads under the
+                # wrong one.
+                for c in split_top_level(ln[1:], "!!"):
                     hcells.append(cell_parts(c))
             elif ln.startswith("|-"):
                 if hcells:
@@ -1130,6 +1139,13 @@ def _self_test():
           split_top_level("1||2||3", "||"), ["1", "2", "3"])
     check("split leaves a cell-free line whole",
           split_top_level("only one cell", "||"), ["only one cell"])
+    # Header cells take the same rule. A split header shifts the COLUMN NAMES,
+    # so every row in the table would then read under the wrong one.
+    check("header split respects a template's own !!",
+          split_top_level(" A !! {{tpl|x!!y}} !! B", "!!"),
+          [" A ", " {{tpl|x!!y}} ", " B"])
+    check("header split still cuts ordinary headers",
+          split_top_level("Date!!Pollster!!Lab", "!!"), ["Date", "Pollster", "Lab"])
 
     # France: the 2022 first-round row, whose date cell is the template above.
     # Shape differs from the UK and NZ rows -- shares are nested under long
@@ -1174,7 +1190,7 @@ def _self_test():
         for f in fails:
             print("  -", f)
         return 1
-    print("fetch_data self-test OK (%d cases)" % 29)
+    print("fetch_data self-test OK (%d cases)" % 31)
     return 0
 
 if __name__ == "__main__":

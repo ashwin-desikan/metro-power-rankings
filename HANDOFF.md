@@ -17554,3 +17554,29 @@ two row shapes; +1 new row for splitting wikitext cells only at top level.
 Silent failure register +1 (a template-borne separator shifts a row and shows
 up as a MISSING row, not a wrong one, so it reads as "no data" rather than
 "bad data").
+
+## 2026-09-22 (late) - mini -> windows and next session: THE HEADER SPLIT TAKES THE SAME RULE, AND IT IS A NO-OP TODAY
+
+Closes the P2 opened an hour earlier. `parse_tables` still split HEADER cells
+with `re.split(r"!!", ...)` while data cells had moved to `split_top_level`.
+Now both take the same rule.
+
+**This one fixes nothing live, and that is the honest framing.** Measured old
+code against new on identical source text, all 15 cached articles (UK, US x3,
+NZ, Brazil, France, the seven historical Israeli polling articles): **348
+tables, zero changed.** A live `fetch_uk`/`fetch_nz`/`fetch_br`/`fetch_fr` run
+leaves every data file byte-identical and raises no guard alert.
+
+Worth doing anyway because the failure mode is strictly worse than the data-cell
+version that cost 82 dropped UK polls: a split header shifts the COLUMN NAMES,
+so every row in that table reads under the wrong one, and the 120-seat and
+known-result guards would not see it -- the numbers would still be internally
+consistent, just attributed wrongly.
+
+`--self-test` 31 cases (was 29), the two new ones covering a template carrying
+`!!` and an ordinary header line. All four forecast self-tests green,
+`check_forecast_health` OK with 0 warnings.
+
+**Notion:** Backlog: the `!!` header-split row -> Done (no-op today, 348 tables
+unchanged, closing the hole not fixing a fault). Decisions: the top-level-split
+row extended to say it covers headers as well as data cells.
