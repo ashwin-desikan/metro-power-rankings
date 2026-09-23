@@ -322,6 +322,41 @@ Decisions row ADDED, "A detector must not depend on the thing it watches", WITH 
 is the field the reconciler has twice reported sessions leaving blank. Silent failure register gains "a scheduled
 cloud routine fires, does nothing, and leaves no log line", filed as STILL SILENT rather than Detected, because the
 detector cannot run until the tokens land; it moves to Detected on the first run that actually reads the page.
+
+### Y. Correction to section X: both reconciler jobs are PARKED, and the trigger token does not exist
+
+Two corrections to section X, both found by answering Ashwin's question "where do I get these?" rather than assuming
+he could.
+
+**1. The per-routine trigger URL and bearer token DO NOT EXIST.** The brief told me to POST "the reconciler routine's
+per-routine trigger endpoint with its bearer token", and I wrote that up as something Ashwin would go and fetch. He
+asked where from, which was the right question. Measured against the claude.ai remote-trigger API: the reconciler is
+real and healthy as a routine (`Notion reconciler (Citizen of Nowhere)`, cron `30 6 * * *`, enabled, next run
+2026-09-24T06:39), but **all 20 routines carry an empty `api_token_hint`**, so no per-routine token has ever been
+issued for any of them. The concept exists as a field; the credential does not. There is nothing to find, only
+something to create, and creating one is Ashwin's to decide rather than mine to go poking at.
+
+The practical consequence is good news: `notion-reconcile-ping` is the OPTIONAL half. `notion-reconcile-verify`, the
+job that actually fixes the defect, needs only `NOTION_API_TOKEN`, which is an ordinary Notion integration token.
+
+**2. I had armed a nightly alert storm, which is the more serious mistake.** The dispatcher has no `enabled = false`
+key: a `[[job]]` in jobs.toml FIRES. Both jobs fail closed without their secrets, which is correct in itself, but a
+job that fails closed on a DAILY schedule pages every single day. Having spent today fixing exactly that fault twice,
+in `run-f1-weekly.sh` and `run-ops-autofix.sh`, I then shipped a third instance of it and wrote a HANDOFF entry
+calling the fail-closed behaviour "the correct state for a detector" without once asking what it would do at 21:20
+tonight.
+
+Both blocks are now commented out in jobs.toml with a header saying how to arm them, and the live copy is updated;
+`--check-sync` is clean and the dispatcher parses 35 jobs with neither notion job scheduled. The runners, the two
+python scripts, their self-tests and the Notion rows are all unchanged and ready.
+
+**The lesson is narrower than "test more".** Fail-closed is about what a job does with the dangerous operation, not
+about how often it is allowed to shout. A detector with no credential is not failing, it is unarmed, and those need
+different behaviour on a schedule. The check I skipped was the cheapest possible one: what does this do tonight?
+
+**Notion:** the two Scheduled jobs rows added in section X are amended, Status Parked and Notes naming the empty
+`api_token_hint` finding and the arming steps; no new rows. The Decisions row and the Silent failure register entry
+stand as written, since the ruling and the fault are unchanged by this.
 ## 2026-09-22 (close, cowork cloud) — CUTOVER: metro-rankings publishes from this Saturday; update_top_companies step removed
 
 Ashwin's ruling tonight, after the Thailand and Peru census populations reached Supabase (watcher run 20:41Z, Counties 3 chunks): cut over on one clean shadow Saturday (2026-09-20) instead of two. Done as one change: `mac-mini-jobs/runners/metro-rankings.sh` default `MODE` is now `publish` (`METRO_RANKINGS_MODE=shadow` still gives a rehearsal); the `update_top_companies.py --write` and its untagged "weekly Top Companies refresh" commit are removed from the tail of `mac-mini-jobs/run-mktcap-refresh.sh` (the script stays in `scripts/mktcap` for a manual patch; `details/*.json` and `meta.json` now come from extract.py in the metro-rankings publish, marketCap included, from the same CSV); `jobs.toml`'s comment rewritten. Both scripts pass `bash -n`. The mini runs the repo files through symlinks, so this lands when its checkout next pulls (deploy-watch, every 10 minutes); confirm on the mini before Saturday 10:30 UTC that `runners/metro-rankings.sh` shows the publish default.

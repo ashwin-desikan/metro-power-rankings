@@ -933,25 +933,40 @@ timeout_minutes = 40           # web research + gates + build + push
 # the verify job's finding needs to land anyway. Add an hc_slug to each the day
 # a slot frees; the runners need no change, because hc-run.sh withholds its
 # success ping on a non-zero exit and both of these exit non-zero on failure.
-[[job]]
-id = "notion-reconcile-ping"
-label = "Notion reconciler: trigger a same-day pass"
-time = "21:20"                  # UTC. Late enough that a day's HANDOFF entries
-                                 # exist (the 06:30 cloud run is far too early to
-                                 # see them), and clear of every other slot,
-                                 # including Saturday's 07:30/09:00/10:30.
-command = "runners/notion-reconcile-ping.sh"
-catchup_hours = 6               # a same-day pass is worthless tomorrow
-timeout_minutes = 5             # one POST, one retry, 30s timeouts
-
-[[job]]
-id = "notion-reconcile-verify"
-label = "Notion reconciler: assert yesterday's log line"
-time = "08:10"                  # UTC, after the 06:30 cloud run would have
-                                 # finished. THIS is the job that fixes the
-                                 # defect; the 21:20 trigger without it would
-                                 # only move the silence to another hour.
-command = "runners/notion-reconcile-verify.sh"
-catchup_hours = 12              # still worth knowing later the same day
-timeout_minutes = 5             # one paginated page read
-
+# 🔴 BOTH PARKED 2026-09-23, COMMENTED OUT ON PURPOSE. Uncomment to arm.
+#
+# The dispatcher has no enabled=false key: a [[job]] in this file FIRES. Both of
+# these fail closed without their secrets, which is correct, but a job that
+# fails closed on a daily schedule pages every single day. That is the exact
+# alert-storm fault fixed twice today (run-f1-weekly.sh and run-ops-autofix.sh),
+# and shipping a third would be indefensible.
+#
+# TO ARM: put the secrets in config.env, uncomment the block(s) below, copy this
+# file to ~/metro-mini-jobs/jobs.toml, and confirm with dispatcher.py --check-sync.
+#   notion-reconcile-verify needs NOTION_API_TOKEN. This is the job that matters.
+#   notion-reconcile-ping   needs NOTION_RECONCILE_TRIGGER_URL and _TOKEN, which
+#                           DO NOT EXIST YET: measured 2026-09-23 against the
+#                           claude.ai remote-trigger API, all 20 routines carry an
+#                           empty api_token_hint, so no per-routine token has ever
+#                           been issued. Arm the verify job without waiting for it.
+# [[job]]
+# id = "notion-reconcile-ping"
+# label = "Notion reconciler: trigger a same-day pass"
+# time = "21:20"                  # UTC. Late enough that a day's HANDOFF entries
+#                                  # exist (the 06:30 cloud run is far too early to
+#                                  # see them), and clear of every other slot,
+#                                  # including Saturday's 07:30/09:00/10:30.
+# command = "runners/notion-reconcile-ping.sh"
+# catchup_hours = 6               # a same-day pass is worthless tomorrow
+# timeout_minutes = 5             # one POST, one retry, 30s timeouts
+#
+# [[job]]
+# id = "notion-reconcile-verify"
+# label = "Notion reconciler: assert yesterday's log line"
+# time = "08:10"                  # UTC, after the 06:30 cloud run would have
+#                                  # finished. THIS is the job that fixes the
+#                                  # defect; the 21:20 trigger without it would
+#                                  # only move the silence to another hour.
+# command = "runners/notion-reconcile-verify.sh"
+# catchup_hours = 12              # still worth knowing later the same day
+# timeout_minutes = 5             # one paginated page read
