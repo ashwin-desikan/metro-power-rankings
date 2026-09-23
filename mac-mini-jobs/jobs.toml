@@ -913,3 +913,45 @@ weekdays = [1]
 command = "run-owners-weekly.sh"
 catchup_hours = 48
 timeout_minutes = 40           # web research + gates + build + push
+# --- NOTION RECONCILER OBSERVABILITY. Two jobs, added 2026-09-23. -----------
+# The reconciler is a Claude CLOUD routine on a 06:30 UTC schedule. On
+# 2026-09-23 it fired, made no tool call, and left no log line; it completed
+# only because Ashwin asked four hours later, and its inputs were healthy the
+# whole time. Nothing detected it.
+#
+# THE RULING (Ashwin, 2026-09-23): the detector must not depend on the thing it
+# watches. A cloud routine cannot report that it died before it started, and a
+# scheduled trigger inside the same system cannot notice an absence. Hence both
+# of these run HERE, and the verify job reads Notion directly over the REST API
+# rather than through Claude.
+#
+# NO hc_slug ON EITHER, AND NOT BY PREFERENCE. healthchecks.io is at exactly 20
+# of 20 checks (measured against the management API on 2026-09-23, a 403 on
+# create means quota, not permission). No existing check is a sensible share:
+# they each cover a distinct job, and sharing would let one job's silence hide
+# behind another's green. So the alert channel for both is ntfy, which is where
+# the verify job's finding needs to land anyway. Add an hc_slug to each the day
+# a slot frees; the runners need no change, because hc-run.sh withholds its
+# success ping on a non-zero exit and both of these exit non-zero on failure.
+[[job]]
+id = "notion-reconcile-ping"
+label = "Notion reconciler: trigger a same-day pass"
+time = "21:20"                  # UTC. Late enough that a day's HANDOFF entries
+                                 # exist (the 06:30 cloud run is far too early to
+                                 # see them), and clear of every other slot,
+                                 # including Saturday's 07:30/09:00/10:30.
+command = "runners/notion-reconcile-ping.sh"
+catchup_hours = 6               # a same-day pass is worthless tomorrow
+timeout_minutes = 5             # one POST, one retry, 30s timeouts
+
+[[job]]
+id = "notion-reconcile-verify"
+label = "Notion reconciler: assert yesterday's log line"
+time = "08:10"                  # UTC, after the 06:30 cloud run would have
+                                 # finished. THIS is the job that fixes the
+                                 # defect; the 21:20 trigger without it would
+                                 # only move the silence to another hour.
+command = "runners/notion-reconcile-verify.sh"
+catchup_hours = 12              # still worth knowing later the same day
+timeout_minutes = 5             # one paginated page read
+

@@ -18564,3 +18564,60 @@ took ten seconds to look at.
 exits 0 (now caught)", written to the page itself and verified in place at the end of the register. No Backlog row
 needed for this correction: the row "Watch: first live promotion by the cricket-champions job" already carries the
 correct status and needed no edit.
+
+### X. Two jobs that make the Notion reconciler observable from outside itself
+
+From the Notion reconciler's own task brief. On 2026-09-23 the reconciler, a Claude cloud routine on a 06:30 UTC
+schedule, FIRED, made no tool call at all, and left no log line on the operating contract page; it completed only
+because Ashwin asked four hours later. Its inputs were healthy throughout, so this is not the 19 to 21 September fetch
+problem. It is a run that exits telling nobody, and nothing detected it.
+
+**The ruling, which shaped everything else** (Ashwin, now a Decisions row): the detector must not depend on the thing
+it watches. A run cannot report that it died before it started, and a scheduled trigger inside the same system cannot
+notice an absence, so there is no failure to observe, only a gap. Both jobs therefore run on the mini, and the
+detector reads Notion DIRECTLY over the REST API rather than through Claude. A detector built on Claude would share
+the failure mode of the thing it is watching.
+
+**`notion-reconcile-verify`, 08:10 UTC, is the actual fix.** It asserts the Reconciler log carries a line dated
+yesterday. Present passes; absent is an ntfy with the missing date and the page link. **`notion-reconcile-ping`,
+21:20 UTC**, is the smaller half: it triggers a same-day pass so a day's entries are reconciled while they are still
+today's. On its own it would only move the silence to a different hour, which is why they shipped together.
+
+**Everything fails closed, which is the whole point.** A missing token, an unreadable page, a retitled "Reconciler
+log" heading and an empty log section all exit non-zero. Only a 2xx exits 0 on the trigger. A detector that fails open
+is the fault it was built to catch.
+
+**Verified before anything could run live.** 30 self-test checks on the trigger (the 2xx classification, that a 3xx is
+NOT success, that 401 and 404 are never retried, that the URL is redacted because a trigger URL can carry a token in
+its query string) and 15 on the verifier (date parsing including the `2026-09-21 (08:30 UTC re-run)` parenthetical
+form, present, absent, a date mid-sentence NOT counting, and three malformed-page shapes). Then the parser was run
+against the page's REAL line shapes rather than only my fixtures: it parsed all 11 log dates, and a run this morning
+would correctly PASS for 09-22. Then both dry-runs end to end through the live symlinks. `dispatcher --self-test`
+passes 121 cases with 37 jobs and unique ids, and `--check-sync` is clean.
+
+🔴 **NEITHER JOB IS LIVE ON REAL DATA, AND WILL NOT BE UNTIL ASHWIN PLACES THREE SECRETS.**
+`NOTION_RECONCILE_TRIGGER_URL`, `NOTION_RECONCILE_TRIGGER_TOKEN` and `NOTION_API_TOKEN` are named in
+`config.env.example` and absent from config.env, so every run currently fails closed and alerts. That is deliberate
+and is the correct state for a detector, but it does mean the reconciler is still unwatched tonight.
+
+🔴 **HEALTHCHECKS IS AT THE CAP, SO NEITHER JOB HAS A TILE, AND THIS ONE NEEDS A DECISION.** Measured against the
+management API rather than assumed: **20 of 20 checks**, so a create would 403 as quota. No existing check is a
+sensible share, because each covers a distinct job and sharing would let one job's silence hide behind another's
+green, which is the same class of fault as the thing being fixed. So ntfy is the only channel for both. The runners
+need no change when a slot frees: `hc_slug` alone is enough, because `hc-run.sh` withholds its success ping on a
+non-zero exit and both jobs exit non-zero on failure.
+
+**A correction to the brief, from the same measurement.** It states "16 of 20 tiles currently have no notification
+channel". The live API says **6 of 20**: euro-comps, f1-weekly, feed-monitor, newsletter-daily, newsletter-watchdog
+and substack-daily. The instruction to confirm the channel was the right one and is what surfaced the discrepancy.
+
+**House rules honoured:** both runners are SYMLINKS into the repo and `jobs.toml` went live as a copy, per the
+standing ruling; `core.hooksPath` confirmed `.githooks` before committing; one commit for the work; no secret is in
+the repo, this entry or any report.
+
+**Notion:** Scheduled jobs rows ADDED for `notion-reconcile-verify` and `notion-reconcile-ping`, both Runs on "Mac
+mini (dispatcher)", Last verified 2026-09-23, each naming ntfy as the only channel and why there is no hc_slug.
+Decisions row ADDED, "A detector must not depend on the thing it watches", WITH a Decided date of 2026-09-23, which
+is the field the reconciler has twice reported sessions leaving blank. Silent failure register gains "a scheduled
+cloud routine fires, does nothing, and leaves no log line", filed as STILL SILENT rather than Detected, because the
+detector cannot run until the tokens land; it moves to Detected on the first run that actually reads the page.
