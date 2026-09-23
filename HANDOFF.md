@@ -18951,3 +18951,58 @@ animal and wants its own preview and a click through the map, chart and embed pa
 
 **Notion:** none (no queryable state changed; this is a draft recorded for the Backlog row named in section AE,
 which is filed on merge rather than now).
+
+### AG. The scheduler pushed the docs commit to main while HEAD was my branch, and the reset did not undo it
+
+🔴 **A CHECKED-OUT BRANCH IS NOT SAFE IN THIS CLONE.** The mini's scheduler runs against the same working tree a
+session edits. Two helpers in `mac-mini-jobs/runners/_common.sh` push with `git push "$GIT_REMOTE" "HEAD:$GIT_BRANCH"`
+and neither checks that HEAD is actually on `$GIT_BRANCH`:
+
+- `commit_paths()`, after its own commit, and
+- `_mini_sync_flush_unpushed()`, called by `mini_sync()` at the start of EVERY job, which pushes stranded local
+  commits when all of them carry `[vercel skip]`.
+
+The second one is the one that fired, and it fired within 30 seconds of my commit. Reflog, 2026-09-23 local time:
+
+| time | event |
+| --- | --- |
+| 15:16:37 | `checkout: moving from main to security-hardening` at `5d57444cf` |
+| 15:37:02 | `commit 3b6ca4e4d` the docs commit, which also carried a staged deletion of `app/api/v/route.ts` (4 files, not the 3 intended) |
+| ~15:37:2x | the `mlb-sim` job's `mini_sync` ran `_mini_sync_flush_unpushed`, saw one stranded `[vercel skip]` commit, and pushed `HEAD:main`. **`3b6ca4e4d` was now on origin/main.** |
+| 15:37:31 | I ran `reset --soft HEAD~1` |
+| 15:37:42 | I re-committed as `816b8dee0`, 3 files, deletion excluded |
+| 15:38:43 | the job committed `2135172ca` on top of `816b8dee0` |
+| 15:38:45 | `git pull --rebase --autostash origin main` rebased onto origin/main, which was `3b6ca4e4d`, and **dropped `816b8dee0` as an already-applied patch** |
+| 15:38:45 | `git push origin HEAD:main` published `3ff42d123` |
+
+**So the correction I reported did not happen.** I wrote that the accidental `app/api/v/route.ts` deletion inside a
+`[vercel skip]` commit was "fixed with `reset --soft`". It was not. The 4-file version was already on origin/main
+before the reset ran, the reset produced a local commit that was cosmetically clean and publicly redundant, and the
+rebase then discarded it because its content was already upstream. The lesson is narrow and worth keeping: in this
+clone, `reset --soft` is not an undo, because a commit can be public seconds after it exists.
+
+**What actually reached main, and what did not.**
+
+- On main: HANDOFF sections AE and AF, the unapplied migration `supabase/migrations/20260923143213_rls_hardening.sql`,
+  and the deletion of `app/api/v/route.ts`.
+- NOT on main: every line of the steps 1 to 6 security code. It sits only on `security-hardening`.
+- No production build ran. Both commits carry `[vercel skip]`, and Vercel canceled both deployments
+  (`dpl_9Jeior6nNhxrzBNgwesreezQrteZ`, `dpl_3NYHLPtpXunNJbzepuNZThEN8tLz`).
+- No database change. Nothing in `mac-mini-jobs/`, `.github/` or `package.json` applies a migration; the only grep
+  hit for "db reset" is an unrelated comment in `run-ops-autofix.sh`. The file on main is inert text until someone
+  runs it by hand, which is what the brief asked for.
+- The deletion on main is safe but is now ahead of production: production still serves `/api/v` until the next
+  build-triggering push, and nothing posts to it (`VisitBeacon` calls Supabase browser-direct), so the gap is
+  cosmetic.
+
+**Why the app code survived.** `_mini_sync_flush_unpushed()` refuses to push when ANY stranded commit is untagged,
+and the steps 1 to 6 commit ends `[preview]`, not `[vercel skip]`. A guard written for the build budget is the only
+reason unreviewed security code did not land on main. That is luck standing in for a rule.
+
+**The rule this earns.** Branch work in the shared clone belongs in a `git worktree`, not in a checkout. This entry
+was written from one, so the clone stayed on `main` throughout. The narrow fix, NOT applied because it changes
+scheduler behaviour and is Ashwin's call: gate both push sites on
+`[ "$(git symbolic-ref --short HEAD)" = "$GIT_BRANCH" ]` and `fail` loudly otherwise, so a stray checkout stops the
+job instead of publishing whatever is on HEAD.
+
+**Notion:** none (no queryable state changed).
