@@ -18361,3 +18361,54 @@ that is Ashwin's call. Flagged with the gc.auto=0 change of the same evening in 
 deploy-watch moved to every_minutes scheduling", for "a runner that fails midway leaves the shared tree dirty and
 stands ops-autofix down", and for "scripts matching flags by substring in sys.argv silently ignore typos like --dry
 for --dry-run".
+
+### T. refresh-schedule.json stopped rewriting itself every ten minutes
+
+Ashwin picked the second option from section S: "drop the live timestamps and compute them at render time".
+
+**What was actually churning, which is narrower than "timestamps".** The file carried `next_run` per job,
+`generated_at` at the top and `last_run` down to the `slot`, and the `jobs` array was SORTED BY `next_run`. So every
+dispatcher tick moved at least one job past its slot, the sort reordered the whole array, and the file was rewritten
+and committed even though no schedule had changed. 349 of the last 502 commits on main, about 30 a day until
+deploy-watch moved to `every_minutes` scheduling on 09-20 and then 135 and 137 a day.
+
+**Nothing consumed any of it, and that was worth checking rather than assuming.** There are five other references to
+this file, not one:
+- `app/refresh-schedule/ScheduleCalendar.tsx` already derives every occurrence ITSELF from
+  `times`/`weekdays`/`months`/`days_of_month`. It never read `next_run`. The "compute at render time" half of this
+  was therefore already done; the export was carrying a second, redundant answer that nobody asked for.
+- `lib/liveData.ts` and `app/activity/page.tsx` only reference the path, never the fields.
+- `scripts/check-live-data.mjs` lists the file, but it is a REGISTRY of which lib reads which live path and who
+  refreshes it, plus a commit-tagging rule. It is not a staleness check, so a quieter file does not trip it. That was
+  the one real risk in this change and it is clear.
+- `lib/refreshSchedule.ts` declared the types, now updated.
+
+So `next_run` and `last_run.slot` are gone, the array sorts by `id`, and `generated_at` becomes `generated_on`, a
+DATE, which is all the page's freshness line ever needed. What remains is either a schedule definition or a real
+event, so a commit now means something actually happened. The commit was already change-gated, so nothing on that
+path needed touching.
+
+**Proved, not assumed:** the exporter was run three times in a row. The first wrote the new shape and committed it
+once; the next two produced no commit at all and left the tree clean.
+
+🔴 **THE SORT SELF-TEST PINNED NOTHING AND PASSED ANYWAY.** After changing the sort from `next_run` to `id` the test
+"build_schedule sorts by soonest next_run" still passed, which is the tell. Its two jobs were timed so that both rules
+give the same order, so it had never discriminated between them in either direction. Rewritten with times where the
+two disagree (now is 12:00, b runs at 18:00 today, a not until 05:50 tomorrow: by id [a, b], by next_run [b, a]),
+plus four checks that the payload carries no `next_run`, no `slot`, no `generated_at`, and a plain date. This is the
+same class of fault as the WNBA self-test that asserted the broken shape.
+
+`next_occurrence` is kept although nothing calls it now: it is the forward counterpart to
+`dispatcher.previous_occurrence` and the reference implementation of the slot arithmetic the calendar does in
+TypeScript, and its four self-tests are the clearest statement of what the weekday, day-of-month and months filters
+mean. Deleting it would throw away tested semantics to save nothing.
+
+**The page change needs a build and is tagged `[vercel skip]`,** so it is inert until the next one. Nothing breaks
+meanwhile: the deployed page guards on `schedule?.generated_at`, so against the new payload that single line does not
+render and the calendar is unaffected.
+
+Verified: typecheck clean, 339 tests in 28 files, `check:live-data` OK, `check:public-data` OK, exporter self-tests
+all pass.
+
+**Notion:** Backlog row "refresh-schedule.json commits every dispatcher tick" closed; a new row filed for "the
+/refresh-schedule freshness line is inert until the next build, since the page still reads generated_at".
