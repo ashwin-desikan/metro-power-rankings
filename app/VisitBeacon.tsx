@@ -1,3 +1,23 @@
+// 🔴 THE TWO SUPABASE ADVISOR WARNINGS ABOUT anon EXECUTE ON track_visit ARE
+// ACCEPTED, NOT OUTSTANDING. Moved here 2026-09-23 from app/api/v/route.ts,
+// which was deleted as dead code; this file is the LIVE path and the place
+// anyone chasing those warnings will actually look.
+//
+// This beacon calls /rest/v1/rpc/track_visit BROWSER-DIRECT with the public
+// anon key. Migration lock_down_track_visit_rpc (2026-08-02) revoked anon
+// EXECUTE and silently killed it: the .catch(){} below swallows every
+// rejection, so page_visits recorded NOTHING for four days before anyone
+// noticed. restore_anon_execute_on_track_visit (2026-08-06) put the grant
+// back, deliberately, and it is still there.
+//
+// Do NOT "fix" those warnings without first moving this beacon onto a
+// server-side relay. The function is safe to expose as it stands: SECURITY
+// DEFINER with search_path pinned, rejects null and inputs over 512
+// characters, and only increments a counter keyed on (path, day). The relay
+// that was written for this and never wired up is in git history at
+// app/api/v/route.ts; if it is ever adopted, SUPABASE_SERVICE_ROLE_KEY must be
+// server-side only, never NEXT_PUBLIC_*.
+
 // First-party page-view beacon. Emitted as a raw inline script in the
 // server-rendered HTML so it runs on page load WITHOUT waiting for React
 // hydration or a useEffect (which did not fire reliably in production), and

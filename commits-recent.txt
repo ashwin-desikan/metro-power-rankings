@@ -1,3 +1,4 @@
+2026-09-23T15:43:34+01:00  1a8f66819  security hardening: slug guard, admin auth, headers, rate limits [preview]
 2026-09-23T15:37:02+01:00  3b6ca4e4d  security hardening: the audit, the RLS draft and the CSP plan [vercel skip]
 2026-09-23T12:43:19+01:00  6c4e45007  HANDOFF: 2026-09-23 section AD, Row created closes the undated-Decisions defect [vercel skip]
 2026-09-23T12:32:21+01:00  f4bb1dcac  HANDOFF: 2026-09-23 section AC, the Decided-date clause is ratified [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-21T03:32:35+01:00  1da29ef1a  chore(activity): refresh site activity feed [vercel skip]
 2026-09-21T02:11:15+01:00  f2697d478  ops: daily sweep 2026-09-21 [vercel skip]
 2026-09-21T00:06:07+01:00  91b57cd35  football: refresh live bundles [vercel skip]
-2026-09-21T00:02:57+01:00  61eaec224  HANDOFF: metro-rankings runner converted to a symlink; runners/ is now 13 of 13 [vercel skip]

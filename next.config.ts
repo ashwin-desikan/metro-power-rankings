@@ -33,6 +33,10 @@ const movedSlugRedirects = [
 ];
 
 const nextConfig: NextConfig = {
+  // Stop advertising the framework and its version. Not a vulnerability on its
+  // own; it removes one free hint for anyone matching a known Next advisory
+  // against the running version.
+  poweredByHeader: false,
   experimental: {
     // Shorter client-side Router Cache so revisiting a live page (e.g.
     // /sports/standings) shows current data without a hard refresh instead of a
@@ -67,6 +71,54 @@ const nextConfig: NextConfig = {
   // the way lib/nflElo.ts already does.
   outputFileTracingExcludes: {
     "*": ["public/data/boundaries-simplified.json"],
+  },
+  // Security headers, added 2026-09-23. Deliberately the cheap, high-confidence
+  // set: each one is either inert for legitimate traffic or scoped to pages
+  // with no embeds.
+  //
+  // 🔴 NO SITE-WIDE Content-Security-Policy HERE, AND THAT IS A DECISION, NOT
+  // AN OMISSION. This site renders Leaflet maps, Recharts canvases and
+  // third-party embeds, and a default-src policy tight enough to be worth
+  // having would break them in ways that only show up on the page rather than
+  // in the build. A draft policy and the order to roll it out in are written up
+  // in the HANDOFF entry for this change; it wants its own preview deploy and a
+  // click through the map, chart and embed pages, in Report-Only first.
+  async headers() {
+    return [
+      {
+        // Everything. These three are safe everywhere: nosniff only stops the
+        // browser second-guessing a declared content type, the referrer policy
+        // is already the modern browser default, and the site asks for none of
+        // the three permissions being denied.
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+        ],
+      },
+      {
+        // The two gated areas, which have no legitimate reason to be framed.
+        // X-Frame-Options for older browsers and frame-ancestors for current
+        // ones: the CSP directive supersedes the header, and both are sent
+        // because the pair costs nothing and the overlap is well defined.
+        // frame-ancestors is the ONE CSP directive that is safe to ship now,
+        // because it governs who may embed the page rather than what the page
+        // may load, so it cannot break a map or a chart.
+        source: "/admin/:path*",
+        headers: [
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "Content-Security-Policy", value: "frame-ancestors 'none'" },
+        ],
+      },
+      {
+        source: "/activity/:path*",
+        headers: [
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "Content-Security-Policy", value: "frame-ancestors 'none'" },
+        ],
+      },
+    ];
   },
   async redirects() {
     return [

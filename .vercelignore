@@ -4,3 +4,26 @@
 # that only run the ignore step).
 Overture-Per-Country-Raw/
 Overture-Match-Suggestions/
+
+# Secrets and local debris, excluded 2026-09-23. None of these is read by
+# `next build`, and each is a thing that should never reach a deployment even
+# by accident.
+#
+# .env*            every env file. .env.example is tracked and harmless, but
+#                  the pattern is the point: a .env.local dropped in the repo
+#                  root must not be uploaded to the build container.
+# betatestkeys.txt not tracked today. Listed so that if it ever is added by
+#                  hand it is excluded from the moment it appears, rather than
+#                  after someone notices.
+# *.bak*           THREE OF THESE ARE TRACKED AND WERE BEING DEPLOYED:
+#                  public/data/leaders/_defunct.json.bak-shangzhou-20260721,
+#                  the matching _modern-territory one, and
+#                  public/data/uk-commons-history.json.bak-ukcommons-20260721,
+#                  about 400 KB of editing debris served as static files.
+#                  Checked before excluding: nothing READS a .bak path at
+#                  build or run time. Several one-off scripts WRITE *.bak
+#                  backups beside a file they edit, but those run locally and
+#                  never inside the build container.
+.env*
+betatestkeys.txt
+*.bak*

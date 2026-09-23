@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { updateEntry, type QueueEntry, type QueueStatus } from "@/lib/missionControl";
+import { requireAdmin } from "@/lib/adminAuth";
 
 export const runtime = "nodejs";
 
@@ -14,6 +15,10 @@ const VALID_CHANNELS: QueueEntry["channel"][] = [
 ];
 
 export async function POST(req: NextRequest) {
+  // Defence in depth: proxy.ts gates this path too, and this is the
+  // second lock. See requireAdmin in lib/adminAuth.ts.
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const form = await req.formData();
   const id = String(form.get("id") ?? "");
   if (!id) return new NextResponse("missing id", { status: 400 });

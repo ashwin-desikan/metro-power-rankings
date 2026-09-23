@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { SB_URL, STATUSES } from "@/lib/feedback";
+import { requireAdmin } from "@/lib/adminAuth";
 
 // Status/note updates for a feedback row. Reachable only behind the /admin
 // gate in proxy.ts (path prefix /api/admin), which returns a clean 401 for an
@@ -10,6 +11,10 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
+  // Defence in depth: proxy.ts gates this path too, and this is the
+  // second lock. See requireAdmin in lib/adminAuth.ts.
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!key) return NextResponse.json({ ok: false, error: "not configured" }, { status: 503 });
 

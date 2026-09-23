@@ -28,6 +28,8 @@ import {
   Atom, LIMITS, Msg, Scenario, factCard, lint, resolveScenario, sanitizeMessages, systemPrompt,
 } from "@/lib/banter/banterCore";
 
+import { checkRateLimit } from "@/lib/rateLimit";
+import { clientIp } from "@/lib/clientIp";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
@@ -35,33 +37,39 @@ const SCENARIOS = scenariosJson as unknown as Scenario[];
 const ATOMS = factsJson as unknown as Atom[];
 
 // ---------------------------------------------------------------- rate limiting
-const BUCKETS = new Map<string, { tokens: number; last: number }>();
-const RATE_CAPACITY = 8;
-const RATE_REFILL_MS = 5000;
-let dayKey = "";
-let dayCount = 0;
+// 🔴 BOTH LIMITS USED TO BE PER-INSTANCE, WHICH ON SERVERLESS MEANS NEITHER
+// EXISTED. The token bucket lived in a module-level Map and the daily breaker
+// in two module-level variables, so every cold start began with a full budget
+// and every concurrent instance kept its own. The daily breaker is the SPEND
+// cap on paid inference, so "roughly 2000 a day" was really "2000 per instance
+// per lifetime". Both now live in Redis via checkRateLimit, which is the same
+// limiter the admin login route uses and which falls back to an in-memory
+// window only when Redis is unreachable.
+//
+// The per-caller key is the TRUSTED ip (see lib/clientIp) plus the tester key
+// index, so one tester cannot spend another's budget and a caller cannot mint
+// a fresh bucket by forging x-forwarded-for, which the old callerId let them
+// do by taking the first hop of a client-appendable header.
+//
+// Window mapping, kept close to the behaviour it replaces: the old bucket held
+// 8 tokens refilling one per 5s, so 8 requests per 40 seconds is the same
+// sustained rate and the same burst.
+const RATE_LIMIT = 8;
+const RATE_WINDOW_MS = 40_000;
 
-/** Returns 0 when the call is allowed, otherwise the whole seconds the caller
- *  should wait. The client uses that to disable its composer and count down,
- *  instead of rendering "Easy on — one at a time." as if it were a reply. */
-function allow(id: string): number {
-  const now = Date.now();
-  const b = BUCKETS.get(id) ?? { tokens: RATE_CAPACITY, last: now };
-  b.tokens = Math.min(RATE_CAPACITY, b.tokens + (now - b.last) / RATE_REFILL_MS);
-  b.last = now;
-  if (b.tokens < 1) {
-    BUCKETS.set(id, b);
-    return Math.max(1, Math.ceil(((1 - b.tokens) * RATE_REFILL_MS) / 1000));
-  }
-  b.tokens -= 1; BUCKETS.set(id, b);
-  return 0;
+/** 0 when allowed, otherwise whole seconds to wait. The client uses the number
+ *  to disable its composer and count down. */
+async function allow(id: string): Promise<number> {
+  const rl = await checkRateLimit(`banter:${id}`, RATE_LIMIT, RATE_WINDOW_MS);
+  return rl.ok ? 0 : Math.max(1, rl.retryAfter);
 }
 
-function underDailyBreaker(): boolean {
-  const today = new Date().toISOString().slice(0, 10);
-  if (today !== dayKey) { dayKey = today; dayCount = 0; }
-  dayCount += 1;
-  return dayCount <= parseInt(process.env.BANTER_DAILY_REQUESTS ?? "2000", 10);
+/** The global daily spend cap, now shared across instances. */
+async function underDailyBreaker(): Promise<boolean> {
+  const cap = parseInt(process.env.BANTER_DAILY_REQUESTS ?? "2000", 10);
+  const day = new Date().toISOString().slice(0, 10);
+  const rl = await checkRateLimit(`banter-daily:${day}`, cap, 24 * 60 * 60 * 1000);
+  return rl.ok;
 }
 
 function sha(s: string): string {
@@ -69,8 +77,9 @@ function sha(s: string): string {
 }
 
 function callerId(req: Request): string {
-  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-  return sha((process.env.BANTER_LOG_SALT ?? "banter") + ip).slice(0, 12);
+  // Hashed for the logs, and keyed on the TRUSTED hop rather than the first
+  // entry of x-forwarded-for, which the caller controls.
+  return sha((process.env.BANTER_LOG_SALT ?? "banter") + clientIp(req)).slice(0, 12);
 }
 
 function json(status: number, body: unknown): Response {
@@ -91,7 +100,7 @@ async function complete(messages: Msg[], temperature: number): Promise<string> {
     body: JSON.stringify({
       model: process.env.BANTER_MODEL ?? "meta-llama/llama-3.1-8b-instruct",
       messages,
-      temperature: Math.max(0, Math.min(1.2, temperature)),
+      temperature: Math.max(0, Math.min(1, temperature)),
       max_tokens: LIMITS.MAX_TOKENS,
     }),
     signal: AbortSignal.timeout(60_000),
@@ -117,7 +126,7 @@ async function completeStreaming(
     body: JSON.stringify({
       model: process.env.BANTER_MODEL ?? "meta-llama/llama-3.1-8b-instruct",
       messages,
-      temperature: Math.max(0, Math.min(1.2, temperature)),
+      temperature: Math.max(0, Math.min(1, temperature)),
       max_tokens: LIMITS.MAX_TOKENS,
       stream: true,
     }),
@@ -219,7 +228,7 @@ export async function GET(): Promise<Response> {
 
 export async function POST(req: Request): Promise<Response> {
   const who = callerId(req);
-  const wait = allow(who);
+  const wait = await allow(who);
   if (wait) {
     return new Response(
       JSON.stringify({ error: "Easy on, one at a time.", retryAfter: wait }),
@@ -260,7 +269,22 @@ export async function POST(req: Request): Promise<Response> {
   // no inference and no daily-breaker credit.
   if (body.probe) return json(200, { ok: true });
 
-  if (!underDailyBreaker()) return json(503, { error: "The bar's closed for today, back tomorrow." });
+  // Second limit, now that the tester is known. The gate above runs BEFORE the
+  // passphrase is checked and must stay that way, because it is what stops the
+  // probe path being a free brute-force oracle; it can only key on the ip. This
+  // one carries the tester key index as well, so a shared office address cannot
+  // let one tester spend another's allowance, and a single leaked passphrase
+  // cannot be fanned out across many addresses without each one still paying
+  // the per-key limit.
+  const perTester = await allow(`k${kidx}:${who}`);
+  if (perTester) {
+    return new Response(
+      JSON.stringify({ error: "Easy on, one at a time.", retryAfter: perTester }),
+      { status: 429, headers: { "content-type": "application/json", "retry-after": String(perTester) } },
+    );
+  }
+
+  if (!(await underDailyBreaker())) return json(503, { error: "The bar's closed for today, back tomorrow." });
 
   // "today" was retired from the scene list on 2026-08-20; a stale client
   // posting it gets the same answer as any other unknown scene.
@@ -273,7 +297,11 @@ export async function POST(req: Request): Promise<Response> {
   const lastUser = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
 
   const sys: Msg = { role: "system", content: systemPrompt(s, factCard(s, ATOMS, lastUser)) };
-  const temperature = typeof body.temperature === "number" ? body.temperature : 0.8;
+  // Clamped at the boundary, and again in the two callers below. The client
+  // sends this value, so an unclamped number is a request to make the model as
+  // incoherent (and as expensive in retries) as the caller likes.
+  const rawTemp = typeof body.temperature === "number" ? body.temperature : 0.8;
+  const temperature = Number.isFinite(rawTemp) ? Math.max(0, Math.min(1, rawTemp)) : 0.8;
 
   const t0 = Date.now();
 

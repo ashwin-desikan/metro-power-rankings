@@ -95,3 +95,28 @@ export async function verifySession(
   const expected = await hmacHex(secret, issued);
   return timingSafeEqual(sig, expected);
 }
+
+// --- defence in depth for the /api/admin handlers ----------------------------
+// proxy.ts already gates /admin and /api/admin, and it stays exactly as it is.
+// This is the second lock: every handler checks for itself, so a matcher edit,
+// a route moved outside the matched prefix, or any future path that proxy.ts
+// does not see cannot silently expose a mutation. Measured 2026-09-23: NONE of
+// the six handlers under app/api/admin verified anything, so the middleware was
+// the only thing standing between an unauthenticated POST and a write.
+//
+// Typed structurally rather than against NextRequest on purpose: this file is
+// imported by proxy.ts, which runs on the edge, and it has no framework imports
+// today. A plain shape also means the unit test can call it with an object
+// instead of standing up a Next request.
+export type CookieBearing = {
+  cookies: { get(name: string): { value: string } | undefined };
+};
+
+/** Null when the caller holds a valid admin session, otherwise a 401 to return.
+ *  Fails CLOSED: a missing ADMIN_SESSION_SECRET denies rather than allows. */
+export async function requireAdmin(req: CookieBearing): Promise<Response | null> {
+  const secret = process.env.ADMIN_SESSION_SECRET;
+  const token = req.cookies.get(ADMIN_COOKIE)?.value;
+  const ok = secret ? await verifySession(token, secret) : false;
+  return ok ? null : new Response("unauthorized", { status: 401 });
+}

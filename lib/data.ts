@@ -193,6 +193,21 @@ export function metroDensity(
 }
 
 export function getMetroDetail(slug: string): MetroDetail | null {
+  // 🔴 PATH TRAVERSAL GUARD. The slug is interpolated straight into a file
+  // path below, so anything containing ".." escapes public/data/details.
+  // Measured before the fix: a slug of "../../../package" resolved to the
+  // repo's own package.json and read it, and /api/mcp's get_metro returns
+  // whatever this function returns, so that content reached an unauthenticated
+  // caller. "a/b" reaches a subdirectory by the same route.
+  //
+  // The guard lives HERE rather than at each call site because there are six
+  // of them (app/api/mcp, app/compare, app/matchups/[slug],
+  // app/rankings/[slug] and its opengraph-image, and lib/compare) and a new
+  // seventh would not inherit a check written in the other six. An allowlist
+  // pattern, not a ".." blocklist: slugs are generated from metro names and
+  // are always lower-case alphanumeric with hyphens, so anything else is
+  // already not a metro and there is nothing to lose by refusing it.
+  if (!/^[a-z0-9-]+$/.test(slug)) return null;
   try {
     const raw = readFileSync(join(process.cwd(), "public", "data", "details", `${slug}.json`), "utf-8");
     return JSON.parse(raw);
