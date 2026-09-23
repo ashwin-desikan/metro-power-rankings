@@ -1,3 +1,4 @@
+2026-09-23T12:26:55+01:00  db56b6bcd  HANDOFF: 2026-09-23 section AA, the reconciler replied with a plan and the turn ended [vercel skip]
 2026-09-23T12:11:57+01:00  532f610c1  notion-reconcile-verify: armed, deployed and proven against live data [vercel skip]
 2026-09-23T12:08:30+01:00  de21b995b  football: refresh live bundles [vercel skip]
 2026-09-23T12:05:57+01:00  2a8d10508  notion reconciler jobs: park both until their secrets exist [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T23:55:54+01:00  823b8e09c  HANDOFF: shell lock helper tightened to match dispatcher.py; one rule, not two [vercel skip]
 2026-09-20T23:55:10+01:00  a559b3ead  dispatcher-lock.sh: match dispatcher.py - honour DISPATCHER_LOCK_HELD only from the live lock owner [vercel skip]
 2026-09-20T23:52:10+01:00  1f1f65550  HANDOFF: acquire_lock re-entrant for the tick's own children; autofix can mark-ok now [vercel skip]
-2026-09-20T23:51:22+01:00  e3d83ac7e  dispatcher: acquire_lock honours DISPATCHER_LOCK_HELD, so autofix can mark-ok its own fix [vercel skip]
