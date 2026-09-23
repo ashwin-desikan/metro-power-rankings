@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-23",
+    headline: "A Fan Attention Index for 660 teams",
+    items: [
+      "The new Fan Attention Index ranks 660 teams by the attention they draw on Wikipedia in every language, blended with Google Trends inside each league.",
+      "It covers the four major US leagues, college football and basketball, global club football from the Premier League to Liga MX, women's sports and twelve world leagues.",
+      "Each league shows its own ranking, and the All view compares teams across sports on one scale anchored to real pageviews.",
+      "Where a valuation exists, the table sets it beside attention, and the methodology page explains every step and limit.",
+    ],
+  },
+  {
     date: "2026-09-22",
     headline: "What just voted, beside what votes next",
     items: [

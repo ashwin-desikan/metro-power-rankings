@@ -9,10 +9,38 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 76, 2026-09-16 to 2026-09-23
-     If the reader counts fewer than 76 entries, its fetch window stopped
+     entries: 77, 2026-09-16 to 2026-09-23
+     If the reader counts fewer than 77 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
+## 2026-09-23: cowork (Windows device session) → next session (Fan Attention Index /fans shipped to main)
+
+Cowork session, started from a teardown of Rascasse (audience-intelligence vendor). Built and merged a new cross-sport **Fan Attention Index** at `/fans` + `/fans/methodology`. Branch `fan-attention-index` merged `--no-ff` into main after `security-hardening`.
+
+### What shipped
+- `public/data/fans/fan-attention.json` **v0.3.1**, 660 teams. Categories (tabs): All | Football | Major American sports (NFL, NBA, MLB, NHL, College football, College basketball) | Women's sports (WNBA, Women's football = NWSL + WSL) | World (F1, EuroLeague, AFL, NRL, IPL, NPB, CFL, Top 14, Handball-Bundesliga, SuperLega).
+- `lib/fanIndex.ts` (reader + canonical name/link resolution via `resolveTeamLink`, football by Wikidata QID, alias tables for NPB, CFL, college). `app/fans/{page,FanTable,_shared/ui,methodology/page}.tsx`. One nav line in `app/DesktopNav.tsx` (Deep Dives, after Team Valuations).
+- Pipeline: `scripts/fans/build_fan_index.py` (fetch, run on a residential IP or the mini; cloud IPs get Wikimedia and Trends 429s) and `scripts/fans/csv_to_json.py` (offline CSV to site JSON). Source CSVs + README (method, mappings, college qualifiers, validation) live OUTSIDE the repo in Ashwin's OneDrive `Job Search/fan_index/`.
+
+### Method (v0.3.1), as ruled by Ashwin in session
+- Wikipedia pageviews, ALL language editions via Wikidata sitelinks, human traffic, Sep 2025 to Aug 2026; baseline = median month x 12.
+- Within each group: blend Wikipedia 0.4 / Google Trends 0.3 / Reddit 0.3 (reweighted; Reddit blocked, so wiki+Trends). Trends excluded where team names collide with common words (Football, AFL, F1, NRL, College football, College basketball). NHL and NBA are wiki-only in v0.3.1 because Trends 429'd.
+- New, relocated or renamed teams (Utah Mammoth, Athletics, Dolphins, expansion teams) get 0.5 weight on attention and a marker.
+- Entity check on every QID (P31 + sport). It caught ~30 city/place mis-resolutions (Arsenal to arms depot, Southampton to city, etc.).
+- All view: global_score = share of the single most-watched team (linear), anchored to pageviews. Never compare within-group scores across sports.
+- College inclusion rule: CBB = SEC, Big Ten, Big 12, ACC, Big East + any program with a Final Four in 2006-2025 or a final AP Top 25 in 2020-21 to 2024-25. CFB = Power 4 + Notre Dame + any G5/independent with a final AP Top 25 in 2020-2024, plus Army and Navy. Verified against AP/Final Four tables; ‡ marker in the UI.
+- Adoption gate vs an internal third-party benchmark (not in repo, never publish): Spearman NFL 0.86, NBA 0.60, MLB 0.69.
+
+### Known limits / open
+- Anaheim Ducks 2nd in NHL and Charlotte Hornets 8th in NBA while those groups are wiki-only. Fix = rerun Trends worldwide from the mini (Backlog row).
+- Links: 593/660. EuroLeague, Top 14, Handball-Bundesliga, SuperLega have no per-club pages (64). Querétaro, FC Juárez and Galatasaray are missing from the club DB.
+- Valuations: only teams in valuations.json carry one. Ashwin ruled (Decisions) that all three tiers may publish, labelled (published / transaction / estimate, with confidence). Backlog row has the source-first plan.
+- `npm run verify` was run before this push (see below). Nobody has eyeballed the rendered page at 390px yet.
+
+### Not in repo, for context
+- New Notion DB **Ideas Inbox** (under Citizen of Nowhere) + Cowork scheduled task `trig_01Stdn37oQKbQpp6znXqRCXp` (daily 06:00 UTC, bound to this PC) that files self-sent Instagram/LinkedIn share links and archives them in Gmail (label Processed). Scheduled jobs row added.
+
+**Notion:** Backlog rows added (Fan Attention Index build items, valuations plan, Trends retry for NHL/NBA; Fan Index build/route rows closed Done), Decisions rows added (valuation tiers; fan index categories, method and college inclusion rule), Scheduled jobs row added (Share-link emails to Ideas Inbox), plan page "Citizen of Nowhere: Rascasse Teardown and Go-Live Plan" updated, new DB Ideas Inbox.
 ## 2026-09-23 (security hardening) — branch security-hardening, NOT merged
 
 ### AE. Seven security steps, three of which were worse than the brief assumed
@@ -244,6 +272,7 @@ calls it: `HEAD=main GIT_BRANCH=main`, rc=0, no stamp written, clone still clean
 in the shared clone safe. There is nothing to add for that; the worktree is the answer.
 
 **Notion:** none (no queryable state changed).
+
 ## 2026-09-23 — git pull, and what four days had left behind
 
 ### S. The cricket promoter works, fiba-weekly was failing, and 70% of commits are one file
