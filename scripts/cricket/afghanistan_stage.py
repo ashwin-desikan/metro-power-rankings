@@ -22,7 +22,7 @@ Usage:
   python afghanistan_stage.py --workbook InternationalCricket.xlsx --out delta.csv
   python afghanistan_stage.py --workbook ... --out ... --since 2026-05-01
 """
-import argparse, csv, datetime, json, re, sys, urllib.parse, urllib.request
+import argparse, csv, datetime, json, re, sys, time, urllib.error, urllib.parse, urllib.request
 
 import openpyxl
 from cricket_source import open_source
@@ -57,14 +57,57 @@ def norm(s): return "".join(ch for ch in (s or "").lower() if ch.isalnum())
 # resolve, alias or not).
 CITY_ALIASES = {
     "magheramason": "Derry",  # Bready Cricket Club; workbook uses "Derry"
+    # Arun Jaitley Stadium, Delhi. Wikipedia names the SAME ground two ways
+    # across one series: the 2026-09-13 India v Afghanistan T20I page says
+    # "Arun Jaitley Stadium, Delhi" and the 09-15 and 09-17 pages say "Arun
+    # Jaitley Cricket Stadium, New Delhi". The workbook has "Delhi", so the
+    # second spelling resolved to nothing and those two matches landed with
+    # NULL venue_country and host_country, next to a row from the same ground
+    # that had them filled. Found by the 2026-09-23 ops sweep.
+    "newdelhi": "Delhi",
 }
 
-def api_get(params):
+# 🔴 THE KEYS ARE norm() OUTPUT, NOT THE SPELLING YOU SEE. norm() strips
+# everything non-alphanumeric and lowercases, and the lookup is
+# CITY_ALIASES.get(norm(city), city), so a key written "new delhi" with the
+# space in it can never match anything. The sweep report that found this bug
+# recommended exactly that key; it would have looked right in review, changed
+# nothing, and left the rows NULL.
+
+# Retries because ONE 429 used to cost a whole page of matches. Wikipedia rate
+# limits occasionally, and the per-title fetch in main() swallowed the error and
+# carried on, so a rate-limited page simply contributed no matches and the run
+# still exited 0. Retrying on the codes that are actually transient turns most
+# of those into a slower success; the ones that survive are reported (see the
+# REVIEW block in main), which matters more than the retry.
+#
+# 404 and the other 4xx are NOT retried: a candidate title that does not exist
+# is a normal outcome of search_titles() guessing, not a failure.
+RETRY_CODES = (429, 500, 502, 503, 504)
+
+def api_get(params, attempts=3):
     params = dict(params); params.update(format="json", formatversion="2")
     url = API + "?" + urllib.parse.urlencode(params)
     req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+    for i in range(1, attempts + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            if e.code not in RETRY_CODES or i == attempts:
+                raise
+            # Honour Retry-After when the server sends one, which on a 429 it
+            # usually does, and otherwise back off linearly.
+            try: wait = int(e.headers.get("Retry-After") or 0)
+            except (TypeError, ValueError): wait = 0
+            wait = min(wait or i * 5, 30)
+            print(f"  (HTTP {e.code} from the Wikipedia API, attempt {i} of {attempts}, retrying in {wait}s)")
+            time.sleep(wait)
+        except (urllib.error.URLError, TimeoutError) as e:
+            if i == attempts:
+                raise
+            print(f"  ({e}, attempt {i} of {attempts}, retrying in {i * 5}s)")
+            time.sleep(i * 5)
 
 def search_titles(years):
     titles = set()
@@ -308,9 +351,20 @@ def main():
     for t in titles: print(f"  - {t}")
 
     parsed = []
+    fetch_failures = []
     for t in titles:
         try: wt = get_wikitext(t)
-        except Exception as e: print(f"  (fetch failed {t}: {e})"); continue
+        except Exception as e:
+            # 🔴 THIS USED TO BE THE END OF IT: print and carry on, exit 0, no
+            # alert anywhere. A page that failed to fetch contributed no
+            # matches, so if it held played ones they were simply absent, with
+            # no FAIL, no ntfy and no review line. The only tell would have
+            # been a quiet gap in a country's fixture list weeks later. Found
+            # by the 2026-09-23 ops sweep, which caught a real 429 that
+            # happened to cost nothing that week.
+            print(f"  (fetch failed {t}: {e})")
+            fetch_failures.append((t, e))
+            continue
         for m in extract_matches(wt, t):
             if m["date"] and m["date"] >= since and is_played(m):
                 parsed.append(m)
@@ -341,10 +395,16 @@ def main():
     for m, _ in staged:
         print(f"  {m['date']} {m['fmt'] or '??':4} {m['t1']} v {m['t2']}  "
               f"[{m['score1']} / {m['score2']}]  {m['result']}")
-    if flagged:
+    # run-cricket-weekly.sh greps everything between this exact heading and the
+    # next blank line into cricket-review-queue.md AND into the ntfy it pushes,
+    # so anything printed here reaches a human. That is why the fetch failures
+    # go in the same block rather than getting a channel of their own.
+    if flagged or fetch_failures:
         print("\nREVIEW BEFORE PASTING:")
         for m, flags in flagged:
             print(f"  {m['date']} {m['fmt']} {m['t1']} v {m['t2']}: " + "; ".join(flags))
+        for t, e in fetch_failures:
+            print(f"  fetch failed {t!r}: {e} -- any played matches on that page were NOT harvested")
     print(f"\nWrote {args.out}")
 
 if __name__ == "__main__":

@@ -176,6 +176,55 @@ metro-rankings publish will redden check:release-notes"; a new row filed for "/u
 metro rankings move, now that the publish commit is exempt from the release-notes gate; consider a runner nudge".
 Still open from the sweep and untouched: the cricket "New Delhi" alias with 4 NULL-country rows, and the Wikipedia
 429 that exits 0 and tells nobody.
+
+### V. The cricket "New Delhi" alias, and the 429 that told nobody
+
+The last two open items from the 2026-09-23 ops sweep.
+
+**1. "New Delhi" is the same ground as "Delhi", and the sweep's own recommended fix would not have worked.**
+Wikipedia names the Arun Jaitley Stadium two ways across ONE series: the 2026-09-13 India v Afghanistan T20I page
+says "Arun Jaitley Stadium, Delhi" and the 09-15 and 09-17 pages say "Arun Jaitley Cricket Stadium, New Delhi". The
+workbook has "Delhi", so the second spelling resolved to nothing and those two matches landed with NULL
+`venue_country` and `host_country`, two perspective rows each, beside a row from the same ground that had them
+filled.
+
+🔴 **The sweep recommended `"new delhi": "Delhi"` and that key can never match.** The lookup is
+`CITY_ALIASES.get(norm(city), city)` and `norm()` strips everything non-alphanumeric, which is why the existing entry
+is `"magheramason"` and not `"Magheramason"`. A key with a space in it would have read correctly in review, changed
+nothing, and left the rows NULL, with the alias sitting there looking like the fix. The correct key is `"newdelhi"`,
+and a comment above the dict now says so, because this is a trap the next person will walk into too. Verified by
+calling `venue_fields()` on both spellings: both now return the workbook's canonical venue, city, country and host
+with no flags.
+
+**The 4 rows are backfilled** (ids 22763 to 22766) to exactly what the fixed code would emit, taken from the 09-13
+sibling rather than invented: venue "Arun Jaitley Stadium, Delhi", city "Delhi", both countries "India".
+`cricket_matches` now has **0 rows since September with a NULL country**. The review queue file is left alone on
+purpose: `run-cricket-weekly.sh` rewrites it every run as an "as of this run" snapshot, so editing it would be
+writing a fiction about what last week's run found, and 09-30 will clear it.
+
+**2. A fetch failure in the harvester was silent, and that is the part worth fixing.** `afghanistan_stage.py` fetched
+each candidate Wikipedia page inside a bare `except` that printed and carried on, so a page that 429'd contributed no
+matches and the run still exited 0: no FAIL, no ntfy, no review line. If that page had held played matches they would
+simply be absent, and the only tell would have been a quiet gap in a country's fixture list weeks later. It cost
+nothing the week the sweep caught it, which is exactly why it was worth fixing then.
+
+Two changes, and the second matters more:
+- `api_get` now retries 429 and 5xx up to three times, honouring `Retry-After` when the server sends one, and
+  deliberately does NOT retry a 404, because a candidate title that does not exist is a normal outcome of
+  `search_titles()` guessing rather than a failure.
+- A failure that survives the retries is collected and printed in the `REVIEW BEFORE PASTING:` block. That block is
+  not decoration: `run-cricket-weekly.sh` greps everything between that exact heading and the next blank line into
+  both `cricket-review-queue.md` and the ntfy it pushes. Routing into the channel that already works beat inventing
+  a second one.
+
+Tested rather than reasoned about. The retry: a 429 then success returns the payload, a 404 raises on the first
+attempt with no retry, and three 429s raise so the caller can report it. The channel: the runner's exact awk was run
+against the new output, including the case that used to be invisible, a run with NO flagged matches and only a fetch
+failure, which previously printed no block at all and now produces a non-empty REVIEW and therefore an ntfy.
+
+**Notion:** Silent failure register gains "cricket candidate-page fetch failure drops matches silently" (now fixed,
+recorded because the register is the list of faults that exit 0). Backlog rows closed for the cricket "New Delhi"
+alias and for the 429. All six items from the 2026-09-23 sweep are now closed or explicitly accepted.
 ## 2026-09-22 (close, cowork cloud) — CUTOVER: metro-rankings publishes from this Saturday; update_top_companies step removed
 
 Ashwin's ruling tonight, after the Thailand and Peru census populations reached Supabase (watcher run 20:41Z, Counties 3 chunks): cut over on one clean shadow Saturday (2026-09-20) instead of two. Done as one change: `mac-mini-jobs/runners/metro-rankings.sh` default `MODE` is now `publish` (`METRO_RANKINGS_MODE=shadow` still gives a rehearsal); the `update_top_companies.py --write` and its untagged "weekly Top Companies refresh" commit are removed from the tail of `mac-mini-jobs/run-mktcap-refresh.sh` (the script stays in `scripts/mktcap` for a manual patch; `details/*.json` and `meta.json` now come from extract.py in the metro-rankings publish, marketCap included, from the same CSV); `jobs.toml`'s comment rewritten. Both scripts pass `bash -n`. The mini runs the repo files through symlinks, so this lands when its checkout next pulls (deploy-watch, every 10 minutes); confirm on the mini before Saturday 10:30 UTC that `runners/metro-rankings.sh` shows the publish default.
