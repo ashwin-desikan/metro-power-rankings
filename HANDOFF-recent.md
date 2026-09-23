@@ -396,6 +396,57 @@ live proof, the 404-versus-401 distinction and the catch-up page recorded in Not
 set to Disabled with the empty `api_token_hint` finding and the arming steps; and the Silent failure register entry
 for "a scheduled cloud routine fires, does nothing and leaves no log line" is updated from still silent to **NOW
 DETECTED**, carrying the same three lessons. No new rows.
+
+### AA. Why the reconciler did nothing: it replied with a plan and the turn ended
+
+Ashwin asked for the cause, not just the detector. Found it, and fixed it at source.
+
+**The 06:40 run in full,** from the routine's own run log (the Claude Code Remote trigger tools are available from the
+mini, which is what the cloud session lacked when it said it could not diagnose this):
+
+    06:40:00.384  the prompt fires
+    06:40:03      cloning metro-power-rankings
+    06:40:29      cloning metro-power-rankings          <- each of 3 repos cloned TWICE
+    06:40:33      finished processing sources
+    06:40:37.873  init: model=claude-opus-5
+    06:40:43.245  assistant: "I'll start by reading the Notion operating contract,
+                              then fetch the generated files from the repo."
+    06:40:43.348  result: success  is_error=false  turns=1  duration=7s
+
+**The run ended after ONE turn and seven seconds of model time, because it opened with prose and no tool call.** A
+turn that calls no tool is a finished turn, so the loop had nothing to continue from, recorded SUCCESS, and stopped.
+Nothing failed, which is exactly why nothing was reported.
+
+**Ruled out on evidence rather than by elimination-by-assertion:**
+- NOT the scheduler: it fired on time, `last_fired_at` 06:40:00.
+- NOT permissions or connectors: the SAME session read and wrote Notion freely from 10:08 onward.
+- NOT the inputs: both generated files read whole at 10:11.
+
+The contrast settles it. The 10:10 hand run opened with a `WebFetch` TOOL CALL and ran 8 turns to completion. Same
+session, same connectors, same prompt, ninety minutes apart. One opened with an action and worked; one opened with a
+sentence and died.
+
+**The fix, applied to the routine's stored prompt** via the remote-trigger API: a paragraph after the role paragraph
+beginning "FIRST ACTION MUST BE A TOOL CALL", which carries the 2026-09-23 incident as its own rationale, so a future
+reader does not strike it out as boilerplate. A rule with its scar attached survives; a bare instruction gets tidied
+away.
+
+**Verified by diffing the trigger JSON before and after, because a partial update can clobber what it does not
+mention.** Prompt 4481 to 5112 characters, two lines ADDED and ZERO removed. `cron_expression`, `enabled`,
+`mcp_connections`, `environment_id`, `session_context`, `tags`, `model` and `next_run_at` all byte-identical. The one
+field flagged as changed, `session_request.events`, turned out to be a second copy of the same prompt and carries the
+identical change. A full pre-change backup sits in `/tmp/recon-backup/`.
+
+**Two things worth keeping.** The double repo clone ate 30 of the 43 seconds and is not explained; it is not the
+cause, since init was clean, but it is not normal either. And the fix and the detector are deliberately independent:
+`notion-reconcile-verify` alerts at 08:10 UTC whether or not the prompt change works, so tomorrow either the log line
+is there or the phone rings. That is the difference between fixing a cause and merely knowing within a day, and this
+now has both.
+
+**Notion:** the P1 Backlog row "The Notion reconciler fired on 2026-09-23 and did no work at all until Ashwin asked"
+is updated with the full diagnosis and the applied fix, and its Needs now names tomorrow's 06:39 UTC run as the proof
+point rather than asking anything of Ashwin. No new rows: the Decisions row and the Silent failure register entry
+written earlier today already cover the ruling and the fault class.
 ## 2026-09-22 (close, cowork cloud) — CUTOVER: metro-rankings publishes from this Saturday; update_top_companies step removed
 
 Ashwin's ruling tonight, after the Thailand and Peru census populations reached Supabase (watcher run 20:41Z, Counties 3 chunks): cut over on one clean shadow Saturday (2026-09-20) instead of two. Done as one change: `mac-mini-jobs/runners/metro-rankings.sh` default `MODE` is now `publish` (`METRO_RANKINGS_MODE=shadow` still gives a rehearsal); the `update_top_companies.py --write` and its untagged "weekly Top Companies refresh" commit are removed from the tail of `mac-mini-jobs/run-mktcap-refresh.sh` (the script stays in `scripts/mktcap` for a manual patch; `details/*.json` and `meta.json` now come from extract.py in the metro-rankings publish, marketCap included, from the same CSV); `jobs.toml`'s comment rewritten. Both scripts pass `bash -n`. The mini runs the repo files through symlinks, so this lands when its checkout next pulls (deploy-watch, every 10 minutes); confirm on the mini before Saturday 10:30 UTC that `runners/metro-rankings.sh` shows the publish default.
