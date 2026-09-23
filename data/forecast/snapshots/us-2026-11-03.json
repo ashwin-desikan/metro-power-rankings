@@ -2,55 +2,49 @@
  "code": "us",
  "election": "2026-11-03",
  "confidence": "confirmed",
- "built": "2026-09-22",
- "daysBefore": 42,
+ "built": "2026-09-23",
+ "daysBefore": 41,
  "block": {
-  "margin": 7.8,
+  "margin": 7.9,
   "sigma": 2.5,
   "aggregators": [
    {
     "source": "Decision Desk HQ",
-    "dem": 48.1,
-    "rep": 40.8,
-    "updated": "2026-09-20"
+    "dem": 48.5,
+    "rep": 40.7,
+    "updated": "2026-09-22"
    },
    {
     "source": "FiftyPlusOne",
-    "dem": 50.4,
+    "dem": 50.7,
     "rep": 43.2,
-    "updated": "2026-09-20"
+    "updated": "2026-09-22"
    },
    {
     "source": "RealClearPolitics",
-    "dem": 50.4,
-    "rep": 42.3,
-    "updated": "2026-09-18"
+    "dem": 50.3,
+    "rep": 42.0,
+    "updated": "2026-09-22"
    },
    {
     "source": "Silver Bulletin",
-    "dem": 49.6,
+    "dem": 49.7,
     "rep": 41.7,
-    "updated": "2026-09-20"
+    "updated": "2026-09-22"
    },
    {
-    "source": "VoteHub",
-    "dem": 49.6,
-    "rep": 41.7,
-    "updated": "2026-09-20"
-   },
-   {
-    "source": "Race to the WH",
-    "dem": 49.9,
-    "rep": 41.8,
-    "updated": "2026-09-20"
+    "source": "Average",
+    "dem": 49.8,
+    "rep": 41.9,
+    "updated": "2026-09-22"
    }
   ],
   "demSeats": {
    "median": 231,
-   "lo": 209,
+   "lo": 210,
    "hi": 253
   },
-  "pDemHouse": 84.2,
+  "pDemHouse": 85.0,
   "fit": {
    "a": 209.5,
    "b": 2.71,
@@ -93,7 +87,7 @@
     ]
    ]
   },
-  "monthsOut": 1.4,
+  "monthsOut": 1.3,
   "sims": 20000,
   "election": "2026-11-03",
   "electionDate": "2026-11-03",
@@ -122,49 +116,49 @@
     "lo": 47,
     "hi": 54
    },
-   "pDemControl": 49.0,
+   "pDemControl": 49.8,
    "competitive": [
     {
-     "state": "Alaska",
+     "state": "Iowa",
      "held": "R",
-     "score": 0.05,
-     "retiring": false,
-     "pDem": 51.0
+     "score": -0.05,
+     "retiring": true,
+     "pDem": 49.0
     },
     {
      "state": "Texas",
      "held": "R",
-     "score": 0.18,
+     "score": 0.1,
      "retiring": false,
-     "pDem": 55.0
+     "pDem": 53.0
     },
     {
-     "state": "Iowa",
+     "state": "Alaska",
      "held": "R",
-     "score": -0.23,
-     "retiring": true,
-     "pDem": 43.0
+     "score": 0.15,
+     "retiring": false,
+     "pDem": 54.0
     },
     {
      "state": "Maine",
      "held": "R",
-     "score": 0.41,
+     "score": 0.4,
      "retiring": false,
-     "pDem": 62.0
+     "pDem": 61.0
     },
     {
      "state": "Ohio",
      "held": "R",
-     "score": 0.45,
+     "score": 0.4,
      "retiring": false,
-     "pDem": 63.0
+     "pDem": 61.0
     },
     {
      "state": "Michigan",
      "held": "D",
-     "score": 0.64,
+     "score": 0.7,
      "retiring": true,
-     "pDem": 68.0
+     "pDem": 69.0
     }
    ],
    "sims": 20000,
@@ -185,67 +179,67 @@
     "D": 24
    },
    "demSeats": {
-    "median": 25,
+    "median": 26,
     "lo": 22,
     "hi": 29
    },
-   "pDemMajority": 48.1,
-   "pRepMajority": 34.4,
+   "pDemMajority": 50.2,
+   "pRepMajority": 32.2,
    "competitive": [
-    {
-     "state": "Alaska",
-     "held": "R",
-     "score": 0.19,
-     "retiring": true,
-     "pDem": 56.0
-    },
     {
      "state": "Nevada",
      "held": "R",
-     "score": -0.19,
+     "score": -0.07,
      "retiring": false,
-     "pDem": 44.0
+     "pDem": 48.0
     },
     {
      "state": "Ohio",
      "held": "R",
-     "score": -0.19,
+     "score": -0.07,
      "retiring": true,
-     "pDem": 44.0
+     "pDem": 48.0
+    },
+    {
+     "state": "Alaska",
+     "held": "R",
+     "score": 0.29,
+     "retiring": true,
+     "pDem": 58.0
     },
     {
      "state": "Georgia",
      "held": "R",
-     "score": 0.38,
+     "score": 0.43,
      "retiring": true,
-     "pDem": 61.0
+     "pDem": 62.0
     },
     {
      "state": "Wisconsin",
      "held": "D",
-     "score": 0.38,
+     "score": 0.43,
      "retiring": true,
-     "pDem": 61.0
+     "pDem": 62.0
     },
     {
      "state": "Kansas",
      "held": "D",
-     "score": -0.75,
+     "score": -0.79,
      "retiring": true,
-     "pDem": 29.0
+     "pDem": 28.0
     },
     {
      "state": "Iowa",
      "held": "R",
-     "score": 0.94,
+     "score": 0.93,
      "retiring": true,
      "pDem": 75.0
     },
     {
-     "state": "Michigan",
+     "state": "Arizona",
      "held": "D",
-     "score": 1.06,
-     "retiring": true,
+     "score": 1.07,
+     "retiring": false,
      "pDem": 78.0
     }
    ],

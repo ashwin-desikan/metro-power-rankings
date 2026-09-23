@@ -2,79 +2,79 @@
  "code": "il",
  "election": "2026-10-27",
  "confidence": "confirmed",
- "built": "2026-09-22",
- "daysBefore": 35,
+ "built": "2026-09-23",
+ "daysBefore": 34,
  "block": {
   "electionAssumed": "2026-10-27",
   "electionDate": "2026-10-27",
   "electionConfidence": "confirmed",
   "parties": [
    {
-    "name": "Yashar",
-    "seats": 24.4
+    "name": "Likud",
+    "seats": 22.3
    },
    {
-    "name": "Likud",
-    "seats": 21.1
+    "name": "Yashar",
+    "seats": 22.1
    },
    {
     "name": "Together",
-    "seats": 13.6
-   },
-   {
-    "name": "Yisrael Beiteinu",
-    "seats": 9.0
+    "seats": 12.0
    },
    {
     "name": "Dems",
-    "seats": 8.9
+    "seats": 9.0
+   },
+   {
+    "name": "Yisrael Beiteinu",
+    "seats": 8.1
    },
    {
     "name": "Shas",
-    "seats": 8.1
-   },
-   {
-    "name": "UTJ",
-    "seats": 8.1
-   },
-   {
-    "name": "Joint List",
-    "seats": 7.6
+    "seats": 8.0
    },
    {
     "name": "Otzma",
-    "seats": 7.4
+    "seats": 7.7
    },
    {
-    "name": "Ra'am",
-    "seats": 5.6
+    "name": "UTJ",
+    "seats": 7.6
+   },
+   {
+    "name": "Joint List",
+    "seats": 7.2
    },
    {
     "name": "RZP- Zehut",
-    "seats": 4.4
+    "seats": 6.0
    },
    {
-    "name": "Reserv.- NEP",
-    "seats": 1.7
-   },
-   {
-    "name": "Blue & White",
-    "seats": 0.0
+    "name": "Ra'am",
+    "seats": 5.2
    },
    {
     "name": "Amcha Yisrael",
-    "seats": 0.0
+    "seats": 3.1
+   },
+   {
+    "name": "Reserv.- NEP",
+    "seats": 1.5
+   },
+   {
+    "name": "Blue & White",
+    "seats": 0.3
    },
    {
     "name": "Haredi Public",
     "seats": 0.0
    }
   ],
-  "polls": 3,
-  "pollsters": 2,
-  "latestPollDate": "2026-09-17",
+  "polls": 24,
+  "pollsters": 9,
+  "latestPollDate": "2026-09-22",
   "gov": {
-   "avg": 49.3,
+   "avg": 51.5,
    "pMajority": 0.0
   },
   "monthsOut": 1.1,

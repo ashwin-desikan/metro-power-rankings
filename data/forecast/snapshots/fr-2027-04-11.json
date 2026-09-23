@@ -2,8 +2,8 @@
  "code": "fr",
  "election": "2027-04-11",
  "confidence": "assumed",
- "built": "2026-09-22",
- "daysBefore": 201,
+ "built": "2026-09-23",
+ "daysBefore": 200,
  "block": {
   "electionAssumed": "2027-04-11",
   "electionDate": "2027-04-11",
@@ -61,10 +61,10 @@
    {
     "a": "Bardella RN",
     "b": "Philippe HOR",
-    "avgA": 52.9,
-    "avgB": 47.1,
-    "pA": 82.1,
-    "polls": 4,
+    "avgA": 53.0,
+    "avgB": 47.0,
+    "pA": 83.0,
+    "polls": 3,
     "latest": "2026-05-27"
    },
    {

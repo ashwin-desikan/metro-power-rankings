@@ -2,8 +2,8 @@
  "code": "nz",
  "election": "2026-11-07",
  "confidence": "confirmed",
- "built": "2026-09-22",
- "daysBefore": 46,
+ "built": "2026-09-23",
+ "daysBefore": 45,
  "block": {
   "electionAssumed": "2026-11-07",
   "electionDate": "2026-11-07",
@@ -55,8 +55,8 @@
     "hi": 0
    }
   },
-  "pRightBloc": 85.2,
-  "pLeftBloc": 7.3,
+  "pRightBloc": 85.4,
+  "pLeftBloc": 7.2,
   "pNeither": 7.5,
   "monthsOut": 1.5,
   "sims": 10000,

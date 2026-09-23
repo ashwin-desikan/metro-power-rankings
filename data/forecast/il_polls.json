@@ -17,8 +17,93 @@
   "Amcha Yisrael",
   "Haredi Public"
  ],
- "handCorrected": "2026-09-21: columns re-aligned by position after the parser dropped a data-cell colspan. RZP-Zehut recovered as 120 minus the other seats and cross-checked against the Gov. total. The next fetch overwrites this file.",
  "polls": [
+  {
+   "date": "2026-09-06",
+   "pollster": "Kantar",
+   "seats": {
+    "Likud": 20,
+    "Together": 13,
+    "RZP- Zehut": 6,
+    "Otzma": 7,
+    "Shas": 7,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 7,
+    "Ra'am": 6,
+    "Joint List": 7,
+    "Dems": 8,
+    "Yashar": 23,
+    "Reserv.- NEP": 4,
+    "Amcha Yisrael": 4
+   },
+   "gov": 48
+  },
+  {
+   "date": "2026-09-07",
+   "pollster": "S.M.L.T.",
+   "seats": {
+    "Likud": 25,
+    "Together": 9,
+    "RZP- Zehut": 8,
+    "Otzma": 9,
+    "Blue & White": 4,
+    "Shas": 10,
+    "UTJ": 7,
+    "Yisrael Beiteinu": 7,
+    "Ra'am": 5,
+    "Joint List": 7,
+    "Dems": 9,
+    "Yashar": 20,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 0,
+    "Haredi Public": 0
+   },
+   "gov": 59
+  },
+  {
+   "date": "2026-09-07",
+   "pollster": "SF+ND",
+   "seats": {
+    "Likud": 30,
+    "Together": 6,
+    "RZP- Zehut": 8,
+    "Otzma": 8,
+    "Blue & White": 0,
+    "Shas": 10,
+    "UTJ": 7,
+    "Yisrael Beiteinu": 6,
+    "Ra'am": 5,
+    "Joint List": 8,
+    "Dems": 10,
+    "Yashar": 22,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 0,
+    "Haredi Public": 0
+   },
+   "gov": 63
+  },
+  {
+   "date": "2026-09-07",
+   "pollster": "Midgam R&C",
+   "seats": {
+    "Likud": 21,
+    "Together": 13,
+    "RZP- Zehut": 6,
+    "Otzma": 6,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 8,
+    "Ra'am": 4,
+    "Joint List": 7,
+    "Dems": 11,
+    "Yashar": 25,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 4,
+    "Haredi Public": 0
+   },
+   "gov": 48
+  },
   {
    "date": "2026-09-08",
    "pollster": "LRI+P4A",
@@ -42,6 +127,182 @@
    "gov": 47
   },
   {
+   "date": "2026-09-09",
+   "pollster": "Maagar Mochot",
+   "seats": {
+    "Likud": 20,
+    "Together": 16,
+    "RZP- Zehut": 4,
+    "Otzma": 9,
+    "Blue & White": 0,
+    "Shas": 9,
+    "UTJ": 7,
+    "Yisrael Beiteinu": 7,
+    "Ra'am": 5,
+    "Joint List": 7,
+    "Dems": 9,
+    "Yashar": 23,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 4,
+    "Haredi Public": 0
+   },
+   "gov": 49
+  },
+  {
+   "date": "2026-09-09",
+   "pollster": "MP+TM+SN+A",
+   "seats": {
+    "Likud": 19,
+    "Together": 13,
+    "RZP- Zehut": 6,
+    "Otzma": 9,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 8,
+    "Ra'am": 6,
+    "Joint List": 8,
+    "Dems": 10,
+    "Yashar": 22,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 4,
+    "Haredi Public": 0
+   },
+   "gov": 49
+  },
+  {
+   "date": "2026-09-09",
+   "pollster": "Direct Polls",
+   "seats": {
+    "Likud": 27,
+    "Together": 10,
+    "RZP- Zehut": 6,
+    "Otzma": 8,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 7,
+    "Ra'am": 5,
+    "Joint List": 7,
+    "Dems": 9,
+    "Yashar": 22,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 4,
+    "Haredi Public": 0
+   },
+   "gov": 56
+  },
+  {
+   "date": "2026-09-09",
+   "pollster": "SF+ND",
+   "seats": {
+    "Likud": 31,
+    "Together": 7,
+    "RZP- Zehut": 8,
+    "Otzma": 8,
+    "Blue & White": 0,
+    "Shas": 10,
+    "UTJ": 7,
+    "Yisrael Beiteinu": 7,
+    "Ra'am": 6,
+    "Joint List": 6,
+    "Dems": 8,
+    "Yashar": 22,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 0,
+    "Haredi Public": 0
+   },
+   "gov": 64
+  },
+  {
+   "date": "2026-09-09",
+   "pollster": "LRI+P4A",
+   "seats": {
+    "Likud": 21,
+    "Together": 14,
+    "RZP- Zehut": 5,
+    "Otzma": 7,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 7,
+    "Yisrael Beiteinu": 9,
+    "Ra'am": 5,
+    "Joint List": 7,
+    "Dems": 9,
+    "Yashar": 25,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 4,
+    "Haredi Public": 0
+   },
+   "gov": 47
+  },
+  {
+   "date": "2026-09-09",
+   "pollster": "Kantar",
+   "seats": {
+    "Likud": 21,
+    "Together": 12,
+    "RZP- Zehut": 5,
+    "Otzma": 7,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 7,
+    "Ra'am": 5,
+    "Joint List": 7,
+    "Dems": 9,
+    "Yashar": 24,
+    "Reserv.- NEP": 4,
+    "Amcha Yisrael": 4,
+    "Haredi Public": 0
+   },
+   "gov": 48
+  },
+  {
+   "date": "2026-09-09",
+   "pollster": "Midgam R&C",
+   "seats": {
+    "Likud": 21,
+    "Together": 13,
+    "RZP- Zehut": 5,
+    "Otzma": 6,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 9,
+    "Ra'am": 4,
+    "Joint List": 7,
+    "Dems": 10,
+    "Yashar": 25,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 5,
+    "Haredi Public": 0
+   },
+   "gov": 47
+  },
+  {
+   "date": "2026-09-10",
+   "pollster": "LRI+P4A",
+   "seats": {
+    "Likud": 19,
+    "Together": 14,
+    "RZP- Zehut": 5,
+    "Otzma": 8,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 7,
+    "Yisrael Beiteinu": 9,
+    "Ra'am": 5,
+    "Joint List": 7,
+    "Dems": 10,
+    "Yashar": 25,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 4,
+    "Haredi Public": 0
+   },
+   "gov": 46
+  },
+  {
    "date": "2026-09-10",
    "pollster": "Yossi Tatika",
    "seats": {
@@ -58,10 +319,182 @@
     "Dems": 8,
     "Yashar": 23,
     "Reserv.- NEP": 0,
+    "Amcha Yisrael": 0
+   },
+   "gov": 52
+  },
+  {
+   "date": "2026-09-14",
+   "pollster": "Midgam R&C",
+   "seats": {
+    "Likud": 20,
+    "Together": 13,
+    "RZP- Zehut": 5,
+    "Otzma": 6,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 8,
+    "Ra'am": 4,
+    "Joint List": 8,
+    "Dems": 10,
+    "Yashar": 23,
+    "Reserv.- NEP": 4,
+    "Amcha Yisrael": 4
+   },
+   "gov": 46
+  },
+  {
+   "date": "2026-09-14",
+   "pollster": "Kantar",
+   "seats": {
+    "Likud": 20,
+    "Together": 12,
+    "RZP- Zehut": 6,
+    "Otzma": 8,
+    "Shas": 7,
+    "UTJ": 7,
+    "Yisrael Beiteinu": 8,
+    "Ra'am": 5,
+    "Joint List": 7,
+    "Dems": 8,
+    "Yashar": 24,
+    "Reserv.- NEP": 4,
+    "Amcha Yisrael": 4
+   },
+   "gov": 48
+  },
+  {
+   "date": "2026-09-15",
+   "pollster": "MP+TM+SN+A",
+   "seats": {
+    "Likud": 18,
+    "Together": 12,
+    "RZP- Zehut": 8,
+    "Otzma": 8,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 7,
+    "Yisrael Beiteinu": 8,
+    "Ra'am": 6,
+    "Joint List": 8,
+    "Dems": 10,
+    "Yashar": 22,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 6,
+    "Haredi Public": 0
+   },
+   "gov": 48
+  },
+  {
+   "date": "2026-09-15",
+   "pollster": "SF+ND",
+   "seats": {
+    "Likud": 30,
+    "Together": 8,
+    "RZP- Zehut": 8,
+    "Otzma": 8,
+    "Blue & White": 0,
+    "Shas": 10,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 6,
+    "Ra'am": 5,
+    "Joint List": 7,
+    "Dems": 9,
+    "Yashar": 21,
+    "Reserv.- NEP": 0,
     "Amcha Yisrael": 0,
     "Haredi Public": 0
    },
-   "gov": 52
+   "gov": 63
+  },
+  {
+   "date": "2026-09-17",
+   "pollster": "SF+ND",
+   "seats": {
+    "Likud": 31,
+    "Together": 9,
+    "RZP- Zehut": 7,
+    "Otzma": 8,
+    "Blue & White": 0,
+    "Shas": 10,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 7,
+    "Ra'am": 5,
+    "Joint List": 7,
+    "Dems": 8,
+    "Yashar": 20,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 0,
+    "Haredi Public": 0
+   },
+   "gov": 64
+  },
+  {
+   "date": "2026-09-17",
+   "pollster": "Direct Polls",
+   "seats": {
+    "Likud": 27,
+    "Together": 9,
+    "RZP- Zehut": 6,
+    "Otzma": 7,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 8,
+    "Ra'am": 5,
+    "Joint List": 7,
+    "Dems": 10,
+    "Yashar": 21,
+    "Reserv.- NEP": 0,
+    "Amcha Yisrael": 5,
+    "Haredi Public": 0
+   },
+   "gov": 55
+  },
+  {
+   "date": "2026-09-17",
+   "pollster": "LRI+P4A",
+   "seats": {
+    "Likud": 18,
+    "Together": 13,
+    "RZP- Zehut": 6,
+    "Otzma": 8,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 7,
+    "Yisrael Beiteinu": 9,
+    "Ra'am": 5,
+    "Joint List": 7,
+    "Dems": 9,
+    "Yashar": 23,
+    "Reserv.- NEP": 4,
+    "Amcha Yisrael": 4,
+    "Haredi Public": 0
+   },
+   "gov": 46
+  },
+  {
+   "date": "2026-09-17",
+   "pollster": "Kantar",
+   "seats": {
+    "Likud": 20,
+    "Together": 13,
+    "RZP- Zehut": 6,
+    "Otzma": 8,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 7,
+    "Yisrael Beiteinu": 8,
+    "Ra'am": 5,
+    "Joint List": 7,
+    "Dems": 9,
+    "Yashar": 22,
+    "Reserv.- NEP": 4,
+    "Amcha Yisrael": 4,
+    "Haredi Public": 0
+   },
+   "gov": 48
   },
   {
    "date": "2026-09-17",
@@ -80,10 +513,31 @@
     "Dems": 8,
     "Yashar": 24,
     "Reserv.- NEP": 0,
-    "Amcha Yisrael": 0,
-    "Haredi Public": 0
+    "Amcha Yisrael": 0
    },
    "gov": 51
+  },
+  {
+   "date": "2026-09-22",
+   "pollster": "Midgam R&C",
+   "seats": {
+    "Likud": 20,
+    "Together": 13,
+    "RZP- Zehut": 5,
+    "Otzma": 6,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 9,
+    "Ra'am": 5,
+    "Joint List": 7,
+    "Dems": 9,
+    "Yashar": 23,
+    "Reserv.- NEP": 4,
+    "Amcha Yisrael": 4,
+    "Haredi Public": 0
+   },
+   "gov": 46
   }
  ]
 }
