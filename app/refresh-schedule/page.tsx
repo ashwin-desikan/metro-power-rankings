@@ -54,13 +54,16 @@ export default async function RefreshSchedulePage() {
             from its own schedule file. Times are UTC on the mini, converted
             below to your local time.
           </p>
-          {schedule?.generated_at && (
+          {schedule?.generated_on && (
             <p className="mt-4 text-xs text-[var(--text-muted)]" style={MONO}>
-              {jobs.length} jobs · schedule last regenerated{" "}
-              {new Date(schedule.generated_at).toLocaleString(undefined, {
-                dateStyle: "medium",
-                timeStyle: "short",
-              })}
+              {jobs.length} jobs · schedule as of{" "}
+              {/* A DATE, deliberately. This line used to print an exact
+                  instant, which meant the underlying file changed on every
+                  dispatcher tick and was committed each time. */}
+              {new Date(`${schedule.generated_on}T00:00:00Z`).toLocaleDateString(
+                undefined,
+                { dateStyle: "medium", timeZone: "UTC" },
+              )}
             </p>
           )}
         </header>

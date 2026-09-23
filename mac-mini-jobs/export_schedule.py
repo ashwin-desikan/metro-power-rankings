@@ -30,6 +30,12 @@ sys.path.insert(0, str(HERE))
 import dispatcher  # noqa: E402  (path insert must come first)
 
 
+# RETAINED DELIBERATELY THOUGH THE EXPORT NO LONGER CALLS IT (2026-09-23).
+# This is the forward counterpart to dispatcher.previous_occurrence and the
+# reference implementation of the same slot arithmetic the calendar now does in
+# TypeScript, and its four self-tests below are the clearest statement of what
+# the weekday, day-of-month and months filters mean. Deleting it would throw
+# away tested semantics to save nothing.
 def next_occurrence(now, job):
     """The next scheduled datetime at or after `now`.
 
@@ -111,7 +117,6 @@ def build_schedule(now, jobs, state):
     for job in jobs:
         jid = job["id"]
         st = state.get(jid) or {}
-        next_occ = next_occurrence(now, job)
         out.append({
             "id": jid,
             "label": job.get("label") or jid,
@@ -121,15 +126,34 @@ def build_schedule(now, jobs, state):
             "weekdays": sorted(job.get("weekdays") or []),
             "months": sorted(job.get("months") or []),
             "days_of_month": sorted(job.get("days") or []),
-            "next_run": next_occ.isoformat() if next_occ else None,
             "last_run": {
                 "date": st.get("last_run_date") or None,
                 "status": st.get("last_status") or None,
-                "slot": st.get("last_slot") or None,
             },
         })
-    out.sort(key=lambda j: j["next_run"] or "")
-    return {"generated_at": now.isoformat(), "jobs": out}
+    # SORTED BY ID, AND THE PAYLOAD CARRIES NO LIVE TIMESTAMP. Both halves of
+    # that matter, and together they are why this file stopped being committed
+    # every ten minutes.
+    #
+    # It used to carry next_run per job, generated_at at the top, and last_run
+    # down to the slot, and it was sorted BY next_run. So every tick moved at
+    # least one job past its slot, the sort reordered the whole array, and the
+    # file was rewritten and committed even though the schedule had not
+    # changed. Measured 2026-09-23: 349 of the last 502 commits on main were
+    # this one file, about 30 a day until deploy-watch moved to every_minutes
+    # scheduling on 09-20 and then 135 and 137 a day.
+    #
+    # Nothing consumed any of it. The calendar in
+    # app/refresh-schedule/ScheduleCalendar.tsx derives every occurrence itself
+    # from times/weekdays/months/days_of_month, which is what "compute them at
+    # render time" means here, and it never read next_run or last_run.slot.
+    # generated_at was shown as a freshness line, so it survives as a DATE,
+    # which changes once a day instead of once a tick.
+    #
+    # What remains in the file is either a schedule definition or a real event,
+    # so a commit now means something actually happened.
+    out.sort(key=lambda j: j["id"])
+    return {"generated_on": now.date().isoformat(), "jobs": out}
 
 
 def self_test():
@@ -189,20 +213,33 @@ def self_test():
     check("next_occurrence skips forward across a closed season to next Jan",
           got.isoformat(), "2027-01-01T09:00:00+00:00")
 
-    # build_schedule: sorts by next_run and carries state through.
+    # build_schedule: sorted by id, carrying state, and carrying NO live
+    # timestamp. The times are chosen so the two candidate sorts DISAGREE:
+    # now is 12:00, so b at 18:00 is next today while a at 05:50 is not until
+    # tomorrow. By id that is [a, b]; by next_run it would be [b, a]. The
+    # previous version of this test used the opposite times, where both sorts
+    # give [a, b], so it passed whichever rule was in force and pinned nothing.
     jobs = [
-        {"id": "b", "label": "B job", "time": "05:50"},
-        {"id": "a", "label": "A job", "time": "18:00"},
+        {"id": "b", "label": "B job", "time": "18:00"},
+        {"id": "a", "label": "A job", "time": "05:50"},
     ]
     state = {"b": {"last_run_date": "2026-08-09", "last_status": "ok",
                    "last_slot": "2026-08-09T05:50:00+00:00"}}
     sched = build_schedule(now, jobs, state)
     ids_in_order = [j["id"] for j in sched["jobs"]]
-    check("build_schedule sorts by soonest next_run", ids_in_order, ["a", "b"])
+    check("build_schedule sorts by id, not by next_run", ids_in_order, ["a", "b"])
     check("build_schedule carries last_run state through",
           sched["jobs"][1]["last_run"]["status"], "ok")
     check("build_schedule reports null last_run for a never-run job",
           sched["jobs"][0]["last_run"]["status"], None)
+
+    # The whole point of the change: nothing in the payload moves on its own.
+    check("no next_run on any job",
+          any("next_run" in j for j in sched["jobs"]), False)
+    check("no last_run.slot on any job",
+          any("slot" in j["last_run"] for j in sched["jobs"]), False)
+    check("no generated_at timestamp", "generated_at" in sched, False)
+    check("generated_on is a plain date", sched["generated_on"], "2026-08-09")
 
     ok = True
     for name, got, want in cases:
