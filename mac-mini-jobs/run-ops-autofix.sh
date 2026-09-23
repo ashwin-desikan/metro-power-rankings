@@ -63,6 +63,41 @@ DATE="$(date +%F)"; LOGDIR="$LIVE/logs"; mkdir -p "$LOGDIR"
 LOG="$LOGDIR/ops-autofix-$DATE.log"
 KILL="$LIVE/AUTOFIX-OFF"
 ATTEMPTS="$LIVE/.autofix-attempts.json"
+
+# --- report-at-most-once-a-day, shared by both notifying paths ----------------
+# Fingerprint = the SET of findings (kind plus the job or workflow each names),
+# so a condition that persists is silent while it stays the same and speaks up
+# the moment the set changes. The db resets on a new date, so an ongoing
+# condition still gets one reminder a day rather than vanishing for good.
+#
+# These were inline in the "nothing auto-fixable" branch at the bottom. They
+# are functions now because the STAND-DOWN path above needed the same treatment
+# and could not reach them: it pushes and exits long before that branch. Each
+# caller keeps its own slot in the db, so a stand-down and an unfixable report
+# of the same findings are separate events and neither silences the other.
+finding_fingerprint() {
+  printf '%s' "$FINDINGS" | python3 -c '
+import sys, json, hashlib
+fs = json.load(sys.stdin)
+key = "|".join(sorted("%s:%s" % (f["kind"], f.get("id", "")) for f in fs))
+print(hashlib.sha256(key.encode()).hexdigest()[:16])'
+}
+notify_once() {  # notify_once <slot> <fingerprint>  ->  yes | no
+  python3 - "$ATTEMPTS" "$DATE" "$1" "$2" <<'PY'
+import json, sys
+path, date, slot, fp = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+try:
+    with open(path) as f: db = json.load(f)
+except Exception: db = {}
+if db.get("date") != date: db = {"date": date, "counts": {}}
+# "unfixable" keeps the original key so an existing db carries over unchanged.
+key = "reported" if slot == "unfixable" else "reported_%s" % slot
+already = db.get(key) == fp
+db[key] = fp
+with open(path, "w") as f: json.dump(db, f)
+print("no" if already else "yes")
+PY
+}
 MAX_ATTEMPTS="${AUTOFIX_MAX_ATTEMPTS:-3}"
 DRY_RUN="${AUTOFIX_DRY_RUN:-0}"
 
@@ -111,8 +146,24 @@ for f in json.load(sys.stdin):
 
 if printf '%s' "$FINDINGS" | grep -q '"kind": "working_tree_dirty"'; then
   log "STOP: uncommitted changes in the repo. Refusing to act around a human's work."
-  push "[ops-autofix] stood down -- uncommitted work" default warning \
-    "$COUNT finding(s) but the working tree is dirty, so nothing was done. Commit or stash and the next run picks it up."
+  # THIS USED TO PUSH EVERY RUN, AND THIS JOB RUNS EVERY TWO HOURS. A dirty
+  # tree is normal while someone is working, so one afternoon of work meant an
+  # alert every two hours saying the same thing. Measured 2026-09-23: a failed
+  # fiba-weekly left two files uncommitted at 07:18 and the stand-down fired at
+  # 09:25 and again at 11:16, identical both times. The branch below already
+  # had a dedupe for exactly this reason, and this path could never reach it,
+  # because it pushes and exits first.
+  #
+  # The fingerprint is the FINDING SET, not merely "the tree is dirty". That
+  # distinction matters: while stood down, a genuinely new problem (today it
+  # was job_failed and check_down alongside the dirty tree) still changes the
+  # set and still gets through, so silencing the repeat cannot silence news.
+  if [ "$(notify_once standdown "$(finding_fingerprint)")" = "yes" ]; then
+    push "[ops-autofix] stood down -- uncommitted work" default warning \
+      "$COUNT finding(s) but the working tree is dirty, so nothing was done. Commit or stash and the next run picks it up. This will not repeat today unless the findings change."
+  else
+    log "same stand-down as the last run -- not re-notifying (still logged every run)"
+  fi
   exit 0
 fi
 
@@ -282,25 +333,7 @@ for f in json.load(sys.stdin):
 # still logged every run; it just stops shouting.
 if [ "${#ACTED[@]}" -eq 0 ]; then
   log "no whitelisted action applied"
-  FINGERPRINT="$(printf '%s' "$FINDINGS" | python3 -c '
-import sys, json, hashlib
-fs = json.load(sys.stdin)
-key = "|".join(sorted("%s:%s" % (f["kind"], f.get("id", "")) for f in fs))
-print(hashlib.sha256(key.encode()).hexdigest()[:16])')"
-  NOTIFY="$(python3 - "$ATTEMPTS" "$DATE" "$FINGERPRINT" <<'PY'
-import json, sys
-path, date, fp = sys.argv[1], sys.argv[2], sys.argv[3]
-try:
-    with open(path) as f: db = json.load(f)
-except Exception: db = {}
-if db.get("date") != date: db = {"date": date, "counts": {}}
-already = db.get("reported") == fp
-db["reported"] = fp
-with open(path, "w") as f: json.dump(db, f)
-print("no" if already else "yes")
-PY
-)"
-  if [ "$NOTIFY" = "yes" ]; then
+  if [ "$(notify_once unfixable "$(finding_fingerprint)")" = "yes" ]; then
     push "[ops-autofix] $COUNT finding(s), nothing auto-fixable" default mag \
       "Detected $COUNT item(s), none matching the whitelist, so nothing was done. This will not repeat today unless the findings change. See $LOG."
   else
