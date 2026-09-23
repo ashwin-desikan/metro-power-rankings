@@ -113,6 +113,69 @@ all pass.
 
 **Notion:** Backlog row "refresh-schedule.json commits every dispatcher tick" closed; a new row filed for "the
 /refresh-schedule freshness line is inert until the next build, since the page still reads generated_at".
+
+### U. The two ntfy items from the sweep: the stand-down storm and the Saturday deadline
+
+Ashwin asked whether the day's work covered every ntfy. It did not, and the honest ledger was three of five, all
+sharing one root cause. These are the two he then asked for.
+
+**1. ops-autofix's stand-down bypassed its own dedupe (sweep item #3).** The `working_tree_dirty` branch pushed an
+ntfy on EVERY run, and that job runs every two hours, so an afternoon of uncommitted work meant an identical urgent
+nudge every two hours. Today it fired at 09:25 and 11:16, word for word, for one failed fiba run.
+
+The script already had the cure and could not reach it. The "nothing auto-fixable" branch at the bottom fingerprints
+the findings and reports at most once a day, with a comment saying an alert channel that cries wolf on a schedule is
+worse than no alert channel. The stand-down pushes and `exit 0`s long before that code. Verified by reading both
+paths rather than trusting the sweep's summary, which is the section I lesson.
+
+So the fingerprint and the once-a-day gate are now `finding_fingerprint()` and `notify_once(slot, fp)`, called from
+both places, each with its own slot in the attempts db so neither path silences the other. The unfixable slot keeps
+the original key, so an existing db carries over unchanged.
+
+🔴 **The fingerprint is the FINDING SET, not "the tree is dirty", and that is the whole safety of it.** Silencing a
+repeat must never silence news: while stood down, a genuinely new problem changes the set and still gets through.
+Today is the case in point, where `job_failed` and `check_down` appeared alongside the dirty tree. Tested by
+extracting the shipped functions: first stand-down notifies, an identical repeat is silent, a NEW finding while stood
+down notifies, the unfixable slot is independent, and a new date reminds once. Then the whole script dry-run end to
+end, with the attempts db backed up and restored so the test could not consume a real alert slot.
+
+**The stale finding underneath it is cleared too.** `hc-run.sh` had made the healthchecks tile green, but the
+dispatcher's own `state.json` still recorded the 07:10 slot as failed, so `job_failed` would have persisted until the
+next scheduled fiba run on 09-30. `dispatcher.py --mark-ok fiba-weekly` settles that. `detect_issues.py` now returns
+**0 findings**.
+
+**2. The Saturday deadline (sweep item #5).** `metro-rankings` makes its first publish-mode run on Saturday
+2026-09-26 at 10:30Z, committing `rankings: weekly metro recalculation <date>` UNTAGGED, because that commit IS the
+week's production build. `check:release-notes` fails any past day with an untagged app/lib/public commit and no
+`lib/releases.ts` entry, so the day after that run, `npm run verify` goes red for everyone.
+
+Of the sweep's two options I took the second, a narrow exemption, and the reasoning matters more than the diff.
+Writing the note automatically sounds more honest to /updates readers, but the job has never run in publish mode,
+there is no report on disk to summarise, and generating prose to a strict format (4 bullets, 220 chars, headline 4 to
+8 words) from a file I have never seen risks either filler or breaking Saturday's run outright. A red gate is a
+better failure than a broken job.
+
+The exemption is SUBJECT-ANCHORED and deliberately not "any bot commit" or "anything touching public/": a regex for
+that one subject, with `isAutomatedShipping()` exported and tested. The distinction it encodes is that this gate is
+about HUMAN shipping discipline, and nobody decided to ship on Saturday morning; a cron did. The repo already draws
+the same line, in the post-commit hook's "known automated data commit scoped to public/".
+
+🔴 **What it costs, recorded so the next reader weighs it rather than discovers it:** /updates will NOT mention that
+the metro rankings moved, which on a rankings site is a real editorial loss. `publish_guard.py` makes the honest fix
+tractable, because its `no_change` outcome exits WITHOUT committing, so that subject only appears in weeks something
+actually changed. A human note in those weeks is the right answer, and a nudge from the runner would be the way to
+prompt it.
+
+Three tests pin it: the scheduled publish is ignored; a day where a HUMAN shipped alongside it still fails, with only
+the human subject listed; and the mktcap weekly refresh, also automated and also untagged, is still NOT exempt.
+
+Verified: `check:release-notes` OK, 342 tests in 28 files, typecheck clean.
+
+**Notion:** Backlog rows closed for "ops-autofix's working_tree_dirty alert bypasses its own dedupe" and "the Saturday
+metro-rankings publish will redden check:release-notes"; a new row filed for "/updates says nothing when the weekly
+metro rankings move, now that the publish commit is exempt from the release-notes gate; consider a runner nudge".
+Still open from the sweep and untouched: the cricket "New Delhi" alias with 4 NULL-country rows, and the Wikipedia
+429 that exits 0 and tells nobody.
 ## 2026-09-22 (close, cowork cloud) — CUTOVER: metro-rankings publishes from this Saturday; update_top_companies step removed
 
 Ashwin's ruling tonight, after the Thailand and Peru census populations reached Supabase (watcher run 20:41Z, Counties 3 chunks): cut over on one clean shadow Saturday (2026-09-20) instead of two. Done as one change: `mac-mini-jobs/runners/metro-rankings.sh` default `MODE` is now `publish` (`METRO_RANKINGS_MODE=shadow` still gives a rehearsal); the `update_top_companies.py --write` and its untagged "weekly Top Companies refresh" commit are removed from the tail of `mac-mini-jobs/run-mktcap-refresh.sh` (the script stays in `scripts/mktcap` for a manual patch; `details/*.json` and `meta.json` now come from extract.py in the metro-rankings publish, marketCap included, from the same CSV); `jobs.toml`'s comment rewritten. Both scripts pass `bash -n`. The mini runs the repo files through symlinks, so this lands when its checkout next pulls (deploy-watch, every 10 minutes); confirm on the mini before Saturday 10:30 UTC that `runners/metro-rankings.sh` shows the publish default.

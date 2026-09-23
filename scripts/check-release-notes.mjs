@@ -40,6 +40,42 @@ export const BUILD_RELEVANT_PATHS = ["app", "lib", "public"];
 export const SKIP_MARKER = "[vercel skip]";
 
 /**
+ * Automated publishing commits this gate deliberately does not demand a note
+ * for. NARROW AND SUBJECT-ANCHORED ON PURPOSE: not "any bot commit", not "any
+ * commit touching public/", but the exact subjects of jobs that republish data
+ * on a schedule without a human deciding to ship anything.
+ *
+ * Why an exception exists at all. The rule above is about HUMAN shipping
+ * discipline: a person changed the site and owes readers a line. A weekly
+ * recalculation is a different animal. Nobody decided to ship on Saturday
+ * morning; a cron did, and it runs whether or not anything interesting moved.
+ * Failing the whole of `npm run verify` days later, for everyone, because a
+ * scheduled job did its job is the gate misfiring rather than catching
+ * anything. The repo already draws this line elsewhere: the post-commit hook
+ * calls the same shape of commit "a known automated data commit scoped to
+ * public/ -- the documented ISR exception".
+ *
+ * 🔴 WHAT THIS COSTS, so the next reader can weigh it rather than discover it.
+ * /updates will NOT mention that the metro rankings moved. On a rankings site
+ * that is a real editorial loss, and the honest fix is a human note in the
+ * weeks the rankings actually move. `publish_guard.py` already makes that
+ * tractable: a `no_change` outcome exits WITHOUT committing, so this subject
+ * only appears in weeks something really changed.
+ *
+ * Adding to this list is a decision about editorial policy, not a tidy-up.
+ */
+export const AUTOMATED_SHIPPING_SUBJECTS = [
+  // mac-mini-jobs/runners/metro-rankings.sh, publish mode, Saturdays 10:30Z.
+  // Untagged on purpose: it IS the week's production build.
+  /^rankings: weekly metro recalculation \d{4}-\d{2}-\d{2}\b/,
+];
+
+/** True when a commit ships data on a schedule rather than because a person shipped. */
+export function isAutomatedShipping(subject) {
+  return AUTOMATED_SHIPPING_SUBJECTS.some((re) => re.test(subject));
+}
+
+/**
  * The SAME brevity limits app/updates/page.tsx enforces at build time.
  *
  * 🔴 Duplicated here on purpose, and it earned its place: on 2026-09-11 a
@@ -106,6 +142,7 @@ export function auditReleaseNotes({ releaseDates, commits, today }) {
   const byDay = new Map();
   for (const c of commits) {
     if (c.subject.includes(SKIP_MARKER)) continue; // not a production build, not a release
+    if (isAutomatedShipping(c.subject)) continue;  // a cron republished data; see above
     if (c.date <= newest) continue;               // already covered by an entry
     if (!byDay.has(c.date)) byDay.set(c.date, []);
     byDay.get(c.date).push(c.subject);

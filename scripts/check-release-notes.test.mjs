@@ -60,6 +60,33 @@ describe("what must NOT fail", () => {
     expect(audit([c("2026-08-30", `data: refresh-schedule.json ${SKIP_MARKER}`)])).toEqual([]);
   });
 
+  // The Saturday metro-rankings publish. Untagged on purpose, because it IS
+  // the week's production build, so the skip-marker rule above cannot cover it.
+  it("ignores the scheduled metro-rankings publish", () => {
+    expect(audit([c("2026-08-30", "rankings: weekly metro recalculation 2026-08-30")])).toEqual([]);
+  });
+
+  // The exemption must not whitewash the DAY. If a person also shipped that
+  // Saturday, the day still owes readers a note, and the cron commit must not
+  // appear in what it is asked to describe.
+  it("still fails a day where a human shipped alongside the scheduled publish", () => {
+    const f = audit([
+      c("2026-08-30", "rankings: weekly metro recalculation 2026-08-30"),
+      c("2026-08-30", "metros: new skyline chart"),
+    ]);
+    expect(f).toHaveLength(1);
+    expect(f[0].level).toBe("fail");
+    expect(f[0].subjects).toEqual(["metros: new skyline chart"]);
+  });
+
+  // Narrowness: this is not a blanket amnesty for bot commits. The mktcap
+  // weekly refresh is also automated and also untagged, and it is NOT exempt.
+  it("does not exempt other automated untagged commits", () => {
+    const f = audit([c("2026-08-30", "Auto: weekly Top Companies refresh 2026-08-30")]);
+    expect(f).toHaveLength(1);
+    expect(f[0].level).toBe("fail");
+  });
+
   it("ignores a skipped commit even on a day that also shipped", () => {
     const f = audit([
       c("2026-08-30", `ops: daily sweep ${SKIP_MARKER}`),
