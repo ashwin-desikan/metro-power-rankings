@@ -1,3 +1,4 @@
+2026-09-23T03:34:30+01:00  34cdb0d75  chore(activity): refresh site activity feed [vercel skip]
 2026-09-23T02:13:02+01:00  e1dfdd80b  ops: daily sweep 2026-09-23 [vercel skip]
 2026-09-23T00:09:31+01:00  872669ae0  football: refresh live bundles [vercel skip]
 2026-09-22T22:13:43+01:00  41557f6a4  metro_sync: launch the watcher through wscript so no console flashes; no admin needed [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T23:19:40+01:00  4f91825d9  git-maintenance: a dry run must not alert - gate the stale-lock page behind DRY_RUN [vercel skip]
 2026-09-20T23:16:15+01:00  f9342a43d  HANDOFF: every runner takes the dispatcher lock; the no-trap decision recorded [vercel skip]
 2026-09-20T23:15:29+01:00  fea5fe445  mini: every runner takes the dispatcher lock, so a hand-run cannot race a tick [vercel skip]
-2026-09-20T23:11:16+01:00  c7d50b516  HANDOFF: deploy-watch takes the dispatcher lock on manual runs too [vercel skip]
