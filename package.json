@@ -44,7 +44,7 @@
     "@vercel/analytics": "^2.0.1",
     "leaflet": "^1.9.4",
     "mcp-handler": "^2.1.0",
-    "next": "^16.2.9",
+    "next": "^16.3.6",
     "postcss": "^8.5.9",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",

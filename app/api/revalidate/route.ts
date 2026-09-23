@@ -3,6 +3,7 @@ import { revalidateTag } from "next/cache";
 import { timingSafeEqual } from "crypto";
 import { checkRateLimit } from "@/lib/rateLimit";
 
+import { clientIp } from "@/lib/clientIp";
 // On-demand ISR revalidation, pinged by the data-refresh workflows right
 // after they push a [vercel skip] data commit. lib/business.ts tags every
 // GitHub-raw fetch with "business-daily", so one call here flushes the data
@@ -69,7 +70,9 @@ export async function POST(req: Request) {
 
   // Secret-guarded, but still rate-limited (same lib as /api/mcp) so a
   // leaked URL can't hammer the cache or brute-force the header from one IP.
-  const ip = (req.headers.get("x-forwarded-for") ?? "unknown").split(",")[0].trim();
+  // The trusted hop, not the first entry of a client-appendable header. See
+  // lib/clientIp: taking [0] let a caller mint a fresh bucket per request.
+  const ip = clientIp(req);
   const rate = await checkRateLimit(`revalidate:${ip}`, 10, 60_000);
   if (!rate.ok) {
     return NextResponse.json(

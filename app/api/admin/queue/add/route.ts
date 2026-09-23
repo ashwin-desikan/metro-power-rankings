@@ -7,6 +7,7 @@ import {
   isAlreadyQueued,
   findingId,
 } from "@/lib/missionControl";
+import { requireAdmin } from "@/lib/adminAuth";
 
 export const runtime = "nodejs";
 
@@ -15,6 +16,10 @@ function s(form: FormData, key: string): string {
 }
 
 export async function POST(req: NextRequest) {
+  // Defence in depth: proxy.ts gates this path too, and this is the
+  // second lock. See requireAdmin in lib/adminAuth.ts.
+  const denied = await requireAdmin(req);
+  if (denied) return denied;
   const form = await req.formData();
   const digestDate = s(form, "digestDate");
   const category = s(form, "category") as DigestFinding["category"];
