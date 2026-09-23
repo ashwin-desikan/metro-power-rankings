@@ -357,6 +357,45 @@ different behaviour on a schedule. The check I skipped was the cheapest possible
 **Notion:** the two Scheduled jobs rows added in section X are amended, Status Parked and Notes naming the empty
 `api_token_hint` finding and the arming steps; no new rows. The Decisions row and the Silent failure register entry
 stand as written, since the ruling and the fault are unchanged by this.
+
+### Z. The reconciler detector is armed and proven live
+
+Ashwin placed `NOTION_API_TOKEN` and shared the integration with the **Citizen of Nowhere parent page**, so every
+child is readable, including the Backlog and Scheduled jobs databases. `notion-reconcile-verify` is uncommented,
+deployed and proven against live data: it reads the contract page over the Notion REST API, parses the Reconciler log
+and passes for 2026-09-22. The dispatcher parses 36 jobs, `--check-sync` is clean, and from tomorrow 08:10 UTC a
+missing log line becomes an ntfy instead of nothing.
+
+`notion-reconcile-ping` stays commented out. Its credential does not exist for any routine, and that is a separate
+decision for Ashwin rather than a missing step here.
+
+**Three things the arming taught, each worth more than the job itself:**
+
+**1. A Notion 404 means the integration cannot see the page. A bad token gives 401.** The first live attempt returned
+404 on a perfectly valid token. Reading the code rather than the status alone turned "your credentials are wrong"
+into "the page is not shared yet", which is a thirty-second fix in the UI and not a credential rotation. Worth
+knowing for every future Notion integration here.
+
+**2. 🔴 A JOB ADDED MID-DAY IS ELIGIBLE FOR ITS OWN EARLIER SLOT, AND MINE PAGED BECAUSE OF IT.** A dispatcher tick at
+10:56 UTC ran the 08:10 slot 167 minutes late, inside the 12h catch-up window I had given it, while the token was
+still absent. It failed closed and sent Ashwin a real alert. So the storm I worried about in section Y did not merely
+threaten: it had already fired once before I parked the jobs, and I only found it because `--status` said "failed"
+after a run I had just watched pass. I did not think about catch-up when adding a job in the middle of the day, and
+the cost landed on Ashwin's phone.
+
+**3. Therefore the rule, stated properly:** fail-closed governs what a job does with the dangerous operation, not how
+often it is allowed to shout. A detector with no credential is UNARMED, not failing. With no `enabled = false` key in
+the dispatcher, the only way to hold a job is to comment it out, which is what both were, and what the ping job
+remains.
+
+The stale `failed` state from that catch-up run is cleared with `dispatcher.py --mark-ok notion-reconcile-verify`, so
+`detect_issues.py` reports nothing but the working tree this entry is about to clean.
+
+**Notion:** the `notion-reconcile-verify` Scheduled jobs row is amended to Active, Last verified 2026-09-23, with the
+live proof, the 404-versus-401 distinction and the catch-up page recorded in Notes; the `notion-reconcile-ping` row is
+set to Disabled with the empty `api_token_hint` finding and the arming steps; and the Silent failure register entry
+for "a scheduled cloud routine fires, does nothing and leaves no log line" is updated from still silent to **NOW
+DETECTED**, carrying the same three lessons. No new rows.
 ## 2026-09-22 (close, cowork cloud) — CUTOVER: metro-rankings publishes from this Saturday; update_top_companies step removed
 
 Ashwin's ruling tonight, after the Thailand and Peru census populations reached Supabase (watcher run 20:41Z, Counties 3 chunks): cut over on one clean shadow Saturday (2026-09-20) instead of two. Done as one change: `mac-mini-jobs/runners/metro-rankings.sh` default `MODE` is now `publish` (`METRO_RANKINGS_MODE=shadow` still gives a rehearsal); the `update_top_companies.py --write` and its untagged "weekly Top Companies refresh" commit are removed from the tail of `mac-mini-jobs/run-mktcap-refresh.sh` (the script stays in `scripts/mktcap` for a manual patch; `details/*.json` and `meta.json` now come from extract.py in the metro-rankings publish, marketCap included, from the same CSV); `jobs.toml`'s comment rewritten. Both scripts pass `bash -n`. The mini runs the repo files through symlinks, so this lands when its checkout next pulls (deploy-watch, every 10 minutes); confirm on the mini before Saturday 10:30 UTC that `runners/metro-rankings.sh` shows the publish default.
