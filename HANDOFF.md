@@ -18311,3 +18311,53 @@ Still open from the cutover rule: `check:release-notes` wants a `lib/releases.ts
 Also uncommitted until this push: `scripts/citypop/` (apply_counties_pop.py and the inbox).
 
 **Notion:** Backlog phase 2 row ("install and cutover") -> Done with the cutover date; Scheduled jobs metro-rankings row -> publish mode; Decisions +1 (cutover on one shadow Saturday; metro-rankings owns the weekly build, update_top_companies retired from the mktcap runner).
+
+## 2026-09-23 — git pull, and what four days had left behind
+
+### S. The cricket promoter works, fiba-weekly was failing, and 70% of commits are one file
+
+A routine `git pull` ("Already up to date") surfaced three things worth separating: one success, one failure, and one
+piece of rot.
+
+**1. The cricket champion promoter from section L works.** It ran every night since it was installed (19th through
+22nd, all "ok" in 11 to 13s) and it caught the CPL final the day it happened. `cpl` 2026 is on the live board:
+**Antigua & Barbuda Falcons, won 2026-09-20**, metro "St. John's (ANT)", `source=cricket-finalizer`, and the 2025
+Trinbago row correctly flipped to `is_current: false`. Board 106 to 107 rows. That is the whole design working
+unattended: detect, resolve the metro from history, write, re-emit, commit `[vercel skip]`.
+
+**2. fiba-weekly was FAILING and had left the shared tree dirty,** which is the thing that blocks ops-autofix. It
+failed at 07:18 today (and silently on 09-02, which was then marked ok by hand). The cause was the women's shrink
+guard doing its job: FIBA moved from the April edition to 2026-09-14 and went 119 nations to 118. That guard exists
+because a silent shrink on 2026-09-09 quietly dropped Czechia from world rank 17, so it refuses rather than writes.
+
+It was a genuine source change, not a mapping break, and the evidence is that all 118 mapped. The movement is entirely
+in the tail: Barbados (94), St Vincent and the Grenadines (103), Moldova (107) and Gibraltar (111) left, while
+Micronesia, Guam and Palau joined. Applied with `--allow-shrink`, which is the explicit decision the guard asks for,
+then committed with the job's own message and re-run through `hc-run.sh fiba-weekly` so the tile clears on a real run
+rather than a manual mark. The re-run is now clean and idempotent ("no change for fiba this run"), because the guard's
+comparison is 118 against 118.
+
+🔴 **MY OWN SLIP, RECORDED BECAUSE IT COULD HAVE BEEN WORSE.** I tried to preview that with `--dry`. The flag is
+`--dry-run`, and the script tests for it with a plain `"--dry-run" in sys.argv`, so `--dry` was silently ignored and
+the write went through for real. It happened to be the write I had already verified as correct, so nothing was
+damaged, but an unknown flag SHOULD NOT be silently ignored. Any script here that reads flags out of `sys.argv` by
+substring has the same hole.
+
+**A design gap this exposed:** when a runner fails midway it leaves the files it already wrote uncommitted, and a
+dirty shared tree is indistinguishable from a human's work in progress, so it stands ops-autofix down until someone
+notices. The fiba runner had written both ranking files before the women's step failed. Worth considering whether a
+failing runner should revert what it wrote, since it commits atomically on success anyway.
+
+**3. 70% of recent commits are `public/data/refresh-schedule.json`.** 349 of the last 502. The file embeds live
+`next_run` and `last_run` and its `jobs` array is SORTED BY `next_run`, so any job crossing its next slot reorders the
+whole array and rewrites the file, and the dispatcher commits it every tick. It ran at about 30 a day through 09-20
+and then jumped to 135 and 137 on the 21st and 22nd. The trigger is identifiable: `baeb6d021` on 09-20 at 22:37
+brought deploy-watch under the dispatcher with **`every_minutes`** scheduling, so its `next_run` now moves on
+essentially every tick. Not fixed, because the options trade against the /refresh-schedule page's contract (sort by
+id for a small stable diff, drop the live timestamps and compute them at render time, or rate-limit the commit) and
+that is Ashwin's call. Flagged with the gc.auto=0 change of the same evening in mind.
+
+**Notion:** Backlog rows filed for "refresh-schedule.json commits every dispatcher tick, 70% of recent history, since
+deploy-watch moved to every_minutes scheduling", for "a runner that fails midway leaves the shared tree dirty and
+stands ops-autofix down", and for "scripts matching flags by substring in sys.argv silently ignore typos like --dry
+for --dry-run".

@@ -9,10 +9,59 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 77, 2026-09-15 to 2026-09-22
-     If the reader counts fewer than 77 entries, its fetch window stopped
+     entries: 75, 2026-09-16 to 2026-09-23
+     If the reader counts fewer than 75 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
+## 2026-09-23 — git pull, and what four days had left behind
+
+### S. The cricket promoter works, fiba-weekly was failing, and 70% of commits are one file
+
+A routine `git pull` ("Already up to date") surfaced three things worth separating: one success, one failure, and one
+piece of rot.
+
+**1. The cricket champion promoter from section L works.** It ran every night since it was installed (19th through
+22nd, all "ok" in 11 to 13s) and it caught the CPL final the day it happened. `cpl` 2026 is on the live board:
+**Antigua & Barbuda Falcons, won 2026-09-20**, metro "St. John's (ANT)", `source=cricket-finalizer`, and the 2025
+Trinbago row correctly flipped to `is_current: false`. Board 106 to 107 rows. That is the whole design working
+unattended: detect, resolve the metro from history, write, re-emit, commit `[vercel skip]`.
+
+**2. fiba-weekly was FAILING and had left the shared tree dirty,** which is the thing that blocks ops-autofix. It
+failed at 07:18 today (and silently on 09-02, which was then marked ok by hand). The cause was the women's shrink
+guard doing its job: FIBA moved from the April edition to 2026-09-14 and went 119 nations to 118. That guard exists
+because a silent shrink on 2026-09-09 quietly dropped Czechia from world rank 17, so it refuses rather than writes.
+
+It was a genuine source change, not a mapping break, and the evidence is that all 118 mapped. The movement is entirely
+in the tail: Barbados (94), St Vincent and the Grenadines (103), Moldova (107) and Gibraltar (111) left, while
+Micronesia, Guam and Palau joined. Applied with `--allow-shrink`, which is the explicit decision the guard asks for,
+then committed with the job's own message and re-run through `hc-run.sh fiba-weekly` so the tile clears on a real run
+rather than a manual mark. The re-run is now clean and idempotent ("no change for fiba this run"), because the guard's
+comparison is 118 against 118.
+
+🔴 **MY OWN SLIP, RECORDED BECAUSE IT COULD HAVE BEEN WORSE.** I tried to preview that with `--dry`. The flag is
+`--dry-run`, and the script tests for it with a plain `"--dry-run" in sys.argv`, so `--dry` was silently ignored and
+the write went through for real. It happened to be the write I had already verified as correct, so nothing was
+damaged, but an unknown flag SHOULD NOT be silently ignored. Any script here that reads flags out of `sys.argv` by
+substring has the same hole.
+
+**A design gap this exposed:** when a runner fails midway it leaves the files it already wrote uncommitted, and a
+dirty shared tree is indistinguishable from a human's work in progress, so it stands ops-autofix down until someone
+notices. The fiba runner had written both ranking files before the women's step failed. Worth considering whether a
+failing runner should revert what it wrote, since it commits atomically on success anyway.
+
+**3. 70% of recent commits are `public/data/refresh-schedule.json`.** 349 of the last 502. The file embeds live
+`next_run` and `last_run` and its `jobs` array is SORTED BY `next_run`, so any job crossing its next slot reorders the
+whole array and rewrites the file, and the dispatcher commits it every tick. It ran at about 30 a day through 09-20
+and then jumped to 135 and 137 on the 21st and 22nd. The trigger is identifiable: `baeb6d021` on 09-20 at 22:37
+brought deploy-watch under the dispatcher with **`every_minutes`** scheduling, so its `next_run` now moves on
+essentially every tick. Not fixed, because the options trade against the /refresh-schedule page's contract (sort by
+id for a small stable diff, drop the live timestamps and compute them at render time, or rate-limit the commit) and
+that is Ashwin's call. Flagged with the gc.auto=0 change of the same evening in mind.
+
+**Notion:** Backlog rows filed for "refresh-schedule.json commits every dispatcher tick, 70% of recent history, since
+deploy-watch moved to every_minutes scheduling", for "a runner that fails midway leaves the shared tree dirty and
+stands ops-autofix down", and for "scripts matching flags by substring in sys.argv silently ignore typos like --dry
+for --dry-run".
 ## 2026-09-22 (close, cowork cloud) — CUTOVER: metro-rankings publishes from this Saturday; update_top_companies step removed
 
 Ashwin's ruling tonight, after the Thailand and Peru census populations reached Supabase (watcher run 20:41Z, Counties 3 chunks): cut over on one clean shadow Saturday (2026-09-20) instead of two. Done as one change: `mac-mini-jobs/runners/metro-rankings.sh` default `MODE` is now `publish` (`METRO_RANKINGS_MODE=shadow` still gives a rehearsal); the `update_top_companies.py --write` and its untagged "weekly Top Companies refresh" commit are removed from the tail of `mac-mini-jobs/run-mktcap-refresh.sh` (the script stays in `scripts/mktcap` for a manual patch; `details/*.json` and `meta.json` now come from extract.py in the metro-rankings publish, marketCap included, from the same CSV); `jobs.toml`'s comment rewritten. Both scripts pass `bash -n`. The mini runs the repo files through symlinks, so this lands when its checkout next pulls (deploy-watch, every 10 minutes); confirm on the mini before Saturday 10:30 UTC that `runners/metro-rankings.sh` shows the publish default.
@@ -24,6 +73,7 @@ Still open from the cutover rule: `check:release-notes` wants a `lib/releases.ts
 Also uncommitted until this push: `scripts/citypop/` (apply_counties_pop.py and the inbox).
 
 **Notion:** Backlog phase 2 row ("install and cutover") -> Done with the cutover date; Scheduled jobs metro-rankings row -> publish mode; Decisions +1 (cutover on one shadow Saturday; metro-rankings owns the weekly build, update_top_companies retired from the mktcap runner).
+
 ## 2026-09-22 (close, cowork cloud) — first citypopulation.de refresh applied by the new pipeline shape: Thailand and Peru provinces on Counties
 
 Ashwin pasted the citypopulation.de tables for Thailand (77 provinces, census 2025-04-01) and Peru (196 provinces, census 2025-08-04) and asked for a name check against `MetroAreas.xlsx` Counties before replacing. Diff (pure code, exact normalised name within country, parent checked): Thailand 77 of 77 matched, parents agree, no structural change (Bueng Kan already present). Peru 193 of 196 exact plus 3 spelling-only variants where the workbook's spelling was kept (Antonio Raimondi / Raymondi, Vilcashuamán / Vilcas Huamán, Nazca / Nasca); no merges or splits; Lima province and Callao matched. No model was needed: rung 1 of the ladder settled everything.
@@ -2921,255 +2971,4 @@ callers use the healthy thing" is still unmonitored.
 **Deliberately not done:** turning off GitHub's Actions failure email. It did its job here, surfacing a real break
 that would otherwise have sat until the next finals weekend. With WNBA fixed the volume should fall to near zero on
 its own, so the setting stays until there is evidence it is noise rather than signal.
-
-## 2026-09-15 (late) — windows → mini (Zone Zero Cup: tiers, weekly snapshots, season boards; a Wikipedia attention prototype)
-
-Ashwin was shown index.evidense.io by its owner and asked what the site could take from it. Four ideas
-implemented on the Cup, plus a prototype for the fifth. Commit `TBD-on-push`, one real build.
-
-### A. WHAT EVIDENSE ACTUALLY IS, AND WHY IT IS WORTH COPYING
-
-A monthly ranking of the 43 Olympic International Federations on **demand**: Wikipedia readership across 16
-language editions weighted by market size, plus Google Trends, rescaled 0-100, summer and winter ranked
-SEPARATELY, tier letters A-E plus W and NEW, and a YoY arrow that compares each federation with the **median
-of its group** rather than with zero. Their own framing is the sharp bit: "attention is not demand and not
-revenue; it is an early signal of both."
-
-Every index we run is the opposite half: supply. Titles won, things built, rankings held. That asymmetry is
-the reason this was worth an afternoon.
-
-### B. SHIPPED ON THE CUP
-
-- **Tiers A-G on merit breakpoints, not rank quantiles.** The distribution is 191.2 to 0.0 with a median of
-  3.2, so quantiles would force equal counts across a savagely skewed field. Cuts are round numbers, published
-  in `_meta.method.tierCuts`, and the page prints them and the live counts (6 / 11 / 23 / 33 / 36 / 44 / 46,
-  plus 41 untiered). **Six bands left F holding 105 of 240, which is not a band**, hence seven. `tier_of()`
-  takes the ROUNDED merit so the letter and the printed number cannot disagree on screen.
-- **Weekly snapshots -> `public/data/zone-zero-cup-history.json`.** Merit only, ~3.4 KB a run, one snapshot
-  per DATE (a re-run replaces, never appends a second point), capped at 160 snapshots. Written LAST, after
-  every existing guard, because a snapshot of a board that was refused would poison the series for a year and
-  the series is the one thing here that cannot be rebuilt from current data.
-- **Movement vs the continent median, not vs zero.** With an 8-year half-life every nation drifts weekly, so
-  an absolute arrow would mostly report which flagship tournaments fell in the window. Percentage change,
-  floored at merit 2.0 so the bottom of the board does not generate noise. **The window is honest: it says
-  "vs N weeks" and lengthens on its own toward 52.** Today N = 0 and the column is not rendered at all.
-- **Winter and Summer views.** Two more entries in the existing `VIEWS` toggle, so no new table. Winter is
-  recomputed at `WINTER_WEIGHT = 1.0` (mutate-and-restore, this file's own idiom from HALFLIFE_LOCKED) or it
-  would be the blend again at half scale. The winter sport set is DERIVED from the medal data each run (a
-  sport is winter when it has more winter than summer medals), which correctly keeps Ice Hockey and Figure
-  Skating on the winter side despite 1908/1920.
-  **Verified no leak: `compute()` before and after `season_boards()` gives zero merit drift.**
-  First findings: Norway 20th overall / 3rd winter / 25th summer, Austria 36th / 7th / 48th, Canada 1st on
-  winter ahead of the USA and Norway.
-- **A scope line under the description**, in the spirit of their "attention is not demand" sentence: what the
-  Cup measures and what it does not.
-
-🔴 **Honest narrowing, and say this before anyone "completes" it:** a Cup winter board is NOT their
-summer/winter split. Winter here exists only inside the Olympics pillar plus ice hockey's own competitions,
-because every other pillar is a summer or year-round sport. It is a winter-SPORT board, not half the Cup.
-
-### C. `scripts/attention/wikipedia_attention.py` — PROTOTYPE, NOT WIRED TO THE SITE
-
-Wikimedia REST pageviews across 16 weighted editions. **No Google Trends, deliberately**: no official API,
-every route is a scrape, and this repo has already lost jobs to exactly that (the ESPN UA flip, WDQS limits).
-Writes nothing to `public/data` and refuses to if asked. `--self-test` is offline and passes.
-
-Pointed at one question: do the hand-set PRESTIGE weights match measured attention? **Spearman 0.82 over 15
-sports.** Football and cricket 1-2 on both. Three sports move 4+ places, all the same direction, all rewarded
-more by the Cup than they are read about: **Ice Hockey (8th attention / 4th prestige), Athletics (12th / 8th),
-Road Cycling (15th / 10th)**. Road cycling only became a pillar on 2026-09-04, so that one is worth a look.
-
-🔴 **I shipped a biased comparison first and caught it on the live run.** v1 subtracted two 0-100 scales and
-reported the gap; every sport but football came out negative, which looked like a finding and was an
-artefact of football being a large outlier on attention. Rewritten to compare by RANK. The reasoning is in
-the docstring so nobody reinstates it. Standing caveat on all of it: **a language is a proxy for a market,
-not a country.**
-
-### D. NOT DONE, ON PURPOSE
-
-Movement could have been made to appear today by backdating a baseline. I do not have last week's merit and
-inventing it would have poisoned the series, so the page says plainly that recording started today and
-movement needs two points. **First real arrows come from your Sunday `metro-mini-refresh.sh` run or the next
-`civic-data-refresh.yml`** — worth confirming the arrows appear and the window reads "1 week".
-
-### E. VERIFIED
-
-typecheck, all `check:*`, 294 vitest, 112 pytest, `next build --webpack`, `check:function-size`.
-`/sports/zone-zero-cup` still ISR at 1h. The Cup regenerated clean through the new code path (240 nations,
-history written). Two nations moved merit in this rebuild (germany 127.6 -> 128.3, kazakhstan 19.7 -> 20.6)
-and **that is your women's basketball ranking change from this morning's pull, not my code** — confirmed by
-the zero-drift test above.
-
-### F. STILL OPEN FROM EARLIER TODAY
-
-`VERCEL_BUILD_CAP_TOKEN` is still unset, so the 2/day cap remains inactive and this is the third real build
-today. Fourth day flagged. Notion Backlog P0, owner Ashwin.
-
-## 2026-09-15 (evening) — windows → mini (champions and majors read at runtime; a new check:live-data guard; the build cap is still a no-op)
-
-Cowork session, Ashwin travelling. He asked why adding the US Open champions cost a full Vercel build and wanted a
-process where it does not. Answer, fix, guard and a finding he should see, below.
-
-### A. WHY `6871c2a9d` BUILT (14 Sep, "Auto: record new major champion(s)")
-
-Not a guardrail gap. A documented decision. The commit changed three files and three lines
-(`majors/tennis.json`, `champions-history.json`, `majors/zzc-titles.json`) and deliberately carried no
-`[vercel skip]`, because `lib/majors.ts` and `lib/champions.ts` both `readFileSync` their JSON, so the build WAS the
-publishing mechanism. `majors-ingest.yml`'s header argued "only ~8 majors a year, so a build each is cheap".
-`footy-refresh.yml` did the same thing, branching its commit message to drop the tag whenever
-`champions-history.json` changed.
-
-Two things were wrong with the premise. It was never only ~8: the ledger in the same commit also carries boxing, the
-AFL/NRL premiers and anything else the finalizers append. **Seven pure champions-data production builds in the 180 days
-to 09-14** (`6871c2a9d`, `1e84f9abf`, `137d66b10`, `166580c7e`, `3cdf4e87e`, `a95599daa`, `f389da010`). And the data was
-already in Supabase the whole time: `majors_ingest.py` writes `tennis_majors`, `majors_to_champions.py` appends to
-`public.champions`, and the JSON is a derived cache. Nothing needed to move. The problem was only ever on the read side.
-
-### B. THE FIX — shipped, modelled on the mini's own `0cd37969a` (owners)
-
-- `lib/majors.ts` — `getGolfMajors`/`getTennisMajors` now async, GitHub raw, `revalidate: 3600`, tag `majors`.
-- `lib/championsCurrent.ts` (new) — the Current board only, tag `champions`.
-- `scripts/champions/build_champions.py` — two new derived files: `champions-current.json` (the `isCurrent` rows alone,
-  **97 rows / 38 KB** vs the ledger's 6,816 / 2.58 MB) and `majors/golf-months.json` (478 dated majors / 12 KB). Both
-  rendered by the existing `render()` so the row shape stays single-source. `build_current` has its own shrink guard
-  (`sys.exit(5)`): a competition does not stop having a reigning holder, and the board is now runtime-read, so a partial
-  Supabase page would empty it with no deploy to notice.
-- `lib/championsHub.ts` — enrichment factored into `enrich()`; `getChampionsWithLinks()` stays SYNC and build-time for
-  its two remaining callers (`championsHistory` competition metadata, `championsTimeline`), new async
-  `getChampionsWithLinksLive()` for the board.
-- Both workflows now `[vercel skip]` and ping `/api/revalidate` (tags `majors`, `champions`), gated on an actual push,
-  then warm `/sports/champions`, `/teams/tennis`, `/teams/golf`. **The 300s sleep before the flush is load-bearing** —
-  same reason as `business-daily-refresh.yml`: raw.githubusercontent has a ~5-min CDN cache and flushing early
-  re-caches the OLD list for the full hour.
-
-**Deliberately NOT converted**, and say so before anyone "finishes the job": the `<ChampionBadge>` on the 54 call sites
-of `getCurrentChampionships`, the metro Championship History, the per-competition rolls and the Time Machine. They pick
-a champion up on the next natural deploy. Converting them means an async ripple through 54 call sites and a fetch
-inside all 4,261 metro pages, to buy a day of freshness on a badge.
-
-### C. THE TRACER BIT ME, EXACTLY AS `DATA-READS-RECIPE.md` SAID IT WOULD
-
-First build after the conversion: `.next/server/app/teams/tennis/page.js.nft.json` traced **111 files and none of the
-majors JSON**. Same silent miss the recipe records for `lib/international.ts` on 09-15, and the `MAJORS_FILES` map was
-rule 1's exact shape. Harmless while those pages were fully static; a blank hub once they carry an ISR window and the
-fallback runs on a real re-render, because both pages do `if (!data) return null`.
-
-Fixed the way the recipe prescribes: **static imports**, not `readFileSync`, for `golf.json`, `tennis.json`,
-`golf-months.json` and `champions-current.json`. That also removed a 2.58 MB build-time ledger read from
-`/teams/golf`, which existed to look up 478 integers. Traces after: tennis/golf 115 files, and the data now compiles
-into the bundle where there is nothing to trace. **Your 09-14 note asked for a sweep of other readers converted to
-literal-join maps in `6edc58ecb` — this is one more confirmed case. The sweep is still open.**
-
-Related, and it vindicates the slice: the build logs `Failed to set Next.js data cache ... items over 2MB can not be
-cached` for `business/companies.json` (2,987,575 bytes). A runtime fetch of the 2.58 MB ledger would have hit the same
-ceiling and re-fetched on every render. 38 KB is nowhere near it.
-
-### D. NEW GUARD — `check:live-data` now enforces the MIRROR case
-
-The script already caught "data refreshed with `[vercel skip]` but read at build time" (never deploys). It now also
-catches "data read at RUNTIME but committed WITHOUT `[vercel skip]`" (wasted build), scanning every `git commit -m`
-subject in `.github/workflows/*` and `mac-mini-jobs/*.sh` against the declared `OUT_OF_BAND` paths. `WASTE_EXEMPT` is
-empty; add to it only for a job whose commit genuinely has to build something else, and say what. Negative-tested by
-stripping the tag back off `majors-ingest.yml`, confirming FAIL, restoring. This is what stops the regression, not the
-comments.
-
-### E. 🔴 THE 2/DAY BUILD CAP IS STILL INACTIVE — third day flagged, still not done
-
-`scripts/vercel-ignore.sh` reads `VERCEL_BUILD_CAP_TOKEN` and, without it, prints `build cap inactive` and applies NO
-cap. Your daily-ops sweep has said so on 09-13, 09-14 and 09-15. So the ceiling that `feedback_vercel_guardrail_must_be_infra_not_memory`
-concluded had to be code rather than a promise is, right now, neither: the code is shipped and disabled. **Anyone with
-Vercel dashboard access should add `VERCEL_BUILD_CAP_TOKEN` (read scope) to project `prj_eGoUAOrnwvNP86s7p74ruILMl3Dr`,
-Production, build-time.** Until then, every "we are capped at 2" statement in this repo is false, mine included — I told
-Ashwin this change saves a daily slot, and it does not yet, because there are no slots being counted.
-
-### F. VERIFIED / OPEN
-
-Verified locally on Windows: typecheck, all 13 `check:*`, 294 vitest, 112 pytest, `next build --webpack`,
-`check:function-size` (92.1 MB `/sports/champions`, under the 220 MB line). `build_champions.py` `py_compile` only —
-the two new emitters could not be run here (no `scripts/mktcap/supabase_key.txt`), so both output files in this commit
-were generated by reproducing the same filter and join against the committed ledger. **First real majors-ingest or
-footy-refresh run should be checked: the files it writes must come back byte-identical, and the ping must log a 200 for
-both tags.** If `champions-current.json` churns, `build_current` is not reproducing `render()` faithfully.
-
-### D. WWC tracker: daily schedule retired, self-tests made state-agnostic (`52fab443e`, no build)
-
-Ashwin asked why he got GitHub Actions emails and an ntfy. The 09-15 scheduled run of `wwc-2026-tracker.yml`
-(11:24Z) failed at "Self-test the builder and the tracker"; ops-autofix re-ran it (13:19 BST ntfy) and it failed
-again, and GitHub emails on each failed scheduled run. Not the parser this time: both self-tests hard-coded the
-PRE-FINAL dump, and recording the final on 09-14 (`8f43c6971`, section L of 09-14) broke them.
-- `build_intl_wbasketball.py` asserted `WC editions == 19` and `2026` scheduled ("got 20, want 19"; "2026 not counted
-  as played"). `track_wwc.py`'s round trip copied the live dump and expected 2026 absent. Left alone, every daily run
-  to 30 Sept would have failed, emailed and drawn an autofix re-run.
-- **Schedule retired** (Ashwin: "do both"): the cron in `.github/workflows/wwc-2026-tracker.yml` is commented out with
-  the reason; `workflow_dispatch` kept; re-enable for 2030. Checked with Ruby's YAML: triggers are only
-  `workflow_dispatch` (note a bare `on:` key parses as boolean `true` in YAML, which is why a naive check reads nil).
-- **Builder self-test:** played + scheduled editions total 20, 2026 counted exactly once, and a played 2026 has a
-  champion. Bump the 20 when a 2030 row is added.
-- **Tracker self-test:** the round trip first resets its temp copy's 2026 block to `SCHEDULED_BLOCK_2026` (identical,
-  byte for byte, to the dump before `8f43c6971`) via a new `swap_block()`, which `replace_block()` now uses. A first
-  draft left `render_block(e)` inside `swap_block()`; caught by the self-test run before commit.
-- **Verified:** both self-tests pass against the current dump (2026 played) AND the pre-final dump from git (2026
-  scheduled; the real dump restored, unchanged). `track_wwc.py` on the real dump: "2026 already in ...; nothing to
-  do", exit 0. Dispatched run 34969956543 on `52fab443e`: success, so the workflow's latest run is green and
-  `detect_issues.py` reports 0 findings (no more autofix re-runs today).
-
-## 2026-09-15 — mini → next session: INTERNATIONAL FOOTBALL HUB WAS SILENTLY EMPTY (fixed, one paid build); cricket REVIEW rows fixed
-
-Ashwin, the morning of 09-15 (conference day): "why have all of the countries disappeared from the home page of
-international football", then "build the static-import fix and push once the build passes", then "fix the
-Afghanistan v India rows". `git pull`: nothing new on either repo.
-
-### A. `/teams/national` showed "0 teams", no tournament hubs, no top games (`f24f4bde6`, one paid build)
-
-- **Symptom, production:** the National teams list read "0 teams match the current filters" with no filter set; the
-  Tournament hubs cards and "Top games of all-time" rows were empty too. Only the World Cup 2026 section (fetched from
-  GitHub raw) rendered. Response `x-vercel-cache: STALE`, i.e. an ISR re-render. `public/data/international/index.json`
-  itself was fine (235 teams). Country pages (`/teams/national/france`) still rendered.
-- **Cause:** `lib/international.ts` read its eleven JSON files with `readFileSync` through a map of arrow functions,
-  each a fully literal `join()`, called as `MAP[name]()` (`6edc58ecb`, 09-08, the file-tracer scoping; rule 1 of
-  `scripts/DATA-READS-RECIPE.md`). In the real build, `.next/server/app/teams/national/page.js.nft.json` listed **0**
-  international files. The build machine has the whole repo, so every deploy prerendered the page complete; the first
-  ISR re-render on Vercel found no file, `existsSync()` returned false and `loadJson()` returned its empty fallback,
-  logging nothing. `check:data-reads` passed. So the hub has most likely been empty between every deploy and the next
-  revalidation since 09-08, and "came back" with each build.
-- **Fix:** static JSON imports for all eleven files (~1.35 MB) in `lib/international.ts`; `fs`/`path` removed. Safe for
-  the client: the module is `import "server-only"` and listed in `check-client-imports`, and all four client components
-  that touch it (`WorldCup2026`, `TopGamesTable`, `TeamTopGames`, `RadialKnockout`) import types only.
-  `getWorldCup2026` now copies the bundled object before attaching `.sim`. Data still changes with a build, as before.
-- **Recipe updated:** `DATA-READS-RECIPE.md` gains the "too FEW files fails silently" section: verify the route's real
-  `page.js.nft.json` after a build, prefer a static import for a small fixed build-time set, and do not hide a missing
-  file behind an `existsSync()` fallback.
-- **Verified** in a scratch worktree on `origin/main`: `npm run verify` with
-  `PYTHON_BIN=~/Projects/Metro Area Project/.venv/bin/python` (typecheck, every check:*, vitest 294, pytest 112,
-  `next build --webpack`, function-size under 220 MB) passed. Trace after: `/teams/national` 11 international files
-  (was 0), `/teams/national/[slug]` 12. Pushed alone as HEAD at 10:12 BST on Ashwin's yes; the day's first paid build.
-- **Deploy: LIVE, verified through two ISR re-renders.** `/deployed` returned `f24f4bde6` at 10:19 BST (~6.5 min).
-  Live HTML: 10:19 `PRERENDER` 347 `cur_name` entries and 9 hub links; 10:21:33 `STALE` (the request that triggers a
-  re-render) still full; 10:21:54 `HIT` age 19 (the re-rendered copy, the one that used to come back empty) still 347
-  and 9; the same again at 10:24:25 / 10:24:45. No "0 teams" text in any of them.
-- **Open, worth a sweep:** the same trace gap showed for `/teams/national/womens-world-cup/[slug]` (0 international)
-  and `/teams/national/tournaments/[slug]` (0) in a 09-11 build; now fixed for anything reading `lib/international`, but
-  any OTHER reader converted to literal-join maps in `6edc58ecb` may fail the same silent way. Not yet swept.
-
-### B. Cricket weekly REVIEW (09-15 10:07 ntfy): Afghanistan v India fixed (`b26709cfe`, no build)
-
-- The ntfy body arrived nearly empty ("REVIEW BEFORE PASTING" twice): the wrapper's `grep -i REVIEW` keeps only the
-  header lines, not the items under them. The items are in `~/metro-mini-jobs/logs/cricket-weekly-DATE.log`. Not fixed.
-- **Gahanga B Ground, Rwanda (8 rows, 8-9 Sep, Africa Continental Cup):** flagged only because the ground is new and
-  the country was inferred from the city; every field is correct. No change.
-- **Afghanistan v India T20I, 13 Sep (cricket_matches 22711, 22712):** were "Arun Jaitley Cricket Stadium, New Delhi" /
-  "New Delhi" with `venue_country`, `host_country`, `tournament_series` null. Set, on Ashwin's instruction, to the
-  existing convention: "Arun Jaitley Stadium, Delhi", Delhi, India, India, "Afghanistan v India T20I Series, Sep 2026
-  (in India)" (Wikipedia: the Friendship Cup, Afghanistan the designated host, all three T20Is in New Delhi).
-- Portal data rebuilt from Supabase (`build_cricket_portal_data.py`, `build_cricket_top_games.py`; both need
-  `~/.config/metro-supabase/env` sourced for `SUPABASE_URL`, as the wrapper does). Only `team-detail/afghanistan.json`
-  and `india.json` changed.
-- **Not changed:** the 2026-08-05..08-15 Afghanistan rows from the Ireland tour also have no `tournament_series`
-  (never flagged). A Wikipedia 429 skipped "Zimbabwean cricket team against Afghanistan in the UAE in 2026-27"; the next
-  weekly run harvests from the workbook's last Afghanistan match (08-15) again, so it should retry.
-
-### C. The rest of the morning's ntfys
-
-Football UNMATCHED at 00:02 and 06:09 (expected until Friday's Lookup sync); Daily Ops Sweep 02:06: 37 ok, 1 failed
-(the 09-14 gap-league-watch, already fixed). It still reports the build-cap token unset, now irrelevant to owners-weekly.
 
