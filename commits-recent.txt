@@ -1,3 +1,4 @@
+2026-09-23T11:33:48+01:00  24b7aa0b8  ops-autofix: the stand-down alert goes through the dedupe it already had [vercel skip]
 2026-09-23T11:28:07+01:00  bf95b5764  HANDOFF: 2026-09-23 section T, the schedule file stopped churning [vercel skip]
 2026-09-23T11:27:01+01:00  1513f5c63  refresh-schedule: drop the live timestamps, compute occurrences at render time [vercel skip]
 2026-09-23T11:22:02+01:00  81532ae43  HANDOFF: 2026-09-23 section S, the pull found a working promoter and a failing scraper [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T23:41:09+01:00  75ef7448a  HANDOFF: zero dangling slugs anywhere; plutil -lint does not catch malformed XML comments [vercel skip]
 2026-09-20T23:40:23+01:00  b65225cdc  mini: clear the dangling healthchecks slugs from the five unloaded fallback plists [vercel skip]
 2026-09-20T23:36:20+01:00  9fc6d3898  HANDOFF: newsletter-retention dangling slug removed; nothing running pings a missing check [vercel skip]
-2026-09-20T23:32:35+01:00  b21344851  HANDOFF: deploy-watch tile created, cricket-monthly given up, API-created checks have no slug [vercel skip]
