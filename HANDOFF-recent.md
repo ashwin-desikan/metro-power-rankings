@@ -225,6 +225,46 @@ failure, which previously printed no block at all and now produces a non-empty R
 **Notion:** Silent failure register gains "cricket candidate-page fetch failure drops matches silently" (now fixed,
 recorded because the register is the list of faults that exit 0). Backlog rows closed for the cricket "New Delhi"
 alias and for the 429. All six items from the 2026-09-23 sweep are now closed or explicitly accepted.
+
+### W. Correction to section S: the cricket job did NOT promote the CPL champion
+
+Found while writing the Silent failure register entry, which is the value of actually opening Notion rather than
+declaring an intention to.
+
+**What section S claims:** "The cricket champion promoter from section L works... it caught the CPL final the day it
+happened... That is the whole design working unattended." **That is wrong on the mechanism**, and I reached it by
+inferring causation from two true facts sitting next to each other: the job ran every night and exited ok, and the CPL
+row exists with `source=cricket-finalizer`. The source field says which SCRIPT wrote the row, not who ran it.
+
+**What actually happened,** from timestamps rather than inference:
+
+- The CPL 2026 row was written at **2026-09-21 10:41:53 UTC**. The job's slots are 22:30 UTC. That is a daytime HAND
+  run of `cricket_finalize.py`, and Notion's Backlog row says so plainly: "CPL was done by hand on 09-21".
+- The row reached `champions-current.json` in **`61982d3b2`, author `majors-update-bot`, 09-21 10:52**, which is
+  `majors-ingest.yml`, eleven minutes later. Not this runner.
+- The 09-20 22:30Z slot ran BEFORE the final was over (a Caribbean evening final on the 20th is after midnight UTC),
+  and by the 09-21 22:30Z slot the hand run had already put the season in the ledger, so the job correctly found 0 new
+  champions.
+
+**And there was a bug that would have stopped it anyway.** A session on 09-21 found that the runner I wrote passed
+`public/data/golf-months.json` to `commit_paths` when the file is at `public/data/majors/golf-months.json`. One
+unmatched pathspec makes `git add` fatal, so it stages NONE of the other paths, `commit_paths` sees an empty index and
+returns 1, and the runner ends "done", exit 0. The Supabase write would already have happened, and the next run would
+count 0 new champions and never re-emit. Verified today that the fix landed: the runner now names the path that
+exists. The Silent failure register carries it as its own entry, including the correction that `majors-ingest.yml` is
+a backstop of up to a day for any row that reaches the table without its own re-emit.
+
+**So the job has still never promoted a champion live**, and Notion's own Backlog row has the status right: the County
+Championship, ending about 27 September, is the first real test. My section S reported a pass that had not happened.
+
+**The lesson, and it is the same one as the Formula E entry in section I:** `source=cricket-finalizer` and "the job ran
+and exited ok" are two facts that do not join up into "the job did it". The joining evidence was a timestamp, and it
+took ten seconds to look at.
+
+**Notion:** Silent failure register gains "a candidate Wikipedia page that 429s contributes no matches, and the run
+exits 0 (now caught)", written to the page itself and verified in place at the end of the register. No Backlog row
+needed for this correction: the row "Watch: first live promotion by the cricket-champions job" already carries the
+correct status and needed no edit.
 ## 2026-09-22 (close, cowork cloud) — CUTOVER: metro-rankings publishes from this Saturday; update_top_companies step removed
 
 Ashwin's ruling tonight, after the Thailand and Peru census populations reached Supabase (watcher run 20:41Z, Counties 3 chunks): cut over on one clean shadow Saturday (2026-09-20) instead of two. Done as one change: `mac-mini-jobs/runners/metro-rankings.sh` default `MODE` is now `publish` (`METRO_RANKINGS_MODE=shadow` still gives a rehearsal); the `update_top_companies.py --write` and its untagged "weekly Top Companies refresh" commit are removed from the tail of `mac-mini-jobs/run-mktcap-refresh.sh` (the script stays in `scripts/mktcap` for a manual patch; `details/*.json` and `meta.json` now come from extract.py in the metro-rankings publish, marketCap included, from the same CSV); `jobs.toml`'s comment rewritten. Both scripts pass `bash -n`. The mini runs the repo files through symlinks, so this lands when its checkout next pulls (deploy-watch, every 10 minutes); confirm on the mini before Saturday 10:30 UTC that `runners/metro-rankings.sh` shows the publish default.
