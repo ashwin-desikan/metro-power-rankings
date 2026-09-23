@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BASE_URL, SITE_NAME, serializeJsonLd, ogImage } from "@/lib/seo";
-import { getFanIndex, RESIDUAL_ELIGIBLE_GROUPS } from "@/lib/fanIndex";
+import { getFanIndex } from "@/lib/fanIndex";
 import { FansCrumbs, FansNav, TabHeader, MONO } from "./_shared/ui";
 import FanTable, { type FanTableTeam } from "./FanTable";
 
@@ -11,7 +11,7 @@ const PAGE_PATH = "/fans";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "Fan Attention Index";
 const PAGE_DESCRIPTION =
-  "The annual attention 224 sports teams earn on Wikipedia across every language edition: a public, reproducible measure of attention, not a fan count. NFL, NBA, MLB, NHL, MLS, WNBA, NWSL, Formula 1, European football and Liga MX, ranked within their own group.";
+  "The annual attention sports teams earn on Wikipedia, across every language edition: a public, reproducible measure of attention, not a fan count. NFL, NBA, MLB, NHL, football worldwide, college football, college basketball, EuroLeague, AFL, NRL, IPL, Formula 1, WNBA and NWSL, ranked within their own group and across sports on one shared scale.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -49,18 +49,20 @@ export default function FansPage() {
     href: t.href,
     group: t.group,
     league: t.league,
-    baseline_12m: t.baseline_12m,
-    all_lang_views_12m: t.all_lang_views_12m,
-    lang_count: t.lang_count,
-    spike_ratio: t.spike_ratio,
-    attention_score: t.attention_score,
-    rank_in_group: t.rank_in_group,
+    wikiBaseline12m: t.wikiBaseline12m,
+    scoreInGroup: t.scoreInGroup,
+    rankInGroup: t.rankInGroup,
+    rankInLeague: t.rankInLeague,
+    globalScore: t.globalScore,
+    globalRank: t.globalRank,
+    inFlux: t.inFlux,
+    spikeRatio: t.spikeRatio,
     monthly: t.monthly,
-    value_m: t.value_m,
-    val_source: t.val_source,
-    val_year: t.val_year,
-    residual_pct: t.residual_pct,
-    residual_eligible: RESIDUAL_ELIGIBLE_GROUPS.has(t.group),
+    valueM: t.valueM,
+    valSource: t.valSource,
+    valYear: t.valYear,
+    residualPct: t.residualPct,
+    residualEligible: t.residualEligible,
   }));
 
   const winLabel = windowLabel(data.window.start, data.window.end);
@@ -80,17 +82,16 @@ export default function FansPage() {
     temporalCoverage: `${data.window.start}/${data.window.end}`,
     isAccessibleForFree: true,
     variableMeasured: [
-      "All-language Wikipedia pageviews (12-month baseline)",
-      "English Wikipedia pageviews (12-month)",
-      "Wikipedia language edition count",
-      "Attention score (0-100, within group)",
+      "All-language Wikipedia pageviews, human traffic only (12-month median baseline x 12)",
+      "Attention score, within group (0-100)",
+      "Global attention score, across every team (0-100, share of the top team)",
     ],
     distribution: {
       "@type": "DataDownload",
       encodingFormat: "application/json",
       contentUrl: `${BASE_URL}/data/fans/fan-attention.json`,
     },
-    citation: "Citizen of Nowhere, Fan Attention Index v0.1 (2026), rankings.citizenofnowhere.org/fans",
+    citation: `Citizen of Nowhere, Fan Attention Index ${data.version} (2026), rankings.citizenofnowhere.org/fans`,
   };
 
   return (
@@ -122,12 +123,14 @@ export default function FansPage() {
         <p className="text-[13.5px] text-[var(--text-muted)] max-w-3xl">
           Every figure on this page is built from the Wikimedia Pageviews API (human traffic only,
           <code className="mx-1">agent=user</code>) and each team&apos;s Wikidata sitelinks, summed across
-          every language edition of Wikipedia. No survey or third-party popularity index is used. Full method,
-          sources, caveats and per-group regression fit are on the{" "}
+          every language edition of Wikipedia. No survey or social-media signal is used: a Wikidata
+          social-following count was tested and dropped as a second signal, because the figures on file
+          were stale and inconsistent across teams. Full method, sources, caveats and per-group
+          regression fit are on the{" "}
           <Link href="/fans/methodology" className="hover:underline text-[var(--accent)]">Methodology</Link> page.
         </p>
         <p className="text-[13.5px] text-[var(--text-muted)] max-w-3xl mt-2">
-          Suggested citation: <em>Citizen of Nowhere, Fan Attention Index v0.1 (2026), rankings.citizenofnowhere.org/fans</em>.
+          Suggested citation: <em>Citizen of Nowhere, Fan Attention Index {data.version} (2026), rankings.citizenofnowhere.org/fans</em>.
           Released under{" "}
           <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="hover:underline text-[var(--accent)]">CC BY 4.0</a>.
         </p>

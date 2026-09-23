@@ -6,9 +6,12 @@ Turns the three Fan Attention Index CSVs (teams_fan_attention.csv,
 teams_monthly_long.csv, teams_fan_vs_valuation.csv) into the single JSON file
 the /fans page reads: public/data/fans/fan-attention.json.
 
+v0.2: new schema (wiki_baseline_12m, social_followers, signal, fan_index_raw,
+score_in_group, global_score, global_rank, in_flux, etc). See
+fan_index/README.md REVISION 5 for the full method writeup.
+
 Pure offline transform, no network calls. Safe to re-run any time the source
-CSVs change (e.g. after a Mac-mini refresh via build_fan_index.py); it does
-not touch the CSVs themselves.
+CSVs change; it does not touch the CSVs themselves.
 
 Usage:
     python3 scripts/fans/csv_to_json.py \
@@ -16,13 +19,11 @@ Usage:
         --out public/data/fans/fan-attention.json
 
 --fan-index-dir can also be set via the FAN_INDEX_DIR environment variable.
---out defaults to public/data/fans/fan-attention.json relative to the repo
-root (this file's grandparent directory), which is right when run from
-anywhere inside the repo.
 """
 import argparse
 import csv
 import json
+import math
 import os
 import sys
 from collections import defaultdict
@@ -30,19 +31,13 @@ from datetime import datetime, timezone
 
 WINDOW_START = "2025-09"
 WINDOW_END = "2026-08"
-VERSION = "v0.1"
+VERSION = "v0.2.1"
 METHOD_URL = "/fans/methodology"
 
-# Groups whose log-log value_m ~ baseline_12m regression clears R^2 >= 0.4
-# (see README.md "Regression: value_m ~ baseline_12m (log-log OLS)"). Only
-# these groups get a residual_pct on the page; the rest render "n/a" because
-# the fitted line explains too little of the group's variance to make a
-# per-team residual meaningful.
-RESIDUAL_ELIGIBLE_GROUPS = {"European football", "MLB", "NBA", "NFL"}
-
 GROUP_ORDER = [
-    "NFL", "NBA", "MLB", "NHL", "MLS", "WNBA/NWSL", "F1",
-    "European football", "Liga MX",
+    "NFL", "NBA", "MLB", "NHL", "Football", "College football",
+    "College basketball", "EuroLeague", "AFL", "NRL", "IPL", "F1",
+    "WNBA", "NWSL",
 ]
 
 
@@ -73,21 +68,8 @@ def round_sig(v, ndigits):
 
 def build_json(fan_index_dir, out_path):
     attention_rows = read_csv(os.path.join(fan_index_dir, "teams_fan_attention.csv"))
-    valuation_rows = read_csv(os.path.join(fan_index_dir, "teams_fan_vs_valuation.csv"))
     monthly_rows = read_csv(os.path.join(fan_index_dir, "teams_monthly_long.csv"))
 
-    # (league, team) -> {residual_pct, value_per_1k_baseline}, only present for
-    # the 220 teams with a valuation.
-    val_by_key = {}
-    for r in valuation_rows:
-        key = (r["league"], r["team"])
-        val_by_key[key] = {
-            "residual_pct": to_float(r["residual_pct"]),
-            "value_per_1k_baseline": to_float(r["value_per_1k_baseline"]),
-        }
-
-    # (league, team) -> 12 ints, oldest first (year_month sorts correctly as a
-    # string in YYYYMM form).
     monthly_by_key = defaultdict(list)
     for r in monthly_rows:
         key = (r["league"], r["team"])
@@ -95,20 +77,14 @@ def build_json(fan_index_dir, out_path):
     for key in monthly_by_key:
         monthly_by_key[key].sort(key=lambda p: p[0])
 
-    # Group baseline_12m totals and maxima, for attention_share_in_group,
-    # attention_score and rank_in_group.
-    baseline_by_group = defaultdict(list)  # group -> [(team_key, baseline_12m)]
+    residual_eligible_groups = set()
     for r in attention_rows:
-        b = to_float(r["baseline_12m"]) or 0.0
-        baseline_by_group[r["group"]].append((r["league"], r["team"], b))
+        if r.get("residual_pct") not in (None, ""):
+            residual_eligible_groups.add(r["group"])
 
-    group_max = {g: max((b for _, _, b in rows), default=0.0) for g, rows in baseline_by_group.items()}
-    group_sum = {g: sum(b for _, _, b in rows) for g, rows in baseline_by_group.items()}
-    group_rank = {}
-    for g, rows in baseline_by_group.items():
-        ordered = sorted(rows, key=lambda t: t[2], reverse=True)
-        for i, (league, team, _b) in enumerate(ordered, start=1):
-            group_rank[(g, league, team)] = i
+    seen_groups = set()
+    for r in attention_rows:
+        seen_groups.add(r["group"])
 
     teams = []
     for r in attention_rows:
@@ -116,52 +92,52 @@ def build_json(fan_index_dir, out_path):
         team = r["team"]
         group = r["group"]
         key = (league, team)
-        baseline = to_float(r["baseline_12m"]) or 0.0
-        gmax = group_max.get(group) or 1.0
-        gsum = group_sum.get(group) or 1.0
-        attention_score = round(baseline / gmax * 100, 1) if gmax else 0.0
-        attention_share = round(baseline / gsum, 4) if gsum else 0.0
 
         has_val = r.get("has_valuation") == "1"
-        val = val_by_key.get(key)
-        residual_pct = None
-        if has_val and group in RESIDUAL_ELIGIBLE_GROUPS and val and val["residual_pct"] is not None:
-            residual_pct = round(val["residual_pct"] * 100, 1)
-
         monthly_series = [v for _, v in monthly_by_key.get(key, [])]
-        if len(monthly_series) != 12:
-            # Missing/short series should never silently ship a misleading
-            # sparkline; pad with None rather than guessing.
-            monthly_series = (monthly_series + [None] * 12)[:12]
+        monthly_series = monthly_series[-12:]
+        if len(monthly_series) < 12:
+            monthly_series = [None] * (12 - len(monthly_series)) + monthly_series
+
+        residual_pct = None
+        if has_val and group in residual_eligible_groups:
+            residual_pct = to_float(r.get("residual_pct"))
+
+        value_m = to_float(r["value_m"]) if has_val else None
+        wiki_baseline = to_float(r.get("wiki_baseline_12m"))
+        value_per_1k_baseline = None
+        if has_val and value_m is not None and wiki_baseline:
+            value_per_1k_baseline = round_sig(value_m / (wiki_baseline / 1000.0), 2)
 
         teams.append({
             "team": team,
             "group": group,
             "league": league,
+            "conference": r.get("conference") or None,
             "qid": r["qid"],
             "en_title": r["en_title"],
-            # Finer-grained than `league` for the WNBA/NWSL group (whose
-            # `league` column is the same for both leagues); the frontend
-            # needs this to resolve the right team-link sport (WNBA vs the
-            # "W Football" NWSL portal).
-            "val_league": r["val_league"],
-            "baseline_12m": to_int(baseline),
-            "all_lang_views_12m": to_int(r["all_lang_views_12m"]),
-            "en_views_12m": to_int(r["en_views_12m"]),
-            "lang_count": to_int(r["lang_count"]),
-            "spike_ratio": round_sig(to_float(r["spike_ratio"]), 2),
-            "attention_share_in_group": attention_share,
-            "attention_score": attention_score,
-            "rank_in_group": group_rank.get((group, league, team)),
+            "wiki_baseline_12m": to_int(wiki_baseline),
+            "social_followers": to_int(r.get("social_followers")),
+            "social_asof": r.get("social_asof") or None,
+            "signal": r.get("signal") or None,
+            "fan_index_raw": round_sig(to_float(r.get("fan_index_raw")), 3),
+            "score_in_group": round_sig(to_float(r.get("score_in_group")), 1),
+            "rank_in_group": to_int(r.get("rank_in_group")),
+            "rank_in_league": to_int(r.get("rank_in_league")),
+            "global_score": round_sig(to_float(r.get("global_score")), 1),
+            "global_rank": to_int(r.get("global_rank")),
+            "in_flux": r.get("in_flux") or None,
+            "spike_ratio": round_sig(to_float(r.get("wiki_spike_ratio")), 2),
             "monthly": monthly_series,
-            "value_m": to_float(r["value_m"]) if has_val else None,
+            "value_m": value_m,
             "val_source": r["val_source"] if has_val else None,
             "val_year": to_int(r["val_year"]) if has_val else None,
-            "residual_pct": residual_pct,
-            "value_per_1k_baseline": round_sig(val["value_per_1k_baseline"], 0) if (has_val and val) else None,
+            "val_league": r.get("val_league") or None,
+            "residual_pct": round_sig(residual_pct, 1),
+            "value_per_1k_baseline": value_per_1k_baseline,
         })
 
-    groups = [g for g in GROUP_ORDER if g in baseline_by_group]
+    groups = [g for g in GROUP_ORDER if g in seen_groups]
 
     payload = {
         "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S"),
@@ -169,6 +145,7 @@ def build_json(fan_index_dir, out_path):
         "version": VERSION,
         "method_url": METHOD_URL,
         "groups": groups,
+        "residual_eligible_groups": sorted(residual_eligible_groups),
         "teams": teams,
     }
 
