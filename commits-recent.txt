@@ -1,3 +1,4 @@
+2026-09-23T17:31:19+01:00  25fda2111  Fan Attention Index live: release note + handoff
 2026-09-23T17:11:52+01:00  4ae6e3b64  fans: Women's sports category tab
 2026-09-23T16:56:03+01:00  f427b0f7b  fans: v0.3.1 nav, new leagues, blend methodology [preview]
 2026-09-23T16:31:35+01:00  3e98ba80c  mini jobs: refuse every git write when HEAD is not GIT_BRANCH [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-21T09:32:26+01:00  c0a232928  handoff_recent: write newest entry first, so a truncated fetch still sees today [vercel skip]
 2026-09-21T09:24:53+01:00  cd7718522  reconciler: exclude data: refresh-schedule from commits-recent.txt too [vercel skip]
 2026-09-21T09:22:36+01:00  0f5803211  reconciler: generate HANDOFF-recent.md and commits-recent.txt for it to read [vercel skip]
-2026-09-21T07:19:03+01:00  43ba455b0  chore(substack): refresh feed snapshot [vercel skip]

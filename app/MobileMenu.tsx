@@ -118,6 +118,7 @@ function buildSections(): Section[] {
         { href: '/sports/heartbreak', label: '💔 The Heartbreak Index' },
         { href: '/sports/games', label: '🏆 The Greatest Games' },
         { href: '/sports/valuations', label: '💵 Team Valuations' },
+        { href: '/fans', label: '🎟️ Fan Attention Index' },
         { href: '/top-teams', label: '🏙️ The Team That Wins the City' },
         { href: '/neighborhoods', label: '🏘️ The Last of the Marylebones' },
         { href: '/badges/velvet-rock-capital', label: '🎸 Velvet Rock Capital' },

@@ -65,6 +65,15 @@ export const DEEP_DIVES: DeepDive[] = [
     accent: "#f59e0b",
   },
   {
+    slug: "fan-attention-index",
+    title: "Fan Attention Index",
+    dek: "660 teams across football, the US majors, college, women's sports and world leagues, ranked by the attention they draw and set beside what they are worth.",
+    href: "/fans",
+    tag: "Cross-sport",
+    domain: "sports",
+    accent: "#14b8a6",
+  },
+  {
     slug: "team-that-wins-the-city",
     title: "The Team That Wins the City",
     dek: "One crest per metro: the club whose disappearance would change what the metro is, not the one with the most trophies.",

@@ -9,10 +9,15 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 77, 2026-09-16 to 2026-09-23
-     If the reader counts fewer than 77 entries, its fetch window stopped
+     entries: 78, 2026-09-16 to 2026-09-23
+     If the reader counts fewer than 78 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
+## 2026-09-23 (later): cowork (Windows device session) → next session (/fans nav wiring)
+
+The /fans page shipped with only the desktop Deep Dives link, which broke DESIGN-STANDARDS §5 ("A new destination goes in both, in the commit that adds it"; "A page that isn't reachable is a bug"). Now wired everywhere the sibling cross-sport index (/sports/valuations) appears: `lib/sportsCatalog.ts` SPORTS_FEATURES (desktop Sports mega-menu + mobile Sports section; now 10 items, at the column cap), `app/MobileMenu.tsx` Deep Dives, `lib/deepDives.ts` (deep-dives hub card) and the `app/sports/page.tsx` features grid. typecheck, client-imports, mobile and data-reads checks pass. Rule for next time: a net-new page gets every nav surface in the same commit as the page.
+
+**Notion:** none (no queryable state changed).
 ## 2026-09-23: cowork (Windows device session) → next session (Fan Attention Index /fans shipped to main)
 
 Cowork session, started from a teardown of Rascasse (audience-intelligence vendor). Built and merged a new cross-sport **Fan Attention Index** at `/fans` + `/fans/methodology`. Branch `fan-attention-index` merged `--no-ff` into main after `security-hardening`.
@@ -41,6 +46,7 @@ Cowork session, started from a teardown of Rascasse (audience-intelligence vendo
 - New Notion DB **Ideas Inbox** (under Citizen of Nowhere) + Cowork scheduled task `trig_01Stdn37oQKbQpp6znXqRCXp` (daily 06:00 UTC, bound to this PC) that files self-sent Instagram/LinkedIn share links and archives them in Gmail (label Processed). Scheduled jobs row added.
 
 **Notion:** Backlog rows added (Fan Attention Index build items, valuations plan, Trends retry for NHL/NBA; Fan Index build/route rows closed Done), Decisions rows added (valuation tiers; fan index categories, method and college inclusion rule), Scheduled jobs row added (Share-link emails to Ideas Inbox), plan page "Citizen of Nowhere: Rascasse Teardown and Go-Live Plan" updated, new DB Ideas Inbox.
+
 ## 2026-09-23 (security hardening) — branch security-hardening, NOT merged
 
 ### AE. Seven security steps, three of which were worse than the brief assumed

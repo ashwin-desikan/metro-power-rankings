@@ -39,6 +39,7 @@ const FEATURES: Feature[] = [
   { emoji: "💔", title: "The Heartbreak Index", href: "/sports/heartbreak", desc: "Which fanbases suffer most: droughts, lost finals and relegation, on one formula across every sport." },
   { emoji: "⚔️", title: "Sports Rivalries", href: "/sports/rivalries", desc: "The derbies, classics and grudge matches that define cities and nations." },
   { emoji: "💰", title: "Team Valuations", href: "/sports/valuations", desc: "What every franchise is worth, league by league, on one sortable board." },
+  { emoji: "🎟️", title: "Fan Attention Index", href: "/fans", desc: "660 teams ranked by the attention they draw, within each league and across every sport." },
   { emoji: "👻", title: "The Geography of Erasure", href: "/sports/geography-of-erasure", desc: "Ghost franchises: the champions erased when the metro behind them was outgrown." },
   { emoji: "🏙️", title: "The Team That Wins the City", href: "/top-teams", desc: "One defining club per metro — the one whose loss would change what the metro is." },
 ];

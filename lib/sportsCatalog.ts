@@ -212,6 +212,7 @@ export const SPORTS_FEATURES: SportsFeature[] = [
   { href: "/sports/heartbreak", label: "The Heartbreak Index", hint: "Which fanbases suffer most, on one formula across every sport" },
   { href: "/sports/rivalries", label: "Sports Rivalries", hint: "Cross-sport derbies, classics and grudge matches" },
   { href: "/sports/valuations", label: "Team Valuations", hint: "Franchise values across the major leagues" },
+  { href: "/fans", label: "Fan Attention Index", hint: "660 teams ranked by the attention they draw, across every sport" },
   { href: "/sports/geography-of-erasure", label: "The Geography of Erasure", hint: "The champions the map forgot" },
   { href: "/top-teams", label: "The Team That Wins the City", hint: "One defining club per metro" },
 ];
