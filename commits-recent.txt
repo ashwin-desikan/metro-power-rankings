@@ -1,3 +1,4 @@
+2026-09-22T22:13:43+01:00  41557f6a4  metro_sync: launch the watcher through wscript so no console flashes; no admin needed [vercel skip]
 2026-09-22T22:05:49+01:00  6ce4a47aa  metro_sync: watcher task runs as S4U so no console window flashes every tick [vercel skip]
 2026-09-22T21:56:27+01:00  c803564bb  mini: metro-rankings cutover to publish mode; update_top_companies step retired; citypop apply script [vercel skip]
 2026-09-22T21:25:06+01:00  ed41c3a24  docs: local and small models protocol (Jev, Ollama) as standing policy [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T23:11:16+01:00  c7d50b516  HANDOFF: deploy-watch takes the dispatcher lock on manual runs too [vercel skip]
 2026-09-20T23:10:30+01:00  85565d230  mini: deploy-watch takes the dispatcher lock on manual runs too [vercel skip]
 2026-09-20T23:02:27+01:00  55538c97e  HANDOFF: verify_wins tolerates a settling game; tonight's backlog is closed [vercel skip]
-2026-09-20T23:01:18+01:00  4a3ea669d  mlb-sim: verify_wins tolerates a bounded in-progress skew instead of hard-failing [vercel skip]
