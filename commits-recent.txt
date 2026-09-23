@@ -1,3 +1,4 @@
+2026-09-23T11:46:54+01:00  67b9073dc  HANDOFF: 2026-09-23 section W, correcting the CPL promotion claim in section S [vercel skip]
 2026-09-23T11:41:51+01:00  5515f2239  cricket: alias New Delhi to Delhi, and stop losing pages to a silent 429 [vercel skip]
 2026-09-23T11:37:07+01:00  e7a23130a  release-notes gate: exempt the scheduled metro-rankings publish [vercel skip]
 2026-09-23T11:33:48+01:00  24b7aa0b8  ops-autofix: the stand-down alert goes through the dedupe it already had [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T23:45:31+01:00  7e1708b29  HANDOFF: all 17 plist pairs byte-identical between repo and LaunchAgents [vercel skip]
 2026-09-20T23:43:49+01:00  193968310  HANDOFF: football-standings fallback plist schedule synced from the live copy [vercel skip]
 2026-09-20T23:43:24+01:00  2e2b68dab  mini: sync the football-standings plist schedule to the live copy (four UTC runs, DST-paired) [vercel skip]
-2026-09-20T23:41:09+01:00  75ef7448a  HANDOFF: zero dangling slugs anywhere; plutil -lint does not catch malformed XML comments [vercel skip]
