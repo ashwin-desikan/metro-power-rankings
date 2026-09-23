@@ -31,13 +31,14 @@ from datetime import datetime, timezone
 
 WINDOW_START = "2025-09"
 WINDOW_END = "2026-08"
-VERSION = "v0.2.1"
+VERSION = "v0.3.1"
 METHOD_URL = "/fans/methodology"
 
 GROUP_ORDER = [
     "NFL", "NBA", "MLB", "NHL", "Football", "College football",
     "College basketball", "EuroLeague", "AFL", "NRL", "IPL", "F1",
-    "WNBA", "NWSL",
+    "WNBA", "Women's football", "Top 14", "Handball-Bundesliga",
+    "SuperLega", "NPB", "CFL",
 ]
 
 
@@ -127,6 +128,12 @@ def build_json(fan_index_dir, out_path):
             "global_score": round_sig(to_float(r.get("global_score")), 1),
             "global_rank": to_int(r.get("global_rank")),
             "in_flux": r.get("in_flux") or None,
+            "reddit_subscribers": to_int(r.get("reddit_subscribers")),
+            "subreddit": r.get("subreddit") or None,
+            "trends_index": round_sig(to_float(r.get("trends_index")), 2),
+            "inclusion_rule": r.get("inclusion_rule") or None,
+            "display_name": r.get("display_name") or None,
+            "category": r.get("category") or None,
             "spike_ratio": round_sig(to_float(r.get("wiki_spike_ratio")), 2),
             "monthly": monthly_series,
             "value_m": value_m,

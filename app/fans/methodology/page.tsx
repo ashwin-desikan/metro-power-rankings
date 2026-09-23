@@ -10,7 +10,7 @@ const PAGE_PATH = "/fans/methodology";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "Fan Attention Index: Methodology";
 const PAGE_DESCRIPTION =
-  "How the Fan Attention Index is built: Wikipedia pageviews by language, the spike-dampened baseline, the entity check, the in-flux weighting, the global cross-sport scale, and what the index cannot tell you.";
+  "How the Fan Attention Index is built: the Wikipedia and Google Trends blend, the entity check, the college inclusion rules, the in-flux weighting, the global cross-sport scale, and what the index cannot tell you.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -53,10 +53,12 @@ export default function FansMethodologyPage() {
         <section>
           <h2 className="text-xl font-bold text-[var(--text)] mb-2">What this measures</h2>
           <p>
-            The Fan Attention Index is a read of how much attention a sports team gets on Wikipedia,
-            across every language edition. It is not a fan count and it is not a survey. It is a
-            direct tally of page requests to a team&apos;s Wikipedia article, from humans, not bots,
-            across as many as 143 language editions for one club.
+            The Fan Attention Index is a read of how much public attention a sports team draws
+            online, blending Wikipedia readership with Google Trends search interest. It is not a
+            fan count and it is not a survey. Its base layer is a direct tally of page requests to a
+            team&apos;s Wikipedia article, from humans, not bots, across as many as 143 language
+            editions for one club; on top of that, most groups add a normalised read of how often
+            people search for the team.
           </p>
         </section>
 
@@ -69,18 +71,12 @@ export default function FansMethodologyPage() {
             resolver mistake (a disambiguation page, a same-named unrelated topic) is caught before it
             enters the index rather than silently inflating a team&apos;s numbers. Pageviews come from
             the Wikimedia Pageviews API (<code>per-article</code>, all-access, <code>agent=user</code>),
-            which counts only human traffic and excludes bots and spiders. Redirect traffic (a reader
-            landing on an old title that forwards to the current article) is not separately tracked or
-            added in; the count is whatever the Pageviews API reports for the canonical title itself.
-            Language editions come from the sitelinks listed on the team&apos;s Wikidata item. Every
-            request carries an identifying User-Agent, as Wikimedia&apos;s API etiquette requires.
-          </p>
-          <p>
-            A Wikidata social-following count (property P8687) was tried as a second signal and
-            dropped: the figures on file were stale and inconsistent across teams, sometimes years
-            out of date and sometimes missing entirely for a team with obvious mainstream reach, so
-            folding them in would have made the index less accurate, not more. The index is
-            Wikipedia-only.
+            which counts only human traffic and excludes bots and spiders, summed across every
+            language edition listed on the team&apos;s Wikidata item. Search interest comes from
+            Google Trends, normalised within each group so it can be combined with the Wikipedia
+            signal. A Reddit subscriber count is part of the design (a third input, alongside Wikipedia
+            and Trends) but has no live data source wired up yet; every team currently carries a null
+            for it, and the blend below reweights around its absence rather than treating it as a zero.
           </p>
         </section>
 
@@ -106,14 +102,55 @@ export default function FansMethodologyPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold text-[var(--text)] mb-2">The blend: Wikipedia, Trends, and Reddit</h2>
+          <p>
+            Within a group, the design target is Wikipedia at 0.4, Google Trends at 0.3 and Reddit at
+            0.3. Reddit has no live data yet, so those two-thirds of that weight are not simply
+            dropped: the two working inputs are reweighted proportionally to fill the gap, which comes
+            out to roughly four-sevenths Wikipedia and three-sevenths Trends in practice. That is why
+            the index currently marks every team&apos;s signal as either &quot;wiki only&quot; (Trends
+            did not clear the adoption gate below, so Wikipedia stands alone) or &quot;blend&quot;
+            (Wikipedia and Trends combined); there is no &quot;full blend&quot; state yet, since
+            Reddit is not live.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-[var(--text)] mb-2">Groups scored on Wikipedia alone</h2>
+          <p>
+            Google Trends measures search volume for a query string, and a team name that collides
+            with an unrelated common word or place name pulls in search volume that has nothing to do
+            with the team. Como, the Serie A club, shares its name with Lake Como; a search-volume
+            signal for &quot;Como&quot; is mostly tourism, not football interest. Rather than build a
+            per-team exception list, the whole Football group is scored on Wikipedia alone, along with
+            AFL, F1, NRL, college football and college basketball, where the same collision problem is
+            common enough (school nicknames, city names, ordinary English words) that Trends would add
+            noise rather than signal. Every team in those groups is a &quot;wiki only&quot; signal, by
+            group policy, not because Trends was individually checked and rejected for that team.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-[var(--text)] mb-2">The adoption gate</h2>
+          <p>
+            Even in a group where Trends is used, an individual team&apos;s Trends read is only folded
+            into its score once that signal clears a minimum adoption gate: too little search volume
+            to be statistically meaningful is worse than no signal at all, since a thin, noisy series
+            can swing a team&apos;s score around for reasons that have nothing to do with its actual
+            attention. A team below the gate falls back to &quot;wiki only&quot; for that one team,
+            even inside a group where most other teams blend successfully.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold text-[var(--text)] mb-2">Spike ratio</h2>
           <p>
             The spike ratio is a team&apos;s busiest month divided by its median month, over the
-            displayed twelve-month window. A ratio at or above 2.5 is marked with a small lightning
-            icon on the index: it flags a year with one unusually loud month, not a team with weak
-            underlying interest. A high spike ratio can also mean a genuine, sustained shift, such as
-            a rename or relocation, rather than a single-month event. Read the marker as a prompt to
-            look closer, not as a verdict.
+            displayed twelve-month window, computed from the Wikipedia series. A ratio at or above 2.5
+            is marked with a small lightning icon on the index: it flags a year with one unusually
+            loud month, not a team with weak underlying interest. A high spike ratio can also mean a
+            genuine, sustained shift, such as a rename or relocation, rather than a single-month event.
+            Read the marker as a prompt to look closer, not as a verdict.
           </p>
         </section>
 
@@ -124,7 +161,7 @@ export default function FansMethodologyPage() {
             Wikipedia history spans more than one identity: a new franchise, a relocation, or a
             rename. Those teams draw look-up curiosity on top of ordinary fan interest, readers
             checking &quot;wait, who are the Utah Mammoth&quot; or searching out a freshly relocated
-            club, and that curiosity inflates raw pageviews in a way that is not really attention to
+            club, and that curiosity inflates raw attention in a way that is not really interest in
             the team as a going concern. To correct for it, an in-flux team&apos;s contribution to
             attention is weighted at 0.5x rather than counted in full. Those teams are marked on the
             index with a small dot and a tooltip naming the change and the weighting. Read the marker
@@ -134,23 +171,49 @@ export default function FansMethodologyPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-[var(--text)] mb-2">Attention score, and the global scale</h2>
+          <h2 className="text-xl font-bold text-[var(--text)] mb-2">College inclusion rules</h2>
           <p>
-            The within-group score is the baseline, scaled to the top team in its own group: the
-            group leader scores 100.0, and every other team in that group scores its baseline as a
-            percentage of the leader&apos;s, to one decimal place. That score only compares teams
-            within the same group.
+            College football and college basketball do not have a fixed league roster the way a pro
+            league does, so which programs belong on the index is set by an explicit rule rather than
+            by editorial judgment team by team. Programs are marked with a small double-dagger and a
+            tooltip naming the exact rule when they are on the index for a reason other than plain
+            major-conference membership.
           </p>
           <p>
-            The &quot;All&quot; view on the index instead ranks every team, across every sport, on a
-            single global score: each team&apos;s attention as a percentage of the single
-            most-watched team across every sport in the index, on a plain linear scale. The team with
-            the most attention anywhere scores 100.0; a team at half its attention scores 50.0. That
-            is a literal ratio, the same way the within-group score is, just measured against one
-            leader across the whole index instead of one leader per group. Most teams score low on
-            this scale, because most teams draw far less attention than the single biggest team in
-            the index; that is the honest picture of how concentrated global sports attention is, not
-            a flaw in the scale.
+            <strong className="text-[var(--text)]">College football:</strong> every Power 4 program,
+            Notre Dame, any program with a final AP Top 25 finish in the last 5 seasons, and Army and
+            Navy by name (service-academy programs with a national following that the conference-only
+            rule would otherwise exclude).
+          </p>
+          <p>
+            <strong className="text-[var(--text)]">College basketball:</strong> every major-conference
+            program, plus any program that reached the Final Four in the last 20 seasons or posted a
+            final AP Top 25 finish in the last 5 seasons, on the view that a Final Four run or a
+            ranked season is itself evidence of the national attention this index is trying to
+            measure, even from a program outside the traditional power conferences.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-[var(--text)] mb-2">Attention score, and the global scale</h2>
+          <p>
+            The within-group score is the blended (or, for a wiki-only group or team, Wikipedia-only)
+            attention figure, scaled to the top team in its own group: the group leader scores 100.0,
+            and every other team in that group scores its attention as a percentage of the
+            leader&apos;s, to one decimal place. That score only compares teams within the same group.
+          </p>
+          <p>
+            The &quot;All&quot; view instead ranks every team, across every sport, on a single global
+            score, and that global score is anchored to the Wikipedia baseline alone, not the blend:
+            each team&apos;s all-language pageview baseline as a percentage of the single most-watched
+            team&apos;s baseline across every sport in the index, on a plain linear scale. Trends is
+            deliberately left out of the global figure, since Trends is normalised within a group and
+            is not on a comparable scale across groups; pageviews are the one signal collected the
+            same way for every team, in every group, which makes them the only honest basis for a
+            single cross-sport number. The team with the most attention anywhere scores 100.0; a team
+            at half its baseline scores 50.0. Most teams score low on this scale, because most teams
+            draw far less attention than the single biggest team in the index; that is the honest
+            picture of how concentrated global sports attention is, not a flaw in the scale.
           </p>
         </section>
 
@@ -194,26 +257,35 @@ export default function FansMethodologyPage() {
           <h2 className="text-xl font-bold text-[var(--text)] mb-2">Limits</h2>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              <strong className="text-[var(--text)]">Attention is not fandom.</strong> Wikipedia is a
-              reference and lookup surface, not a ticket-buying or merchandise-buying surface. It
-              captures casual and news-driven interest well and under-represents passionate fan
-              bases that are less likely to look a team up on Wikipedia, particularly younger,
-              social-media-native audiences.
+              <strong className="text-[var(--text)]">Attention is not fandom.</strong> Wikipedia and
+              search interest are reference and lookup signals, not ticket-buying or
+              merchandise-buying signals. They capture casual and news-driven interest well and
+              under-represent passionate fan bases that are less likely to look a team up online,
+              particularly younger, social-media-native audiences.
             </li>
             <li>
               <strong className="text-[var(--text)]">Attention measures curiosity as well as
               fandom.</strong> A team in the news, for a trade, a scandal, a coaching change, draws
-              Wikipedia look-ups from people who are not really its fans and would not call themselves
-              one. That team can rank above its actual fanbase size on this index simply because more
+              look-ups from people who are not really its fans and would not call themselves one.
+              That team can rank above its actual fanbase size on this index simply because more
               people were curious about it that month. The in-flux weighting above corrects for the
               most visible version of this (a rename or relocation), but ordinary news-driven curiosity
               is not otherwise separated out.
             </li>
             <li>
-              <strong className="text-[var(--text)]">News and event spikes.</strong> Wikipedia
-              traffic reacts sharply to single events: trades, coaching changes, scandals, deep
-              playoff runs. Even the spike-dampened baseline can still overweight a team that had one
-              unusually loud stretch relative to a team with steadier, lower-amplitude attention.
+              <strong className="text-[var(--text)]">Agreement with a search-based benchmark is not
+              independent proof.</strong> This index was checked against an outside popularity
+              benchmark during development, and where the two agree that is treated as supporting
+              evidence for the method, not as proof of it: that benchmark is itself built substantially
+              from search and web-attention signals, so a strong correlation partly reflects shared
+              inputs and blind spots rather than two independent measurements landing on the same
+              answer.
+            </li>
+            <li>
+              <strong className="text-[var(--text)]">News and event spikes.</strong> Wikipedia and
+              search traffic both react sharply to single events: trades, coaching changes, scandals,
+              deep playoff runs. Even the spike-dampened baseline can still overweight a team that had
+              one unusually loud stretch relative to a team with steadier, lower-amplitude attention.
             </li>
             <li>
               <strong className="text-[var(--text)]">Relocations and renames.</strong> The Athletics
@@ -242,10 +314,11 @@ export default function FansMethodologyPage() {
               &quot;vs attention&quot; figure should be read with that in mind.
             </li>
             <li>
-              <strong className="text-[var(--text)]">EuroLeague has no per-club page yet.</strong> The
-              site&apos;s EuroLeague coverage links each club to its metro page, not a dedicated team
-              page, so EuroLeague rows on the index do not link out the way other groups do. That is
-              a gap in the site&apos;s team pages, not a resolver error.
+              <strong className="text-[var(--text)]">EuroLeague, Top 14, Handball-Bundesliga and
+              SuperLega have no per-club page yet.</strong> The site&apos;s coverage of these leagues
+              links each club to its metro page, not a dedicated team page, so rows in these four
+              groups do not link out the way other groups do. That is a gap in the site&apos;s team
+              pages, not a resolver error.
             </li>
           </ul>
         </section>

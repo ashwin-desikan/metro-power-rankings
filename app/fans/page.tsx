@@ -11,7 +11,7 @@ const PAGE_PATH = "/fans";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "Fan Attention Index";
 const PAGE_DESCRIPTION =
-  "The annual attention sports teams earn on Wikipedia, across every language edition: a public, reproducible measure of attention, not a fan count. NFL, NBA, MLB, NHL, football worldwide, college football, college basketball, EuroLeague, AFL, NRL, IPL, Formula 1, WNBA and NWSL, ranked within their own group and across sports on one shared scale.";
+  "The annual attention sports teams earn on Wikipedia, across every language edition: a public, reproducible measure of attention, not a fan count. Football, the major American leagues (NFL, NBA, MLB, NHL, college football, college basketball), and the rest of the world's sports (WNBA, women's football, EuroLeague, AFL, NRL, IPL, Formula 1, NPB, CFL, Top 14, Handball-Bundesliga, SuperLega), ranked within their own group and across sports on one shared scale.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -49,6 +49,7 @@ export default function FansPage() {
     href: t.href,
     group: t.group,
     league: t.league,
+    category: t.category,
     wikiBaseline12m: t.wikiBaseline12m,
     scoreInGroup: t.scoreInGroup,
     rankInGroup: t.rankInGroup,
@@ -56,6 +57,7 @@ export default function FansPage() {
     globalScore: t.globalScore,
     globalRank: t.globalRank,
     inFlux: t.inFlux,
+    inclusionRule: t.inclusionRule,
     spikeRatio: t.spikeRatio,
     monthly: t.monthly,
     valueM: t.valueM,
@@ -110,23 +112,26 @@ export default function FansPage() {
       />
       <FansNav active="index" />
 
-      <FanTable teams={teams} groups={data.groups} />
+      <FanTable teams={teams} />
 
       <p className="text-xs text-[var(--text-dim)] mt-4" style={MONO}>
         Version {data.version}, data window {winLabel}. * = residual not shown; this group&apos;s
-        attention-to-value fit is too weak (R&sup2; &lt; 0.4) to be meaningful. See{" "}
+        attention-to-value fit is too weak (R&sup2; &lt; 0.4) to be meaningful. &Dagger; = added to
+        the index by a stated inclusion rule rather than by conference membership alone; hover the
+        mark for the rule. See{" "}
         <Link href="/fans/methodology" className="hover:underline text-[var(--text-muted)]">Methodology</Link>.
       </p>
 
       <div className="mt-8 pt-6 border-t rounded-2xl" style={{ borderColor: "var(--border)" }}>
         <h2 className="text-sm font-semibold mb-2 text-[var(--text)]">Where these numbers come from</h2>
         <p className="text-[13.5px] text-[var(--text-muted)] max-w-3xl">
-          Every figure on this page is built from the Wikimedia Pageviews API (human traffic only,
+          Every figure on this page starts from the Wikimedia Pageviews API (human traffic only,
           <code className="mx-1">agent=user</code>) and each team&apos;s Wikidata sitelinks, summed across
-          every language edition of Wikipedia. No survey or social-media signal is used: a Wikidata
-          social-following count was tested and dropped as a second signal, because the figures on file
-          were stale and inconsistent across teams. Full method, sources, caveats and per-group
-          regression fit are on the{" "}
+          every language edition of Wikipedia. For most groups that Wikipedia baseline is blended with a
+          Google Trends search-interest signal; a small number of groups whose team names collide with
+          common words (football, AFL, F1, NRL, college football and college basketball) are scored on
+          Wikipedia alone, because Trends cannot tell the team from the word. Full method, sources,
+          caveats and per-group regression fit are on the{" "}
           <Link href="/fans/methodology" className="hover:underline text-[var(--accent)]">Methodology</Link> page.
         </p>
         <p className="text-[13.5px] text-[var(--text-muted)] max-w-3xl mt-2">

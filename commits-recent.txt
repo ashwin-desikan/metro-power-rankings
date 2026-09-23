@@ -1,3 +1,4 @@
+2026-09-23T15:21:23+01:00  e6926b11d  Fan Attention Index v0.2.1: all-sport scale, football consolidation, college and new leagues, canonical links [preview]
 2026-09-23T13:14:03+01:00  c5aa41327  Add Fan Attention Index page [preview]
 2026-09-22T22:13:43+01:00  41557f6a4  metro_sync: launch the watcher through wscript so no console flashes; no admin needed [vercel skip]
 2026-09-22T22:05:49+01:00  6ce4a47aa  metro_sync: watcher task runs as S4U so no console window flashes every tick [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T23:16:15+01:00  f9342a43d  HANDOFF: every runner takes the dispatcher lock; the no-trap decision recorded [vercel skip]
 2026-09-20T23:15:29+01:00  fea5fe445  mini: every runner takes the dispatcher lock, so a hand-run cannot race a tick [vercel skip]
 2026-09-20T23:11:16+01:00  c7d50b516  HANDOFF: deploy-watch takes the dispatcher lock on manual runs too [vercel skip]
-2026-09-20T23:10:30+01:00  85565d230  mini: deploy-watch takes the dispatcher lock on manual runs too [vercel skip]

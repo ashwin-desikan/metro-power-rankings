@@ -12,7 +12,18 @@ const FOOTBALL_LEAGUES = [
   "Premier League", "Championship", "La Liga", "Bundesliga", "Serie A",
   "Ligue 1", "Primeira Liga", "Eredivisie", "Süper Lig", "MLS", "Liga MX",
 ];
+const WOMENS_FOOTBALL_LEAGUES = ["NWSL", "WSL"];
+const MAJOR_AMERICAN_GROUPS = ["NFL", "NBA", "MLB", "NHL", "College football", "College basketball"];
+const WORLD_GROUPS = [
+  "WNBA", "Women's football", "F1", "EuroLeague", "AFL", "NRL", "IPL",
+  "NPB", "CFL", "Top 14", "Handball-Bundesliga", "SuperLega",
+];
 const ALL_FOOTBALL = "All football";
+const ALL_GROUPS = "All groups";
+const ALL_LEAGUES = "All leagues";
+
+const TOP_TABS = ["All", "Football", "Major American sports", "World"] as const;
+type TopTab = (typeof TOP_TABS)[number];
 
 export type FanTableTeam = {
   team: string;
@@ -20,6 +31,7 @@ export type FanTableTeam = {
   href: string | null;
   group: string;
   league: string;
+  category: string;
   wikiBaseline12m: number;
   scoreInGroup: number;
   rankInGroup: number;
@@ -27,6 +39,7 @@ export type FanTableTeam = {
   globalScore: number;
   globalRank: number;
   inFlux: string | null;
+  inclusionRule: string | null;
   spikeRatio: number;
   monthly: (number | null)[];
   valueM: number | null;
@@ -86,6 +99,15 @@ function TeamCell({ t }: { t: FanTableTeam }) {
           ●
         </span>
       ) : null}
+      {t.inclusionRule ? (
+        <span
+          className="ml-1 inline-block text-[var(--text-dim)]"
+          title={`Added by inclusion rule: ${t.inclusionRule}`}
+          aria-label="Added by inclusion rule"
+        >
+          ‡
+        </span>
+      ) : null}
     </>
   );
   return t.href ? (
@@ -95,36 +117,82 @@ function TeamCell({ t }: { t: FanTableTeam }) {
   );
 }
 
-export default function FanTable({ teams, groups }: { teams: FanTableTeam[]; groups: string[] }) {
-  const [group, setGroup] = useState<string>("All");
-  const [leagueFilter, setLeagueFilter] = useState<string>(ALL_FOOTBALL);
-  const tabs = ["All", ...groups];
-  const isAll = group === "All";
-  const isFootball = group === "Football";
+export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
+  const [topTab, setTopTab] = useState<TopTab>("All");
+  const [footballLeague, setFootballLeague] = useState<string>(ALL_FOOTBALL);
+  const [masGroup, setMasGroup] = useState<string | null>(null);
+  const [worldGroup, setWorldGroup] = useState<string | null>(null);
+  const [wflLeague, setWflLeague] = useState<string | null>(null);
+
+  function selectTopTab(tab: TopTab) {
+    setTopTab(tab);
+    setFootballLeague(ALL_FOOTBALL);
+    setMasGroup(null);
+    setWorldGroup(null);
+    setWflLeague(null);
+  }
+
+  const isAllTab = topTab === "All";
+  const isFootballTab = topTab === "Football";
+  const isMasTab = topTab === "Major American sports";
+  const isWorldTab = topTab === "World";
+  const isWomensFootball = worldGroup === "Women's football";
 
   const footballLeaguesPresent = useMemo(
     () => FOOTBALL_LEAGUES.filter((lg) => teams.some((t) => t.group === "Football" && t.league === lg)),
     [teams],
   );
+  const masGroupsPresent = useMemo(
+    () => MAJOR_AMERICAN_GROUPS.filter((g) => teams.some((t) => t.category === "Major American sports" && t.group === g)),
+    [teams],
+  );
+  const worldGroupsPresent = useMemo(
+    () => WORLD_GROUPS.filter((g) => teams.some((t) => t.category === "World" && t.group === g)),
+    [teams],
+  );
+  const wflLeaguesPresent = useMemo(
+    () => WOMENS_FOOTBALL_LEAGUES.filter((lg) => teams.some((t) => t.group === "Women's football" && t.league === lg)),
+    [teams],
+  );
+
+  // "Scoped" = the view is narrowed to one group (a league or a single
+  // sport), so the Attention score compares teams within that group rather
+  // than across the whole index.
+  const scoped = isFootballTab || (isMasTab && masGroup !== null) || (isWorldTab && worldGroup !== null);
+  const showLeagueRank =
+    (isFootballTab && footballLeague !== ALL_FOOTBALL) ||
+    (isWorldTab && isWomensFootball && wflLeague !== null);
 
   const filtered = useMemo(() => {
-    if (isAll) return teams;
-    let rows = teams.filter((t) => t.group === group);
-    if (isFootball && leagueFilter !== ALL_FOOTBALL) rows = rows.filter((t) => t.league === leagueFilter);
+    if (isAllTab) return teams;
+    if (isFootballTab) {
+      let rows = teams.filter((t) => t.group === "Football");
+      if (footballLeague !== ALL_FOOTBALL) rows = rows.filter((t) => t.league === footballLeague);
+      return rows;
+    }
+    if (isMasTab) {
+      let rows = teams.filter((t) => t.category === "Major American sports");
+      if (masGroup) rows = rows.filter((t) => t.group === masGroup);
+      return rows;
+    }
+    // World
+    let rows = teams.filter((t) => t.category === "World");
+    if (worldGroup) {
+      rows = rows.filter((t) => t.group === worldGroup);
+      if (worldGroup === "Women's football" && wflLeague) rows = rows.filter((t) => t.league === wflLeague);
+    }
     return rows;
-  }, [teams, group, isAll, isFootball, leagueFilter]);
-
-  const showLeagueRank = isFootball && leagueFilter !== ALL_FOOTBALL;
+  }, [teams, isAllTab, isFootballTab, isMasTab, footballLeague, masGroup, worldGroup, wflLeague]);
 
   const cols: BoardCol[] = [
     { key: "team", label: "Team", sortable: true, className: "min-w-[10rem]" },
-    isAll
-      ? { key: "group", label: "Group / League", sortable: true, demote: "md", short: "Group" }
-      : { key: "league", label: "League", sortable: true, demote: "md", short: "League" },
+    scoped
+      ? { key: "league", label: "League", sortable: true, demote: "md", short: "League" }
+      : { key: "group", label: "Group / League", sortable: true, demote: "md", short: "Group" },
     ...(showLeagueRank
-      ? [{ key: "leagueRank", label: "Lg #", right: true, sortable: true, demote: "sm", title: `Rank within ${leagueFilter}` } as BoardCol]
+      ? [{ key: "leagueRank", label: "Lg #", right: true, sortable: true, demote: "sm", title: `Rank within ${isFootballTab ? footballLeague : wflLeague}` } as BoardCol]
       : []),
-    { key: "score", label: "Attention", right: true, sortable: true, title: isAll ? "0 to 100, share of the single most-watched team across all sports" : "0 to 100, scaled to the top team in its group" },
+    { key: "score", label: "Attention", right: true, sortable: true, title: scoped ? "0 to 100, scaled to the top team in its group" : "0 to 100, share of the single most-watched team across all sports" },
     { key: "baseline", label: "Baseline views", right: true, sortable: true, demote: "sm", title: "Median monthly all-language Wikipedia views x 12 (spike-dampened)" },
     { key: "trend", label: "12mo", right: false, sortable: false, demote: "md", className: "w-24" },
     { key: "value", label: "Valuation", right: true, sortable: true },
@@ -138,13 +206,13 @@ export default function FanTable({ teams, groups }: { teams: FanTableTeam[]; gro
         ? <span className="text-[var(--text-dim)] text-xs" title="This group's attention-to-value fit is too weak (R² < 0.4) for a residual to mean much.">n/a*</span>
         : <DivergingBar v={t.residualPct} dp={0} suffix="%" />;
 
-    const score = isAll ? t.globalScore : t.scoreInGroup;
+    const score = scoped ? t.scoreInGroup : t.globalScore;
 
     return {
       key: `${t.group}-${t.league}-${t.team}`,
       sort: {
         team: t.displayName,
-        group: `${t.group}, ${t.league}`,
+        group: t.group === t.league ? t.group : `${t.group}, ${t.league}`,
         league: t.league,
         leagueRank: showLeagueRank ? -t.rankInLeague : null,
         score,
@@ -154,9 +222,9 @@ export default function FanTable({ teams, groups }: { teams: FanTableTeam[]; gro
       },
       cells: [
         <TeamCell key="team" t={t} />,
-        isAll
-          ? <span key="group" className="text-[var(--text-muted)]">{t.group} <span className="text-[var(--text-dim)]">{"·"}</span> {t.league}</span>
-          : <span key="league" className="text-[var(--text-muted)]">{t.league}</span>,
+        scoped
+          ? <span key="league" className="text-[var(--text-muted)]">{t.league}</span>
+          : <span key="group" className="text-[var(--text-muted)]">{t.group}{t.group !== t.league ? <> <span className="text-[var(--text-dim)]">{"·"}</span> {t.league}</> : null}</span>,
         ...(showLeagueRank ? [<DataBar key="leagueRank" v={t.rankInLeague} dp={0} />] : []),
         <DataBar key="score" v={score} dp={1} />,
         <DataBar key="baseline" v={t.wikiBaseline12m} format={formatCompact} />,
@@ -172,7 +240,7 @@ export default function FanTable({ teams, groups }: { teams: FanTableTeam[]; gro
       ],
       mobile: {
         name: <TeamCell key="team" t={t} />,
-        sub: <span>{isAll ? `${t.group} · ${t.league}` : t.league}</span>,
+        sub: <span>{scoped ? t.league : (t.group === t.league ? t.group : `${t.group} · ${t.league}`)}</span>,
         right: <span style={MONO}>{score.toFixed(1)}</span>,
         rightSub: t.valueM != null ? formatValueM(t.valueM) : undefined,
       },
@@ -182,46 +250,109 @@ export default function FanTable({ teams, groups }: { teams: FanTableTeam[]; gro
   return (
     <div>
       <div className="flex flex-wrap gap-x-1 gap-y-1 border-b mb-1" style={{ borderColor: "var(--border)" }}>
-        {tabs.map((g) => (
+        {TOP_TABS.map((tab) => (
           <button
-            key={g}
+            key={tab}
             type="button"
-            onClick={() => { setGroup(g); setLeagueFilter(ALL_FOOTBALL); }}
+            onClick={() => selectTopTab(tab)}
             className="px-3 py-2 text-sm font-semibold transition-colors"
             style={{
-              borderBottom: g === group ? "2px solid var(--accent)" : "2px solid transparent",
-              color: g === group ? "var(--text)" : "var(--text-muted)",
+              borderBottom: tab === topTab ? "2px solid var(--accent)" : "2px solid transparent",
+              color: tab === topTab ? "var(--text)" : "var(--text-muted)",
             }}
           >
-            {g}
+            {tab}
           </button>
         ))}
       </div>
 
-      {isAll ? (
+      {isAllTab ? (
         <p className="text-xs text-[var(--text-dim)] mb-4">
           Across sports, teams are ranked on absolute fan attention, not on their standing inside their own league.
         </p>
       ) : null}
 
-      {isFootball ? (
+      {isFootballTab ? (
         <div className="flex flex-wrap gap-1.5 mb-4 mt-2">
           {[ALL_FOOTBALL, ...footballLeaguesPresent].map((lg) => (
             <button
               key={lg}
               type="button"
-              onClick={() => setLeagueFilter(lg)}
+              onClick={() => setFootballLeague(lg)}
               className="rounded-full border px-2.5 py-1 text-xs"
               style={{
-                borderColor: lg === leagueFilter ? "var(--accent)" : "var(--border)",
-                color: lg === leagueFilter ? "var(--text)" : "var(--text-muted)",
-                background: lg === leagueFilter ? "var(--bg-card-hover)" : "transparent",
+                borderColor: lg === footballLeague ? "var(--accent)" : "var(--border)",
+                color: lg === footballLeague ? "var(--text)" : "var(--text-muted)",
+                background: lg === footballLeague ? "var(--bg-card-hover)" : "transparent",
               }}
             >
               {lg}
             </button>
           ))}
         </div>
+      ) : null}
+
+      {isMasTab ? (
+        <div className="flex flex-wrap gap-1.5 mb-4 mt-2">
+          {[ALL_GROUPS, ...masGroupsPresent].map((g) => (
+            <button
+              key={g}
+              type="button"
+              onClick={() => setMasGroup(g === ALL_GROUPS ? null : g)}
+              className="rounded-full border px-2.5 py-1 text-xs"
+              style={{
+                borderColor: (masGroup ?? ALL_GROUPS) === g ? "var(--accent)" : "var(--border)",
+                color: (masGroup ?? ALL_GROUPS) === g ? "var(--text)" : "var(--text-muted)",
+                background: (masGroup ?? ALL_GROUPS) === g ? "var(--bg-card-hover)" : "transparent",
+              }}
+            >
+              {g}
+            </button>
+          ))}
+        </div>
+      ) : null}
+
+      {isWorldTab ? (
+        <>
+          <div className="flex flex-wrap gap-1.5 mb-2 mt-2">
+            {[ALL_GROUPS, ...worldGroupsPresent].map((g) => (
+              <button
+                key={g}
+                type="button"
+                onClick={() => { setWorldGroup(g === ALL_GROUPS ? null : g); setWflLeague(null); }}
+                className="rounded-full border px-2.5 py-1 text-xs"
+                style={{
+                  borderColor: (worldGroup ?? ALL_GROUPS) === g ? "var(--accent)" : "var(--border)",
+                  color: (worldGroup ?? ALL_GROUPS) === g ? "var(--text)" : "var(--text-muted)",
+                  background: (worldGroup ?? ALL_GROUPS) === g ? "var(--bg-card-hover)" : "transparent",
+                }}
+              >
+                {g}
+              </button>
+            ))}
+          </div>
+          {isWomensFootball ? (
+            <div className="flex flex-wrap gap-1.5 mb-4">
+              {[ALL_LEAGUES, ...wflLeaguesPresent].map((lg) => (
+                <button
+                  key={lg}
+                  type="button"
+                  onClick={() => setWflLeague(lg === ALL_LEAGUES ? null : lg)}
+                  className="rounded-full border px-2 py-0.5 text-[11px]"
+                  style={{
+                    borderColor: (wflLeague ?? ALL_LEAGUES) === lg ? "var(--accent)" : "var(--border)",
+                    color: (wflLeague ?? ALL_LEAGUES) === lg ? "var(--text)" : "var(--text-muted)",
+                    background: (wflLeague ?? ALL_LEAGUES) === lg ? "var(--bg-card-hover)" : "transparent",
+                  }}
+                >
+                  {lg}
+                </button>
+              ))}
+            </div>
+          ) : (
+            <div className="mb-2" />
+          )}
+        </>
       ) : null}
 
       <SortableBoard
