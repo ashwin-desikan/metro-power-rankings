@@ -18829,3 +18829,125 @@ byte-identical. Snapshots of every intermediate state are in `/tmp/recon-backup/
 **Notion:** Backlog row "Decisions rows are being written without a Decided date, so the ruling is invisible to every
 date query" CLOSED as Done, with a note recording that the structural fix is `Row created` rather than a required
 property, and why the required property would not have bound the API path.
+
+## 2026-09-23 (security hardening) — branch security-hardening, NOT merged
+
+### AE. Seven security steps, three of which were worse than the brief assumed
+
+Branch `security-hardening` off a clean main. Steps 1 to 6 are code; step 7 is a read-only audit and a draft
+migration. Nothing merged, nothing applied to the database.
+
+**STEP 1, path traversal, CONFIRMED EXPLOITABLE BEFORE THE FIX.** `getMetroDetail` interpolated its slug into a file
+path, so `../../../package` resolved to the repo's own `package.json` and read it, and `/api/mcp`'s `get_metro` is
+unauthenticated and returns whatever that function returns. Proved it first, fixed it, then proved it through the
+live endpoint: the slug now answers "No metro found" and `new-york` still returns data.
+
+The brief named three callers. There are **six**: `app/api/mcp`, `app/compare`, `app/rankings/[slug]` and its
+`opengraph-image`, `app/matchups/[slug]`, and `lib/compare`. That is the argument for the guard living in
+`getMetroDetail` rather than at each call site, since a seventh caller would not inherit a check written in the other
+six. Allowlist, not a `..` blocklist. 14 tests, including the shapes a blocklist misses.
+
+**STEP 2, Next 16.2.9 to 16.3.6. Critical and all highs cleared.** Two moderates remain and both are `vitest`, a
+devDependency that does not ship; the fix is vitest 5.x, a major bump that risks the suite for no production gain. A
+third moderate DID ship, `baseline-browser-mapping` via next, and it is gone: next declares `^2.9.19`, which already
+allowed the fixed 2.11.25, so a plain `npm update` took it without an override.
+
+**STEP 3, and this is the one worth reading twice: NONE of the six handlers under `app/api/admin` verified anything.**
+`proxy.ts` was the only lock on an unauthenticated POST to a write. `requireAdmin` in `lib/adminAuth.ts` is the second
+one, on the four mutating routes; `login` and `logout` are deliberately left open, because login creates the session
+and a logout that requires a valid session cannot clear an expired one. It FAILS CLOSED: a missing
+`ADMIN_SESSION_SECRET` denies. Typed structurally rather than against `NextRequest`, so the file keeps no framework
+import for the edge bundle and the test needs no Next machinery. 5 tests.
+
+**STEP 4, headers, and the bare-route trap that would have failed the brief's own check.** `/admin/:path*` in
+`headers()` DOES match a bare `/admin`, unlike a middleware matcher, where `proxy.ts` has to list `/admin` separately.
+Verified locally against a real `next start` before spending a preview build rather than discovering it on the
+deploy: `/admin`, `/admin/login` and `/activity` all carry `X-Frame-Options: DENY` and `frame-ancestors 'none'`, `/`
+and `/rankings/new-york` carry the three site-wide headers, and `x-powered-by` is gone everywhere.
+
+No site-wide CSP, deliberately. The draft and the order to roll it out in are in section AF below.
+
+**STEP 5, and the limiter was worse than "in-memory".** Two faults, not one. The token bucket and the daily breaker
+both lived in module scope, so on serverless every cold start began with a full budget and every concurrent instance
+kept its own: the daily cap on PAID INFERENCE was really 2000 per instance per lifetime. And `callerId` keyed on
+`x-forwarded-for.split(",")[0]`, the FIRST hop, which a caller can prepend at will, so anyone could mint a fresh
+bucket per request. The correct logic already existed in the admin login route and is now `lib/clientIp.ts`, used by
+banter, revalidate and login alike.
+
+Both limits are now Redis via `checkRateLimit`. The per-caller gate stays BEFORE the passphrase check, because that
+is what stops the probe path being a free brute-force oracle, so it can only key on ip; a second limit carrying the
+tester key index runs once the tester is known, which is what the brief asked for and the only place it can be known.
+Temperature is clamped 0 to 1 at the boundary and in both callers, which were clamping to 1.2.
+
+**`app/api/v` deleted, and its documentation deliberately moved rather than lost.** Nothing posts to it: the beacon
+calls Supabase browser-direct and that route was a spare never wired up. But its header comment was load-bearing, and
+recorded why two Supabase advisor warnings about anon EXECUTE on `track_visit` are ACCEPTED, with the history that
+revoking that grant once killed page-view recording for four days behind a swallowed `.catch(){}`. That warning now
+lives in `app/VisitBeacon.tsx`, which is the live path and where anyone chasing those advisor warnings will look.
+
+**STEP 6.** `.env*`, `betatestkeys.txt`, `*.bak*`. Not hypothetical: THREE `.bak` files are tracked and were being
+deployed, about 400 KB of editing debris served as static files. Checked that nothing reads a `.bak` path at build or
+run time first; several one-off scripts WRITE them, which is not the same thing.
+
+**Verified:** typecheck clean, 361 tests in 30 files (was 342), production build clean on 16.3.6 with all 5,695 pages.
+
+⚠️ **ONE THING TO KNOW BEFORE MERGING.** The app commit carries `[preview]`, not `[vercel skip]`, so
+`check:release-notes` counts it as a shipping commit. Today that is a WARN. The day after this merges it becomes a
+FAIL for everyone until `lib/releases.ts` has an entry covering the day. Either write one as part of the merge or
+decide the day does not need one; it is an editorial call rather than a technical one, which is why it was not made
+here.
+
+**Notion:** Backlog rows to add on merge, not added now because the work is unmerged and unapproved: "vitest 5.x
+major bump to clear the two remaining moderate advisories"; "site-wide CSP rollout, Report-Only first, see HANDOFF
+2026-09-23 section AF"; "pick_locks feed: the RLS draft cannot enforce a lock until something populates it". Silent
+failure register candidate, also deferred to merge: "a rate limiter in module scope on serverless is per instance, so
+a spend cap can read as enforced while being unenforced".
+
+### AF. The site-wide CSP draft, deliberately not shipped today
+
+Step 4 shipped the two CSP directives that cannot break a page: `frame-ancestors 'none'` on `/admin` and
+`/activity`, which governs who may embed us rather than what we may load. A `default-src` policy is a different
+animal and wants its own preview and a click through the map, chart and embed pages.
+
+**The draft, from the hosts this codebase actually references rather than a template:**
+
+    default-src 'self';
+    script-src  'self' 'unsafe-inline';
+    style-src   'self' 'unsafe-inline';
+    img-src     'self' data: blob: https://flagcdn.com https://raw.githubusercontent.com
+                https://*.basemaps.cartocdn.com;
+    font-src    'self' data:;
+    connect-src 'self' https://raw.githubusercontent.com
+                https://nmprqkmymrdknffwnuur.supabase.co https://site.api.espn.com;
+    frame-src   https://www.youtube-nocookie.com;
+    object-src  'none';
+    base-uri    'self';
+    form-action 'self';
+    frame-ancestors 'self';
+
+**The traps, each of which is why this is not a one-line change:**
+
+- 🔴 **`'unsafe-inline'` on script-src makes the policy far weaker than it looks,** and it is there because Next
+  inlines hydration and route data as inline scripts. Removing it means nonces, which means a per-request nonce
+  threaded through the middleware and a dynamic rendering cost on pages that are currently static. That trade is the
+  real work; everything else here is bookkeeping.
+- **Leaflet and Recharts write inline styles,** so `style-src 'unsafe-inline'` is not optional today either.
+- 🔴 **THE MAP TILES HIDE A TRAP.** They are served from our own origin, `/tiles`, so `img-src 'self'` covers them
+  and a test will pass. But `lib/basemap.ts` carries a documented OUTAGE PLAN that switches HOST to
+  `basemaps.cartocdn.com`, and under a policy that omits it the fallback fails silently, during an outage, which is
+  exactly when nobody wants a second fault. The draft above allows cartocdn for that reason alone.
+- **Video is `youtube-nocookie.com`,** not `youtube.com`; allowing the wrong one passes review and breaks playback.
+- `connect-src` must keep `raw.githubusercontent.com`: a dozen libs read live data from it at runtime, and losing it
+  degrades quietly to stale content rather than erroring.
+
+**Rollout order, which matters more than the policy text:**
+
+1. Ship as `Content-Security-Policy-Report-Only` on a preview. It blocks nothing and reports everything.
+2. Click the surfaces that inline or embed: a metro page with the map, `/sports/standings`, a page with a chart, a
+   featured-game video, `/compare`, and the admin login.
+3. Read the violation reports, widen only for what is real, and never by adding a wildcard.
+4. Promote to enforcing on the preview first. Only then to production.
+5. Tighten `script-src` last, by introducing nonces, as its own change with its own preview.
+
+**Notion:** none (no queryable state changed; this is a draft recorded for the Backlog row named in section AE,
+which is filed on merge rather than now).
