@@ -1,3 +1,4 @@
+2026-09-23T07:20:24+01:00  d82532024  chore(substack): refresh feed snapshot [vercel skip]
 2026-09-23T07:15:07+01:00  87c7dd57f  data: weekly election forecast refresh [vercel skip]
 2026-09-23T06:08:00+01:00  e9cae21ab  football: refresh live bundles [vercel skip]
 2026-09-23T03:34:30+01:00  34cdb0d75  chore(activity): refresh site activity feed [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T23:23:52+01:00  f0220eaf8  football: refresh live bundles [vercel skip]
 2026-09-20T23:23:24+01:00  e6c9853ad  HANDOFF: healthchecks all green, but deploy-watch and newsletter-retention ping tiles that do not exist [vercel skip]
 2026-09-20T23:20:24+01:00  f9b69b6b8  HANDOFF: ntfy re-check caught a false alert from git-maintenance's dry run [vercel skip]
-2026-09-20T23:19:40+01:00  4f91825d9  git-maintenance: a dry run must not alert - gate the stale-lock page behind DRY_RUN [vercel skip]
