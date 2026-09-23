@@ -1,3 +1,4 @@
+2026-09-23T16:56:03+01:00  f427b0f7b  fans: v0.3.1 nav, new leagues, blend methodology [preview]
 2026-09-23T15:21:23+01:00  e6926b11d  Fan Attention Index v0.2.1: all-sport scale, football consolidation, college and new leagues, canonical links [preview]
 2026-09-23T13:14:03+01:00  c5aa41327  Add Fan Attention Index page [preview]
 2026-09-22T22:13:43+01:00  41557f6a4  metro_sync: launch the watcher through wscript so no console flashes; no admin needed [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-20T23:19:40+01:00  4f91825d9  git-maintenance: a dry run must not alert - gate the stale-lock page behind DRY_RUN [vercel skip]
 2026-09-20T23:16:15+01:00  f9342a43d  HANDOFF: every runner takes the dispatcher lock; the no-trap decision recorded [vercel skip]
 2026-09-20T23:15:29+01:00  fea5fe445  mini: every runner takes the dispatcher lock, so a hand-run cannot race a tick [vercel skip]
-2026-09-20T23:11:16+01:00  c7d50b516  HANDOFF: deploy-watch takes the dispatcher lock on manual runs too [vercel skip]

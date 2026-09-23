@@ -14,16 +14,26 @@ const FOOTBALL_LEAGUES = [
 ];
 const WOMENS_FOOTBALL_LEAGUES = ["NWSL", "WSL"];
 const MAJOR_AMERICAN_GROUPS = ["NFL", "NBA", "MLB", "NHL", "College football", "College basketball"];
+const WOMENS_SPORTS_GROUPS = ["WNBA", "Women's football"];
 const WORLD_GROUPS = [
-  "WNBA", "Women's football", "F1", "EuroLeague", "AFL", "NRL", "IPL",
-  "NPB", "CFL", "Top 14", "Handball-Bundesliga", "SuperLega",
+  "F1", "EuroLeague", "AFL", "NRL", "IPL", "NPB", "CFL",
+  "Top 14", "Handball-Bundesliga", "SuperLega",
 ];
 const ALL_FOOTBALL = "All football";
 const ALL_GROUPS = "All groups";
 const ALL_LEAGUES = "All leagues";
 
-const TOP_TABS = ["All", "Football", "Major American sports", "World"] as const;
+// Top-level tabs, and the "category" value + group list each one scopes to
+// (except All and Football, which are special-cased: All shows everything,
+// Football is its own group with league chips instead of group chips).
+const TOP_TABS = ["All", "Football", "Major American sports", "Women's sports", "World"] as const;
 type TopTab = (typeof TOP_TABS)[number];
+
+const CATEGORY_GROUPS: Partial<Record<TopTab, string[]>> = {
+  "Major American sports": MAJOR_AMERICAN_GROUPS,
+  "Women's sports": WOMENS_SPORTS_GROUPS,
+  World: WORLD_GROUPS,
+};
 
 export type FanTableTeam = {
   team: string;
@@ -120,35 +130,28 @@ function TeamCell({ t }: { t: FanTableTeam }) {
 export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
   const [topTab, setTopTab] = useState<TopTab>("All");
   const [footballLeague, setFootballLeague] = useState<string>(ALL_FOOTBALL);
-  const [masGroup, setMasGroup] = useState<string | null>(null);
-  const [worldGroup, setWorldGroup] = useState<string | null>(null);
+  const [catGroup, setCatGroup] = useState<string | null>(null);
   const [wflLeague, setWflLeague] = useState<string | null>(null);
 
   function selectTopTab(tab: TopTab) {
     setTopTab(tab);
     setFootballLeague(ALL_FOOTBALL);
-    setMasGroup(null);
-    setWorldGroup(null);
+    setCatGroup(null);
     setWflLeague(null);
   }
 
   const isAllTab = topTab === "All";
   const isFootballTab = topTab === "Football";
-  const isMasTab = topTab === "Major American sports";
-  const isWorldTab = topTab === "World";
-  const isWomensFootball = worldGroup === "Women's football";
+  const categoryGroups = CATEGORY_GROUPS[topTab] ?? null; // non-null for MAS / Women's sports / World
+  const isWomensFootball = catGroup === "Women's football";
 
   const footballLeaguesPresent = useMemo(
     () => FOOTBALL_LEAGUES.filter((lg) => teams.some((t) => t.group === "Football" && t.league === lg)),
     [teams],
   );
-  const masGroupsPresent = useMemo(
-    () => MAJOR_AMERICAN_GROUPS.filter((g) => teams.some((t) => t.category === "Major American sports" && t.group === g)),
-    [teams],
-  );
-  const worldGroupsPresent = useMemo(
-    () => WORLD_GROUPS.filter((g) => teams.some((t) => t.category === "World" && t.group === g)),
-    [teams],
+  const catGroupsPresent = useMemo(
+    () => (categoryGroups ?? []).filter((g) => teams.some((t) => t.category === topTab && t.group === g)),
+    [teams, categoryGroups, topTab],
   );
   const wflLeaguesPresent = useMemo(
     () => WOMENS_FOOTBALL_LEAGUES.filter((lg) => teams.some((t) => t.group === "Women's football" && t.league === lg)),
@@ -158,10 +161,10 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
   // "Scoped" = the view is narrowed to one group (a league or a single
   // sport), so the Attention score compares teams within that group rather
   // than across the whole index.
-  const scoped = isFootballTab || (isMasTab && masGroup !== null) || (isWorldTab && worldGroup !== null);
+  const scoped = isFootballTab || (categoryGroups !== null && catGroup !== null);
   const showLeagueRank =
     (isFootballTab && footballLeague !== ALL_FOOTBALL) ||
-    (isWorldTab && isWomensFootball && wflLeague !== null);
+    (isWomensFootball && wflLeague !== null);
 
   const filtered = useMemo(() => {
     if (isAllTab) return teams;
@@ -170,19 +173,16 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
       if (footballLeague !== ALL_FOOTBALL) rows = rows.filter((t) => t.league === footballLeague);
       return rows;
     }
-    if (isMasTab) {
-      let rows = teams.filter((t) => t.category === "Major American sports");
-      if (masGroup) rows = rows.filter((t) => t.group === masGroup);
+    if (categoryGroups !== null) {
+      let rows = teams.filter((t) => t.category === topTab);
+      if (catGroup) {
+        rows = rows.filter((t) => t.group === catGroup);
+        if (catGroup === "Women's football" && wflLeague) rows = rows.filter((t) => t.league === wflLeague);
+      }
       return rows;
     }
-    // World
-    let rows = teams.filter((t) => t.category === "World");
-    if (worldGroup) {
-      rows = rows.filter((t) => t.group === worldGroup);
-      if (worldGroup === "Women's football" && wflLeague) rows = rows.filter((t) => t.league === wflLeague);
-    }
-    return rows;
-  }, [teams, isAllTab, isFootballTab, isMasTab, footballLeague, masGroup, worldGroup, wflLeague]);
+    return teams;
+  }, [teams, isAllTab, isFootballTab, footballLeague, categoryGroups, topTab, catGroup, wflLeague]);
 
   const cols: BoardCol[] = [
     { key: "team", label: "Team", sortable: true, className: "min-w-[10rem]" },
@@ -292,39 +292,19 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
         </div>
       ) : null}
 
-      {isMasTab ? (
-        <div className="flex flex-wrap gap-1.5 mb-4 mt-2">
-          {[ALL_GROUPS, ...masGroupsPresent].map((g) => (
-            <button
-              key={g}
-              type="button"
-              onClick={() => setMasGroup(g === ALL_GROUPS ? null : g)}
-              className="rounded-full border px-2.5 py-1 text-xs"
-              style={{
-                borderColor: (masGroup ?? ALL_GROUPS) === g ? "var(--accent)" : "var(--border)",
-                color: (masGroup ?? ALL_GROUPS) === g ? "var(--text)" : "var(--text-muted)",
-                background: (masGroup ?? ALL_GROUPS) === g ? "var(--bg-card-hover)" : "transparent",
-              }}
-            >
-              {g}
-            </button>
-          ))}
-        </div>
-      ) : null}
-
-      {isWorldTab ? (
+      {categoryGroups !== null ? (
         <>
           <div className="flex flex-wrap gap-1.5 mb-2 mt-2">
-            {[ALL_GROUPS, ...worldGroupsPresent].map((g) => (
+            {[ALL_GROUPS, ...catGroupsPresent].map((g) => (
               <button
                 key={g}
                 type="button"
-                onClick={() => { setWorldGroup(g === ALL_GROUPS ? null : g); setWflLeague(null); }}
+                onClick={() => { setCatGroup(g === ALL_GROUPS ? null : g); setWflLeague(null); }}
                 className="rounded-full border px-2.5 py-1 text-xs"
                 style={{
-                  borderColor: (worldGroup ?? ALL_GROUPS) === g ? "var(--accent)" : "var(--border)",
-                  color: (worldGroup ?? ALL_GROUPS) === g ? "var(--text)" : "var(--text-muted)",
-                  background: (worldGroup ?? ALL_GROUPS) === g ? "var(--bg-card-hover)" : "transparent",
+                  borderColor: (catGroup ?? ALL_GROUPS) === g ? "var(--accent)" : "var(--border)",
+                  color: (catGroup ?? ALL_GROUPS) === g ? "var(--text)" : "var(--text-muted)",
+                  background: (catGroup ?? ALL_GROUPS) === g ? "var(--bg-card-hover)" : "transparent",
                 }}
               >
                 {g}

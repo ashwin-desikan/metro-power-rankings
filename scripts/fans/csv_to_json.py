@@ -133,7 +133,12 @@ def build_json(fan_index_dir, out_path):
             "trends_index": round_sig(to_float(r.get("trends_index")), 2),
             "inclusion_rule": r.get("inclusion_rule") or None,
             "display_name": r.get("display_name") or None,
-            "category": r.get("category") or None,
+            # WNBA and Women's football (NWSL + WSL) are grouped under a
+            # dedicated "Women's sports" tab on the site, distinct from the
+            # source CSV's own category column (which files them under
+            # "World"). This is the one place that distinction is applied;
+            # every other group's category passes through unchanged.
+            "category": ("Women's sports" if group in ("WNBA", "Women's football") else (r.get("category") or None)),
             "spike_ratio": round_sig(to_float(r.get("wiki_spike_ratio")), 2),
             "monthly": monthly_series,
             "value_m": value_m,

@@ -151,10 +151,14 @@ export const MAJOR_AMERICAN_GROUPS = [
   "NFL", "NBA", "MLB", "NHL", "College football", "College basketball",
 ];
 
-// Every other group, shown under the "World" tab. Matches
+// WNBA and Women's football (NWSL + WSL), shown under their own
+// "Women's sports" tab. Matches category === "Women's sports" in the JSON.
+export const WOMENS_SPORTS_GROUPS = ["WNBA", "Women's football"];
+
+// Every remaining group, shown under the "World" tab. Matches
 // category === "World" in the JSON.
 export const WORLD_GROUPS = [
-  "WNBA", "Women's football", "F1", "EuroLeague", "AFL", "NRL", "IPL",
+  "F1", "EuroLeague", "AFL", "NRL", "IPL",
   "NPB", "CFL", "Top 14", "Handball-Bundesliga", "SuperLega",
 ];
 
