@@ -18796,3 +18796,36 @@ required or defaulted Decided property on the Decisions data source.
 
 **Notion:** none (no queryable state changed; the prompt clause was already applied and recorded in section AB, and
 the two Backlog rows it touches are already in their correct states).
+
+### AD. The undated-Decisions defect is closed structurally, and not by the fix I first proposed
+
+Ashwin added a **`Row created`** property to the Decisions data source, type `created_time`. The data source's own
+table definition now reads `"Row created" TEXT NOT NULL`, automatically set. The reconciler's prompt carries the
+matching rule, so the P2 row is closed.
+
+🔴 **MY FIRST SUGGESTION WOULD NOT HAVE WORKED, AND WOULD HAVE LOOKED LIKE IT DID.** I told him the fix was "a
+required or defaulted Decided property, which no session can forget". Most Decisions rows are created by sessions
+THROUGH THE API. A required field is a UI constraint and a database template only fires on a hand-added row, so
+neither binds an API write. Blank dates would have kept arriving while the row sat closed. I only caught it by
+reading the data source schema before writing the steps, instead of writing the steps from what I assumed Notion
+offered.
+
+**What actually closes it** is a property nothing has to remember: Notion sets `created_time` itself, on every row,
+from every origin, and it cannot be null. `Decided` still answers WHAT a ruling says about itself; `Row created`
+answers WHETHER a row is recent. The prompt now says exactly that, with the seven undated rows of 09-21 and 09-22 as
+its reason, so the rule is not mistaken later for a stylistic preference.
+
+**A trap worth carrying forward: the Notion MCP reported a schema change it did not make.** I first tried to add the
+property myself with `notion-update-data-source`. It returned "Updated data source" and a full schema dump, and the
+property was not in it. A re-fetch confirmed nothing had changed. **A success string is not a change**; verify by
+re-reading the thing you claim to have written. That is the same discipline that caught the false "pushed" on
+2026-09-19, and the third time today it has paid for itself.
+
+**Third prompt edit, verified the same way as the first two:** 5,821 to 6,302 characters, two lines added and zero
+removed, all three earlier rules (first action, view mode, Decided date) confirmed still present rather than assumed,
+and `cron_expression`, `enabled`, `mcp_connections`, `environment_id`, `session_context`, `tags` and `next_run_at`
+byte-identical. Snapshots of every intermediate state are in `/tmp/recon-backup/`.
+
+**Notion:** Backlog row "Decisions rows are being written without a Decided date, so the ruling is invisible to every
+date query" CLOSED as Done, with a note recording that the structural fix is `Row created` rather than a required
+property, and why the required property would not have bound the API path.
