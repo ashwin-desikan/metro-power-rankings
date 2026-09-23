@@ -134,6 +134,63 @@ animal and wants its own preview and a click through the map, chart and embed pa
 
 **Notion:** none (no queryable state changed; this is a draft recorded for the Backlog row named in section AE,
 which is filed on merge rather than now).
+
+### AH. The HEAD:main guard, and a self-test that fails against the old file
+
+Fixes what section AG diagnosed. **AG itself is on the unmerged `security-hardening` branch, not on main**, which is why this
+entry is AH: merging that branch later should read AE, AF, AG, AH rather than two AGs.
+
+`require_expected_branch` in `mac-mini-jobs/runners/_common.sh`, called from three places:
+
+| call site | why there |
+| --- | --- |
+| `mini_sync()`, first line after the `cd` | before the fetch, so a feature branch never gets origin/main merged or rebased into it either |
+| `_mini_sync_flush_unpushed()`, first line | this is the line that actually published the branch on 2026-09-23 |
+| `commit_paths()`, immediately before `git config`/`git commit` | AFTER the `DRY_RUN` early return on purpose: a dry run stages, prints a stat and resets, has no push to protect, and must keep working on any branch |
+
+It compares `git symbolic-ref --short -q HEAD` with `$GIT_BRANCH`. A detached HEAD is refused by name, because
+`symbolic-ref -q` prints nothing and an empty string cannot equal a non-empty branch.
+
+**It exits 1 rather than standing down 0, and that is the one real judgement call here.** The dispatcher-lock code a few
+lines above stands down with `exit 0`, but its own comment says why that is safe: only a MANUAL run can stand down, so no
+scheduled job is ever silently skipped. A wrong branch has no such property, it can sit for hours, and a green
+healthchecks tile over a job that built nothing is the silent-failure class this repo keeps paying for. So it is a real
+failure and reported as one. The noise is bounded from both ends: `dispatcher.py` records the slot even on failure
+(line 456), so there is no 10-minute retry loop, and `alert()` here is deduped through a `.mini-wrong-branch` stamp,
+the same trick `_mini_sync_flush_unpushed` uses for untagged commits. The stamp is CLEARED on the way past when HEAD is
+correct, so a second checkout of the same branch name later still alerts; without that line the dedupe would silently
+become permanent.
+
+**Accepted cost, stated plainly:** while the clone is off main, every scheduled job fails and the dispatcher sends one
+ntfy per job per slot. That is roughly a dozen messages across a working day. It is the price of not lying about
+whether the data refreshed, and it is avoidable entirely by using `git worktree add` for branch work, which leaves the
+clone on main and never trips the guard.
+
+**`mac-mini-jobs/runners/_common-selftest.sh`, 20 assertions, new.** Builds a throwaway repo, bare remote and MINI_DIR
+in `mktemp -d`, overrides `REPO_DIR` through a generated `config.env` and stubs `notify.py` to append to a file so
+alerts can be counted. It never touches the real clone. It takes an optional path argument so a candidate file can be
+tested before installing, which is how this change was made.
+
+Run against the PRE-FIX file it reports **13 of 20 failing**, and one of those failures is the incident itself
+reproduced: "mini_sync pushed nothing" fails because the branch commit really does reach the fake origin's main. It
+also pins the half that must NOT change, and those four assertions pass both before and after: on main,
+`commit_paths` still commits and pushes, and `mini_sync` still flushes a stranded `[vercel skip]` commit.
+
+🔴 **RUN IT WITH `bash`, NOT `zsh`.** The first run of this harness reported everything green while testing nothing.
+`_common.sh` reads `BASH_SOURCE` under `set -u`, so under zsh the source aborts, every function is undefined, and
+assertions that only check "did not push" pass by doing nothing at all. The rc-127 rows in the pre-fix run above are
+the tell. Recorded because a test that cannot fail is worse than no test: it retires the suspicion that would
+otherwise have caught this.
+
+**Verified live:** the file is a symlink from `~/metro-mini-jobs/runners/_common.sh`, so it was installed with `mv`
+rather than an in-place edit, which is atomic and means no runner could ever source a half-written library. Checked
+that no runner or dispatcher was mid-run first. Then `mini_sync` was called on the real clone exactly as a runner
+calls it: `HEAD=main GIT_BRANCH=main`, rc=0, no stamp written, clone still clean at `3ff42d123`.
+
+**Not fixed, and not attempted:** the guard stops the fleet when the clone is on a branch. It does not make branch work
+in the shared clone safe. There is nothing to add for that; the worktree is the answer.
+
+**Notion:** none (no queryable state changed).
 ## 2026-09-23 — git pull, and what four days had left behind
 
 ### S. The cricket promoter works, fiba-weekly was failing, and 70% of commits are one file
