@@ -4394,7 +4394,7 @@
     "metro": "Los Angeles",
     "us": 29.9,
     "uk": 20.6,
-    "combined": 110.4,
+    "combined": 110.3,
     "rank": 1
    },
    {
@@ -4409,8 +4409,8 @@
     "slug": "london",
     "metro": "London",
     "us": 9.7,
-    "uk": 45.1,
-    "combined": 74.2,
+    "uk": 45.2,
+    "combined": 74.3,
     "rank": 3
    },
    {
@@ -4418,7 +4418,7 @@
     "metro": "Toronto",
     "us": 19.0,
     "uk": 7.8,
-    "combined": 64.9,
+    "combined": 64.8,
     "rank": 4
    },
    {
@@ -4482,7 +4482,7 @@
     "metro": "Manchester",
     "us": 5.2,
     "uk": 6.0,
-    "combined": 21.7,
+    "combined": 21.6,
     "rank": 12
    },
    {
@@ -4498,7 +4498,7 @@
     "metro": "Chicago",
     "us": 4.4,
     "uk": 2.8,
-    "combined": 16.1,
+    "combined": 16.0,
     "rank": 14
    },
    {
@@ -4526,18 +4526,18 @@
     "rank": 17
    },
    {
-    "slug": "honolulu",
-    "metro": "Honolulu",
-    "us": 3.9,
-    "uk": 1.2,
-    "combined": 12.8,
-    "rank": 18
-   },
-   {
     "slug": "dallas",
     "metro": "Dallas",
     "us": 3.6,
     "uk": 2.0,
+    "combined": 12.7,
+    "rank": 18
+   },
+   {
+    "slug": "honolulu",
+    "metro": "Honolulu",
+    "us": 3.8,
+    "uk": 1.2,
     "combined": 12.7,
     "rank": 19
    },
@@ -4657,7 +4657,7 @@
     "slug": "bristol",
     "metro": "Bristol",
     "us": 0.7,
-    "uk": 2.1,
+    "uk": 2.0,
     "combined": 4.1,
     "rank": 34
    },
@@ -4721,19 +4721,19 @@
     "name": "Drake",
     "slug": "drake",
     "metro": "Toronto",
-    "combined": 44.0
+    "combined": 43.9
    },
    {
     "name": "Morgan Wallen",
     "slug": "morgan-wallen",
     "metro": "Knoxville",
-    "combined": 32.2
+    "combined": 32.3
    },
    {
     "name": "Olivia Rodrigo",
     "slug": "olivia-rodrigo",
     "metro": "Los Angeles",
-    "combined": 26.4
+    "combined": 26.3
    },
    {
     "name": "Ariana Grande",
@@ -4751,7 +4751,7 @@
     "name": "Harry Styles",
     "slug": "harry-styles",
     "metro": "Manchester",
-    "combined": 20.2
+    "combined": 20.1
    },
    {
     "name": "SZA",
@@ -4805,13 +4805,13 @@
     "name": "Dua Lipa",
     "slug": "dua-lipa",
     "metro": "London",
-    "combined": 13.2
+    "combined": 13.3
    },
    {
     "name": "Bruno Mars",
     "slug": "bruno-mars",
     "metro": "Honolulu",
-    "combined": 12.8
+    "combined": 12.7
    },
    {
     "name": "Beyonc\u00e9",
