@@ -18781,3 +18781,18 @@ second edit resent the whole prompt and could have dropped it.
 CLOSED as Done, with the new wording and the note that it was previously blocked on tooling the cloud session did not
 have. Backlog row "Decisions rows are being written without a Decided date" updated and deliberately LEFT OPEN, with
 a note distinguishing what the prompt rule does reach from what it cannot.
+
+### AC. Ratified: the Decided-date clause stays
+
+Ashwin, on the unasked-for change flagged in section AB: "leave it in". So the step 2(c) clause instructing the
+reconciler to ALWAYS set a Decided date is sanctioned and stays in the routine's prompt.
+
+Recorded because section AB ended with "say the word and it comes out", and a future reader finding an instruction
+described as scope I took rather than scope I was given could reasonably strike it. It was ratified. It stays.
+
+Unchanged by this: the P2 row "Decisions rows are being written without a Decided date" is still OPEN, because the
+clause only binds the reconciler and the undated rows come from ordinary sessions. The fix that row wants is a
+required or defaulted Decided property on the Decisions data source.
+
+**Notion:** none (no queryable state changed; the prompt clause was already applied and recorded in section AB, and
+the two Backlog rows it touches are already in their correct states).
