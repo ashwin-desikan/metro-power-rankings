@@ -19154,3 +19154,36 @@ absent, and its next slot is 08:15Z. Hand-running those jobs would spend the sam
 spend, so the right move was to clear the blocker and let it work.
 
 **Notion:** none (no queryable state changed).
+
+### AJ. The mini took macOS 27.0 overnight, which is what the f1-weekly alert was
+
+`kern.boottime` says the mini rebooted at 2026-09-24 07:40:47Z and `sw_vers` now reports **macOS 27.0 (26A428)**,
+up from Darwin 25.5 earlier the same session. A major OS upgrade, not a fault, and it explains the one alert that
+arrived after the fleet recovered:
+
+- `dispatcher.log` has a 34 minute hole between 07:07:50Z and 07:41:37Z, and the first tick after it ran
+  `feed-monitor` "22m late". That is the upgrade and reboot, not a stuck tick.
+- `f1-weekly` is NOT a dispatcher job. It is its own launchd agent on `StartInterval 3600`, and **launchd restarts
+  that countdown at boot**, so its next fire moved from 07:09Z to roughly 08:40Z. The healthchecks tile expects an
+  hourly ping, so it went down in between and `detect_issues` reported `check_down`.
+- ops-autofix did exactly the right thing by ignoring it. `check_down` is deliberately outside its whitelist, on the
+  reasoning that a down tile usually means launchd or the mini being off rather than something a script can fix.
+  That reasoning was correct here on the first try.
+
+The job itself never missed any work: it logs `idle: 2026 R14 already synced` hourly and R14 is genuinely the
+current round, so a skipped poll costs nothing. One hand run through `hc-run.sh f1-weekly` cleared the tile and
+`detect_issues` now reports `no findings; nothing to do`.
+
+**Verified after the upgrade, because a major macOS bump is exactly when this breaks:** 23 launchd agents loaded with
+no nonzero exits, `.venv` Python 3.14.6 with requests 2.34.2, node 26.4.0, npm 11.17.0, git 2.54.0, and
+`xcode-select -p` still pointing at `/Library/Developer/CommandLineTools`.
+
+⚠️ **Watch for a TCC reset.** A major upgrade can drop Full Disk Access grants, and `egress-refresh` has failed with
+exit 126 for exactly that reason before. Nothing shows it today, but that job runs Sundays, so the first real test is
+2026-09-27. If it exits 126, the fix is to re-grant Full Disk Access rather than to debug the script.
+
+**Also closed:** the two `--mark-ok` calls that lost the dispatcher lock during the forced autofix run were retried
+once the tick finished and both landed at 07:19:39Z, `screen-number-ones` and `substack-daily` moving from `failed`
+to `ok (manual)`.
+
+**Notion:** none (no queryable state changed).
