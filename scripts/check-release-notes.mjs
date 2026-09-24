@@ -68,6 +68,17 @@ export const AUTOMATED_SHIPPING_SUBJECTS = [
   // mac-mini-jobs/runners/metro-rankings.sh, publish mode, Saturdays 10:30Z.
   // Untagged on purpose: it IS the week's production build.
   /^rankings: weekly metro recalculation \d{4}-\d{2}-\d{2}\b/,
+  // mac-mini-jobs/runners/fans-monthly.sh, 3rd of the month 07:00Z. Untagged on
+  // purpose for the same reason: lib/fanIndex.ts reads fan-attention.json at
+  // BUILD time, so the commit IS the month's production build for /fans.
+  //
+  // 🔴 THIS EXEMPTION IS NOT COSMETIC. Without it the gate counts that commit as
+  // a human shipping without a release note, so `npm run verify` would FAIL for
+  // everyone from the day after each monthly run until somebody wrote an entry
+  // about a cron republishing data. Measured 2026-09-24 before the job's first
+  // live slot: build-relevant via public/, not skip-tagged, not exempt, counted.
+  // The old "Auto:" prefix did not save it either; nothing here keys off that.
+  /^fans: Fan Attention Index monthly refresh\b/,
 ];
 
 /** True when a commit ships data on a schedule rather than because a person shipped. */

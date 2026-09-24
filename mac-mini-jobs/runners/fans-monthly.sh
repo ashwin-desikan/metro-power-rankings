@@ -60,7 +60,15 @@ _fans_dry=""
 STEP_TIMEOUT=3600 guarded "monthly pageviews + trends + history + rebuild" \
   "$PY" scripts/fans/monthly_refresh.py $_fans_dry
 
-commit_paths "Auto: fan attention index monthly refresh" \
+# NOT "Auto:" prefixed, deliberately. .githooks/pre-commit generates
+# commits-recent.txt with --invert-grep --grep='^Auto:', so an Auto: subject
+# never reaches the file the Notion reconciler treats as ground truth. For the
+# refresh bots that is right: they are noise. This one is the single commit a
+# month that triggers a real production build, which is the opposite of noise,
+# and hiding it is how "did /fans deploy this month?" becomes unanswerable from
+# the reconciler's only input. Same class as the merge commits that --no-merges
+# hid until 2026-09-24 (HANDOFF section AR).
+commit_paths "fans: Fan Attention Index monthly refresh" \
   scripts/fans/universe_state.json \
   public/data/fans/fan-attention.json \
   public/data/fans/history

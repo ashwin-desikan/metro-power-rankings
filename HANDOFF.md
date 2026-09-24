@@ -19843,3 +19843,43 @@ as the merge commits fixed this morning in section AR.
 **Notion:** Scheduled jobs row "fans-monthly (Fan Attention Index refresh)" moved from `One-off (pending)` to
 **Active** with Last verified 2026-09-24, and Backlog P1 "Activate fans-monthly on the Mac mini" closed. Both verified
 over REST rather than accepted from the write's return value.
+
+### AX. The monthly build commit was invisible to the reconciler, and hiding it was the smaller of two problems
+
+`fans-monthly`'s commit subject is now `fans: Fan Attention Index monthly refresh`, not
+`Auto: fan attention index monthly refresh`.
+
+**Why the rename.** `.githooks/pre-commit` builds `commits-recent.txt` with `--invert-grep --grep='^Auto:'`, so an
+`Auto:` subject never reaches the file the Notion reconciler treats as ground truth. For the refresh bots that exclusion
+is right, they are noise. This is the single commit a month that triggers a real production build, which is the opposite
+of noise, and hiding it makes "did /fans deploy this month?" unanswerable from the reconciler's only input. Exactly the
+class of gap `--no-merges` created for merge commits until section AR this morning: an input that cannot show a thing,
+so nobody can ask about it.
+
+Verified with real git rather than reasoned about: a scratch repo with four commits confirms the generator now keeps
+`fans: ...` and `rankings: weekly metro recalculation 2026-09-20` while still dropping the `Auto:` and
+`data: refresh-schedule` families. Only `.githooks/pre-commit` keys off `^Auto:` anywhere in the repo, so the rename
+breaks nothing else; that was checked before changing it.
+
+🔴 **AND THE RENAME ALONE WOULD NOT HAVE BEEN ENOUGH, which is the part worth keeping.** Checking what else consumed the
+prefix turned up a latent failure the prefix had nothing to do with. `scripts/check-release-notes.mjs` counts any
+untagged commit touching `app`, `lib` or `public` as a person shipping without a release note. This job's commit touches
+`public/data/fans/`, is untagged on purpose because `lib/fanIndex.ts` reads `fan-attention.json` at BUILD time, and was
+not in `AUTOMATED_SHIPPING_SUBJECTS`. So from the day after every monthly run, `npm run verify` would have FAILED for
+everyone until somebody wrote a release note about a cron republishing data.
+
+The old `Auto:` prefix did not save it either: nothing in that gate keys off `Auto:`. Simulated against the gate's own
+rule before the job's first live slot: build-relevant, not skip-tagged, not exempt, counted. It is now exempt alongside
+the weekly metro recalculation, for the identical stated reason, with a comment saying why the exemption is not
+cosmetic.
+
+**The lesson is about the method, not the bug.** The instruction was "make the build commit visible", which is a
+one-word edit. Asking what else read that prefix is what surfaced a gate that would have broken every developer's
+`verify` four days later, and the two problems shared no mechanism at all. Two of today's three worst finds came from
+the same move: check every consumer before changing a value.
+
+Both checks pass: `check:release-notes` clean at 147 entries, `isAutomatedShipping` true for the new subject and false
+for the old, and the runner's `commit_paths` still carries its three paths.
+
+**Notion:** Scheduled jobs row "fans-monthly (Fan Attention Index refresh)" updated with the new commit subject, the
+reason, and the release-notes gate finding. No other queryable state changed.
