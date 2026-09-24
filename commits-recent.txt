@@ -1,3 +1,4 @@
+2026-09-24T09:11:27+01:00  5d7dc4e53  RLS hardening applied, minus the read policy that would blank the leaderboard [vercel skip]
 2026-09-24T09:01:29+01:00  fac0159ed  HANDOFF: 2026-09-24 section AJ, the f1-weekly alert was a macOS 27 reboot [vercel skip]
 2026-09-24T08:02:58+01:00  267dca829  chore(substack): refresh feed snapshot [vercel skip]
 2026-09-24T07:54:29+01:00  03596af57  football: refresh live bundles [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-21T12:14:46+01:00  77c0d0aa6  forecast: Israel per-list seat simulation and calibration data, report only [vercel skip]
 2026-09-21T12:09:38+01:00  5fd255368  football: refresh live bundles [vercel skip]
 2026-09-21T11:52:53+01:00  e00b88927  Champions: CPL 2026, Antigua & Barbuda Falcons; cricket runner path fix; coalition research [vercel skip]
-2026-09-21T11:21:07+01:00  7cb1f3d1f  deploy: build 19b8c9b0e, Sweden 2026 result [deploy-retry]
