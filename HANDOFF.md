@@ -19358,3 +19358,57 @@ verified no-ops in part 1.
 **Notion:** the Backlog row "pick_locks feed" is done; the security-hardening work has no open RLS items left. The
 Silent failure register candidate from section AE, "a rate limiter in module scope on serverless is per instance, so a
 spend cap can read as enforced while being unenforced", is still unfiled.
+
+### AN. The silent-failure register entry is filed, and filing it found a documented claim that is false
+
+Filed on the 🔇 Silent failure register as "Added 2026-09-24: a rate limiter in module scope on serverless is per
+instance, so a spend cap reads as enforced while being unenforced". Verified by re-reading the page afterwards rather
+than by trusting the write: `notion-update-page` returned a page id, which in this workspace is not proof, so the
+seven bullets were confirmed present in a fresh fetch.
+
+**The entry is worth more than a tick because the fix moved the risk rather than removing it.** The original fault was
+one route: `app/api/banter/route.ts` held its per-caller bucket `Map` and its daily spend breaker in module scope, so
+on Vercel each warm instance had its own copy and a cold start reset it. The real cap was the written one times the
+instance count, and the code read as capped.
+
+It is fixed, and eight limit call sites across six routes now share `checkRateLimit`: banter per-caller and daily,
+feedback per-IP and per-user, `/activity` login, admin login, revalidate, and the public MCP endpoint. Verified by
+grep that no module-scope counter remains in `app/` or `lib/`.
+
+🔴 **But `checkRateLimit` falls back to the per-instance counter in two places and neither says anything:**
+`getRedis()` returning null when no store is configured, and any Redis error, caught at `lib/rateLimit.ts:58` under
+"fall back rather than lock out real users". Before the fix one route degraded silently. Now one missing environment
+variable degrades admin-login brute-force protection, the LLM spend cap and five other limits at once. Centralising a
+guard centralised its failure mode, which is worth saying out loud because the change was still right.
+
+**Not established, and it needs one click Ashwin can do and a session cannot:** whether Upstash is configured for
+Production. `filter_project_envs` returns 403 for the token a session has. The check is the Production env holding
+either `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` or `KV_REST_API_URL` + `KV_REST_API_TOKEN`. If neither
+pair is there, every one of those eight limits is already a speed bump rather than a limit.
+
+**🔴 A CORRECTION TO WHAT THIS WORKSPACE HAS WRITTEN DOWN TWICE.** Section Z and the register's own 2026-09-23 entry
+both state that Ashwin "shared the integration with the Citizen of Nowhere parent page" and that "sharing the PARENT
+page covers every child, including the Backlog and Scheduled jobs databases, which is the more useful grant".
+Measured over the REST API with the real `NOTION_API_TOKEN`, three pages, same token, same minute:
+
+| page | REST status |
+| --- | --- |
+| Notion operating contract | **200** |
+| Citizen of Nowhere (the parent) | **404** |
+| Silent failure register | **404** |
+
+A 404 is this workspace's own documented signal for "the integration cannot see the page", as against 401 for a bad
+token. So only the operating contract page is actually shared. The parent is not, and the broad grant everyone has
+been assuming does not exist.
+
+Why it matters rather than being trivia: `notion-reconcile-verify` works only because it happens to read the contract
+page. Any future REST-based detector pointed at the Backlog, Decisions, Scheduled jobs or this register would 404,
+and it would 404 while failing closed, which reads as a fault in the detector rather than a missing grant. The
+Decisions ruling "a detector must not depend on the thing it watches" is what makes REST the right transport; this is
+the grant that transport needs. **One click for Ashwin: share the Citizen of Nowhere parent page with the integration,
+which is what the 09-23 note already believed had happened.** Until then, write to Notion through the MCP connector,
+which can see everything, and read over REST only for the contract page.
+
+**Notion:** the register entry is filed. The Backlog row for the Upstash production check and a row for the missing
+parent-page share are both worth adding on the next pass; not added here because the integration cannot currently see
+the Backlog database over REST and the MCP write path is the one that works.
