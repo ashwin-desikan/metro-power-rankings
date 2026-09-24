@@ -1,3 +1,4 @@
+2026-09-24T14:07:42+01:00  7f80995f0  fans-monthly: parked the day it was added, it cannot finish inside its timeout [vercel skip]
 2026-09-24T13:01:35+01:00  a347a08a9  fans monthly: --dry-run was not a dry run, it wrote two history files [vercel skip]
 2026-09-24T12:54:48+01:00  b7aa576d1  HANDOFF AT: correct the false "Notion: none", and fix the habit in CLAUDE.md [vercel skip]
 2026-09-24T12:34:45+01:00  a2f41cfba  HANDOFF: 2026-09-24 section AU, the verifier's first catch is AT's own Notion line [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-22T09:14:24+01:00  224fc050b  handoff: the date corrections are live on a third build [vercel skip]
 2026-09-22T09:13:54+01:00  e43dc4a22  Release notes: the eight corrected election dates [deploy-now]
 2026-09-22T09:08:40+01:00  d28db196a  elections: correct eight records whose date contradicted their own year [vercel skip]
-2026-09-22T08:59:22+01:00  546debfc2  elections: a "Just voted" board for the last six months

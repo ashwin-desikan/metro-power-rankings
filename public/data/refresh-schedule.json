@@ -439,24 +439,6 @@
       }
     },
     {
-      "id": "fans-monthly",
-      "label": "Fan Attention Index monthly refresh",
-      "schedule_text": "3rd of the month at 07:00 UTC",
-      "cadence": "monthly",
-      "times": [
-        "07:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [
-        3
-      ],
-      "last_run": {
-        "date": null,
-        "status": null
-      }
-    },
-    {
       "id": "feed-monitor",
       "label": "Feed shape monitor",
       "schedule_text": "Daily at 07:20 UTC",
