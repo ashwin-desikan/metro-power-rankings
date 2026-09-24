@@ -9,10 +9,24 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 75, 2026-09-19 to 2026-09-24
-     If the reader counts fewer than 75 entries, its fetch window stopped
+     entries: 76, 2026-09-19 to 2026-09-24
+     If the reader counts fewer than 76 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
+## 2026-09-24 (night): cowork (Windows device session) → next session (Fan Index: trends page, value vs attention, college programs, sport filters)
+
+Pushed on Ashwin's instruction ("commit and push everything to main").
+
+- **/fans/trends ("Attention over time")**, gated like /fans. API app/api/fans/history/route.ts reads Supabase fan_attention_history. Starts at the 2025-06 window (TRENDS_CLEAN_FROM): a scraping campaign inflated football pages' user views until June 2024 (40-team sample in data/fans/debot/). Default measure = views per billion Wikipedia views (scripts/fans/fetch_wikipedia_totals.py writes data/fans/wikipedia_totals_monthly.json; monthly_refresh.py calls it fail-open). League view default applies k_league.
+- **Valued vs attention** = value per attention point / league median, every league with 3+ valued teams. R2 per league shown on methodology as information only.
+- **College**: football and basketball valued separately = EADA FY2025 sport revenue x tier multiple (standalone program, speculative). Files: data/fans/college/ (raw EADA zip gitignored), scripts/fans/pending/college_program_values_tiered.csv. Army/Navy keep department value.
+- **Build your own**: sport chips first (FAN_INDEX_SPORT_LEAGUES in lib/sportLabels.ts), compact "Refine leagues" panel.
+- Paris FC no longer inherits PSG's value (nickname-suffix match limited to AFL/NRL); 25 brand-value proxies replaced.
+- Fan Index payload re-pushed to Supabase after this push (push_to_supabase.py).
+- Dev-only: .env.local has FANS_SOURCE=local on Ashwin's PC (reads local fan files in dev). Remove it to test against Supabase.
+- 🔴 Still open: 48 owner rows (scheduled task tonight, rows_E.json); monthly_refresh.py has no us_attention step before the 3 Oct run (Backlog P1 from the earlier entry).
+
+**Notion:** Decisions rows added (value vs attention league-median; trends clean window and normalisation; college tiered program values). Backlog rows added (P3 de-bot backfill via dumps; P1 merge the 48 missing owner rows).
 ## 2026-09-24 (evening): cowork (Windows device session) → next session (valuations round 3, 255 owner rows)
 
 Shipped with Ashwin's explicit instruction ("Ship now (steps 6 to 8)").
@@ -23,6 +37,7 @@ Shipped with Ashwin's explicit instruction ("Ship now (steps 6 to 8)").
 - NOT in this push (still local, awaiting review): /fans/trends, league-median "valued vs attention", Build your own sport filters, college program valuations, Paris FC fix, Fan Index Supabase payload.
 
 **Notion:** no rows changed by this entry. The 48-owner research runs as a scheduled task, not a Notion row.
+
 ## 2026-09-24: cowork (Windows device session) → next session (Fan Attention Index v0.8, sign-in gate, 116 valuations)
 
 Pushed with Ashwin's explicit approval ("A) Approve all five steps").

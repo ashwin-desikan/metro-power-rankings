@@ -1,0 +1,178 @@
+team,league,unitid,eada_institution_name,match_status
+Michigan,College basketball,170976,University of Michigan-Ann Arbor,matched
+Duke,College basketball,198419,Duke University,matched
+Connecticut,College basketball,129020,University of Connecticut,matched
+St. John's,College basketball,195809,St. John's University-New York,matched
+Arizona,College basketball,104179,University of Arizona,matched
+Villanova,College basketball,216597,Villanova University,matched
+Kentucky,College basketball,157085,University of Kentucky,matched
+North Carolina,College basketball,199120,University of North Carolina at Chapel Hill,matched
+Florida,College basketball,134130,University of Florida,matched
+Illinois,College basketball,145637,University of Illinois Urbana-Champaign,matched
+Gonzaga,College basketball,235316,Gonzaga University,matched
+Purdue,College basketball,243780,Purdue University-Main Campus,matched
+Kansas,College basketball,155317,University of Kansas,matched
+Michigan State,College basketball,171100,Michigan State University,matched
+Indiana,College basketball,151351,Indiana University-Bloomington,matched
+Iowa,College basketball,153658,University of Iowa,matched
+Arkansas,College basketball,106397,University of Arkansas,matched
+UCLA,College basketball,110662,University of California-Los Angeles,matched
+VCU,College basketball,234030,Virginia Commonwealth University,matched
+Nebraska,College basketball,181464,University of Nebraska-Lincoln,matched
+Texas,College basketball,228778,The University of Texas at Austin,matched
+Auburn,College basketball,100858,Auburn University,matched
+Iowa State,College basketball,153603,Iowa State University,matched
+Virginia,College basketball,234076,University of Virginia-Main Campus,matched
+Ohio State,College basketball,204796,Ohio State University-Main Campus,matched
+Houston,College basketball,225511,University of Houston,matched
+Louisville,College basketball,157289,University of Louisville,matched
+North Carolina State,College basketball,199193,North Carolina State University at Raleigh,matched
+Tennessee,College basketball,221759,The University of Tennessee-Knoxville,matched
+BYU,College basketball,230038,Brigham Young University,matched
+Georgetown,College basketball,131496,Georgetown University,matched
+Saint Mary's,College basketball,123554,Saint Mary's College of California,matched
+Syracuse,College basketball,196413,Syracuse University,matched
+Vanderbilt,College basketball,221999,Vanderbilt University,matched
+Alabama,College basketball,100751,The University of Alabama,matched
+Marquette,College basketball,239105,Marquette University,matched
+Wake Forest,College basketball,199847,Wake Forest University,matched
+Xavier,College basketball,206622,Xavier University,matched
+Wisconsin,College basketball,240444,University of Wisconsin-Madison,matched
+Creighton,College basketball,181002,Creighton University,matched
+Maryland,College basketball,163286,University of Maryland-College Park,matched
+Miami (FL),College basketball,135726,University of Miami,matched
+Providence,College basketball,217402,Providence College,matched
+Seton Hall,College basketball,186584,Seton Hall University,matched
+Utah State,College basketball,230728,Utah State University,matched
+California,College basketball,110635,University of California-Berkeley,matched
+Wichita State,College basketball,156125,Wichita State University,matched
+Butler,College basketball,150163,Butler University,matched
+LSU,College basketball,159391,Louisiana State University and Agricultural & Mechanical College,matched
+USC,College basketball,123961,University of Southern California,matched
+Rutgers,College basketball,186380,Rutgers University-New Brunswick,matched
+Cincinnati,College basketball,201885,University of Cincinnati-Main Campus,matched
+Georgia,College basketball,139959,University of Georgia,matched
+West Virginia,College basketball,238032,West Virginia University,matched
+Missouri,College basketball,178396,University of Missouri-Columbia,matched
+Arizona State,College basketball,104151,Arizona State University Campus Immersion,matched
+Baylor,College basketball,223232,Baylor University,matched
+Notre Dame,College basketball,152080,University of Notre Dame,matched
+Texas A&M,College basketball,228723,Texas A&M University-College Station,matched
+DePaul,College basketball,144740,DePaul University,matched
+Clemson,College basketball,217882,Clemson University,matched
+Penn State,College basketball,214777,Pennsylvania State University-Main Campus,matched
+Texas Tech,College basketball,229115,Texas Tech University,matched
+TCU,College basketball,228875,Texas Christian University,matched
+Oklahoma State,College basketball,207388,Oklahoma State University-Main Campus,matched
+Central Florida,College basketball,132903,University of Central Florida,matched
+Washington,College basketball,236948,University of Washington-Seattle Campus,matched
+Pittsburgh,College basketball,215293,University of Pittsburgh-Pittsburgh Campus,matched
+Kansas State,College basketball,155399,Kansas State University,matched
+SMU,College basketball,228246,Southern Methodist University,matched
+Minnesota,College basketball,174066,University of Minnesota-Twin Cities,matched
+Georgia Tech,College basketball,139755,Georgia Institute of Technology-Main Campus,matched
+Oregon,College basketball,209551,University of Oregon,matched
+Stanford,College basketball,243744,Stanford University,matched
+San Diego State,College basketball,122409,San Diego State University,matched
+Florida Atlantic,College basketball,133669,Florida Atlantic University,matched
+Florida State,College basketball,134097,Florida State University,matched
+Loyola Chicago,College basketball,146719,Loyola University Chicago,matched
+Boston College,College basketball,164924,Boston College,matched
+Utah,College basketball,230764,University of Utah,matched
+George Mason,College basketball,232186,George Mason University,matched
+South Carolina,College basketball,218663,University of South Carolina-Columbia,matched
+Virginia Tech,College basketball,233921,Virginia Polytechnic Institute and State University,matched
+Mississippi,College basketball,176017,University of Mississippi,matched
+Northwestern,College basketball,147767,Northwestern University,matched
+Colorado,College basketball,126614,University of Colorado Boulder,matched
+Mississippi State,College basketball,176080,Mississippi State University,matched
+Memphis Tigers,College basketball,220862,University of Memphis,matched
+Boise State,College basketball,142115,Boise State University,matched
+Colorado State Rams,College basketball,126818,Colorado State University-Fort Collins,matched
+Dayton Flyers,College basketball,202480,University of Dayton,matched
+Oklahoma,College basketball,207500,University of Oklahoma-Norman Campus,matched
+Indiana,College football,151351,Indiana University-Bloomington,matched
+Miami (FL),College football,135726,University of Miami,matched
+Ohio State,College football,204796,Ohio State University-Main Campus,matched
+Notre Dame,College football,152080,University of Notre Dame,matched
+Mississippi,College football,176017,University of Mississippi,matched
+Alabama,College football,100751,The University of Alabama,matched
+Michigan,College football,170976,University of Michigan-Ann Arbor,matched
+Penn State,College football,214777,Pennsylvania State University-Main Campus,matched
+Texas,College football,228778,The University of Texas at Austin,matched
+LSU,College football,159391,Louisiana State University and Agricultural & Mechanical College,matched
+Georgia,College football,139959,University of Georgia,matched
+Oregon,College football,209551,University of Oregon,matched
+Texas A&M,College football,228723,Texas A&M University-College Station,matched
+Florida,College football,134130,University of Florida,matched
+North Carolina,College football,199120,University of North Carolina at Chapel Hill,matched
+California,College football,110635,University of California-Berkeley,matched
+USC,College football,123961,University of Southern California,matched
+Oklahoma,College football,207500,University of Oklahoma-Norman Campus,matched
+Auburn,College football,100858,Auburn University,matched
+Vanderbilt,College football,221999,Vanderbilt University,matched
+Texas Tech,College football,229115,Texas Tech University,matched
+Tennessee,College football,221759,The University of Tennessee-Knoxville,matched
+Clemson,College football,217882,Clemson University,matched
+Florida State,College football,134097,Florida State University,matched
+Nebraska,College football,181464,University of Nebraska-Lincoln,matched
+UCLA,College football,110662,University of California-Los Angeles,matched
+Washington,College football,236948,University of Washington-Seattle Campus,matched
+Colorado,College football,126614,University of Colorado Boulder,matched
+BYU,College football,230038,Brigham Young University,matched
+Arkansas,College football,106397,University of Arkansas,matched
+Pittsburgh,College football,215293,University of Pittsburgh-Pittsburgh Campus,matched
+Michigan State,College football,171100,Michigan State University,matched
+SMU,College football,228246,Southern Methodist University,matched
+Georgia Tech,College football,139755,Georgia Institute of Technology-Main Campus,matched
+Stanford,College football,243744,Stanford University,matched
+TCU,College football,228875,Texas Christian University,matched
+South Carolina,College football,218663,University of South Carolina-Columbia,matched
+Iowa,College football,153658,University of Iowa,matched
+Utah,College football,230764,University of Utah,matched
+Virginia Tech,College football,233921,Virginia Polytechnic Institute and State University,matched
+Central Florida,College football,132903,University of Central Florida,matched
+Illinois,College football,145637,University of Illinois Urbana-Champaign,matched
+Oklahoma State,College football,207388,Oklahoma State University-Main Campus,matched
+Northwestern,College football,147767,Northwestern University,matched
+Virginia,College football,234076,University of Virginia-Main Campus,matched
+Missouri,College football,178396,University of Missouri-Columbia,matched
+Wisconsin,College football,240444,University of Wisconsin-Madison,matched
+Mississippi State,College football,176080,Mississippi State University,matched
+Iowa State,College football,153603,Iowa State University,matched
+Cincinnati,College football,201885,University of Cincinnati-Main Campus,matched
+Navy Midshipmen football,College football,,,"UNMATCHED - service academy, not EADA-reportable"
+Minnesota,College football,174066,University of Minnesota-Twin Cities,matched
+Arizona State,College football,104151,Arizona State University Campus Immersion,matched
+Purdue,College football,243780,Purdue University-Main Campus,matched
+Duke,College football,198419,Duke University,matched
+West Virginia,College football,238032,West Virginia University,matched
+Army Black Knights football,College football,,,"UNMATCHED - service academy, not EADA-reportable"
+Rutgers,College football,186380,Rutgers University-New Brunswick,matched
+Kentucky,College football,157085,University of Kentucky,matched
+Louisville,College football,157289,University of Louisville,matched
+Boise State Broncos football,College football,142115,Boise State University,matched
+Maryland,College football,163286,University of Maryland-College Park,matched
+Syracuse,College football,196413,Syracuse University,matched
+North Carolina State,College football,199193,North Carolina State University at Raleigh,matched
+Houston,College football,225511,University of Houston,matched
+UNLV Rebels football,College football,182281,University of Nevada-Las Vegas,matched
+Arizona,College football,104179,University of Arizona,matched
+Boston College,College football,164924,Boston College,matched
+Troy Trojans football,College football,102368,Troy University,matched
+Wake Forest,College football,199847,Wake Forest University,matched
+Kansas State,College football,155399,Kansas State University,matched
+Memphis Tigers football,College football,220862,University of Memphis,matched
+Baylor,College football,223232,Baylor University,matched
+Kansas,College football,155317,University of Kansas,matched
+Louisiana Ragin Cajuns football,College football,160658,University of Louisiana at Lafayette,matched
+Fresno State Bulldogs football,College football,110556,California State University-Fresno,matched
+San Diego State Aztecs football,College football,122409,San Diego State University,matched
+Utah State Aggies football,College football,230728,Utah State University,matched
+Buffalo Bulls football,College football,196088,University at Buffalo,matched
+San Jose State Spartans football,College football,122755,San Jose State University,matched
+Tulane Green Wave,College football,160755,Tulane University of Louisiana,matched
+Ball State Cardinals football,College football,150136,Ball State University,matched
+Boise State Broncos,College football,142115,Boise State University,matched
+Coastal Carolina Chanticleers,College football,218724,Coastal Carolina University,matched
+Liberty Flames,College football,232557,Liberty University,matched

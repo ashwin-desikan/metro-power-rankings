@@ -1,0 +1,176 @@
+program,sport,conference,sport_revenue_usd_m,tier,multiple,value_usd_m,justification,flag_vs_brief_range
+Indiana,CFB,Big Ten,80.9,T4,5.25,425,"Remaining Big Ten program, not in a higher football tier.",inside
+Miami (FL),CFB,Atlantic Coast,99.9,T3,6.75,674,Named T3 brand in the brief.,inside
+Ohio State,CFB,Big Ten,160.5,T1,10.25,1646,Named T1 blue-chip brand in the brief.,below (< $1800M)
+Notre Dame,CFB,Independent,195.7,T1,10.25,2006,Named T1 blue-chip brand in the brief.,inside
+Mississippi,CFB,Southeastern,90.7,T4,5.25,476,"Remaining SEC program, not in a higher football tier.",above (> $450M)
+Alabama,CFB,Southeastern,146.3,T1,10.25,1500,Named T1 blue-chip brand in the brief.,below (< $1800M)
+Michigan,CFB,Big Ten,175.3,T1,10.25,1797,Named T1 blue-chip brand in the brief.,below (< $1800M)
+Penn State,CFB,Big Ten,150.3,T2,8.75,1315,Named T2 brand in the brief.,inside
+Texas,CFB,Southeastern,171.9,T1,10.25,1762,Named T1 blue-chip brand in the brief.,below (< $1800M)
+LSU,CFB,Southeastern,117.6,T2,8.75,1029,Named T2 brand in the brief.,inside
+Georgia,CFB,Southeastern,149.3,T1,10.25,1530,Named T1 blue-chip brand in the brief.,below (< $1800M)
+Oregon,CFB,Big Ten,119.6,T2,8.75,1046,Named T2 brand in the brief.,inside
+Texas A&M,CFB,Southeastern,108.5,T4,5.25,569,"Remaining SEC program, not in a higher football tier.",above (> $450M)
+Florida,CFB,Southeastern,113.4,T2,8.75,992,Named T2 brand in the brief.,below (< $1000M)
+North Carolina,CFB,Atlantic Coast,63.3,T4,5.25,333,"Remaining ACC program, not in a higher football tier.",inside
+California,CFB,Atlantic Coast,64.0,T4,5.25,336,"Remaining ACC program, not in a higher football tier.",inside
+USC,CFB,Big Ten,74.0,T4,5.25,389,"Remaining Big Ten program, not in a higher football tier.",inside
+Oklahoma,CFB,Southeastern,126.2,T2,8.75,1105,Named T2 brand in the brief.,inside
+Auburn,CFB,Southeastern,121.4,T2,8.75,1062,Top half of SEC by football revenue (rank 6 of 16).,inside
+Vanderbilt,CFB,Southeastern,44.1,T4,5.25,232,"Remaining SEC program, not in a higher football tier.",inside
+Texas Tech,CFB,Big 12,69.9,T3,6.75,472,Named T3 brand in the brief.,below (< $500M)
+Tennessee,CFB,Southeastern,162.5,T2,8.75,1422,Named T2 brand in the brief.,inside
+Clemson,CFB,Atlantic Coast,86.9,T3,6.75,587,Named T3 brand in the brief.,inside
+Florida State,CFB,Atlantic Coast,83.5,T3,6.75,563,Named T3 brand in the brief.,inside
+Nebraska,CFB,Big Ten,122.3,T2,8.75,1070,Named T2 brand in the brief.,inside
+UCLA,CFB,Big Ten,55.2,T4,5.25,290,"Remaining Big Ten program, not in a higher football tier.",inside
+Washington,CFB,Big Ten,121.0,T2,8.75,1059,Top half of Big Ten by football revenue (rank 5 of 18).,inside
+Colorado,CFB,Big 12,69.3,T3,6.75,468,Top third of Big 12 by football revenue (rank 3 of 16).,below (< $500M)
+BYU,CFB,Big 12,51.7,T4,5.25,272,"Remaining Big 12 program, not in a higher football tier.",inside
+Arkansas,CFB,Southeastern,90.8,T4,5.25,477,"Remaining SEC program, not in a higher football tier.",above (> $450M)
+Pittsburgh,CFB,Atlantic Coast,57.2,T4,5.25,300,"Remaining ACC program, not in a higher football tier.",inside
+Michigan State,CFB,Big Ten,77.1,T4,5.25,405,"Remaining Big Ten program, not in a higher football tier.",inside
+SMU,CFB,Atlantic Coast,45.3,T4,5.25,238,"Remaining ACC program, not in a higher football tier.",inside
+Georgia Tech,CFB,Atlantic Coast,70.5,T3,6.75,476,Top third of ACC by football revenue (rank 5 of 17).,below (< $500M)
+Stanford,CFB,Atlantic Coast,36.0,T4,5.25,189,"Remaining ACC program, not in a higher football tier.",below (< $200M)
+TCU,CFB,Big 12,59.6,T3,6.75,402,Named T3 brand in the brief.,below (< $500M)
+South Carolina,CFB,Southeastern,76.5,T4,5.25,402,"Remaining SEC program, not in a higher football tier.",inside
+Iowa,CFB,Big Ten,105.2,T2,8.75,920,Top half of Big Ten by football revenue (rank 8 of 18).,below (< $1000M)
+Utah,CFB,Big 12,95.9,T3,6.75,648,Named T3 brand in the brief.,inside
+Virginia Tech,CFB,Atlantic Coast,79.7,T3,6.75,538,Top third of ACC by football revenue (rank 4 of 17).,inside
+Central Florida,CFB,Big 12,30.1,T4,5.25,158,"Remaining Big 12 program, not in a higher football tier.",below (< $200M)
+Illinois,CFB,Big Ten,87.9,T4,5.25,462,"Remaining Big Ten program, not in a higher football tier.",above (> $450M)
+Oklahoma State,CFB,Big 12,57.0,T3,6.75,385,Top third of Big 12 by football revenue (rank 6 of 16).,below (< $500M)
+Northwestern,CFB,Big Ten,85.6,T4,5.25,449,"Remaining Big Ten program, not in a higher football tier.",inside
+Virginia,CFB,Atlantic Coast,51.4,T4,5.25,270,"Remaining ACC program, not in a higher football tier.",inside
+Missouri,CFB,Southeastern,53.3,T4,5.25,280,"Remaining SEC program, not in a higher football tier.",inside
+Wisconsin,CFB,Big Ten,112.3,T2,8.75,983,Top half of Big Ten by football revenue (rank 7 of 18).,below (< $1000M)
+Mississippi State,CFB,Southeastern,37.6,T4,5.25,197,"Remaining SEC program, not in a higher football tier.",below (< $200M)
+Iowa State,CFB,Big 12,60.7,T3,6.75,410,Top third of Big 12 by football revenue (rank 4 of 16).,below (< $500M)
+Cincinnati,CFB,Big 12,30.4,T4,5.25,160,"Remaining Big 12 program, not in a higher football tier.",below (< $200M)
+Minnesota,CFB,Big Ten,101.7,T2,8.75,890,Top half of Big Ten by football revenue (rank 9 of 18).,below (< $1000M)
+Arizona State,CFB,Big 12,50.4,T4,5.25,264,"Remaining Big 12 program, not in a higher football tier.",inside
+Purdue,CFB,Big Ten,83.1,T4,5.25,437,"Remaining Big Ten program, not in a higher football tier.",inside
+Duke,CFB,Atlantic Coast,67.4,T4,5.25,354,"Remaining ACC program, not in a higher football tier.",inside
+West Virginia,CFB,Big 12,47.6,T4,5.25,250,"Remaining Big 12 program, not in a higher football tier.",inside
+Rutgers,CFB,Big Ten,75.9,T4,5.25,399,"Remaining Big Ten program, not in a higher football tier.",inside
+Kentucky,CFB,Southeastern,43.3,T4,5.25,227,"Remaining SEC program, not in a higher football tier.",inside
+Louisville,CFB,Atlantic Coast,33.1,T4,5.25,174,"Remaining ACC program, not in a higher football tier.",below (< $200M)
+Boise State Broncos football,CFB,Mountain West,55.7,T5,3.75,209,Named T5 Group of 5 anchor brand in the brief.,above (> $175M)
+Maryland,CFB,Big Ten,63.1,T4,5.25,331,"Remaining Big Ten program, not in a higher football tier.",inside
+Syracuse,CFB,Atlantic Coast,64.6,T4,5.25,339,"Remaining ACC program, not in a higher football tier.",inside
+North Carolina State,CFB,Atlantic Coast,69.8,T3,6.75,471,Top third of ACC by football revenue (rank 6 of 17).,below (< $500M)
+Houston,CFB,Big 12,23.3,T4,5.25,122,"Remaining Big 12 program, not in a higher football tier.",below (< $200M)
+UNLV Rebels football,CFB,Mountain West,24.7,T5,3.75,93,Top two of Mountain West by football revenue (rank 2 of 6).,inside
+Arizona,CFB,Big 12,37.8,T4,5.25,198,"Remaining Big 12 program, not in a higher football tier.",below (< $200M)
+Boston College,CFB,Atlantic Coast,47.5,T4,5.25,250,"Remaining ACC program, not in a higher football tier.",inside
+Troy Trojans football,CFB,Sun Belt Conference,12.6,T6,2.0,25,Group of 5 program outside the top two of its conference by football revenue.,inside
+Wake Forest,CFB,Atlantic Coast,39.4,T4,5.25,207,"Remaining ACC program, not in a higher football tier.",inside
+Kansas State,CFB,Big 12,27.1,T4,5.25,142,"Remaining Big 12 program, not in a higher football tier.",below (< $200M)
+Memphis Tigers football,CFB,American Athletic Conference,22.0,T5,3.75,83,Named T5 Group of 5 anchor brand in the brief.,inside
+Baylor,CFB,Big 12,44.3,T4,5.25,232,"Remaining Big 12 program, not in a higher football tier.",inside
+Kansas,CFB,Big 12,37.1,T4,5.25,195,"Remaining Big 12 program, not in a higher football tier.",below (< $200M)
+Louisiana Ragin Cajuns football,CFB,Sun Belt Conference,14.8,T5,3.75,56,Top two of Sun Belt by football revenue (rank 2 of 3).,below (< $75M)
+Fresno State Bulldogs football,CFB,Mountain West,17.7,T6,2.0,35,Group of 5 program outside the top two of its conference by football revenue.,inside
+San Diego State Aztecs football,CFB,Mountain West,24.5,T6,2.0,49,Group of 5 program outside the top two of its conference by football revenue.,inside
+Utah State Aggies football,CFB,Mountain West,17.3,T6,2.0,35,Group of 5 program outside the top two of its conference by football revenue.,inside
+Buffalo Bulls football,CFB,Mid-American Conference,14.1,T5,3.75,53,Top two of MAC by football revenue (rank 1 of 2).,below (< $75M)
+San Jose State Spartans football,CFB,Mountain West,11.9,T6,2.0,24,Group of 5 program outside the top two of its conference by football revenue.,below (< $25M)
+Tulane Green Wave,CFB,American Athletic Conference,24.0,T5,3.75,90,Named T5 Group of 5 anchor brand in the brief.,inside
+Ball State Cardinals football,CFB,Mid-American Conference,8.0,T5,3.75,30,Top two of MAC by football revenue (rank 2 of 2).,below (< $75M)
+Boise State Broncos,CFB,Mountain West,55.7,T5,3.75,209,Named T5 Group of 5 anchor brand in the brief.,above (> $175M)
+Coastal Carolina Chanticleers,CFB,Sun Belt Conference,17.1,T5,3.75,64,Top two of Sun Belt by football revenue (rank 1 of 3).,below (< $75M)
+Liberty Flames,CFB,Conference USA,23.0,T5,3.75,86,Top two of C-USA by football revenue (rank 1 of 1).,inside
+Michigan,CBB,Big Ten,21.2,Standard power conference,5.0,106,"Remaining Big Ten / Big East program, not in a higher basketball tier.",inside
+Duke,CBB,Atlantic Coast,52.7,Blue blood,7.75,409,Named blue-blood brand in the brief.,above (> $400M)
+Connecticut,CBB,Big East,20.2,Blue blood,7.75,156,Named blue-blood brand in the brief.,below (< $250M)
+St. John's,CBB,Big East,32.0,Upper high-major,6.5,208,Top 15 of all Power 4 / Big East programs by men's basketball revenue (rank 6).,inside
+Arizona,CBB,Big 12,22.6,Upper high-major,6.5,147,Named upper high-major brand in the brief.,inside
+Villanova,CBB,Big East,16.6,Upper high-major,6.5,108,Named upper high-major brand in the brief.,below (< $125M)
+Kentucky,CBB,Southeastern,21.4,Blue blood,7.75,166,Named blue-blood brand in the brief.,below (< $250M)
+North Carolina,CBB,Atlantic Coast,39.7,Blue blood,7.75,308,Named blue-blood brand in the brief.,inside
+Florida,CBB,Southeastern,17.3,Standard power conference,5.0,86,"Remaining SEC / Big East program, not in a higher basketball tier.",inside
+Illinois,CBB,Big Ten,34.8,Upper high-major,6.5,226,Top 15 of all Power 4 / Big East programs by men's basketball revenue (rank 5).,above (> $225M)
+Gonzaga,CBB,West Coast Conference,19.5,Upper high-major,6.5,127,Named upper high-major brand in the brief.,inside
+Purdue,CBB,Big Ten,21.0,Upper high-major,6.5,136,Named upper high-major brand in the brief.,inside
+Kansas,CBB,Big 12,21.9,Blue blood,7.75,170,Named blue-blood brand in the brief.,below (< $250M)
+Michigan State,CBB,Big Ten,21.8,Upper high-major,6.5,142,Named upper high-major brand in the brief.,inside
+Indiana,CBB,Big Ten,52.3,Blue blood,7.75,405,Named blue-blood brand in the brief.,above (> $400M)
+Iowa,CBB,Big Ten,16.7,Standard power conference,5.0,84,"Remaining Big Ten / Big East program, not in a higher basketball tier.",inside
+Arkansas,CBB,Southeastern,25.4,Upper high-major,6.5,165,Top 15 of all Power 4 / Big East programs by men's basketball revenue (rank 11).,inside
+UCLA,CBB,Big Ten,17.8,Standard power conference,5.0,89,"Remaining Big Ten / Big East program, not in a higher basketball tier.",inside
+VCU,CBB,Atlantic 10,7.8,Top mid-major,4.0,31,Named top mid-major brand in the brief.,inside
+Nebraska,CBB,Big Ten,18.4,Standard power conference,5.0,92,"Remaining Big Ten / Big East program, not in a higher basketball tier.",inside
+Texas,CBB,Southeastern,17.4,Standard power conference,5.0,87,"Remaining SEC / Big East program, not in a higher basketball tier.",inside
+Auburn,CBB,Southeastern,26.6,Upper high-major,6.5,173,Top 15 of all Power 4 / Big East programs by men's basketball revenue (rank 9).,inside
+Iowa State,CBB,Big 12,14.4,Standard power conference,5.0,72,"Remaining Big 12 / Big East program, not in a higher basketball tier.",inside
+Virginia,CBB,Atlantic Coast,17.8,Standard power conference,5.0,89,"Remaining ACC / Big East program, not in a higher basketball tier.",inside
+Ohio State,CBB,Big Ten,23.4,Upper high-major,6.5,152,Top 15 of all Power 4 / Big East programs by men's basketball revenue (rank 13).,inside
+Houston,CBB,Big 12,14.6,Upper high-major,6.5,95,Named upper high-major brand in the brief.,below (< $125M)
+Louisville,CBB,Atlantic Coast,22.8,Upper high-major,6.5,148,Named upper high-major brand in the brief.,inside
+North Carolina State,CBB,Atlantic Coast,19.0,Standard power conference,5.0,95,"Remaining ACC / Big East program, not in a higher basketball tier.",inside
+Tennessee,CBB,Southeastern,35.3,Upper high-major,6.5,230,Top 15 of all Power 4 / Big East programs by men's basketball revenue (rank 4).,above (> $225M)
+BYU,CBB,Big 12,28.0,Upper high-major,6.5,182,Top 15 of all Power 4 / Big East programs by men's basketball revenue (rank 8).,inside
+Georgetown,CBB,Big East,17.5,Standard power conference,5.0,87,"Remaining Big East / Big East program, not in a higher basketball tier.",inside
+Saint Mary's,CBB,West Coast Conference,8.3,Top mid-major,4.0,33,Named top mid-major brand in the brief.,inside
+Syracuse,CBB,Atlantic Coast,31.6,Upper high-major,6.5,205,Top 15 of all Power 4 / Big East programs by men's basketball revenue (rank 7).,inside
+Vanderbilt,CBB,Southeastern,13.3,Standard power conference,5.0,67,"Remaining SEC / Big East program, not in a higher basketball tier.",inside
+Alabama,CBB,Southeastern,24.4,Upper high-major,6.5,159,Top 15 of all Power 4 / Big East programs by men's basketball revenue (rank 12).,inside
+Marquette,CBB,Big East,25.7,Upper high-major,6.5,167,Named upper high-major brand in the brief.,inside
+Wake Forest,CBB,Atlantic Coast,13.1,Standard power conference,5.0,65,"Remaining ACC / Big East program, not in a higher basketball tier.",inside
+Xavier,CBB,Big East,16.0,Standard power conference,5.0,80,"Remaining Big East / Big East program, not in a higher basketball tier.",inside
+Wisconsin,CBB,Big Ten,19.9,Standard power conference,5.0,99,"Remaining Big Ten / Big East program, not in a higher basketball tier.",inside
+Creighton,CBB,Big East,19.8,Standard power conference,5.0,99,"Remaining Big East / Big East program, not in a higher basketball tier.",inside
+Maryland,CBB,Big Ten,16.5,Standard power conference,5.0,82,"Remaining Big Ten / Big East program, not in a higher basketball tier.",inside
+Miami (FL),CBB,Atlantic Coast,17.9,Standard power conference,5.0,89,"Remaining ACC / Big East program, not in a higher basketball tier.",inside
+Providence,CBB,Big East,12.5,Standard power conference,5.0,63,"Remaining Big East / Big East program, not in a higher basketball tier.",inside
+Seton Hall,CBB,Big East,9.8,Standard power conference,5.0,49,"Remaining Big East / Big East program, not in a higher basketball tier.",below (< $50M)
+Utah State,CBB,Mountain West,5.7,Top mid-major,4.0,23,Non-power-conference program in the index (mid-major tier).,below (< $30M)
+California,CBB,Atlantic Coast,13.2,Standard power conference,5.0,66,"Remaining ACC / Big East program, not in a higher basketball tier.",inside
+Wichita State,CBB,American Athletic Conference,6.8,Top mid-major,4.0,27,Non-power-conference program in the index (mid-major tier).,below (< $30M)
+Butler,CBB,Big East,12.9,Standard power conference,5.0,65,"Remaining Big East / Big East program, not in a higher basketball tier.",inside
+LSU,CBB,Southeastern,13.6,Standard power conference,5.0,68,"Remaining SEC / Big East program, not in a higher basketball tier.",inside
+USC,CBB,Big Ten,13.1,Standard power conference,5.0,65,"Remaining Big Ten / Big East program, not in a higher basketball tier.",inside
+Rutgers,CBB,Big Ten,16.1,Standard power conference,5.0,80,"Remaining Big Ten / Big East program, not in a higher basketball tier.",inside
+Cincinnati,CBB,Big 12,12.3,Standard power conference,5.0,62,"Remaining Big 12 / Big East program, not in a higher basketball tier.",inside
+Georgia,CBB,Southeastern,16.1,Standard power conference,5.0,80,"Remaining SEC / Big East program, not in a higher basketball tier.",inside
+West Virginia,CBB,Big 12,10.2,Standard power conference,5.0,51,"Remaining Big 12 / Big East program, not in a higher basketball tier.",inside
+Missouri,CBB,Southeastern,18.9,Standard power conference,5.0,94,"Remaining SEC / Big East program, not in a higher basketball tier.",inside
+Arizona State,CBB,Big 12,10.1,Standard power conference,5.0,50,"Remaining Big 12 / Big East program, not in a higher basketball tier.",inside
+Baylor,CBB,Big 12,18.4,Standard power conference,5.0,92,"Remaining Big 12 / Big East program, not in a higher basketball tier.",inside
+Notre Dame,CBB,Atlantic Coast,13.2,Standard power conference,5.0,66,"Remaining ACC / Big East program, not in a higher basketball tier.",inside
+Texas A&M,CBB,Southeastern,15.7,Standard power conference,5.0,79,"Remaining SEC / Big East program, not in a higher basketball tier.",inside
+DePaul,CBB,Big East,12.7,Standard power conference,5.0,64,"Remaining Big East / Big East program, not in a higher basketball tier.",inside
+Clemson,CBB,Atlantic Coast,12.6,Standard power conference,5.0,63,"Remaining ACC / Big East program, not in a higher basketball tier.",inside
+Penn State,CBB,Big Ten,15.2,Standard power conference,5.0,76,"Remaining Big Ten / Big East program, not in a higher basketball tier.",inside
+Texas Tech,CBB,Big 12,16.0,Standard power conference,5.0,80,"Remaining Big 12 / Big East program, not in a higher basketball tier.",inside
+TCU,CBB,Big 12,15.6,Standard power conference,5.0,78,"Remaining Big 12 / Big East program, not in a higher basketball tier.",inside
+Oklahoma State,CBB,Big 12,18.1,Standard power conference,5.0,90,"Remaining Big 12 / Big East program, not in a higher basketball tier.",inside
+Central Florida,CBB,Big 12,7.8,Standard power conference,5.0,39,"Remaining Big 12 / Big East program, not in a higher basketball tier.",below (< $50M)
+Washington,CBB,Big Ten,13.5,Standard power conference,5.0,67,"Remaining Big Ten / Big East program, not in a higher basketball tier.",inside
+Pittsburgh,CBB,Atlantic Coast,13.9,Standard power conference,5.0,69,"Remaining ACC / Big East program, not in a higher basketball tier.",inside
+Kansas State,CBB,Big 12,10.9,Standard power conference,5.0,55,"Remaining Big 12 / Big East program, not in a higher basketball tier.",inside
+SMU,CBB,Atlantic Coast,16.7,Standard power conference,5.0,84,"Remaining ACC / Big East program, not in a higher basketball tier.",inside
+Minnesota,CBB,Big Ten,16.0,Standard power conference,5.0,80,"Remaining Big Ten / Big East program, not in a higher basketball tier.",inside
+Georgia Tech,CBB,Atlantic Coast,14.5,Standard power conference,5.0,73,"Remaining ACC / Big East program, not in a higher basketball tier.",inside
+Oregon,CBB,Big Ten,11.6,Standard power conference,5.0,58,"Remaining Big Ten / Big East program, not in a higher basketball tier.",inside
+Stanford,CBB,Atlantic Coast,10.8,Standard power conference,5.0,54,"Remaining ACC / Big East program, not in a higher basketball tier.",inside
+San Diego State,CBB,Mountain West,15.3,Top mid-major,4.0,61,Named top mid-major brand in the brief.,inside
+Florida Atlantic,CBB,American Athletic Conference,4.8,Top mid-major,4.0,19,Non-power-conference program in the index (mid-major tier).,below (< $30M)
+Florida State,CBB,Atlantic Coast,14.6,Standard power conference,5.0,73,"Remaining ACC / Big East program, not in a higher basketball tier.",inside
+Loyola Chicago,CBB,Atlantic 10,7.0,Top mid-major,4.0,28,Non-power-conference program in the index (mid-major tier).,below (< $30M)
+Boston College,CBB,Atlantic Coast,10.0,Standard power conference,5.0,50,"Remaining ACC / Big East program, not in a higher basketball tier.",inside
+Utah,CBB,Big 12,17.0,Standard power conference,5.0,85,"Remaining Big 12 / Big East program, not in a higher basketball tier.",inside
+George Mason,CBB,CAA,5.8,Top mid-major,4.0,23,Non-power-conference program in the index (mid-major tier).,below (< $30M)
+South Carolina,CBB,Southeastern,15.4,Standard power conference,5.0,77,"Remaining SEC / Big East program, not in a higher basketball tier.",inside
+Virginia Tech,CBB,Atlantic Coast,8.5,Standard power conference,5.0,42,"Remaining ACC / Big East program, not in a higher basketball tier.",below (< $50M)
+Mississippi,CBB,Southeastern,18.2,Standard power conference,5.0,91,"Remaining SEC / Big East program, not in a higher basketball tier.",inside
+Northwestern,CBB,Big Ten,14.4,Standard power conference,5.0,72,"Remaining Big Ten / Big East program, not in a higher basketball tier.",inside
+Colorado,CBB,Big 12,11.9,Standard power conference,5.0,60,"Remaining Big 12 / Big East program, not in a higher basketball tier.",inside
+Mississippi State,CBB,Southeastern,12.2,Standard power conference,5.0,61,"Remaining SEC / Big East program, not in a higher basketball tier.",inside
+Memphis Tigers,CBB,American Athletic Conference,9.3,Top mid-major,4.0,37,Non-power-conference program in the index (mid-major tier).,inside
+Boise State,CBB,Mountain West,6.1,Top mid-major,4.0,24,Non-power-conference program in the index (mid-major tier).,below (< $30M)
+Colorado State Rams,CBB,Mountain West,7.0,Top mid-major,4.0,28,Non-power-conference program in the index (mid-major tier).,below (< $30M)
+Dayton Flyers,CBB,Atlantic 10,19.1,Top mid-major,4.0,76,Named top mid-major brand in the brief.,above (> $65M)
+Oklahoma,CBB,Southeastern,9.8,Standard power conference,5.0,49,"Remaining SEC / Big East program, not in a higher basketball tier.",below (< $50M)

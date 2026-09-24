@@ -1,3 +1,4 @@
+2026-09-24T22:04:15+01:00  ad3172ac7  Load round-3 sourced valuations (47 rows), remove 11 superseded guesses, add 255 owner rows
 2026-09-24T18:24:41+01:00  317328155  Fan Attention Index v0.8: sum+peak baseline, US attention tab, sign-in gate, 116 valuations
 2026-09-24T18:09:11+01:00  5bfbce962  HANDOFF: 2026-09-24 section AY, football-standings raced because 15 jobs have two schedulers [vercel skip]
 2026-09-24T18:01:53+01:00  8e24f66b7  football: refresh live bundles [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-22T12:46:26+01:00  a50d1c94f  handoff: jobs reconcile and The Hundred honours fix [vercel skip]
 2026-09-22T12:27:49+01:00  1ffdf2809  jev: audit mode, hash-order sampling, first full eval sweep [vercel skip]
 2026-09-22T12:24:44+01:00  8f7d422f5  tsconfig: exclude .next/dev so verify stops reading files Turbopack rewrites [vercel skip]
-2026-09-22T12:14:47+01:00  52f467a77  gap-watch: announce every auto-promotion, not just failures [vercel skip]

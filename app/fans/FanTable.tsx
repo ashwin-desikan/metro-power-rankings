@@ -5,7 +5,13 @@ import Link from "next/link";
 import SortableBoard, { type BoardCol, type BoardRow } from "@/app/_shared/SortableBoard";
 import { Sparkline } from "@/app/_shared/Sparkline";
 import { DataBar } from "@/app/_shared/DataBar";
-import { leagueIcon } from "@/lib/sportLabels";
+import {
+  leagueIcon,
+  FAN_INDEX_SPORTS,
+  FAN_INDEX_SPORT_LEAGUES,
+  fanIndexSportIcon,
+  type FanIndexSport,
+} from "@/lib/sportLabels";
 
 const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const SPIKE_THRESHOLD = 2.5;
@@ -55,27 +61,68 @@ const BUILD_LEAGUE_SLUG: Record<string, string> = {
   MLS: "mls", "Liga MX": "liga-mx", "Brasileirão": "brasileirao", "Liga Profesional": "liga-profesional",
   NWSL: "nwsl", WSL: "wsl",
 };
-// Groups that only field women's competitions, for the Men's / Women's
-// toggle. Everything else (including mixed-field sports like F1) is left
-// visible under both, since the toggle is a scoping convenience, not a
-// claim that every other group is men-only.
-const WOMENS_ONLY_GROUPS = new Set(["WNBA", "Women's football"]);
+// The two Women's football leagues plus WNBA are the only fan-index
+// leagues that are women-only, for the Build-your-own Men's / Women's
+// toggle (2026-09-24 sport-chip rework operates at LEAGUE granularity
+// throughout, not group). Everything else (including mixed-field sports
+// like F1) stays visible under both, since the toggle is a scoping
+// convenience, not a claim that every other league is men-only.
+const WOMENS_ONLY_LEAGUES = new Set(["WNBA", "NWSL", "WSL"]);
 
-type BuildCategory = { category: string; groups: string[] };
-const BUILD_CATEGORIES: BuildCategory[] = [
-  { category: "Football", groups: ["Football"] },
-  { category: "Major American sports", groups: MAJOR_AMERICAN_GROUPS },
-  { category: "Women's sports", groups: WOMENS_SPORTS_GROUPS },
-  { category: "World", groups: WORLD_GROUPS },
-];
+// One token per LEAGUE, for every one of the dataset's 33 leagues, reusing
+// the EXACT SAME token strings the site has always used (2026-09-24 sport-
+// chip rework: previously only Football's and Women's football's own
+// leagues had a per-league token; every other group's token WAS ALREADY a
+// league token in disguise, since group === league for all of them -- NFL,
+// NBA, MLB, ... are each a group of exactly one league sharing its name).
+// This is what makes a sport chip's "select every league of this sport"
+// meaningful for BOTH kinds of sport, and what keeps every existing
+// ?build=... link (group tokens included) resolving to exactly the same
+// teams as before: the filter below still checks BUILD_GROUP_SLUG[t.group]
+// first, unchanged.
+const SINGLE_LEAGUE_GROUP_SLUG: Record<string, string> = Object.fromEntries(
+  Object.entries(BUILD_GROUP_SLUG).filter(([g]) => g !== "Football" && g !== "Women's football"),
+);
+const LEAGUE_KEY_BY_LEAGUE: Record<string, string> = { ...SINGLE_LEAGUE_GROUP_SLUG, ...BUILD_LEAGUE_SLUG };
+
+// URL-only slug per sport, for the shareable ?sports=... mirror of which
+// sport chips are fully selected (see the URL-sync effect below). Not the
+// source of truth for filtering -- ?build=... (league tokens) is -- so a
+// typo or an unknown slug here only ever fails to restore a chip's visual
+// "fully selected" state, never drops a team from the table.
+const SPORT_SLUG: Record<FanIndexSport, string> = {
+  Football: "football", Gridiron: "gridiron", Basketball: "basketball",
+  Baseball: "baseball", Hockey: "hockey", Rugby: "rugby",
+  "Aussie rules": "aussie-rules", Cricket: "cricket", Motorsport: "motorsport",
+  Handball: "handball", Volleyball: "volleyball",
+};
+const SPORT_BY_SLUG: Record<string, FanIndexSport> = Object.fromEntries(
+  FAN_INDEX_SPORTS.map((s) => [SPORT_SLUG[s], s]),
+);
+
+function leagueTokensForSport(sport: FanIndexSport): string[] {
+  return FAN_INDEX_SPORT_LEAGUES[sport].map((lg) => LEAGUE_KEY_BY_LEAGUE[lg]).filter((t): t is string => !!t);
+}
 
 function parseBuildQuery(): { selection: Set<string>; gender: "all" | "men" | "women" } {
   if (typeof window === "undefined") return { selection: new Set(), gender: "all" };
   const params = new URLSearchParams(window.location.search);
   const build = params.get("build");
+  const sportsParam = params.get("sports");
   const gender = params.get("gender");
+  const selection = new Set(build ? build.split(",").filter(Boolean) : []);
+  // ?sports=... is a convenience on top of ?build=...: each listed sport
+  // adds every one of its league tokens, so an old ?build=-only link is
+  // unaffected and a ?sports=-only link still resolves to real teams.
+  if (sportsParam) {
+    for (const slug of sportsParam.split(",").filter(Boolean)) {
+      const sport = SPORT_BY_SLUG[slug];
+      if (!sport) continue;
+      for (const token of leagueTokensForSport(sport)) selection.add(token);
+    }
+  }
   return {
-    selection: new Set(build ? build.split(",").filter(Boolean) : []),
+    selection,
     gender: gender === "men" || gender === "women" ? gender : "all",
   };
 }
@@ -109,6 +156,7 @@ export type FanTableTeam = {
   valSource: string | null;
   valYear: number | null;
   valMethod: string | null;
+  valUnit: string | null;
   residualPct: number | null;
   valueVsAttention: number | null;
   residualEligible: boolean;
@@ -189,6 +237,7 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
   const [wflLeague, setWflLeague] = useState<string | null>(null);
   const [buildSelection, setBuildSelection] = useState<Set<string>>(() => new Set());
   const [buildGender, setBuildGender] = useState<"all" | "men" | "women">("all");
+  const [refineOpen, setRefineOpen] = useState(false);
   const buildInitFromUrl = useRef(false);
 
   // One-time read of ?build=...&gender=... on mount, so a shared link opens
@@ -220,6 +269,21 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
     } else {
       url.searchParams.delete("gender");
     }
+    // ?sports=...: a derived, shareable mirror of which sport chips are
+    // FULLY selected (every one of that sport's leagues is in
+    // buildSelection). Purely a convenience for restoring the chip's
+    // filled-in visual state and for a shorter link when a whole sport is
+    // meant -- buildSelection (?build=...) is what actually drives the
+    // table either way, so this can never itself drop or add a team.
+    const fullySelectedSports = FAN_INDEX_SPORTS.filter((sport) => {
+      const tokens = leagueTokensForSport(sport);
+      return tokens.length > 0 && tokens.every((t) => buildSelection.has(t));
+    });
+    if (topTab === BUILD_YOUR_OWN && fullySelectedSports.length > 0) {
+      url.searchParams.set("sports", fullySelectedSports.map((s) => SPORT_SLUG[s]).join(","));
+    } else {
+      url.searchParams.delete("sports");
+    }
     window.history.replaceState(null, "", url.pathname + url.search);
   }, [topTab, buildSelection, buildGender]);
 
@@ -244,6 +308,34 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
     setBuildGender("all");
   }
 
+  // Sport chip click: "selects every league of that sport; clicking again
+  // clears them" (coordinator's spec). A PARTIAL sport (some but not all of
+  // its leagues already selected, e.g. from the refine panel) also fills
+  // in to fully selected on click, same as a sport with nothing selected --
+  // only a chip that is already FULLY selected clears on click. Takes the
+  // PRESENT (data-visible, gender-filtered) tokens for that sport, not
+  // every token the sport could ever have, so a men's-only view of
+  // "Football" never silently adds NWSL/WSL to the selection.
+  function toggleSport(presentTokens: string[]) {
+    if (presentTokens.length === 0) return;
+    const allSelected = presentTokens.every((t) => buildSelection.has(t));
+    setBuildSelection((prev) => {
+      const next = new Set(prev);
+      for (const t of presentTokens) {
+        if (allSelected) next.delete(t);
+        else next.add(t);
+      }
+      return next;
+    });
+  }
+
+  function sportSelectionState(sport: FanIndexSport, presentTokens: string[]): "all" | "partial" | "none" {
+    if (presentTokens.length === 0) return "none";
+    const selectedCount = presentTokens.filter((t) => buildSelection.has(t)).length;
+    if (selectedCount === 0) return "none";
+    return selectedCount === presentTokens.length ? "all" : "partial";
+  }
+
   const isAllTab = topTab === "All";
   const isFootballTab = topTab === "Football";
   const isBuildTab = topTab === BUILD_YOUR_OWN;
@@ -261,6 +353,34 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
   const wflLeaguesPresent = useMemo(
     () => WOMENS_FOOTBALL_LEAGUES.filter((lg) => teams.some((t) => t.group === "Women's football" && t.league === lg)),
     [teams],
+  );
+
+  // Build-your-own, sport-chip rework (2026-09-24): for each sport, its
+  // leagues that both (a) have at least one team in this dataset and (b)
+  // pass the current Men's/Women's filter, plus the league tokens for
+  // exactly those leagues. Recomputed on buildGender so a sport with no
+  // leagues left under the current filter (e.g. Gridiron under "Women's")
+  // disappears from the chip row entirely, same as every other present-
+  // filtered chip list on this page.
+  const sportLeaguesPresent = useMemo(() => {
+    const leagueOk = (lg: string) => {
+      if (buildGender === "men") return !WOMENS_ONLY_LEAGUES.has(lg);
+      if (buildGender === "women") return WOMENS_ONLY_LEAGUES.has(lg);
+      return true;
+    };
+    const map = new Map<FanIndexSport, { leagues: string[]; tokens: string[] }>();
+    for (const sport of FAN_INDEX_SPORTS) {
+      const leagues = FAN_INDEX_SPORT_LEAGUES[sport].filter(
+        (lg) => leagueOk(lg) && teams.some((t) => t.league === lg),
+      );
+      const tokens = leagues.map((lg) => LEAGUE_KEY_BY_LEAGUE[lg]).filter((t): t is string => !!t);
+      map.set(sport, { leagues, tokens });
+    }
+    return map;
+  }, [teams, buildGender]);
+  const sportsPresent = useMemo(
+    () => FAN_INDEX_SPORTS.filter((sport) => (sportLeaguesPresent.get(sport)?.leagues.length ?? 0) > 0),
+    [sportLeaguesPresent],
   );
 
   // "Scoped" = the view is narrowed to one group (a league or a single
@@ -329,25 +449,62 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
     { key: "baseline", label: "Baseline views", right: true, sortable: true, demote: "sm", title: "Median monthly all-language Wikipedia views x 12 (spike-dampened)" },
     { key: "trend", label: "12mo", right: false, sortable: false, demote: "md", className: "w-24" },
     { key: "value", label: "Valuation", right: true, sortable: true },
-    { key: "vsAttention", label: "Valued vs attention", right: true, sortable: true, demote: "sm", title: "How a team's valuation compares with what its fan attention would predict within its league. ×2.0 = valued at twice what its attention suggests; ×0.5 = half." },
+    { key: "vsAttention", label: "Valued vs attention", right: true, sortable: true, demote: "sm", title: "×1.8 means the team is valued at 1.8 times what is typical in its league for its level of attention. 1.0 is the league norm." },
   ];
 
   const rows: BoardRow[] = filtered.map((t) => {
     const icon = leagueIcon(t.league) || leagueIcon(t.group);
+    // val_unit (2026-09-24): distinguishes a college row still carrying the
+    // whole athletic department's figure ("athletic dept" badge) from one
+    // with its own program-level value -- either a normal team-level value
+    // (val_unit null, no badge from this check) or a derived program value
+    // (val_method "derived", "program value" badge below). Was previously
+    // (bug) checked as t.valMethod === "college", a value val_method never
+    // actually takes, so the "athletic dept" badge never rendered.
     const methodBadge =
       t.valueM == null || !t.valMethod || t.valMethod === "published"
-        ? null
+        ? (t.valUnit === "athletic department"
+            ? <span className="ml-1 rounded border px-1 text-[9px] uppercase tracking-wide text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }} title="The whole athletic department, not one sport">athletic dept</span>
+            : null)
         : t.valMethod === "transaction"
           ? <span className="ml-1 rounded border px-1 text-[9px] uppercase tracking-wide text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }} title="Implied by a recent stake sale">deal</span>
-          : t.valMethod === "college"
+          : t.valUnit === "athletic department"
             ? <span className="ml-1 rounded border px-1 text-[9px] uppercase tracking-wide text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }} title="The whole athletic department, not one sport">athletic dept</span>
-            : t.valMethod === "speculative"
-              ? <span className="ml-1 text-[9px] italic text-[var(--text-dim)]" title="Estimate, not a reported valuation or a disclosed deal">est</span>
-              : null;
+            : t.valMethod === "derived"
+              ? <span className="ml-1 rounded border px-1 text-[9px] uppercase tracking-wide text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }} title="Program value: this sport's revenue share of the athletic department's valuation.">program value</span>
+              : t.valMethod === "speculative"
+                ? <span className="ml-1 text-[9px] italic text-[var(--text-dim)]" title="Estimate, not a reported valuation or a disclosed deal">est</span>
+                : null;
 
+    // Est badge (2026-09-24): same badge as the Valuation column's
+    // methodBadge, repeated here so a reader scanning the "Valued vs
+    // attention" column alone -- not cross-referencing Valuation -- can
+    // still tell a speculative-sourced multiplier apart from a published
+    // one, since v0.9 shows a multiplier for every valued team in a league
+    // with enough valued teams (>= 3, any method), not only for leagues
+    // whose fit cleared an R^2 bar.
+    const vsAttentionEstBadge = t.valMethod === "speculative"
+      ? <span className="ml-1 text-[9px] italic text-[var(--text-dim)]" title="Estimate, not a reported valuation or a disclosed deal">est</span>
+      : null;
+    // College basketball (2026-09-24, refined 2026-09-24 when program-level
+    // values were added): a College basketball row whose value_m is still
+    // the whole athletic department's figure (val_unit === "athletic
+    // department") never gets a value_vs_attention from csv_to_json.py's
+    // apply_value_vs_attention() (see that function's doc comment) -- the
+    // value itself still shows, only the multiplier is withheld, with a
+    // tooltip that says why instead of the generic "too few valued teams"
+    // one. A College basketball row with its own program value (val_unit
+    // null) is compared normally, so it falls through to the generic
+    // message like any other league.
+    const vsAttentionDashTitle =
+      t.valueM == null
+        ? undefined
+        : t.league === "College basketball" && t.valUnit === "athletic department"
+          ? "Value covers the whole athletic department, so it is not compared with basketball attention."
+          : "Not shown: fewer than 3 valued teams in this league.";
     const vsAttentionCell = t.valueVsAttention == null
-      ? <span className="text-[var(--text-dim)]" title={t.valueM != null ? "Not shown: this league's attention-to-value fit is too weak to be meaningful." : undefined}>—</span>
-      : <span className="tabular-nums">&times;{t.valueVsAttention.toFixed(1)}</span>;
+      ? <span className="text-[var(--text-dim)]" title={vsAttentionDashTitle}>—</span>
+      : <span className="tabular-nums">&times;{t.valueVsAttention.toFixed(1)}{vsAttentionEstBadge}</span>;
 
     const score = isMajorAmerican ? t.fanIndexRaw : scoped ? t.scoreInGroup : t.globalScore;
 
@@ -509,76 +666,109 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
             ) : null}
           </div>
 
-          {BUILD_CATEGORIES.map(({ category, groups }) => {
-            const visibleGroups = groups.filter((g) => {
-              if (!teams.some((t) => t.group === g)) return false;
-              if (buildGender === "men") return !WOMENS_ONLY_GROUPS.has(g);
-              if (buildGender === "women") return WOMENS_ONLY_GROUPS.has(g);
-              return true;
-            });
-            if (visibleGroups.length === 0) return null;
-            return (
-              <div key={category} className="mb-3">
-                <div className="text-xs font-semibold text-[var(--text-dim)] mb-1.5">{category}</div>
-                {visibleGroups.map((g) => {
-                  const token = BUILD_GROUP_SLUG[g];
-                  const icon = leagueIcon(g);
-                  const selected = buildSelection.has(token);
-                  const subLeagues = g === "Football" ? footballLeaguesPresent : g === "Women's football" ? wflLeaguesPresent : [];
-                  return (
-                    <div key={g} className="mb-1.5">
-                      <button
-                        type="button"
-                        onClick={() => toggleBuildToken(token)}
-                        className="inline-flex items-center justify-center min-h-[44px] rounded-full border px-3 text-xs"
-                        style={{
-                          borderColor: selected ? "var(--accent)" : "var(--border)",
-                          color: selected ? "var(--text)" : "var(--text-muted)",
-                          background: selected ? "var(--bg-card-hover)" : "transparent",
-                        }}
-                        aria-pressed={selected}
-                      >
-                        {icon ? <span className="mr-1" aria-hidden>{icon}</span> : null}
-                        {g}
-                      </button>
-                      {subLeagues.length > 0 ? (
-                        <div className="flex flex-wrap gap-1.5 mt-1.5 ml-1">
-                          {subLeagues.map((lg) => {
-                            const lgToken = BUILD_LEAGUE_SLUG[lg];
-                            const lgIcon = leagueIcon(lg);
-                            const lgSelected = buildSelection.has(lgToken);
-                            return (
-                              <button
-                                key={lg}
-                                type="button"
-                                onClick={() => toggleBuildToken(lgToken)}
-                                className="inline-flex items-center justify-center min-h-[44px] rounded-full border px-2.5 text-[11px]"
-                                style={{
-                                  borderColor: lgSelected ? "var(--accent)" : "var(--border)",
-                                  color: lgSelected ? "var(--text)" : "var(--text-muted)",
-                                  background: lgSelected ? "var(--bg-card-hover)" : "transparent",
-                                }}
-                                aria-pressed={lgSelected}
-                              >
-                                {lgIcon ? <span className="mr-1" aria-hidden>{lgIcon}</span> : null}
-                                {lg}
-                              </button>
-                            );
-                          })}
-                        </div>
-                      ) : null}
+          {/* Sport-level filters, first: one chip per sport, each with that
+              sport's icon (from lib/sportLabels.ts, reused from the League
+              column so the two can never disagree). Clicking a sport
+              selects every one of its (present, gender-filtered) leagues;
+              clicking again clears them. Mobile: this row scrolls
+              horizontally within itself rather than wrapping, so it never
+              forces the PAGE to scroll sideways; sm+ it wraps normally. */}
+          <div className="mb-3">
+            <div className="text-xs text-[var(--text-dim)] mb-1.5">Sport</div>
+            <div className="flex gap-1.5 overflow-x-auto sm:overflow-visible sm:flex-wrap pb-1 -mx-4 px-4 sm:mx-0 sm:px-0">
+              {sportsPresent.map((sport) => {
+                const { tokens } = sportLeaguesPresent.get(sport) ?? { tokens: [] };
+                const state = sportSelectionState(sport, tokens);
+                const icon = fanIndexSportIcon(sport);
+                return (
+                  <button
+                    key={sport}
+                    type="button"
+                    onClick={() => toggleSport(tokens)}
+                    aria-pressed={state === "all"}
+                    className="inline-flex shrink-0 items-center justify-center gap-1 min-h-[44px] rounded-full border px-3 text-xs"
+                    style={{
+                      borderColor: state !== "none" ? "var(--accent)" : "var(--border)",
+                      color: state !== "none" ? "var(--text)" : "var(--text-muted)",
+                      background: state === "all" ? "var(--bg-card-hover)" : "transparent",
+                    }}
+                    title={state === "partial" ? `${sport}: some leagues selected` : sport}
+                  >
+                    {icon ? <span aria-hidden>{icon}</span> : null}
+                    {sport}
+                    {state === "partial" ? (
+                      <span
+                        className="inline-block w-1.5 h-1.5 rounded-full"
+                        style={{ background: "var(--accent)" }}
+                        aria-label="partially selected"
+                      />
+                    ) : null}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Compact league refinement: collapsed by default, grouped by
+              sport, small wrapping chip rows. Desktop flows the sport
+              groups into 2-3 columns; at <640px it is a single stacked
+              column (each group's own chips still wrap). */}
+          <button
+            type="button"
+            onClick={() => setRefineOpen((v) => !v)}
+            aria-expanded={refineOpen}
+            className="inline-flex items-center gap-1 text-xs text-[var(--text-muted)] mb-2 hover:text-[var(--text)]"
+          >
+            <span aria-hidden>{refineOpen ? "\u25BE" : "\u25B8"}</span>
+            Refine leagues ({buildSelection.size} selected)
+          </button>
+          {refineOpen ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3 mb-1 rounded-xl border p-3" style={{ borderColor: "var(--border)" }}>
+              {sportsPresent.map((sport) => {
+                const { leagues } = sportLeaguesPresent.get(sport) ?? { leagues: [] };
+                if (leagues.length === 0) return null;
+                const icon = fanIndexSportIcon(sport);
+                return (
+                  <div key={sport}>
+                    <div className="text-[11px] font-semibold text-[var(--text-dim)] mb-1">
+                      {icon ? <span className="mr-1" aria-hidden>{icon}</span> : null}
+                      {sport}
                     </div>
-                  );
-                })}
-              </div>
-            );
-          })}
+                    <div className="flex flex-wrap gap-1.5">
+                      {leagues.map((lg) => {
+                        const token = LEAGUE_KEY_BY_LEAGUE[lg];
+                        const lgIcon = leagueIcon(lg);
+                        const selected = token ? buildSelection.has(token) : false;
+                        return (
+                          <button
+                            key={lg}
+                            type="button"
+                            onClick={() => token && toggleBuildToken(token)}
+                            className="inline-flex items-center justify-center min-h-[32px] rounded-full border px-2.5 text-[11px]"
+                            style={{
+                              borderColor: selected ? "var(--accent)" : "var(--border)",
+                              color: selected ? "var(--text)" : "var(--text-muted)",
+                              background: selected ? "var(--bg-card-hover)" : "transparent",
+                            }}
+                            aria-pressed={selected}
+                          >
+                            {lgIcon ? <span className="mr-1" aria-hidden>{lgIcon}</span> : null}
+                            {lg}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
         </div>
       ) : null}
 
       {isBuildTab && buildSelection.size === 0 ? (
         <p className="text-sm text-[var(--text-muted)] py-8 text-center">
-          Pick sports, leagues or men&apos;s and women&apos;s to compare.
+          Pick a sport to start.
         </p>
       ) : (
         <SortableBoard

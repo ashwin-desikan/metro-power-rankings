@@ -25,9 +25,10 @@ export function FansCrumbs({ tab }: { tab?: string }) {
   );
 }
 
-export function FansNav({ active }: { active: "index" | "methodology" }) {
-  const tabs: { key: "index" | "methodology"; href: string; label: string }[] = [
+export function FansNav({ active }: { active: "index" | "methodology" | "trends" }) {
+  const tabs: { key: "index" | "methodology" | "trends"; href: string; label: string }[] = [
     { key: "index", href: "/fans", label: "Index" },
+    { key: "trends", href: "/fans/trends", label: "Attention over time" },
     { key: "methodology", href: "/fans/methodology", label: "Methodology" },
   ];
   return (

@@ -542,6 +542,22 @@ def run(ym=None, dry_run=False):
         r["peak_month_all_lang"] = max(vals)
     log(f"pageviews done: {n_teams} teams, {n_zero} with zero views this month")
 
+    # Wikipedia's own overall traffic total, needed by /fans/trends to
+    # normalize away Wikipedia's site-wide decline (see app/api/fans/
+    # history/route.ts's normalized-series comment). Fail-open: this file
+    # is a small input to one page's charts, not the index itself, so a
+    # fetch problem here must never fail the whole monthly run. On error
+    # the existing data/fans/wikipedia_totals_monthly.json (if any) is left
+    # in place untouched and this run's log just notes it is stale.
+    wiki_totals_script = os.path.join(HERE, "fetch_wikipedia_totals.py")
+    wiki_totals_result = subprocess.run([sys.executable, wiki_totals_script], cwd=REPO)
+    if wiki_totals_result.returncode != 0:
+        log("WARNING: fetch_wikipedia_totals.py failed (see above); "
+            "data/fans/wikipedia_totals_monthly.json was NOT updated this run "
+            "-- /fans/trends will keep using whatever it last had.")
+    else:
+        log("wikipedia_totals_monthly.json refreshed")
+
     trends_groups = defaultdict(list)
     for r in u:
         if r.get("trends_index") is not None:

@@ -92,25 +92,35 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Your session has expired. Sign in again." }, { status: 401 });
   }
 
-  let raw = await fetchLatestFromSupabase(token);
+  // FANS_SOURCE=local (dev only): skip the Supabase read entirely and go
+  // straight to the local-file fallback below, so Ashwin can review new
+  // data/fans/fan-attention.json output locally (a fresh csv_to_json.py
+  // run he has not pushed to Supabase yet) without that data ever reaching
+  // production -- this branch can only ever be taken when NODE_ENV is not
+  // "production", same guard as the existing empty-table fallback.
+  const isDev = process.env.NODE_ENV !== "production";
+  const forceLocal = isDev && process.env.FANS_SOURCE === "local";
+  const raw = forceLocal ? null : await fetchLatestFromSupabase(token);
 
   // Local dev convenience ONLY: if Supabase has nothing yet (a fresh dev
-  // database, or scripts/fans/push_to_supabase.py has never run locally)
-  // and this is a development server, fall back to the gitignored local
-  // data/fans/fan-attention.json a dev has built with csv_to_json.py, so
-  // /fans keeps working while the Supabase side of the pipeline is being
-  // set up. Never falls back in production: a production Supabase table
-  // that is empty is a real incident, not something to paper over with
-  // whatever JSON happens to be on the server's disk.
+  // database, or scripts/fans/push_to_supabase.py has never run locally),
+  // or FANS_SOURCE=local was explicitly set, and this is not a production
+  // server, fall back to the gitignored local data/fans/fan-attention.json
+  // a dev has built with csv_to_json.py, so /fans keeps working while the
+  // Supabase side of the pipeline is being set up (or while reviewing data
+  // that has not been pushed yet). Never falls back in production: a
+  // production Supabase table that is empty is a real incident, not
+  // something to paper over with whatever JSON happens to be on the
+  // server's disk.
   let usedLocalFallback = false;
-  if (!raw && process.env.NODE_ENV === "development") {
+  if (!raw && isDev) {
     const local = getFanIndexFromLocalFile();
     if (local) {
       usedLocalFallback = true;
       console.warn(
-        "[api/fans] public.fan_attention_teams returned no rows; NODE_ENV=development, " +
-          "serving the local data/fans/fan-attention.json instead. Run " +
-          "scripts/fans/push_to_supabase.py to populate Supabase.",
+        `[api/fans] ${forceLocal ? "FANS_SOURCE=local set" : "public.fan_attention_teams returned no rows"}; ` +
+          "NODE_ENV!==production, serving the local data/fans/fan-attention.json instead." +
+          (forceLocal ? "" : " Run scripts/fans/push_to_supabase.py to populate Supabase."),
       );
       return NextResponse.json(
         {

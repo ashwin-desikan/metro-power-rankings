@@ -127,8 +127,12 @@ def _norm_name(s):
     return "".join(toks)
 
 
-# method precedence for valuations_extended.csv rows, low index = wins first
-_METHOD_RANK = {"published": 0, "transaction": 1, "estimate": 2, "speculative": 3}
+# method precedence for valuations_extended.csv rows, low index = wins first.
+# "derived" (scripts/fans/pending/college_program_values.csv -- a program's
+# revenue share of a department value) ranks like "estimate": it is a
+# computed figure, not a directly published or transacted one, but it is
+# still more grounded than an unverified "speculative" guess.
+_METHOD_RANK = {"published": 0, "transaction": 1, "estimate": 2, "derived": 2, "speculative": 3}
 
 # valuations_extended.csv "league" strings -> the dataset's own `league`
 # field value(s) they apply to. Most are 1:1; the college row applies its
@@ -149,9 +153,33 @@ EXTENDED_LEAGUE_MAP = {
     "Scottish Premiership": ["Scottish Premiership"],
     "Liga MX": ["Liga MX"],
     "College football / College basketball (athletic dept.)": ["College football", "College basketball"],
+    # Added 2026-09-24 for scripts/fans/pending/college_program_values.csv (see
+    # load_college_program_values below): identity entries, one league each, so
+    # a program-value row's _unit stays None (team-level), unlike the combined
+    # department row above whose two-league list marks it "athletic department".
+    "College football": ["College football"],
+    "College basketball": ["College basketball"],
     "Brazilian football (division unconfirmed)": ["Brasileirão"],
     "NRL": ["NRL"],
     "AFL": ["AFL"],
+    # Added 2026-09-24 for the round2 valuations merge (scripts/fans/pending/
+    # valuations_round2_sourced.csv): identity entries for league strings
+    # that were already the dataset's own `league` field value verbatim
+    # (checked against data/fans/fan-attention.json), so they just needed
+    # to be present in this map at all.
+    "CFL": ["CFL"],
+    "NPB": ["NPB"],
+    "Top 14": ["Top 14"],
+    "Handball-Bundesliga": ["Handball-Bundesliga"],
+    "SuperLega": ["SuperLega"],
+    "EuroLeague": ["EuroLeague"],
+    "WSL": ["WSL"],
+    "Primeira Liga": ["Primeira Liga"],
+    "Süper Lig": ["Süper Lig"],
+    "Liga Profesional": ["Liga Profesional"],
+    "Championship": ["Championship"],
+    # Scottish Premiership and Liga MX were already keys above; not repeated
+    # here to avoid a duplicate dict key.
 }
 
 EXTENDED_UNMATCHED = []  # rows whose league string or team name never resolved; reported by main()
@@ -215,6 +243,46 @@ def load_speculative_valuations(path):
     return by_team
 
 
+def load_college_program_values(path):
+    """Loads scripts/fans/pending/college_program_values.csv (same columns as
+    valuations_extended.csv; method is "derived" -- a school's football or
+    basketball revenue share of its athletic department's valuation, per
+    Ashwin's ruling that a school's football and basketball rows should not
+    both show the same whole-department figure).
+
+    Unlike valuations_extended.csv/valuations_speculative.csv, a program-value
+    row's league string is already the dataset's own single league ("College
+    football" or "College basketball" -- see the identity entries added to
+    EXTENDED_LEAGUE_MAP above), so it resolves to exactly one league and its
+    `_unit` is None (team/program-level), not "athletic department".
+
+    Kept as a separate dict from load_extended_valuations()/
+    load_speculative_valuations() and checked FIRST in build_json (before the
+    merged extended+speculative dict), so a program value always takes
+    precedence over the combined department row for the same team+league,
+    regardless of the department row's own method rank (most department rows
+    are "published", which would otherwise outrank a "derived" program row on
+    _rank alone). Returns {} if the file does not exist yet."""
+    if not path or not os.path.exists(path):
+        return {}
+    rows = read_csv(path)
+    by_team = defaultdict(list)
+    for r in rows:
+        league_raw = (r.get("league") or "").strip()
+        team = (r.get("team") or "").strip()
+        leagues = EXTENDED_LEAGUE_MAP.get(league_raw)
+        if not leagues:
+            EXTENDED_UNMATCHED.append({**r, "_reason": f"unrecognized league '{league_raw}' (college program value)"})
+            continue
+        method = (r.get("method") or "derived").strip().lower()
+        row = dict(r)
+        row["_leagues"] = leagues
+        row["_rank"] = _METHOD_RANK.get(method, 99)
+        row["_unit"] = "athletic department" if len(leagues) > 1 else None
+        by_team[_norm_name(team)].append(row)
+    return by_team
+
+
 def merge_valuation_sources(*by_team_dicts):
     """Merges several {norm_team: [rows]} dicts (e.g. valuations_extended.csv
     + valuations_speculative.csv) into one, concatenating candidate lists per
@@ -253,6 +321,10 @@ def best_extended_match(by_team, league, display_name, en_title):
     # the dataset says "Geelong"). Match when a source key is this team's
     # name plus trailing words, within this league, and only when exactly
     # one source team fits, so it cannot misattribute.
+    # Restricted to AFL/NRL: elsewhere a bare prefix is ambiguous ("Paris FC"
+    # normalises to "paris", a prefix of "Paris Saint-Germain").
+    if league not in ("AFL", "NRL"):
+        return None
     for name in (display_name, en_title):
         base = _norm_name(name or "")
         if not base:
@@ -265,8 +337,9 @@ def best_extended_match(by_team, league, display_name, en_title):
     return None
 
 
-MIN_FIT_N = 4       # minimum valued teams in a group before a fit is attempted
-MIN_FIT_R2 = 0.4    # coordinator's threshold; below this, no predicted_value_m/value_vs_attention
+MIN_FIT_N = 4       # minimum valued teams in a group before the informational log-log fit is attempted
+MIN_FIT_R2 = 0.4    # informational threshold only; no longer gates value_vs_attention (see below)
+MIN_RATIO_N = 3     # minimum valued teams (any method) in a LEAGUE before value_vs_attention is shown
 
 
 def _loglog_fit_r2(pairs):
@@ -294,60 +367,134 @@ def _loglog_fit_r2(pairs):
     return slope, intercept, r2
 
 
-def apply_value_vs_attention_fits(teams):
-    """Recomputes, per group, a log-log OLS fit of value_m on
-    wiki_baseline_12m using every NON-speculative valued team in that group
-    (valuations.json published, or valuations_extended.csv published/
-    transaction/estimate -- speculative-sourced value_m rows are excluded
-    from the fit's training data per the coordinator's v0.7 ruling, since
-    they are unverified). For groups where the fit clears MIN_FIT_R2, sets
-    value_vs_attention = value_m / predicted_value_m (2 decimals) and
-    residual_pct = (value_vs_attention - 1) * 100 for EVERY valued team in
-    that group, including speculative ones -- they are scored FROM the fit,
-    just never used to TRAIN it. Groups below the R^2 threshold, or with too
-    few non-speculative valued teams, get value_vs_attention = residual_pct
-    = None for every team. Returns (sorted list of groups that cleared the
-    threshold, {group: {n, r2}} for every group a fit was attempted on,
-    whether or not it cleared) -- n counts only the non-speculative training
-    pairs."""
-    all_valued = defaultdict(list)
-    fit_valued = defaultdict(list)
+def round_sig_figs(v, sig=2):
+    """Rounds v to `sig` significant figures (not decimal places -- round_sig()
+    above is decimal places and is the wrong tool for a ratio that can
+    legitimately sit anywhere from 0.05 to 20)."""
+    if v is None:
+        return None
+    if v == 0:
+        return 0.0
+    d = sig - int(math.floor(math.log10(abs(v)))) - 1
+    return round(v, d)
+
+
+def apply_value_vs_attention(teams):
+    """v0.9 (2026-09-24): replaces the old R^2-gated log-log-fit multiplier.
+    Ashwin's ruling: gating the multiplier on a within-group fit clearing
+    R^2 >= 0.4 left it blank for NFL/MLB/NHL/WNBA/F1/college/AFL/NRL --
+    exactly the leagues where attention least explains value, which is
+    itself the interesting finding, not a reason to hide the number.
+
+    New rule: for every LEAGUE (not group -- Football's dozen leagues each
+    get their own multiplier, not one blended across all of them) with at
+    least MIN_RATIO_N valued teams, by ANY method including speculative:
+
+        ratio_i = value_m_i / attention_i
+        value_vs_attention_i = ratio_i / median(ratio over valued teams in the same league)
+
+    attention_i is fan_index_raw -- confirmed against the source CSV to be
+    the exact measure rank_in_league is sorted on (every league's
+    rank_in_league is strictly non-increasing in fan_index_raw; wiki_baseline_12m
+    is NOT monotonic with it, since fan_index_raw is wiki_baseline_12m after
+    the in-flux 0.5x weight and the Wikipedia/Trends blend). Rounded to 2
+    significant figures, not 2 decimal places, since these ratios span from
+    well under 1 to well over 10 (round(0.087, 2) would print as 0.09 next
+    to round(8.7, 2) printing as 8.7 -- inconsistent precision -- while 2
+    sig figs keeps both honestly precise: 0.087 and 8.7).
+
+    No R^2 threshold gates this any more: every league that clears the
+    team-count bar gets a multiplier for every one of its valued teams,
+    published or speculative alike (the UI's Est badge, driven by
+    val_method, is what tells a speculative one apart -- see FanTable.tsx).
+    A league below MIN_RATIO_N teams, or a team with no value_m or no
+    fan_index_raw, gets value_vs_attention = residual_pct = None.
+
+    PARTIALLY EXCLUDED: College basketball (2026-09-24, refined 2026-09-24 when
+    program-level values were added). A College basketball row whose value_m
+    still carries a WHOLE-ATHLETIC-DEPARTMENT figure (val_unit ==
+    "athletic department" -- see EXTENDED_LEAGUE_MAP's "College football /
+    College basketball (athletic dept.)" entry, one department figure applied
+    to both a school's football AND basketball rows) is excluded here, since
+    dividing it by basketball-only attention produces a meaningless ratio
+    (Oklahoma basketball showed x160). A College basketball row with its own
+    program-level value (scripts/fans/pending/college_program_values.csv,
+    val_unit is None) is NOT excluded -- that figure is this sport's own
+    revenue share, so the ratio is meaningful again. value_m stays visible for
+    every row regardless (untouched, set earlier in build_json); only
+    value_vs_attention/residual_pct are skipped for the still-department-valued
+    ones. College football keeps the same athletic-department caveat but is
+    left as is per the coordinator's original call -- not touched by this
+    exclusion either way.
+
+    Returns {league: {"n": int}} for every league that cleared the bar."""
+    by_league = defaultdict(list)
     for t in teams:
-        if t["value_m"] is not None and t["value_m"] > 0 and t.get("wiki_baseline_12m"):
-            all_valued[t["group"]].append(t)
-            if t.get("val_method") != "speculative":
-                fit_valued[t["group"]].append(t)
+        if t["league"] == "College basketball" and t.get("val_unit") == "athletic department":
+            continue
+        if (t["value_m"] is not None and t["value_m"] > 0
+                and t.get("fan_index_raw") is not None and t["fan_index_raw"] > 0):
+            by_league[t["league"]].append(t)
 
-    eligible_groups = []
-    fit_info = {}
-    for group, group_teams in all_valued.items():
-        pairs = [(t["wiki_baseline_12m"], t["value_m"]) for t in fit_valued.get(group, [])]
-        fit = _loglog_fit_r2(pairs)
-        if fit is None:
-            fit_info[group] = {"n": len(pairs), "r2": None}
+    eligible_leagues = {}
+    for league, league_teams in by_league.items():
+        if len(league_teams) < MIN_RATIO_N:
             continue
-        slope, intercept, r2 = fit
-        fit_info[group] = {"n": len(pairs), "r2": round(r2, 3)}
-        if r2 < MIN_FIT_R2:
+        ratios = [(t, t["value_m"] / t["fan_index_raw"]) for t in league_teams]
+        sorted_ratios = sorted(r for _, r in ratios)
+        n = len(sorted_ratios)
+        mid = n // 2
+        median_ratio = sorted_ratios[mid] if n % 2 else (sorted_ratios[mid - 1] + sorted_ratios[mid]) / 2
+        if median_ratio <= 0:
             continue
-        eligible_groups.append(group)
-        for t in group_teams:
-            predicted = math.exp(intercept + slope * math.log(t["wiki_baseline_12m"]))
-            if predicted <= 0:
-                continue
-            vva = round_sig(t["value_m"] / predicted, 2)
+        eligible_leagues[league] = {"n": n}
+        for t, ratio in ratios:
+            vva = round_sig_figs(ratio / median_ratio, 2)
             t["value_vs_attention"] = vva
-            t["residual_pct"] = round_sig((vva - 1) * 100, 1)
+            t["residual_pct"] = round_sig((vva - 1) * 100, 1) if vva is not None else None
 
-    return sorted(eligible_groups), fit_info
+    return eligible_leagues
 
 
-def build_json(fan_index_dir, out_path, extended_valuations_path=None, speculative_valuations_path=None):
+def apply_value_fit_info(teams):
+    """Informational only as of v0.9 -- no longer gates value_vs_attention
+    (see apply_value_vs_attention above). The same log-log OLS fit of
+    value_m on wiki_baseline_12m as before (non-speculative valued teams
+    only), still computed per GROUP for method-summary.json's existing
+    groups[] entries (continuity with earlier versions of that file), and
+    ALSO computed per LEAGUE for method-summary.json's leagues[] entries --
+    the granularity the methodology page's "how much attention explains
+    value, by league" table needs, since a group like Football spans a
+    dozen leagues with very different fits and one blended group-level R^2
+    would hide that. Returns (fit_info_by_group, fit_info_by_league), each
+    {key: {"n": int, "r2": float | None}}."""
+    def _fit_by(keyfn):
+        pairs_by_key = defaultdict(list)
+        for t in teams:
+            if (t["value_m"] is not None and t["value_m"] > 0 and t.get("wiki_baseline_12m")
+                    and t.get("val_method") != "speculative"):
+                pairs_by_key[keyfn(t)].append((t["wiki_baseline_12m"], t["value_m"]))
+        info = {}
+        for key, pairs in pairs_by_key.items():
+            fit = _loglog_fit_r2(pairs)
+            info[key] = {"n": len(pairs), "r2": round(fit[2], 3) if fit else None}
+        return info
+
+    return _fit_by(lambda t: t["group"]), _fit_by(lambda t: t["league"])
+
+
+def build_json(fan_index_dir, out_path, extended_valuations_path=None, speculative_valuations_path=None,
+                college_program_values_path=None):
     attention_rows = read_csv(os.path.join(fan_index_dir, "teams_fan_attention.csv"))
     monthly_rows = read_csv(os.path.join(fan_index_dir, "teams_monthly_long.csv"))
     extended_val_only = load_extended_valuations(extended_valuations_path)
     speculative_val = load_speculative_valuations(speculative_valuations_path)
     extended_val = merge_valuation_sources(extended_val_only, speculative_val)
+    # Loaded and matched SEPARATELY (not merged into extended_val above) so a
+    # program value takes precedence over the combined department row for the
+    # same team+league no matter its method rank -- see best_extended_match()
+    # calls in the loop below, which try college_program_val first.
+    college_program_val = load_college_program_values(college_program_values_path)
 
     monthly_by_key = defaultdict(list)
     for r in monthly_rows:
@@ -390,7 +537,9 @@ def build_json(fan_index_dir, out_path, extended_valuations_path=None, speculati
             # best_extended_match() further restricts to rows whose resolved
             # league(s) include this team's league (a college row's single
             # row applies to both that school's football and basketball rows).
-            ext_row = best_extended_match(extended_val, league, r.get("display_name") or team, r.get("en_title"))
+            ext_row = best_extended_match(college_program_val, league, r.get("display_name") or team, r.get("en_title"))
+            if not ext_row:
+                ext_row = best_extended_match(extended_val, league, r.get("display_name") or team, r.get("en_title"))
             if ext_row:
                 value_m = to_float(ext_row.get("value_usd_m"))
                 val_source = ext_row.get("source") or None
@@ -473,7 +622,16 @@ def build_json(fan_index_dir, out_path, extended_valuations_path=None, speculati
             "us_attention_rank_in_league": to_int(r.get("us_attention_rank_in_league")),
         })
 
-    residual_eligible_groups, fit_info_by_group = apply_value_vs_attention_fits(teams)
+    eligible_leagues = apply_value_vs_attention(teams)
+    fit_info_by_group, fit_info_by_league = apply_value_fit_info(teams)
+
+    # residual_eligible_groups: field name kept for continuity (the JSON
+    # shape / lib/fanIndex.ts's fallback both still read it), but its
+    # meaning changed with v0.9: the gate moved from a per-group R^2 fit to
+    # a per-league valued-team count (see apply_value_vs_attention above),
+    # so this is now "groups with at least one team whose value_vs_attention
+    # is actually shown" rather than "groups whose fit cleared R^2 >= 0.4".
+    residual_eligible_groups = sorted({t["group"] for t in teams if t.get("value_vs_attention") is not None})
 
     groups = [g for g in GROUP_ORDER if g in seen_groups]
 
@@ -501,7 +659,7 @@ def build_json(fan_index_dir, out_path, extended_valuations_path=None, speculati
     print(f"Wrote {out_path} ({len(teams)} teams, {size_kb:.1f} KB)")
 
     write_preview(payload, os.path.join(os.path.dirname(out_path), "preview.json"))
-    write_method_summary(payload, fit_info_by_group,
+    write_method_summary(payload, fit_info_by_group, fit_info_by_league, eligible_leagues,
                           os.path.join(os.path.dirname(out_path), "method-summary.json"))
 
     return payload
@@ -520,7 +678,7 @@ def build_json(fan_index_dir, out_path, extended_valuations_path=None, speculati
 # The /fans methodology page reads this instead of the full fan-attention.json,
 # because that file lives outside public/ and is gitignored -- it will not
 # exist at all in a production build, so the methodology page cannot read it.
-def write_method_summary(payload, fit_info_by_group, out_path):
+def write_method_summary(payload, fit_info_by_group, fit_info_by_league, eligible_leagues, out_path):
     teams = payload["teams"]
 
     by_league = defaultdict(list)
@@ -538,6 +696,7 @@ def write_method_summary(payload, fit_info_by_group, out_path):
         valued = sum(1 for r in rows if r.get("value_m") is not None)
         speculative_valued = sum(1 for r in rows if r.get("val_method") == "speculative")
         r0 = rows[0]
+        fi = fit_info_by_league.get(league, {"n": 0, "r2": None})
         leagues.append({
             "league": league,
             "group": r0["group"],
@@ -553,6 +712,15 @@ def write_method_summary(payload, fit_info_by_group, out_path):
             "valued_count": valued,
             "valued_coverage_pct": round_sig(100 * valued / n, 1) if n else None,
             "speculative_valued_count": speculative_valued,
+            # v0.9: the log-log attention-explains-value fit, informational
+            # only (see apply_value_fit_info in csv_to_json.py), computed at
+            # LEAGUE granularity so a group spanning many leagues (Football)
+            # does not hide how differently each one fits. value_vs_attention
+            # itself is gated separately, on a per-league valued-team count
+            # (>= MIN_RATIO_N, any method) -- see value_vs_attention_shown.
+            "value_fit_n": fi["n"],
+            "value_fit_r2": fi["r2"],
+            "value_vs_attention_shown": league in eligible_leagues,
         })
 
     groups = []
@@ -575,6 +743,7 @@ def write_method_summary(payload, fit_info_by_group, out_path):
         "window": payload["window"],
         "min_fit_n": MIN_FIT_N,
         "min_fit_r2": MIN_FIT_R2,
+        "min_ratio_n": MIN_RATIO_N,
         "groups": groups,
         "leagues": leagues,
     }
@@ -643,12 +812,31 @@ def main():
              "row for that team. Excluded from the value-vs-attention fit's training data "
              "but still scored from it. Safe to omit.",
     )
+    ap.add_argument(
+        "--college-program-values",
+        default=os.path.join(os.path.dirname(__file__), "pending", "college_program_values_tiered.csv"),
+        help="Optional scripts/fans/pending/college_program_values_tiered.csv (same "
+             "columns as valuations_extended.csv; method 'speculative'). A school's "
+             "football or basketball program valued as a STANDALONE sport enterprise: "
+             "EADA FY2025 sport revenue x a tiered EV/revenue multiple (brief supplied "
+             "by Ashwin, 2026-09-24) -- see load_college_program_values(). Checked "
+             "BEFORE valuations_extended.csv/valuations_speculative.csv, so a program "
+             "value always wins over the combined department row for the same "
+             "team+league. Swapped in 2026-09-24 for the earlier "
+             "scripts/fans/pending/college_program_values.csv (revenue-share-of-"
+             "department method, method 'derived') -- that file is kept and still "
+             "loadable via this same flag, just no longer wired in by default. Safe "
+             "to omit.",
+    )
     args = ap.parse_args()
     if not args.fan_index_dir:
         ap.error("--fan-index-dir is required (or set FAN_INDEX_DIR)")
     ext_path = os.path.abspath(os.path.expanduser(args.valuations_extended)) if args.valuations_extended else None
     spec_path = os.path.abspath(os.path.expanduser(args.valuations_speculative)) if args.valuations_speculative else None
-    build_json(os.path.abspath(os.path.expanduser(args.fan_index_dir)), os.path.abspath(args.out), ext_path, spec_path)
+    college_path = (os.path.abspath(os.path.expanduser(args.college_program_values))
+                    if args.college_program_values else None)
+    build_json(os.path.abspath(os.path.expanduser(args.fan_index_dir)), os.path.abspath(args.out), ext_path, spec_path,
+               college_path)
 
 
 if __name__ == "__main__":

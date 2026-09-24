@@ -21,10 +21,10 @@ export const RELEASES: Release[] = [
     date: "2026-09-24",
     headline: "Fan Attention Index compares sports fairly",
     items: [
-      "The All view now scales each league by the size of its market, and every club from the Primeira Liga, Eredivisie, Süper Lig, Scottish Premiership, Brasileirão and Liga Profesional joins, 770 teams in all.",
-      "Attention counts a full year plus each team's biggest month, and college teams rank on what fans search, which puts Texas, Alabama, Ohio State and Michigan among the NFL's middle tier.",
-      "The full index is free with a Google sign-in; everyone else sees the top 20.",
-      "The Team Valuations and Owners pages now cover more than 600 teams, adding college, NPB, CFL, rugby, handball, volleyball and women's leagues, with estimates marked and multi-club owners linked.",
+      "The Fan Attention Index covers 770 teams, scales each league to its market for the All view, and is free with a Google sign-in; everyone else sees the top 20.",
+      "New Attention over time page shows how teams and leagues move, from June 2025 on, after bot traffic that inflated football pages until mid-2024.",
+      "Valued vs attention now works in every league with three or more valued teams, and college football and basketball programs are valued separately.",
+      "Build your own starts from sports, and Team Valuations and Owners now cover more than 600 teams across college, NPB, CFL, rugby, handball and volleyball.",
     ],
   },
   {

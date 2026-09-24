@@ -90,6 +90,8 @@ CONTENT.md
 !/data/fans/
 /data/fans/fan-attention.json
 /data/fans/history/
+/data/fans/college/raw/
+/data/fans/debot/raw/
 
 # xlsx backups (sandbox bindfs creates these; do not push)
 MetroAreas.xlsx.bak-*

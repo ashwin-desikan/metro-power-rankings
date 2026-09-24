@@ -1,0 +1,374 @@
+[
+ {
+  "team": "Arizona",
+  "league": "College"
+ },
+ {
+  "team": "Arizona State",
+  "league": "College"
+ },
+ {
+  "team": "Arkansas",
+  "league": "College"
+ },
+ {
+  "team": "Army Black Knights football",
+  "league": "College"
+ },
+ {
+  "team": "Auburn",
+  "league": "College"
+ },
+ {
+  "team": "BYU",
+  "league": "College"
+ },
+ {
+  "team": "Ball State Cardinals football",
+  "league": "College"
+ },
+ {
+  "team": "Baylor",
+  "league": "College"
+ },
+ {
+  "team": "Boise State Broncos",
+  "league": "College"
+ },
+ {
+  "team": "Boise State Broncos football",
+  "league": "College"
+ },
+ {
+  "team": "Boston College",
+  "league": "College"
+ },
+ {
+  "team": "Buffalo Bulls football",
+  "league": "College"
+ },
+ {
+  "team": "Butler",
+  "league": "College"
+ },
+ {
+  "team": "California",
+  "league": "College"
+ },
+ {
+  "team": "Central Florida",
+  "league": "College"
+ },
+ {
+  "team": "Cincinnati",
+  "league": "College"
+ },
+ {
+  "team": "Clemson",
+  "league": "College"
+ },
+ {
+  "team": "Coastal Carolina Chanticleers",
+  "league": "College"
+ },
+ {
+  "team": "Colorado",
+  "league": "College"
+ },
+ {
+  "team": "Colorado State Rams",
+  "league": "College"
+ },
+ {
+  "team": "Connecticut",
+  "league": "College"
+ },
+ {
+  "team": "Creighton",
+  "league": "College"
+ },
+ {
+  "team": "Dayton Flyers",
+  "league": "College"
+ },
+ {
+  "team": "DePaul",
+  "league": "College"
+ },
+ {
+  "team": "Duke",
+  "league": "College"
+ },
+ {
+  "team": "Florida",
+  "league": "College"
+ },
+ {
+  "team": "Florida Atlantic",
+  "league": "College"
+ },
+ {
+  "team": "Florida State",
+  "league": "College"
+ },
+ {
+  "team": "Fresno State Bulldogs football",
+  "league": "College"
+ },
+ {
+  "team": "George Mason",
+  "league": "College"
+ },
+ {
+  "team": "Georgetown",
+  "league": "College"
+ },
+ {
+  "team": "Georgia Tech",
+  "league": "College"
+ },
+ {
+  "team": "Gonzaga",
+  "league": "College"
+ },
+ {
+  "team": "Houston",
+  "league": "College"
+ },
+ {
+  "team": "Illinois",
+  "league": "College"
+ },
+ {
+  "team": "Indiana",
+  "league": "College"
+ },
+ {
+  "team": "Iowa",
+  "league": "College"
+ },
+ {
+  "team": "Iowa State",
+  "league": "College"
+ },
+ {
+  "team": "Kansas",
+  "league": "College"
+ },
+ {
+  "team": "Kansas State",
+  "league": "College"
+ },
+ {
+  "team": "Kentucky",
+  "league": "College"
+ },
+ {
+  "team": "Liberty Flames",
+  "league": "College"
+ },
+ {
+  "team": "Louisiana Ragin Cajuns football",
+  "league": "College"
+ },
+ {
+  "team": "Louisville",
+  "league": "College"
+ },
+ {
+  "team": "Loyola Chicago",
+  "league": "College"
+ },
+ {
+  "team": "Marquette",
+  "league": "College"
+ },
+ {
+  "team": "Maryland",
+  "league": "College"
+ },
+ {
+  "team": "Memphis Tigers",
+  "league": "College"
+ },
+ {
+  "team": "Memphis Tigers football",
+  "league": "College"
+ },
+ {
+  "team": "Miami (FL)",
+  "league": "College"
+ },
+ {
+  "team": "Michigan State",
+  "league": "College"
+ },
+ {
+  "team": "Minnesota",
+  "league": "College"
+ },
+ {
+  "team": "Mississippi",
+  "league": "College"
+ },
+ {
+  "team": "Mississippi State",
+  "league": "College"
+ },
+ {
+  "team": "Missouri",
+  "league": "College"
+ },
+ {
+  "team": "Navy Midshipmen football",
+  "league": "College"
+ },
+ {
+  "team": "North Carolina",
+  "league": "College"
+ },
+ {
+  "team": "North Carolina State",
+  "league": "College"
+ },
+ {
+  "team": "Northwestern",
+  "league": "College"
+ },
+ {
+  "team": "Oklahoma State",
+  "league": "College"
+ },
+ {
+  "team": "Oregon",
+  "league": "College"
+ },
+ {
+  "team": "Pittsburgh",
+  "league": "College"
+ },
+ {
+  "team": "Providence",
+  "league": "College"
+ },
+ {
+  "team": "Purdue",
+  "league": "College"
+ },
+ {
+  "team": "Rutgers",
+  "league": "College"
+ },
+ {
+  "team": "SMU",
+  "league": "College"
+ },
+ {
+  "team": "Saint Mary's",
+  "league": "College"
+ },
+ {
+  "team": "San Diego State Aztecs football",
+  "league": "College"
+ },
+ {
+  "team": "San Jose State Spartans football",
+  "league": "College"
+ },
+ {
+  "team": "Seton Hall",
+  "league": "College"
+ },
+ {
+  "team": "South Carolina",
+  "league": "College"
+ },
+ {
+  "team": "St. John's",
+  "league": "College"
+ },
+ {
+  "team": "Stanford",
+  "league": "College"
+ },
+ {
+  "team": "Syracuse",
+  "league": "College"
+ },
+ {
+  "team": "TCU",
+  "league": "College"
+ },
+ {
+  "team": "Texas Tech",
+  "league": "College"
+ },
+ {
+  "team": "Troy Trojans football",
+  "league": "College"
+ },
+ {
+  "team": "Tulane Green Wave",
+  "league": "College"
+ },
+ {
+  "team": "UCLA",
+  "league": "College"
+ },
+ {
+  "team": "UNLV Rebels football",
+  "league": "College"
+ },
+ {
+  "team": "Utah",
+  "league": "College"
+ },
+ {
+  "team": "Utah State Aggies football",
+  "league": "College"
+ },
+ {
+  "team": "VCU",
+  "league": "College"
+ },
+ {
+  "team": "Vanderbilt",
+  "league": "College"
+ },
+ {
+  "team": "Villanova",
+  "league": "College"
+ },
+ {
+  "team": "Virginia",
+  "league": "College"
+ },
+ {
+  "team": "Virginia Tech",
+  "league": "College"
+ },
+ {
+  "team": "Wake Forest",
+  "league": "College"
+ },
+ {
+  "team": "Washington",
+  "league": "College"
+ },
+ {
+  "team": "West Virginia",
+  "league": "College"
+ },
+ {
+  "team": "Wichita State",
+  "league": "College"
+ },
+ {
+  "team": "Wisconsin",
+  "league": "College"
+ },
+ {
+  "team": "Xavier",
+  "league": "College"
+ }
+]

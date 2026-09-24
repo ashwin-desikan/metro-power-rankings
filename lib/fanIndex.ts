@@ -59,6 +59,11 @@ type RawTeamV03 = {
   val_source: string | null;
   val_year: number | null;
   val_method: string | null;
+  /** "athletic department" for a college row whose value_m is still the
+   * whole department's figure (one number applied to both the football and
+   * basketball rows); null for a team-level value, including a college
+   * program-level value (scripts/fans/pending/college_program_values.csv). */
+  val_unit: string | null;
   residual_pct: number | null;
   value_vs_attention: number | null;
   value_per_1k_baseline: number | null;
@@ -124,6 +129,7 @@ export type FanTeamRow = {
   valSource: string | null;
   valYear: number | null;
   valMethod: string | null;
+  valUnit: string | null;
   residualPct: number | null;
   valueVsAttention: number | null;
   valuePer1kBaseline: number | null;
@@ -384,6 +390,7 @@ export function parseFanIndexPayload(raw: RawFile): FanIndexData {
       valSource: t.val_source ?? null,
       valYear: t.val_year ?? null,
       valMethod: t.val_method ?? null,
+      valUnit: t.val_unit ?? null,
       residualPct: t.residual_pct ?? null,
       valueVsAttention: t.value_vs_attention ?? null,
       valuePer1kBaseline: t.value_per_1k_baseline ?? null,
@@ -467,6 +474,19 @@ export type MethodSummaryLeague = {
   anchor_basis: string | null;
   k_league: number | null;
   season_article_coverage_pct: number | null;
+  valued_count: number;
+  valued_coverage_pct: number | null;
+  speculative_valued_count: number;
+  /** v0.9: the log-log attention-explains-value fit, informational only --
+   * see apply_value_fit_info() in scripts/fans/csv_to_json.py. Computed at
+   * league granularity (not group), since a group like Football spans many
+   * leagues with very different fits. */
+  value_fit_n: number;
+  value_fit_r2: number | null;
+  /** Whether this league clears MIN_RATIO_N valued teams (any method) --
+   * the actual gate on value_vs_attention as of v0.9, replacing the old
+   * per-group R^2 gate. */
+  value_vs_attention_shown: boolean;
 };
 
 export type MethodSummary = {
@@ -475,6 +495,9 @@ export type MethodSummary = {
   window: { start: string; end: string };
   min_fit_n: number;
   min_fit_r2: number;
+  /** v0.9: minimum valued teams (any method) a league needs before
+   * value_vs_attention is shown for any of its teams. */
+  min_ratio_n: number;
   groups: MethodSummaryGroup[];
   leagues: MethodSummaryLeague[];
 };
@@ -628,6 +651,7 @@ export type FanTableTeamPayload = {
   valSource: string | null;
   valYear: number | null;
   valMethod: string | null;
+  valUnit: string | null;
   residualPct: number | null;
   valueVsAttention: number | null;
   residualEligible: boolean;
@@ -657,6 +681,7 @@ export function toFanTablePayload(data: FanIndexData): FanTableTeamPayload[] {
     valSource: t.valSource,
     valYear: t.valYear,
     valMethod: t.valMethod,
+    valUnit: t.valUnit,
     residualPct: t.residualPct,
     valueVsAttention: t.valueVsAttention,
     residualEligible: t.residualEligible,

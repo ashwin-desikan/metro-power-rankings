@@ -1,0 +1,1322 @@
+[
+  {
+    "league": "Premier League",
+    "team": "Arsenal",
+    "qid": "Q9617",
+    "en_title": "Arsenal F.C.",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Arsenal F.C.",
+        "views_2026": 4766530
+      },
+      {
+        "lang": "es",
+        "title": "Arsenal Football Club",
+        "views_2026": 539351
+      },
+      {
+        "lang": "fr",
+        "title": "Arsenal Football Club",
+        "views_2026": 506803
+      },
+      {
+        "lang": "ru",
+        "title": "Арсенал (футбольный клуб, Лондон)",
+        "views_2026": 447408
+      },
+      {
+        "lang": "it",
+        "title": "Arsenal Football Club",
+        "views_2026": 379369
+      }
+    ]
+  },
+  {
+    "league": "Premier League",
+    "team": "Manchester United",
+    "qid": "Q18656",
+    "en_title": "Manchester United F.C.",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Manchester United F.C.",
+        "views_2026": 4628289
+      },
+      {
+        "lang": "ru",
+        "title": "Манчестер Юнайтед",
+        "views_2026": 410600
+      },
+      {
+        "lang": "es",
+        "title": "Manchester United Football Club",
+        "views_2026": 341969
+      },
+      {
+        "lang": "ja",
+        "title": "マンチェスター・ユナイテッドFC",
+        "views_2026": 336334
+      },
+      {
+        "lang": "fr",
+        "title": "Manchester United Football Club",
+        "views_2026": 283360
+      }
+    ]
+  },
+  {
+    "league": "Premier League",
+    "team": "Manchester City",
+    "qid": "Q50602",
+    "en_title": "Manchester City F.C.",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Manchester City F.C.",
+        "views_2026": 3774166
+      },
+      {
+        "lang": "es",
+        "title": "Manchester City Football Club",
+        "views_2026": 414770
+      },
+      {
+        "lang": "ru",
+        "title": "Манчестер Сити",
+        "views_2026": 361920
+      },
+      {
+        "lang": "ja",
+        "title": "マンチェスター・シティFC",
+        "views_2026": 359496
+      },
+      {
+        "lang": "fr",
+        "title": "Manchester City Football Club",
+        "views_2026": 324963
+      }
+    ]
+  },
+  {
+    "league": "Premier League",
+    "team": "Chelsea",
+    "qid": "Q9616",
+    "en_title": "Chelsea F.C.",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Chelsea F.C.",
+        "views_2026": 3881251
+      },
+      {
+        "lang": "es",
+        "title": "Chelsea Football Club",
+        "views_2026": 392016
+      },
+      {
+        "lang": "ru",
+        "title": "Челси (футбольный клуб)",
+        "views_2026": 372926
+      },
+      {
+        "lang": "fr",
+        "title": "Chelsea Football Club",
+        "views_2026": 312850
+      },
+      {
+        "lang": "it",
+        "title": "Chelsea Football Club",
+        "views_2026": 257907
+      }
+    ]
+  },
+  {
+    "league": "Premier League",
+    "team": "Liverpool",
+    "qid": "Q1130849",
+    "en_title": "Liverpool F.C.",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Liverpool F.C.",
+        "views_2026": 3473213
+      },
+      {
+        "lang": "es",
+        "title": "Liverpool Football Club",
+        "views_2026": 304812
+      },
+      {
+        "lang": "ru",
+        "title": "Ливерпуль (футбольный клуб)",
+        "views_2026": 296276
+      },
+      {
+        "lang": "ja",
+        "title": "リヴァプールFC",
+        "views_2026": 278767
+      },
+      {
+        "lang": "fr",
+        "title": "Liverpool Football Club",
+        "views_2026": 252993
+      }
+    ]
+  },
+  {
+    "league": "La Liga",
+    "team": "Real Madrid",
+    "qid": "Q8682",
+    "en_title": "Real Madrid CF",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Real Madrid CF",
+        "views_2026": 4649706
+      },
+      {
+        "lang": "es",
+        "title": "Real Madrid Club de Fútbol",
+        "views_2026": 940513
+      },
+      {
+        "lang": "fr",
+        "title": "Real Madrid Club de Fútbol",
+        "views_2026": 874729
+      },
+      {
+        "lang": "ru",
+        "title": "Реал Мадрид (футбольный клуб)",
+        "views_2026": 850806
+      },
+      {
+        "lang": "ja",
+        "title": "レアル・マドリード",
+        "views_2026": 489777
+      }
+    ]
+  },
+  {
+    "league": "La Liga",
+    "team": "FC Barcelona",
+    "qid": "Q7156",
+    "en_title": "FC Barcelona",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "FC Barcelona",
+        "views_2026": 4040586
+      },
+      {
+        "lang": "es",
+        "title": "Fútbol Club Barcelona",
+        "views_2026": 869032
+      },
+      {
+        "lang": "fr",
+        "title": "FC Barcelone (football)",
+        "views_2026": 702689
+      },
+      {
+        "lang": "ru",
+        "title": "Барселона (футбольный клуб)",
+        "views_2026": 671413
+      },
+      {
+        "lang": "ja",
+        "title": "FCバルセロナ",
+        "views_2026": 362334
+      }
+    ]
+  },
+  {
+    "league": "La Liga",
+    "team": "Atlético de Madrid",
+    "qid": "Q8701",
+    "en_title": "Atlético Madrid",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Atlético Madrid",
+        "views_2026": 1626404
+      },
+      {
+        "lang": "es",
+        "title": "Club Atlético de Madrid",
+        "views_2026": 495848
+      },
+      {
+        "lang": "fr",
+        "title": "Club Atlético de Madrid",
+        "views_2026": 263533
+      },
+      {
+        "lang": "ru",
+        "title": "Атлетико Мадрид",
+        "views_2026": 237680
+      },
+      {
+        "lang": "it",
+        "title": "Club Atlético de Madrid",
+        "views_2026": 189569
+      }
+    ]
+  },
+  {
+    "league": "La Liga",
+    "team": "Athletic Bilbao",
+    "qid": "Q8687",
+    "en_title": "Athletic Bilbao",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Athletic Bilbao",
+        "views_2026": 885199
+      },
+      {
+        "lang": "es",
+        "title": "Athletic Club",
+        "views_2026": 301582
+      },
+      {
+        "lang": "fr",
+        "title": "Athletic Club",
+        "views_2026": 133795
+      },
+      {
+        "lang": "ru",
+        "title": "Атлетик Бильбао",
+        "views_2026": 104397
+      },
+      {
+        "lang": "it",
+        "title": "Athletic Club",
+        "views_2026": 92193
+      }
+    ]
+  },
+  {
+    "league": "La Liga",
+    "team": "Real Sociedad",
+    "qid": "Q10315",
+    "en_title": "Real Sociedad",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Real Sociedad",
+        "views_2026": 760461
+      },
+      {
+        "lang": "es",
+        "title": "Real Sociedad de Fútbol",
+        "views_2026": 302908
+      },
+      {
+        "lang": "ja",
+        "title": "レアル・ソシエダ",
+        "views_2026": 183587
+      },
+      {
+        "lang": "ru",
+        "title": "Реал Сосьедад",
+        "views_2026": 98185
+      },
+      {
+        "lang": "it",
+        "title": "Real Sociedad de Fútbol",
+        "views_2026": 95854
+      }
+    ]
+  },
+  {
+    "league": "Bundesliga",
+    "team": "Bayern Munich",
+    "qid": "Q15789",
+    "en_title": "FC Bayern Munich",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "FC Bayern Munich",
+        "views_2026": 2362763
+      },
+      {
+        "lang": "de",
+        "title": "FC Bayern München",
+        "views_2026": 682373
+      },
+      {
+        "lang": "es",
+        "title": "Bayern de Múnich",
+        "views_2026": 372482
+      },
+      {
+        "lang": "fr",
+        "title": "Bayern Munich",
+        "views_2026": 328646
+      },
+      {
+        "lang": "ru",
+        "title": "Бавария (футбольный клуб)",
+        "views_2026": 313172
+      }
+    ]
+  },
+  {
+    "league": "Bundesliga",
+    "team": "Borussia Dortmund",
+    "qid": "Q41420",
+    "en_title": "Borussia Dortmund",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Borussia Dortmund",
+        "views_2026": 1418290
+      },
+      {
+        "lang": "de",
+        "title": "Borussia Dortmund",
+        "views_2026": 344038
+      },
+      {
+        "lang": "es",
+        "title": "Borussia Dortmund",
+        "views_2026": 205365
+      },
+      {
+        "lang": "ja",
+        "title": "ボルシア・ドルトムント",
+        "views_2026": 177047
+      },
+      {
+        "lang": "ru",
+        "title": "Боруссия (футбольный клуб, Дортмунд)",
+        "views_2026": 163697
+      }
+    ]
+  },
+  {
+    "league": "Bundesliga",
+    "team": "Bayer Leverkusen",
+    "qid": "Q104761",
+    "en_title": "Bayer 04 Leverkusen",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Bayer 04 Leverkusen",
+        "views_2026": 1010109
+      },
+      {
+        "lang": "de",
+        "title": "Bayer 04 Leverkusen",
+        "views_2026": 170554
+      },
+      {
+        "lang": "es",
+        "title": "Bayer Leverkusen",
+        "views_2026": 112846
+      },
+      {
+        "lang": "fr",
+        "title": "Bayer 04 Leverkusen",
+        "views_2026": 104555
+      },
+      {
+        "lang": "ru",
+        "title": "Байер 04",
+        "views_2026": 94643
+      }
+    ]
+  },
+  {
+    "league": "Bundesliga",
+    "team": "FC Schalke 04",
+    "qid": "Q32494",
+    "en_title": "FC Schalke 04",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "FC Schalke 04",
+        "views_2026": 598299
+      },
+      {
+        "lang": "de",
+        "title": "FC Schalke 04",
+        "views_2026": 377674
+      },
+      {
+        "lang": "es",
+        "title": "FC Schalke 04",
+        "views_2026": 98646
+      },
+      {
+        "lang": "it",
+        "title": "Fußball-Club Gelsenkirchen-Schalke 04",
+        "views_2026": 98153
+      },
+      {
+        "lang": "ru",
+        "title": "Шальке 04",
+        "views_2026": 72109
+      }
+    ]
+  },
+  {
+    "league": "Bundesliga",
+    "team": "RB Leipzig",
+    "qid": "Q702455",
+    "en_title": "RB Leipzig",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "RB Leipzig",
+        "views_2026": 641795
+      },
+      {
+        "lang": "de",
+        "title": "RB Leipzig",
+        "views_2026": 203085
+      },
+      {
+        "lang": "es",
+        "title": "RasenBallsport Leipzig",
+        "views_2026": 80927
+      },
+      {
+        "lang": "ja",
+        "title": "RBライプツィヒ",
+        "views_2026": 67084
+      },
+      {
+        "lang": "it",
+        "title": "RasenBallsport Leipzig",
+        "views_2026": 65914
+      }
+    ]
+  },
+  {
+    "league": "Serie A",
+    "team": "Juventus",
+    "qid": "Q1422",
+    "en_title": "Juventus FC",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Juventus FC",
+        "views_2026": 1717156
+      },
+      {
+        "lang": "it",
+        "title": "Juventus Football Club",
+        "views_2026": 889276
+      },
+      {
+        "lang": "ru",
+        "title": "Ювентус",
+        "views_2026": 252098
+      },
+      {
+        "lang": "es",
+        "title": "Juventus de Turín",
+        "views_2026": 248835
+      },
+      {
+        "lang": "fr",
+        "title": "Juventus Football Club",
+        "views_2026": 216742
+      }
+    ]
+  },
+  {
+    "league": "Serie A",
+    "team": "AC Milan",
+    "qid": "Q1543",
+    "en_title": "AC Milan",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "AC Milan",
+        "views_2026": 1840684
+      },
+      {
+        "lang": "it",
+        "title": "Associazione Calcio Milan",
+        "views_2026": 664356
+      },
+      {
+        "lang": "es",
+        "title": "Associazione Calcio Milan",
+        "views_2026": 249983
+      },
+      {
+        "lang": "ru",
+        "title": "Милан (футбольный клуб)",
+        "views_2026": 239862
+      },
+      {
+        "lang": "ja",
+        "title": "ACミラン",
+        "views_2026": 213615
+      }
+    ]
+  },
+  {
+    "league": "Serie A",
+    "team": "Internazionale",
+    "qid": "Q631",
+    "en_title": "Inter Milan",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Inter Milan",
+        "views_2026": 1582665
+      },
+      {
+        "lang": "it",
+        "title": "Football Club Internazionale Milano",
+        "views_2026": 852613
+      },
+      {
+        "lang": "es",
+        "title": "Inter de Milán",
+        "views_2026": 302676
+      },
+      {
+        "lang": "ru",
+        "title": "Интернационале",
+        "views_2026": 273453
+      },
+      {
+        "lang": "ja",
+        "title": "インテルナツィオナーレ・ミラノ",
+        "views_2026": 178655
+      }
+    ]
+  },
+  {
+    "league": "Serie A",
+    "team": "Como",
+    "qid": "Q1120838",
+    "en_title": "Como 1907",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Como 1907",
+        "views_2026": 1280353
+      },
+      {
+        "lang": "it",
+        "title": "Como 1907",
+        "views_2026": 367211
+      },
+      {
+        "lang": "es",
+        "title": "Como 1907",
+        "views_2026": 241499
+      },
+      {
+        "lang": "ru",
+        "title": "Комо (футбольный клуб)",
+        "views_2026": 124217
+      },
+      {
+        "lang": "id",
+        "title": "Como 1907",
+        "views_2026": 120469
+      }
+    ]
+  },
+  {
+    "league": "Serie A",
+    "team": "SSC Napoli",
+    "qid": "Q2641",
+    "en_title": "SSC Napoli",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "SSC Napoli",
+        "views_2026": 1052829
+      },
+      {
+        "lang": "it",
+        "title": "Società Sportiva Calcio Napoli",
+        "views_2026": 639515
+      },
+      {
+        "lang": "es",
+        "title": "Società Sportiva Calcio Napoli",
+        "views_2026": 166798
+      },
+      {
+        "lang": "ru",
+        "title": "Наполи",
+        "views_2026": 135847
+      },
+      {
+        "lang": "fr",
+        "title": "Società Sportiva Calcio Napoli",
+        "views_2026": 126596
+      }
+    ]
+  },
+  {
+    "league": "NFL",
+    "team": "Dallas Cowboys",
+    "qid": "Q204862",
+    "en_title": "Dallas Cowboys",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Dallas Cowboys",
+        "views_2026": 1256159
+      },
+      {
+        "lang": "es",
+        "title": "Dallas Cowboys",
+        "views_2026": 70451
+      },
+      {
+        "lang": "de",
+        "title": "Dallas Cowboys",
+        "views_2026": 64228
+      },
+      {
+        "lang": "ja",
+        "title": "ダラス・カウボーイズ",
+        "views_2026": 35339
+      },
+      {
+        "lang": "fr",
+        "title": "Cowboys de Dallas",
+        "views_2026": 28929
+      }
+    ]
+  },
+  {
+    "league": "NFL",
+    "team": "Seattle Seahawks",
+    "qid": "Q221878",
+    "en_title": "Seattle Seahawks",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Seattle Seahawks",
+        "views_2026": 2183206
+      },
+      {
+        "lang": "de",
+        "title": "Seattle Seahawks",
+        "views_2026": 112448
+      },
+      {
+        "lang": "es",
+        "title": "Seattle Seahawks",
+        "views_2026": 103012
+      },
+      {
+        "lang": "fr",
+        "title": "Seahawks de Seattle",
+        "views_2026": 42307
+      },
+      {
+        "lang": "it",
+        "title": "Seattle Seahawks",
+        "views_2026": 33173
+      }
+    ]
+  },
+  {
+    "league": "NFL",
+    "team": "New England Patriots",
+    "qid": "Q193390",
+    "en_title": "New England Patriots",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "New England Patriots",
+        "views_2026": 2044243
+      },
+      {
+        "lang": "es",
+        "title": "New England Patriots",
+        "views_2026": 181144
+      },
+      {
+        "lang": "de",
+        "title": "New England Patriots",
+        "views_2026": 124848
+      },
+      {
+        "lang": "fr",
+        "title": "Patriots de la Nouvelle-Angleterre",
+        "views_2026": 72987
+      },
+      {
+        "lang": "it",
+        "title": "New England Patriots",
+        "views_2026": 43641
+      }
+    ]
+  },
+  {
+    "league": "NFL",
+    "team": "Chicago Bears",
+    "qid": "Q205033",
+    "en_title": "Chicago Bears",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Chicago Bears",
+        "views_2026": 1186758
+      },
+      {
+        "lang": "de",
+        "title": "Chicago Bears",
+        "views_2026": 36826
+      },
+      {
+        "lang": "es",
+        "title": "Chicago Bears",
+        "views_2026": 26525
+      },
+      {
+        "lang": "ja",
+        "title": "シカゴ・ベアーズ",
+        "views_2026": 14936
+      },
+      {
+        "lang": "it",
+        "title": "Chicago Bears",
+        "views_2026": 11545
+      }
+    ]
+  },
+  {
+    "league": "NFL",
+    "team": "Buffalo Bills",
+    "qid": "Q221626",
+    "en_title": "Buffalo Bills",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Buffalo Bills",
+        "views_2026": 1105387
+      },
+      {
+        "lang": "es",
+        "title": "Buffalo Bills",
+        "views_2026": 58128
+      },
+      {
+        "lang": "de",
+        "title": "Buffalo Bills",
+        "views_2026": 40639
+      },
+      {
+        "lang": "fr",
+        "title": "Bills de Buffalo",
+        "views_2026": 20102
+      },
+      {
+        "lang": "ja",
+        "title": "バッファロー・ビルズ",
+        "views_2026": 16919
+      }
+    ]
+  },
+  {
+    "league": "NBA",
+    "team": "New York Knicks",
+    "qid": "Q131364",
+    "en_title": "New York Knicks",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "New York Knicks",
+        "views_2026": 2665897
+      },
+      {
+        "lang": "es",
+        "title": "New York Knicks",
+        "views_2026": 125996
+      },
+      {
+        "lang": "it",
+        "title": "New York Knicks",
+        "views_2026": 108101
+      },
+      {
+        "lang": "fr",
+        "title": "Knicks de New York",
+        "views_2026": 106531
+      },
+      {
+        "lang": "zh",
+        "title": "纽约尼克斯",
+        "views_2026": 105408
+      }
+    ]
+  },
+  {
+    "league": "NBA",
+    "team": "San Antonio Spurs",
+    "qid": "Q159729",
+    "en_title": "San Antonio Spurs",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "San Antonio Spurs",
+        "views_2026": 1359405
+      },
+      {
+        "lang": "fr",
+        "title": "Spurs de San Antonio",
+        "views_2026": 135001
+      },
+      {
+        "lang": "es",
+        "title": "San Antonio Spurs",
+        "views_2026": 103985
+      },
+      {
+        "lang": "zh",
+        "title": "圣安东尼奥马刺",
+        "views_2026": 97247
+      },
+      {
+        "lang": "ja",
+        "title": "サンアントニオ・スパーズ",
+        "views_2026": 78092
+      }
+    ]
+  },
+  {
+    "league": "NBA",
+    "team": "Los Angeles Lakers",
+    "qid": "Q121783",
+    "en_title": "Los Angeles Lakers",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Los Angeles Lakers",
+        "views_2026": 1475551
+      },
+      {
+        "lang": "ja",
+        "title": "ロサンゼルス・レイカーズ",
+        "views_2026": 118006
+      },
+      {
+        "lang": "es",
+        "title": "Los Angeles Lakers",
+        "views_2026": 112311
+      },
+      {
+        "lang": "ru",
+        "title": "Лос-Анджелес Лейкерс",
+        "views_2026": 92300
+      },
+      {
+        "lang": "it",
+        "title": "Los Angeles Lakers",
+        "views_2026": 83137
+      }
+    ]
+  },
+  {
+    "league": "NBA",
+    "team": "Golden State Warriors",
+    "qid": "Q157376",
+    "en_title": "Golden State Warriors",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Golden State Warriors",
+        "views_2026": 1084198
+      },
+      {
+        "lang": "zh",
+        "title": "金州勇士",
+        "views_2026": 105709
+      },
+      {
+        "lang": "es",
+        "title": "Golden State Warriors",
+        "views_2026": 85420
+      },
+      {
+        "lang": "ja",
+        "title": "ゴールデンステート・ウォリアーズ",
+        "views_2026": 81421
+      },
+      {
+        "lang": "fr",
+        "title": "Warriors de Golden State",
+        "views_2026": 73774
+      }
+    ]
+  },
+  {
+    "league": "NBA",
+    "team": "Oklahoma City Thunder",
+    "qid": "Q180950",
+    "en_title": "Oklahoma City Thunder",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Oklahoma City Thunder",
+        "views_2026": 898772
+      },
+      {
+        "lang": "ja",
+        "title": "オクラホマシティ・サンダー",
+        "views_2026": 69571
+      },
+      {
+        "lang": "fr",
+        "title": "Thunder d'Oklahoma City",
+        "views_2026": 62048
+      },
+      {
+        "lang": "es",
+        "title": "Oklahoma City Thunder",
+        "views_2026": 58241
+      },
+      {
+        "lang": "it",
+        "title": "Oklahoma City Thunder",
+        "views_2026": 52226
+      }
+    ]
+  },
+  {
+    "league": "MLB",
+    "team": "Toronto Blue Jays",
+    "qid": "Q650829",
+    "en_title": "Toronto Blue Jays",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Toronto Blue Jays",
+        "views_2026": 1898522
+      },
+      {
+        "lang": "ja",
+        "title": "トロント・ブルージェイズ",
+        "views_2026": 791154
+      },
+      {
+        "lang": "zh",
+        "title": "多倫多藍鳥",
+        "views_2026": 111891
+      },
+      {
+        "lang": "es",
+        "title": "Toronto Blue Jays",
+        "views_2026": 99931
+      },
+      {
+        "lang": "fr",
+        "title": "Blue Jays de Toronto",
+        "views_2026": 25062
+      }
+    ]
+  },
+  {
+    "league": "MLB",
+    "team": "Los Angeles Dodgers",
+    "qid": "Q334634",
+    "en_title": "Los Angeles Dodgers",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Los Angeles Dodgers",
+        "views_2026": 1799889
+      },
+      {
+        "lang": "ja",
+        "title": "ロサンゼルス・ドジャース",
+        "views_2026": 810981
+      },
+      {
+        "lang": "zh",
+        "title": "洛杉矶道奇",
+        "views_2026": 151296
+      },
+      {
+        "lang": "es",
+        "title": "Los Angeles Dodgers",
+        "views_2026": 115885
+      },
+      {
+        "lang": "fr",
+        "title": "Dodgers de Los Angeles",
+        "views_2026": 28801
+      }
+    ]
+  },
+  {
+    "league": "MLB",
+    "team": "New York Yankees",
+    "qid": "Q213417",
+    "en_title": "New York Yankees",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "New York Yankees",
+        "views_2026": 1223685
+      },
+      {
+        "lang": "ja",
+        "title": "ニューヨーク・ヤンキース",
+        "views_2026": 228038
+      },
+      {
+        "lang": "es",
+        "title": "New York Yankees",
+        "views_2026": 72878
+      },
+      {
+        "lang": "zh",
+        "title": "紐約洋基",
+        "views_2026": 65976
+      },
+      {
+        "lang": "de",
+        "title": "New York Yankees",
+        "views_2026": 32537
+      }
+    ]
+  },
+  {
+    "league": "MLB",
+    "team": "Seattle Mariners",
+    "qid": "Q466586",
+    "en_title": "Seattle Mariners",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Seattle Mariners",
+        "views_2026": 815538
+      },
+      {
+        "lang": "ja",
+        "title": "シアトル・マリナーズ",
+        "views_2026": 252792
+      },
+      {
+        "lang": "zh",
+        "title": "西雅圖水手",
+        "views_2026": 40546
+      },
+      {
+        "lang": "es",
+        "title": "Seattle Mariners",
+        "views_2026": 24049
+      },
+      {
+        "lang": "de",
+        "title": "Seattle Mariners",
+        "views_2026": 6059
+      }
+    ]
+  },
+  {
+    "league": "MLB",
+    "team": "Chicago Cubs",
+    "qid": "Q246782",
+    "en_title": "Chicago Cubs",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Chicago Cubs",
+        "views_2026": 664008
+      },
+      {
+        "lang": "ja",
+        "title": "シカゴ・カブス",
+        "views_2026": 172376
+      },
+      {
+        "lang": "zh",
+        "title": "芝加哥小熊",
+        "views_2026": 25583
+      },
+      {
+        "lang": "es",
+        "title": "Chicago Cubs",
+        "views_2026": 22900
+      },
+      {
+        "lang": "de",
+        "title": "Chicago Cubs",
+        "views_2026": 11089
+      }
+    ]
+  },
+  {
+    "league": "NHL",
+    "team": "Carolina Hurricanes",
+    "qid": "Q201857",
+    "en_title": "Carolina Hurricanes",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Carolina Hurricanes",
+        "views_2026": 1001198
+      },
+      {
+        "lang": "ru",
+        "title": "Каролина Харрикейнз",
+        "views_2026": 131538
+      },
+      {
+        "lang": "fr",
+        "title": "Hurricanes de la Caroline",
+        "views_2026": 41563
+      },
+      {
+        "lang": "de",
+        "title": "Carolina Hurricanes",
+        "views_2026": 30152
+      },
+      {
+        "lang": "fi",
+        "title": "Carolina Hurricanes",
+        "views_2026": 16099
+      }
+    ]
+  },
+  {
+    "league": "NHL",
+    "team": "Montreal Canadiens",
+    "qid": "Q188143",
+    "en_title": "Montreal Canadiens",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Montreal Canadiens",
+        "views_2026": 968154
+      },
+      {
+        "lang": "fr",
+        "title": "Canadiens de Montréal",
+        "views_2026": 160889
+      },
+      {
+        "lang": "ru",
+        "title": "Монреаль Канадиенс",
+        "views_2026": 102561
+      },
+      {
+        "lang": "de",
+        "title": "Canadiens de Montréal",
+        "views_2026": 34613
+      },
+      {
+        "lang": "es",
+        "title": "Montreal Canadiens",
+        "views_2026": 12922
+      }
+    ]
+  },
+  {
+    "league": "NHL",
+    "team": "Vegas Golden Knights",
+    "qid": "Q24725640",
+    "en_title": "Vegas Golden Knights",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Vegas Golden Knights",
+        "views_2026": 920833
+      },
+      {
+        "lang": "ru",
+        "title": "Вегас Голден Найтс",
+        "views_2026": 104909
+      },
+      {
+        "lang": "de",
+        "title": "Vegas Golden Knights",
+        "views_2026": 22833
+      },
+      {
+        "lang": "fr",
+        "title": "Golden Knights de Vegas",
+        "views_2026": 20494
+      },
+      {
+        "lang": "fi",
+        "title": "Vegas Golden Knights",
+        "views_2026": 10079
+      }
+    ]
+  },
+  {
+    "league": "NHL",
+    "team": "Anaheim Ducks",
+    "qid": "Q192751",
+    "en_title": "Anaheim Ducks",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Anaheim Ducks",
+        "views_2026": 629903
+      },
+      {
+        "lang": "ru",
+        "title": "Анахайм Дакс",
+        "views_2026": 69167
+      },
+      {
+        "lang": "de",
+        "title": "Anaheim Ducks",
+        "views_2026": 29576
+      },
+      {
+        "lang": "fr",
+        "title": "Ducks d'Anaheim",
+        "views_2026": 19932
+      },
+      {
+        "lang": "fi",
+        "title": "Anaheim Ducks",
+        "views_2026": 11782
+      }
+    ]
+  },
+  {
+    "league": "NHL",
+    "team": "Colorado Avalanche",
+    "qid": "Q206297",
+    "en_title": "Colorado Avalanche",
+    "langs": [
+      {
+        "lang": "en",
+        "title": "Colorado Avalanche",
+        "views_2026": 536496
+      },
+      {
+        "lang": "ru",
+        "title": "Колорадо Эвеланш",
+        "views_2026": 92720
+      },
+      {
+        "lang": "fr",
+        "title": "Avalanche du Colorado",
+        "views_2026": 26089
+      },
+      {
+        "lang": "de",
+        "title": "Colorado Avalanche",
+        "views_2026": 24512
+      },
+      {
+        "lang": "cs",
+        "title": "Colorado Avalanche",
+        "views_2026": 13838
+      }
+    ]
+  }
+]

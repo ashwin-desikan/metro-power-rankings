@@ -178,7 +178,7 @@ export default function FanGate({ totalTeams, previewRows }: { totalTeams: numbe
         <FanTable teams={teams} />
         <p className="text-xs text-[var(--text-dim)] mt-3" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
           &mdash; under Valued vs attention = not shown, either because the team has no published
-          valuation or because that league&apos;s attention-to-value fit is too weak to be meaningful.
+          valuation or because its league has fewer than 3 valued teams.
           &Dagger; = added to the index by a stated inclusion rule rather than by conference
           membership alone; hover the mark for the rule.
         </p>

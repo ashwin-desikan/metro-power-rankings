@@ -96,3 +96,52 @@ export function leagueIcon(league: string | undefined): string {
     default: return "";
   }
 }
+
+
+// ---------------------------------------------------------------------
+// Fan Attention Index: sport -> league mapping (app/fans/FanTable.tsx's
+// "Build your own" tab, 2026-09-24). One entry per FAN-INDEX LEAGUE string
+// exactly as it appears in data/fans/fan-attention.json (checked against
+// that file directly, not the group field -- Football and Women's football
+// are single GROUPs with many LEAGUEs each, while every other group here
+// has exactly one league sharing the group's own name). Every one of the
+// dataset's 33 leagues appears in exactly one sport below.
+export const FAN_INDEX_SPORTS = [
+  "Football", "Gridiron", "Basketball", "Baseball", "Hockey", "Rugby",
+  "Aussie rules", "Cricket", "Motorsport", "Handball", "Volleyball",
+] as const;
+export type FanIndexSport = (typeof FAN_INDEX_SPORTS)[number];
+
+export const FAN_INDEX_SPORT_LEAGUES: Record<FanIndexSport, string[]> = {
+  Football: [
+    "Premier League", "Championship", "La Liga", "Bundesliga", "Serie A",
+    "Ligue 1", "Primeira Liga", "Eredivisie", "Scottish Premiership", "Süper Lig",
+    "MLS", "Liga MX", "Brasileirão", "Liga Profesional", "NWSL", "WSL",
+  ],
+  Gridiron: ["NFL", "College football", "CFL"],
+  Basketball: ["NBA", "WNBA", "College basketball", "EuroLeague"],
+  Baseball: ["MLB", "NPB"],
+  Hockey: ["NHL"],
+  Rugby: ["Top 14", "NRL"],
+  "Aussie rules": ["AFL"],
+  Cricket: ["IPL"],
+  Motorsport: ["F1"],
+  Handball: ["Handball-Bundesliga"],
+  Volleyball: ["SuperLega"],
+};
+
+// Which sport a given fan-index league belongs to, the inverse of
+// FAN_INDEX_SPORT_LEAGUES above, built from it so the two can never drift.
+export const FAN_INDEX_SPORT_BY_LEAGUE: Record<string, FanIndexSport> = Object.fromEntries(
+  FAN_INDEX_SPORTS.flatMap((sport) => FAN_INDEX_SPORT_LEAGUES[sport].map((league) => [league, sport])),
+);
+
+// Icon for a sport chip: reuses leagueIcon() on that sport's first league,
+// so the Build-your-own sport row can never show an icon that disagrees
+// with the League column's own icon for the same league -- one source of
+// truth (leagueIcon's switch above), not a second emoji table to keep in
+// sync by hand.
+export function fanIndexSportIcon(sport: FanIndexSport): string {
+  const first = FAN_INDEX_SPORT_LEAGUES[sport]?.[0];
+  return first ? leagueIcon(first) : "";
+}

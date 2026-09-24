@@ -40,9 +40,20 @@ export const metadata: Metadata = {
 // of silently.
 export default function FansMethodologyPage() {
   const summary = getMethodSummary();
-  const groupsWithValuation = summary.groups.filter((g) => g.value_fit_n > 0);
-  const eligible = groupsWithValuation.filter((g) => g.value_vs_attention_shown).map((g) => g.group);
-  const notEligible = groupsWithValuation.filter((g) => !g.value_vs_attention_shown).map((g) => g.group);
+  // v0.9: the gate is per LEAGUE (>= min_ratio_n valued teams, any method),
+  // not a per-group R^2 fit -- see lib/fanIndex.ts's MethodSummaryLeague and
+  // scripts/fans/csv_to_json.py's apply_value_vs_attention().
+  const leaguesWithValuation = summary.leagues.filter((l) => l.valued_count > 0);
+  const shownLeagues = leaguesWithValuation.filter((l) => l.value_vs_attention_shown).map((l) => l.league);
+  const notShownLeagues = leaguesWithValuation.filter((l) => !l.value_vs_attention_shown).map((l) => l.league);
+  // The log-log fit is now informational only (no longer gates anything),
+  // computed at league granularity for the table below. Sorted worst-fit
+  // first, since that ordering is the one worth reading top to bottom: it
+  // puts the leagues where attention explains value least right at the top.
+  const fitLeagues = summary.leagues
+    .filter((l) => l.value_fit_r2 !== null)
+    .slice()
+    .sort((a, b) => (a.value_fit_r2 ?? 0) - (b.value_fit_r2 ?? 0));
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-8">
@@ -277,37 +288,39 @@ export default function FansMethodologyPage() {
             currency is not silently inflated or deflated by currency movement since then.
           </p>
           <p>
-            Within each league with enough valued teams, a log-log ordinary least squares line is
-            fit between the baseline and the valuation. The fitted line gives a predicted valuation
-            for each team from its attention alone. <strong className="text-[var(--text)]">Valued vs
-            attention</strong> is that team&apos;s actual valuation divided by the line&apos;s
-            prediction, shown as a multiplier: <code>&times;2.0</code> means the team is valued at
-            twice what its attention within its league would suggest; <code>&times;0.5</code> means
-            half. It replaces an earlier percentage-gap version of the same comparison (still stored
-            as <code>residual_pct</code> in the underlying data).
+            <strong className="text-[var(--text)]">Valued vs attention</strong> compares a team&apos;s
+            valuation with what is typical for its level of attention within its own league. For
+            every team with a valuation, the index first computes a ratio of valuation to attention
+            (the same within-league attention figure its rank in the league is sorted on). It then
+            takes the median of that ratio across every valued team in the league, and divides each
+            team&apos;s own ratio by that league median. The result is a multiplier read directly
+            against 1.0, the league norm: <code>&times;1.8</code> means the team is valued at 1.8
+            times what is typical in its league for its level of attention; <code>&times;0.5</code>{" "}
+            means half. A team sitting exactly at its league&apos;s typical value-for-attention scores{" "}
+            <code>&times;1.0</code>. It replaces an earlier fitted-line, percentage-gap version of the
+            same comparison (the fitted line is still computed, but only as information -- see the
+            table below -- and the old <code>residual_pct</code> field is still written from the new
+            multiplier, unchanged in shape).
           </p>
           <p>
-            The multiplier is only shown where the league&apos;s fit is strong enough to trust, R
-            squared at or above 0.4; everywhere else the index shows a dash. That threshold is
-            recomputed on every data refresh, so which leagues clear it can change as more teams
-            gain a valuation or a fit is re-run. As of this page&apos;s last build:
+            The multiplier is shown for every league with at least {summary.min_ratio_n} valued
+            teams, by any method including speculative estimates; a league with fewer valued teams
+            than that shows a dash, since a median of one or two ratios is not a meaningful league
+            norm to compare against. This is a change from an earlier version of the index, which
+            additionally required the league&apos;s attention-to-value relationship to fit a log-log
+            regression at R squared 0.4 or above -- a bar that left the multiplier blank for entire
+            major leagues (NFL, MLB, NHL, WNBA, F1, both college groups, AFL, NRL) precisely because
+            attention explains value poorly there, which is itself worth showing, not hiding. As of
+            this page&apos;s last build:
           </p>
           <p className="mt-3">
             <strong className="text-[var(--text)]">Shown:</strong>{" "}
-            {eligible.length ? eligible.join(", ") : "none yet"}.
+            {shownLeagues.length ? shownLeagues.join(", ") : "none yet"}.
           </p>
           <p>
             <strong className="text-[var(--text)]">Shown as a dash</strong> (valued teams exist,
-            but the league&apos;s fit is below the 0.4 line):{" "}
-            {notEligible.length ? notEligible.join(", ") : "none"}.
-          </p>
-          <p className="mt-3">
-            Attention has historically explained franchise value well within European football, an
-            almost mechanical relationship, likely because European club value is itself driven
-            heavily by global fan reach and media rights, which pageviews also track. It explains
-            value only moderately for the big US leagues, and very little for leagues whose
-            valuations are set by factors such as media-rights deals, ownership scarcity and arena
-            economics that do not show up in Wikipedia traffic.
+            but fewer than {summary.min_ratio_n} in that league):{" "}
+            {notShownLeagues.length ? notShownLeagues.join(", ") : "none"}.
           </p>
           <p className="mt-3">
             A small badge next to a valuation marks how it was derived: <strong
@@ -317,11 +330,80 @@ export default function FansMethodologyPage() {
             university&apos;s whole athletic department, not the one team shown, and <strong
             className="text-[var(--text)]"><em>est</em></strong> (shown muted and italic) means the
             figure is an estimate, not a reported valuation or a disclosed deal. Estimated figures
-            are excluded from the attention-to-value fit above (they would let the index validate
-            itself against its own guesses), but Valued vs attention is still shown for an
-            estimated team, multiplier and <em>est</em> badge together, so a reader can weigh it
-            appropriately rather than see a gap in the column. A valuation with none of these three
-            badges is a publisher&apos;s own franchise appraisal.
+            are excluded from the attention-to-value fit below (they would let the index validate
+            itself against its own guesses), but they DO count toward a league&apos;s median ratio and
+            ARE shown a Valued vs attention multiplier, with the <em>est</em> badge repeated next to
+            it, so a reader can weigh it appropriately rather than see a gap in the column. A
+            valuation with none of these three badges is a publisher&apos;s own franchise appraisal.
+          </p>
+          <p className="mt-3">
+            <strong className="text-[var(--text)]">Program values for college football and college
+            basketball (added 2026-09-24):</strong> a school&apos;s athletic department is valued as
+            one number, but its football and basketball programs earn very different revenue, so
+            showing that one department figure on both rows made them look equally valuable when
+            they usually are not. Where a program-level figure is available (the <strong
+            className="text-[var(--text)]"><em>program value</em></strong> badge), it is built from
+            the U.S. Department of Education&apos;s EADA (Equity in Athletics Data Analysis) filing
+            for that school -- the same federal disclosure every Title IX-covered athletic
+            department, public or private, submits every year, broken out by sport. The department&apos;s
+            published or estimated valuation is divided by that school&apos;s EADA total athletics
+            revenue for the same year to get an implied revenue multiple, and that multiple is then
+            applied separately to the school&apos;s EADA football revenue and men&apos;s basketball
+            revenue to get each program&apos;s own value. A school with no FBS football program (most
+            basketball-only Big East and mid-major schools -- Gonzaga, Villanova, Georgetown and
+            similar) only gets a basketball program value, since there is no football revenue to
+            derive one from. Rows still marked <strong className="text-[var(--text)]">athletic
+            dept</strong> have not yet been broken out this way and still carry the whole
+            department&apos;s figure; the underlying revenue file, the school-to-EADA-institution match,
+            and the derived program values themselves are in <code>data/fans/college/</code> and{" "}
+            <code>scripts/fans/pending/college_program_values.csv</code> in the repo.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-[var(--text)] mb-2">How much attention explains value, by league</h2>
+          <p>
+            Separately from the multiplier above, the index still fits a log-log ordinary least
+            squares line between attention and valuation within each league (non-speculative valued
+            teams only), purely as information about how well attention and value actually track
+            each other -- it no longer decides whether a multiplier is shown. R squared closer to 1
+            means a league where the fitted line predicts a team&apos;s valuation from its attention
+            almost exactly; closer to 0 means attention barely predicts valuation at all, and
+            something else -- a closed, revenue-shared league structure; media-rights deals;
+            ownership scarcity; arena economics -- is doing most of the work instead. Sorted worst
+            fit first, since that end is the more interesting one to read.
+          </p>
+          <div className="overflow-x-auto rounded-xl border mt-3" style={{ borderColor: "var(--border)" }}>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-left text-[var(--text-dim)] text-[11px] uppercase tracking-wide">
+                  <th className="px-3 py-2">League</th>
+                  <th className="px-3 py-2 text-right">Valued teams in fit</th>
+                  <th className="px-3 py-2 text-right">R&sup2;</th>
+                </tr>
+              </thead>
+              <tbody>
+                {fitLeagues.map((l) => (
+                  <tr key={l.league} className="border-t" style={{ borderColor: "var(--border)" }}>
+                    <td className="px-3 py-2">{l.league}</td>
+                    <td className="px-3 py-2 text-right tabular-nums">{l.value_fit_n}</td>
+                    <td className="px-3 py-2 text-right tabular-nums">{l.value_fit_r2 != null ? l.value_fit_r2.toFixed(2) : "n/a"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3">
+            Attention explains value well within European football (Premier League, La Liga,
+            Bundesliga, Serie A, Primeira Liga, Brasileir&atilde;o all sit at R&sup2; 0.8 or above), an
+            almost mechanical relationship, likely because European club value is itself driven
+            heavily by global fan reach and media rights, which pageviews also track. It explains
+            value only moderately for the big US pro leagues (NFL 0.26, MLB 0.38) and barely at all
+            for the NHL (0.06) or college basketball (0.00). In revenue-sharing closed leagues like
+            the NFL, franchise value is set largely by a shared national media contract, salary-cap
+            economics and ownership scarcity rather than by any one team&apos;s own public following,
+            so value is substantially decoupled from fan attention there -- and that decoupling is
+            itself a finding of this index, not a defect in it.
           </p>
         </section>
 
@@ -416,8 +498,28 @@ export default function FansMethodologyPage() {
           <h2 className="text-xl font-bold text-[var(--text)] mb-2">Updates and history</h2>
           <p>
             The index refreshes monthly, on the 3rd. Each month&apos;s snapshot is kept, starting from
-            January 2024, so a team&apos;s attention, ranking and cross-sport score can be compared
-            month over month rather than only read as a single current figure.
+            December 2023, so a team&apos;s attention, ranking and cross-sport score can be compared
+            month over month rather than only read as a single current figure. That monthly history is
+            browsable directly on the{" "}
+            <Link href="/fans/trends" className="hover:underline text-[var(--accent)]">Attention over time</Link>{" "}
+            page: compare teams, see the biggest risers and fallers within a league, and track whole
+            leagues over time.
+          </p>
+          <p>
+            The trends page only shows months from June 2025 onward, not the full archive. A bot or
+            scraping campaign had been inflating Wikipedia&apos;s recorded &quot;user&quot; pageviews
+            for football pages, and that got corrected in June 2024; since every point on the trends
+            page is a rolling 12-month total, any window ending before June 2025 still has some of that
+            inflated traffic mixed in, so those months are left off rather than shown as if they were
+            clean.
+          </p>
+          <p>
+            Separately, total human traffic to Wikipedia has been falling over time, mostly because more
+            searches now get answered without a click-through. Left alone, that would make every team and
+            league look like it is losing attention even when its real standing has not changed. The
+            trends page corrects for this by default, dividing each value by that same month&apos;s total
+            Wikipedia traffic (&quot;share of Wikipedia attention, per billion views&quot;); a &quot;Raw
+            views&quot; toggle switches back to the unadjusted numbers.
           </p>
         </section>
 
