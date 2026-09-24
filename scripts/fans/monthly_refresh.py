@@ -35,6 +35,7 @@ the previous-month calculation is correct for a few fixed "today" values.
 No network calls.
 """
 import argparse
+import bz2
 import csv
 import json
 import math
@@ -57,8 +58,6 @@ OUT_JSON = os.path.join(REPO, "public", "data", "fans", "fan-attention.json")
 SCRATCH_CSV_DIR = os.path.join(HERE, "_scratch_csv")
 
 UA = "CitizenOfNowhere-FanIndex/0.1 (ashwind@gmail.com; monthly job)"
-RATE = float(os.environ.get("FANS_MONTHLY_RATE", "10"))  # requests/sec
-MIN_INTERVAL = 1.0 / RATE
 HISTORY_BUDGET_BYTES = 8 * 1024 * 1024
 
 
@@ -75,47 +74,122 @@ def log(msg):
     print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {msg}", flush=True)
 
 
-_last_call = [0.0]
+# --- the monthly dump ------------------------------------------------------
+# ONE download replaces 26,602 per-article REST calls. Switched 2026-09-24 after
+# the per-article path failed its own validation gate: measured on the mini, a
+# 0.8 percent 429 rate fanned out across up to 143 language editions per club
+# gave a 63 percent per-team failure chance, and the retry ladder turned that
+# into 1.51 req/s effective against a 90 minute step timeout, so a run reached
+# 31 percent of the roster before being killed. See HANDOFF section AV.
+#
+# 🔴 THE DUMP IS SPLIT BY ACCESS METHOD, AND THAT IS THE PARITY TRAP. One article
+# has up to three lines (desktop, mobile-web, mobile-app). The REST endpoint this
+# replaces asked for `all-access`, so a faithful figure is the SUM of those lines,
+# not the first one found. Reading one line per article would silently under-count
+# by roughly the mobile share, which on Wikipedia is most of the traffic.
+#
+# Line format, space separated, verified against the real 2026-08 file:
+#   wiki_code  article_title  page_id  access_method  views  hourly_breakdown
+#   aa.wikibooks Administrator null desktop 1 Y1
+# Titles are underscored raw UTF-8, NOT percent-encoded, which is why the lookup
+# key is title.replace(" ", "_") with no quoting.
+#
+# `-user`, not `-automated`: it matches the `agent=user` the REST path requested.
+DUMP_URL = ("https://dumps.wikimedia.org/other/pageview_complete/monthly/"
+            "{y}/{y}-{mm}/pageviews-{ym}-user.bz2")
+
+# Share of requested keys that must appear before the result is trusted. A dump
+# whose format changed, or a truncated stream, would otherwise yield zeros for
+# every team and look exactly like a quiet month: the same shape as the NPB
+# HScore bug on the Silent failure register, where a null-safe reader of the
+# wrong field is indistinguishable from no news. Measured coverage is around
+# 0.75, since some sitelinks are to articles with no views in a given month.
+MIN_MATCH_RATE = float(os.environ.get("FANS_MIN_MATCH_RATE", "0.55"))
 
 
-def throttled_get_json(url):
-    wait = MIN_INTERVAL - (time.time() - _last_call[0])
-    if wait > 0:
-        time.sleep(wait)
-    _last_call[0] = time.time()
+def dump_url(ym):
+    return DUMP_URL.format(y=ym[:4], mm=ym[4:6], ym=ym)
+
+
+def dump_key(lang, title):
+    """The first two dump fields joined, as bytes: the whole lookup key. Kept as
+    bytes so the hot loop never decodes any of the ~465 million lines."""
+    return (f"{lang}.wikipedia {title.replace(' ', '_')}").encode("utf-8")
+
+
+def accumulate_line(line, wanted, totals):
+    """Add one dump line's views to totals when its (wiki, title) is wanted.
+
+    Pure and bytes-only so --self-test can pin it without a network. Two finds
+    on the reject path, which is almost every line."""
+    i = line.find(b" ")
+    if i < 0:
+        return
+    j = line.find(b" ", i + 1)
+    if j < 0:
+        return
+    key = line[:j]
+    if key not in wanted:
+        return
+    k = line.find(b" ", j + 1)          # end of page_id
+    if k < 0:
+        return
+    m = line.find(b" ", k + 1)          # end of access_method
+    if m < 0:
+        return
+    n = line.find(b" ", m + 1)          # end of views
+    field = line[m + 1:] if n < 0 else line[m + 1:n]
+    try:
+        totals[key] = totals.get(key, 0) + int(field)
+    except ValueError:
+        return
+
+
+def fetch_month_from_dump(ym, wanted, log_every=60):
+    """Stream the month's dump once and return {key: all-access user views}.
+
+    Raises on a transport or decode failure rather than returning partial data:
+    a short read must never be recorded as low view counts."""
+    url = dump_url(ym)
+    log(f"dump: {url}")
+    totals = {}
+    dec = bz2.BZ2Decompressor()
+    tail = b""
+    n_lines = 0
+    n_bytes = 0
+    t0 = time.time()
+    next_log = log_every
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    for attempt in range(4):
-        try:
-            with urllib.request.urlopen(req, timeout=25) as resp:
-                return json.loads(resp.read().decode("utf-8"))
-        except urllib.error.HTTPError as e:
-            if e.code == 404:
-                return {"items": []}
-            if e.code == 429:
-                time.sleep(min(3.0 * (attempt + 1), 15.0))
-                continue
-            time.sleep(2.0)
-        except Exception:
-            time.sleep(2.0)
-    return None  # give up this run; caller must not cache a failure as zero
-
-
-def fetch_month_views(lang, title, ym):
-    """One month of all-access/user pageviews for one language edition."""
-    enc = urllib.parse.quote(title.replace(" ", "_"), safe="")
-    start = ym + "01"
-    end_date = date(int(ym[:4]), int(ym[4:6]), 1)
-    next_month = (end_date.replace(day=28) + timedelta(days=4)).replace(day=1)
-    end = (next_month - timedelta(days=1)).strftime("%Y%m%d")
-    url = (
-        f"https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/"
-        f"{lang}.wikipedia/all-access/user/{enc}/monthly/{start}/{end}"
-    )
-    data = throttled_get_json(url)
-    if data is None:
-        return None  # fetch failed after retries
-    total = sum(item.get("views", 0) for item in data.get("items", []))
-    return total
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        while True:
+            chunk = resp.read(1 << 20)
+            if not chunk:
+                break
+            n_bytes += len(chunk)
+            buf = tail + dec.decompress(chunk)
+            lines = buf.split(b"\n")
+            tail = lines.pop()
+            for line in lines:
+                accumulate_line(line, wanted, totals)
+            n_lines += len(lines)
+            el = time.time() - t0
+            if el >= next_log:
+                next_log += log_every
+                log(f"  dump: {n_bytes / 1e9:.2f} GB read, {n_lines / 1e6:.0f}M lines, "
+                    f"{len(totals):,} keys matched, {el / 60:.1f} min")
+    if tail:
+        accumulate_line(tail, wanted, totals)
+        n_lines += 1
+    log(f"dump done: {n_bytes / 1e9:.2f} GB, {n_lines / 1e6:.0f}M lines, "
+        f"{len(totals):,}/{len(wanted):,} keys matched, {(time.time() - t0) / 60:.1f} min")
+    rate = len(totals) / max(1, len(wanted))
+    if rate < MIN_MATCH_RATE:
+        raise RuntimeError(
+            f"dump matched only {rate:.1%} of {len(wanted):,} requested keys "
+            f"(floor {MIN_MATCH_RATE:.0%}); refusing to record this as the month's "
+            f"views. Check the line format and the wiki_code mapping before lowering "
+            f"FANS_MIN_MATCH_RATE.")
+    return totals
 
 
 def load_anchors():
@@ -294,6 +368,46 @@ def self_test():
     if not ok:
         print("SELF-TEST FAILED")
         sys.exit(1)
+    # --- the dump parser -------------------------------------------------
+    # Real lines, copied from the 2026-08 file rather than invented.
+    assert dump_url("202608").endswith(
+        "/monthly/2026/2026-08/pageviews-202608-user.bz2"), "dump url shape"
+    assert dump_key("en", "Real Madrid CF") == b"en.wikipedia Real_Madrid_CF", "key shape"
+    assert dump_key("ky", "Барселона (футбол клубу)") == \
+        "ky.wikipedia Барселона_(футбол_клубу)".encode("utf-8"), "non-ASCII key is raw UTF-8, not quoted"
+
+    # 🔴 THE ACCESS-METHOD SUM. This is the assertion that matters: three lines
+    # for one article must add up, because the endpoint this replaced asked for
+    # all-access. Reading one line would under-count by the mobile share, which
+    # is most of Wikipedia's traffic, and every downstream number would still
+    # look plausible.
+    want = {b"en.wikipedia Arsenal_F.C."}
+    tot = {}
+    for ln in (b"en.wikipedia Arsenal_F.C. 12345 desktop 100 A1B2",
+               b"en.wikipedia Arsenal_F.C. 12345 mobile-web 250 C3",
+               b"en.wikipedia Arsenal_F.C. 12345 mobile-app 40 D4"):
+        accumulate_line(ln, want, tot)
+    assert tot == {b"en.wikipedia Arsenal_F.C.": 390}, f"access methods must sum, got {tot}"
+
+    # Rejects, each of which appeared in the real file
+    tot2 = {}
+    accumulate_line(b"aa.wikibooks Administrator null desktop 1 Y1", want, tot2)
+    assert tot2 == {}, "an unwanted project must be ignored"
+    accumulate_line(b"en.wikipedia Arsenal_F.C. null desktop 7 Y1", want, tot2)
+    assert tot2 == {b"en.wikipedia Arsenal_F.C.": 7}, "a null page_id is still a real row"
+    accumulate_line(b"en.wikipedia - null desktop 92 A19", want, tot2)
+    assert list(tot2.values()) == [7], "the '-' title must not match anything wanted"
+    for junk in (b"", b"no-spaces", b"en.wikipedia Arsenal_F.C.", b"en.wikipedia Arsenal_F.C. 1 desktop"):
+        accumulate_line(junk, want, tot2)
+    assert list(tot2.values()) == [7], f"short or malformed lines must be skipped, got {tot2}"
+    accumulate_line(b"en.wikipedia Arsenal_F.C. 1 desktop notanumber X", want, tot2)
+    assert list(tot2.values()) == [7], "a non-numeric views field must be skipped, not crash"
+    # A trailing line with no breakdown column still carries a usable count.
+    tot3 = {}
+    accumulate_line(b"en.wikipedia Arsenal_F.C. 1 desktop 55", want, tot3)
+    assert tot3 == {b"en.wikipedia Arsenal_F.C.": 55}, "views must parse as the last field too"
+    print("dump parser: url, keys, access-method sum and 9 reject cases OK")
+
     print("monthly_refresh self-test OK")
 
 
@@ -367,19 +481,32 @@ def run(ym=None, dry_run=False):
     log(f"target month: {target_ym[:4]}-{target_ym[4:]}")
 
     n_teams = len(u)
-    n_fail = 0
+
+    # One pass over the month's dump, then arithmetic. There is no per-team
+    # failure mode any more: either the whole dump read (and the match-rate gate
+    # passed), or fetch_month_from_dump raised and this run makes no claim about
+    # the month at all. That is deliberate. The old per-article path could record
+    # a partial month as if it were the truth, team by team, and did.
+    wanted = {}
     for i, r in enumerate(u):
-        langs = r.get("langs") or {}
-        month_total = 0
-        any_fail = False
-        for lang, title in langs.items():
-            v = fetch_month_views(lang, title, target_ym)
-            if v is None:
-                any_fail = True
-                continue
-            month_total += v
-        if any_fail:
-            n_fail += 1
+        for lang, title in (r.get("langs") or {}).items():
+            wanted.setdefault(dump_key(lang, title), []).append(i)
+    log(f"{n_teams} teams, {len(wanted):,} distinct (wiki, title) keys")
+    totals = fetch_month_from_dump(target_ym, wanted)
+
+    per_team = [0] * n_teams
+    for key, idxs in wanted.items():
+        v = totals.get(key)
+        if not v:
+            continue
+        for i in idxs:
+            per_team[i] += v
+
+    n_zero = 0
+    for i, r in enumerate(u):
+        month_total = per_team[i]
+        if month_total == 0:
+            n_zero += 1
         monthly = r.setdefault("monthly", {})
         ym_disp_key = target_ym  # keep the same "YYYYMM" key style already in monthly_long.csv
         monthly[ym_disp_key] = month_total
@@ -393,9 +520,7 @@ def run(ym=None, dry_run=False):
         median_month = statistics.median(vals)
         r["wiki_baseline_12m"] = median_month * 12
         r["median_month_all_lang"] = median_month
-        if (i + 1) % 50 == 0:
-            log(f"  fetched {i + 1}/{n_teams} teams (fails so far: {n_fail})")
-    log(f"pageviews fetch done: {n_teams} teams, {n_fail} had at least one language fetch fail this month")
+    log(f"pageviews done: {n_teams} teams, {n_zero} with zero views this month")
 
     trends_groups = defaultdict(list)
     for r in u:

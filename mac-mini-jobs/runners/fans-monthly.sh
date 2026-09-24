@@ -32,11 +32,22 @@ mini_sync
 
 guarded "self-test monthly_refresh" "$PY" scripts/fans/monthly_refresh.py --self-test
 
-# ~26k requests at ~10 req/s (FANS_MONTHLY_RATE) is 40-60 minutes with
-# Wikimedia 429 backoff on top; the default STEP_TIMEOUT (600s) would kill
-# this step every month, so it is raised for this step alone, the same way
-# metro-rankings.sh raises it for its own long step.
-STEP_TIMEOUT=5400 guarded "monthly pageviews + trends + history + rebuild" \
+# ONE 4.7 GB download, not 26,602 requests. Switched 2026-09-24 (HANDOFF AV/AW)
+# after the per-article path failed its own validation gate. Measured on the mini
+# that day: 5.02 GB and 439M lines streamed in 16.0 minutes, 26,037 of 26,602
+# keys matched, and 24 of 24 checkable values identical to the REST endpoint it
+# replaced. The default STEP_TIMEOUT (600s) would still kill it, so it is raised
+# for this step alone, the same way metro-rankings.sh raises it for its own long
+# step. 3600s is a 3.7x margin on the measured time, which leaves room for a slow
+# transfer day without leaving room for a silent hang.
+#
+# 🔴 THE TRENDS HALF IS INERT ON THIS MACHINE. pytrends is not in the venv, so
+# fetch_trends_for_group() takes its ImportError path, logs "pytrends not
+# installed, skipping (keeping last value)" once per blended group and returns
+# {}. That is fail-open by design and the Wikipedia half is unaffected, but it
+# means /fans keeps whatever trends_index the Windows session last produced. Read
+# the log, not the exit code, to know whether Trends actually refreshed.
+STEP_TIMEOUT=3600 guarded "monthly pageviews + trends + history + rebuild" \
   "$PY" scripts/fans/monthly_refresh.py
 
 commit_paths "Auto: fan attention index monthly refresh" \
