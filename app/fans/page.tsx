@@ -58,6 +58,7 @@ export default function FansPage() {
     globalRank: t.globalRank,
     inFlux: t.inFlux,
     inclusionRule: t.inclusionRule,
+    globalReachPct: t.globalReachPct,
     spikeRatio: t.spikeRatio,
     monthly: t.monthly,
     valueM: t.valueM,

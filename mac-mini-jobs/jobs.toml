@@ -56,6 +56,11 @@
 #   owners-weekly    ADDED 2026-09-12. Goes live on first hand-verified mini run;
 #                    its other runner is a Claude CLOUD scheduled task (not an
 #                    Action), disabled 2026-09-12 and kept as manual fallback.
+#   fans-monthly     ADDED 2026-09-24 (v0.4.1). No prior Action -- mini-only
+#                    from birth, like cfb-sun/cfb-wed/cfb-fri and cricket-champions.
+#                    NOT DRY_RUN-validated on the mini yet (this repo state was
+#                    produced off-mini); validate by hand before its first live
+#                    day-3 slot, same as every job in this file.
 #
 # The four below stay commented until each is DRY_RUN-validated on the mini, one
 # per day, in that order. Uncommenting one without retiring its Action schedule
@@ -516,6 +521,26 @@ command = "run-cricket-monthly.sh"
 # deploy-watch itself the same evening.
 catchup_hours = 20
 timeout_minutes = 20
+
+# --- fans-monthly: v0.4.1, added 2026-09-24. ---------------------------------
+# Fan Attention Index (/fans) monthly refresh: previous month's all-language
+# Wikipedia pageviews for every team, best-effort Trends refresh for the
+# currently-blended groups, append + roll public/data/fans/history/, rebuild
+# fan-attention.json. Day 3 (not day 1, unlike conflicts-monthly/
+# cricket-monthly): those two read data whose upstream source is already
+# final on the 1st; this one is a derived rebuild of OUR OWN dataset and the
+# extra 48h gives Wikimedia's pageviews dumps for the just-completed month
+# time to fully settle before the incremental fetch reads them.
+# See scripts/fans/README.md for the full flow and the annual anchor-refresh
+# / season-rollover maintenance this monthly job does NOT do.
+[[job]]
+id = "fans-monthly"
+label = "Fan Attention Index monthly refresh"
+time = "07:00"
+days = [3]
+command = "runners/fans-monthly.sh"
+catchup_hours = 40                # monthly cadence, same generous room as the other two
+timeout_minutes = 110              # self-test + git + the ~26k-request fetch step (STEP_TIMEOUT=5400s inside the runner)
 
 [[job]]
 id = "cricket-champions"        # no plist; born on the dispatcher 2026-09-19

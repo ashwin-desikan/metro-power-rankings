@@ -31,8 +31,16 @@ from datetime import datetime, timezone
 
 WINDOW_START = "2025-09"
 WINDOW_END = "2026-08"
-VERSION = "v0.3.1"
+VERSION = "v0.4.1"
 METHOD_URL = "/fans/methodology"
+CROSS_SPORT_METHOD = (
+    "v0.4 cross-sport scale: for each league L (each Football league separately; "
+    "the group for every other sport), k_L = sqrt(revenue_usd_m_L / wiki_attention_total_L), "
+    "cross_raw = fan_index_raw x k_L (the geometric mean of a team's within-league wiki-attention "
+    "share and its league's revenue scale). global_score = 100 x cross_raw / max(cross_raw) over all "
+    "teams; global_rank follows. Revenue anchors are Deloitte (Europe's top 5 + WSL), league/federation "
+    "self-reported or reputable-aggregator figures elsewhere -- see anchor_source/anchor_confidence per team."
+)
 
 GROUP_ORDER = [
     "NFL", "NBA", "MLB", "NHL", "Football", "College football",
@@ -133,6 +141,14 @@ def build_json(fan_index_dir, out_path):
             "trends_index": round_sig(to_float(r.get("trends_index")), 2),
             "inclusion_rule": r.get("inclusion_rule") or None,
             "display_name": r.get("display_name") or None,
+            "trends_excluded_reason": r.get("trends_excluded_reason") or None,
+            "anchor_revenue_usd_m": to_float(r.get("anchor_revenue_usd_m")),
+            "anchor_source": r.get("anchor_source") or None,
+            "anchor_confidence": r.get("anchor_confidence") or None,
+            "k_league": round_sig(to_float(r.get("k_league")), 6),
+            "home_langs": r.get("home_langs") or None,
+            "home_views_12m": to_int(r.get("home_views_12m")),
+            "global_reach_pct": round_sig(to_float(r.get("global_reach_pct")), 2),
             # WNBA and Women's football (NWSL + WSL) are grouped under a
             # dedicated "Women's sports" tab on the site, distinct from the
             # source CSV's own category column (which files them under
@@ -156,6 +172,8 @@ def build_json(fan_index_dir, out_path):
         "window": {"start": WINDOW_START, "end": WINDOW_END},
         "version": VERSION,
         "method_url": METHOD_URL,
+        "cross_sport_method": CROSS_SPORT_METHOD,
+        "history_index_url": "/data/fans/history/index.json",
         "groups": groups,
         "residual_eligible_groups": sorted(residual_eligible_groups),
         "teams": teams,

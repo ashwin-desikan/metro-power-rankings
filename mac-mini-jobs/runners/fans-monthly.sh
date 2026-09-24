@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Monthly refresh for the Fan Attention Index (/fans). See jobs.toml id
+# "fans-monthly" and scripts/fans/README.md for the full flow. Same runner
+# idiom as economy-housing.sh: self-test gate, guarded steps, commit_paths --
+# but NO "[vercel skip]" and NO revalidate_ping (see below, both deliberate).
+#
+# scripts/fans/monthly_refresh.py is the whole pipeline in one entry point:
+# fetches the previous completed month's all-language Wikipedia pageviews
+# for every team (scripts/fans/universe_state.json is the persisted roster --
+# the original research pipeline's cache lives outside the repo on Ashwin's
+# own machine and is not reachable from the mini), best-effort refreshes
+# Google Trends for the currently-blended groups (fails open: keeps last
+# month's value on any pytrends error, never blocks the run), appends the
+# month to public/data/fans/history/, rolls the 12-month window, recomputes
+# the blend-rescale and cross-sport score (scripts/fans/
+# league_revenue_anchor.csv), and regenerates public/data/fans/
+# fan-attention.json via csv_to_json.py.
+#
+# NO "[vercel skip]": lib/fanIndex.ts reads fan-attention.json with
+# readFileSync at BUILD time (checked 2026-09-24), not at request time, so
+# unlike every other job in this folder a commit here MUST trigger a real
+# Vercel build or /fans silently keeps serving last month's data forever.
+# revalidate_ping is correspondingly skipped: revalidateTag() only busts the
+# Next.js fetch cache, which a readFileSync page never populates -- the
+# build itself is the only thing that changes what this page serves.
+#
+# Needs nothing from config.env beyond REPO_DIR: no API key (Wikimedia
+# pageviews and Trends are both unauthenticated), no Supabase.
+. "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/_common.sh"
+
+mini_sync
+
+guarded "self-test monthly_refresh" "$PY" scripts/fans/monthly_refresh.py --self-test
+
+# ~26k requests at ~10 req/s (FANS_MONTHLY_RATE) is 40-60 minutes with
+# Wikimedia 429 backoff on top; the default STEP_TIMEOUT (600s) would kill
+# this step every month, so it is raised for this step alone, the same way
+# metro-rankings.sh raises it for its own long step.
+STEP_TIMEOUT=5400 guarded "monthly pageviews + trends + history + rebuild" \
+  "$PY" scripts/fans/monthly_refresh.py
+
+commit_paths "Auto: fan attention index monthly refresh" \
+  scripts/fans/universe_state.json \
+  public/data/fans/fan-attention.json \
+  public/data/fans/history
+
+note "done"

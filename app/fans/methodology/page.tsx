@@ -203,17 +203,63 @@ export default function FansMethodologyPage() {
             leader&apos;s, to one decimal place. That score only compares teams within the same group.
           </p>
           <p>
-            The &quot;All&quot; view instead ranks every team, across every sport, on a single global
-            score, and that global score is anchored to the Wikipedia baseline alone, not the blend:
-            each team&apos;s all-language pageview baseline as a percentage of the single most-watched
-            team&apos;s baseline across every sport in the index, on a plain linear scale. Trends is
-            deliberately left out of the global figure, since Trends is normalised within a group and
-            is not on a comparable scale across groups; pageviews are the one signal collected the
-            same way for every team, in every group, which makes them the only honest basis for a
-            single cross-sport number. The team with the most attention anywhere scores 100.0; a team
-            at half its baseline scores 50.0. Most teams score low on this scale, because most teams
-            draw far less attention than the single biggest team in the index; that is the honest
-            picture of how concentrated global sports attention is, not a flaw in the scale.
+            The &quot;Cross-sport score&quot; shown in the All view, and in each category tab when no
+            group chip is selected, instead ranks every team on a single global score. That score is
+            not the within-group attention figure directly; it is that figure scaled by a per-league
+            factor before teams from different sports are put on the same axis. The full method for
+            that scaling, and why it exists, is the next section. The team with the highest cross-sport
+            score anywhere scores 100.0; a team at half that scores 50.0. Most teams score low on this
+            scale, because most teams draw far less scaled attention than the single biggest team in
+            the index; that is the honest picture of how concentrated cross-sport attention is, not a
+            flaw in the scale. The within-group score above, and the within-league or within-group
+            order it produces, is completely unaffected by any of this: the cross-sport scale only
+            changes how teams from different sports compare to each other, never the ranking of teams
+            against others in their own league or group.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-[var(--text)] mb-2">Comparing across sports</h2>
+          <p>
+            Raw Wikipedia attention overweights football relative to almost everything else, for
+            reasons that have little to do with fandom. A football club is covered by dozens of
+            language editions of Wikipedia, one per country that follows the sport seriously, while a
+            team in a more regionally-concentrated sport might have five or six. Wikipedia is also
+            football&apos;s de facto reference site in a way it is not for US sports, where fans reach
+            first for ESPN, a league&apos;s own site or a stats site rather than an encyclopedia
+            article. Compared purely on raw pageviews, a mid-table European club can out-rank a
+            marquee NFL franchise, not because more people care about the club, but because Wikipedia
+            captures a larger share of the club&apos;s total attention than it captures of the
+            franchise&apos;s.
+          </p>
+          <p>
+            The fix is a per-league scaling factor, k<sub>L</sub>, applied before any cross-sport
+            comparison. For each league L (each Football league counted separately; every other sport
+            grouped by its own group), k<sub>L</sub> = the square root of that league&apos;s total
+            annual revenue divided by its total Wikipedia attention. A team&apos;s cross-sport score is
+            its within-league attention share multiplied by k<sub>L</sub>, so leagues whose fans
+            generate more real-world revenue per unit of Wikipedia attention are scaled up relative to
+            leagues (like top-flight European football) whose Wikipedia footprint already runs ahead of
+            their revenue. Revenue figures come from Deloitte&apos;s Football Money League (Europe&apos;s
+            top 5 leagues plus the WSL), Forbes and Sportico franchise-value reporting, and each
+            league or federation&apos;s own published or reputable-aggregator revenue figures elsewhere.
+            Every team carries an <code>anchor_source</code> naming exactly which figure was used and an
+            <code>anchor_confidence</code> of high, medium or low, so a reader can see how solid the
+            revenue side of that team&apos;s scaling is.
+          </p>
+          <p>
+            This scaling only ever touches the cross-sport comparison. It has no effect on the
+            within-league or within-group order: a team&apos;s rank among its own league or group
+            rivals is set entirely by its share of that league&apos;s or group&apos;s Wikipedia (and,
+            where used, Trends) attention, exactly as described above, before k<sub>L</sub> is ever
+            applied.
+          </p>
+          <p>
+            The Football group (every league in it, including MLS and Liga MX) is Wikipedia-only in
+            this version, with Trends left out entirely: club football team names collide constantly
+            with unrelated high-volume searches, for example MLS&apos;s Chicago Fire against the
+            unrelated television series of the same name, so no Football league&apos;s Trends read
+            can be trusted and none is used.
           </p>
         </section>
 
@@ -256,6 +302,23 @@ export default function FansMethodologyPage() {
         <section>
           <h2 className="text-xl font-bold text-[var(--text)] mb-2">Limits</h2>
           <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <strong className="text-[var(--text)]">Revenue scaling reflects monetisation as well as
+              fandom.</strong> A league&apos;s revenue is shaped by media-rights deals, ticket prices,
+              sponsorship markets and other business factors that are not the same thing as how many
+              people care about it, so the k<sub>L</sub> cross-sport scale carries some of that
+              business-side distortion along with the fandom signal it is meant to correct for.
+            </li>
+            <li>
+              <strong className="text-[var(--text)]">Some revenue anchors are low-confidence
+              estimates.</strong> Every team&apos;s <code>anchor_confidence</code> says how solid its
+              league&apos;s revenue figure is, and several leagues currently sit at medium or low:
+              Argentina&apos;s Liga Profesional, Liga MX, the Primeira Liga, Eredivisie and Süper Lig
+              (whose figures are from the 2021-22 season), NPB, the CFL, the Handball-Bundesliga,
+              SuperLega, the college groups, and the IPL (media-rights revenue only, not the
+              franchises&apos; full commercial revenue). A cross-sport comparison involving any of
+              these leagues should be read with that uncertainty in mind.
+            </li>
             <li>
               <strong className="text-[var(--text)]">Attention is not fandom.</strong> Wikipedia and
               search interest are reference and lookup signals, not ticket-buying or
@@ -321,6 +384,15 @@ export default function FansMethodologyPage() {
               pages, not a resolver error.
             </li>
           </ul>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-[var(--text)] mb-2">Updates and history</h2>
+          <p>
+            The index refreshes monthly, on the 3rd. Each month&apos;s snapshot is kept, starting from
+            January 2024, so a team&apos;s attention, ranking and cross-sport score can be compared
+            month over month rather than only read as a single current figure.
+          </p>
         </section>
 
         <section>

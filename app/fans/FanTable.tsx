@@ -10,7 +10,8 @@ const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const SPIKE_THRESHOLD = 2.5;
 const FOOTBALL_LEAGUES = [
   "Premier League", "Championship", "La Liga", "Bundesliga", "Serie A",
-  "Ligue 1", "Primeira Liga", "Eredivisie", "Süper Lig", "MLS", "Liga MX",
+  "Ligue 1", "Primeira Liga", "Eredivisie", "Scottish Premiership", "Süper Lig",
+  "MLS", "Liga MX", "Brasileirão", "Liga Profesional",
 ];
 const WOMENS_FOOTBALL_LEAGUES = ["NWSL", "WSL"];
 const MAJOR_AMERICAN_GROUPS = ["NFL", "NBA", "MLB", "NHL", "College football", "College basketball"];
@@ -50,6 +51,7 @@ export type FanTableTeam = {
   globalRank: number;
   inFlux: string | null;
   inclusionRule: string | null;
+  globalReachPct: number | null;
   spikeRatio: number;
   monthly: (number | null)[];
   valueM: number | null;
@@ -192,8 +194,9 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
     ...(showLeagueRank
       ? [{ key: "leagueRank", label: "Lg #", right: true, sortable: true, demote: "sm", title: `Rank within ${isFootballTab ? footballLeague : wflLeague}` } as BoardCol]
       : []),
-    { key: "score", label: "Attention", right: true, sortable: true, title: scoped ? "0 to 100, scaled to the top team in its group" : "0 to 100, share of the single most-watched team across all sports" },
+    { key: "score", label: scoped ? "Attention" : "Cross-sport score", right: true, sortable: true, title: scoped ? "0 to 100, scaled to the top team in its group" : "0 to 100, revenue-scaled share of the single most-watched team across all sports" },
     { key: "baseline", label: "Baseline views", right: true, sortable: true, demote: "sm", title: "Median monthly all-language Wikipedia views x 12 (spike-dampened)" },
+    { key: "reach", label: "Global reach", right: true, sortable: true, demote: "sm", title: "Share of Wikipedia views from outside the team's home-market languages." },
     { key: "trend", label: "12mo", right: false, sortable: false, demote: "md", className: "w-24" },
     { key: "value", label: "Valuation", right: true, sortable: true },
     { key: "residual", label: "vs attention", right: true, sortable: true, demote: "sm", title: "Actual valuation vs. what the group's attention-value line predicts; n/a where the group's fit is too weak (R² < 0.4)" },
@@ -217,6 +220,7 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
         leagueRank: showLeagueRank ? -t.rankInLeague : null,
         score,
         baseline: t.wikiBaseline12m,
+        reach: t.globalReachPct,
         value: t.valueM,
         residual: t.residualEligible ? t.residualPct : null,
       },
@@ -228,6 +232,7 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
         ...(showLeagueRank ? [<DataBar key="leagueRank" v={t.rankInLeague} dp={0} />] : []),
         <DataBar key="score" v={score} dp={1} />,
         <DataBar key="baseline" v={t.wikiBaseline12m} format={formatCompact} />,
+        <DataBar key="reach" v={t.globalReachPct} dp={0} suffix="%" />,
         <Sparkline
           key="trend"
           values={t.monthly}
@@ -268,7 +273,7 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
 
       {isAllTab ? (
         <p className="text-xs text-[var(--text-dim)] mb-4">
-          Across sports, teams are ranked on absolute fan attention, not on their standing inside their own league.
+          Across sports, each league's attention is scaled by the size of its market (the geometric mean of its Wikipedia attention and its annual revenue), then shared among its teams by their attention.
         </p>
       ) : null}
 

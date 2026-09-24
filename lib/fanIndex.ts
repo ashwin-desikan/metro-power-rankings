@@ -40,6 +40,7 @@ type RawTeamV03 = {
   in_flux: string | null;
   signal: string;
   inclusion_rule: string | null;
+  global_reach_pct: number | null;
   spike_ratio: number;
   monthly: (number | null)[];
   value_m: number | null;
@@ -102,6 +103,7 @@ export type FanTeamRow = {
   inFlux: string | null;
   signal: string;
   inclusionRule: string | null;
+  globalReachPct: number | null;
   spikeRatio: number;
   monthly: (number | null)[];
   valueM: number | null;
@@ -138,7 +140,8 @@ const DEFAULT_RESIDUAL_ELIGIBLE_GROUPS = ["European football", "Football", "MLB"
 // for the "All football / MLS / Liga MX / <European league>" chip row.
 export const FOOTBALL_LEAGUES = [
   "Premier League", "Championship", "La Liga", "Bundesliga", "Serie A",
-  "Ligue 1", "Primeira Liga", "Eredivisie", "Süper Lig", "MLS", "Liga MX",
+  "Ligue 1", "Primeira Liga", "Eredivisie", "Scottish Premiership", "Süper Lig",
+  "MLS", "Liga MX", "Brasileirão", "Liga Profesional",
 ];
 
 // The two leagues inside the "Women's football" group, for its league
@@ -356,6 +359,7 @@ export function getFanIndex(): FanIndexData {
       inFlux: t.in_flux ?? null,
       signal: t.signal ?? "wiki only",
       inclusionRule: t.inclusion_rule ?? null,
+      globalReachPct: t.global_reach_pct ?? null,
       spikeRatio: t.spike_ratio ?? 0,
       monthly: t.monthly ?? [],
       valueM: t.value_m ?? null,

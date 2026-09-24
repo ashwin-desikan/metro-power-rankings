@@ -19621,3 +19621,18 @@ the probe is a finder inside `detect_issues.py` rather than a job with a runner,
 
 **Notion:** Decisions row added for the receipt rule, verified over REST. Backlog `commits-recent.txt` P2 closed in AR.
 No other queryable state changed by this entry.
+
+## 2026-09-24: cowork (Windows device session) → next session (Fan Attention Index v0.4.1 + monthly job)
+
+Ashwin rejected the v0.3.1 All view (MLS clubs above every NFL team). Root causes: (1) raw all-language Wikipedia structurally overweights football; (2) a rescale bug let the within-group Trends blend inflate a group's total (Chicago Fire 376K wiki ranked above the Patriots at 1.67M; Trends also collided with the TV series). Fixes in v0.4.1:
+- Football group (incl. MLS, Liga MX) is Wikipedia-only; the blend is forced to preserve each group's attention total.
+- Cross-sport score: k_L = sqrt(league revenue / league attention), cross_raw = within-league attention x k_L. Anchors in `scripts/fans/league_revenue_anchor.csv` (Deloitte ARFF 2025, Forbes/Sportico, league reports; confidence per row; weakest: Argentina build-up, Liga MX 2018-19, Primeira/Eredivisie/Süper Lig 2021-22, NPB, CFL, HBL, SuperLega, college proxies, IPL media rights only). Result: Real Madrid #1, Cowboys #10, Lakers #12, no MLS club above the Cowboys.
+- Universe 770: full Primeira Liga, Eredivisie, Süper Lig, Scottish Premiership, Brasileirão, Liga Profesional, membership taken from `public/data/football/live-standings-2026.json` (canonical names), Wikipedia only for QID validation and views. Removed 5 duplicate rows and a wrong-entity Galatasaray.
+- New fields home_views_12m / global_reach_pct (home-market languages vs rest); Global reach column in the UI.
+- Links: Football 253/284. Süper Lig 0/18 because no Turkish clubs exist in the club DB yet; Brasileirão missing Vitória, Remo; Liga Profesional missing 9 smaller clubs.
+
+**Monthly refresh (new):** `mac-mini-jobs/jobs.toml` entry `fans-monthly` (3rd of month, 07:00 UTC) + `runners/fans-monthly.sh` + `scripts/fans/monthly_refresh.py` (self-test passes; NOT yet run on the mini). It fetches last month's pageviews (+ Trends where used), appends `public/data/fans/history/fan-attention-YYYY-MM.json`, rolls the 12-month window, regenerates fan-attention.json and commits WITHOUT [vercel skip] (lib/fanIndex.ts reads at build time). Mini session: pull, check the dispatcher picks it up, dry-run it once, add the Scheduled jobs row verification. Flow and annual anchor refresh documented in `scripts/fans/README.md`.
+
+**History:** an all-language monthly backfill (2023-01 to 2026-08) is running detached on the Windows box (cache %LOCALAPPDATA%\fan_cache\hist_lang); history files will land in a follow-up commit. The EN-only history files in the working tree are superseded and NOT committed.
+
+**Notion:** Backlog row added (activate fans-monthly on the mini), Scheduled jobs row added (fans-monthly, pending activation), Decisions row added (cross-sport revenue anchor), Data sources row added (league revenue anchor CSV).

@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-24",
+    headline: "Fan Attention Index compares sports fairly",
+    items: [
+      "The All view now scales each league by the size of its market, so Real Madrid still leads but the Cowboys, Lakers and Yankees sit among the global elite.",
+      "Every club from the Primeira Liga, Eredivisie, Süper Lig, Scottish Premiership, Brasileirão and Liga Profesional joins the index, 770 teams in all.",
+      "A new Global reach column shows how much of each team's attention comes from outside its home languages.",
+      "The methodology page explains the cross-sport scaling, its sources and its weakest estimates.",
+    ],
+  },
+  {
     date: "2026-09-23",
     headline: "A Fan Attention Index for 660 teams",
     items: [
