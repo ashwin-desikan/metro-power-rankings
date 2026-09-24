@@ -1,5 +1,5 @@
 {
-"generated": "2026-09-24T17:15:07",
+"generated": "2026-09-24T20:24:52",
 "rows": [
 {
 "year": 2026,
@@ -23,6 +23,16 @@
 },
 {
 "year": 2026,
+"team": "Los Angeles Lakers",
+"league": "NBA",
+"value_m": 12500.0,
+"source": "CNBC",
+"method": "transaction",
+"confidence": "high",
+"source_url": "https://www.cnbc.com/2026/08/12/bob-iger-joshua-kushner-buy-los-angeles-lakers-at-a-12-point-5-billion-valuation-source-says.html"
+},
+{
+"year": 2026,
 "team": "New York Giants",
 "league": "NFL",
 "value_m": 12000.0,
@@ -40,6 +50,16 @@
 "method": null,
 "confidence": null,
 "source_url": null
+},
+{
+"year": 2026,
+"team": "Atlanta Falcons",
+"league": "NFL",
+"value_m": 10600.0,
+"source": "CNBC",
+"method": "transaction",
+"confidence": "high",
+"source_url": "https://www.cnbc.com/2026/08/20/arctos-agrees-to-buy-10percent-of-atlanta-falcons-at-10point6-billion-valuation-sources.html"
 },
 {
 "year": 2026,
@@ -103,29 +123,9 @@
 },
 {
 "year": 2026,
-"team": "Los Angeles Lakers",
-"league": "NBA",
-"value_m": 10000.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026",
-"method": null,
-"confidence": null,
-"source_url": null
-},
-{
-"year": 2026,
 "team": "New York Knicks",
 "league": "NBA",
 "value_m": 9850.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026",
-"method": null,
-"confidence": null,
-"source_url": null
-},
-{
-"year": 2026,
-"team": "Atlanta Falcons",
-"league": "NFL",
-"value_m": 9780.0,
 "source": "Sportico, The Most Valuable Sports Franchises 2026",
 "method": null,
 "confidence": null,
@@ -410,6 +410,16 @@
 "method": null,
 "confidence": null,
 "source_url": null
+},
+{
+"year": 2026,
+"team": "Chelsea",
+"league": "England",
+"value_m": 6700.0,
+"source": "CNBC",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://www.cnbc.com/2026/09/17/chelsea-mark-walter-bohely-clearlake-capital.html"
 },
 {
 "year": 2026,
@@ -753,6 +763,16 @@
 },
 {
 "year": 2026,
+"team": "Minnesota Timberwolves",
+"league": "NBA",
+"value_m": 4500.0,
+"source": "MPR News (AP)",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://www.mprnews.org/story/2026/08/21/timberwolves-lynx-coowner-marc-lore-agrees-to-sell-his-controlling-stake"
+},
+{
+"year": 2026,
 "team": "San Francisco Giants",
 "league": "MLB",
 "value_m": 4360.0,
@@ -806,16 +826,6 @@
 "team": "Toronto Maple Leafs",
 "league": "NHL",
 "value_m": 4250.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026",
-"method": null,
-"confidence": null,
-"source_url": null
-},
-{
-"year": 2026,
-"team": "Minnesota Timberwolves",
-"league": "NBA",
-"value_m": 4240.0,
 "source": "Sportico, The Most Valuable Sports Franchises 2026",
 "method": null,
 "confidence": null,
@@ -883,8 +893,8 @@
 },
 {
 "year": 2026,
-"team": "Chelsea",
-"league": "England",
+"team": "Memphis Grizzlies",
+"league": "NBA",
 "value_m": 4000.0,
 "source": "Sportico, The Most Valuable Sports Franchises 2026",
 "method": null,
@@ -893,13 +903,13 @@
 },
 {
 "year": 2026,
-"team": "Memphis Grizzlies",
-"league": "NBA",
+"team": "Los Angeles Angels",
+"league": "MLB",
 "value_m": 4000.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026",
-"method": null,
-"confidence": null,
-"source_url": null
+"source": "Sportico",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://www.sportico.com/business/team-sales/stan-kroenke-buy-los-angeles-angels-record-4-billion/"
 },
 {
 "year": 2026,
@@ -1046,16 +1056,6 @@
 "team": "Toronto Blue Jays",
 "league": "MLB",
 "value_m": 2900.0,
-"source": "Sportico, The Most Valuable Sports Franchises 2026",
-"method": null,
-"confidence": null,
-"source_url": null
-},
-{
-"year": 2026,
-"team": "Los Angeles Angels",
-"league": "MLB",
-"value_m": 2780.0,
 "source": "Sportico, The Most Valuable Sports Franchises 2026",
 "method": null,
 "confidence": null,
@@ -1783,6 +1783,26 @@
 },
 {
 "year": 2025,
+"team": "Florida",
+"league": "College",
+"value_m": 975.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2022,
+"team": "Olympique Lyonnais",
+"league": "France",
+"value_m": 972.0,
+"source": "Wikipedia (club page, Eagle Football deal)",
+"method": "transaction",
+"confidence": "high",
+"source_url": "https://en.wikipedia.org/wiki/Olympique_Lyonnais"
+},
+{
+"year": 2025,
 "team": "Flamengo",
 "league": "Brasileirao Serie A",
 "value_m": 944.0,
@@ -1813,6 +1833,16 @@
 },
 {
 "year": 2025,
+"team": "Kentucky",
+"league": "College",
+"value_m": 910.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
 "team": "Aston Villa",
 "league": "England",
 "value_m": 900.0,
@@ -1833,6 +1863,36 @@
 },
 {
 "year": 2025,
+"team": "Oregon",
+"league": "College",
+"value_m": 880.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2026,
+"team": "VfB Stuttgart",
+"league": "Germany",
+"value_m": 880.0,
+"source": "2026 club valuation list as tabulated on Wikipedia",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://en.wikipedia.org/wiki/Forbes_list_of_the_most_valuable_football_clubs"
+},
+{
+"year": 2025,
+"team": "Wisconsin",
+"league": "College",
+"value_m": 875.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
 "team": "Brighton & Hove Albion",
 "league": "England",
 "value_m": 860.0,
@@ -1840,6 +1900,16 @@
 "method": "published",
 "confidence": "high",
 "source_url": "https://www.forbes.com/sites/justinteitelbaum/2025/05/30/the-worlds-most-valuable-soccer-teams-2025/"
+},
+{
+"year": 2025,
+"team": "Clemson",
+"league": "College",
+"value_m": 860.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2026,
@@ -1893,6 +1963,26 @@
 },
 {
 "year": 2025,
+"team": "Iowa",
+"league": "College",
+"value_m": 835.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Illinois",
+"league": "College",
+"value_m": 815.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
 "team": "Palmeiras",
 "league": "Brasileirao Serie A",
 "value_m": 814.0,
@@ -1900,6 +1990,16 @@
 "method": "published",
 "confidence": "high",
 "source_url": "https://www.riotimesonline.com/flamengo-crosses-the-r5-billion-line-as-brazils-club-valuations-surge/"
+},
+{
+"year": 2025,
+"team": "South Carolina",
+"league": "College",
+"value_m": 812.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2025,
@@ -1912,6 +2012,26 @@
 "source_url": "https://www.forbes.com/sites/justinteitelbaum/2025/05/30/the-worlds-most-valuable-soccer-teams-2025/"
 },
 {
+"year": 2025,
+"team": "Auburn",
+"league": "College",
+"value_m": 810.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Stanford",
+"league": "College",
+"value_m": 805.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
 "year": 2026,
 "team": "Columbus Crew",
 "league": "United States",
@@ -1920,6 +2040,26 @@
 "method": null,
 "confidence": null,
 "source_url": null
+},
+{
+"year": 2025,
+"team": "Arkansas",
+"league": "College",
+"value_m": 800.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Washington",
+"league": "College",
+"value_m": 795.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2026,
@@ -1952,6 +2092,16 @@
 "source_url": null
 },
 {
+"year": 2025,
+"team": "Michigan State",
+"league": "College",
+"value_m": 780.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
 "year": 2026,
 "team": "CF América",
 "league": "Mexico",
@@ -1960,6 +2110,16 @@
 "method": null,
 "confidence": null,
 "source_url": null
+},
+{
+"year": 2025,
+"team": "Indiana",
+"league": "College",
+"value_m": 775.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2026,
@@ -1972,6 +2132,26 @@
 "source_url": null
 },
 {
+"year": 2025,
+"team": "Florida State",
+"league": "College",
+"value_m": 765.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Miami (FL)",
+"league": "College",
+"value_m": 760.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
 "year": 2026,
 "team": "Charlotte FC",
 "league": "United States",
@@ -1980,6 +2160,16 @@
 "method": null,
 "confidence": null,
 "source_url": null
+},
+{
+"year": 2025,
+"team": "Mississippi",
+"league": "College",
+"value_m": 755.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2026,
@@ -2112,6 +2302,26 @@
 "source_url": null
 },
 {
+"year": 2025,
+"team": "Missouri",
+"league": "College",
+"value_m": 700.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Minnesota",
+"league": "College",
+"value_m": 695.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
 "year": 2026,
 "team": "Chicago Fire",
 "league": "United States",
@@ -2120,6 +2330,16 @@
 "method": null,
 "confidence": null,
 "source_url": null
+},
+{
+"year": 2025,
+"team": "Duke",
+"league": "College",
+"value_m": 690.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2026,
@@ -2150,6 +2370,16 @@
 "method": null,
 "confidence": null,
 "source_url": null
+},
+{
+"year": 2025,
+"team": "Fukuoka SoftBank Hawks",
+"league": "NPB",
+"value_m": 679.0,
+"source": "Sportico Hawks revenue vs MLB clubs",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://www.sportico.com/leagues/baseball/2026/japan-softbank-hawks-revenue-mlb-comparison-npb-1234938485/"
 },
 {
 "year": 2026,
@@ -2183,6 +2413,16 @@
 },
 {
 "year": 2025,
+"team": "Purdue",
+"league": "College",
+"value_m": 670.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
 "team": "Leeds United",
 "league": "England",
 "value_m": 667.0,
@@ -2213,6 +2453,36 @@
 },
 {
 "year": 2025,
+"team": "Vanderbilt",
+"league": "College",
+"value_m": 655.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "North Carolina",
+"league": "College",
+"value_m": 650.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Louisville",
+"league": "College",
+"value_m": 645.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
 "team": "Atletico Mineiro",
 "league": "Brasileirao Serie A",
 "value_m": 636.0,
@@ -2230,6 +2500,26 @@
 "method": null,
 "confidence": null,
 "source_url": null
+},
+{
+"year": 2025,
+"team": "Mississippi State",
+"league": "College",
+"value_m": 625.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Kansas",
+"league": "College",
+"value_m": 620.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2026,
@@ -2262,6 +2552,16 @@
 "source_url": null
 },
 {
+"year": 2025,
+"team": "Virginia",
+"league": "College",
+"value_m": 610.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
 "year": 2026,
 "team": "Lazio",
 "league": "Italy",
@@ -2290,6 +2590,16 @@
 "method": "published",
 "confidence": "high",
 "source_url": "https://www.sportico.com/valuations/teams/2026/wnba-team-values-2026-valkyries-liberty-fever-1234891620/"
+},
+{
+"year": 2025,
+"team": "Oklahoma State",
+"league": "College",
+"value_m": 600.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2026,
@@ -2322,6 +2632,26 @@
 "source_url": null
 },
 {
+"year": 2025,
+"team": "Baylor",
+"league": "College",
+"value_m": 585.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "North Carolina State",
+"league": "College",
+"value_m": 584.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
 "year": 2026,
 "team": "Real Salt Lake",
 "league": "United States",
@@ -2330,6 +2660,16 @@
 "method": null,
 "confidence": null,
 "source_url": null
+},
+{
+"year": 2025,
+"team": "Northwestern",
+"league": "College",
+"value_m": 580.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2025,
@@ -2343,6 +2683,16 @@
 },
 {
 "year": 2025,
+"team": "Georgia Tech",
+"league": "College",
+"value_m": 577.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
 "team": "Brentford",
 "league": "England",
 "value_m": 575.0,
@@ -2353,6 +2703,36 @@
 },
 {
 "year": 2025,
+"team": "Iowa State",
+"league": "College",
+"value_m": 575.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Colorado",
+"league": "College",
+"value_m": 574.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Pittsburgh",
+"league": "College",
+"value_m": 572.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
 "team": "Real Sociedad",
 "league": "Spain",
 "value_m": 571.0,
@@ -2360,6 +2740,26 @@
 "method": "published",
 "confidence": "high",
 "source_url": "https://footballbenchmark.com/documents/d/guest/football-benchmark-the-european-elite-2025"
+},
+{
+"year": 2025,
+"team": "Texas Tech",
+"league": "College",
+"value_m": 570.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "TCU",
+"league": "College",
+"value_m": 568.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2026,
@@ -2392,6 +2792,26 @@
 "source_url": "https://footballbenchmark.com/documents/d/guest/football-benchmark-the-european-elite-2025"
 },
 {
+"year": 2025,
+"team": "Virginia Tech",
+"league": "College",
+"value_m": 564.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2026,
+"team": "SS Lazio",
+"league": "Italy",
+"value_m": 561.0,
+"source": "Football Benchmark EV via Radio Marte",
+"method": "published",
+"confidence": "high",
+"source_url": "https://www.radiomarte.it/football-benchmark-il-napoli-vale-967-milioni-quarto-club-di-a/"
+},
+{
 "year": 2026,
 "team": "New England Revolution",
 "league": "United States",
@@ -2410,6 +2830,16 @@
 "method": "published",
 "confidence": "high",
 "source_url": "https://www.sportico.com/valuations/teams/2026/wnba-team-values-2026-valkyries-liberty-fever-1234891620/"
+},
+{
+"year": 2025,
+"team": "Olympique de Marseille",
+"league": "France",
+"value_m": 558.0,
+"source": "Deloitte Football Money League (Wikipedia)",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://en.wikipedia.org/wiki/Deloitte_Football_Money_League"
 },
 {
 "year": 2025,
@@ -2442,6 +2872,16 @@
 "source_url": "https://footballbenchmark.com/documents/d/guest/football-benchmark-the-european-elite-2025"
 },
 {
+"year": 2025,
+"team": "UCLA",
+"league": "College",
+"value_m": 539.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
 "year": 2023,
 "team": "Sevilla FC",
 "league": "Spain",
@@ -2460,6 +2900,36 @@
 "method": "published",
 "confidence": "high",
 "source_url": "https://footballbenchmark.com/documents/d/guest/football-benchmark-the-european-elite-2025"
+},
+{
+"year": 2025,
+"team": "Maryland",
+"league": "College",
+"value_m": 534.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Boston College",
+"league": "College",
+"value_m": 530.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Arizona",
+"league": "College",
+"value_m": 529.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2025,
@@ -2493,6 +2963,36 @@
 },
 {
 "year": 2025,
+"team": "Rutgers",
+"league": "College",
+"value_m": 506.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "BYU",
+"league": "College",
+"value_m": 500.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Bayer Leverkusen",
+"league": "Germany",
+"value_m": 497.0,
+"source": "Wikipedia (club page; Bayer AG withholds accounts)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://de.wikipedia.org/wiki/Bayer_04_Leverkusen"
+},
+{
+"year": 2025,
 "team": "SC Internacional",
 "league": "Brasileirao Serie A",
 "value_m": 489.0,
@@ -2500,6 +3000,26 @@
 "method": "speculative",
 "confidence": "medium",
 "source_url": "https://www.sportsvalue.com.br/wp-content/uploads/2026/01/Valuation-TOP-30-Teams-Brazil-6th.-edition.pdf"
+},
+{
+"year": 2025,
+"team": "Bologna FC",
+"league": "Italy",
+"value_m": 484.0,
+"source": "Calcio e Finanza Serie A revenue ranking 2024-25",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://www.calcioefinanza.it/2026/02/02/serie-a-classifica-ricavi-2024-2025-inter-juventus-milan/"
+},
+{
+"year": 2025,
+"team": "West Virginia",
+"league": "College",
+"value_m": 481.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2026,
@@ -2532,6 +3052,26 @@
 "source_url": null
 },
 {
+"year": 2025,
+"team": "Syracuse",
+"league": "College",
+"value_m": 452.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Utah",
+"league": "College",
+"value_m": 451.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
 "year": 2026,
 "team": "Vancouver Whitecaps FC",
 "league": "United States",
@@ -2553,13 +3093,13 @@
 },
 {
 "year": 2025,
-"team": "Bayer Leverkusen",
-"league": "Germany",
-"value_m": 444.0,
-"source": "Brand Finance Football 50 2025",
-"method": "speculative",
-"confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"team": "Kansas State",
+"league": "College",
+"value_m": 435.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2026,
@@ -2570,6 +3110,16 @@
 "method": null,
 "confidence": null,
 "source_url": null
+},
+{
+"year": 2025,
+"team": "Arizona State",
+"league": "College",
+"value_m": 430.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2026,
@@ -2602,6 +3152,16 @@
 "source_url": null
 },
 {
+"year": 2025,
+"team": "Wake Forest",
+"league": "College",
+"value_m": 405.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
 "year": 2026,
 "team": "Los Angeles Sparks",
 "league": "WNBA",
@@ -2622,6 +3182,16 @@
 "source_url": "https://www.sportsvalue.com.br/wp-content/uploads/2026/01/Valuation-TOP-30-Teams-Brazil-6th.-edition.pdf"
 },
 {
+"year": 2026,
+"team": "Fenerbahçe SK",
+"league": "Turkey",
+"value_m": 395.0,
+"source": "Fenerbahce Futbol AS market cap, StockAnalysis",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://stockanalysis.com/quote/ist/FENER/market-cap/"
+},
+{
 "year": 2025,
 "team": "Fluminense",
 "league": "Brasileirao Serie A",
@@ -2630,6 +3200,46 @@
 "method": "speculative",
 "confidence": "medium",
 "source_url": "https://www.sportsvalue.com.br/wp-content/uploads/2026/01/Valuation-TOP-30-Teams-Brazil-6th.-edition.pdf"
+},
+{
+"year": 2022,
+"team": "Sporting Braga",
+"league": "Portugal",
+"value_m": 389.0,
+"source": "QSI acquires 21.67% stake in Braga, Wikipedia S.C. Braga",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://en.wikipedia.org/wiki/S.C._Braga"
+},
+{
+"year": 2024,
+"team": "TSG Hoffenheim",
+"league": "Germany",
+"value_m": 385.0,
+"source": "Rhein-Neckar-Zeitung, TSG Hoffenheim revenue report",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.rnz.de/politik/wirtschaft-regional_artikel,-TSG-Hoffenheim-Hoffenheim-steigert-Umsatz-auf-178-Millionen-Euro-_arid,1241471.html"
+},
+{
+"year": 2025,
+"team": "SMU",
+"league": "College",
+"value_m": 385.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "California",
+"league": "College",
+"value_m": 370.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2026,
@@ -2682,6 +3292,26 @@
 "source_url": "https://www.sportico.com/valuations/teams/2026/nwsl-team-values-2026-angel-city-1234886336/"
 },
 {
+"year": 2025,
+"team": "Athletic Bilbao",
+"league": "Spain",
+"value_m": 335.0,
+"source": "Cronica Global LaLiga budgets 2024-25",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://cronicaglobal.elespanol.com/culemania/palco/20250213/todos-los-presupuestos-de-liga-primera-division/923657741_0.html"
+},
+{
+"year": 2024,
+"team": "Yomiuri Giants",
+"league": "NPB",
+"value_m": 333.0,
+"source": "Real Sports world team revenue ranking",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://real-sports.jp/page/articles/279724464336274589/"
+},
+{
 "year": 2026,
 "team": "Dallas Wings",
 "league": "WNBA",
@@ -2703,6 +3333,16 @@
 },
 {
 "year": 2025,
+"team": "Borussia Monchengladbach",
+"league": "Germany",
+"value_m": 324.0,
+"source": "Wikipedia (club page)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://de.wikipedia.org/wiki/Borussia_M%C3%B6nchengladbach"
+},
+{
+"year": 2025,
 "team": "Red Bull Bragantino",
 "league": "Brasileirao Serie A",
 "value_m": 324.0,
@@ -2710,6 +3350,16 @@
 "method": "speculative",
 "confidence": "medium",
 "source_url": "https://www.sportsvalue.com.br/wp-content/uploads/2026/01/Valuation-TOP-30-Teams-Brazil-6th.-edition.pdf"
+},
+{
+"year": 2026,
+"team": "Chicago Sky",
+"league": "WNBA",
+"value_m": 320.0,
+"source": "Sportico WNBA Team Values 2026",
+"method": "published",
+"confidence": "high",
+"source_url": "https://www.sportico.com/valuations/teams/2026/wnba-team-values-2026-valkyries-liberty-fever-1234891620/"
 },
 {
 "year": 2025,
@@ -2722,6 +3372,66 @@
 "source_url": "https://www.sportico.com/valuations/teams/2026/nwsl-team-values-2026-angel-city-1234886336/"
 },
 {
+"year": 2026,
+"team": "Washington Mystics",
+"league": "WNBA",
+"value_m": 310.0,
+"source": "Sportico WNBA Team Values 2026",
+"method": "published",
+"confidence": "high",
+"source_url": "https://www.sportico.com/valuations/teams/2026/wnba-team-values-2026-valkyries-liberty-fever-1234891620/"
+},
+{
+"year": 2025,
+"team": "Villarreal CF",
+"league": "Spain",
+"value_m": 309.0,
+"source": "Cronica Global LaLiga budgets 2024-25",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://cronicaglobal.elespanol.com/culemania/palco/20250213/todos-los-presupuestos-de-liga-primera-division/923657741_0.html"
+},
+{
+"year": 2022,
+"team": "Southampton",
+"league": "England",
+"value_m": 309.0,
+"source": "Sport Republic Southampton takeover, Inside World Football",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://www.insideworldfootball.com/2022/01/05/saints-valued-250m-sports-republic-takes-first-big-step-building-global-empire/"
+},
+{
+"year": 2024,
+"team": "St. John's",
+"league": "College",
+"value_m": 309.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2025,
+"team": "VfL Wolfsburg",
+"league": "Germany",
+"value_m": 302.0,
+"source": "Wikipedia (club page)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://de.wikipedia.org/wiki/VfL_Wolfsburg"
+},
+{
+"year": 2026,
+"team": "AS Monaco",
+"league": "France",
+"value_m": 302.0,
+"source": "le11hdf.fr citing Sportune budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://le11hdf.fr/ligue-1-budgets-saison-2025-2026/"
+},
+{
 "year": 2025,
 "team": "Vasco da Gama",
 "league": "Brasileirao Serie A",
@@ -2732,24 +3442,164 @@
 "source_url": "https://www.sportsvalue.com.br/wp-content/uploads/2026/01/Valuation-TOP-30-Teams-Brazil-6th.-edition.pdf"
 },
 {
-"year": 2025,
-"team": "RB Leipzig",
-"league": "Germany",
-"value_m": 276.0,
-"source": "Brand Finance Football 50 2025",
-"method": "speculative",
-"confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"year": 2026,
+"team": "Atlanta Dream",
+"league": "WNBA",
+"value_m": 280.0,
+"source": "Sportico WNBA Team Values 2026",
+"method": "published",
+"confidence": "high",
+"source_url": "https://www.sportico.com/valuations/teams/2026/wnba-team-values-2026-valkyries-liberty-fever-1234891620/"
 },
 {
 "year": 2025,
-"team": "SSC Napoli",
-"league": "Italy",
-"value_m": 259.0,
-"source": "Brand Finance Football 50 2025",
+"team": "Cincinnati",
+"league": "College",
+"value_m": 280.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2024,
+"team": "Villanova",
+"league": "College",
+"value_m": 274.0,
+"source": "College Factual EADA summary",
 "method": "speculative",
 "confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2017,
+"team": "Hanshin Tigers",
+"league": "NPB",
+"value_m": 273.0,
+"source": "Digital Dokusho NPB revenue ranking",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.digital-dokusho.jp/industry/professional-baseball/"
+},
+{
+"year": 2024,
+"team": "Navy Midshipmen football",
+"league": "College",
+"value_m": 272.0,
+"source": "Sportico Army-Navy financial report",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportico.com/business/finance/2024/army-navy-game-money-financials-1234820061/"
+},
+{
+"year": 2020,
+"team": "River Plate",
+"league": "Argentina",
+"value_m": 270.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
+},
+{
+"year": 2025,
+"team": "San Diego State Aztecs football",
+"league": "College",
+"value_m": 270.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Torino FC",
+"league": "Italy",
+"value_m": 265.0,
+"source": "Calcio e Finanza (Torino bilancio 2025)",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://www.calcioefinanza.it/2026/04/17/torino-bilancio-2025-fatturato-costi-risultato-netto/"
+},
+{
+"year": 2024,
+"team": "Tulane Green Wave",
+"league": "College",
+"value_m": 265.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2025,
+"team": "Union Berlin",
+"league": "Germany",
+"value_m": 264.0,
+"source": "Wikipedia (club page, cites 2021-22 accounts)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://de.wikipedia.org/wiki/1._FC_Union_Berlin"
+},
+{
+"year": 2024,
+"team": "Memphis Tigers football",
+"league": "College",
+"value_m": 263.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2024,
+"team": "Memphis Tigers",
+"league": "College",
+"value_m": 263.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2025,
+"team": "Central Florida",
+"league": "College",
+"value_m": 262.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2024,
+"team": "Udinese",
+"league": "Italy",
+"value_m": 260.0,
+"source": "Udinese 2023-24 bilancio (Calcio e Finanza)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.calcioefinanza.it/2024/11/21/bilancio-udinese-2024-ricavi-e-costi/"
+},
+{
+"year": 2026,
+"team": "OGC Nice",
+"league": "France",
+"value_m": 259.0,
+"source": "le11hdf.fr citing Sportune budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://le11hdf.fr/ligue-1-budgets-saison-2025-2026/"
+},
+{
+"year": 2025,
+"team": "Arsenal Women",
+"league": "WSL",
+"value_m": 257.0,
+"source": "Guardian WSL club finances (revenue), Chelsea multiple applied",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.theguardian.com/football/2026/aug/20/womens-super-league-finances-club-by-club-breakdown-verdict"
 },
 {
 "year": 2025,
@@ -2760,6 +3610,216 @@
 "method": "speculative",
 "confidence": "medium",
 "source_url": "https://www.sportsvalue.com.br/wp-content/uploads/2026/01/Valuation-TOP-30-Teams-Brazil-6th.-edition.pdf"
+},
+{
+"year": 2025,
+"team": "Chelsea Women",
+"league": "WSL",
+"value_m": 254.0,
+"source": "Wikipedia Chelsea FC Women (Ohanian stake sale)",
+"method": "transaction",
+"confidence": "high",
+"source_url": "https://en.wikipedia.org/wiki/Chelsea_F.C._Women"
+},
+{
+"year": 2024,
+"team": "Army Black Knights football",
+"league": "College",
+"value_m": 254.0,
+"source": "Sportico Army-Navy financial report",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportico.com/business/finance/2024/army-navy-game-money-financials-1234820061/"
+},
+{
+"year": 2017,
+"team": "Hiroshima Toyo Carp",
+"league": "NPB",
+"value_m": 251.0,
+"source": "Digital Dokusho NPB revenue ranking",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.digital-dokusho.jp/industry/professional-baseball/"
+},
+{
+"year": 2025,
+"team": "Connecticut",
+"league": "College",
+"value_m": 249.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2024,
+"team": "Liberty Flames",
+"league": "College",
+"value_m": 248.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2025,
+"team": "SC Freiburg",
+"league": "Germany",
+"value_m": 238.0,
+"source": "Wikipedia (club page)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://de.wikipedia.org/wiki/SC_Freiburg"
+},
+{
+"year": 2026,
+"team": "RC Strasbourg",
+"league": "France",
+"value_m": 238.0,
+"source": "le11hdf.fr citing Sportune budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://le11hdf.fr/ligue-1-budgets-saison-2025-2026/"
+},
+{
+"year": 2026,
+"team": "LOSC Lille",
+"league": "France",
+"value_m": 238.0,
+"source": "le11hdf.fr citing Sportune budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://le11hdf.fr/ligue-1-budgets-saison-2025-2026/"
+},
+{
+"year": 2026,
+"team": "Stade Rennais",
+"league": "France",
+"value_m": 238.0,
+"source": "le11hdf.fr citing Sportune budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://le11hdf.fr/ligue-1-budgets-saison-2025-2026/"
+},
+{
+"year": 2024,
+"team": "Providence",
+"league": "College",
+"value_m": 235.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2024,
+"team": "Georgetown",
+"league": "College",
+"value_m": 234.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2025,
+"team": "US Lecce",
+"league": "Italy",
+"value_m": 233.0,
+"source": "Calcio e Finanza (Lecce bilancio 2025)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.calcioefinanza.it/2026/01/23/lecce-bilancio-2025-fatturato-utile-plusvalenze/"
+},
+{
+"year": 2025,
+"team": "Celta Vigo",
+"league": "Spain",
+"value_m": 231.0,
+"source": "Cronica Global LaLiga budgets 2024-25",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://cronicaglobal.elespanol.com/culemania/palco/20250213/todos-los-presupuestos-de-liga-primera-division/923657741_0.html"
+},
+{
+"year": 2026,
+"team": "Sporting Clube de Portugal",
+"league": "Portugal",
+"value_m": 229.0,
+"source": "Sporting CP Futebol SAD market cap, StockAnalysis",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://stockanalysis.com/quote/eli/SCP/market-cap/"
+},
+{
+"year": 2025,
+"team": "Atlas",
+"league": "Mexico",
+"value_m": 225.0,
+"source": "Infobae analyst estimate on Atlas sale",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.infobae.com/mexico/deportes/2025/07/15/cuanto-vale-el-club-atlas-equipo-que-puso-a-la-venta-grupo-orlegi/"
+},
+{
+"year": 2018,
+"team": "Yokohama DeNA BayStars",
+"league": "NPB",
+"value_m": 225.0,
+"source": "Digital Dokusho NPB revenue ranking",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.digital-dokusho.jp/industry/professional-baseball/"
+},
+{
+"year": 2024,
+"team": "Colorado State Rams",
+"league": "College",
+"value_m": 223.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2023,
+"team": "EC Bahia",
+"league": "Brasileirao Serie A",
+"value_m": 222.0,
+"source": "City Football Group completes Bahia takeover, Front Office Sports",
+"method": "transaction",
+"confidence": "high",
+"source_url": "https://frontofficesports.com/city-football-group-completes-200-million-takeover-of-brazilian-club-bahia/"
+},
+{
+"year": 2025,
+"team": "Houston",
+"league": "College",
+"value_m": 222.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Boise State Broncos football",
+"league": "College",
+"value_m": 221.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2025,
+"team": "Boise State Broncos",
+"league": "College",
+"value_m": 221.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
 },
 {
 "year": 2026,
@@ -2773,13 +3833,33 @@
 },
 {
 "year": 2025,
-"team": "Olympique de Marseille",
-"league": "France",
-"value_m": 213.0,
-"source": "Brand Finance Football 50 2025",
+"team": "Werder Bremen",
+"league": "Germany",
+"value_m": 216.0,
+"source": "Wikipedia (club page)",
 "method": "speculative",
 "confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"source_url": "https://de.wikipedia.org/wiki/SV_Werder_Bremen"
+},
+{
+"year": 2024,
+"team": "Fresno State Bulldogs football",
+"league": "College",
+"value_m": 216.0,
+"source": "USA Today NCAA finances via SJV Sun Mountain West comparison",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://sjvsun.com/sports/fresno-states-athletic-revenue-above-average-in-the-mountain-west/"
+},
+{
+"year": 2025,
+"team": "Valencia CF",
+"league": "Spain",
+"value_m": 214.0,
+"source": "Cronica Global LaLiga budgets 2024-25",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://cronicaglobal.elespanol.com/culemania/palco/20250213/todos-los-presupuestos-de-liga-primera-division/923657741_0.html"
 },
 {
 "year": 2025,
@@ -2792,6 +3872,16 @@
 "source_url": "https://www.sportico.com/valuations/teams/2026/nwsl-team-values-2026-angel-city-1234886336/"
 },
 {
+"year": 2026,
+"team": "Besiktas JK",
+"league": "Turkey",
+"value_m": 201.0,
+"source": "Besiktas Futbol Yatirimlari market cap, StockAnalysis",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://stockanalysis.com/quote/ist/BJKAS/market-cap/"
+},
+{
 "year": 2025,
 "team": "San Diego Wave",
 "league": "NWSL",
@@ -2802,6 +3892,56 @@
 "source_url": "https://www.sportico.com/valuations/teams/2026/nwsl-team-values-2026-angel-city-1234886336/"
 },
 {
+"year": 2026,
+"team": "Club León",
+"league": "Mexico",
+"value_m": 200.0,
+"source": "Club León sale in negotiation",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://www.elimparcial.com/deporte/2026/02/19/grupo-pachuca-tendria-un-nuevo-comprador-para-el-club-leon/"
+},
+{
+"year": 2022,
+"team": "Necaxa",
+"league": "Mexico",
+"value_m": 200.0,
+"source": "Sportico Necaxa investor valuation",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://www.sportico.com/business/sales/2022/club-necaxa-ligamx-investors-1234666427/"
+},
+{
+"year": 2024,
+"team": "Buffalo Bulls football",
+"league": "College",
+"value_m": 200.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2020,
+"team": "Boca Juniors",
+"league": "Argentina",
+"value_m": 199.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
+},
+{
+"year": 2024,
+"team": "Florida Atlantic",
+"league": "College",
+"value_m": 197.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
 "year": 2025,
 "team": "Washington Spirit",
 "league": "NWSL",
@@ -2810,6 +3950,36 @@
 "method": "published",
 "confidence": "high",
 "source_url": "https://www.sportico.com/valuations/teams/2026/nwsl-team-values-2026-angel-city-1234886336/"
+},
+{
+"year": 2024,
+"team": "Utah State Aggies football",
+"league": "College",
+"value_m": 193.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2024,
+"team": "Gonzaga",
+"league": "College",
+"value_m": 193.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2024,
+"team": "DePaul",
+"league": "College",
+"value_m": 191.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
 },
 {
 "year": 2025,
@@ -2823,13 +3993,73 @@
 },
 {
 "year": 2025,
-"team": "Borussia Monchengladbach",
-"league": "Germany",
-"value_m": 176.0,
-"source": "Brand Finance Football 50 2025",
+"team": "UNLV Rebels football",
+"league": "College",
+"value_m": 190.0,
+"source": "CNBC Official College Sports Valuations 2025",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://www.athleticbusiness.com/operations/budgeting/article/15814135/report-15-college-athletics-programs-valued-at-over-1b"
+},
+{
+"year": 2024,
+"team": "Coastal Carolina Chanticleers",
+"league": "College",
+"value_m": 188.0,
+"source": "College Factual EADA summary",
 "method": "speculative",
 "confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2026,
+"team": "Portland Thorns FC",
+"league": "NWSL",
+"value_m": 186.0,
+"source": "Sportico NWSL Team Values 2026",
+"method": "published",
+"confidence": "high",
+"source_url": "https://www.sportico.com/valuations/teams/2026/nwsl-team-values-2026-angel-city-1234886336/"
+},
+{
+"year": 2017,
+"team": "Tohoku Rakuten Golden Eagles",
+"league": "NPB",
+"value_m": 184.0,
+"source": "Digital Dokusho NPB revenue ranking",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.digital-dokusho.jp/industry/professional-baseball/"
+},
+{
+"year": 2020,
+"team": "Independiente",
+"league": "Argentina",
+"value_m": 182.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
+},
+{
+"year": 2025,
+"team": "RCD Espanyol",
+"league": "Spain",
+"value_m": 179.0,
+"source": "Cronica Global LaLiga budgets 2024-25",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://cronicaglobal.elespanol.com/culemania/palco/20250213/todos-los-presupuestos-de-liga-primera-division/923657741_0.html"
+},
+{
+"year": 2024,
+"team": "Marquette",
+"league": "College",
+"value_m": 178.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
 },
 {
 "year": 2025,
@@ -2842,24 +4072,124 @@
 "source_url": "https://www.sportico.com/valuations/teams/2026/nwsl-team-values-2026-angel-city-1234886336/"
 },
 {
-"year": 2025,
-"team": "Athletic Bilbao",
-"league": "Spain",
-"value_m": 172.0,
-"source": "Spanish teams on top: Brand Finance releases 2025 ranking of the 50 most valuable football brands",
+"year": 2024,
+"team": "Dayton Flyers",
+"league": "College",
+"value_m": 175.0,
+"source": "College Factual EADA summary",
 "method": "speculative",
 "confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2020,
+"team": "Santos Laguna",
+"league": "Mexico",
+"value_m": 174.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
 },
 {
 "year": 2025,
-"team": "SC Freiburg",
-"league": "Germany",
-"value_m": 167.0,
-"source": "Brand Finance Football 50 2025",
+"team": "CA Osasuna",
+"league": "Spain",
+"value_m": 173.0,
+"source": "Cronica Global LaLiga budgets 2024-25",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://cronicaglobal.elespanol.com/culemania/palco/20250213/todos-los-presupuestos-de-liga-primera-division/923657741_0.html"
+},
+{
+"year": 2024,
+"team": "Louisiana Ragin Cajuns football",
+"league": "College",
+"value_m": 172.0,
+"source": "College Factual EADA summary",
 "method": "speculative",
 "confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2026,
+"team": "OL Reign (now Seattle Reign FC)",
+"league": "NWSL",
+"value_m": 168.0,
+"source": "Sportico NWSL Team Values 2026",
+"method": "published",
+"confidence": "high",
+"source_url": "https://www.sportico.com/valuations/teams/2026/nwsl-team-values-2026-angel-city-1234886336/"
+},
+{
+"year": 2024,
+"team": "Creighton",
+"league": "College",
+"value_m": 164.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2025,
+"team": "Deportivo Alaves",
+"league": "Spain",
+"value_m": 164.0,
+"source": "Cronica Global LaLiga budgets 2024-25",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://cronicaglobal.elespanol.com/culemania/palco/20250213/todos-los-presupuestos-de-liga-primera-division/923657741_0.html"
+},
+{
+"year": 2026,
+"team": "Trabzonspor",
+"league": "Turkey",
+"value_m": 163.0,
+"source": "Trabzonspor Sportif market cap, StockAnalysis",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://stockanalysis.com/quote/ist/TSPOR/market-cap/"
+},
+{
+"year": 2024,
+"team": "VCU",
+"league": "College",
+"value_m": 163.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2026,
+"team": "Orlando Pride",
+"league": "NWSL",
+"value_m": 160.0,
+"source": "Sportico NWSL Team Values 2026 (derived)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportico.com/valuations/teams/2026/nwsl-team-values-2026-angel-city-1234886336/"
+},
+{
+"year": 2015,
+"team": "Hokkaido Nippon-Ham Fighters",
+"league": "NPB",
+"value_m": 160.0,
+"source": "Digital Dokusho NPB revenue ranking",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.digital-dokusho.jp/industry/professional-baseball/"
+},
+{
+"year": 2024,
+"team": "Troy Trojans football",
+"league": "College",
+"value_m": 159.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
 },
 {
 "year": 2025,
@@ -2870,6 +4200,16 @@
 "method": "speculative",
 "confidence": "medium",
 "source_url": "https://www.sportsvalue.com.br/wp-content/uploads/2026/01/Valuation-TOP-30-Teams-Brazil-6th.-edition.pdf"
+},
+{
+"year": 2024,
+"team": "San Jose State Spartans football",
+"league": "College",
+"value_m": 156.0,
+"source": "USA Today NCAA finances via SJV Sun Mountain West comparison",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://sjvsun.com/sports/fresno-states-athletic-revenue-above-average-in-the-mountain-west/"
 },
 {
 "year": 2025,
@@ -2883,6 +4223,216 @@
 },
 {
 "year": 2025,
+"team": "Sassuolo",
+"league": "Italy",
+"value_m": 153.0,
+"source": "Calcio e Finanza (Sassuolo bilancio 2025)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.calcioefinanza.it/2026/04/18/sassuolo-bilancio-2025-rosso-38-milioni-fatturato-costi/"
+},
+{
+"year": 2025,
+"team": "Cagliari",
+"league": "Italy",
+"value_m": 153.0,
+"source": "Calcio e Finanza (Cagliari bilancio 2025)",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://www.calcioefinanza.it/2026/01/16/cagliari-bilancio-2025-calcio-fatturato-costi-debiti/"
+},
+{
+"year": 2024,
+"team": "Wichita State",
+"league": "College",
+"value_m": 149.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2024,
+"team": "Butler",
+"league": "College",
+"value_m": 148.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2026,
+"team": "Houston Dash",
+"league": "NWSL",
+"value_m": 140.0,
+"source": "Sportico NWSL Team Values 2026",
+"method": "published",
+"confidence": "high",
+"source_url": "https://www.sportico.com/valuations/teams/2026/nwsl-team-values-2026-angel-city-1234886336/"
+},
+{
+"year": 2024,
+"team": "Sheffield United",
+"league": "England",
+"value_m": 135.0,
+"source": "ITV News, COH Sports GBP105m Sheffield United takeover",
+"method": "transaction",
+"confidence": "high",
+"source_url": "https://www.itv.com/news/calendar/2024-12-23/sheffield-united-taken-over-in-105m-deal"
+},
+{
+"year": 2026,
+"team": "Melbourne Storm",
+"league": "NRL",
+"value_m": 133.0,
+"source": "Bloomberg / EQT",
+"method": "transaction",
+"confidence": "low",
+"source_url": "https://www.melbournestorm.com.au/news/2026/08/19/storm-welcomes-eqt-into-ownership-group"
+},
+{
+"year": 2024,
+"team": "Seton Hall",
+"league": "College",
+"value_m": 132.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2024,
+"team": "George Mason",
+"league": "College",
+"value_m": 132.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2026,
+"team": "Puebla",
+"league": "Mexico",
+"value_m": 130.0,
+"source": "Club Puebla sale asking price",
+"method": "transaction",
+"confidence": "low",
+"source_url": "https://www.infobae.com/mexico/deportes/2026/03/24/club-puebla-a-la-venta-esta-es-la-millonaria-cifra-que-pedirian-por-la-historica-franquicia-de-liga-mx/"
+},
+{
+"year": 2026,
+"team": "RC Lens",
+"league": "France",
+"value_m": 130.0,
+"source": "le11hdf.fr citing Sportune budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://le11hdf.fr/ligue-1-budgets-saison-2025-2026/"
+},
+{
+"year": 2026,
+"team": "FC Lorient",
+"league": "France",
+"value_m": 130.0,
+"source": "le11hdf.fr citing Sportune budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://le11hdf.fr/ligue-1-budgets-saison-2025-2026/"
+},
+{
+"year": 2024,
+"team": "Getafe",
+"league": "Spain",
+"value_m": 128.0,
+"source": "Getafe CF 2023-24 budget report (2Playbook)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.2playbook.com/clubes/getafe-cf-proyecta-59-millones-negocio-7-millones-en-plusvalias-dar-beneficios-en-23-24_13016_102.html"
+},
+{
+"year": 2025,
+"team": "Manchester United Women",
+"league": "WSL",
+"value_m": 128.0,
+"source": "Guardian WSL club finances (revenue), Chelsea multiple applied",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.theguardian.com/football/2026/aug/20/womens-super-league-finances-club-by-club-breakdown-verdict"
+},
+{
+"year": 2024,
+"team": "Saint Mary's",
+"league": "College",
+"value_m": 128.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2025,
+"team": "Manchester City Women",
+"league": "WSL",
+"value_m": 127.0,
+"source": "Guardian WSL club finances (revenue), Chelsea multiple applied",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.theguardian.com/football/2026/aug/20/womens-super-league-finances-club-by-club-breakdown-verdict"
+},
+{
+"year": 2026,
+"team": "Racing Louisville FC",
+"league": "NWSL",
+"value_m": 127.0,
+"source": "Sportico NWSL valuations via NYT/Just Women's Sports",
+"method": "published",
+"confidence": "high",
+"source_url": "https://justwomenssports.com/reads/racing-louisville-nwsl-sale-minority-stake-soccer-holdings/"
+},
+{
+"year": 2024,
+"team": "Xavier",
+"league": "College",
+"value_m": 127.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2024,
+"team": "Portland Fire",
+"league": "WNBA",
+"value_m": 125.0,
+"source": "Wikipedia Portland Fire (expansion fee)",
+"method": "transaction",
+"confidence": "high",
+"source_url": "https://en.wikipedia.org/wiki/Portland_Fire"
+},
+{
+"year": 2024,
+"team": "Norwich City",
+"league": "England",
+"value_m": 122.0,
+"source": "Norwich City 2023-24 accounts (Pink Un)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.pinkun.com/sport/norwich-city/24658052.norwich-city-canaries-annual-accounts-2023-24-released/"
+},
+{
+"year": 2024,
+"team": "Ball State Cardinals football",
+"league": "College",
+"value_m": 121.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
+},
+{
+"year": 2025,
 "team": "Queretaro FC",
 "league": "Mexico",
 "value_m": 120.0,
@@ -2893,33 +4443,103 @@
 },
 {
 "year": 2025,
-"team": "Werder Bremen",
-"league": "Germany",
-"value_m": 112.0,
-"source": "Brand Finance Football 50 2025",
-"method": "speculative",
-"confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
-},
-{
-"year": 2025,
-"team": "Union Berlin",
-"league": "Germany",
-"value_m": 107.0,
-"source": "Brand Finance Football 50 2025",
-"method": "speculative",
-"confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
-},
-{
-"year": 2025,
-"team": "Atalanta",
+"team": "Como",
 "league": "Italy",
-"value_m": 107.0,
-"source": "Brand Finance Football 50 2025",
+"value_m": 120.0,
+"source": "Calcio e Finanza (Como bilancio 2025)",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://www.calcioefinanza.it/2025/12/10/como-bilancio-2025-ricavi-costi-perdite/"
+},
+{
+"year": 2026,
+"team": "Chicago Stars FC",
+"league": "NWSL",
+"value_m": 114.0,
+"source": "Sportico NWSL Team Values 2026 (derived)",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://www.sportico.com/valuations/teams/2026/nwsl-team-values-2026-angel-city-1234886336/"
+},
+{
+"year": 2026,
+"team": "AZ Alkmaar",
+"league": "Netherlands",
+"value_m": 113.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
 "method": "speculative",
 "confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2020,
+"team": "CD Toluca",
+"league": "Mexico",
+"value_m": 113.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
+},
+{
+"year": 2025,
+"team": "Denver Summit FC",
+"league": "NWSL",
+"value_m": 110.0,
+"source": "Wikipedia Denver Summit FC (expansion fee)",
+"method": "transaction",
+"confidence": "high",
+"source_url": "https://en.wikipedia.org/wiki/Denver_Summit_FC"
+},
+{
+"year": 2020,
+"team": "San Lorenzo",
+"league": "Argentina",
+"value_m": 108.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
+},
+{
+"year": 2025,
+"team": "Rayo Vallecano",
+"league": "Spain",
+"value_m": 108.0,
+"source": "Cronica Global LaLiga budgets 2024-25",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://cronicaglobal.elespanol.com/culemania/palco/20250213/todos-los-presupuestos-de-liga-primera-division/923657741_0.html"
+},
+{
+"year": 2026,
+"team": "Toulouse FC",
+"league": "France",
+"value_m": 108.0,
+"source": "le11hdf.fr citing Sportune budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://le11hdf.fr/ligue-1-budgets-saison-2025-2026/"
+},
+{
+"year": 2026,
+"team": "FC Twente",
+"league": "Netherlands",
+"value_m": 102.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2024,
+"team": "Loyola Chicago",
+"league": "College",
+"value_m": 102.0,
+"source": "College Factual EADA summary",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.collegefactual.com/colleges/troy-university/student-life/sports/"
 },
 {
 "year": 2024,
@@ -2932,34 +4552,124 @@
 "source_url": "https://www.sportico.com/valuations/teams/2026/nwsl-team-values-2026-angel-city-1234886336/"
 },
 {
-"year": 2025,
-"team": "Villarreal CF",
-"league": "Spain",
-"value_m": 100.0,
-"source": "Brand Finance Football 50 2025",
-"method": "speculative",
-"confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
-},
-{
-"year": 2025,
-"team": "SS Lazio",
+"year": 2020,
+"team": "Parma",
 "league": "Italy",
-"value_m": 87.0,
-"source": "Brand Finance Football 50 2025",
+"value_m": 100.0,
+"source": "Forbes, Krause Group buys Parma for over 100 million dollars",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://www.forbes.com/sites/kurtbadenhausen/2020/09/18/iowa-based-krause-group-jumps-into-italian-soccer-with-100-million-plus-parma-purchase/"
+},
+{
+"year": 2020,
+"team": "Tigres UANL",
+"league": "Mexico",
+"value_m": 99.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
+},
+{
+"year": 2020,
+"team": "Club Tijuana",
+"league": "Mexico",
+"value_m": 98.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
+},
+{
+"year": 2024,
+"team": "Watford",
+"league": "England",
+"value_m": 96.0,
+"source": "Watford Finances 2023-24 (Swiss Ramble)",
 "method": "speculative",
 "confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"source_url": "https://swissramble.substack.com/p/watford-finances-202324"
+},
+{
+"year": 2020,
+"team": "Cruz Azul",
+"league": "Mexico",
+"value_m": 92.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
+},
+{
+"year": 2020,
+"team": "Estudiantes de La Plata",
+"league": "Argentina",
+"value_m": 91.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
 },
 {
 "year": 2025,
-"team": "Valencia CF",
-"league": "Spain",
-"value_m": 85.0,
-"source": "Brand Finance Football 50 2025",
+"team": "Winnipeg Blue Bombers",
+"league": "CFL",
+"value_m": 91.0,
+"source": "Wikipedia Canadian Football League (Blue Bombers financials)",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://en.wikipedia.org/wiki/Canadian_Football_League"
+},
+{
+"year": 2025,
+"team": "Stade Toulousain",
+"league": "Top 14",
+"value_m": 90.0,
+"source": "SportBuzzBusiness Top 14 club budgets 2025-26",
 "method": "speculative",
 "confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"source_url": "https://www.sportbuzzbusiness.fr/rugby-toulouse-en-tete-montauban-en-difficulte-voici-les-budgets-des-clubs-de-top-14-pour-la-saison-2025-2026.html"
+},
+{
+"year": 2025,
+"team": "Real Madrid Baloncesto",
+"league": "EuroLeague",
+"value_m": 89.0,
+"source": "Teleceuta",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://teleceuta.com/el-presupuesto-del-real-madrid-para-baloncesto-alcanza-los-55-millones-de-euros/"
+},
+{
+"year": 2025,
+"team": "Coventry City",
+"league": "England",
+"value_m": 87.0,
+"source": "Coventry City 2024-25 accounts (AOL/PA)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.aol.com/articles/coventry-post-pre-tax-loss-144303233.html"
+},
+{
+"year": 2026,
+"team": "Dubai Basketball",
+"league": "EuroLeague",
+"value_m": 86.0,
+"source": "Basketball Sphere EuroLeague license fees report",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://basketballsphere.com/en/partizan-crvena-zvezda-euroleague-licenses/"
+},
+{
+"year": 2026,
+"team": "AJ Auxerre",
+"league": "France",
+"value_m": 86.0,
+"source": "le11hdf.fr citing Sportune budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://le11hdf.fr/ligue-1-budgets-saison-2025-2026/"
 },
 {
 "year": 2025,
@@ -2982,6 +4692,16 @@
 "source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2025-preview.pdf"
 },
 {
+"year": 2026,
+"team": "FC Juárez",
+"league": "Mexico",
+"value_m": 80.0,
+"source": "FC Juárez franchise value report",
+"method": "transaction",
+"confidence": "low",
+"source_url": "https://planoinformativo.com/planodeportivo/340863/fc-juarez-estaria-en-venta-su-franquicia-tendria-un-valor-de-80-millones-de-dolares"
+},
+{
 "year": 2025,
 "team": "Brisbane Broncos",
 "league": "NRL",
@@ -2990,6 +4710,36 @@
 "method": "speculative",
 "confidence": "low",
 "source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2025-preview.pdf"
+},
+{
+"year": 2020,
+"team": "Racing Club",
+"league": "Argentina",
+"value_m": 78.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
+},
+{
+"year": 2024,
+"team": "West Bromwich Albion",
+"league": "England",
+"value_m": 77.0,
+"source": "Sky Sports, Shilen Patel completes GBP60m West Brom takeover",
+"method": "transaction",
+"confidence": "high",
+"source_url": "https://www.skysports.com/football/news/11698/13083133/west-brom-us-entrepreneur-shilen-patel-completes-gbp60m-baggies-takeover"
+},
+{
+"year": 2026,
+"team": "Stade Brestois",
+"league": "France",
+"value_m": 76.0,
+"source": "le11hdf.fr citing Sportune budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://le11hdf.fr/ligue-1-budgets-saison-2025-2026/"
 },
 {
 "year": 2025,
@@ -3013,6 +4763,66 @@
 },
 {
 "year": 2025,
+"team": "Liverpool Women",
+"league": "WSL",
+"value_m": 73.0,
+"source": "Guardian WSL club finances (revenue), Chelsea multiple applied",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.theguardian.com/football/2026/aug/20/womens-super-league-finances-club-by-club-breakdown-verdict"
+},
+{
+"year": 2025,
+"team": "Birmingham City Women",
+"league": "WSL",
+"value_m": 73.0,
+"source": "Guardian WSL club finances (revenue), Chelsea multiple applied",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.theguardian.com/football/2026/aug/20/womens-super-league-finances-club-by-club-breakdown-verdict"
+},
+{
+"year": 2025,
+"team": "Lyon OU",
+"league": "Top 14",
+"value_m": 73.0,
+"source": "SportBuzzBusiness Top 14 club budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportbuzzbusiness.fr/rugby-toulouse-en-tete-montauban-en-difficulte-voici-les-budgets-des-clubs-de-top-14-pour-la-saison-2025-2026.html"
+},
+{
+"year": 2025,
+"team": "Venezia",
+"league": "Italy",
+"value_m": 73.0,
+"source": "Calcio e Finanza (Venezia bilancio 2025)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.calcioefinanza.it/2025/11/22/venezia-bilancio-2025-fatturato-costi-debiti/"
+},
+{
+"year": 2020,
+"team": "Pumas UNAM",
+"league": "Mexico",
+"value_m": 72.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
+},
+{
+"year": 2025,
+"team": "Bristol City",
+"league": "England",
+"value_m": 71.0,
+"source": "Bristol City 2024-25 revenue (Swiss Ramble via Bluesky)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://bsky.app/profile/swissramble.bsky.social/post/3lfmd4vdxnu2i"
+},
+{
+"year": 2025,
 "team": "Richmond Tigers",
 "league": "AFL",
 "value_m": 70.0,
@@ -3020,6 +4830,46 @@
 "method": "speculative",
 "confidence": "low",
 "source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2025-preview.pdf"
+},
+{
+"year": 2020,
+"team": "Vélez Sarsfield",
+"league": "Argentina",
+"value_m": 70.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
+},
+{
+"year": 2025,
+"team": "Aston Villa Women",
+"league": "WSL",
+"value_m": 70.0,
+"source": "Wikipedia Aston Villa WFC (Zahr stake deal)",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://en.wikipedia.org/wiki/Aston_Villa_W.F.C."
+},
+{
+"year": 2026,
+"team": "FC Nantes",
+"league": "France",
+"value_m": 70.0,
+"source": "le11hdf.fr citing Sportune budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://le11hdf.fr/ligue-1-budgets-saison-2025-2026/"
+},
+{
+"year": 2025,
+"team": "Stade Français Paris",
+"league": "Top 14",
+"value_m": 69.0,
+"source": "SportBuzzBusiness Top 14 club budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportbuzzbusiness.fr/rugby-toulouse-en-tete-montauban-en-difficulte-voici-les-budgets-des-clubs-de-top-14-pour-la-saison-2025-2026.html"
 },
 {
 "year": 2025,
@@ -3030,6 +4880,36 @@
 "method": "speculative",
 "confidence": "medium",
 "source_url": "https://www.sportsvalue.com.br/wp-content/uploads/2026/01/Valuation-TOP-30-Teams-Brazil-6th.-edition.pdf"
+},
+{
+"year": 2025,
+"team": "Hull City",
+"league": "England",
+"value_m": 66.0,
+"source": "Hull City 2024-25 financial results (Matchday Finance)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.matchdayfinance.com/post/hull-city-financial-results-2024-25"
+},
+{
+"year": 2026,
+"team": "FC Utrecht",
+"league": "Netherlands",
+"value_m": 66.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2025,
+"team": "Atlante",
+"league": "Mexico",
+"value_m": 65.0,
+"source": "Atlante buys Mazatlán FC Liga MX license",
+"method": "transaction",
+"confidence": "low",
+"source_url": "https://www.infobae.com/mexico/deportes/2025/11/20/cual-es-la-millonaria-cantidad-que-pagarian-los-duenos-del-atlante-por-comprar-al-mazatlan/"
 },
 {
 "year": 2025,
@@ -3063,6 +4943,26 @@
 },
 {
 "year": 2025,
+"team": "Union Bordeaux Bègles",
+"league": "Top 14",
+"value_m": 63.0,
+"source": "SportBuzzBusiness Top 14 club budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportbuzzbusiness.fr/rugby-toulouse-en-tete-montauban-en-difficulte-voici-les-budgets-des-clubs-de-top-14-pour-la-saison-2025-2026.html"
+},
+{
+"year": 2025,
+"team": "RC Toulon",
+"league": "Top 14",
+"value_m": 63.0,
+"source": "SportBuzzBusiness Top 14 club budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportbuzzbusiness.fr/rugby-toulouse-en-tete-montauban-en-difficulte-voici-les-budgets-des-clubs-de-top-14-pour-la-saison-2025-2026.html"
+},
+{
+"year": 2025,
 "team": "Melbourne Storm",
 "league": "NRL",
 "value_m": 62.0,
@@ -3070,6 +4970,16 @@
 "method": "speculative",
 "confidence": "low",
 "source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2025-preview.pdf"
+},
+{
+"year": 2025,
+"team": "Stade Rochelais",
+"league": "Top 14",
+"value_m": 62.0,
+"source": "SportBuzzBusiness Top 14 club budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportbuzzbusiness.fr/rugby-toulouse-en-tete-montauban-en-difficulte-voici-les-budgets-des-clubs-de-top-14-pour-la-saison-2025-2026.html"
 },
 {
 "year": 2025,
@@ -3082,34 +4992,14 @@
 "source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2025-preview.pdf"
 },
 {
-"year": 2025,
-"team": "Bologna FC",
-"league": "Italy",
-"value_m": 59.0,
-"source": "Brand Finance Football 50 2025",
-"method": "speculative",
-"confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
-},
-{
-"year": 2025,
-"team": "Celta Vigo",
-"league": "Spain",
-"value_m": 58.0,
-"source": "Brand Finance Football 50 2025",
-"method": "speculative",
-"confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
-},
-{
-"year": 2025,
-"team": "RC Lens",
-"league": "France",
-"value_m": 58.0,
-"source": "Brand Finance Football 50 2025",
-"method": "speculative",
-"confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"year": 2020,
+"team": "Pachuca CF",
+"league": "Mexico",
+"value_m": 60.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
 },
 {
 "year": 2025,
@@ -3143,23 +5033,103 @@
 },
 {
 "year": 2025,
-"team": "AS Monaco",
-"league": "France",
-"value_m": 56.0,
-"source": "Brand Finance Football 50 2025",
+"team": "ASM Clermont",
+"league": "Top 14",
+"value_m": 57.0,
+"source": "SportBuzzBusiness Top 14 club budgets 2025-26",
 "method": "speculative",
 "confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"source_url": "https://www.sportbuzzbusiness.fr/rugby-toulouse-en-tete-montauban-en-difficulte-voici-les-budgets-des-clubs-de-top-14-pour-la-saison-2025-2026.html"
 },
 {
-"year": 2025,
-"team": "OGC Nice",
-"league": "France",
-"value_m": 53.0,
-"source": "Brand Finance Football 50 2025",
+"year": 2024,
+"team": "Genoa",
+"league": "Italy",
+"value_m": 56.0,
+"source": "Inside World Football, Dan Sucu Genoa takeover",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://www.insideworldfootball.com/2024/12/20/control-serie-genoa-passes-romanian-dan-secu-e40m/"
+},
+{
+"year": 2026,
+"team": "NEC Nijmegen",
+"league": "Netherlands",
+"value_m": 55.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
 "method": "speculative",
 "confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2026,
+"team": "SC Heerenveen",
+"league": "Netherlands",
+"value_m": 55.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2020,
+"team": "Lanús",
+"league": "Argentina",
+"value_m": 55.0,
+"source": "Forbes 50 most valuable clubs in the Americas",
+"method": "published",
+"confidence": "medium",
+"source_url": "https://forbes.com.mx/listas-los-50-equipos-mas-valiosos-de-america/"
+},
+{
+"year": 2024,
+"team": "Stoke City",
+"league": "England",
+"value_m": 54.0,
+"source": "Stoke City Finances 2023-24 (Swiss Ramble)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://swissramble.substack.com/p/stoke-city-finances-202324"
+},
+{
+"year": 2026,
+"team": "KK Partizan",
+"league": "EuroLeague",
+"value_m": 54.0,
+"source": "Basketball Sphere EuroLeague license fees report",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://basketballsphere.com/en/partizan-crvena-zvezda-euroleague-licenses/"
+},
+{
+"year": 2026,
+"team": "KK Crvena zvezda",
+"league": "EuroLeague",
+"value_m": 54.0,
+"source": "Basketball Sphere EuroLeague license fees report",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://basketballsphere.com/en/partizan-crvena-zvezda-euroleague-licenses/"
+},
+{
+"year": 2026,
+"team": "Le Havre AC",
+"league": "France",
+"value_m": 54.0,
+"source": "le11hdf.fr citing Sportune budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://le11hdf.fr/ligue-1-budgets-saison-2025-2026/"
+},
+{
+"year": 2026,
+"team": "Angers SCO",
+"league": "France",
+"value_m": 54.0,
+"source": "le11hdf.fr citing Sportune budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://le11hdf.fr/ligue-1-budgets-saison-2025-2026/"
 },
 {
 "year": 2025,
@@ -3170,6 +5140,56 @@
 "method": "speculative",
 "confidence": "low",
 "source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2025-preview.pdf"
+},
+{
+"year": 2024,
+"team": "Middlesbrough",
+"league": "England",
+"value_m": 53.0,
+"source": "Middlesbrough FC 2023-24 financial analysis (Gamestate)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://gamestate.substack.com/p/club-financial-analysis-middlesbrough-fc-2023-2024"
+},
+{
+"year": 2026,
+"team": "FC Groningen",
+"league": "Netherlands",
+"value_m": 53.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2025,
+"team": "Tottenham Hotspur Women",
+"league": "WSL",
+"value_m": 53.0,
+"source": "Guardian WSL club finances (revenue), Chelsea multiple applied",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.theguardian.com/football/2026/aug/20/womens-super-league-finances-club-by-club-breakdown-verdict"
+},
+{
+"year": 2023,
+"team": "Boston Legacy FC",
+"league": "NWSL",
+"value_m": 53.0,
+"source": "Front Office Sports (Boston Legacy debut article)",
+"method": "transaction",
+"confidence": "high",
+"source_url": "https://frontofficesports.com/article/boston-legacy-make-nwsl-debut-after-long-road-to-opening-day/"
+},
+{
+"year": 2025,
+"team": "Montpellier HR",
+"league": "Top 14",
+"value_m": 52.0,
+"source": "SportBuzzBusiness Top 14 club budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportbuzzbusiness.fr/rugby-toulouse-en-tete-montauban-en-difficulte-voici-les-budgets-des-clubs-de-top-14-pour-la-saison-2025-2026.html"
 },
 {
 "year": 2025,
@@ -3200,6 +5220,26 @@
 "method": "speculative",
 "confidence": "low",
 "source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2025-preview.pdf"
+},
+{
+"year": 2024,
+"team": "Toronto Tempo",
+"league": "WNBA",
+"value_m": 50.0,
+"source": "Wikipedia Toronto Tempo (expansion fee)",
+"method": "transaction",
+"confidence": "high",
+"source_url": "https://en.wikipedia.org/wiki/Toronto_Tempo"
+},
+{
+"year": 2025,
+"team": "Section Paloise",
+"league": "Top 14",
+"value_m": 50.0,
+"source": "SportBuzzBusiness Top 14 club budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportbuzzbusiness.fr/rugby-toulouse-en-tete-montauban-en-difficulte-voici-les-budgets-des-clubs-de-top-14-pour-la-saison-2025-2026.html"
 },
 {
 "year": 2025,
@@ -3233,23 +5273,133 @@
 },
 {
 "year": 2025,
-"team": "LOSC Lille",
-"league": "France",
-"value_m": 48.0,
-"source": "Brand Finance Football 50 2025",
+"team": "Saskatchewan Roughriders",
+"league": "CFL",
+"value_m": 49.0,
+"source": "3DownNation (Roughriders financial report)",
 "method": "speculative",
-"confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"confidence": "medium",
+"source_url": "https://3downnation.com/2026/06/23/saskatchewan-roughriders-post-slight-financial-loss-in-2025/"
 },
 {
 "year": 2025,
-"team": "Torino FC",
-"league": "Italy",
-"value_m": 44.0,
-"source": "Brand Finance Football 50 2025",
+"team": "Aviron Bayonnais",
+"league": "Top 14",
+"value_m": 49.0,
+"source": "SportBuzzBusiness Top 14 club budgets 2025-26",
 "method": "speculative",
 "confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"source_url": "https://www.sportbuzzbusiness.fr/rugby-toulouse-en-tete-montauban-en-difficulte-voici-les-budgets-des-clubs-de-top-14-pour-la-saison-2025-2026.html"
+},
+{
+"year": 2024,
+"team": "Valencia Basket",
+"league": "EuroLeague",
+"value_m": 45.0,
+"source": "2Playbook Valencia Basket budget report",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.2playbook.com/clubes/valencia-basket-bate-su-record-ingresos-presupuesta-275-millones-2024-2025_17552_102.html"
+},
+{
+"year": 2025,
+"team": "Heart of Midlothian",
+"league": "Scotland",
+"value_m": 44.0,
+"source": "Tony Bloom buys 29% of Hearts, Sky Sports",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://www.skysports.com/football/news/13375084/hearts-brighton-owner-tony-bloom-sees-9-86m-investment-offer-in-scottish-premiership-club-approved"
+},
+{
+"year": 2024,
+"team": "Queens Park Rangers",
+"league": "England",
+"value_m": 43.0,
+"source": "QPR Finances 2023-24 (Swiss Ramble)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://swissramble.substack.com/p/qpr-finances-202324"
+},
+{
+"year": 2026,
+"team": "Willem II Tilburg",
+"league": "Netherlands",
+"value_m": 43.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2025,
+"team": "Castres Olympique",
+"league": "Top 14",
+"value_m": 43.0,
+"source": "SportBuzzBusiness Top 14 club budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportbuzzbusiness.fr/rugby-toulouse-en-tete-montauban-en-difficulte-voici-les-budgets-des-clubs-de-top-14-pour-la-saison-2025-2026.html"
+},
+{
+"year": 2025,
+"team": "RC Vannes",
+"league": "Top 14",
+"value_m": 43.0,
+"source": "info.fr RC Vannes budget report",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://info.fr/rc-vannes-budget-26-me-matchs-delocalises-rennes-nantes-president-cloarec-ambitions/"
+},
+{
+"year": 2025,
+"team": "Belgrano de Córdoba",
+"league": "Argentina",
+"value_m": 43.0,
+"source": "Canal Showsport (club assembly report)",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://canalshowsport.com.ar/asamblea-ordinaria-belgrano-aprobo-su-balance-y-destaco-el-aporte-clave-de-los-socios/"
+},
+{
+"year": 2025,
+"team": "Racing 92",
+"league": "Top 14",
+"value_m": 42.0,
+"source": "SportBuzzBusiness Top 14 club budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportbuzzbusiness.fr/rugby-toulouse-en-tete-montauban-en-difficulte-voici-les-budgets-des-clubs-de-top-14-pour-la-saison-2025-2026.html"
+},
+{
+"year": 2025,
+"team": "FC Bayern München Basketball",
+"league": "EuroLeague",
+"value_m": 42.0,
+"source": "Taking the Charge Bayern player salaries report",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://takingthecharge.substack.com/p/german-league-bayern-player-salaries"
+},
+{
+"year": 2024,
+"team": "Fremantle",
+"league": "AFL",
+"value_m": 41.0,
+"source": "Brand Finance AFL & NRL full report 2024",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2024-full-report.pdf"
+},
+{
+"year": 2025,
+"team": "Hapoel Tel Aviv BC",
+"league": "EuroLeague",
+"value_m": 41.0,
+"source": "Calcalist Hapoel Tel Aviv finances report",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.calcalistech.com/ctechnews/article/rkc9umjxwx"
 },
 {
 "year": 2025,
@@ -3272,6 +5422,46 @@
 "source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2025-preview.pdf"
 },
 {
+"year": 2024,
+"team": "Cardiff City",
+"league": "England",
+"value_m": 39.0,
+"source": "Cardiff City accounts analysis (Cardiff City Supporters Trust)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.ccfctrust.org/cardiff-citys-latest-accounts-verdict-from-trust-chair/"
+},
+{
+"year": 2026,
+"team": "Sparta Rotterdam",
+"league": "Netherlands",
+"value_m": 39.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2026,
+"team": "ADO Den Haag",
+"league": "Netherlands",
+"value_m": 39.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2026,
+"team": "ASVEL Basket",
+"league": "EuroLeague",
+"value_m": 39.0,
+"source": "Sportando ASVEL budget cut report",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://sportando.basketball/en/asvels-budget-drops-from-e59m-to-e24m-as-tony-parker-takes-an-80-pay-cut-from-e1-2m-to-e200k/"
+},
+{
 "year": 2025,
 "team": "Melbourne Demons",
 "league": "AFL",
@@ -3280,6 +5470,36 @@
 "method": "speculative",
 "confidence": "low",
 "source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2025-preview.pdf"
+},
+{
+"year": 2025,
+"team": "USA Perpignan",
+"league": "Top 14",
+"value_m": 37.0,
+"source": "SportBuzzBusiness Top 14 club budgets 2025-26",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportbuzzbusiness.fr/rugby-toulouse-en-tete-montauban-en-difficulte-voici-les-budgets-des-clubs-de-top-14-pour-la-saison-2025-2026.html"
+},
+{
+"year": 2025,
+"team": "Aberdeen",
+"league": "Scotland",
+"value_m": 37.0,
+"source": "Aberdeen FC annual accounts statement",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://www.afc.co.uk/2025/11/14/aberdeen-fc-reports-continued-robust-financial-performance-in-latest-accounts/"
+},
+{
+"year": 2022,
+"team": "Hamilton Tiger-Cats",
+"league": "CFL",
+"value_m": 37.0,
+"source": "3DownNation",
+"method": "transaction",
+"confidence": "low",
+"source_url": "https://3downnation.com/2022/01/27/stelco-paid-roughly-20-million-for-40-percent-share-in-tiger-cats-hamilton-sports-group-report/"
 },
 {
 "year": 2025,
@@ -3292,14 +5512,164 @@
 "source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2025-preview.pdf"
 },
 {
-"year": 2025,
-"team": "Stade Rennais",
-"league": "France",
-"value_m": 35.0,
-"source": "Brand Finance Football 50 2025",
+"year": 2024,
+"team": "Blackburn Rovers",
+"league": "England",
+"value_m": 36.0,
+"source": "Blackburn Rovers 2023-24 accounts (Matchday Finance)",
 "method": "speculative",
 "confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"source_url": "https://www.matchdayfinance.com/post/blackburn-rovers-financial-results-2023-24"
+},
+{
+"year": 2024,
+"team": "Millwall",
+"league": "England",
+"value_m": 36.0,
+"source": "Millwall Finances 2023-24 (Swiss Ramble)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://swissramble.substack.com/p/millwall-finances-202324"
+},
+{
+"year": 2025,
+"team": "Virtus Bologna",
+"league": "EuroLeague",
+"value_m": 36.0,
+"source": "Sportando Virtus Bologna budget report",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://sportando.basketball/virtus-bologna-il-budget-passera-da-22-milioni-di-euro-ad-almeno-25-milioni-di-euro/"
+},
+{
+"year": 2023,
+"team": "Swansea City",
+"league": "England",
+"value_m": 35.0,
+"source": "Swansea City accounts confirmation",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.swanseacity.com/news/swansea-city-confirm-latest-accounts-3"
+},
+{
+"year": 2026,
+"team": "Cambuur Leeuwarden",
+"league": "Netherlands",
+"value_m": 35.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2025,
+"team": "Everton Women",
+"league": "WSL",
+"value_m": 35.0,
+"source": "Guardian WSL club finances (revenue), Chelsea multiple applied",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.theguardian.com/football/2026/aug/20/womens-super-league-finances-club-by-club-breakdown-verdict"
+},
+{
+"year": 2023,
+"team": "Birmingham City",
+"league": "England",
+"value_m": 32.0,
+"source": "Birmingham City accounts analysis (Almajir)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://almajir.net/2024/04/04/bcfc-club-accounts-analysis/"
+},
+{
+"year": 2024,
+"team": "Derby County",
+"league": "England",
+"value_m": 32.0,
+"source": "Derby County 2023-24 revenue report (Insider Media)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.insidermedia.com/news/midlands/derby-county-score-revenue-jump-but-report-losses-of-more-than-11m"
+},
+{
+"year": 2024,
+"team": "St Kilda",
+"league": "AFL",
+"value_m": 32.0,
+"source": "Brand Finance AFL & NRL full report 2024",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2024-full-report.pdf"
+},
+{
+"year": 2025,
+"team": "Monza",
+"league": "Italy",
+"value_m": 32.0,
+"source": "Calcio e Finanza (Beckett Layne purchase)",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://www.calcioefinanza.it/2025/09/26/beckett-layne-patrimonio-acquisto-monza-bond/"
+},
+{
+"year": 2025,
+"team": "Olympiacos BC",
+"league": "EuroLeague",
+"value_m": 32.0,
+"source": "Sport24",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://www.sport24.gr/basket/afto-einai-to-batzet-tou-olimpiakou-gia-ti-sezon-2024-25/"
+},
+{
+"year": 2023,
+"team": "Bolton Wanderers",
+"league": "England",
+"value_m": 31.0,
+"source": "Bolton Wanderers 2022-23 accounts (TheBusinessDesk)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.thebusinessdesk.com/northwest/news/2131845-promotion-chasing-bolton-wanderers-boosts-turnover-but-sees-losses-increase"
+},
+{
+"year": 2025,
+"team": "Rio Ave FC",
+"league": "Portugal",
+"value_m": 31.0,
+"source": "Rio Ave owned by Evangelos Marinakis, ECO investors piece",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://eco.sapo.pt/especiais/quem-sao-os-novos-donos-bilionarios-da-bola-em-portugal/"
+},
+{
+"year": 2024,
+"team": "Hibernian",
+"league": "Scotland",
+"value_m": 31.0,
+"source": "Black Knight Football Club buys 25% of Hibs, Sky Sports",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://www.skysports.com/football/news/11792/13082422/bournemouth-owner-bill-foleys-gbp6m-hibernian-investment-approved-at-agm"
+},
+{
+"year": 2024,
+"team": "Western Bulldogs",
+"league": "AFL",
+"value_m": 31.0,
+"source": "Brand Finance AFL & NRL full report 2024",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2024-full-report.pdf"
+},
+{
+"year": 2024,
+"team": "Paris Basketball",
+"league": "EuroLeague",
+"value_m": 31.0,
+"source": "BeBasket Paris Basketball budget report",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.bebasket.fr/le-chiffre-un-budget-de-19-millions-deuros-pour-paris"
 },
 {
 "year": 2025,
@@ -3332,6 +5702,46 @@
 "source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2025-preview.pdf"
 },
 {
+"year": 2026,
+"team": "Go Ahead Eagles",
+"league": "Netherlands",
+"value_m": 29.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2026,
+"team": "Fortuna Sittard",
+"league": "Netherlands",
+"value_m": 29.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2024,
+"team": "North Melbourne",
+"league": "AFL",
+"value_m": 29.0,
+"source": "Brand Finance AFL & NRL full report 2024",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2024-full-report.pdf"
+},
+{
+"year": 2024,
+"team": "BC Žalgiris",
+"league": "EuroLeague",
+"value_m": 29.0,
+"source": "Kaunas Kasvyksta",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://kaunas.kasvyksta.lt/2024/10/01/sportas/pinigine-atveres-kauno-zalgiris-pristate-rekordini-klubo-biudzeta-ir-sio-sezono-tikslus/"
+},
+{
 "year": 2025,
 "team": "Manly Warringah Sea Eagles",
 "league": "NRL",
@@ -3340,6 +5750,26 @@
 "method": "speculative",
 "confidence": "low",
 "source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2025-preview.pdf"
+},
+{
+"year": 2024,
+"team": "Preston North End",
+"league": "England",
+"value_m": 28.0,
+"source": "Preston revenue report, Lancashire Post",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.lep.co.uk/sport/football/preston-north-end/preston-north-end-championship-revenue-kieran-maguire-finance-leeds-united-birmingham-city-5081982"
+},
+{
+"year": 2025,
+"team": "Saski Baskonia",
+"league": "EuroLeague",
+"value_m": 28.0,
+"source": "Cronica Vasca",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://cronicavasca.elespanol.com/deportes/20250727/baskonia-seguira-potente-acb-contara-millones-presupuesto/1003742675823_0.html"
 },
 {
 "year": 2025,
@@ -3353,13 +5783,603 @@
 },
 {
 "year": 2025,
-"team": "Stade Brestois",
-"league": "France",
-"value_m": 24.0,
-"source": "Brand Finance Football 50 2025",
+"team": "GD Estoril-Praia",
+"league": "Portugal",
+"value_m": 27.0,
+"source": "David Blitzer Global Football Holdings 92.3% stake, ECO",
 "method": "speculative",
 "confidence": "low",
-"source_url": "https://static.poder360.com.br/2025/08/brand-finance-football-50-2025-preview.pdf"
+"source_url": "https://eco.sapo.pt/2025/08/07/58-das-equipas-do-futebol-portugues-tem-acionistas-estrangeiros-talento-e-formacao-atraem-investidores/"
+},
+{
+"year": 2026,
+"team": "PEC Zwolle",
+"league": "Netherlands",
+"value_m": 25.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2026,
+"team": "Excelsior Rotterdam",
+"league": "Netherlands",
+"value_m": 25.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2026,
+"team": "Casa Pia AC",
+"league": "Portugal",
+"value_m": 25.0,
+"source": "Casa Pia new investor Krause Group, O Jogo",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.ojogo.pt/futebol/artigo/investidor-do-parma-adquire-participacao-maioritaria-no-casa-pia/18107262"
+},
+{
+"year": 2024,
+"team": "Portsmouth",
+"league": "England",
+"value_m": 23.0,
+"source": "Portsmouth 2023-24 accounts review (Pompey Supporters Trust)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.pompeytrust.com/news/review-of-pfc-financial-statements-2023-24"
+},
+{
+"year": 2026,
+"team": "SC Telstar",
+"league": "Netherlands",
+"value_m": 20.0,
+"source": "Eredivisie club budgets 2026/27, Manly.nl",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://manly.nl/begrotingen-eredivisie-clubs-2026-2027"
+},
+{
+"year": 2024,
+"team": "Greater Western Sydney",
+"league": "AFL",
+"value_m": 20.0,
+"source": "Brand Finance AFL & NRL full report 2024",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2024-full-report.pdf"
+},
+{
+"year": 2025,
+"team": "CD Santa Clara",
+"league": "Portugal",
+"value_m": 18.0,
+"source": "Bruno Vicintin 55.8% stake, ECO foreign investors piece",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://eco.sapo.pt/2025/08/07/58-das-equipas-do-futebol-portugues-tem-acionistas-estrangeiros-talento-e-formacao-atraem-investidores/"
+},
+{
+"year": 2025,
+"team": "Moreirense FC",
+"league": "Portugal",
+"value_m": 18.0,
+"source": "Black Knight Football Club 70% stake, ECO foreign investors",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://eco.sapo.pt/2025/08/07/58-das-equipas-do-futebol-portugues-tem-acionistas-estrangeiros-talento-e-formacao-atraem-investidores/"
+},
+{
+"year": 2024,
+"team": "Gold Coast",
+"league": "AFL",
+"value_m": 18.0,
+"source": "Brand Finance AFL & NRL full report 2024",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://static.brandirectory.com/reports/brand-finance-afl-nrl-2024-full-report.pdf"
+},
+{
+"year": 2025,
+"team": "Dundee United",
+"league": "Scotland",
+"value_m": 18.0,
+"source": "Dundee United FC accounts statement",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://www.dundeeunitedfc.co.uk/news/9127/2025-Accounts-Show-Record-Turnover-And-EBITDA-Profit-.html"
+},
+{
+"year": 2025,
+"team": "Crystal Palace Women",
+"league": "WSL",
+"value_m": 16.0,
+"source": "Guardian WSL club finances (revenue), Chelsea multiple applied",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.theguardian.com/football/2026/aug/20/womens-super-league-finances-club-by-club-breakdown-verdict"
+},
+{
+"year": 2025,
+"team": "Brighton & Hove Albion Women",
+"league": "WSL",
+"value_m": 16.0,
+"source": "Guardian WSL club finances (revenue), Chelsea multiple applied",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.theguardian.com/football/2026/aug/20/womens-super-league-finances-club-by-club-breakdown-verdict"
+},
+{
+"year": 2024,
+"team": "Mirassol FC",
+"league": "Brasileirao Serie A",
+"value_m": 16.0,
+"source": "InfoMoney",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.infomoney.com.br/esportes/so-com-premiacao-mirassol-arrecada-mesma-coisa-que-conseguiu-durante-2024-inteiro/"
+},
+{
+"year": 2024,
+"team": "Charlton Athletic",
+"league": "England",
+"value_m": 15.0,
+"source": "Charlton Athletic 2023-24 accounts (CAS Trust)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.castrust.org/2025/04/charlton-lost-13-9m-in-23-24/"
+},
+{
+"year": 2025,
+"team": "FC Famalicão",
+"league": "Portugal",
+"value_m": 15.0,
+"source": "Famalicao sells 4.98% of SAD capital for EUR700k, Sapo",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://sapo.pt/artigo/famalicao-venda-de-4-98-do-capital-a-sad-por-700-mil-euros-e-para-reduzir-passivo-e-investir-no-clube-6996dd314c6a0667186a931f"
+},
+{
+"year": 2024,
+"team": "THW Kiel",
+"league": "Handball-Bundesliga",
+"value_m": 15.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/?pageNo=4"
+},
+{
+"year": 2025,
+"team": "St. Mirren",
+"league": "Scotland",
+"value_m": 15.0,
+"source": "Scottish Football Info (club accounts)",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://www.scottishfootball.info/p/st-mirren-fc-annual-report-year-ending"
+},
+{
+"year": 2025,
+"team": "Lincoln City",
+"league": "England",
+"value_m": 14.0,
+"source": "Lincoln City 2024-25 accounts (We Are Imps)",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.weareimps.com/news/lincoln-city-accounts-202425"
+},
+{
+"year": 2025,
+"team": "Académico de Viseu",
+"league": "Portugal",
+"value_m": 14.0,
+"source": "Hobra Germany 90% stake, ECO foreign investors piece",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://eco.sapo.pt/2025/08/07/58-das-equipas-do-futebol-portugues-tem-acionistas-estrangeiros-talento-e-formacao-atraem-investidores/"
+},
+{
+"year": 2023,
+"team": "VSC Vitória Guimarães",
+"league": "Portugal",
+"value_m": 13.0,
+"source": "V Sports buys 46% of Vitoria SC for EUR5.5m, SportBusiness",
+"method": "transaction",
+"confidence": "low",
+"source_url": "https://www.sportbusiness.com/news/aston-villa-owners-buy-46-per-cent-stake-in-vitoria-de-guimaraes-for-e5-5m/"
+},
+{
+"year": 2025,
+"team": "Motherwell",
+"league": "Scotland",
+"value_m": 13.0,
+"source": "Scottish Football Info (club accounts)",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://www.scottishfootball.info/p/the-motherwell-football-and-athletic"
+},
+{
+"year": 2023,
+"team": "Instituto de Córdoba",
+"league": "Argentina",
+"value_m": 13.0,
+"source": "Perfil",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.perfil.com/noticias/cordoba/237-millones-de-dolares-el-costo-de-ser-de-primera-division-para-talleres-belgrano-e-instituto.phtml"
+},
+{
+"year": 2026,
+"team": "Kilmarnock",
+"league": "Scotland",
+"value_m": 12.0,
+"source": "Kilmarnock FC club history, Wikipedia",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://en.wikipedia.org/wiki/Kilmarnock_F.C."
+},
+{
+"year": 2025,
+"team": "St. Johnstone",
+"league": "Scotland",
+"value_m": 12.0,
+"source": "The Courier",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://www.thecourier.co.uk/fp/sport/football/st-johnstone/5422146/st-johnstone-profit-annual-accounts/"
+},
+{
+"year": 2023,
+"team": "Talleres",
+"league": "Argentina",
+"value_m": 12.0,
+"source": "Perfil",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.perfil.com/noticias/cordoba/237-millones-de-dolares-el-costo-de-ser-de-primera-division-para-talleres-belgrano-e-instituto.phtml"
+},
+{
+"year": 2025,
+"team": "FC Alverca",
+"league": "Portugal",
+"value_m": 11.0,
+"source": "Vinicius Jr group buys 80% of Alverca SAD, O Mirante",
+"method": "transaction",
+"confidence": "medium",
+"source_url": "https://omirante.pt/desporto/2025-03-09-craque-do-real-madrid-compra-da-sad-do-alverca-por-oito-milhoes-de-euros-63d05ee1"
+},
+{
+"year": 2025,
+"team": "London City Lionesses",
+"league": "WSL",
+"value_m": 11.0,
+"source": "Guardian WSL club finances (revenue), Chelsea multiple applied",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.theguardian.com/football/2026/aug/20/womens-super-league-finances-club-by-club-breakdown-verdict"
+},
+{
+"year": 2024,
+"team": "SC Magdeburg",
+"league": "Handball-Bundesliga",
+"value_m": 10.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/?pageNo=4"
+},
+{
+"year": 2024,
+"team": "SG Flensburg-Handewitt",
+"league": "Handball-Bundesliga",
+"value_m": 9.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/?pageNo=4"
+},
+{
+"year": 2024,
+"team": "MT Melsungen",
+"league": "Handball-Bundesliga",
+"value_m": 9.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/?pageNo=4"
+},
+{
+"year": 2024,
+"team": "Füchse Berlin",
+"league": "Handball-Bundesliga",
+"value_m": 9.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/?pageNo=4"
+},
+{
+"year": 2024,
+"team": "Sir Safety Perugia",
+"league": "SuperLega",
+"value_m": 9.0,
+"source": "Sport e Finanza SuperLega budget overview",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportefinanza.it/2024/10/28/superlega-volley-budget/"
+},
+{
+"year": 2024,
+"team": "Cucine Lube Civitanova",
+"league": "SuperLega",
+"value_m": 9.0,
+"source": "Sport e Finanza SuperLega budget overview",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportefinanza.it/2024/10/28/superlega-volley-budget/"
+},
+{
+"year": 2024,
+"team": "Itas Trentino",
+"league": "SuperLega",
+"value_m": 9.0,
+"source": "Sport e Finanza SuperLega budget overview",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportefinanza.it/2024/10/28/superlega-volley-budget/"
+},
+{
+"year": 2024,
+"team": "Allianz Milano",
+"league": "SuperLega",
+"value_m": 9.0,
+"source": "Sport e Finanza SuperLega budget overview",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportefinanza.it/2024/10/28/superlega-volley-budget/"
+},
+{
+"year": 2024,
+"team": "Rhein-Neckar Löwen",
+"league": "Handball-Bundesliga",
+"value_m": 8.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/"
+},
+{
+"year": 2024,
+"team": "TVB 1898 Stuttgart",
+"league": "Handball-Bundesliga",
+"value_m": 8.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/?pageNo=4"
+},
+{
+"year": 2024,
+"team": "SC DHfK Leipzig",
+"league": "Handball-Bundesliga",
+"value_m": 8.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/?pageNo=4"
+},
+{
+"year": 2022,
+"team": "Dundee FC",
+"league": "Scotland",
+"value_m": 8.0,
+"source": "The Courier",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.thecourier.co.uk/fp/sport/football/dundee-fc/5265494/dundee-fc-finances-history/"
+},
+{
+"year": 2025,
+"team": "Falkirk",
+"league": "Scotland",
+"value_m": 8.0,
+"source": "Falkirk Herald (AGM report)",
+"method": "speculative",
+"confidence": "medium",
+"source_url": "https://www.falkirkherald.co.uk/sport/football/back-to-back-promotions-returning-falkirk-to-scottish-footballs-top-flight-have-led-to-turnaround-in-financial-fortunes-agm-told-5374676"
+},
+{
+"year": 2024,
+"team": "TSV Hannover-Burgdorf",
+"league": "Handball-Bundesliga",
+"value_m": 7.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/?pageNo=4"
+},
+{
+"year": 2024,
+"team": "Frisch Auf Göppingen",
+"league": "Handball-Bundesliga",
+"value_m": 7.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/?pageNo=4"
+},
+{
+"year": 2024,
+"team": "Gas Sales Bluenergy Piacenza",
+"league": "SuperLega",
+"value_m": 6.0,
+"source": "Sport e Finanza SuperLega budget overview",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportefinanza.it/2024/10/28/superlega-volley-budget/"
+},
+{
+"year": 2024,
+"team": "Modena Volley",
+"league": "SuperLega",
+"value_m": 6.0,
+"source": "Sport e Finanza SuperLega budget overview",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportefinanza.it/2024/10/28/superlega-volley-budget/"
+},
+{
+"year": 2024,
+"team": "Rana Verona",
+"league": "SuperLega",
+"value_m": 6.0,
+"source": "Sport e Finanza SuperLega budget overview",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportefinanza.it/2024/10/28/superlega-volley-budget/"
+},
+{
+"year": 2024,
+"team": "Vero Volley Monza",
+"league": "SuperLega",
+"value_m": 6.0,
+"source": "Sport e Finanza SuperLega budget overview",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportefinanza.it/2024/10/28/superlega-volley-budget/"
+},
+{
+"year": 2024,
+"team": "Bergischer HC",
+"league": "Handball-Bundesliga",
+"value_m": 5.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/?pageNo=4"
+},
+{
+"year": 2024,
+"team": "TBV Lemgo Lippe",
+"league": "Handball-Bundesliga",
+"value_m": 5.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/?pageNo=4"
+},
+{
+"year": 2024,
+"team": "HSG Wetzlar",
+"league": "Handball-Bundesliga",
+"value_m": 5.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/?pageNo=4"
+},
+{
+"year": 2026,
+"team": "Beşiktaş Basketbol",
+"league": "EuroLeague",
+"value_m": 5.0,
+"source": "Basketfaul Beşiktaş player budget report",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://basketfaul.com.tr/gundem/yucel-besiktasin-oyuncu-butcesi-3-milyon-350-bin-dolar/"
+},
+{
+"year": 2024,
+"team": "VfL Gummersbach",
+"league": "Handball-Bundesliga",
+"value_m": 4.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/"
+},
+{
+"year": 2024,
+"team": "HC Erlangen",
+"league": "Handball-Bundesliga",
+"value_m": 4.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/"
+},
+{
+"year": 2024,
+"team": "Pallavolo Padova",
+"league": "SuperLega",
+"value_m": 4.0,
+"source": "Sport e Finanza SuperLega budget overview",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportefinanza.it/2024/10/28/superlega-volley-budget/"
+},
+{
+"year": 2024,
+"team": "Cisterna Volley",
+"league": "SuperLega",
+"value_m": 4.0,
+"source": "Sport e Finanza SuperLega budget overview",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportefinanza.it/2024/10/28/superlega-volley-budget/"
+},
+{
+"year": 2024,
+"team": "Yuasa Battery Grottazzolina",
+"league": "SuperLega",
+"value_m": 4.0,
+"source": "Sport e Finanza SuperLega budget overview",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportefinanza.it/2024/10/28/superlega-volley-budget/"
+},
+{
+"year": 2024,
+"team": "Gioiella Prisma Taranto",
+"league": "SuperLega",
+"value_m": 4.0,
+"source": "Sport e Finanza SuperLega budget overview",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.sportefinanza.it/2024/10/28/superlega-volley-budget/"
+},
+{
+"year": 2024,
+"team": "ThSV Eisenach",
+"league": "Handball-Bundesliga",
+"value_m": 3.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/"
+},
+{
+"year": 2024,
+"team": "TuS N-Lübbecke",
+"league": "Handball-Bundesliga",
+"value_m": 3.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/"
+},
+{
+"year": 2024,
+"team": "HSC 2000 Coburg",
+"league": "Handball-Bundesliga",
+"value_m": 3.0,
+"source": "Handballecke.de Etat-Rangliste forum",
+"method": "speculative",
+"confidence": "low",
+"source_url": "https://www.handballecke.de/forum/thread/2696-etat-rangliste/"
 }
 ]
 }

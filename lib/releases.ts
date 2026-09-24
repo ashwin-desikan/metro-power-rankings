@@ -24,7 +24,7 @@ export const RELEASES: Release[] = [
       "The All view now scales each league by the size of its market, and every club from the Primeira Liga, Eredivisie, Süper Lig, Scottish Premiership, Brasileirão and Liga Profesional joins, 770 teams in all.",
       "Attention counts a full year plus each team's biggest month, and college teams rank on what fans search, which puts Texas, Alabama, Ohio State and Michigan among the NFL's middle tier.",
       "The full index is free with a Google sign-in; everyone else sees the top 20.",
-      "116 new valuations reach the Team Valuations and Owners pages, including every NRL club and most of the AFL, with estimates clearly marked and multi-club owners linked across sports.",
+      "The Team Valuations and Owners pages now cover more than 600 teams, adding college, NPB, CFL, rugby, handball, volleyball and women's leagues, with estimates marked and multi-club owners linked.",
     ],
   },
   {

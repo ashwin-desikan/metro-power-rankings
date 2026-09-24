@@ -13,7 +13,8 @@ type Row = {
   displayName: string;
   league: string;
   leagueHref: string;
-  sport: "NFL" | "NBA" | "MLB" | "NHL" | "Football" | "F1" | "WNBA" | "NWSL" | "AFL" | "NRL";
+  sport: "NFL" | "NBA" | "MLB" | "NHL" | "Football" | "F1" | "WNBA" | "NWSL" | "AFL" | "NRL"
+    | "CFL" | "NPB" | "Rugby" | "Handball" | "Volleyball" | "Basketball" | "College";
   valueM: number;
   valueLabel: string;
   year: number | null;
@@ -37,7 +38,8 @@ type Row = {
 type SortKey = "value" | "team" | "league" | "year" | "owner";
 // Ordered by how many rows each carries, so the chips a reader is most likely
 // to want sit left of the fold at 390px rather than wrapping to a second line.
-const SPORTS: Array<Row["sport"] | "All"> = ["All", "Football", "NFL", "NHL", "NBA", "MLB", "F1", "WNBA", "NWSL", "AFL", "NRL"];
+const SPORTS: Array<Row["sport"] | "All"> = ["All", "Football", "NFL", "NHL", "NBA", "MLB", "F1", "WNBA", "NWSL", "AFL", "NRL",
+  "CFL", "NPB", "Rugby", "Handball", "Volleyball", "Basketball", "College"];
 
 export default function ValuationsTable({ rows }: { rows: Row[] }) {
   const [sport, setSport] = useState<(typeof SPORTS)[number]>("All");

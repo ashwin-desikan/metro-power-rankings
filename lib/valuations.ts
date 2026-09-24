@@ -33,7 +33,8 @@ export type ValuationRow = {
   displayName: string; // canonical name when matched, else the sheet name
   league: string; // sheet league/country label (shown verbatim)
   leagueHref: string; // link to the league hub (US) or football country hub
-  sport: "NFL" | "NBA" | "NHL" | "MLB" | "Football" | "F1" | "WNBA" | "NWSL" | "AFL" | "NRL";
+  sport: "NFL" | "NBA" | "NHL" | "MLB" | "Football" | "F1" | "WNBA" | "NWSL" | "AFL" | "NRL"
+    | "CFL" | "NPB" | "Rugby" | "Handball" | "Volleyball" | "Basketball" | "College";
   valueM: number;
   valueLabel: string;
   year: number | null;
@@ -87,6 +88,28 @@ const NAMED_LEAGUES: Record<string, LeagueRoute> = {
   // board's own league table was missing these two.
   AFL: { hub: "/teams/afl", sport: "AFL", resolve: ["AFL", "AFL"] },
   NRL: { hub: "/teams/nrl", sport: "NRL", resolve: ["NRL", "NRL"] },
+  // Added 2026-09-24 alongside scripts/fans/pending/valuations_round2_supabase.csv.
+  CFL: { hub: "/teams/cfl", sport: "CFL", resolve: ["CFL", "CFL"] },
+  // NPB clubs share MLB's resolver pair -- isMlb() falls through to the NPB
+  // lookup (/teams/baseball/npb) when no MLB franchise name matches, so this
+  // reuses that path rather than adding a new isNpb().
+  NPB: { hub: "/teams/baseball/npb", sport: "NPB", resolve: ["MLB", "MLB"] },
+  // No per-team resolver exists yet for these hubs, so resolve stays null:
+  // the league chip links to a real /teams hub, individual rows render
+  // unlinked rather than guessing a slug that 404s.
+  "Top 14": { hub: "/teams/rugby-union", sport: "Rugby", resolve: null },
+  "Handball-Bundesliga": { hub: "/teams/handball", sport: "Handball", resolve: null },
+  SuperLega: { hub: "/teams/volleyball", sport: "Volleyball", resolve: null },
+  EuroLeague: { hub: "/teams/basketball/euroleague", sport: "Basketball", resolve: null },
+  // WSL rides the same women's-football hub and resolver as NWSL -- both are
+  // the "NWSL" sport tag on purpose so the existing women's-football chip,
+  // filter and hub handling cover WSL rows without a new sport bucket.
+  WSL: { hub: "/teams/wfootball", sport: "NWSL", resolve: ["W Football", "W Football"] },
+  // College rows (scripts/fans/pending's CNBC/EADA athletic-department
+  // figures) cover both football and basketball programs under one row, so
+  // there is no single per-team hub to resolve into; the chip still links to
+  // the CFB hub as the closest real page.
+  College: { hub: "/teams/cfb", sport: "College", resolve: null },
 };
 
 // Football country -> league-hub slug under /teams/football/leagues/.

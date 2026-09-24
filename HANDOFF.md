@@ -19946,3 +19946,14 @@ Pushed with Ashwin's explicit approval ("A) Approve all five steps").
 - **Not done (needs Ashwin):** 18 Brazilian valuation rows labelled "Brasileirao Serie A" rather than "Brazil"; the update was blocked pending approval.
 
 **Notion:** Decisions rows added (sum+peak baseline; US Trends blend; sign-in gate with private Supabase; speculative valuations). Backlog rows added (P1 port us_attention into monthly_refresh before 3 Oct; P3 monitor Indiana Trends; P3 valuation gaps; P3 Brazil league label). Backlog "commit all-language history backfill" closed as Done (history lives in Supabase instead).
+
+## 2026-09-24 (evening): cowork (Windows device session) → next session (valuations round 3, 255 owner rows)
+
+Shipped with Ashwin's explicit instruction ("Ship now (steps 6 to 8)").
+
+- Supabase team_valuations: round 3 loaded (6 updated, 41 inserted) from scripts/fans/pending/valuations_round3_sourced_supabase.csv, then 11 superseded 2025 speculative guesses deleted (valuations_round3_cleanup.sql, verified 0 remain). Table now 638 rows. Earlier today: round 2 (274 rows) and brand-proxy replacements (25) loaded. valuations.json rebuilt.
+- Owners: 255 sourced owner rows added to scripts/data/team-owners-seed.json (college programs owned by their university: "state" public, "trust" private). 🔴 48 teams on the valuations board still have no owner row (SuperLega 11, Eredivisie 11, Handball-Bundesliga 9, Top 14 5, Aberdeen, Dundee United, St Mirren, Millwall, Preston, Beşiktaş, Trabzonspor, Santa Clara, Casa Pia, St Kilda, Western Bulldogs, Mirassol). build-team-owners-data.py therefore fails validation; team-owners.json was written this once via a wrapper that tolerates ONLY the "no owner row" problem class, as Ashwin accepted. Until the 48 are filled, owners-weekly (which requires the build to pass) will not commit. A one-off scheduled task researches the 48.
+- lib/valuations.ts and ValuationsTable.tsx: chips and hubs for CFL, NPB, Top 14, Handball, Volleyball, EuroLeague, WSL, College.
+- NOT in this push (still local, awaiting review): /fans/trends, league-median "valued vs attention", Build your own sport filters, college program valuations, Paris FC fix, Fan Index Supabase payload.
+
+**Notion:** no rows changed by this entry. The 48-owner research runs as a scheduled task, not a Notion row.
