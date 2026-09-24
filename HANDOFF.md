@@ -19240,3 +19240,69 @@ would silently read as open, which is the failure that looks like success.
 **Notion:** the existing Backlog row "pick_locks feed: the RLS draft cannot enforce a lock until something populates
 it" is now the blocker for finding c1 rather than a nice-to-have, and is worth re-describing as such on the next
 Notion pass.
+
+### AL. The pick_locks feed, which is what turns the RLS lock from decorative into real
+
+`scripts/predictions/build_pick_locks.py`, called from three runners through a new `sync_pick_locks` helper in
+`mac-mini-jobs/runners/_common.sh`. Section AK applied the write policies; they call `pick_is_open()`, which reads
+`pick_locks`, and with that table empty every event read as OPEN. It no longer does: **217 rows, 172 already locked,
+45 still open, covering 2026-08-21 to 2026-10-12.**
+
+**The whole risk in this job is key drift, so the derivation is a MIRROR, not a design.** `lib/picksGame.ts` owns it,
+the browser stores picks with it, and a row whose key differs by one character is invisible rather than wrong:
+`pick_is_open` finds no row, `coalesce` falls through to `true`, and the event stays editable for ever with nothing
+logged. The two rules, copied verbatim:
+
+```
+eventKey = (league != "pl" and e.event_id) ? e.event_id : f"{e.date}:{e.home_slug}"
+lockTime = e.kickoff if parseable else f"{e.date}T00:00:00Z"
+```
+
+PL is the exception deliberately: its ledger carries no `event_id`, and `picksGame.ts` says changing PL's key would
+orphan every stored pick, so the `league != "pl"` guard is reproduced here even though it looks redundant today. The
+self-test pins that guard specifically, by asserting that PL still keys on `date:home_slug` even when handed an
+`event_id`. MLB contributes two shapes from one file: `ledger` games, and `series` entries keyed
+`series:<round>:<series_id>` by `seriesKey()`. Its series list is empty until October, so an empty MLB file is normal.
+
+**🔴 A MISSING ROW FAILS OPEN, A WRONG ROW FAILS CLOSED, AND THOSE ARE NOT EQUALLY BAD.** A missing row leaves a pick
+editable, which is the hole being closed. A row whose `locks_at` is too early freezes a pick the player should still
+have had, which is worse for them and invisible to us. So an entry with neither a usable kickoff nor a usable date is
+SKIPPED AND REPORTED rather than given a guessed time, and the self-test failing blocks the write entirely rather than
+letting approximate keys through.
+
+**The check that actually proves it is wired to reality** is `--check-coverage`, which reads the real `picks` table and
+asks whether every `(league, season, event_key)` a human has picked has a lock row. Measured before the first write:
+117 distinct picked events, 0 lock rows, **117 uncovered**. After: **0 uncovered.** That is the number to re-run if
+anything about keys is ever touched, and it is the only test that cannot be fooled by both sides sharing a mistake.
+
+**Why it has no dispatcher slot of its own.** Its input is the ledger, so it runs where the ledger is rebuilt:
+`predictions.sh` (PL, UCL, NFL), `cfb.sh` and `mlb-sim.sh`. That keeps feed and source in step by construction, where
+a separate schedule would drift and a fixture added between slots would sit unlocked. The cost is one line of
+coupling in three runners and a note in `sync_pick_locks` that a FOURTH ledger league needs a fourth call, or that
+league silently never locks.
+
+`sync_pick_locks` splits the two failure modes on purpose. The offline self-test gates the write and calls `fail()`,
+because a broken derivation is a defect a human must see and writing wrong keys is worse than writing none. The
+network write only `alert()`s, because a transient Supabase failure must not cost the data run its revalidate ping.
+Same reasoning, and the same shape, as the meta-market step already in `predictions.sh`.
+
+`updated_at` is sent explicitly on every row rather than left to the column default, found by checking after the
+second run: the default fires on INSERT only, so a merge-duplicates upsert of unchanged rows left it frozen at the
+first insert and "when did the feed last run" was unanswerable from the table. `select now() - max(updated_at) from
+public.pick_locks` now answers it, which is what a staleness check would need.
+
+**Verified:** 20 self-test assertions pass; the dry run reports 217 rows across four leagues with no skips; two
+consecutive writes leave 217 rows and 217 distinct keys, so the upsert is idempotent; `updated_at` moves on the second
+run; coverage is 0 uncovered; and against live data `pick_is_open` is now **false** for past events and **true** for
+future ones in all four leagues, so the write policies genuinely refuse a post-kickoff edit. `dispatcher.py
+--check-sync` reports in sync, since all four touched runner files are symlinks into the repo.
+
+⚠️ **THIS UNBLOCKS THE PARKED READ POLICY, and that is a decision rather than a next step.**
+`supabase/pending/20260924_picks_read_policy.sql` was held because an empty `pick_locks` would have collapsed it to
+"your own rows only" and blanked the leaderboard. With 172 of 217 events now locked, applying it would show other
+players' picks for settled events and hide them only for the 45 still open, which is the intended behaviour and would
+close finding c1. It still needs the check the file names: that the leaderboard lists more than one player, as anon
+and as a signed-in user. Not applied here, because nobody asked for it and it changes what visitors see.
+
+**Notion:** the Backlog row "pick_locks feed" is DONE and can be closed. Finding c1 now blocks on applying the parked
+read policy rather than on this feed.

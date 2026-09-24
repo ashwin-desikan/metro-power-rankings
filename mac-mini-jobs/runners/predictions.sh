@@ -70,5 +70,10 @@ commit_paths "Auto: refresh PL + UCL + NFL prediction models [vercel skip]" \
 # tag -- a flush here invalidates all three, so include it too rather than
 # leave it cold on Tue/Fri (the gap windows flagged 2026-08-06). Mirrors
 # predictions-refresh.yml -- keep the two in step.
+# The lock feed for the RLS policy on public.picks. Runs here, and in the
+# other two ledger runners, because its input is the ledger this step just
+# rebuilt. See sync_pick_locks in _common.sh.
+sync_pick_locks
+
 revalidate_ping "predictions-daily" "/predictions/pl" "/predictions/ucl" "/predictions/nfl" "/predictions/mlb" "/predictions"
 note "done"

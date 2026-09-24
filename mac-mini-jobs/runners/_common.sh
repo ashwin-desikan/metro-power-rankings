@@ -277,6 +277,49 @@ guarded() {
 # commit_paths "message" path...
 # Early-exits when nothing changed, exactly as the workflows do, so a no-op day
 # is silent rather than an error. Returns 1 when there was nothing to commit.
+# sync_pick_locks
+# Refreshes public.pick_locks from the prediction ledgers on disk, which is what
+# makes the RLS lock on public.picks real: pick_is_open() reads that table, and
+# an event with no row there reads as OPEN for ever (migration 20260924080603).
+#
+# 🔴 CALLED FROM EVERY RUNNER THAT REBUILDS A LEDGER, AND THAT IS THREE OF THEM:
+# predictions.sh (PL, UCL, NFL), cfb.sh (college football) and mlb-sim.sh (the
+# MLB postseason). It deliberately does NOT have its own dispatcher slot. The
+# feed's input is the ledger, so running it where the ledger changes keeps the
+# two in step by construction; a separate schedule would drift and a fixture
+# added between slots would stay unlocked. If a FOURTH ledger league ever gets
+# its own runner, add a call there too, or that league silently never locks.
+#
+# Split on purpose:
+#   * the SELF-TEST is offline, deterministic and gates the write. It pins the
+#     event_key and lock-time rules against lib/picksGame.ts. If it fails the
+#     derivation is wrong, and writing wrong keys is worse than writing none:
+#     a bogus lock row can freeze a pick that should still be editable, which
+#     is invisible to us and costs the player their entry. So it fails the run.
+#   * the WRITE talks to Supabase over the network. A transient failure there
+#     must not cost the data run its revalidate ping, so it alerts and returns
+#     0. Read the log, not the exit code, to know the feed ran.
+sync_pick_locks() {
+  local script="scripts/predictions/build_pick_locks.py"
+  if [ ! -f "$REPO_DIR/$script" ]; then
+    note "WARN $script is missing; pick_locks was NOT refreshed"
+    return 0
+  fi
+  if [ "$DRY_RUN" = "1" ]; then
+    note "DRY_RUN=1: would refresh pick_locks; showing the dry run instead"
+    ( cd "$REPO_DIR" && "$PY" "$script" ) || true
+    return 0
+  fi
+  ( cd "$REPO_DIR" && "$PY" "$script" --self-test >/dev/null 2>&1 ) \
+    || fail "build_pick_locks self-test FAILED, so nothing was written. The event_key or lock rule has drifted from lib/picksGame.ts; run it by hand to see which assertion broke."
+  if ( cd "$REPO_DIR" && "$PY" "$script" --write ); then
+    note "pick_locks refreshed."
+  else
+    alert "pick_locks feed FAILED (Supabase write). Picks for events added since the last good run stay editable after kickoff until it succeeds. Data itself is unaffected."
+  fi
+  return 0
+}
+
 commit_paths() {
   local msg="$1"; shift
   git add "$@"

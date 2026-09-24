@@ -97,6 +97,11 @@ commit_paths "Auto: refresh MLB + season playoff odds [vercel skip]" \
   public/data/nwsl-sim.json
 
 # Same predictions-daily tag both YAMLs used -- one flush covers all seven.
+# The lock feed for the RLS policy on public.picks. Runs here, and in the
+# other two ledger runners, because its input is the ledger this step just
+# rebuilt. See sync_pick_locks in _common.sh.
+sync_pick_locks
+
 revalidate_ping "predictions-daily" \
   /predictions/mlb /predictions \
   /sports/standings /teams/afl /teams/nrl /teams/wnba /teams/cfl /teams/baseball/npb \

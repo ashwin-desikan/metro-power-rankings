@@ -68,6 +68,11 @@ commit_paths "Auto: refresh CFB predictions [vercel skip]" \
 # lib/cfbSim.ts uses the shared predictions-daily tag (deliberately), so this
 # flush also invalidates PL/NFL/MLB -- cross-warm them too rather than leave
 # them cold until their own next slot, mirroring predictions.sh's own note.
+# The lock feed for the RLS policy on public.picks. Runs here, and in the
+# other two ledger runners, because its input is the ledger this step just
+# rebuilt. See sync_pick_locks in _common.sh.
+sync_pick_locks
+
 revalidate_ping "predictions-daily" \
   "/predictions/cfb" "/predictions/pl" "/predictions/nfl" "/predictions/mlb" "/predictions"
 note "done"
