@@ -22,9 +22,9 @@ export const RELEASES: Release[] = [
     headline: "A Fan Attention Index for 660 teams",
     items: [
       "The new Fan Attention Index ranks 660 teams by the attention they draw on Wikipedia in every language, blended with Google Trends inside each league.",
-      "It covers the four major US leagues, college football and basketball, global club football from the Premier League to Liga MX, women's sports and twelve world leagues.",
-      "Each league shows its own ranking, and the All view compares teams across sports on one scale anchored to real pageviews.",
+      "It covers the US major leagues, college sport, global club football, women's sports and twelve world leagues, each with its own ranking plus an All view that compares across sports on one scale.",
       "Where a valuation exists, the table sets it beside attention, and the methodology page explains every step and limit.",
+      "Security hardening: the public metro API accepts real slugs only, admin changes verify their session, and standard security headers go out with every page.",
     ],
   },
   {
