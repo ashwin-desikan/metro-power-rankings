@@ -409,11 +409,21 @@ def run(ym=None, dry_run=False):
                 r["trends_index"] = new_vals[r["team"]]
 
     recompute_blend_and_cross_sport(u, anchors)
-    history_size = append_history_month(u, target_ym, anchors)
 
+    # 🔴 THE DRY-RUN CHECK MUST COME BEFORE append_history_month, WHICH WRITES.
+    # It creates public/data/fans/history/fan-attention-YYYY-MM.json and updates
+    # index.json, so with the call above this check a "dry run" left two
+    # generated files behind. On the mini that matters more than it sounds: the
+    # clone is shared with the dispatcher, and an uncommitted generated file
+    # stops every job that fast-forwards, which cost about fourteen hours on
+    # 2026-09-24 (HANDOFF section AI). jobs.toml tells the next person to
+    # DRY_RUN-validate this job by hand before its first live slot, so the dry
+    # run has to be safe to do in place.
     if dry_run:
-        log("DRY_RUN: not writing universe_state.json / CSVs / fan-attention.json")
+        log("DRY_RUN: writing nothing (no history month, no universe_state.json, no CSVs, no fan-attention.json)")
         return
+
+    history_size = append_history_month(u, target_ym, anchors)
 
     with open(STATE_PATH, "w", encoding="utf-8") as f:
         json.dump(u, f, ensure_ascii=False, separators=(",", ":"))
