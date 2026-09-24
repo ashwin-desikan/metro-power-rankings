@@ -89,6 +89,20 @@ state changed)`. `.githooks/pre-commit` rejects a HANDOFF change without it
 Claude cloud task, "Notion reconciler", catches drift as a backstop; relying on
 it breaks the contract.
 
+Since 2026-09-24 that task does more than look for drift: it VERIFIES each
+entry's `Notion:` line the day after, against the rows actually created or
+edited on that entry's date. A line naming a row that was never written is a
+finding, not a note, and `**Notion:** none` is checked too, for whether state
+really stayed still. Write the line knowing it is read.
+
+🔴 **An entry whose subject IS a scheduled job can almost never close with
+`none`.** The first thing that check caught was a session that rewrote a cloud
+routine's stored prompt and then closed with `Notion: none`. A routine's prompt
+IS its behaviour, so editing it changes an Active job, and its Scheduled jobs
+row needs both the change and a new Last verified. The same trap covers editing
+a runner, a `jobs.toml` slot or a schedule: the code change and the row are two
+halves of one job change, and only the row is queryable.
+
 On the mini the Notion MCP is added with
 `claude mcp add --transport http notion https://mcp.notion.com/mcp` and
 authorised once with `/mcp`. launchd jobs have no Claude in the loop and do not

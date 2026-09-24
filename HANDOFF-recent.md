@@ -631,7 +631,9 @@ while the routine ran the old one, which is the failure that looks like success.
 four 2026-09-23 entries whose Notion lines named rows that were never created is still open, and the first run under
 the new prompt will re-find them. A detector finding the defect it was built for is not a fault in the detector.
 
-**Notion:** none (no queryable state changed by this entry; the Decisions row for the rule was written in AS).
+**Notion:** Scheduled jobs, row "Notion reconciler (Citizen of Nowhere)": the prompt rewrite in this entry changed an Active job's behaviour, so the row needed the verification step, the merge-inclusive `commits-recent.txt` and Last verified 2026-09-24. The Decisions row for the rule itself was written in AS.
+
+**CORRECTED 2026-09-24.** This line first read "none (no queryable state changed by this entry)". That was false and the verifier this entry installed caught it on its first run, which is section AU. Rewriting a routine's stored prompt IS changing a scheduled job. The row left untouched then still described `commits-recent.txt` as "the last 80 non-merge commits", false since 540eb01f2 that same morning, and knew nothing of the verification step. The reconciler brought the row up to date in its 11:23Z run; the correction here is to the claim, which is mine.
 
 
 ## 2026-09-23: cowork (Windows device session) → next session (Fan Attention Index /fans shipped to main)
