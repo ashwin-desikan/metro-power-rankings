@@ -19673,3 +19673,42 @@ Ashwin rejected the v0.3.1 All view (MLS clubs above every NFL team). Root cause
 
 **Notion:** Backlog row added (activate fans-monthly on the mini), Scheduled jobs row added (fans-monthly, pending activation), Decisions row added (cross-sport revenue anchor), Data sources row added (league revenue anchor CSV).
 
+
+### AU. The verification step works, and its first catch is section AT's own Notion line
+
+Ran `trig_01MeTbjkpBua9UMypHz7KRFh` by hand at 11:23Z to prove the AT prompt edit. It worked, and the proof is better
+than a clean run would have been.
+
+**What the run did right.** First action was a tool call, so the 09-23 plan-only failure the prompt opens with did not
+recur. It read all four databases in view mode and paginated to `has_more: false` on each, 191 Backlog rows across two
+pages, unfiltered. When three view queries exceeded the token limit it wrote them to disk and parsed them rather than
+accepting a partial page, which is the exact failure the prompt warns about. Decisions was sorted on `Row created`, not
+`Decided`. And the log line carries the new field: **1 false Notion line.**
+
+🔴 **THE FALSE LINE WAS MINE, AND IT WAS SECTION AT'S OWN `Notion: none`.** AT is the entry in which I rewrote the
+stored prompt of a scheduled job. The contract counts changing a scheduled job as queryable state, so the honest line
+was never "none". Worse than the omission: the Scheduled jobs row I left untouched then said `commits-recent.txt` held
+"the last 80 non-merge commits", which `540eb01f2` had made false that same morning, and it said nothing about the
+verification step the prompt had just gained. So the entry did not merely under-claim, it left a row actively wrong
+about a file the routine reads as ground truth.
+
+The line AT should have carried: *Scheduled jobs row "Notion reconciler (Citizen of Nowhere)" updated with the
+verification step and the merge-inclusive input, Last verified 2026-09-24.*
+
+**The lesson, and it is not a small one. A ROUTINE'S PROMPT IS ITS BEHAVIOUR.** Editing it is a change to a scheduled
+job, not documentation about one. I treated the prompt as configuration of a thing I was describing rather than as the
+thing itself, which is the same shape as the `deploy_drift` earlier today: committing a runner to the repo is half a
+deploy, and editing a prompt without touching its row is half a job change. Both times the missing half was invisible
+until something external looked.
+
+**Verified rather than taken from the report.** The row now reads `Last verified 2026-09-24`, mentions the verification
+step and no longer says "non-merge". `fans-monthly` also gained the `Last verified` it was created without. The morning
+P1, which waited on this prompt step, is closed, and closed on direct evidence: the step was in the prompt the run was
+given.
+
+**The observation worth keeping is the reconciler's own:** the detector's first finding is its own author. A check whose
+first catch is the session that built it is stronger evidence that it works than any number of clean runs, and it is
+also the answer to the obvious worry about a session grading its own homework. It did not grade mine. It failed mine.
+
+**Notion:** none by this entry. The two Scheduled jobs corrections and the P1 closure were the reconciler's own writes
+during the 11:23Z run, verified here over REST rather than accepted from its report.

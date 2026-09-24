@@ -1,3 +1,5 @@
+2026-09-24T12:16:54+01:00  3ad626944  HANDOFF: 2026-09-24 section AT, the reconciler prompt now verifies the Notion line [vercel skip]
+2026-09-24T12:15:36+01:00  572f3c079  Fan Attention Index v0.4.1: revenue-anchored cross-sport score, 770 teams, monthly refresh job
 2026-09-24T12:10:21+01:00  8e430bbbd  football: refresh live bundles [vercel skip]
 2026-09-24T12:06:55+01:00  f39d6cdd8  HANDOFF: 2026-09-24 section AS, the receipt rule is ruled and the reason is cost [vercel skip]
 2026-09-24T12:01:48+01:00  8092cdb6b  football: refresh live bundles [vercel skip]
@@ -76,27 +78,3 @@
 2026-09-22T08:43:32+01:00  95b49a60f  forecast: header cells take the top-level split rule too [vercel skip]
 2026-09-22T08:35:58+01:00  a1ca4b388  forecast: split wikitext cells at top level only, and anchor France [vercel skip]
 2026-09-22T08:26:59+01:00  7d371d8f1  forecast: extend the known-results guard to every country [vercel skip]
-2026-09-22T08:19:06+01:00  3f1c3dd27  elections: Labour leads the UK polling chart
-2026-09-22T08:18:54+01:00  6e86b214e  forecast(uk): correct the 2024 baseline row and check it against the real result [vercel skip]
-2026-09-22T07:07:36+01:00  4f0817680  chore(substack): refresh feed snapshot [vercel skip]
-2026-09-22T06:11:00+01:00  7db1ed8b4  screen: weekly US number-ones refresh [vercel skip]
-2026-09-22T06:10:39+01:00  4d20c7a29  football: refresh live bundles [vercel skip]
-2026-09-22T03:37:00+01:00  c65253c36  chore(activity): refresh site activity feed [vercel skip]
-2026-09-22T02:15:38+01:00  16dac8460  ops: daily sweep 2026-09-22 [vercel skip]
-2026-09-22T00:05:58+01:00  5fe3b7594  football: refresh live bundles [vercel skip]
-2026-09-21T20:52:41+01:00  000351242  forecast(il): step B2, re-read the seven polling articles from raw wikitext [vercel skip]
-2026-09-21T19:11:10+01:00  5d10d273f  Release notes: trim 21 Sep entry
-2026-09-21T18:09:30+01:00  1bcd25e73  football: refresh live bundles [vercel skip]
-2026-09-21T12:25:13+01:00  766c23726  Champions: LPL 2026 Galle Gallants; release notes for the Israel correction; drift watcher counts shipping commits only
-2026-09-21T12:18:21+01:00  88e7f2027  gitattributes: generated files merge by union; handoff entry and correction [vercel skip]
-2026-09-21T12:14:46+01:00  77c0d0aa6  forecast: Israel per-list seat simulation and calibration data, report only [vercel skip]
-2026-09-21T12:09:38+01:00  5fd255368  football: refresh live bundles [vercel skip]
-2026-09-21T11:52:53+01:00  e00b88927  Champions: CPL 2026, Antigua & Barbuda Falcons; cricket runner path fix; coalition research [vercel skip]
-2026-09-21T11:21:07+01:00  7cb1f3d1f  deploy: build 19b8c9b0e, Sweden 2026 result [deploy-retry]
-2026-09-21T11:21:05+01:00  d93c11661  handoff: Israel forecast fix, Sweden push incident, handoff_recent UTF-8 fix [vercel skip]
-2026-09-21T11:14:23+01:00  1d811d4de  forecast: Israel colspan fix, 120-seat guard, hand-corrected il block [vercel skip]
-2026-09-21T10:19:56+01:00  19b8c9b0e  elections(se): file the 2026 general election result
-2026-09-21T10:00:13+01:00  7fb8881e9  reconciler: entry count in the HANDOFF-recent banner, plus workflows-list.txt for the Monday audit [vercel skip]
-2026-09-21T09:40:03+01:00  3f5fafeaa  data: owners weekly, Yankees minority to Apollo Sports Capital [vercel skip]
-2026-09-21T09:32:26+01:00  c0a232928  handoff_recent: write newest entry first, so a truncated fetch still sees today [vercel skip]
-2026-09-21T09:24:53+01:00  cd7718522  reconciler: exclude data: refresh-schedule from commits-recent.txt too [vercel skip]

@@ -9,8 +9,8 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 76, 2026-09-18 to 2026-09-24
-     If the reader counts fewer than 76 entries, its fetch window stopped
+     entries: 75, 2026-09-18 to 2026-09-24
+     If the reader counts fewer than 75 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
 ## 2026-09-24: cowork (Windows device session) → next session (Fan Attention Index v0.4.1 + monthly job)
@@ -28,6 +28,45 @@ Ashwin rejected the v0.3.1 All view (MLS clubs above every NFL team). Root cause
 
 **Notion:** Backlog row added (activate fans-monthly on the mini), Scheduled jobs row added (fans-monthly, pending activation), Decisions row added (cross-sport revenue anchor), Data sources row added (league revenue anchor CSV).
 
+
+### AU. The verification step works, and its first catch is section AT's own Notion line
+
+Ran `trig_01MeTbjkpBua9UMypHz7KRFh` by hand at 11:23Z to prove the AT prompt edit. It worked, and the proof is better
+than a clean run would have been.
+
+**What the run did right.** First action was a tool call, so the 09-23 plan-only failure the prompt opens with did not
+recur. It read all four databases in view mode and paginated to `has_more: false` on each, 191 Backlog rows across two
+pages, unfiltered. When three view queries exceeded the token limit it wrote them to disk and parsed them rather than
+accepting a partial page, which is the exact failure the prompt warns about. Decisions was sorted on `Row created`, not
+`Decided`. And the log line carries the new field: **1 false Notion line.**
+
+🔴 **THE FALSE LINE WAS MINE, AND IT WAS SECTION AT'S OWN `Notion: none`.** AT is the entry in which I rewrote the
+stored prompt of a scheduled job. The contract counts changing a scheduled job as queryable state, so the honest line
+was never "none". Worse than the omission: the Scheduled jobs row I left untouched then said `commits-recent.txt` held
+"the last 80 non-merge commits", which `540eb01f2` had made false that same morning, and it said nothing about the
+verification step the prompt had just gained. So the entry did not merely under-claim, it left a row actively wrong
+about a file the routine reads as ground truth.
+
+The line AT should have carried: *Scheduled jobs row "Notion reconciler (Citizen of Nowhere)" updated with the
+verification step and the merge-inclusive input, Last verified 2026-09-24.*
+
+**The lesson, and it is not a small one. A ROUTINE'S PROMPT IS ITS BEHAVIOUR.** Editing it is a change to a scheduled
+job, not documentation about one. I treated the prompt as configuration of a thing I was describing rather than as the
+thing itself, which is the same shape as the `deploy_drift` earlier today: committing a runner to the repo is half a
+deploy, and editing a prompt without touching its row is half a job change. Both times the missing half was invisible
+until something external looked.
+
+**Verified rather than taken from the report.** The row now reads `Last verified 2026-09-24`, mentions the verification
+step and no longer says "non-merge". `fans-monthly` also gained the `Last verified` it was created without. The morning
+P1, which waited on this prompt step, is closed, and closed on direct evidence: the step was in the prompt the run was
+given.
+
+**The observation worth keeping is the reconciler's own:** the detector's first finding is its own author. A check whose
+first catch is the session that built it is stronger evidence that it works than any number of clean runs, and it is
+also the answer to the obvious worry about a session grading its own homework. It did not grade mine. It failed mine.
+
+**Notion:** none by this entry. The two Scheduled jobs corrections and the P1 closure were the reconciler's own writes
+during the 11:23Z run, verified here over REST rather than accepted from its report.
 ## 2026-09-23 (later): cowork (Windows device session) → next session (/fans nav wiring)
 
 The /fans page shipped with only the desktop Deep Dives link, which broke DESIGN-STANDARDS §5 ("A new destination goes in both, in the commit that adds it"; "A page that isn't reachable is a bug"). Now wired everywhere the sibling cross-sport index (/sports/valuations) appears: `lib/sportsCatalog.ts` SPORTS_FEATURES (desktop Sports mega-menu + mobile Sports section; now 10 items, at the column cap), `app/MobileMenu.tsx` Deep Dives, `lib/deepDives.ts` (deep-dives hub card) and the `app/sports/page.tsx` features grid. typecheck, client-imports, mobile and data-reads checks pass. Rule for next time: a net-new page gets every nav surface in the same commit as the page.
@@ -3907,103 +3946,4 @@ Fixed:
 Found by the inventory, for Ashwin: the Windows task "Daily Newsletter Digest" has failed daily since 29 June (81 missed runs) while the mini runs the same pipeline. Backlog row filed; likely a leftover to retire.
 
 **Notion:** Backlog closed 8 (NFL seeds watch, NFL Friday refresh, NFL hand dispatch, NRL finals, Sweden, evening news, 45 AFC/CAF clubs, duplicate build-cap row), added 5 (Windows newsletter task, CAF group-stage regex check, reconciler first run, live jobs.toml reconcile, stale REBUILD-RUNBOOK table); Decisions added 11; Scheduled jobs database created with 90 rows; Notion operating contract page created.
-
-## 2026-09-18 — mini → next session: a SUCCESSFUL promotion failed the job; the season 2025 row is correct; ntfy reviewed
-
-### A. gap-league-watch failed for doing its job right
-
-Failed its 05:00Z slot, ops-autofix re-ran it, it failed again and was left for a human. Fixed in `0731cb049`.
-
-The watcher auto-promoted CONCACAF Nations League on 09-17 (`3df23071c`), so 536 left `leagues_pending.json`
-exactly as designed. The self-test then asserted `{ids with nations_auto} == {536}` against the LIVE file, which a
-successful promotion could only fail. Line 174's `next(e for e in _p if ... == 536)` would have raised
-`StopIteration` immediately after, so fixing the assertion alone just moved the error, and the 323 lookup beside it
-was primed to break the same way the day the Indian Super League promotes.
-
-**Third instance this week of a self-test encoding a transient state as an invariant**, after `wnba_finalize`'s
-fortnight shape and its window assertions. The pattern is now worth naming: a test that pins today's data rather than
-the rule will reject the correct future state, and because it runs as a gate before `--write`, it blocks the fix and
-passes the bug. It now asserts the rule, that nothing skips the club-Lookup gate unless it is a known national-team
-competition, against whatever the file holds.
-
-🔴 **The first rewrite leaked, and an adversarial probe caught it, not review.** Gating on `nations_auto()` meant a
-club competition carrying `auto_promote: true` with `comp_type: "continental"` returned False, dropped out of the
-set, and sailed through the very check meant to stop it. The old `== {536}` form caught that case only as a side
-effect of demanding exact membership. Now gated on the raw `auto_promote` flag, with three planted cases proven to
-fail: continental plus auto_promote, an unknown international id, and no comp_type at all. **Plant a bad row and
-watch the test fail before believing a guard works.**
-
-### B. The `season: 2025` row in leagues.json is CORRECT
-
-Worth writing down because it looks like a bug and is not. api-football labels the CONCACAF Nations League campaign
-that runs 23 Sep to 11 Nov 2026 as season **2025**: id 536 numbers a campaign by the year it STARTS, 880 by the World
-Cup it feeds, 36 by the year it ENDS. `classify`'s window variant takes the season year verbatim and ignores the
-target year, which is why `season_used` is 2025, and `refresh.py:465` passes that same label to `/standings` and
-`/fixtures`. Querying 2026 would return nothing. Do not "fix" this to 2026.
-
-### C. ntfy over the last 12 hours: six messages, nothing unexplained
-
-Two `[ALERT] gap-league-watch FAILED` (05:05Z, 06:29Z) plus the ops-autofix note, all section A. Two
-`football: unmatched team(s) -- add to Lookup` (23:04Z, 05:07Z), the standing Neftchi / Johor Darul Takzim backlog
-that Friday's Windows session is booked to clear. One Daily Ops Sweep at 01:15Z reporting **31 jobs ran, 0 failed, 0
-missed, the first fully clean window**, and flagging Formula E data as overdue. No unexplained pages.
-
-**Still open:** Formula E is overdue per the 01:15Z sweep, and `run-gap-league-watch.sh` still calls `push()` only
-from `fail()`, so a promotion goes live silently. A wrong promotion would be equally silent.
-
-### E. MLB and NPB in the event strips, and Coming up widened to a week
-
-All three sit UNPUSHED in the shared tree as of this entry: Ashwin said "wait" on the build. `liveData.tsx` modified,
-`lib/mlbFixtures.ts` and `lib/npbFixtures.ts` new and untracked. Build passes, exit 0. One paid build covers all three
-when he says go.
-
-**Coming up is 7 days, results and On today unchanged.** `COMING_DAYS` 3 to 7. Ashwin then said "keep it at 3 days for
-results and upcoming", which was already true and was verified rather than assumed: `COMING_DAYS` feeds only the
-`coming` filter, results use `RESULTS_BACK_MS` (72h) and On today uses `todayWindow`. Measured by serving the build:
-Coming up 135 to 202 fixtures before baseball, page weight up 0.4%.
-
-**MLB overrules the 2026-09-11 ruling.** That ruling is quoted in `mlbBlock` ("the playoffs must show, fifteen
-regular-season games a day would make the list too long") and is why MLB was invisible all September: the postseason
-ledger has 0 rows until the bracket exists. Ashwin overruled it on 09-18. Both sources now feed the strips, postseason
-ledger first so a bracket game keeps its label, then the live scoreboard.
-
-`lib/mlbFixtures.ts` is ONE REQUEST PER DAY across a 13-day window, not the month form: a month of a 15-game-a-day
-league is far more than the window needs and large enough to worry the 2 MB data-cache item limit. Raw bodies are
-fetched `noStore` (2.4 MB across the window) and the SHAPED result is what `unstable_cache` holds, the same lesson as
-`getCfbStandings`. Confirmed in the build log: the only data-cache warning is the pre-existing `companies.json` one.
-
-🔴 **A bug this caught before shipping: ESPN sends `score: "0"` on games that have NOT been played.** Replaying the
-shaping against the live feed showed tonight's fixtures coming back 0-0, and `collectEvents` treats any event carrying
-a score as a RESULT, so every scheduled game would have rendered as a 0-0 final and vanished from On today. Scores are
-now gated on `state === "post"`, not on the field being present.
-
-**NPB uses SPAIA, not Flashscore.** Ashwin suggested Flashscore; SPAIA returns real JSON, is already trusted here for
-the ladder, and is already shape-checked daily by the mini's feed monitor. Flashscore is JS-rendered and scraping it
-would be fragile and against its terms.
-
-🔴 **SPAIA's `game_schedule` is TODAY ONLY.** `Month`, `DateJPN`, `From`/`To`, `GameKindID`, `LeagueCD`, `TeamID` are
-all ignored: every variant returns the identical rows. So NPB fills On today and Recent results and CANNOT fill Coming
-up. Anyone wanting NPB fixtures further out needs npb.jp's monthly page, which carries the full month as
-Japanese-language HTML and means a real parser, not a quick patch.
-
-Also checked before raising a false alarm: 18 Sept returned three games, all Central League, and npb.jp's own index
-confirms three games that day (Tokyo Dome, Yokohama, Koshien). **A short card is a quiet day, not a truncated feed.**
-
-**Verified live, by serving the build:** On today 20 to 38 fixtures (18 Baseball: 3 NPB, 15 MLB), Recent results 64 to
-113 (49 MLB finals with real scores), Coming up 202 to 293 (91 MLB). `/api/on-today` carries the baseball items too.
-
-**Method note, and it is the fourth this week.** Three times in this session I concluded something was MISSING by
-reading a truncated slice: Aussie Rules "absent" from all strips (it was in On today), and Baseball "absent" from
-Coming up twice, when it sat at offset 14,233 of a 9,000-character read. Each time the executed check said the
-opposite. Grep for the thing itself, or print the whole section; never conclude absence from a prefix.
-
-**SHIPPED, superseding the "all three sit UNPUSHED" line above.** Ashwin said go; `8ea042238` pushed alone as HEAD
-(`touches_build=1 tagged=0`), one paid build, live at 11:46Z about six minutes after the push. Verified on production
-by searching for the rows themselves rather than a slice: On today 38 fixtures across 7 sports with a Baseball group
-of 18 (15 MLB, 3 NPB), Recent results 113 across 5 sports (49 MLB finals), Coming up 293 across 7 sports (91 MLB).
-NPB correctly appears in On today only, which is the SPAIA today-only ceiling described above, not a fault.
-
-One note for whoever runs the em-dash check next: a whole-file `grep '—'` on `liveData.tsx` reports 8 hits and blocks
-the commit, but they are all pre-existing, and one of them is `const DASH = "—"`, the display character itself. The
-check that means anything is the added-lines one, `git diff -U0 <file> | grep '^+' | grep '—'`.
 
