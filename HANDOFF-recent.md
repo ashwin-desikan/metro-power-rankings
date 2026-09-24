@@ -9,8 +9,8 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 77, 2026-09-17 to 2026-09-23
-     If the reader counts fewer than 77 entries, its fetch window stopped
+     entries: 76, 2026-09-17 to 2026-09-23
+     If the reader counts fewer than 76 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
 ## 2026-09-23 (later): cowork (Windows device session) → next session (/fans nav wiring)
@@ -465,6 +465,49 @@ here: merge commits are absent by construction, so "branch X is merged" is unche
 commits leak into it (`1a8f66819`, `3b6ca4e4d` and `96ca87654` are all present). The two-line fix, deliberately NOT
 applied because the hook runs on every commit and deserves its own change: drop `--no-merges`, and skip regenerating
 when HEAD is not `main`.
+
+### AR. A correction I owe the reconciler, and the commits-recent.txt fix it asked for
+
+**First, the correction, because it is against me.** Sections AN and AP said that section Z's recorded lesson,
+"sharing the PARENT page covers every child", was FALSE. The reconciler pushed back and it is right. The mechanism was
+never in doubt: the moment Ashwin applied the share, every child became visible at once, nine data sources and the
+register included, which is precisely what Z said would happen. What was missing was **the share, not the mechanism**,
+and the 404s were the ordinary signature of a page that had never been granted rather than evidence against a rule.
+
+The narrow claim in AN, that the broad grant did not exist at that moment, was true and worth recording. The framing
+around it, that a documented lesson was wrong, was not, and it is the more memorable half, which is exactly why it
+needed correcting. The transferable point is smaller and more useful than the one I reached for: **a 404 tells you a
+page is not shared. It tells you nothing about whether sharing the parent would have worked.** I inferred a broken
+mechanism from a missing grant, which is the same shape of error as reading a job's file timestamps and concluding what
+the job did.
+
+**Second, the fix.** `.githooks/pre-commit` regenerated `commits-recent.txt` in two ways that misled its only reader:
+
+| mechanism | consequence | now |
+| --- | --- | --- |
+| `--no-merges` | no subject beginning "Merge" ever appeared, so "is branch X merged?" was unanswerable from the file. The reconciler read the absence of `e3ad59153` as doubt about the security merge | merges included; they match neither `--grep` pattern, so nothing else changes |
+| `git log` follows whatever HEAD the clone is on | a session committing on a branch wrote BRANCH commits into a file read as main's history. `1a8f66819`, `3b6ca4e4d` and `96ca87654` all arrived that way, and the first was branch-only and unmerged at the time | off `main` the file is left exactly as main left it, and the hook says so on stderr |
+
+Both mechanisms were the reconciler's finding and both were confirmed by measurement here before anything was edited.
+This is the same family as the `HEAD:main` push that `require_expected_branch` now refuses: **in a shared clone, HEAD
+is not a safe proxy for "the project"**. Stale is recoverable and obvious; wrong is neither, which is why the branch
+case leaves the file alone rather than writing a best effort.
+
+The stale note above that block, which called generation from HEAD "harmless", is corrected in place rather than left
+sitting above a paragraph that contradicts it.
+
+**Third, a correction the reconciler asked for.** It created a Scheduled jobs row for the new rate-limiter probe, with
+honest placeholders for job name, runner path and alert channel, on the reasoning that a job without a row does not
+exist. The reasoning is right and the premise is not: **the probe is not a scheduled job.** It is
+`find_limiter_degraded()` inside `mac-mini-jobs/detect_issues.py`, so it runs wherever that runs: the `ops-autofix`
+job, every two hours at :15 UTC, and the daily ops sweep. Its alert channel is therefore ops-autofix's ntfy plus the
+sweep digest, it has no runner of its own, and it has no healthchecks tile, which is just as well because the project
+is at 20 of 20. The row should be deleted or folded into the existing `ops-autofix` row as a note about what it now
+checks. Deliberately not deleted from here: it is the reconciler's row and one word from Ashwin settles it.
+
+**Notion:** the Backlog P2 the reconciler filed for `commits-recent.txt` is done by this entry and can be closed. The
+Scheduled jobs row for the limiter probe should be deleted or folded into `ops-autofix`, per above. The receipt-design
+Decisions row is still pending Ashwin's ruling.
 ## 2026-09-23: cowork (Windows device session) → next session (Fan Attention Index /fans shipped to main)
 
 Cowork session, started from a teardown of Rascasse (audience-intelligence vendor). Built and merged a new cross-sport **Fan Attention Index** at `/fans` + `/fans/methodology`. Branch `fan-attention-index` merged `--no-ff` into main after `security-hardening`.
@@ -3930,81 +3973,4 @@ Two mistakes worth keeping: the award-order list said "MVP" and the sheet says *
 - NOT DONE, and explicitly asked for: **NFL awards and Pro Bowl in the NFL year hubs.** `build-nfl-data.py` already emits `award-winners.json` and `pro-bowl-counts.json`; they need a by-year slice and a component mirroring `SeasonHonours.tsx`.
 - NOT DONE: validating the NHL sim against NHL.xlsx's own "2026 Projections" logreg Cup odds, which was the agreed benchmark.
 - The mobile probe was NOT rerun after the last few edits (sort keys, season jumper, honours). Typecheck and full verify are green; the 390px numbers are from one revision earlier: season pages 7.0 to 7.7 phone screens, the 2027 shell 3.1, the index 6.7, no page-level horizontal scroll anywhere.
-
-## 2026-09-17 — mini → next session: HANDOFF entries are now written WITHOUT ASKING (standing rule); first clean night since the ESPN outage
-
-### A. Standing rule from Ashwin
-
-**Always add work to HANDOFF without asking.** Ruled 2026-09-17 after he had to say "add it to HANDOFF" three
-times in a row for entries that were already written, which made the ask pure ceremony.
-
-Treat the entry as part of the definition of done for a change, alongside the code and the verification: write it
-before reporting the work finished, commit it in the same push or the adjacent one tagged `[vercel skip]`, and do
-not report "added it to HANDOFF" as a separate accomplishment. Record the reasoning and the mistakes, not only the
-fix. The entries that have earned their keep are the ones saying why something was built differently from how it was
-asked for (09-16 section G) or which assumption turned out false (09-16 section H). The no-em-dash rule stands, and
-stale open items still get closed in place with a marker rather than left reading as outstanding.
-
-### B. Overnight: nothing failed
-
-First night with no GitHub Actions failure at all since the 09-15 ESPN outage began. Every scheduled run since
-18:00Z yesterday is green, including AFL + NRL at 00:15Z and 10:38Z (the finals data the 09-16 fix unfroze, now
-refreshing unattended), Majors at 10:08Z, ESPN standings snapshot at 05:00Z and the staleness dead-man's switch at
-04:39Z. `Test` is green across every push.
-
-`feed-monitor` ran on schedule at 07:24Z and logged `ok` for all 18 entries, including the two new date-form canary
-rows from 09-16 section G. That is the canary's first unattended run.
-
-**Still unproven:** the WNBA fix (`de5c233a4`) has only been verified by my manual dispatch. Its cron is written
-`0 8 * * *` but GitHub has actually fired it between 11:00Z and 14:00Z every day this week, so at 10:41Z today's run
-had not started yet. The first scheduled confirmation is due later today. If it fails, the place to look is
-`_windows()` in `wnba_finalize.py` and the self-test assertions immediately above it, both rewritten yesterday.
-
-### C. Carried forward, unchanged
-
-Nothing yet alerts when a frontend reader swallows an upstream error with `return []`, and the 09-16 canary cannot
-see a caller still using a dead upstream form: it checks that ESPN's forms work, not that our code uses the working
-ones. Other readers converted in `6edc58ecb` may still have the silent trace gap from 09-15.
-
-### D. Live standings: college football events showed a frozen poll rank
-
-Ashwin reported that On today / Recent / Upcoming for college football carried the wrong ranking, and that it should
-show AP until the CFP rankings exist, then CFP. Fixed in `18eb6a0cd`, verified live at 11:11Z.
-
-**Cause.** The labels read `g.ap` from `cfb-predictions.json`. `build_cfb_sim.py:1084` stamps that field ONCE, when
-the job first adds a fixture, so the label froze at whatever rank the team held that week. Miami read `#7` from its
-Week 2 entry while the live AP poll had it 5th; Ohio State read `#1` against an actual 6th. It is wrong in both
-directions over a season: a team that drops out of the Top 25 keeps its number forever, and one that climbs in after
-its fixture was added shows nothing at all, because the stored value is null.
-
-`cfbBlock` already held the live snapshot. It calls `getCfbRankings()` on its first line and renders it in the table
-immediately above the strip. The events strip simply never read it.
-
-**The CFP half needed no new code.** `lead` is `s.polls[0]`, ordered CFP, AP, Coaches by `POLL_ORDER` in
-`lib/cfb-live.ts`. Joining the labels to the lead poll means they follow whatever poll the block is already showing,
-so when ESPN starts publishing CFP in November the labels switch on their own. Measured 2026-09-17: ESPN's rankings
-feed carries AP, AFCA Coaches, FCS, DII and DIII, and no CFP poll, which is why AP leads today.
-
-**The join is not name equality, and that was the trap.** ESPN says "Miami" and "Ole Miss"; the poll rows carry the
-canonical "Miami FL" and "Mississippi" because they pass through `resolve()`. A raw join would have silently dropped
-exactly the ranked teams, producing a page that looked fine and showed no ranks. Exported `canonicalSchool()` from
-`lib/cfb-live.ts` reusing the existing private `resolve()`, rather than copying `CANONICAL_OVERRIDE` to the call
-site: a duplicated lookup drifting from its original is precisely what broke `wnba_finalize` on 09-16.
-
-**Ruling.** Ashwin chose live rank everywhere, completed games included, so Recent results agrees with the table
-beside it instead of showing two different numbers for the same team. The frozen `g.ap` stays on `/predictions/cfb`,
-where the rank at prediction time is the honest number for an accuracy ledger.
-
-**Verification, in the order it was done.** Replayed the join in Python over the real slate against the live AP poll
-BEFORE spending a build: 7 of the first 10 upcoming labels changed, 25 ranked-team hits, and the three unresolved
-names (Eastern Washington, Northern Iowa, Portland State) are unranked FCS visitors that correctly take no prefix.
-Then `typecheck`, `check:live-data`, `check:data-reads` (1115 files) and a full `npm run build`, exit 0. Pushed alone
-as HEAD so Vercel read the build-required rule from the right commit. Polled production until the label turned over:
-`#7 Miami` to `#5 Miami` at 11:11Z, about four minutes after the push.
-
-**Worth knowing for November.** The ledger's scope is still "games involving AP Top 25 teams only", so when CFP goes
-live the labels will read CFP while the slate is still SELECTED by AP involvement. Defensible, but it is a second
-decision hiding behind the first, and it belongs to `build_cfb_sim.py`, not to this page.
-
----
 

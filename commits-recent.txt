@@ -1,3 +1,4 @@
+2026-09-24T11:53:27+01:00  f68f5279c  HANDOFF: 2026-09-24 section AQ, the limiter is confirmed shared in production [vercel skip]
 2026-09-24T11:49:47+01:00  c848c6782  detect_issues: the limiter probe needs a User-Agent or it 403s for ever [vercel skip]
 2026-09-24T11:46:45+01:00  951f230e0  rate limiter: make the silent per-instance fallback observable
 2026-09-24T11:46:44+01:00  6d3184237  detect_issues: probe the site's rate limiter and report a degraded one [vercel skip]
@@ -15,7 +16,9 @@
 2026-09-24T02:16:31+01:00  38aefc1f6  ops: daily sweep 2026-09-24 [vercel skip]
 2026-09-23T23:15:45+01:00  532698d33  fans: wire Fan Attention Index into every nav surface
 2026-09-23T17:31:19+01:00  25fda2111  Fan Attention Index live: release note + handoff
+2026-09-23T17:11:55+01:00  62a1e0ec6  Merge branch 'fan-attention-index'
 2026-09-23T17:11:52+01:00  4ae6e3b64  fans: Women's sports category tab
+2026-09-23T17:02:46+01:00  e3ad59153  Merge security-hardening: slug guard, admin auth, headers, rate limits
 2026-09-23T16:56:03+01:00  f427b0f7b  fans: v0.3.1 nav, new leagues, blend methodology [preview]
 2026-09-23T16:31:35+01:00  3e98ba80c  mini jobs: refuse every git write when HEAD is not GIT_BRANCH [vercel skip]
 2026-09-23T15:47:24+01:00  96ca87654  HANDOFF: 2026-09-23 section AG, the scheduler published the docs commit from my branch [vercel skip]
@@ -75,6 +78,3 @@
 2026-09-22T06:11:00+01:00  7db1ed8b4  screen: weekly US number-ones refresh [vercel skip]
 2026-09-22T06:10:39+01:00  4d20c7a29  football: refresh live bundles [vercel skip]
 2026-09-22T03:37:00+01:00  c65253c36  chore(activity): refresh site activity feed [vercel skip]
-2026-09-22T02:15:38+01:00  16dac8460  ops: daily sweep 2026-09-22 [vercel skip]
-2026-09-22T00:05:58+01:00  5fe3b7594  football: refresh live bundles [vercel skip]
-2026-09-21T20:52:41+01:00  000351242  forecast(il): step B2, re-read the seven polling articles from raw wikitext [vercel skip]

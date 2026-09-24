@@ -108,10 +108,35 @@ fi
 # --grep are OR'd and --invert-grep then inverts the lot, so this excludes a
 # commit matching EITHER pattern.
 #
-# NOTE it is generated from HEAD, so it always lags by exactly this commit --
-# inherent to a pre-commit hook, and harmless for its purpose, which is "what
-# has been going on lately".
-if git log --no-merges --invert-grep --grep='^Auto:' --grep='^data: refresh-schedule' \
+# NOTE it always lags by exactly this commit, which is inherent to a pre-commit
+# hook and is genuinely harmless for its purpose, "what has been going on
+# lately". The old note also called generation from HEAD harmless. That part was
+# wrong, and the block below is why.
+# 🔴 ONLY REGENERATED ON main, AND MERGE COMMITS ARE NOW INCLUDED. Both changed
+# 2026-09-24, after the Notion reconciler found this file misleading it in two
+# separate ways. Both mechanisms were confirmed by measurement before anything
+# was edited here.
+#
+#   * --no-merges hid every merge commit, so no subject beginning "Merge" ever
+#     appeared and "is branch X merged?" was unanswerable from this file. The
+#     reconciler reasonably read the absence of e3ad59153 as doubt about whether
+#     the security merge had happened. Merges are included now; they match
+#     neither --grep pattern, so nothing else about the output changes.
+#   * git log follows whatever HEAD the clone is on, and this clone is SHARED
+#     with whoever is working on the mini. A session committing on a branch wrote
+#     BRANCH commits into a file every reader treats as main's history:
+#     1a8f66819, 3b6ca4e4d and 96ca87654 all arrived that way, and the first was
+#     branch-only and unmerged at the time. Off main the file is therefore left
+#     exactly as main left it, rather than overwritten with history that is not
+#     main's. Stale is recoverable and obvious; wrong is neither.
+#
+# Same family as the HEAD:main push that require_expected_branch in
+# mac-mini-jobs/runners/_common.sh now refuses. A shared clone means HEAD is not
+# a safe proxy for "the project".
+cr_branch=$(git symbolic-ref --short -q HEAD || echo '')
+if [ "$cr_branch" != "main" ]; then
+  echo "pre-commit: on '${cr_branch:-a detached HEAD}', so commits-recent.txt is left as main left it" >&2
+elif git log --invert-grep --grep='^Auto:' --grep='^data: refresh-schedule' \
      --date=iso-strict --pretty='%ad  %h  %s' -n 80 > "$REPO_ROOT/commits-recent.txt"; then
   git add "$REPO_ROOT/commits-recent.txt"
 else

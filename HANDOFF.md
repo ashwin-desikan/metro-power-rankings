@@ -19543,3 +19543,46 @@ here: merge commits are absent by construction, so "branch X is merged" is unche
 commits leak into it (`1a8f66819`, `3b6ca4e4d` and `96ca87654` are all present). The two-line fix, deliberately NOT
 applied because the hook runs on every commit and deserves its own change: drop `--no-merges`, and skip regenerating
 when HEAD is not `main`.
+
+### AR. A correction I owe the reconciler, and the commits-recent.txt fix it asked for
+
+**First, the correction, because it is against me.** Sections AN and AP said that section Z's recorded lesson,
+"sharing the PARENT page covers every child", was FALSE. The reconciler pushed back and it is right. The mechanism was
+never in doubt: the moment Ashwin applied the share, every child became visible at once, nine data sources and the
+register included, which is precisely what Z said would happen. What was missing was **the share, not the mechanism**,
+and the 404s were the ordinary signature of a page that had never been granted rather than evidence against a rule.
+
+The narrow claim in AN, that the broad grant did not exist at that moment, was true and worth recording. The framing
+around it, that a documented lesson was wrong, was not, and it is the more memorable half, which is exactly why it
+needed correcting. The transferable point is smaller and more useful than the one I reached for: **a 404 tells you a
+page is not shared. It tells you nothing about whether sharing the parent would have worked.** I inferred a broken
+mechanism from a missing grant, which is the same shape of error as reading a job's file timestamps and concluding what
+the job did.
+
+**Second, the fix.** `.githooks/pre-commit` regenerated `commits-recent.txt` in two ways that misled its only reader:
+
+| mechanism | consequence | now |
+| --- | --- | --- |
+| `--no-merges` | no subject beginning "Merge" ever appeared, so "is branch X merged?" was unanswerable from the file. The reconciler read the absence of `e3ad59153` as doubt about the security merge | merges included; they match neither `--grep` pattern, so nothing else changes |
+| `git log` follows whatever HEAD the clone is on | a session committing on a branch wrote BRANCH commits into a file read as main's history. `1a8f66819`, `3b6ca4e4d` and `96ca87654` all arrived that way, and the first was branch-only and unmerged at the time | off `main` the file is left exactly as main left it, and the hook says so on stderr |
+
+Both mechanisms were the reconciler's finding and both were confirmed by measurement here before anything was edited.
+This is the same family as the `HEAD:main` push that `require_expected_branch` now refuses: **in a shared clone, HEAD
+is not a safe proxy for "the project"**. Stale is recoverable and obvious; wrong is neither, which is why the branch
+case leaves the file alone rather than writing a best effort.
+
+The stale note above that block, which called generation from HEAD "harmless", is corrected in place rather than left
+sitting above a paragraph that contradicts it.
+
+**Third, a correction the reconciler asked for.** It created a Scheduled jobs row for the new rate-limiter probe, with
+honest placeholders for job name, runner path and alert channel, on the reasoning that a job without a row does not
+exist. The reasoning is right and the premise is not: **the probe is not a scheduled job.** It is
+`find_limiter_degraded()` inside `mac-mini-jobs/detect_issues.py`, so it runs wherever that runs: the `ops-autofix`
+job, every two hours at :15 UTC, and the daily ops sweep. Its alert channel is therefore ops-autofix's ntfy plus the
+sweep digest, it has no runner of its own, and it has no healthchecks tile, which is just as well because the project
+is at 20 of 20. The row should be deleted or folded into the existing `ops-autofix` row as a note about what it now
+checks. Deliberately not deleted from here: it is the reconciler's row and one word from Ashwin settles it.
+
+**Notion:** the Backlog P2 the reconciler filed for `commits-recent.txt` is done by this entry and can be closed. The
+Scheduled jobs row for the limiter probe should be deleted or folded into `ops-autofix`, per above. The receipt-design
+Decisions row is still pending Ashwin's ruling.
