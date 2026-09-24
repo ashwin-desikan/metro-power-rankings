@@ -19972,3 +19972,9 @@ Pushed on Ashwin's instruction ("commit and push everything to main").
 - 🔴 Still open: 48 owner rows (scheduled task tonight, rows_E.json); monthly_refresh.py has no us_attention step before the 3 Oct run (Backlog P1 from the earlier entry).
 
 **Notion:** Decisions rows added (value vs attention league-median; trends clean window and normalisation; college tiered program values). Backlog rows added (P3 de-bot backfill via dumps; P1 merge the 48 missing owner rows).
+
+## 2026-09-24 (late): cowork (Windows device session) → next session (/fans sign-in fix)
+
+Ashwin reported /fans ignoring his Google sign-in although the next page showed him signed in. Cause: app/api/fans/route.ts (and /api/fans/history, /api/feedback) read NEXT_PUBLIC_SUPABASE_ANON_KEY straight from the environment; in production that variable has held a placeholder with non-Latin-1 characters (documented in lib/supabaseClient.ts), so Node's fetch throws while building the apikey header, token verification returns null, and the route answers 401. FanGate then fell back to the sign-in card. Fix: new lib/supabasePublic.ts validates the env URL and key and falls back to the public constants, used by all three routes. FanGate and TrendsGate now retry once after refreshSession() on a 401 and show the error state (not the sign-in card) when a signed-in visitor is refused. Worth fixing the Vercel env var itself too (Backlog-worthy, not done here).
+
+**Notion:** no rows changed by this entry.

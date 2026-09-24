@@ -25,12 +25,20 @@ export default function TrendsGate() {
     }
     let mounted = true;
 
-    async function load(token: string) {
+    async function load(token: string, retried = false): Promise<void> {
       setStatus("fetching");
       try {
         const res = await fetch("/api/fans/history", { headers: { Authorization: `Bearer ${token}` } });
         if (!res.ok) {
-          if (mounted) setStatus("anon");
+          // A session exists but the server did not accept its token. Try one
+          // token refresh before giving up, and never fall back to the sign-in
+          // card for someone who is signed in: show the error state instead.
+          if (res.status === 401 && !retried) {
+            const { data: refreshed } = await sb!.auth.refreshSession();
+            const fresh = refreshed.session?.access_token;
+            if (fresh) return load(fresh, true);
+          }
+          if (mounted) setStatus("error");
           return;
         }
         const json = (await res.json()) as HistoryPayload;

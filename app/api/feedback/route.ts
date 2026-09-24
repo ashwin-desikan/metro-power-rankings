@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { checkRateLimit } from "@/lib/rateLimit";
+import { SB_PUBLIC_URL, SB_PUBLIC_ANON_KEY } from "@/lib/supabasePublic";
 
 // Reader feedback relay: corrections, coverage requests, ideas and bugs.
 //
@@ -17,14 +18,9 @@ import { checkRateLimit } from "@/lib/rateLimit";
 // Supabase's /auth/v1/user with the token, which is the only thing that proves
 // the caller is who they claim. The user id and email we store come from that
 // response, not from the browser.
-const SB_URL =
-  process.env.SUPABASE_URL ||
-  process.env.NEXT_PUBLIC_SUPABASE_URL ||
-  "https://nmprqkmymrdknffwnuur.supabase.co";
+const SB_URL = SB_PUBLIC_URL;
 const SB_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const SB_ANON_KEY =
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM";
+const SB_ANON_KEY = SB_PUBLIC_ANON_KEY;
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

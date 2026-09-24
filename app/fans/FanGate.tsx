@@ -121,12 +121,20 @@ export default function FanGate({ totalTeams, previewRows }: { totalTeams: numbe
     }
     let mounted = true;
 
-    async function loadFull(token: string) {
+    async function loadFull(token: string, retried = false): Promise<void> {
       setStatus("fetching");
       try {
         const res = await fetch("/api/fans", { headers: { Authorization: `Bearer ${token}` } });
         if (!res.ok) {
-          if (mounted) setStatus("anon");
+          // A session exists but the server did not accept its token. Try one
+          // token refresh before giving up, and never fall back to the sign-in
+          // card for someone who is signed in: show the error state instead.
+          if (res.status === 401 && !retried) {
+            const { data } = await getSupabase()!.auth.refreshSession();
+            const fresh = data.session?.access_token;
+            if (fresh) return loadFull(fresh, true);
+          }
+          if (mounted) setStatus("error");
           return;
         }
         const json = await res.json();

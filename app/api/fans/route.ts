@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { parseFanIndexPayload, toFanTablePayload, getFanIndexFromLocalFile } from "@/lib/fanIndex";
+import { SB_PUBLIC_URL, SB_PUBLIC_ANON_KEY } from "@/lib/supabasePublic";
 
 // The ONLY place the full Fan Attention Index (all 770 teams, every field)
 // is served to a browser. The public /fans page renders a small top-20
@@ -32,13 +33,8 @@ import { parseFanIndexPayload, toFanTablePayload, getFanIndexFromLocalFile } fro
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const SB_URL =
-  process.env.SUPABASE_URL ||
-  process.env.NEXT_PUBLIC_SUPABASE_URL ||
-  "https://nmprqkmymrdknffwnuur.supabase.co";
-const SB_ANON_KEY =
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM";
+const SB_URL = SB_PUBLIC_URL;
+const SB_ANON_KEY = SB_PUBLIC_ANON_KEY;
 
 type SbUser = { id: string; email?: string | null };
 
