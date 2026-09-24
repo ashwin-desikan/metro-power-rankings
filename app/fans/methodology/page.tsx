@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
-import { getFanIndex } from "@/lib/fanIndex";
+import { getMethodSummary } from "@/lib/fanIndex";
 import { FansCrumbs, FansNav, TabHeader } from "../_shared/ui";
 
 export const dynamicParams = false;
 
 const PAGE_PATH = "/fans/methodology";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
-const PAGE_TITLE = "Fan Attention Index: Methodology";
+const PAGE_TITLE = "Citizen of Nowhere Fan Attention Index: Methodology";
 const PAGE_DESCRIPTION =
   "How the Fan Attention Index is built: the Wikipedia and Google Trends blend, the entity check, the college inclusion rules, the in-flux weighting, the global cross-sport scale, and what the index cannot tell you.";
 
@@ -31,20 +31,25 @@ export const metadata: Metadata = {
   },
 };
 
+// Reads ONLY data/fans/method-summary.json (getMethodSummary()), a small
+// committed, public-safe, per-group/per-league aggregate file -- never the
+// gitignored data/fans/fan-attention.json (absent in production) and never
+// Supabase. getMethodSummary() throws a clear error at build/request time
+// if that file is missing, rather than letting this page render its
+// valuation section empty, so a broken pipeline fails loudly here instead
+// of silently.
 export default function FansMethodologyPage() {
-  const data = getFanIndex();
-  const groupsWithValuation = Array.from(
-    new Set(data.teams.filter((t) => t.valueM != null).map((t) => t.group)),
-  ).sort();
-  const eligible = groupsWithValuation.filter((g) => data.residualEligibleGroups.has(g));
-  const notEligible = groupsWithValuation.filter((g) => !data.residualEligibleGroups.has(g));
+  const summary = getMethodSummary();
+  const groupsWithValuation = summary.groups.filter((g) => g.value_fit_n > 0);
+  const eligible = groupsWithValuation.filter((g) => g.value_vs_attention_shown).map((g) => g.group);
+  const notEligible = groupsWithValuation.filter((g) => !g.value_vs_attention_shown).map((g) => g.group);
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-8">
       <FansCrumbs tab="Methodology" />
       <TabHeader
         emoji="🎟️"
-        title="Fan Attention Index: Methodology"
+        title={PAGE_TITLE}
         sub="How the index is built, what it measures, and what it does not."
       />
       <FansNav active="methodology" />
@@ -264,29 +269,36 @@ export default function FansMethodologyPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-[var(--text)] mb-2">Valuation and the attention-to-value line</h2>
+          <h2 className="text-xl font-bold text-[var(--text)] mb-2">Valuation, and &quot;Valued vs attention&quot;</h2>
           <p>
-            Where a team has a published franchise valuation in this site&apos;s valuations dataset,
-            it is joined to that figure. Within each group with enough valued teams, a log-log
-            ordinary least squares line is fit between the baseline and the valuation. The fitted
-            line gives a predicted valuation for each team from its attention alone, and the
-            &quot;vs attention&quot; column on the index is the percentage gap between the team&apos;s
-            actual valuation and that prediction: positive means the team is valued above what its
-            attention alone would predict, negative means below.
+            Where a team has a franchise valuation in this site&apos;s valuations dataset, it is
+            joined to that figure. Every value is converted to USD at the exchange rate on the
+            valuation&apos;s own as-of date, not today&apos;s rate, so a 2023 valuation in another
+            currency is not silently inflated or deflated by currency movement since then.
           </p>
           <p>
-            That comparison is only shown where the group&apos;s fit is strong enough to trust, R
-            squared at or above 0.4, and is recomputed on every data refresh, so which groups clear
-            that line can change as more teams gain a valuation or a fit is re-run. As of this
-            page&apos;s last build:
+            Within each league with enough valued teams, a log-log ordinary least squares line is
+            fit between the baseline and the valuation. The fitted line gives a predicted valuation
+            for each team from its attention alone. <strong className="text-[var(--text)]">Valued vs
+            attention</strong> is that team&apos;s actual valuation divided by the line&apos;s
+            prediction, shown as a multiplier: <code>&times;2.0</code> means the team is valued at
+            twice what its attention within its league would suggest; <code>&times;0.5</code> means
+            half. It replaces an earlier percentage-gap version of the same comparison (still stored
+            as <code>residual_pct</code> in the underlying data).
+          </p>
+          <p>
+            The multiplier is only shown where the league&apos;s fit is strong enough to trust, R
+            squared at or above 0.4; everywhere else the index shows a dash. That threshold is
+            recomputed on every data refresh, so which leagues clear it can change as more teams
+            gain a valuation or a fit is re-run. As of this page&apos;s last build:
           </p>
           <p className="mt-3">
-            <strong className="text-[var(--text)]">Residual shown:</strong>{" "}
+            <strong className="text-[var(--text)]">Shown:</strong>{" "}
             {eligible.length ? eligible.join(", ") : "none yet"}.
           </p>
           <p>
-            <strong className="text-[var(--text)]">Residual shown as n/a</strong> (valued teams exist,
-            but the group&apos;s fit is below the 0.4 line):{" "}
+            <strong className="text-[var(--text)]">Shown as a dash</strong> (valued teams exist,
+            but the league&apos;s fit is below the 0.4 line):{" "}
             {notEligible.length ? notEligible.join(", ") : "none"}.
           </p>
           <p className="mt-3">
@@ -296,6 +308,20 @@ export default function FansMethodologyPage() {
             value only moderately for the big US leagues, and very little for leagues whose
             valuations are set by factors such as media-rights deals, ownership scarcity and arena
             economics that do not show up in Wikipedia traffic.
+          </p>
+          <p className="mt-3">
+            A small badge next to a valuation marks how it was derived: <strong
+            className="text-[var(--text)]">deal</strong> means the figure is implied by a recent
+            stake sale rather than a standalone appraisal, <strong
+            className="text-[var(--text)]">athletic dept</strong> means the figure covers a
+            university&apos;s whole athletic department, not the one team shown, and <strong
+            className="text-[var(--text)]"><em>est</em></strong> (shown muted and italic) means the
+            figure is an estimate, not a reported valuation or a disclosed deal. Estimated figures
+            are excluded from the attention-to-value fit above (they would let the index validate
+            itself against its own guesses), but Valued vs attention is still shown for an
+            estimated team, multiplier and <em>est</em> badge together, so a reader can weigh it
+            appropriately rather than see a gap in the column. A valuation with none of these three
+            badges is a publisher&apos;s own franchise appraisal.
           </p>
         </section>
 
@@ -374,7 +400,7 @@ export default function FansMethodologyPage() {
               Valuations come from more than one publisher, with different methodologies for what
               counts toward a franchise&apos;s value, and most but not all figures are from 2026;
               some entries reflect 2023 through 2025 editions. Cross-league comparisons of the
-              &quot;vs attention&quot; figure should be read with that in mind.
+              &quot;Valued vs attention&quot; multiplier should be read with that in mind.
             </li>
             <li>
               <strong className="text-[var(--text)]">EuroLeague, Top 14, Handball-Bundesliga and
@@ -398,7 +424,7 @@ export default function FansMethodologyPage() {
         <section>
           <h2 className="text-xl font-bold text-[var(--text)] mb-2">Citing this dataset</h2>
           <p>
-            Suggested citation: <em>Citizen of Nowhere, Fan Attention Index {data.version} (2026),
+            Suggested citation: <em>Citizen of Nowhere Fan Attention Index {summary.version} (2026),
             rankings.citizenofnowhere.org/fans</em>. Released under{" "}
             <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="hover:underline text-[var(--accent)]">CC BY 4.0</a>.
           </p>

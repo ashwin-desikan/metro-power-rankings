@@ -68,16 +68,31 @@ export function sportIcon(sport: string | undefined): string {
 }
 
 // Icon for a league code (used by defunct/relocated cards keyed on league).
+// Extended 2026-09-24 for the Fan Attention Index's league/group chips and
+// League column (app/fans/FanTable.tsx): those pass either a fan-index
+// GROUP name ("NFL", "College football", "EuroLeague", "Women's football",
+// "Top 14", ...) or, for Football and Women's football, a specific LEAGUE
+// display name ("Premier League", "NWSL", ...). Both are handled here so
+// the site keeps one sport-icon source of truth rather than a second map.
 export function leagueIcon(league: string | undefined): string {
   switch ((league || "").toLowerCase()) {
-    case "nfl": case "cfl": case "cfb": return "🏈";
-    case "nba": case "wnba": return "🏀";
+    case "nfl": case "cfl": case "cfb": case "college football": return "🏈";
+    case "nba": case "wnba": case "college basketball": case "euroleague": return "🏀";
     case "nhl": return "🏒";
-    case "mlb": return "⚾";
+    case "mlb": case "npb": return "⚾";
     case "afl": return "🦘";
-    case "nrl": case "rugby-union": return "🏉";
+    case "nrl": case "rugby-union": case "rugby union": case "top 14": return "🏉";
     case "cricket-t20": return "🏏";
-    case "football": case "mls": return "⚽";
+    case "f1": return "🏎️";
+    case "handball-bundesliga": return "🤾";
+    case "superlega": return "🏐";
+    case "ipl": return "🏏";
+    case "football": case "mls": case "women's football":
+    case "premier league": case "championship": case "la liga": case "bundesliga":
+    case "serie a": case "ligue 1": case "primeira liga": case "eredivisie":
+    case "scottish premiership": case "süper lig": case "liga mx":
+    case "brasileirão": case "liga profesional": case "nwsl": case "wsl":
+      return "⚽";
     default: return "";
   }
 }

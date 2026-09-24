@@ -19932,3 +19932,17 @@ in August.
 
 **Notion:** none by this entry. A Backlog row for the fourteen remaining agents and for teaching `--check-sync` about
 launchd is worth filing once Ashwin rules on the unload.
+## 2026-09-24: cowork (Windows device session) → next session (Fan Attention Index v0.8, sign-in gate, 116 valuations)
+
+Pushed with Ashwin's explicit approval ("A) Approve all five steps").
+
+- **Baseline v0.8:** wiki_baseline_12m = 12-month sum + peak month (the peak counts twice); Trends = 52-week sum + peak 4-week window; in-flux 0.5 after. All view: Real Madrid, Barcelona, Arsenal, Man United, Knicks lead; Cowboys about #11.
+- **Major American sports tab** ranks on us_attention (US Wiki share x US Trends share, geometric mean, Cowboys-anchored chain). College queries are "<school> football/basketball". Texas #18, Alabama #20, Ohio State #21, Michigan #22. Indiana football #7 (real 2025-season series; monitor).
+- **Gate:** anonymous = committed data/fans/preview.json (top 20); signed in = /api/fans reading Supabase fan_attention_teams (RLS authenticated SELECT, anon revoked). Preview disappears after sign-in. fan-attention.json and history/ are gitignored.
+- **Supabase (applied):** migrations 20260924171144_fan_attention and 20260924171147_team_valuations_provenance_columns (repo files renamed to the applied versions). Loaded v0.8 payload + 33 history months. team_valuations 220 → 336 rows (116 inserted, 6 updated, 0 deleted, 2 skipped on precedence); valuations.json rebuilt.
+- **AFL valuation join fixed:** csv_to_json.py best_extended_match() has a nickname-suffix fallback (unique, same-league only). AFL 4/18 → 12/18.
+- **Monthly job:** monthly_refresh.py now sum+peak; universe_state.json regenerated to match v0.8. 🔴 It does NOT compute us_attention yet: fix before the 3 Oct run (Backlog P1).
+- **Rebase:** merged onto the mini's dump-based monthly_refresh.py (ca26654dd..65aa53164). Kept its dump fetch and the non-Auto commit subject; added sum+peak, the Supabase push step, and the preview-only commit paths. Self-test passes.
+- **Not done (needs Ashwin):** 18 Brazilian valuation rows labelled "Brasileirao Serie A" rather than "Brazil"; the update was blocked pending approval.
+
+**Notion:** Decisions rows added (sum+peak baseline; US Trends blend; sign-in gate with private Supabase; speculative valuations). Backlog rows added (P1 port us_attention into monthly_refresh before 3 Oct; P3 monitor Indiana Trends; P3 valuation gaps; P3 Brazil league label). Backlog "commit all-language history backfill" closed as Done (history lives in Supabase instead).

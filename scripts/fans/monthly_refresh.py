@@ -6,7 +6,7 @@ and scripts/fans/README.md for how this script fits the monthly cadence).
 
 Run by mac-mini-jobs runners/fans-monthly.sh on the 3rd of each month
 (jobs.toml id "fans-monthly"). Self-contained: reads and writes only inside
-scripts/fans/** and public/data/fans/**, per the repo's read-only rule for
+scripts/fans/** and data/fans/**, per the repo's read-only rule for
 this pipeline. Does NOT depend on any path outside the repo (the original
 research pipeline in fan_index/ lives on Ashwin's own machine and is not
 reachable from the mini).
@@ -21,12 +21,12 @@ What it does, one pass:
      (those with a non-null trends_index on any row) -- fails open: on any
      pytrends error the group's LAST trends_index is kept unchanged and a
      note is logged, never a hard failure.
-  5. Appends the month to public/data/fans/history/fan-attention-YYYY-MM.json,
+  5. Appends the month to data/fans/history/fan-attention-YYYY-MM.json,
      rolls the 12-month window on universe_state.json's "monthly" per team,
      recomputes wiki_baseline_12m, the blend-rescale (fan_index_raw), and the
      cross-sport score (reading scripts/fans/league_revenue_anchor.csv).
-  6. Regenerates public/data/fans/fan-attention.json via csv_to_json.py.
-  7. Updates public/data/fans/history/index.json's month list and re-checks
+  6. Regenerates data/fans/fan-attention.json via csv_to_json.py.
+  7. Updates data/fans/history/index.json's month list and re-checks
      the 8MB history budget.
 
 Self-test (--self-test): validates universe_state.json and the anchor CSV
@@ -53,8 +53,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 STATE_PATH = os.path.join(HERE, "universe_state.json")
 ANCHOR_PATH = os.path.join(HERE, "league_revenue_anchor.csv")
-HISTORY_DIR = os.path.join(REPO, "public", "data", "fans", "history")
-OUT_JSON = os.path.join(REPO, "public", "data", "fans", "fan-attention.json")
+# 2026-09-24: moved out of public/ so the raw JSON is no longer directly
+# downloadable; the /fans page now serves it only via the auth-gated
+# app/api/fans/route.ts. See scripts/fans/README.md for the full note.
+HISTORY_DIR = os.path.join(REPO, "data", "fans", "history")
+OUT_JSON = os.path.join(REPO, "data", "fans", "fan-attention.json")
 SCRATCH_CSV_DIR = os.path.join(HERE, "_scratch_csv")
 
 UA = "CitizenOfNowhere-FanIndex/0.1 (ashwind@gmail.com; monthly job)"
@@ -225,25 +228,41 @@ def fetch_trends_for_group(group_name, rows):
         # Anchor-chained batches of 5 (pytrends' own cap), same scheme as the
         # research pipeline's trends_fetch.py: one shared anchor team per
         # group so every batch's scale can be chained back to a single base.
+        # v0.8: 12 months (52 weeks) of weekly interest, and the metric is
+        # sum(52 weeks) + peak 4-consecutive-week window (the peak month
+        # counts twice) -- the same peak-weighting rule as the wiki baseline,
+        # replacing the old 3-month mean.
+        def peak_plus_52(series):
+            n = len(series)
+            if n == 0:
+                return 0.0
+            total = sum(series)
+            if n >= 4:
+                best4 = max(sum(series[i:i + 4]) for i in range(n - 3))
+            else:
+                best4 = total
+            return total + best4
+
         teams = [r["team"] for r in rows]
         anchor_team = teams[0]
         base_anchor_value = None
         for i in range(0, len(teams), 4):
             batch = [anchor_team] + [t for t in teams[i:i + 4] if t != anchor_team]
-            pytrend.build_payload(batch, timeframe="today 3-m")
+            pytrend.build_payload(batch, timeframe="today 12-m")
             df = pytrend.interest_over_time()
             if df is None or df.empty:
                 continue
-            means = df.drop(columns=[c for c in ("isPartial",) if c in df.columns]).mean()
-            anchor_val = means.get(anchor_team)
+            df = df.drop(columns=[c for c in ("isPartial",) if c in df.columns])
+            metrics = {col: peak_plus_52(df[col].tolist()) for col in df.columns}
+            anchor_val = metrics.get(anchor_team)
             if not anchor_val:
                 continue
             if base_anchor_value is None:
                 base_anchor_value = anchor_val
             scale = base_anchor_value / anchor_val
             for t in batch:
-                if t in means:
-                    out[t] = float(means[t]) * scale
+                if t in metrics:
+                    out[t] = float(metrics[t]) * scale
             time.sleep(1.0)
         return out
     except Exception as e:
@@ -517,9 +536,10 @@ def run(ym=None, dry_run=False):
         vals = list(monthly.values())
         while len(vals) < 12:
             vals.append(0)
-        median_month = statistics.median(vals)
-        r["wiki_baseline_12m"] = median_month * 12
-        r["median_month_all_lang"] = median_month
+        # v0.8: sum of the 12 months + the peak month (the peak month counts
+        # twice), replacing the old median-month x 12 rule.
+        r["wiki_baseline_12m"] = sum(vals) + max(vals)
+        r["peak_month_all_lang"] = max(vals)
     log(f"pageviews done: {n_teams} teams, {n_zero} with zero views this month")
 
     trends_groups = defaultdict(list)
@@ -563,11 +583,31 @@ def run(ym=None, dry_run=False):
     )
     log(f"fan-attention.json regenerated; history dir {history_size / 1024 / 1024:.2f} MB")
 
+    # Push the freshly regenerated JSON (and this month's history file) to
+    # Supabase. 2026-09-24: data/fans/fan-attention.json and data/fans/
+    # history/ are gitignored now (see scripts/fans/README.md), so this push
+    # is the ONLY way this month's numbers reach production -- there is no
+    # commit of the JSON for a Vercel build to pick up any more. Fails open:
+    # a push failure is logged loudly but does not fail the refresh run,
+    # matching every other Supabase loader in this repo (see
+    # scripts/business/load_market_series.py's service_key() note).
+    push = subprocess.run(
+        [sys.executable, os.path.join(HERE, "push_to_supabase.py")],
+        cwd=REPO,
+    )
+    if push.returncode != 0:
+        log("WARNING: push_to_supabase.py failed (see above); Supabase was NOT "
+            "updated this run. data/fans/fan-attention.json is regenerated and "
+            "correct locally -- re-run scripts/fans/push_to_supabase.py by hand "
+            "once the problem is fixed.")
+    else:
+        log("pushed to Supabase (fan_attention_teams + fan_attention_history)")
+
 
 def write_scratch_csvs(u, out_dir):
     u_sorted = sorted(u, key=lambda r: (r["group"], r["league"], -r["fan_index_raw"]))
     cols = ["category", "group", "league", "conference", "team", "display_name", "qid", "en_title",
-            "wiki_baseline_12m", "median_month_all_lang", "wiki_spike_ratio", "lang_count", "top5_langs",
+            "wiki_baseline_12m", "peak_month_all_lang", "wiki_spike_ratio", "lang_count", "top5_langs",
             "social_followers", "social_asof",
             "reddit_subscribers", "subreddit", "trends_index", "trends_excluded_reason", "signal",
             "in_flux", "inclusion_rule", "fan_index_raw", "score_in_group", "rank_in_group",

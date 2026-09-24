@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
-"""Merge Football Benchmark's "The European Elite 2026" into the Team Valuations
-sheet, taking the HIGHER of the two published figures for any club both houses
-cover, and recording which house each surviving figure came from.
+"""Merge Football Benchmark's "The European Elite 2026" into Supabase's
+public.team_valuations, taking the HIGHER of the two published figures for any
+club both houses cover, and recording which house each surviving figure came
+from.
+
+As of 2026-09-24 (Ashwin's ruling), Supabase is the ONLY source of truth for
+team valuations; OtherLeagues.xlsx is no longer read or written by this
+script. --write now stages a CSV for scripts/valuations/upsert_team_valuations.py
+rather than editing the workbook directly.
 
 Ashwin's ruling, 2026-08-18: Football Benchmark is the primary European football
 source, the board shows the higher valuation regardless of source, and every row
@@ -32,18 +38,24 @@ The source tag makes it visible. It does not make it go away.
     python scripts/valuations/load_football_benchmark_2026.py --write
     python scripts/valuations/load_football_benchmark_2026.py --self-test
 
-Dry run by default. Then sync_team_valuations.py and build-valuations-data.py.
+Dry run by default. --write stages scripts/valuations/out/football_benchmark_2026_upsert.csv;
+review it, then run scripts/valuations/upsert_team_valuations.py on it (itself
+dry-run by default; add --write there to actually touch Supabase).
 """
-import argparse, csv, io, os, re, sys
+import argparse, csv, io, json, os, re, sys, urllib.error, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-XLSX = os.path.join(ROOT, "OtherLeagues.xlsx")
-SHEET = "Team Valuations"
 HERE = os.path.dirname(os.path.abspath(__file__))
 RAW = os.path.join(HERE, "sources", "football-benchmark-2026.txt")
 REVIEW = os.path.join(HERE, "out", "football_benchmark_2026_diff.csv")
+UPSERT_CSV = os.path.join(HERE, "out", "football_benchmark_2026_upsert.csv")
 YEAR = 2026
 SOURCE = "Football Benchmark, The European Elite 2026 (enterprise value, midpoint)"
+TABLE = "team_valuations"
+SB_URL = (os.environ.get("SUPABASE_URL") or os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+          or "https://nmprqkmymrdknffwnuur.supabase.co").rstrip("/")
+SB_KEY = (os.environ.get("SUPABASE_ANON_KEY") or os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+          or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM")
 
 
 # Football Benchmark's rendering -> the name the sheet already uses. A value of
@@ -159,22 +171,26 @@ def self_test():
 
 
 def read_sheet():
-    from openpyxl import load_workbook
-    wb = load_workbook(XLSX, read_only=True, data_only=True)
-    rows = list(wb[SHEET].iter_rows(values_only=True))
-    wb.close()
-    hdr = [str(c).strip() if c is not None else "" for c in rows[0]]
-    ix = {h: i for i, h in enumerate(hdr)}
-    out = []
-    for r in rows[1:]:
-        g = lambda n: r[ix[n]] if ix[n] < len(r) else None
-        if g("Team") is None:
-            continue
-        out.append({"year": g("Year"), "team": str(g("Team")).strip(),
-                    "league": str(g("League") or "").strip(),
-                    "value_m": float(g("Value ($M)")),
-                    "source": str(g("Source") or "").strip()})
-    return out
+    """The current board, read straight from Supabase (read-only -- this
+    script never writes here directly; see UPSERT_CSV / --write below)."""
+    out, step, off = [], 1000, 0
+    while True:
+        q = f"select=year,team,league,value_m,source&order=id&limit={step}&offset={off}"
+        req = urllib.request.Request(f"{SB_URL}/rest/v1/{TABLE}?{q}",
+                                     headers={"apikey": SB_KEY, "Authorization": f"Bearer {SB_KEY}"})
+        try:
+            with urllib.request.urlopen(req, timeout=30) as rr:
+                batch = json.load(rr)
+        except urllib.error.HTTPError as e:
+            sys.exit(f"FATAL: could not read {TABLE} from Supabase: HTTP {e.code} {e.read().decode(errors='replace')[:300]}")
+        out += batch
+        if len(batch) < step:
+            break
+        off += step
+    return [{"year": r["year"], "team": str(r["team"]).strip(),
+             "league": str(r["league"] or "").strip(),
+             "value_m": float(r["value_m"]),
+             "source": str(r["source"] or "").strip()} for r in out]
 
 
 def main():
@@ -282,25 +298,26 @@ def main():
         print("\nDRY RUN. Nothing written. Re-run with --write once the diff reads right.")
         return 0
 
-    from openpyxl import load_workbook
-    wb = load_workbook(XLSX)
-    ws = wb[SHEET]
-    hdr = [str(c.value).strip() if c.value is not None else "" for c in ws[1]]
-    ix = {h: i + 1 for i, h in enumerate(hdr)}
-    switch = {canon: r for canon, _, r in took_fb}
-    changed = 0
-    for row in range(2, ws.max_row + 1):
-        team = ws.cell(row, ix["Team"]).value
-        if team in switch:
-            ws.cell(row, ix["Value ($M)"]).value = switch[team]["usd_m"]
-            ws.cell(row, ix["Year"]).value = YEAR
-            ws.cell(row, ix["Source"]).value = SOURCE
-            changed += 1
-    for n in added:
-        ws.append([YEAR, n["team"], n["league"], n["value_m"], SOURCE])
-    wb.save(XLSX)
-    print(f"WROTE: {changed} rows switched to Football Benchmark, {len(added)} appended. "
-          f"Sheet now holds {ws.max_row - 1} rows.")
+    # Stage a CSV for scripts/valuations/upsert_team_valuations.py -- this
+    # script does not touch Supabase itself. Columns match
+    # scripts/fans/valuations_extended.csv so the same upsert script reads
+    # both. "published" is the right method label: these are all formal
+    # annual valuation exercises (Sportico or Football Benchmark), never an
+    # inferred transaction price.
+    os.makedirs(os.path.dirname(UPSERT_CSV), exist_ok=True)
+    with io.open(UPSERT_CSV, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["team", "league", "value_usd_m", "year", "source", "source_url",
+                    "method", "confidence", "notes"])
+        for canon, cur, r in took_fb:
+            w.writerow([canon, cur["league"], r["usd_m"], YEAR, SOURCE, "",
+                       "published", "high", f"Switched from Sportico ({cur['value_m']:.0f}M); FB YoY {r['yoy']}."])
+        for n in added:
+            w.writerow([n["team"], n["league"], n["value_m"], YEAR, SOURCE, "",
+                       "published", "high", "New to the board via Football Benchmark."])
+    print(f"WROTE: {len(took_fb)} switched + {len(added)} new rows staged at "
+          f"{os.path.relpath(UPSERT_CSV, ROOT)}. Review it, then run:\n"
+          f"  python scripts/valuations/upsert_team_valuations.py {os.path.relpath(UPSERT_CSV, ROOT)} --write")
     return 0
 
 

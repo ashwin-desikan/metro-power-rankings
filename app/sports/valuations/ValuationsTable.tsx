@@ -13,7 +13,7 @@ type Row = {
   displayName: string;
   league: string;
   leagueHref: string;
-  sport: "NFL" | "NBA" | "MLB" | "NHL" | "Football" | "F1" | "WNBA" | "NWSL";
+  sport: "NFL" | "NBA" | "MLB" | "NHL" | "Football" | "F1" | "WNBA" | "NWSL" | "AFL" | "NRL";
   valueM: number;
   valueLabel: string;
   year: number | null;
@@ -21,6 +21,11 @@ type Row = {
   /** Which valuation house this row's figure came from. The board takes the
       higher of the figures it holds per team, so this is part of the number. */
   sourceTag: "Sportico" | "Football Benchmark";
+  /** Added 2026-09-24 for scripts/fans/valuations_extended.csv rows; null on
+      older rows that predate the field. */
+  method?: "published" | "transaction" | "speculative" | null;
+  confidence?: "high" | "medium" | "low" | null;
+  sourceUrl?: string | null;
   href: string | null;
   anchor: string;
   /** Control owner, from lib/teamOwners. Null only if the owner row is missing,
@@ -32,7 +37,7 @@ type Row = {
 type SortKey = "value" | "team" | "league" | "year" | "owner";
 // Ordered by how many rows each carries, so the chips a reader is most likely
 // to want sit left of the fold at 390px rather than wrapping to a second line.
-const SPORTS: Array<Row["sport"] | "All"> = ["All", "Football", "NFL", "NHL", "NBA", "MLB", "F1", "WNBA", "NWSL"];
+const SPORTS: Array<Row["sport"] | "All"> = ["All", "Football", "NFL", "NHL", "NBA", "MLB", "F1", "WNBA", "NWSL", "AFL", "NRL"];
 
 export default function ValuationsTable({ rows }: { rows: Row[] }) {
   const [sport, setSport] = useState<(typeof SPORTS)[number]>("All");
@@ -202,6 +207,7 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
               <div className="mt-2 flex items-baseline gap-3 text-sm flex-wrap">
                 <span className="font-semibold tabular-nums">{r.valueLabel}</span>
                 <SourceTag tag={r.sourceTag} />
+                <MethodTag method={r.method} confidence={r.confidence} sourceUrl={r.sourceUrl} source={r.source} />
                 <span className="text-xs tabular-nums text-[var(--text-muted)]">{r.year ?? "—"}</span>
               </div>
               {/* Wraps rather than truncates: entity names run long ("City
@@ -271,6 +277,7 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
                       <DataBar v={r.valueM} max={colMax} dp={1} suffix="B" scale={0.001}
                                color="var(--seq-4)" width={104} label="valuation" />
                       <SourceTag tag={r.sourceTag} />
+                      <MethodTag method={r.method} confidence={r.confidence} sourceUrl={r.sourceUrl} source={r.source} />
                     </span>
                   </td>
                   <td className="px-3 py-2 text-[var(--text-muted)] hidden md:table-cell">
@@ -312,4 +319,54 @@ function SourceTag({ tag, className = "" }: { tag: Row["sourceTag"]; className?:
       {fb ? "FB" : "SP"}
     </span>
   );
+}
+
+/* Method/confidence marker, added 2026-09-24 alongside
+   scripts/fans/valuations_extended.csv so a reader can tell a formal annual
+   valuation ("published") from a figure inferred off a real sale price
+   ("transaction") at a glance, without a second column. Renders nothing for
+   older rows that predate the field, so the board looks exactly as it did
+   before for every row this doesn't apply to. */
+function MethodTag({
+  method, confidence, sourceUrl, source,
+}: { method?: Row["method"]; confidence?: Row["confidence"]; sourceUrl?: string | null; source: string }) {
+  if (!method) return null;
+  const isTxn = method === "transaction";
+  // "speculative" (added 2026-09-24, same day as the /fans method badge it
+  // mirrors): a muted italic tag, its own fixed tooltip rather than the
+  // source-based one below -- the whole point is to say plainly that this
+  // number is an estimate, not to cite a source for it.
+  if (method === "speculative") {
+    return (
+      <span
+        className="rounded px-1 py-0.5 text-[9px] italic tracking-wide align-middle"
+        style={{ color: "var(--text-dim)" }}
+        title="Estimate, not a reported valuation or a disclosed deal"
+      >
+        Est
+      </span>
+    );
+  }
+  const title = [
+    source,
+    confidence ? `confidence: ${confidence}` : null,
+    sourceUrl ? sourceUrl : null,
+  ].filter(Boolean).join(" — ");
+  const label = isTxn ? "Txn" : "Pub";
+  const content = (
+    <span
+      className="rounded px-1 py-0.5 text-[9px] font-semibold uppercase tracking-wider align-middle"
+      style={{
+        background: isTxn ? "rgba(234,179,8,0.14)" : "transparent",
+        color: "var(--text-dim)",
+        border: isTxn ? "none" : "1px solid var(--border)",
+      }}
+      title={title}
+    >
+      {label}
+    </span>
+  );
+  return sourceUrl ? (
+    <a href={sourceUrl} target="_blank" rel="noopener noreferrer">{content}</a>
+  ) : content;
 }

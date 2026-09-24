@@ -21,10 +21,10 @@ export const RELEASES: Release[] = [
     date: "2026-09-24",
     headline: "Fan Attention Index compares sports fairly",
     items: [
-      "The All view now scales each league by the size of its market, so Real Madrid still leads but the Cowboys, Lakers and Yankees sit among the global elite.",
-      "Every club from the Primeira Liga, Eredivisie, Süper Lig, Scottish Premiership, Brasileirão and Liga Profesional joins the index, 770 teams in all.",
-      "A new Global reach column shows how much of each team's attention comes from outside its home languages.",
-      "The methodology page explains the cross-sport scaling, its sources and its weakest estimates.",
+      "The All view now scales each league by the size of its market, and every club from the Primeira Liga, Eredivisie, Süper Lig, Scottish Premiership, Brasileirão and Liga Profesional joins, 770 teams in all.",
+      "Attention counts a full year plus each team's biggest month, and college teams rank on what fans search, which puts Texas, Alabama, Ohio State and Michigan among the NFL's middle tier.",
+      "The full index is free with a Google sign-in; everyone else sees the top 20.",
+      "116 new valuations reach the Team Valuations and Owners pages, including every NRL club and most of the AFL, with estimates clearly marked and multi-club owners linked across sports.",
     ],
   },
   {

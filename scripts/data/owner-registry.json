@@ -1,0 +1,225 @@
+{
+  "_readme": "Canonical owner/entity registry, added 2026-09-24 to fix multi-club ownership detection on /sports/owners and /sports/valuations. Problem: lib/teamOwners.ts groups franchises into a portfolio purely by an exact-string match on owner_key from scripts/data/team-owners-seed.json. When the SAME person or holding company controls two clubs under two DIFFERENT display names -- e.g. Wes Edens is 'Wes Edens' at the Milwaukee Bucks but part of 'V Sports' at Aston Villa -- the two rows land in separate portfolios and the site shows no multi-club link, even though the seed's own prose notes the connection. This registry is the fix: each entity lists every alias owner_key it appears under (for CONTROL roles, which lib/ownerRegistry.ts folds into one portfolio) plus every club it holds, control or minority (used to badge minority cross-links that the portfolio grouping intentionally does not merge, per the seed's one-control-entity-per-franchise rule). Read lib/ownerRegistry.ts for how this is consumed. Entities already correctly unified by a shared owner_key (Kroenke, Friedkin Group, City Football Group, Black Knight, Fenway Sports Group core clubs, Glazer family, Josh Harris/HBSE, Woody Johnson) are still documented here so this file is the complete audit trail Ashwin asked for, not just the one broken case.",
+  "generated": "2026-09-24",
+  "entities": [
+    {
+      "id": "edens-sawiris-vsports",
+      "displayName": "Wes Edens & Nassef Sawiris (V Sports)",
+      "aliasNames": ["V Sports", "Wes Edens", "Nassef Sawiris", "Nassef Sawiris and Wes Edens (V Sports)"],
+      "aliasOwnerKeys": ["v-sports", "wes-edens"],
+      "clubs": [
+        { "team": "Aston Villa", "league": "England", "role": "control" },
+        { "team": "Milwaukee Bucks", "league": "NBA", "role": "control" }
+      ],
+      "note": "THE CASE ASHWIN FLAGGED. Aston Villa's owner row keys on 'v-sports'; the Bucks' owner row keys on 'wes-edens'. Different strings, same person, previously two unlinked portfolios. V Sports also holds Vitoria SC and Real Union (not on this board)."
+    },
+    {
+      "id": "haslam-sports-group",
+      "displayName": "Haslam Sports Group (Dee and Jimmy Haslam)",
+      "aliasNames": ["Haslam Sports Group", "Dee and Jimmy Haslam"],
+      "aliasOwnerKeys": ["haslam-sports-group"],
+      "clubs": [
+        { "team": "Cleveland Browns", "league": "NFL", "role": "control" },
+        { "team": "Columbus Crew", "league": "United States", "role": "control" },
+        { "team": "Milwaukee Bucks", "league": "NBA", "role": "minority", "note": "25% via Jimmy Haslam personally, per the Bucks' own seed row; Jimmy Haslam becomes governor/control after Apr 2028." }
+      ],
+      "note": "Browns and Crew already share owner_key and were already linked. The Bucks minority stake was previously only prose in two different rows' notes, not structurally linked to either."
+    },
+    {
+      "id": "kroenke-sports-entertainment",
+      "displayName": "Kroenke Sports & Entertainment (Stan and Josh Kroenke)",
+      "aliasNames": ["Kroenke Sports & Entertainment", "Stan Kroenke", "Stan and Josh Kroenke"],
+      "aliasOwnerKeys": ["kroenke-sports-entertainment"],
+      "clubs": [
+        { "team": "Arsenal", "league": "England", "role": "control" },
+        { "team": "Los Angeles Rams", "league": "NFL", "role": "control" },
+        { "team": "Denver Nuggets", "league": "NBA", "role": "control" },
+        { "team": "Colorado Avalanche", "league": "NHL", "role": "control" },
+        { "team": "Colorado Rapids", "league": "United States", "role": "control" }
+      ],
+      "note": "Already correctly unified under one owner_key across 5 leagues/codes -- confirmed working, not a bug."
+    },
+    {
+      "id": "black-knight-foley",
+      "displayName": "Bill Foley (Black Knight Football / Sports & Entertainment)",
+      "aliasNames": ["Bill Foley", "Black Knight Football Club", "Black Knight Sports & Entertainment"],
+      "aliasOwnerKeys": ["bill-foley"],
+      "clubs": [
+        { "team": "AFC Bournemouth", "league": "England", "role": "control" },
+        { "team": "Vegas Golden Knights", "league": "NHL", "role": "control" }
+      ],
+      "note": "Already correctly unified -- confirmed working."
+    },
+    {
+      "id": "friedkin-group",
+      "displayName": "Dan Friedkin (The Friedkin Group)",
+      "aliasNames": ["Dan Friedkin", "The Friedkin Group", "Friedkin Group"],
+      "aliasOwnerKeys": ["friedkin-group"],
+      "clubs": [
+        { "team": "Everton", "league": "England", "role": "control" },
+        { "team": "AS Roma", "league": "Italy", "role": "control" }
+      ],
+      "note": "Already correctly unified -- confirmed working."
+    },
+    {
+      "id": "fenway-sports-group",
+      "displayName": "Fenway Sports Group (John W. Henry, Tom Werner)",
+      "aliasNames": ["Fenway Sports Group", "John W. Henry", "Tom Werner"],
+      "aliasOwnerKeys": ["fenway-sports-group"],
+      "clubs": [
+        { "team": "Liverpool", "league": "England", "role": "control" },
+        { "team": "Boston Red Sox", "league": "MLB", "role": "control" },
+        { "team": "Pittsburgh Penguins", "league": "NHL", "role": "minority", "note": "FSG held Penguins equity before selling to the Hoffmann Family of Companies in 2021; verify whether any residual FSG stake remains before badging this live." }
+      ],
+      "note": "Liverpool + Red Sox already correctly unified. RedBird Capital holds a stake IN FSG itself (see redbird-capital entity) -- noted today only in Liverpool's free-text 'minority' field, not structurally."
+    },
+    {
+      "id": "redbird-capital",
+      "displayName": "RedBird Capital Partners (Gerry Cardinale)",
+      "aliasNames": ["RedBird Capital Partners", "RedBird Capital", "Gerry Cardinale"],
+      "aliasOwnerKeys": ["redbird-capital"],
+      "clubs": [
+        { "team": "AC Milan", "league": "Italy", "role": "control" },
+        { "team": "Liverpool", "league": "England", "role": "minority", "note": "RedBird holds a stake in Fenway Sports Group itself, per Liverpool's seed row." }
+      ],
+      "note": "AC Milan control was already isolated (correct: RedBird's FSG stake is a minority position in the holding company, not control of Liverpool). Listed here so the FSG<->RedBird link is visible from both sides."
+    },
+    {
+      "id": "city-football-group",
+      "displayName": "City Football Group (Sheikh Mansour / Abu Dhabi United Group)",
+      "aliasNames": ["City Football Group", "Abu Dhabi United Group", "Sheikh Mansour"],
+      "aliasOwnerKeys": ["city-football-group"],
+      "clubs": [
+        { "team": "Manchester City", "league": "England", "role": "control" },
+        { "team": "New York City FC", "league": "United States", "role": "control" }
+      ],
+      "note": "Already correctly unified -- confirmed working. CFG's wider multi-club portfolio (Girona, Melbourne City, Mumbai City, etc.) is outside this board."
+    },
+    {
+      "id": "glazer-family",
+      "displayName": "Glazer family",
+      "aliasNames": ["Glazer family"],
+      "aliasOwnerKeys": ["glazer-family"],
+      "clubs": [
+        { "team": "Manchester United", "league": "England", "role": "control" },
+        { "team": "Tampa Bay Buccaneers", "league": "NFL", "role": "control" }
+      ],
+      "note": "Already correctly unified -- confirmed working."
+    },
+    {
+      "id": "ineos-ratcliffe",
+      "displayName": "Jim Ratcliffe / INEOS",
+      "aliasNames": ["INEOS", "Jim Ratcliffe", "Sir Jim Ratcliffe"],
+      "aliasOwnerKeys": [],
+      "clubs": [
+        { "team": "Manchester United", "league": "England", "role": "minority", "note": "~28.94% via INEOS's Feb 2024 tender; controls football operations but the Glazers retain voting control." },
+        { "team": "Mercedes", "league": "F1", "role": "minority", "note": "Equal third alongside Mercedes-Benz Group and Toto Wolff; the seed deliberately records no single controller for this team." }
+      ],
+      "note": "New entity added this session. Neither row's owner_key is an INEOS/Ratcliffe alias (correctly -- INEOS does not control either team), but both are minority positions worth badging as a multi-club investor. OGC Nice (France, INEOS-controlled) is not currently on this board."
+    },
+    {
+      "id": "woody-johnson",
+      "displayName": "Woody Johnson",
+      "aliasNames": ["Woody Johnson"],
+      "aliasOwnerKeys": ["woody-johnson"],
+      "clubs": [
+        { "team": "New York Jets", "league": "NFL", "role": "control" },
+        { "team": "Crystal Palace", "league": "England", "role": "control", "note": "Largest shareholder (bought Textor's 43% in 2025); \"Control is shared in practice: Parish runs the club\" per the seed's own note, and a full sale was being explored as of mid-2026." }
+      ],
+      "note": "Already correctly unified -- confirmed working."
+    },
+    {
+      "id": "josh-harris-hbse",
+      "displayName": "Josh Harris (Harris Blitzer Sports & Entertainment)",
+      "aliasNames": ["Josh Harris", "Josh Harris and David Blitzer", "Harris Blitzer Sports & Entertainment", "HBSE"],
+      "aliasOwnerKeys": ["josh-harris"],
+      "clubs": [
+        { "team": "Washington Commanders", "league": "NFL", "role": "control" },
+        { "team": "Philadelphia 76ers", "league": "NBA", "role": "control" },
+        { "team": "New Jersey Devils", "league": "NHL", "role": "control" },
+        { "team": "Crystal Palace", "league": "England", "role": "minority", "note": "30% held with David Blitzer, per the Commanders' seed row." }
+      ],
+      "note": "Commanders/76ers/Devils already correctly unified (3-way). The Crystal Palace 30% stake was previously prose-only on the Commanders row, not linked to Crystal Palace's own entry."
+    },
+    {
+      "id": "sixth-street",
+      "displayName": "Sixth Street",
+      "aliasNames": ["Sixth Street", "Sixth Street Partners"],
+      "aliasOwnerKeys": [],
+      "clubs": [
+        { "team": "Boston Celtics", "league": "NBA", "role": "minority" },
+        { "team": "New England Patriots", "league": "NFL", "role": "minority", "note": "3%" },
+        { "team": "Real Madrid", "league": "Spain", "role": "minority", "note": "Proposed ~5% non-voting subsidiary stake, per a Nov 2025 member proposal; not yet completed." },
+        { "team": "Bay FC", "league": "NWSL", "role": "minority", "note": "Founding investor in the Bay Collective ownership group; also launched its own multi-club women's-football collective." }
+      ],
+      "note": "New entity added this session -- a minority investor across at least 4 clubs on this board, none of them previously cross-linked."
+    },
+    {
+      "id": "arctos-partners",
+      "displayName": "Arctos Partners",
+      "aliasNames": ["Arctos Partners", "Arctos Sports Partners", "Arctos"],
+      "aliasOwnerKeys": [],
+      "clubs": [
+        { "team": "Aston Martin", "league": "F1", "role": "minority" },
+        { "team": "Paris Saint-Germain", "league": "France", "role": "minority", "note": "12.5%" },
+        { "team": "Atalanta", "league": "Italy", "role": "minority", "note": "co-investor" },
+        { "team": "Golden State Warriors", "league": "NBA", "role": "minority", "note": "13%" },
+        { "team": "Atlanta Falcons", "league": "NFL", "role": "minority", "note": "10% agreed Aug 2026, pending NFL approval" }
+      ],
+      "note": "New entity added this session -- a minority investor across at least 5 clubs on this board, none previously cross-linked. Arctos's stated strategy IS multi-club minority investing, so this list will likely grow."
+    },
+    {
+      "id": "tilman-fertitta",
+      "displayName": "Tilman Fertitta",
+      "aliasNames": ["Tilman Fertitta"],
+      "aliasOwnerKeys": ["tilman-fertitta"],
+      "clubs": [
+        { "team": "Houston Rockets", "league": "NBA", "role": "control" },
+        { "team": "Connecticut Sun", "league": "WNBA", "role": "control", "note": "Bought Mar 2026 for a WNBA-record ~$300m; team relocates to Houston for 2027." }
+      ],
+      "note": "New link surfaced by adding the Connecticut Sun valuation/owner row this session -- happened to share the exact same owner_key already, so no alias mapping was even needed."
+    },
+    {
+      "id": "bay-fc-collective",
+      "displayName": "Bay Collective",
+      "aliasNames": ["Bay Collective", "Bay FC Collective"],
+      "aliasOwnerKeys": ["bay-fc-collective"],
+      "clubs": [
+        { "team": "Bay FC", "league": "NWSL", "role": "control" },
+        { "team": "Sunderland AFC", "league": "England", "role": "control", "note": "Not on this valuations board. Acquired majority control in 2026." }
+      ],
+      "note": "New entity added this session alongside the new Bay FC owner row."
+    },
+    {
+      "id": "miller-family-lhm",
+      "displayName": "Miller family (Larry H. Miller Company)",
+      "aliasNames": ["Miller family", "Larry H. Miller Company"],
+      "aliasOwnerKeys": ["miller-family-lhm"],
+      "clubs": [
+        { "team": "Utah Royals", "league": "NWSL", "role": "control" },
+        { "team": "Real Salt Lake", "league": "United States", "role": "control", "note": "Not on this valuations board (MLS club valuations aren't currently tracked here)." }
+      ],
+      "note": "New entity added this session alongside the new Utah Royals owner row. Former Utah Jazz owners, re-acquired RSL/Royals from Ryan Smith/David Blitzer's Smith Entertainment Group for a reported $600m."
+    },
+    {
+      "id": "york-family-49ers-enterprises",
+      "displayName": "York family (San Francisco 49ers / 49ers Enterprises)",
+      "aliasNames": ["York family", "Jed York and the York family", "49ers Enterprises"],
+      "aliasOwnerKeys": ["york-family"],
+      "clubs": [
+        { "team": "San Francisco 49ers", "league": "NFL", "role": "control" },
+        { "team": "Rangers FC", "league": "Scotland", "role": "control", "note": "With Andrew Cavenagh, 2026 takeover, via the 49ers' venture arm 49ers Enterprises." },
+        { "team": "Leeds United", "league": "England", "role": "minority", "note": "Not on this valuations board." }
+      ],
+      "note": "New link surfaced this session: the 49ers' own seed row already used owner_key 'york-family', so the new Rangers FC row was given the SAME owner_key rather than a separate alias -- they now merge into one control portfolio directly, no registry-side alias resolution needed. Left in the registry anyway as documentation."
+    },
+    {
+      "id": "marinakis",
+      "displayName": "Evangelos Marinakis",
+      "aliasNames": ["Evangelos Marinakis", "Nottingham Forest", "Olympiacos"],
+      "aliasOwnerKeys": [],
+      "clubs": [],
+      "note": "Named explicitly in Ashwin's brief as a pattern the registry should hold (Nottingham Forest + Olympiacos), but NEITHER club is currently on this board or in the owner seed, so there is nothing to link yet. Left as an empty-clubs placeholder so the weekly ownership job's registry lookups don't need special-casing when one of these clubs is eventually added -- fill in `clubs` at that point."
+    }
+  ]
+}

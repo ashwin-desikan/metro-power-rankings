@@ -19,6 +19,13 @@ type RawRow = {
                   // or a COUNTRY for men's football
   value_m: number;
   source: string;
+  // Added 2026-09-24 alongside scripts/fans/valuations_extended.csv. Optional:
+  // the Supabase team_valuations table only has these columns once the
+  // pending migration in scripts/fans/pending/valuations_upsert.sql is
+  // applied, and older rows loaded before that will simply omit them.
+  method?: "published" | "transaction" | "speculative" | null;
+  confidence?: "high" | "medium" | "low" | null;
+  source_url?: string | null;
 };
 
 export type ValuationRow = {
@@ -26,7 +33,7 @@ export type ValuationRow = {
   displayName: string; // canonical name when matched, else the sheet name
   league: string; // sheet league/country label (shown verbatim)
   leagueHref: string; // link to the league hub (US) or football country hub
-  sport: "NFL" | "NBA" | "NHL" | "MLB" | "Football" | "F1" | "WNBA" | "NWSL";
+  sport: "NFL" | "NBA" | "NHL" | "MLB" | "Football" | "F1" | "WNBA" | "NWSL" | "AFL" | "NRL";
   valueM: number;
   valueLabel: string;
   year: number | null;
@@ -35,6 +42,15 @@ export type ValuationRow = {
       takes the HIGHER of the published valuations it holds per team, so which
       house a figure came from is part of the number, not a footnote. */
   sourceTag: "Sportico" | "Football Benchmark";
+  /** How the figure was derived, when the source row carries it (added
+      2026-09-24 for scripts/fans/valuations_extended.csv rows): a formal
+      annual valuation exercise ("published") vs. inferred from a real sale
+      price ("transaction"). Null for older rows that predate this field. */
+  method: RawRow["method"];
+  /** Confidence in the figure, when the source row carries it. */
+  confidence: RawRow["confidence"];
+  /** Direct link to the source article, when the row carries one. */
+  sourceUrl: string | null;
   href: string | null; // canonical team page, when matched
   leagueKey: TeamLink["league"] | null;
   slug: string | null;
@@ -65,6 +81,12 @@ const NAMED_LEAGUES: Record<string, LeagueRoute> = {
   // these rows link now. /teams/f1/[slug] is still CIRCUITS; the resolver goes
   // through teamLinks, which knows the difference.
   F1: { hub: "/teams/f1/constructors", sport: "F1", resolve: ["F1", "F1"] },
+  // Added 2026-09-24 alongside scripts/fans/valuations_speculative.csv's AFL
+  // and NRL rows. Team pages and resolution already existed (app/teams/afl,
+  // app/teams/nrl, lib/teamLinks.ts's isAfl()/isNrl()); only the valuations
+  // board's own league table was missing these two.
+  AFL: { hub: "/teams/afl", sport: "AFL", resolve: ["AFL", "AFL"] },
+  NRL: { hub: "/teams/nrl", sport: "NRL", resolve: ["NRL", "NRL"] },
 };
 
 // Football country -> league-hub slug under /teams/football/leagues/.
@@ -141,6 +163,9 @@ function build(): { rows: ValuationRow[]; index: Map<string, ValuationRow> } {
       year: r.year,
       source: r.source,
       sourceTag: sourceTagFor(r.source),
+      method: r.method ?? null,
+      confidence: r.confidence ?? null,
+      sourceUrl: r.source_url ?? null,
       href: link?.href ?? null,
       leagueKey: link?.league ?? null,
       slug: link?.slug ?? null,

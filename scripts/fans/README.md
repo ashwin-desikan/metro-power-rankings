@@ -8,15 +8,91 @@ repo**: the automatic monthly refresh, the annual revenue-anchor update, and
 the season rollover of league membership. It assumes the reader has read
 `fan_index/README.md` REVISION 8/9 for the method itself.
 
+**PATH MOVE, 2026-09-24 (read this before touching anything below):**
+`fan-attention.json` and `history/` moved from `public/data/fans/` to
+`data/fans/` at the repo root. They are no longer inside `public/`, so
+nothing under this path is directly downloadable from the site any more --
+`GET /data/fans/fan-attention.json` now 404s. The `/fans` page instead:
+  - server-renders a small public preview (top 20 teams of the All view,
+    rank/name/league/score only) straight from `data/fans/fan-attention.json`
+    via `lib/fanIndex.ts`'s `getFanIndexPreview()`, and
+  - serves the FULL dataset only from `app/api/fans/route.ts`, which
+    verifies a Supabase access token server-side (401 without one) before
+    reading `data/fans/fan-attention.json` in full via `getFanIndex()`.
+
+Every path below (`csv_to_json.py`'s `--out`, `monthly_refresh.py`'s
+`HISTORY_DIR`/`OUT_JSON`, `runners/fans-monthly.sh`'s `commit_paths`) has
+already been updated to `data/fans/...`. If you are pasting in a new anchor
+CSV, a new `universe_state.json`, or otherwise working from an older copy
+of this pipeline, make sure any `public/data/fans/...` path in your own
+notes or scripts is corrected to `data/fans/...` too, or the write will land
+in the wrong place (or silently recreate a stray `public/data/fans/`
+directory) instead of updating the file the site actually reads.
+
+**SECOND MOVE, SAME DAY (2026-09-24): `data/fans/fan-attention.json` and
+`data/fans/history/` ARE NOW GITIGNORED. DO NOT COMMIT THEM.** The repo
+itself is public, so even the server-only `data/fans/` location from the
+first move above is not safe for a 770-team dataset carrying franchise
+valuations -- a public git *history* is exactly as public as a public git
+*working tree*. Read this before you touch anything in this directory:
+
+  - `data/fans/fan-attention.json` and `data/fans/history/**` are real
+    files, still written locally by `csv_to_json.py` / `monthly_refresh.py`
+    exactly as before, and still the ONLY input `push_to_supabase.py`
+    reads -- **but `.gitignore` now excludes both paths, and `git add`ing
+    either one is a mistake, not just noise.**
+  - The one exception is `data/fans/preview.json`, a NEW file
+    `csv_to_json.py` now also writes (top 20 of the All view, four fields
+    a row: rank/name/league/icon/score, no href, no group, no team-linking
+    detail). It IS committed -- it is the only fan-index file left in git,
+    and it is all the public, unauthenticated `/fans` page reads
+    (`lib/fanIndex.ts`'s `getFanIndexPreview()`).
+  - **Supabase is now the system of record for the full dataset.**
+    `scripts/fans/push_to_supabase.py` upserts `data/fans/fan-attention.json`
+    into `public.fan_attention_teams` (one row per version, the whole file
+    as one `jsonb` payload) and every `data/fans/history/fan-attention-
+    YYYY-MM.json` file into `public.fan_attention_history` (one row per
+    month), using the `service_role` key
+    (`SUPABASE_SERVICE_KEY`/`SUPABASE_SERVICE_ROLE_KEY`). RLS on both
+    tables grants `SELECT` to the `authenticated` role only -- see
+    `supabase/migrations/20260924171144_fan_attention.sql`.
+  - `app/api/fans/route.ts` (the gated full table the signed-in client
+    fetches) now queries `public.fan_attention_teams` directly with the
+    SIGNED-IN CALLER'S OWN Supabase access token, not a service key, so RLS
+    is what actually enforces the gate at the database layer, not just the
+    token check in the route. It only falls back to the local
+    `data/fans/fan-attention.json` file when `NODE_ENV=development` AND
+    Supabase returned no rows, and it logs loudly when it does.
+  - `monthly_refresh.py` calls `push_to_supabase.py` itself, right after
+    regenerating the JSON; `runners/fans-monthly.sh` also calls it as its
+    own guarded step (belt and suspenders -- see that script's comment).
+  - **If you are the data worker maintaining the CSVs/pipeline outside this
+    repo:** nothing about where you write `data/fans/fan-attention.json` or
+    `data/fans/history/*.json` has changed -- same paths as the first move.
+    What changed is only that this repo no longer commits them; make sure
+    whatever pushes your changes here also runs
+    `python3 scripts/fans/push_to_supabase.py` (or lets
+    `monthly_refresh.py` do it), or Supabase -- and therefore the live site
+    -- will not see your update.
+
 ## Files here
 
     build_fan_index.py         an earlier (pre-v0.3) snapshot of the research
                                 builder, kept for reference; NOT what the
                                 monthly job runs (see below) and not updated
                                 by this maintenance flow.
-    csv_to_json.py             turns 3 CSVs into public/data/fans/fan-attention.json.
-                                Called by both a full manual rebuild and by
-                                monthly_refresh.py (via scratch CSVs, see below).
+    csv_to_json.py             turns 3 CSVs into data/fans/fan-attention.json
+                                (gitignored) and data/fans/preview.json
+                                (committed, top 20 only). Called by both a
+                                full manual rebuild and by monthly_refresh.py
+                                (via scratch CSVs, see below).
+    push_to_supabase.py         upserts data/fans/fan-attention.json and
+                                data/fans/history/*.json into Supabase
+                                (public.fan_attention_teams /
+                                fan_attention_history), service_role key
+                                only, --dry-run to preview. Called by
+                                monthly_refresh.py and by
+                                runners/fans-monthly.sh.
     universe_state.json        THE PERSISTED ROSTER. One row per team: qid,
                                 en_title, group/league/team, every language
                                 edition's title (langs), in_flux, home_langs,
@@ -64,7 +140,7 @@ Runs the 3rd of each month, 07:00 UTC (`mac-mini-jobs/jobs.toml`,
    `fan_index/README.md` REVISION 8-9 for which groups are actually blended
    today -- that list moves over time and this script does not hardcode it,
    it just refreshes whatever the state file says is blended.
-4. Append the month to `public/data/fans/history/fan-attention-YYYY-MM.json`
+4. Append the month to `data/fans/history/fan-attention-YYYY-MM.json`
    and update `history/index.json`. Checks the 8MB history budget on every
    run and logs a warning (never fails the job) if it's exceeded --
    pruning the oldest month(s) is a manual call, not automatic, because
@@ -76,22 +152,28 @@ Runs the 3rd of each month, 07:00 UTC (`mac-mini-jobs/jobs.toml`,
    computations.
 6. Writes `universe_state.json`, regenerates the 3 working CSVs into a
    scratch folder inside `scripts/fans/`, and calls `csv_to_json.py` to
-   rebuild `public/data/fans/fan-attention.json`.
-7. Commits `scripts/fans/universe_state.json`, `public/data/fans/
-   fan-attention.json` and `public/data/fans/history/**`.
+   rebuild `data/fans/fan-attention.json` (gitignored) and
+   `data/fans/preview.json` (committed).
+7. Calls `push_to_supabase.py`, which upserts `data/fans/fan-attention.json`
+   and every `data/fans/history/*.json` file into Supabase.
+8. Commits `scripts/fans/universe_state.json` and `data/fans/preview.json`
+   ONLY -- `data/fans/fan-attention.json` and `data/fans/history/**` are
+   gitignored (see the SECOND MOVE note near the top of this file) and are
+   never committed; Supabase is their system of record now.
 
-**No `[vercel skip]` on this commit.** `lib/fanIndex.ts`'s `getFanIndex()`
-reads `fan-attention.json` with `readFileSync` at **build** time (checked
-2026-09-24), not `fetch` at request time, so a `[vercel skip]` commit here
-would update the file in git while `/fans` kept serving whatever the last
-real build baked in, forever. `runners/fans-monthly.sh` also skips
-`revalidate_ping` for the same reason: `revalidateTag()` only busts the
-Next.js fetch cache, which a `readFileSync` page never populates -- the build
-itself is the only thing that changes what this page serves. If `lib/
-fanIndex.ts` is ever changed to fetch the JSON instead of reading it off
-disk, both of those need to flip back (drop `[vercel skip]`'s absence, add
-a `revalidate_ping` call) -- check that file before assuming either still
-holds.
+**No `[vercel skip]` on this commit**, for `data/fans/preview.json`'s sake:
+`lib/fanIndex.ts`'s `getFanIndexPreview()` reads that file with
+`readFileSync` at build/request time, so a `[vercel skip]` commit here would
+update it in git while `/fans`'s top 20 kept showing whatever the last real
+build baked in, forever. The FULL dataset no longer has this problem: since
+the 2026-09-24 Supabase move, `app/api/fans/route.ts` reads
+`public.fan_attention_teams` live at request time, so it updates the moment
+`push_to_supabase.py` succeeds, with no build needed. `runners/fans-
+monthly.sh` still skips `revalidate_ping` for the same `readFileSync`
+reason as before, scoped now to `preview.json` alone: `revalidateTag()`
+only busts the Next.js fetch cache, which a `readFileSync` page never
+populates -- the build itself is the only thing that changes what the
+preview shows.
 
 **Known simplification, monthly cadence only:** the monthly fetch does not
 re-derive `lang_count` / `top5_langs` / `wiki_spike_ratio` (those would need

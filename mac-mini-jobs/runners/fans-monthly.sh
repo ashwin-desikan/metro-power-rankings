@@ -11,21 +11,33 @@
 # own machine and is not reachable from the mini), best-effort refreshes
 # Google Trends for the currently-blended groups (fails open: keeps last
 # month's value on any pytrends error, never blocks the run), appends the
-# month to public/data/fans/history/, rolls the 12-month window, recomputes
+# month to data/fans/history/, rolls the 12-month window, recomputes
 # the blend-rescale and cross-sport score (scripts/fans/
-# league_revenue_anchor.csv), and regenerates public/data/fans/
-# fan-attention.json via csv_to_json.py.
+# league_revenue_anchor.csv), regenerates data/fans/fan-attention.json
+# (which also writes data/fans/preview.json) via csv_to_json.py, and then
+# calls scripts/fans/push_to_supabase.py to upsert the full dataset into
+# Supabase (public.fan_attention_teams / fan_attention_history). SECOND
+# REVISION, same day (2026-09-24): the repo is public, so the full JSON can
+# no longer be committed even server-only; it is now gitignored and
+# Supabase is the system of record. app/api/fans/route.ts (the gated full
+# table) reads Supabase at REQUEST time with the signed-in caller's own
+# token, not at build time, so it updates the moment the push above
+# succeeds -- no Vercel build needed for the gated data. See scripts/fans/
+# README.md.
 #
-# NO "[vercel skip]": lib/fanIndex.ts reads fan-attention.json with
-# readFileSync at BUILD time (checked 2026-09-24), not at request time, so
-# unlike every other job in this folder a commit here MUST trigger a real
-# Vercel build or /fans silently keeps serving last month's data forever.
-# revalidate_ping is correspondingly skipped: revalidateTag() only busts the
-# Next.js fetch cache, which a readFileSync page never populates -- the
-# build itself is the only thing that changes what this page serves.
+# "[vercel skip]" is still NOT used, because data/fans/preview.json (the
+# small public top-20 file) IS committed below and IS read with readFileSync
+# at build/request time, same as before: a commit that only bumped Supabase
+# and not preview.json would still need a real build for the public page's
+# top 20 to move. revalidate_ping is still skipped for the same reason it
+# always was: revalidateTag() only busts the Next.js fetch cache, which a
+# readFileSync page never populates.
 #
-# Needs nothing from config.env beyond REPO_DIR: no API key (Wikimedia
-# pageviews and Trends are both unauthenticated), no Supabase.
+# Needs SUPABASE_SERVICE_KEY (or SUPABASE_SERVICE_ROLE_KEY) in config.env
+# for the push step above; that step fails open (logs and continues) if it
+# is missing, same as every other Supabase loader in this repo. Beyond that,
+# nothing from config.env but REPO_DIR: no API key (Wikimedia
+# pageviews and Trends are both unauthenticated).
 . "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/_common.sh"
 
 mini_sync
@@ -60,6 +72,21 @@ _fans_dry=""
 STEP_TIMEOUT=3600 guarded "monthly pageviews + trends + history + rebuild" \
   "$PY" scripts/fans/monthly_refresh.py $_fans_dry
 
+# Belt and suspenders: monthly_refresh.py already calls push_to_supabase.py
+# itself right after regenerating the JSON (so a bare run of that script
+# still updates Supabase), but this runner calls it again as its own guarded
+# step so a push failure shows up as its own line in the job log rather than
+# being buried inside the "monthly pageviews + trends + history + rebuild"
+# step above. Idempotent (upsert on the version/month primary key), so
+# running it twice in one refresh is harmless.
+guarded "push to Supabase" "$PY" scripts/fans/push_to_supabase.py
+
+# 2026-09-24: data/fans/fan-attention.json and data/fans/history/ are
+# gitignored now (the repo is public; see scripts/fans/README.md and
+# supabase/migrations/20260924171144_fan_attention.sql) -- Supabase is the
+# system of record for them, pushed above, not a git commit. Only
+# data/fans/preview.json (the public top-20 file) and universe_state.json
+# (this pipeline's own roster cache) are still committed.
 # NOT "Auto:" prefixed, deliberately. .githooks/pre-commit generates
 # commits-recent.txt with --invert-grep --grep='^Auto:', so an Auto: subject
 # never reaches the file the Notion reconciler treats as ground truth. For the
@@ -70,7 +97,6 @@ STEP_TIMEOUT=3600 guarded "monthly pageviews + trends + history + rebuild" \
 # hid until 2026-09-24 (HANDOFF section AR).
 commit_paths "fans: Fan Attention Index monthly refresh" \
   scripts/fans/universe_state.json \
-  public/data/fans/fan-attention.json \
-  public/data/fans/history
+  data/fans/preview.json
 
 note "done"

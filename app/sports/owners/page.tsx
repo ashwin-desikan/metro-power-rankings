@@ -69,6 +69,12 @@ export default async function OwnersPage() {
       coControllers: t.coControllers,
       minority: t.minority,
       sourceUrl: t.sourceUrl,
+      // Added 2026-09-24: cross-links resolved from scripts/data/owner-registry.json
+      // (see lib/ownerRegistry.ts), for clubs this owner is also tied to via a
+      // registered alias/entity -- control or minority -- that the portfolio
+      // grouping itself does not merge (a minority stake never inflates
+      // someone else's portfolio total, but it should still be visible).
+      multiClubLinks: t.multiClubLinks,
     })),
   }));
 

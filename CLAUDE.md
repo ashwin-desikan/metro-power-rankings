@@ -335,6 +335,17 @@ Log rows, dollars and latency in HANDOFF; state in Notion. Ashwin should never h
 
 ## Where things live
 
+- `scripts/valuations/` — team valuations. **Supabase's `public.team_valuations`
+  is the ONLY source of truth as of 2026-09-24 (Ashwin's ruling).**
+  `OtherLeagues.xlsx` is NOT read or written for valuations any more (it still
+  feeds other pipelines this repo owns: WNBA, CFL, AFL/NRL, EuroLeague, CWS —
+  only valuations moved off it). `sync_team_valuations.py` (the old
+  truncate-and-reload-from-the-workbook script) is retired and refuses to run.
+  Edits go through `upsert_team_valuations.py`, which upserts by
+  `(team, league, year)` from a CSV and never deletes or truncates; dry-run by
+  default, `--write` needs `SUPABASE_SERVICE_KEY`. `build-valuations-data.py`
+  reads Supabase and writes `public/data/valuations/valuations.json` as
+  before.
 - `scripts/civic/` — officeholder refresh pipelines (mayors, governors,
   Congress, Cabinet, House leadership), all built on the shared
   discovery-cache + hot-path pattern in `civic_common.py`.

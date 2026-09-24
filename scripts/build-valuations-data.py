@@ -1,17 +1,26 @@
 #!/usr/bin/env python3
-"""Build cross-sport team valuations data from the Team Valuations sheet of
-OtherLeagues.xlsx.
+"""Build cross-sport team valuations data from Supabase's public.team_valuations.
 
-The sheet is a curated, non-exhaustive snapshot: latest available valuation per
-team. US leagues (NFL/NBA/MLB/NHL) carry Forbes figures; global soccer clubs
-carry Sportico figures, with the League column holding the club's country.
+As of 2026-09-24 (Ashwin's ruling), Supabase is the ONLY source of truth for
+team valuations. OtherLeagues.xlsx is retired from this pipeline entirely --
+scripts/valuations/sync_team_valuations.py (which used to truncate-and-reload
+the table from the workbook's "Team Valuations" sheet) now refuses to run.
+Edits go through scripts/valuations/upsert_team_valuations.py, which upserts
+by (team, league, year) from a CSV and never deletes or truncates. The
+workbook still feeds OTHER pipelines this repo owns (WNBA, CFL, AFL/NRL,
+EuroLeague, CWS) -- only valuations moved off it.
+
+US leagues (NFL/NBA/MLB/NHL) carry Forbes figures; global soccer clubs carry
+Sportico or Football Benchmark figures, with the League column holding the
+club's country.
 
 Emits public/data/valuations/valuations.json:
-  { "generated": "<iso>", "rows": [ {year, team, league, value_m, source}, ... ] }
+  { "generated": "<iso>", "rows": [ {year, team, league, value_m, source,
+    method?, confidence?, source_url?}, ... ] }
 Link resolution to canonical /teams pages is done in lib/valuations.ts so the
 shared resolveTeamLink() stays the single source of truth.
 
-Usage: python scripts/build-valuations-data.py [SOURCE_XLSX]
+Usage: python scripts/build-valuations-data.py
 """
 import json, os, sys, datetime
 import time, urllib.request, urllib.parse
@@ -40,24 +49,45 @@ def _sb(table, select, order="id"):
         off += step
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "OtherLeagues.xlsx")
 OUT = os.path.join(ROOT, "public", "data", "valuations", "valuations.json")
-SHEET = "Team Valuations"
+
+def _fetch_rows():
+    """Try the extended select (method/confidence/source_url, added
+    2026-09-24 alongside scripts/fans/valuations_extended.csv and
+    scripts/fans/pending/valuations_upsert.sql). Falls back to the original
+    5-column select if those columns don't exist yet in Supabase -- so this
+    script keeps working whether or not Ashwin has applied the pending
+    migration, per the "smallest reversible change" convention in CLAUDE.md.
+    """
+    extended = "year,team,league,value_m,source,method,confidence,source_url"
+    try:
+        return _sb("team_valuations", extended), True
+    except Exception as e:
+        print(f"extended select failed ({e}); falling back to base columns "
+              "(scripts/fans/pending/valuations_upsert.sql not applied yet?)")
+        return _sb("team_valuations", "year,team,league,value_m,source"), False
+
 
 def main():
+    rows, has_extended = _fetch_rows()
     out = []
-    for r in _sb("team_valuations", "year,team,league,value_m,source"):
+    for r in rows:
         team = r["team"]
         val = r["value_m"]
         if team is None or val is None:
             continue
-        out.append({
+        row = {
             "year": int(r["year"]) if r["year"] is not None else None,
             "team": str(team).strip(),
             "league": str(r["league"]).strip() if r["league"] is not None else "",
             "value_m": float(val),
             "source": str(r["source"]).strip() if r["source"] is not None else "",
-        })
+        }
+        if has_extended:
+            row["method"] = r.get("method")
+            row["confidence"] = r.get("confidence")
+            row["source_url"] = r.get("source_url")
+        out.append(row)
     out.sort(key=lambda x: x["value_m"], reverse=True)
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     payload = {"generated": datetime.datetime.now().isoformat(timespec="seconds"), "rows": out}

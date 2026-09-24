@@ -79,6 +79,17 @@ CONTENT.md
 /data/*
 !/data/country-orgs.json
 !/data/forecast/
+# Fan Attention Index (2026-09-24): the full dataset (770 teams, franchise
+# valuations) can no longer live in this public repo at all, even
+# server-only -- see scripts/fans/README.md and supabase/migrations/
+# 20260924120000_fan_attention.sql. Supabase is its system of record.
+# preview.json (the public top-20 file) is the one exception and stays
+# tracked; unignore the directory first, then re-ignore the two real paths
+# inside it, or the /data/* rule above hides the whole folder including
+# preview.json.
+!/data/fans/
+/data/fans/fan-attention.json
+/data/fans/history/
 
 # xlsx backups (sandbox bindfs creates these; do not push)
 MetroAreas.xlsx.bak-*

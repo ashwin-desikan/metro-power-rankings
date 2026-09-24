@@ -78,3 +78,12 @@
 2026-09-22T12:14:47+01:00  52f467a77  gap-watch: announce every auto-promotion, not just failures [vercel skip]
 2026-09-22T12:04:13+01:00  504c90186  football: refresh live bundles [vercel skip]
 2026-09-22T10:01:04+01:00  d7d4a4382  data: cricket weekly refresh [vercel skip]
+2026-09-22T09:56:33+01:00  c2761b021  hooks: stop calling every public/ data commit "the documented ISR exception" [vercel skip]
+2026-09-22T09:14:24+01:00  224fc050b  handoff: the date corrections are live on a third build [vercel skip]
+2026-09-22T09:13:54+01:00  e43dc4a22  Release notes: the eight corrected election dates [deploy-now]
+2026-09-22T09:08:40+01:00  d28db196a  elections: correct eight records whose date contradicted their own year [vercel skip]
+2026-09-22T08:59:22+01:00  546debfc2  elections: a "Just voted" board for the last six months
+2026-09-22T08:43:32+01:00  95b49a60f  forecast: header cells take the top-level split rule too [vercel skip]
+2026-09-22T08:35:58+01:00  a1ca4b388  forecast: split wikitext cells at top level only, and anchor France [vercel skip]
+2026-09-22T08:26:59+01:00  7d371d8f1  forecast: extend the known-results guard to every country [vercel skip]
+2026-09-22T08:19:06+01:00  3f1c3dd27  elections: Labour leads the UK polling chart

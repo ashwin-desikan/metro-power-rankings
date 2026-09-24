@@ -1,5 +1,5 @@
 import "server-only";
-import { readFileSync } from "fs";
+import { existsSync, readFileSync } from "fs";
 import { join } from "path";
 import { resolveTeamLink } from "./teamLinks";
 import { getAllClubs, getFootballClubByName } from "./football";
@@ -7,11 +7,23 @@ import { getAllClubs, getFootballClubByName } from "./football";
 // Fan Attention Index. Source data is built entirely from Wikimedia
 // Pageviews (agent=user, human traffic only), Google Trends and Wikidata
 // sitelinks, by scripts/fans/build_fan_index.py, converted to JSON by
-// scripts/fans/csv_to_json.py, and read here from
-// public/data/fans/fan-attention.json. No external popularity survey is
-// used anywhere in this pipeline. Reddit is part of the design (see the
-// methodology page) but has no live data yet, so every team's `signal` is
-// currently "wiki only" or "blend" (Wikipedia + Trends).
+// scripts/fans/csv_to_json.py, and read here from data/fans/fan-attention.json
+// (moved out of public/ on 2026-09-24 so the full dataset is no longer
+// directly downloadable; see "Gating" below and scripts/fans/README.md). No
+// external popularity survey is used anywhere in this pipeline. Reddit is
+// part of the design (see the methodology page) but has no live data yet,
+// so every team's `signal` is currently "wiki only" or "blend" (Wikipedia +
+// Trends).
+//
+// GATING. getFanIndex() (the full dataset, every field) must only ever be
+// called from server-only code that does not hand its result to a client
+// component as a prop: today that is app/api/fans/route.ts (behind a
+// Supabase access-token check) and app/fans/methodology/page.tsx (which
+// only ever reads group-level aggregates off it, never a team's own
+// numbers). The public, unauthenticated /fans page must use
+// getFanIndexPreview() instead, which returns only the top N rows of the
+// All view with a deliberately narrow field set (rank, name, league,
+// group, score, href) -- never import getFanIndex() into that page.
 
 // v0.3.1 contract. Kept as `string` rather than a union: new groups/leagues
 // can land in the JSON before this file is touched, and a page that only
@@ -46,7 +58,9 @@ type RawTeamV03 = {
   value_m: number | null;
   val_source: string | null;
   val_year: number | null;
+  val_method: string | null;
   residual_pct: number | null;
+  value_vs_attention: number | null;
   value_per_1k_baseline: number | null;
 };
 
@@ -109,7 +123,9 @@ export type FanTeamRow = {
   valueM: number | null;
   valSource: string | null;
   valYear: number | null;
+  valMethod: string | null;
   residualPct: number | null;
+  valueVsAttention: number | null;
   valuePer1kBaseline: number | null;
   residualEligible: boolean;
   /** Canonical /teams page, when the site has one for this team. */
@@ -289,7 +305,7 @@ function footballByQid(): Map<string, { slug: string; cur_name: string }> {
   return _footballByQid;
 }
 
-function resolveCanonical(t: { group: string; team: string; qid: string; rawDisplayName: string | null }): { href: string | null; displayName: string } {
+export function resolveCanonical(t: { group: string; team: string; qid: string; rawDisplayName: string | null }): { href: string | null; displayName: string } {
   const fallbackName = t.rawDisplayName ?? t.team;
 
   if (NO_LINK_GROUPS.has(t.group)) {
@@ -327,12 +343,14 @@ function resolveCanonical(t: { group: string; team: string; qid: string; rawDisp
   return { href: null, displayName: fallbackName };
 }
 
-let _data: FanIndexData | null = null;
-
-export function getFanIndex(): FanIndexData {
-  if (_data) return _data;
-  const file = join(process.cwd(), "public", "data", "fans", "fan-attention.json");
-  const raw = JSON.parse(readFileSync(file, "utf8")) as RawFile;
+// Pure transform: RawFile (exactly what data/fans/fan-attention.json holds,
+// and what public.fan_attention_teams.payload holds in Supabase -- the two
+// are byte-for-byte the same shape, see the migration's header note) into
+// the camelCase, team-linked FanIndexData shape the rest of the app uses.
+// Exported so app/api/fans/route.ts can run the SAME team-resolution logic
+// (resolveCanonical, the football/CFB/CBB alias tables) on a payload it
+// fetched from Supabase, without duplicating it.
+export function parseFanIndexPayload(raw: RawFile): FanIndexData {
   const residualEligibleGroups = new Set(raw.residual_eligible_groups ?? DEFAULT_RESIDUAL_ELIGIBLE_GROUPS);
 
   const teams: FanTeamRow[] = raw.teams.map((t) => {
@@ -365,7 +383,9 @@ export function getFanIndex(): FanIndexData {
       valueM: t.value_m ?? null,
       valSource: t.val_source ?? null,
       valYear: t.val_year ?? null,
+      valMethod: t.val_method ?? null,
       residualPct: t.residual_pct ?? null,
+      valueVsAttention: t.value_vs_attention ?? null,
       valuePer1kBaseline: t.value_per_1k_baseline ?? null,
       residualEligible: residualEligibleGroups.has(t.group),
       href,
@@ -373,7 +393,7 @@ export function getFanIndex(): FanIndexData {
     };
   });
 
-  _data = {
+  return {
     generated: raw.generated,
     window: raw.window,
     version: raw.version,
@@ -382,7 +402,103 @@ export function getFanIndex(): FanIndexData {
     residualEligibleGroups,
     teams,
   };
-  return _data;
+}
+
+// ---------------------------------------------------------------------
+// Full-data sources
+// ---------------------------------------------------------------------
+//
+// data/fans/fan-attention.json is no longer committed (2026-09-24: the repo
+// is public, so a 770-team dataset with valuations cannot live in git even
+// server-only; see supabase/migrations/20260924171144_fan_attention.sql and
+// scripts/fans/README.md). It still exists on disk in local dev, written by
+// scripts/fans/csv_to_json.py, and is gitignored. Production has no such
+// file, so the only source of the full dataset in production is Supabase.
+
+let _localFileData: FanIndexData | null = null;
+
+/** DEV-ONLY FALLBACK, and as of 2026-09-24 used from exactly ONE place:
+ * app/api/fans/route.ts, when Supabase has returned no rows AND
+ * NODE_ENV=development. Nothing else server-side may call this. The
+ * gitignored data/fans/fan-attention.json does not exist in a production
+ * build (the repo is public; see scripts/fans/README.md), so any other
+ * caller -- the methodology page included -- would crash in production the
+ * moment it tried. Returns null (never throws) when the file is absent,
+ * which it always will be outside local dev / the data-refresh pipeline;
+ * the ONE caller that exists decides what to do with null. */
+export function getFanIndexFromLocalFile(): FanIndexData | null {
+  if (_localFileData) return _localFileData;
+  const file = join(process.cwd(), "data", "fans", "fan-attention.json");
+  if (!existsSync(file)) return null;
+  const raw = JSON.parse(readFileSync(file, "utf8")) as RawFile;
+  _localFileData = parseFanIndexPayload(raw);
+  return _localFileData;
+}
+
+// ---------------------------------------------------------------------
+// Methodology page's group-level aggregates
+// ---------------------------------------------------------------------
+//
+// data/fans/method-summary.json: tracked and public-safe (per-group and
+// per-league aggregates only -- team counts, valuation-fit R^2, revenue
+// anchors, coverage percentages; NO team rows, no qid, no en_title,
+// nothing that could reconstruct a team-level number). Written by
+// scripts/fans/csv_to_json.py's write_method_summary(), alongside
+// preview.json, specifically so app/fans/methodology/page.tsx never has to
+// read data/fans/fan-attention.json (gitignored, absent in production) or
+// touch Supabase at all. This is a committed file read with readFileSync,
+// same idiom as getFanIndexPreview() below.
+export type MethodSummaryGroup = {
+  group: string;
+  team_count: number;
+  value_fit_n: number;
+  value_fit_r2: number | null;
+  value_vs_attention_shown: boolean;
+  season_article_coverage_pct: number | null;
+};
+
+export type MethodSummaryLeague = {
+  league: string;
+  group: string;
+  team_count: number;
+  anchor_revenue_usd_m: number | null;
+  anchor_source: string | null;
+  anchor_confidence: string | null;
+  anchor_basis: string | null;
+  k_league: number | null;
+  season_article_coverage_pct: number | null;
+};
+
+export type MethodSummary = {
+  generated: string;
+  version: string;
+  window: { start: string; end: string };
+  min_fit_n: number;
+  min_fit_r2: number;
+  groups: MethodSummaryGroup[];
+  leagues: MethodSummaryLeague[];
+};
+
+let _methodSummary: MethodSummary | null = null;
+
+/** Throws a clear error at build/request time if data/fans/method-
+ * summary.json is missing, rather than letting the methodology page render
+ * with silently empty sections -- a missing committed file is a real
+ * pipeline problem (the data worker's csv_to_json.py did not run, or its
+ * output was not committed), not something to paper over. */
+export function getMethodSummary(): MethodSummary {
+  if (_methodSummary) return _methodSummary;
+  const file = join(process.cwd(), "data", "fans", "method-summary.json");
+  if (!existsSync(file)) {
+    throw new Error(
+      "data/fans/method-summary.json is missing. This file must be committed " +
+        "(it is the ONLY source app/fans/methodology/page.tsx reads); run " +
+        "scripts/fans/csv_to_json.py to regenerate it, or check that the " +
+        "data worker's last run committed it.",
+    );
+  }
+  _methodSummary = JSON.parse(readFileSync(file, "utf8")) as MethodSummary;
+  return _methodSummary;
 }
 
 export function formatFanValueM(m: number): string {
@@ -398,4 +514,151 @@ export function formatCompactViews(n: number): string {
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
   if (n >= 1_000) return `${(n / 1_000).toFixed(0)}K`;
   return `${n}`;
+}
+
+// ---------------------------------------------------------------------
+// Public preview (unauthenticated /fans page)
+// ---------------------------------------------------------------------
+//
+// data/fans/preview.json (2026-09-24 Supabase migration; raw-name schema
+// added 2026-09-24 later the same day): the ONLY fan-index file left in the
+// repo besides method-summary.json, on purpose. Written by scripts/fans/
+// csv_to_json.py, the top 20 of the All view -- rank, RAW team/group/qid
+// (the same identifiers resolveCanonical() takes for the full table),
+// league, icon and score. It deliberately does NOT carry a pre-resolved
+// display name or href: those are computed here, in TypeScript, at render
+// time, by running the exact same resolveCanonical() the full table uses,
+// so the public top 20 and the signed-in full table can never show two
+// different names for the same team (a Python-side reimplementation of the
+// football/CFB/CBB alias tables would drift from this one eventually).
+export type FanPreviewRawRow = {
+  rank: number;
+  team: string;
+  group: string;
+  qid: string;
+  league: string;
+  icon: string;
+  score: number;
+};
+
+export type FanPreviewRow = {
+  rank: number;
+  name: string;
+  href: string | null;
+  league: string;
+  icon: string;
+  score: number;
+};
+
+export type FanPreviewMeta = {
+  version: string;
+  generated: string;
+  window: { start: string; end: string };
+  totalTeams: number;
+};
+
+type PreviewFile = { meta: FanPreviewMeta; rows: FanPreviewRawRow[] };
+
+let _previewRaw: PreviewFile | null = null;
+
+/** Throws a clear error at build/request time if data/fans/preview.json is
+ * missing, rather than letting the public /fans page render an empty top
+ * 20 -- a missing committed file is a real pipeline problem, not something
+ * to paper over. */
+function readPreviewFile(): PreviewFile {
+  if (_previewRaw) return _previewRaw;
+  const file = join(process.cwd(), "data", "fans", "preview.json");
+  if (!existsSync(file)) {
+    throw new Error(
+      "data/fans/preview.json is missing. This file must be committed (it is " +
+        "the ONLY thing the public, unauthenticated /fans page reads); run " +
+        "scripts/fans/csv_to_json.py to regenerate it, or check that the " +
+        "data worker's last run committed it.",
+    );
+  }
+  _previewRaw = JSON.parse(readFileSync(file, "utf8")) as PreviewFile;
+  return _previewRaw;
+}
+
+export function getFanIndexPreview(): { meta: FanPreviewMeta; rows: FanPreviewRow[] } {
+  const file = readPreviewFile();
+  const rows: FanPreviewRow[] = file.rows.map((r) => {
+    const { href, displayName } = resolveCanonical({
+      group: r.group,
+      team: r.team,
+      qid: r.qid,
+      rawDisplayName: null,
+    });
+    return { rank: r.rank, name: displayName, href, league: r.league, icon: r.icon, score: r.score };
+  });
+  return { meta: file.meta, rows };
+}
+
+// ---------------------------------------------------------------------
+// Full table payload (app/api/fans/route.ts ONLY, behind the auth check)
+// ---------------------------------------------------------------------
+//
+// Same field set app/fans/FanTable.tsx's FanTableTeam expects. Kept here,
+// next to FanTeamRow, so the two can never silently drift apart; FanTable's
+// own FanTableTeam type is structurally identical (TypeScript checks by
+// shape, not name) and the API route's JSON response is assigned straight
+// into it on the client. This function must never be called from a server
+// component that passes its result to a client component as a prop --
+// that would defeat the whole point of gating the route.
+export type FanTableTeamPayload = {
+  team: string;
+  displayName: string;
+  href: string | null;
+  group: string;
+  league: string;
+  category: string;
+  wikiBaseline12m: number;
+  fanIndexRaw: number;
+  scoreInGroup: number;
+  rankInGroup: number;
+  rankInLeague: number;
+  globalScore: number;
+  globalRank: number;
+  inFlux: string | null;
+  inclusionRule: string | null;
+  globalReachPct: number | null;
+  spikeRatio: number;
+  monthly: (number | null)[];
+  valueM: number | null;
+  valSource: string | null;
+  valYear: number | null;
+  valMethod: string | null;
+  residualPct: number | null;
+  valueVsAttention: number | null;
+  residualEligible: boolean;
+};
+
+export function toFanTablePayload(data: FanIndexData): FanTableTeamPayload[] {
+  return data.teams.map((t) => ({
+    team: t.team,
+    displayName: t.displayName,
+    href: t.href,
+    group: t.group,
+    league: t.league,
+    category: t.category,
+    wikiBaseline12m: t.wikiBaseline12m,
+    fanIndexRaw: t.fanIndexRaw,
+    scoreInGroup: t.scoreInGroup,
+    rankInGroup: t.rankInGroup,
+    rankInLeague: t.rankInLeague,
+    globalScore: t.globalScore,
+    globalRank: t.globalRank,
+    inFlux: t.inFlux,
+    inclusionRule: t.inclusionRule,
+    globalReachPct: t.globalReachPct,
+    spikeRatio: t.spikeRatio,
+    monthly: t.monthly,
+    valueM: t.valueM,
+    valSource: t.valSource,
+    valYear: t.valYear,
+    valMethod: t.valMethod,
+    residualPct: t.residualPct,
+    valueVsAttention: t.valueVsAttention,
+    residualEligible: t.residualEligible,
+  }));
 }

@@ -1,0 +1,13 @@
+-- RETIRED 2026-09-24. This hand-written DELETE/INSERT SQL is superseded.
+--
+-- Use scripts/fans/pending/valuations_pending.csv with
+-- scripts/valuations/upsert_team_valuations.py instead (see
+-- scripts/fans/pending/README.txt) -- it UPSERTS by (team, league, year) and
+-- never deletes or truncates public.team_valuations, unlike this file's
+-- former DELETE statements.
+--
+-- The provenance-column ALTER TABLE this file used to carry now lives in
+-- supabase/migrations/20260924171147_team_valuations_provenance_columns.sql.
+--
+-- Kept as a stub (rather than removed) because this device's connected
+-- folder does not allow file deletion in this session; content only.

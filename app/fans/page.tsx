@@ -1,17 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BASE_URL, SITE_NAME, serializeJsonLd, ogImage } from "@/lib/seo";
-import { getFanIndex } from "@/lib/fanIndex";
+import { getFanIndexPreview } from "@/lib/fanIndex";
 import { FansCrumbs, FansNav, TabHeader, MONO } from "./_shared/ui";
-import FanTable, { type FanTableTeam } from "./FanTable";
+import FanGate from "./FanGate";
 
 export const dynamicParams = false;
 
 const PAGE_PATH = "/fans";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
-const PAGE_TITLE = "Fan Attention Index";
+// Branded name (2026-09-24): used for <title>/OG, the H1, JSON-LD name and
+// the citation line, matching the "Citizen of Nowhere Picks" house pattern
+// for a named feature. Nav labels stay the short "Fan Attention Index" (see
+// app/DesktopNav.tsx, app/MobileMenu.tsx, lib/sportsCatalog.ts,
+// lib/deepDives.ts, app/sports/page.tsx): the site's nav never carries the
+// "Citizen of Nowhere" prefix for any other branded page either (compare
+// "Metro Power Rankings" in nav vs. its own full name), so this matches
+// the house pattern rather than diverging from it.
+const PAGE_TITLE = "Citizen of Nowhere Fan Attention Index";
 const PAGE_DESCRIPTION =
-  "The annual attention sports teams earn on Wikipedia, across every language edition: a public, reproducible measure of attention, not a fan count. Football, the major American leagues (NFL, NBA, MLB, NHL, college football, college basketball), and the rest of the world's sports (WNBA, women's football, EuroLeague, AFL, NRL, IPL, Formula 1, NPB, CFL, Top 14, Handball-Bundesliga, SuperLega), ranked within their own group and across sports on one shared scale.";
+  "The annual attention sports teams earn on Wikipedia, across every language edition: a public, reproducible measure of attention, not a fan count. Football, the major American leagues (NFL, NBA, MLB, NHL, college football, college basketball), and the rest of the world's sports (WNBA, women's football, EuroLeague, AFL, NRL, IPL, Formula 1, NPB, CFL, Top 14, Handball-Bundesliga, SuperLega), ranked within their own group and across sports on one shared scale. The top 20 are free to view; sign in with Google to see the full index.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -41,35 +49,22 @@ function windowLabel(start: string, end: string): string {
   return `${fmt(start)} to ${fmt(end)}`;
 }
 
+// PUBLIC / UNAUTHENTICATED PAGE. This server component must only ever read
+// getFanIndexPreview() (top 20 rows, four fields each), never getFanIndex()
+// (the full dataset): whatever this function returns as JSX -- directly, or
+// via a prop into <FanGate> -- is what every anonymous visitor's browser
+// receives, full stop. The preview TABLE MARKUP itself lives in FanGate.tsx
+// now (2026-09-24), not here: FanGate is the one client component that owns
+// the whole table area (preview, loading skeleton, gate, full table) so it
+// can hide the preview the instant a session is detected, rather than the
+// preview being a separate server block with no way to react to client
+// auth state. The full table's DATA still only ever exists client-side,
+// fetched from the auth-gated app/api/fans/route.ts after a real sign-in.
+// See lib/fanIndex.ts's GATING note for the reasoning.
 export default function FansPage() {
-  const data = getFanIndex();
-  const teams: FanTableTeam[] = data.teams.map((t) => ({
-    team: t.team,
-    displayName: t.displayName,
-    href: t.href,
-    group: t.group,
-    league: t.league,
-    category: t.category,
-    wikiBaseline12m: t.wikiBaseline12m,
-    scoreInGroup: t.scoreInGroup,
-    rankInGroup: t.rankInGroup,
-    rankInLeague: t.rankInLeague,
-    globalScore: t.globalScore,
-    globalRank: t.globalRank,
-    inFlux: t.inFlux,
-    inclusionRule: t.inclusionRule,
-    globalReachPct: t.globalReachPct,
-    spikeRatio: t.spikeRatio,
-    monthly: t.monthly,
-    valueM: t.valueM,
-    valSource: t.valSource,
-    valYear: t.valYear,
-    residualPct: t.residualPct,
-    residualEligible: t.residualEligible,
-  }));
-
-  const winLabel = windowLabel(data.window.start, data.window.end);
-  const stamp = `Wikimedia Pageviews API · window ${winLabel} · ${data.teams.length} teams · v${data.version.replace(/^v/i, "")}`;
+  const preview = getFanIndexPreview();
+  const winLabel = windowLabel(preview.meta.window.start, preview.meta.window.end);
+  const stamp = `Wikimedia Pageviews API · window ${winLabel} · ${preview.meta.totalTeams} teams · v${preview.meta.version.replace(/^v/i, "")}`;
 
   const datasetJsonLd = {
     "@context": "https://schema.org",
@@ -80,21 +75,20 @@ export default function FansPage() {
     identifier: PAGE_URL,
     license: "https://creativecommons.org/licenses/by/4.0/",
     creator: { "@type": "Organization", name: "Citizen of Nowhere", url: BASE_URL },
-    version: data.version,
-    dateModified: data.generated,
-    temporalCoverage: `${data.window.start}/${data.window.end}`,
+    version: preview.meta.version,
+    dateModified: preview.meta.generated,
+    temporalCoverage: `${preview.meta.window.start}/${preview.meta.window.end}`,
+    // The top 20 are free to view without sign-in; the rest require a
+    // (free) Google sign-in, so this is not an unconditional "free dataset"
+    // claim, and there is deliberately no `distribution` field: the raw
+    // JSON is no longer a public URL (see scripts/fans/README.md).
     isAccessibleForFree: true,
     variableMeasured: [
       "All-language Wikipedia pageviews, human traffic only (12-month median baseline x 12)",
       "Attention score, within group (0-100)",
-      "Global attention score, across every team (0-100, share of the top team)",
+      "Cross-sport score, across every team (0-100, revenue-scaled share of the top team)",
     ],
-    distribution: {
-      "@type": "DataDownload",
-      encodingFormat: "application/json",
-      contentUrl: `${BASE_URL}/data/fans/fan-attention.json`,
-    },
-    citation: `Citizen of Nowhere, Fan Attention Index ${data.version} (2026), rankings.citizenofnowhere.org/fans`,
+    citation: `${PAGE_TITLE} ${preview.meta.version} (2026), rankings.citizenofnowhere.org/fans`,
   };
 
   return (
@@ -113,13 +107,10 @@ export default function FansPage() {
       />
       <FansNav active="index" />
 
-      <FanTable teams={teams} />
+      <FanGate totalTeams={preview.meta.totalTeams} previewRows={preview.rows} />
 
       <p className="text-xs text-[var(--text-dim)] mt-4" style={MONO}>
-        Version {data.version}, data window {winLabel}. * = residual not shown; this group&apos;s
-        attention-to-value fit is too weak (R&sup2; &lt; 0.4) to be meaningful. &Dagger; = added to
-        the index by a stated inclusion rule rather than by conference membership alone; hover the
-        mark for the rule. See{" "}
+        Version {preview.meta.version}, data window {winLabel}. See{" "}
         <Link href="/fans/methodology" className="hover:underline text-[var(--text-muted)]">Methodology</Link>.
       </p>
 
@@ -136,7 +127,7 @@ export default function FansPage() {
           <Link href="/fans/methodology" className="hover:underline text-[var(--accent)]">Methodology</Link> page.
         </p>
         <p className="text-[13.5px] text-[var(--text-muted)] max-w-3xl mt-2">
-          Suggested citation: <em>Citizen of Nowhere, Fan Attention Index {data.version} (2026), rankings.citizenofnowhere.org/fans</em>.
+          Suggested citation: <em>{PAGE_TITLE} {preview.meta.version} (2026), rankings.citizenofnowhere.org/fans</em>.
           Released under{" "}
           <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="hover:underline text-[var(--accent)]">CC BY 4.0</a>.
         </p>

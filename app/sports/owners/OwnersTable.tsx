@@ -20,6 +20,8 @@ type TeamRow = {
   coControllers: string | null;
   minority: string | null;
   sourceUrl: string | null;
+  /** Cross-links from scripts/data/owner-registry.json, added 2026-09-24. */
+  multiClubLinks: { entity: string; role: "control" | "minority"; otherClubs: { team: string; league: string; role: "control" | "minority"; note?: string }[] }[];
 };
 
 type Row = {
@@ -284,6 +286,22 @@ export default function OwnersTable({ rows }: { rows: Row[] }) {
                               {t.minority && (
                                 <div className="text-[var(--text-dim)] mt-0.5 ml-6">
                                   Minority: {t.minority}
+                                </div>
+                              )}
+                              {t.multiClubLinks.length > 0 && (
+                                <div className="mt-0.5 ml-6 flex flex-wrap gap-x-3 gap-y-0.5">
+                                  {t.multiClubLinks.map((link, li) => (
+                                    <span key={li} className="text-[var(--text-dim)]">
+                                      <span
+                                        className="rounded px-1 py-0.5 text-[9px] font-semibold uppercase tracking-wider mr-1 align-middle"
+                                        style={{ border: "1px solid var(--border)" }}
+                                        title={link.role === "control" ? "Control here" : "Minority stake here"}
+                                      >
+                                        Multi-club
+                                      </span>
+                                      {link.entity}: {link.otherClubs.map((c) => `${c.team} (${c.role})`).join(", ")}
+                                    </span>
+                                  ))}
                                 </div>
                               )}
                               {t.note && (
