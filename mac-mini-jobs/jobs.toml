@@ -56,11 +56,11 @@
 #   owners-weekly    ADDED 2026-09-12. Goes live on first hand-verified mini run;
 #                    its other runner is a Claude CLOUD scheduled task (not an
 #                    Action), disabled 2026-09-12 and kept as manual fallback.
-#   fans-monthly     ADDED 2026-09-24 (v0.4.1). No prior Action -- mini-only
-#                    from birth, like cfb-sun/cfb-wed/cfb-fri and cricket-champions.
-#                    NOT DRY_RUN-validated on the mini yet (this repo state was
-#                    produced off-mini); validate by hand before its first live
-#                    day-3 slot, same as every job in this file.
+#   fans-monthly     ADDED 2026-09-24 (v0.4.1), then PARKED the same day when the
+#                    DRY_RUN validation it asks for FAILED. No prior Action --
+#                    mini-only from birth, like cfb-sun/cfb-wed/cfb-fri and
+#                    cricket-champions. Do NOT uncomment it until the fetch fits
+#                    inside its timeout; the block below carries the numbers.
 #
 # The four below stay commented until each is DRY_RUN-validated on the mini, one
 # per day, in that order. Uncommenting one without retiring its Action schedule
@@ -533,14 +533,47 @@ timeout_minutes = 20
 # time to fully settle before the incremental fetch reads them.
 # See scripts/fans/README.md for the full flow and the annual anchor-refresh
 # / season-rollover maintenance this monthly job does NOT do.
-[[job]]
-id = "fans-monthly"
-label = "Fan Attention Index monthly refresh"
-time = "07:00"
-days = [3]
-command = "runners/fans-monthly.sh"
-catchup_hours = 40                # monthly cadence, same generous room as the other two
-timeout_minutes = 110              # self-test + git + the ~26k-request fetch step (STEP_TIMEOUT=5400s inside the runner)
+# 🔴 PARKED 2026-09-24, THE SAME DAY IT WAS ADDED, BECAUSE IT CANNOT FINISH.
+# The dispatcher has no `enabled = false`, so commenting out is the only way to
+# hold a job (same as notion-reconcile-ping). Measured on the mini, not argued:
+#
+#   requests per run          26,602  (770 teams, up to 143 language editions each)
+#   healthy rate, measured       6.0 req/s  ->  74 min with ZERO retries
+#   effective rate observed      1.51 req/s ->  4.9 hours
+#   runner step timeout         90 min (STEP_TIMEOUT=5400 in fans-monthly.sh)
+#   reached before the kill      8,154 requests, 31 percent of the roster
+#
+# TWO SEPARATE PROBLEMS, and fixing only the first is not enough.
+#
+# 1. A 0.8 percent transient amplified into a 4x slowdown. A 754-request probe
+#    of real (team, language) pairs returned 746 OK, 6 x 429, 2 x 404. Sub-one
+#    percent. But the biggest clubs carry 126 to 143 languages, so at 0.8 percent
+#    per request one team has about a 63 percent chance of hitting a 429, which
+#    is exactly the 38-of-50 team failure rate the run reported. throttled_get_json
+#    then sleeps 3s, 6s, 15s per occurrence and STILL records the team as failed
+#    if all four attempts trip. The sleeping buys almost nothing and costs hours.
+#    Shorten the ladder and honour Retry-After.
+#
+# 2. Even perfectly healthy the fetch needs 74 min against a 90 min ceiling. That
+#    is a 20 percent margin on a monthly job whose failure mode is total, and the
+#    real run writes nothing until the whole fetch completes, so a timeout yields
+#    zero output rather than partial progress. Either raise both timeouts with
+#    real headroom, or cut the request count. Wikimedia publishes monthly
+#    pageview dumps that would replace all 26,602 requests with one download,
+#    which is the durable answer.
+#
+# Notion: Scheduled jobs row stays "One-off (pending)" and the P1 Backlog row
+# "Activate fans-monthly on the Mac mini" stays OPEN with these numbers on it.
+# To unpark: fix the fetch, re-run the DRY_RUN validation, then uncomment.
+#
+# [[job]]
+# id = "fans-monthly"
+# label = "Fan Attention Index monthly refresh"
+# time = "07:00"
+# days = [3]
+# command = "runners/fans-monthly.sh"
+# catchup_hours = 40
+# timeout_minutes = 110
 
 [[job]]
 id = "cricket-champions"        # no plist; born on the dispatcher 2026-09-19

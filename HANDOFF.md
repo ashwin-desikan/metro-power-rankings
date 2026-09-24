@@ -19714,3 +19714,64 @@ also the answer to the obvious worry about a session grading its own homework. I
 
 **Notion:** none by this entry. The two Scheduled jobs corrections and the P1 closure were the reconciler's own writes
 during the 11:23Z run, verified here over REST rather than accepted from its report.
+
+### AV. fans-monthly: deployed, validated, failed its gate, parked the same day
+
+Asked to activate it. The wiring went in and works; the job itself cannot finish, so activating it would have
+scheduled a guaranteed failure for 3 October. It is parked instead, and the Scheduled jobs row stays
+`One-off (pending)`, which is now the truthful state rather than a placeholder.
+
+**Deployed and verified first**, because the job was committed but never deployed, which is its own failure class on the
+register. `jobs.toml` is a COPY in the live directory, not a symlink, so it was diffed before overwriting: the only
+difference was the fans-monthly comment and job block, nothing else. Runner symlinked, `--check-sync` clean, `--status`
+listed it as `off-schedule` (right on the 24th for a day-3 job) and the schedule export rendered "3rd of the month at
+07:00 UTC".
+
+**Then the DRY_RUN validation `jobs.toml` itself demands, run for real, and stopped at 42 minutes:**
+
+| measurement | value |
+| --- | --- |
+| requests per run | 26,602 (770 teams, up to 143 language editions each) |
+| healthy rate, measured | 6.0 req/s, so 74 min with zero retries |
+| effective rate observed | 1.51 req/s, so 4.9 hours |
+| runner step timeout | 90 min (`STEP_TIMEOUT=5400`) |
+| would reach before the kill | 8,154 requests, 31 percent of the roster |
+
+🔴 **TWO PROBLEMS, AND FIXING ONLY THE FIRST IS NOT ENOUGH.**
+
+1. **A 0.8 percent transient amplified into a 4x slowdown.** A 754-request probe of real (team, language) pairs returned
+   746 OK, 6 x 429, 2 x 404. The first instinct was "the 10 req/s rate is too high", and that was WRONG: 30 of 30
+   succeeded at that rate. The real mechanism is fan-out. The biggest clubs carry 126 to 143 languages, so at 0.8
+   percent per request one team has about a 63 percent chance of hitting a 429, which is exactly the 38-of-50 team
+   failure rate the run reported. `throttled_get_json` then sleeps 3s, 6s, 15s per occurrence and STILL records the team
+   as failed if all four attempts trip. The sleeping buys almost nothing and costs hours.
+2. **Even perfectly healthy the fetch needs 74 minutes against a 90 minute ceiling.** A 20 percent margin on a monthly
+   job whose failure mode is total, and the real run writes nothing until the whole fetch completes, so a timeout yields
+   zero output rather than partial progress. Nothing but running it would have shown this.
+
+The durable fix is to stop making 26,602 requests: Wikimedia publishes monthly pageview dumps that would replace the
+lot with one download. Shortening the retry ladder and honouring `Retry-After` is the cheap half and does not by itself
+buy enough headroom.
+
+**Parked by commenting the block out of `jobs.toml` in both copies,** since the dispatcher has no `enabled = false` key;
+same method as `notion-reconcile-ping`. Verified: the TOML still parses at 36 jobs, `fans-monthly` is absent from the
+parsed ids, `--check-sync` is clean and `--status` no longer lists it. The runner symlink is left in place, harmless, so
+unparking is uncommenting. The measurements are in the `jobs.toml` comment as well as the Backlog row, so the job cannot
+be re-activated from one source alone, and the roster note at the top of the file no longer says "not validated yet",
+which would have read as an invitation.
+
+**Fixed in passing, `a347a08a9`.** `--dry-run` was not a dry run: `append_history_month()` wrote
+`fan-attention-2026-08.json` and updated `index.json` before the dry-run check. So the validation this very job's
+comment instructs the next person to perform would have left generated files uncommitted in the shared clone, which is
+what stopped every job that fast-forwards for fourteen hours this morning (section AI). A validation step that dirties
+the tree is a trap set for whoever follows the instruction.
+
+**What this says about the gate.** The reconciler's dated instruction was "pull, self-test, dry run, confirm pickup,
+then move the row to Active". Every step before the last passed, and the last one was the point: a job can be correctly
+wired, correctly scheduled, visible in `--status` and on the schedule page, and still be incapable of completing. Had
+the row been flipped on the strength of the first four, Notion would have said Active and the first anyone would have
+known was a 90 minute burn and a page on 3 October.
+
+**Notion:** Backlog P1 "Activate fans-monthly on the Mac mini" stays OPEN, with the measurements, the two problems and
+the parking method written onto the row. Scheduled jobs row "fans-monthly (Fan Attention Index refresh)" deliberately
+NOT moved to Active and left at `One-off (pending)`.
