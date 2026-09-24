@@ -19622,6 +19622,42 @@ the probe is a finder inside `detect_issues.py` rather than a job with a runner,
 **Notion:** Decisions row added for the receipt rule, verified over REST. Backlog `commits-recent.txt` P2 closed in AR.
 No other queryable state changed by this entry.
 
+### AT. The reconciler's prompt now carries the verification step, so the AS ruling is live rather than recorded
+
+`trig_01MeTbjkpBua9UMypHz7KRFh`, "Notion reconciler (Citizen of Nowhere)", cron `30 6 * * *`, enabled, next run
+2026-09-25 06:39Z. Prompt 6,302 to 7,567 characters, three edits, each anchored on a string confirmed to appear exactly
+once before anything was sent.
+
+1. **Step 2 gains (e), the ruling itself.** It replaces "check whether the entry ends with a `**Notion:**` line", which
+   only tested PRESENCE, with a verification: for every row the line claims, confirm a matching row exists and that its
+   `Row created` or last-edited date is the entry's date; for "Notion: none", confirm nothing queryable changed. A line
+   naming a row that was never written is a FAILURE, named in the report and filed as ONE Backlog row for the day
+   rather than one per line. It reuses the prompt's own `Row created` rule, which is already there because a
+   hand-typed `Decided` can be blank and a `created_time` cannot.
+2. **Step 1(b) records that merges are now in `commits-recent.txt`.** Without this the routine keeps reasoning from the
+   old behaviour, which it said itself: this morning's merge report passed only because three corroborating RLS commits
+   happened to be present, which is luck rather than method. It also notes the file is no longer written off `main`.
+3. **Step 5's log line gains `N false Notion lines`,** so the count lands in the daily artefact rather than only in a
+   report nobody re-reads.
+
+**One operational fact worth keeping.** The prompt is stored in THREE places: `derived_state.prompt`,
+`job_config.ccr.events[0].data.message.content` and `session_request.events[0].payload.message.content`. The one that
+actually runs is `job_config`. Sending `{"prompt": "..."}` to the update endpoint propagates to all three, which is
+worth knowing because `job_config` and `session_request` are about 116 KB each and resending either intact is not
+practical from a tool call.
+
+**Verified on a FRESH read rather than on the update's echo**, and specifically against `job_config`: sha256 matches
+the text built locally, all three edits present, the presence-only sentence gone, no em dashes. Checking the executed
+copy rather than the derived one is the whole point, because a partial write would leave the UI showing the new prompt
+while the routine ran the old one, which is the failure that looks like success.
+
+⚠️ **Expect tomorrow's log line to carry a non-zero false-line count, and that is correct.** The P1 Backlog row for the
+four 2026-09-23 entries whose Notion lines named rows that were never created is still open, and the first run under
+the new prompt will re-find them. A detector finding the defect it was built for is not a fault in the detector.
+
+**Notion:** none (no queryable state changed by this entry; the Decisions row for the rule was written in AS).
+
+
 ## 2026-09-24: cowork (Windows device session) → next session (Fan Attention Index v0.4.1 + monthly job)
 
 Ashwin rejected the v0.3.1 All view (MLS clubs above every NFL team). Root causes: (1) raw all-language Wikipedia structurally overweights football; (2) a rescale bug let the within-group Trends blend inflate a group's total (Chicago Fire 376K wiki ranked above the Patriots at 1.67M; Trends also collided with the TV series). Fixes in v0.4.1:
@@ -19636,3 +19672,4 @@ Ashwin rejected the v0.3.1 All view (MLS clubs above every NFL team). Root cause
 **History:** an all-language monthly backfill (2023-01 to 2026-08) is running detached on the Windows box (cache %LOCALAPPDATA%\fan_cache\hist_lang); history files will land in a follow-up commit. The EN-only history files in the working tree are superseded and NOT committed.
 
 **Notion:** Backlog row added (activate fans-monthly on the mini), Scheduled jobs row added (fans-monthly, pending activation), Decisions row added (cross-sport revenue anchor), Data sources row added (league revenue anchor CSV).
+
