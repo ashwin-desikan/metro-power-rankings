@@ -1,3 +1,4 @@
+2026-09-24T11:57:41+01:00  540eb01f2  pre-commit: commits-recent.txt now includes merges and is only written on main [vercel skip]
 2026-09-24T11:53:27+01:00  f68f5279c  HANDOFF: 2026-09-24 section AQ, the limiter is confirmed shared in production [vercel skip]
 2026-09-24T11:49:47+01:00  c848c6782  detect_issues: the limiter probe needs a User-Agent or it 403s for ever [vercel skip]
 2026-09-24T11:46:45+01:00  951f230e0  rate limiter: make the silent per-instance fallback observable
@@ -77,4 +78,3 @@
 2026-09-22T07:07:36+01:00  4f0817680  chore(substack): refresh feed snapshot [vercel skip]
 2026-09-22T06:11:00+01:00  7db1ed8b4  screen: weekly US number-ones refresh [vercel skip]
 2026-09-22T06:10:39+01:00  4d20c7a29  football: refresh live bundles [vercel skip]
-2026-09-22T03:37:00+01:00  c65253c36  chore(activity): refresh site activity feed [vercel skip]
