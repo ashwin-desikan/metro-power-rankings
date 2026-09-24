@@ -1,13 +1,90 @@
 {
-  "generatedAt": "2026-09-23",
+  "generatedAt": "2026-09-24",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-24",
+      "category": "hub",
+      "hub": null,
+      "text": "Release notes: amend 2026-09-23 to cover the security hardening.",
+      "commit": "0738bd796"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "36cd9306a"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Wire Fan Attention Index into every nav surface.",
+      "commit": "532698d33"
+    },
     {
       "date": "2026-09-23",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL.",
-      "commit": "417b6c8db"
+      "text": "Data refreshed — Football, Basketball, Cricket, Elections, and 5 more.",
+      "commit": "2b1fe2f2e"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "hub",
+      "hub": null,
+      "text": "Fan Attention Index live: release note + handoff.",
+      "commit": "25fda2111"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "hub",
+      "hub": "Fans",
+      "text": "Women's sports category tab.",
+      "commit": "4ae6e3b64"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "hub",
+      "hub": "Fans",
+      "text": "V0.3.1 nav, new leagues, blend methodology [preview].",
+      "commit": "f427b0f7b"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Security hardening: slug guard, admin auth, headers, rate limits [preview].",
+      "commit": "1a8f66819"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Security hardening: the audit, the RLS draft and the CSP plan.",
+      "commit": "3b6ca4e4d"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "hub",
+      "hub": "Fans",
+      "text": "Fan Attention Index v0.2.1: all-sport scale, football consolidation, college and new leagues, canonical links [preview].",
+      "commit": "e6926b11d"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "new-hub",
+      "hub": "Fans",
+      "text": "New hub: Fans.",
+      "commit": "c5aa41327"
+    },
+    {
+      "date": "2026-09-23",
+      "category": "hub",
+      "hub": "Refresh Schedule",
+      "text": "Drop the live timestamps, compute occurrences at render time.",
+      "commit": "1513f5c63"
     },
     {
       "date": "2026-09-22",
@@ -4124,83 +4201,6 @@
       "hub": "Club Football",
       "text": "Wire NBA top games to Game Score; zero out NFL offseason standings.",
       "commit": "2ab5f8afd"
-    },
-    {
-      "date": "2026-06-02",
-      "category": "hub",
-      "hub": null,
-      "text": "Publish top-team editorial refresh from the June 2 workbook.",
-      "commit": "c9778ec7b"
-    },
-    {
-      "date": "2026-06-02",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Expand Club Football: Copa Libertadores, Other Continental, and MLS hubs plus the full club universe.",
-      "commit": "7d797cd86"
-    },
-    {
-      "date": "2026-06-02",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Add Club Football hubs: Copa Libertadores, Other Continental, and MLS.",
-      "commit": "018d5a0f2"
-    },
-    {
-      "date": "2026-06-02",
-      "category": "fix",
-      "hub": null,
-      "text": "Fix /updates build failure: consolidate the 2026-06-02 entry to four bullets and a twelve-word headline.",
-      "commit": "8984f3a7d"
-    },
-    {
-      "date": "2026-06-02",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Add 2026 NFL Standings board to the NFL hub and refresh metro rankings from the latest workbook.",
-      "commit": "7683ee068"
-    },
-    {
-      "date": "2026-06-02",
-      "category": "fix",
-      "hub": null,
-      "text": "Fix /updates build: trim 2026-06-02 release to satisfy the brevity guard.",
-      "commit": "1ee5da53a"
-    },
-    {
-      "date": "2026-06-02",
-      "category": "fix",
-      "hub": "Rankings",
-      "text": "Live WNBA standings on team pages, compact metro Dimension Breakdown, football playoff label fixes, NWSL deep-links, mobile season-table sc…",
-      "commit": "602444709"
-    },
-    {
-      "date": "2026-06-01",
-      "category": "fix",
-      "hub": "Rankings",
-      "text": "Women's Football portal expansion, WNBA hub, and live standings.",
-      "commit": "8dd1f19db"
-    },
-    {
-      "date": "2026-06-01",
-      "category": "hub",
-      "hub": "Rankings",
-      "text": "Workbook sync: refresh metro and sports data from MetroAreas.xlsx.",
-      "commit": "6d17f50e5"
-    },
-    {
-      "date": "2026-06-01",
-      "category": "fix",
-      "hub": "Sports",
-      "text": "Women's Football portal plus Women's World Cup, and Gold Standard fix.",
-      "commit": "a3189ae02"
-    },
-    {
-      "date": "2026-05-31",
-      "category": "fix",
-      "hub": "Sports",
-      "text": "IPL hub + franchise pages, football standings overhaul, playout pills, sports cleanup.",
-      "commit": "ae698c78b"
     }
   ]
 }
