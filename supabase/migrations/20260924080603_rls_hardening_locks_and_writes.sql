@@ -150,6 +150,7 @@ commit;
 -- only; RLS makes picks world-readable)"), so applying it would have blanked
 -- the leaderboard for everyone.
 --
--- It lives in supabase/pending/20260924_picks_read_policy.sql, outside
--- migrations/ on purpose, so `supabase db push` cannot apply it by accident.
--- That file carries the prerequisites.
+-- It was parked in supabase/pending/ for a day so `supabase db push` could not
+-- apply it by accident, and landed on 2026-09-24 08:52Z once the pick_locks feed
+-- existed. It is now
+-- supabase/migrations/20260924085233_picks_read_policy_own_or_locked.sql.

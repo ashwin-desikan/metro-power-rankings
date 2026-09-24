@@ -19306,3 +19306,55 @@ and as a signed-in user. Not applied here, because nobody asked for it and it ch
 
 **Notion:** the Backlog row "pick_locks feed" is DONE and can be closed. Finding c1 now blocks on applying the parked
 read policy rather than on this feed.
+
+### AM. The read policy is applied, and both RLS findings are now closed
+
+Applied 2026-09-24 08:52Z as version `20260924085233 picks_read_policy_own_or_locked`. `picks_select_all` is gone.
+The four policies on `public.picks` now all reference the lock, with the polarity each needs:
+
+| policy | cmd | predicate |
+| --- | --- | --- |
+| `picks_select_own_or_locked` | SELECT | own **OR NOT** open, so others' picks appear once the event locks |
+| `picks_insert_own` | INSERT | own **AND** open |
+| `picks_update_own` | UPDATE | own **AND** open |
+| `picks_delete_own` | DELETE | own **AND** open |
+
+**Measured by simulating each role, not by reading the predicate.** `set_config('request.jwt.claims', ...)` plus
+`set local role`, which is the only way to see what RLS actually does:
+
+| acting as | picks visible | live-event | settled |
+| --- | --- | --- | --- |
+| `anon` | 107 | **0** | 107 |
+| the owning user | 117 | 10 | 107 |
+| a different signed-in user | 107 | **0** | 107 |
+
+The two zeros are finding c1 closed: nobody else can read a live pick now, signed in or not. The owner's row is the
+guarantee the player needs, that their own picks stay visible while the event is live. The third row is what the
+leaderboard needs, and it still has 107 settled picks to read from another account.
+
+🔴 **THE FILE'S OWN PRE-FLIGHT CHECK COULD NOT BE RUN, AND THAT IS WORTH KNOWING.** It said "verify the leaderboard
+lists more than one player". `public.picks` holds exactly **one** distinct `user_id`, so there has never been a second
+player to list and that check was unsatisfiable from the day it was written. The role simulation above replaced it and
+is strictly more informative, because it shows what a second player WOULD see rather than what one player does see.
+Re-run it when a second account exists. Worth remembering generally: a verification step can be impossible rather than
+merely unperformed, and the difference only shows up when someone tries.
+
+**Cost, measured rather than worried about.** The SELECT policy calls `pick_is_open` per row, which is a primary-key
+lookup into `pick_locks`. `explain (analyze, buffers)` on the leaderboard's own query as `authenticated`: seq scan over
+117 rows, 10 removed by the filter, 436 shared buffer hits, **2.3 ms**. That is the baseline to compare against, not a
+promise. At twenty thousand picks it is twenty thousand function calls and the honest expectation is a few hundred
+milliseconds; if it ever matters the fix is a join against `pick_locks` or fetching the lock table once client side,
+not loosening the policy.
+
+**Repo now matches the database.** The parked file moved from `supabase/pending/` into
+`supabase/migrations/20260924085233_picks_read_policy_own_or_locked.sql`, `supabase/pending/` is gone, and part 1's
+trailing pointer to it was corrected rather than left describing a file that had moved.
+
+**Security audit status: both findings closed.** c2 (a pick rewritable after the event started) closed by the write
+policies in AK plus the feed in AL. c1 (every pick world readable before the game) closed here. The other two things
+the audit went looking for, anon write policies and tables with RLS off, were already absent and are recorded as
+verified no-ops in part 1.
+
+**Notion:** the Backlog row "pick_locks feed" is done; the security-hardening work has no open RLS items left. The
+Silent failure register candidate from section AE, "a rate limiter in module scope on serverless is per instance, so a
+spend cap can read as enforced while being unenforced", is still unfiled.
