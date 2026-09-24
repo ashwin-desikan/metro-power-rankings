@@ -163,6 +163,74 @@ def find_down_checks(fetch=None):
     return out
 
 
+
+CONFIG_ENV = os.path.join(LIVE_DIR, "config.env")
+
+
+def _config_value(name):
+    """One value out of config.env, without sourcing it. Same shallow parse as
+    find_down_checks uses on mini-hc.env, for the same reason: importing shell
+    would mean running it."""
+    try:
+        with open(CONFIG_ENV, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line.startswith(name + "="):
+                    return line.split("=", 1)[1].strip().strip('"').strip("'")
+    except OSError:
+        return None
+    return None
+
+
+def find_limiter_degraded(fetch=None):
+    """Is the site's rate limiter actually holding across the fleet?
+
+    lib/rateLimit.ts falls back to a per-instance in-memory counter when no
+    shared store is configured or when Redis errors. Eight limits across six
+    routes share it, two of them a spend cap and a brute-force limit, so one
+    missing environment variable turns all eight into speed bumps. Until
+    2026-09-24 that happened in total silence; this is the outside observer that
+    ends the silence, and it is on the mini rather than in the app for the same
+    reason notion-reconcile-verify is: a detector must not depend on the thing
+    it watches.
+
+    It reads /api/health/limiter, which PROBES the store per request, so one
+    call speaks for the fleet. The endpoint's per-instance fallback counter is
+    forensics and is deliberately NOT what this decides on.
+
+    An absent secret is a LOW finding rather than nothing, because "the probe is
+    not configured" and "the probe says fine" must not look the same. That
+    distinction is the whole lesson of the build cap, which failed open and said
+    so only in a log line.
+    """
+    origin = _config_value("SITE_ORIGIN") or "https://rankings.citizenofnowhere.org"
+    secret = _config_value("REVALIDATE_SECRET")
+    if not secret:
+        return [{"kind": "limiter_probe_unconfigured", "severity": "low",
+                 "summary": "REVALIDATE_SECRET not in config.env, so the rate limiter cannot be probed",
+                 "evidence": {"config_env": CONFIG_ENV}}]
+    url = origin.rstrip("/") + "/api/health/limiter"
+    try:
+        if fetch is None:
+            req = urllib.request.Request(url, headers={"x-revalidate-secret": secret})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                doc = json.load(r)
+        else:
+            doc = fetch()
+    except Exception as ex:                                   # noqa: BLE001
+        return [{"kind": "limiter_probe_unreachable", "severity": "low",
+                 "summary": "could not probe the rate limiter: %s" % type(ex).__name__,
+                 "evidence": {"url": url, "error": str(ex)[:200]}}]
+    if doc.get("shared") is True:
+        return []
+    return [{"kind": "limiter_degraded", "severity": "high",
+             "summary": "rate limiter is NOT shared across instances (%s); the spend cap and the "
+                        "login brute-force limit are per-instance speed bumps right now"
+                        % (doc.get("reason") or "unknown reason"),
+             "evidence": {"store": doc.get("store"), "reason": doc.get("reason"),
+                          "detail": doc.get("detail"),
+                          "fallbacks_this_instance": doc.get("fallbacksThisInstance")}}]
+
 def find_failed_actions(run=None):
     """Workflows whose MOST RECENT run failed.
 
@@ -253,6 +321,7 @@ def detect():
     findings += find_drift()
     findings += find_down_checks()
     findings += find_failed_actions()
+    findings += find_limiter_degraded()
     return findings
 
 
@@ -317,6 +386,42 @@ def _self_test():
     dirty = lambda argv, cwd: type("P", (), {"stdout": " M a.py\n?? b.py\n", "stderr": ""})()
     dt_ = find_dirty_tree(dirty)
     check("dirty tree IS a blocker", dt_[0]["severity"], "blocker")
+
+
+    # --- the rate-limiter probe -------------------------------------------
+    # The shape that matters: a healthy-looking instance counter alongside a
+    # store that is not shared. Deciding on `shared` and not on the counter is
+    # the difference between catching this and missing it.
+    ok_doc = lambda: {"ok": True, "shared": True, "store": "redis", "fallbacksThisInstance": 0}
+    check("a shared store is not a finding", find_limiter_degraded(ok_doc), [])
+    bad_doc = lambda: {"ok": True, "shared": False, "store": "memory",
+                       "reason": "no-store-configured", "fallbacksThisInstance": 0}
+    got = find_limiter_degraded(bad_doc)
+    check("an unshared store IS a finding", len(got), 1)
+    check("...and it is high severity", got[0]["severity"], "high")
+    check("...and it names the reason", "no-store-configured" in got[0]["summary"], True)
+    check("...even though this instance's counter reads zero",
+          got[0]["evidence"]["fallbacks_this_instance"], 0)
+
+    def _boom():
+        raise OSError("refused")
+    # The "not configured" branch, exercised by pointing the module at a path
+    # that does not exist. Worth covering: "the probe is unconfigured" and "the
+    # probe says fine" must never render the same, and an empty list would.
+    global CONFIG_ENV
+    _saved_cfg = CONFIG_ENV
+    try:
+        CONFIG_ENV = "/nonexistent/config.env"
+        unconf = find_limiter_degraded(ok_doc)
+        check("no secret gives a LOW finding, not silence", unconf[0]["kind"],
+              "limiter_probe_unconfigured")
+        check("...and it is not mistaken for an all-clear", len(unconf), 1)
+    finally:
+        CONFIG_ENV = _saved_cfg
+
+    unreach = find_limiter_degraded(_boom)
+    check("an unreachable probe is LOW, not a false all-clear", unreach[0]["severity"], "low")
+    check("...and is named as a probe failure", unreach[0]["kind"], "limiter_probe_unreachable")
 
     print("self-test OK (%d checks)" % n[0])
     return 0

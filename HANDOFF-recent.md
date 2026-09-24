@@ -334,6 +334,66 @@ which can see everything, and read over REST only for the contract page.
 **Notion:** the register entry is filed. The Backlog row for the Upstash production check and a row for the missing
 parent-page share are both worth adding on the next pass; not added here because the integration cannot currently see
 the Backlog database over REST and the MCP write path is the one that works.
+
+### AO. The rate-limiter fallback is observable, and it probes rather than counts
+
+Closes the live gap named in section AN and on the Silent failure register. `checkRateLimit` falls back to a
+per-instance in-memory counter when no shared store is configured or when Redis errors, and it did so in total
+silence while eight limits across six routes depended on it, two of them a spend cap and a brute-force limit.
+
+**Three pieces.** `lib/rateLimit.ts` records each fallback and warns ONCE per instance per reason rather than per
+request, and exposes `limiterHealth()`. `app/api/health/limiter/route.ts` reports it, gated by the `REVALIDATE_SECRET`
+the mini already holds. `find_limiter_degraded()` in `mac-mini-jobs/detect_issues.py` reads that endpoint and turns
+`shared: false` into a high finding, so it reaches ops-autofix's findings list and the daily sweep digest. The
+detector sits on the mini rather than in the app for the same reason `notion-reconcile-verify` does: a detector must
+not depend on the thing it watches.
+
+🔴 **IT PROBES, IT DOES NOT COUNT, AND THAT IS THE ONLY DESIGN DECISION THAT MATTERS HERE.** The obvious
+implementation is a counter of past fallbacks, and it would have been wrong for exactly the reason the original bug
+was wrong: the counter lives in module scope, so it is per instance. An instance that has served no traffic reports
+zero however badly its neighbours are doing, and a monitor reading that number would see a healthy instance and call
+the fleet healthy. So `shared` comes from pinging the store ON the request. Every instance answers the same way and
+one call speaks for the fleet. The counter is kept as forensics, labelled as such in the code, and the endpoint's
+comment says a monitor must read `shared`. One test asserts the trap directly: a broken store with a zero counter
+must still report `shared: false`.
+
+**Design notes worth keeping.** The fallback BEHAVIOUR is deliberately unchanged, because locking real users out
+because Redis blinked is worse than a looser limit for a few seconds; what changed is that the state is reportable.
+The endpoint is secret-gated rather than public, because an open one would tell an attacker exactly when the login
+brute-force limit is not holding, and it reuses `REVALIDATE_SECRET` rather than minting a credential that would be a
+second thing to rotate and forget. It reuses the exported `timingSafeEqual` from `lib/adminAuth.ts` rather than adding
+a third copy of a constant-time compare; `app/api/revalidate/route.ts` still has its own crypto-based one, and
+consolidating those two is a real cleanup that was left alone rather than done in passing.
+
+The store is INJECTED (`getStore: () => LimiterStore | null = getRedis`) rather than module-mocked, matching the
+`fetch=None` seam on every detector in `detect_issues.py` and the structural-typing style in `lib/adminAuth.test.ts`.
+`() => null` exercises the no-store path with no sentinel value.
+
+**An absent secret is a LOW finding, not silence.** `find_limiter_degraded` returns `limiter_probe_unconfigured` when
+`REVALIDATE_SECRET` is missing from config.env and `limiter_probe_unreachable` when the call fails, because "the probe
+is not configured" and "the probe says fine" must never render the same. That is the build cap's lesson, which failed
+open and reported it in one build-log line nobody read.
+
+**Verified, in this order:** typecheck clean; 10 new limiter tests; the whole suite 371 passing in 31 files;
+`detect_issues.py --self-test` at 26 checks including the unconfigured branch, exercised by pointing the module at a
+path that does not exist; a full production build clean with the route present in `routes-manifest.json` and
+`app-path-routes-manifest.json`; then against a real `next start`, no header 401, wrong secret 401, correct secret 200
+with `Cache-Control: no-store`, and with `REVALIDATE_SECRET` unset a 503 that leaks no state; and finally the detector
+itself run against that live server over real urllib with the real header, producing exactly one `limiter_degraded`
+finding. The local server has no Redis, so that last run is also a live demonstration of the condition being caught.
+
+⚠️ **Expect a finding on the first run after deploy if Production has no Upstash store.** That is the point rather than
+a fault, and it answers a question a session cannot: `filter_project_envs` is 403 for a session token, so whether
+`UPSTASH_REDIS_REST_URL`/`TOKEN` or `KV_REST_API_URL`/`TOKEN` exist for Production was unverifiable from here. Once
+this ships the mini answers it every two hours instead. ops-autofix will report and not act, since `limiter_degraded`
+is not on its whitelist, which is correct: the remedy is a credential only Ashwin can add.
+
+**Built in a git worktree, not the shared clone**, per section AI. The app files are build-relevant, so leaving them
+uncommitted in `REPO_DIR` would have stopped every job that fast-forwards, which is the fourteen-hour outage from
+earlier the same day.
+
+**Notion:** the Silent failure register entry filed in AN should move from "still silent" to Detected once this is
+deployed and the first probe has run, naming `find_limiter_degraded` as the detector.
 ## 2026-09-23: cowork (Windows device session) → next session (Fan Attention Index /fans shipped to main)
 
 Cowork session, started from a teardown of Rascasse (audience-intelligence vendor). Built and merged a new cross-sport **Fan Attention Index** at `/fans` + `/fans/methodology`. Branch `fan-attention-index` merged `--no-ff` into main after `security-hardening`.
