@@ -1,3 +1,4 @@
+2026-09-24T07:54:29+01:00  03596af57  football: refresh live bundles [vercel skip]
 2026-09-24T07:46:19+01:00  f7a922ddc  chore(activity): refresh site activity feed [vercel skip]
 2026-09-24T07:44:59+01:00  e3b796dd3  HANDOFF: 2026-09-23 section AI, an uncommitted file stopped the fleet for 14 hours [vercel skip]
 2026-09-24T07:39:35+01:00  0738bd796  Release notes: amend 2026-09-23 to cover the security hardening
@@ -77,4 +78,3 @@
 2026-09-21T11:21:07+01:00  7cb1f3d1f  deploy: build 19b8c9b0e, Sweden 2026 result [deploy-retry]
 2026-09-21T11:21:05+01:00  d93c11661  handoff: Israel forecast fix, Sweden push incident, handoff_recent UTF-8 fix [vercel skip]
 2026-09-21T11:14:23+01:00  1d811d4de  forecast: Israel colspan fix, 120-seat guard, hand-corrected il block [vercel skip]
-2026-09-21T10:19:56+01:00  19b8c9b0e  elections(se): file the 2026 general election result
