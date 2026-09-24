@@ -212,7 +212,19 @@ def find_limiter_degraded(fetch=None):
     url = origin.rstrip("/") + "/api/health/limiter"
     try:
         if fetch is None:
-            req = urllib.request.Request(url, headers={"x-revalidate-secret": secret})
+            # 🔴 THE USER-AGENT IS LOAD-BEARING. Measured 2026-09-24: our own
+            # origin answers 403 to the default `Python-urllib/3.x` UA on EVERY
+            # route, including ones that exist -- /api/revalidate gives curl a
+            # 405 and urllib a 403. Without this header the probe below would
+            # report limiter_probe_unreachable for ever and check nothing, which
+            # is exactly the class of dead detector this function exists to
+            # prevent. The other finders here are unaffected because they call
+            # healthchecks.io and GitHub, which are not behind our Cloudflare.
+            req = urllib.request.Request(url, headers={
+                "x-revalidate-secret": secret,
+                "User-Agent": "Mozilla/5.0 (compatible; CitizenOfNowhere/1.0; "
+                              "+https://rankings.citizenofnowhere.org)",
+            })
             with urllib.request.urlopen(req, timeout=20) as r:
                 doc = json.load(r)
         else:

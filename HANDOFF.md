@@ -19472,3 +19472,42 @@ earlier the same day.
 
 **Notion:** the Silent failure register entry filed in AN should move from "still silent" to Detected once this is
 deployed and the first probe has run, naming `find_limiter_degraded` as the detector.
+
+### AP. Two corrections to AN and AO, both found by running things against the real world
+
+**1. A detector that probes our OWN origin needs a User-Agent, or it 403s for ever.** Measured immediately after
+pushing AO, against production: `Python-urllib/3.x`, urllib's default, gets **403 on every route**, including ones
+that exist. `/api/revalidate` answers curl with 405 and urllib with 403. So `find_limiter_degraded` as first written
+would have reported `limiter_probe_unreachable` at severity LOW for ever and checked nothing, which is precisely the
+dead-detector class it was built to prevent. It now sends the house UA,
+`Mozilla/5.0 (compatible; CitizenOfNowhere/1.0; +https://rankings.citizenofnowhere.org)`, the same one
+`lib/npbFixtures.ts` and the feed monitor use, and the live probe returns a genuine 404 until the route deploys.
+
+The other finders in `detect_issues.py` are unaffected and were checked rather than assumed: they call
+healthchecks.io and the GitHub API, neither of which sits behind our Cloudflare zone. The general rule worth keeping:
+**our own origin is a hostile client to a default HTTP library**, and any future mini job that probes
+rankings.citizenofnowhere.org needs the UA. Found only because the detector was run against production before being
+trusted, which took one command; reasoning about it would have missed it entirely, because the code is obviously
+correct and the environment is what rejects it.
+
+**2. Section AN's claim that the pre-commit-hook option for the Notion receipt is "broken today" is now out of date,
+in the right direction.** Ashwin shared the Citizen of Nowhere parent page with the integration on 2026-09-24, and
+REST access changed in the same minute:
+
+| | before | after |
+| --- | --- | --- |
+| Citizen of Nowhere (parent) | 404 | **200** |
+| Silent failure register | 404 | **200** |
+| data sources visible to REST | unknown, presumed none | **9** |
+
+Backlog, Decisions, Scheduled jobs, Ideas Inbox, Data sources, Pipeline, Weekly numbers, Editorial calendar and CoN
+Go-Live Tasks are all readable over REST now. So the pre-commit option is buildable rather than impossible, and the
+argument against it reverts to the original one, which is cost: a Notion round trip on every HANDOFF commit, against
+a reconciler check that is free and a day late. The recommendation does not change; the reason for it does, and a
+recorded reason that has quietly stopped being true is the thing this file keeps getting caught by.
+
+Also worth noting against AN: `notion-reconcile-verify` can now be extended to check ROWS rather than only the
+contract page's log, because the grant it needed exists. That was the blocker named in AN and it is gone.
+
+**Notion:** the Decisions row for the receipt design is still unwritten, pending Ashwin's ruling. When it is written,
+its reason should cite cost rather than AN's impossibility finding.
