@@ -1,234 +1,254 @@
-# Daily Ops Sweep -- 2026-09-23
+# Daily Ops Sweep -- 2026-09-24
 
-Window: 2026-09-21T23:01Z .. 2026-09-23T01:01Z (trailing 26h), selected on each log line's own
-UTC timestamp. Read-only run: nothing was re-run, pinged, committed or fixed except this file.
-**Zero job failures.** Yesterday's most urgent item resolved itself with hours to spare; two
-things want Ashwin, and one has a Saturday deadline.
+Window: 2026-09-22T23:09Z to 2026-09-24T01:09Z (trailing 26h), read from
+`~/metro-mini-jobs/dispatcher.log` selected on each line's own UTC timestamp.
+Read-only run: nothing was fixed, re-run, pinged or written except this file.
 
-## Jobs this window: 19 ok, 0 failed, 2 flagged
+## Jobs this window: 184 ok, 6 failed, 3 flagged
 
-188 `RUN` lines, 187 `DONE`, **zero `FAIL`, zero `MISSED`**, no traceback anywhere in the
-window (the 188th RUN is this sweep). Every job that `jobs.toml` made due actually ran, and
-nothing ran that shouldn't have -- all 35 job schedules were evaluated against the window
-rather than eyeballed.
+21 distinct dispatcher jobs made 190 runs. 6 runs failed, across 5 jobs, plus
+1 MISSED slot. The f1-weekly poller runs on its own launchd timer outside the
+dispatcher and is healthy (hourly `idle: 2026 R14 already synced`).
 
-| job | runs | result |
+| Job | Runs | Result |
 |---|---|---|
-| deploy-watch | 149 | ok 2-3s each |
-| ops-autofix | 13 | ok (4 stood down early in the window, see Self-healed #1) |
-| football-standings | 5 | ok 112-124s, `errors=0` every run |
-| claude-auth-canary | 4 | ok -- 15.11 days of refresh-token life left (threshold 3) |
-| screen-number-ones | 3 | ok 18s / 21s / 351s |
-| mlb-sim | 2 | ok 445s / 446s, all 11 warm targets HTTP 200 |
-| daily-ops-sweep | 2 | ok (one is this run) |
-| activity-feed, business-daily, cricket-champions, cricket-weekly, euro-comps, feed-monitor, gap-league-watch, git-maintenance, nfl-elo, predictions-tue, rugby-weekly, substack-daily | 1 each | ok |
+| deploy-watch | 149 | all ok, `532698d33` live and serving since 22:27Z |
+| ops-autofix | 13 | all exit 0, but **stood down every run since 16:15Z**, see item 2 |
+| claude-auth-canary | 4 | ok, refresh token valid to 2026-10-08 (14.1 days) |
+| football-standings | 4 | 2 ok (09:09Z, 11:08Z), **2 FAIL** (17:05Z, 23:07Z) |
+| screen-number-ones | 3 | 2 ok (05:08Z, 13:06Z), **1 FAIL** (21:07Z) |
+| mlb-sim | 2 | ok (448s, 461s) |
+| activity-feed, business-daily, cfb-wed, daily-ops-sweep, euro-comps, feed-monitor, forecast, gap-league-watch, git-maintenance, nfl-elo, sound-weekly, substack-daily | 1 each | ok |
+| cricket-champions | 1 | **FAIL** 22:37Z |
+| fiba-weekly | 1 | **FAIL** 07:18Z, self-healed the same morning |
+| notion-reconcile-verify | 1 | **FAIL** 10:56Z, self-resolving |
+| notion-reconcile-ping | 0 | **MISSED** (job has since been retired) |
 
-**Not due, verified against the weekday/day/month masks rather than assumed:** forecast,
-cfb-wed, fiba-weekly, sound-weekly (all `weekdays=[3]`, due later today, after this window);
-predictions-fri, cfb-fri, economy-rates `[5]`; economy-housing, mktcap-refresh, metro-rankings
-`[6]`; cfb-sun, egress-refresh, economy-prices `[7]`; owners-weekly `[1]` (ran 09-21, before
-the window); conflicts-monthly and cricket-monthly day 1.
-
-**Not under the dispatcher, checked separately.** Only three launchd agents are actually loaded
-(`dispatcher`, `f1-weekly`, `heartbeat`); the other 15 plists on disk are inert leftovers from
-the dispatcher migration. `f1` logged `idle: 2026 R14 already synced` hourly -- **correct**, R14
-(Madrid, 11-13 Sep) is the latest completed round and R15 (Azerbaijan) is 24-26 Sep.
-newsletter-podcast's four agents all ran clean: daily digest + 2 Gmail drafts 08:20, evening
-refresh (45 items, 30 tagged), watchdog `final.mp3` present + episode READY, retention deleted
-1 episode older than 7 days. heartbeat writes nothing by design -- `HEALTHCHECK_URL`,
-`HC_PING_KEY` and `NTFY_TOPIC` were all confirmed present, so its silence is real health, not a
-disabled dead-man's switch.
-
-**Gates and probes, read rather than assumed:** feed-monitor 07:23Z all 12 probes `ok`.
-gap-league-watch: 3 leagues still `awaiting_target`, no state transitions. cricket-champions:
-self-test 26 checks, 0 new champions. git-maintenance: loose objects 1760 against the 6700
-threshold, so another vacuous pass (still not evidence the step works -- carried from 09-22).
+Also clean and worth recording as checked: feed-monitor's 2026-09-23 sweep
+returned ok on all 18 probes bar `empty:ESPN PGA scoreboard`, which is the
+normal between-tournaments state it has shown on and off since 09-02, not a
+fault. newsletter-podcast ran morning and evening, 36 items, both Gmail drafts
+created. gap-league-watch reported no state transitions (ISL, CONCACAF CL and
+OFC CL all still `awaiting_target`), so no `[gap-watch]` push fired.
 
 ## Self-healed (informational only, no action needed)
 
-**1. Yesterday's #1 -- the uncommitted UK forecast fix -- shipped, and the Wednesday half-ship
-risk is closed.** Yesterday's report warned that 8 uncommitted files had stood ops-autofix down
-since 09-21T20:21Z, and that if they weren't committed before **today 06:10Z** the `forecast`
-job would sweep the data half into a skip-tagged bot commit while the page change and its
-release note stayed stranded. They were committed on 09-22 between 07:18Z and 08:13Z
-(`6e86b214e`, `7d371d8f1`, `a1ca4b388`, `95b49a60f`, `3f1c3dd27`, `546debfc2`). Verified on
-disk, not inferred: `HEAD:public/data/forecast.json` now opens the UK trend at `lab 36.4 /
-con 21.9` -- exactly the corrected values yesterday's report identified as right and unshipped
--- and ops-autofix has logged `no findings; nothing to do` on every slot from 08:20Z onward.
-Nothing further is needed from Ashwin, and `forecast`'s 06:10Z run today is now safe.
+**fiba-weekly, 07:18Z, AssertionError on the women's shrink guard.** The run
+stopped at `apply_womens_ranking.py:173`: `118 ranks would replace 119`. The
+guard did its job. A session completed the run by hand at 10:20Z and committed
+`6766422dd` with `--allow-shrink`; the 10:20Z re-run then reported
+`Women's Basketball now 118 ranks (was 118)` and `no change for fiba this run`.
+I verified the underlying fact independently rather than taking the commit
+message on trust: FIBA's World Ranking Women now carries **118 national
+federations**, with Guam, the Federated States of Micronesia and Palau joining
+after the FIBA Women's Micronesian Cup 2026. That matches the commit's account
+(Barbados, St Vincent and the Grenadines, Moldova and Gibraltar left; three
+Pacific federations joined). The data is correct and the item is closed.
+Source: <https://www.fiba.basketball/en/news/spain-and-germany-enter-the-top-5-in-latest-fiba-world-ranking-women-presented-by-nike>
 
-**2. `jobs.toml` drift self-corrected.** Ashwin's `c803564bb` (20:56Z) edited the repo's
-`jobs.toml`; the live dispatcher copy is a real file, not a symlink, so it went stale until
-ops-autofix's 22:16Z slot found `deploy_drift` and copied it. Working as designed. Worth
-knowing that a `jobs.toml` change can therefore run stale for up to ~2h (this one was a
-comment-only rewrite, so no scheduling behaviour was affected) -- unlike `runners/*.sh`, which
-are symlinks and take effect immediately.
+**notion-reconcile-verify, 10:56Z, "NOTION_API_TOKEN is not set".** An arming
+race, not a defect. The catch-up run for the 08:10Z slot fired at 10:56:42Z;
+`config.env` gained the token at **11:07:20Z**, eleven minutes later. The token
+is present now (50 chars, `ntn_` prefix) and the runner sources `config.env`
+through `_common.sh`. The next slot, 2026-09-24 08:10Z, had not yet fired when
+this sweep ran, so the pass is expected but unproven. No action; if the 08:10Z
+run fails again today, that is a real finding and this note is void.
 
-**3. `deploy-watch` coalesced 4 of ~153 slots** (05:10, 08:10, 14:40, 20:30Z). Each sits
-directly after a long job (screen-number-ones, nfl-elo, mlb-sim) that pushed the dispatcher tick
-past a slot boundary; the dispatcher resolves an `every_minutes` job to its most recent due slot
-and drops the intervening one. Same benign pattern explained in the 09-22 report; recorded so a
-future sweep doesn't chase it.
+**notion-reconcile-ping, MISSED its 2026-09-22 21:20Z slot by 817m.** The job
+was still armed in `jobs.toml` at 10:56Z and was commented out at 11:09:53Z,
+because its per-routine trigger token does not exist for any claude.ai routine.
+The MISSED line is the dispatcher retiring a stale slot. Nothing to do.
 
-**4. The HANDOFF pre-Saturday check is satisfied.** The 09-22 cutover entry asked that someone
-confirm on the mini, before Saturday 10:30Z, that `runners/metro-rankings.sh` shows the publish
-default. Confirmed: it is a symlink into the repo and reads `MODE="${METRO_RANKINGS_MODE:-publish}"`.
-
-**5. A Wikipedia 429 during cricket-weekly cost nothing.** The fetch of *Zimbabwean cricket team
-against Afghanistan in the UAE in 2026-27* failed with HTTP 429. Checked the real fixture list:
-that series doesn't begin until **17 October 2026** (ODI tri-series 17-23 Oct, T20Is 27 Oct-1
-Nov, Tests 5-17 Nov), so the page had no played matches to harvest. No data was lost. The
-*shape* of that failure is still worth fixing -- see Needs attention #2.
+**screen-number-ones, 21:07Z.** Caused by item 1 below, but harmless in its own
+right: the job had already run clean twice that day (05:08Z and 13:06Z), both
+reporting `no number-ones change this week; nothing to commit`. No data was
+lost by the failed third run.
 
 ## Needs Ashwin's attention
 
-### 1. cricket-weekly pushed an ntfy from inside a clean run, and it is right to: 4 Supabase rows have NULL venue_country and host_country because Wikipedia says "New Delhi" and the workbook says "Delhi"
+### 1. BLOCKER: one uncommitted file has been stopping every git-syncing job for 9 hours, and still is
 
-**What happened.** `cricket-weekly` exited 0 (`DONE ok 35s`) but logged `REVIEW items surfaced
-via ntfy` at 09:01Z. `mac-mini-jobs/cricket-review-queue.md` holds:
+**What happened.** `lib/releases.ts` has an uncommitted edit in the mini's
+working tree. Every mini job that fast-forwards the repo before working now
+refuses to run. This started at **2026-09-23 16:09Z** and is still live as of
+this sweep, 01:09Z on 09-24, so it is now into its tenth hour.
+
+Confirmed casualties in the window:
+
+- `football-standings` FAIL at 17:05Z, 23:07Z, and again at 00:07Z today
+  (`logs/football-standings-2026-09-24.log`). Three missed refreshes.
+- `screen-number-ones` FAIL at 21:07Z.
+- `cricket-champions` FAIL at 22:37Z, reporting
+  `0 ahead, 8 behind, 1 modified path(s)`.
+- `export_schedule.py` WARN on **48 consecutive dispatcher ticks**:
+  `git sync failed, skipping this run`.
+- `ops-autofix` neutered on all 6 runs since 16:15Z, see item 2.
+
+**Root cause.** The file's mtime is 2026-09-23T16:08:47Z, six minutes after the
+security-hardening merge `e3ad59153` landed at 16:02:50Z. Someone drafted the
+release note for that merge and never committed it. `origin/main` then moved 9
+commits ahead, and one of them, `25fda2111`, edits the same region of the same
+file. So `git pull` aborts with:
 
 ```
-2026-09-15 T20I Afghanistan v India: venue city 'New Delhi' not in workbook
-2026-09-17 T20I India v Afghanistan: venue city 'New Delhi' not in workbook
+error: Your local changes to the following files would be overwritten by merge:
+	lib/releases.ts
+Please commit your changes or stash them before you merge.
 ```
 
-**The matches are real and the scrape is correct.** Verified against the actual series: India
-toured Afghanistan (hosted in India) for three T20Is at the Arun Jaitley Stadium, Delhi, on
-13 / 15 / 17 September 2026. The workbook already held 09-13, so harvesting "since 2026-09-14"
-and picking up exactly the 15th and 17th is right, as are the scores in the log.
+**This is not a mechanical fix, which is why it needs you and not a script.**
+The uncommitted draft adds a `2026-09-23` block for the security hardening.
+`origin/main` already has a *different* `2026-09-23` block, for the Fan
+Attention Index. Committing the draft as-is would put **two blocks on the same
+date** on `/updates`, which `CLAUDE.md` forbids ("One date block per shipping
+day"), and eight bullets across the day against a ceiling of four.
 
-**Root cause, pinned to the line.** `venue_fields()` in `scripts/cricket/afghanistan_stage.py:268`
-takes the city as the text after the last comma of the Wikipedia venue string, canonicalises it
-through `CITY_ALIASES` (line 58), then looks it up in `venue_by_city` built from the workbook.
-The 09-13 match's page names the ground `Arun Jaitley Stadium, Delhi`; the 2nd and 3rd T20Is'
-page names it `Arun Jaitley Cricket Stadium, New Delhi`. `"new delhi"` is not in `CITY_ALIASES`
-and is not a workbook Venue City, so the lookup misses and the function returns blank
-venue_country / host_country.
+I checked whether anything would catch that: **nothing would.**
+`node scripts/check-release-notes.mjs` passes right now with the duplicate in
+place (`OK (146 entries, newest 2026-09-23)`), and `app/updates/page.tsx`
+validates bullet count, headline length and character count *per block*, never
+uniqueness of date. A duplicated day would ship silently.
 
-**The measured consequence** (read-only SELECT on `public.cricket_matches`, not inferred):
+There is a second, quieter consequence: because a `2026-09-23` entry does exist
+upstream, the release-notes gate is satisfied for that date, so **the security
+hardening shipped to production with no public release note and the gate will
+never flag it.**
 
-| start_date | venue | venue_city | venue_country | host_country |
-|---|---|---|---|---|
-| 2026-09-13 | Arun Jaitley Stadium, Delhi | Delhi | India | India |
-| 2026-09-15 | Arun Jaitley Cricket Stadium, New Delhi | New Delhi | **null** | **null** |
-| 2026-09-17 | Arun Jaitley Cricket Stadium, New Delhi | New Delhi | **null** | **null** |
+**Recommended fix, in two separable steps.**
 
-Two matches x two perspective rows = **4 rows** carrying NULL country fields, sitting next to a
-row from the same series and the same ground that has them filled. Anything that groups cricket
-matches by `host_country` or `venue_country` now undercounts these two.
+Step 1, unblocks the whole fleet in seconds, safe to do before deciding
+anything editorial:
 
-**Recommended fix.** One line in `scripts/cricket/afghanistan_stage.py`, following the exact
-precedent already in the table:
-
-```python
-CITY_ALIASES = {
-    "magheramason": "Derry",    # Bready Cricket Club; workbook uses "Derry"
-    "new delhi": "Delhi",       # Arun Jaitley Stadium; workbook uses "Delhi"
-}
+```
+cd "$HOME/Projects/Metro Area Project"
+git stash push -m "09-23 security release note draft" lib/releases.ts
+git pull --ff-only
 ```
 
-Then backfill the 4 existing rows (`venue_country='India'`, `host_country='India'`, and
-optionally normalise `venue`/`venue_city` to the workbook's spelling so the series reads
-consistently). Next scheduled cricket-weekly is **2026-09-30 09:00Z**; the alias alone will
-stop it recurring but will NOT repair the rows already inserted, so the backfill is the part
-that needs doing deliberately.
+Do **not** reach for `git checkout -- lib/releases.ts`. That is the reflexive
+fix and it destroys the draft. To make the draft safe regardless, here it is
+verbatim:
 
-### 2. That 429 exits 0 and tells nobody -- Silent failure register candidate
+```
+  {
+    date: "2026-09-23",
+    headline: "Stricter inputs, headers and admin checks",
+    items: [
+      "The public metro API now accepts real metro slugs only. Anything else gets a plain no-metro-found reply instead of being looked up at all.",
+      "The admin tools check their login session on every change they make, and refuse the change outright when that session is missing or expired.",
+      "Standard security headers go out with every page now, and the admin and activity pages can no longer be embedded in a frame on another site.",
+      "The cap on AI-written banter is counted in one shared place, so it holds across every server rather than being counted afresh on each one.",
+    ],
+  },
+```
 
-Nothing was lost this week (Self-healed #5), which is exactly why it is worth writing down now
-rather than after it costs something. The harvester enumerated 7 candidate Wikipedia pages,
-one returned HTTP 429, and the run printed `(fetch failed ...)`, carried on, inserted what it
-had, and **exited 0 with no alert**. Had that page been one with played matches, those matches
-would simply be absent -- no FAIL, no ntfy, no review-queue line, and the next run's
-"harvest since <last workbook match>" window would have moved past them only if something else
-had advanced the watermark. The tell would be a quiet gap in a country's fixture list.
+Step 2, editorial, whenever suits: fold the security bullets into the existing
+`2026-09-23` block so the day has **one** block of **at most four** bullets,
+choosing across both sets what a reader would actually notice. Ship that edit
+inside the next commit that already touches `app/` or `lib/`; `lib/releases.ts`
+is build-relevant, so a release-notes-only commit spends a production build on
+its own.
 
-**Recommended fix.** cricket-weekly already owns a review-queue + ntfy channel that works
-(finding #1 proves it), so route the failure into it: append a `fetch failed <title>: <error>`
-line to `cricket-review-queue.md` and include it in the "REVIEW items surfaced" push, rather
-than only printing to the log. A bounded retry with backoff on 429 specifically would be a
-reasonable addition, but the alert matters more than the retry. Add a row to the Silent failure
-register for "candidate-page fetch failure drops matches silently".
+### 2. ops-autofix has been stood down for 9 hours and stopped saying so
 
-### 3. Carried and still unfixed: ops-autofix's `working_tree_dirty` alert bypasses its own dedupe
+**What happened.** Every `ops-autofix` run since 16:15Z exits 0 and logs
+`STOP: uncommitted changes in the repo. Refusing to act around a human's work.`
+Standing down on a dirty tree is correct and deliberate. The problem is that it
+also went quiet. At 21:16Z the log reads:
 
-Yesterday's report filed this as the secondary half of its #1. Confirmed still present:
-`mac-mini-jobs/run-ops-autofix.sh:112-117` pushes `[ops-autofix] stood down -- uncommitted work`
-and `exit 0`s immediately, while the same-findings dedupe lives at line ~280 and is never
-reached. So this one finding re-notifies on all 12 daily slots, which is what produced the
-alert-every-2-hours complaint on 09-21/09-22. It is **latent right now** (the tree is clean and
-ops-autofix has been quiet since 08:20Z on 09-22), so nothing is firing today -- but it will
-recur in full the next time uncommitted work sits overnight.
+```
+21:16:42 same stand-down as the last run -- not re-notifying (still logged every run)
+```
 
-**Recommended fix.** Move that `push` behind the same last-findings comparison the other
-findings use, so it alerts once per distinct condition and then goes quiet. The comment at
-line 280 already argues this case ("an alert channel that cries wolf on a schedule is worse
-than no alert channel").
+That dedupe was added on purpose (commit `24b7aa0b8`, "the stand-down alert
+goes through the dedupe it already had") to stop an alert storm every two hours
+during a normal working afternoon. The side effect is the one that matters
+here: the tree stayed dirty overnight rather than for an afternoon, findings
+accumulated from 2 to 5, and nobody was told. By 01:18Z today it was sitting on:
 
-### 4. 2026-09-22 spent 3 paid production builds against the 2/day budget -- but deliberately, unlike 09-21
+```
+   [blocker] working_tree_dirty -- repo has 1 uncommitted change(s)
+   [high] job_failed -- cricket-champions failed its 2026-09-23T22:30:00+00:00 slot
+   [high] job_failed -- football-standings failed its 2026-09-23T23:00:00+00:00 slot
+   [high] job_failed -- screen-number-ones failed its 2026-09-23T21:00:00+00:00 slot
+   [high] deploy_drift -- live dispatcher directory is out of sync with the repo
+```
 
-**Measured, with the 404-as-empty trap avoided:** GitHub core rate limit was 4729/5000 when
-queried, so these are real answers rather than rate-limited silence. The three build-relevant
-commits (the only ones since 09-22 without `[vercel skip]`) each produced a deployment, all
-`success`:
+This is exactly the Silent failure register shape: the safety net was disabled,
+the tile was green, the topic was quiet, and the only record was a log file.
+Item 1 would have been caught hours earlier if this had spoken once.
 
-| commit | created | subject |
+**Recommended fix.** Keep the dedupe, but do not let it hold silently across a
+day boundary or while the finding set is growing. Two options, either is small:
+
+- Re-notify when the **finding set changes**, not only when the stand-down
+  reason changes. The set went 2 -> 3 -> 4 -> 5 findings and each of those
+  transitions was newsworthy; the dedupe key is currently the stand-down
+  reason, which never changed. `.autofix-attempts.json` already stores
+  `reported_standdown` as a hash, so this is a change to what gets hashed.
+- Or add a floor: re-notify once if a stand-down has persisted past N hours
+  (4 would have caught this before midnight) or across a UTC day change.
+
+### 3. The 2/day Vercel build cap is still inactive, and 09-23 spent three paid builds
+
+**Already a known P0 of yours; recording the number, not re-opening it.** This
+is the `VERCEL_BUILD_CAP_TOKEN` thread that HANDOFF has carried since 09-15.
+
+Counted via the Vercel MCP (not GitHub `deployment_status`, which 404s under
+secondary rate limiting), project `metro-power-rankings`, target production,
+2026-09-23 UTC. **Three READY builds, against `MAX_DAILY_BUILDS=2`:**
+
+| Time (UTC) | Commit | Subject |
 |---|---|---|
-| `3f1c3dd27` | 2026-09-22T07:25:20Z | elections: Labour leads the UK polling chart |
-| `546debfc2` | 2026-09-22T08:05:04Z | elections: a "Just voted" board for the last six months |
-| `e43dc4a22` | 2026-09-22T08:19:44Z | Release notes: the eight corrected election dates **[deploy-now]** |
+| 16:02:50Z | `e3ad59153` | Merge security-hardening: slug guard, admin auth, headers, rate limits |
+| 16:31:31Z | `25fda2111` | Fan Attention Index live: release note + handoff |
+| 22:16:06Z | `532698d33` | fans: wire Fan Attention Index into every nav surface |
 
-**The important distinction from 09-21.** The third build carries `[deploy-now]`, which is the
-documented and only override of the cap, and the session that made it recorded the overage in
-HANDOFF (`224fc050b`, "the date corrections are live on a third build"). So 09-22's third build
-was a deliberate, logged choice, not a guard failure -- materially different from 09-21, where
-the third had no override. **2026-09-23 so far: 0 paid builds** (every deployment today is
-CANCELED, which is free).
+Every other production deployment that day was CANCELED, which is free.
 
-**Not re-verified this run, stated rather than assumed.** Whether `VERCEL_BUILD_CAP_TOKEN` is
-still absent could not be confirmed from the mini: there is no Vercel token in any config here,
-and the Vercel MCP ignored `since`, `until`, `state` and `limit` (every call returned the same
-newest 20 deployments), so paid builds could not be enumerated through it. Yesterday's
-measurement -- two 09-21 build logs both printing `vercel-ignore: build cap inactive` -- is the
-last hard evidence, and nothing in the repo or on the mini would have changed it, since it is a
-Vercel dashboard env var. It remains Ashwin's existing P0: add a read-scope
-`VERCEL_BUILD_CAP_TOKEN` as a Production build-time variable on `prj_eGoUAOrnwvNP86s7p74ruILMl3Dr`
-(team `team_yQjbuPwcr40J6AxkjCv6AawD`); the confirmation to look for in the next build log is
-`vercel-ignore: N paid production build(s) so far today (cap 2)`.
+I pulled the third build's log for the decisive line rather than inferring it:
 
-### 5. Saturday deadline, from the 09-22 cutover entry rather than any job failure: `check:release-notes` will complain on the first publish-mode metro-rankings run
+```
+Running "sh scripts/vercel-ignore.sh"
+vercel-ignore: build cap inactive (no VERCEL_BUILD_CAP_TOKEN or the API did not answer)
+vercel-ignore: build-relevant change in 25fda2111..532698d33; building
+```
 
-The mini is confirmed ready to publish (Self-healed #4): `metro-rankings` runs **Saturday
-2026-09-26 at 10:30Z** and, on a clean guarded run, makes **one UNTAGGED `public/` commit**
-(metros, regions, states, meta, details, state-metro-scores, states-directory, plus the report).
-`npm run check:release-notes` fails when an earlier day shipped an untagged `app/`/`lib/`/
-`public/` commit with no `lib/releases.ts` entry covering it -- so the first publish Saturday
-leaves that gap, exactly as the retired Top Companies commit used to. The 09-22 HANDOFF entry
-flagged this as still open and asked for it to be settled before Saturday.
+So the guard is deployed, running, and reporting itself inactive on every
+build. Nothing is broken in the script; the token has simply never been placed.
 
-**Recommended fix, pick one.** Either add a standing weekly-rankings entry convention (the
-runner writes a `lib/releases.ts` block in the same commit -- note that makes the commit
-build-relevant on purpose, which it already is), or exempt bot-authored commits in
-`scripts/check-release-notes` the way other guards distinguish automated data commits. The
-second is smaller and does not spend a build; the first is more honest to readers of `/updates`.
-Either way it wants deciding before Saturday 10:30Z, or the day's verify goes red.
+**Recommended fix, unchanged from HANDOFF.** Add `VERCEL_BUILD_CAP_TOKEN` (read
+scope) to the build environment of project `prj_eGoUAOrnwvNP86s7p74ruILMl3Dr`.
+I could not verify the variable's presence from here: the MCP token returns
+`403 forbidden` on `projectEnvVars`, the same 403 recorded on 09-20. The build
+log above is the better evidence anyway, and it is unambiguous.
 
-### 6. Minor housekeeping, no urgency
+Today, 2026-09-24 UTC, stands at **0 paid production builds** so far, so
+whatever you do about item 1 has the full budget available.
 
-- **15 stale launchd plists** sit in `~/Library/LaunchAgents/` (activity-feed, cricket-weekly,
-  euro-comps, feed-monitor, fiba-weekly, football-standings, gap-league-watch, rugby-weekly,
-  screen-number-ones, sound-weekly, substack-daily, egress-refresh, conflicts-monthly,
-  cricket-monthly, deploy-watch) that are **not loaded** -- their jobs moved into the dispatcher.
-  Harmless, but a future session reading the directory could reasonably think they run. Worth
-  deleting, or a README line saying they are archived.
-- **`com.citizenofnowhere.f1-weekly` is named "weekly" and runs hourly** (`StartInterval 3600`),
-  pinging the healthchecks slug `f1-weekly` 24 times a day. Behaviour is correct and idempotent;
-  only the name misleads. Its `.err` file last changed 2026-09-19 (a `curl (56) 504` on a
-  healthchecks ping), nothing since.
+### 4. Low: a permanent `deploy_drift` finding from a file that is not a runner
+
+`python3 dispatcher.py --check-sync` reports exactly one item:
+
+```
+DRIFT vs .../mac-mini-jobs:
+  missing-live  runners/_common-selftest.sh
+```
+
+`jobs.toml` is byte-identical to `origin/main`, so nothing is actually
+mis-scheduled. The file arrived with `3e98ba80c` at 16:31Z on 09-23 and is a
+self-test for `_common.sh`'s git guards: no job invokes it, and it has no
+runtime role. But `--check-sync` compares directory contents, so it will report
+drift forever, keeping a `[high]` finding permanently lit in `ops-autofix` and
+raising the noise floor of the thing meant to spot real drift.
+
+**Recommended fix, either one:** symlink it into the live directory alongside
+its siblings (`ln -s "$REPO/mac-mini-jobs/runners/_common-selftest.sh" \
+"$HOME/metro-mini-jobs/runners/"`), or teach `--check-sync` to ignore
+`*-selftest.sh`, which is more honest about what the file is. The second also
+covers the next test file someone adds.
 
 ---
-*Read-only sweep: no job re-run, no healthchecks ping, no Supabase write, no commit but this
-file. **Notion was not read or updated** -- the Notion MCP needs an interactive OAuth
-authorisation this headless session cannot perform, so the contract's start-of-session Backlog
-read and end-of-session row updates did not happen. Findings 1, 2, 3 and 5 are Backlog
-candidates; finding 2 is a Silent failure register candidate; finding 4 is an existing P0.*
+
+*Written by the unattended daily ops sweep. Investigate-and-report only: no
+job was re-run, no data written, no healthcheck pinged, nothing fixed.*
