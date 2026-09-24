@@ -19096,3 +19096,61 @@ Cowork session, started from a teardown of Rascasse (audience-intelligence vendo
 The /fans page shipped with only the desktop Deep Dives link, which broke DESIGN-STANDARDS §5 ("A new destination goes in both, in the commit that adds it"; "A page that isn't reachable is a bug"). Now wired everywhere the sibling cross-sport index (/sports/valuations) appears: `lib/sportsCatalog.ts` SPORTS_FEATURES (desktop Sports mega-menu + mobile Sports section; now 10 items, at the column cap), `app/MobileMenu.tsx` Deep Dives, `lib/deepDives.ts` (deep-dives hub card) and the `app/sports/page.tsx` features grid. typecheck, client-imports, mobile and data-reads checks pass. Rule for next time: a net-new page gets every nav surface in the same commit as the page.
 
 **Notion:** none (no queryable state changed).
+
+### AI. An uncommitted file in this clone is an outage, not a draft
+
+🔴 **THE WORKING TREE IS PRODUCTION HERE.** A single uncommitted `lib/releases.ts` stopped every mini job that
+fast-forwards the repo, from 2026-09-23 16:09Z to 2026-09-24 06:40Z, about fourteen and a half hours. Ten dispatcher
+job failures across eight jobs, plus six ops-autofix stand-down alerts and one sweep digest: roughly seventeen ntfy,
+every one of them from that one file.
+
+| job | failed slots |
+| --- | --- |
+| football-standings | 17:05Z, 23:07Z, 05:09Z |
+| cricket-champions, screen-number-ones | one each |
+| activity-feed, euro-comps, gap-league-watch, business-daily, substack-daily | one each |
+| export_schedule.py | warned on roughly 48 consecutive dispatcher ticks |
+
+**The mechanism, which is the part I had backwards.** Every runner begins with `mini_sync`, whose first move is
+`git merge --ff-only`. That fails outright when a locally modified file is one the incoming commits also touch, and
+the function then finds 0 local commits to rebase and calls `fail()`. So the job dies before it does anything.
+
+I left the file uncommitted ON PURPOSE, to honour the rule that a build-triggering push needs Ashwin's explicit yes,
+and I judged it safe by reasoning that `commit_paths` only stages its own paths so nothing would sweep my edit into a
+bot commit. That reasoning was about the wrong hazard. Being swept into someone else's commit is the small risk;
+blocking the fast-forward that all twenty-one jobs start with is the large one, and it is certain rather than
+possible, because origin moves every few minutes.
+
+**The two rules genuinely collide,** and naming the collision is the useful part: a build-relevant edit cannot be
+committed without approval, and cannot be left sitting in this clone without breaking the fleet. The resolution is to
+keep the edit OUT of the clone until approval exists. A `git worktree`, or a patch file in a scratch directory, then
+apply, commit and push in one motion once the yes arrives. Same answer as section AH reached for branches, arrived at
+from the opposite direction.
+
+**A correction to the automated sweep's own report.** `daily-ops-sweep-2026-09-24` says ops-autofix "never
+re-notified as findings grew from 2 to 5 overnight". Measured against its logs, that is not what happened: it pushed
+a stand-down alert at 17:15, 19:15 and 23:17 on 09-23 and at 01:18, 05:18 and 07:19 on 09-24, and suppressed exactly
+the two runs where the finding SET was byte-identical to the previous run. The dedupe worked as designed. What the
+sweep got right, and what matters more, is the outcome: the autofixer was hard-stopped on `working_tree_dirty` for
+fourteen hours, so the one component whose job is re-running failed jobs could not re-run anything.
+
+**A second finding, also mine.** `deploy_drift` had been high all day: `runners/_common-selftest.sh` was committed to
+the repo in section AH and never appeared in the live directory. `~/metro-mini-jobs/runners/` holds one symlink PER
+FILE, so adding a runner to the repo is only half a deploy; a new file needs a new link. `dispatcher.py --check-sync`
+names it exactly, and now reports in sync.
+
+**Release notes.** The security merge shipped with no public note because another session had already written a
+2026-09-23 block for the Fan Attention Index, and a day only gets one block. Amended rather than appended: the
+coverage and per-league bullets merge into one and the fourth bullet names the security work, without enumerating
+what the site did before, since a changelog that confirms which endpoint used to be open is a map. Live on /updates.
+
+⚠️ **Recorded, not fixed: nothing enforces one block per date.** `check-release-notes.mjs` passes with a duplicate
+date present, and the build-time validator in `app/updates/page.tsx` checks bullets, headline words and characters
+PER BLOCK and never date uniqueness. Two 2026-09-23 blocks would have shipped silently.
+
+**Left to self-heal deliberately.** Eight `job_failed` findings and two down tiles remain. ops-autofix re-runs
+job_failed through `hc-run.sh` and marks the slot ok, its attempt budget for today is empty, the kill switch is
+absent, and its next slot is 08:15Z. Hand-running those jobs would spend the same effort the autofixer exists to
+spend, so the right move was to clear the blocker and let it work.
+
+**Notion:** none (no queryable state changed).

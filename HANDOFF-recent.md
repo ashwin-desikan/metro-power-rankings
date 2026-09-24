@@ -9,13 +9,71 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 78, 2026-09-16 to 2026-09-23
-     If the reader counts fewer than 78 entries, its fetch window stopped
+     entries: 77, 2026-09-17 to 2026-09-23
+     If the reader counts fewer than 77 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
 ## 2026-09-23 (later): cowork (Windows device session) → next session (/fans nav wiring)
 
 The /fans page shipped with only the desktop Deep Dives link, which broke DESIGN-STANDARDS §5 ("A new destination goes in both, in the commit that adds it"; "A page that isn't reachable is a bug"). Now wired everywhere the sibling cross-sport index (/sports/valuations) appears: `lib/sportsCatalog.ts` SPORTS_FEATURES (desktop Sports mega-menu + mobile Sports section; now 10 items, at the column cap), `app/MobileMenu.tsx` Deep Dives, `lib/deepDives.ts` (deep-dives hub card) and the `app/sports/page.tsx` features grid. typecheck, client-imports, mobile and data-reads checks pass. Rule for next time: a net-new page gets every nav surface in the same commit as the page.
+
+**Notion:** none (no queryable state changed).
+
+### AI. An uncommitted file in this clone is an outage, not a draft
+
+🔴 **THE WORKING TREE IS PRODUCTION HERE.** A single uncommitted `lib/releases.ts` stopped every mini job that
+fast-forwards the repo, from 2026-09-23 16:09Z to 2026-09-24 06:40Z, about fourteen and a half hours. Ten dispatcher
+job failures across eight jobs, plus six ops-autofix stand-down alerts and one sweep digest: roughly seventeen ntfy,
+every one of them from that one file.
+
+| job | failed slots |
+| --- | --- |
+| football-standings | 17:05Z, 23:07Z, 05:09Z |
+| cricket-champions, screen-number-ones | one each |
+| activity-feed, euro-comps, gap-league-watch, business-daily, substack-daily | one each |
+| export_schedule.py | warned on roughly 48 consecutive dispatcher ticks |
+
+**The mechanism, which is the part I had backwards.** Every runner begins with `mini_sync`, whose first move is
+`git merge --ff-only`. That fails outright when a locally modified file is one the incoming commits also touch, and
+the function then finds 0 local commits to rebase and calls `fail()`. So the job dies before it does anything.
+
+I left the file uncommitted ON PURPOSE, to honour the rule that a build-triggering push needs Ashwin's explicit yes,
+and I judged it safe by reasoning that `commit_paths` only stages its own paths so nothing would sweep my edit into a
+bot commit. That reasoning was about the wrong hazard. Being swept into someone else's commit is the small risk;
+blocking the fast-forward that all twenty-one jobs start with is the large one, and it is certain rather than
+possible, because origin moves every few minutes.
+
+**The two rules genuinely collide,** and naming the collision is the useful part: a build-relevant edit cannot be
+committed without approval, and cannot be left sitting in this clone without breaking the fleet. The resolution is to
+keep the edit OUT of the clone until approval exists. A `git worktree`, or a patch file in a scratch directory, then
+apply, commit and push in one motion once the yes arrives. Same answer as section AH reached for branches, arrived at
+from the opposite direction.
+
+**A correction to the automated sweep's own report.** `daily-ops-sweep-2026-09-24` says ops-autofix "never
+re-notified as findings grew from 2 to 5 overnight". Measured against its logs, that is not what happened: it pushed
+a stand-down alert at 17:15, 19:15 and 23:17 on 09-23 and at 01:18, 05:18 and 07:19 on 09-24, and suppressed exactly
+the two runs where the finding SET was byte-identical to the previous run. The dedupe worked as designed. What the
+sweep got right, and what matters more, is the outcome: the autofixer was hard-stopped on `working_tree_dirty` for
+fourteen hours, so the one component whose job is re-running failed jobs could not re-run anything.
+
+**A second finding, also mine.** `deploy_drift` had been high all day: `runners/_common-selftest.sh` was committed to
+the repo in section AH and never appeared in the live directory. `~/metro-mini-jobs/runners/` holds one symlink PER
+FILE, so adding a runner to the repo is only half a deploy; a new file needs a new link. `dispatcher.py --check-sync`
+names it exactly, and now reports in sync.
+
+**Release notes.** The security merge shipped with no public note because another session had already written a
+2026-09-23 block for the Fan Attention Index, and a day only gets one block. Amended rather than appended: the
+coverage and per-league bullets merge into one and the fourth bullet names the security work, without enumerating
+what the site did before, since a changelog that confirms which endpoint used to be open is a map. Live on /updates.
+
+⚠️ **Recorded, not fixed: nothing enforces one block per date.** `check-release-notes.mjs` passes with a duplicate
+date present, and the build-time validator in `app/updates/page.tsx` checks bullets, headline words and characters
+PER BLOCK and never date uniqueness. Two 2026-09-23 blocks would have shipped silently.
+
+**Left to self-heal deliberately.** Eight `job_failed` findings and two down tiles remain. ops-autofix re-runs
+job_failed through `hc-run.sh` and marks the slot ok, its attempt budget for today is empty, the kill switch is
+absent, and its next slot is 08:15Z. Hand-running those jobs would spend the same effort the autofixer exists to
+spend, so the right move was to clear the blocker and let it work.
 
 **Notion:** none (no queryable state changed).
 ## 2026-09-23: cowork (Windows device session) → next session (Fan Attention Index /fans shipped to main)
@@ -3560,150 +3618,4 @@ live the labels will read CFP while the slate is still SELECTED by AP involvemen
 decision hiding behind the first, and it belongs to `build_cfb_sim.py`, not to this page.
 
 ---
-
-## 2026-09-16 — mini → next session: ESPN DROPPED `dates=A-B` SITE-WIDE; every caller moved to season, month or per-day queries
-
-Ashwin asked why the morning was full of ntfys and GitHub emails, then "fix the python callers now and do the
-standings fix too". Five of the seven pings came from one upstream change.
-
-### A. The break, and what it cost before anyone noticed
-
-Between 2026-09-15T15:53Z (last good run) and 09-16T00:04Z, ESPN's team-sport scoreboards began rejecting **any**
-hyphenated `dates=A-B` range with HTTP 400, including a one-day range. Bisected by the daily sweep and re-measured
-here: single date, month (`202609`) and year (`2026`) all still answer 200. Golf and tennis do NOT 400, but a range
-there now returns almost nothing (`golf/pga` 0 events against 2 for the month, ATP 1 against 5), which is worse,
-because it is silent.
-
-- `AFL + NRL season refresh` failed 00:04Z and again on its autofix rerun; three reruns, three ntfys, GitHub emails.
-- `mlb-sim` failed 07:00Z, "failed leagues: afl, nrl" (the 08:17 "CoN mini job" ping).
-- `lib/espnScores.ts` swallowed it with `return []`: the Recent results strip lost every ESPN-supplied final and
-  nothing logged it.
-- AFL/NRL `finals.json` froze at 09-15 15:54Z, with AFL preliminary finals on 09-18/19 and the Grand Final after.
-
-### B. Python callers (`e7c8ab06b`, no build)
-
-One shape per call site, each measured live before committing:
-- **Whole-season windows -> `dates=<season>`:** `footy_finals.py`, `build_season_sims.py`. AFL `dates=2026` returns
-  226 events of which `parse_finals` keeps exactly the 10 finals; NRL 213 -> exactly 6. Same bundles the last good
-  run committed.
-- **Fortnights -> MONTHS:** `build_mlb_postseason.py`, `wnba_finalize.py`. A month keeps both old scars at bay (a wide
-  range silently caps at 100 events and ignores `seasontype`; `limit=` truncates WNBA): mlb `202610&seasontype=3` = 45
-  events, wnba `202609` = 38.
-- **`build_nfl_sim.py` `played_results`: months + a `season.year` guard.** The bare year is NOT safe here: `dates=2026`
-  returns from 2026-01-03, i.e. LAST season's playoffs, and the filter keys on season TYPE only. `scan()` (upcoming) is
-  per-day.
-- **Per-day across the horizon, deduped by event id:** `build_meta_market.py`, `build_pl_sim.py`, NFL `scan()`. A failed
-  day costs that day, not the window.
-- **`majors_ingest.py`: the 14-day lookback becomes month queries** (current, plus previous when the window straddles),
-  because a range there fails silently rather than loudly.
-
-Self-tests all pass: footy_finals 19 checks, wnba 88, season sims 27, nfl 79, meta-market 56, mlb postseason 8, pl 53.
-
-### C. The two frontend readers (`de5721381`, one paid build, LIVE and verified)
-
-- `lib/espnScores.ts`: one request per feed per DAY across the results window, deduped (ESPN answers a single date with
-  a neighbouring late kick-off), capped at `DAYS_MAX` 8 so a widened window cannot fan out.
-- `lib/wc2026Standings.ts`: both readers share a new `koEvents()` over `dates=202606` and `202607`. The year form is not
-  a substitute: `dates=2026` caps at 100 events and stops on 12 July, before the Final (202606 = 79 events, 202607 = 25
-  ending 07-19).
-- `npm run verify` in a scratch worktree: typecheck, every check:*, vitest 294, pytest 112, `next build --webpack`,
-  function-size. Live at 09:39; the page cycles HIT -> STALE -> HIT on the new code.
-- **Recent results still reads "150 results across 7 sports", and that is correct:** every ledger game played 09-12 to
-  09-15 is already graded, so the ESPN merge has nothing to add today. It earns its keep this weekend, when finals land
-  before the grading jobs run.
-
-### D. Jobs put back green
-
-`footy-refresh` re-run on the fix: success, committed `587d334b0`, so AFL/NRL data is live again ahead of Friday.
-`mlb-sim` re-ran from the shared tree (exit 0, pushed, revalidated, every warm 200) and its 07:00Z slot is
-`--mark-ok`. `detect_issues.py`: 0 findings.
-
-### E. Mistakes worth not repeating
-
-- **The first push of B silently did not land.** `git rebase` refused because the two `lib/*.ts` files were unstaged in
-  the same worktree, so `push` was a non-fast-forward and only my local echo said "pushed". I then dispatched
-  `footy-refresh` and watched it fail on the OLD code at the old line number. Stash the unrelated changes, rebase, push,
-  THEN confirm with `git merge-base --is-ancestor HEAD origin/main` before dispatching anything.
-- **`mlb-sim`'s 09:23 autofix rerun failed for a stale reason:** the shared tree had not been pulled, so it ran the old
-  range. Pull `~/Projects/Metro Area Project` after pushing a job fix; the jobs run from that clone, not from a worktree.
-- Two of my own read errors, both caught by checking rather than assuming: `footy_finals.build()` returns
-  `meta`/`weeks`/`premier`, not `games`, so a first probe printed "0 finals" for a working fetch; and counting
-  "ungraded" ledger rows without excluding FUTURE fixtures made the strip look half-dead when it was not.
-- A `urllib` probe of the live site with `Cache-Control: no-cache` got 403 from the edge; `curl` was fine all morning.
-
-### F. Also today
-
-Another session fixed the cricket REVIEW ntfy that arrived with only its header lines (`21c47d243`, 08:22): the
-wrapper's `grep -iE 'REVIEW'` kept the header and dropped the items under it, now an awk block. That was the gap
-recorded in 09-15 section B.
-
-**Open:** add a range-versus-single-date probe to `feed_shape_monitor.py`, so the next silent ESPN parameter change is
-caught by a job rather than by a finals bracket freezing. The Silent failure register row from 09-15 (a route's data
-missing from its bundle) has a sibling here: two frontend readers swallowed a 400 with `return []` and nothing logged.
-**CLOSED same day, see section G.**
-
-### G. The ESPN date-form canary (closes F's open item)
-
-`feed_shape_monitor.py` now carries two entries, `ESPN date forms (soccer)` and `ESPN date forms (golf)`, via a new
-`fetch_espn_date_forms` fetcher and `check_espn_date_forms` validator. One team sport (the loud case, read per-day by
-`lib/espnScores.ts`) and one non-team (the silent case, months in `majors_ingest.py`).
-
-**It is deliberately not the probe the open item asked for.** A literal range-versus-single-date check would compare a
-form nothing reads any more against one everything reads, so it would FAIL on every run from now on. That is permanent
-noise, not detection. Inverted instead: it asserts the three forms the callers moved to on 09-16 (`dates=YYYYMMDD`,
-`dates=YYYYMM`, `dates=YYYY`) still answer with a well-formed `events` array, and FAILs when one of *those* breaks.
-That catches the next change in whichever direction it comes, which is what the open item actually wanted.
-
-Two design points worth keeping:
-
-- **The probe day is two days back, not today.** A quiet today would otherwise read as a broken parameter.
-- **A working range is a note, never a failure, and only when it returns events.** First run exposed why: golf answers
-  200 with **0 events** to a range and always has. That is precisely the silent shape that hid the 09-15 break, not a
-  recovery, and noting it every run would be wallpaper. The count has to be non-zero to earn the note.
-
-It also FAILs when the month form returns fewer events than the single day, which is the silent-truncation shape
-itself rather than an outright error.
-
-Verified before it went live: all eight failure paths fire on synthetic docs (each form erroring, all three at once, a
-renamed `events` key, the truncation shape), off-season stays a soft `empty`, and the full 18-entry registry is green,
-so the real run was silent. Live copy synced, `dispatcher.py --check-sync` in sync, run logged `ok` at 09:56. No
-healthchecks change: this rides the existing `feed-monitor` slug at 07:20 UTC.
-
-**Still open from F:** other readers converted in `6edc58ecb` may have the same silent trace gap, and nothing yet
-alerts when a frontend reader swallows an upstream error with `return []`. This canary watches the upstream, not the
-swallowing.
-
-### H. The WNBA failure emails, and the assertion that hid the bug
-
-Ashwin asked about the constant GitHub Action failure emails. Measured rather than guessed: 42 failures in the last
-200 runs, but 15 are `Test` from July and early August, and `Test` has been green for 45 straight pushes since. The
-WWC tracker's cron is already commented out, so its four stopped after 09-15. Majors 09-12, NFL Elo 09-08 and CFL
-08-31 are one-offs predating the outage. The only thing still failing on a schedule was **WNBA season refresh**,
-daily, and that one was mine.
-
-**The bug.** This morning's `e7c8ab06b` rewrote `_windows()`'s docstring in `wnba_finalize.py` to say months and left
-the body building fortnight ranges. The 13:09Z run failed on `833002ee8`, a tree that already contained the "fix", so
-this was not a stale-tree artifact. All eight URLs it generated 400d. Fixed in `de5c233a4`: 29 postseason events
-against 0 before.
-
-**The part worth remembering is not the bug, it is the self-test.** It already executed `_windows()` and asserted
-`len(x) == 17 and "-" in x`, which is to say it demanded the exact form ESPN had dropped. The workflow runs
-`--self-test` immediately before `--write`, so that assertion would have REJECTED a correct fix and PASSED the broken
-one. An assertion that encodes the bug is worse than no assertion, because it converts review into rubber-stamping.
-It now pins the month shape and forbids a hyphen outright, and the docstring carries a note saying the body is what
-is checked.
-
-**Method change, applied same day.** Having missed one caller by reading its comment, I re-swept all seven others
-from `e7c8ab06b` by EXECUTING their URL builders and probing what came back, not by reading what they claimed:
-`majors_ingest` months (golf 2 events, tennis 5), `build_nfl_sim` months (48) and per-day, `build_meta_market`
-per-day, `build_pl_sim` per-day, `build_season_sims` season year (AFL 226, NRL 213). All returned real events. WNBA
-was the only miss. Comments in those files were accurate, but that was luck, not verification.
-
-**Note for the canary in section G:** it did not catch this and could not. It asserts ESPN's forms still work, and
-they do. A caller still using the dead form is invisible to it. The gap between "upstream is healthy" and "our
-callers use the healthy thing" is still unmonitored.
-
-**Deliberately not done:** turning off GitHub's Actions failure email. It did its job here, surfacing a real break
-that would otherwise have sat until the next finals weekend. With WNBA fixed the volume should fall to near zero on
-its own, so the setting stays until there is evidence it is noise rather than signal.
 
