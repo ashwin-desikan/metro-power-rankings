@@ -9,8 +9,8 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 75, 2026-09-18 to 2026-09-24
-     If the reader counts fewer than 75 entries, its fetch window stopped
+     entries: 74, 2026-09-19 to 2026-09-24
+     If the reader counts fewer than 74 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
 ## 2026-09-24: cowork (Windows device session) → next session (Fan Attention Index v0.4.1 + monthly job)
@@ -128,6 +128,74 @@ known was a 90 minute burn and a page on 3 October.
 **Notion:** Backlog P1 "Activate fans-monthly on the Mac mini" stays OPEN, with the measurements, the two problems and
 the parking method written onto the row. Scheduled jobs row "fans-monthly (Fan Attention Index refresh)" deliberately
 NOT moved to Active and left at `One-off (pending)`.
+
+### AW. fans-monthly is live, on one Wikimedia dump instead of 26,602 requests
+
+Activated 2026-09-24, first scheduled run 3 October 07:00 UTC. Parked for a few hours the same morning (section AV),
+because the per-article fetch could not finish. Replaced, validated end to end, and unparked.
+
+**Measured on this machine rather than estimated:**
+
+| | |
+| --- | --- |
+| requests per run | **1**, replacing 26,602 |
+| dump pass | 5.02 GB, 439M lines, **16.1 min**, never written to disk |
+| key coverage | 26,037 of 26,602, **97.9 percent** |
+| REST parity | **24 of 24** checkable values identical |
+| August views recorded | 770 of 770 teams non-zero, 41,862,454 total |
+| Trends | pytrends installed and working: 143 values refreshed across 7 groups, 0 nulled |
+
+The one non-comparison in the parity sample was the REST API returning 429, which is the fault being removed.
+Non-ASCII titles matched exactly across `wuu`, `ko`, `th`, `mzn`, `pa`, `ru`, `os`, `ar`, which is what confirms the
+lookup key is a raw UTF-8 underscored title and not a percent-encoded one.
+
+🔴 **TWO THINGS THE IMPLEMENTATION HAD TO GET RIGHT, both pinned by self-tests rather than trusted.** The dump splits
+each article across up to three lines by access method, and the endpoint it replaces asked for `all-access`, so the
+figure is the SUM. Reading one line per article would under-count by roughly the mobile share, which is most of
+Wikipedia's traffic, and every downstream number would still look plausible. And there is no per-team failure mode any
+more: either the whole dump read and the match-rate gate passed, or it raises and the run makes no claim about the
+month. The old path recorded partial months as truth, team by team, and did.
+
+**THREE DEFECTS THE GATE CAUGHT, AND NONE OF THEM WAS FINDABLE BY READING.** This is the part worth keeping.
+
+1. `--dry-run` wrote two history files, because `append_history_month()` ran before the dry-run check (`a347a08a9`).
+2. **`DRY_RUN=1` never reached the script at all.** `_common.sh`'s `DRY_RUN` gates `commit_paths` and
+   `revalidate_ping` and nothing else, so the "DRY_RUN validation" that `jobs.toml` instructs the next person to
+   perform ran the ENTIRE real pipeline and left the shared clone dirty with four generated paths. Fixing defect 1 was
+   therefore necessary and insufficient, and only running the runner showed it. The runner now passes the flag through,
+   verified by tracing the actual argv rather than by reading the script.
+3. 🔴 **`scripts/fans/_scratch_csv/` was neither committed nor ignored.** Every real run would leave it untracked, and
+   `detect_issues.py`'s `find_dirty_tree` reads `git status --porcelain`, so from 3 October onward one monthly job would
+   have made ops-autofix stand down as a BLOCKER, permanently, and stop re-running every failed job in the fleet. A
+   monthly job would have disabled the auto-fixer and nothing would have said so. Now in `.gitignore`.
+
+Defect 3 is the one to remember. It is not a fault in fans-monthly at all; it is a fault in the coupling between "a job
+leaves debris" and "a detector treats any debris as a blocker", and it would have presented as ops-autofix mysteriously
+doing nothing from October onward.
+
+**pytrends added to the venv** and pinned at 4.9.2 in `mac-mini-jobs/metro-venv-requirements.txt`, at Ashwin's
+instruction, after the gate showed it absent. A 15 KB wheel with every dependency already satisfied. It then worked
+against Google Trends for all seven blended groups inside the same gate run, which is a better result than expected for
+a library last released in 2023. Installing it mid-run was deliberate: `fetch_trends_for_group` imports it at call time,
+and the dump pass still had thirteen minutes to run, so the gate exercised the real path instead of the documented
+`ImportError` fallback.
+
+**Timeouts fitted to the measurement,** `STEP_TIMEOUT` 5400 to 3600 and `timeout_minutes` 110 to 75, both about 4x the
+observed pass. The comments that explained the old numbers were rewritten rather than left contradicting the code, and
+the roster note at the top of `jobs.toml` no longer says "NOT DRY_RUN-validated".
+
+**The August data the gate produced was reverted, not committed.** The 3 October run produces September, and committing
+would have spent a production build nobody asked for: this job carries no `[vercel skip]` on purpose, because
+`lib/fanIndex.ts` reads `fan-attention.json` at build time.
+
+⚠️ **Still true and worth flagging:** that monthly commit is the only one in `mac-mini-jobs/` that triggers a build, and
+its subject begins `Auto:`, which `commits-recent.txt` excludes. So the one commit a month that does deploy is invisible
+to the reconciler's ground-truth input. Not fixed here; it is the same "the input cannot show this class of thing" shape
+as the merge commits fixed this morning in section AR.
+
+**Notion:** Scheduled jobs row "fans-monthly (Fan Attention Index refresh)" moved from `One-off (pending)` to
+**Active** with Last verified 2026-09-24, and Backlog P1 "Activate fans-monthly on the Mac mini" closed. Both verified
+over REST rather than accepted from the write's return value.
 ## 2026-09-23 (later): cowork (Windows device session) → next session (/fans nav wiring)
 
 The /fans page shipped with only the desktop Deep Dives link, which broke DESIGN-STANDARDS §5 ("A new destination goes in both, in the commit that adds it"; "A page that isn't reachable is a bug"). Now wired everywhere the sibling cross-sport index (/sports/valuations) appears: `lib/sportsCatalog.ts` SPORTS_FEATURES (desktop Sports mega-menu + mobile Sports section; now 10 items, at the column cap), `app/MobileMenu.tsx` Deep Dives, `lib/deepDives.ts` (deep-dives hub card) and the `app/sports/page.tsx` features grid. typecheck, client-imports, mobile and data-reads checks pass. Rule for next time: a net-new page gets every nav surface in the same commit as the page.
@@ -3966,47 +4034,4 @@ check that every `tags: [...]` in lib/ appears in ALLOWED_TAGS, which would have
 
 **Notion:** Backlog row filed for "the nba-elo revalidate tag is listed but inert until the next build", and another
 for "no check that a lib's cache tag appears in ALLOWED_TAGS; nba-elo was missing for the life of lib/nbaElo.ts".
-
-## 2026-09-18 - windows (Cowork, cloud bridged to the Windows box) -> mini and next session: LOOKUP SYNCED, CAF PRELIMS STOP ALERTING, OWNERS SWEPT (CHELSEA), NOTION MADE THE SOURCE OF TRUTH
-
-No paid build from this session. Everything below is `[vercel skip]` or lives outside git.
-
-### A. Lookup sync (cl-lookup-sync, Supabase only)
-
-Ashwin set `API Name` on the clubs already in the Lookup (sheet 1 of the mini's 09-14 triage) and added no new rows. Diff: 17 countries differed; **16 CHANGE + 1 ADD, 0 REMOVE, 0 HELD**. The 16 are the 15 from the triage plus Atletico Petroleos (`api_name` Petro de Luanda). The ADD is Apollon Pontus FC (Greece), Ashwin's own edit. Applied on his explicit yes (the first attempt was blocked by the session's safety check, which is correct for a shared table). **Verified by hash: 9,954 compared rows, `8c6c1d527eeae65435008eacb1b38db0` on both sides.**
-
-### B. CAF Champions League prelims no longer page anyone (ruling)
-
-Ashwin: "I want the ntfy notifications to stop as I'm not going to add any more African teams unless they make the CAF Champions League group stage (not prelims)." Implemented as an opt-in gate, not a mute:
-- `leagues.json` league 12 gains `"lookup_gate": "group_stage"`.
-- `refresh.py`: pure `gate_defer()` plus `MAIN_STAGE_ROUND_RE`. A team is DEFERRED only when every league it appeared in this run carries the gate AND none of those appearances is main stage (a standings row, or a fixture round matching group / quarter / semi / final). Deferred teams are not written to `football_team`, do not count as unmatched and do not exit 3, but each is logged by name (`deferred (CAF prelims, ...)`), and the api-name display fallback still names them on the site.
-- Self-test covers five planted cases (prelim-only defers; group-stage fixture alerts; standings row alerts; prelim plus a non-gated league alerts; a non-gated league's prelim alerts) and was proven to FAIL with the logic inverted.
-- Real round labels in today's bundle are "1st Preliminary Round" and "2nd Preliminary Round"; neither matches. **The group-stage label has never been seen**, so the first run after the CAF draw must show group-stage clubs as UNMATCHED, not deferred. Backlog row filed for the mini.
-- The job does an ff-merge at the start of each run, so the next football-standings slot after the push picks this up.
-
-### C. Owners: full sweep, applied today on Ashwin's instruction (not waiting for Monday)
-
-Research sweep 2026-09-07 to 09-18 over every contested row plus new transactions; curation rules from `run-owners-weekly.sh` and `check-owners-watchlist.py`.
-- **Chelsea RESOLVED:** Clearlake bought out Boehly's and Walter's stakes (reported combined ~$950m, Bloomberg 16 Sep, CNBC 17 Sep), now 99.9% and sole controller; Boehly stepped down as chairman; Wyss keeps an economic interest without control. Dodgers row text that said Walter holds a Chelsea stake corrected.
-- **Timberwolves / Lynx:** no NBA release or official recap of the 14-15 Sep BoG mentions the Stad sale; presumed pending; review moved 09-18 to 10-16. Not proof of non-approval: WebFetch was blocked on startribune.com and sportico.com. **Mini, Monday's run: check a Minneapolis source.**
-- **West Ham:** moved, not resolved; completion expected end of September with reported post-completion stakes noted.
-- No change: Lakers (not on the docket), Crystal Palace, Sevilla, Sounders, Whitecaps, Earthquakes, Lightning, Angels.
-- Flagged, not applied: Giants (Koch 10%) and 49ers (Briger 3.2%) minority sales approved in Oct 2025 are missing from those rows' minority text. Pre-dates the window; left for a curation pass.
-- Gates: build self-test 16/16, 220 franchises, `check-owners-watchlist` OK (11 contested, none due). Runtime read with tag `owners`, so no build; there is no revalidate secret on this box, so the hourly ISR window publishes it.
-
-### D. Notion: why it went stale, and the fix
-
-Measured today: six Backlog rows open for finished work (Sweden, three NFL Friday watches, NRL finals, evening news), one item duplicated, and **no Decisions row since 09-11** although about ten rulings were made. Causes: the Notion rule was one paragraph of advice while HANDOFF had a standing rule; the mini had no ids (they lived in Windows memory); nothing checked; and scheduled jobs had no home at all.
-
-Fixed:
-- **Notion operating contract** page (under Citizen of Nowhere): what lives where, start / during / end duties, the trigger table.
-- **Scheduled jobs** database: 90 rows, every job on every machine (31 dispatcher jobs, launchd agents including the newsletter ones, 34 workflows, 13 Claude cloud tasks, 3 Windows tasks, healthchecks). Built from the REPO copy of `jobs.toml`; Backlog row for the mini to reconcile against the live copy.
-- **CLAUDE.md** section rewritten as a hard rule with every database id inline, so the mini no longer depends on Windows memory.
-- **`.githooks/pre-commit`**: a commit that adds HANDOFF lines without a `**Notion:**` line is rejected (`SKIP_NOTION_CHECK=1` overrides loudly). Tested in a temp clone, five cases plus deletion. `core.hooksPath` is already `.githooks` on Windows; confirm on the mini.
-- **Notion reconciler**, Claude cloud task `trig_01MeTbjkpBua9UMypHz7KRFh`, daily 06:30 UTC: closes finished rows, adds missing rulings and jobs, files doubts, logs one line on the contract page. A backstop, not the process.
-- Reconciled today: 8 Backlog rows closed, 5 added, 11 Decisions rows added (09-13 to 09-18).
-
-Found by the inventory, for Ashwin: the Windows task "Daily Newsletter Digest" has failed daily since 29 June (81 missed runs) while the mini runs the same pipeline. Backlog row filed; likely a leftover to retire.
-
-**Notion:** Backlog closed 8 (NFL seeds watch, NFL Friday refresh, NFL hand dispatch, NRL finals, Sweden, evening news, 45 AFC/CAF clubs, duplicate build-cap row), added 5 (Windows newsletter task, CAF group-stage regex check, reconciler first run, live jobs.toml reconcile, stale REBUILD-RUNBOOK table); Decisions added 11; Scheduled jobs database created with 90 rows; Notion operating contract page created.
 

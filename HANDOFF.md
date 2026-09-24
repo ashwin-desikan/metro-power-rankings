@@ -19775,3 +19775,71 @@ known was a 90 minute burn and a page on 3 October.
 **Notion:** Backlog P1 "Activate fans-monthly on the Mac mini" stays OPEN, with the measurements, the two problems and
 the parking method written onto the row. Scheduled jobs row "fans-monthly (Fan Attention Index refresh)" deliberately
 NOT moved to Active and left at `One-off (pending)`.
+
+### AW. fans-monthly is live, on one Wikimedia dump instead of 26,602 requests
+
+Activated 2026-09-24, first scheduled run 3 October 07:00 UTC. Parked for a few hours the same morning (section AV),
+because the per-article fetch could not finish. Replaced, validated end to end, and unparked.
+
+**Measured on this machine rather than estimated:**
+
+| | |
+| --- | --- |
+| requests per run | **1**, replacing 26,602 |
+| dump pass | 5.02 GB, 439M lines, **16.1 min**, never written to disk |
+| key coverage | 26,037 of 26,602, **97.9 percent** |
+| REST parity | **24 of 24** checkable values identical |
+| August views recorded | 770 of 770 teams non-zero, 41,862,454 total |
+| Trends | pytrends installed and working: 143 values refreshed across 7 groups, 0 nulled |
+
+The one non-comparison in the parity sample was the REST API returning 429, which is the fault being removed.
+Non-ASCII titles matched exactly across `wuu`, `ko`, `th`, `mzn`, `pa`, `ru`, `os`, `ar`, which is what confirms the
+lookup key is a raw UTF-8 underscored title and not a percent-encoded one.
+
+🔴 **TWO THINGS THE IMPLEMENTATION HAD TO GET RIGHT, both pinned by self-tests rather than trusted.** The dump splits
+each article across up to three lines by access method, and the endpoint it replaces asked for `all-access`, so the
+figure is the SUM. Reading one line per article would under-count by roughly the mobile share, which is most of
+Wikipedia's traffic, and every downstream number would still look plausible. And there is no per-team failure mode any
+more: either the whole dump read and the match-rate gate passed, or it raises and the run makes no claim about the
+month. The old path recorded partial months as truth, team by team, and did.
+
+**THREE DEFECTS THE GATE CAUGHT, AND NONE OF THEM WAS FINDABLE BY READING.** This is the part worth keeping.
+
+1. `--dry-run` wrote two history files, because `append_history_month()` ran before the dry-run check (`a347a08a9`).
+2. **`DRY_RUN=1` never reached the script at all.** `_common.sh`'s `DRY_RUN` gates `commit_paths` and
+   `revalidate_ping` and nothing else, so the "DRY_RUN validation" that `jobs.toml` instructs the next person to
+   perform ran the ENTIRE real pipeline and left the shared clone dirty with four generated paths. Fixing defect 1 was
+   therefore necessary and insufficient, and only running the runner showed it. The runner now passes the flag through,
+   verified by tracing the actual argv rather than by reading the script.
+3. 🔴 **`scripts/fans/_scratch_csv/` was neither committed nor ignored.** Every real run would leave it untracked, and
+   `detect_issues.py`'s `find_dirty_tree` reads `git status --porcelain`, so from 3 October onward one monthly job would
+   have made ops-autofix stand down as a BLOCKER, permanently, and stop re-running every failed job in the fleet. A
+   monthly job would have disabled the auto-fixer and nothing would have said so. Now in `.gitignore`.
+
+Defect 3 is the one to remember. It is not a fault in fans-monthly at all; it is a fault in the coupling between "a job
+leaves debris" and "a detector treats any debris as a blocker", and it would have presented as ops-autofix mysteriously
+doing nothing from October onward.
+
+**pytrends added to the venv** and pinned at 4.9.2 in `mac-mini-jobs/metro-venv-requirements.txt`, at Ashwin's
+instruction, after the gate showed it absent. A 15 KB wheel with every dependency already satisfied. It then worked
+against Google Trends for all seven blended groups inside the same gate run, which is a better result than expected for
+a library last released in 2023. Installing it mid-run was deliberate: `fetch_trends_for_group` imports it at call time,
+and the dump pass still had thirteen minutes to run, so the gate exercised the real path instead of the documented
+`ImportError` fallback.
+
+**Timeouts fitted to the measurement,** `STEP_TIMEOUT` 5400 to 3600 and `timeout_minutes` 110 to 75, both about 4x the
+observed pass. The comments that explained the old numbers were rewritten rather than left contradicting the code, and
+the roster note at the top of `jobs.toml` no longer says "NOT DRY_RUN-validated".
+
+**The August data the gate produced was reverted, not committed.** The 3 October run produces September, and committing
+would have spent a production build nobody asked for: this job carries no `[vercel skip]` on purpose, because
+`lib/fanIndex.ts` reads `fan-attention.json` at build time.
+
+⚠️ **Still true and worth flagging:** that monthly commit is the only one in `mac-mini-jobs/` that triggers a build, and
+its subject begins `Auto:`, which `commits-recent.txt` excludes. So the one commit a month that does deploy is invisible
+to the reconciler's ground-truth input. Not fixed here; it is the same "the input cannot show this class of thing" shape
+as the merge commits fixed this morning in section AR.
+
+**Notion:** Scheduled jobs row "fans-monthly (Fan Attention Index refresh)" moved from `One-off (pending)` to
+**Active** with Last verified 2026-09-24, and Backlog P1 "Activate fans-monthly on the Mac mini" closed. Both verified
+over REST rather than accepted from the write's return value.

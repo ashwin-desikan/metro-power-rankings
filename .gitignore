@@ -229,3 +229,11 @@ reel-build/
 
 # disposable output of npm run probe:mobile
 .probe-shots/
+
+# scripts/fans/monthly_refresh.py writes per-group CSVs here as an intermediate
+# step for csv_to_json.py, and fans-monthly.sh does NOT commit them. Untracked
+# debris is not harmless on the mini: detect_issues.py's find_dirty_tree reads
+# `git status --porcelain`, so an uncommitted anything makes ops-autofix stand
+# down as a BLOCKER and stop re-running failed jobs. Left unignored, one monthly
+# job would have disabled the auto-fixer permanently from 2026-10-03 onward.
+scripts/fans/_scratch_csv/

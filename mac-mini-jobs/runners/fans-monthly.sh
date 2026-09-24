@@ -47,8 +47,18 @@ guarded "self-test monthly_refresh" "$PY" scripts/fans/monthly_refresh.py --self
 # {}. That is fail-open by design and the Wikipedia half is unaffected, but it
 # means /fans keeps whatever trends_index the Windows session last produced. Read
 # the log, not the exit code, to know whether Trends actually refreshed.
+# 🔴 DRY_RUN=1 ALONE IS NOT A DRY RUN OF THIS SCRIPT, so the flag is passed
+# through. _common.sh's DRY_RUN gates commit_paths and revalidate_ping and
+# nothing else, so without this the "DRY_RUN validation" that jobs.toml tells the
+# next person to perform runs the entire real pipeline and WRITES
+# universe_state.json, the history month, the scratch CSVs and fan-attention.json.
+# Measured 2026-09-24: that is exactly what the first validation run did, and it
+# left the shared clone dirty, which stops every job that fast-forwards and cost
+# about fourteen hours that morning (HANDOFF section AI).
+_fans_dry=""
+[ "$DRY_RUN" = "1" ] && _fans_dry="--dry-run"
 STEP_TIMEOUT=3600 guarded "monthly pageviews + trends + history + rebuild" \
-  "$PY" scripts/fans/monthly_refresh.py
+  "$PY" scripts/fans/monthly_refresh.py $_fans_dry
 
 commit_paths "Auto: fan attention index monthly refresh" \
   scripts/fans/universe_state.json \
