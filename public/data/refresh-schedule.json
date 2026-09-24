@@ -14,7 +14,7 @@
       "days_of_month": [],
       "last_run": {
         "date": "2026-09-24",
-        "status": "failed"
+        "status": "ok (manual)"
       }
     },
     {
@@ -30,7 +30,7 @@
       "days_of_month": [],
       "last_run": {
         "date": "2026-09-24",
-        "status": "failed"
+        "status": "ok (manual)"
       }
     },
     {
@@ -136,7 +136,7 @@
       "days_of_month": [],
       "last_run": {
         "date": "2026-09-23",
-        "status": "failed"
+        "status": "ok (manual)"
       }
     },
     {
@@ -435,7 +435,7 @@
       "days_of_month": [],
       "last_run": {
         "date": "2026-09-24",
-        "status": "failed"
+        "status": "ok (manual)"
       }
     },
     {
@@ -488,7 +488,7 @@
       "days_of_month": [],
       "last_run": {
         "date": "2026-09-24",
-        "status": "failed"
+        "status": "ok (manual)"
       }
     },
     {
@@ -524,7 +524,7 @@
       "days_of_month": [],
       "last_run": {
         "date": "2026-09-24",
-        "status": "failed"
+        "status": "ok (manual)"
       }
     },
     {
@@ -602,7 +602,7 @@
       ],
       "days_of_month": [],
       "last_run": {
-        "date": "2026-09-23",
+        "date": "2026-09-24",
         "status": "ok"
       }
     },
