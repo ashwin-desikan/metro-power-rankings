@@ -1,3 +1,4 @@
+2026-09-24T18:01:53+01:00  8e24f66b7  football: refresh live bundles [vercel skip]
 2026-09-24T17:02:09+01:00  831c65aa3  football: refresh live bundles [vercel skip]
 2026-09-24T14:55:54+01:00  624721779  fans-monthly activated: dump switch validated, three plumbing defects fixed [vercel skip]
 2026-09-24T14:32:25+01:00  ca26654dd  fans monthly: one Wikimedia dump instead of 26,602 requests, and unparked [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-22T12:14:47+01:00  52f467a77  gap-watch: announce every auto-promotion, not just failures [vercel skip]
 2026-09-22T12:04:13+01:00  504c90186  football: refresh live bundles [vercel skip]
 2026-09-22T10:01:04+01:00  d7d4a4382  data: cricket weekly refresh [vercel skip]
-2026-09-22T09:56:33+01:00  c2761b021  hooks: stop calling every public/ data commit "the documented ISR exception" [vercel skip]

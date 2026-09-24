@@ -19883,3 +19883,52 @@ for the old, and the runner's `commit_paths` still carries its three paths.
 
 **Notion:** Scheduled jobs row "fans-monthly (Fan Attention Index refresh)" updated with the new commit subject, the
 reason, and the release-notes gate finding. No other queryable state changed.
+
+### AY. football-standings FAILED because fifteen jobs are scheduled twice, and 25 October makes it worse
+
+The ntfy was real. `run-football-standings.sh` logged `push rejected (attempt 1)` then
+`ERROR: rebase after push-reject failed` at 17:01:58Z. The dispatcher's own run of the same job succeeded at the same
+moment (`DONE football-standings: ok 112s`). Two instances raced; one pushed `8e24f66b7`, the other had committed
+`b63bb8548` two seconds earlier, lost the push, failed its rebase and alerted.
+
+🔴 **THE CAUSE IS NOT THE RACE, IT IS THAT FIFTEEN JOBS HAVE TWO SCHEDULERS.** Audited every loaded launchd agent
+against `jobs.toml`:
+
+- 18 `com.citizenofnowhere.*` agents are loaded; 15 of them are ALSO dispatcher jobs with a real launchd schedule
+  (`StartInterval` or `StartCalendarInterval`), none disabled.
+- `jobs.toml` lines 214 to 227 record thirteen of them, by name, as **"Plist unloaded."** They are not. The
+  legacy-launchd migration is recorded as closed and is not.
+- All 15 are unprotected: every one runs a TOP-LEVEL `mac-mini-jobs/run-*.sh` that never sources `_common.sh`, so
+  neither instance takes the dispatcher lock. The lock re-entrancy added 2026-09-20 protects `runners/` scripts and
+  none of these.
+
+**Why only this one has ever failed, and why that is the unlucky part rather than the lucky part.** The plists use
+LOCAL calendar times and the dispatcher uses UTC, so under BST they miss each other by an hour. `football-standings` is
+the exception because its plist lists BOTH hours of each intended slot (05 and 06, 11 and 12, 17 and 18, 23 and 00) to
+cover GMT and BST, so one of each pair always coincides. It fires 8 times a day against the dispatcher's 4, and today
+two of them landed 4 seconds apart.
+
+⚠️ **DATED: 2026-10-25.** When BST ends, local time equals UTC and **every one of the fifteen collides with its own
+dispatcher slot**, all fifteen unprotected by the lock. `jobs.toml` line 267 already anticipates the clock change for a
+different reason. Today's single failure is the preview.
+
+**Done now, scoped to the live failure:** the duplicate commit `b63bb8548` was discarded (`reset --hard origin/main`;
+the winner is already on origin and the trees differed only in the same two regenerated files), and
+`com.citizenofnowhere.football-standings` was booted out and its plist moved to `~/Library/LaunchAgents/retired/` so it
+cannot reload at login. That restores what `jobs.toml` already claims. The dispatcher still owns the job:
+`--status` reads `09-24 17:00 ok already-ran`.
+
+**NOT done, and it needs Ashwin's yes because it is fourteen more agents on his machine:** unload the other fourteen.
+The commands are `launchctl bootout gui/$(id -u)/com.citizenofnowhere.<slug>` then move the plist to `retired/`, for
+activity-feed, substack-daily, euro-comps, gap-league-watch, screen-number-ones, rugby-weekly, cricket-weekly,
+fiba-weekly, sound-weekly, feed-monitor, conflicts-monthly, cricket-monthly, egress-refresh and deploy-watch. Until
+then those jobs run twice on an offset, which is wasteful rather than broken, and becomes broken on 25 October.
+
+**The lesson worth keeping, and it is the third time today.** "Plist unloaded" was written in the file that is supposed
+to be the schedule's source of truth, and nothing ever checked it. `dispatcher.py --check-sync` compares the repo to the
+live directory and cannot see launchd at all, so the one drift it cannot detect is the one that matters most: a second
+scheduler nobody remembers. A `--check-sync` that also diffed loaded agents against `jobs.toml` would have caught this
+in August.
+
+**Notion:** none by this entry. A Backlog row for the fourteen remaining agents and for teaching `--check-sync` about
+launchd is worth filing once Ashwin rules on the unload.
