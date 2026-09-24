@@ -19511,3 +19511,35 @@ contract page's log, because the grant it needed exists. That was the blocker na
 
 **Notion:** the Decisions row for the receipt design is still unwritten, pending Ashwin's ruling. When it is written,
 its reason should cite cost rather than AN's impossibility finding.
+
+### AQ. Confirmed live: the limiter is genuinely shared, and the register entry is now Detected
+
+The AO/AP work is deployed and measured on production rather than expected. `/api/health/limiter` answers
+`{"store":"redis","shared":true,"probeMs":87}`, `find_limiter_degraded()` returns no findings, and the whole
+`detect_issues.py` run reports "no findings; nothing to do".
+
+**So the question a session could not answer is answered, and the answer is good.** `KV_REST_API_URL` and
+`KV_REST_API_TOKEN` are set for Production, which is the second pair `lib/kv.ts` accepts, so the eight limits that
+share `checkRateLimit` were holding across the fleet all along. The spend cap and the admin-login brute-force limit
+were real, not per-instance. AN recorded that as unverified because `filter_project_envs` is 403 for a session token;
+the mini now measures it every two hours instead of anyone trusting it.
+
+Worth being precise about what was and was not wrong. The silent-failure entry was correct that the degradation was
+unobservable, and correct that the surface had widened from one route to eight. It was NOT evidence that anything was
+degraded, and this session was careful not to claim it was. The fix therefore ships into a healthy state, which is the
+right time to ship an observer: there is a known-good baseline to compare against.
+
+**The Silent failure register entry is updated to Detected**, naming the detector, the probe-not-count design, the
+measured production values, and the urllib 403 finding from AP as the transferable lesson. Verified by re-reading the
+page over REST rather than trusting the MCP write's return value, which in this workspace is not proof. That REST read
+was itself only possible because of the parent-page share earlier today, so AP's correction paid for itself within the
+hour.
+
+**Notion:** register entry moved to Detected. Nothing else outstanding from the rate-limiter work. The open Notion
+items are unchanged: the receipt-design Decisions row (pending Ashwin's ruling), the `/api/v` row (pending one word),
+and a new P2 worth filing for the `commits-recent.txt` generator, which uses `--no-merges` and regenerates from
+whatever HEAD the clone is on. Both halves of that were the reconciler's finding and both were confirmed mechanically
+here: merge commits are absent by construction, so "branch X is merged" is uncheckable from that file, and branch
+commits leak into it (`1a8f66819`, `3b6ca4e4d` and `96ca87654` are all present). The two-line fix, deliberately NOT
+applied because the hook runs on every commit and deserves its own change: drop `--no-merges`, and skip regenerating
+when HEAD is not `main`.

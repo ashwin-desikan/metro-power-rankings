@@ -1,3 +1,4 @@
+2026-09-24T11:49:47+01:00  c848c6782  detect_issues: the limiter probe needs a User-Agent or it 403s for ever [vercel skip]
 2026-09-24T11:46:45+01:00  951f230e0  rate limiter: make the silent per-instance fallback observable
 2026-09-24T11:46:44+01:00  6d3184237  detect_issues: probe the site's rate limiter and report a degraded one [vercel skip]
 2026-09-24T11:27:59+01:00  bdb9feba1  HANDOFF: 2026-09-24 section AN, register entry filed, and the Notion parent share does not exist [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-22T02:15:38+01:00  16dac8460  ops: daily sweep 2026-09-22 [vercel skip]
 2026-09-22T00:05:58+01:00  5fe3b7594  football: refresh live bundles [vercel skip]
 2026-09-21T20:52:41+01:00  000351242  forecast(il): step B2, re-read the seven polling articles from raw wikitext [vercel skip]
-2026-09-21T19:11:10+01:00  5d10d273f  Release notes: trim 21 Sep entry
