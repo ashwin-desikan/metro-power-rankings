@@ -1,4 +1,6 @@
--- RLS hardening. DRAFT, NOT APPLIED. Written 2026-09-23 for review.
+-- RLS hardening, part 1 of 2. APPLIED 2026-09-24 08:06Z, recorded upstream as
+-- version 20260924080603. Renamed from 20260923143213_rls_hardening.sql, which
+-- was the unapplied draft and also carried part 2; see the note at the bottom.
 --
 -- Audited against the live database first, read only, and TWO OF THE FOUR
 -- THINGS THIS FILE WAS ASKED TO DO TURN OUT TO BE ALREADY DONE. They are
@@ -22,12 +24,30 @@
 --    table in `public` has relrowsecurity set.
 --
 -- What is left is real, and it is all about picks.
+--
+-- FINDING (c2), FIXED HERE: a player could rewrite or delete a pick after the
+-- event started. picks_update_own and picks_delete_own enforced ownership and
+-- nothing about timing, so a pick could be changed once the result was known.
+--
+-- FINDING (c1), NOT FIXED HERE: every pick is world readable, before the game
+-- as well as after. That is the read policy, and it is part 2. See the bottom.
+--
+-- 🔴 WHY THE OBVIOUS ONE-LINER WAS NOT POSSIBLE. There was nothing in the
+-- database to compare a lock against. public.picks is
+-- (user_id, league, season, event_key, mode, pick, confidence, picked_at) and
+-- carries no kickoff or lock column, and no table mapped event_key to a start
+-- time: the keys are league-shaped, "2026-08-21:arsenal" for the Premier
+-- League and bare ESPN event ids such as 401872656 for the NFL and college
+-- football, while football_fixtures is keyed on api-football ids and the ESPN
+-- schedule lives in committed JSON rather than in Postgres. A policy cannot
+-- read a JSON file. So the lock time had to be brought INTO the database
+-- before any policy could enforce it, which is what this migration does.
 
 begin;
 
--- ---------------------------------------------------------------------------
--- A record of the policies as they stood when this was drafted, so the change
--- can be reasoned about and reversed without digging through history.
+-- A record of the policies as they stood when this was applied, so the change
+-- can be reasoned about and reversed without digging through history. 98 rows
+-- captured.
 create table if not exists public._rls_audit_20260923 (
   captured_at timestamptz not null default now(),
   tablename   text,
@@ -45,34 +65,6 @@ select tablename, policyname, cmd, roles::text, qual, with_check
 alter table public._rls_audit_20260923 enable row level security;
 -- No policy on it, so it is readable only by a key that bypasses RLS.
 
--- ---------------------------------------------------------------------------
--- FINDING (c1): every pick is world readable, before the game as well as after.
---
---   picks_select_all : SELECT, role PUBLIC, using (true)
---
--- So an anonymous caller can read what anyone has picked while the pick is
--- still live. For a picks game that is the whole contest: it lets a later
--- player copy an earlier one, and it does not need an account to do it.
---
--- FINDING (c2): a player can rewrite or delete a pick after the event starts.
---
---   picks_update_own : UPDATE, using/with check auth.uid() = user_id
---   picks_delete_own : DELETE, using auth.uid() = user_id
---
--- Neither carries any time condition, so a pick can be changed once the result
--- is known. Ownership is enforced; timing is not.
---
--- 🔴 WHY THE OBVIOUS ONE-LINER IS NOT POSSIBLE. There is nothing in the
--- database to compare a lock against. public.picks is
--- (user_id, league, season, event_key, mode, pick, confidence, picked_at) and
--- carries no kickoff or lock column, and no table maps event_key to a start
--- time: the keys are league-shaped, "2026-08-21:arsenal" for the Premier
--- League and bare ESPN event ids such as 401872656 for the NFL and college
--- football, while football_fixtures is keyed on api-football ids and the ESPN
--- schedule lives in committed JSON rather than in Postgres. A policy cannot
--- read a JSON file. So the lock time has to be brought INTO the database
--- before any policy can enforce it, which is what this section does. Review
--- this part hardest: it adds a table and a writer, not just a grant.
 create table if not exists public.pick_locks (
   league     text not null,
   season     text not null,
@@ -93,6 +85,12 @@ create policy pick_locks_public_read on public.pick_locks
 
 -- True when the event has no recorded lock time yet, or that time is still in
 -- the future. STABLE, not IMMUTABLE: it reads a table and the clock.
+--
+-- security invoker, deliberately. The subquery is therefore subject to
+-- pick_locks' own RLS, which is why that table needs the public read policy
+-- above: without it the subquery would return no row, coalesce would fall to
+-- true, and every event would read as open. Verified after applying that anon
+-- and authenticated both hold EXECUTE here and can see pick_locks.
 create or replace function public.pick_is_open(p_league text, p_season text, p_event_key text)
 returns boolean
 language sql
@@ -110,15 +108,16 @@ $$;
 
 -- 🔴 THE DEFAULT ABOVE IS A DELIBERATE CHOICE AND IT IS THE RISKY ONE.
 -- With pick_locks empty, `true` means nothing is locked and this migration
--- changes no behaviour on day one, which is what makes it safe to apply before
--- the lock feed exists. It also means an event missing from pick_locks is
--- editable for ever, so the guarantee is only as good as the feed that fills
--- the table. Flipping the default to false is the fail-closed choice and would
--- freeze every pick the moment this lands, including for events nobody has
+-- changed no behaviour on the day it landed, which is what made it safe to
+-- apply before the lock feed exists. It also means an event missing from
+-- pick_locks is editable for ever, so the guarantee is only as good as the feed
+-- that fills the table. Flipping the default to false is the fail-closed choice
+-- and would freeze every pick immediately, including for events nobody has
 -- loaded yet. Do not flip it until pick_locks is populated and a job keeps it
 -- current; that job does not exist yet and is the real prerequisite here.
 
--- Ownership AND timing on writes.
+-- Ownership AND timing on writes. With pick_locks empty these are equivalent to
+-- the policies they replace; they begin to bite when the lock feed exists.
 drop policy if exists picks_update_own on public.picks;
 create policy picks_update_own on public.picks
   for update
@@ -137,17 +136,20 @@ create policy picks_insert_own on public.picks
   for insert
   with check ((select auth.uid()) = user_id and public.pick_is_open(league, season, event_key));
 
--- Your own picks always; everyone else's only once the event has locked.
-drop policy if exists picks_select_all on public.picks;
-create policy picks_select_own_or_locked on public.picks
-  for select
-  using ((select auth.uid()) = user_id or not public.pick_is_open(league, season, event_key));
-
--- ⚠️ READ THIS BEFORE APPLYING. With pick_locks empty, pick_is_open is true
--- everywhere, so the SELECT policy above hides EVERY other player's picks and
--- any leaderboard that reads picks with the anon key goes blank. That is the
--- correct end state and the wrong first move. Either populate pick_locks in
--- the same change, or land the write policies first and the read policy after
--- the feed exists. Check which key the leaderboard reads with before choosing.
-
 commit;
+
+-- ---------------------------------------------------------------------------
+-- 🔴 PART 2 IS NOT IN THIS FILE, AND NOT IN migrations/ AT ALL.
+--
+-- The draft also replaced picks_select_all with picks_select_own_or_locked.
+-- That is the fix for finding c1 and it is the ONLY part that changes
+-- behaviour while pick_locks is empty: pick_is_open is true everywhere, so the
+-- policy would hide every other player's rows. app/play/picks/PicksClient.tsx
+-- builds the global leaderboard by reading the whole picks table with the
+-- BROWSER client, and its own comment says so ("Leaderboard data (signed-in
+-- only; RLS makes picks world-readable)"), so applying it would have blanked
+-- the leaderboard for everyone.
+--
+-- It lives in supabase/pending/20260924_picks_read_policy.sql, outside
+-- migrations/ on purpose, so `supabase db push` cannot apply it by accident.
+-- That file carries the prerequisites.

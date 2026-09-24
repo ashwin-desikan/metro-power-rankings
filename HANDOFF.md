@@ -19187,3 +19187,56 @@ once the tick finished and both landed at 07:19:39Z, `screen-number-ones` and `s
 to `ok (manual)`.
 
 **Notion:** none (no queryable state changed).
+
+### AK. The RLS migration is applied, minus the one statement that would have blanked the leaderboard
+
+Applied 2026-09-24 08:06Z, recorded upstream as version `20260924080603 rls_hardening_locks_and_writes`. Ashwin
+approved applying it; the draft from section AE had been held for review.
+
+**Applied: the lock substrate and the write policies.** `public.pick_locks` (league, season, event_key, locks_at,
+updated_at) with RLS on and a public read policy, `public.pick_is_open()` as a STABLE security-invoker function, and
+`picks_insert_own`, `picks_update_own`, `picks_delete_own` rewritten to carry the lock condition alongside ownership.
+That closes finding c2, a player rewriting or deleting a pick after the result was known, as soon as the lock feed
+exists. `public._rls_audit_20260923` captured 98 policy rows first and is readable only by a key that bypasses RLS.
+
+**HELD BACK: the picks SELECT policy, which is the one that fixes finding c1.** My own draft carried a warning about
+this and it was right. With `pick_locks` empty, `pick_is_open` is true everywhere, so
+`picks_select_own_or_locked` collapses to "your own rows only". `app/play/picks/PicksClient.tsx` builds the global
+leaderboard by reading the entire picks table with the BROWSER client, and its comment at line 318 says so in terms:
+"Leaderboard data (signed-in only; RLS makes picks world-readable)". Applying it would have reduced that board to one
+player, silently, with no error anywhere. So finding c1, every pick being world readable before the game, is STILL
+OPEN.
+
+Two routes out, either sufficient, recorded in the file itself:
+
+- **Populate `pick_locks` and keep it current.** The end state the design wants, and the Notion backlog row
+  "pick_locks feed" is exactly this. Then the policy means what it says and settled events stay visible.
+- **Move the leaderboard read server side**, behind a route handler using the service key. Smaller, fixes c1 without
+  waiting for the feed, but it is app work rather than SQL.
+
+**Where part 2 lives, and why not in `migrations/`.** `supabase/pending/20260924_picks_read_policy.sql`. Anything
+under `supabase/migrations/` is applied by `supabase db push`, so leaving it there with a migration-shaped name would
+be a loaded gun for whoever next runs a push. The file carries the prerequisites, the breakage warning and a rollback.
+The draft `20260923143213_rls_hardening.sql` was renamed to the version that actually landed, so the repo and the
+remote history agree.
+
+**Verified after applying, not assumed:**
+
+| check | result |
+| --- | --- |
+| the three picks write policies reference `pick_is_open` | yes, all three |
+| `picks_select_all` still `using (true)` | yes, untouched, leaderboard intact |
+| `pick_is_open('nfl','2026','401872656')` | true, so no behaviour change today |
+| `pick_locks` rows | 0 |
+| EXECUTE on `pick_is_open` for anon and authenticated | both true |
+| as role `authenticated`: function runs, `pick_locks` visible | yes |
+
+That last pair was the real risk and the reason to check rather than reason. A policy that calls a function the
+caller cannot execute, or that reads a table the caller cannot see, does not warn: it just refuses the write. Under
+`security invoker` the subquery is subject to `pick_locks` own RLS, which is why that table needs its public read
+policy. If it lacked one, the subquery would find nothing, `coalesce` would fall through to true, and every event
+would silently read as open, which is the failure that looks like success.
+
+**Notion:** the existing Backlog row "pick_locks feed: the RLS draft cannot enforce a lock until something populates
+it" is now the blocker for finding c1 rather than a nice-to-have, and is worth re-describing as such on the next
+Notion pass.
