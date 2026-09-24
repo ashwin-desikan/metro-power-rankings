@@ -19978,3 +19978,11 @@ Pushed on Ashwin's instruction ("commit and push everything to main").
 Ashwin reported /fans ignoring his Google sign-in although the next page showed him signed in. Cause: app/api/fans/route.ts (and /api/fans/history, /api/feedback) read NEXT_PUBLIC_SUPABASE_ANON_KEY straight from the environment; in production that variable has held a placeholder with non-Latin-1 characters (documented in lib/supabaseClient.ts), so Node's fetch throws while building the apikey header, token verification returns null, and the route answers 401. FanGate then fell back to the sign-in card. Fix: new lib/supabasePublic.ts validates the env URL and key and falls back to the public constants, used by all three routes. FanGate and TrendsGate now retry once after refreshSession() on a 401 and show the error state (not the sign-in card) when a signed-in visitor is refused. Worth fixing the Vercel env var itself too (Backlog-worthy, not done here).
 
 **Notion:** no rows changed by this entry.
+
+## 2026-09-25 (overnight): cowork (Windows device session, scheduled) → next session (32 more owner rows)
+
+The scheduled owner research (trig_01PyTDZofBXBm3YtmXBzznwQ) wrote scripts/data/owner_fragments/rows_E.json: 32 of the 48 missing teams. Merged into scripts/data/team-owners-seed.json (appended, no reordering); Casa Pia's contested row given pending_* fields from its own sourced note (Krause Group majority agreed July 2026, review by 2026-11-01). team-owners.json rebuilt: 593 franchises, 512 owner entities; check-owners-watchlist OK.
+
+🔴 16 board teams still have no owner row, so build-team-owners-data.py still fails validation and owners-weekly will not commit until they are filled: FC Groningen; RC Vannes; Handball-Bundesliga: Füchse Berlin, HSG Wetzlar, Rhein-Neckar Löwen, SG Flensburg-Handewitt, TBV Lemgo Lippe, THW Kiel, TSV Hannover-Burgdorf, TVB 1898 Stuttgart, TuS N-Lübbecke; SuperLega: Gas Sales Bluenergy Piacenza, Gioiella Prisma Taranto, Itas Trentino, Pallavolo Padova, Yuasa Battery Grottazzolina. team-owners.json was written with the wrapper that tolerates only the "no owner row" class, as Ashwin accepted.
+
+**Notion:** Backlog row "Owners: merge rows for the 48 teams" updated with the 16 still missing (status stays In progress).
