@@ -9,8 +9,8 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 76, 2026-09-17 to 2026-09-23
-     If the reader counts fewer than 76 entries, its fetch window stopped
+     entries: 75, 2026-09-18 to 2026-09-23
+     If the reader counts fewer than 75 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
 ## 2026-09-23 (later): cowork (Windows device session) → next session (/fans nav wiring)
@@ -508,6 +508,41 @@ checks. Deliberately not deleted from here: it is the reconciler's row and one w
 **Notion:** the Backlog P2 the reconciler filed for `commits-recent.txt` is done by this entry and can be closed. The
 Scheduled jobs row for the limiter probe should be deleted or folded into `ops-autofix`, per above. The receipt-design
 Decisions row is still pending Ashwin's ruling.
+
+### AS. Ashwin ruled: the Notion line is verified the next day, not at commit time
+
+Decisions row written and verified over REST, not trusted from the write's return value:
+`3e5edcc4-e0f7-811a-8a02-e81ccba8569b`, Decided 2026-09-24, Area Infra / deploy.
+
+**The rule.** A HANDOFF entry's `Notion:` line is a CLAIM, not a receipt. The following day's reconciler run checks
+each line against the rows actually created or edited that day and treats a false line as a FAILURE rather than a note.
+The pre-commit hook keeps requiring the line to exist; it does not query Notion to find out whether it is true.
+
+**The reason is cost, and getting that right mattered more than the ruling.** Both options work. The rejected one has
+the hook query the day's rows at commit time, catching a false line at source; it adds a Notion round trip to every
+HANDOFF commit on the mini. The chosen one is free, because the reconciler already reads all three databases, and it is
+one day late. A false line that survives 24 hours is a much smaller problem than one that survives indefinitely.
+
+🔴 **The wrong reason nearly went in, and the row records that deliberately.** Section AN argued the hook option was
+not merely expensive but NON-FUNCTIONAL, because Notion REST could not see the Backlog or Decisions databases. That was
+true when written and dead within the hour: section AP records the parent-page share making nine data sources visible.
+So the hook option is buildable and rejected anyway. The reconciler caught this before the row was written and said it
+exactly right: a rule standing on a true conclusion and a dead premise is the shape that rots quietly. Had the row gone
+in citing impossibility, the next session to check would have found the premise false and had no way to tell whether
+the ruling survived it.
+
+**Also confirmed rather than acted on:** the `/api/v` Backlog row is already `Done`. Ashwin accepted the deletion, so
+there was nothing for this session to close, and checking first avoided a second write to a settled row. The P3 doubt
+is resolved: production no longer serves the route, nothing posts to it, and the acceptance is now on the record rather
+than inferred from a session's evidence, which is what the reconciler held out for and was right to.
+
+**Still open in Notion, and none of it is mine to close.** The P1 for the four 2026-09-23 sections whose Notion lines
+named rows that were never written, which is the defect this ruling exists to stop recurring. And the Scheduled jobs
+row the reconciler created for the rate-limiter probe, which should be deleted or folded into `ops-autofix`, because
+the probe is a finder inside `detect_issues.py` rather than a job with a runner, a slot and a tile of its own.
+
+**Notion:** Decisions row added for the receipt rule, verified over REST. Backlog `commits-recent.txt` P2 closed in AR.
+No other queryable state changed by this entry.
 ## 2026-09-23: cowork (Windows device session) → next session (Fan Attention Index /fans shipped to main)
 
 Cowork session, started from a teardown of Rascasse (audience-intelligence vendor). Built and merged a new cross-sport **Fan Attention Index** at `/fans` + `/fans/methodology`. Branch `fan-attention-index` merged `--no-ff` into main after `security-hardening`.
@@ -3919,58 +3954,4 @@ NPB correctly appears in On today only, which is the SPAIA today-only ceiling de
 One note for whoever runs the em-dash check next: a whole-file `grep '—'` on `liveData.tsx` reports 8 hits and blocks
 the commit, but they are all pre-existing, and one of them is `const DASH = "—"`, the display character itself. The
 check that means anything is the added-lines one, `git diff -U0 <file> | grep '^+' | grep '—'`.
-
-## 2026-09-17 — windows → next session (NBA season hubs, NHL odds, and two constants that were wrong)
-
-Cowork session. Two commits, one production build: `b9202b255` (builders, `[vercel skip]`) then `2f9a0f0d5` (app + lib + data, build-relevant, at the push HEAD). `npm run verify` green before the push. Deployment `dpl_HeBTthpr1zUfPcVZdhxbmEUzgh5b` reached **READY** and `rankings.citizenofnowhere.org/teams/nba/season` serves the 2026-27 shell. **Two paid Vercel builds today, which is the whole budget** — the other was the mini's CFB poll-rank commit `18eb6a0cd`.
-
-### A. THE NBA ELO IS AN EXTERNAL SERIES. WE CANNOT COMPUTE IT.
-
-This is the load-bearing finding and it is the OPPOSITE of the NFL, so anyone porting `build-nfl-elo.py` will assume wrong. Established by measurement, not by reading:
-
-- `NBA_RegSeason` "Formula Backup" carries a damped MOV shift formula that looks exactly like the NFL's (K=9.3, HFA=65). Replayed against 30,958 rated team-games it reproduces **nothing**: mean |diff| 3.26 Elo, worst 16.47, and the ratio to the real column is not constant (sd 0.13 over 5,286 rows) so it is not a fittable scale constant.
-- That formula belongs to column **BP, whose header is the keyboard-mash "sdfd"**, and which is EMPTY for every recent season. An abandoned attempt, not the generator.
-- The real column, BL "ELO Shift", is exactly `BM - BI` in **99.39%** of rows. So ELO-Post is the primitive, not the derived value.
-- ELO-Post is not internally generated either: a self-consistent pairwise Elo is zero-sum by construction, and this one is zero-sum in only **63.26% of 15,317 game pairs**. That asymmetry is the fingerprint of a published, rounded, editorially adjusted series being pasted in. The 2026 preseason seeds carried injury adjustments (Pacers −136, 76ers +143, Celtics −131) that no formula reproduces.
-
-**Consequence:** the 2026-27 season refreshes by REREADING the workbook after Ashwin updates it on a Sunday, not by carrying a chain forward in Python. `--audit` replaces `--replay`: it gates chain continuity rather than pretending to regenerate. 27 historical breaks are baselined, all pre-1984 except the **8 Mar 2008 Hawks/Heat game replayed from the 51:50 mark** (the only replayed game in modern NBA history) and a Hornets/Pelicans naming split. Named in an allowlist, not silenced, so a twenty-eighth still fails.
-
-### B. THE NHL PLAYS 84 GAMES FROM 2026-27, AND 82 WAS IN SHIPPED CODE
-
-The new CBA (term began 2026-09-16) expanded the regular season for the first time in 33 years: 1,344 games, both added games intra-division. **ESPN returned 84 per team and I treated it as a feed bug** because 82 was the number in my head; Ashwin corrected it. Two shipped call sites passed 82 (`liveData.tsx` nhlBlock, `app/teams/nhl/[slug]/page.tsx`), which ends the season two games early: once every club reaches 82, `min(games) < 82` goes false, the board closes itself and the live rows vanish with two games still to play. The number now lives once, in `GAMES_PER_SEASON` in `lib/seasonWindows.ts`.
-
-🔴 **That fix opens a new exposure, and `lib/seasonWindows.test.ts` asserts it rather than hoping it away.** A completed 82-game table now reads `82 < 84` = true, so if ESPN is still serving last season when the October window opens, the board goes LIVE showing a finished table. Not hypothetical: on 2026-09-17 ESPN was still serving the completed 2025-26 season as seasonType 2. Only the calendar window stops it. If it bites, gate on the payload's own season year; do **not** put 82 back.
-
-### C. NHL PRESEASON MISLABEL, CAUGHT 12 DAYS BEFORE THE OPENER
-
-`lib/nhl-standings.ts` and `lib/nba-standings.ts` keep private copies of the shaping logic and never inherited the 2026-09-04 NFL fix. Both ended their ladder at `"unknown"`, so `is_preseason` fell through to "are all the records zero", and preseason records are not zero. **My first fix was wrong**: I ported the NFL's `seasons[].types[]` calendar fallback, then measured live ESPN and found neither league sends `season.type`, a `seasons[]` array, or any date field in 98 KB of payload. The only season-type field either carries is `seasonType`, nested under `children[].standings`. Measure the payload before fixing the parser.
-
-⚠️ **Still unverified, and unverifiable until about 20 Sep:** whether ESPN flips `seasonType` to 1 during preseason at all. Check the NHL board between 20 and 28 Sep and record what it did.
-
-### D. NBA SEASON HUBS
-
-`/teams/nba/season` and `/teams/nba/season/[year]`, 81 seasons from 1947, built to match the NFL's. Weekly rating race, week scrubber, sortable standings, playoff bracket (the two conferences either side of a dotted rule, the Finals at the right), the twenty best games by the workbook's frozen Game Score, and the individual honours from the Awards and All-Stars sheets. The hub opens on **2026-27**, an `"upcoming"` shell carrying the field only — a status kept distinct from `"seeded"` because a page that conflates them draws an empty chart. It disappears on its own once the workbook carries the season.
-
-**ERA NAMES EVERYWHERE, CANONICAL ONLY AS A LINK.** A 1978 bracket reading "Thunder" is wrong: that club was the Seattle SuperSonics. Verified on 1979 across bracket, standings, top games and All-Star.
-
-Two mistakes worth keeping: the award-order list said "MVP" and the sheet says **"Most Valuable Player"**, so the headline award silently sorted LAST, under Coach of the Year. And the standings shipped with `data-static-sort` plus an argument for why they were the exception; the argument was wrong on the facts (`SortableBoard`'s `rank` renumbers) and wrong on the principle (sortability is a standing rule, per Ashwin).
-
-### E. NHL PLAYOFF AND CUP ODDS
-
-`scripts/predictions/build_nhl_sim.py` runs Monte Carlo on ESPN's real schedule into `public/data/nhl-sim.json`, read by `lib/nhlSim.ts` and rendered as `PO%` / `Cup%` in `nhlBlock`. Two constants **measured** from 13,511 games in NHL.xlsx: **22.46%** of games go past regulation, the home side wins **54.04%**. The three-point game is modelled explicitly; without it every points total runs about 9 low per season. Mutation testing found the bracket self-test could not see wild cards swapped between halves, so that assertion now exists.
-
-⚠️ **No market blend.** `meta.market` is null and the page says so. Regulation wins are approximate for completed games: the schedule feed gives a final score with no period detail.
-
-### F. THE ELO CHART IS NOW ONE COMPONENT
-
-`app/teams/_shared/SeasonEloChart.tsx` and `WeekScrubber.tsx`, with both sports' old paths left as re-export shims. The scrubber especially HAD to be shared: it is a React context, and two copies are two different contexts, so a page mixing them loses the scrub silently, with no error anywhere. Axes read in dates rather than the workbook's week counter, marking the year at the January crossing. A hover no longer outlives the pointer **on mouse only**: touch fires `pointerleave` on lift, which is the one moment a phone reader wants the reading to stay.
-
-### Housekeeping / open threads
-
-- 🔴 **`tsconfig.json` includes the DEV SERVER's generated types in the production typecheck** (`.next/dev/types/**/*.ts`, plus a duplicated-looking `.next/dev/dev/types/**/*.ts`). So `npm run verify` type-checks files Turbopack is actively rewriting. This cost real debugging time today: `Type error: Cannot find name 'ecific'` was a torn write in `.next/dev/types/validator.ts`, not a typo anywhere in the repo. **Do not run `npm run dev` and `npm run verify` at the same time.** I also killed Ashwin's dev server repeatedly with `Stop-Process -Force` on all node; don't.
-- The `DEP0205 module.register()` warning on every node command is `@tailwindcss/node@4.2.2`. **4.3.3 fixes it** (prefers `registerHooks`), it sits inside the declared `^4.2.2` range, and CI runs Node 20 so it never reaches a build. Local noise on Node 26 only. Ashwin's call whether to bump.
-- NOT DONE: the weekly Sunday job that restages both NBA workbooks and reruns `build-nba-elo.py --audit` then `--write`. Until it exists the NBA Elo only updates when someone runs it by hand.
-- NOT DONE, and explicitly asked for: **NFL awards and Pro Bowl in the NFL year hubs.** `build-nfl-data.py` already emits `award-winners.json` and `pro-bowl-counts.json`; they need a by-year slice and a component mirroring `SeasonHonours.tsx`.
-- NOT DONE: validating the NHL sim against NHL.xlsx's own "2026 Projections" logreg Cup odds, which was the agreed benchmark.
-- The mobile probe was NOT rerun after the last few edits (sort keys, season jumper, honours). Typecheck and full verify are green; the 390px numbers are from one revision earlier: season pages 7.0 to 7.7 phone screens, the 2027 shell 3.1, the index 6.7, no page-level horizontal scroll anywhere.
 

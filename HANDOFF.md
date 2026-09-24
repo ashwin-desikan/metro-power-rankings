@@ -19586,3 +19586,38 @@ checks. Deliberately not deleted from here: it is the reconciler's row and one w
 **Notion:** the Backlog P2 the reconciler filed for `commits-recent.txt` is done by this entry and can be closed. The
 Scheduled jobs row for the limiter probe should be deleted or folded into `ops-autofix`, per above. The receipt-design
 Decisions row is still pending Ashwin's ruling.
+
+### AS. Ashwin ruled: the Notion line is verified the next day, not at commit time
+
+Decisions row written and verified over REST, not trusted from the write's return value:
+`3e5edcc4-e0f7-811a-8a02-e81ccba8569b`, Decided 2026-09-24, Area Infra / deploy.
+
+**The rule.** A HANDOFF entry's `Notion:` line is a CLAIM, not a receipt. The following day's reconciler run checks
+each line against the rows actually created or edited that day and treats a false line as a FAILURE rather than a note.
+The pre-commit hook keeps requiring the line to exist; it does not query Notion to find out whether it is true.
+
+**The reason is cost, and getting that right mattered more than the ruling.** Both options work. The rejected one has
+the hook query the day's rows at commit time, catching a false line at source; it adds a Notion round trip to every
+HANDOFF commit on the mini. The chosen one is free, because the reconciler already reads all three databases, and it is
+one day late. A false line that survives 24 hours is a much smaller problem than one that survives indefinitely.
+
+🔴 **The wrong reason nearly went in, and the row records that deliberately.** Section AN argued the hook option was
+not merely expensive but NON-FUNCTIONAL, because Notion REST could not see the Backlog or Decisions databases. That was
+true when written and dead within the hour: section AP records the parent-page share making nine data sources visible.
+So the hook option is buildable and rejected anyway. The reconciler caught this before the row was written and said it
+exactly right: a rule standing on a true conclusion and a dead premise is the shape that rots quietly. Had the row gone
+in citing impossibility, the next session to check would have found the premise false and had no way to tell whether
+the ruling survived it.
+
+**Also confirmed rather than acted on:** the `/api/v` Backlog row is already `Done`. Ashwin accepted the deletion, so
+there was nothing for this session to close, and checking first avoided a second write to a settled row. The P3 doubt
+is resolved: production no longer serves the route, nothing posts to it, and the acceptance is now on the record rather
+than inferred from a session's evidence, which is what the reconciler held out for and was right to.
+
+**Still open in Notion, and none of it is mine to close.** The P1 for the four 2026-09-23 sections whose Notion lines
+named rows that were never written, which is the defect this ruling exists to stop recurring. And the Scheduled jobs
+row the reconciler created for the rate-limiter probe, which should be deleted or folded into `ops-autofix`, because
+the probe is a finder inside `detect_issues.py` rather than a job with a runner, a slot and a tile of its own.
+
+**Notion:** Decisions row added for the receipt rule, verified over REST. Backlog `commits-recent.txt` P2 closed in AR.
+No other queryable state changed by this entry.
