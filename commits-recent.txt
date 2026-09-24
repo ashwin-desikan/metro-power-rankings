@@ -1,3 +1,4 @@
+2026-09-24T22:49:55+01:00  6d98ce3b1  Fix /fans sign-in: API routes validate the Supabase env key before use
 2026-09-24T22:23:53+01:00  ebd7e3d23  Fan Index: Attention over time page, league-median value vs attention, college program values, sport filters
 2026-09-24T22:04:15+01:00  ad3172ac7  Load round-3 sourced valuations (47 rows), remove 11 superseded guesses, add 255 owner rows
 2026-09-24T18:24:41+01:00  317328155  Fan Attention Index v0.8: sum+peak baseline, US attention tab, sign-in gate, 116 valuations
@@ -77,4 +78,3 @@
 2026-09-22T13:49:23+01:00  f67d43333  mktcap: correct 37 provably wrong state values in mktcap_geo [vercel skip]
 2026-09-22T13:33:53+01:00  83726efca  mktcap: a free geography consistency check, and the full Jev audit [vercel skip]
 2026-09-22T12:46:26+01:00  a50d1c94f  handoff: jobs reconcile and The Hundred honours fix [vercel skip]
-2026-09-22T12:27:49+01:00  1ffdf2809  jev: audit mode, hash-order sampling, first full eval sweep [vercel skip]
