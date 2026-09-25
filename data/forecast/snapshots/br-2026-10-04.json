@@ -2,33 +2,33 @@
  "code": "br",
  "election": "2026-10-04",
  "confidence": "confirmed",
- "built": "2026-09-23",
- "daysBefore": 11,
+ "built": "2026-09-25",
+ "daysBefore": 9,
  "block": {
   "election": "2026-10-04",
   "electionDate": "2026-10-04",
   "electionConfidence": "confirmed",
   "firstRound": {
    "shares": {
-    "Lula": 39.2,
-    "F. Bolsonaro": 35.2,
-    "Cury": 6.2,
-    "Santos": 4.2,
-    "Caiado": 3.5,
-    "Zema": 1.4
+    "Lula": 39.8,
+    "F. Bolsonaro": 36.5,
+    "Cury": 5.8,
+    "Santos": 4.3,
+    "Caiado": 3.2,
+    "Zema": 1.3
    },
-   "polls": 36,
-   "latest": "2026-09-20"
+   "polls": 40,
+   "latest": "2026-09-24"
   },
   "runoffs": [
    {
-    "a": "Lula",
-    "b": "F. Bolsonaro",
-    "avgA": 45.0,
-    "avgB": 44.6,
-    "pA": 54.2,
-    "polls": 86,
-    "latest": "2026-09-20"
+    "a": "F. Bolsonaro",
+    "b": "Lula",
+    "avgA": 45.2,
+    "avgB": 45.1,
+    "pA": 51.1,
+    "polls": 89,
+    "latest": "2026-09-24"
    }
   ],
   "monthsOut": 0.5,

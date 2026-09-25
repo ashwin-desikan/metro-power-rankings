@@ -2,33 +2,33 @@
  "code": "fr",
  "election": "2027-04-11",
  "confidence": "assumed",
- "built": "2026-09-23",
- "daysBefore": 200,
+ "built": "2026-09-25",
+ "daysBefore": 198,
  "block": {
   "electionAssumed": "2027-04-11",
   "electionDate": "2027-04-11",
   "electionConfidence": "assumed",
   "firstRound": {
    "shares": {
-    "Marine Le Pen": 33.2,
-    "Jean-Luc Mélenchon": 15.8,
-    "Édouard Philippe": 15.2,
-    "Raphaël Glucksmann": 10.8,
+    "Marine Le Pen": 32.9,
+    "Jean-Luc Mélenchon": 16.3,
+    "Édouard Philippe": 15.9,
+    "Raphaël Glucksmann": 11.0,
     "Gabriel Attal": 8.3,
     "Bruno Retailleau": 7.4,
     "François Hollande": 7.0,
-    "Sarah Knafo": 4.8,
+    "Sarah Knafo": 4.2,
     "Éric Zemmour": 3.5,
-    "Marine Tondelier": 3.2,
+    "Marine Tondelier": 3.1,
     "Dominique de Villepin": 2.8,
-    "Fabien Roussel": 2.5,
-    "Nicolas Dupont-Aignan": 2.1,
+    "Fabien Roussel": 2.4,
+    "Nicolas Dupont-Aignan": 2.3,
     "David Lisnard": 2.0,
     "Karim Bouamrane": 1.0,
-    "Nathalie Arthaud": 0.9
+    "Nathalie Arthaud": 0.8
    },
    "polls": 19,
-   "latest": "2026-09-10"
+   "latest": "2026-09-16"
   },
   "runoffs": [
    {
@@ -46,7 +46,7 @@
     "avgA": 52.5,
     "avgB": 47.5,
     "pA": 79.0,
-    "polls": 4,
+    "polls": 3,
     "latest": "2026-07-08"
    },
    {
@@ -55,16 +55,16 @@
     "avgA": 54.9,
     "avgB": 45.1,
     "pA": 94.2,
-    "polls": 4,
+    "polls": 3,
     "latest": "2026-07-08"
    },
    {
     "a": "Bardella RN",
     "b": "Philippe HOR",
-    "avgA": 53.0,
-    "avgB": 47.0,
-    "pA": 83.0,
-    "polls": 3,
+    "avgA": 53.1,
+    "avgB": 46.9,
+    "pA": 83.8,
+    "polls": 2,
     "latest": "2026-05-27"
    },
    {
@@ -79,32 +79,14 @@
    {
     "a": "Bardella RN",
     "b": "Mélenchon LFI",
-    "avgA": 68.2,
-    "avgB": 31.8,
+    "avgA": 68.0,
+    "avgB": 32.0,
     "pA": 100.0,
-    "polls": 2,
+    "polls": 1,
     "latest": "2026-05-27"
-   },
-   {
-    "a": "Bardella RN",
-    "b": "Glucksmann PP",
-    "avgA": 58.5,
-    "avgB": 41.5,
-    "pA": 99.8,
-    "polls": 1,
-    "latest": "2026-03-27"
-   },
-   {
-    "a": "Bardella RN",
-    "b": "Retailleau LR",
-    "avgA": 58.0,
-    "avgB": 42.0,
-    "pA": 99.4,
-    "polls": 1,
-    "latest": "2026-03-27"
    }
   ],
-  "monthsOut": 6.6,
+  "monthsOut": 6.5,
   "sources": [
    "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)"
   ]
