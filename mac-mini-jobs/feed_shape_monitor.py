@@ -186,9 +186,32 @@ def check_espn_golf_scoreboard(doc):
         return "empty", f"{ev.get('name','tournament')}: not started ({len(field or [])} in field)"
     if not isinstance(field, list) or not field:
         return "FAIL", f"{ev.get('name','tournament')} is {state} but has no field"
-    if "athlete" not in (field[0] or {}):
-        return "FAIL", "golf competitor missing 'athlete' (ESPN shape change?)"
-    return "ok", f"{ev.get('name','?')}: {len(field)} in field ({state})"
+    first = field[0] or {}
+    if "athlete" in first:
+        return "ok", f"{ev.get('name','?')}: {len(field)} in field ({state})"
+    # 🔴 THIRD FALSE POSITIVE FROM THIS ONE CHECK, and the same root each time: it
+    # encodes "a golf event looks like individual stroke play" and ESPN keeps
+    # having other legitimate shapes. Biltmore 2026-09-02 had no field yet; the
+    # ATP case was a range quirk; and on 2026-09-25 the Presidents Cup teed off.
+    #
+    # Team match play (Presidents Cup, Ryder Cup, Solheim Cup) has no individual
+    # competitors at all. Measured live that morning: every competitor is
+    # `type: team` (the overall USA v INTL score) or `type: pair` (one match),
+    # each carrying a `team` object and no `athlete`. That is correct ESPN, not a
+    # shape change, and it paged at 07:30Z.
+    #
+    # The site is unaffected either way and was checked: lib/golfLeaderboard.ts
+    # only renders events matching MAJOR_RE, and even unfiltered its loop skips a
+    # competitor with no athlete and returns null. So this is accepted as healthy
+    # rather than as "empty", because the feed is fine; it is just not a feed the
+    # site reads this week.
+    #
+    # Still FAILS when a competitor has NEITHER key: that is the real shape change
+    # this check exists to catch, and loosening past it would retire the check.
+    if first.get("type") in ("team", "pair") and isinstance(first.get("team"), dict):
+        return "ok", (f"{ev.get('name','?')}: team match play, {len(field)} sides ({state}); "
+                      f"not rendered by the site, which shows majors only")
+    return "FAIL", "golf competitor has neither 'athlete' nor 'team' (ESPN shape change?)"
 
 
 def check_spaia_npb(doc):
