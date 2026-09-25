@@ -36,55 +36,15 @@ note()  { echo "[$(date '+%F %T')] $*"; }
 alert() { "$PY" "$MINI_DIR/notify.py" "CoN mini job" "$1" 1 || true; }
 fail()  { note "FAIL: $1"; alert "$1"; exit 1; }
 
-# 🔴 `HEAD:$GIT_BRANCH` DOES NOT MEAN "main TO main". Both push sites in this
-# file push whatever HEAD happens to point at onto $GIT_BRANCH, and until
-# 2026-09-23 neither checked that HEAD was on it. This clone is shared with
-# whoever is working on the mini, so one `git switch` silently re-aimed the
-# whole fleet at someone's branch.
-#
-# Measured that day: at 15:37 a session committed a [vercel skip] docs commit on
-# an unreviewed `security-hardening` branch, _mini_sync_flush_unpushed ran about
-# 20 seconds later inside the mlb-sim job, pushed HEAD:main, and the commit was
-# public before the author noticed. Their `reset --soft` could not undo it, and
-# the follow-up rebase then DISCARDED the corrected commit as already applied.
-# The only thing that kept that branch's app code off main was the untagged-
-# commit rule below, which exists to protect the build budget and had never been
-# asked to be a security boundary.
-#
-# A detached HEAD counts as wrong on purpose: `symbolic-ref -q` prints nothing
-# and returns non-zero, so `head` is empty and never equals a non-empty
-# $GIT_BRANCH.
-#
-# WHY THIS EXITS 1 RATHER THAN STANDING DOWN 0 like the dispatcher lock does.
-# The lock's own rule, a few lines up, is that a scheduled job must never be
-# silently skipped. A green healthchecks tile over a job that built nothing is
-# the silent-failure class this repo keeps paying for, so a wrong branch is a
-# real failure and is reported as one. Volume is bounded from both ends: the
-# dispatcher records the slot even on failure, so there is no 10-minute retry
-# loop, and the alert() here is deduped per distinct HEAD, the same stamp trick
-# _mini_sync_flush_unpushed uses. One ntfy for the condition, plus the
-# dispatcher's own honest FAIL per job that really did not run.
-#
-# Branch work in this clone belongs in `git worktree add`, which leaves the
-# clone itself on $GIT_BRANCH and never trips this.
-require_expected_branch() {
-  local what="${1:-this git write}" head where stamp
-  stamp="$MINI_DIR/.mini-wrong-branch"
-  head="$(git symbolic-ref --short -q HEAD || true)"
-  # Clearing on the way past is what makes the dedupe re-arm. Without it a
-  # second checkout of a branch already named in the stamp would be silent.
-  if [ "$head" = "$GIT_BRANCH" ]; then
-    rm -f "$stamp" 2>/dev/null
-    return 0
-  fi
-  where="${head:-a detached HEAD at $(git rev-parse --short HEAD 2>/dev/null)}"
-  note "REFUSING $what: the clone is on $where, not $GIT_BRANCH. Every push here is HEAD:$GIT_BRANCH, so continuing would publish $where. NOTHING WAS DONE."
-  if [ "$(cat "$stamp" 2>/dev/null)" != "$where" ]; then
-    alert "mini clone is on $where, not $GIT_BRANCH. Jobs are refusing to run rather than pushing that branch to $GIT_BRANCH. Switch back, or use a git worktree for branch work."
-    echo "$where" > "$stamp" 2>/dev/null || true
-  fi
-  exit 1
-}
+# THE BRANCH GUARD LIVES IN ../branch-guard.sh, the one copy of the rule for the
+# whole fleet, with its history (HANDOFF AG, AH, BD, BE) and the reasons it exits
+# 1 rather than standing down. require_expected_branch stays as a wrapper so the
+# call sites below and _common-selftest.sh keep their names. It honours
+# $MINI_DIR (set above), so the stamp and alert go where they always did.
+# Fails CLOSED: a runner that cannot load the guard does not run at all.
+# shellcheck source=../branch-guard.sh
+. "$MINI_DIR/branch-guard.sh" || { echo "branch-guard.sh missing from $MINI_DIR; refusing to run unguarded"; exit 1; }
+require_expected_branch() { require_main_branch "${1:-this git write}" "$GIT_BRANCH"; }
 
 # EVERY runner takes the dispatcher's lock, so a run started BY HAND cannot
 # collide with a scheduled tick. This is the case that actually did damage on

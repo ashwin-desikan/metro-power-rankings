@@ -1,40 +1,65 @@
 # shellcheck shell=bash
-# mac-mini-jobs/branch-guard.sh -- the HEAD:main push guard, for the top-level
-# scripts that do NOT source runners/_common.sh.
+# mac-mini-jobs/branch-guard.sh -- THE branch guard for every mini job that
+# writes to git. The only copy of the rule: runners/_common.sh sources this file
+# (require_expected_branch is a thin wrapper), and the top-level run-*.sh
+# scripts and metro-mini-refresh.sh source it directly.
 #
-# Usage: source it, then call `require_main_branch "<what>"` immediately after
-# cd-ing into the repo and BEFORE any fetch, merge, commit or push:
+# Usage: source it, then call `require_main_branch "<what>" [branch]` immediately
+# after cd-ing into the repo and BEFORE any fetch, merge, commit or push:
 #
-#   . "$REPO/mac-mini-jobs/branch-guard.sh"
 #   cd "$REPO" || fail "repo not found"
+#   . "$REPO/mac-mini-jobs/branch-guard.sh" || fail "branch-guard.sh missing"
 #   require_main_branch "a scraper refresh"
 #
-# 🔴 WHY IT EXISTS. These scripts end with `git push origin HEAD:main`, which
-# pushes whatever HEAD points at, and the clone they run in is shared with
-# whoever is working on the mini. On 2026-09-23 a session's branch checkout was
-# published to main within seconds by exactly this mechanism (HANDOFF AG). The
-# fix for runners/ is require_expected_branch in runners/_common.sh (HANDOFF AH),
-# but twelve top-level scripts never source _common.sh and so were never
-# covered. Measured 2026-09-25.
+# 🔴 WHY IT EXISTS. `HEAD:main` DOES NOT MEAN "main TO main": it pushes whatever
+# HEAD points at, and the clone these jobs run in is shared with whoever is
+# working on the mini, so one `git switch` silently re-aims the whole fleet.
+# Measured 2026-09-23 (HANDOFF AG): at 15:37 a session committed a [vercel skip]
+# docs commit on an unreviewed `security-hardening` branch, and about 20 seconds
+# later the mlb-sim job's _mini_sync_flush_unpushed pushed HEAD:main and made it
+# public. The author's `reset --soft` could not undo it, and the follow-up rebase
+# DISCARDED the corrected commit as already applied. Only the untagged-commit
+# build rule kept that branch's app code off main, a rule written to protect the
+# build budget that had never been asked to be a security boundary.
+# Scripts that push `origin main` instead of HEAD:main are not safe either: on a
+# branch they fast-forward or rebase it and commit the job's data onto it, so the
+# data silently never ships (HANDOFF BE). Either way: no git off main.
+#
+# A detached HEAD counts as wrong on purpose: `symbolic-ref -q` prints nothing,
+# so `head` is empty and never equals a non-empty branch name.
+#
+# WHY IT EXITS 1 RATHER THAN STANDING DOWN 0. A scheduled job must never be
+# silently skipped: a green healthchecks tile over a job that did nothing is the
+# silent-failure class this repo keeps paying for. Volume is bounded from both
+# ends: the dispatcher records the slot even on failure, so there is no retry
+# loop, and the ntfy here is deduped per distinct wrong HEAD through a stamp
+# file shared by every job. One ntfy for the condition, plus the dispatcher's
+# honest FAIL per job that really did not run.
+# THE ONE EXCEPTION is run-deploy-watch.sh, which catches the exit in a subshell
+# and stands down 0. Its slot comes every 10 minutes, so "no retry loop" does
+# not hold for it and exit 1 would page six times an hour. The deduped ntfy
+# still fires, and every other job goes red. Do not copy that pattern to a job
+# that runs once a day.
 #
 # 🔴 DO NOT PIPE THE CALL. `require_main_branch ... | tee -a "$LOG"` runs the
 # function in a subshell, so its `exit 1` would exit the subshell and the script
 # would carry on to the push. It writes to $LOG itself when $LOG is set.
 #
-# 🔴 NO SIDE EFFECTS AT SOURCE TIME, which is the whole reason this is a
-# separate file rather than "just source _common.sh". Sourcing _common.sh would
-# redefine these scripts' own fail(), source config.env into them and take the
-# dispatcher lock at load time: four behaviour changes to every job using it.
-# This file only defines one function.
+# 🔴 NO SIDE EFFECTS AT SOURCE TIME. Sourcing it defines one function and does
+# nothing else, which is why the top-level scripts source this and not
+# _common.sh (that would redefine their fail(), source config.env into them and
+# take the dispatcher lock at load time).
 #
-# TWIN of require_expected_branch in runners/_common.sh. Same rule, same
-# detached-HEAD handling, and the SAME stamp file, so the alert is deduped across
-# the whole fleet: one ntfy per distinct wrong HEAD, not one per script. If the
-# rule changes, change both, or better, make _common.sh source this file.
-
+# $MINI_DIR, when set (runners/_common.sh sets it, and so does its selftest),
+# says where the stamp, config.env and notify.py live; otherwise it is
+# ~/metro-mini-jobs. The selftest depends on this: without it, a test run would
+# write the REAL stamp and send a REAL ntfy.
+#
+# Branch work in the shared clone belongs in `git worktree add`, which leaves
+# the clone itself on main and never trips this.
 require_main_branch() {
   local what="${1:-this git write}" want="${2:-main}" head where stamp line
-  local mini="$HOME/metro-mini-jobs"
+  local mini="${MINI_DIR:-$HOME/metro-mini-jobs}"
   stamp="$mini/.mini-wrong-branch"
   head="$(git symbolic-ref --short -q HEAD || true)"
   # Clearing on the way past is what re-arms the dedupe for the next episode.
@@ -42,9 +67,8 @@ require_main_branch() {
     rm -f "$stamp" 2>/dev/null
     return 0
   fi
-  # A detached HEAD prints nothing, so it can never equal a non-empty branch.
   where="${head:-a detached HEAD at $(git rev-parse --short HEAD 2>/dev/null)}"
-  line="$(date +%T) REFUSING $what: the clone is on $where, not $want. This script pushes HEAD:$want, so continuing would publish $where. NOTHING WAS DONE."
+  line="[$(date '+%F %T')] REFUSING $what: the clone is on $where, not $want. Jobs only touch git on $want, and a HEAD:$want push from here would publish $where. NOTHING WAS DONE."
   echo "$line"
   [ -n "${LOG:-}" ] && echo "$line" >> "$LOG" 2>/dev/null
   if [ "$(cat "$stamp" 2>/dev/null)" != "$where" ]; then
