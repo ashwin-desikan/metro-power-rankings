@@ -1,3 +1,4 @@
+2026-09-25T07:00:07+01:00  c7e5ff813  chore(substack): refresh feed snapshot [vercel skip]
 2026-09-25T06:09:36+01:00  78c5d0f78  football: refresh live bundles [vercel skip]
 2026-09-25T03:30:06+01:00  d1aeab127  chore(activity): refresh site activity feed [vercel skip]
 2026-09-25T02:15:59+01:00  284ca2df0  ops: daily sweep 2026-09-25 [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-22T22:05:49+01:00  6ce4a47aa  metro_sync: watcher task runs as S4U so no console window flashes every tick [vercel skip]
 2026-09-22T21:56:27+01:00  c803564bb  mini: metro-rankings cutover to publish mode; update_top_companies step retired; citypop apply script [vercel skip]
 2026-09-22T21:25:06+01:00  ed41c3a24  docs: local and small models protocol (Jev, Ollama) as standing policy [vercel skip]
-2026-09-22T21:18:20+01:00  d65f05a58  reep: club identity crosswalk applied; Lookup AF:AI, football_team_reep bridge, identity resolver [vercel skip]
