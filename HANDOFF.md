@@ -20156,3 +20156,43 @@ so `require_expected_branch` from section AH does not protect it. It serves conf
 checked-out branch in the shared clone would still be pushed to main by any of those four.
 
 **Notion:** none (no queryable state changed; the validation wrote only inside a removed worktree).
+
+### BC. conflicts-monthly: a failed run now leaves the repo clean, and the obvious fix would not have done it
+
+At Ashwin's instruction, fixing the write-before-gate defect section BB found. Pushed as `7022e2e29`, done in a worktree
+from start to finish so the shared clone was never touched.
+
+**The asked-for fix was necessary and NOT sufficient, and only reading the whole flow showed it.**
+`build-conflicts.py` wrote `conflicts.json` and only then exited 2 on an unmapped belligerent, so moving that gate ahead
+of the write is right, and is done: it now reports "NOT written" and leaves the file alone. But `fetch-conflicts.py` runs
+first and writes `conflicts_raw.json`, which is ALSO a tracked file, before any gate exists. So with the gate fixed and
+nothing else, a failed run would still have left `conflicts_raw.json` modified in the shared clone, which is the
+2026-09-24 outage in a slightly smaller shape. `run-scraper-refresh.sh` now restores both scraped paths before failing,
+on either step; a checkout of an unchanged file is a no-op. The other two gates in the script (exit 3, an unreadable
+existing file; exit 4, a merge that would drop wars) were already correctly placed before the write.
+
+**Tested with a test copy of the runner,** with the repo, the python and the log directory pointed at the worktree and
+`push()` replaced by a no-op so no test could page:
+
+| test | result |
+| --- | --- |
+| an injected unmapped belligerent, script alone | exit 2, `conflicts.json` byte-identical |
+| the normal path, script alone | exit 0, 623 wars written |
+| fetch writes new data, build's gate fails, fixed runner | exit 1, **0** dirty files |
+| **control**: the same scenario, ORIGINAL runner | exit 1, `conflicts_raw.json` **left modified** |
+| the success path, real fetch, `DRY_RUN=1` | exit 0, nothing committed |
+
+The control is the result that makes the others worth anything: it shows the test would have caught the bug, and that
+the restore is what cleans the tree rather than something incidental in the setup. One design point for anyone
+repeating this: the real fetch may reproduce the committed file byte for byte, which would make a restore test pass by
+having nothing to restore. So the test's fetch step copied a genuinely different raw file into place.
+
+**Live already.** `run-scraper-refresh.sh` is a symlink in `~/metro-mini-jobs/`, so the repo change is the live change;
+`--check-sync` is clean and the live file carries the restore. `build-conflicts.py` runs from the repo. Only the
+conflicts branch of the runner changed; fiba, rugby and substack are untouched.
+
+**Still open from BB, deliberately not bundled in:** `run-scraper-refresh.sh` ends with `git push origin HEAD:main` and
+does not source `_common.sh`, so the section AH branch guard does not cover any of its four jobs.
+
+**Notion:** Scheduled jobs row "conflicts-monthly" Last verified 2026-09-25, with the validation, the two-part fix, the
+test table and the control. Verified over REST.
