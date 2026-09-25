@@ -19996,3 +19996,71 @@ On Ashwin's instruction the other 8 (THW Kiel, Flensburg-Handewitt, Füchse Berl
 build-team-owners-data.py now passes with 0 problems (609 franchises), so owners-weekly can commit again.
 
 **Notion:** Backlog row retitled "Owners: 8 handball owner rows are unverified placeholders (research by 2026-10-25)", status Open, P2.
+
+## 2026-09-25
+
+### AZ. This morning's two ntfy, and a correction to section AY that the daily sweep earned
+
+**Alert 1, 07:30Z: feed-monitor FAILED, then again at 08:22Z.** The PGA probe reported "golf competitor missing
+'athlete' (ESPN shape change?)". It was not a shape change. The Presidents Cup teed off, and team match play has no
+individual competitors: measured live, every competitor is `type: team` (the overall USA v INTL score) or `type: pair`
+(one match), each with a `team` object and no `athlete`. ops-autofix re-ran it at 08:22Z with the same code, it failed
+again, and that paged a second time.
+
+It is the THIRD false positive from this one check, after the Biltmore Championship (no field yet) and the ATP range
+quirk, and all three share one assumption: that a golf event looks like individual stroke play. Fixed narrowly in
+`498756518`. A team or pair competitor carrying a `team` object is accepted; a competitor with NEITHER key still fails,
+because that is the genuine shape change the check exists to catch and loosening past it would retire the check.
+Tested 6 of 6 against the live payload and synthetic cases, both genuine-break cases still failing. The site was never
+affected: `lib/golfLeaderboard.ts` renders majors only, and even unfiltered it skips a competitor with no athlete.
+
+🔴 **`feed_shape_monitor.py` IS A COPY IN THE LIVE DIRECTORY, NOT A SYMLINK**, while its runner `run-feed-monitor.sh` IS a
+symlink, which is exactly what makes it easy to miss. The repo fix was not live. `--check-sync` reported
+`differs feed_shape_monitor.py`, the diff showed only the three lines the fix replaces, and it was copied by hand. Had I
+re-run before checking, it would have failed and paged a third time. Then re-run through `hc-run.sh feed-monitor` so the
+tile cleared, and `--mark-ok` for the slot. Detector: "no findings; nothing to do".
+
+A smaller slip of my own in the same hour: I edited the monitor in the shared clone rather than a worktree, and the
+detector reported it as `[blocker] working_tree_dirty` within minutes. Committed at once, but it is the thing the
+worktree rule from yesterday exists to prevent, and I did it anyway because the edit felt small. Small is not the test.
+
+**Alert 2, 02:16Z: the daily ops sweep digest.** Three items, and one of them is a correction I owe.
+
+1. Build cap still unarmed: `VERCEL_BUILD_CAP_TOKEN` absent, 09-24 spent 8 paid production builds against 2. Needs a
+   credential only Ashwin can add. Unchanged.
+2. **It found the mechanism behind yesterday's `UU lib/releases.ts`.** `run-activity-feed.sh` runs
+   `git pull --rebase --autostash`; the autostash conflicted on re-apply and exited 1 WITHOUT cleaning the index, turning
+   a recoverable "local changes would be overwritten" into `unmerged files`, which killed five more jobs over three and a
+   half hours. That answers the question section AI left open about which job left the conflict behind. The class fix is
+   moving that script onto `_common.sh`'s `mini_sync`, which refuses rather than half-merges. Not done here.
+3. **It challenged section AY's 25 October deadline, and on checking, the challenge is right and so is part of mine.**
+
+🔴 **CORRECTION TO SECTION AY: THE 25 OCTOBER CLIFF WAS WRONG.** AY claimed the duplicate launchd agents miss the
+dispatcher only because BST offsets them by an hour, so every one would collide once local time equals UTC. Measured
+this morning, that mechanism is false. `euro-comps`' plist already lists both 04:00 and 05:00 local, so under BST its
+05:00 local run IS 04:00Z, its dispatcher slot, and it ran from launchd at 04:00:06Z and from the dispatcher at 04:07:24Z
+without colliding. Collisions depend on whether two runs overlap in time: euro-comps finishes in 3 seconds and the tick
+lagged 7 minutes, whereas football-standings runs about 100 seconds eight times a day. Nothing about that changes on 25
+October.
+
+The sweep was also partly wrong, and it matters because it would have sent someone in the opposite direction. It said
+13 of the 14 remaining agents "have not executed since early August". That is true for rugby-weekly, cricket-weekly,
+fiba-weekly, sound-weekly, conflicts-monthly and cricket-monthly, whose `launchd-*.out` files stopped then. It is false
+for euro-comps and substack-daily, whose launchd output was written THIS MORNING, and several others write no `.out`
+at all so cannot be read either way. So some duplicates are dormant and some genuinely run twice.
+
+**What stands:** fourteen agents are still loaded that `jobs.toml` records as unloaded, and some of them do run twice.
+Unloading them is worth doing as hygiene, not as an emergency, and the right trigger is not a date. The genuinely odd
+question, which both the sweep and I now agree on, is why six loaded, enabled, scheduled agents have silently not run
+since August. That is not a state launchd should have, and it is unresolved.
+
+**Worth keeping about the correction itself:** two independent readers, one of them me, each got half of this right and
+presented it with confidence. The measurement that settled it took one command: read what each agent last wrote, and
+line up one job's two runs by timestamp.
+
+**Also flagged, not mine to fix:** `check:release-notes` warns that 2026-09-25 has shipped two build-relevant Owners
+commits from another session with no entry. Warn-only today, a hard `npm run verify` failure from 00:00Z tomorrow. It is
+editorial and belongs to whoever shipped the Owners work.
+
+**Notion:** Scheduled jobs row "feed-monitor" Last verified 2026-09-25, with the team-match-play fix, the copy-not-symlink
+warning, and the note that its plist is still loaded despite `jobs.toml`. Verified over REST.
