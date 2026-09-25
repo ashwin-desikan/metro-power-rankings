@@ -20250,3 +20250,65 @@ section AZ already identified as the script that deepened the 09-24 outage.
 **Notion:** Scheduled jobs rows conflicts-monthly, fiba-weekly, rugby-weekly and substack-daily each carry a Notes line
 about the guard and `b35beb34a`, verified over REST. Last verified was deliberately left unchanged on fiba, rugby and
 substack (09-18), because this tested the guard, not those jobs' runs. conflicts-monthly already reads 09-25 from BB.
+
+### BE. The branch guard now covers all twelve top-level job scripts, and deploy-watch stands down instead of paging
+
+At Ashwin's instruction, finishing what section BD started. Pushed as `587109829`, `[vercel skip]`, built and tested in a
+worktree; the shared clone stayed on `main` and clean throughout.
+
+**Correction to BD's framing, small but it changes the hazard.** BD said twelve scripts "push `HEAD:main`". Eight do
+(the scraper runner, cricket monthly and weekly, euro-comps, f1-weekly, gap-league-watch, sound-weekly, and
+metro-mini-refresh as `HEAD:$GIT_BRANCH`). Four push `origin main`: activity-feed, deploy-watch, football-standings,
+screen-number-ones. On a branch those do not publish the branch; they rebase or fast-forward it, commit the job's data
+onto it, and then push a stale local `main` or nothing, so the data silently never ships. Different failure, same
+remedy: do not touch git off main.
+
+**What each script got:** the same two lines as BD, placed right after `cd` into the repo and before its first git
+command (checked mechanically for all eleven), failing closed if `branch-guard.sh` is missing. Two differ:
+- `metro-mini-refresh.sh` passes `"$GIT_BRANCH"` and uses `$REPO_DIR`, since both come from `config.env`.
+- 🔴 **`run-deploy-watch.sh` STANDS DOWN with exit 0 rather than failing.** The dispatcher sends an ntfy for every failed
+  slot (`dispatcher.py` around line 450), and deploy-watch has a slot every 10 minutes, so exit 1 would have paged six
+  times an hour for as long as the clone sat on a branch: the alert storm this fleet has already fixed twice. It calls
+  the guard in a subshell, the one sanctioned exception to "do not pipe the call", so the guard's `exit` is caught. The
+  guard's own ntfy still fires once, deduped by its stamp, and every other job goes red, so nothing is hidden. Verified
+  that the dispatcher lock is released on stand-down (the EXIT trap).
+- `run-f1-weekly.sh`'s guard sits after its round check, which runs no git. Idle hours never reach the guard, so a
+  wrong branch only stops it on an hour that would actually sync. That is intended; it keeps the hourly poller green
+  while doing nothing harmful.
+
+**Tested all eleven real scripts, 176 of 176.** A throwaway repo at the hardcoded path under a fake `HOME`, with a
+`curl` stub so nothing reached the network or ntfy, a stub `notify.py`, and `env -i` so no real secret leaked in. Per
+script:
+
+| case | expected, and got |
+| --- | --- |
+| on a branch | refused before ANY git (no `FETCH_HEAD`), branch and origin untouched, tree clean, exit 1 (deploy-watch 0) |
+| repeat on the branch | no second alert |
+| detached HEAD | refused, named |
+| on main, origin unreachable | guard passes, script reaches its first fetch or pull, stamp cleared |
+| `branch-guard.sh` deleted | exit 1 "refusing to run unguarded", no git |
+| **control**: the ORIGINAL script on the branch | 10 of 11 fast-forwarded the branch; deploy-watch ran git but only writes when re-triggering |
+
+**The first run of that harness failed 32 cases, and none of them were the guard.** Worth recording because both
+causes would bite anyone repeating this:
+1. Four scripts check their own preconditions (`APISPORTS_KEY`, `~/som-pipeline`) BEFORE the guard, so they never reached
+   it. The harness now supplies dummies.
+2. Four "no alert" failures came from my fake venv python. Those scripts set `PY` to the repo venv, the guard falls back
+   to `$PY` for `notify.py`, and my fake answered every call with f1's canned "SYNC" line. In production `config.env`'s
+   `PYTHON_BIN` wins, and it resolves to the real venv. A stub that answers every call hides the calls it was never
+   meant to answer; the stub now passes `notify.py` through to real python.
+The 176 is from the corrected harness, rerun from scratch, not from patching expectations.
+
+**Live:** six are symlinks in `~/metro-mini-jobs/` and five run straight from the repo (dispatcher.py's `NOT_DEPLOYED`),
+so the pull made all eleven live; each live copy was grepped for the call. `--check-sync` is clean.
+First production run through a guard, confirmed rather than assumed: the dispatcher ran deploy-watch for its 09:30Z
+slot at 09:32:57Z, after the pull, and logged `DONE deploy-watch: ok 2s`, so the guard passes on main in production.
+
+**Notion:** Scheduled jobs rows activity-feed, cricket-monthly, cricket-weekly, deploy-watch, egress-refresh (which is
+`metro-mini-refresh.sh`), euro-comps, football-standings, gap-league-watch, screen-number-ones, sound-weekly, and
+"F1 weekly sync" each carry a guard note, appended where a note already existed, all verified over REST. Two
+traps met: the f1 row is titled "F1 weekly sync", not `f1-weekly`, and deploy-watch's existing note pushed past Notion's
+2000-character limit per text item, so the note is now split across items. Last verified left unchanged, as in BD.
+
+**What remains of this thread:** `runners/_common.sh` still carries its own copy of the rule (`require_expected_branch`).
+Having it source `branch-guard.sh` would leave one copy. Not done; the two are tested twins and share a stamp.
