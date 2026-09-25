@@ -80,6 +80,51 @@ editorial and belongs to whoever shipped the Owners work.
 
 **Notion:** Scheduled jobs row "feed-monitor" Last verified 2026-09-25, with the team-match-play fix, the copy-not-symlink
 warning, and the note that its plist is still loaded despite `jobs.toml`. Verified over REST.
+
+### BA. The fourteen duplicate launchd agents are unloaded, and "Plist unloaded" is finally true
+
+At Ashwin's instruction. `jobs.toml` lines 214 to 227 have recorded these plists as "unloaded" since 7 August. Until
+this morning they were not.
+
+**Checked before touching anything, one job at a time,** because unloading the launchd copy of a job whose dispatcher
+path does not work would remove its only working path. Thirteen of the fourteen were proven: present in `jobs.toml`, a
+recent dispatcher run in `state.json`, and a real `DONE <job>:` line in `dispatcher.log`.
+
+🔴 **conflicts-monthly FAILED that check, and it is worth knowing why.** Its only dispatcher run ever, 2026-09-01 07:47Z,
+FAILED in 3 seconds and was flipped to `ok (manual)` by `--mark-ok` seventeen minutes later. Its launchd copy last wrote
+output on 1 August. So since August it has no proven successful run from EITHER scheduler, and the green status in
+`state.json` is a hand-set flag rather than evidence. Unloading its plist was still safe, since that copy was dormant
+and removed nothing that worked, but its next slot is **2026-10-01 07:15Z** on the dispatcher, where its only previous
+attempt failed. Worth validating in a worktree before then. A 3-second failure is more likely a git preamble than the
+data job, but that is a guess and the log from 1 September should settle it.
+
+**Done:** for each of the fourteen, `launchctl bootout gui/$UID/com.citizenofnowhere.<slug>` (all returned 0) and the
+plist moved to `~/Library/LaunchAgents/retired/`, so it cannot reload at login. Checked idle first; nothing was
+mid-run.
+
+**Verified, not assumed:**
+- Only `dispatcher`, `heartbeat` and `f1-weekly` remain loaded, which are the three that belong on launchd.
+- `~/Library/LaunchAgents/retired/` holds 15 plists (these fourteen plus football-standings from section AY).
+- `dispatcher.py --status` still lists all fourteen, and `--check-sync` is clean.
+- The dispatcher ran `deploy-watch` at 08:32:38Z, one second after the unload finished: `DONE deploy-watch: ok 2s`.
+
+**Memory corrected in the same pass,** because two files said the opposite of reality. `legacy-launchd-migration` read
+"CLOSED 2026-08-07, all legacy plists unloaded" and now records that the claim was false for seven weeks and when it
+became true. `site-activity-feed` described activity-feed and deploy-watch as LOADED launchd agents and "21 agents"; both
+now point at the dispatcher.
+
+**The lesson, stated once:** a claim written into the source-of-truth file survived seven weeks because the only
+automated check, `--check-sync`, compares the repo to the live directory and cannot see launchd at all. The drift it
+could not detect was the one that mattered most: a second scheduler nobody remembered. Teaching `--check-sync` to diff
+loaded `com.citizenofnowhere.*` agents against `jobs.toml` would have caught this in August, and is the durable fix.
+Not built here.
+
+Still open from section AZ: why six of these agents were loaded, enabled and scheduled yet silently not running since
+August. Moot for these fifteen now that they are retired, but "launchd skips a scheduled job without saying so" would
+affect `f1-weekly` and `heartbeat` too if it has a general cause.
+
+**Notion:** none by this entry. Worth filing on the next pass: a Backlog row to validate conflicts-monthly before
+2026-10-01, and one to teach `--check-sync` about launchd.
 ## 2026-09-25: cowork (Windows device session) → next session (last 16 owner rows; owners build passes)
 
 Ashwin supplied a Gemini summary of owners for the final 16 board teams. Each claim was checked against sources: 8 confirmed and added with normal confidence (FC Groningen, RC Vannes, TuS N-Lübbecke, Gas Sales Piacenza, Itas Trentino, Pallavolo Padova, Prisma Taranto, Yuasa Grottazzolina; for the last three only the club president is public, so the rows name the club company, not the president, as owner). Gemini errors found: TuS Nettelstedt e.V. is licence holder not shareholder; ITAS is Trentino's sponsor not owner; the Padova "Consorzio" and a Taranto co-owner could not be found.
