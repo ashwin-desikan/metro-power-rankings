@@ -1,3 +1,4 @@
+2026-09-25T03:30:06+01:00  d1aeab127  chore(activity): refresh site activity feed [vercel skip]
 2026-09-25T02:15:59+01:00  284ca2df0  ops: daily sweep 2026-09-25 [vercel skip]
 2026-09-25T01:36:23+01:00  5e7377c43  Owners: last 16 board teams (8 verified, 8 unverified placeholders); owners build passes
 2026-09-25T00:37:59+01:00  b245c6f5b  Owners: 32 more owner rows from overnight research (16 board teams still pending)
@@ -77,4 +78,3 @@
 2026-09-22T21:25:06+01:00  ed41c3a24  docs: local and small models protocol (Jev, Ollama) as standing policy [vercel skip]
 2026-09-22T21:18:20+01:00  d65f05a58  reep: club identity crosswalk applied; Lookup AF:AI, football_team_reep bridge, identity resolver [vercel skip]
 2026-09-22T17:17:33+01:00  fcf4a36d9  apifootball: Jev club resolver pilot, measurement only [vercel skip]
-2026-09-22T18:07:47+01:00  ea82840c6  football: refresh live bundles [vercel skip]
