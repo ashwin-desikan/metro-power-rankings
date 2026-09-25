@@ -19986,3 +19986,13 @@ The scheduled owner research (trig_01PyTDZofBXBm3YtmXBzznwQ) wrote scripts/data/
 🔴 16 board teams still have no owner row, so build-team-owners-data.py still fails validation and owners-weekly will not commit until they are filled: FC Groningen; RC Vannes; Handball-Bundesliga: Füchse Berlin, HSG Wetzlar, Rhein-Neckar Löwen, SG Flensburg-Handewitt, TBV Lemgo Lippe, THW Kiel, TSV Hannover-Burgdorf, TVB 1898 Stuttgart, TuS N-Lübbecke; SuperLega: Gas Sales Bluenergy Piacenza, Gioiella Prisma Taranto, Itas Trentino, Pallavolo Padova, Yuasa Battery Grottazzolina. team-owners.json was written with the wrapper that tolerates only the "no owner row" class, as Ashwin accepted.
 
 **Notion:** Backlog row "Owners: merge rows for the 48 teams" updated with the 16 still missing (status stays In progress).
+
+## 2026-09-25: cowork (Windows device session) → next session (last 16 owner rows; owners build passes)
+
+Ashwin supplied a Gemini summary of owners for the final 16 board teams. Each claim was checked against sources: 8 confirmed and added with normal confidence (FC Groningen, RC Vannes, TuS N-Lübbecke, Gas Sales Piacenza, Itas Trentino, Pallavolo Padova, Prisma Taranto, Yuasa Grottazzolina; for the last three only the club president is public, so the rows name the club company, not the president, as owner). Gemini errors found: TuS Nettelstedt e.V. is licence holder not shareholder; ITAS is Trentino's sponsor not owner; the Padova "Consorzio" and a Taranto co-owner could not be found.
+
+On Ashwin's instruction the other 8 (THW Kiel, Flensburg-Handewitt, Füchse Berlin, Rhein-Neckar Löwen, Hannover-Burgdorf, TVB Stuttgart, TBV Lemgo, HSG Wetzlar) carry Gemini's claims as UNVERIFIED PLACEHOLDERS: confidence "contested", pending_kind "unverified placeholder", owner_key prefixed placeholder-, note starting "UNVERIFIED PLACEHOLDER", pending_review_by 2026-10-25 so check-owners-watchlist flags them for research. Verified corrections are in the notes (THW e.V. holds 26% of votes; Vonovia and Deutsche Wohnen are Füchse shareholders).
+
+build-team-owners-data.py now passes with 0 problems (609 franchises), so owners-weekly can commit again.
+
+**Notion:** Backlog row retitled "Owners: 8 handball owner rows are unverified placeholders (research by 2026-10-25)", status Open, P2.
