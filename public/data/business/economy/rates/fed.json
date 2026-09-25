@@ -8,7 +8,7 @@
   "founded": "1913-12-23",
   "first_change": "1914-11-16",
   "last_change": "2026-09-17",
-  "built": "2026-09-19",
+  "built": "2026-09-25",
   "instruments": [
     {
       "from": "1914-11-16",
@@ -3617,7 +3617,7 @@
   ],
   "coverage": {
     "spine": "own",
-    "note": "Discount rate is the decision instrument from 1914-11-16 (Reserve Banks opening) to 1982-09-26: monthly averages (FRED M13009USM156NNBR, NBER) from 1914-11 to 1934-01, exact dated changes (FRED DISCOUNT) from 1934-02-02; the 1914-1934 span is month granularity only, not exact decision dates. FOMC federal funds target rate (FRED DFEDTAR) from 1982-09-27, target range midpoint with lower/upper bounds (FRED DFEDTARU/DFEDTARL) from 2008-12-16. The effective funds rate is never published as the decision instrument for 1954-1982; BIS United States daily is a market rate, not this spine, before 1985-12-19, so the cross-check runs only from there: 147 of 147 overlapping change dates agree (0.0% disagreement)."
+    "note": "Discount rate is the decision instrument from 1914-11-16 (Reserve Banks opening) to 1982-09-26: monthly averages (FRED M13009USM156NNBR, NBER) from 1914-11 to 1934-01, exact dated changes (FRED DISCOUNT) from 1934-02-02; the 1914-1934 span is month granularity only, not exact decision dates. FOMC federal funds target rate (FRED DFEDTAR) from 1982-09-27, target range midpoint with lower/upper bounds (FRED DFEDTARU/DFEDTARL) from 2008-12-16. The effective funds rate is never published as the decision instrument for 1954-1982; BIS United States daily is a market rate, not this spine, before 1985-12-19, so the cross-check runs only from there: 148 of 148 overlapping change dates agree (0.0% disagreement)."
   },
   "sources": [
     {

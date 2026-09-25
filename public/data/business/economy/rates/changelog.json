@@ -1,5 +1,35 @@
 [
   {
+    "bank": "bis-us",
+    "date": "2026-09-17",
+    "level": 3.875,
+    "change": 0.25,
+    "source": "bis",
+    "era_name": "mid-point of the Federal Reserve targ...",
+    "kind": "policy",
+    "built": "2026-09-25"
+  },
+  {
+    "bank": "bis-br",
+    "date": "2026-09-17",
+    "level": 13.75,
+    "change": -0.25,
+    "source": "bis",
+    "era_name": "Central Bank target, money market",
+    "kind": "policy",
+    "built": "2026-09-25"
+  },
+  {
+    "bank": "bis-xm",
+    "date": "2026-09-16",
+    "level": 2.5,
+    "change": 0.25,
+    "source": "bis",
+    "era_name": "official central bank steering rate i...",
+    "kind": "policy",
+    "built": "2026-09-25"
+  },
+  {
     "bank": "fed",
     "date": "2026-09-17",
     "level": 3.875,

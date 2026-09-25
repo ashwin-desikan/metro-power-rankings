@@ -8,7 +8,7 @@
   "founded": "1998-06-01",
   "first_change": "1999-01-01",
   "last_change": "2026-09-16",
-  "built": "2026-09-19",
+  "built": "2026-09-25",
   "instruments": [
     {
       "from": "1998-06-01",
@@ -665,7 +665,7 @@
   ],
   "coverage": {
     "spine": "own",
-    "note": "Deposit facility rate from the ECB Data Portal date-of-changes series (FM.D.U2.EUR.4F.KR.DFR.LEV), first change 1999-01-01; the main refinancing rate is carried alongside as a secondary series. BIS treated MRR, not DFR, as the euro area's steering rate until 2024-09-18, so the DFR spine is cross-checked against BIS only from that date (8 of 8 overlapping dates agree, 0.0% disagreement); the MRR secondary series agrees with BIS on 35 of 43 overlapping dates across the full run (18.6% disagreement)."
+    "note": "Deposit facility rate from the ECB Data Portal date-of-changes series (FM.D.U2.EUR.4F.KR.DFR.LEV), first change 1999-01-01; the main refinancing rate is carried alongside as a secondary series. BIS treated MRR, not DFR, as the euro area's steering rate until 2024-09-18, so the DFR spine is cross-checked against BIS only from that date (9 of 9 overlapping dates agree, 0.0% disagreement); the MRR secondary series agrees with BIS on 35 of 44 overlapping dates across the full run (20.5% disagreement)."
   },
   "sources": [
     {

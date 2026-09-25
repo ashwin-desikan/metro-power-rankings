@@ -1,5 +1,5 @@
 {
-  "built": "2026-09-19",
+  "built": "2026-09-25",
   "banks": [
     {
       "code": "bis-ar",
@@ -17,7 +17,7 @@
       "level": 38.0,
       "changes": 2911,
       "changes_12m": 0,
-      "hold_days": 596,
+      "hold_days": 602,
       "direction_12m": "market"
     },
     {
@@ -66,15 +66,15 @@
       "iso2": "BR",
       "founded": null,
       "series_from": "1986-06-04",
-      "last_change": "2026-08-06",
+      "last_change": "2026-09-17",
       "spine": "bis",
       "power_rank": 12,
       "ended": null,
       "ended_note": null,
-      "level": 14.0,
-      "changes": 2348,
-      "changes_12m": 4,
-      "hold_days": 44,
+      "level": 13.75,
+      "changes": 2349,
+      "changes_12m": 5,
+      "hold_days": 8,
       "direction_12m": "cutting"
     },
     {
@@ -93,7 +93,7 @@
       "level": 4.5,
       "changes": 124,
       "changes_12m": 1,
-      "hold_days": 276,
+      "hold_days": 282,
       "direction_12m": "cutting"
     },
     {
@@ -112,7 +112,7 @@
       "level": 3.0,
       "changes": 49,
       "changes_12m": 0,
-      "hold_days": 487,
+      "hold_days": 493,
       "direction_12m": "hold"
     },
     {
@@ -131,7 +131,7 @@
       "level": 12.0,
       "changes": 146,
       "changes_12m": 3,
-      "hold_days": 80,
+      "hold_days": 86,
       "direction_12m": "hiking"
     },
     {
@@ -150,7 +150,7 @@
       "level": 3.75,
       "changes": 117,
       "changes_12m": 1,
-      "hold_days": 92,
+      "hold_days": 98,
       "direction_12m": "hiking"
     },
     {
@@ -169,7 +169,7 @@
       "level": 2.1,
       "changes": 255,
       "changes_12m": 2,
-      "hold_days": 8,
+      "hold_days": 14,
       "direction_12m": "hiking"
     },
     {
@@ -245,7 +245,7 @@
       "level": 4.0,
       "changes": 160,
       "changes_12m": 2,
-      "hold_days": 282,
+      "hold_days": 288,
       "direction_12m": "cutting"
     },
     {
@@ -283,7 +283,7 @@
       "level": 5.5,
       "changes": 164,
       "changes_12m": 6,
-      "hold_days": 24,
+      "hold_days": 30,
       "direction_12m": "mixed"
     },
     {
@@ -302,7 +302,7 @@
       "level": 5.75,
       "changes": 90,
       "changes_12m": 3,
-      "hold_days": 93,
+      "hold_days": 99,
       "direction_12m": "hiking"
     },
     {
@@ -321,7 +321,7 @@
       "level": 3.5,
       "changes": 162,
       "changes_12m": 4,
-      "hold_days": 72,
+      "hold_days": 78,
       "direction_12m": "cutting"
     },
     {
@@ -340,7 +340,7 @@
       "level": 5.25,
       "changes": 96,
       "changes_12m": 1,
-      "hold_days": 288,
+      "hold_days": 294,
       "direction_12m": "cutting"
     },
     {
@@ -359,7 +359,7 @@
       "level": 8.0,
       "changes": 115,
       "changes_12m": 4,
-      "hold_days": 31,
+      "hold_days": 37,
       "direction_12m": "mixed"
     },
     {
@@ -397,7 +397,7 @@
       "level": 3.0,
       "changes": 61,
       "changes_12m": 2,
-      "hold_days": 23,
+      "hold_days": 29,
       "direction_12m": "hiking"
     },
     {
@@ -416,7 +416,7 @@
       "level": 3.5,
       "changes": 40,
       "changes_12m": 1,
-      "hold_days": 282,
+      "hold_days": 288,
       "direction_12m": "cutting"
     },
     {
@@ -435,7 +435,7 @@
       "level": 2.25,
       "changes": 19,
       "changes_12m": 0,
-      "hold_days": 548,
+      "hold_days": 554,
       "direction_12m": "hold"
     },
     {
@@ -454,7 +454,7 @@
       "level": 4.25,
       "changes": 384,
       "changes_12m": 2,
-      "hold_days": 94,
+      "hold_days": 100,
       "direction_12m": "mixed"
     },
     {
@@ -473,7 +473,7 @@
       "level": 6.5,
       "changes": 1747,
       "changes_12m": 5,
-      "hold_days": 134,
+      "hold_days": 140,
       "direction_12m": "cutting"
     },
     {
@@ -492,7 +492,7 @@
       "level": 2.75,
       "changes": 39,
       "changes_12m": 0,
-      "hold_days": 437,
+      "hold_days": 443,
       "direction_12m": "hold"
     },
     {
@@ -530,7 +530,7 @@
       "level": 4.25,
       "changes": 85,
       "changes_12m": 0,
-      "hold_days": 372,
+      "hold_days": 378,
       "direction_12m": "hold"
     },
     {
@@ -549,7 +549,7 @@
       "level": 5.0,
       "changes": 979,
       "changes_12m": 6,
-      "hold_days": 22,
+      "hold_days": 28,
       "direction_12m": "mixed"
     },
     {
@@ -568,7 +568,7 @@
       "level": 3.75,
       "changes": 103,
       "changes_12m": 4,
-      "hold_days": 198,
+      "hold_days": 204,
       "direction_12m": "cutting"
     },
     {
@@ -606,7 +606,7 @@
       "level": 6.5,
       "changes": 79,
       "changes_12m": 0,
-      "hold_days": 772,
+      "hold_days": 778,
       "direction_12m": "hold"
     },
     {
@@ -625,7 +625,7 @@
       "level": 5.75,
       "changes": 162,
       "changes_12m": 0,
-      "hold_days": 737,
+      "hold_days": 743,
       "direction_12m": "hold"
     },
     {
@@ -644,7 +644,7 @@
       "level": 14.0,
       "changes": 152,
       "changes_12m": 7,
-      "hold_days": 54,
+      "hold_days": 60,
       "direction_12m": "cutting"
     },
     {
@@ -663,7 +663,7 @@
       "level": 4.25,
       "changes": 63,
       "changes_12m": 2,
-      "hold_days": 283,
+      "hold_days": 289,
       "direction_12m": "cutting"
     },
     {
@@ -682,7 +682,7 @@
       "level": 1.0,
       "changes": 69,
       "changes_12m": 2,
-      "hold_days": 206,
+      "hold_days": 212,
       "direction_12m": "cutting"
     },
     {
@@ -701,7 +701,7 @@
       "level": 37.0,
       "changes": 108,
       "changes_12m": 3,
-      "hold_days": 239,
+      "hold_days": 245,
       "direction_12m": "cutting"
     },
     {
@@ -720,7 +720,7 @@
       "level": 7.0,
       "changes": 460,
       "changes_12m": 2,
-      "hold_days": 113,
+      "hold_days": 119,
       "direction_12m": "mixed"
     },
     {
@@ -739,7 +739,7 @@
       "level": 2.25,
       "changes": 408,
       "changes_12m": 1,
-      "hold_days": 324,
+      "hold_days": 330,
       "direction_12m": "cutting"
     },
     {
@@ -758,7 +758,7 @@
       "level": 3.75,
       "changes": 852,
       "changes_12m": 1,
-      "hold_days": 275,
+      "hold_days": 281,
       "direction_12m": "cutting"
     },
     {
@@ -777,7 +777,7 @@
       "level": 1.0,
       "changes": 194,
       "changes_12m": 2,
-      "hold_days": 94,
+      "hold_days": 100,
       "direction_12m": "hiking"
     },
     {
@@ -815,7 +815,7 @@
       "level": 2.5,
       "changes": 64,
       "changes_12m": 2,
-      "hold_days": 3,
+      "hold_days": 9,
       "direction_12m": "hiking"
     },
     {
@@ -834,7 +834,7 @@
       "level": 3.875,
       "changes": 350,
       "changes_12m": 3,
-      "hold_days": 2,
+      "hold_days": 8,
       "direction_12m": "mixed"
     },
     {
@@ -853,7 +853,7 @@
       "level": 4.25,
       "changes": 550,
       "changes_12m": 1,
-      "hold_days": 134,
+      "hold_days": 140,
       "direction_12m": "hiking"
     },
     {
@@ -872,7 +872,7 @@
       "level": 4.35,
       "changes": 98,
       "changes_12m": 3,
-      "hold_days": 136,
+      "hold_days": 142,
       "direction_12m": "hiking"
     },
     {
@@ -891,7 +891,7 @@
       "level": 2.75,
       "changes": 78,
       "changes_12m": 4,
-      "hold_days": 17,
+      "hold_days": 23,
       "direction_12m": "mixed"
     },
     {
@@ -910,7 +910,7 @@
       "level": 1.75,
       "changes": 571,
       "changes_12m": 1,
-      "hold_days": 353,
+      "hold_days": 359,
       "direction_12m": "cutting"
     },
     {
@@ -929,7 +929,7 @@
       "level": 0.0,
       "changes": 132,
       "changes_12m": 0,
-      "hold_days": 456,
+      "hold_days": 462,
       "direction_12m": "hold"
     }
   ]

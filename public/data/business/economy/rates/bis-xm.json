@@ -7,8 +7,8 @@
   "currency": "EUR",
   "founded": null,
   "first_change": "1999-01-01",
-  "last_change": "2026-06-17",
-  "built": "2026-09-19",
+  "last_change": "2026-09-16",
+  "built": "2026-09-25",
   "instruments": [
     {
       "from": "1999-01-01",
@@ -429,6 +429,12 @@
       "level": 2.25,
       "change": 0.25,
       "era": 3
+    },
+    {
+      "date": "2026-09-16",
+      "level": 2.5,
+      "change": 0.25,
+      "era": 3
     }
   ],
   "market": [],
@@ -676,6 +682,10 @@
     [
       "2026-06-17",
       2.25
+    ],
+    [
+      "2026-09-16",
+      2.5
     ]
   ],
   "coverage": {
