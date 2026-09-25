@@ -1,20 +1,69 @@
 {
-  "generatedAt": "2026-09-24",
+  "generatedAt": "2026-09-25",
   "count": 600,
   "entries": [
+    {
+      "date": "2026-09-25",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "e49264770"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "fix",
+      "hub": "Api",
+      "text": "Fix /fans sign-in: API routes validate the Supabase env key before use.",
+      "commit": "6d98ce3b1"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, AFL, NFL, and 1 more.",
+      "commit": "a2f4190e3"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Fan Index: Attention over time page, league-median value vs attention, college program values, sport filters.",
+      "commit": "ebd7e3d23"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Load round-3 sourced valuations (47 rows), remove 11 superseded guesses, add 255 owner rows.",
+      "commit": "ad3172ac7"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Fan Attention Index v0.8: sum+peak baseline, US attention tab, sign-in gate, 116 valuations.",
+      "commit": "317328155"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "hub",
+      "hub": "Fans",
+      "text": "Fan Attention Index v0.4.1: revenue-anchored cross-sport score, 770 teams, monthly refresh job.",
+      "commit": "572f3c079"
+    },
+    {
+      "date": "2026-09-24",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Rate limiter: make the silent per-instance fallback observable.",
+      "commit": "951f230e0"
+    },
     {
       "date": "2026-09-24",
       "category": "hub",
       "hub": null,
       "text": "Release notes: amend 2026-09-23 to cover the security hardening.",
       "commit": "0738bd796"
-    },
-    {
-      "date": "2026-09-24",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Football, AFL.",
-      "commit": "36cd9306a"
     },
     {
       "date": "2026-09-23",
@@ -4152,55 +4201,6 @@
       "hub": "Club Football",
       "text": "Refresh International ELO/FIFA from the workbook with workbook-driven 'as of' dates; fold international, club-football, women's-football an…",
       "commit": "1d9baf22c"
-    },
-    {
-      "date": "2026-06-04",
-      "category": "hub",
-      "hub": "Sports",
-      "text": "Add Team Valuations board, per-team value chips, and Sports hub restructure.",
-      "commit": "060396dfa"
-    },
-    {
-      "date": "2026-06-03",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Show full NHL season-by-season history; drop the 20-row cap.",
-      "commit": "d57648118"
-    },
-    {
-      "date": "2026-06-03",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Add defunct franchise detail pages and link them from all-time tables.",
-      "commit": "2b2c0d9bc"
-    },
-    {
-      "date": "2026-06-03",
-      "category": "fix",
-      "hub": "Club Football",
-      "text": "Add shared HubNav component and nav to league and directory hubs; fix NFL standings width and add Champ App column.",
-      "commit": "df3f3663a"
-    },
-    {
-      "date": "2026-06-03",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Add on-this-page nav to club and international football sub-hubs.",
-      "commit": "4598efaea"
-    },
-    {
-      "date": "2026-06-03",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "f38426d34"
-    },
-    {
-      "date": "2026-06-03",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Wire NBA top games to Game Score; zero out NFL offseason standings.",
-      "commit": "2ab5f8afd"
     }
   ]
 }
