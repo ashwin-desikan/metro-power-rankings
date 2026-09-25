@@ -18,6 +18,14 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-25",
+    headline: "The owners board now covers every team",
+    items: [
+      "Every team on the owners board now has an owner row, after 40 more sourced rows from overnight research.",
+      "Eight handball clubs carry a clearly marked, unverified placeholder until their owners are confirmed, due by late October.",
+    ],
+  },
+  {
     date: "2026-09-24",
     headline: "Fan Attention Index compares sports fairly",
     items: [
