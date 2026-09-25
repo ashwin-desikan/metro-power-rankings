@@ -20365,3 +20365,20 @@ runners to go through it are predictions-fri and cfb-fri at 11:40Z today; not wa
 
 **Notion:** none. No job's behaviour, schedule or alerting changed: the rule, the stamp and the alert text are
 identical for every runner, and only where the code lives moved. The BD and BE notes on the job rows remain accurate.
+
+### BG. BF's first production runs: predictions-fri and cfb-fri both passed through the new `_common.sh`
+
+Checked at Ashwin's request, closing the "not waited for" line in section BF. Both are `_common.sh` runners, and both
+call `mini_sync` and `commit_paths`, each of which runs `require_expected_branch` and so now `require_main_branch`
+from `branch-guard.sh`.
+
+| job | dispatcher | pushed |
+| --- | --- | --- |
+| predictions-fri | RUN 11:45:24Z, `DONE ok 459s` | `cb9280964` "Auto: refresh PL + UCL + NFL prediction models", 11:47Z |
+| cfb-fri | RUN 11:53:03Z, `DONE ok 407s` | `ee1df47fa` "Auto: refresh CFB predictions", 11:54Z |
+
+A commit on origin is the evidence that counts here, stronger than the green status, because `commit_paths` refuses
+before committing if the guard fails. Both revalidated on attempt 1. No FAIL or MISSED in `dispatcher.log` since
+10:00Z, no `.mini-wrong-branch` stamp, and the shared clone was on `main`, clean and level with origin at 18:21Z.
+
+**Notion:** none. Nothing changed; this confirms BF.
