@@ -24,6 +24,15 @@ fail(){ log "ERROR: $1"; push "[ALERT] scraper $JOB FAILED -- $DATE" urgent rota
 
 log "=== scraper $JOB start ($DATE, DRY_RUN=$DRY_RUN) ==="
 cd "$REPO" || fail "repo not found: $REPO"
+# 🔴 BRANCH GUARD, before ANY git operation. This script ends with
+# `git push origin HEAD:main`, and on a checked-out branch that publishes the
+# branch; the ff-merge below would also merge main into it first. It serves four
+# jobs (conflicts, fiba, rugby, substack) and never sourced _common.sh, so the
+# section AH guard never covered it. Fails CLOSED if the guard file is missing,
+# because running without it is exactly the hazard; that also stops a clone left
+# on an old branch that predates the file. Do not pipe the call (see the file).
+. "$REPO/mac-mini-jobs/branch-guard.sh" || fail "branch-guard.sh missing; refusing to run unguarded"
+require_main_branch "a scraper $JOB refresh"
 git fetch origin main --quiet || fail "git fetch failed"
 git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diverged; resolve by hand)"
 
