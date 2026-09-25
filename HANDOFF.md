@@ -20109,3 +20109,50 @@ affect `f1-weekly` and `heartbeat` too if it has a general cause.
 
 **Notion:** none by this entry. Worth filing on the next pass: a Backlog row to validate conflicts-monthly before
 2026-10-01, and one to teach `--check-sync` about launchd.
+
+### BB. conflicts-monthly validated in a worktree: it passes, and my guess about why it failed was wrong
+
+Section BA flagged conflicts-monthly because its only dispatcher run, 2026-09-01, failed in 3 seconds and was then
+flipped to `ok (manual)`, so nothing proved it could succeed before its 2026-10-01 07:15Z slot. BA guessed the 3-second
+failure was "more likely a git preamble than the data job". **That guess was wrong**, and reading the log before running
+anything is what showed it. The job fetched and parsed 75 wars, then hit its own gate:
+`UNMAPPED belligerents: PLO` followed by `ERROR: build-conflicts failed`.
+
+**The failure was real and was fixed properly, not waved through.** `PLO` is now in `KEEP_LABEL` in
+`scripts/conflicts/build-conflicts.py` with a comment explaining it (the 1982 Lebanon War, non-state at the time). The
+committed `conflicts.json` carries `"generated": "2026-09-02"`, so the job ran successfully by hand the next day. The
+`--mark-ok` on 1 September followed a genuine fix. BA's reading of it as "a hand-set flag rather than evidence" was
+right to be suspicious and wrong in its conclusion.
+
+**Validated in a worktree, per the rule ruled yesterday.** The runner hardcodes `REPO="$HOME/Projects/Metro Area Project"`,
+so running it from anywhere would have operated on the shared clone. The part that failed was `build-conflicts.py`, not
+the runner's git steps, which the other scraper jobs exercise daily; so the two scripts were run directly in a worktree,
+after confirming both resolve their output from `Path(__file__)` and therefore wrote into the worktree. Neither makes
+any external write. Result, with exit codes captured directly rather than read off the text:
+
+| step | exit | result |
+| --- | --- | --- |
+| `fetch-conflicts.py` | 0 | parsed 75 wars |
+| `build-conflicts.py` | 0 | 623 wars, "all belligerents resolved" |
+| versus committed | | 623 to 623, 0 added, 0 dropped; only `generated` changed |
+
+The shared clone was clean before and after, and the worktree and branch were removed.
+
+A small trap met on the way, worth knowing for this machine: the Bash tool runs **zsh**, where `${PIPESTATUS[0]}` is
+empty, so the first attempt printed blank exit codes. The exit code IS this gate's signal (`sys.exit(2)` on an unmapped
+belligerent), so it was re-run under `bash -c` rather than inferred from "all belligerents resolved".
+
+🔴 **ONE REAL DEFECT FOUND, AND IT IS THE 1 OCTOBER RISK.** `build-conflicts.py` calls `OUT.write_text(...)` and only
+THEN checks `if unmapped: sys.exit(2)`. So when Wikipedia adds a belligerent nobody has mapped, the job writes a new
+`conflicts.json` into the shared clone and then fails, and `run-scraper-refresh.sh`'s `fail()` exits without restoring
+it. That leaves a modified tracked file behind, which is exactly the 2026-09-24 outage: every job that fast-forwards
+stops, and ops-autofix stands down on `working_tree_dirty`. It already happened once, on 1 September, and was absorbed
+only because someone re-ran it the next day. The fix is to run the gate before the write, since the reviewer needs the
+printed names and `conflicts_raw.json`, not a half-published output. Same class as the fans-monthly `--dry-run` that
+wrote history before its check. **Not applied; offered to Ashwin.**
+
+Also noted, not fixed: `run-scraper-refresh.sh` ends with `git push origin HEAD:main` and does not source `_common.sh`,
+so `require_expected_branch` from section AH does not protect it. It serves conflicts, fiba, rugby and substack, so a
+checked-out branch in the shared clone would still be pushed to main by any of those four.
+
+**Notion:** none (no queryable state changed; the validation wrote only inside a removed worktree).
