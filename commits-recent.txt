@@ -1,3 +1,4 @@
+2026-09-25T01:36:23+01:00  5e7377c43  Owners: last 16 board teams (8 verified, 8 unverified placeholders); owners build passes
 2026-09-25T00:37:59+01:00  b245c6f5b  Owners: 32 more owner rows from overnight research (16 board teams still pending)
 2026-09-25T00:05:39+01:00  e8b4952f4  football: refresh live bundles [vercel skip]
 2026-09-24T22:49:55+01:00  6d98ce3b1  Fix /fans sign-in: API routes validate the Supabase env key before use
@@ -77,4 +78,3 @@
 2026-09-22T17:17:33+01:00  fcf4a36d9  apifootball: Jev club resolver pilot, measurement only [vercel skip]
 2026-09-22T18:07:47+01:00  ea82840c6  football: refresh live bundles [vercel skip]
 2026-09-22T14:42:42+01:00  91d0004c5  mktcap: apply the 20 metro rulings; contradictions 14 -> 0 [vercel skip]
-2026-09-22T13:49:23+01:00  f67d43333  mktcap: correct 37 provably wrong state values in mktcap_geo [vercel skip]
