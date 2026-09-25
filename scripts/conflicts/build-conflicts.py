@@ -132,15 +132,25 @@ def main():
                   " (post-1945 rows) plus curated historical wars carried forward",
         "count": len(merged), "wars": merged,
     }
-    OUT.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"wrote {len(merged)} wars -> {OUT.name} "
-          f"({len(wars)} from the scrape, {len(carried)} carried forward)")
+    # 🔴 THE UNMAPPED GATE RUNS BEFORE THE WRITE, like the two gates above it.
+    # Until 2026-09-25 it ran AFTER OUT.write_text, so an unreviewed belligerent
+    # produced a newly written conflicts.json AND an exit 2. On the mini that is
+    # not a harmless leftover: the runner's fail() does not restore the file, and
+    # a modified tracked file in the shared clone stops every job that
+    # fast-forwards and makes ops-autofix stand down as a blocker. It happened on
+    # 2026-09-01 (PLO) and was absorbed only because the job was re-run by hand
+    # the next day. The reviewer needs the printed names and conflicts_raw.json,
+    # not a half-published output, so nothing is lost by not writing.
     if unmapped:
         print("UNMAPPED belligerents (review — add to ALIAS or KEEP_LABEL):")
         for u in sorted(unmapped): print("  ", u)
+        print(f"NOT written: {OUT.name} is left exactly as it was.")
         sys.exit(2)  # gate: a new/unknown belligerent must be reviewed (alias or keep-label)
-    else:
-        print("all belligerents resolved (mapped or intentional labels)")
+
+    OUT.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"wrote {len(merged)} wars -> {OUT.name} "
+          f"({len(wars)} from the scrape, {len(carried)} carried forward)")
+    print("all belligerents resolved (mapped or intentional labels)")
 
 if __name__ == "__main__":
     main()

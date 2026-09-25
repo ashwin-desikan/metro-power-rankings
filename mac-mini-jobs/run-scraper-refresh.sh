@@ -29,8 +29,17 @@ git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diver
 
 case "$JOB" in
   conflicts)
-    "$PY" scripts/conflicts/fetch-conflicts.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "fetch-conflicts failed"
-    "$PY" scripts/conflicts/build-conflicts.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "build-conflicts failed"
+    # 🔴 RESTORE BEFORE FAILING. fetch-conflicts.py writes conflicts_raw.json, a
+    # TRACKED file, before build-conflicts.py runs any gate. So moving the
+    # unmapped gate ahead of build's own write (done 2026-09-25) is necessary and
+    # not sufficient: a failed build still left conflicts_raw.json modified in the
+    # shared clone, which is the dirty-tree state that stopped the fleet on
+    # 2026-09-24. Restoring both scraped paths makes a failed run leave the repo
+    # exactly as it found it. A checkout of an unchanged file is a no-op, so it is
+    # safe on either failure.
+    _conflicts_restore() { git checkout -- public/data/conflicts_raw.json public/data/conflicts.json 2>/dev/null; }
+    "$PY" scripts/conflicts/fetch-conflicts.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || { _conflicts_restore; fail "fetch-conflicts failed (scraped files restored)"; }
+    "$PY" scripts/conflicts/build-conflicts.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || { _conflicts_restore; fail "build-conflicts failed (scraped files restored, repo left clean)"; }
     ADD=( public/data/conflicts.json public/data/conflicts_raw.json )
     MSG="data: monthly interstate-wars refresh [vercel skip]" ;;
   fiba)
