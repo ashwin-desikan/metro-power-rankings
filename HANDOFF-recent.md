@@ -212,6 +212,60 @@ does not source `_common.sh`, so the section AH branch guard does not cover any 
 
 **Notion:** Scheduled jobs row "conflicts-monthly" Last verified 2026-09-25, with the validation, the two-part fix, the
 test table and the control. Verified over REST.
+
+### BD. run-scraper-refresh.sh now refuses to run off main, via a guard the other eleven scripts can share
+
+At Ashwin's instruction, closing the gap sections BB and BC left open. Pushed as `b35beb34a`, `[vercel skip]`, built and
+tested in a worktree; the shared clone stayed on `main` and clean throughout.
+
+**The gap was wider than this one script.** Measured before writing anything: section AH's `require_expected_branch`
+only protects scripts that source `runners/_common.sh`. Twelve top-level scripts push `HEAD:main` without it:
+`run-scraper-refresh.sh` (conflicts, fiba, rugby, substack) plus run-activity-feed, run-cricket-monthly,
+run-cricket-weekly, run-deploy-watch, run-euro-comps, run-f1-weekly, run-football-standings, run-gap-league-watch,
+run-screen-number-ones, run-sound-weekly and metro-mini-refresh. Pasting a second copy of the rule into each would give
+twelve copies to drift. So the rule now lives in its own file.
+
+**`mac-mini-jobs/branch-guard.sh`** defines `require_main_branch` and nothing else. It has no side effects at source
+time (checked with `declare -F`), so sourcing it cannot change a script's behaviour except where the function is called.
+It reuses the same `.mini-wrong-branch` stamp as `require_expected_branch`, so a wrong branch pages once for the whole
+fleet, not once per script. It calls `exit`, so, like its twin, it must never be called in a pipe or `$( )`.
+
+**In the runner** it is sourced right after `cd "$REPO"` and before `git fetch`, and a missing guard file FAILS CLOSED
+("refusing to run unguarded") rather than silently running unguarded.
+
+**Tested in a throwaway repo, 17 of 17.** The runner hardcodes `REPO="$HOME/Projects/Metro Area Project"`, so the test
+pointed `HOME` at a temp dir holding a throwaway repo at that path and a stub `notify.py` that logs instead of paging.
+That let the REAL fixed runner run unmodified, with no test copy.
+
+| test | result |
+| --- | --- |
+| on main | passes, no alert |
+| on a branch | exit 1, one alert, stamp names the branch |
+| second refusal | no second alert |
+| detached HEAD | refused, named as "a detached HEAD at <sha>" |
+| `exit` stops the caller | the line after the call never runs |
+| back on main | passes, stamp cleared |
+| real fixed runner, clone on a branch behind main | exit 1; branch not fast-forwarded; origin untouched; one alert |
+| **control**: ORIGINAL runner, same scenario | fast-forwarded main INTO the branch |
+
+The control shows what the guard prevents. Before `b35beb34a`, leaving the shared clone on a branch meant the next
+scraper job merged main into that branch and then pushed the result to main.
+
+**Live:** `run-scraper-refresh.sh` was already a symlink, so the repo change is the live change. `branch-guard.sh` is
+now symlinked into `~/metro-mini-jobs/` too, so the file cannot drift from the repo. `--check-sync` is clean.
+
+A small trap for anyone reading `config.env` here: a grep for `PYTHON_BIN=` also matches a commented-out line holding
+an old `/Users/ashwin/` path. The live value, read by sourcing the file, is the correct venv python. Source the file to
+read a value; do not grep it.
+
+**Still open, offered to Ashwin rather than bundled in:** the other eleven scripts listed above are still unguarded.
+Each needs one `.` line and one `require_main_branch` call, placed before its first git write. `_common.sh` could also
+source `branch-guard.sh` so that only one copy of the rule exists. Worth doing first: `run-activity-feed.sh`, which
+section AZ already identified as the script that deepened the 09-24 outage.
+
+**Notion:** Scheduled jobs rows conflicts-monthly, fiba-weekly, rugby-weekly and substack-daily each carry a Notes line
+about the guard and `b35beb34a`, verified over REST. Last verified was deliberately left unchanged on fiba, rugby and
+substack (09-18), because this tested the guard, not those jobs' runs. conflicts-monthly already reads 09-25 from BB.
 ## 2026-09-25: cowork (Windows device session) → next session (last 16 owner rows; owners build passes)
 
 Ashwin supplied a Gemini summary of owners for the final 16 board teams. Each claim was checked against sources: 8 confirmed and added with normal confidence (FC Groningen, RC Vannes, TuS N-Lübbecke, Gas Sales Piacenza, Itas Trentino, Pallavolo Padova, Prisma Taranto, Yuasa Grottazzolina; for the last three only the club president is public, so the rows name the club company, not the president, as owner). Gemini errors found: TuS Nettelstedt e.V. is licence holder not shareholder; ITAS is Trentino's sponsor not owner; the Padova "Consorzio" and a Taranto co-owner could not be found.
