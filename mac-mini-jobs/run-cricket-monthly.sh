@@ -18,6 +18,10 @@ log "=== Cricket monthly start ($DATE, DRY_RUN=$DRY_RUN) ==="
 [ -n "${SUPABASE_SERVICE_KEY:-}" ] || fail "SUPABASE_SERVICE_KEY not set"
 
 cd "$REPO" || fail "repo not found"
+# BRANCH GUARD, before any git operation (branch-guard.sh, HANDOFF BD/BE). Fails
+# CLOSED if the guard file is missing. Do not pipe the call (see the file).
+. "$REPO/mac-mini-jobs/branch-guard.sh" || fail "branch-guard.sh missing; refusing to run unguarded"
+require_main_branch "the cricket monthly refresh"
 git fetch origin main --quiet || fail "git fetch failed"
 git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diverged)"
 

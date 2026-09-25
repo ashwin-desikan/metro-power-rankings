@@ -58,6 +58,10 @@ alert() { "$PY" "$DIR/notify.py" "CoN mini refresh" "$1" 1 || true; }
 fail() { note "FAIL: $1"; alert "$1"; exit 1; }
 
 cd "$REPO_DIR" || fail "REPO_DIR not found: $REPO_DIR"
+# BRANCH GUARD, before any git operation (branch-guard.sh, HANDOFF BD/BE). Fails
+# CLOSED if the guard file is missing. Do not pipe the call (see the file).
+. "$REPO_DIR/mac-mini-jobs/branch-guard.sh" || fail "branch-guard.sh missing; refusing to run unguarded"
+require_main_branch "the civic-data refresh" "$GIT_BRANCH"
 
 # Fast-forward to origin so we commit on top of the latest history.
 git fetch "$GIT_REMOTE" "$GIT_BRANCH" --quiet || fail "git fetch failed"

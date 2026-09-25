@@ -97,6 +97,10 @@ esac
 # 2. SYNC: new race ($season R$jrnd, "$racename")
 log "=== F1 sync: new race $season R$jrnd ($racename) ==="
 cd "$REPO" || fail "repo not found"
+# BRANCH GUARD, before any git operation (branch-guard.sh, HANDOFF BD/BE). Fails
+# CLOSED if the guard file is missing. Do not pipe the call (see the file).
+. "$REPO/mac-mini-jobs/branch-guard.sh" || fail "branch-guard.sh missing; refusing to run unguarded"
+require_main_branch "the f1 sync"
 git fetch origin main --quiet || fail "git fetch failed"
 git merge --ff-only origin/main --quiet || fail "cannot fast-forward"
 BASE="https://api.jolpi.ca/ergast/f1"

@@ -30,6 +30,10 @@ log "=== football-standings start ($DATE) ==="
 # back to it, and the mini standardises on SERVICE_KEY). See run-gap-league-watch.sh.
 [ -n "${SUPABASE_WRITE_KEY:-}${SUPABASE_SERVICE_KEY:-}" ] || fail "no Supabase key set (SUPABASE_WRITE_KEY or SUPABASE_SERVICE_KEY expected in ~/.config/metro-supabase/env)"
 cd "$REPO" || fail "repo not found: $REPO"
+# BRANCH GUARD, before any git operation (branch-guard.sh, HANDOFF BD/BE). Fails
+# CLOSED if the guard file is missing. Do not pipe the call (see the file).
+. "$REPO/mac-mini-jobs/branch-guard.sh" || fail "branch-guard.sh missing; refusing to run unguarded"
+require_main_branch "the football-standings refresh"
 git fetch origin main --quiet || fail "git fetch failed"
 git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diverged; resolve by hand)"
 

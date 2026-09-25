@@ -24,6 +24,10 @@ fail(){ log "ERROR: $1"; push "[ALERT] euro-comps FAILED -- $DATE" urgent rotati
 log "=== euro-comps start ($DATE, DRY_RUN=$DRY_RUN) ==="
 [ -n "${APISPORTS_KEY:-}" ] || fail "APISPORTS_KEY not set (expected in ~/.config/metro-supabase/env)"
 cd "$REPO" || fail "repo not found: $REPO"
+# BRANCH GUARD, before any git operation (branch-guard.sh, HANDOFF BD/BE). Fails
+# CLOSED if the guard file is missing. Do not pipe the call (see the file).
+. "$REPO/mac-mini-jobs/branch-guard.sh" || fail "branch-guard.sh missing; refusing to run unguarded"
+require_main_branch "the euro-comps refresh"
 git fetch origin main --quiet || fail "git fetch failed"
 git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diverged; resolve by hand)"
 

@@ -19,6 +19,10 @@ fail(){ log "ERROR: $1"; push "[ALERT] Sound weekly FAILED -- $DATE" urgent rota
 log "=== Sound weekly start ($DATE, DRY_RUN=$DRY_RUN) ==="
 [ -d "$PIPE" ] || fail "pipeline folder missing: $PIPE"
 cd "$REPO" || fail "repo not found"
+# BRANCH GUARD, before any git operation (branch-guard.sh, HANDOFF BD/BE). Fails
+# CLOSED if the guard file is missing. Do not pipe the call (see the file).
+. "$REPO/mac-mini-jobs/branch-guard.sh" || fail "branch-guard.sh missing; refusing to run unguarded"
+require_main_branch "the sound weekly refresh"
 git fetch origin main --quiet || fail "git fetch failed"
 git merge --ff-only origin/main --quiet || fail "cannot fast-forward (diverged)"
 

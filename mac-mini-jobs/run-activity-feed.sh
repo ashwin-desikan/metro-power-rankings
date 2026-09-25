@@ -10,6 +10,10 @@ set -uo pipefail
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 REPO="$HOME/Projects/Metro Area Project"
 cd "$REPO" || { echo "repo not found at $REPO"; exit 1; }
+# BRANCH GUARD, before any git operation (branch-guard.sh, HANDOFF BD/BE). Fails
+# CLOSED if the guard file is missing. Do not pipe the call (see the file).
+. "$REPO/mac-mini-jobs/branch-guard.sh" || { echo "branch-guard.sh missing; refusing to run unguarded"; exit 1; }
+require_main_branch "the activity-feed refresh"
 
 # Pull every machine's latest commits first so the feed is complete.
 git pull --rebase --autostash -q origin main || { echo "git pull failed"; exit 1; }

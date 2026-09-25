@@ -40,6 +40,16 @@ cd "$REPO" || { echo "repo missing at $REPO"; exit 1; }
 dispatcher_lock_acquire "deploy-watch" || exit 0
 trap dispatcher_lock_release EXIT
 
+# BRANCH GUARD, before any git operation (branch-guard.sh, HANDOFF BD/BE). Fails
+# CLOSED if the guard file is missing. UNLIKE the other jobs this one STANDS DOWN
+# (exit 0) off main instead of failing: it runs every 10 minutes and the
+# dispatcher pages on every failed slot, so exit 1 here would page six times an
+# hour. The guard's own ntfy still fires once (deduped by its stamp file), and
+# every other job goes red. The subshell is deliberate: it is the one call site
+# where the guard's exit must NOT end the script, so its status is caught.
+. "$REPO/mac-mini-jobs/branch-guard.sh" || { echo "branch-guard.sh missing; refusing to run unguarded"; exit 1; }
+( require_main_branch "the deploy-watch re-trigger" ) || { echo "standing down: clone is not on main (exit 0, see above)"; exit 0; }
+
 git fetch -q origin main || { echo "git fetch failed (transient) — next run"; exit 0; }
 
 # TARGET: newest origin/main commit that Vercel's ignoreCommand would build.
