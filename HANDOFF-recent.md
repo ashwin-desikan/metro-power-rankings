@@ -328,6 +328,59 @@ traps met: the f1 row is titled "F1 weekly sync", not `f1-weekly`, and deploy-wa
 
 **What remains of this thread:** `runners/_common.sh` still carries its own copy of the rule (`require_expected_branch`).
 Having it source `branch-guard.sh` would leave one copy. Not done; the two are tested twins and share a stamp.
+
+### BF. One copy of the branch rule: `_common.sh` now sources `branch-guard.sh`
+
+At Ashwin's instruction, closing the follow-up from BE. Pushed as `f815c704d`, `[vercel skip]`, built and tested in a
+worktree; the shared clone stayed on `main` and clean.
+
+**What changed.** `require_expected_branch` in `runners/_common.sh` was a hand-kept twin of `require_main_branch`. It is
+now a one-line wrapper (`require_main_branch "$1" "$GIT_BRANCH"`), so its three call sites and the selftest keep their
+names. `_common.sh` sources `$MINI_DIR/branch-guard.sh` and fails CLOSED if it is missing, so every runner refuses to run
+unguarded. The long history comment (AG's incident, the detached-HEAD rule, why it exits 1) moved into `branch-guard.sh`
+with it, so the rule and its reasons live in one file.
+
+🔴 **THE TRAP THIS NEARLY SPRANG: the selftest would have sent REAL ntfy.** `_common-selftest.sh` builds a temp
+`MINI_DIR` with a stub `notify.py` so alerts can be counted, not sent. The guard as written in BD hardcoded
+`$HOME/metro-mini-jobs`. Swapping it in as-is would have made every selftest run write the REAL stamp file and call the
+REAL notify path. Measured rather than argued, under a fake `HOME`: with the BD guard, one selftest run sent 2 alerts to
+the `~/metro-mini-jobs/notify.py` path. The fix is `local mini="${MINI_DIR:-$HOME/metro-mini-jobs}"`: runners and the
+selftest set `MINI_DIR`, and the top-level scripts leave it unset and get the old default. The selftest's "stamp records
+the branch" check now fails if the guard ever stops honouring `MINI_DIR`, which is what the control run showed (3
+failures).
+
+**Recorded in the guard's comment, because it was left contradicting itself:** `_common.sh`'s rationale said a wrong
+branch must exit 1 and never stand down, since "the dispatcher records the slot even on failure, so there is no retry
+loop". Section BE made deploy-watch stand down with exit 0. Both are right: that volume bound assumes one slot per run,
+and deploy-watch has a slot every 10 minutes. The comment now names deploy-watch as the one sanctioned exception, and
+says why, so nobody copies it to a daily job.
+
+**Two smaller wording fixes** in the refusal line: it uses the runners' `[%F %T]` timestamp format, and it no longer
+says every script "pushes HEAD:main" (BE found four that push `origin main`).
+
+**Tests**, all under a fake `HOME` so nothing real could be touched:
+
+| run | result |
+| --- | --- |
+| selftest: new `_common.sh` and new guard | 21/21 (adds a fail-closed check), 0 alerts reached the real-path probe |
+| **control**: same selftest with the BD guard | 3 failures, 2 alerts reached the real-path probe |
+| **control**: the OLD selftest against the new `_common.sh` | fails from the first check: its temp `MINI_DIR` has no guard, so sourcing refuses (fail-closed working) |
+| eleven-script harness from BE | 176/176 |
+| scraper-runner test from BD | 16/16 real checks; its control now "fails" because `origin/main`'s runner already carries the guard |
+
+**A mistake in my own testing, worth knowing:** my first "did anything reach the real path" probe was a stub
+`notify.py` written with `printf` inside `bash -c '...'`. The `\\n` became a literal newline inside a Python string, so
+the stub crashed on every call, and "untouched" meant nothing. The rerun first calls the stub once itself and checks it
+recorded something, before trusting a zero. A probe that cannot fire proves nothing, and a zero from one looks exactly
+like a pass.
+
+**Live:** `_common.sh`, `_common-selftest.sh` and `branch-guard.sh` are all symlinks in `~/metro-mini-jobs/`, so the pull
+made it live. `--check-sync` is clean. The selftest passes 21/21 against the live files, and sourcing the live
+`_common.sh` exactly as a runner does resolves `MINI_DIR=~/metro-mini-jobs` and passes on `main`. The first scheduled
+runners to go through it are predictions-fri and cfb-fri at 11:40Z today; not waited for.
+
+**Notion:** none. No job's behaviour, schedule or alerting changed: the rule, the stamp and the alert text are
+identical for every runner, and only where the code lives moved. The BD and BE notes on the job rows remain accurate.
 ## 2026-09-25: cowork (Windows device session) → next session (last 16 owner rows; owners build passes)
 
 Ashwin supplied a Gemini summary of owners for the final 16 board teams. Each claim was checked against sources: 8 confirmed and added with normal confidence (FC Groningen, RC Vannes, TuS N-Lübbecke, Gas Sales Piacenza, Itas Trentino, Pallavolo Padova, Prisma Taranto, Yuasa Grottazzolina; for the last three only the club president is public, so the rows name the club company, not the president, as owner). Gemini errors found: TuS Nettelstedt e.V. is licence holder not shareholder; ITAS is Trentino's sponsor not owner; the Padova "Consorzio" and a Taranto co-owner could not be found.
