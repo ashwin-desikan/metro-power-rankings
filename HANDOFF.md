@@ -20502,3 +20502,71 @@ times a day and deploy-watch every ten minutes, so they have the most chances to
 
 **Notion:** none. This is shared plumbing, not one job's row; no job's schedule changed, and the only behaviour change is
 a refusal where there used to be silent damage. Recorded here and in the selftest.
+
+### BJ. The last five autostash sites are gone, and there is one copy of the push rule
+
+At Ashwin's instruction, the five sites BI left open. Pushed as `7da1c5688`, `[vercel skip]`, built and tested in a
+worktree. No uncommented `autostash` remains anywhere in `mac-mini-jobs/`.
+
+**Measured on the originals first.** With a post-commit hook making "another machine" push a change to a file that is
+dirty in the clone, between the script's commit and its push: **the original football-standings and deploy-watch both
+exited 0 and left 3 unmerged entries, a stash and conflict markers.** Same silent shape as BI's commit_paths finding.
+
+**One file, `mac-mini-jobs/safe-push.sh`**, side-effect free like `branch-guard.sh`:
+- `push_head_retry <remote> <branch> [n]`: push FIRST; on a rejection back off, fetch, and only if origin moved, rebase.
+- `rebase_local_onto <remote> <branch>`: the replay rules that lived in `mini_sync` (never stash; refuse on a dirty tree,
+  untracked files included; refuse past 50 commits; abort a conflict), word for word, including "(resolve by hand)".
+- Both RETURN, with the reason in `$SAFE_PUSH_REASON`, because the callers want different things from a refusal.
+
+`_common.sh` sources it (fails closed) and `_mini_sync_rebase_local`, `commit_paths` and metro-rankings now use it, so
+BI's helper is now a thin `fail()` wrapper. The two top-level scripts source it from the repo. The rule has one copy.
+
+| site | now |
+| --- | --- |
+| football-standings, push retry | `push_head_retry origin main 3`; a refusal fails the run with the reason and keeps the bundle commit locally |
+| deploy-watch, before its commit | fetch + fast-forward ONLY; anything else stands down, exit 0, next run |
+| deploy-watch, push loop | `push_head_retry`; on failure `reset --keep HEAD~1` undoes OUR commit, records nothing, exit 0 |
+| metro-rankings, publish push | `push_head_retry`; failure is fatal, as before |
+| metro-rankings, held-report push | `push_head_retry`; failure is a WARN, as before, so the hold reason is never replaced |
+
+🔴 **deploy-watch was also lying, separately from the stash.** Its push loop's result was never checked: a push that
+failed three times fell straight through to writing the attempt into its state file and sending the "Vercel auto-retry:
+re-triggered" ntfy. The control run shows it: `state=written claimed=1` while the clone sat unmerged. It now reports a
+re-trigger only after a push that happened, and an unchecked `git commit` got a check too.
+
+**Tests**, all in throwaway repos under a fake `HOME`:
+
+| suite | result |
+| --- | --- |
+| `_common-selftest.sh` | 42/42: all of BI's cases through the refactor, plus `push_head_retry`'s soft-refusal contract (returns 1 with a reason, caller survives, nothing mid-rebase) and a fail-closed check for `safe-push.sh` |
+| football-standings + deploy-watch, real scripts | 34/34: origin moves mid-run on a clean tree (rebases and pushes, both commits kept); the 09-24 class (no unmerged, no stash, local edit kept; football fails with the reason and keeps its commit, deploy-watch undoes its commit and records no state); deploy-watch with the fast-forward blocked (stands down, no commit) |
+| **controls**, the originals | both: exit 0, 3 unmerged, 1 stash, conflict markers; deploy-watch also recorded and announced the re-trigger |
+| BD/BE branch-guard harness | 176/176 |
+| BH activity-feed | 34/34 |
+
+**Harness notes, because each of these would bite a repeat:**
+- The "another machine" push is a `post-commit` hook in the throwaway repo, armed by a flag file. It must `unset GIT_DIR
+  GIT_INDEX_FILE GIT_WORK_TREE` first, because git exports them into hooks. Every case checks the hook actually fired: the
+  first football run failed on a missing Supabase key before ever committing, and "hook fired: NOT FIRED" is what said so.
+- The BD/BE harness had silently gone stale at BH: activity-feed now sources `~/metro-mini-jobs/runners/_common.sh`, which
+  the harness never provided. Rerunning old harnesses after a change is how that surfaced; they are updated.
+- My first football-standings edit piped `push_head_retry | tee`, which runs it in a subshell and loses
+  `$SAFE_PUSH_REASON`. Caught on reading it back, before any test. The fleet's "do not pipe the call" rule applies to any
+  function that sets state, not only to ones that exit.
+
+**Deployed in the order that cannot break the fleet.** The live `_common.sh` refuses to run without
+`~/metro-mini-jobs/safe-push.sh`, so the symlink was created BEFORE the pull that made `_common.sh` need it. A runner
+starting between the two would otherwise have refused. `--check-sync` clean, selftest 42/42 against the live files.
+
+**Confirmed live:** economy-housing, a `commit_paths` runner, pushed `466772cc2` "Auto: house prices refresh" at 07:33Z via
+the new path ("Pushed on attempt 1.", `DONE ok 315s`), then deploy-watch ran `ok` with `safe-push.sh` loaded. Clone
+afterwards on `main`, 0 dirty, 0 unmerged, 0 stashes, 0 ahead. **Not yet exercised live:** metro-rankings (today's
+10:30Z slot) and football-standings (11:00Z), and deploy-watch's re-trigger path, which only runs on a canceled build.
+
+**A slip of mine worth knowing:** to confirm the deploy, I sourced the live `_common.sh` by hand. That takes the
+dispatcher lock, which `_common.sh` deliberately never releases, so it left a dead-PID lock file; the 07:33Z tick logged
+"stale lock file; taking it over" for it. Harmless by design, but it is a manual run in the fleet's lock. The selftest
+against the live files is the check that touches nothing; use that.
+
+**Notion:** Scheduled jobs rows football-standings, deploy-watch and metro-rankings each carry a note on the change, what
+was and was not exercised live, verified over REST. Last verified unchanged: none of those three has run through it yet.

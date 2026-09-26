@@ -9,8 +9,8 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 79, 2026-09-19 to 2026-09-26
-     If the reader counts fewer than 79 entries, its fetch window stopped
+     entries: 78, 2026-09-20 to 2026-09-26
+     If the reader counts fewer than 78 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
 ## 2026-09-26
@@ -132,6 +132,74 @@ times a day and deploy-watch every ten minutes, so they have the most chances to
 
 **Notion:** none. This is shared plumbing, not one job's row; no job's schedule changed, and the only behaviour change is
 a refusal where there used to be silent damage. Recorded here and in the selftest.
+
+### BJ. The last five autostash sites are gone, and there is one copy of the push rule
+
+At Ashwin's instruction, the five sites BI left open. Pushed as `7da1c5688`, `[vercel skip]`, built and tested in a
+worktree. No uncommented `autostash` remains anywhere in `mac-mini-jobs/`.
+
+**Measured on the originals first.** With a post-commit hook making "another machine" push a change to a file that is
+dirty in the clone, between the script's commit and its push: **the original football-standings and deploy-watch both
+exited 0 and left 3 unmerged entries, a stash and conflict markers.** Same silent shape as BI's commit_paths finding.
+
+**One file, `mac-mini-jobs/safe-push.sh`**, side-effect free like `branch-guard.sh`:
+- `push_head_retry <remote> <branch> [n]`: push FIRST; on a rejection back off, fetch, and only if origin moved, rebase.
+- `rebase_local_onto <remote> <branch>`: the replay rules that lived in `mini_sync` (never stash; refuse on a dirty tree,
+  untracked files included; refuse past 50 commits; abort a conflict), word for word, including "(resolve by hand)".
+- Both RETURN, with the reason in `$SAFE_PUSH_REASON`, because the callers want different things from a refusal.
+
+`_common.sh` sources it (fails closed) and `_mini_sync_rebase_local`, `commit_paths` and metro-rankings now use it, so
+BI's helper is now a thin `fail()` wrapper. The two top-level scripts source it from the repo. The rule has one copy.
+
+| site | now |
+| --- | --- |
+| football-standings, push retry | `push_head_retry origin main 3`; a refusal fails the run with the reason and keeps the bundle commit locally |
+| deploy-watch, before its commit | fetch + fast-forward ONLY; anything else stands down, exit 0, next run |
+| deploy-watch, push loop | `push_head_retry`; on failure `reset --keep HEAD~1` undoes OUR commit, records nothing, exit 0 |
+| metro-rankings, publish push | `push_head_retry`; failure is fatal, as before |
+| metro-rankings, held-report push | `push_head_retry`; failure is a WARN, as before, so the hold reason is never replaced |
+
+🔴 **deploy-watch was also lying, separately from the stash.** Its push loop's result was never checked: a push that
+failed three times fell straight through to writing the attempt into its state file and sending the "Vercel auto-retry:
+re-triggered" ntfy. The control run shows it: `state=written claimed=1` while the clone sat unmerged. It now reports a
+re-trigger only after a push that happened, and an unchecked `git commit` got a check too.
+
+**Tests**, all in throwaway repos under a fake `HOME`:
+
+| suite | result |
+| --- | --- |
+| `_common-selftest.sh` | 42/42: all of BI's cases through the refactor, plus `push_head_retry`'s soft-refusal contract (returns 1 with a reason, caller survives, nothing mid-rebase) and a fail-closed check for `safe-push.sh` |
+| football-standings + deploy-watch, real scripts | 34/34: origin moves mid-run on a clean tree (rebases and pushes, both commits kept); the 09-24 class (no unmerged, no stash, local edit kept; football fails with the reason and keeps its commit, deploy-watch undoes its commit and records no state); deploy-watch with the fast-forward blocked (stands down, no commit) |
+| **controls**, the originals | both: exit 0, 3 unmerged, 1 stash, conflict markers; deploy-watch also recorded and announced the re-trigger |
+| BD/BE branch-guard harness | 176/176 |
+| BH activity-feed | 34/34 |
+
+**Harness notes, because each of these would bite a repeat:**
+- The "another machine" push is a `post-commit` hook in the throwaway repo, armed by a flag file. It must `unset GIT_DIR
+  GIT_INDEX_FILE GIT_WORK_TREE` first, because git exports them into hooks. Every case checks the hook actually fired: the
+  first football run failed on a missing Supabase key before ever committing, and "hook fired: NOT FIRED" is what said so.
+- The BD/BE harness had silently gone stale at BH: activity-feed now sources `~/metro-mini-jobs/runners/_common.sh`, which
+  the harness never provided. Rerunning old harnesses after a change is how that surfaced; they are updated.
+- My first football-standings edit piped `push_head_retry | tee`, which runs it in a subshell and loses
+  `$SAFE_PUSH_REASON`. Caught on reading it back, before any test. The fleet's "do not pipe the call" rule applies to any
+  function that sets state, not only to ones that exit.
+
+**Deployed in the order that cannot break the fleet.** The live `_common.sh` refuses to run without
+`~/metro-mini-jobs/safe-push.sh`, so the symlink was created BEFORE the pull that made `_common.sh` need it. A runner
+starting between the two would otherwise have refused. `--check-sync` clean, selftest 42/42 against the live files.
+
+**Confirmed live:** economy-housing, a `commit_paths` runner, pushed `466772cc2` "Auto: house prices refresh" at 07:33Z via
+the new path ("Pushed on attempt 1.", `DONE ok 315s`), then deploy-watch ran `ok` with `safe-push.sh` loaded. Clone
+afterwards on `main`, 0 dirty, 0 unmerged, 0 stashes, 0 ahead. **Not yet exercised live:** metro-rankings (today's
+10:30Z slot) and football-standings (11:00Z), and deploy-watch's re-trigger path, which only runs on a canceled build.
+
+**A slip of mine worth knowing:** to confirm the deploy, I sourced the live `_common.sh` by hand. That takes the
+dispatcher lock, which `_common.sh` deliberately never releases, so it left a dead-PID lock file; the 07:33Z tick logged
+"stale lock file; taking it over" for it. Harmless by design, but it is a manual run in the fleet's lock. The selftest
+against the live files is the check that touches nothing; use that.
+
+**Notion:** Scheduled jobs rows football-standings, deploy-watch and metro-rankings each carry a note on the change, what
+was and was not exercised live, verified over REST. Last verified unchanged: none of those three has run through it yet.
 ## 2026-09-25
 
 ### AZ. This morning's two ntfy, and a correction to section AY that the daily sweep earned
@@ -3961,20 +4029,5 @@ Ashwin's ask: stop rebuilding the site by hand each week. MetroAreas.xlsx syncs 
 **Not done:** phase 2, the mini's weekly job (it must REPLACE the `update_top_companies` commit in `run-mktcap-refresh.sh`, or Saturday spends both builds; shadow two Saturdays first). Phase 3, the Task Scheduler watcher. No scheduled job was created or changed today. The metro-join builders (states, similar, relocations) were not checked for workbook reads.
 
 **Notion:** Decisions +2 (workbook-free metro rankings; positional chunked mirror). Backlog +3 (phase 2 mini job; phase 3 Windows watcher; Supabase free plan at 439 of 500 MB, owner Ashwin). Scheduled jobs: none changed.
-
-
-## 2026-09-19 (late) - windows (Cowork, cloud bridged to the Windows box) -> mini and next session: THE RELEASE IS LIVE (`778734ced`), FOURTH PAID BUILD OF THE DAY, ON ASHWIN'S WORD
-
-Ashwin: "Commit and push everything to main". That is the explicit yes, given knowing three builds had run. The scheduled 00:10 UTC push was deleted unused.
-
-- `git pull --rebase` replayed the nine local commits onto `49aa53f00`; the SHAs in the two entries above are PRE-REBASE. On origin: forecast hubs `43077db72`, NBA vs Last `43f298303`, NBA weekly seeds `341bb9f0f`, NFL honours `4db7dba60`, subscribe path `eb3c0f8e9`, check:cache-tags `7f58ffc06`, release `778734ced` (HEAD of the push, no skip marker).
-- Before the push: `npm run verify` EXIT 0 end to end (typecheck, every check, 339 JS tests, 112 Python tests, build, function size). `probe-mobile` at concurrency 1 on a local production build: `/` 17.7 screens, `/digest` 5.6, `/teams/nfl/season/1980` 13.4, `/teams/nba/season/2001` 9.3, `/deep-dives` 6.1; 5/5 clean at 390px. The homepage was 16.5 on 09-13.
-- Deployment `dpl_CqZBtiATwpcPkWsCNrXo5WphB5J9`: BUILDING 20:40 UTC, READY by 20:48. **Builds on 2026-09-19 UTC: FOUR** (09:06 mktcap weekly, 11:33, 13:05, 20:40). The cap is still inactive.
-- Verified on production from fresh fetches (`x-vercel-cache` PRERENDER or MISS, age 0; `/updates` HIT at age 8 and already carrying the new entry): the NFL headline reads "The Buffalo Bills have a 10.8% chance to win Super Bowl LXI, up 1.6pp over 7 days"; heat board, movers strip, the PL headline, the NBA 2000-01 page, "Houston Oilers" on the 1980 NFL honours, the subscribe card on `/` and `/digest`, and Writing on Deep Dives are all present.
-- The release note is dated 2026-09-20 and went live at 21:48 BST on the 19th. It was written for a push after midnight and left as it was rather than squeezed into the 19th's full four bullets.
-- Ashwin ruled the NBA honours badges stay as built: they follow the scrub.
-- Not proven: a real flush of `nba-elo` or the seven new tags. This box has no `REVALIDATE_SECRET`. **Mini: flush `nba-elo` one time and confirm `ok:true`.**
-
-**Notion:** Backlog closed 2 (forecast hubs, nba-elo tag inert); Scheduled jobs: the one-off "Push the 2026-09-20 release" row added and then set to Retired, never fired.
 
 
