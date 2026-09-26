@@ -9,8 +9,8 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 75, 2026-09-20 to 2026-09-26
-     If the reader counts fewer than 75 entries, its fetch window stopped
+     entries: 74, 2026-09-20 to 2026-09-26
+     If the reader counts fewer than 74 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
 ## 2026-09-26
@@ -368,6 +368,59 @@ worth a glance if it recurs.
 
 **Notion:** Backlog "Six launchd agents were loaded, enabled and scheduled yet had not run since early August, and
 nothing said so" set to Done with the cause, the timeline and the f1-weekly/heartbeat answer. Verified over REST.
+
+### BN. The 24 September "hard reset" was a power-button restart after an AUTOMATIC macOS 27 upgrade
+
+At Ashwin's request, the item BM flagged. Read-only throughout. This refines BM's "a hard reset followed".
+
+**Timeline, grouped by the unified log's boot IDs** (compact-style timestamps from that session are unreliable:
+pre-login installer processes log in UTC, and one query returned lines 19 minutes off, so ordering is by boot ID and
+`machTimestamp`, not wall clock):
+
+| boot | BST | what happened | evidence |
+| --- | --- | --- | --- |
+| `13D6C57F` (macOS 26.5.2) | 08:15 | `SUOSUScheduler.tonight.install` waiting for 900 s of user inactivity | `dasd` Restart Required Activities Policy |
+| `13D6C57F` | 08:19:43 | `softwareupdated`: "Starting Apply ... macOS 27 Golden Gate"; phase "Boot 1" at 08:20:38 | `softwareupdated`, Installer Progress; `softwareupdate --history` "macOS 27 09/24/2026 08:20:38" |
+| `3F64B0D4` | 08:22 | installer boot; Template Migration, Boot 4, IOKit Boot, loginwindow Boot | Installer Progress phase log |
+| `3F64B0D4` | 08:24:56 to **08:33:56** | Setup Assistant shown, then "phase Setup Assistant is done": **the upgrade finished cleanly** | Setup Assistant / Installer Progress |
+| `3F64B0D4` | 08:34:26 | display sleeps; ordinary background work continues | pmset log; mediaanalysisd, wallpaper |
+| `3F64B0D4` | **08:39:02** | last surviving log line, mid-activity. **No shutdown sequence, no restart request, no thermal, watchdog or panic message** | log search over the whole boot |
+| `0EEAC2FA` | **08:40:54** | new boot. **`kern.bootreason: pwrbtn`**, `kern.shutdownreason: unknown`; ResetCounter report (reset count 1, no boot faults); DumpPanic finds nothing | `sysctl`; DiagnosticReports |
+
+**Conclusion: the mini was power-cycled by hand, about six minutes after the upgrade had fully finished.** A power
+button boot plus an unclean previous shutdown with nothing logged is the signature of holding the button to force it
+off, then pressing it to start. **A plain power cut is ruled out:** `pmset autorestart` is 1, so the mini would have
+booted itself on power return, and the boot reason would not be `pwrbtn`. Not a kernel panic, not the installer, not
+a software crash. Setup Assistant needs clicks, so someone was at the mini or on screen sharing at 08:33; the most
+likely story is a dark or unresponsive-looking screen after the upgrade and a forced restart. **Only Ashwin can
+confirm that; nothing on the machine can.** `last` labels the session "crash" only because it never logged out.
+
+**Nothing was damaged or interrupted.** The dispatcher's last action before the upgrade was 07:19:39Z and its next
+07:41:37Z; no job was mid-run at the reset. The only cost was feed-monitor's 07:20Z slot running 22 minutes late.
+APFS has shown no trouble since.
+
+🔴 **THE FINDING THAT MATTERS: the mini installs macOS updates automatically.**
+`/Library/Preferences/com.apple.SoftwareUpdate`: `AutomaticallyInstallMacOSUpdates = 1`, `AutomaticDownload = 1`, and
+the App Store's `AutoUpdate = 1`. The macOS 27 upgrade was scheduled by `SUOSUScheduler.tonight.install` and applied
+by `softwareupdated` with nobody starting it. That one unattended event is the root of the whole 09-24/25 episode: the
+reboot re-loaded the fifteen legacy agents (BM), which raced the dispatcher (AY), and a major-version upgrade on a
+production box is also exactly what should be chosen, not received. Whether to turn automatic macOS installs off on
+the mini is Ashwin's call, and it is a System Settings change (General, Software Update, the (i) beside Automatic
+updates), so it was not touched. Security responses and data files can stay automatic; only "Install macOS updates"
+is the risk.
+
+**Also recorded, fine as it is:** `autorestart = 1`, so a real power cut brings the mini back unattended.
+
+**Mistakes of mine on the way, for anyone repeating this:**
+- zsh has a builtin `log` that shadows `/usr/bin/log`; `log show` silently ran the builtin. Use the full path.
+- The first "open run" check on `dispatcher.log` reported eleven interrupted jobs; it was my parsing (`DONE` lines
+  write the job as `mlb-sim:` with a colon). Read the log directly before believing a script about it.
+- BM called the reset "a power interruption or a forced restart"; `autorestart` now rules out the first.
+
+**Memory** `legacy-launchd-migration` updated to say manual power-cycle after an automatic upgrade.
+
+**Notion:** none. No job, row or Backlog state changed; the automatic-updates decision is put to Ashwin directly and
+belongs in Decisions once he rules.
 ## 2026-09-25
 
 ### AZ. This morning's two ntfy, and a correction to section AY that the daily sweep earned
@@ -4101,30 +4154,5 @@ Windows relayed that only two steps were left, "copy two files and one dry run".
 Twice in eight hours is a pattern. `gc.auto`, `gc.autoDetach` and `maintenance.auto` are all UNSET here, so git 2.54 takes its defaults: auto-gc fires off the back of a commit and **detaches into the background**, where it races whatever git command the next job runs and dies holding three locks. This repo commits from a dozen scheduled jobs all day, so it will keep happening. `.git/objects` now holds EIGHT `tmp_obj_*` garbage files, one pair per crash. **Recommended (not done, Ashwin's call): `git config gc.auto 0` on this repo and run `git maintenance` from a dispatcher slot at a quiet hour, or at minimum `git config gc.autoDetach false` so a gc that collides fails in the foreground instead of orphaning locks.** Also worth noting for anyone running a job by hand: the dispatcher can fire mid-run, and that is what collided tonight -- check the schedule before a manual run.
 
 **Notion:** Scheduled jobs: `metro-rankings` Disabled -> **Active**, notes rewritten with the verified install and the symlink-vs-copy question. Backlog: the phase 2 row retitled and its Needs rewritten -- install struck off, shadow-two-Saturdays and the cutover remain, owner Mac mini. Decisions: none new (the runners/ convention and the gc config are both Ashwin's to rule). Data sources unchanged.
-
-
-## 2026-09-20 (night) - mini -> next session and windows: TODAY'S 14 ntfy ALERTS WERE ONE STRANDED COMMIT; A CRASHED GC LEFT THREE LOCKS; `mini_sync` HAS NO REBASE FALLBACK
-
-Triage of every ntfy message dated 2026-09-20. Fourteen alerts, one systemic cause, two racy-but-healthy jobs. Nothing left red.
-
-**The chain.** 14:17:44 the business job committed `f5687d931` (leader QID, Bank of China). Six seconds later, 14:17:50, a git gc/maintenance pass took `index.lock`, `HEAD.lock` and `objects/maintenance.lock` and died without releasing them — `.git/objects` still held two `tmp_obj_*` files, the signature of an interrupted object write. The commit never pushed and sat local-only. From then, every job that calls `mini_sync()` failed: it is `git merge --ff-only` with `fail "cannot fast-forward ... (resolve by hand)"` and **no rebase fallback** — while the PUSH path in the same codebase auto-rebases on rejection (football-standings did exactly that at 21:56:50 tonight). One stranded bot commit reds the whole fleet until a human turns up. 7h27m today.
-
-**Fixed:** the three stale locks moved aside (backed up, not deleted), `git pull --rebase` (local 1 / remote 7, zero overlapping files — checked before rebasing), pushed `3fd6a6061`. Tree clean, in sync.
-
-**The 14, by cause:**
-- **7 = the chain above.** `cannot fast-forward` at 15:18 / 15:38 / 17:19 / 19:20, plus football-standings ALERT at 18:09 / 19:20 / 21:21. Re-ran football-standings tonight: exit 0, bundles pushed.
-- **4 = mlb-sim `job_failed`, then its 3/day autofix cap.** Not a code bug. `verify_wins()` in `build_mlb_sim.py` is an exact-equality gate against ESPN standings and at 07:09 read `Cardinals 75 vs 76`. ESPN's standings endpoint increments the moment a game goes final; the per-team schedule endpoint's `completed` flag lags a few minutes. Reproduced live tonight — the same parse gave 75 at 21:49 and 76 at 21:52. The 21:58 run is `wins: verified against ESPN standings (30/30 teams)`. 09-16 failed the same way and self-healed on its next slot. I did **not** touch the gate: it is the reason the model is trustworthy and the runner header says never route around it.
-- **2 = ops-autofix "stood down -- uncommitted work"** (11:15, 13:18). A dirty tree it refused to act through. Clean now.
-- **1 = refresh "2/16 best-effort steps errored"** (10:25): `leaders (auto-apply)` and `uk offices (check)`, both transient Wikidata. Re-ran tonight: uk offices `current holders unchanged in all 8 offices`; leaders exit 0, 204 countries, 6 changed (nigeria, kazakhstan, estonia, mauritius, madagascar, malawi). I **reverted** those 6 rather than commit them — `public/data/leaders/_changes.json` is on `scripts/refresh-needs-build-paths.txt`, so that commit is build-triggering and needs Ashwin's word. They re-apply at the next 09:00 egress-refresh.
-
-**Open for Ashwin (two):**
-1. `mini_sync()` should rebase, or at least retry once, instead of `fail ... resolve by hand`. The push path already proves the pattern is safe here. As it stands, any unpushed local commit is a fleet-wide outage with no self-heal.
-2. `verify_wins()` could tolerate a one-team, one-game skew (or retry after a few minutes). The season-sims self-test already tolerates exactly this — `gp ahead of remaining+records by 1, consistent with an in-progress match -- proceeding`. verify_wins does not, so an in-flight game is a guaranteed red at the 07:00 and 14:30 slots.
-
-**Two mistakes worth recording.** I first reproduced the leaders step with plain `python3`, got `ModuleNotFoundError: No module named 'requests'`, and nearly filed that as the bug — the jobs use `PYTHON_BIN="$REPO/.venv/bin/python"`, which has requests 2.34.2. Repro a step with the job's interpreter, never the shell's. And a bulk `git diff --quiet -- $NEEDS_BUILD_PATHS` answered "no build needed" when `_changes.json` **had** changed; the per-path loop was right. Check needs-build paths one at a time before concluding a commit can be tagged `[vercel skip]`.
-
-**Left alone deliberately:** `.autofix-attempts.json` still shows mlb-sim at its 3/day cap (resets at midnight; the job is green now). Two `tmp_obj_*` garbage objects remain in `.git/objects` — harmless; `git prune` clears them when no job is running. I did not run gc while jobs were live, since that is what started this.
-
-**Notion:** Backlog +2 (`mini_sync()` should rebase or retry, P1, owner Ashwin; `verify_wins()` hard-fails on an in-progress game, P2, owner Ashwin — both need a ruling, not code). Data sources: the ESPN row gains a quirk, STANDINGS LEAD THE SCHEDULE ENDPOINT, with the measured times. Scheduled jobs unchanged — no job was created, moved, disabled or retired tonight. Decisions: none new (I made no ruling; both are Ashwin's).
 
 

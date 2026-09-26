@@ -20738,3 +20738,56 @@ worth a glance if it recurs.
 
 **Notion:** Backlog "Six launchd agents were loaded, enabled and scheduled yet had not run since early August, and
 nothing said so" set to Done with the cause, the timeline and the f1-weekly/heartbeat answer. Verified over REST.
+
+### BN. The 24 September "hard reset" was a power-button restart after an AUTOMATIC macOS 27 upgrade
+
+At Ashwin's request, the item BM flagged. Read-only throughout. This refines BM's "a hard reset followed".
+
+**Timeline, grouped by the unified log's boot IDs** (compact-style timestamps from that session are unreliable:
+pre-login installer processes log in UTC, and one query returned lines 19 minutes off, so ordering is by boot ID and
+`machTimestamp`, not wall clock):
+
+| boot | BST | what happened | evidence |
+| --- | --- | --- | --- |
+| `13D6C57F` (macOS 26.5.2) | 08:15 | `SUOSUScheduler.tonight.install` waiting for 900 s of user inactivity | `dasd` Restart Required Activities Policy |
+| `13D6C57F` | 08:19:43 | `softwareupdated`: "Starting Apply ... macOS 27 Golden Gate"; phase "Boot 1" at 08:20:38 | `softwareupdated`, Installer Progress; `softwareupdate --history` "macOS 27 09/24/2026 08:20:38" |
+| `3F64B0D4` | 08:22 | installer boot; Template Migration, Boot 4, IOKit Boot, loginwindow Boot | Installer Progress phase log |
+| `3F64B0D4` | 08:24:56 to **08:33:56** | Setup Assistant shown, then "phase Setup Assistant is done": **the upgrade finished cleanly** | Setup Assistant / Installer Progress |
+| `3F64B0D4` | 08:34:26 | display sleeps; ordinary background work continues | pmset log; mediaanalysisd, wallpaper |
+| `3F64B0D4` | **08:39:02** | last surviving log line, mid-activity. **No shutdown sequence, no restart request, no thermal, watchdog or panic message** | log search over the whole boot |
+| `0EEAC2FA` | **08:40:54** | new boot. **`kern.bootreason: pwrbtn`**, `kern.shutdownreason: unknown`; ResetCounter report (reset count 1, no boot faults); DumpPanic finds nothing | `sysctl`; DiagnosticReports |
+
+**Conclusion: the mini was power-cycled by hand, about six minutes after the upgrade had fully finished.** A power
+button boot plus an unclean previous shutdown with nothing logged is the signature of holding the button to force it
+off, then pressing it to start. **A plain power cut is ruled out:** `pmset autorestart` is 1, so the mini would have
+booted itself on power return, and the boot reason would not be `pwrbtn`. Not a kernel panic, not the installer, not
+a software crash. Setup Assistant needs clicks, so someone was at the mini or on screen sharing at 08:33; the most
+likely story is a dark or unresponsive-looking screen after the upgrade and a forced restart. **Only Ashwin can
+confirm that; nothing on the machine can.** `last` labels the session "crash" only because it never logged out.
+
+**Nothing was damaged or interrupted.** The dispatcher's last action before the upgrade was 07:19:39Z and its next
+07:41:37Z; no job was mid-run at the reset. The only cost was feed-monitor's 07:20Z slot running 22 minutes late.
+APFS has shown no trouble since.
+
+🔴 **THE FINDING THAT MATTERS: the mini installs macOS updates automatically.**
+`/Library/Preferences/com.apple.SoftwareUpdate`: `AutomaticallyInstallMacOSUpdates = 1`, `AutomaticDownload = 1`, and
+the App Store's `AutoUpdate = 1`. The macOS 27 upgrade was scheduled by `SUOSUScheduler.tonight.install` and applied
+by `softwareupdated` with nobody starting it. That one unattended event is the root of the whole 09-24/25 episode: the
+reboot re-loaded the fifteen legacy agents (BM), which raced the dispatcher (AY), and a major-version upgrade on a
+production box is also exactly what should be chosen, not received. Whether to turn automatic macOS installs off on
+the mini is Ashwin's call, and it is a System Settings change (General, Software Update, the (i) beside Automatic
+updates), so it was not touched. Security responses and data files can stay automatic; only "Install macOS updates"
+is the risk.
+
+**Also recorded, fine as it is:** `autorestart = 1`, so a real power cut brings the mini back unattended.
+
+**Mistakes of mine on the way, for anyone repeating this:**
+- zsh has a builtin `log` that shadows `/usr/bin/log`; `log show` silently ran the builtin. Use the full path.
+- The first "open run" check on `dispatcher.log` reported eleven interrupted jobs; it was my parsing (`DONE` lines
+  write the job as `mlb-sim:` with a colon). Read the log directly before believing a script about it.
+- BM called the reset "a power interruption or a forced restart"; `autorestart` now rules out the first.
+
+**Memory** `legacy-launchd-migration` updated to say manual power-cycle after an automatic upgrade.
+
+**Notion:** none. No job, row or Backlog state changed; the automatic-updates decision is put to Ashwin directly and
+belongs in Decisions once he rules.
