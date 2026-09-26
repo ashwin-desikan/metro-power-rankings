@@ -1,0 +1,78 @@
+name: EuroLeague season refresh
+
+# Daily in-season: pull the current EuroLeague regular-season table from the
+# first-party feed (api-live.euroleague.net; ESPN has no usable EuroLeague
+# standings), upsert the in-progress season into Supabase
+# (public.euroleague_seasons, idempotent on season+competition+team), rebuild
+# public/data/basketball/euroleague.json from Supabase, and commit with
+# [vercel skip]. Quiet days produce no commit.
+#
+# NOTE: euroleague.json is a BUILD-TIME read (lib getEuroleagueHonours stays
+# sync; see HANDOFF). A [vercel skip] commit therefore reaches the site at the
+# next organic build, not instantly. The live table on /sports/standings and
+# the EuroLeague hub reads the feed directly and is unaffected.
+#
+# LANE: commits ONLY euroleague.json. The mini's run-scraper-refresh.sh also
+# runs build_intl_basketball.py weekly for the FIBA ranking; the other outputs
+# come from committed inputs and are deterministic, so they are left to it.
+#
+# REQUIRES repo secret SUPABASE_WRITE_KEY (sb_secret_..., new key system) and
+# migration 20260925120000_euroleague_seasons_ingest_key.sql applied (unique
+# key for on_conflict). Without the key the ingest fails loud.
+
+on:
+  schedule:
+    - cron: "30 6 * 9-12,1-6 *"   # 06:30 UTC daily, Sep-Jun (RS -> Final Four)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: euroleague-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install openpyxl
+
+      - name: Self-test ingest logic
+        run: python3 scripts/ingest/euroleague_ingest.py --self-test
+
+      - name: Ingest EuroLeague standings -> Supabase
+        env:
+          SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
+        run: python3 scripts/ingest/euroleague_ingest.py --write
+
+      - name: Rebuild basketball portal JSON from Supabase
+        run: python3 scripts/basketball/build_intl_basketball.py
+
+      - name: Commit and push only if the EuroLeague data changed
+        run: |
+          if git diff --quiet -- public/data/basketball/euroleague.json; then
+            echo "No change in EuroLeague data; nothing to commit."
+            exit 0
+          fi
+          git config user.name "euroleague-refresh-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/basketball/euroleague.json
+          git commit -m "Auto: refresh EuroLeague live season [vercel skip]"
+          git checkout -- public/data/basketball   # drop untracked-lane changes before rebase
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            echo "Push race on attempt $attempt; retrying..."; sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1

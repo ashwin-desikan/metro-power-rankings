@@ -11,6 +11,8 @@
 .github/workflows/espn-standings-snapshot.yml
     17:    - cron: "25 */3 * * *"
 .github/workflows/euro-comps-refresh.yml
+.github/workflows/euroleague-refresh.yml
+    25:    - cron: "30 6 * 9-12,1-6 *"   # 06:30 UTC daily, Sep-Jun (RS -> Final Four)
 .github/workflows/external-url-monitor.yml
     30:    - cron: "30 7 * * *"
 .github/workflows/f1-refresh.yml
