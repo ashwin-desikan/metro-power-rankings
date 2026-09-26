@@ -1,3 +1,4 @@
+2026-09-26T08:13:19+01:00  402d779e5  HANDOFF: 2026-09-26 section BI, commit_paths no longer autostashes [vercel skip]
 2026-09-26T07:54:51+01:00  e6d688717  mini: commit_paths pushes first and rebases without autostash [vercel skip]
 2026-09-26T07:46:56+01:00  669f17a4f  HANDOFF: 2026-09-26 section BH, run-activity-feed.sh onto mini_sync [vercel skip]
 2026-09-26T07:37:23+01:00  de4ecfacf  chore(activity): refresh site activity feed [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-23T15:43:34+01:00  1a8f66819  security hardening: slug guard, admin auth, headers, rate limits [preview]
 2026-09-23T15:37:02+01:00  3b6ca4e4d  security hardening: the audit, the RLS draft and the CSP plan [vercel skip]
 2026-09-23T15:21:23+01:00  e6926b11d  Fan Attention Index v0.2.1: all-sport scale, football consolidation, college and new leagues, canonical links [preview]
-2026-09-23T13:14:03+01:00  c5aa41327  Add Fan Attention Index page [preview]
