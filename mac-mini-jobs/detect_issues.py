@@ -318,6 +318,53 @@ def find_failed_actions(run=None):
     return out
 
 
+SOFTWARE_UPDATE_DOMAIN = "/Library/Preferences/com.apple.SoftwareUpdate"
+
+
+def find_macos_autoinstall(read=None):
+    """The mini must NOT install macOS updates by itself (Decisions, 2026-09-26).
+
+    On 2026-09-24 the macOS 27 upgrade installed itself overnight-style
+    (SUOSUScheduler.tonight.install), its reboot re-loaded fifteen retired
+    launchd agents that then raced the dispatcher, and the post-upgrade screen
+    ended in a hand power-cycle (HANDOFF BM, BN, BO). The setting is a System
+    Settings toggle this machine's sessions may not change, and a future macOS
+    upgrade can quietly turn it back on, so it is watched here and reported,
+    never "fixed": the kind is outside ops-autofix's whitelist.
+
+    Reads through `defaults` (cfprefsd), not the plist file, so a change made
+    moments ago in System Settings is seen before it is flushed to disk. An
+    unreadable, missing or unrecognised value is a LOW finding, never an
+    all-clear: a check that passes when it cannot see is worse than none.
+    """
+    read = read or (lambda: subprocess.run(
+        ["defaults", "read", SOFTWARE_UPDATE_DOMAIN, "AutomaticallyInstallMacOSUpdates"],
+        capture_output=True, text=True, timeout=15))
+    try:
+        p = read()
+    except Exception as ex:                                   # noqa: BLE001
+        return [{"kind": "macos_update_check_failed", "severity": "low",
+                 "summary": "could not read the macOS auto-install setting: %s" % type(ex).__name__,
+                 "evidence": {"error": str(ex)[:200]}}]
+    val = (p.stdout or "").strip()
+    if p.returncode != 0:
+        why = "key not set" if "does not exist" in (p.stderr or "") else "defaults exited %d" % p.returncode
+        return [{"kind": "macos_update_check_failed", "severity": "low",
+                 "summary": "macOS auto-install setting unreadable (%s); cannot confirm it is off" % why,
+                 "evidence": {"stderr": (p.stderr or "")[:200]}}]
+    if val.lower() in ("0", "false", "no"):
+        return []
+    if val.lower() in ("1", "true", "yes"):
+        return [{"kind": "macos_autoinstall_on", "severity": "high",
+                 "summary": "the mini is set to install macOS updates by itself, against the 2026-09-26 "
+                            "decision; turn off System Settings > General > Software Update > (i) > "
+                            "'Install macOS updates'",
+                 "evidence": {"AutomaticallyInstallMacOSUpdates": val}}]
+    return [{"kind": "macos_update_check_failed", "severity": "low",
+             "summary": "unrecognised AutomaticallyInstallMacOSUpdates value %r; cannot confirm it is off" % val[:40],
+             "evidence": {"value": val[:80]}}]
+
+
 def find_dirty_tree(run=None):
     """Uncommitted work in the repo.
 
@@ -351,6 +398,7 @@ def detect():
     findings += find_down_checks()
     findings += find_failed_actions()
     findings += find_limiter_degraded()
+    findings += find_macos_autoinstall()
     return findings
 
 
@@ -469,6 +517,24 @@ def _self_test():
     check("an unreachable probe is LOW, not a false all-clear", unreach[0]["severity"], "low")
     check("...and is named as a probe failure", unreach[0]["kind"], "limiter_probe_unreachable")
 
+
+    # --- macOS auto-install (Decisions 2026-09-26) ----------------------------
+    R_ = lambda rc, out="", err="": (lambda: type("P", (), {"returncode": rc, "stdout": out, "stderr": err})())
+    on = find_macos_autoinstall(R_(0, "1\n"))
+    check("auto-install ON is found", [f["kind"] for f in on], ["macos_autoinstall_on"])
+    check("...at high severity", on[0]["severity"], "high")
+    check("auto-install off (0) is silent", find_macos_autoinstall(R_(0, "0\n")), [])
+    check("'false' is off too", find_macos_autoinstall(R_(0, "false")), [])
+    check("'true' is on too", [f["kind"] for f in find_macos_autoinstall(R_(0, "true"))], ["macos_autoinstall_on"])
+    miss = find_macos_autoinstall(R_(1, "", "The domain/default pair of (...) does not exist"))
+    check("a missing key is LOW, not an all-clear", [(f["kind"], f["severity"]) for f in miss],
+          [("macos_update_check_failed", "low")])
+    def _nodefaults():
+        raise FileNotFoundError("defaults")
+    check("no `defaults` binary is LOW, not an all-clear",
+          [f["severity"] for f in find_macos_autoinstall(_nodefaults)], ["low"])
+    check("a garbage value is LOW, not an all-clear",
+          [f["kind"] for f in find_macos_autoinstall(R_(0, "maybe"))], ["macos_update_check_failed"])
     print("self-test OK (%d checks)" % n[0])
     return 0
 
