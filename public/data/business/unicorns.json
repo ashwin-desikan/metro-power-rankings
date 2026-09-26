@@ -1,7 +1,7 @@
 {
  "meta": {
-  "as_of": "2026-09-19",
-  "generated_at": "2026-09-19T09:01:10Z",
+  "as_of": "2026-09-26",
+  "generated_at": "2026-09-26T09:05:37Z",
   "unicorns": 1396,
   "graduated": 8,
   "private": 372
@@ -105,6 +105,17 @@
    "investors": "Alibaba Group, CATL, Guozhitou Private Equity Fund Management",
    "metro": "Hangzhou",
    "metroSlug": "hangzhou"
+  },
+  {
+   "name": "Moonshot AI",
+   "valuation": 50000000000.0,
+   "dateJoined": "2024-02-19",
+   "country": "China",
+   "city": "Beijing",
+   "industry": "Consumer & Retail",
+   "investors": "HongShan, Jinfu Investment, ZhenFund",
+   "metro": "Beijing",
+   "metroSlug": "beijing"
   },
   {
    "name": "Ramp",
@@ -261,6 +272,17 @@
    "metroSlug": "new-york"
   },
   {
+   "name": "Etched",
+   "valuation": 21000000000.0,
+   "dateJoined": "2026-01-13",
+   "country": "United States",
+   "city": "San Jose",
+   "industry": "Industrial",
+   "investors": "Primary Venture Partners, Positive Sum",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
    "name": "Chobani",
    "valuation": 20000000000.0,
    "dateJoined": "2025-10-16",
@@ -283,6 +305,17 @@
    "metroSlug": "san-francisco-san-jose"
   },
   {
+   "name": "Helsing",
+   "valuation": 18000000000.0,
+   "dateJoined": "2023-09-14",
+   "country": "Germany",
+   "city": "Munchen",
+   "industry": "Enterprise Tech",
+   "investors": "",
+   "metro": "Munich",
+   "metroSlug": "munich"
+  },
+  {
    "name": "Deel",
    "valuation": 17500000000.0,
    "dateJoined": "2021-04-21",
@@ -301,6 +334,17 @@
    "city": "San Francisco",
    "industry": "Enterprise Tech",
    "investors": "Accel, AltaIR Capital, Technology Crossover Ventures",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "name": "Fireworks",
+   "valuation": 17500000000.0,
+   "dateJoined": "2025-10-28",
+   "country": "United States",
+   "city": "Redwood City",
+   "industry": "Enterprise Tech",
+   "investors": "Evantic Capital, Index Ventures, Sequoia Capital",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
   },
@@ -679,6 +723,17 @@
    "metroSlug": "london"
   },
   {
+   "name": "SambaNova Systems",
+   "valuation": 11000000000.0,
+   "dateJoined": "2021-04-13",
+   "country": "United States",
+   "city": "San Jose",
+   "industry": "Enterprise Tech",
+   "investors": "Walden International, Google Ventures, Intel Capital",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
    "name": "ElevenLabs",
    "valuation": 11000000000.0,
    "dateJoined": "2024-01-22",
@@ -899,6 +954,17 @@
    "metroSlug": "san-francisco-san-jose"
   },
   {
+   "name": "Wonder",
+   "valuation": 9650000000.0,
+   "dateJoined": "2021-05-06",
+   "country": "United States",
+   "city": "New York",
+   "industry": "Consumer & Retail",
+   "investors": "Accel, Forerunner Ventures",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
    "name": "Vinted",
    "valuation": 9390000000.0,
    "dateJoined": "2019-11-27",
@@ -1097,6 +1163,17 @@
    "metroSlug": "san-francisco-san-jose"
   },
   {
+   "name": "Together AI",
+   "valuation": 8300000000.000001,
+   "dateJoined": "2024-03-13",
+   "country": "United States",
+   "city": "San Francisco",
+   "industry": "Enterprise Tech",
+   "investors": "Definition Capital, Long Journey Ventures, Lux Capital",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
    "name": "Odoo",
    "valuation": 8130000000.000001,
    "dateJoined": "2021-07-29",
@@ -1106,6 +1183,17 @@
    "investors": "Summit Partners, Noshaq, Sofinnova Partners",
    "metro": "Brussels",
    "metroSlug": "brussels"
+  },
+  {
+   "name": "Quantum Systems",
+   "valuation": 8000000000.0,
+   "dateJoined": "2025-05-06",
+   "country": "Germany",
+   "city": "Gilching",
+   "industry": "Industrials",
+   "investors": "Notion Capital, Bayern Kapital",
+   "metro": "Munich",
+   "metroSlug": "munich"
   },
   {
    "name": "Dream11",
@@ -1339,6 +1427,17 @@
    "metroSlug": "san-francisco-san-jose"
   },
   {
+   "name": "Neko Health",
+   "valuation": 7000000000.0,
+   "dateJoined": "2025-01-23",
+   "country": "Sweden",
+   "city": "Stockholm",
+   "industry": "Healthcare & Life Sciences",
+   "investors": "Lightspeed Venture Partners, General Catalyst",
+   "metro": "Stockholm",
+   "metroSlug": "stockholm"
+  },
+  {
    "name": "Zepto",
    "valuation": 7000000000.0,
    "dateJoined": "2023-08-25",
@@ -1381,17 +1480,6 @@
    "investors": "Amazon, Australian Gulf Capital, Bosch",
    "metro": "Stuttgart",
    "metroSlug": "stuttgart"
-  },
-  {
-   "name": "Wonder",
-   "valuation": 7000000000.0,
-   "dateJoined": "2021-05-06",
-   "country": "United States",
-   "city": "New York",
-   "industry": "Consumer & Retail",
-   "investors": "Accel, Forerunner Ventures",
-   "metro": "New York",
-   "metroSlug": "new-york"
   },
   {
    "name": "We Doctor",
@@ -1900,17 +1988,6 @@
    "metroSlug": "boston"
   },
   {
-   "name": "Helsing",
-   "valuation": 5370000000.0,
-   "dateJoined": "2023-09-14",
-   "country": "Germany",
-   "city": "Munchen",
-   "industry": "Enterprise Tech",
-   "investors": "",
-   "metro": "Munich",
-   "metroSlug": "munich"
-  },
-  {
    "name": "Runway",
    "valuation": 5320000000.0,
    "dateJoined": "2023-05-04",
@@ -2087,17 +2164,6 @@
    "metroSlug": "chicago"
   },
   {
-   "name": "SambaNova Systems",
-   "valuation": 5000000000.0,
-   "dateJoined": "2021-04-13",
-   "country": "United States",
-   "city": "San Jose",
-   "industry": "Enterprise Tech",
-   "investors": "Walden International, Google Ventures, Intel Capital",
-   "metro": "San Francisco-San Jose",
-   "metroSlug": "san-francisco-san-jose"
-  },
-  {
    "name": "ZEPZ",
    "valuation": 5000000000.0,
    "dateJoined": "2021-08-23",
@@ -2173,17 +2239,6 @@
    "investors": "Alven Capital, Valar Ventures, Tencent Holdings",
    "metro": "Paris",
    "metroSlug": "paris"
-  },
-  {
-   "name": "Etched",
-   "valuation": 5000000000.0,
-   "dateJoined": "2026-01-13",
-   "country": "United States",
-   "city": "San Jose",
-   "industry": "Industrial",
-   "investors": "Primary Venture Partners, Positive Sum",
-   "metro": "San Francisco-San Jose",
-   "metroSlug": "san-francisco-san-jose"
   },
   {
    "name": "Icertis",
@@ -2615,17 +2670,6 @@
    "metroSlug": "minneapolis"
   },
   {
-   "name": "Moonshot AI",
-   "valuation": 4300000000.0,
-   "dateJoined": "2024-02-19",
-   "country": "China",
-   "city": "Beijing",
-   "industry": "Consumer & Retail",
-   "investors": "HongShan, Jinfu Investment, ZhenFund",
-   "metro": "Beijing",
-   "metroSlug": "beijing"
-  },
-  {
    "name": "OutSystems",
    "valuation": 4300000000.0,
    "dateJoined": "2018-06-05",
@@ -2791,17 +2835,6 @@
    "metroSlug": "austin"
   },
   {
-   "name": "Fireworks",
-   "valuation": 4000000000.0,
-   "dateJoined": "2025-10-28",
-   "country": "United States",
-   "city": "Redwood City",
-   "industry": "Enterprise Tech",
-   "investors": "Evantic Capital, Index Ventures, Sequoia Capital",
-   "metro": "San Francisco-San Jose",
-   "metroSlug": "san-francisco-san-jose"
-  },
-  {
    "name": "Ricursive Intelligence",
    "valuation": 4000000000.0,
    "dateJoined": "2026-01-26",
@@ -2842,8 +2875,8 @@
    "city": "Tel Aviv",
    "industry": "Enterprise Tech",
    "investors": "Fidelity Investments, Undisclosed Investors",
-   "metro": null,
-   "metroSlug": ""
+   "metro": "Tel-Aviv",
+   "metroSlug": "tel-aviv"
   },
   {
    "name": "EON",
@@ -3099,6 +3132,17 @@
    "metroSlug": "san-francisco-san-jose"
   },
   {
+   "name": "Corgi",
+   "valuation": 4000000000.0,
+   "dateJoined": "2026-05-28",
+   "country": "United States",
+   "city": "San Francisco",
+   "industry": "Financial Services",
+   "investors": "8188 Capital, First Order Fund, GSB Backers",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
    "name": "Hozon Auto",
    "valuation": 3950000000.0,
    "dateJoined": "2022-02-22",
@@ -3249,8 +3293,8 @@
    "city": "Suzhou",
    "industry": "Healthcare & Life Sciences",
    "investors": "Hillhouse Capital Management, SoftBank Group, Qiming Venture Partners",
-   "metro": "Shanghai",
-   "metroSlug": "shanghai"
+   "metro": "Suzhou",
+   "metroSlug": "suzhou"
   },
   {
    "name": "o9 Solutions",
@@ -3495,17 +3539,6 @@
    "metroSlug": "new-york"
   },
   {
-   "name": "Quantum Systems",
-   "valuation": 3480000000.0,
-   "dateJoined": "2025-05-06",
-   "country": "Germany",
-   "city": "Gilching",
-   "industry": "Industrials",
-   "investors": "Notion Capital, Bayern Kapital",
-   "metro": "Munich",
-   "metroSlug": "munich"
-  },
-  {
    "name": "Innovaccer",
    "valuation": 3450000000.0,
    "dateJoined": "2021-02-19",
@@ -3592,17 +3625,6 @@
    "investors": "Index Ventures, Coatue Management, Andreessen Horowitz",
    "metro": "Boston",
    "metroSlug": "boston"
-  },
-  {
-   "name": "Together AI",
-   "valuation": 3300000000.0,
-   "dateJoined": "2024-03-13",
-   "country": "United States",
-   "city": "San Francisco",
-   "industry": "Enterprise Tech",
-   "investors": "Definition Capital, Long Journey Ventures, Lux Capital",
-   "metro": "San Francisco-San Jose",
-   "metroSlug": "san-francisco-san-jose"
   },
   {
    "name": "Sila",
@@ -4470,8 +4492,8 @@
    "city": "Hangzhou",
    "industry": "Industrials",
    "investors": "Fortune Capital, Galaxy Yuanhui, Glacier Capital",
-   "metro": null,
-   "metroSlug": ""
+   "metro": "Hangzhou",
+   "metroSlug": "hangzhou"
   },
   {
    "name": "Workrise",
@@ -4835,17 +4857,6 @@
    "investors": "Insight Partners, Jackson Square Ventures, Liberty Gloval Ventures",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose"
-  },
-  {
-   "name": "Corgi",
-   "valuation": 2600000000.0,
-   "dateJoined": "2026-05-28",
-   "country": "United States",
-   "city": "San Francisco",
-   "industry": "Financial Services",
-   "investors": "8188 Capital, First Order Fund, GSB Backers",
-   "metro": null,
-   "metroSlug": ""
   },
   {
    "name": "Moglix",
@@ -6817,6 +6828,17 @@
    "metroSlug": "berlin"
   },
   {
+   "name": "CAIS",
+   "valuation": 2000000000.0,
+   "dateJoined": "2022-01-11",
+   "country": "United States",
+   "city": "New York",
+   "industry": "Financial Services",
+   "investors": "Franklin Templeton, Motive Partners. Apollo Global Management",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
    "name": "Gradiant",
    "valuation": 2000000000.0,
    "dateJoined": "2023-05-17",
@@ -7090,17 +7112,6 @@
    "investors": "Undisclosed",
    "metro": "Amsterdam",
    "metroSlug": "amsterdam"
-  },
-  {
-   "name": "Neko Health",
-   "valuation": 1800000000.0,
-   "dateJoined": "2025-01-23",
-   "country": "Sweden",
-   "city": "Stockholm",
-   "industry": "Healthcare & Life Sciences",
-   "investors": "Lightspeed Venture Partners, General Catalyst",
-   "metro": "Stockholm",
-   "metroSlug": "stockholm"
   },
   {
    "name": "Quest Global",
@@ -8265,8 +8276,8 @@
    "city": "Worcester",
    "industry": "Enterprise Tech",
    "investors": "Bain Capital Ventures, Bessemer Venture Partners",
-   "metro": "Boston",
-   "metroSlug": "boston"
+   "metro": "Worcester",
+   "metroSlug": "worcester"
   },
   {
    "name": "Tide",
@@ -11888,17 +11899,6 @@
    "metroSlug": "alicante"
   },
   {
-   "name": "CAIS",
-   "valuation": 1100000000.0,
-   "dateJoined": "2022-01-11",
-   "country": "United States",
-   "city": "New York",
-   "industry": "Financial Services",
-   "investors": "Franklin Templeton, Motive Partners. Apollo Global Management",
-   "metro": "New York",
-   "metroSlug": "new-york"
-  },
-  {
    "name": "nesto",
    "valuation": 1100000000.0,
    "dateJoined": "2026-06-10",
@@ -13501,8 +13501,8 @@
    "city": "Wuxi",
    "industry": "Enterprise Tech",
    "investors": "V Star Capital, GF Xinde Investment Management Co., Haitong Leading Capital Management",
-   "metro": "Shanghai",
-   "metroSlug": "shanghai"
+   "metro": "Suzhou",
+   "metroSlug": "suzhou"
   },
   {
    "name": "LinkDoc Technology",
@@ -15375,7 +15375,7 @@
    "investors": "Durable Capital Partners, Adjacent, Creator Partners",
    "metro": "Milan",
    "metroSlug": "milan",
-   "publicCap": 24189153280.0
+   "publicCap": 21121042432.0
   },
   {
    "name": "Netskope",
@@ -15387,7 +15387,7 @@
    "investors": "Lightspeed Venture Partners, Social Capital, Accel",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "publicCap": 7146199552.0
+   "publicCap": 7219745280.0
   },
   {
    "name": "Navan",
@@ -15399,7 +15399,7 @@
    "investors": "Andreessen Horowitz, Lightspeed Venture Partners, Zeev Ventures",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "publicCap": 5562368512.0
+   "publicCap": 5055869952.0
   },
   {
    "name": "HeartFlow",
@@ -15411,19 +15411,7 @@
    "investors": "BlueCross BlueShield Venture Partners, US Venture Partners",
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "publicCap": 4412896256.0
-  },
-  {
-   "name": "Ionic Digital",
-   "valuation": 2400000000.0,
-   "dateJoined": "2026-06-26",
-   "country": "United States",
-   "city": "Coral Gables",
-   "industry": "Enterprise Tech",
-   "investors": "Attestor, Citadel, Oaktree Capital Management",
-   "metro": null,
-   "metroSlug": "",
-   "publicCap": 3812975872.0
+   "publicCap": 4275509504.0
   },
   {
    "name": "Firefly Aerospace",
@@ -15435,7 +15423,19 @@
    "investors": "Noosphere Ventures, RPM Ventures, SMS Capital Investment",
    "metro": "Austin",
    "metroSlug": "austin",
-   "publicCap": 3510475264.0
+   "publicCap": 4077977088.0
+  },
+  {
+   "name": "Ionic Digital",
+   "valuation": 2400000000.0,
+   "dateJoined": "2026-06-26",
+   "country": "United States",
+   "city": "Coral Gables",
+   "industry": "Enterprise Tech",
+   "investors": "Attestor, Citadel, Oaktree Capital Management",
+   "metro": null,
+   "metroSlug": "",
+   "publicCap": 3688786688.0
   },
   {
    "name": "Omada Health",
@@ -15447,7 +15447,7 @@
    "investors": "U.S. Venture Partners, dRx Capital, Andreessen Horowitz",
    "metro": null,
    "metroSlug": "",
-   "publicCap": 1250657280.0
+   "publicCap": 1203520384.0
   },
   {
    "name": "Mercor",
@@ -15459,7 +15459,7 @@
    "investors": "Felicis, Benchmark",
    "metro": null,
    "metroSlug": "",
-   "publicCap": 60626786.0
+   "publicCap": 35495933.0
   }
  ],
  "private": [
@@ -17336,8 +17336,8 @@
    "name": "Clark Associates",
    "cap": 10800000000.0,
    "country": "United States",
-   "metro": "Lancaster",
-   "metroSlug": "lancaster"
+   "metro": "Lancaster (PA)",
+   "metroSlug": "lancaster-pa"
   },
   {
    "name": "David Weekley Homes",
