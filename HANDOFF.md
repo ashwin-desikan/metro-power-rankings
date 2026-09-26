@@ -20814,3 +20814,41 @@ it is ever back on, since a future macOS upgrade could reset it.
 **Notion:** Decisions "The Mac mini never installs macOS updates by itself; macOS upgrades are installed deliberately"
 created (Area Infra / deploy, Decided 2026-09-26) with the rule, the why, the not-yet-enforced state and the pending
 toggle in Open questions. Verified over REST. **Memory** `legacy-launchd-migration` records the confirmation and ruling.
+
+### BP. The macOS auto-install decision is now watched; the toggle itself has NOT taken effect yet
+
+At Ashwin's instruction: verify the toggle he reported done, and add the check offered in BO.
+
+🔴 **VERIFICATION FAILED: the setting is still ON.** Ashwin reported it done. At 12:5x and again at 13:56 BST,
+`defaults read /Library/Preferences/com.apple.SoftwareUpdate AutomaticallyInstallMacOSUpdates` returned `1`, `plutil`
+on the file returned `true`, and the plist's mtime was still 11:24, before the report. The machine is
+"Ashwin's Mac mini" (`scutil --get ComputerName`). So the change did not reach this machine: likely the admin-password
+prompt was not completed, or it was made on another Mac. Not re-tried from here; sessions on the mini do not change
+system settings. The Decisions row stays pending, with the reading recorded.
+
+**The check, pushed as `6f87fae43`, `[vercel skip]`:** `detect_issues.py` gains `find_macos_autoinstall`, wired into
+`detect()`. It reads through `defaults` (cfprefsd), so a change made in System Settings is seen before it reaches disk.
+
+| value | finding |
+| --- | --- |
+| `1` / `true` / `yes` | `macos_autoinstall_on`, high, naming the exact toggle to turn off |
+| `0` / `false` / `no` | none |
+| key missing, `defaults` absent or failing, an unrecognised value | `macos_update_check_failed`, low. Never an all-clear |
+
+It is outside ops-autofix's whitelist, so ops-autofix REPORTS it and does nothing, at most once a day while the set of
+findings is unchanged (its `notify_once`). Expect one "[ops-autofix] 1 finding(s), nothing auto-fixable" ntfy at the
+next 2-hourly run while the toggle is still on; that is the check working, not noise.
+
+**Tests:** self-test 30 to 38 (on, off, both spellings, a missing key, no `defaults`, a garbage value, severities).
+**Mutation test:** a copy that no longer recognises "on" fails the self-test at "auto-install ON is found", so the cases
+guard the logic rather than restating it. **Against the real machine** it reports `macos_autoinstall_on` today, which
+is correct. `detect_issues.py` is a symlink in `~/metro-mini-jobs/`, so the pull made it live; live self-test 38/38,
+`--check-sync` clean on files and launchd.
+
+**One thing to confirm when the toggle is flipped:** whether turning it off writes `0` or removes the key. If it
+removes the key, this check will report a LOW "key not set" every day, and the missing-key branch should then be
+treated as off. Decide that on the evidence, not in advance.
+
+**Notion:** Decisions "The Mac mini never installs macOS updates by itself..." updated: Enforced in names the
+check and commit; Open questions records that the toggle still read 1 at 13:56 BST after being reported done.
+Verified over REST.
