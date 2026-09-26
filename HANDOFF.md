@@ -20679,3 +20679,62 @@ SILENT agent still passes it. The healthchecks tiles are what catch an agent tha
 
 **Notion:** Backlog "Teach dispatcher.py --check-sync to diff the loaded launchd agents against jobs.toml" set to Done
 with the commit, the live result and the control, verified over REST.
+
+### BM. Why the "six silent" launchd agents went quiet: they were unloaded, and a reboot reloaded them
+
+At Ashwin's request, the open P2 Backlog row from BA. **Answered, and the premise was wrong.** This corrects AY, AZ,
+BA and my own BL.
+
+🔴 **CORRECTION TO AY, AZ, BA AND BL: THE LEGACY AGENTS WERE UNLOADED ON 2026-08-07. The "(unloaded)" in `jobs.toml`
+was true for seven weeks.** What was wrong was HOW: the migration used plain `launchctl unload <plist>`, exactly as
+DST-MIGRATION.md instructed, and left each plist in `~/Library/LaunchAgents`. That unloads only until the next login.
+
+**What happened, with the evidence for each step:**
+
+| when | what | evidence |
+| --- | --- | --- |
+| 08-01..08-06 | every legacy agent's last launchd run, including the two "survivors" | `launchd-*.out` mtimes; substack-daily's `.out` has a start every day 07-07..08-06, then one on 09-25; euro-comps the same pattern |
+| 08-07 | retired with plain `launchctl unload`; plists stay at the top of LaunchAgents | DST-MIGRATION.md line 172 and HANDOFF steps "launchctl unload the plist" |
+| 09-24 08:20 BST | macOS 27 installed, reboot at 08:22 | `softwareupdate --history`; `last reboot` |
+| 09-24 08:24 to 08:40 | the first post-upgrade session ends in a hard reset | `last` shows the session "- crash"; a ResetCounter report (reset count 1, no boot fault); no panic report |
+| 09-24 08:41 BST | login loads every plist at the top of LaunchAgents: all fifteen legacy agents are back | `kern.boottime` 08:40; every `/tmp` log (wiped by the reboot) is created after this |
+| 09-24 08:51 BST on | deploy-watch's legacy copy runs every 10 min, 141 times | `/tmp/deploy-watch.out` |
+| 09-24 11:00 BST | football-standings' legacy copy fires; races the dispatcher at 17:00Z | `/tmp/football-standings.out`; section AY |
+| 09-25 03:30 to 07:00 BST | activity-feed, euro-comps x2, gap-league-watch x2, substack fire from launchd too | their `/tmp` and `launchd-*.out` files |
+| 09-25 08:32Z | BA boots out fourteen and moves the plists to `retired/` | BA |
+
+**The "six silent since August"** (rugby-weekly, cricket-weekly, fiba-weekly, sound-weekly, conflicts-monthly,
+cricket-monthly) are weekly or monthly. Between the 09-24 08:41 login and the 09-25 bootout, none had a slot. They were
+never a separate phenomenon; they were the same seven weeks of genuinely unloaded, with no chance to show the reload.
+AZ's "some are dormant and some genuinely run twice", and BA's "loaded, enabled and scheduled yet not running", both
+read a one-day window as a seven-week state.
+
+**No launchd skip bug, so nothing threatens f1-weekly or heartbeat.** `launchctl print` since the 09-24 boot:
+heartbeat 209 runs in 52 hours at a 15-minute interval, f1-weekly 52 runs in 52 hours hourly, both last exit 0.
+f1-weekly also has a daily log for every day of August and September. `launchctl print-disabled` shows no override for
+any of our agents, which rules out `disable` / `unload -w` as a mechanism. (heartbeat's `launchd-heartbeat.out` last
+changed in July only because it writes nothing to stdout; it just pings healthchecks. An empty `.out` is not silence.)
+
+**Already fixed, and now correctly explained:**
+- BA's move of the plists into `~/Library/LaunchAgents/retired/` is what makes the retirement survive a login. That
+  was right, for a reason BA did not know it had.
+- BL's `--check-sync` reports `plist-loads-at-login`. Run on 08-07, it would have flagged all fifteen that day.
+- `313a36e30`: DST-MIGRATION.md's retire step now says `launchctl bootout` AND move the plist to `retired/`, then
+  `--check-sync`, with a red note on why plain `unload` was the cause. The comments I wrote into `jobs.toml`,
+  `dispatcher.py` and `detect_issues.py` in BL ("fourteen agents stayed loaded for seven weeks") repeated BA's story
+  and are corrected. `dispatcher.py` and `jobs.toml` redeployed as copies after confirming the live `jobs.toml` was
+  unchanged since BL; `--check-sync` clean on both counts.
+- Memory `legacy-launchd-migration` rewritten: it said the 08-07 claim was false for seven weeks.
+
+**Worth carrying forward, because three sessions and the ops sweep each got part of this wrong with confidence:**
+a launchd state that looks impossible ("loaded but not running") is worth one `sysctl kern.boottime` before it is
+treated as a mystery. Every wrong reading this week started from the current `launchctl list` and projected it
+backwards across a reboot nobody had checked for. The mechanism took five commands once the question became "when did
+each agent last and next write anything", across ALL of them rather than the ones that looked odd.
+
+**Not investigated, flagged:** the hard reset during the first macOS 27 session on 09-24. There is no panic report, so
+it looks like a power interruption or a forced restart rather than a kernel fault. One occurrence, nothing since;
+worth a glance if it recurs.
+
+**Notion:** Backlog "Six launchd agents were loaded, enabled and scheduled yet had not run since early August, and
+nothing said so" set to Done with the cause, the timeline and the f1-weekly/heartbeat answer. Verified over REST.
