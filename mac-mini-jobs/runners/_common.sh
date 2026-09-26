@@ -46,6 +46,12 @@ fail()  { note "FAIL: $1"; alert "$1"; exit 1; }
 . "$MINI_DIR/branch-guard.sh" || { echo "branch-guard.sh missing from $MINI_DIR; refusing to run unguarded"; exit 1; }
 require_expected_branch() { require_main_branch "${1:-this git write}" "$GIT_BRANCH"; }
 
+# PUSHING AND REBASING LIVE IN ../safe-push.sh (push_head_retry, rebase_local_onto):
+# the one no-stash copy of the rule, shared with the top-level scripts (HANDOFF BI,
+# BJ). Side-effect free, like branch-guard.sh. Fails CLOSED if it is missing.
+# shellcheck source=../safe-push.sh
+. "$MINI_DIR/safe-push.sh" || { echo "safe-push.sh missing from $MINI_DIR; refusing to run"; exit 1; }
+
 # EVERY runner takes the dispatcher's lock, so a run started BY HAND cannot
 # collide with a scheduled tick. This is the case that actually did damage on
 # 2026-09-20: a hand-run metro-rankings and a scheduled bot commit touched the
@@ -124,36 +130,11 @@ mini_sync() {
   return 0
 }
 
-# _mini_sync_rebase_local: put our local commit(s) back on top of an
-# already-fetched $GIT_REMOTE/$GIT_BRANCH, or fail() in the cases where refusing
-# is right (listed above mini_sync). Returns 0 only when HEAD is on top of it.
-# Shared by mini_sync and commit_paths' push retry, so there is one copy of
-# "when is it safe to replay our commits". NEVER stashes: the autostash that
-# commit_paths used to run before every push is the same trap that turned a
-# dirty lib/releases.ts into an unmerged index on 2026-09-24 (HANDOFF AZ, BI).
+# _mini_sync_rebase_local: put our local commit(s) back on top of the fetched
+# $GIT_REMOTE/$GIT_BRANCH, or fail() the run with the reason. The rules and the
+# no-stash reasoning are in ../safe-push.sh (rebase_local_onto).
 _mini_sync_rebase_local() {
-  local ahead behind dirty
-  ahead="$(git rev-list --count "$GIT_REMOTE/$GIT_BRANCH..HEAD" 2>/dev/null || echo 0)"
-  behind="$(git rev-list --count "HEAD..$GIT_REMOTE/$GIT_BRANCH" 2>/dev/null || echo 0)"
-  dirty="$(git status --porcelain 2>/dev/null | wc -l | tr -d ' ')"
-
-  if [ "${ahead:-0}" -eq 0 ]; then
-    fail "cannot fast-forward to $GIT_REMOTE/$GIT_BRANCH and there is nothing to rebase (0 ahead, $behind behind, $dirty modified path(s)) (resolve by hand)"
-  fi
-  if [ "${dirty:-0}" -ne 0 ]; then
-    fail "diverged (local $ahead, remote $behind) but the working tree has $dirty modified path(s), so a rebase would not be safe; commit or clean it (resolve by hand)"
-  fi
-  if [ "$ahead" -gt "${MINI_SYNC_MAX_REBASE:-50}" ]; then
-    fail "diverged by $ahead local commits, past the ${MINI_SYNC_MAX_REBASE:-50} limit -- not the usual stranded-commit case, so stopping instead of replaying it (resolve by hand)"
-  fi
-
-  note "diverged from $GIT_REMOTE/$GIT_BRANCH (local $ahead, remote $behind); rebasing the local commit(s) on top"
-  if git rebase "$GIT_REMOTE/$GIT_BRANCH" --quiet; then
-    note "rebased $ahead local commit(s) onto $GIT_REMOTE/$GIT_BRANCH"
-    return 0
-  fi
-  git rebase --abort >/dev/null 2>&1 || true
-  fail "diverged and the rebase of $ahead local commit(s) CONFLICTED; aborted and left the branch exactly as it was (resolve by hand)"
+  rebase_local_onto "$GIT_REMOTE" "$GIT_BRANCH" || fail "$SAFE_PUSH_REASON"
 }
 
 # Flush commits that are sitting local. Rebasing clears the DIVERGENCE, which
@@ -309,34 +290,14 @@ commit_paths() {
   git config user.name  "metro-mini[bot]"
   git config user.email "metro-mini-bot@users.noreply.github.com"
   git commit -m "$msg" || fail "git commit failed"
-  # PUSH FIRST, and only on a rejection get back on top of origin. Until
-  # 2026-09-26 every attempt began with `git pull --rebase --autostash`: if
-  # origin had changed a file that was dirty in the shared clone, the stash
-  # re-apply conflicted and left an UNMERGED index, which stops every job that
-  # syncs (the 2026-09-24 outage, HANDOFF AZ). The rebase now goes through
-  # _mini_sync_rebase_local, which refuses on a dirty tree or a conflict and
-  # leaves the repo as it was. The commit is kept either way: the next
-  # mini_sync on a clean tree replays and flushes it (tagged) or alerts
-  # (untagged). Deliberately NOT mini_sync itself: its flush step refuses to
-  # push untagged commits, and fans-monthly and metro-rankings commit
-  # untagged on purpose, so their retry would stall and page.
-  local attempt
-  for attempt in 1 2 3 4 5; do
-    if git push "$GIT_REMOTE" "HEAD:$GIT_BRANCH"; then
-      note "Pushed on attempt $attempt."
-      return 0
-    fi
-    [ "$attempt" -lt 5 ] || break
-    sleep $((attempt * 5))
-    # A network blip also lands here. Fetch failing, or origin not having
-    # moved, means there is nothing to rebase: just try the push again.
-    git fetch "$GIT_REMOTE" "$GIT_BRANCH" --quiet || continue
-    if ! git merge-base --is-ancestor "$GIT_REMOTE/$GIT_BRANCH" HEAD 2>/dev/null; then
-      note "push rejected: $GIT_REMOTE/$GIT_BRANCH moved; rebasing our commit onto it (no stash)"
-      _mini_sync_rebase_local
-    fi
-  done
-  fail "Failed to push after retries; the commit is kept locally and the next clean mini_sync carries it."
+  # PUSH FIRST; only on a rejection rebase, never stashing (../safe-push.sh,
+  # HANDOFF BI). A refusal keeps the commit locally: the next clean mini_sync
+  # replays and flushes it (tagged) or alerts about it (untagged).
+  if push_head_retry "$GIT_REMOTE" "$GIT_BRANCH"; then
+    note "Pushed on attempt $SAFE_PUSH_ATTEMPT."
+    return 0
+  fi
+  fail "$SAFE_PUSH_REASON; the commit is kept locally and the next clean mini_sync carries it."
 }
 
 # revalidate_ping <tag> [warm_path...]

@@ -3,7 +3,7 @@
 # touching require_expected_branch, mini_sync, _mini_sync_flush_unpushed or
 # commit_paths:
 #
-#   bash mac-mini-jobs/runners/_common-selftest.sh [_common.sh] [branch-guard.sh]
+#   bash mac-mini-jobs/runners/_common-selftest.sh [_common.sh] [branch-guard.sh] [safe-push.sh]
 #
 # Run it after touching branch-guard.sh too: since 2026-09-25 require_expected_branch
 # is a wrapper round require_main_branch in that file, so this is its test as well.
@@ -38,6 +38,10 @@ cp "$SRC" "$T/mini/runners/_common.sh"
 GUARD="${2:-$(cd "$(dirname "$SRC")/.." && pwd)/branch-guard.sh}"
 [ -r "$GUARD" ] || { echo "no such file: $GUARD"; exit 2; }
 cp "$GUARD" "$T/mini/branch-guard.sh"
+# ...and safe-push.sh, the no-stash push/rebase every git write goes through.
+SAFEPUSH="${3:-$(cd "$(dirname "$SRC")/.." && pwd)/safe-push.sh}"
+[ -r "$SAFEPUSH" ] || { echo "no such file: $SAFEPUSH"; exit 2; }
+cp "$SAFEPUSH" "$T/mini/safe-push.sh"
 C="$T/mini/runners/_common.sh"
 A="$T/mini/alerts.log"
 S="$T/mini/.mini-wrong-branch"
@@ -174,10 +178,23 @@ check "untagged commit, rejected push: still pushes" "$(rc_of "commit_paths 'ran
 check "  it is origin's tip"                "$(git --git-dir="$RM" log -1 --format=%s main)" "rankings: weekly metro recalculation"
 check "  and no untagged-commit alert"      "$(alerts)" "$a0"
 
+# push_head_retry's contract for best-effort callers (metro-rankings' held
+# report): a refusal RETURNS 1 with a reason and never exits the caller.
+other_push s.txt 'origin-s\n' "other: s [vercel skip]"
+echo mine-s > "$T/repo/s.txt"; git -C "$T/repo" add s.txt; git -C "$T/repo" commit -qm "held report [vercel skip]"
+out="$(inrepo 'push_head_retry "$GIT_REMOTE" "$GIT_BRANCH" 2 >/dev/null 2>&1; echo "rc=$? reason=$SAFE_PUSH_REASON"; echo survived')"
+case "$out" in *"rc=1 reason=diverged and the rebase"*"CONFLICTED"*survived*) ok "push_head_retry refusal returns 1 with a reason, caller survives" ;;
+  *) bad "push_head_retry refusal returns 1 with a reason, caller survives (got: $out)" ;; esac
+check "  not left mid-rebase, no unmerged"  "$([ -d "$T/repo/.git/rebase-merge" ] && echo MID || echo clean):$(unmerged)" "clean:0"
+git -C "$T/repo" reset -q --hard origin/main
+
 # Fails CLOSED: a runner whose _common.sh cannot load the guard must not run.
 mv "$T/mini/branch-guard.sh" "$T/mini/branch-guard.sh.off"
 check "without branch-guard.sh, sourcing refuses" "$(bash -c "cd '$T/repo'; . '$C' >/dev/null 2>&1; echo survived")" ""
 mv "$T/mini/branch-guard.sh.off" "$T/mini/branch-guard.sh"
+mv "$T/mini/safe-push.sh" "$T/mini/safe-push.sh.off"
+check "without safe-push.sh, sourcing refuses" "$(bash -c "cd '$T/repo'; . '$C' >/dev/null 2>&1; echo survived")" ""
+mv "$T/mini/safe-push.sh.off" "$T/mini/safe-push.sh"
 
 echo "_common-selftest: $pass passed, $fail failed"
 [ "$fail" -eq 0 ] || exit 1

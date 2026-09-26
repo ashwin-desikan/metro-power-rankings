@@ -75,24 +75,19 @@ trap _restore_public_data EXIT
 
 # _push_committed_or_fail <label>
 # The already-created local commit exists either way; this only decides
-# whether the push retry loop's exhaustion is reported. Mirrors
-# commit_paths' own 5-attempt backoff in _common.sh, which we can't reuse
-# here directly because report-only commits must still happen (and DRY_RUN
-# must still block them) even on the hold path, before commit_paths' own
-# no-op-detection logic would run.
+# whether the push retry's exhaustion is reported. Uses push_head_retry from
+# safe-push.sh, the same no-stash push commit_paths uses (HANDOFF BJ), rather
+# than commit_paths itself, because report-only commits must still happen (and
+# DRY_RUN must still block them) even on the hold path, before commit_paths'
+# own no-op-detection logic would run.
 _push_committed_or_fail() {
   local label="$1"
-  local attempt
-  for attempt in 1 2 3 4 5; do
-    if git pull --rebase --autostash "$GIT_REMOTE" "$GIT_BRANCH" \
-       && git push "$GIT_REMOTE" "HEAD:$GIT_BRANCH"; then
-      note "Pushed $label on attempt $attempt."
-      _CLEAN_ON_EXIT=0
-      return 0
-    fi
-    sleep $((attempt * 5))
-  done
-  fail "failed to push $label after retries"
+  if push_head_retry "$GIT_REMOTE" "$GIT_BRANCH"; then
+    note "Pushed $label on attempt $SAFE_PUSH_ATTEMPT."
+    _CLEAN_ON_EXIT=0
+    return 0
+  fi
+  fail "failed to push $label: $SAFE_PUSH_REASON"
 }
 
 mini_sync
@@ -172,15 +167,12 @@ print(reasons[0] if reasons else 'guard held for an unspecified reason')
       # Best-effort: a failed push here must not replace the real hold
       # reason with a push-failure message, so this does not call fail()
       # itself. fail "$FIRST_REASON" right below is unconditional either way.
-      for attempt in 1 2 3 4 5; do
-        if git pull --rebase --autostash "$GIT_REMOTE" "$GIT_BRANCH" \
-           && git push "$GIT_REMOTE" "HEAD:$GIT_BRANCH"; then
-          note "Pushed held report on attempt $attempt."
-          _CLEAN_ON_EXIT=0
-          break
-        fi
-        sleep $((attempt * 5))
-      done
+      if push_head_retry "$GIT_REMOTE" "$GIT_BRANCH"; then
+        note "Pushed held report on attempt $SAFE_PUSH_ATTEMPT."
+        _CLEAN_ON_EXIT=0
+      else
+        note "WARN: held report not pushed ($SAFE_PUSH_REASON); it stays committed locally for the next clean mini_sync"
+      fi
     fi
   fi
   fail "$FIRST_REASON"

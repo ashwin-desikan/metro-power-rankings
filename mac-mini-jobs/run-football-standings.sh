@@ -34,6 +34,8 @@ cd "$REPO" || fail "repo not found: $REPO"
 # CLOSED if the guard file is missing. Do not pipe the call (see the file).
 . "$REPO/mac-mini-jobs/branch-guard.sh" || fail "branch-guard.sh missing; refusing to run unguarded"
 require_main_branch "the football-standings refresh"
+# No-stash push retry (safe-push.sh, HANDOFF BJ). Fails CLOSED if missing.
+. "$REPO/mac-mini-jobs/safe-push.sh" || fail "safe-push.sh missing; refusing to run"
 git fetch origin main --quiet || fail "git fetch failed"
 git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diverged; resolve by hand)"
 
@@ -133,15 +135,15 @@ if ! git diff --quiet -- $BUNDLES; then
   git commit -q -m "football: refresh live bundles [vercel skip]" || fail "bundle commit failed"
   # Push with rebase-retry: another machine/job commonly lands a commit on main
   # between our start-of-run ff-merge and this push, rejecting it non-fast-forward.
-  # A single push then hard-failed and cried wolf (2026-08-03). Rebase + retry instead.
-  pushed=0
-  for attempt in 1 2 3; do
-    if git push -q origin main 2>/dev/null; then pushed=1; break; fi
-    log "push rejected (attempt $attempt) — rebasing on origin/main and retrying"
-    git pull --rebase --autostash -q origin main || fail "rebase after push-reject failed"
-  done
-  [ "$pushed" = 1 ] || fail "bundle push failed after 3 attempts"
-  log "pushed updated football bundles"
+  # A single push then hard-failed and cried wolf (2026-08-03). Rebase + retry instead,
+  # but NEVER with --autostash, which on a dirty clone left an unmerged index and still
+  # reported success (HANDOFF BI, BJ). push_head_retry refuses on a dirty tree instead.
+  # Not piped to tee: that would run it in a subshell and lose $SAFE_PUSH_REASON.
+  if push_head_retry origin main 3; then
+    log "pushed updated football bundles (attempt $SAFE_PUSH_ATTEMPT)"
+  else
+    fail "bundle push failed: $SAFE_PUSH_REASON; the commit is kept locally for the next clean sync"
+  fi
 else
   log "bundles unchanged"
 fi

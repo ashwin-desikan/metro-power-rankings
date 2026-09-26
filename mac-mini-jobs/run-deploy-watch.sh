@@ -49,6 +49,8 @@ trap dispatcher_lock_release EXIT
 # where the guard's exit must NOT end the script, so its status is caught.
 . "$REPO/mac-mini-jobs/branch-guard.sh" || { echo "branch-guard.sh missing; refusing to run unguarded"; exit 1; }
 ( require_main_branch "the deploy-watch re-trigger" ) || { echo "standing down: clone is not on main (exit 0, see above)"; exit 0; }
+# No-stash push retry (safe-push.sh, HANDOFF BJ). Fails CLOSED if missing.
+. "$REPO/mac-mini-jobs/safe-push.sh" || { echo "safe-push.sh missing; refusing to run"; exit 1; }
 
 git fetch -q origin main || { echo "git fetch failed (transient) — next run"; exit 0; }
 
@@ -205,7 +207,12 @@ if [ "$ATTEMPTS" -ge "$MAX_ATTEMPTS" ]; then
   exit 1
 fi
 
-git pull --rebase --autostash -q origin main || { echo "pull failed — next run"; exit 0; }
+# Get onto origin before committing, by FAST-FORWARD ONLY, never a stash
+# (HANDOFF BJ). Whatever blocks a clean fast-forward (our own unpushed commits
+# diverged from origin, or a dirty file origin also changed) belongs to the next
+# runner's mini_sync or a human, not to this watcher, so stand down.
+git fetch -q origin main && git merge --ff-only -q origin/main 2>/dev/null \
+  || { echo "cannot fast-forward cleanly to origin/main -- next run"; exit 0; }
 N=$(( ATTEMPTS + 1 ))
 cat > lib/deploy-retry.ts <<EOF
 // Bumped by mac-mini-jobs/run-deploy-watch.sh to re-trigger a Vercel build that a
@@ -215,8 +222,21 @@ cat > lib/deploy-retry.ts <<EOF
 export const DEPLOY_RETRY = "${TARGET:0:9}-$N";
 EOF
 git add lib/deploy-retry.ts
-git commit -q -m "chore(deploy): re-trigger canceled build of ${TARGET:0:9} (attempt $N) [deploy-retry]"
-for a in 1 2 3; do git push -q origin main 2>/dev/null && break; git pull --rebase --autostash -q origin main || true; done
+if ! git commit -q -m "chore(deploy): re-trigger canceled build of ${TARGET:0:9} (attempt $N) [deploy-retry]"; then
+  git checkout -q -- lib/deploy-retry.ts 2>/dev/null
+  echo "re-trigger commit failed -- next run"; exit 0
+fi
+# UNTIL 2026-09-26 this loop's result was never checked: a push that failed all
+# three times still fell through to record the attempt and ntfy "re-triggered",
+# and its `pull --rebase --autostash || true` could leave an unmerged index
+# behind (HANDOFF BJ). Now: push-first, no stash, and on failure undo OUR commit
+# (--keep refuses rather than touch anyone's uncommitted work) so the clone is
+# as this run found it, record nothing, and try again next run.
+if ! push_head_retry origin main 3; then
+  git reset -q --keep HEAD~1 2>/dev/null || echo "WARN: could not undo the local re-trigger commit; the next mini_sync will report it"
+  echo "re-trigger NOT pushed ($SAFE_PUSH_REASON) -- next run"
+  exit 0
+fi
 
 printf 'sha=%s\nts=%s\nattempts=%s\n' "$TARGET" "$NOW" "$N" > "$STATE"
 echo "re-triggered build of ${TARGET:0:9} (attempt $N)"
