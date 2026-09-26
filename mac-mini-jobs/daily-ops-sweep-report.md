@@ -1,315 +1,119 @@
-# Daily Ops Sweep -- 2026-09-25
+# Daily Ops Sweep -- 2026-09-26
 
-Window: 2026-09-23T23:06:44Z to 2026-09-25T01:06:27Z (trailing 26h), read from
-`~/metro-mini-jobs/dispatcher.log` selected on each line's own UTC timestamp.
-Read-only run: nothing was fixed, re-run, pinged or written except this file.
-(One exception worth declaring: I ran `git fetch origin`, which updates
-remote-tracking refs only and touched neither the working tree nor the remote.)
+Window: 2026-09-24T23:06Z to 2026-09-26T01:05Z (trailing 26h), run read-only on the Mac mini.
+Rolling snapshot: this file is rewritten every run, never appended.
 
-## Jobs this window: 176 ok, 8 failed, 3 flagged
+## Jobs this window: 185 ok, 1 failed, 3 flagged
 
-184 dispatcher runs across 16 distinct jobs, plus one run outside the
-dispatcher. 7 dispatcher runs failed, all of them from a single cause, plus
-1 failure from a second launchd copy of `football-standings`. No MISSED slots.
-The 184th run is this sweep.
+**Dispatcher jobs (186 runs, 20 distinct ids, 0 MISSED):**
 
-| Job | Runs | Result |
-|---|---|---|
-| deploy-watch | 148 | all ok, `5e7377c43` live and serving since 00:46Z |
-| ops-autofix | 13 | all exit 0; stood down 00:15Z to 06:15Z on the dirty tree, clean since 08:15Z |
-| football-standings | 5 | 3 ok, **2 FAIL** (09-23 23:07Z, 05:09Z), both the git block |
-| claude-auth-canary | 4 | ok, refresh token valid to 2026-10-08 (13.1 days) |
-| mlb-sim | 2 | ok (464s, 478s) |
-| daily-ops-sweep | 2 | 1 ok (517s), 1 in flight (this run) |
-| activity-feed, business-daily, euro-comps, gap-league-watch, substack-daily | 1 each | **all 5 FAIL**, the git block |
-| cricket-champions, feed-monitor, git-maintenance, nfl-elo, notion-reconcile-verify | 1 each | ok |
-| football-standings (launchd copy) | n/a | **1 FAIL** 17:01:58Z, lost a push race |
+| job | runs | result |
+| --- | --- | --- |
+| deploy-watch | 148 | all DONE, every one "up to date" |
+| ops-autofix | 13 | all DONE (12 "no findings", 1 acted on feed-monitor) |
+| football-standings | 4 | all DONE, pushed live bundles each time |
+| claude-auth-canary | 4 | all DONE, refresh token valid to 2026-10-08, 12.1 days left |
+| mlb-sim | 2 | DONE 457s / 450s |
+| **feed-monitor** | **1** | **FAIL exit 1** -- see "Self-healed" item 1 |
+| activity-feed, business-daily, cfb-fri, cricket-champions, economy-rates, euro-comps, forecast, gap-league-watch, git-maintenance, nfl-elo, notion-reconcile-verify, predictions-fri, substack-daily, daily-ops-sweep | 1 each | all DONE |
 
-Also checked and clean, so it is on the record as looked at rather than
-assumed: feed-monitor's 09-24 sweep returned ok on 17 of 18 probes, the
-exception being `empty:ESPN PGA scoreboard`, which I verified is correct rather
-than a fault (see below). newsletter-podcast ran its single 08:00 local slot on
-09-24, 40 items kept of 54, both Gmail drafts created; it runs once a day, not
-twice. The f1-weekly launchd poller is healthy (hourly `idle: 2026 R14 already
-synced`). No job script fired an in-script `push()` state-change alert this
-window: gap-league-watch reported no transitions (ISL, CONCACAF CL and OFC CL
-all still `awaiting_target`), screen-number-ones found no weekly change,
-substack found no new slugs.
+**Not dispatcher-owned, checked separately:**
+- `f1-weekly` (launchd, hourly): 26 runs, all "idle: 2026 R14 already synced". Healthy, see below.
+- `newsletter-podcast`: daily 08:27Z done (episode live, 41 morning items pushed, Gmail drafts created), evening 20:02Z done (7 items appended, day holds 48), watchdog 09:30Z "final.mp3 present and episode READY on Spotify. Healthy", retention 12:00Z deleted 1 episode older than 7 days as designed. No alerts.
 
-**On the PGA probe.** It has read `empty` on and off since 09-02 and it did
-again on 09-24 with `Presidents Cup: not started (2 in field)`. I checked the
-real-world fact rather than assuming the usual between-tournaments state: the
-2026 Presidents Cup runs **September 24 to 27 at Medinah Country Club**, and
-the 09-24 probe fired at 08:42 local (02:42 CDT), before round 1 teed off. The
-reading was correct. 🔴 It stops being correct today: if the 07:20Z probe on
-09-25 or later this weekend still reads `empty`, that IS a fault, because the
-tournament is live. Worth a glance at tomorrow's sweep rather than pattern
-matching on "PGA empty is normal".
+**Alert scan of individual job logs (Step 2):** no in-script `push()` fired this window other than the feed-monitor failure path. gap-league-watch logged "no state transitions this run" on all three of its runs; cricket-champions "0 new champion(s)"; euro-comps and substack-daily both "no change, nothing to commit"; economy-rates reported three new policy-rate decisions (bis-xm, bis-br, bis-us) which is normal output, not an alert.
 
 ## Self-healed (informational only, no action needed)
 
-**All 7 dispatcher failures share one cause and were fully recovered on 09-24
-morning.** An uncommitted `lib/releases.ts` sat in the mini's working tree from
-before 23:07Z on 09-23. Every job that fast-forwards the repo died in its git
-preamble (`error: Your local changes to the following files would be
-overwritten by merge`). Casualties in this window, in order: football-standings
-23:07Z, activity-feed 02:38Z, euro-comps 04:08Z, gap-league-watch 05:09Z,
-football-standings 05:09Z, business-daily 05:59Z, substack-daily 06:09Z. The
-previous sweep reported this blocker at 01:17Z while it was live.
+**1. feed-monitor FAIL at 07:30Z -- ESPN PGA probe, already diagnosed and fixed.**
+The probe returned `ESPN PGA scoreboard: golf competitor missing 'athlete' (ESPN shape change?)`. ops-autofix re-ran it at 08:22Z and it failed again, correctly standing down ("leaving it failed for a human"). It was not a shape change: the 2026 Presidents Cup teed off that morning, and team match play has competitors of `type: team`/`pair` carrying a `team` object and no `athlete`. A session fixed it the same morning (`498756518`, 08:23Z), and the slot was flipped to `ok (manual)` at 08:24Z.
 
-Resolution, from the log and from git: commit `0738bd796` ("Release notes:
-amend 2026-09-23 to cover the security hardening") landed 06:39Z and cleared
-the tree. Between 06:46Z and 07:19Z the eight failed slots were flipped with
-`--mark-ok`. **`--mark-ok` only flips a status flag, it does not run the job**,
-so I checked each one separately to confirm the day's work actually happened,
-rather than trusting the green status:
+Verified live during this sweep rather than assumed: fetching the real endpoint and calling the current validator returns
+`('ok', 'Presidents Cup: team match play, 2 sides (post); not rendered by the site, which shows majors only')`.
+The mini's `feed_shape_monitor.py` is byte-identical to the repo copy (it is a real file, not a symlink, so this was checked). feed-monitor is daily at 07:20Z, so its next unattended run is ~07:20Z today and should pass. Nothing for Ashwin to do.
 
-- **activity-feed**: commit `f7a922ddc` at 06:46Z; `activity-feed.json` carries
-  `generatedAt: 2026-09-24`. Ran.
-- **business-daily**: commit `ff5d25ff0` at 06:46Z; `markets.json` meta reads
-  `generated_at 2026-09-24T06:46:33Z`, `as_of 2026-09-24`. Ran. This is the one
-  with reader-visible staleness, and it is current.
-- **euro-comps**: hand-run 07:52:48 local, 30 fixtures across 3 competitions,
-  committed and pushed.
-- **gap-league-watch**: hand-run 07:54:31 local, self-test OK, 3 leagues
-  checked, no transitions.
-- **screen-number-ones**: hand-run 07:54:34 local, 4,190 weeks / 2,025 films,
-  no weekly change so nothing to commit.
-- **substack-daily**: hand-run 08:02:57 local, 20 live posts, no new slugs,
-  committed and pushed.
-- **cricket-champions**: its 09-23 22:37Z failure healed on its own next daily
-  slot, `DONE ok 12s` at 09-24 22:33Z.
+**2. The fourteen duplicate launchd agents -- retired mid-window.**
+Evidence found before reading HANDOFF: gap-league-watch ran three times on 09-25 (04:00Z, 05:00Z from launchd; 05:07Z from the dispatcher) against one dispatcher slot, and `/tmp/gap-league-watch.out` plus the `launchd-euro-comps.*` and `launchd-substack-daily.*` files confirm those plists were genuinely executing. The retired `gap-league-watch.plist` carries `StartCalendarInterval: [{Hour:5},{Hour:6}]`, exactly matching the stray runs. This is HANDOFF section BA: at Ashwin's instruction all fourteen were `launchctl bootout`ed at 08:32Z on 09-25 and the plists moved to `~/Library/LaunchAgents/retired/`.
 
-I confirmed these second runs were hand-run and not a second scheduler: none of
-the four jobs' launchd calendars land anywhere near 07:52 to 08:02 local. So
-nothing was lost and no re-run is owed.
+Confirmed resolved: `launchctl list` now shows only `dispatcher`, `heartbeat` and `f1-weekly`; no launchd output file has been written by any retired agent since 09-25 09:32 local. No duplicate runs today.
 
-**football-standings' launchd race, 17:01:58Z, already fixed the same evening.**
-Two copies of the job ran four seconds apart; one pushed, the other lost the
-push, failed its rebase and alerted. A session retired
-`com.citizenofnowhere.football-standings` to `~/Library/LaunchAgents/retired/`
-that evening and wrote it up in HANDOFF section AY. Verified fixed: the 09-24
-log shows 9 starts, five of them exactly on the hour (the launchd copy); the
-09-25 log shows exactly 1.
+**3. Release notes for 2026-09-25 -- written, gate is green.**
+Yesterday's sweep warned this would become a hard `npm run verify` failure from 00:00Z today. It was written (`5884897ba`). Ran the check read-only this morning: `check:release-notes - OK (148 entries, newest 2026-09-25)`. No action.
+
+**4. F1 "R14 already synced" is correct, not stale.**
+The hourly poller has reported R14 for two weeks, which reads like a stuck sync. It is not. Queried Jolpica read-only: 2026's last race with results is genuinely **round 14, Spanish Grand Prix, 2026-09-13**. Round 15 (Azerbaijan) is **today**, and the calendar has 23 rounds. The poller will pick it up within ~1h of Jolpica publishing. No action.
+
+**5. Vercel production builds are within budget this window.**
+09-25 UTC: exactly **2** paid production builds (both READY, 0 ERROR) -- at the 2/day budget, not over. 09-26 UTC so far: **0**. Every other push in the window shows `CANCELED`, which is the free skip. Counted with the Vercel API per CLAUDE.md, not from GitHub deployment events. This is a sharp improvement on 09-24's eight. But see finding 1 below: it stayed in budget by luck of the commit mix, not because anything enforced it.
 
 ## Needs Ashwin's attention
 
-### 1. The build cap is still inactive, and 09-24 spent 8 paid production builds against a budget of 2
+### 1. The 2/day Vercel build cap is STILL not armed (7th day flagged, and it is the only thing standing between a quiet day and a seventh overage)
 
-**What happened.** 2026-09-24 UTC ran **8 paid production builds**, all READY,
-zero ERROR. In order: `0738bd796`, `951f230e0`, `572f3c079`, `317328155`,
-`ad3172ac7`, `ebd7e3d23`, `6d98ce3b1`, `b245c6f5b`. Today (09-25 UTC) stands at
-**1** so far (`5e7377c43`). This is the sixth overage.
+**What happened.** Nothing failed. The cap simply is not running, so the 2/day limit remains a convention rather than code, exactly as it was when the 09-24 burst spent 8 paid builds.
 
-**Root cause, measured rather than inferred.** `scripts/vercel-ignore.sh` needs
-`VERCEL_BUILD_CAP_TOKEN` in the project's build environment to ask the API how
-many builds today has already started. It is absent. I pulled the build log of
-`b245c6f5b` (the day's sixth paid build, `dpl_6ZUCZj2izwNDECdyw9oujYw7D25o`)
-and it prints, verbatim:
+**Root cause.** `scripts/vercel-ignore.sh`'s `builds_today()` returns empty when `VERCEL_BUILD_CAP_TOKEN` is absent, and line 111 then takes the "cap inactive" branch and lets the build through unconditionally. The code is correct; only the token is missing.
+
+**Evidence (primary, not inferred).** Build log of `dpl_EL7Qo1SgG7gyiPKuine59xDf2jQn` (commit `5884897ba`, 2026-09-25T09:39Z), the most recent paid production build:
 
 ```
+Running "sh scripts/vercel-ignore.sh"
 vercel-ignore: build cap inactive (no VERCEL_BUILD_CAP_TOKEN or the API did not answer)
-vercel-ignore: build-relevant change in 6d98ce3b1..b245c6f5b; building
 ```
 
-So the cap did not decline to fire, it was never armed. `MAX_DAILY_BUILDS` is
-still 2 and the code is correct; only the token is missing. The token is also
-not in `~/metro-mini-jobs/config.env` (that is the wrong place for it anyway,
-the build reads its own environment). I could not read the project's env vars
-to confirm from the other side: the MCP token gets `403 forbidden` on
-`projectEnvVars`.
+**Recommended fix.** Add a Vercel **read** token to the project's build environment as `VERCEL_BUILD_CAP_TOKEN` (Vercel dashboard, project `metro-power-rankings`, `prj_eGoUAOrnwvNP86s7p74ruILMl3Dr`, team `team_yQjbuPwcr40J6AxkjCv6AawD`, Settings > Environment Variables, Production). The next build's log line then reads `vercel-ignore: N paid production build(s) so far today (cap 2)` instead of "inactive", which is the one-line way to confirm it took. Nothing in the repo needs changing.
 
-**Evidence.** Vercel API `list_deployments` for `prj_eGoUAOrnwvNP86s7p74ruILMl3Dr`,
-production target, counted by UTC day, paid states only (READY, ERROR,
-BUILDING, QUEUED, INITIALIZING; CANCELED excluded as free). Build log via
-`list_deployment_events` on `bld_764rfivvl`.
+**Note on why I could not check it any other way:** the Vercel MCP token in this session gets 403 on `projectEnvVars` (`You don't have permission to list the project environment variable`), so the build log is the only read-only proof available to an unattended run. That is fine as a method, but it means the cap can only ever be confirmed *after* a build has already been spent.
 
-**Recommended fix.** Mint a Vercel read token and add it to the
-metro-power-rankings project as `VERCEL_BUILD_CAP_TOKEN`, scoped to Production
-(and Preview if you want the same protection there). Nothing in the repo needs
-to change; the next build will print the count instead of the "inactive" line,
-and that line is how you confirm it took. This has been the standing P0 across
-at least the last three sweeps and it is the single change that converts the
-budget from a promise back into code, which is what
-`feedback_vercel_guardrail_must_be_infra_not_memory` already rules it must be.
-Note that 09-24's eight were legitimate shipping work (the Fan Attention Index
-wave), not a guard bug, so the cap would have *deferred* six of them rather
-than prevented anything; `[deploy-now]` on the subject is the override for the
-ones that genuinely could not wait.
+**Also checked, and NOT a problem:** the same build log shows `vercel-ignore: base '5e7377c43...' unreachable; falling back to HEAD^`. That is the intended intermediate fallback at `scripts/vercel-ignore.sh:145-148`; the real fail-closed path is lines 149-152 (`no usable base at all; skipping rather than building`). The guard behaved correctly here.
 
-### 2. `run-activity-feed.sh`'s `--autostash` turned a recoverable dirty tree into an unresolved merge conflict, and left it that way
+### 2. `run-activity-feed.sh` still does `git pull --rebase --autostash` -- the exact mechanism behind the 2026-09-24 multi-job outage
 
-**What happened.** This is the part of the outage that was avoidable, and it is
-a code defect rather than a housekeeping miss. Until 02:38Z the repo was merely
-*dirty*: jobs failed with "your local changes would be overwritten", which any
-commit or stash clears. At 02:38:01Z `run-activity-feed.sh` ran:
+**What happened.** Nothing this window; activity-feed ran once at 02:36Z and DONE'd clean. This is a live latent fault, not an incident.
+
+**Root cause.** On 09-24 this script's `git pull --rebase --autostash` stashed a dirty tracked file, conflicted on re-apply, and exited 1 **without cleaning the index**, converting a recoverable "local changes would be overwritten" into `unmerged files`. That killed five more jobs over 3.5 hours while ops-autofix correctly stood down on `working_tree_dirty`. HANDOFF sections AZ and BB name the class fix and explicitly leave it undone.
+
+**Evidence.** Verified against the live file rather than taken from HANDOFF:
 
 ```
-git pull --rebase --autostash -q origin main
+mac-mini-jobs/run-activity-feed.sh:16  require_main_branch "the activity-feed refresh"
+mac-mini-jobs/run-activity-feed.sh:19  git pull --rebase --autostash -q origin main || { echo "git pull failed"; exit 1; }
+mac-mini-jobs/run-activity-feed.sh:36  git pull --rebase --autostash -q origin main || true
 ```
 
-The autostash stashed `lib/releases.ts`, the rebase succeeded, and **re-applying
-the autostash conflicted**. dispatcher.log records the exact sequence:
+Section BE gave this script the branch guard (line 16), but the autostash was not touched. Line 36's `|| true` is the worse of the two: it swallows the failure entirely.
 
-```
-| Created autostash: 7dcb4fc1d
-| wrote .../public/data/activity-feed.json  (600 entries)
-| U	lib/releases.ts
-| commit failed
-! error: Committing is not possible because you have unmerged files.
-```
+**Recommended fix.** Move both call sites onto `runners/_common.sh`'s `mini_sync`, which refuses rather than half-merging. `run-activity-feed.sh` does not currently source `_common.sh`, so this is a small refactor, not a one-line swap, and it changes an Active job's behaviour -- so it wants a worktree test with a deliberately dirty tracked file (the control being the current script leaving `unmerged files` behind), in the style of the BD/BE/BF harnesses. Worth pairing with the conflicts-monthly restore-on-failure work already done in `BC`, since it is the same failure class.
 
-The script's `||` guard caught the failed commit and exited 1, but it never
-cleaned up the index it had just broken. From that moment every other job hit
-the strictly worse `Merging is not possible because you have unmerged files.
-fatal: Exiting because of an unresolved conflict`, which is what euro-comps,
-gap-league-watch, football-standings, business-daily and substack-daily all
-died on for the next 3.5 hours. `export_schedule.py` warned on every dispatcher
-tick across the whole 7 hours.
+### 3. HANDOFF section BA retired fourteen scheduled jobs and closed with `**Notion:** none`
 
-**Why nothing self-healed.** `run-ops-autofix.sh` behaved exactly as designed
-and that is the trap: `working_tree_dirty` is a [blocker], so it logged
-`STOP: uncommitted changes in the repo. Refusing to act around a human's work.`
-on all four stand-down runs and never touched anything. Its stand-down dedupe
-("same stand-down as the last run -- not re-notifying") then kept it quiet
-while its finding count grew from 5 to 11. Green tile, quiet topic, disabled
-safety net. The previous sweep raised this half; the new half is that a job
-script actively deepened the damage.
+**What happened.** Section BA is the entry that `launchctl bootout`ed fourteen agents and moved their plists. Its closing line is:
 
-**Recommended fix**, smallest reversible change at the point that owns the
-problem. In `mac-mini-jobs/run-activity-feed.sh`, replace the bare pull with
-one that cannot leave a conflicted index behind:
+> `**Notion:** none by this entry. Worth filing on the next pass: a Backlog row to validate conflicts-monthly before 2026-10-01, and one to teach --check-sync about launchd.`
 
-```bash
-if ! git pull --rebase --autostash -q origin main; then
-  git rebase --abort 2>/dev/null || true
-  git merge --abort 2>/dev/null || true
-  echo "git pull failed; tree left as found"; exit 1
-fi
-# and after the commit step, on failure:
-#   git reset -q && git checkout -q -- lib/releases.ts 2>/dev/null || true
-```
+**Why this matters.** CLAUDE.md's Notion contract states in red that *"an entry whose subject IS a scheduled job can almost never close with `none`"*, and gives retiring or changing a job on any machine as the canonical example. BA changed the real execution path of fourteen Active jobs, so fourteen Scheduled jobs rows are the queryable record of that change and, if BA wrote none of them, they still describe a second scheduler that no longer exists. The two Backlog rows BA said to file also appear not to have been filed.
 
-The principle worth applying beyond this one script: **a job that fails must
-leave the repo no worse than it found it**, because fourteen other jobs share
-this clone. `mac-mini-jobs/runners/*.sh` get this right through `_common.sh`'s
-`mini_sync`, which is why business-daily printed a clean "resolve by hand" and
-stopped. The top-level `run-*.sh` scripts do not source `_common.sh` at all,
-and `run-activity-feed.sh` is the only one of them that uses `--autostash`.
-Moving it onto `_common.sh` would fix the class rather than the instance.
+**Evidence.** HANDOFF.md, section BA closing line (the entry pushed as `25c0afd9a`). Sections BC, BD and BE each *do* carry verified row updates, so this is specific to BA, not a general lapse by those sessions.
 
-**Also worth knowing:** the autostash commit `7dcb4fc1d` still exists as a
-dangling object. If anything from that editing session looks missing,
-`git show 7dcb4fc1d` has it. It will be pruned by the next `git gc`.
+**Recommended fix.** In one pass: set Last verified and a "plist booted out 2026-09-25, dispatcher is now the only scheduler" note on the fourteen Scheduled jobs rows (activity-feed, conflicts-monthly, cricket-monthly, cricket-weekly, deploy-watch, egress-refresh, euro-comps, feed-monitor, fiba-weekly, gap-league-watch, rugby-weekly, screen-number-ones, sound-weekly, substack-daily), and open the two Backlog rows BA named. Note the traps BE recorded: the f1 row is titled "F1 weekly sync", and deploy-watch's note has already hit Notion's 2000-character per-item limit and is split across items.
 
-### 3. HANDOFF section AY's "all fifteen collide on 25 October" is not supported by the evidence, and the fourteen agents are dormant rather than double-running
+**Caveat, and it is the reason this is a recommendation rather than a finding of fact:** I could not verify any of it. See below.
 
-**Why I am raising this.** AY (09-24) is an excellent catch and its core fact is
-right: fourteen `com.citizenofnowhere.*` launchd agents are still loaded that
-`jobs.toml` lines 214 to 227 record as "Plist unloaded." I re-verified today and
-the count is unchanged: 17 loaded, of which `dispatcher`, `f1-weekly` and
-`heartbeat` are legitimately launchd-owned, leaving 14. None is disabled
-(`launchctl print-disabled` lists none), all show last exit status 0.
+### 4. Capability gap: this sweep cannot see Notion, so the contract's daily backstop has a blind spot
 
-**But the risk model attached to them is wrong, and acting on it would be
-wasted urgency.** AY explains that the fourteen currently miss their dispatcher
-slots because "the plists use LOCAL calendar times and the dispatcher uses UTC,
-so under BST they miss each other by an hour", predicting that all fifteen
-collide when BST ends on 2026-10-25. Two pieces of evidence contradict that:
+The Notion MCP server is not authorised in a headless `claude -p` session, so I could not read Backlog, Decisions or Scheduled jobs to confirm finding 3, or to do the start-of-session row read the contract asks for. Yesterday's sweep hit and reported the same wall, which makes it a standing limitation rather than a one-off.
 
-- **The offset does not actually save euro-comps or gap-league-watch.** Their
-  plists list BOTH hours of each slot, exactly like football-standings did:
-  euro-comps fires at 04:00 and 05:00 local, gap-league-watch at 05:00 and
-  06:00. Under BST, euro-comps' 05:00 local IS its dispatcher slot of 04:00Z,
-  and gap-league-watch's 06:00 local IS its 05:00Z slot. If these agents were
-  live they would have been colliding every single day already. They are not.
-- **Thirteen of the fourteen have not executed since early August.** Their
-  launchd stdout files stopped dead the week each job moved to the dispatcher
-  and have not been written since:
+`notion-reconcile-verify` ran clean at 08:22Z and confirmed the reconciler logged 09-24, so the separate cloud reconciler is alive and should independently check 09-25's entries (including BA's `none`) today. That is the existing backstop and it is working. But it means two of the three daily Notion checks are cloud-side and this one is blind.
 
-  | agent | `launchd-<slug>.out` last written |
-  |---|---|
-  | conflicts-monthly, cricket-monthly | 2026-08-01 |
-  | cricket-weekly, rugby-weekly | 2026-08-04 |
-  | fiba-weekly, sound-weekly | 2026-08-05 |
-  | euro-comps, substack-daily | 2026-08-06 |
+**Recommended fix if you want sweeps to reconcile against Notion:** authorise it once interactively on the mini (`claude mcp` or `/mcp`), per CLAUDE.md's own instruction for adding the Notion MCP there. If headless sessions cannot hold that auth, the honest alternative is to drop the expectation and let the cloud reconciler own it, rather than leaving it ambiguous.
 
-  And the per-job daily logs agree: euro-comps and gap-league-watch show
-  exactly **one** start per day on 09-18 through 09-23, the dispatcher's.
-  By contrast football-standings, the one that genuinely was double-firing,
-  shows **9** starts on 09-24, five of them exactly on the hour.
+## Housekeeping observed, nothing to do
 
-**So the real situation is:** football-standings was the only live duplicate,
-and it is already retired. The other fourteen are registered-but-dormant, which
-is untidy and genuinely worth cleaning up, but is not a dated emergency.
+- No `MISSED` slots in the window. Dispatcher lateness peaked at 12 minutes (notion-reconcile-verify, 08:10Z slot) and is otherwise 0-10 minutes, which is normal tick lag.
+- Shared clone is on `main` and clean; no `.mini-wrong-branch` stamp.
+- `git-maintenance` ran at 03:07Z: 4683 loose objects, threshold 6700, no repack needed.
+- `~/metro-mini-jobs/pending/` holds only `.applied-*` files plus the 09-14 unmatched-clubs CSV/XLSX; `quarantine/` holds one zero-byte lock from 09-20. Neither is growing.
+- `mktcap-refresh` is Saturday 09:00Z and had not yet run at sweep time (today is Saturday, so it is due in ~8h). Not a miss.
 
-**Recommended action.** Still unload them, because a dormant registered agent is
-a thing that can wake up on a reboot or a re-login and nobody would expect it,
-and because `jobs.toml` should stop lying about it. The commands are the ones
-AY lists (`launchctl bootout gui/$(id -u)/com.citizenofnowhere.<slug>`, then
-move the plist to `~/Library/LaunchAgents/retired/`). But treat it as hygiene at
-your convenience, not as a 25 October deadline. 🔴 Before relying on that
-downgrade, it is worth someone establishing *why* they are dormant, because
-"loaded, enabled, scheduled, and silently not running" is not a state launchd
-is supposed to have, and whatever explains it might also apply to an agent you
-do want firing. That question is the one thing here I could not settle
-read-only.
-
-### 4. Release notes for 2026-09-25 (heads-up, becomes a hard failure tomorrow)
-
-`npm run check:release-notes` currently returns:
-
-```
-WARN: 2026-09-25 has shipped 1 build-relevant commit(s) so far with no entry yet
-(newest entry is 2026-09-24).
-    Owners: 32 more owner rows from overnight research (16 board teams still pending)
-```
-
-Today only warns by design, so nothing is broken. But `5e7377c43` has shipped
-since that check ran, so it is two commits now, and from 00:00Z tomorrow this
-becomes a hard `npm run verify` failure for every session until an entry
-exists. 2026-09-24 is correctly covered, so this is only about today.
-Cheapest fix is to fold the entry into whatever commit ships next, since
-`lib/releases.ts` is build-relevant and a standalone release-notes commit
-spends one of the day's two builds on its own.
-
-**Related, low priority, no action needed today.** The duplicate-09-23 problem
-the last sweep flagged is resolved: there is now exactly one 2026-09-23 block.
-But the underlying gap it identified is still open. `lib/releases.ts` today
-holds 6 blocks dated 2026-05-20, 3 dated 2026-08-11, and 2 each for 2026-05-24
-and 2026-05-25, against the "one date block per shipping day" rule. Neither
-`check-release-notes.mjs` nor the build-time validator checks date uniqueness,
-so these pass everything. Historical and harmless; worth a line in the gate
-next time someone is in that file.
-
-## Checked, current, nothing owed
-
-- **Deploy state healthy.** `5e7377c43` built READY and is live and serving.
-  deploy-watch made 148 passes with no retrigger and no failure-vs-canceled
-  ambiguity.
-- **metro-rankings publishes for the first time tomorrow**, Saturday 2026-09-26
-  10:30Z, in publish mode (`METRO_RANKINGS_MODE` is unset in `config.env`, so
-  the default applies). Its untagged commit IS the week's production build, by
-  design. I confirmed the release-notes collision flagged on 09-23 was handled:
-  `AUTOMATED_SHIPPING_SUBJECTS` in `scripts/check-release-notes.mjs` now exempts
-  `/^rankings: weekly metro recalculation \d{4}-\d{2}-\d{2}\b/`. Its `missed`
-  status in `state.json` for the 2026-09-19 slot is the known false-MISSED from
-  install day (dispatcher.py has no `first_seen`), not a real skip.
-- **owners-weekly** next fires Monday 2026-09-28. Per HANDOFF 2026-09-25, 16
-  board teams still have no owner row, so `build-team-owners-data.py` fails
-  validation and the job will not commit. Expected, tracked in Notion Backlog,
-  no action from this sweep.
-- **`notion-reconcile-ping` MISSED** in `state.json` is a retired job, as
-  previously established.
-- Local clone is 1 commit behind `origin/main` with a clean working tree. Normal
-  between jobs; the next `mini_sync` fast-forwards it.
-
-## Caveat on this run
-
-The Notion MCP server is **not authorised in this headless session**, so I could
-not cross-check the Backlog, Decisions, Data sources or Scheduled jobs rows, and
-could not confirm whether items 1 and 3 above already have rows. Everything in
-this report is from the logs, git, the Vercel API, launchd and the filesystem.
-If you want the sweep to reconcile against Notion, the server needs authorising
-interactively on the mini (`claude mcp` / `/mcp`); a headless run cannot
-complete the OAuth flow.
+---
+*Written by the unattended daily ops sweep. Report-only: no job was re-run, no data written, no healthchecks pinged. The only file this run changed is this one.*
