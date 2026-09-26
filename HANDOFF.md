@@ -20443,3 +20443,62 @@ instead of stashing. Not done here: it changes every runner and wants its own se
 
 **Notion:** Scheduled jobs row "activity-feed" Last verified 2026-09-26, with the change, the 09-24 replay, the live run
 and the extra ntfy. Verified over REST.
+
+### BI. commit_paths no longer autostashes: the 09-24 outage class is gone from the helper every runner uses
+
+At Ashwin's instruction, the item BH left open. Pushed as `e6d688717`, `[vercel skip]`, built and tested in a worktree.
+
+**The defect, measured rather than inferred.** `commit_paths` began every push attempt with
+`git pull --rebase --autostash`. The old code, run through the new selftest case (origin changes a file that is dirty in
+the clone between our commit and our push): **exit 0, the push went through, and the clone was left with 3 unmerged
+index entries, a stash, conflict markers in the local file, and NO alert.** So the damage was silent: the job went green
+and the next job to sync failed on `unmerged files`. That is the 09-24 shape exactly, sitting in the helper that thirteen
+callers use.
+
+**The fix.** Push first. Only on a rejection: fetch, and if origin actually moved, rebase through
+`_mini_sync_rebase_local`, which is `mini_sync`'s existing divergence logic extracted into one helper, so "when is it safe
+to replay our commits" has one copy. It never stashes: on a dirty tree it refuses, on a conflict it aborts, and either
+way the commit stays local for the next clean `mini_sync` to replay and flush. A fetch failure or an origin that did not
+move just retries the push.
+
+🔴 **Deliberately NOT a call to `mini_sync` in the retry.** Its flush step refuses to push untagged commits and alerts
+about them. fans-monthly ("fans: Fan Attention Index monthly refresh") and metro-rankings ("rankings: weekly metro
+recalculation") commit untagged ON PURPOSE, because they need a build; a retry through `mini_sync` would stall their
+push and page. `commit_paths` still pushes for itself. There is a selftest case for exactly this.
+
+**One behaviour is now stricter, and that is intended.** `_mini_sync_rebase_local` counts untracked files as dirty, as
+`mini_sync` always has. So a rejected push with ANY untracked file in the clone now refuses, where the old autostash
+path pushed. The combination needs origin to move in the seconds before a push AND stray files in the clone, which
+`detect_issues.py` already reports as a blocker. The commit is not lost, only held. Loosening it would have meant
+changing `mini_sync`'s rule too, which is a separate decision.
+
+**Tests**, under a fake `HOME` (0 files touched on the real path):
+
+| run | result |
+| --- | --- |
+| selftest, new `_common.sh` | 39/39 |
+| new: rejected push, clean tree | rebases, pushes, no stash |
+| new: the 09-24 class | exit 1, 0 unmerged, 0 stashes, local edit and commit kept, one alert; `mini_sync` carries it once clean |
+| new: conflicting rebase | aborted, not left mid-rebase, commit kept |
+| new: untagged commit, rejected push | still pushes, no untagged-commit alert |
+| **control**: old `_common.sh`, same selftest | fails exactly the 09-24 cases (exit 0, UU, stash, markers, no alert) |
+| activity-feed test (BH) | 34/34 |
+
+**The first selftest run had 8 failures, all one leftover:** an earlier case leaves an untracked `b.txt`, and the new
+cases inherited it, so the helper correctly refused every rebase. The cases now start from a clean tree. It is also how
+the untracked-file strictness above was noticed, which is the useful part.
+
+**Live, and confirmed on a real run.** `_common.sh` is a symlink in `~/metro-mini-jobs/runners/`, so the pull made it
+live; `--check-sync` clean, selftest 39/39 against the live files. The first scheduled runner through it, mlb-sim for its
+07:00Z slot, pushed `17097bae5` "Auto: refresh MLB + season playoff odds" at 07:06:46Z via the new push-first path,
+revalidated on attempt 1 and logged `DONE mlb-sim: ok 445s`. Clone afterwards: `main`, 0 dirty, 0 unmerged, 0 stashes,
+level with origin.
+
+🔴 **STILL OPEN, SAME CLASS, OUTSIDE `_common.sh`: five more `git pull --rebase --autostash` sites.**
+`run-football-standings.sh` line 141 (push-reject retry), `run-deploy-watch.sh` lines 208 and 219 (before and after the
+re-trigger commit), and `runners/metro-rankings.sh` lines 87 and 176 (its own push loops). football-standings runs eight
+times a day and deploy-watch every ten minutes, so they have the most chances to meet a dirty clone. Each could move to
+`commit_paths`, or to push-first plus `_mini_sync_rebase_local`. Offered to Ashwin, not bundled.
+
+**Notion:** none. This is shared plumbing, not one job's row; no job's schedule changed, and the only behaviour change is
+a refusal where there used to be silent damage. Recorded here and in the selftest.
