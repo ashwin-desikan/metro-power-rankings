@@ -20791,3 +20791,26 @@ is the risk.
 
 **Notion:** none. No job, row or Backlog state changed; the automatic-updates decision is put to Ashwin directly and
 belongs in Decisions once he rules.
+
+### BO. Ruled: the mini never installs macOS updates by itself (toggle still pending)
+
+**Ashwin confirmed** the 24 September 08:40 power-button restart in BN was his. BN's reading stands.
+
+**His ruling on BN's finding:** on the Mac mini, "Install macOS updates" is turned OFF. Security Responses and system
+data files stay automatic, and so does downloading, so updates are staged but never applied unattended. A macOS update
+or upgrade is installed by hand at a chosen time, then checked with `launchctl list`, `dispatcher.py --check-sync` and
+the next dispatcher tick. The reason is BM and BN in one line: an upgrade nobody started rebooted a production box,
+re-armed fifteen retired agents and led to a forced power-cycle.
+
+🔴 **NOT DONE YET: the toggle still reads `AutomaticallyInstallMacOSUpdates = 1`** (read 2026-09-26, after the
+ruling). It is a System Settings change (General, Software Update, the (i) beside Automatic updates, "Install macOS
+updates" off), which is Ashwin's to make; sessions on the mini do not modify system settings. Verify read-only with
+`defaults read /Library/Preferences/com.apple.SoftwareUpdate AutomaticallyInstallMacOSUpdates` (want 0), then mark the
+Decisions row done.
+
+**Nothing enforces it yet.** Offered as a follow-up, not built: a `detect_issues.py` check that reports the setting if
+it is ever back on, since a future macOS upgrade could reset it.
+
+**Notion:** Decisions "The Mac mini never installs macOS updates by itself; macOS upgrades are installed deliberately"
+created (Area Infra / deploy, Decided 2026-09-26) with the rule, the why, the not-yet-enforced state and the pending
+toggle in Open questions. Verified over REST. **Memory** `legacy-launchd-migration` records the confirmation and ruling.

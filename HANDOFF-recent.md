@@ -9,8 +9,8 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 74, 2026-09-20 to 2026-09-26
-     If the reader counts fewer than 74 entries, its fetch window stopped
+     entries: 73, 2026-09-20 to 2026-09-26
+     If the reader counts fewer than 73 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
 ## 2026-09-26
@@ -421,6 +421,29 @@ is the risk.
 
 **Notion:** none. No job, row or Backlog state changed; the automatic-updates decision is put to Ashwin directly and
 belongs in Decisions once he rules.
+
+### BO. Ruled: the mini never installs macOS updates by itself (toggle still pending)
+
+**Ashwin confirmed** the 24 September 08:40 power-button restart in BN was his. BN's reading stands.
+
+**His ruling on BN's finding:** on the Mac mini, "Install macOS updates" is turned OFF. Security Responses and system
+data files stay automatic, and so does downloading, so updates are staged but never applied unattended. A macOS update
+or upgrade is installed by hand at a chosen time, then checked with `launchctl list`, `dispatcher.py --check-sync` and
+the next dispatcher tick. The reason is BM and BN in one line: an upgrade nobody started rebooted a production box,
+re-armed fifteen retired agents and led to a forced power-cycle.
+
+🔴 **NOT DONE YET: the toggle still reads `AutomaticallyInstallMacOSUpdates = 1`** (read 2026-09-26, after the
+ruling). It is a System Settings change (General, Software Update, the (i) beside Automatic updates, "Install macOS
+updates" off), which is Ashwin's to make; sessions on the mini do not modify system settings. Verify read-only with
+`defaults read /Library/Preferences/com.apple.SoftwareUpdate AutomaticallyInstallMacOSUpdates` (want 0), then mark the
+Decisions row done.
+
+**Nothing enforces it yet.** Offered as a follow-up, not built: a `detect_issues.py` check that reports the setting if
+it is ever back on, since a future macOS upgrade could reset it.
+
+**Notion:** Decisions "The Mac mini never installs macOS updates by itself; macOS upgrades are installed deliberately"
+created (Area Infra / deploy, Decided 2026-09-26) with the rule, the why, the not-yet-enforced state and the pending
+toggle in Open questions. Verified over REST. **Memory** `legacy-launchd-migration` records the confirmation and ruling.
 ## 2026-09-25
 
 ### AZ. This morning's two ntfy, and a correction to section AY that the daily sweep earned
@@ -4137,22 +4160,5 @@ maintenance.auto = false
 **Convention, still unruled.** I symlinked this runner, matching 11 of the 12 in `~/metro-mini-jobs/runners/`, so a `git pull` updates it. `metro-rankings.sh` is the lone real copy, because its build entry said "separate copy, not a symlink" in as many words. Two conventions now live side by side in one directory. Ashwin to rule; whichever way it goes, the loser needs changing, because a janitor that silently goes stale is worse than no janitor.
 
 **Notion:** Scheduled jobs +1 (`git-maintenance`, Active, Ops / monitoring, with the why and the deploy-watch gap). Decisions +1 ("Git never runs its own maintenance on the rankings clone; one dispatcher slot owns gc", Infra / deploy, Ashwin 2026-09-20, open question = deploy-watch outside the lock). Backlog unchanged -- the two rows filed earlier tonight (`mini_sync` rebase fallback P1, `verify_wins` skew P2) are still open and still need a ruling, not code. Data sources unchanged.
-
-
-## 2026-09-20 (night, later) - mini -> windows and next session: METRO RANKINGS IS INSTALLED AND ACTIVE (SHADOW); THE GC CRASH RECURRED MID-INSTALL AND IS NOW A PATTERN, NOT AN INCIDENT
-
-Windows relayed that only two steps were left, "copy two files and one dry run". The build entry actually lists five, and steps 3 and 5 are real: the prerequisite check, and the Notion row. All five are done.
-
-**Installed 22:20 BST.** `jobs.toml` copied to `~/metro-mini-jobs/`; `runners/metro-rankings.sh` copied (NOT symlinked) and `chmod +x`. `dispatcher.py --self-test` OK. `DRY_RUN=1 runners/metro-rankings.sh` exit 0, `guard verdict: pass (rc=0)`, `unmatched metros: 3` (the calamine baseline -- 215 would have meant the adapter was on the wrong code path), `public/data` restored, nothing committed, clean tree. Scheduled jobs row set Active. First real run Sat 2026-09-26 10:30 UTC in shadow.
-
-**Prerequisites, step 3, all satisfied but not as written:** the venv has `openpyxl` 3.1.5. `python_calamine` is NOT installed and is NOT needed -- `open_workbook.py` imports it only on the non-Supabase branch, and the runner sets `METRO_WORKBOOK_SOURCE=supabase`. `MKTCAP_SUPABASE_KEY` is absent from `~/.config/metro-supabase/env`, but `SUPABASE_SERVICE_KEY` is there and `metro-rankings.sh` lines 99-100 map it across, exactly as the entry claimed. Nothing to install.
-
-**A mistake, made and undone.** I first symlinked the runner into the repo, because all ELEVEN sibling runners in `~/metro-mini-jobs/runners/` are symlinks and a lone real file will not track a `git pull`. The Backlog row says "separate copy, not a symlink" in as many words. That is explicit, so I reverted to a copy and re-ran the dry run against it (exit 0, guard pass). Convention and instruction genuinely disagree here and the disagreement is now the only thing standing between a runner edit and a silently stale mini -- Ashwin to rule which way `runners/` goes. The self-test reports 86 cases, not the 87 the build entry predicted; `dispatcher.py` on the mini is byte-identical to the repo's, so that is a count from the Windows environment, not a missing piece.
-
-**🔴 THE GC CRASH RECURRED, 22:15, and this is the important part.** Same signature as 14:17:50: `index.lock`, `HEAD.lock`, `objects/maintenance.lock`, this time with a 1.7 MB `next-index-6.lock`. It landed while a mini job committed `0880b185a` and my dry run was restoring `public/data`. Consequences: the shadow restore FAILED, leaving **775 modified files** in the tree, and `0880b185a` was left unpushed -- the exact stranded-commit shape that cost 7h27m earlier today, forming again within six hours. I cleared the locks (no git process was running; backed up, not deleted), completed the restore by hand, and pushed `0880b185a`.
-
-Twice in eight hours is a pattern. `gc.auto`, `gc.autoDetach` and `maintenance.auto` are all UNSET here, so git 2.54 takes its defaults: auto-gc fires off the back of a commit and **detaches into the background**, where it races whatever git command the next job runs and dies holding three locks. This repo commits from a dozen scheduled jobs all day, so it will keep happening. `.git/objects` now holds EIGHT `tmp_obj_*` garbage files, one pair per crash. **Recommended (not done, Ashwin's call): `git config gc.auto 0` on this repo and run `git maintenance` from a dispatcher slot at a quiet hour, or at minimum `git config gc.autoDetach false` so a gc that collides fails in the foreground instead of orphaning locks.** Also worth noting for anyone running a job by hand: the dispatcher can fire mid-run, and that is what collided tonight -- check the schedule before a manual run.
-
-**Notion:** Scheduled jobs: `metro-rankings` Disabled -> **Active**, notes rewritten with the verified install and the symlink-vs-copy question. Backlog: the phase 2 row retitled and its Needs rewritten -- install struck off, shadow-two-Saturdays and the cutover remain, owner Mac mini. Decisions: none new (the runners/ convention and the gc config are both Ashwin's to rule). Data sources unchanged.
 
 
