@@ -1,3 +1,4 @@
+2026-09-26T11:31:31+01:00  8b9ad3538  rankings: weekly metro recalculation 2026-09-26
 2026-09-26T10:05:42+01:00  3b9cc40e0  business: weekly mktcap snapshot 2026-09-26 [vercel skip]
 2026-09-26T10:05:10+01:00  e0c10d0b4  mktcap: weekly export.csv refresh 2026-09-26 [vercel skip]
 2026-09-26T08:40:10+01:00  fba325328  HANDOFF: 2026-09-26 section BJ, last five autostash sites removed via safe-push.sh [vercel skip]
@@ -77,4 +78,3 @@
 2026-09-23T17:11:52+01:00  4ae6e3b64  fans: Women's sports category tab
 2026-09-23T17:02:46+01:00  e3ad59153  Merge security-hardening: slug guard, admin auth, headers, rate limits
 2026-09-23T16:56:03+01:00  f427b0f7b  fans: v0.3.1 nav, new leagues, blend methodology [preview]
-2026-09-23T16:31:35+01:00  3e98ba80c  mini jobs: refuse every git write when HEAD is not GIT_BRANCH [vercel skip]
