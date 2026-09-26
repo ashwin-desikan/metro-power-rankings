@@ -20382,3 +20382,64 @@ before committing if the guard fails. Both revalidated on attempt 1. No FAIL or 
 10:00Z, no `.mini-wrong-branch` stamp, and the shared clone was on `main`, clean and level with origin at 18:21Z.
 
 **Notion:** none. Nothing changed; this confirms BF.
+
+## 2026-09-26
+
+### BH. run-activity-feed.sh is on mini_sync: the step that deepened the 09-24 outage is gone
+
+At Ashwin's instruction, doing the class fix section AZ named. Pushed as `4a8675830`, `[vercel skip]`, built and tested
+in a worktree.
+
+**What changed.** The script opened with `git pull --rebase --autostash`. It now sources `_common.sh` and calls
+`mini_sync`, which never stashes: it fast-forwards, rebases only this machine's own commits and only on a clean tree,
+and aborts a conflicting rebase so a refusal leaves the repo as it found it. The commit and push go through
+`commit_paths`. It also gains what every runner has: the branch guard (so its own BE guard lines went), the dispatcher
+lock, the stranded-commit flush, and `DRY_RUN`. A failed generation or a `DRY_RUN` restores the feed file, so neither can
+leave a modified tracked file behind (the BC lesson).
+
+🔴 **IT SOURCES THE LIVE `~/metro-mini-jobs/runners/_common.sh`, NOT THE REPO COPY BESIDE IT.** This is a repo-checkout
+job (`NOT_DEPLOYED` in dispatcher.py), and `_common.sh` derives `MINI_DIR` from its own path. From the repo copy that
+would be the repo's `mac-mini-jobs/`: no `config.env` there, and the guard's `.mini-wrong-branch` and
+`.mini-sync-untagged` stamps, which are not gitignored, would be written INSIDE the shared clone. That is a dirty tree,
+the exact outage this change exists to prevent. owners-weekly already sources the repo copy, but only for
+`revalidate_ping` after loading the live `config.env` itself, so it never writes a stamp; checked, not changed.
+
+**Tested in a throwaway repo under a fake `HOME`, 34 of 34.** Happy path; a no-change run; a dirty file origin did NOT
+touch (left dirty, not committed, the feed commit touches only the feed); generator failure and `DRY_RUN` (tree clean
+after both); off main (refused before any git). And the case that matters:
+
+| 09-24 replay: uncommitted edit to `lib/releases.ts`, origin changes the same line | result |
+| --- | --- |
+| new script | exit 1, **0 unmerged entries**, no stash left, local edit intact, HEAD and origin unchanged, one alert |
+| **control**: old script | `UU lib/releases.ts` plus the feed staged: the outage, reproduced |
+
+The control also explains 09-24 better than AZ did: the autostash conflict does NOT make `git pull` fail. The old script
+carried on, generated the feed, staged it, and died at `git commit` on the unmerged path, leaving both behind.
+
+**The first run of that harness had 5 failures, all of them the harness.** The "other machine" was a `git clone` of a
+bare repo whose HEAD named a branch that did not exist, so the clone checked out nothing, its commits went nowhere, and
+origin never changed. With nothing to conflict, BOTH scripts passed the replay, the control included. A control that
+does not reproduce the bug is what exposed it. `origin_commit` now fails loudly if origin did not move.
+
+**Verified live, not assumed.** Pulled into the shared clone, `--check-sync` clean, then ONE hand run of the real job at
+06:37Z (the dispatcher does exactly this daily, so this was production, not validation in the clone): exit 0, pushed
+`de4ecfacf` as `metro-mini[bot]`, clone left on `main` with 0 dirty, 0 unmerged, 0 stashes, 0 ahead. Its second file is
+`commits-recent.txt`, which the pre-commit hook adds to every commit on main. The hand run left the lock file with a
+dead PID, deliberately (`_common.sh` never releases); the 06:45Z tick logged "stale lock file; taking it over" and ran
+deploy-watch `ok`.
+
+A small scare on the way: filtering `dispatcher.log` with `awk '$1 >= "2026-09-26T06:38"'` returned git errors about
+`HANDOFF.md` and an unreadable remote. They were from line 4284, 31 August: untimestamped lines such as `fatal:` sort
+after any "2026-" string, so they pass that filter. Anchor on a known line number, not a string comparison.
+
+**One behaviour change to know about:** a failure now sends its own ntfy through `fail()` as well as the dispatcher's
+per-slot one, as every runner already does. Previously it sent only the dispatcher's.
+
+🔴 **STILL OPEN, THE SAME CLASS ONE LEVEL DOWN: `commit_paths` itself runs `git pull --rebase --autostash` before every
+push**, for every runner in the fleet. It is far less exposed than the step removed here (it only conflicts if origin
+changed a file that is dirty in the clone in the seconds between `mini_sync` and the push), but when it does it leaves
+the same unmerged index. The fix is to push, and on rejection re-run `mini_sync`, which refuses on a dirty tree
+instead of stashing. Not done here: it changes every runner and wants its own selftest cases. Offered to Ashwin.
+
+**Notion:** Scheduled jobs row "activity-feed" Last verified 2026-09-26, with the change, the 09-24 replay, the live run
+and the extra ntfy. Verified over REST.

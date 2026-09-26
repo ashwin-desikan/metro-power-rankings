@@ -9,10 +9,70 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 80, 2026-09-19 to 2026-09-25
+     entries: 80, 2026-09-19 to 2026-09-26
      If the reader counts fewer than 80 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
+## 2026-09-26
+
+### BH. run-activity-feed.sh is on mini_sync: the step that deepened the 09-24 outage is gone
+
+At Ashwin's instruction, doing the class fix section AZ named. Pushed as `4a8675830`, `[vercel skip]`, built and tested
+in a worktree.
+
+**What changed.** The script opened with `git pull --rebase --autostash`. It now sources `_common.sh` and calls
+`mini_sync`, which never stashes: it fast-forwards, rebases only this machine's own commits and only on a clean tree,
+and aborts a conflicting rebase so a refusal leaves the repo as it found it. The commit and push go through
+`commit_paths`. It also gains what every runner has: the branch guard (so its own BE guard lines went), the dispatcher
+lock, the stranded-commit flush, and `DRY_RUN`. A failed generation or a `DRY_RUN` restores the feed file, so neither can
+leave a modified tracked file behind (the BC lesson).
+
+🔴 **IT SOURCES THE LIVE `~/metro-mini-jobs/runners/_common.sh`, NOT THE REPO COPY BESIDE IT.** This is a repo-checkout
+job (`NOT_DEPLOYED` in dispatcher.py), and `_common.sh` derives `MINI_DIR` from its own path. From the repo copy that
+would be the repo's `mac-mini-jobs/`: no `config.env` there, and the guard's `.mini-wrong-branch` and
+`.mini-sync-untagged` stamps, which are not gitignored, would be written INSIDE the shared clone. That is a dirty tree,
+the exact outage this change exists to prevent. owners-weekly already sources the repo copy, but only for
+`revalidate_ping` after loading the live `config.env` itself, so it never writes a stamp; checked, not changed.
+
+**Tested in a throwaway repo under a fake `HOME`, 34 of 34.** Happy path; a no-change run; a dirty file origin did NOT
+touch (left dirty, not committed, the feed commit touches only the feed); generator failure and `DRY_RUN` (tree clean
+after both); off main (refused before any git). And the case that matters:
+
+| 09-24 replay: uncommitted edit to `lib/releases.ts`, origin changes the same line | result |
+| --- | --- |
+| new script | exit 1, **0 unmerged entries**, no stash left, local edit intact, HEAD and origin unchanged, one alert |
+| **control**: old script | `UU lib/releases.ts` plus the feed staged: the outage, reproduced |
+
+The control also explains 09-24 better than AZ did: the autostash conflict does NOT make `git pull` fail. The old script
+carried on, generated the feed, staged it, and died at `git commit` on the unmerged path, leaving both behind.
+
+**The first run of that harness had 5 failures, all of them the harness.** The "other machine" was a `git clone` of a
+bare repo whose HEAD named a branch that did not exist, so the clone checked out nothing, its commits went nowhere, and
+origin never changed. With nothing to conflict, BOTH scripts passed the replay, the control included. A control that
+does not reproduce the bug is what exposed it. `origin_commit` now fails loudly if origin did not move.
+
+**Verified live, not assumed.** Pulled into the shared clone, `--check-sync` clean, then ONE hand run of the real job at
+06:37Z (the dispatcher does exactly this daily, so this was production, not validation in the clone): exit 0, pushed
+`de4ecfacf` as `metro-mini[bot]`, clone left on `main` with 0 dirty, 0 unmerged, 0 stashes, 0 ahead. Its second file is
+`commits-recent.txt`, which the pre-commit hook adds to every commit on main. The hand run left the lock file with a
+dead PID, deliberately (`_common.sh` never releases); the 06:45Z tick logged "stale lock file; taking it over" and ran
+deploy-watch `ok`.
+
+A small scare on the way: filtering `dispatcher.log` with `awk '$1 >= "2026-09-26T06:38"'` returned git errors about
+`HANDOFF.md` and an unreadable remote. They were from line 4284, 31 August: untimestamped lines such as `fatal:` sort
+after any "2026-" string, so they pass that filter. Anchor on a known line number, not a string comparison.
+
+**One behaviour change to know about:** a failure now sends its own ntfy through `fail()` as well as the dispatcher's
+per-slot one, as every runner already does. Previously it sent only the dispatcher's.
+
+🔴 **STILL OPEN, THE SAME CLASS ONE LEVEL DOWN: `commit_paths` itself runs `git pull --rebase --autostash` before every
+push**, for every runner in the fleet. It is far less exposed than the step removed here (it only conflicts if origin
+changed a file that is dirty in the clone in the seconds between `mini_sync` and the push), but when it does it leaves
+the same unmerged index. The fix is to push, and on rejection re-run `mini_sync`, which refuses on a dirty tree
+instead of stashing. Not done here: it changes every runner and wants its own selftest cases. Offered to Ashwin.
+
+**Notion:** Scheduled jobs row "activity-feed" Last verified 2026-09-26, with the change, the 09-24 replay, the live run
+and the extra ntfy. Verified over REST.
 ## 2026-09-25
 
 ### AZ. This morning's two ntfy, and a correction to section AY that the daily sweep earned
@@ -398,6 +458,7 @@ before committing if the guard fails. Both revalidated on attempt 1. No FAIL or 
 10:00Z, no `.mini-wrong-branch` stamp, and the shared clone was on `main`, clean and level with origin at 18:21Z.
 
 **Notion:** none. Nothing changed; this confirms BF.
+
 ## 2026-09-25: cowork (Windows device session) → next session (last 16 owner rows; owners build passes)
 
 Ashwin supplied a Gemini summary of owners for the final 16 board teams. Each claim was checked against sources: 8 confirmed and added with normal confidence (FC Groningen, RC Vannes, TuS N-Lübbecke, Gas Sales Piacenza, Itas Trentino, Pallavolo Padova, Prisma Taranto, Yuasa Grottazzolina; for the last three only the club president is public, so the rows name the club company, not the president, as owner). Gemini errors found: TuS Nettelstedt e.V. is licence holder not shareholder; ITAS is Trentino's sponsor not owner; the Padova "Consorzio" and a Taranto co-owner could not be found.
@@ -3890,35 +3951,4 @@ New gate `npm run check:cache-tags` (in `verify`): every `tags: [...]` on a fetc
 tsc clean; vitest 339 passed in 28 files; `next build --webpack` compiled; check:function-size OK (largest 138.4 MB); check:release-notes OK (newest 2026-09-20); check:cache-tags OK (24 tags, 19 flushable, 5 upstream-only). Probe at 390 and 1280 for the forecast hubs is in the evening entry; the NBA season page measured 390/390 and 1280/1280 with the control in its new place. NOT run: `npm run verify` end to end, `test:python`, and `probe:mobile` on `/`, `/digest` and the NFL season page. Run the probe on those three before the push.
 
 **Notion:** Backlog closed 4 (subscribe path, Writing in the nav, cache-tag check, NFL year hubs: awards done and the Pro Bowl half impossible from a career file); Backlog edited 2 (midterms map: data finding; forecast hubs: now on local main); Backlog added 3 (Awards sheet column J files St. Louis Cardinals All-Pros under Rams; refresh jobs should ping the seven newly flushable tags; confirm the 2016 and 1975-77 seed-rule boundaries from a source); Decisions added 2 (NBA weekly seeds ruling; subscribe path is an outbound Substack link).
-
-## 2026-09-19 (evening) - windows (Cowork, cloud bridged to the Windows box) -> mini and next session: FORECAST HUBS BUILT ON A LOCAL BRANCH (NOT PUSHED), NOTION RECONCILED, THREE PAID BUILDS TODAY
-
-No paid build from this session. Nothing on main changed except this entry.
-
-### A. Build count, and a correction to section O
-
-Vercel `list_deployments` for 2026-09-19 UTC: THREE READY production builds, 09:06 `dda64bbb1` (the Saturday "mktcap: weekly Top Companies refresh", untagged by design), 11:33 `80e1d5671`, 13:05 `d2c3f82e6`. Section O names the first build as `18eb6a0cd`; that build ran on 2026-09-17 11:06. The Saturday mktcap commit takes a slot every week, so Saturdays have ONE spare build, not two. The cap is still inactive (`VERCEL_BUILD_CAP_TOKEN`, Ashwin's P0 row). 2026-09-13 had seven builds and 2026-09-15 had four.
-
-### B. Forecast hubs package: local branch `feature/forecast-hubs`, commit `b5b46f601`, NOT pushed, NOT on main
-
-Ashwin asked for a competitive read of prediction.com, Underdog and Carlo De Marchis's YouTube Football Tracker, then chose this package first and ruled "build locally, hold the push". Order for the rest: midterms map, sign-in gate, daily data recap.
-
-- `app/predictions/_shared/ForecastHeadline.tsx`: one sentence above the first board of every hub ("The Buffalo Bills have a 10.8% chance to win Super Bowl LXI"), 7-day change from the sim-history file, sparkline, one MONO context line. UCL has no history file, so no movement row there.
-- `app/predictions/_shared/HeatBoard.tsx`: generic group / column / tile board on the `--seq` tokens; NFL hub gets 8 divisions by 4 teams in a Disclosure plus a HubNav chip. Tint steps 10 to 45 percent; a stronger `--seq-5` mix drops `var(--text)` below 4.5:1 (3.7:1 at 60 percent).
-- `app/predictions/_shared/Movers.tsx`: largest 7-day title swing per league on `/predictions`.
-- Every hub's `PredHeader sub` is now one reading-key clause under 20 words; the method text already stands in each page's sources section.
-
-Measured on a production build served locally, `probe-mobile` at concurrency 1: `/predictions` 4.8 screens (4.3 on 09-03), nfl 3.7 (3.4), cfb 3.8 (3.6), mlb 2.6 (2.3), pl 2.8 (2.5), ucl 2.7 (2.5); 6/6 clean at 390px. tsc clean, `next build --webpack` compiled, check:mobile, check:sortable, check:table-scroll, check:client-imports, check:data-reads OK. NOT run: vitest and the full `npm run verify` (run it before the merge).
-
-**To ship:** on Ashwin's yes, merge the branch into main with the `lib/releases.ts` entry for the shipping day IN THE SAME COMMIT, as the LAST commit of the push. That build also makes the `nba-elo` revalidate tag live (section R).
-
-**Why a branch and not a dirty tree:** this clone has `pull.rebase` set, so `git pull --ff-only` refuses with "cannot pull with rebase: You have unstaged changes". Six modified files blocked every pull on this box. The work was committed on a new local branch and main switched back clean. A non-main branch without `[preview]` does not build, so a later push of the branch is free.
-
-### C. Notion had drifted inside one day of the contract
-
-Sections J, L, Q and R each end with a `**Notion:**` line that names Backlog rows. A query of rows created on 2026-09-19 found NONE of six: the Hundred strand conflict, the cricket `is_current` producer, footy_finalize anon (add and close), the NBA.xlsx source fix, the inert `nba-elo` tag, the cache-tag check. Two rows stayed open that the entries closed ("NBA Elo: 2 of the 2024 team-seasons", "Formula E data is overdue"). `cricket-champions` had no Scheduled jobs row. The reverse also occurred: the `BUILT_DATE` fix (`3586981f0`) is Done in Notion and has no HANDOFF record.
-
-The pre-commit hook proves that the line exists. It does not prove that the writes happened. A session that loses the Notion connector after it wrote the line leaves a false receipt. Cheap guard worth a row: the reconciler should compare each `**Notion:**` line with rows created that day.
-
-**Notion:** Backlog closed 2 (NBA Elo 2024 pair, Formula E overdue); Backlog added 11 (NBA.xlsx source fix, nba-elo tag inert, cache-tag check, CPL first-promotion watch, Hundred honours row, forecast hubs [In progress], midterms map, sign-in gate, daily data recap, model-against-market board, small items bundle); Scheduled jobs added `cricket-champions` (not yet verified against the live jobs.toml); Decisions added "The champions tables are read with the service key".
 
