@@ -230,7 +230,7 @@ function TeamCell({ t }: { t: FanTableTeam }) {
   );
 }
 
-export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
+export default function FanTable({ teams, windowLabel }: { teams: FanTableTeam[]; windowLabel?: string }) {
   const [topTab, setTopTab] = useState<TopTab>("All");
   const [footballLeague, setFootballLeague] = useState<string>(ALL_FOOTBALL);
   const [catGroup, setCatGroup] = useState<string | null>(null);
@@ -764,6 +764,12 @@ export default function FanTable({ teams }: { teams: FanTableTeam[] }) {
             </div>
           ) : null}
         </div>
+      ) : null}
+
+      {windowLabel ? (
+        <p className="text-sm font-medium mb-2 text-[var(--text-muted)]" style={MONO}>
+          Attention window: {windowLabel}
+        </p>
       ) : null}
 
       {isBuildTab && buildSelection.size === 0 ? (

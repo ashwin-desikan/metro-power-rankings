@@ -539,6 +539,28 @@ export function formatCompactViews(n: number): string {
   return `${n}`;
 }
 
+const FULL_MONTHS = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+/**
+ * Full-month "Attention window" label from the dataset's own
+ * meta.window (never hardcoded), e.g. window("2025-09", "2026-08") ->
+ * "September 2025 to August 2026". Shared by the /fans table caption
+ * (SortableBoard headline) and anything else that needs the same window
+ * spelled out in full, so the wording can only ever drift from the real
+ * data if the meta itself is wrong.
+ */
+export function fanIndexWindowLabel(start: string, end: string): string {
+  const fmt = (ym: string) => {
+    const [y, m] = ym.split("-");
+    const month = FULL_MONTHS[parseInt(m, 10) - 1] ?? m;
+    return `${month} ${y}`;
+  };
+  return `${fmt(start)} to ${fmt(end)}`;
+}
+
 // ---------------------------------------------------------------------
 // Public preview (unauthenticated /fans page)
 // ---------------------------------------------------------------------

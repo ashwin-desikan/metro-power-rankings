@@ -44,3 +44,8 @@ public/data/valuations
 # lib/teamOwners.ts -> readFileSync, no ISR. Feeds /sports/owners and the Owner
 # column on /sports/valuations.
 public/data/owners
+
+# lib/mlb.ts's getSeasons() -> readFileSync, no ISR. The current-season
+# overlay written by scripts/ingest/mlb_season_finalize.py, merged into the
+# workbook-placeholder row for /teams/mlb/<slug>.
+public/data/mlb/season-overlay.json

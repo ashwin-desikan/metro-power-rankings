@@ -22,7 +22,8 @@ import { FilterRail } from "./FilterRail";
 
 export { MONO };
 
-const SPOTIFY_SHOW = "https://open.spotify.com/show/033dcKWSbfDoQObNoPOwsZ";
+// No Spotify link here: the show is a private feed on Ashwin's own account and
+// resolves for nobody else (removed 2026-09-26 at his instruction).
 
 /** "Sunday 13 September 2026" / "13 Sept 2026" / "Sun 13 Sept 2026". Dates are calendar days, so UTC noon. */
 export function fmtDigestDate(day: string, style: "long" | "short" | "stamp" = "long"): string {
@@ -236,11 +237,6 @@ export function DigestSources() {
         Links open the publisher&rsquo;s own site, which may ask you to subscribe. The one-line summaries are
         ours; the reporting is theirs. A place tag links to that metro or country on this site, where the same
         story appears under In the news.
-      </p>
-      <p>
-        <a href={SPOTIFY_SHOW} target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">
-          Listen to the audio edition on Spotify ↗
-        </a>
       </p>
     </SourcesCard>
   );

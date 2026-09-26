@@ -707,6 +707,13 @@ At 390px CSS width, before calling any page done:
 4. Swipe every wide table: the name column stays pinned, values scroll.
 5. The headline value of each ranked board is visible without swiping.
 6. Every sort/filter the desktop table offers exists on the phone.
+   **And the sorted value is the card headline.** When the phone Sort is on
+   a column other than the board's default, that column's cell is the
+   card's right-hand value, the default metric drops to the sub line with
+   its label, and a "Sorted by X" caption sits above the list. SortableBoard
+   does this for every board; a hand-rolled card list must do the same
+   (Fan Attention Index, 2026-09-26: sorted by valuation, every card still
+   showed the index).
 7. Tab rows wrap to three rows or fewer; stat grids collapse.
 8. Tap targets ≥44px; nothing important below 13px.
 9. The `<details>` reveals actually open, and are already open at ≥640px.

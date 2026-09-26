@@ -396,6 +396,28 @@ def espn_teams():
     return out
 
 
+def classify_event_status(status_type):
+    """Decide what an ESPN event's `competitions[0].status.type` means for
+    the schedule count. Pure (no network) so the self-test can hit it directly.
+
+    Postponed and canceled events are dropped from the schedule entirely,
+    not just marked not-done: a rain-out reappears later as a REPLAYED event
+    under a brand-new event id (the doubleheader nightcap), so leaving the
+    original in as `remaining` double-counts the game and hands teams
+    phantom games they cannot actually play (verified against the live ESPN
+    API 2026-09-26: 28 STATUS_POSTPONED events, April-September, inflating
+    remaining-game counts by up to +4 for one club).
+
+    -> ("skip", None) for postponed/canceled, else ("keep", done: bool)
+    """
+    st = status_type or {}
+    name = st.get("name") or ""
+    state = st.get("state") or ""
+    if name in ("STATUS_POSTPONED", "STATUS_CANCELED") or state == "postponed":
+        return "skip", None
+    return "keep", bool(st.get("completed"))
+
+
 def team_schedules(team_ids):
     """One pass over 30 per-team schedules gives BOTH the full 2430-game
     regular season and every completed result, which is cheaper and far more
@@ -407,16 +429,27 @@ def team_schedules(team_ids):
     shortDisplayName, which happens to equal the mark) rather than reading
     `team.name`, which is silently None here and would drop every game.
 
+    Postponed/canceled events are skipped entirely via classify_event_status
+    (see there for why) rather than kept as not-done; the count of skipped
+    events is stashed on this function's own `skipped` attribute for build()
+    to report in meta, since events are shared across both leagues' teams and
+    a plain return-value counter would double-count each one.
+
     -> {event_id: (iso_date, home_mark, away_mark, hs, as_, completed)}
     """
     id2mark = {str(tid): mark for mark, (tid, _dn) in team_ids.items()}
     games = {}
+    skipped_ids = set()
     for mark, (tid, _dn) in team_ids.items():
         d = fetch_json("%s/site/v2/sports/baseball/mlb/teams/%s/schedule"
                        "?season=%d&seasontype=2" % (ESPN, tid, SEASON), soft=True)
         for ev in (d or {}).get("events", []) or []:
             comp = (ev.get("competitions") or [{}])[0]
-            done = bool(((comp.get("status") or {}).get("type") or {}).get("completed"))
+            status_type = (comp.get("status") or {}).get("type") or {}
+            action, done = classify_event_status(status_type)
+            if action == "skip":
+                skipped_ids.add(ev.get("id"))
+                continue
             home = away = None
             hs = as_ = None
             for c in comp.get("competitors", []) or []:
@@ -429,7 +462,11 @@ def team_schedules(team_ids):
                     away, as_ = nm, sc
             if home in TEAM_DIV and away in TEAM_DIV:
                 games[ev["id"]] = (ev.get("date", "")[:10], home, away, hs, as_, done)
+    team_schedules.skipped = len(skipped_ids)
     return games
+
+
+team_schedules.skipped = 0
 
 
 # ------------------------------------------------------- market (futures)
@@ -678,6 +715,26 @@ def build(sims, today=None):
     gid_pos = {gid: i for i, (gid, _v) in enumerate(full_sorted)}
     n_full = len(full_sorted)
     remaining = [(gid, v[1], v[2]) for gid, v in games.items() if not v[5]]
+    postponed_dropped = team_schedules.skipped
+
+    # Sanity check: played + remaining should equal GAMES_PER_TEAM for every
+    # team. A genuinely suspended game (completed=False, not postponed, stuck
+    # mid-play under the ORIGINAL event id) can legitimately break this, so
+    # this warns rather than aborting the build.
+    played_count = {t: 0 for t in TEAMS}
+    for _d, h, a, hs, as_, done in games.values():
+        if done:
+            played_count[h] += 1
+            played_count[a] += 1
+    remaining_count = {t: 0 for t in TEAMS}
+    for _gid, h, a in remaining:
+        remaining_count[h] += 1
+        remaining_count[a] += 1
+    for t in TEAMS:
+        total = played_count[t] + remaining_count[t]
+        if total != GAMES_PER_TEAM:
+            print("WARNING: %s has %d played + %d remaining = %d games, expected %d"
+                  % (t, played_count[t], remaining_count[t], total, GAMES_PER_TEAM))
 
     per_season = {s: season_rundiff(s) for s, _ in STRENGTH_SEASONS}
     r_stats = base_ratings(per_season, played)
@@ -787,6 +844,7 @@ def build(sims, today=None):
             "market": market_note, "market_weight": round(market_w, 3),
             "schedule_games": len(games), "games_played": len(played),
             "games_remaining": len(remaining), "wins_check": wins_note,
+            "postponed_dropped": postponed_dropped,
             "source": "ESPN standings (2024/2025) + 2026 team schedules + World Series futures",
             "notes": "Regressed run-differential ratings on the ten-runs-per-win scale, "
                      "converted to log-odds so each game is log5 plus home field, with "
@@ -830,6 +888,27 @@ def self_test():
     check("divisions-30", len(TEAMS) == 30 and len(DIVISIONS) == 6
           and all(len(v) == 5 for v in DIVISIONS.values()))
     check("leagues-15", sum(1 for t in TEAMS if TEAM_LG[t] == "AL") == 15)
+
+    # classify_event_status: postponed/canceled events are skipped outright
+    # (they resurface later under a new event id), FINAL is kept done, and a
+    # not-yet-played event is kept as remaining. Real ESPN status.type shapes.
+    check("status-postponed-skipped",
+          classify_event_status({"name": "STATUS_POSTPONED", "state": "postponed",
+                                 "completed": False}) == ("skip", None))
+    check("status-canceled-skipped",
+          classify_event_status({"name": "STATUS_CANCELED", "state": "post",
+                                 "completed": False}) == ("skip", None))
+    check("status-postponed-state-without-name",
+          classify_event_status({"name": "STATUS_SOMETHING_ELSE",
+                                 "state": "postponed", "completed": False})
+          == ("skip", None))
+    check("status-final-kept-done",
+          classify_event_status({"name": "STATUS_FINAL", "state": "post",
+                                 "completed": True}) == ("keep", True))
+    check("status-scheduled-kept-not-done",
+          classify_event_status({"name": "STATUS_SCHEDULED", "state": "pre",
+                                 "completed": False}) == ("keep", False))
+    check("status-none-kept-not-done", classify_event_status(None) == ("keep", False))
 
     # --- verify_wins skew classifier (Ashwin's ruling, 2026-09-20) ----------
     # The gate is there to catch a silent SYSTEMATIC parse break, not a game

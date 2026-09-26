@@ -112,6 +112,35 @@ export type Season = {
   tiebreaker?: boolean;   // played in a one-game tiebreaker that year
 };
 
+// public/data/mlb/season-overlay.json -- written by
+// scripts/ingest/mlb_season_finalize.py from live ESPN standings (and,
+// once it exists, public/data/mlb/playoffs.json) so the current season
+// shows up on team pages before MLB.xlsx is hand-edited. Keyed by the same
+// `canonical` string as franchises.json, not by slug.
+export type SeasonOverlayTeam = {
+  w: number; l: number; t: number; win_pct: number;
+  rs: number; ra: number; run_diff: number;
+  place: string;           // "1".."5", or "" while the regular season is in progress
+  div_title: boolean;
+  best_rec_leag: boolean;
+  playoff: boolean;
+  lcs_app: boolean;
+  ws_app: boolean;
+  champ_app: boolean;
+  champ: boolean;
+};
+
+export type SeasonOverlay = {
+  meta: {
+    season: number;
+    generated_at: string;
+    regular_season_complete: boolean;
+    postseason_complete: boolean;
+    source: string;
+  };
+  teams: Record<string, SeasonOverlayTeam>; // keyed by canonical (e.g. "Yankees")
+};
+
 export type TopGameTeamRow = {
   year: number;
   date: string | null;
@@ -193,10 +222,79 @@ let _historicalSeasons: Record<string, Season[]> | null = null;
 let _topGamesByTeam: Record<string, TopGameTeamRow[]> | null = null;
 let _topGamesAllTime: TopGameLeagueRow[] | null = null;
 let _topGamesByDecade: Record<string, TopGameLeagueRow[]> | null = null;
+let _seasonOverlay: SeasonOverlay | null | undefined = undefined; // undefined = not yet loaded
 
 function read<T>(filename: string): T {
   const path = join(process.cwd(), "public", "data", "mlb", filename);
   return JSON.parse(readFileSync(path, "utf-8")) as T;
+}
+
+// Overlay reader: tolerate a missing file (the common case -- it only
+// exists once scripts/ingest/mlb_season_finalize.py has run) and a
+// malformed one, since a bad overlay must never break the team page that
+// would otherwise render the workbook's zero-filled placeholder just fine.
+function readSeasonOverlay(): SeasonOverlay | null {
+  if (_seasonOverlay !== undefined) return _seasonOverlay;
+  const path = join(process.cwd(), "public", "data", "mlb", "season-overlay.json");
+  if (!existsSync(path)) {
+    _seasonOverlay = null;
+    return null;
+  }
+  try {
+    _seasonOverlay = JSON.parse(readFileSync(path, "utf-8")) as SeasonOverlay;
+  } catch {
+    _seasonOverlay = null;
+  }
+  return _seasonOverlay;
+}
+
+// Pure and exported so it is directly testable (see lib/mlb.test.ts).
+//
+// Merges the overlay's numbers into a franchise's season rows for exactly
+// one case: the row for `overlay.meta.season` whose w+l is still 0 -- i.e.
+// the untouched workbook placeholder. Any row Ashwin has already filled in
+// MLB.xlsx by hand (w+l > 0) is left completely alone, so the overlay never
+// fights a manual edit.
+//
+// While overlay.meta.regular_season_complete is false, the w/l/rs/ra/
+// run_diff we merge in are still true to date (ESPN's in-progress
+// standings), but `place` stays "" and the postseason-shaped flags
+// (div_title, best_rec_leag, playoff, lcs_app, ws_app, champ_app, champ)
+// all stay false -- scripts/ingest/mlb_season_finalize.py withholds those
+// until the 162-game season is actually over, rather than guess a division
+// finish off an incomplete season.
+export function applySeasonOverlay(
+  rows: Season[],
+  overlay: SeasonOverlay | null,
+  canonical: string
+): Season[] {
+  if (!overlay) return rows;
+  const teamRow = overlay.teams[canonical];
+  if (!teamRow) return rows;
+
+  return rows.map((row) => {
+    if (row.year !== overlay.meta.season) return row;
+    if (row.w + row.l !== 0) return row; // workbook already filled -- overlay ignored
+
+    return {
+      ...row,
+      w: teamRow.w,
+      l: teamRow.l,
+      t: teamRow.t,
+      win_pct: teamRow.win_pct,
+      rs: teamRow.rs,
+      ra: teamRow.ra,
+      run_diff: teamRow.run_diff,
+      place: teamRow.place,
+      div_title: teamRow.div_title,
+      best_rec_leag: teamRow.best_rec_leag,
+      playoff: teamRow.playoff,
+      lcs_app: teamRow.lcs_app,
+      ws_app: teamRow.ws_app,
+      champ_app: teamRow.champ_app,
+      champ: teamRow.champ,
+    };
+  });
 }
 
 export function getAllFranchises(): Franchise[] {
@@ -270,7 +368,10 @@ export function getAwards(canonical: string): Record<string, AwardWinner[]> {
 
 export function getSeasons(slug: string): Season[] {
   if (!_seasons) _seasons = read<Record<string, Season[]>>("seasons-by-team.json");
-  return _seasons[slug] || [];
+  const rows = _seasons[slug] || [];
+  const franchise = getFranchiseBySlug(slug);
+  if (!franchise) return rows;
+  return applySeasonOverlay(rows, readSeasonOverlay(), franchise.canonical);
 }
 
 export function getTopGamesForTeam(slug: string): TopGameTeamRow[] {

@@ -109,7 +109,7 @@ function PreviewTable({ rows }: { rows: FanPreviewRow[] }) {
 // session with data in hand. Signing out reverses this: onAuthStateChange
 // below clears `teams` and sets status back to "anon", which exits the
 // "ready" branch and shows the preview + gate again.
-export default function FanGate({ totalTeams, previewRows }: { totalTeams: number; previewRows: FanPreviewRow[] }) {
+export default function FanGate({ totalTeams, previewRows, windowLabel }: { totalTeams: number; previewRows: FanPreviewRow[]; windowLabel: string }) {
   const [status, setStatus] = useState<Status>("checking");
   const [teams, setTeams] = useState<FanTableTeam[] | null>(null);
 
@@ -183,7 +183,7 @@ export default function FanGate({ totalTeams, previewRows }: { totalTeams: numbe
   if (status === "ready" && teams) {
     return (
       <div className="mt-4">
-        <FanTable teams={teams} />
+        <FanTable teams={teams} windowLabel={windowLabel} />
         <p className="text-xs text-[var(--text-dim)] mt-3" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
           &mdash; under Valued vs attention = not shown, either because the team has no published
           valuation or because its league has fewer than 3 valued teams.
@@ -204,6 +204,9 @@ export default function FanGate({ totalTeams, previewRows }: { totalTeams: numbe
   return (
     <div className="mt-2">
       <div style={loading ? { display: "none" } : undefined}>
+        <p className="text-sm font-medium mb-2 text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+          Attention window: {windowLabel}
+        </p>
         <PreviewTable rows={previewRows} />
       </div>
       {loading ? <SkeletonRows /> : null}

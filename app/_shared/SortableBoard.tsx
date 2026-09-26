@@ -132,6 +132,23 @@ export default function SortableBoard({
   const selectKey = sort?.key ?? initial?.key ?? sortableCols[0]?.key ?? "";
   const dirDesc = (sort?.dir ?? (initial?.dir === "asc" ? 1 : -1)) === -1;
 
+  // Phone-card headline override (DESIGN-STANDARDS mobile-sort fix): when
+  // the reader has sorted by a column other than the board's own default
+  // and other than the identity column, the card's headline `right` shows
+  // THAT column's value (the thing the list is actually ordered by), not
+  // the board's unrelated default metric. `rightSub` then falls back to
+  // showing the default headline instead, with a short label, so the
+  // reader does not lose it. Unsorted or default-sorted boards render
+  // exactly as before: `overrideColIndex` stays -1 and every branch below
+  // is a no-op.
+  const defaultKey = initial?.key ?? null;
+  const identityKey = cols[0]?.key ?? null;
+  const isNonDefaultSort = selectKey !== "" && selectKey !== defaultKey && selectKey !== identityKey;
+  const overrideColIndex = isNonDefaultSort ? cols.findIndex((c) => c.key === selectKey) : -1;
+  const overrideCol = overrideColIndex >= 0 ? cols[overrideColIndex] : null;
+  const defaultCol = defaultKey ? cols.find((c) => c.key === defaultKey) ?? null : null;
+  const overrideColLabel = (c: BoardCol) => c.short ?? (typeof c.label === "string" ? c.label : c.key);
+
   const pad = compact ? "py-1 px-2" : "py-1.5 px-3";
   const thCls = (c: BoardCol) =>
     `${compact ? "py-1.5 px-2" : "py-2 px-3"} font-medium${c.right ? " text-right" : ""}${tierCls(c.demote)}${c.className ? ` ${c.className}` : ""}`;
@@ -165,6 +182,11 @@ export default function SortableBoard({
           </button>
         </div>
       ) : null}
+      {overrideCol ? (
+        <div className="sm:hidden mt-1.5 text-[10px]" style={{ ...MONO, color: "var(--text-dim)" }}>
+          Sorted by {overrideColLabel(overrideCol)}
+        </div>
+      ) : null}
       <ResponsiveTable
         compact={compact}
         variant="list"
@@ -179,8 +201,23 @@ export default function SortableBoard({
             rank={rank ? i + 1 : undefined}
             name={r.mobile.name}
             sub={r.mobile.sub}
-            right={r.mobile.right}
-            rightSub={r.mobile.rightSub}
+            right={
+              overrideColIndex >= 0 ? (
+                <span className="inline-block max-w-[7.5rem] truncate align-bottom">{r.cells[overrideColIndex]}</span>
+              ) : (
+                r.mobile.right
+              )
+            }
+            rightSub={
+              overrideColIndex >= 0 ? (
+                <span className="inline-flex items-baseline gap-1 justify-end">
+                  {defaultCol ? <span className="opacity-70">{overrideColLabel(defaultCol)}</span> : null}
+                  {r.mobile.right}
+                </span>
+              ) : (
+                r.mobile.rightSub
+              )
+            }
             highlight={r.mobile.highlight}
           />
         ))}

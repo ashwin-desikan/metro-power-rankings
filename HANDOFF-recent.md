@@ -9,8 +9,8 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 73, 2026-09-20 to 2026-09-26
-     If the reader counts fewer than 73 entries, its fetch window stopped
+     entries: 70, 2026-09-20 to 2026-09-26
+     If the reader counts fewer than 70 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
 ## 2026-09-26
@@ -482,6 +482,39 @@ treated as off. Decide that on the evidence, not in advance.
 **Notion:** Decisions "The Mac mini never installs macOS updates by itself..." updated: Enforced in names the
 check and commit; Open questions records that the toggle still read 1 at 13:56 BST after being reported done.
 Verified over REST.
+
+### BQ. MLB and WNBA playoff brackets, the postponed-game sim bug, the mobile sort headline, Warwickshire
+
+Cowork (Windows device session), Ashwin present for the first hour then away. Six asks plus two that arrived mid-turn; everything below is built, gated and committed in this section's commits. One production build owed by the app changes.
+
+**1. The Padres read 94.6% while clinched: ESPN's postponed events never close.** The per-team schedule feed keeps a rained-out game as its own event with `STATUS_POSTPONED` and `completed=false` for the rest of the season, while the makeup is a NEW event id. 28 such zombies in 2026 (verified live: 2458 events, 2402 done, 56 not, 28 of those postponed, dated April to 22 September). `team_schedules()` marked them `done=False`, so they were "remaining": the D-backs carried a phantom 25 June game, the Cubs three, the Guardians four, and in the sim the D-backs could reach 89 and tie the Padres. Fix in `build_mlb_sim.py`: `classify_event_status()` (pure, six self-test cases) skips POSTPONED and CANCELED outright; `meta.postponed_dropped`; a per-team played+remaining=162 WARNING. The same parser shape in `build_season_sims.py` (AFL/NRL scoreboard, the shared `espn_schedules()` for WNBA/MLS/NWSL) got the same filter and cases (34 checks). Regenerated in the cloud container against live ESPN: schedule 2430 games, 28 remaining, Padres 100.00%, wins verified 30/30. `mlb-sim.json` and its history are in this commit; the mini's 07:00 run overwrites them tomorrow with the fixed code. `build_mlb_postseason.py` does not have the pattern (checked).
+
+**2. AFL: nothing was wrong.** The finalizer ran at 10:30 UTC (champions id 149516, `afl_nrl_grand_finals` 2026 rows, `finals.json` GF post); /teams/afl shows 2026 Brisbane Lions 96-89 in the Grand Finals list, the Brisbane page says 2026 AFL Champions, /sports/champions has 2026. Ashwin looked before the run.
+
+**3. Spotify link** removed from `app/digest/_shared/ui.tsx` (private show, resolves for nobody else).
+
+**4 and 5. MLB and WNBA postseason, one mechanism.** Contract in `_scratch/playoffs-contract.md` (gitignored folder; the shape is also the `PlayoffBundle` type).
+- `scripts/ingest/playoff_series.py --league mlb|wnba|all` (stdlib, 31 self-test checks, `--dry`, `--fixtures`, `--empty`). Per-DAY scoreboard fetches over the postseason window: the date-range form still 400s (since 09-15) and `dates=YYYYMM&seasontype=3` IGNORES the season type for MLB and returns the first 100 regular-season games of the month, so a September month query never reaches the 29 September Wild Card shells. Rounds from the notes headline (`ALWC - Game 3 If Necessary`, `NLDS - Game 1`, `World Series - Game 1`; `First Round - Game 1`, `Semifinals`, `WNBA Finals`); an unnameable game goes to `unassigned`, never a guess. ESPN's `competitions[0].series` object (wins, summary, completed, totalCompetitions) is authoritative; the game-by-game count must agree or the run exits 2 and writes nothing. TBD shells (ESPN lists every fixture of a round before the draw) are dealt into the round's open slots by Game number, one-sided shells join the known club's series, and extras beyond `SERIES_PER_ROUND` are dropped, so the bracket shows dates before the draw and the Division Series card of a bye club already carries its five game dates. Seeds: MLB from ESPN `playoffSeed` (a league rank 1..15, so the finalizer treats only 1..6 as the field); WNBA computed overall (ESPN's is the conference seed) and ties broken so the first-round pairings sum to nine, swapping only clubs on equal records (Mystics 5, Fever 6, measured). Retries on transport errors, not on 4xx.
+- Live today: MLB 53 games (WC: Yankees 4 v Red Sox 5; Braves 3 v TBD; two TBD slots; DS: Rays, Brewers, Dodgers with byes; CS and WS shells), WNBA 26 (Lynx 1 v Liberty 8, Valkyries 2 v Wings 7, Aces 3 v Fever 6, Dream 4 v Mystics 5; SF and Finals shells). Both files committed.
+- `lib/playoffSeries.ts` (footyFinals mechanics: local copy, then GH raw with `revalidate: 900`, tag `playoff-series`, an empty remote never outranks a local with series; `playoffsIsCurrent` = series present and generated within 45 days). Literal path branches for check:data-reads; tag registered in `app/api/revalidate/route.ts`; module in check-client-imports.
+- `app/teams/_shared/SeriesBracket.tsx`: one card per series (seed, crest, name link, wins bold for the leader, tick when decided, ESPN summary, per-game chips G1 4-2 / Live / G3 Tue 30 Sep). Desktop: round columns in their own scroll box; MLB stacks AL over NL inside a column. Phone: stacked rounds, each a Disclosure (more than two rounds), the first round with any action open. Champion banner when `meta.complete`.
+- Hubs: `/teams/mlb` gains `#postseason` above the standings (nav item only when current; MlbStandings heading reads "Final 2026 standings" when the bundle is current); `/teams/wnba` gains `#playoffs` the same way.
+- Live Standings strips: `wnbaBlock()` now pushes playoff games as "Away at Home · First Round G1" into On Today / Recent Results / Coming Up (the admission rules already said WNBA playoffs belong there; the block simply never pushed events); `mlbBlock()` pushes the same from the bundle, de-duplicated against the postseason ledger by ESPN id then (date, home, away) display names. TBD-vs-TBD shells never reach the strips. Both blocks stay open with note "Playoffs" after the regular season ends.
+- Jobs: `wnba-refresh.yml` runs the WNBA feed after its rebuild, commits `public/data/wnba/playoffs.json`, and gains `0 3,6 * 9,10 *`. The mini's `runners/mlb-sim.sh` runs the MLB feed and the season overlay (below) after the sims; the new `mlb-playoffs-refresh.yml` is DISPATCH ONLY (schedule commented out: one writer per file). 🔴 MINI-SIDE STEP OWED: `~/metro-mini-jobs/runners/mlb-sim.sh` is a separate copy; cp the repo runner over it after the pull and `DRY_RUN=1` once (Backlog row).
+
+**The permanence question (how the season gets written into the teams).** MLB.xlsx is the canonical source and hand-edited; its 2026 rows exist as 0-0 placeholders. `scripts/ingest/mlb_season_finalize.py` (31 checks) builds `public/data/mlb/season-overlay.json` from ESPN standings plus playoffs.json (W, L, RS, RA, run_diff; `place`, `div_title`, `best_rec_leag` only once every club is at 162; `playoff` from a real series or, after 162, seeds 1..6; lcs_app/ws_app/champ from the bundle). `lib/mlb.ts applySeasonOverlay` (vitest, 5 cases) fills a season row only while its workbook W+L is 0, so a hand-filled row always wins. Read at build time, so the overlay commit is `[vercel skip]` on purpose (the file moves every run; an untagged commit would spend a build twice a day). The script also writes `_scratch/mlb-2026-season-rows.csv` in Year by Year column order, the paste for the workbook after the World Series. Live run today: 30 teams resolved, Padres 89-71 (playoff False until their series is named; Yankees True already). Two script fixes on the live run: a browser User-Agent 403s at ESPN's edge (now none, like every other caller), and `playoffSeed` was being read as a playoff flag (the Angels carried 15).
+
+**6. Mobile sort headline.** `app/_shared/SortableBoard.tsx`: when the phone Sort select is on a column other than the board's default or the identity column, the card's `right` renders that column's own cell node (`row.cells[i]`, so DataBar and currency formatting carry), the default metric drops to `rightSub` with its short label, and a mono "Sorted by X" caption sits above the list. Default or unsorted boards are byte-identical. About 20 boards inherit it. Decisions row.
+
+**7. Fan Attention Index window.** `lib/fanIndex.ts fanIndexWindowLabel` ("September 2025 to August 2026", from `meta.window`, never hardcoded); the caption "Attention window: ..." now sits directly above the board at every width, on the signed-in FanTable AND the anonymous PreviewTable in FanGate (text-sm, muted, mono).
+
+**8. Warwickshire, County Championship 2026 (Ashwin, mid-turn).** Wikipedia already carried `champions = Warwickshire`, `todate = 27 September 2026`, so the mini's 22:30 cricket-champions run would have promoted it tonight; Ashwin wanted it today and ruled the date stays the season end. Written by hand mirroring the finalizer's row: champions id 149517 (county-championship, 2026, match_date and date_awarded 2026-09-27, source cricket-finalizer, Birmingham), 148271 Nottinghamshire cleared. `update-county-champion.py` run in the container against the list page: 2026 Warwickshire appended, most_titled recomputed (Warwickshire 9), runner-up blank because the list row has none yet (Backlog P3). Tonight's finalizer run should be a quiet "already carries" no-op; that spoils the "first real test" watch again, noted on that row.
+
+**Gates.** typecheck, client-imports, data-reads, cache-tags, public-data, table-scroll, sortable, mobile (11 baselined, no growth), live-data, release-notes, vitest (mlb + standings, 16), all green from device_bash. `next build --webpack` from PowerShell: compiled, 5698 pages, no errors (log in `_to_delete/`). check:function-size ran detached; read `fnsize_check.log` before pushing if it is still there.
+
+**Ideas Inbox triage (Ashwin, away):** 16 rows Actioned into Backlog rows or existing rows, 7 Dropped, 5 left Triaged for the Job Search project (Product Growth, Sean McCann, Sabrina Ramonov, Claude Certified Architect, Sairam Sundaresan), one Editorial calendar row (the hot hand as a measuring error).
+
+**Notion:** Scheduled jobs: "MLB postseason series refresh (mlb-playoffs-refresh.yml)" created (Dispatch only); "mlb-sim" and "WNBA season refresh" edited (Defined in, Writes to, Notes, Last verified 2026-09-26). Decisions: four rows created (phone card headlines the sorted column; a champion's date is the season's scheduled end; MLB season overlay until MLB.xlsx catches up; postseason series feeds one file per league, one SeriesBracket). Data sources: "ESPN" Incident note and Last incident updated with the three quirks (postponed zombies, month query ignores seasontype, playoffSeed is a rank). Backlog: 13 rows created (two P0 watches for the 28/30 Sep runs, the mini-side runner copy P1, MLB.xlsx paste P2, County runner-up P3, and eight rows triaged from the Ideas Inbox: Picks private groups, Scoreboard CLV, Scrapling trial, pre-launch security pass, wehoop fallback, F1 race deep dives, non-dilutive deal structures, Claude Code plugin set). Editorial calendar: one row created. Ideas Inbox: 28 status changes. Verified by re-query.
 ## 2026-09-25
 
 ### AZ. This morning's two ntfy, and a correction to section AY that the daily sweep earned
@@ -4126,77 +4159,5 @@ The original reasoning survives intact: refusing beats silently discarding, and 
 **🔴 The gap this leaves, and it is a real one.** Nobody owns PUSHING a stranded commit. mini_sync now clears the divergence but still will not push, so the commit sits local until some later job happens to commit. For a `[vercel skip]` bot commit that is harmless. For an UNTAGGED one it means data that was meant to trigger a build can sit unpublished indefinitely with nothing alerting -- quieter than tonight's failure, and therefore worse in its own way. Filed as the open question on the new Decisions row: should mini_sync push tagged commits automatically and alert on untagged ones?
 
 **Notion:** Backlog: the `mini_sync` P1 row CLOSED (Done), with the four refusal cases and the verification recorded. Decisions +1 ("The mini's pull path self-heals", Infra / deploy, Ashwin 2026-09-20), carrying the unpushed-commit gap as its open question. Scheduled jobs unchanged -- no job's schedule moved. Still open in Backlog: `verify_wins` in-progress-game skew (P2), which still wants a ruling rather than code.
-
-
-## 2026-09-20 (night, last +2) - mini -> windows and next session: dispatcher.log ROTATES NOW, 5 MB AND FIVE GENERATIONS
-
-Ashwin: "add log rotation to dispatcher.log". The last loose end from tonight. Commit `26e6cd53b`, `[vercel skip]`.
-
-**Why it mattered now.** The log had NO rotation and was 823 KB after roughly two months -- about 14 KB a day, which nobody would ever have noticed. Bringing deploy-watch under the dispatcher an hour earlier added ~430 lines a day on its own (RUN + one output line + DONE, 144 times), quadrupling the growth rate on a machine nobody logs into. Unbounded from there.
-
-**`rotate_log()` in dispatcher.py.** 5 MB, five generations -- about 100 days per generation at the new rate, so well over a year of history retained, and 30 MB worst case on disk. Called ONCE per real tick, from inside the `try` that already holds the dispatcher's lock, so two dispatchers can never rotate at the same moment and neither `--dry-run` nor `--self-test` ever writes. When it fires, the first line of the fresh file says why it is fresh.
-
-Three decisions worth keeping:
-- **It renames, it does not truncate.** That is safe precisely because `log()` opens the file with `"a"` for every single line and holds no handle between calls -- the rename moves the old bytes aside and the very next `log()` recreates the file. Truncating would also work and would throw the history away, and the history is the only record of what the fleet did.
-- **Oldest first, then shift up, then move the live file** -- in that order, so a crash midway leaves every surviving generation still correctly numbered instead of overwriting one.
-- **It never raises.** Every `OSError` is swallowed and the tick carries on. A dispatcher that died because it could not tidy its own log would be a strictly worse failure than an oversized log.
-
-**Verified, including against the real file.** Ten new self-test cases cover the threshold, the rename, the `.1 -> .2` shift, dropping the oldest past `keep`, and a missing file being a no-op. Then a live proof rather than a synthetic one: the real 823 KB `dispatcher.log` was copied to a temp dir, rotated with a low threshold, and came back byte-identical as `.1`, with `log()` recreating the live file immediately after -- which is the `open("a")` assumption above, demonstrated rather than asserted. On the mini it correctly does NOT rotate yet (0.79 MB against a 5 MB threshold) and a live tick runs clean. **Self-test 86 -> 111 cases across tonight's three changes, all green.**
-
-A note on my own test-writing: I first compared two 2000-character strings in the generation checks, which passed but made the self-test output unreadable. Rewritten to compare a single marker character per generation, so the ordering check now reads `['b', 'a', 'z']` and actually tells you the shift chain is right. A test whose output nobody can read is most of the way to no test.
-
-**Where the rotated files live:** `~/metro-mini-jobs/dispatcher.log.1` through `.5`, outside the git checkout, so nothing to gitignore.
-
-**Notion:** Decisions: the gc ruling's open questions are now BOTH closed (deploy-watch under the lock; dispatcher.log rotating), leaving only the human-at-a-terminal case. Scheduled jobs: the deploy-watch row's log-volume note updated from a concern to a handled one. No new rows -- this changed no job's schedule. Backlog unchanged; `mini_sync` rebase fallback (P1) and `verify_wins` skew (P2) are still open and still want a ruling rather than code.
-
-
-## 2026-09-20 (night, last +1) - mini -> windows and next session: DEPLOY-WATCH IS A DISPATCHER JOB. EVERY SCHEDULED WRITER OF THIS REPO NOW RUNS UNDER ONE LOCK
-
-Ashwin: "bring deploy-watch under the dispatcher". Done, and it needed a new scheduling primitive to do honestly. Commit `baeb6d021`, `[vercel skip]`.
-
-**Why it was the last gap.** `run-deploy-watch.sh` ran on its own launchd agent, `StartInterval 600`, doing `git fetch`, `git log` and -- on a re-trigger -- `git pull --rebase --autostash` plus a commit and push, every 10 minutes, OUTSIDE the dispatcher's lock. At 22:15 tonight that is exactly what raced the metro-rankings shadow run: the run's restore of `public/data` failed and left 775 files modified. Once gc was taken off git's hands earlier this evening, this was the only remaining way two SCHEDULED things could touch this index at the same moment.
-
-**`every_minutes`, new in dispatcher.py.** The scheduler only understood clock slots (`time`, `times`). Ten-minute cadence as 144 `times` entries would have worked and been unreadable. So the interval is expanded inside `job_times()` -- the ONE pure function every scheduling decision reads its slots from -- and returns the same sorted `(hh, mm)` list it always returned. `previous_occurrence`, catchup, MISSED and `last_slot` are untouched and needed no changes. Validation makes it mutually exclusive with `time`/`times` and requires it to divide 1440 evenly, so the pattern is identical every day instead of drifting across midnight. **Self-test 86 -> 101 cases, all green.**
-
-One of those new cases caught me rather than the code: I asserted that just after midnight an `every_minutes` job falls back to yesterday's last slot, the way a `times` job does. It does not, and should not -- such a job always owns a 00:00 slot, so there is always a slot just behind it. My expectation was wrong, the scheduler was right, and the corrected case now documents that property, which is also what makes a skipped tick harmless.
-
-**The flip, done in the same change** as the house rule requires: `com.citizenofnowhere.deploy-watch` is UNLOADED, plist left on disk as the manual fallback, exactly as football-standings and the other migrated jobs were treated. Unloaded FIRST, then the row installed, so there was never a window with both live -- two copies would have fought over the same re-trigger cooldown in `.deploy-watch-state`.
-
-**Verified live, not asserted.** `dispatcher.py --dry-run` showed `WOULD RUN deploy-watch (slot 21:30Z)`; a real tick ran it, `DONE deploy-watch: ok 2s`, output `up to date: TARGET 6d6a29447 is live`; `state.json` recorded `last_slot 21:30Z`, status ok. `build_argv` returns `/bin/bash hc-run.sh deploy-watch /bin/bash run-deploy-watch.sh` -- byte-for-byte what the plist ran, so the healthchecks tile keeps its pings unchanged. (`HC_PING_KEY` IS set; my first grep missed the `export ` prefix and briefly said otherwise.)
-
-**The trade, stated because it is real.** On its own agent it ran every 10 minutes no matter what. In here a long job holds the lock -- mlb-sim can take 45 minutes -- so a tick can be skipped and a canceled build can sit un-healed that much longer. Acceptable because the script is threshold-based, not schedule-based: `STALE_MIN=20` decides what counts as canceled, `COOLDOWN_MIN=18` spaces retries, `MAX_ATTEMPTS=3` bounds them, so a late run sees a slightly staler build and does the same thing. It is NOT acceptable to coarsen the cadence much past 10 minutes, because it must stay well inside `STALE_MIN`.
-
-**Two things now worth someone's attention.** (1) `dispatcher.log` gains roughly 430 lines a day from this (RUN + one output line + DONE, 144 times) and has **no rotation**; it is already 822 KB. (2) The lock now covers every scheduled writer, but NOT a human at a terminal -- a manual job run is still outside it, which is what collided at 22:15. Check the schedule before running a job by hand.
-
-**Also explained, a loose end from earlier tonight:** the self-test case count differs by one between machines (86 vs 87 before, 100 vs 101 now) because `no NOT_DEPLOYED entry names a file that is gone` only runs from the repo checkout, not from `~/metro-mini-jobs`. Nothing is missing on the mini.
-
-**Notion:** Scheduled jobs: the `Deploy watch` row rewritten as `deploy-watch`, Runs on launchd -> **Mac mini (dispatcher)**, with the every_minutes rationale, the live verification and the trade. Decisions: the gc ruling's open question CLOSED -- deploy-watch was the named gap -- leaving only the human-at-a-terminal case and dispatcher.log rotation. Backlog unchanged; the two rows from earlier tonight (`mini_sync` rebase fallback P1, `verify_wins` skew P2) are still open and still want a ruling.
-
-
-## 2026-09-20 (night, last) - mini -> windows and next session: GC IS OFF GIT'S HANDS. ONE 03:00 SLOT OWNS IT, AND IT SWEEPS THE LOCKS TOO
-
-Ashwin's ruling tonight, after the crash recurred mid-install: "apply gc.auto 0 and add the maintenance slot". Both done and verified. Commit `0689e3906`, `[vercel skip]`, no build path touched.
-
-**Config on the clone, two settings not one.** `gc.auto=0` is what was asked for and it disables the gc TASK. But the lock that actually crashed twice is `objects/maintenance.lock`, which belongs to `git maintenance run --auto` -- the hook git 2.54 fires off the back of a commit, gated by `maintenance.auto` (default true), not by `gc.auto`. With only `gc.auto=0` that hook still runs and still takes the lock; it just finds nothing to do. So the clone now carries **both**:
-```
-gc.auto = 0
-maintenance.auto = false
-```
-`maintenance.auto=false` is the one that actually stops the thing we kept finding dead.
-
-**New job: `git-maintenance`, daily 03:00, `runners/git-maintenance.sh`.** 03:00 is the quietest slot in the day -- activity-feed (02:30, timeout 20) is done by 02:50, ops-autofix's 02:15 tick by 02:40, and nothing else runs until euro-comps at 04:00. Three things, in order:
-1. **Stale lock sweep.** The recovery I did by hand twice today, automated. A lock is touched ONLY if it is older than 60 minutes AND no git process is running anywhere on the box. It is MOVED to `~/metro-mini-jobs/quarantine/` with a timestamp, never deleted, so a wrong call is recoverable. A lock younger than 60 minutes ends the run on the spot -- it may belong to a live git we cannot see. Sweeping anything fires an ntfy, because a stale lock means something crashed mid-write and that is the event worth knowing about.
-2. **`tmp_obj_*` older than a day**, deleted. These are half-written objects from a crashed writer; a live one is seconds old. `git gc` only clears them once they pass `gc.pruneExpire` (two weeks), which is why EIGHT had piled up by tonight.
-3. **The gc**, as `git -c gc.auto=6700 -c gc.autoDetach=false gc --auto`. The threshold is git's own default: `gc.auto=0` exists to stop git picking the MOMENT, not to abandon the threshold, so the slot re-applies it. `autoDetach=false` is the point -- it runs in the foreground, where a collision fails visibly instead of orphaning locks in a background process nobody is waiting on. That detach is the whole bug.
-
-**It does not commit, does not push, and never calls `mini_sync`.** A janitor that refuses to tidy because the branch diverged is precisely the failure this job exists to clean up after.
-
-**Verified 22:28, with planted fixtures rather than by assertion.** Dry run reported both a planted stale lock and a planted stale `tmp_obj` and changed nothing. The real run quarantined the lock, deleted the `tmp_obj`, left the EIGHT genuine `tmp_obj` files from today's two crashes alone -- correctly, they are under the one-day floor -- did a no-op gc at 288 loose objects, and left `fsck` clean and the tree untouched. Those eight are deliberately still there: tomorrow's 03:00 run is a live test of step 2, and if they are gone on Monday the job works.
-
-**🔴 The remaining gap, and it is real.** `run-deploy-watch.sh` has its OWN launchd agent, runs every 10 minutes, and does real git including `pull --rebase --autostash` and a commit -- entirely outside the dispatcher's lock. So this slot is no longer self-inflicted, but it is not collision-proof. The runner therefore treats "another git holds the lock" as a SKIP, not a failure: gc is never urgent, and paging Ashwin at 03:00 because a fetch was in flight is worse than shrugging and trying tomorrow. But if deploy-watch itself crashes mid-write, a lock can now sit for up to 24h until the next sweep. Bringing deploy-watch under the dispatcher, or giving the two a shared lock, is the honest fix and is NOT done.
-
-**Convention, still unruled.** I symlinked this runner, matching 11 of the 12 in `~/metro-mini-jobs/runners/`, so a `git pull` updates it. `metro-rankings.sh` is the lone real copy, because its build entry said "separate copy, not a symlink" in as many words. Two conventions now live side by side in one directory. Ashwin to rule; whichever way it goes, the loser needs changing, because a janitor that silently goes stale is worse than no janitor.
-
-**Notion:** Scheduled jobs +1 (`git-maintenance`, Active, Ops / monitoring, with the why and the deploy-watch gap). Decisions +1 ("Git never runs its own maintenance on the rankings clone; one dispatcher slot owns gc", Infra / deploy, Ashwin 2026-09-20, open question = deploy-watch outside the lock). Backlog unchanged -- the two rows filed earlier tonight (`mini_sync` rebase fallback P1, `verify_wins` skew P2) are still open and still need a ruling, not code. Data sources unchanged.
 
 

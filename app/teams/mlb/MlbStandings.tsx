@@ -83,7 +83,7 @@ function gamesBack(team: TeamStanding, leader: TeamStanding): number | null {
   return ((leader.wins - team.wins) + (team.losses - leader.losses)) / 2;
 }
 
-export default async function MlbStandings() {
+export default async function MlbStandings({ playoffsCurrent = false }: { playoffsCurrent?: boolean } = {}) {
   const [standings, sim] = await Promise.all([getCurrentMlbStandings(), getMlbSim()]);
   if (Object.keys(standings.by_canonical).length === 0) {
     // ESPN unreachable or feed empty — hide rather than ship a broken block.
@@ -152,9 +152,13 @@ export default async function MlbStandings() {
     <section className="mb-8">
       <header className="mb-3 flex items-baseline justify-between gap-4 flex-wrap">
         <div>
-          <h2 className="text-lg font-bold tracking-tight">{standings.season_year} MLB Standings</h2>
+          <h2 className="text-lg font-bold tracking-tight">
+            {playoffsCurrent ? `Final ${standings.season_year} standings` : `${standings.season_year} MLB Standings`}
+          </h2>
           <p className="text-xs text-[var(--text-muted)]">
-            Live from ESPN, refreshed hourly{fetchedDate ? `. As of ${fetchedDate}.` : "."}
+            {playoffsCurrent
+              ? `Regular season complete${fetchedDate ? `, as of ${fetchedDate}` : ""}.`
+              : <>Live from ESPN, refreshed hourly{fetchedDate ? `. As of ${fetchedDate}.` : "."}</>}
             {showOdds && <>{" "}Green-shaded teams currently hold a playoff seed.</>}
             {oddsAsOf && (
               <>

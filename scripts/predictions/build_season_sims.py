@@ -303,6 +303,27 @@ FOOTY_GAME_TOTAL = {"afl": 165.0, "nrl": 44.0}  # combined score, for PF/PA upda
 FOOTY_EXCLUDE_TEAMS = {"afl": frozenset(), "nrl": frozenset({"New South Wales", "Queensland"})}
 
 
+def classify_event_status(status_type):
+    """Decide what an ESPN event's `competitions[0].status.type` means for
+    the schedule count (build_mlb_sim.py pattern, duplicated here because
+    this is a standalone script). Pure -- no network -- so the self-test can
+    exercise it directly.
+
+    Postponed and canceled events are dropped from the schedule entirely,
+    not just marked not-done: a rescheduled game resurfaces later, often
+    under a new event id, so leaving the original in as "remaining" can
+    double-count it and hand a team phantom games it cannot actually play.
+
+    -> ("skip", None) for postponed/canceled, else ("keep", done: bool)
+    """
+    st = status_type or {}
+    name = st.get("name") or ""
+    state = st.get("state") or ""
+    if name in ("STATUS_POSTPONED", "STATUS_CANCELED") or state == "postponed":
+        return "skip", None
+    return "keep", bool(st.get("completed"))
+
+
 def parse_footy_scoreboard(data, name_map, exclude_teams=frozenset()):
     """[(home_key, away_key, played)] from an ESPN scoreboard payload
     (site.api.espn.com .../scoreboard?dates=...), regular season only.
@@ -346,7 +367,10 @@ def parse_footy_scoreboard(data, name_map, exclude_teams=frozenset()):
                 away = key
         if home is None or away is None:
             continue
-        done = bool(((comp.get("status") or {}).get("type") or {}).get("completed"))
+        status_type = (comp.get("status") or {}).get("type") or {}
+        action, done = classify_event_status(status_type)
+        if action == "skip":
+            continue
         out.append((home, away, done))
     return out
 
@@ -603,7 +627,10 @@ def espn_schedules(path_frag, team_ids, season, soccer=False, exclude_note=None)
                 if exclude_note and any(exclude_note in (n.get("headline") or "")
                                         for n in comp.get("notes", []) or []):
                     continue
-                done = bool(((comp.get("status") or {}).get("type") or {}).get("completed"))
+                status_type = (comp.get("status") or {}).get("type") or {}
+                action, done = classify_event_status(status_type)
+                if action == "skip":
+                    continue
                 home = away = hs = as_ = None
                 for c in comp.get("competitors", []) or []:
                     t = c.get("team") or {}
@@ -1555,6 +1582,47 @@ def self_test():
     fx = parse_footy_scoreboard(mini_scoreboard, AFL_ESPN)
     check("footy scoreboard: preseason filtered, 2 regular-season games", len(fx) == 2)
     check("footy scoreboard: played flags", fx[0] == ("geelong", "stkilda", True) and fx[1] == ("swans", "carlton", False))
+
+    # classify_event_status: postponed/canceled skipped outright, FINAL kept
+    # done, a not-yet-played event kept as remaining.
+    check("status-postponed-skipped",
+          classify_event_status({"name": "STATUS_POSTPONED", "state": "postponed",
+                                 "completed": False}) == ("skip", None))
+    check("status-canceled-skipped",
+          classify_event_status({"name": "STATUS_CANCELED", "state": "post",
+                                 "completed": False}) == ("skip", None))
+    check("status-postponed-state-without-name",
+          classify_event_status({"name": "STATUS_SOMETHING_ELSE",
+                                 "state": "postponed", "completed": False})
+          == ("skip", None))
+    check("status-final-kept-done",
+          classify_event_status({"name": "STATUS_FINAL", "state": "post",
+                                 "completed": True}) == ("keep", True))
+    check("status-scheduled-kept-not-done",
+          classify_event_status({"name": "STATUS_SCHEDULED", "state": "pre",
+                                 "completed": False}) == ("keep", False))
+    check("status-none-kept-not-done", classify_event_status(None) == ("keep", False))
+
+    # footy scoreboard: a postponed regular-season event is dropped entirely,
+    # not just marked unplayed.
+    mini_postponed = {"events": [
+        {"season": {"slug": "regular-season"}, "competitions": [{
+            "status": {"type": {"name": "STATUS_POSTPONED", "state": "postponed",
+                                "completed": False}},
+            "competitors": [
+                {"homeAway": "home", "team": {"displayName": "Geelong Cats"}},
+                {"homeAway": "away", "team": {"displayName": "St Kilda"}},
+            ]}]},
+        {"season": {"slug": "regular-season"}, "competitions": [{
+            "status": {"type": {"completed": False}},
+            "competitors": [
+                {"homeAway": "home", "team": {"displayName": "Sydney Swans"}},
+                {"homeAway": "away", "team": {"displayName": "Carlton"}},
+            ]}]},
+    ]}
+    fx_pp = parse_footy_scoreboard(mini_postponed, AFL_ESPN)
+    check("footy scoreboard: postponed event dropped, only the scheduled one remains",
+          fx_pp == [("swans", "carlton", False)])
     fx_unmapped = parse_footy_scoreboard({"events": [
         {"season": {"slug": "regular-season"}, "competitions": [{
             "status": {"type": {"completed": True}},

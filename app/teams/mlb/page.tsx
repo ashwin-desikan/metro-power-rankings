@@ -14,6 +14,8 @@ import TopGamesTable from "./TopGamesTable";
 import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
 import MlbStandings from "./MlbStandings";
+import SeriesBracket from "@/app/teams/_shared/SeriesBracket";
+import { getPlayoffSeries, playoffsIsCurrent } from "@/lib/playoffSeries";
 import HubNav from "@/app/teams/HubNav";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import { SportBadge } from "@/app/teams/_shared/SportIcon";
@@ -59,6 +61,9 @@ function withTeamSlugs<T extends { winner_canonical: string; loser_canonical: st
 }
 
 export default async function MlbIndexPage() {
+  const playoffs = await getPlayoffSeries("mlb");
+  const playoffsCurrent = playoffsIsCurrent(playoffs);
+  const currentPlayoffs = playoffsCurrent ? playoffs : null;
   const franchises = getAllFranchises();
   const totalWS = franchises.reduce((s, f) => s + f.championships, 0);
   const totalPreWS = franchises.reduce((s, f) => s + f.pre_ws_championships, 0);
@@ -96,6 +101,7 @@ export default async function MlbIndexPage() {
       <HubNav
         items={[
           { label: "Current Standings", href: "#standings" },
+          ...(currentPlayoffs ? [{ label: "Postseason", href: "#postseason" }] : []),
           { label: "Map", href: "#map" },
           { label: "All-Time Table", href: "#all-time" },
           { label: "Top Games", href: "#top-games" },
@@ -103,8 +109,20 @@ export default async function MlbIndexPage() {
         ]}
       />
 
+      {currentPlayoffs && (
+        <section id="postseason" className="mb-8">
+          <header className="mb-3">
+            <h2 className="text-lg font-bold tracking-tight">{currentPlayoffs.meta.season} Postseason</h2>
+            <p className="text-xs text-[var(--text-muted)]">
+              Best-of series from ESPN; seeds are the final regular-season seeds.
+            </p>
+          </header>
+          <SeriesBracket bundle={currentPlayoffs} league="mlb" teamHref={(slug) => `/teams/mlb/${slug}`} />
+        </section>
+      )}
+
       <div id="standings">
-        <MlbStandings />
+        <MlbStandings playoffsCurrent={playoffsCurrent} />
       </div>
 
       <div id="map">

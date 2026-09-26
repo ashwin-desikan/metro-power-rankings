@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BASE_URL, SITE_NAME, serializeJsonLd, ogImage } from "@/lib/seo";
-import { getFanIndexPreview } from "@/lib/fanIndex";
+import { getFanIndexPreview, fanIndexWindowLabel } from "@/lib/fanIndex";
 import { FansCrumbs, FansNav, TabHeader, MONO } from "./_shared/ui";
 import FanGate from "./FanGate";
 
@@ -64,6 +64,7 @@ function windowLabel(start: string, end: string): string {
 export default function FansPage() {
   const preview = getFanIndexPreview();
   const winLabel = windowLabel(preview.meta.window.start, preview.meta.window.end);
+  const attentionWindowLabel = fanIndexWindowLabel(preview.meta.window.start, preview.meta.window.end);
   const stamp = `Wikimedia Pageviews API · window ${winLabel} · ${preview.meta.totalTeams} teams · v${preview.meta.version.replace(/^v/i, "")}`;
 
   const datasetJsonLd = {
@@ -107,7 +108,7 @@ export default function FansPage() {
       />
       <FansNav active="index" />
 
-      <FanGate totalTeams={preview.meta.totalTeams} previewRows={preview.rows} />
+      <FanGate totalTeams={preview.meta.totalTeams} previewRows={preview.rows} windowLabel={attentionWindowLabel} />
 
       <p className="text-xs text-[var(--text-dim)] mt-4" style={MONO}>
         Version {preview.meta.version}, data window {winLabel}. See{" "}

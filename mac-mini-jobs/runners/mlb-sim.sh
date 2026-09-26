@@ -42,6 +42,7 @@ mini_sync
 
 guarded "self-test MLB"          "$PY" scripts/predictions/build_mlb_sim.py --self-test
 guarded "self-test season sims"  "$PY" scripts/predictions/build_season_sims.py --self-test
+guarded "self-test MLB season finalize" "$PY" scripts/ingest/mlb_season_finalize.py --self-test
 
 PARTIAL_FAILURE=0
 
@@ -86,6 +87,21 @@ run_soft "rebuild the MLB model" 600 \
 run_soft "rebuild the season sims" 1800 \
   "$PY" scripts/predictions/build_season_sims.py
 
+guarded "self-test postseason series feed" "$PY" scripts/ingest/playoff_series.py --self-test
+run_soft "postseason series feed (MLB playoffs.json)" 300 \
+  "$PY" scripts/ingest/playoff_series.py --league mlb
+
+# season-overlay.json bridges the current season into team pages while
+# MLB.xlsx is still hand-edited (see the script's own docstring for the
+# full why). Runs after playoffs.json above so a completed postseason's
+# champ/ws_app/lcs_app flags are available the same run. Soft-fail like
+# every other league here: a broken ESPN parse must not cost the other six
+# leagues their day's odds, and the script's own refuse-on-unresolved-team
+# check means a bad run writes nothing rather than a plausible-looking
+# wrong overlay.
+run_soft "finalize the MLB season overlay" 300 \
+  "$PY" scripts/ingest/mlb_season_finalize.py --write
+
 # The *-sim-history.json snapshots were written by the builders from
 # 2026-09-03 but never staged, so the week-over-week deltas and
 # sparklines on the hubs stayed blank. Added 2026-09-04.
@@ -94,7 +110,20 @@ commit_paths "Auto: refresh MLB + season playoff odds [vercel skip]" \
   public/data/afl-sim.json public/data/nrl-sim.json \
   public/data/wnba-sim.json public/data/cfl-sim.json \
   public/data/npb-sim.json public/data/mls-sim.json \
-  public/data/nwsl-sim.json
+  public/data/nwsl-sim.json public/data/mlb/playoffs.json
+
+# [vercel skip] ON PURPOSE, even though lib/mlb.ts reads season-overlay.json at
+# Next.js BUILD time (readFileSync, not ISR). The file changes every run during
+# the season (W-L moves daily), so an untagged commit here would spend one of
+# the two daily production builds twice a day for six weeks. The overlay is a
+# bridge: it reaches the team pages on the next app build, which happens
+# several times a week anyway, and the values that matter permanently (final
+# record, place, playoff flags) are read from the file whenever that build
+# runs. If a build is ever wanted on demand, an empty [deploy-now] commit is
+# the override. Committed separately from the sims/playoffs above so a
+# soft-failed overlay run never blocks those.
+commit_paths "Auto: refresh MLB season overlay [vercel skip]" \
+  public/data/mlb/season-overlay.json
 
 # Same predictions-daily tag both YAMLs used -- one flush covers all seven.
 # The lock feed for the RLS policy on public.picks. Runs here, and in the

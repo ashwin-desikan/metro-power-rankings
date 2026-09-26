@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-09-26",
+    headline: "MLB and WNBA playoff brackets arrive",
+    items: [
+      "The MLB and WNBA hubs now carry a series-by-series playoff bracket with seeds, game scores and dates, refreshed after every game.",
+      "WNBA playoff games join On Today, Recent Results and Coming Up on Live Standings; MLB postseason games follow from Tuesday.",
+      "MLB playoff odds no longer count rained-out games ESPN never closed, so a clinched club reads as clinched.",
+      "Sorting a phone table now shows the sorted value on each card, and the Fan Attention Index states its September to August window.",
+    ],
+  },
+  {
     date: "2026-09-25",
     headline: "The owners board now covers every team",
     items: [

@@ -30,6 +30,7 @@
 .github/workflows/leaders-refresh.yml
 .github/workflows/majors-ingest.yml
     35:    - cron: "30 5 * * *"   # daily 05:30 UTC (finals finish the prior day)
+.github/workflows/mlb-playoffs-refresh.yml
 .github/workflows/mlb-sim-refresh.yml
 .github/workflows/nfl-live-refresh.yml
 .github/workflows/orgs-monthly.yml
@@ -45,4 +46,5 @@
 .github/workflows/wc2026-daily.yml
 .github/workflows/wnba-refresh.yml
     16:    - cron: "0 8 * * *"     # 08:00 UTC daily (after night games); ingest is a no-op in the offseason
+    17:    - cron: "0 3,6 * 9,10 *" # postseason window: post-game US evenings, Sep-Oct, for the playoffs.json series feed
 .github/workflows/wwc-2026-tracker.yml

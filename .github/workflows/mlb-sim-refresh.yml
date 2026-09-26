@@ -59,9 +59,14 @@ jobs:
         # than publishing a plausible-looking wrong table.
         run: python3 scripts/predictions/build_mlb_sim.py
 
+      - name: Postseason series feed (MLB + WNBA playoffs.json contract)
+        run: |
+          python3 scripts/ingest/playoff_series.py --self-test
+          python3 scripts/ingest/playoff_series.py --league mlb
+
       - name: Commit if anything changed
         run: |
-          git add public/data/mlb-sim.json public/data/mlb-sim-history.json
+          git add public/data/mlb-sim.json public/data/mlb-sim-history.json public/data/mlb/playoffs.json
           if git diff --cached --quiet; then
             echo "No changes; nothing to commit."
             exit 0

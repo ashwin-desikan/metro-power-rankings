@@ -51,6 +51,7 @@ const ALLOWED_TAGS = new Set([
   "pl-expectation",     // lib/plExpectation.ts
   "intl-expectation",   // lib/intlExpectation.ts
   "footy-finals",       // lib/footyFinals.ts, 15 minute ISR during the AFL and NRL finals
+  "playoff-series",     // lib/playoffSeries.ts, 15 minute ISR during the MLB and WNBA postseasons
 ]);
 
 export const runtime = "nodejs";

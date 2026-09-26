@@ -7,6 +7,8 @@ import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getSeasonSim, simIsCurrent, simByName, fmtOdds } from "@/lib/seasonSim";
 import { BASE_URL, SITE_NAME, ogImage } from "@/lib/seo";
 import WnbaFranchiseTable from "./WnbaFranchiseTable";
+import SeriesBracket from "@/app/teams/_shared/SeriesBracket";
+import { getPlayoffSeries, playoffsIsCurrent } from "@/lib/playoffSeries";
 import { CappedList } from "@/app/_shared/Disclosure";
 import { SportBadge } from "@/app/teams/_shared/SportIcon";
 
@@ -42,7 +44,8 @@ export default async function WnbaPage() {
 
   // Live current-season standings from ESPN; fall back to the workbook's last
   // completed season if the API is unreachable or still on the prior season.
-  const [live, sim] = await Promise.all([getCurrentWnbaStandings(), getSeasonSim("wnba")]);
+  const [live, sim, playoffs] = await Promise.all([getCurrentWnbaStandings(), getSeasonSim("wnba"), getPlayoffSeries("wnba")]);
+  const playoffsBundle = playoffsIsCurrent(playoffs) ? playoffs : null;
   const liveActive = live.rows.length > 0 && live.season_year > meta.latest_season;
   // Playoff odds from our own Monte Carlo (scripts/predictions/
   // build_season_sims.py, refreshed daily); columns appear only while the
@@ -79,13 +82,13 @@ export default async function WnbaPage() {
       if (lastLead >= 0 && !sorted.slice(lastLead + 1).some((r) => r.po)) sorted[lastLead].cut = true;
       return { conference: confLabel(c), rows: sorted };
     });
-    standingsLabel = live.source_label || `${live.season_year} Standings`;
+    standingsLabel = playoffsBundle ? `Final ${live.season_year} standings` : (live.source_label || `${live.season_year} Standings`);
   } else {
     groups = getLatestStandings().map(({ conference, rows }) => ({
       conference: confLabel(conference),
       rows: rows.map((st) => { const f = bySlug.get(st.slug); return { slug: st.slug, team: st.team, abbr: f?.abbr ?? null, color: f?.color ?? null, w: st.w, l: st.l, win_pct: st.win_pct, champion: st.champion, finals: st.finals_app }; }),
     }));
-    standingsLabel = `${meta.latest_season} Standings`;
+    standingsLabel = playoffsBundle ? `Final ${meta.latest_season} standings` : `${meta.latest_season} Standings`;
   }
 
   return (
@@ -117,11 +120,24 @@ export default async function WnbaPage() {
       <HubNav
         items={[
           { label: "Standings", href: "#standings" },
+          ...(playoffsBundle ? [{ label: "Playoffs", href: "#playoffs" }] : []),
           { label: "All-Time Franchises", href: "#all-time" },
           { label: "Champions", href: "#champions" },
           { label: "Defunct", href: "#defunct" },
         ]}
       />
+
+      {playoffsBundle && (
+        <section id="playoffs" className="mb-10">
+          <header className="mb-3">
+            <h2 className="text-xl font-bold">{playoffsBundle.meta.season} Playoffs</h2>
+            <p className="text-xs text-[var(--text-muted)]">
+              Best-of series from ESPN; seeds are the final regular-season seeds.
+            </p>
+          </header>
+          <SeriesBracket bundle={playoffsBundle} league="wnba" teamHref={(slug) => `/teams/wnba/${slug}`} />
+        </section>
+      )}
 
       <section className="mb-10">
         <div className="flex items-center gap-2 mb-4">

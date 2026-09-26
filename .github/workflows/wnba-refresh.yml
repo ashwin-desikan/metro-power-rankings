@@ -14,6 +14,7 @@ name: WNBA season refresh
 on:
   schedule:
     - cron: "0 8 * * *"     # 08:00 UTC daily (after night games); ingest is a no-op in the offseason
+    - cron: "0 3,6 * 9,10 *" # postseason window: post-game US evenings, Sep-Oct, for the playoffs.json series feed
   workflow_dispatch: {}
 
 permissions:
@@ -60,15 +61,21 @@ jobs:
       - name: Rebuild hub JSON from Supabase
         run: python3 scripts/build-wnba-data.py
 
+      - name: Postseason series feed (MLB + WNBA playoffs.json contract)
+        run: |
+          python3 scripts/ingest/playoff_series.py --self-test
+          python3 scripts/ingest/playoff_series.py --league wnba
+
       - name: Commit and push only if the data changed
         run: |
-          if git diff --quiet -- public/data/wnba/data.json; then
-            echo "No change in WNBA data; nothing to deploy."
+          PATHS="public/data/wnba/data.json public/data/wnba/playoffs.json"
+          git add -- $PATHS
+          if git diff --cached --quiet -- $PATHS; then
+            echo "No change in WNBA data or playoffs; nothing to deploy."
             exit 0
           fi
           git config user.name "wnba-refresh-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/wnba/data.json
           git commit -m "Auto: refresh WNBA live season from ESPN [vercel skip]"
           for attempt in 1 2 3 4 5; do
             if git pull --rebase --autostash origin main && git push; then

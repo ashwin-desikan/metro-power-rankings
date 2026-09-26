@@ -1,0 +1,141 @@
+name: MLB postseason series refresh
+
+# Actions-owned companion to the mini's mlb-sim.sh step (which also runs
+# playoff_series.py --league mlb after every rebuild of the MLB model). This
+# job exists so the postseason series feed still updates on its own cadence
+# even on a day the mini's combined job doesn't touch MLB, and as the manual
+# fallback if the mini is down mid-October.
+#
+# Cron restricted to October-November: the MLB postseason runs late
+# September/October into early November. scripts/ingest/playoff_series.py
+# exits 0 with nothing written when ESPN has no postseason games on the wire
+# for the season/date windows it queries, so an out-of-window firing (this
+# job also has workflow_dispatch, which can be fired any time) is a harmless
+# no-op rather than a wrong-season write.
+#
+# playoffs.json is read via GitHub raw with ISR (lib/playoffSeries.ts,
+# revalidate 900, tag "playoff-series"), exactly like lib/footyFinals.ts and
+# lib/nflPlayoffs.ts, so [vercel skip] is correct here: a data commit reaches
+# the hub through ISR with no production build.
+
+# DISPATCH ONLY. The mini owns this file through runners/mlb-sim.sh (07:00 and
+# 14:30 UTC, same slots as the sim it rides on), exactly as it owns mlb-sim.json.
+# One writer per file: a second scheduled writer races the commit (CLAUDE.md,
+# "never both at once"). Uncomment the schedule only after retiring the
+# runner step, never alongside it.
+on:
+  # schedule:
+  #   - cron: "0 4,8 * 10,11 *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mlb-playoffs-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Self-test (offline decision logic; runs before ESPN is called)
+        run: python3 scripts/ingest/playoff_series.py --self-test
+
+      - name: Rebuild the MLB postseason series feed
+        # The contract's reconciliation rule (playoff_series.py's
+        # build_series()) exits 2 and writes nothing on any disagreement
+        # between our derived series wins and ESPN's own series.competitors
+        # wins, so a broken parse stops here rather than publishing a
+        # plausible-looking wrong series score.
+        run: python3 scripts/ingest/playoff_series.py --league mlb
+
+      - name: Commit if anything changed
+        run: |
+          git add public/data/mlb/playoffs.json
+          if git diff --cached --quiet; then
+            echo "No change in the MLB postseason series feed; nothing to deploy."
+            exit 0
+          fi
+          git config user.name "playoff-series-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Auto: refresh MLB postseason series [vercel skip]"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            echo "Push race on attempt $attempt; retrying..."; sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1
+
+      - name: Self-test the season overlay bridge
+        run: python3 scripts/ingest/mlb_season_finalize.py --self-test
+
+      - name: Finalize the MLB season overlay
+        # Bridges the current season into /teams/mlb/<slug> pages while
+        # MLB.xlsx is still hand-edited -- see the script's own docstring.
+        # Reads the playoffs.json this job just rebuilt above, so a
+        # completed postseason's champ/ws_app/lcs_app flags land the same
+        # run. Refuses (exit 2, nothing written) on any ESPN team it cannot
+        # resolve to a franchises.json canonical, rather than guessing.
+        run: python3 scripts/ingest/mlb_season_finalize.py --write
+
+      - name: Commit the season overlay if anything changed
+        run: |
+          git add public/data/mlb/season-overlay.json
+          if git diff --cached --quiet; then
+            echo "No change in the MLB season overlay; nothing to deploy."
+            exit 0
+          fi
+          git config user.name "playoff-series-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # [vercel skip] on purpose: lib/mlb.ts reads season-overlay.json at
+          # BUILD time, but the file changes every run in season, and an
+          # untagged commit would spend a production build each time. The
+          # overlay reaches the team pages on the next app build (see the
+          # runner comment in mac-mini-jobs/runners/mlb-sim.sh).
+          git commit -m "Auto: refresh MLB season overlay [vercel skip]"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            echo "Push race on attempt $attempt; retrying..."; sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1
+
+      - name: Revalidate site caches (on-demand ISR)
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          # Fail-open by design, exactly as in season-sims-refresh.yml: the
+          # 15-min ISR window on lib/playoffSeries.ts is the backstop, so a
+          # missing secret or a failed ping must never fail the data run.
+          if [ -z "$REVALIDATE_SECRET" ]; then
+            echo "REVALIDATE_SECRET not set; skipping (15-min ISR backstop applies)."
+            exit 0
+          fi
+          # raw.githubusercontent serves from a ~5-min CDN cache; flushing
+          # before it expires would re-render from the previous bundle and
+          # re-cache THAT, same trap noted in mlb-sim-refresh.yml.
+          echo "Waiting out the GitHub raw CDN TTL before flushing..."
+          sleep 300
+          for attempt in 1 2 3; do
+            code="$(curl -s -o /tmp/reval.out -w '%{http_code}' -X POST \
+              -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+              "https://rankings.citizenofnowhere.org/api/revalidate?tag=playoff-series")" || code=000
+            if [ "$code" = "200" ]; then
+              cat /tmp/reval.out; echo
+              echo "Revalidated on attempt $attempt."
+              break
+            fi
+            echo "revalidate ping attempt $attempt returned HTTP $code"
+            sleep $((attempt * 5))
+          done

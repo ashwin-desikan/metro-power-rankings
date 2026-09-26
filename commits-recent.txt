@@ -78,3 +78,4 @@
 2026-09-24T09:24:12+01:00  d5e816633  pick_locks feed: make the RLS lock on picks real [vercel skip]
 2026-09-24T09:11:27+01:00  5d7dc4e53  RLS hardening applied, minus the read policy that would blank the leaderboard [vercel skip]
 2026-09-24T09:01:29+01:00  fac0159ed  HANDOFF: 2026-09-24 section AJ, the f1-weekly alert was a macOS 27 reboot [vercel skip]
+2026-09-24T08:02:58+01:00  267dca829  chore(substack): refresh feed snapshot [vercel skip]

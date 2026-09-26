@@ -23,6 +23,7 @@ import { getNhlSim, nhlOddsByCanonical, nhlSimIsCurrent } from "@/lib/nhlSim";
 const NHL_SIM_SEASON = 2027;
 import { getCurrentMlbStandings } from "@/lib/mlb-standings";
 import { getMlbSim, getMlbPostseason, playoffOddsByCanonical, fmtOdds } from "@/lib/mlbSim";
+import { getPlayoffSeries, playoffsIsCurrent } from "@/lib/playoffSeries";
 import { getMlbFixtures, type MlbGame } from "@/lib/mlbFixtures";
 import { getSeasonSim, simIsCurrent, simBySlug, simByName } from "@/lib/seasonSim";
 import { getCurrentMlsStandings } from "@/lib/mls-standings";
@@ -942,10 +943,11 @@ async function nhlBlock(): Promise<Block | null> {
 }
 
 async function mlbBlock(): Promise<Block | null> {
-  const [s, sim, post, fixtures] = await Promise.all([
+  const [s, sim, post, fixtures, mlbPlayoffs] = await Promise.all([
     getCurrentMlbStandings(), getMlbSim(), getMlbPostseason().catch(() => null),
-    getMlbFixtures().catch(() => [] as MlbGame[]),
+    getMlbFixtures().catch(() => [] as MlbGame[]), getPlayoffSeries("mlb").catch(() => null),
   ]);
+  const mlbPlayoffsCur = playoffsIsCurrent(mlbPlayoffs) ? mlbPlayoffs : null;
   // The Today box took the POSTSEASON only until 2026-09-18 (Ashwin, 2026-09-11:
   // "the playoffs must show, fifteen regular-season games a day would make the
   // list too long"). The ledger is empty until the bracket exists, so through
@@ -960,6 +962,30 @@ async function mlbBlock(): Promise<Block | null> {
   const postEvents: LiveEvent[] = (post?.ledger ?? []).filter((g) => g.kickoff).map((g) => ({
     sport: "Baseball", league: "MLB postseason", href: "/teams/mlb", label: `${g.away} at ${g.home}`, when: g.kickoff,
     score: g.result ? awayFirst(g.score) : null, live: false }));
+  // The new playoff-series bundle (lib/playoffSeries.ts) and the older
+  // postseason ledger (getMlbPostseason) both source from ESPN's postseason
+  // scoreboard, so a game the ledger already carries must not appear twice
+  // in the strips. Dedup by ESPN event id first, then by (date, home, away)
+  // for a game the ledger has not yet been re-run to pick up.
+  const postEventIds = new Set((post?.ledger ?? []).map((g) => g.event_id));
+  const postDateHomeAway = new Set(
+    (post?.ledger ?? []).map((g) => `${g.date}|${g.home.toLowerCase()}|${g.away.toLowerCase()}`),
+  );
+  // The bundle names games by ESPN abbreviation; the ledger and the fixture
+  // feed use the display name, which is what the strips show everywhere
+  // else, so resolve the abbreviation through the series' two sides.
+  const sideName = (sr: { high: { abbr: string; name: string }; low: { abbr: string; name: string } }, abbr: string) =>
+    abbr === sr.high.abbr ? sr.high.name : abbr === sr.low.abbr ? sr.low.name : abbr;
+  const seriesEvents: LiveEvent[] = mlbPlayoffsCur
+    ? mlbPlayoffsCur.rounds.flatMap((r) => r.series.flatMap((sr) => sr.games
+        .filter((g) => g.date && g.home !== "TBD" && g.away !== "TBD"
+          && !postEventIds.has(g.espn_id)
+          && !postDateHomeAway.has(`${g.date.slice(0, 10)}|${sideName(sr, g.home).toLowerCase()}|${sideName(sr, g.away).toLowerCase()}`))
+        .map((g): LiveEvent => ({
+          sport: "Baseball", league: "MLB postseason", href: "/teams/mlb",
+          label: `${sideName(sr, g.away)} at ${sideName(sr, g.home)} · ${r.name} G${g.num}`, when: g.date,
+          score: g.state === "post" && g.home_score !== null && g.away_score !== null ? `${g.away_score}–${g.home_score}` : null,
+          live: g.state === "in" })))) : [];
   const fixtureEvents: LiveEvent[] = fixtures.map((g) => ({
     sport: "Baseball", league: "MLB", href: "/teams/mlb",
     label: `${g.away} at ${g.home}`, when: g.when,
@@ -969,7 +995,7 @@ async function mlbBlock(): Promise<Block | null> {
     score: g.state === "post" && g.homeScore !== null && g.awayScore !== null
       ? `${g.awayScore}–${g.homeScore}` : null,
     live: g.state === "in", teams: { home: g.home, away: g.away } }));
-  const events: LiveEvent[] = [...postEvents, ...fixtureEvents];
+  const events: LiveEvent[] = [...postEvents, ...seriesEvents, ...fixtureEvents];
   const teams = Object.values(s.by_canonical);
   if (teams.length === 0) return null;
   // Playoff odds from our own Monte Carlo (scripts/predictions/build_mlb_sim.py).
@@ -1012,8 +1038,8 @@ async function mlbBlock(): Promise<Block | null> {
   };
   return buildBlock({
     league: "MLB", href: "/teams/mlb",
-    note: live ? (showOdds ? `${s.source_label} · odds simulated` : s.source_label) : "Offseason",
-    open: live,
+    note: live ? (showOdds ? `${s.source_label} · odds simulated` : s.source_label) : (mlbPlayoffsCur ? "Playoffs" : "Offseason"),
+    open: live || !!mlbPlayoffsCur,
     items: teams, columns: ["W", "L", "PCT", "GB", ...(showOdds ? ["PO%", "WS%"] : []), "STRK"],
     sort: live ? (a, b) => b.win_pct - a.win_pct || b.wins - a.wins : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "American League", pick: (t) => leagueOf(t) === "AL" }, { title: "National League", pick: (t) => leagueOf(t) === "NL" }],
@@ -1027,8 +1053,27 @@ async function mlbBlock(): Promise<Block | null> {
 }
 
 async function wnbaBlock(): Promise<Block | null> {
-  const [s, sim] = await Promise.all([getCurrentWnbaStandings(), getSeasonSim("wnba")]);
+  const [s, sim, wnbaPlayoffs] = await Promise.all([
+    getCurrentWnbaStandings(), getSeasonSim("wnba"), getPlayoffSeries("wnba").catch(() => null),
+  ]);
   if (s.rows.length === 0) return null;
+  const wnbaPlayoffsCur = playoffsIsCurrent(wnbaPlayoffs) ? wnbaPlayoffs : null;
+  // No older postseason ledger exists for the WNBA (unlike MLB's
+  // getMlbPostseason), so every playoff game comes from the bundle alone --
+  // nothing to de-duplicate against.
+  const wSide = (sr: { high: { abbr: string; name: string }; low: { abbr: string; name: string } }, abbr: string) =>
+    abbr === sr.high.abbr ? sr.high.name : abbr === sr.low.abbr ? sr.low.name : abbr;
+  const seriesEvents: LiveEvent[] = wnbaPlayoffsCur
+    ? wnbaPlayoffsCur.rounds.flatMap((r) => r.series.flatMap((sr) => sr.games
+        // ESPN lists every fixture shell of a round before the draw, both
+        // sides "TBD"; a strip row reading "TBD at TBD" is noise, so only a
+        // game with two named clubs joins On Today / Coming Up.
+        .filter((g) => g.date && g.home !== "TBD" && g.away !== "TBD")
+        .map((g): LiveEvent => ({
+          sport: "Basketball", league: "WNBA playoffs", href: "/teams/wnba",
+          label: `${wSide(sr, g.away)} at ${wSide(sr, g.home)} · ${r.name} G${g.num}`, when: g.date,
+          score: g.state === "post" && g.home_score !== null && g.away_score !== null ? `${g.away_score}–${g.home_score}` : null,
+          live: g.state === "in" })))) : [];
   const live = isLeagueLive("wnba", s.rows.map((t) => t.games_played), 44);
   const showOdds = live && simIsCurrent(sim);
   const odds = simByName(sim); // sim rows carry the same ESPN displayName as t.name
@@ -1049,13 +1094,15 @@ async function wnbaBlock(): Promise<Block | null> {
   };
   return buildBlock({
     league: "WNBA", href: "/teams/wnba",
-    note: live ? (showOdds ? `${s.source_label} · odds simulated` : s.source_label) : "Offseason", open: live,
+    note: live ? (showOdds ? `${s.source_label} · odds simulated` : s.source_label) : (wnbaPlayoffsCur ? "Playoffs" : "Offseason"),
+    open: live || !!wnbaPlayoffsCur,
     items: s.rows, columns: ["W", "L", "PCT", ...(showOdds ? ["PO%", "Title%"] : []), "STRK"],
     sort: live ? (a, b) => b.win_pct - a.win_pct : (a, b) => a.name.localeCompare(b.name),
     groups: [{ title: "Eastern Conference", pick: (t) => t.conf === "Eastern" }, { title: "Western Conference", pick: (t) => t.conf === "Western" }],
     row,
     playoff: live ? () => (t) => field.has(t.name) : undefined,
     cutNote: "The best eight records across both conferences make the playoffs; seeding is conference-blind.",
+    events: seriesEvents,
   });
 }
 
