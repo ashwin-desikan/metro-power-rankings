@@ -384,6 +384,28 @@ def self_test():
     else:
         print("history/index.json: not present yet (first run will create it) -- OK")
 
+    # 2026-09-26 carry-forward gate: the six us_* fields (US cross-league
+    # attention blend, Major American sports tab) are seeded once by
+    # scripts/fans/seed_us_attention.py and carried forward unchanged every
+    # month (the US Wiki + US Trends pipeline itself is not ported into this
+    # script yet). Every row with us_attention set must also have
+    # us_wiki_share (they are computed together upstream, so one without the
+    # other means a partial or corrupted carry-forward), and the seeded count
+    # must not have silently dropped below its 2026-09-26 baseline of 301.
+    n_us_attention = sum(1 for r in u if r.get("us_attention") is not None)
+    n_us_partial = sum(1 for r in u if r.get("us_attention") is not None and r.get("us_wiki_share") is None)
+    if n_us_partial:
+        print(f"FAIL: {n_us_partial} row(s) have us_attention but no us_wiki_share "
+              f"-- the us_* carry-forward from seed_us_attention.py looks partial")
+        ok = False
+    elif n_us_attention < 250:
+        print(f"FAIL: only {n_us_attention} rows carry us_attention (expected >= 250, "
+              f"baseline 301 as of 2026-09-26) -- the us_attention carry-forward looks "
+              f"lost; re-run scripts/fans/seed_us_attention.py --write")
+        ok = False
+    else:
+        print(f"us_attention carry-forward: {n_us_attention} rows OK")
+
     if not ok:
         print("SELF-TEST FAILED")
         sys.exit(1)
@@ -622,6 +644,15 @@ def run(ym=None, dry_run=False):
 
 def write_scratch_csvs(u, out_dir):
     u_sorted = sorted(u, key=lambda r: (r["group"], r["league"], -r["fan_index_raw"]))
+    # us_attention, us_wiki_share, us_trends_area, us_trends_share, us_attention_rank,
+    # us_attention_rank_in_league: the US cross-league attention blend (Major American
+    # sports tab). 2026-09-26 carry-forward -- the US Wiki + US Trends pipeline is not
+    # ported into this script yet (Backlog: "Fan Index: port us_attention into
+    # monthly_refresh.py before 3 Oct"), so these six fields are only ever copied
+    # through from the previous universe_state.json row (seeded once by
+    # scripts/fans/seed_us_attention.py) and never recomputed here. They must stay in
+    # this column list so csv_to_json.py keeps reading real values instead of the
+    # None it silently falls back to when a column is missing from the CSV header.
     cols = ["category", "group", "league", "conference", "team", "display_name", "qid", "en_title",
             "wiki_baseline_12m", "peak_month_all_lang", "wiki_spike_ratio", "lang_count", "top5_langs",
             "social_followers", "social_asof",
@@ -629,7 +660,9 @@ def write_scratch_csvs(u, out_dir):
             "in_flux", "inclusion_rule", "fan_index_raw", "score_in_group", "rank_in_group",
             "rank_in_league", "anchor_revenue_usd_m", "anchor_source", "anchor_confidence", "k_league",
             "global_score", "global_rank", "has_valuation", "value_m", "val_year", "val_league",
-            "val_source", "residual_pct", "p31", "desc_en", "home_langs", "home_views_12m", "global_reach_pct"]
+            "val_source", "residual_pct", "p31", "desc_en", "home_langs", "home_views_12m", "global_reach_pct",
+            "us_attention", "us_wiki_share", "us_trends_area", "us_trends_share",
+            "us_attention_rank", "us_attention_rank_in_league"]
     with open(os.path.join(out_dir, "teams_fan_attention.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(cols)

@@ -1,3 +1,4 @@
+2026-09-26T16:00:09+01:00  360ee9831  MLB and WNBA playoff brackets, postponed-game sim fix, mobile sort headline
 2026-09-26T14:42:54+01:00  7c930c603  data: f1 sync — 2026 R15 Azerbaijan Grand Prix [vercel skip]
 2026-09-26T13:55:07+01:00  77c0d388c  feat(ingest): EuroLeague live-season ingest + daily workflow [vercel skip]
 2026-09-26T13:57:00+01:00  d61817f96  HANDOFF: 2026-09-26 section BP, macOS auto-install check live; toggle not yet applied [vercel skip]
@@ -77,5 +78,3 @@
 2026-09-24T09:54:57+01:00  e52e1b0d0  picks read policy applied: both RLS findings now closed [vercel skip]
 2026-09-24T09:24:12+01:00  d5e816633  pick_locks feed: make the RLS lock on picks real [vercel skip]
 2026-09-24T09:11:27+01:00  5d7dc4e53  RLS hardening applied, minus the read policy that would blank the leaderboard [vercel skip]
-2026-09-24T09:01:29+01:00  fac0159ed  HANDOFF: 2026-09-24 section AJ, the f1-weekly alert was a macOS 27 reboot [vercel skip]
-2026-09-24T08:02:58+01:00  267dca829  chore(substack): refresh feed snapshot [vercel skip]

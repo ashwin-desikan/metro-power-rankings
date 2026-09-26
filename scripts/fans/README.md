@@ -118,6 +118,11 @@ valuations -- a public git *history* is exactly as public as a public git
                                 the target month (default: the previous
                                 completed month). `--dry-run` fetches and
                                 recomputes but writes nothing.
+    seed_us_attention.py       one-off 2026-09-26 carry-forward seed: copies the six
+                                us_* fields (US cross-league attention blend) from
+                                data/fans/fan-attention.json onto universe_state.json
+                                by qid, since monthly_refresh.py has nowhere else to
+                                get them from until the US pipeline is ported in.
 
 ## Monthly flow (automatic, mac-mini-jobs id "fans-monthly")
 
@@ -154,6 +159,8 @@ Runs the 3rd of each month, 07:00 UTC (`mac-mini-jobs/jobs.toml`,
    scratch folder inside `scripts/fans/`, and calls `csv_to_json.py` to
    rebuild `data/fans/fan-attention.json` (gitignored) and
    `data/fans/preview.json` (committed).
+   (2026-09-26: the six `us_*` fields, US cross-league attention blend, are
+   carried through unchanged here, not recomputed -- see `seed_us_attention.py`.)
 7. Calls `push_to_supabase.py`, which upserts `data/fans/fan-attention.json`
    and every `data/fans/history/*.json` file into Supabase.
 8. Commits `scripts/fans/universe_state.json` and `data/fans/preview.json`
