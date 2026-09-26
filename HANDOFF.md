@@ -20624,3 +20624,58 @@ It completed normally at 11:03Z. A background Bash does outlive its timeout; che
 not with a hand-rolled `ps` grep. (A Monitor was armed as well, so nothing was missed either way.)
 
 **Notion:** as listed above: two Scheduled jobs rows corrected and one Backlog row closed, all verified over REST.
+
+### BL. `--check-sync` now sees launchd, so the seven-week drift from BA cannot recur unseen
+
+At Ashwin's instruction, BA's stated durable fix and the P2 Backlog row filed for it. Pushed as `db52164fe`,
+`[vercel skip]`, built and tested in a worktree.
+
+**Declared, not commented.** `jobs.toml` has a new `[launchd]` table, `loaded = ["dispatcher", "heartbeat",
+"f1-weekly"]`: the `com.citizenofnowhere.*` agents that should be loaded. The per-row `# ...plist (unloaded)` comments
+were exactly what went stale for seven weeks, and a comment cannot be checked.
+
+**What `--check-sync` now reports**, after the file diff, under `LAUNCHD DRIFT vs jobs.toml [launchd]`:
+
+| status | meaning |
+| --- | --- |
+| `agent-loaded-undeclared` | loaded but not declared; annotated "(ALSO a jobs.toml job: it runs twice)" when the slug is a dispatcher job, which is the BA failure exactly |
+| `agent-declared-not-loaded` | declared but launchd has not loaded it |
+| `plist-loads-at-login` | an undeclared plist at the TOP of `~/Library/LaunchAgents`, which loads at the next login even if not loaded now (`retired/` does not load) |
+| `plist-absent` | declared, but no plist, so it would not survive a reboot |
+| `launchd-unreadable` | `launchctl list` failed. Reported, never read as a clean pass: a check that passes when it is blind is worse than none |
+| `launchd-undeclared` | `jobs.toml` has no `[launchd]` list |
+
+When all is well it prints a second line after "in sync with ...": `launchd matches jobs.toml: 3 com.citizenofnowhere.*
+agent(s) loaded and on disk`. Any drift exits 1, as file drift always has.
+
+**Scoped, and the scope is named in the output.** Only this project's prefix. The five `com.newsletter.*` agents belong
+to the newsletter-podcast repo; the header says `(com.citizenofnowhere.* only)` so nobody reads silence about them as
+a clean bill. That is BK's lesson applied: when a claim is scoped, name the scope.
+
+🔴 **It is deliberately NOT something ops-autofix can act on.** `detect_issues.py` turns any output containing "DRIFT"
+into a finding and treats lines starting with `differs` or `missing` as FILES, which the autofix then symlinks from the
+repo. So no launchd status starts with either word (a self-test case enforces it), and `detect_issues` raises launchd
+items as their own kind, `launchd_drift`, which is outside the autofix whitelist: reported, nothing done. Loading or
+booting out an agent is a judgement. Also fixed on the way: a launchd-only drift would previously have produced a
+`deploy_drift` with zero items.
+
+**Tests:** dispatcher self-test 122 to 136 (launchctl parsing incl. other prefixes; failure and absence both None, not
+empty; the six statuses; the "runs twice" annotation; `retired/` ignored; no status collides with file drift; the shipped
+`jobs.toml` declares its agents). detect_issues 26 to 30 (launchd-only drift is `launchd_drift` and not `deploy_drift`;
+file and launchd drift are separate findings). Both counts checked against a full `origin/main` copy, so the new cases
+did run. **Control on real data:** the 15 plists in `~/Library/LaunchAgents/retired/`, fed in as if still loaded and
+at the top level, give 30 items, all 15 flagged as running twice. That is what BA found by hand, found mechanically.
+
+**Deployed.** `dispatcher.py` and `jobs.toml` are COPIES in `~/metro-mini-jobs/` (only `detect_issues.py` is a symlink),
+so after the pull both were copied in with an atomic `mv`, having first confirmed the live `jobs.toml` matched
+`origin/main` exactly, so the copy discarded nothing. Live: `--check-sync` exit 0 with both lines; the detector's
+`find_drift()` returns `[]`; `--status` loads; and the first real tick on the new `dispatcher.py` (11:33Z,
+deploy-watch) ran `ok` and wrote `state.json`. The live self-test reads 135, not 136: one existing case only runs where a
+`launchd/` folder exists, which the repo has and the live directory does not. Expected, not a lost case.
+
+**What this does not cover:** why six agents went silent in August while loaded (still the open P2 row), and whether
+the same could hit `f1-weekly` or `heartbeat`. This check would now show such an agent as loaded and declared, so a
+SILENT agent still passes it. The healthchecks tiles are what catch an agent that is loaded but not firing.
+
+**Notion:** Backlog "Teach dispatcher.py --check-sync to diff the loaded launchd agents against jobs.toml" set to Done
+with the commit, the live result and the control, verified over REST.

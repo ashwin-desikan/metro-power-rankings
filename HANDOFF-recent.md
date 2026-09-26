@@ -9,8 +9,8 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 77, 2026-09-20 to 2026-09-26
-     If the reader counts fewer than 77 entries, its fetch window stopped
+     entries: 76, 2026-09-20 to 2026-09-26
+     If the reader counts fewer than 76 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
 ## 2026-09-26
@@ -254,6 +254,61 @@ It completed normally at 11:03Z. A background Bash does outlive its timeout; che
 not with a hand-rolled `ps` grep. (A Monitor was armed as well, so nothing was missed either way.)
 
 **Notion:** as listed above: two Scheduled jobs rows corrected and one Backlog row closed, all verified over REST.
+
+### BL. `--check-sync` now sees launchd, so the seven-week drift from BA cannot recur unseen
+
+At Ashwin's instruction, BA's stated durable fix and the P2 Backlog row filed for it. Pushed as `db52164fe`,
+`[vercel skip]`, built and tested in a worktree.
+
+**Declared, not commented.** `jobs.toml` has a new `[launchd]` table, `loaded = ["dispatcher", "heartbeat",
+"f1-weekly"]`: the `com.citizenofnowhere.*` agents that should be loaded. The per-row `# ...plist (unloaded)` comments
+were exactly what went stale for seven weeks, and a comment cannot be checked.
+
+**What `--check-sync` now reports**, after the file diff, under `LAUNCHD DRIFT vs jobs.toml [launchd]`:
+
+| status | meaning |
+| --- | --- |
+| `agent-loaded-undeclared` | loaded but not declared; annotated "(ALSO a jobs.toml job: it runs twice)" when the slug is a dispatcher job, which is the BA failure exactly |
+| `agent-declared-not-loaded` | declared but launchd has not loaded it |
+| `plist-loads-at-login` | an undeclared plist at the TOP of `~/Library/LaunchAgents`, which loads at the next login even if not loaded now (`retired/` does not load) |
+| `plist-absent` | declared, but no plist, so it would not survive a reboot |
+| `launchd-unreadable` | `launchctl list` failed. Reported, never read as a clean pass: a check that passes when it is blind is worse than none |
+| `launchd-undeclared` | `jobs.toml` has no `[launchd]` list |
+
+When all is well it prints a second line after "in sync with ...": `launchd matches jobs.toml: 3 com.citizenofnowhere.*
+agent(s) loaded and on disk`. Any drift exits 1, as file drift always has.
+
+**Scoped, and the scope is named in the output.** Only this project's prefix. The five `com.newsletter.*` agents belong
+to the newsletter-podcast repo; the header says `(com.citizenofnowhere.* only)` so nobody reads silence about them as
+a clean bill. That is BK's lesson applied: when a claim is scoped, name the scope.
+
+🔴 **It is deliberately NOT something ops-autofix can act on.** `detect_issues.py` turns any output containing "DRIFT"
+into a finding and treats lines starting with `differs` or `missing` as FILES, which the autofix then symlinks from the
+repo. So no launchd status starts with either word (a self-test case enforces it), and `detect_issues` raises launchd
+items as their own kind, `launchd_drift`, which is outside the autofix whitelist: reported, nothing done. Loading or
+booting out an agent is a judgement. Also fixed on the way: a launchd-only drift would previously have produced a
+`deploy_drift` with zero items.
+
+**Tests:** dispatcher self-test 122 to 136 (launchctl parsing incl. other prefixes; failure and absence both None, not
+empty; the six statuses; the "runs twice" annotation; `retired/` ignored; no status collides with file drift; the shipped
+`jobs.toml` declares its agents). detect_issues 26 to 30 (launchd-only drift is `launchd_drift` and not `deploy_drift`;
+file and launchd drift are separate findings). Both counts checked against a full `origin/main` copy, so the new cases
+did run. **Control on real data:** the 15 plists in `~/Library/LaunchAgents/retired/`, fed in as if still loaded and
+at the top level, give 30 items, all 15 flagged as running twice. That is what BA found by hand, found mechanically.
+
+**Deployed.** `dispatcher.py` and `jobs.toml` are COPIES in `~/metro-mini-jobs/` (only `detect_issues.py` is a symlink),
+so after the pull both were copied in with an atomic `mv`, having first confirmed the live `jobs.toml` matched
+`origin/main` exactly, so the copy discarded nothing. Live: `--check-sync` exit 0 with both lines; the detector's
+`find_drift()` returns `[]`; `--status` loads; and the first real tick on the new `dispatcher.py` (11:33Z,
+deploy-watch) ran `ok` and wrote `state.json`. The live self-test reads 135, not 136: one existing case only runs where a
+`launchd/` folder exists, which the repo has and the live directory does not. Expected, not a lost case.
+
+**What this does not cover:** why six agents went silent in August while loaded (still the open P2 row), and whether
+the same could hit `f1-weekly` or `heartbeat`. This check would now show such an agent as loaded and declared, so a
+SILENT agent still passes it. The healthchecks tiles are what catch an agent that is loaded but not firing.
+
+**Notion:** Backlog "Teach dispatcher.py --check-sync to diff the loaded launchd agents against jobs.toml" set to Done
+with the commit, the live result and the control, verified over REST.
 ## 2026-09-25
 
 ### AZ. This morning's two ntfy, and a correction to section AY that the daily sweep earned
@@ -4034,34 +4089,5 @@ Not a fault: files this session's shell writes under `%LOCALAPPDATA%` land in th
 **Still open:** the mini install of `metro-rankings` (evening entry, five steps); two clean shadow Saturdays, then the cutover; Municipality row 93191 (`Utqiag_x001A_vik city`) for Ashwin to retype, which will be the watcher's first real write.
 
 **Notion:** Scheduled jobs +1 (`Metro workbook sync watcher`, Active). Decisions +3 (edit timing; guard thresholds; owner of state-metro-scores.json). Backlog: phase 3 row Done; two-writers row Done; Supabase free plan row Done.
-
-
-## 2026-09-20 (night) - windows (Cowork, cloud bridged to the Windows box) -> MINI (action needed) and next session: METRO RANKINGS PHASE 2 BUILT, THE WEEKLY JOB IS IN THE REPO IN SHADOW MODE AND NOT YET INSTALLED
-
-Phase 1 went to main as `7ae9c1aed` on Ashwin's word. This entry is phase 2: the job that recalculates the rankings every Saturday with no workbook and no person.
-
-**In this commit (all `[vercel skip]`, no build path touched):**
-- `mac-mini-jobs/runners/metro-rankings.sh` : sources `_common.sh`. Steps: `mini_sync`; three self-tests (sync shim, publish guard, score parity); `METRO_WORKBOOK_SOURCE=supabase extract.py`; revert `quiz_queue.json`; `build-states-directory.py` from the mirror; the publish guard; then by `METRO_RANKINGS_MODE`: **shadow (default)** restores every output and commits only `mac-mini-jobs/reports/metro-rankings-<date>.md` tagged `[vercel skip]`; **publish** runs `check-slug-drift` and commits the literal output paths UNTAGGED, which is the weekly build. A hold restores the outputs, commits the report tagged, and `fail`s with the first reason so the alert names it. `DRY_RUN=1` commits nothing in any mode. The restore touches only this job's own paths, never a blanket `git checkout -- public/data`, so it cannot wipe another job's uncommitted output.
-- `scripts/metro_sync/publish_guard.py` : seven rules, each a constant with an env override `METRO_GUARD_<NAME>`: metro count falls; a slug disappears; an old top-100 metro moves more than 10 places; a score moves more than 3.0; total market cap moves more than 15 percent; zero-score metros rise by more than 50; fewer than 1,000 metros or a parse failure. Exit 0 pass or no_change, 20 held. `--self-test` 12 cases.
-- `scripts/metro_sync/open_workbook.py` : lets the two calamine readers (`build-states-directory.py`, `build-state-metro-scores.py`) run from the mirror. Calamine and openpyxl disagree on three things, measured cell by cell: empty is `''` not `None`, every number is a float, an error cell is `''`. The adapter converts, and decodes OOXML `_xHHHH_` escapes. After the fix: Municipality, Counties, States and Metro Areas match calamine exactly, value and type. Before it the JSON was already byte-identical but one builder logged 215 unmatched metros against 3, so identical output had hidden a different code path.
-- `mac-mini-jobs/jobs.toml` : `metro-rankings`, Saturday 10:30 UTC, after `mktcap-refresh` (09:00, timeout 20). `dispatcher.py --self-test` 87 of 87.
-
-**Measured:**
-- Real Supabase REST, end to end, from the Windows box: `extract.py` 11 s on a warm chunk cache, `metros.json` sha256 `0cc06c867e8d5036...`, identical to the offline mirror run; guard `pass`; 774 files differ from HEAD (718 metros move, largest move 40 places, Carlsbad NM 3617 to 3657; total market cap down 0.45 percent). That difference is the update the site is waiting for. Every file was restored; nothing was published.
-- Two mirror-fed runs give the same `metros.json` hash. The run is deterministic.
-- Offline runner proofs (fake mini dir, local bare remote): dry run clean in both modes; forced hold exits 1, restores, names the reason; a live shadow run commits the report file only, subject tagged.
-
-**MINI, to install (nothing runs until this is done; the dispatcher reads `~/metro-mini-jobs`, not the repo):**
-1. `git pull --ff-only`
-2. `cp mac-mini-jobs/jobs.toml ~/metro-mini-jobs/ && cp mac-mini-jobs/runners/metro-rankings.sh ~/metro-mini-jobs/runners/ && chmod +x ~/metro-mini-jobs/runners/metro-rankings.sh`
-3. Confirm the venv has `openpyxl`, and that `~/.config/metro-supabase/env` exports `MKTCAP_SUPABASE_KEY` (the runner also maps `SUPABASE_SERVICE_KEY` onto it).
-4. `python3 ~/metro-mini-jobs/dispatcher.py --self-test`, then `DRY_RUN=1 ~/metro-mini-jobs/runners/metro-rankings.sh`. Expect `guard verdict: pass` and a clean tree.
-5. Set the Notion Scheduled jobs row `metro-rankings` from Disabled to Active.
-
-**Cutover rule (not now):** after two clean shadow Saturdays, set `METRO_RANKINGS_MODE=publish` AND remove the `update_top_companies` step from the tail of `run-mktcap-refresh.sh` IN THE SAME CHANGE. Both are untagged Saturday commits; together they spend the whole daily build budget. Open at cutover: `check:release-notes` wants a `lib/releases.ts` entry for a day with an untagged `public/` commit, and the existing Top Companies commit already has that gap.
-
-**Not done:** phase 3, the Windows Task Scheduler watcher. `relocations` reads the league workbooks, not MetroAreas, and is out of scope. `build-state-metro-scores.py` is switched to the mirror but NOT run by the job: it writes the same file as `build-states-directory.py` with different arithmetic (Backlog row, Ashwin to rule).
-
-**Notion:** Scheduled jobs +1 (`metro-rankings`, Disabled until installed). Backlog: phase 2 row rewritten as the install and cutover, owner Mac mini; +2 (two writers of state-metro-scores.json; the Utqiagvik control character in Municipality row 93191). Decisions: none new.
 
 
