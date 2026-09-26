@@ -169,8 +169,24 @@ additions in total: `times`, `args`, `days` (plus the `hc-run.sh` wrap).
    protection because it only guards against overlapping *ticks*.
 
    So for each legacy job: DRY_RUN, then a real hand-run to prove the
-   invocation, then **uncomment the `jobs.toml` row and `launchctl unload` the
-   plist in the SAME sitting**. Never leave both loaded overnight.
+   invocation, then **uncomment the `jobs.toml` row and retire the plist in the
+   SAME sitting**. Never leave both loaded overnight.
+
+   🔴 **CORRECTED 2026-09-26 (HANDOFF BM): "retire" means BOTH steps below, not
+   `launchctl unload`.** This file used to say `launchctl unload` the plist, and
+   that is what was done on 2026-08-07. It unloads only until the next login,
+   and the plists stayed in `~/Library/LaunchAgents`. When the macOS 27 upgrade
+   and a hard reset rebooted the mini on 2026-09-24, the login reloaded all
+   fifteen and they ran their jobs a second time beside the dispatcher until
+   they were found the next day.
+
+       launchctl bootout "gui/$(id -u)/com.citizenofnowhere.<slug>"
+       mv ~/Library/LaunchAgents/com.citizenofnowhere.<slug>.plist \
+          ~/Library/LaunchAgents/retired/
+
+   Only the top level of `~/Library/LaunchAgents` loads at login, so the move is
+   what makes it permanent. Then `dispatcher.py --check-sync` must say "launchd
+   matches jobs.toml"; a plist left behind shows as `plist-loads-at-login`.
 
 ## Two more things found while drafting the first move (2026-08-06)
 

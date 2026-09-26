@@ -121,9 +121,9 @@ def find_drift(run=None):
         })
     # launchd drift is its OWN kind, deliberately outside ops-autofix's
     # whitelist: loading or booting out an agent is a judgement, never a
-    # mechanical copy. (Before 2026-09-26 --check-sync could not see launchd;
-    # fourteen agents stayed loaded for seven weeks after jobs.toml said
-    # "unloaded", some running their job twice. HANDOFF BA, BL.)
+    # mechanical copy. (Before 2026-09-26 --check-sync could not see launchd.
+    # Fifteen agents unloaded non-persistently on 08-07 were reloaded by the
+    # 09-24 reboot and ran their jobs twice for a day. HANDOFF BA, BL, BM.)
     agents = [l.strip() for l in text.splitlines()
               if l.strip().startswith(("agent-", "plist-", "launchd-"))]
     if agents:

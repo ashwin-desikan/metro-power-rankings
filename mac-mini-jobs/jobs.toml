@@ -50,11 +50,15 @@
 # because that directory is what loads at the next login. Anything else under
 # the prefix is drift; so is anything listed here that is not loaded.
 #
-# WHY IT IS DATA AND NOT A COMMENT. From 2026-08-07 the rows below said
-# "(unloaded)" beside fourteen plists that were still loaded, and seven weeks
-# passed before anyone looked, because --check-sync compared files and could
-# not see launchd at all. Some of those agents ran their job a second time
-# alongside the dispatcher (HANDOFF AY, BA, BL). A comment cannot be checked.
+# WHY IT IS DATA AND NOT A COMMENT, AND WHY THE PLIST SIDE MATTERS MOST.
+# On 2026-08-07 the legacy agents were retired with plain `launchctl unload`,
+# which lasts only until the next login, and their plists were left in
+# ~/Library/LaunchAgents. The rows below said "(unloaded)", and for seven weeks
+# that was true. Then the macOS 27 upgrade and a hard reset rebooted the mini on
+# 2026-09-24, the 08:41 BST login reloaded all fifteen, and they ran their jobs
+# a second time beside the dispatcher until they were booted out and moved to
+# retired/ the next day (HANDOFF AY, BA, BM). A comment could not see that
+# coming; `plist-loads-at-login` would have reported all fifteen on 08-07.
 #
 # Scope is this project's namespace only. The five com.newsletter.* agents are
 # the newsletter-podcast repo's and are deliberately not listed or checked.

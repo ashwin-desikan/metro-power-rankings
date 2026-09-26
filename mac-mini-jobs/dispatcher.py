@@ -1162,7 +1162,11 @@ def launchd_report(declared, loaded, on_disk, job_ids=()):
     launchctl could not be read.
 
     An undeclared agent whose slug is ALSO a jobs.toml job is the exact failure
-    of 2026-08-07 to 09-25: two schedulers for one job, so it says so.
+    of 2026-09-24/25, when a reboot reloaded fifteen agents that had been
+    unloaded only until the next login: two schedulers for one job, so it says
+    so. A plist left at the top of LaunchAgents is that failure waiting for a
+    login, which is why plist-loads-at-login is checked even when nothing is
+    loaded now.
 
     Statuses never start with "differs" or "missing": detect_issues.py and
     ops-autofix treat those as FILES to symlink from the repo, and a launchd
@@ -1393,8 +1397,8 @@ def main():
             table = {}
         sync_jobs = table.get("job", [])
         drift = sync_report(HERE, repo, deployed_skip_set(sync_jobs))
-        # launchd is the second scheduler on this machine, and the one that
-        # drifted unseen for seven weeks (see [launchd] in jobs.toml).
+        # launchd is the second scheduler on this machine, and the one a
+        # reboot silently re-armed on 2026-09-24 (see [launchd] in jobs.toml).
         declared = (table.get("launchd") or {}).get("loaded")
         ldrift = launchd_report(declared, loaded_launchd_agents(), plist_launchd_agents(),
                                 [j.get("id") for j in sync_jobs])
