@@ -44,6 +44,23 @@
 # commented out when the job goes live here. Keep workflow_dispatch in the YAML
 # as the manual fallback for when the mini is down. ONE runner per job.
 
+# LAUNCHD: the com.citizenofnowhere.* agents that SHOULD be loaded, by slug
+# (the label minus that prefix). `dispatcher.py --check-sync` diffs this
+# against `launchctl list` AND against the plists in ~/Library/LaunchAgents/,
+# because that directory is what loads at the next login. Anything else under
+# the prefix is drift; so is anything listed here that is not loaded.
+#
+# WHY IT IS DATA AND NOT A COMMENT. From 2026-08-07 the rows below said
+# "(unloaded)" beside fourteen plists that were still loaded, and seven weeks
+# passed before anyone looked, because --check-sync compared files and could
+# not see launchd at all. Some of those agents ran their job a second time
+# alongside the dispatcher (HANDOFF AY, BA, BL). A comment cannot be checked.
+#
+# Scope is this project's namespace only. The five com.newsletter.* agents are
+# the newsletter-podcast repo's and are deliberately not listed or checked.
+[launchd]
+loaded = ["dispatcher", "heartbeat", "f1-weekly"]
+
 # ROLLOUT STATE (keep this file honest: it is what a fresh clone would run).
 # Enabled here == the GitHub schedule for the same job is commented out. The two
 # must move together or you get duplicate commits.

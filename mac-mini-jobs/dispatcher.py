@@ -820,6 +820,57 @@ def self_test():
               [{"id": "m", "command": "runners/mlb-sim.sh"}]), False)
     check("the hand-written entries survive the merge",
           "run-deploy-watch.sh" in deployed_skip_set([]), True)
+
+    # --- launchd drift (the second scheduler, invisible to the file diff) ----
+    P_ = lambda rc, out: (lambda: type("P", (), {"returncode": rc, "stdout": out})())
+    ls = ("PID\tStatus\tLabel\n-\t0\tcom.citizenofnowhere.dispatcher\n"
+          "123\t0\tcom.citizenofnowhere.heartbeat\n-\t0\tcom.newsletter.daily\n"
+          "-\t78\tcom.apple.something\n")
+    check("launchctl: only our prefix, slugs stripped",
+          loaded_launchd_agents(P_(0, ls)), {"dispatcher", "heartbeat"})
+    check("launchctl failing is None, NOT an empty set",
+          loaded_launchd_agents(P_(1, "")), None)
+    def _boom():
+        raise OSError("no launchctl")
+    check("launchctl missing is None too", loaded_launchd_agents(_boom), None)
+    D3 = {"dispatcher", "heartbeat", "f1-weekly"}
+    check("declared == loaded == on disk -> no drift",
+          launchd_report(D3, set(D3), set(D3), ["deploy-watch"]), [])
+    check("the 2026-09 failure: a loaded duplicate of a dispatcher job",
+          launchd_report(D3, D3 | {"deploy-watch"}, D3, ["deploy-watch"]),
+          [("com.citizenofnowhere.deploy-watch (ALSO a jobs.toml job: it runs twice)",
+            "agent-loaded-undeclared")])
+    check("an undeclared agent that is not a job is still drift",
+          launchd_report(D3, D3 | {"mystery"}, D3, []),
+          [("com.citizenofnowhere.mystery", "agent-loaded-undeclared")])
+    check("a declared agent that is not loaded",
+          launchd_report(D3, D3 - {"heartbeat"}, D3),
+          [("com.citizenofnowhere.heartbeat", "agent-declared-not-loaded")])
+    check("a retired plist moved back would load at login",
+          launchd_report(D3, D3, D3 | {"rugby-weekly"}),
+          [("com.citizenofnowhere.rugby-weekly.plist", "plist-loads-at-login")])
+    check("a declared agent with no plist would not survive a reboot",
+          launchd_report(D3, D3, D3 - {"f1-weekly"}),
+          [("com.citizenofnowhere.f1-weekly.plist", "plist-absent")])
+    check("unreadable launchctl is reported, never a clean pass",
+          launchd_report(D3, None, D3), [("launchctl list", "launchd-unreadable")])
+    check("no [launchd] list in jobs.toml is itself drift",
+          launchd_report(None, D3, D3), [("jobs.toml [launchd] loaded", "launchd-undeclared")])
+    check("no launchd status can be mistaken for FILE drift by the autofix",
+          [s for _, s in launchd_report(D3, D3 | {"x"}, D3 | {"y"}) + launchd_report(D3, None, set())
+           + launchd_report(None, D3, D3) if s.startswith(("differs", "missing"))], [])
+    with tempfile.TemporaryDirectory() as _la:
+        la = Path(_la)
+        (la / "com.citizenofnowhere.dispatcher.plist").write_text("x")
+        (la / "com.newsletter.daily.plist").write_text("x")
+        (la / "retired").mkdir()
+        (la / "retired" / "com.citizenofnowhere.rugby-weekly.plist").write_text("x")
+        check("plists: our prefix, top level only (retired/ does not load)",
+              plist_launchd_agents(la), {"dispatcher"})
+    with JOBS_FILE.open("rb") as fh:
+        _decl = (tomllib.load(fh).get("launchd") or {}).get("loaded")
+    check("shipped jobs.toml declares its launchd agents",
+          isinstance(_decl, list) and all(isinstance(x, str) and x for x in _decl) and len(_decl) > 0, True)
     # When run from the repo copy (it has launchd/, the live copy does not),
     # every NOT_DEPLOYED key must name a file that actually exists. At runtime
     # the same thing surfaces as "stale-skip-entry"; this catches it at commit
@@ -1061,6 +1112,81 @@ def sync_report(live_dir, repo_dir, skip=None):
     return sorted(out)
 
 
+LAUNCHD_PREFIX = "com.citizenofnowhere."
+LAUNCH_AGENTS_DIR = Path.home() / "Library" / "LaunchAgents"
+
+
+def loaded_launchd_agents(run=None):
+    """Slugs of the LAUNCHD_PREFIX agents launchd has loaded, or None if
+    `launchctl list` could not be read.
+
+    None is not "nothing loaded": an unreadable launchctl must be reported, not
+    read as a clean result, or this check would pass exactly when it is blind.
+    `launchctl list` prints `PID Status Label`, with "-" for no PID.
+    """
+    run = run or (lambda: subprocess.run(["launchctl", "list"], capture_output=True,
+                                         text=True, timeout=30))
+    try:
+        p = run()
+    except Exception:                                         # noqa: BLE001
+        return None
+    if p.returncode != 0:
+        return None
+    out = set()
+    for line in (p.stdout or "").splitlines():
+        parts = line.split(None, 2)
+        if len(parts) == 3 and parts[2].startswith(LAUNCHD_PREFIX):
+            out.add(parts[2][len(LAUNCHD_PREFIX):].strip())
+    return out
+
+
+def plist_launchd_agents(agents_dir=None):
+    """Slugs of the LAUNCHD_PREFIX plists that would load at the next login.
+
+    Only the top level of ~/Library/LaunchAgents loads. The retired/ subfolder,
+    where the fifteen duplicate plists went on 2026-09-24/25, does not.
+    """
+    d = Path(agents_dir or LAUNCH_AGENTS_DIR)
+    if not d.is_dir():
+        return set()
+    return {p.name[len(LAUNCHD_PREFIX):-len(".plist")]
+            for p in d.glob(LAUNCHD_PREFIX + "*.plist") if p.is_file()}
+
+
+def launchd_report(declared, loaded, on_disk, job_ids=()):
+    """Diff the declared agents against what launchd has loaded now and what
+    would load at the next login. Returns sorted (item, status) pairs.
+
+    None for `declared` means jobs.toml has no [launchd] list, which is itself
+    drift: an undeclared expectation cannot be checked. None for `loaded` means
+    launchctl could not be read.
+
+    An undeclared agent whose slug is ALSO a jobs.toml job is the exact failure
+    of 2026-08-07 to 09-25: two schedulers for one job, so it says so.
+
+    Statuses never start with "differs" or "missing": detect_issues.py and
+    ops-autofix treat those as FILES to symlink from the repo, and a launchd
+    agent is never something to fix automatically.
+    """
+    if declared is None:
+        return [("jobs.toml [launchd] loaded", "launchd-undeclared")]
+    declared, on_disk, job_ids = set(declared), set(on_disk), set(job_ids)
+    out = []
+    if loaded is None:
+        out.append(("launchctl list", "launchd-unreadable"))
+    else:
+        for s in loaded - declared:
+            twice = " (ALSO a jobs.toml job: it runs twice)" if s in job_ids else ""
+            out.append((LAUNCHD_PREFIX + s + twice, "agent-loaded-undeclared"))
+        for s in declared - loaded:
+            out.append((LAUNCHD_PREFIX + s, "agent-declared-not-loaded"))
+    for s in on_disk - declared:
+        out.append((LAUNCHD_PREFIX + s + ".plist", "plist-loads-at-login"))
+    for s in declared - on_disk:
+        out.append((LAUNCHD_PREFIX + s + ".plist", "plist-absent"))
+    return sorted(out)
+
+
 def repo_dir_guess():
     """Where the mac-mini-jobs/ checkout lives on the mini.
 
@@ -1262,21 +1388,36 @@ def main():
         # reason you are running it is that jobs.toml is the broken file.
         try:
             with JOBS_FILE.open("rb") as fh:
-                sync_jobs = tomllib.load(fh).get("job", [])
+                table = tomllib.load(fh)
         except Exception:
-            sync_jobs = []
+            table = {}
+        sync_jobs = table.get("job", [])
         drift = sync_report(HERE, repo, deployed_skip_set(sync_jobs))
-        if not drift:
-            print(f"in sync with {repo}")
-            return 0
-        if drift[0][1] == "missing-repo":
+        # launchd is the second scheduler on this machine, and the one that
+        # drifted unseen for seven weeks (see [launchd] in jobs.toml).
+        declared = (table.get("launchd") or {}).get("loaded")
+        ldrift = launchd_report(declared, loaded_launchd_agents(), plist_launchd_agents(),
+                                [j.get("id") for j in sync_jobs])
+        rc = 0
+        if drift and drift[0][1] == "missing-repo":
             print(f"no repo checkout at {repo}; nothing to compare against. "
                   f"Set REPO_DIR in config.env if it lives elsewhere.")
-            return 0
-        print(f"DRIFT vs {repo}:")
-        for rel, status in drift:
-            print(f"  {status:<13} {rel}")
-        return 1
+        elif not drift:
+            print(f"in sync with {repo}")
+        else:
+            print(f"DRIFT vs {repo}:")
+            for rel, status in drift:
+                print(f"  {status:<13} {rel}")
+            rc = 1
+        if not ldrift:
+            print(f"launchd matches jobs.toml: {len(declared)} {LAUNCHD_PREFIX}* agent(s) "
+                  f"loaded and on disk ({', '.join(sorted(declared))})")
+        else:
+            print(f"LAUNCHD DRIFT vs jobs.toml [launchd] ({LAUNCHD_PREFIX}* only):")
+            for item, status in ldrift:
+                print(f"  {status:<25} {item}")
+            rc = 1
+        return rc
 
     now = datetime.now(timezone.utc)
     jobs = load_jobs()

@@ -110,13 +110,30 @@ def find_drift(run=None):
     text = (p.stdout or "") + (p.stderr or "")
     if "DRIFT" not in text:
         return []
+    out = []
     lines = [l.strip() for l in text.splitlines() if l.strip().startswith(("differs", "missing"))]
-    return [{
-        "kind": "deploy_drift",
-        "severity": "high",
-        "summary": "live dispatcher directory is out of sync with the repo (%d item(s))" % len(lines),
-        "evidence": {"items": lines},
-    }]
+    if lines:
+        out.append({
+            "kind": "deploy_drift",
+            "severity": "high",
+            "summary": "live dispatcher directory is out of sync with the repo (%d item(s))" % len(lines),
+            "evidence": {"items": lines},
+        })
+    # launchd drift is its OWN kind, deliberately outside ops-autofix's
+    # whitelist: loading or booting out an agent is a judgement, never a
+    # mechanical copy. (Before 2026-09-26 --check-sync could not see launchd;
+    # fourteen agents stayed loaded for seven weeks after jobs.toml said
+    # "unloaded", some running their job twice. HANDOFF BA, BL.)
+    agents = [l.strip() for l in text.splitlines()
+              if l.strip().startswith(("agent-", "plist-", "launchd-"))]
+    if agents:
+        out.append({
+            "kind": "launchd_drift",
+            "severity": "high",
+            "summary": "launchd agents do not match jobs.toml [launchd] (%d item(s)); not auto-fixed" % len(agents),
+            "evidence": {"items": agents},
+        })
+    return out
 
 
 def find_down_checks(fetch=None):
@@ -365,6 +382,23 @@ def _self_test():
     d = find_drift(drifted)
     check("drift is found", len(d), 1)
     check("...and lists the items", len(d[0]["evidence"]["items"]), 2)
+    lonly = lambda argv, cwd: type("P", (), {"stdout":
+        "in sync with /repo\nLAUNCHD DRIFT vs jobs.toml [launchd] (com.citizenofnowhere.* only):\n"
+        "  agent-loaded-undeclared   com.citizenofnowhere.rugby-weekly (ALSO a jobs.toml job: it runs twice)\n",
+        "stderr": ""})()
+    ld = find_drift(lonly)
+    check("launchd-only drift is NOT a deploy_drift (autofix would act on it)",
+          [f["kind"] for f in ld], ["launchd_drift"])
+    check("...and carries its item", len(ld[0]["evidence"]["items"]), 1)
+    both = lambda argv, cwd: type("P", (), {"stdout":
+        "DRIFT vs /repo:\n  differs       jobs.toml\n"
+        "LAUNCHD DRIFT vs jobs.toml [launchd] (com.citizenofnowhere.* only):\n"
+        "  plist-loads-at-login      com.citizenofnowhere.x.plist\n", "stderr": ""})()
+    bd = find_drift(both)
+    check("file and launchd drift are separate findings",
+          sorted(f["kind"] for f in bd), ["deploy_drift", "launchd_drift"])
+    check("...and the file finding holds only the file",
+          [f for f in bd if f["kind"] == "deploy_drift"][0]["evidence"]["items"], ["differs       jobs.toml"])
 
     check("no down checks -> nothing",
           find_down_checks(fetch=lambda: {"checks": [{"status": "up", "slug": "a"}]}), [])
