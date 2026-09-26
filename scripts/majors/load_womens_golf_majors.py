@@ -294,6 +294,12 @@ def self_test():
         if NATION.get(code) != exp_nation:
             print("SELF-TEST FAIL fold:", code, NATION.get(code), "!=", exp_nation); ok = False
 
+    try:
+        _check_flags(["x", "--wrte"], {"--write"})
+        print("SELF-TEST FAIL flag-check: --wrte not rejected"); ok = False
+    except SystemExit:
+        pass
+
     print("Self-test:", "PASS" if ok else "FAIL")
     return ok
 
@@ -325,7 +331,25 @@ def upsert(rows):
         print(f"  upserted {off + len(batch)}/{len(rows)}")
 
 
+def _check_flags(argv, allowed, with_value=()):
+    """Refuse an unknown --flag: a mistyped --dry-run must not fall through to a write."""
+    skip = False
+    bad = []
+    for tok in argv[1:]:
+        if skip:
+            skip = False
+            continue
+        if tok.startswith("--"):
+            name = tok.split("=", 1)[0]
+            if name not in allowed:
+                bad.append(tok)
+            elif name in with_value and "=" not in tok:
+                skip = True
+    if bad:
+        sys.stderr.write("unknown flag(s) %s; allowed: %s\n" % (", ".join(bad), ", ".join(sorted(allowed))))
+        sys.exit(2)
 def main():
+    _check_flags(sys.argv, {"--self-test", "--write"})
     if "--self-test" in sys.argv:
         sys.exit(0 if self_test() else 1)
     write = "--write" in sys.argv

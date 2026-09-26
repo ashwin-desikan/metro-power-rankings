@@ -336,6 +336,23 @@ def _load_dir(path):
     return out
 
 
+def _check_flags(argv, allowed, with_value=()):
+    """Refuse an unknown --flag: a mistyped --dry-run must not fall through to a write."""
+    skip = False
+    bad = []
+    for tok in argv[1:]:
+        if skip:
+            skip = False
+            continue
+        if tok.startswith("--"):
+            name = tok.split("=", 1)[0]
+            if name not in allowed:
+                bad.append(tok)
+            elif name in with_value and "=" not in tok:
+                skip = True
+    if bad:
+        sys.stderr.write("unknown flag(s) %s; allowed: %s\n" % (", ".join(bad), ", ".join(sorted(allowed))))
+        sys.exit(2)
 def main():
     doc = score_all(_load_dir(SNAP_DIR), _load_dir(RES_DIR))
     doc["built"] = date.today().isoformat()
@@ -462,6 +479,12 @@ def _self_test():
     check("partial result grades one call", len(doc["resolved"][0]["binaries"]), 1)
     check("partial result has no market", "skill" in doc["resolved"][0]["summary"], False)
 
+    try:
+        _check_flags(["x", "--wrte"], {"--write"})
+        fails.append("_check_flags did not reject --wrte")
+    except SystemExit:
+        pass
+
     if fails:
         print("SELF-TEST FAILED")
         for f in fails:
@@ -472,6 +495,7 @@ def _self_test():
 
 
 if __name__ == "__main__":
+    _check_flags(sys.argv, {"--self-test", "--write"})
     if "--self-test" in sys.argv:
         sys.exit(_self_test())
     sys.exit(main())

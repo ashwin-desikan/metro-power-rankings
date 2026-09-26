@@ -330,7 +330,25 @@ def auto_promote(lg, c, skey):
     log("  AUTO-PROMOTED %s (api %s) -> leagues.json; removed from pending" % (lg["intended_name"], lid))
     return True
 
+def _check_flags(argv, allowed, with_value=()):
+    """Refuse an unknown --flag: a mistyped --dry-run must not fall through to a write."""
+    skip = False
+    bad = []
+    for tok in argv[1:]:
+        if skip:
+            skip = False
+            continue
+        if tok.startswith("--"):
+            name = tok.split("=", 1)[0]
+            if name not in allowed:
+                bad.append(tok)
+            elif name in with_value and "=" not in tok:
+                skip = True
+    if bad:
+        sys.stderr.write("unknown flag(s) %s; allowed: %s\n" % (", ".join(bad), ", ".join(sorted(allowed))))
+        sys.exit(2)
 def main():
+    _check_flags(sys.argv, {"--self-test", "--write"})
     if "--self-test" in sys.argv: return selftest()
     write = "--write" in sys.argv
     pending = json.load(open(os.path.join(HERE, "leagues_pending.json"), encoding="utf-8"))

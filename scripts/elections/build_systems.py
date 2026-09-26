@@ -414,6 +414,12 @@ def _self_test():
     check("turnout n counts every row", t["n"], 4)
     check("no turnout at all returns None", turnout_stats([{"year": 1950}]), None)
 
+    try:
+        _check_flags(["x", "--wrte"], {"--write"})
+        fails.append("_check_flags did not reject --wrte")
+    except SystemExit:
+        pass
+
     if fails:
         print("SELF-TEST FAILED")
         for f in fails:
@@ -423,7 +429,25 @@ def _self_test():
     return 0
 
 
+def _check_flags(argv, allowed, with_value=()):
+    """Refuse an unknown --flag: a mistyped --dry-run must not fall through to a write."""
+    skip = False
+    bad = []
+    for tok in argv[1:]:
+        if skip:
+            skip = False
+            continue
+        if tok.startswith("--"):
+            name = tok.split("=", 1)[0]
+            if name not in allowed:
+                bad.append(tok)
+            elif name in with_value and "=" not in tok:
+                skip = True
+    if bad:
+        sys.stderr.write("unknown flag(s) %s; allowed: %s\n" % (", ".join(bad), ", ".join(sorted(allowed))))
+        sys.exit(2)
 def main():
+    _check_flags(sys.argv, {"--self-test", "--write"})
     if "--self-test" in sys.argv:
         return _self_test()
     doc = build(_loader, sorted(SYSTEMS))

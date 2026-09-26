@@ -106,7 +106,25 @@ def check(day: dict, skel: dict, metros: set[str], countries: set[str]) -> list[
     return errs
 
 
+def _check_flags(argv, allowed, with_value=()):
+    """Refuse an unknown --flag: a mistyped --dry-run must not fall through to a write."""
+    skip = False
+    bad = []
+    for tok in argv[1:]:
+        if skip:
+            skip = False
+            continue
+        if tok.startswith("--"):
+            name = tok.split("=", 1)[0]
+            if name not in allowed:
+                bad.append(tok)
+            elif name in with_value and "=" not in tok:
+                skip = True
+    if bad:
+        sys.stderr.write("unknown flag(s) %s; allowed: %s\n" % (", ".join(bad), ", ".join(sorted(allowed))))
+        sys.exit(2)
 def main() -> None:
+    _check_flags(sys.argv, {"--write"})
     if len(sys.argv) < 3:
         sys.exit(__doc__)
     feeds, skels = Path(sys.argv[1]), Path(sys.argv[2])

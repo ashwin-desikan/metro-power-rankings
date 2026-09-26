@@ -271,7 +271,25 @@ def series_for(slug, symbol):
 
 # ---- main -------------------------------------------------------------------
 
+def _check_flags(argv, allowed, with_value=()):
+    """Refuse an unknown --flag: a mistyped --dry-run must not fall through to a write."""
+    skip = False
+    bad = []
+    for tok in argv[1:]:
+        if skip:
+            skip = False
+            continue
+        if tok.startswith("--"):
+            name = tok.split("=", 1)[0]
+            if name not in allowed:
+                bad.append(tok)
+            elif name in with_value and "=" not in tok:
+                skip = True
+    if bad:
+        sys.stderr.write("unknown flag(s) %s; allowed: %s\n" % (", ".join(bad), ", ".join(sorted(allowed))))
+        sys.exit(2)
 def main(argv):
+    _check_flags(sys.argv, {"--self-test", "--dry", "--only"}, with_value=("--only",))
     if "--self-test" in argv:
         return self_test()
     dry = "--dry" in argv
@@ -348,7 +366,14 @@ def self_test():
         "2010-07-18,51,0.08584,1100000\n"
         "2014-09-17,99,457.334,13000000\n")
     assert cm == {"2010-07-18": 0.08584, "2014-09-17": 457.334}, cm
-    print("self-test: 5/5 PASS")
+    try:
+        _check_flags(["x", "--wrte"], {"--dry", "--only"}, with_value=("--only",))
+    except SystemExit:
+        pass
+    else:
+        raise AssertionError("_check_flags did not reject --wrte")
+
+    print("self-test: 6/6 PASS")
     return 0
 
 

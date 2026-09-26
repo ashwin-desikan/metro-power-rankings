@@ -95,7 +95,25 @@ def parse(rows, commodity, col, unit):
     return out
 
 
+def _check_flags(argv, allowed, with_value=()):
+    """Refuse an unknown --flag: a mistyped --dry-run must not fall through to a write."""
+    skip = False
+    bad = []
+    for tok in argv[1:]:
+        if skip:
+            skip = False
+            continue
+        if tok.startswith("--"):
+            name = tok.split("=", 1)[0]
+            if name not in allowed:
+                bad.append(tok)
+            elif name in with_value and "=" not in tok:
+                skip = True
+    if bad:
+        sys.stderr.write("unknown flag(s) %s; allowed: %s\n" % (", ".join(bad), ", ".join(sorted(allowed))))
+        sys.exit(2)
 def main(argv):
+    _check_flags(sys.argv, {"--self-test", "--dry"})
     if "--self-test" in argv:
         return self_test()
     dry = "--dry" in argv
@@ -161,7 +179,14 @@ def self_test():
         raise AssertionError("a renamed value column must stop the load, not emit zero rows")
     except SystemExit:
         pass
-    print("self-test: 7/7 PASS")
+    try:
+        _check_flags(["x", "--wrte"], {"--dry"})
+    except SystemExit:
+        pass
+    else:
+        raise AssertionError("_check_flags did not reject --wrte")
+
+    print("self-test: 8/8 PASS")
     return 0
 
 

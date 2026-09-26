@@ -146,11 +146,36 @@ def self_test() -> None:
         print(f"  FAIL empty-why fallback: {r3}")
         bad += 1
 
+    try:
+        _check_flags(["x", "--wrte"], {"--write"})
+        print("  FAIL flag-check: --wrte not rejected")
+        bad += 1
+    except SystemExit:
+        pass
+
     print("self-test:", "OK" if bad == 0 else f"{bad} FAILURE(S)")
     sys.exit(1 if bad else 0)
 
 
+def _check_flags(argv, allowed, with_value=()):
+    """Refuse an unknown --flag: a mistyped --dry-run must not fall through to a write."""
+    skip = False
+    bad = []
+    for tok in argv[1:]:
+        if skip:
+            skip = False
+            continue
+        if tok.startswith("--"):
+            name = tok.split("=", 1)[0]
+            if name not in allowed:
+                bad.append(tok)
+            elif name in with_value and "=" not in tok:
+                skip = True
+    if bad:
+        sys.stderr.write("unknown flag(s) %s; allowed: %s\n" % (", ".join(bad), ", ".join(sorted(allowed))))
+        sys.exit(2)
 def main() -> None:
+    _check_flags(sys.argv, {"--self-test", "--write"})
     if "--self-test" in sys.argv:
         self_test()
     args = [a for a in sys.argv[1:] if not a.startswith("--")]

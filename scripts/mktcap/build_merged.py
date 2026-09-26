@@ -120,6 +120,23 @@ def merge(pub, uni, private_rows, changes, overrides):
         m["company_id"] = m["symbol"] if n == 1 else f'{m["symbol"]}#{n}'
     return merged, ipo_dedup, skipped
 
+def _check_flags(argv, allowed, with_value=()):
+    """Refuse an unknown --flag: a mistyped --dry-run must not fall through to a write."""
+    skip = False
+    bad = []
+    for tok in argv[1:]:
+        if skip:
+            skip = False
+            continue
+        if tok.startswith("--"):
+            name = tok.split("=", 1)[0]
+            if name not in allowed:
+                bad.append(tok)
+            elif name in with_value and "=" not in tok:
+                skip = True
+    if bad:
+        sys.stderr.write("unknown flag(s) %s; allowed: %s\n" % (", ".join(bad), ", ".join(sorted(allowed))))
+        sys.exit(2)
 def main(write=False):
     pub, uni = load_sources()
     private_rows = select_all("/rest/v1/mktcap_private?select=name,revenue,country", "id")
@@ -262,4 +279,5 @@ def main(write=False):
         f"{len(uni)} unicorns rewritten")
 
 if __name__ == "__main__":
+    _check_flags(sys.argv, {"--write"})
     main(write="--write" in sys.argv)

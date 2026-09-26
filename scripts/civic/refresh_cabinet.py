@@ -101,6 +101,23 @@ def build(existing, holders):
     out["executive"] = exec_
     return out, changed
 
+def _check_flags(argv, allowed, with_value=()):
+    """Refuse an unknown --flag: a mistyped --dry-run must not fall through to a write."""
+    skip = False
+    bad = []
+    for tok in argv[1:]:
+        if skip:
+            skip = False
+            continue
+        if tok.startswith("--"):
+            name = tok.split("=", 1)[0]
+            if name not in allowed:
+                bad.append(tok)
+            elif name in with_value and "=" not in tok:
+                skip = True
+    if bad:
+        sys.stderr.write("unknown flag(s) %s; allowed: %s\n" % (", ".join(bad), ", ".join(sorted(allowed))))
+        sys.exit(2)
 def main():
     write = "--write" in sys.argv
     existing = load_json(CONG, None)
@@ -181,7 +198,17 @@ def _self_test():
     assert any("Secretary of Labor" in c for c in changed4)
     assert "acting" not in out4["executive"]["cabinet"][0], out4["executive"]["cabinet"][0]
 
+    try:
+        _check_flags(["x", "--wrte"], {"--write"})
+    except SystemExit:
+        pass
+    else:
+        raise AssertionError("_check_flags did not reject --wrte")
+
     print("refresh_cabinet self-test OK")
 
 if __name__ == "__main__":
+    # --check: civic-data-refresh.yml's dry-run spelling (a run with no --write
+    # IS the dry run); accepted so that step keeps printing its diff.
+    _check_flags(sys.argv, {"--self-test", "--write", "--check"})
     _self_test() if "--self-test" in sys.argv else main()

@@ -64,7 +64,25 @@ def build_rows():
     return meta, daily
 
 
+def _check_flags(argv, allowed, with_value=()):
+    """Refuse an unknown --flag: a mistyped --dry-run must not fall through to a write."""
+    skip = False
+    bad = []
+    for tok in argv[1:]:
+        if skip:
+            skip = False
+            continue
+        if tok.startswith("--"):
+            name = tok.split("=", 1)[0]
+            if name not in allowed:
+                bad.append(tok)
+            elif name in with_value and "=" not in tok:
+                skip = True
+    if bad:
+        sys.stderr.write("unknown flag(s) %s; allowed: %s\n" % (", ".join(bad), ", ".join(sorted(allowed))))
+        sys.exit(2)
 def main(argv):
+    _check_flags(sys.argv, {"--self-test", "--dry"})
     if "--self-test" in argv:
         return self_test()
     dry = "--dry" in argv
@@ -103,6 +121,13 @@ def self_test():
     gbp = [r for r in daily if r["slug"] == "gbp"]
     assert gbp[0]["date"] == "1957-01-31", gbp[0]
     assert 0.3 < gbp[0]["close"] < 0.4, gbp[0]  # sterling was ~$2.80, so ~0.357 per USD
+    try:
+        _check_flags(["x", "--wrte"], {"--dry"})
+    except SystemExit:
+        pass
+    else:
+        raise AssertionError("_check_flags did not reject --wrte")
+
     print(f"self-test: 8/8 PASS ({len(meta)} currencies, {len(daily):,} observations)")
     return 0
 
