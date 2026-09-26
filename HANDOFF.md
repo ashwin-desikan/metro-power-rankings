@@ -20570,3 +20570,57 @@ against the live files is the check that touches nothing; use that.
 
 **Notion:** Scheduled jobs rows football-standings, deploy-watch and metro-rankings each carry a note on the change, what
 was and was not exercised live, verified over REST. Last verified unchanged: none of those three has run through it yet.
+
+### BK. The last 12 hours of ntfy, and BJ's two untested jobs confirmed live
+
+At Ashwin's request: review the ntfy since about 22:30Z on 09-25, act where it is ours, and confirm metro-rankings and
+football-standings through BJ's new push path.
+
+**Two ntfy in the window.**
+
+1. **01:15Z, the daily ops sweep digest.** It raised four things, and they sort cleanly:
+   - *The build cap is still not armed* (`VERCEL_BUILD_CAP_TOKEN` missing). Needs a credential only Ashwin can add.
+     Unchanged, and still the one standing risk to the build budget.
+   - *`run-activity-feed.sh` still autostashes.* **Already stale when it arrived in the morning:** the sweep ran at 02:05Z,
+     and BH moved that script onto `mini_sync` at 06:37Z; BJ then removed every remaining autostash. Nothing to do.
+   - *HANDOFF BA closed with `Notion: none` while retiring fourteen jobs.* **A fair hit on my own entry**, against the
+     contract's red rule. Checked all fifteen retired jobs' rows rather than assuming: thirteen were already accurate
+     (the reconciler and earlier entries had kept Runs on at "dispatcher"). Two were stale and are fixed, below.
+   - *The Notion MCP is not authorised in headless sessions.* Needs Ashwin, interactively on the mini.
+2. **09:05Z, mktcap-refresh: "6 new, 2 notable to map".** Curation for Ashwin's Windows workbooks (SHEIN Global
+   Holdings $18.9B and Vivmark Residential $47.6B are the notable two). `sync_city_lookup.py` stays manual by design, so
+   nothing here for the mini.
+
+**Notion, fixed and verified over REST:**
+- Scheduled jobs "football-standings": its Notes still said a legacy launchd agent makes it fire twice and cited an open
+  P1 Backlog row. Appended a dated correction (retired in AY, the rest in BA; the P1 row is Done).
+- Scheduled jobs "deploy-watch": Defined in said its plist was "UNLOADED but left on disk as the manual fallback".
+  Replaced with where it actually is (`~/Library/LaunchAgents/retired/`, cannot load at login, can be copied back by hand).
+- Backlog P3 "Reconciler: five newsletter jobs read 'Mac mini (launchd)' although section BA says only three launchd
+  agents are still loaded": **answered and closed.** `launchctl list` shows both statements are true: three
+  `com.citizenofnowhere.*` agents (dispatcher, heartbeat, f1-weekly) and five `com.newsletter.*` agents, all last exit 0.
+  BA's "only three remain" meant the project's own namespace and never said so. The five newsletter rows are correct;
+  no row changed. The lesson for entries: when a claim is scoped, name the scope.
+
+The reconciler had already marked the P1 "Fifteen mini jobs are scheduled twice" row Done and filed BA's two follow-ups
+(why six agents went silent in August; teach `--check-sync` about launchd). Both remain open and are right to.
+
+**BJ's untested jobs, now exercised live:**
+- **metro-rankings, 10:30Z slot:** published. `8b9ad3538` "rankings: weekly metro recalculation 2026-09-26", 1294 files,
+  untagged on purpose as the weekly build, "Pushed on attempt 1." through `commit_paths` and `push_head_retry`, `DONE ok
+  20s`. deploy-watch then saw the new TARGET building. My first reading of "ok 20s" was that it was too quick to have
+  published; the log showed otherwise.
+- **football-standings, 11:00Z slot:** pushed `28bd2eef1` "football: refresh live bundles", logged "pushed updated
+  football bundles (attempt 1)". The attempt suffix exists only in the new code, so this went through `push_head_retry`.
+  `DONE ok 114s`.
+- The weekly build `8b9ad3538` was live by 10:41Z (deploy-watch: "up to date"). Clone afterwards on `main`, 0 dirty, 0
+  unmerged, 0 stashes, 0 ahead. Ashwin was sent the requested ntfy at 11:04Z and it was confirmed on the topic.
+- Still not exercised live: deploy-watch's re-trigger path, which only runs when a build is canceled.
+
+**A misreading of my own, worth knowing:** I concluded the first background watcher for these runs had died at its
+10-minute timeout, because `ps | grep` found no process and its output file was empty. Both were wrong signals: the
+grep pattern did not match how the command line appears in `ps`, and an `until` loop writes nothing until it finishes.
+It completed normally at 11:03Z. A background Bash does outlive its timeout; check one with its output on completion,
+not with a hand-rolled `ps` grep. (A Monitor was armed as well, so nothing was missed either way.)
+
+**Notion:** as listed above: two Scheduled jobs rows corrected and one Backlog row closed, all verified over REST.

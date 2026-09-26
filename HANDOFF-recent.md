@@ -9,8 +9,8 @@
      2026-09-14 at the top and today's entry out of reach, which is exactly how
      the 2026-09-21 run failed even after this file existed.
 
-     entries: 78, 2026-09-20 to 2026-09-26
-     If the reader counts fewer than 78 entries, its fetch window stopped
+     entries: 77, 2026-09-20 to 2026-09-26
+     If the reader counts fewer than 77 entries, its fetch window stopped
      short and the entries it did not see are the OLDEST ones. -->
 
 ## 2026-09-26
@@ -200,6 +200,60 @@ against the live files is the check that touches nothing; use that.
 
 **Notion:** Scheduled jobs rows football-standings, deploy-watch and metro-rankings each carry a note on the change, what
 was and was not exercised live, verified over REST. Last verified unchanged: none of those three has run through it yet.
+
+### BK. The last 12 hours of ntfy, and BJ's two untested jobs confirmed live
+
+At Ashwin's request: review the ntfy since about 22:30Z on 09-25, act where it is ours, and confirm metro-rankings and
+football-standings through BJ's new push path.
+
+**Two ntfy in the window.**
+
+1. **01:15Z, the daily ops sweep digest.** It raised four things, and they sort cleanly:
+   - *The build cap is still not armed* (`VERCEL_BUILD_CAP_TOKEN` missing). Needs a credential only Ashwin can add.
+     Unchanged, and still the one standing risk to the build budget.
+   - *`run-activity-feed.sh` still autostashes.* **Already stale when it arrived in the morning:** the sweep ran at 02:05Z,
+     and BH moved that script onto `mini_sync` at 06:37Z; BJ then removed every remaining autostash. Nothing to do.
+   - *HANDOFF BA closed with `Notion: none` while retiring fourteen jobs.* **A fair hit on my own entry**, against the
+     contract's red rule. Checked all fifteen retired jobs' rows rather than assuming: thirteen were already accurate
+     (the reconciler and earlier entries had kept Runs on at "dispatcher"). Two were stale and are fixed, below.
+   - *The Notion MCP is not authorised in headless sessions.* Needs Ashwin, interactively on the mini.
+2. **09:05Z, mktcap-refresh: "6 new, 2 notable to map".** Curation for Ashwin's Windows workbooks (SHEIN Global
+   Holdings $18.9B and Vivmark Residential $47.6B are the notable two). `sync_city_lookup.py` stays manual by design, so
+   nothing here for the mini.
+
+**Notion, fixed and verified over REST:**
+- Scheduled jobs "football-standings": its Notes still said a legacy launchd agent makes it fire twice and cited an open
+  P1 Backlog row. Appended a dated correction (retired in AY, the rest in BA; the P1 row is Done).
+- Scheduled jobs "deploy-watch": Defined in said its plist was "UNLOADED but left on disk as the manual fallback".
+  Replaced with where it actually is (`~/Library/LaunchAgents/retired/`, cannot load at login, can be copied back by hand).
+- Backlog P3 "Reconciler: five newsletter jobs read 'Mac mini (launchd)' although section BA says only three launchd
+  agents are still loaded": **answered and closed.** `launchctl list` shows both statements are true: three
+  `com.citizenofnowhere.*` agents (dispatcher, heartbeat, f1-weekly) and five `com.newsletter.*` agents, all last exit 0.
+  BA's "only three remain" meant the project's own namespace and never said so. The five newsletter rows are correct;
+  no row changed. The lesson for entries: when a claim is scoped, name the scope.
+
+The reconciler had already marked the P1 "Fifteen mini jobs are scheduled twice" row Done and filed BA's two follow-ups
+(why six agents went silent in August; teach `--check-sync` about launchd). Both remain open and are right to.
+
+**BJ's untested jobs, now exercised live:**
+- **metro-rankings, 10:30Z slot:** published. `8b9ad3538` "rankings: weekly metro recalculation 2026-09-26", 1294 files,
+  untagged on purpose as the weekly build, "Pushed on attempt 1." through `commit_paths` and `push_head_retry`, `DONE ok
+  20s`. deploy-watch then saw the new TARGET building. My first reading of "ok 20s" was that it was too quick to have
+  published; the log showed otherwise.
+- **football-standings, 11:00Z slot:** pushed `28bd2eef1` "football: refresh live bundles", logged "pushed updated
+  football bundles (attempt 1)". The attempt suffix exists only in the new code, so this went through `push_head_retry`.
+  `DONE ok 114s`.
+- The weekly build `8b9ad3538` was live by 10:41Z (deploy-watch: "up to date"). Clone afterwards on `main`, 0 dirty, 0
+  unmerged, 0 stashes, 0 ahead. Ashwin was sent the requested ntfy at 11:04Z and it was confirmed on the topic.
+- Still not exercised live: deploy-watch's re-trigger path, which only runs when a build is canceled.
+
+**A misreading of my own, worth knowing:** I concluded the first background watcher for these runs had died at its
+10-minute timeout, because `ps | grep` found no process and its output file was empty. Both were wrong signals: the
+grep pattern did not match how the command line appears in `ps`, and an `until` loop writes nothing until it finishes.
+It completed normally at 11:03Z. A background Bash does outlive its timeout; check one with its output on completion,
+not with a hand-rolled `ps` grep. (A Monitor was armed as well, so nothing was missed either way.)
+
+**Notion:** as listed above: two Scheduled jobs rows corrected and one Backlog row closed, all verified over REST.
 ## 2026-09-25
 
 ### AZ. This morning's two ntfy, and a correction to section AY that the daily sweep earned
@@ -4009,25 +4063,5 @@ Phase 1 went to main as `7ae9c1aed` on Ashwin's word. This entry is phase 2: the
 **Not done:** phase 3, the Windows Task Scheduler watcher. `relocations` reads the league workbooks, not MetroAreas, and is out of scope. `build-state-metro-scores.py` is switched to the mirror but NOT run by the job: it writes the same file as `build-states-directory.py` with different arithmetic (Backlog row, Ashwin to rule).
 
 **Notion:** Scheduled jobs +1 (`metro-rankings`, Disabled until installed). Backlog: phase 2 row rewritten as the install and cutover, owner Mac mini; +2 (two writers of state-metro-scores.json; the Utqiagvik control character in Municipality row 93191). Decisions: none new.
-
-
-## 2026-09-20 (evening) - windows (Cowork, cloud bridged to the Windows box) -> mini and next session: METRO RANKINGS GO WORKBOOK-FREE, PHASE 1 OF 3 (MIRROR LOADED AND PROVEN; NOTHING COMMITTED, NOTHING SCHEDULED)
-
-Ashwin's ask: stop rebuilding the site by hand each week. MetroAreas.xlsx syncs to Supabase, the rankings calculate from there, and he edits the workbook only now and then. Four rulings, all by multiple choice: scope = all 15 sheets extract.py reads; truth splits by data type (workbook wins curated sheets, Supabase wins feeds, so MktCap_Data is NOT mirrored); the site keeps reading public/data and a job makes one build a week; workbook edits reach Supabase through a Windows watcher.
-
-**Built (in the working tree, UNCOMMITTED, no build-relevant path touched):**
-- `scripts/metro_sync/` : `sync_workbook.py` (dry run default, `--write`, `--self-test`, `--json`; guards: Excel lock file, 120 s settle, shrink over 2 percent or 50 rows, error cells up by more than 10, Metro Areas header change, BG blank on over 1 percent of rows, missing sheet; exit 0 / 10 written / 20 held / 1 error), `supabase_workbook.py` (a shim with openpyxl's `sheetnames` / `iter_rows` surface, local chunk cache in `.cache/metro_sync`, serves MktCap_Data from `scripts/mktcap/out/mktcap_export.csv`), `codec.py`, `backends.py` (REST and `file:<dir>`), `parity_cells.py`, README. `scripts/tests/test_metro_sync.py` (22 cases).
-- `scripts/extract.py` : `METRO_WORKBOOK_SOURCE=supabase` runs the whole ETL with no workbook on disk. Default is unchanged. In that mode the display dims AQ to BF come from the score engine, not the cached cells, and `meta.lastUpdate` is the newer of the workbook save and the mktcap snapshot.
-- Supabase migration `create_workbook_mirror_tables`: `wb_sheet` (written last; `content_hash` is the commit marker), `wb_chunk` (500-row jsonb windows), `wb_sync_run` (service role only). Chunked because the project is on the FREE plan at 439 of 500 MB.
-
-**Measured, not inferred:**
-- First live `--write` from the Windows box: 15 sheets, 459 chunks, 221,404 rows, 45 s, 9.8 MB in Postgres. Second run: no change, exit 0, so the hashes survive real jsonb normalisation.
-- `parity_cells.py --backend rest` against the OneDrive master: 15 of 15 sheets, zero mismatches, value AND type per cell.
-- Offline end to end (clone of origin at `a45994f`, workbook renamed away for the mirror run): 777 files written each way, 774 byte-identical. The three: `quiz_queue.json` (unseeded RNG, differs on any two runs), and `metros.json` + `details/crewe.json` on one field, Crewe marketCap 1070000000.0000001 against 1070000000.0, float addition order. Fixed by rounding AU to cents in `patch_metro_derived` and re-run: 776 of 777 byte-identical, `quiz_queue.json` the only difference.
-- Two faults only the live run could find, both fixed: PostgREST rejects an epoch float for a timestamptz (conversion now lives in `RestBackend`), and `mkstemp` leaves an open descriptor that blocks the temp unlink on Windows.
-
-**Not done:** phase 2, the mini's weekly job (it must REPLACE the `update_top_companies` commit in `run-mktcap-refresh.sh`, or Saturday spends both builds; shadow two Saturdays first). Phase 3, the Task Scheduler watcher. No scheduled job was created or changed today. The metro-join builders (states, similar, relocations) were not checked for workbook reads.
-
-**Notion:** Decisions +2 (workbook-free metro rankings; positional chunked mirror). Backlog +3 (phase 2 mini job; phase 3 Windows watcher; Supabase free plan at 439 of 500 MB, owner Ashwin). Scheduled jobs: none changed.
 
 
