@@ -119,6 +119,19 @@ mini_sync() {
     return 0
   fi
 
+  _mini_sync_rebase_local
+  _mini_sync_flush_unpushed
+  return 0
+}
+
+# _mini_sync_rebase_local: put our local commit(s) back on top of an
+# already-fetched $GIT_REMOTE/$GIT_BRANCH, or fail() in the cases where refusing
+# is right (listed above mini_sync). Returns 0 only when HEAD is on top of it.
+# Shared by mini_sync and commit_paths' push retry, so there is one copy of
+# "when is it safe to replay our commits". NEVER stashes: the autostash that
+# commit_paths used to run before every push is the same trap that turned a
+# dirty lib/releases.ts into an unmerged index on 2026-09-24 (HANDOFF AZ, BI).
+_mini_sync_rebase_local() {
   local ahead behind dirty
   ahead="$(git rev-list --count "$GIT_REMOTE/$GIT_BRANCH..HEAD" 2>/dev/null || echo 0)"
   behind="$(git rev-list --count "HEAD..$GIT_REMOTE/$GIT_BRANCH" 2>/dev/null || echo 0)"
@@ -137,7 +150,6 @@ mini_sync() {
   note "diverged from $GIT_REMOTE/$GIT_BRANCH (local $ahead, remote $behind); rebasing the local commit(s) on top"
   if git rebase "$GIT_REMOTE/$GIT_BRANCH" --quiet; then
     note "rebased $ahead local commit(s) onto $GIT_REMOTE/$GIT_BRANCH"
-    _mini_sync_flush_unpushed
     return 0
   fi
   git rebase --abort >/dev/null 2>&1 || true
@@ -297,16 +309,34 @@ commit_paths() {
   git config user.name  "metro-mini[bot]"
   git config user.email "metro-mini-bot@users.noreply.github.com"
   git commit -m "$msg" || fail "git commit failed"
+  # PUSH FIRST, and only on a rejection get back on top of origin. Until
+  # 2026-09-26 every attempt began with `git pull --rebase --autostash`: if
+  # origin had changed a file that was dirty in the shared clone, the stash
+  # re-apply conflicted and left an UNMERGED index, which stops every job that
+  # syncs (the 2026-09-24 outage, HANDOFF AZ). The rebase now goes through
+  # _mini_sync_rebase_local, which refuses on a dirty tree or a conflict and
+  # leaves the repo as it was. The commit is kept either way: the next
+  # mini_sync on a clean tree replays and flushes it (tagged) or alerts
+  # (untagged). Deliberately NOT mini_sync itself: its flush step refuses to
+  # push untagged commits, and fans-monthly and metro-rankings commit
+  # untagged on purpose, so their retry would stall and page.
   local attempt
   for attempt in 1 2 3 4 5; do
-    if git pull --rebase --autostash "$GIT_REMOTE" "$GIT_BRANCH" \
-       && git push "$GIT_REMOTE" "HEAD:$GIT_BRANCH"; then
+    if git push "$GIT_REMOTE" "HEAD:$GIT_BRANCH"; then
       note "Pushed on attempt $attempt."
       return 0
     fi
+    [ "$attempt" -lt 5 ] || break
     sleep $((attempt * 5))
+    # A network blip also lands here. Fetch failing, or origin not having
+    # moved, means there is nothing to rebase: just try the push again.
+    git fetch "$GIT_REMOTE" "$GIT_BRANCH" --quiet || continue
+    if ! git merge-base --is-ancestor "$GIT_REMOTE/$GIT_BRANCH" HEAD 2>/dev/null; then
+      note "push rejected: $GIT_REMOTE/$GIT_BRANCH moved; rebasing our commit onto it (no stash)"
+      _mini_sync_rebase_local
+    fi
   done
-  fail "Failed to push after retries."
+  fail "Failed to push after retries; the commit is kept locally and the next clean mini_sync carries it."
 }
 
 # revalidate_ping <tag> [warm_path...]

@@ -125,6 +125,55 @@ git -C "$T/repo" commit -q --allow-empty -m "stranded [vercel skip]"
 check "on main mini_sync still flushes"     "$(rc_of mini_sync)" 0
 check "the stranded commit reached origin"  "$([ "$(remote)" != "$was" ] && echo moved || echo stuck)" "moved"
 
+# commit_paths' push retry (HANDOFF BI). A second clone plays "another machine"
+# that pushes between our commit and our push, so the first push is rejected.
+# The retry must rebase WITHOUT stashing: on 2026-09-24 an autostash re-apply
+# left an unmerged index that stopped the fleet. Each retry sleeps 5s.
+git clone -q -b main "$RM" "$T/other" >/dev/null 2>&1
+git -C "$T/other" config user.email other@example.com; git -C "$T/other" config user.name other
+other_push() { ( cd "$T/other" && git pull -q origin main && printf "$2" > "$1" && git add "$1" \
+  && git commit -qm "$3" && git push -q origin main ) >/dev/null 2>&1 || { echo "HARNESS BROKEN: other_push"; exit 3; }; }
+unmerged() { git -C "$T/repo" ls-files -u | wc -l | tr -d ' '; }
+stashes()  { git -C "$T/repo" stash list | wc -l | tr -d ' '; }
+dirty()    { git -C "$T/repo" status --porcelain | tr '\n' ' ' | sed 's/ $//'; }
+# Start clean: an earlier case leaves an untracked b.txt, and _mini_sync_rebase_local
+# counts untracked files as dirty (as mini_sync always has), so it would refuse.
+rm -f "$T/repo/b.txt"
+git -C "$T/repo" fetch -q origin && git -C "$T/repo" merge -q --ff-only origin/main
+printf 'x1\nx2\nx3\n' > "$T/repo/x.txt"; git -C "$T/repo" add x.txt; git -C "$T/repo" commit -qm "x [vercel skip]"; git -C "$T/repo" push -q origin main
+
+other_push o1.txt 'o\n' "other: o1 [vercel skip]"
+echo d1 > "$T/repo/d1.txt"
+check "rejected push, clean tree: pushes"   "$(rc_of "commit_paths 'Auto: d1 [vercel skip]' d1.txt")" 0
+check "  origin has both commits"           "$(git --git-dir="$RM" log --format=%s -2 main | tr '\n' '|')" "Auto: d1 [vercel skip]|other: o1 [vercel skip]|"
+check "  no stash, tree clean"              "$(stashes):$(dirty)" "0:"
+
+other_push x.txt 'x1\nORIGIN\nx3\n' "other: x [vercel skip]"
+printf 'x1\nLOCAL\nx3\n' > "$T/repo/x.txt"; echo d2 > "$T/repo/d2.txt"; a0="$(alerts)"; tip0="$(remote)"
+check "the 09-24 class: dirty file origin also changed, refuses" "$(rc_of "commit_paths 'Auto: d2 [vercel skip]' d2.txt")" 1
+check "  NO unmerged entries"               "$(unmerged)" 0
+check "  no stash left"                     "$(stashes)" 0
+check "  local edit intact"                 "$(sed -n 2p "$T/repo/x.txt")" "LOCAL"
+check "  our commit kept locally"           "$(git -C "$T/repo" log -1 --format=%s)" "Auto: d2 [vercel skip]"
+check "  origin untouched by us"            "$(remote)" "$tip0"
+check "  it alerted"                        "$([ "$(alerts)" -gt "$a0" ] && echo yes || echo no)" "yes"
+git -C "$T/repo" checkout -q -- x.txt
+check "  once clean, mini_sync carries it"  "$(rc_of mini_sync)" 0
+check "  and it reached origin"             "$(git --git-dir="$RM" log -1 --format=%s main)" "Auto: d2 [vercel skip]"
+
+other_push c.txt 'origin-c\n' "other: c [vercel skip]"
+echo mine-c > "$T/repo/c.txt"; head0=""
+check "rebase conflict: refuses"            "$(rc_of "commit_paths 'Auto: c [vercel skip]' c.txt")" 1
+check "  not left mid-rebase"               "$([ -d "$T/repo/.git/rebase-merge" ] || [ -d "$T/repo/.git/rebase-apply" ] && echo MID-REBASE || echo clean)" "clean"
+check "  no unmerged, our commit on top"    "$(unmerged):$(git -C "$T/repo" log -1 --format=%s)" "0:Auto: c [vercel skip]"
+git -C "$T/repo" reset -q --hard origin/main
+
+other_push o2.txt 'o\n' "other: o2 [vercel skip]"
+echo u > "$T/repo/u.txt"; a0="$(alerts)"
+check "untagged commit, rejected push: still pushes" "$(rc_of "commit_paths 'rankings: weekly metro recalculation' u.txt")" 0
+check "  it is origin's tip"                "$(git --git-dir="$RM" log -1 --format=%s main)" "rankings: weekly metro recalculation"
+check "  and no untagged-commit alert"      "$(alerts)" "$a0"
+
 # Fails CLOSED: a runner whose _common.sh cannot load the guard must not run.
 mv "$T/mini/branch-guard.sh" "$T/mini/branch-guard.sh.off"
 check "without branch-guard.sh, sourcing refuses" "$(bash -c "cd '$T/repo'; . '$C' >/dev/null 2>&1; echo survived")" ""
